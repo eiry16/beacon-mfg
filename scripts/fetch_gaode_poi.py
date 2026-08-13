@@ -25,15 +25,19 @@ from pathlib import Path
 AMAP_KEY = ""  # TODO: 填入高德 Web 服务 Key，或通过环境变量 AMAP_KEY 传入
 BASE = "https://restapi.amap.com/v3/place/text"
 
+REQUEST_COUNT = 0  # 本次运行累计 API 请求次数（配额统计用）
+
 ROOT = Path(__file__).resolve().parent.parent
 SUPPLIERS_DIR = ROOT / "data" / "suppliers"
 
 
 def fetch(keyword, city, limit, offset=20, delay=0.5):
-    """分页拉取高德 POI，直到拿满 limit 或没有更多数据"""
+    """分页拉取高德 POI，直到拿满 limit 或没有更多数据。自动统计请求次数（REQUEST_COUNT）。"""
+    global REQUEST_COUNT
     pois_all = []
     page = 1
     while len(pois_all) < limit:
+        REQUEST_COUNT += 1
         url = BASE + "?" + urllib.parse.urlencode({
             "key": AMAP_KEY,
             "keywords": keyword,
@@ -51,11 +55,14 @@ def fetch(keyword, city, limit, offset=20, delay=0.5):
             print(f"请求失败: {e}")
             break
         if data.get("status") != "1":
-            print(f"API 返回错误: {data.get('info')}")
+            info = data.get("info", "")
+            print(f"API 返回错误: {info}")
+            if "OVER" in info.upper() or "LIMIT" in info.upper() or "QUOTA" in info.upper():
+                print(">>> 配额已用尽（次日 00:00 重置），本次停止抓取。")
             break
         pois = data.get("pois", [])
         pois_all.extend(pois)
-        print(f"  第 {page} 页: +{len(pois)} 条（累计 {len(pois_all)} / 目标 {limit}）")
+        print(f"  第 {page} 页: +{len(pois)} 条（累计 {len(pois_all)} / 目标 {limit}，本次已用请求 {REQUEST_COUNT}）")
         if len(pois) < offset:
             break  # 没有更多数据
         page += 1

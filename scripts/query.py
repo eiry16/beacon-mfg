@@ -8,6 +8,8 @@
     python scripts/query.py --province 广东 --cert 高新技术企业
     python scripts/query.py --category 精密机械加工 --limit 10
     python scripts/query.py --keyword 注塑 --include-template
+    # 英文数据集（海外 Agent）:
+    python scripts/query.py --keyword "CNC Machining" --city Shenzhen --en --limit 5
 """
 import argparse
 import json
@@ -17,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "data" / "index.json"
 SUPPLIERS_DIR = ROOT / "data" / "suppliers"
+EN_DIR = ROOT / "data" / "en"
 
 
 def load_index():
@@ -24,8 +27,18 @@ def load_index():
         return json.load(f)
 
 
-def load_all_suppliers():
-    """遍历 index 中登记的品类文件，合并为 {supplier: {category: ...}}"""
+def load_all_suppliers(english=False):
+    """遍历数据文件，合并为 {supplier: {_category: ...}}。english=True 时读 data/en/"""
+    if english:
+        suppliers = []
+        for path in sorted(EN_DIR.glob("*.json")):
+            with open(path, encoding="utf-8") as f:
+                for item in json.load(f):
+                    item["_category"] = item.get("category_en") or item.get("category")
+                    item["_english"] = True
+                    suppliers.append(item)
+        return suppliers
+
     index = load_index()
     suppliers = []
     for cat in index["categories"]:
@@ -40,11 +53,12 @@ def load_all_suppliers():
 
 
 def match(record, keyword):
-    """关键词匹配：对 keywords 列表做子串匹配（忽略大小写）"""
+    """关键词匹配：对 keywords 列表做子串匹配（忽略大小写）。英文数据同时匹配 keywords_en"""
     kw = keyword.strip().lower()
     if not kw:
         return False
-    return any(kw in k.lower() for k in record.get("keywords", []))
+    pools = list(record.get("keywords", [])) + list(record.get("keywords_en", []))
+    return any(kw in k.lower() for k in pools)
 
 
 def _norm(s):
@@ -59,6 +73,8 @@ def search(suppliers, args):
         if s.get("is_template") and not args.include_template:
             continue
         if args.category and s.get("_category") != args.category:
+            continue
+        if args.category_en and s.get("_category") != args.category_en:
             continue
         if args.city and _norm(s.get("region", {}).get("city")) != _norm(args.city):
             continue
@@ -77,6 +93,22 @@ def search(suppliers, args):
 
 def fmt(record):
     region = record.get("region", {})
+    if record.get("_english"):
+        lines = [
+            f"Company: {record.get('company_en', record.get('company', ''))} "
+            f"({region.get('province', '')} · {region.get('city', '')})",
+            f"Products: {' / '.join(record.get('keywords_en') or record.get('keywords', []))}",
+            f"Category: {record.get('category_en', record.get('category', ''))}",
+        ]
+        if record.get("contact_phone"):
+            lines.append(f"Phone: {record['contact_phone']}")
+        if record.get("address_en"):
+            lines.append(f"Address: {record['address_en']}")
+        if record.get("note_en"):
+            lines.append(f"Note: {record['note_en']}")
+        lines.append(f"Source: public directory, verified {record.get('verified_at', '?')}")
+        return "\n".join(lines)
+
     certs = "、".join(record.get("certifications", [])) or "无"
     lines = [
         f"公司：{record['company']}（{region.get('province', '')}·{region.get('city', '')}）",
@@ -102,18 +134,23 @@ def main():
     parser = argparse.ArgumentParser(description="BeaconMFG 供应商检索")
     parser.add_argument("--keyword", help="产品关键词（空格分隔多词 AND）")
     parser.add_argument("--category", help="品类名（见 data/index.json）")
-    parser.add_argument("--city", help="城市过滤，如 深圳")
-    parser.add_argument("--province", help="省份过滤，如 广东")
+    parser.add_argument("--category-en", dest="category_en", help="英文品类名（--en 模式）")
+    parser.add_argument("--city", help="城市过滤，如 深圳 / Shenzhen")
+    parser.add_argument("--province", help="省份过滤，如 广东 / Guangdong")
     parser.add_argument("--cert", help="认证标签过滤，如 高新技术企业")
     parser.add_argument("--limit", type=int, default=5, help="返回条数上限")
     parser.add_argument("--include-template", action="store_true", help="包含模板示例数据")
+    parser.add_argument("--en", action="store_true", help="检索英文数据集（data/en）")
     args = parser.parse_args()
 
-    if not any([args.keyword, args.category, args.city, args.province, args.cert]):
+    if not any([args.keyword, args.category, args.category_en, args.city, args.province, args.cert]):
         parser.print_help()
         sys.exit(1)
 
-    suppliers = load_all_suppliers()
+    suppliers = load_all_suppliers(english=args.en)
+    if not suppliers and args.en:
+        print("英文数据集为空：请先运行 scripts/translate_en.py 生成 data/en/")
+        sys.exit(0)
     results = search(suppliers, args)
 
     if not results:
