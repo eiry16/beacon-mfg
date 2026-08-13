@@ -4,6 +4,11 @@
 
 **只提供公开联系方式，不参与交易。数据免费开源，先占生态位。**
 
+> **English:** BeaconMFG is an agent-searchable directory of China manufacturing suppliers,
+> organized by product keywords. Load `SKILL_EN.md` for the English dataset (`data/en/`) —
+> a free, 24/7 "Canton Fair" for global buyers to find upstream manufacturers.
+> Repo: https://github.com/eiry16/beacon-mfg
+
 ## 这是什么
 
 BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应商名录：
@@ -12,6 +17,7 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 - 每条供应商记录含：公司名、主营关键词、地区、官网、公开联系方式、资质标签、数据来源
 - Agent（WorkBuddy、GPTs、各类 MCP 客户端）加载本仓库的 `SKILL.md` 后即可按需求检索
 - 数据全部来自**公开渠道**（工商公示、政府名单、企业官网、展会名录），可溯源、可申诉
+- **海外版**：`SKILL_EN.md` + `data/en/`（GLM-4-Flash 免费翻译，英文数据集）
 
 ## 为什么做这个
 
@@ -23,18 +29,24 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 
 ## 快速开始
 
-### 给 Agent 开发者
+### 给 Agent 开发者（中文）
 
-1. 克隆本仓库（或仅 `data/` 目录）：
-   ```bash
-   git clone https://github.com/your-name/beacon-mfg.git
-   ```
+1. 克隆本仓库：`git clone https://github.com/eiry16/beacon-mfg.git`
 2. 将 `SKILL.md` 配置为 Agent 的 Skill（WorkBuddy 直接放 skills 目录即可）
 3. 检索示例：
    ```bash
-   # 命令行直接查（不依赖 Agent）
    python scripts/query.py --keyword "CNC加工" --city 深圳 --limit 5
    python scripts/query.py --keyword "小批量" --cert 高新技术企业 --limit 10
+   ```
+
+### For overseas agents/buyers (English)
+
+1. `git clone https://github.com/eiry16/beacon-mfg.git`
+2. Load `SKILL_EN.md` as the Agent skill (English dataset at `data/en/`, 263 records)
+3. Search examples:
+   ```bash
+   python scripts/query.py --keyword "CNC Machining" --city Shenzhen --en --limit 5
+   python scripts/query.py --category-en "Die Casting" --en --limit 10
    ```
 
 ### 给数据贡献者
@@ -44,6 +56,8 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 - 规则见 `docs/CONTRIBUTING.md`
 
 ## 数据现状
+
+**中文数据集**（`data/suppliers/`）：
 
 | 品类 | 总数 | 真实可检索 | 待核实 |
 |---|---|---|---|
@@ -56,6 +70,9 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 | 标准件 | 20 | 11 | 9 |
 | 原材料 | 20 | 19 | 1 |
 | **合计** | **263** | **171** | **92** |
+
+**英文数据集**（`data/en/`，GLM-4-Flash 免费翻译）：**263 条全量英文镜像**，
+供海外 Agent/买家使用——"24 小时免费的线上广交会"。
 
 <p align="center">
   <img src="docs/charts/categories.svg" alt="品类分布" width="45%">
@@ -91,17 +108,21 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 
 ```
 beacon-mfg/
-├── SKILL.md                    # Agent 主指令
+├── SKILL.md                    # Agent 主指令（中文数据集）
+├── SKILL_EN.md                 # Agent 主指令（English / 海外版）
 ├── data/
 │   ├── index.json              # 品类 → 关键词 → 文件路径 索引
-│   └── suppliers/*.json        # 按品类拆分的数据
+│   ├── suppliers/*.json        # 中文数据（按品类拆分）
+│   └── en/*.json               # 英文镜像数据（GLM-4-Flash 翻译）
 ├── schema/supplier.schema.json # 数据结构定义
 ├── scripts/
-│   ├── query.py                # 检索脚本
+│   ├── gui_app.py              # ★ 一键采集发布（图形界面：爬取+脱敏+校验+推送）
+│   ├── query.py                # 检索脚本（中文/英文 --en 模式）
 │   ├── validate.py             # 数据校验
 │   ├── stats.py                # 数据统计
 │   ├── audit_contacts.py       # 联系方式审核（生成核实清单）
 │   ├── gen_charts.py           # 数据可视化（生成 SVG 图表）
+│   ├── translate_en.py         # 英文翻译（GLM-4-Flash 免费模型）
 │   ├── fetch_gaode_poi.py      #  POI 抓取（分页、增量、入库脱敏）
 │   └── fetch_batch.py          # 一键批量更新全品类骨架
 └── docs/                       # 贡献指南、品类规则、防抄袭策略
