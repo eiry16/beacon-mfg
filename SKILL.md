@@ -73,10 +73,11 @@ python scripts/query.py --category 精密机械加工 --limit 10
 ## 数据说明
 
 - 数据文件：`data/suppliers/{品类}.json`，分类索引：`data/index.json`
-- 真实数据必须含 `source`（来源渠道）与 `verified_at`（核实日期）
+- 真实数据（`is_template: false`）包含：公司名、品类关键词、地区、联系方式（座机完整/手机脱敏）、来源与核实日期
 - **合规策略**：座机/400/官网电话完整发布；个人手机号一律脱敏为 `1XX****XXXX`（合规红线，完整手机号禁止入库）
 - 脱敏号兼作认领钩子：企业看到自己的号会来认领，认领后由商家提交完整业务联系方式（合法授权）
-- 当前数据为骨架（`is_template: true`），核实与脱敏见 `docs/audit_report.md` 和 `scripts/audit_contacts.py`
+- 当前 171 条已发布（来源：公开名录，未经官网逐一核实）；52 条待核实（49 无电话 + 3 模板）不进入检索
+- 核实与更新：`scripts/audit_contacts.py` / `docs/CONTRIBUTING.md`
 
 ## 贡献
 
