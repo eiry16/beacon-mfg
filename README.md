@@ -63,9 +63,15 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 </p>
 
 > 当前全部数据为 `is_template: true`（骨架，联系方式未核实），**不会出现在 Agent 检索结果中**。
-> 核实流程：`python scripts/audit_contacts.py` 生成待核实清单（按座机/手机/无电话分类）→ 逐条从官网核实 →
+> 核实流程：`python scripts/audit_contacts.py` 生成待核实清单（按座机/脱敏手机/无电话分类）→ 逐条核实 →
 > 更新联系方式 → 改 `is_template: false` → 提交发布。
 > 数据更新与图表刷新：`python scripts/stats.py` / `python scripts/gen_charts.py`。
+
+### 联系方式合规策略
+
+- **座机 / 400 / 800 / 官网电话**：完整发布（企业公开经营信息）
+- **个人手机号**：一律脱敏为 `1XX****XXXX`（合规红线，完整手机号禁止入库，validate.py 自动拦截）
+- 脱敏号是**认领钩子**：企业看到自己的号会来认领，认领时由商家自行提交完整业务联系方式（合法授权）
 
 ## 数据来源与合规
 
