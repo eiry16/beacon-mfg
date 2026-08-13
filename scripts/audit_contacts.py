@@ -27,39 +27,44 @@ HOTLINE_RE = re.compile(r"^(400|800)\d{5,}")
 
 
 def classify(phone):
-    """返回电话类型: good(座机/热线) / mixed(座机+手机) / mobile_warn(疑似手机) / none(无) / unknown"""
+    """返回电话类型: good(座机/热线) / masked(已脱敏手机) / mixed(座机+脱敏手机) / none(无) / unknown"""
     if not phone or str(phone).strip() in ("", "待核实"):
         return "none"
     parts = [p.strip() for p in re.split(r"[;；,，]", str(phone)) if p.strip()]
     types = set()
     for p in parts:
         digits = re.sub(r"\D", "", p)
-        if HOTLINE_RE.match(digits):
+        if "*" in p:
+            types.add("masked")  # 脱敏手机号（合规，可发布）
+        elif HOTLINE_RE.match(digits):
             types.add("hotline")
         elif LANDLINE_RE.match(digits):
             types.add("landline")
         elif MOBILE_RE.match(digits):
-            types.add("mobile")
+            types.add("mobile_raw")  # 完整手机号（不应存在，validate 会拦截）
         else:
             types.add("unknown")
     has_biz = bool(types & {"landline", "hotline"})
-    has_mobile = "mobile" in types
-    if has_mobile and has_biz:
+    has_masked = "masked" in types
+    if has_masked and has_biz:
         return "mixed"
-    if has_mobile:
-        return "mobile_warn"
+    if has_masked:
+        return "masked"
     if has_biz:
         return "good"
+    if "mobile_raw" in types:
+        return "mobile_raw"
     if "unknown" in types:
         return "unknown"
     return "none"
 
 
 LABELS = {
-    "good": ("可优先核实（座机/400/800）", "核实后改 is_template=false 即可发布"),
-    "mixed": ("座机+手机混合", "保留座机/热线，删除手机号部分"),
-    "mobile_warn": ("疑似个人手机号（禁止直接发布）", "需从官网找座机/业务电话替换"),
+    "good": ("座机/400/800（完整可发布）", "核实后改 is_template=false 即可发布"),
+    "masked": ("手机号已脱敏（公开层展示）", "作认领钩子：企业看到脱敏号会来认领；认领后由商家提交完整业务号（合法授权）"),
+    "mixed": ("座机 + 脱敏手机", "座机完整展示 + 手机号脱敏展示，均可发布"),
     "none": ("无电话 / 待核实", "需从官网补充联系方式"),
+    "mobile_raw": ("完整手机号（违规，应立即脱敏）", "validate.py 会拦截，运行脱敏处理"),
     "unknown": ("格式无法识别", "人工查看原始电话"),
 }
 
@@ -90,18 +95,18 @@ def main():
     args = parser.parse_args()
 
     items = load_all()
-    groups = {"good": [], "mixed": [], "mobile_warn": [], "none": [], "unknown": []}
+    groups = {"good": [], "masked": [], "mixed": [], "none": [], "mobile_raw": [], "unknown": []}
     for s in items:
         groups[classify(s.get("contact_phone"))].append(s)
 
     total = len(items)
     print(f"共 {total} 条待核实记录：")
-    for k in ("good", "mixed", "mobile_warn", "none", "unknown"):
-        print(f"  {LABELS[k][0]:<28} {len(groups[k]):>4} 条")
+    for k in ("good", "masked", "mixed", "none", "mobile_raw", "unknown"):
+        print(f"  {LABELS[k][0]:<32} {len(groups[k]):>4} 条")
 
     if args.only_mobile:
-        for s in groups["mobile_warn"]:
-            print(row(s, LABELS["mobile_warn"][1]))
+        for s in groups["masked"]:
+            print(row(s, LABELS["masked"][1]))
         return
 
     # 生成报告
@@ -110,11 +115,12 @@ def main():
         "",
         f"生成时间：2026-08-13 | 待核实记录：**{total}** 条 | 发布前必须逐条完成核实",
         "",
-        "> 合规红线：只发布企业公开经营联系方式（座机/400/官网电话）；**个人手机号禁止直接发布**。",
-        "> 操作流程：核实 → 更新 contact_phone → 改 is_template=false → 提交。",
+        "> 合规策略：座机/400/官网电话完整发布；**个人手机号一律脱敏展示（1XX****XXXX）**，",
+        "> 脱敏号兼作认领钩子——企业看到自己的号后主动认领，认领时由商家自行提交完整业务联系方式（合法授权）。",
+        "> 操作流程：核实 → 更新联系方式 → 改 is_template=false → 提交。",
         "",
     ]
-    for k in ("good", "mixed", "mobile_warn", "none", "unknown"):
+    for k in ("good", "masked", "mixed", "none", "mobile_raw", "unknown"):
         title, tag = LABELS[k]
         lines.append(f"## {title}（{len(groups[k])} 条）\n")
         for s in groups[k]:

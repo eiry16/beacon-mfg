@@ -61,6 +61,22 @@ def check_supplier(item, path, seen_ids):
             if any(m in phone for m in PLACEHOLDER_MARKERS):
                 err(f"{path} ({item.get('id')}): 真实数据联系方式疑似占位符 '{phone}'")
                 ok = False
+
+    # 合规闸门：完整手机号禁止入库（必须脱敏为 1XX****XXXX），按分隔符逐段检查
+    phone = item.get("contact_phone") or ""
+    for seg in re.split(r"[;；,，]", phone):
+        seg = seg.strip()
+        if not seg or seg == "待核实":
+            continue
+        digits = re.sub(r"\D", "", seg)
+        if "*" in seg:
+            # 脱敏段：必须符合 1XX****XXXX（前 3 位 + 4 星 + 后 4 位）
+            if not re.match(r"^1[3-9]\d\*{4}\d{4}$", seg):
+                err(f"{path} ({item.get('id')}): 脱敏格式异常 '{seg}'，应为 1XX****XXXX")
+                ok = False
+        elif re.match(r"^1[3-9]\d{9}$", digits):
+            err(f"{path} ({item.get('id')}): 检测到完整手机号 '{seg}'，必须脱敏为 1XX****XXXX（合规红线）")
+            ok = False
     return ok
 
 

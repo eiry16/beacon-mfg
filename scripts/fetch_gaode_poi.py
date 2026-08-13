@@ -61,6 +61,28 @@ def normalize_region(province, city):
     )
 
 
+MOBILE_RE = re.compile(r"^1[3-9]\d{9}$")
+
+
+def mask_mobile(phone_str):
+    """手机号脱敏（138****0000），座机/400 保留。多个号码分号分隔逐号处理。
+
+    合规策略：完整个人手机号不进仓库。抓取入库即脱敏，
+    完整业务联系方式仅在商家认领时由商家自行提交（合法授权）。
+    """
+    if not phone_str:
+        return "待核实"
+    parts = [p.strip() for p in re.split(r"[;；,，]", str(phone_str)) if p.strip()]
+    out = []
+    for p in parts:
+        digits = re.sub(r"\D", "", p)
+        if MOBILE_RE.match(digits):
+            out.append(digits[:3] + "****" + digits[-4:])
+        else:
+            out.append(p)
+    return "; ".join(out)
+
+
 def to_supplier(poi, category, keyword, seq):
     """POI → 供应商骨架（待核实，is_template=true 直到人工核实后改 false）"""
     province, city = normalize_region(poi.get("pname", ""), poi.get("cityname", ""))
@@ -71,14 +93,14 @@ def to_supplier(poi, category, keyword, seq):
         "keywords": [keyword],
         "region": {"province": province, "city": city},
         "address": poi.get("address") or (poi.get("pname", "") + poi.get("adname", "")),
-        "contact_phone": poi.get("tel") or "待核实",
+        "contact_phone": mask_mobile(poi.get("tel")),  # 手机号入库即脱敏
         "lat": float(poi.get("location", "").split(",")[1]) if poi.get("location") else None,
         "lng": float(poi.get("location", "").split(",")[0]) if poi.get("location") else None,
         "source": "public_directory",  # 高德 POI 属公开名录
         "source_url": "https://lbs.amap.com",
         "verified_at": "2026-08-13",
         "is_template": True,  # 待核实骨架，联系方式需人工核实后改 false 才对外发布
-        "note": f"高德 POI 抓取（关键词：{keyword}），公司名/地址/经纬度直接采纳；联系方式需人工核实后改 is_template=false 发布",
+        "note": f"高德 POI 抓取（关键词：{keyword}）。手机号已脱敏展示；完整业务联系方式需商家认领后自行提交（合法授权），见 docs/CONTRIBUTING.md",
     }
 
 
