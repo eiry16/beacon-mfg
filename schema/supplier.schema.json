@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/beacon-mfg/beacon-mfg/schema/supplier.schema.json",
+  "title": "BeaconMFG Supplier Record",
+  "description": "面向 Agent 检索的制造业供应商结构化记录。所有字段必须来自公开渠道，联系方式必须为企业公开渠道。",
+  "type": "object",
+  "required": ["id", "company", "category", "keywords", "region", "contact_phone", "source", "source_url", "verified_at", "is_template"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "全局唯一编号，格式 CN-MFG-XXXX",
+      "pattern": "^CN-MFG-[0-9]{4}$"
+    },
+    "company": { "type": "string", "minLength": 2, "description": "企业全称" },
+    "category": {
+      "type": "string",
+      "description": "一级品类，必须存在于 data/index.json 的 categories 列表",
+      "enum": ["精密机械加工", "钣金冲压", "注塑成型", "压铸", "电子元器件", "表面处理", "标准件", "原材料"]
+    },
+    "keywords": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "产品关键词（用于检索），建议与 index.json 中的关键词词典对齐"
+    },
+    "region": {
+      "type": "object",
+      "required": ["province", "city"],
+      "properties": {
+        "province": { "type": "string", "description": "省/直辖市，如 广东" },
+        "city": { "type": "string", "description": "市，如 深圳" }
+      }
+    },
+    "lat": { "type": ["number", "null"], "description": "纬度（LBS 检索预留）" },
+    "lng": { "type": ["number", "null"], "description": "经度（LBS 检索预留）" },
+    "website": { "type": ["string", "null"], "format": "uri", "description": "企业官网（公开渠道）" },
+    "contact_phone": { "type": "string", "minLength": 5, "description": "公开联系电话。模板数据允许占位符，真实数据必须为可核实的企业公开电话" },
+    "contact_email": { "type": ["string", "null"], "description": "公开邮箱（可选）" },
+    "address": { "type": ["string", "null"], "description": "注册/经营地址（公开）" },
+    "founded": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2030, "description": "成立年份（可选）" },
+    "scale": { "type": ["string", "null"], "enum": ["<50人", "50-100人", "100-500人", "500-1000人", ">1000人", null], "description": "规模（可选）" },
+    "certifications": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "资质标签，如 高新技术企业 / ISO9001 / 专精特新（可选）"
+    },
+    "source": {
+      "type": "string",
+      "enum": ["gov_list", "company_website", "public_directory", "exhibition", "template"],
+      "description": "数据来源渠道"
+    },
+    "source_url": { "type": "string", "description": "数据来源链接（可溯源）" },
+    "verified_at": { "type": "string", "format": "date", "description": "信息核实日期，格式 YYYY-MM-DD" },
+    "is_template": {
+      "type": "boolean",
+      "description": "true = 示例占位数据（联系方式为占位符），false = 真实公开数据。发布时真实数据必须为 false"
+    },
+    "note": { "type": ["string", "null"], "description": "备注，如主营特色、交期、最小起订（公开信息，不编造）" }
+  },
+  "additionalProperties": false
+}

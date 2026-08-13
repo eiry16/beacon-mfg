@@ -1,0 +1,21 @@
+# 敏感信息（API Key 等）
+.env
+.env.local
+.env.*.local
+secrets/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
