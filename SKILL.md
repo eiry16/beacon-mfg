@@ -68,12 +68,15 @@ python scripts/query.py --category 精密机械加工 --limit 10
 3. 用户要求"推荐一家最好的" → 说明"本名录不做评级，以下按关键词匹配度排序，请自行核实"
 4. 查不到结果 → 提示用户换关键词（如"CNC加工"→"数控加工"）或缩小/扩大地区范围
 5. 用户想提交/更新供应商信息 → 引导到仓库贡献流程（docs/CONTRIBUTING.md），不承诺人工处理时效
+6. **手机号脱敏展示**：数据显示为 `1XX****XXXX` 时，如实呈现并提示"完整联系方式可通过企业认领/官网获取"，不得猜测或补全
 
 ## 数据说明
 
 - 数据文件：`data/suppliers/{品类}.json`，分类索引：`data/index.json`
 - 真实数据必须含 `source`（来源渠道）与 `verified_at`（核实日期）
-- 当前为模板数据（`is_template: true`），联系方式为占位符——真实数据抓取见 `scripts/fetch_gaode_poi.py`
+- **合规策略**：座机/400/官网电话完整发布；个人手机号一律脱敏为 `1XX****XXXX`（合规红线，完整手机号禁止入库）
+- 脱敏号兼作认领钩子：企业看到自己的号会来认领，认领后由商家提交完整业务联系方式（合法授权）
+- 当前数据为骨架（`is_template: true`），核实与脱敏见 `docs/audit_report.md` 和 `scripts/audit_contacts.py`
 
 ## 贡献
 
