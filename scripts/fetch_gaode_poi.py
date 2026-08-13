@@ -29,27 +29,38 @@ ROOT = Path(__file__).resolve().parent.parent
 SUPPLIERS_DIR = ROOT / "data" / "suppliers"
 
 
-def fetch(keyword, city, limit, offset=20):
-    """分页拉取高德 POI，返回候选记录列表"""
-    url = BASE + "?" + urllib.parse.urlencode({
-        "key": AMAP_KEY,
-        "keywords": keyword,
-        "city": city,
-        "citylimit": "true",
-        "types": "商务住宅|科教文化服务|公司企业",  # 制造业企业常见分类
-        "offset": offset,
-        "page": 1,
-        "extensions": "base",
-    })
-    print(f"请求: {url}")
-    with urllib.request.urlopen(url, timeout=15) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
-    if data.get("status") != "1":
-        print(f"API 返回错误: {data.get('info')}")
-        return []
-    pois = data.get("pois", [])
-    print(f"命中 {len(pois)} 条（按需扩展分页）")
-    return pois
+def fetch(keyword, city, limit, offset=20, delay=0.5):
+    """分页拉取高德 POI，直到拿满 limit 或没有更多数据"""
+    pois_all = []
+    page = 1
+    while len(pois_all) < limit:
+        url = BASE + "?" + urllib.parse.urlencode({
+            "key": AMAP_KEY,
+            "keywords": keyword,
+            "city": city,
+            "citylimit": "true",
+            "types": "商务住宅|科教文化服务|公司企业",  # 制造业企业常见分类
+            "offset": offset,
+            "page": page,
+            "extensions": "base",
+        })
+        try:
+            with urllib.request.urlopen(url, timeout=15) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+        except Exception as e:
+            print(f"请求失败: {e}")
+            break
+        if data.get("status") != "1":
+            print(f"API 返回错误: {data.get('info')}")
+            break
+        pois = data.get("pois", [])
+        pois_all.extend(pois)
+        print(f"  第 {page} 页: +{len(pois)} 条（累计 {len(pois_all)} / 目标 {limit}）")
+        if len(pois) < offset:
+            break  # 没有更多数据
+        page += 1
+        time.sleep(delay)  # 尊重 API 配额
+    return pois_all
 
 
 def normalize_region(province, city):
@@ -124,6 +135,28 @@ def next_seq_id(existing):
     return max_n + 1
 
 
+def save_suppliers(pois, category, keyword):
+    """把 POI 列表增量写入品类文件（按公司名去重），返回新增条数"""
+    out = SUPPLIERS_DIR / f"{category}.json"
+    existing = []
+    if out.exists():
+        with open(out, encoding="utf-8") as f:
+            existing = json.load(f)
+
+    names = {s["company"] for s in existing}
+    new_pois = [p for p in pois if p.get("name") and p.get("name") not in names]
+    seq_start = next_seq_id(existing)
+    suppliers = [to_supplier(p, category, keyword, seq_start + i) for i, p in enumerate(new_pois)]
+    if not suppliers:
+        return 0
+
+    existing.extend(suppliers)
+    with open(out, "w", encoding="utf-8") as f:
+        json.dump(existing, f, ensure_ascii=False, indent=2)
+    print(f"  新增 {len(suppliers)} 条（ID {seq_start:04d}~{seq_start + len(suppliers) - 1:04d}），当前 {category} 共 {len(existing)} 条")
+    return len(suppliers)
+
+
 def main():
     parser = argparse.ArgumentParser(description="高德 POI 抓取框架（制造业供应商骨架）")
     parser.add_argument("--keyword", required=True, help="搜索关键词，如 CNC加工 / 注塑 / 钣金")
@@ -140,28 +173,11 @@ def main():
         raise SystemExit(1)
 
     pois = fetch(args.keyword, args.city, args.limit)
-    out = SUPPLIERS_DIR / f"{args.category}.json"
-    existing = []
-    if out.exists():
-        with open(out, encoding="utf-8") as f:
-            existing = json.load(f)
-
-    # 简单去重：公司名相同则跳过
-    names = {s["company"] for s in existing}
-    new_pois = [p for p in pois[: args.limit] if p.get("name") not in names]
-    seq_start = next_seq_id(existing)
-    suppliers = [to_supplier(p, args.category, args.keyword, seq_start + i) for i, p in enumerate(new_pois)]
-    if not suppliers:
-        print("无新增。")
-        return
-
-    existing.extend(suppliers)
-    with open(out, "w", encoding="utf-8") as f:
-        json.dump(existing, f, ensure_ascii=False, indent=2)
-
-    print(f"新增 {len(suppliers)} 条（ID {seq_start:04d}~{seq_start + len(suppliers) - 1:04d}）")
-    print(f"当前 {args.category} 共 {len(existing)} 条 → {out}")
-    print("提醒：所有抓取数据 is_template=true，需逐条从官网核实联系方式后改 false 才对外发布")
+    added = save_suppliers(pois, args.category, args.keyword)
+    if added == 0:
+        print("无新增（已全部存在或没有数据）。")
+    print(f"品类文件：{SUPPLIERS_DIR / (args.category + '.json')}")
+    print("提醒：抓取数据 is_template=true，需核实后改 false 才对外发布（当前已发布数据不受影响）")
 
 
 if __name__ == "__main__":
