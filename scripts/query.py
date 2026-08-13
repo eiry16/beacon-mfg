@@ -47,6 +47,11 @@ def match(record, keyword):
     return any(kw in k.lower() for k in record.get("keywords", []))
 
 
+def _norm(s):
+    """去掉省市后缀做兼容匹配"""
+    return (s or "").replace("省", "").replace("市", "").replace("自治区", "")
+
+
 def search(suppliers, args):
     results = []
     for s in suppliers:
@@ -55,9 +60,9 @@ def search(suppliers, args):
             continue
         if args.category and s.get("_category") != args.category:
             continue
-        if args.city and s.get("region", {}).get("city") != args.city:
+        if args.city and _norm(s.get("region", {}).get("city")) != _norm(args.city):
             continue
-        if args.province and s.get("region", {}).get("province") != args.province:
+        if args.province and _norm(s.get("region", {}).get("province")) != _norm(args.province):
             continue
         if args.cert and not any(c == args.cert for c in s.get("certifications", [])):
             continue

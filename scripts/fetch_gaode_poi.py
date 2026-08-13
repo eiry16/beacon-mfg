@@ -52,14 +52,24 @@ def fetch(keyword, city, limit, offset=20):
     return pois
 
 
+def normalize_region(province, city):
+    """规范省市名称：去掉 省/市/自治区 等后缀，保证与查询参数一致"""
+    return (
+        province.replace("省", "").replace("市", "").replace("自治区", "")
+        .replace("壮族", "").replace("回族", "").replace("维吾尔", ""),
+        city.replace("市", ""),
+    )
+
+
 def to_supplier(poi, category, keyword, seq):
     """POI → 供应商骨架（待核实，is_template=true 直到人工核实后改 false）"""
+    province, city = normalize_region(poi.get("pname", ""), poi.get("cityname", ""))
     return {
         "id": f"CN-MFG-{seq:04d}",
         "company": poi.get("name", ""),
         "category": category,
         "keywords": [keyword],
-        "region": {"province": poi.get("pname", ""), "city": poi.get("cityname", "")},
+        "region": {"province": province, "city": city},
         "address": poi.get("address") or (poi.get("pname", "") + poi.get("adname", "")),
         "contact_phone": poi.get("tel") or "待核实",
         "lat": float(poi.get("location", "").split(",")[1]) if poi.get("location") else None,
@@ -73,12 +83,22 @@ def to_supplier(poi, category, keyword, seq):
 
 
 def next_seq_id(existing):
-    """从已有数据中找最大编号 +1，避免 ID 冲突"""
+    """从全部品类文件中找最大编号 +1，保证 ID 全局唯一"""
     max_n = 0
     for s in existing:
         m = re.match(r"^CN-MFG-(\d{4})$", s.get("id", ""))
         if m:
             max_n = max(max_n, int(m.group(1)))
+    if SUPPLIERS_DIR.exists():
+        for path in SUPPLIERS_DIR.glob("*.json"):
+            try:
+                with open(path, encoding="utf-8") as f:
+                    for s in json.load(f):
+                        m = re.match(r"^CN-MFG-(\d{4})$", s.get("id", ""))
+                        if m:
+                            max_n = max(max_n, int(m.group(1)))
+            except (json.JSONDecodeError, OSError):
+                continue
     return max_n + 1
 
 

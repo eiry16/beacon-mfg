@@ -45,14 +45,27 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 
 ## 数据现状
 
-| 品类 | 数量 | 数据状态 |
+| 品类 | 骨架数量 | 数据状态 |
 |---|---|---|
-| 精密机械加工 | 模板 3 条 | 首发品类，待高德 POI + 官网核实填充 |
-| 钣金冲压 / 注塑成型 / 压铸 / 电子元器件 / 表面处理 / 标准件 / 原材料 | 0 | 品类骨架已建，待填充 |
+| 精密机械加工 | 79 | 待核实（含 3 条模板示例） |
+| 钣金冲压 | 40 | 待核实 |
+| 注塑成型 | 26 | 待核实 |
+| 压铸 | 20 | 待核实 |
+| 电子元器件 | 10 | 待核实 |
+| 表面处理 | 8 | 待核实 |
+| 标准件 | 20 | 待核实 |
+| 原材料 | 20 | 待核实 |
+| **合计** | **223** | **已核实可发布 0 条** |
 
-> 当前为模板数据（`is_template: true`），联系方式为占位符，仅用于验证数据结构与检索逻辑。
-> 真实数据通过 `scripts/fetch_gaode_poi.py`（高德开放 API，合规绿区）拉取骨架后人工核实填充。
-> 更新数据状态可运行 `python scripts/stats.py`。
+<p align="center">
+  <img src="docs/charts/categories.svg" alt="品类分布" width="45%">
+  <img src="docs/charts/cities.svg" alt="城市分布" width="45%">
+</p>
+
+> 当前全部数据为 `is_template: true`（骨架，联系方式未核实），**不会出现在 Agent 检索结果中**。
+> 核实流程：`python scripts/audit_contacts.py` 生成待核实清单（按座机/手机/无电话分类）→ 逐条从官网核实 →
+> 更新联系方式 → 改 `is_template: false` → 提交发布。
+> 数据更新与图表刷新：`python scripts/stats.py` / `python scripts/gen_charts.py`。
 
 ## 数据来源与合规
 
@@ -81,15 +94,17 @@ beacon-mfg/
 │   ├── query.py                # 检索脚本
 │   ├── validate.py             # 数据校验
 │   ├── stats.py                # 数据统计
+│   ├── audit_contacts.py       # 联系方式审核（生成核实清单）
+│   ├── gen_charts.py           # 数据可视化（生成 SVG 图表）
 │   └── fetch_gaode_poi.py      # 高德 POI 抓取框架（需填 API Key）
 └── docs/                       # 贡献指南、品类维护规则
 ```
 
 ## 路线图
 
-- [ ] MVP：CNC 品类 200 家（深圳+东莞）
-- [ ] 扩展品类：钣金 / 注塑 / 压铸
-- [ ] CI 数据校验自动化
+- [x] MVP：8 品类骨架数据 223 条（深圳/东莞/苏州/佛山，高德 POI）
+- [x] 检索/校验/统计/审核/可视化 工具链
+- [ ] 逐条核实联系方式 → 首批真实数据发布（优先座机 25 条）
 - [ ] 供应商"认领/更新"入口
 - [ ] 增值 API / Agent 可见性服务
 
