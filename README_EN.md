@@ -58,8 +58,9 @@ Edit `data/suppliers/*.json` (or `data/en/*.json`), follow
 **Chinese** (`data/suppliers/`): **1,739 records, 171 published & agent-searchable**
 across 8 categories — precision machining (426), sheet metal (298), injection molding
 (71), die casting (120), electronic components (175), surface treatment (171),
-standard parts (239), raw materials (239). Cities: Shenzhen, Dongguan, Suzhou, Ningbo,
-Wuxi, Foshan.
+standard parts (241), raw materials (243). Cities: 16 across the Yangtze River
+Delta & Pearl River Delta (Shanghai, Guangzhou, Shenzhen, Dongguan, Foshan, Zhongshan,
+Zhuhai, Huizhou, Suzhou, Wuxi, Changzhou, Ningbo, Jiaxing, Hangzhou, Wenzhou, Kunshan).
 
 **English** (`data/en/`): **1,739 full English mirrors** (auto-translated, GLM-4-Flash) —
 for overseas buyers and agents.
