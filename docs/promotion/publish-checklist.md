@@ -3,7 +3,7 @@
 ## 1. GitHub 仓库 About 描述（已通过 gh 设置，见下方）
 
 ```
-Agent-searchable directory of China manufacturing suppliers (8 categories, 263 records, bilingual). Free 24/7 "online Canton Fair" for sourcing. Info-only, compliance-first.
+Agent-searchable directory of China manufacturing suppliers (8 categories, 1,739 records, bilingual). Free 24/7 "online Canton Fair" for sourcing. Info-only, compliance-first.
 ```
 
 ## 2. GitHub Topics（已通过 gh 设置）
@@ -17,7 +17,7 @@ Agent-searchable directory of China manufacturing suppliers (8 categories, 263 r
 
 - Tag: `v0.1.0`
 - Title: `BeaconMFG v0.1.0 — Agent-searchable China supplier directory`
-- 内容：双语数据集 263 条、SKILL.md/SKILL_EN.md、工具链、合规说明
+- 内容：双语数据集 1,739 条、SKILL.md/SKILL_EN.md、工具链、合规说明
 
 ## 4. 外部平台发布顺序（需要你登录操作）
 

@@ -6,7 +6,7 @@
 
 ```
 New open-source project: BeaconMFG 📦
-An agent-searchable directory of 263 China manufacturers, organized by product keywords.
+An agent-searchable directory of 1,739 China manufacturers, organized by product keywords.
 No API key. No signup. Just git clone + ask your agent.
 Bilingual (CN/EN) — a 24/7 "online Canton Fair" for global buyers.
 github.com/eiry16/beacon-mfg
@@ -29,7 +29,7 @@ github.com/eiry16/beacon-mfg
 **推文 3（数据/合规角度）：**
 
 ```
-Open data for manufacturing sourcing: 263 Chinese suppliers across 8 categories,
+Open data for manufacturing sourcing: 1,739 Chinese suppliers across 8 categories,
 fully bilingual, with source+verification on every record.
 
 Compliance-first: personal mobiles masked, public info only, companies can
@@ -57,7 +57,7 @@ one-line query to your AI assistant?
 
 BeaconMFG is an open-source, agent-searchable directory of Chinese manufacturers:
 
-- 263 companies across 8 categories (CNC machining, sheet metal, injection molding,
+- 1,739 companies across 8 categories (CNC machining, sheet metal, injection molding,
   die casting, electronic components, surface treatment, standard parts, raw materials)
 - Full English mirror for global procurement teams
 - Every listing: company, product keywords, region, public contact, data source

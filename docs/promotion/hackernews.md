@@ -6,7 +6,7 @@
 ## 标题
 
 ```
-Show HN: BeaconMFG – open, agent-searchable directory of 263 China manufacturers
+Show HN: BeaconMFG – open, agent-searchable directory of 1,739 China manufacturers
 ```
 
 ## 正文
@@ -17,7 +17,7 @@ China manufacturing suppliers organized by product keywords, designed to be read
 directly by AI agents.
 
 What's inside:
-- 263 manufacturers across 8 categories (CNC machining, sheet metal, injection molding,
+- 1,739 manufacturers across 8 categories (CNC machining, sheet metal, injection molding,
   die casting, electronic components, surface treatment, standard parts, raw materials)
 - Bilingual: full English mirror (data/en/) for overseas buyers, translated with a free
   LLM model — think "a 24/7 online Canton Fair"

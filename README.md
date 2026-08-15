@@ -44,7 +44,7 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 ### For overseas agents/buyers (English)
 
 1. `git clone https://github.com/eiry16/beacon-mfg.git`
-2. Load `SKILL_EN.md` as the Agent skill (English dataset at `data/en/`, 263 records)
+2. Load `SKILL_EN.md` as the Agent skill (English dataset at `data/en/`, 1,739 records)
 3. Search examples:
    ```bash
    python scripts/query.py --keyword "CNC Machining" --city Shenzhen --en --limit 5
@@ -63,17 +63,17 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 
 | 品类 | 总数 | 真实可检索 | 待核实 |
 |---|---|---|---|
-| 精密机械加工 | 79 | 55 | 24 |
-| 钣金冲压 | 40 | 38 | 2 |
-| 注塑成型 | 26 | 22 | 4 |
-| 压铸 | 60 | 10 | 50 |
-| 电子元器件 | 10 | 8 | 2 |
-| 表面处理 | 8 | 8 | 0 |
-| 标准件 | 20 | 11 | 9 |
-| 原材料 | 20 | 19 | 1 |
-| **合计** | **263** | **171** | **92** |
+| 精密机械加工 | 426 | 55 | 371 |
+| 钣金冲压 | 298 | 38 | 260 |
+| 注塑成型 | 71 | 22 | 49 |
+| 压铸 | 120 | 10 | 110 |
+| 电子元器件 | 175 | 8 | 167 |
+| 表面处理 | 171 | 8 | 163 |
+| 标准件 | 239 | 11 | 228 |
+| 原材料 | 239 | 19 | 220 |
+| **合计** | **1,739** | **171** | **1,568** |
 
-**英文数据集**（`data/en/`，GLM-4-Flash 免费翻译）：**263 条全量英文镜像**，
+**英文数据集**（`data/en/`，GLM-4-Flash 免费翻译）：**1,739 条全量英文镜像**，
 供海外 Agent/买家使用——"24 小时免费的线上广交会"。
 
 <p align="center">
@@ -83,7 +83,8 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 
 > **171 条已发布**（`is_template: false`，Agent 可检索）：联系方式来自高德公开名录——
 > 座机/400 完整展示，个人手机号已脱敏（`1XX****XXXX`，完整号禁止入库）。
-> **92 条待核实**：无电话或新抓取未核实 + 3 条模板示例，不进入检索结果。
+> **1,568 条待核实**：新抓取骨架（无电话或未核实），不进入检索结果。
+> 覆盖城市：东莞/深圳/苏州/宁波/无锡/佛山。
 > 核实/更新流程见 `docs/CONTRIBUTING.md` 与 `scripts/audit_contacts.py`。
 
 ### 联系方式合规策略

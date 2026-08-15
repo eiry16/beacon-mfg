@@ -8,7 +8,7 @@
 **标题：**
 
 ```
-I built an open directory of 263 Chinese manufacturers, searchable by AI agents — feedback welcome
+I built an open directory of 1,739 Chinese manufacturers, searchable by AI agents — feedback welcome
 ```
 
 **正文：**
@@ -23,7 +23,7 @@ casting, electronic components, surface treatment, standard parts, raw materials
 designed to be consumed directly by AI agents.
 
 Current state:
-- 263 companies across 8 categories (Shenzhen/Dongguan/Suzhou/Ningbo, more to come)
+- 1,739 companies across 8 categories (Shenzhen/Dongguan/Suzhou/Ningbo, more to come)
 - Full English mirror for overseas buyers
 - Each record: company name, product keywords, region, address, public phone, source
 - Compliance-first: public info only; personal mobiles are masked; no scraping of
