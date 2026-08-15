@@ -53,14 +53,15 @@ Then load `SKILL.md` / `SKILL_EN.md` into your agent and ask naturally:
 Edit `data/suppliers/*.json` (or `data/en/*.json`), follow
 `schema/supplier.schema.json`, run `python scripts/validate.py`, open a PR.
 
-## Data Status (2026-08-13)
+## Data Status (2026-08-14)
 
-**Chinese** (`data/suppliers/`): **263 records, 171 published & agent-searchable**
-across 8 categories — precision machining (79), sheet metal (40), injection molding (26),
-die casting (60), electronic components (10), surface treatment (8), standard parts (20),
-raw materials (20). Cities: Shenzhen, Dongguan, Suzhou, Ningbo, Foshan, Wuxi.
+**Chinese** (`data/suppliers/`): **1,739 records, 171 published & agent-searchable**
+across 8 categories — precision machining (426), sheet metal (298), injection molding
+(71), die casting (120), electronic components (175), surface treatment (171),
+standard parts (239), raw materials (239). Cities: Shenzhen, Dongguan, Suzhou, Ningbo,
+Wuxi, Foshan.
 
-**English** (`data/en/`): **263 full English mirrors** (auto-translated, GLM-4-Flash) —
+**English** (`data/en/`): **1,739 full English mirrors** (auto-translated, GLM-4-Flash) —
 for overseas buyers and agents.
 
 ## Compliance & Trust
@@ -90,7 +91,7 @@ for overseas buyers and agents.
 
 ## Roadmap
 
-- [x] 8 categories × 263 records skeleton, bilingual
+- [x] 8 categories × 1,739 records skeleton, bilingual
 - [x] Agent skills (CN/EN) + search toolchain + CI validation
 - [x] One-click GUI pipeline
 - [ ] Contact verification → replace masked numbers with verified landlines
