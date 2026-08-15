@@ -1,6 +1,12 @@
 # BeaconMFG · 供应商灯塔
 
-> **🌐 [English Version](README_EN.md)** · 中文为主，英文数据集见 `data/en/`
+> **🌐 [English Version](README_EN.md)** · 中文为主，英文数据集见 `data/en/` · 落地页 https://eiry16.github.io/beacon-mfg/
+
+[![License](https://img.shields.io/badge/code-MIT-3fb68a)](LICENSE)
+[![Data](https://img.shields.io/badge/data-CC%20BY--NC%204.0-blue)](DATA_LICENSE.md)
+[![Records](https://img.shields.io/badge/records-1%2C773-58a6ff)](data/)
+[![Categories](https://img.shields.io/badge/categories-8-58a6ff)](data/index.json)
+[![Stars](https://img.shields.io/github/stars/eiry16/beacon-mfg?style=social)](https://github.com/eiry16/beacon-mfg)
 
 > 面向 Agent 的制造业供应商结构化名录 —— 按产品关键词分类，让下游厂商的 Agent 一眼看到上游供应商。
 
