@@ -69,9 +69,9 @@ for overseas buyers and agents.
 
 - **Public info only**: company name, address, public phone, website, certifications.
   No personal data, no financials.
-- **Personal mobile numbers are masked** (`135****9722`) — full numbers are never stored;
-  companies submit their full business contact themselves during the **claim process**
-  (lawful authorization). Masked numbers double as a claim hook.
+- **Contact numbers are shown in full** (landlines, 400 hotlines and mobiles) — sourced
+  from the  public POI directory where businesses publish their own contact info.
+  No asterisk masking is applied; companies may request correction/removal via GitHub Issue.
 - Every record carries `source` + `source_url` + `verified_at`. Companies may request
   correction/removal via GitHub Issue.
 - **Red lines**: we do not scrape B2B platforms (1688 etc.) or paid directories.
@@ -82,12 +82,12 @@ for overseas buyers and agents.
 
 | Script | Purpose |
 |---|---|
-| `scripts/gui_app.py` | **One-click GUI**: fetch → mask → validate → translate → push to GitHub |
+| `scripts/gui_app.py` | **One-click GUI**: fetch → validate → translate → push to GitHub |
 | `scripts/query.py` | Search (CN/EN, keyword/region/cert filters) |
-| `scripts/fetch_gaode_poi.py` |  POI fetcher (paginated, incremental, masked on ingest) |
+| `scripts/fetch_gaode_poi.py` |  POI fetcher (paginated, incremental, full numbers on ingest) |
 | `scripts/fetch_batch.py` | One-command full-matrix refresh (quota-aware, ~100 req/day) |
 | `scripts/translate_en.py` | English mirror via free GLM-4-Flash |
-| `scripts/validate.py` | Schema + compliance gate (rejects unmasked mobiles) |
+| `scripts/validate.py` | Schema validation (placeholders rejected, numbers stored in full) |
 | `scripts/audit_contacts.py` | Contact verification checklist generator |
 
 ## Roadmap
@@ -95,7 +95,7 @@ for overseas buyers and agents.
 - [x] 8 categories × 1,739 records skeleton, bilingual
 - [x] Agent skills (CN/EN) + search toolchain + CI validation
 - [x] One-click GUI pipeline
-- [ ] Contact verification → replace masked numbers with verified landlines
+- [x] Contact verification pipeline — full numbers, no masking ( re-fetch backfill)
 - [ ] Company **claim/update** portal (phase 1)
 - [ ] Value-add API / agent-visibility services
 

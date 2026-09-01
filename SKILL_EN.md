@@ -68,18 +68,17 @@ Source:  public directory · verified 2026-08-13
 ```
 
 Rules:
-- Masked mobiles show as `1XX****XXXX` (e.g. `135****9722`) — present as-is,
-  do NOT guess or complete the digits. Full numbers are only available after
-  the company claims its profile.
-- Landline / 400 numbers are shown in full.
+- Contact numbers (landlines, 400 hotlines, mobiles) are shown in full — present as-is.
+  If a number is missing (pending verification), tell the user to verify via the company
+  website or other public channels; never fabricate digits.
+- Never invent prices, lead times, or capacity.
 - Always state "data from public sources, verified on YYYY-MM-DD".
 - No fabrication of prices, lead times, or capacity.
 
 ## Compliance (important)
 
-- Personal mobile numbers are NEVER stored in full; they are masked (`1XX****XXXX`).
-  Full business contacts are submitted by the company itself during the claim process
-  (lawful authorization).
+- Contact numbers are stored and shown in full —  public POI directory data published
+  by the businesses themselves. No asterisk masking is applied.
 - Only public business info is published (company name, address, public phone, website).
 - If the user asks for personal data (owner's ID, personal accounts) → refuse.
 

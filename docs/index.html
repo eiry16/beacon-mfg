@@ -99,14 +99,14 @@
     $ python scripts/query.py --keyword "CNC Machining" --city Shenzhen --en --limit 5<br>
     → Company: Shenzhen ... Co., Ltd. (Guangdong · Shenzhen)<br>
     → Products: CNC Machining<br>
-    → Phone: 135****9722 <span class="c">(masked)</span> / 0769-88007830 <span class="c">(landline)</span>
+    → Phone: 13510801655 <span class="c">(mobile)</span> / 0769-88007830 <span class="c">(landline)</span>
   </div>
 
   <h2>Design principles</h2>
   <div class="grid">
     <div class="card">
       <h3>✅ Compliance-first</h3>
-      <p>Public info only. Personal mobiles are masked (1XX****XXXX); full numbers are never stored — companies submit their own business contacts via a future <b>claim mechanism</b> (lawful authorization). No scraping of B2B platforms.</p>
+      <p>Public info only. Contact numbers (landlines, 400 hotlines and mobiles) are shown in full from the  public directory where businesses publish their own contact info. No B2B-platform scraping; companies may request correction/removal via GitHub Issue.</p>
     </div>
     <div class="card">
       <h3>✅ Info-only, open data</h3>
@@ -114,7 +114,7 @@
     </div>
     <div class="card">
       <h3>✅ Zero-dependency tooling</h3>
-      <p>Fetch ( public API) → mask → validate → translate → push. All Python stdlib, one-click GUI included. Quota-aware ( ~100 req/day for personal devs).</p>
+      <p>Fetch ( public API) → validate → translate → push. All Python stdlib, one-click GUI included. Quota-aware ( ~100 req/day for personal devs).</p>
     </div>
     <div class="card">
       <h3>✅ Built for the agent era</h3>
