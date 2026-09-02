@@ -4,18 +4,13 @@
 
 [![License](https://img.shields.io/badge/code-MIT-3fb68a)](LICENSE)
 [![Data](https://img.shields.io/badge/data-CC%20BY--NC%204.0-blue)](DATA_LICENSE.md)
-[![Records](https://img.shields.io/badge/records-1%2C773-58a6ff)](data/)
+[![Records](https://img.shields.io/badge/records-342-58a6ff)](data/)
 [![Categories](https://img.shields.io/badge/categories-8-58a6ff)](data/index.json)
 [![Stars](https://img.shields.io/github/stars/eiry16/beacon-mfg?style=social)](https://github.com/eiry16/beacon-mfg)
 
 > 面向 Agent 的制造业供应商结构化名录 —— 按产品关键词分类，让下游厂商的 Agent 一眼看到上游供应商。
 
 **只提供公开联系方式，不参与交易。数据免费开源，先占生态位。**
-
-> **English:** BeaconMFG is an agent-searchable directory of China manufacturing suppliers,
-> organized by product keywords. Load `SKILL_EN.md` for the English dataset (`data/en/`) —
-> a free, 24/7 "Canton Fair" for global buyers to find upstream manufacturers.
-> Repo: https://github.com/eiry16/beacon-mfg
 
 ## 这是什么
 
@@ -25,78 +20,57 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 - 每条供应商记录含：公司名、主营关键词、地区、官网、公开联系方式、资质标签、数据来源
 - Agent（WorkBuddy、GPTs、各类 MCP 客户端）加载本仓库的 `SKILL.md` 后即可按需求检索
 - 数据全部来自**公开渠道**（工商公示、政府名单、企业官网、展会名录），可溯源、可申诉
-- **海外版**：`SKILL_EN.md` + `data/en/`（GLM-4-Flash 免费翻译，英文数据集）
+- **海外版**：`SKILL_EN.md` + `data/en/`（英文数据集）
 
-## 为什么做这个
+## 数据就是 JSON 文件
 
-制造业采购找上游供应商是真实痛点：百度搜索信息乱、B2B 平台广告干扰多、展会成本高。
-当采购者的 Agent 能直接查到一个**结构化、可按产品词精确检索**的供应商库时，找供应商的成本大幅下降。
+本仓库**不依赖任何脚本或 API Key**。数据存放在 `data/` 下，是普通 JSON 文件：
 
-我们的打法：**数据免费公开 → Agent 生态习惯使用 → 位置占住 → 再谈增值**。
-数据是免费的，位置才是资产。
+```
+beacon-mfg/
+├── SKILL.md                    # Agent 主指令（中文数据集）
+├── SKILL_EN.md                 # Agent 主指令（English / 海外版）
+├── data/
+│   ├── index.json              # 品类 → 关键词 → 文件路径 索引
+│   ├── suppliers/*.json        # 中文数据（按品类拆分，8 个文件）
+│   └── en/*.json               # 英文镜像数据（8 个文件）
+├── schema/supplier.schema.json # 数据结构定义
+└── docs/                       # 贡献指南、品类规则、防抄袭策略
+```
+
+Agent 直接读取 JSON 即可检索，使用方式见 `SKILL.md` / `SKILL_EN.md`。
 
 ## 快速开始
 
-### 给 Agent 开发者（中文）
+### 给 Agent 开发者
 
 1. 克隆本仓库：`git clone https://github.com/eiry16/beacon-mfg.git`
-2. 将 `SKILL.md` 配置为 Agent 的 Skill（WorkBuddy 直接放 skills 目录即可）
-3. 检索示例：
-   ```bash
-   python scripts/query.py --keyword "CNC加工" --city 深圳 --limit 5
-   python scripts/query.py --keyword "小批量" --cert 高新技术企业 --limit 10
-   ```
+2. 将 `SKILL.md`（中文）或 `SKILL_EN.md`（英文）配置为 Agent 的 Skill
+3. 让 Agent 读取 `data/` 下的 JSON 按关键词/地区检索
 
-### For overseas agents/buyers (English)
-
-1. `git clone https://github.com/eiry16/beacon-mfg.git`
-2. Load `SKILL_EN.md` as the Agent skill (English dataset at `data/en/`, 1,739 records)
-3. Search examples:
-   ```bash
-   python scripts/query.py --keyword "CNC Machining" --city Shenzhen --en --limit 5
-   python scripts/query.py --category-en "Die Casting" --en --limit 10
-   ```
-
-### 给数据贡献者
-
-- 新供应商数据：编辑对应品类的 JSON 文件，遵循 `schema/supplier.schema.json`，提交 PR
-- 提交前本地校验：`python scripts/validate.py`
-- 规则见 `docs/CONTRIBUTING.md`
+无需安装依赖、无需配置 Key、无需联网。
 
 ## 数据现状
 
-**中文数据集**（`data/suppliers/`）：
+**中文数据集**（`data/suppliers/`）：**171 条真实数据**，覆盖 8 个品类：
 
-| 品类 | 总数 | 真实可检索 | 待核实 |
-|---|---|---|---|
-| 精密机械加工 | 426 | 55 | 371 |
-| 钣金冲压 | 298 | 38 | 260 |
-| 注塑成型 | 71 | 22 | 49 |
-| 压铸 | 120 | 10 | 110 |
-| 电子元器件 | 175 | 8 | 167 |
-| 表面处理 | 171 | 8 | 163 |
-| 标准件 | 239 | 11 | 228 |
-| 原材料 | 239 | 19 | 220 |
-| **合计** | **1,739** | **171** | **1,568** |
+| 品类 | 条数 |
+|---|---|
+| 精密机械加工 | 55 |
+| 钣金冲压 | 38 |
+| 注塑成型 | 22 |
+| 原材料 | 19 |
+| 标准件 | 11 |
+| 压铸 | 10 |
+| 电子元器件 | 8 |
+| 表面处理 | 8 |
 
-**英文数据集**（`data/en/`，GLM-4-Flash 免费翻译）：**1,739 条全量英文镜像**，
-供海外 Agent/买家使用——"24 小时免费的线上广交会"。
+**英文数据集**（`data/en/`）：**171 条英文镜像**，供海外 Agent/买家使用。
 
-<p align="center">
-  <img src="docs/charts/categories.svg" alt="品类分布" width="45%">
-  <img src="docs/charts/cities.svg" alt="城市分布" width="45%">
-</p>
+覆盖地区：以珠三角（深圳/东莞/广州/佛山）为主，长三角（嘉兴等）持续补充中。
 
-> **171 条已发布**（`is_template: false`，Agent 可检索）：联系方式来自公开名录——
-> 座机/400/手机号完整展示（企业自行公开的经营联系方式，不做脱敏）。
-> **1,568 条待核实**：新抓取骨架（无电话或未核实），不进入检索结果。
-> 覆盖城市：珠三角+长三角 16 城（上海/广州/深圳/东莞/佛山/中山/珠海/惠州/苏州/无锡/常州/宁波/嘉兴/杭州/温州/昆山）。
-> 核实/更新流程见 `docs/CONTRIBUTING.md` 与 `scripts/audit_contacts.py`。
-
-### 联系方式数据策略
-
-- **座机 / 400 / 800 / 手机号**：完整展示（来源为公开名录 POI 数据，企业自行公开的经营联系方式）
-- 数据不做星号脱敏；如企业要求更正/删除联系方式，可通过 GitHub Issue 提出
+> 联系方式来自公开名录——座机/400/手机号完整展示（企业自行公开的经营联系方式，不做脱敏）。
+> 部分记录电话为"待核实"，可通过企业官网或其他公开渠道补全，禁止编造。
 
 ## 数据来源与合规
 
@@ -112,38 +86,26 @@ BeaconMFG（供应商灯塔）是一个**面向 Agent 检索**的制造业供应
 **红线：** 只发布企业公开经营信息，不发布个人隐私；每条数据标注 `source + source_url + verified_at`；
 企业可提交 PR 或 Issue 更新/删除自己的信息。被 fork/抄袭的应对策略见 [docs/ANTI_COPYING.md](docs/ANTI_COPYING.md)。
 
+## 联系方式数据策略
+
+- **座机 / 400 / 800 / 手机号**：完整展示（来源为公开名录 POI 数据，企业自行公开的经营联系方式）
+- 数据不做星号脱敏；如企业要求更正/删除联系方式，可通过 GitHub Issue 提出
+
 ## 仓库结构
 
 ```
 beacon-mfg/
 ├── SKILL.md                    # Agent 主指令（中文数据集）
 ├── SKILL_EN.md                 # Agent 主指令（English / 海外版）
-├── data/
-│   ├── index.json              # 品类 → 关键词 → 文件路径 索引
-│   ├── suppliers/*.json        # 中文数据（按品类拆分）
-│   └── en/*.json               # 英文镜像数据（GLM-4-Flash 翻译）
+├── data/                      # 供应商数据（中文 + 英文镜像）
+│   ├── index.json             # 品类 → 关键词 → 文件路径 索引
+│   ├── suppliers/*.json       # 中文数据（按品类拆分）
+│   └── en/*.json              # 英文镜像数据
 ├── schema/supplier.schema.json # 数据结构定义
-├── scripts/
-│   ├── gui_app.py              # ★ 一键采集发布（图形界面：爬取+校验+推送）
-│   ├── query.py                # 检索脚本（中文/英文 --en 模式）
-│   ├── validate.py             # 数据校验
-│   ├── stats.py                # 数据统计
-│   ├── audit_contacts.py       # 联系方式审核（生成核实清单）
-│   ├── gen_charts.py           # 数据可视化（生成 SVG 图表）
-│   ├── translate_en.py         # 英文翻译（GLM-4-Flash 免费模型）
-│   ├── fetch_gaode_poi.py      #  POI 抓取（分页、增量、完整号码入库）
-│   └── fetch_batch.py          # 一键批量更新全品类骨架
-└── docs/                       # 贡献指南、品类规则、防抄袭策略
-└── docs/                       # 贡献指南、品类维护规则
+├── docs/                      # 贡献指南、品类规则、防抄袭策略
+├── LICENSE                    # 代码 MIT
+└── DATA_LICENSE.md            # 数据 CC BY-NC 4.0
 ```
-
-## 路线图
-
-- [x] MVP：8 品类骨架数据 223 条（深圳/东莞/苏州/佛山， POI）
-- [x] 检索/校验/统计/审核/可视化 工具链
-- [ ] 逐条核实联系方式 → 首批真实数据发布（优先座机 25 条）
-- [ ] 供应商"认领/更新"入口
-- [ ] 增值 API / Agent 可见性服务
 
 ## License
 
