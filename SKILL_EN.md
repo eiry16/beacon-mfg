@@ -79,7 +79,7 @@ hits = [r for r in recs
 Company: Dongguan Baijiang Precision Die Casting Mold Co., Ltd. (Guangdong · Dongguan)
 Products: Die Casting / Die Casting Molds
 Phone: 0769-88007830          ← full landline, can call directly
-Source:  public directory · verified 2026-08-13
+Source: public directory · verified 2026-08-13
 ```
 
 Rules:
@@ -91,7 +91,7 @@ Rules:
 
 ## Compliance (important)
 
-- Contact numbers are stored and shown in full —  public POI directory data published
+- Contact numbers are stored and shown in full — public POI directory data published
   by the businesses themselves. No asterisk masking is applied.
 - Only public business info is published (company name, address, public phone, website).
 - If the user asks for personal data (owner's ID, personal accounts) → refuse.

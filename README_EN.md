@@ -16,7 +16,7 @@ BeaconMFG is a **structured supplier directory built for AI agents**:
   data source, verification date
 - Any agent (WorkBuddy, GPTs, MCP clients) loads `SKILL.md` (Chinese) or `SKILL_EN.md`
   (English) and searches directly — no API key, no signup, just `git clone`
-- Data from **public sources only** ( POI, government lists, company websites,
+- Data from **public sources only** (public POI, government lists, company websites,
   exhibition directories) — traceable and removable on request
 
 ## The data is just JSON
@@ -72,7 +72,7 @@ No dependencies, no keys, no network required.
 Regions: mainly the Pearl River Delta (Shenzhen / Dongguan / Guangzhou / Foshan), with the
 Yangtze River Delta (Jiaxing, etc.) being added continuously.
 
-> Contact numbers come from the  public directory — landlines / 400 hotlines / mobiles are
+> Contact numbers come from the public directory — landlines / 400 hotlines / mobiles are
 > shown in full (published by the businesses themselves, no masking). Some records show
 > "待核实" (pending verification); never fabricate digits.
 
