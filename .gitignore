@@ -11,10 +11,18 @@ __pycache__/
 .venv/
 venv/
 
-# IDE
-.vscode/
-.idea/
-*.swp
+
+# 内部维护脚本（不对外公开，仅本地维护使用）
+scripts/
+.workbuddy/
+.github/
+examples/
+docs/promotion/
+docs/charts/
+docs/backfill_unresolved.md
+docs/audit_report.md
+CRON_*.md
+.env.example
 
 # OS
 .DS_Store
