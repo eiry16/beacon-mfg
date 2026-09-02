@@ -1,7 +1,7 @@
-# BeaconMFG — Agent-Searchable Directory of China Manufacturing Suppliers
+# BeaconMFG · Agent-Searchable Directory of China Manufacturing Suppliers
 
 > A free, open, 24/7 "online Canton Fair" for finding upstream manufacturers in China —
-> organized by product keywords, readable by AI agents, bilingual (中文/English).
+> organized by product keywords, readable by AI agents, bilingual (中文 / English).
 
 **Information only. No transactions. Open data. Own the position.**
 
@@ -19,15 +19,24 @@ BeaconMFG is a **structured supplier directory built for AI agents**:
 - Data from **public sources only** ( POI, government lists, company websites,
   exhibition directories) — traceable and removable on request
 
-## Why does this exist?
+## The data is just JSON
 
-Finding a Chinese manufacturer is painful: Baidu results are noisy, B2B marketplaces bury
-you in ads, trade shows are expensive and slow. When your procurement agent can query a
-clean, structured directory by product term and get a public phone number — sourcing
-collapses from days to minutes.
+This repo **does not depend on any scripts or API keys**. The data lives under `data/`
+as plain JSON files:
 
-**Strategy:** data is free and open; the *position* is the asset. We become the place
-agents look first.
+```
+beacon-mfg/
+├── SKILL.md                    # Agent instructions (Chinese dataset)
+├── SKILL_EN.md                 # Agent instructions (English dataset)
+├── data/
+│   ├── index.json              # category → keywords → file path index
+│   ├── suppliers/*.json        # Chinese data (split by category, 8 files)
+│   └── en/*.json               # English mirror data (8 files)
+├── schema/supplier.schema.json # record structure definition
+└── docs/                       # contribution guide, category rules, anti-copying
+```
+
+The agent reads the JSON directly to search. See `SKILL.md` / `SKILL_EN.md` for usage.
 
 ## Quick Start
 
@@ -36,80 +45,44 @@ agents look first.
 ```bash
 git clone https://github.com/eiry16/beacon-mfg.git
 cd beacon-mfg
-
-# Chinese dataset
-python scripts/query.py --keyword "CNC加工" --city 深圳 --limit 5
-
-# English dataset (overseas buyers)
-python scripts/query.py --keyword "CNC Machining" --city Shenzhen --en --limit 5
-python scripts/query.py --category-en "Die Casting" --en --limit 10
 ```
 
-Then load `SKILL.md` / `SKILL_EN.md` into your agent and ask naturally:
+Then load `SKILL.md` (Chinese) or `SKILL_EN.md` (English) into your agent and ask naturally:
 "Find a CNC machining shop near Shenzhen that accepts small batches."
 
-### For contributors
+No dependencies, no keys, no network required.
 
-Edit `data/suppliers/*.json` (or `data/en/*.json`), follow
-`schema/supplier.schema.json`, run `python scripts/validate.py`, open a PR.
+## Data Status
 
-## Data Status (2026-08-14)
+**Chinese** (`data/suppliers/`): **171 real records** across 8 categories:
 
-**Chinese** (`data/suppliers/`): **1,739 records, 171 published & agent-searchable**
-across 8 categories — precision machining (426), sheet metal (298), injection molding
-(71), die casting (120), electronic components (175), surface treatment (171),
-standard parts (241), raw materials (243). Cities: 16 across the Yangtze River
-Delta & Pearl River Delta (Shanghai, Guangzhou, Shenzhen, Dongguan, Foshan, Zhongshan,
-Zhuhai, Huizhou, Suzhou, Wuxi, Changzhou, Ningbo, Jiaxing, Hangzhou, Wenzhou, Kunshan).
-
-**English** (`data/en/`): **1,739 full English mirrors** (auto-translated, GLM-4-Flash) —
-for overseas buyers and agents.
-
-## Compliance & Trust
-
-- **Public info only**: company name, address, public phone, website, certifications.
-  No personal data, no financials.
-- **Contact numbers are shown in full** (landlines, 400 hotlines and mobiles) — sourced
-  from the  public POI directory where businesses publish their own contact info.
-  No asterisk masking is applied; companies may request correction/removal via GitHub Issue.
-- Every record carries `source` + `source_url` + `verified_at`. Companies may request
-  correction/removal via GitHub Issue.
-- **Red lines**: we do not scrape B2B platforms (1688 etc.) or paid directories.
-  Only official public APIs () and public listings.
-- License: code MIT · data CC BY-NC 4.0.
-
-## Tooling (all stdlib, zero dependencies)
-
-| Script | Purpose |
+| Category | Count |
 |---|---|
-| `scripts/gui_app.py` | **One-click GUI**: fetch → validate → translate → push to GitHub |
-| `scripts/query.py` | Search (CN/EN, keyword/region/cert filters) |
-| `scripts/fetch_gaode_poi.py` |  POI fetcher (paginated, incremental, full numbers on ingest) |
-| `scripts/fetch_batch.py` | One-command full-matrix refresh (quota-aware, ~100 req/day) |
-| `scripts/translate_en.py` | English mirror via free GLM-4-Flash |
-| `scripts/validate.py` | Schema validation (placeholders rejected, numbers stored in full) |
-| `scripts/audit_contacts.py` | Contact verification checklist generator |
+| Precision Machining (CNC) | 55 |
+| Sheet Metal & Stamping | 38 |
+| Injection Molding | 22 |
+| Raw Materials | 19 |
+| Standard Parts | 11 |
+| Die Casting | 10 |
+| Electronic Components | 8 |
+| Surface Treatment | 8 |
 
-## Roadmap
+**English** (`data/en/`): **171 English-mirror records** for overseas agents/buyers.
 
-- [x] 8 categories × 1,739 records skeleton, bilingual
-- [x] Agent skills (CN/EN) + search toolchain + CI validation
-- [x] One-click GUI pipeline
-- [x] Contact verification pipeline — full numbers, no masking ( re-fetch backfill)
-- [ ] Company **claim/update** portal (phase 1)
-- [ ] Value-add API / agent-visibility services
+Regions: mainly the Pearl River Delta (Shenzhen / Dongguan / Guangzhou / Foshan), with the
+Yangtze River Delta (Jiaxing, etc.) being added continuously.
 
-## Anti-Copying
+> Contact numbers come from the  public directory — landlines / 400 hotlines / mobiles are
+> shown in full (published by the businesses themselves, no masking). Some records show
+> "待核实" (pending verification); never fabricate digits.
 
-Data and code are open by design; moats are continuous maintenance, the claim mechanism
-(data rights), and ecosystem position. See [docs/ANTI_COPYING.md](docs/ANTI_COPYING.md).
+## Compliance
+
+- Public business info only. No personal data. Each record carries `source + source_url + verified_at`.
+- Companies may request correction/removal of their info via GitHub Issue.
+- Anti-forking / anti-scraping strategy: [docs/ANTI_COPYING.md](docs/ANTI_COPYING.md).
 
 ## License
 
 - Code: MIT
-- Data: CC BY-NC 4.0 (attribution, non-commercial)
-
-## Contact / Contribute
-
-GitHub Issues for corrections, claims, and new categories. PRs welcome.
-This is a side project — maintainers respond on weekends.
+- Data: CC BY-NC 4.0 (Attribution-NonCommercial)

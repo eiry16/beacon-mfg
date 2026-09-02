@@ -72,31 +72,31 @@
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="n">1,773</div><div class="l">Supplier Records</div></div>
-    <div class="stat"><div class="n">171</div><div class="l">Published & Searchable</div></div>
+    <div class="stat"><div class="n">342</div><div class="l">Supplier Records</div></div>
+    <div class="stat"><div class="n">171</div><div class="l">Chinese + 171 English</div></div>
     <div class="stat"><div class="n">8</div><div class="l">Procurement Categories</div></div>
-    <div class="stat"><div class="n">6</div><div class="l">Cities Covered</div></div>
+    <div class="stat"><div class="n">4+</div><div class="l">Cities (PRD focus)</div></div>
   </div>
 
   <h2>Categories</h2>
   <div class="cats">
-    <span class="cat">🔩 Precision Machining (CNC) · 426</span>
-    <span class="cat">🛠️ Sheet Metal & Stamping · 302</span>
-    <span class="cat">💉 Injection Molding · 75</span>
-    <span class="cat">🔥 Die Casting · 121</span>
-    <span class="cat">⚡ Electronic Components · 177</span>
-    <span class="cat">🎨 Surface Treatment · 172</span>
-    <span class="cat">⚙️ Standard Parts · 241</span>
-    <span class="cat">🧪 Raw Materials · 243</span>
+    <span class="cat">🔩 Precision Machining (CNC) · 55</span>
+    <span class="cat">🛠️ Sheet Metal &amp; Stamping · 38</span>
+    <span class="cat">💉 Injection Molding · 22</span>
+    <span class="cat">🔥 Die Casting · 10</span>
+    <span class="cat">⚡ Electronic Components · 8</span>
+    <span class="cat">🎨 Surface Treatment · 8</span>
+    <span class="cat">⚙️ Standard Parts · 11</span>
+    <span class="cat">🧪 Raw Materials · 19</span>
   </div>
-  <p style="color:#8b949e;font-size:13.5px">Cities: 16 across the Yangtze & Pearl River Deltas — more coming</p>
+  <p style="color:#8b949e;font-size:13.5px">Region: Pearl River Delta (Shenzhen / Dongguan / Guangzhou / Foshan), Yangtze River Delta expanding</p>
 
   <h2>How an agent uses it</h2>
   <div class="code">
     <span class="c"># git clone + load SKILL_EN.md, then ask your agent:</span><br>
     "Find a CNC machining shop near Shenzhen that accepts small batches"<br><br>
-    <span class="c"># or use the CLI directly:</span><br>
-    $ python scripts/query.py --keyword "CNC Machining" --city Shenzhen --en --limit 5<br>
+    <span class="c"># or read the JSON directly (data is plain files, no script needed):</span><br>
+    $ cat data/en/precision-machining.json | grep -i "CNC"<br>
     → Company: Shenzhen ... Co., Ltd. (Guangdong · Shenzhen)<br>
     → Products: CNC Machining<br>
     → Phone: 13510801655 <span class="c">(mobile)</span> / 0769-88007830 <span class="c">(landline)</span>

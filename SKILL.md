@@ -12,6 +12,15 @@ description: 面向 Agent 的制造业供应商检索。当用户需要寻找制
 
 **边界：** 只提供公开联系方式与基本信息，**不参与**询价、下单、交易；**不**对供应商做推荐评级。
 
+## 数据在哪
+
+- 中文数据：`data/suppliers/{品类}.json`（8 个品类文件）
+- 英文数据：`data/en/{品类}.json`（对应英文镜像）
+- 品类索引：`data/index.json`（品类 → 关键词词典 → 文件路径）
+- 字段结构：`schema/supplier.schema.json`
+
+数据就是普通 JSON 文件，**无需任何脚本、无需网络、无需 API Key**——Agent 直接读取文件即可检索。
+
 ## 使用流程
 
 ### 第 1 步：解析需求 → 映射关键词
@@ -26,21 +35,31 @@ description: 面向 Agent 的制造业供应商检索。当用户需要寻找制
 
 关键词匹配失败时，询问用户更具体的产品描述，不要硬猜。
 
-### 第 2 步：检索
+### 第 2 步：直接读取 JSON 检索
 
-优先使用 `scripts/query.py`（读取本地 JSON，无需网络）：
+打开对应品类的 JSON 文件，按字段过滤即可。例如找"深圳的 CNC 加工"：
 
-```bash
-python scripts/query.py --keyword "CNC加工" --city 深圳 --limit 5
-python scripts/query.py --keyword "小批量" --province 广东 --cert 高新技术企业
-python scripts/query.py --category 精密机械加工 --limit 10
+1. 读 `data/index.json` → 确认 "CNC加工" 属于 `精密机械加工`
+2. 读 `data/suppliers/精密机械加工.json`
+3. 过滤：`region.city == "深圳"` 且 `keywords` 含 "CNC加工"
+
+记录字段说明：
+- `company`：公司名
+- `keywords`：主营关键词数组（子串匹配）
+- `region`：`{ "province": "...", "city": "..." }`
+- `contact_phone`：座机/400/手机，**完整展示**；缺失时为 `"待核实"`
+- `certifications`：资质标签数组
+- `source` / `source_url` / `verified_at`：来源与核实日期
+- `website`：官网（若有）
+
+若运行环境支持执行代码，也可用一行过滤：
+```python
+import json
+recs = json.load(open("data/suppliers/精密机械加工.json", encoding="utf-8"))
+hits = [r for r in recs
+        if r["region"]["city"] == "深圳"
+        and any("CNC" in k for k in r["keywords"])]
 ```
-
-**过滤规则：**
-- `--keyword`：匹配 `keywords` 字段（子串匹配，支持多词 AND）
-- `--city / --province`：地区过滤
-- `--cert`：认证标签过滤
-- 默认排除 `is_template: true` 的示例数据；加 `--include-template` 可查看模板
 
 ### 第 3 步：呈现结果
 
@@ -63,22 +82,20 @@ python scripts/query.py --category 精密机械加工 --limit 10
 
 ## 使用规则（强制）
 
-1. 只返回 `is_template == false` 的真实数据（除非用户明确要求查看模板示例）
-2. 不缓存数据用于二次分发；每次查询重新读取
+1. 直接读取 JSON，每次查询重新读取，不缓存数据用于二次分发
+2. 不编造价格、交期、产能
 3. 用户要求"推荐一家最好的" → 说明"本名录不做评级，以下按关键词匹配度排序，请自行核实"
 4. 查不到结果 → 提示用户换关键词（如"CNC加工"→"数控加工"）或缩小/扩大地区范围
-5. 用户想提交/更新供应商信息 → 引导到仓库贡献流程（docs/CONTRIBUTING.md），不承诺人工处理时效
+5. 用户想提交/更新供应商信息 → 引导到仓库贡献流程（`docs/CONTRIBUTING.md`），不承诺人工处理时效
 6. **联系方式完整展示**：座机/400/手机号均完整呈现；如号码缺失显示"待核实"，提示用户可通过企业官网或其他公开渠道核实，不得编造
 
 ## 数据说明
 
-- 数据文件：`data/suppliers/{品类}.json`，分类索引：`data/index.json`
-- 真实数据（`is_template: false`）包含：公司名、品类关键词、地区、联系方式（座机/400/手机完整）、来源与核实日期
-- **数据策略**：座机/400/手机号完整发布（公开名录数据，企业自行公开的经营联系方式）
+- 当前 **171 条中文真实数据 + 171 条英文镜像**，全部来自公开渠道（ POI 等），未经官网逐一核实，请自行联系确认
+- 覆盖品类：精密机械加工、钣金冲压、注塑成型、压铸、电子元器件、表面处理、标准件、原材料
+- 覆盖地区：以珠三角（深圳/东莞/广州/佛山）为主，长三角（嘉兴等）持续补充中
+- **数据策略**：座机/400/手机号一律完整展示（公开名录数据，企业自行公开的经营联系方式），不做星号脱敏；禁止编造号码
 - 如企业要求更正/删除联系方式，引导其通过 GitHub Issue 提交
-- 当前 171 条真实数据（来源：公开名录，未经官网逐一核实）；后续优先补充长三角（嘉兴重点）数据
-- 英文数据集：`data/en/`（1,739 条），海外 Agent 用 `SKILL_EN.md` 检索
-- 核实与更新：`scripts/audit_contacts.py` / `docs/CONTRIBUTING.md`
 
 ## 贡献
 
