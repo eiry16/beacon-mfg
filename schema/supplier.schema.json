@@ -2,16 +2,32 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/beacon-mfg/beacon-mfg/schema/supplier.schema.json",
   "title": "BeaconMFG Supplier Record",
-  "description": "面向 Agent 检索的制造业供应商结构化记录。所有字段必须来自公开渠道，联系方式必须为企业公开渠道。",
+  "description": "面向 Agent 检索的制造业供应商结构化记录。所有字段必须来自公开渠道，联系方式必须为企业公开渠道。数据状态字段：status（新）与 is_template（已废弃，兼容旧数据）。",
   "type": "object",
-  "required": ["id", "company", "category", "keywords", "region", "contact_phone", "source", "verified_at", "is_template"],
+  "required": ["id", "company", "category", "keywords", "region", "contact_phone", "source"],
+  "allOf": [
+    {
+      "description": "数据状态标记（二选一或过渡期并存）：新数据使用 status；旧数据沿用 is_template",
+      "anyOf": [
+        { "required": ["status"] },
+        { "required": ["is_template"] }
+      ]
+    },
+    {
+      "description": "导入/核验时间（二选一或过渡期并存）：新数据使用 imported_at（last_verified_at 可空）；旧数据使用 verified_at",
+      "anyOf": [
+        { "required": ["verified_at"] },
+        { "required": ["imported_at"] }
+      ]
+    }
+  ],
   "properties": {
     "id": {
       "type": "string",
       "description": "全局唯一编号，格式 CN-MFG-XXXXXXX（4-7位数字，支持千万级规模）",
       "pattern": "^CN-MFG-[0-9]{4,7}$"
     },
-    "company": { "type": "string", "minLength": 2, "description": "企业全称" },
+    "company": { "type": "string", "minLength": 2, "description": "企业全称（去 POI 噪声）" },
     "category": {
       "type": "string",
       "description": "一级品类，必须存在于 data/index.json 的 categories 列表",
@@ -33,27 +49,75 @@
     },
     "lat": { "type": ["number", "null"], "description": "纬度（LBS 检索预留）" },
     "lng": { "type": ["number", "null"], "description": "经度（LBS 检索预留）" },
-    "website": { "type": ["string", "null"], "format": "uri", "description": "企业官网（公开渠道）" },
-    "contact_phone": { "type": "string", "minLength": 5, "description": "公开联系电话。模板数据允许占位符，真实数据必须为可核实的企业公开电话" },
-    "contact_email": { "type": ["string", "null"], "description": "公开邮箱（可选）" },
+    "website": { "type": ["string", "null"], "format": "uri", "description": "企业官网（公开渠道；认领后解锁）" },
+    "contact_phone": { "type": "string", "minLength": 5, "description": "公开联系电话。模板数据允许占位符，真实数据必须为可核实的企业公开电话；unverified_poi 状态允许「待核实」" },
+    "contact_email": { "type": ["string", "null"], "description": "公开邮箱（可选；认领后解锁）" },
     "address": { "type": ["string", "null"], "description": "注册/经营地址（公开）" },
     "founded": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2030, "description": "成立年份（可选）" },
     "scale": { "type": ["string", "null"], "enum": ["<50人", "50-100人", "100-500人", "500-1000人", ">1000人", null], "description": "规模（可选）" },
     "certifications": {
       "type": "array",
       "items": { "type": "string" },
-      "description": "资质标签，如 高新技术企业 / ISO9001 / 专精特新（可选）"
+      "description": "资质标签，如 高新技术企业 / ISO9001 / 专精特新（可选；认领后解锁）"
     },
     "source": {
       "type": "string",
       "enum": ["gov_list", "company_website", "public_directory", "exhibition", "template"],
-      "description": "数据来源渠道"
+      "description": "数据来源渠道。取值说明：\n- public_directory → 公开地图/工商 POI 名录（当前数据 100% 为此来源）\n- gov_list → 政府公开名单（专精特新/高企等）\n- company_website → 企业官网\n- exhibition → 展会/协会名录\n- template → 示例占位数据"
     },
     "source_url": { "type": ["string", "null"], "description": "数据来源链接（可溯源）。去出处策略下可为空，不再点名数据源。" },
-    "verified_at": { "type": "string", "format": "date", "description": "信息核实日期，格式 YYYY-MM-DD" },
+    "status": {
+      "type": "string",
+      "enum": ["verified", "unverified_poi", "template"],
+      "description": "数据状态：verified=已核验（电话完整），unverified_poi=真实企业POI电话待核实，template=示例占位数据"
+    },
     "is_template": {
       "type": "boolean",
-      "description": "true = 示例占位数据（联系方式为占位符），false = 真实公开数据。发布时真实数据必须为 false"
+      "deprecated": true,
+      "description": "已废弃，请使用 status 字段。本字段保留用于兼容旧数据：true=template，false=verified或unverified_poi"
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date",
+      "deprecated": true,
+      "description": "已废弃，请使用 imported_at / last_verified_at。旧数据的核实日期（实际为导入日期），格式 YYYY-MM-DD"
+    },
+    "imported_at": {
+      "type": "string",
+      "format": "date",
+      "description": "数据导入日期（YYYY-MM-DD）"
+    },
+    "last_verified_at": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "最近一次人工核验日期，未核验时为 null"
+    },
+    "claim": {
+      "type": ["object", "null"],
+      "description": "Phase 1 认主系统预留字段（当前数据不启用）",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["unclaimed", "claimed", "verified"],
+          "description": "认主状态：unclaimed=未认主，claimed=微信认证，verified=平台审核通过"
+        },
+        "claimed_at": { "type": ["string", "null"], "format": "date" },
+        "wechat_openid": { "type": ["string", "null"], "description": "企业微信 OpenID（加密存储）" },
+        "verified_by": { "type": ["string", "null"], "enum": ["wechat", "email", "manual", null] }
+      }
+    },
+    "agent": {
+      "type": ["object", "null"],
+      "description": "Phase 1 供应商官方 Agent 预留字段（当前数据不启用）",
+      "properties": {
+        "skill_url": { "type": ["string", "null"], "format": "uri" },
+        "protocol": { "type": "string", "enum": ["mcp", "skill", "a2a", "native"] },
+        "capabilities": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["catalog", "rfq", "live_chat", "quote"] }
+        },
+        "verified": { "type": "boolean", "description": "平台内容审核通过" }
+      }
     },
     "note": { "type": ["string", "null"], "description": "备注，如主营特色、交期、最小起订（公开信息，不编造）" }
   },
