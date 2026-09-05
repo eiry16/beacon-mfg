@@ -4,12 +4,12 @@
   "title": "BeaconMFG Supplier Record",
   "description": "面向 Agent 检索的制造业供应商结构化记录。所有字段必须来自公开渠道，联系方式必须为企业公开渠道。",
   "type": "object",
-  "required": ["id", "company", "category", "keywords", "region", "contact_phone", "source", "source_url", "verified_at", "is_template"],
+  "required": ["id", "company", "category", "keywords", "region", "contact_phone", "source", "verified_at", "is_template"],
   "properties": {
     "id": {
       "type": "string",
-      "description": "全局唯一编号，格式 CN-MFG-XXXX",
-      "pattern": "^CN-MFG-[0-9]{4}$"
+      "description": "全局唯一编号，格式 CN-MFG-XXXXX（4-5位数字）",
+      "pattern": "^CN-MFG-[0-9]{4,5}$"
     },
     "company": { "type": "string", "minLength": 2, "description": "企业全称" },
     "category": {
@@ -49,7 +49,7 @@
       "enum": ["gov_list", "company_website", "public_directory", "exhibition", "template"],
       "description": "数据来源渠道"
     },
-    "source_url": { "type": "string", "description": "数据来源链接（可溯源）" },
+    "source_url": { "type": ["string", "null"], "description": "数据来源链接（可溯源）。去出处策略下可为空，不再点名数据源。" },
     "verified_at": { "type": "string", "format": "date", "description": "信息核实日期，格式 YYYY-MM-DD" },
     "is_template": {
       "type": "boolean",

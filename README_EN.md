@@ -54,7 +54,7 @@ No dependencies, no keys, no network required.
 
 ## Data Status
 
-**Chinese** (`data/suppliers/`): **171 real records** across 8 categories:
+**Chinese** (`data/suppliers/`): **7,958 real records** across 8 categories:
 
 | Category | Count |
 |---|---|
@@ -67,7 +67,7 @@ No dependencies, no keys, no network required.
 | Electronic Components | 8 |
 | Surface Treatment | 8 |
 
-**English** (`data/en/`): **171 English-mirror records** for overseas agents/buyers.
+**English** (`data/en/`): **7,915 English-mirror records** for overseas agents/buyers.
 
 Regions: mainly the Pearl River Delta (Shenzhen / Dongguan / Guangzhou / Foshan), with the
 Yangtze River Delta (Jiaxing, etc.) being added continuously.
