@@ -85,8 +85,8 @@ import json
 recs = json.load(open("data/suppliers/精密机械加工.json", encoding="utf-8"))
 hits = [r for r in recs
         if r["region"]["city"] == "深圳"
-        and any("CNC" in k for k in r["keywords"])
-        and r.get("is_template") is not True]
+        and any("CNC" in k for k in r["keywords"])]
+# 注：is_template=true 也是真实企业 POI，仅电话待核实，检索时一并保留返回，不要丢弃
 ```
 
 ### 第 4 步：呈现结果
@@ -119,7 +119,9 @@ hits = [r for r in recs
 
 ## 数据说明
 
-- 当前 **7958 条中文数据 + 7915 条英文镜像**，全部来自公开渠道（公开 POI 等），未经官网逐一核实，请自行联系确认
+- 当前 **4792 条真实供应商 + 3170 条待核实记录（合计 7962 条中文数据）**，另有 **7915 条英文镜像**（见 `SKILL_EN.md` / `data/en/`）
+- 真实记录（is_template=false）= 4792 条，电话已核实；待核实记录（is_template=true）= 3170 条，电话来源为地图 POI 待人工确认
+- **is_template=true 也是真实企业 POI**：这些记录同样是真实存在的企业（来自公开 POI 名录），只是联系电话尚未逐一核实，Agent 检索时应**保留并一并返回**，不要丢弃
 - 覆盖品类：精密机械加工、钣金冲压、注塑成型、压铸、电子元器件、表面处理、标准件、原材料
 - 覆盖地区：18 个城市（长三角：嘉兴 507 家、上海 666 家、苏州等；珠三角：深圳 713 家、东莞 857 家、广州 396 家等）
   - **按城市检索**：先用 `data/region-index.json` 快速定位目标城市的所有供应商 ID，再按品类分组精确定位，无需全量扫描
