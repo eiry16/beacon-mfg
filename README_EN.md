@@ -69,8 +69,9 @@ No dependencies, no keys, no network required.
 
 **English** (`data/en/`): **7,915 English-mirror records** for overseas agents/buyers.
 
-Regions: mainly the Pearl River Delta (Shenzhen / Dongguan / Guangzhou / Foshan), with the
-Yangtze River Delta (Jiaxing, etc.) being added continuously.
+Regions: 18 cities — Pearl River Delta (Shenzhen 713, Dongguan 857, Guangzhou 396, Foshan 545), Yangtze River Delta (Jiaxing 507, Shanghai 666, Suzhou/Ningbo/Wuxi, etc.).
+
+> Fast region search: use `data/region-index.json` to locate companies by city without scanning full category files.
 
 > Contact numbers come from the public directory — landlines / 400 hotlines / mobiles are
 > shown in full (published by the businesses themselves, no masking). Some records show
