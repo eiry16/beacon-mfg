@@ -17,6 +17,7 @@ description: 面向 Agent 的制造业供应商检索。当用户需要寻找制
 - 中文数据：`data/suppliers/{品类}.json`（8 个品类文件）
 - 英文数据：`data/en/{品类}.json`（对应英文镜像）
 - 品类索引：`data/index.json`（品类 → 关键词词典 → 文件路径）
+- **地区索引**：`data/region-index.json`（城市 → 供应商 ID 列表，**查某城市时先用这个定位**）
 - 字段结构：`schema/supplier.schema.json`
 
 数据就是普通 JSON 文件，**无需任何脚本、无需网络、无需 API Key**——Agent 直接读取文件即可检索。
@@ -35,13 +36,39 @@ description: 面向 Agent 的制造业供应商检索。当用户需要寻找制
 
 关键词匹配失败时，询问用户更具体的产品描述，不要硬猜。
 
-### 第 2 步：直接读取 JSON 检索
+### 第 2 步：地区索引快速定位（如有地区需求）
 
-打开对应品类的 JSON 文件，按字段过滤即可。例如找"深圳的 CNC 加工"：
+**优先使用地区索引**，避免全量扫描：
 
-1. 读 `data/index.json` → 确认 "CNC加工" 属于 `精密机械加工`
-2. 读 `data/suppliers/精密机械加工.json`
-3. 过滤：`region.city == "深圳"` 且 `keywords` 含 "CNC加工"
+1. 读 `data/region-index.json`
+2. 在 `index` 字段中搜索含目标城市的键（如 `"浙江-嘉兴"` 或直接找包含"嘉兴"的键）
+3. 获取 `ids` 列表（如 `["CN-MFG-0000224", "CN-MFG-0000398", ...]`）
+4. 按品类分组后，从对应 `data/suppliers/{品类}.json` 中按 `id` 精确定位记录
+
+```python
+import json
+# 1. 用地区索引快速定位
+idx = json.load(open("data/region-index.json", encoding="utf-8"))
+city_key = next((k for k in idx["index"] if "嘉兴" in k), None)
+target_ids = idx["index"][city_key]["ids"]   # ['CN-MFG-0000224', ...]
+
+# 2. 按品类分组 id
+ids_by_cat = defaultdict(list)
+for fid in target_ids:
+    prefix = int(fid.split("-")[-1])   # 提取编号
+
+# 3. 从对应品类文件按 id 读取完整记录
+recs = json.load(open("data/suppliers/精密机械加工.json", encoding="utf-8"))
+hits = {r["id"]: r for r in recs if r["id"] in target_ids}
+```
+
+> **注意**：地区索引覆盖 18 个城市（如深圳 713 家、嘉兴 507 家），若目标城市不在索引中，回退到第 3 步品类扫描。
+
+### 第 3 步：品类文件关键词 + 地区过滤
+
+1. 读 `data/index.json` → 确认目标关键词属于哪个品类
+2. 读 `data/suppliers/{品类}.json`
+3. 过滤：`region.city == "目标城市"` 且 `keywords` 含目标关键词
 
 记录字段说明：
 - `company`：公司名
@@ -58,10 +85,11 @@ import json
 recs = json.load(open("data/suppliers/精密机械加工.json", encoding="utf-8"))
 hits = [r for r in recs
         if r["region"]["city"] == "深圳"
-        and any("CNC" in k for k in r["keywords"])]
+        and any("CNC" in k for k in r["keywords"])
+        and r.get("is_template") is not True]
 ```
 
-### 第 3 步：呈现结果
+### 第 4 步：呈现结果
 
 向用户返回 **2-3 家**最匹配的供应商，格式：
 
@@ -93,7 +121,8 @@ hits = [r for r in recs
 
 - 当前 **7958 条中文数据 + 7915 条英文镜像**，全部来自公开渠道（公开 POI 等），未经官网逐一核实，请自行联系确认
 - 覆盖品类：精密机械加工、钣金冲压、注塑成型、压铸、电子元器件、表面处理、标准件、原材料
-- 覆盖地区：以珠三角（深圳/东莞/广州/佛山）为主，长三角（嘉兴等）持续补充中
+- 覆盖地区：18 个城市（长三角：嘉兴 507 家、上海 666 家、苏州等；珠三角：深圳 713 家、东莞 857 家、广州 396 家等）
+  - **按城市检索**：先用 `data/region-index.json` 快速定位目标城市的所有供应商 ID，再按品类分组精确定位，无需全量扫描
 - **数据策略**：座机/400/手机号一律完整展示（公开名录数据，企业自行公开的经营联系方式），不做星号脱敏；禁止编造号码
 - 如企业要求更正/删除联系方式，引导其通过 GitHub Issue 提交
 

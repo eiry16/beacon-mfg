@@ -30,6 +30,9 @@ This skill consumes the **English mirror** dataset at `data/en/`:
 Each record contains: `id`, `company_en`, `category_en`, `keywords_en`, `region`
 (English), `address_en`, `contact_phone`, `source`, `verified_at`, `note_en`.
 
+**Region index** (`data/region-index.json`) provides fast city-level lookups:
+`index["province-city"] → list of CN-MFG IDs` — use this to avoid scanning entire category files.
+
 The data is plain JSON — **no scripts, no network, no API key required**. The agent
 just reads the files.
 
@@ -48,21 +51,43 @@ Extract product terms from the request and match them to a category
 
 If nothing matches, ask for a more specific product description — do not guess.
 
-### Step 2: Read the JSON directly
+### Step 2: Region index fast lookup (if region is specified)
 
-Open the matching category file and filter by fields. Example — "CNC machining in Shenzhen":
+**Prefer the region index** over scanning full category files:
 
-1. Read `data/index.json` → confirm "CNC Machining" belongs to `precision-machining`
-2. Read `data/en/precision-machining.json`
-3. Filter: `region.city == "Shenzhen"` and `keywords_en` contains "CNC"
+1. Read `data/region-index.json`
+2. Search for the target city key in `index` (e.g. `"Zhejiang-Jiaxing"` or key containing "Jiaxing")
+3. Get `ids` list → group by category → read from `data/en/{category}.json` by `id`
+
+```python
+import json
+idx = json.load(open("data/region-index.json", encoding="utf-8"))
+# find key containing "Jiaxing"
+city_key = next((k for k in idx["index"] if "Jiaxing" in k), None)
+target_ids = idx["index"][city_key]["ids"]
+
+# read full records from category file
+recs = json.load(open("data/en/precision-machining.json", encoding="utf-8"))
+hits = {r["id"]: r for r in recs if r["id"] in target_ids}
+```
+
+> **Fallback**: if target city is not in the 18-city index, fall back to category scan in Step 3.
+> Current index covers: Shanghai (666), Shenzhen (713), Dongguan (857), Guangzhou (396), Foshan (545),
+> Jiaxing (507), and 12 other cities.
+
+### Step 3: Category file keyword + region filter
+
+1. Read `data/index.json` → confirm keyword belongs to a category
+2. Read `data/en/{category}.json`
+3. Filter: `region.city == "TargetCity"` and `keywords_en` contains target keyword
 
 Field notes:
-- `company_en`: company name
+- `company_en`: company name (English or transliterated)
 - `keywords_en`: product keyword array (substring match)
-- `region`: `{ "province": "...", "city": "..." }` (English)
-- `contact_phone`: landlines / 400 hotlines / mobiles shown **in full**; `"待核实"` when missing
+- `region`: `{ "province": "...", "city": "..." }` (English, e.g. `"Zhejiang"`, `"Jiaxing"`)
+- `contact_phone`: landlines / 400 hotlines / mobiles shown **in full**; `"Pending verification"` when missing
 - `certifications`: certification tags
-- `source` / `source_url` / `verified_at`: provenance and verification date
+- `source` / `verified_at`: provenance and verification date
 
 If the agent environment can run code, a one-liner filter works:
 ```python
@@ -70,15 +95,16 @@ import json
 recs = json.load(open("data/en/precision-machining.json", encoding="utf-8"))
 hits = [r for r in recs
         if r["region"]["city"] == "Shenzhen"
-        and any("CNC" in k for k in r["keywords_en"])]
+        and any("CNC" in k for k in r["keywords_en"])
+        and r.get("is_template") is not True]
 ```
 
-### Step 3: Present results (2-3 best matches)
+### Step 4: Present results (2-3 best matches)
 
 ```
-Company: Dongguan Baijiang Precision Die Casting Mold Co., Ltd. (Guangdong · Dongguan)
-Products: Die Casting / Die Casting Molds
-Phone: 0769-88007830          ← full landline, can call directly
+Company: Jiaxing Precision Technology Co., Ltd. (Zhejiang · Jiaxing)
+Products: CNC Machining / Precision Components / Small Batch Custom
+Phone: 0573-XXXXXXXX     ← full landline, call directly
 Source: public directory · verified 2026-08-13
 ```
 
