@@ -8,8 +8,8 @@
   "properties": {
     "id": {
       "type": "string",
-      "description": "全局唯一编号，格式 CN-MFG-XXXXX（4-5位数字）",
-      "pattern": "^CN-MFG-[0-9]{4,5}$"
+      "description": "全局唯一编号，格式 CN-MFG-XXXXXXX（4-7位数字，支持千万级规模）",
+      "pattern": "^CN-MFG-[0-9]{4,7}$"
     },
     "company": { "type": "string", "minLength": 2, "description": "企业全称" },
     "category": {
