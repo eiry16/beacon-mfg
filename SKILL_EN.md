@@ -95,8 +95,8 @@ import json
 recs = json.load(open("data/en/precision-machining.json", encoding="utf-8"))
 hits = [r for r in recs
         if r["region"]["city"] == "Shenzhen"
-        and any("CNC" in k for k in r["keywords_en"])
-        and r.get("is_template") is not True]
+        and any("CNC" in k for k in r["keywords_en"])]
+# Note: is_template=true records are real business POIs too; only their phone is pending verification — keep them in results.
 ```
 
 ### Step 4: Present results (2-3 best matches)
@@ -114,6 +114,13 @@ Rules:
   website or other public channels; never fabricate digits.
 - Never invent prices, lead times, or capacity.
 - Always state "data from public sources, verified on YYYY-MM-DD".
+
+## Data notes
+
+- Current dataset: **4,792 verified suppliers + 3,170 pending records (7,962 total Chinese records)**, plus a **7,915-record English mirror** (this skill's `data/en/`).
+- Verified records (`is_template=false`) = 4,792 — phone confirmed. Pending records (`is_template=true`) = 3,170 — phone sourced from map POI, pending manual confirmation.
+- **`is_template=true` are still real business POIs**: these are genuine companies from the public POI directory; only their phone number is not yet confirmed. The agent should **keep and return them** in search results, not drop them.
+- All data comes from public sources (public POI directory); not individually verified against official websites — contact the supplier to confirm.
 
 ## Compliance (important)
 
