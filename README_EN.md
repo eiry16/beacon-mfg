@@ -16,8 +16,7 @@ BeaconMFG is a **structured supplier directory built for AI agents**:
   data source, verification date
 - Any agent (WorkBuddy, GPTs, MCP clients) loads `SKILL.md` (Chinese) or `SKILL_EN.md`
   (English) and searches directly — no API key, no signup, just `git clone`
-- Data from **public sources only** (public POI, government lists, company websites,
-  exhibition directories) — traceable and removable on request
+- Data from **public POI directories** (public_directory source) — traceable and removable on request
 
 ## The data is just JSON
 
@@ -54,32 +53,32 @@ No dependencies, no keys, no network required.
 
 ## Data Status
 
-**Chinese** (`data/suppliers/`): **7,958 real records** across 8 categories:
+**Chinese** (`data/suppliers/`): **7,962 records total** across 8 categories:
 
-| Category | Count |
-|---|---|
-| Precision Machining (CNC) | 55 |
-| Sheet Metal & Stamping | 38 |
-| Injection Molding | 22 |
-| Raw Materials | 19 |
-| Standard Parts | 11 |
-| Die Casting | 10 |
-| Electronic Components | 8 |
-| Surface Treatment | 8 |
+| Category | Total | Verified | Pending |
+|---|---|---|---|
+| Precision Machining (CNC) | 1,305 | 603 | 702 |
+| Sheet Metal & Stamping | 1,204 | 879 | 325 |
+| Injection Molding | 282 | 181 | 101 |
+| Die Casting | 418 | 196 | 222 |
+| Electronic Components | 639 | 293 | 346 |
+| Surface Treatment | 1,133 | 505 | 628 |
+| Standard Parts | 1,756 | 1,159 | 597 |
+| Raw Materials | 1,225 | 976 | 249 |
 
-**English** (`data/en/`): **7,915 English-mirror records** for overseas agents/buyers.
+> **Verified** (is_template=false): 4,792 records with confirmed phone numbers.
+> **Pending** (is_template=true): 3,170 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
-Regions: 18 cities — Pearl River Delta (Shenzhen 713, Dongguan 857, Guangzhou 396, Foshan 545), Yangtze River Delta (Jiaxing 507, Shanghai 666, Suzhou/Ningbo/Wuxi, etc.).
+**English** (`data/en/`): **7,915 English-mirror records** for overseas agents/buyers
+(slight gap vs. Chinese 7,962 due to async sync; source data is the same).
 
-> Fast region search: use `data/region-index.json` to locate companies by city without scanning full category files.
+> **Fast region search:** use `data/region-index.json` to locate companies by city without scanning full category files.
 
-> Contact numbers come from the public directory — landlines / 400 hotlines / mobiles are
-> shown in full (published by the businesses themselves, no masking). Some records show
-> "待核实" (pending verification); never fabricate digits.
+> **Contact numbers** come from public POI directories — landlines / 400 hotlines / mobiles are shown in full (published by the businesses themselves, no masking or asterisks). Records marked "待核实" (pending verification) have unconfirmed phone data from public maps; never fabricate digits — contact the supplier via their website to confirm.
 
 ## Compliance
 
-- Public business info only. No personal data. Each record carries `source + source_url + verified_at`.
+- Public business info only. No personal data. Each record carries `source + verified_at`.
 - Companies may request correction/removal of their info via GitHub Issue.
 - Anti-forking / anti-scraping strategy: [docs/ANTI_COPYING.md](docs/ANTI_COPYING.md).
 
