@@ -107,13 +107,13 @@ beacon-mfg/
 ├── schema/supplier.schema.json # 数据结构定义
 ├── docs/                      # 贡献指南、品类规则、防抄袭策略
 ├── LICENSE                    # 代码 MIT
-└── DATA_LICENSE.md            # 数据 CC BY-NC 4.0
+└── DATA_LICENSE.md            # 数据 CC BY 4.0（可商用，需署名）
 ```
 
 ## License
 
 - 代码：MIT
-- 数据：CC BY-NC 4.0（署名-非商业使用）
+- 数据：CC BY 4.0（署名即可，**允许商业使用**）
 
 ## 声明
 
