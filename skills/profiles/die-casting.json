@@ -1,0 +1,53 @@
+{
+  "profile": "die-casting",
+  "category": "压铸",
+  "version": "1.0",
+  "description": "铝/锌/镁合金压铸。客户最关心吨位、合金牌号、最小壁厚与后加工能力。",
+  "fields": [
+    {
+      "path": "capability.machine_tonnage_t", "label": "压铸机吨位", "type": "number_list", "unit": "t",
+      "normalize": "number_list", "question": "压铸机都是多少吨的？",
+      "hint": "例：160、280、500、800", "required": true
+    },
+    {
+      "path": "capability.alloys", "label": "合金牌号", "type": "multi_enum",
+      "enum": ["ADC12", "A380", "A356", "锌合金", "镁合金", "ZL102", "YL113"],
+      "normalize": "multi_enum", "question": "主要压铸哪些合金？",
+      "hint": "ADC12 / A380 / 锌合金 等，可多选", "required": true
+    },
+    {
+      "path": "capability.part_weight_g", "label": "件重范围", "type": "range", "unit": "g",
+      "normalize": "range", "question": "能做的件从多重到多重？",
+      "hint": "例：10 到 5000（指 10 克到 5 公斤）", "required": true
+    },
+    {
+      "path": "capability.min_wall_thickness_mm", "label": "最小壁厚", "type": "number", "unit": "mm",
+      "normalize": "length_mm", "question": "最薄能压多薄的壁？",
+      "hint": "例：1.2", "required": true
+    },
+    {
+      "path": "capability.porosity_grade", "label": "气孔等级", "type": "enum",
+      "enum": ["按客户要求", "ASTM E505 一级", "ASTM E505 二级", "可做浸渗", "可做X光检测"],
+      "normalize": "enum", "question": "气孔按什么标准控制？能做浸渗或者X光检测吗？",
+      "hint": "内部质量要求，做结构件的客户很关心", "required": false
+    },
+    {
+      "path": "capability.cnc_post_machining", "label": "后加工能力", "type": "bool",
+      "normalize": "bool", "question": "压铸后的 CNC 加工是自己做吗？",
+      "hint": "自有后加工能缩短交期", "required": true
+    },
+    {
+      "path": "capability.mold_inhouse", "label": "模具能力", "type": "enum",
+      "enum": ["自制", "外协", "自制+外协"],
+      "normalize": "enum", "question": "压铸模是自己开还是外发？",
+      "hint": "自制 / 外协", "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "wall_vs_weight", "when": ["capability.min_wall_thickness_mm", "capability.part_weight_g"],
+      "check": "wall_weight_sane", "level": "warn",
+      "message": "最小壁厚与件重范围组合异常，请确认单位"
+    }
+  ]
+}

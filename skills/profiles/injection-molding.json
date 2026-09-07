@@ -1,0 +1,58 @@
+{
+  "profile": "injection-molding",
+  "category": "注塑成型",
+  "version": "1.0",
+  "description": "注塑件生产与模具制造。客户最关心锁模力区间、射出量、模具是否自制与开模周期。",
+  "fields": [
+    {
+      "path": "capability.clamping_force_t", "label": "锁模力范围", "type": "range", "unit": "t",
+      "normalize": "range", "question": "注塑机的锁模力从多少吨到多少吨？",
+      "hint": "例：60 到 800（指 60 吨到 800 吨）", "required": true
+    },
+    {
+      "path": "capability.shot_weight_g", "label": "射出量范围", "type": "range", "unit": "g",
+      "normalize": "range", "question": "单件能做多重？最小和最大？",
+      "hint": "例：1 到 2000（指 1 克到 2000 克）", "required": true
+    },
+    {
+      "path": "capability.cavity_max", "label": "最多模穴数", "type": "integer",
+      "normalize": "integer", "question": "一套模最多开多少穴？",
+      "hint": "例：32", "required": false
+    },
+    {
+      "path": "capability.resins", "label": "常用原料", "type": "multi_enum",
+      "enum": ["ABS", "PP", "PC", "PA尼龙", "POM", "PMMA", "PE", "PVC", "TPE", "PBT", "LCP", "PEEK"],
+      "normalize": "multi_enum", "question": "平时主要打哪些料？",
+      "hint": "ABS / PP / PC 等，可多选", "required": true
+    },
+    {
+      "path": "capability.mold_inhouse", "label": "模具能力", "type": "enum",
+      "enum": ["自制", "外协", "自制+外协", "仅开模"],
+      "normalize": "enum", "question": "模具是自己开还是外发？",
+      "hint": "自制 / 外协 / 都有", "required": true
+    },
+    {
+      "path": "capability.mold_lead_time_days", "label": "开模周期", "type": "integer", "unit": "天",
+      "normalize": "days", "question": "开一套模要多久？",
+      "hint": "例：25（指 25 天）", "required": false
+    },
+    {
+      "path": "capability.mold_life_shots", "label": "模具寿命", "type": "integer", "unit": "模次",
+      "normalize": "integer", "question": "模具寿命大概多少模次？",
+      "hint": "例：500000", "required": false
+    },
+    {
+      "path": "capability.overmolding", "label": "包胶/镶件", "type": "multi_enum",
+      "enum": ["双色注塑", "包胶成型", "镶件注塑", "气辅成型"],
+      "normalize": "multi_enum", "question": "能做双色、包胶或者镶件注塑吗？",
+      "hint": "可多选，没有就不填", "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "shot_vs_force", "when": ["capability.shot_weight_g", "capability.clamping_force_t"],
+      "check": "shot_force_sane", "level": "warn",
+      "message": "射出量与锁模力区间看起来不匹配，请确认单位（克 / 吨）"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "profile": "surface-treatment",
+  "category": "表面处理",
+  "version": "1.0",
+  "description": "阳极氧化、电镀、喷涂、热处理等。环保资质是本品类最强的准入壁垒，务必采集。",
+  "fields": [
+    {
+      "path": "capability.processes", "label": "处理工艺", "type": "multi_enum",
+      "enum": ["阳极氧化", "硬质氧化", "电镀", "化学镀", "喷粉", "喷油", "电泳", "发黑", "磷化", "喷砂", "拉丝", "热处理"],
+      "normalize": "multi_enum", "question": "主要做哪些表面处理工艺？",
+      "hint": "可多选", "required": true
+    },
+    {
+      "path": "capability.substrates", "label": "适用基材", "type": "multi_enum",
+      "enum": ["铝合金", "不锈钢", "碳钢", "铜", "锌合金", "镁合金", "塑料", "钛合金"],
+      "normalize": "multi_enum", "question": "能处理哪些材料？",
+      "hint": "铝合金 / 不锈钢 等，可多选", "required": true
+    },
+    {
+      "path": "capability.coating_thickness_um", "label": "膜厚范围", "type": "range", "unit": "μm",
+      "normalize": "range", "question": "膜厚一般做多少微米？",
+      "hint": "例：5 到 25", "required": true
+    },
+    {
+      "path": "capability.color_options", "label": "可做颜色", "type": "list",
+      "normalize": "list", "question": "有哪些颜色？能按色号调吗？",
+      "hint": "例：黑色、银白、香槟金、可来色定制", "required": false
+    },
+    {
+      "path": "capability.salt_spray_hours", "label": "盐雾测试", "type": "integer", "unit": "小时",
+      "normalize": "integer", "question": "盐雾测试能过多少小时？",
+      "hint": "例：480", "required": false
+    },
+    {
+      "path": "capability.max_part_size_mm", "label": "最大工件尺寸", "type": "size3", "unit": "mm",
+      "normalize": "size3", "question": "最大能处理多大的工件（长宽高）？",
+      "hint": "受槽体尺寸限制，例：2000 乘 800 乘 600", "required": true
+    },
+    {
+      "path": "capability.environmental_permit", "label": "排污许可证号", "type": "text",
+      "normalize": "text", "question": "排污许可证号是多少？有环保手续吗？",
+      "hint": "★ 本品类最强准入壁垒，有证的客户才敢下单", "required": true
+    },
+    {
+      "path": "capability.rack_or_barrel", "label": "挂镀/滚镀", "type": "enum",
+      "enum": ["挂镀", "滚镀", "两者都有"],
+      "normalize": "enum", "question": "是挂镀还是滚镀？",
+      "hint": "小件适合滚镀，大件必须挂镀", "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "permit_required", "when": ["capability.environmental_permit"],
+      "check": "permit_present", "level": "warn",
+      "message": "未填写排污许可证号，客户 Agent 会标注「环保资质未核验」"
+    }
+  ]
+}

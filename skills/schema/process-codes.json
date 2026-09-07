@@ -1,0 +1,202 @@
+{
+  "version": "1.0",
+  "description": "BeaconMFG 统一工艺码表。跨品类可比，是 L0 指纹行 proc 字段与客户 Agent 过滤的取值域。新增工艺需提 PR 并说明所属品类。",
+  "codes": {
+    "cnc_turning": {
+      "name": "CNC车削",
+      "category": "精密机械加工"
+    },
+    "cnc_milling": {
+      "name": "CNC铣削",
+      "category": "精密机械加工"
+    },
+    "cnc_5axis": {
+      "name": "五轴加工",
+      "category": "精密机械加工"
+    },
+    "wire_cutting": {
+      "name": "线切割",
+      "category": "精密机械加工"
+    },
+    "edm": {
+      "name": "电火花",
+      "category": "精密机械加工"
+    },
+    "grinding": {
+      "name": "磨削",
+      "category": "精密机械加工"
+    },
+    "laser_cutting": {
+      "name": "激光切割",
+      "category": "钣金冲压"
+    },
+    "bending": {
+      "name": "折弯",
+      "category": "钣金冲压"
+    },
+    "stamping": {
+      "name": "冲压",
+      "category": "钣金冲压"
+    },
+    "welding": {
+      "name": "焊接",
+      "category": "钣金冲压"
+    },
+    "sheet_assembly": {
+      "name": "钣金组装",
+      "category": "钣金冲压"
+    },
+    "injection_molding": {
+      "name": "注塑成型",
+      "category": "注塑成型"
+    },
+    "mold_making": {
+      "name": "模具制造",
+      "category": "注塑成型"
+    },
+    "two_shot": {
+      "name": "双色注塑",
+      "category": "注塑成型"
+    },
+    "die_casting": {
+      "name": "压铸",
+      "category": "压铸"
+    },
+    "cnc_post_machine": {
+      "name": "压铸后加工",
+      "category": "压铸"
+    },
+    "pcb_assembly": {
+      "name": "PCBA",
+      "category": "电子元器件"
+    },
+    "smt": {
+      "name": "SMT贴片",
+      "category": "电子元器件"
+    },
+    "wire_harness": {
+      "name": "线束",
+      "category": "电子元器件"
+    },
+    "pcb_fab": {
+      "name": "PCB制板",
+      "category": "电子元器件"
+    },
+    "anodizing": {
+      "name": "阳极氧化",
+      "category": "表面处理"
+    },
+    "electroplating": {
+      "name": "电镀",
+      "category": "表面处理"
+    },
+    "spray_painting": {
+      "name": "喷涂",
+      "category": "表面处理"
+    },
+    "powder_coating": {
+      "name": "粉末喷涂",
+      "category": "表面处理"
+    },
+    "heat_treatment": {
+      "name": "热处理",
+      "category": "表面处理"
+    },
+    "blackening": {
+      "name": "发黑",
+      "category": "表面处理"
+    },
+    "fastener": {
+      "name": "紧固件",
+      "category": "标准件"
+    },
+    "bearing": {
+      "name": "轴承",
+      "category": "标准件"
+    },
+    "spring": {
+      "name": "弹簧",
+      "category": "标准件"
+    },
+    "gear": {
+      "name": "齿轮",
+      "category": "标准件"
+    },
+    "metal_material": {
+      "name": "金属材料",
+      "category": "原材料"
+    },
+    "plastic_material": {
+      "name": "塑料原料",
+      "category": "原材料"
+    },
+    "cutting_service": {
+      "name": "零切服务",
+      "category": "原材料"
+    },
+    "connector": "连接器",
+    "sensor": "传感器",
+    "relay": "继电器",
+    "electronic_component": "电子元件",
+    "metal_stamping": "五金冲压"
+  },
+  "aliases": {
+    "数控车": "cnc_turning",
+    "车床": "cnc_turning",
+    "车削": "cnc_turning",
+    "车": "cnc_turning",
+    "数控铣": "cnc_milling",
+    "铣床": "cnc_milling",
+    "铣削": "cnc_milling",
+    "加工中心": "cnc_milling",
+    "CNC": "cnc_milling",
+    "铣": "cnc_milling",
+    "cnc": "cnc_milling",
+    "五轴": "cnc_5axis",
+    "5轴": "cnc_5axis",
+    "线切割": "wire_cutting",
+    "慢走丝": "wire_cutting",
+    "快走丝": "wire_cutting",
+    "火花机": "edm",
+    "电火花": "edm",
+    "磨床": "grinding",
+    "平面磨": "grinding",
+    "外圆磨": "grinding",
+    "激光": "laser_cutting",
+    "镭射": "laser_cutting",
+    "折弯": "bending",
+    "冲压": "stamping",
+    "冲床": "stamping",
+    "焊接": "welding",
+    "氩弧焊": "welding",
+    "点焊": "welding",
+    "注塑": "injection_molding",
+    "模具": "mold_making",
+    "压铸": "die_casting",
+    "SMT": "smt",
+    "贴片": "smt",
+    "PCBA": "pcb_assembly",
+    "PCB": "pcb_fab",
+    "氧化": "anodizing",
+    "阳极": "anodizing",
+    "电镀": "electroplating",
+    "喷油": "spray_painting",
+    "喷粉": "powder_coating",
+    "喷漆": "spray_painting",
+    "热处理": "heat_treatment",
+    "淬火": "heat_treatment",
+    "发黑": "blackening",
+    "螺丝": "fastener",
+    "紧固件": "fastener",
+    "轴承": "bearing",
+    "弹簧": "spring",
+    "齿轮": "gear",
+    "连接器": "connector",
+    "接插件": "connector",
+    "端子": "connector",
+    "传感器": "sensor",
+    "继电器": "relay",
+    "电子元件": "electronic_component",
+    "五金冲压": "metal_stamping"
+  }
+}

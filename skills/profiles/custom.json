@@ -1,0 +1,29 @@
+{
+  "profile": "custom",
+  "category": "其他",
+  "version": "1.0",
+  "description": "兜底 Profile。用于组装、检测、物流、设计服务等不属于 8 个制造品类的供应商。structure 自由，但必须有 summary 供客户 Agent 判断。",
+  "fields": [
+    {
+      "path": "capability.service_items", "label": "服务项目", "type": "list",
+      "normalize": "list", "question": "主要提供哪些服务？",
+      "hint": "例：整机组装、老化测试、第三方检测、结构设计", "required": true
+    },
+    {
+      "path": "capability.summary", "label": "能力概述", "type": "text",
+      "normalize": "text", "question": "用一两句话说说你们能帮客户解决什么问题？",
+      "hint": "这段会直接进 SKILL.md 的第 1 段", "required": true
+    },
+    {
+      "path": "capability.typical_clients", "label": "典型客户行业", "type": "list",
+      "normalize": "list", "question": "客户一般是哪些行业？",
+      "hint": "例：医疗设备、通信基站、新能源", "required": false
+    },
+    {
+      "path": "capability.equipment_or_team", "label": "核心资源", "type": "text",
+      "normalize": "text", "question": "核心资源是什么？设备、团队还是资质？",
+      "hint": "例：20 人组装线 + 万级洁净车间", "required": false
+    }
+  ],
+  "conflict_rules": []
+}

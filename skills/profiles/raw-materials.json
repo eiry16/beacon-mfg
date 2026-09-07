@@ -1,0 +1,51 @@
+{
+  "profile": "raw-materials",
+  "category": "原材料",
+  "version": "1.0",
+  "description": "金属与塑料原材料供应。客户最关心牌号、规格、库存吨位与材质单。",
+  "fields": [
+    {
+      "path": "capability.grades", "label": "主营牌号", "type": "list",
+      "normalize": "list", "question": "主要供哪些牌号？",
+      "hint": "例：304、316L、6061、7075、45钢", "required": true
+    },
+    {
+      "path": "capability.forms", "label": "材料形态", "type": "multi_enum",
+      "enum": ["板材", "棒材", "管材", "卷材", "型材", "带材", "锻件"],
+      "normalize": "multi_enum", "question": "供哪些形态？板、棒、管还是型材？",
+      "hint": "可多选", "required": true
+    },
+    {
+      "path": "capability.spec_range", "label": "规格区间", "type": "text",
+      "normalize": "text", "question": "规格范围是什么？",
+      "hint": "例：板厚 0.5 到 200mm，棒径 5 到 300mm", "required": true
+    },
+    {
+      "path": "capability.stock_tons", "label": "常备库存", "type": "number", "unit": "吨",
+      "normalize": "number", "question": "常备库存多少吨？",
+      "hint": "例：2000", "required": false
+    },
+    {
+      "path": "capability.cutting_service", "label": "加工服务", "type": "multi_enum",
+      "enum": ["零切", "锯切", "激光切割", "等离子切割", "开平", "分条", "贴膜"],
+      "normalize": "multi_enum", "question": "能提供哪些加工服务？零切、锯切还是激光？",
+      "hint": "可多选，零切是小批量客户的关键需求", "required": false
+    },
+    {
+      "path": "capability.mtc_provided", "label": "提供材质单", "type": "bool",
+      "normalize": "bool", "question": "能提供材质单（MTC）吗？",
+      "hint": "★ 做出口和医疗器械的客户必须要", "required": true
+    },
+    {
+      "path": "capability.min_cut_length_mm", "label": "最小切割长度", "type": "number", "unit": "mm",
+      "normalize": "length_mm", "question": "零切最短能切多短？",
+      "hint": "例：50", "required": false
+    },
+    {
+      "path": "capability.tolerance_standard", "label": "公差标准", "type": "text",
+      "normalize": "text", "question": "按什么公差标准交货？",
+      "hint": "例：GB/T 702、或按客户要求", "required": false
+    }
+  ],
+  "conflict_rules": []
+}

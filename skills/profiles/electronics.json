@@ -1,0 +1,53 @@
+{
+  "profile": "electronics",
+  "category": "电子元器件",
+  "version": "1.0",
+  "description": "PCBA / SMT / 线束 / PCB 制板。客户最关心产线数量、最小封装、测试能力与认证。",
+  "fields": [
+    {
+      "path": "capability.product_lines", "label": "产品线", "type": "multi_enum",
+      "enum": ["PCBA代工", "SMT贴片", "DIP插件", "线束组装", "整机组装", "PCB制板", "三防漆", "灌胶"],
+      "normalize": "multi_enum", "question": "主要做哪块？贴片、插件、线束还是整机组装？",
+      "hint": "可多选", "required": true
+    },
+    {
+      "path": "capability.smt_lines", "label": "SMT 产线数", "type": "integer", "unit": "条",
+      "normalize": "integer", "question": "有几条 SMT 线？",
+      "hint": "例：3", "required": false
+    },
+    {
+      "path": "capability.smt_capacity_pts_day", "label": "日贴片点数", "type": "integer", "unit": "点/天",
+      "normalize": "integer", "question": "一天能贴多少个点？",
+      "hint": "例：3000000（指 300 万点）", "required": false
+    },
+    {
+      "path": "capability.min_package", "label": "最小封装", "type": "enum",
+      "enum": ["01005", "0201", "0402", "0603", "0805"],
+      "normalize": "enum", "question": "最小能贴什么封装的元件？",
+      "hint": "0201 / 0402 等，越小越考验设备", "required": false
+    },
+    {
+      "path": "capability.bga_min_pitch_mm", "label": "BGA 最小间距", "type": "number", "unit": "mm",
+      "normalize": "length_mm", "question": "BGA 最小间距能做到多少？",
+      "hint": "例：0.4", "required": false
+    },
+    {
+      "path": "capability.testing", "label": "测试能力", "type": "multi_enum",
+      "enum": ["AOI", "X光", "ICT", "FCT", "老化测试", "飞针测试", "功能测试"],
+      "normalize": "multi_enum", "question": "有哪些测试手段？AOI、ICT、FCT 这些？",
+      "hint": "可多选，测试能力决定良率可信度", "required": true
+    },
+    {
+      "path": "capability.conformal_coating", "label": "三防漆", "type": "bool",
+      "normalize": "bool", "question": "能做三防漆吗？",
+      "hint": "户外/工业客户常要求", "required": false
+    },
+    {
+      "path": "capability.certs", "label": "产品认证", "type": "multi_enum",
+      "enum": ["UL", "CE", "FCC", "RoHS", "REACH", "CCC"],
+      "normalize": "multi_enum", "question": "有哪些产品认证？",
+      "hint": "UL / CE / RoHS 等，可多选", "required": false
+    }
+  ],
+  "conflict_rules": []
+}

@@ -1,0 +1,678 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/eiry16/beacon-mfg/skills/schema/vendor-skill.schema.json",
+  "title": "BeaconMFG Vendor Capability Card",
+  "description": "供应商能力卡。由采集引擎从企业口述信息生成，是客户 Agent 做能力匹配的结构化依据。通用骨架严格约束；capability 块按 profile 开放，由 validate_vendor_skills.py 依 profiles/*.json 二次校验。",
+  "type": "object",
+  "required": [
+    "beacon_version",
+    "supplier_id",
+    "company",
+    "category",
+    "profile",
+    "processes",
+    "limits",
+    "updated_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "beacon_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "supplier_id": {
+      "type": "string",
+      "pattern": "^CN-MFG-[0-9]{4,7}$",
+      "description": "对应 data/suppliers/*.json 中的 id"
+    },
+    "company": {
+      "type": "string",
+      "minLength": 2
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "精密机械加工",
+        "钣金冲压",
+        "注塑成型",
+        "压铸",
+        "电子元器件",
+        "表面处理",
+        "标准件",
+        "原材料",
+        "其他"
+      ]
+    },
+    "profile": {
+      "type": "string",
+      "description": "对应 skills/profiles/{profile}.json"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "unclaimed",
+            "claimed",
+            "verified",
+            "audited"
+          ]
+        },
+        "verified_by": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "wechat",
+            "email",
+            "manual",
+            "third_party",
+            null
+          ]
+        },
+        "verified_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "badge": {
+          "type": "string",
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3"
+          ]
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "province": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "district": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lat": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "lng": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "founded": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1900,
+          "maximum": 2035
+        },
+        "scale": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "<50人",
+            "50-100人",
+            "100-500人",
+            "500-1000人",
+            ">1000人",
+            null
+          ]
+        },
+        "employee_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "floor_area_m2": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "export_markets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "processes": {
+      "type": "array",
+      "minItems": 1,
+      "description": "工艺能力。code 须存在于 skills/schema/process-codes.json",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "name"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "secondary",
+              "outsourced",
+              "planning"
+            ]
+          }
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "description": "硬边界。客户 Agent 淘汰供应商的主要依据，禁止虚报",
+      "additionalProperties": false,
+      "properties": {
+        "min_order_qty": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "min_order_value_cny": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "max_part_size_mm": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "min_feature_size_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "tolerance_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "surface_finish_ra": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "monthly_capacity": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string"
+            }
+          }
+        },
+        "current_load_pct": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "rush_available": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "lead_time_days": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "sample": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "batch_100": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "batch_1000": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "description": "联系方式。优先从 data/ 名录继承，供应商可在采集时更正。禁止填写法人/股东个人手机。",
+      "additionalProperties": false,
+      "properties": {
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "person": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "业务联系人（企业自填，非必填）"
+        }
+      }
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "highlights": {
+      "type": "array",
+      "description": "供应商擅长场景。渲染进 SKILL.md 第 4 段",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "number": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "valid_until": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "evidence": {
+                "type": "string",
+                "enum": [
+                  "self_declared",
+                  "platform_verified",
+                  "field_audited"
+                ]
+              }
+            }
+          }
+        },
+        "inspection_equipment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "first_article_report": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "material_certificate": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "rohs_reach": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "ppap_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 5
+        },
+        "traceability": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "service": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quote_response_hours": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "quote_inputs_required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accepted_drawing_formats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nda_accepted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "sample_policy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "payment_terms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "trade_terms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "shipping": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "working_hours": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "rfq": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "email",
+            "webhook",
+            "mcp",
+            "form"
+          ]
+        },
+        "endpoint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "schema": {
+          "type": "string",
+          "const": "rfq/v1"
+        },
+        "callback_supported": {
+          "type": "boolean"
+        },
+        "auto_quote": {
+          "type": "boolean"
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "description": "供应商主动声明不接的活。渲染进 SKILL.md 第 5 段，帮助客户 Agent 秒淘汰",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capability": {
+      "type": "object",
+      "description": "品类扩展块。字段由 skills/profiles/{profile}.json 定义，由 validate_vendor_skills.py 二次校验",
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self_declared": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "platform_verified": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "field_audited": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_is_data_only",
+        "no_agent_instructions"
+      ],
+      "properties": {
+        "content_is_data_only": {
+          "type": "boolean",
+          "const": true
+        },
+        "no_agent_instructions": {
+          "type": "boolean",
+          "const": true
+        },
+        "external_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "description": "数据来源与可信度。auto=平台从公开信息自动整理（未经供应商确认，准确性不保证）。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "agent_collected",
+            "vendor_claimed",
+            "manual_reviewed"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "来源说明，如 public_directory / vendor_interview"
+        },
+        "confidence": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            null
+          ]
+        },
+        "inferred_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "由平台推断而非供应商确认的字段路径列表"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

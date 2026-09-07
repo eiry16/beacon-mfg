@@ -108,6 +108,56 @@ hits = [r for r in recs
 - 联系方式仅提供公开渠道；用户索要法人个人信息 → 拒绝
 - 不编造价格、交期、产能（数据里没有的就不说，引导用户直接联系核实）
 
+## 能力层检索（能做 vs 只存在）
+
+上面的流程只回答"**有这家厂**"。如果还要判断"**这家厂能不能做我的活**"，
+用 `skills/registry/fingerprint/{品类}.jsonl`——每家一行能力指纹，约 120 字。
+
+**先粗筛后精读，不要一上来就全量读供应商自述**（8000 家全读会撑爆上下文）：
+
+| 阶段 | 读什么 | 规模 |
+|---|---|---|
+| 1 粗筛 | `fingerprint/{品类}.jsonl`，数值规则过滤 | 全量 → 10-30 家 |
+| 2 比对 | `capability/{id}.json` | 30 家 → 5 家 |
+| 3 精读 | `vendors/{id}/SKILL.md` | 5 家 → 3 家 |
+
+指纹行字段（刻意用短键，省钱）：
+
+```
+id / co(公司) / city / proc(工艺码) / mat(材料) / tol(公差mm)
+size([长,宽,高]mm) / moq / lt([打样天,百件天]) / cert / rt(回价小时) / cl(凭证等级) / sc(完整度)
+```
+
+按需求做确定性过滤：
+
+```python
+import json
+need = {"city": "深圳", "proc": "cnc_milling", "tol": 0.05, "moq": 10}
+hits = []
+for line in open("skills/registry/fingerprint/精密机械加工.jsonl", encoding="utf-8"):
+    r = json.loads(line)
+    if need["city"] != r["city"]: continue
+    if need["proc"] not in r["proc"]: continue
+    if r["tol"] is None or r["tol"] > need["tol"]: continue   # 公差达不到
+    if r["moq"] is None or r["moq"] > need["moq"]: continue   # 起订量太高
+    hits.append(r)
+```
+
+也可直接用现成脚本：
+
+```bash
+python scripts/search_capabilities.py --city 深圳 --proc cnc_milling \
+    --mat 铝合金6061 --tol 0.05 --moq 10 --size 300,200,100
+```
+
+**规则：**
+1. 工艺码取值域见 `skills/schema/process-codes.json`
+2. `tol` / `moq` / `size` 为 `null` 表示未填——**无法确定性筛选，不要当作合格**
+3. `cl`（凭证等级）：L0 未核验 / L1 企业自述 / L2 平台已认证 / L3 第三方核验。
+   呈现给用户时必须原样标注，L1 及以下要说明"未经平台核验"
+4. `sc` 是**资料完整度**（不是评级），仅用于排序
+5. 没有提交 Skill 的供应商在指纹库里查不到——回退到前面的名录检索即可，不影响使用
+
 ## 使用规则（强制）
 
 1. 直接读取 JSON，每次查询重新读取，不缓存数据用于二次分发

@@ -1,0 +1,47 @@
+{
+  "profile": "standard-parts",
+  "category": "标准件",
+  "version": "1.0",
+  "description": "紧固件、轴承、弹簧、齿轮等标准件。客户最关心标准体系、规格区间与现货能力。",
+  "fields": [
+    {
+      "path": "capability.product_lines", "label": "产品线", "type": "multi_enum",
+      "enum": ["螺丝", "螺母", "垫片", "铆钉", "轴承", "弹簧", "齿轮", "销轴", "卡簧"],
+      "normalize": "multi_enum", "question": "主要做哪些品类？",
+      "hint": "可多选", "required": true
+    },
+    {
+      "path": "capability.standards", "label": "标准体系", "type": "multi_enum",
+      "enum": ["GB", "ISO", "DIN", "JIS", "ANSI", "非标定制"],
+      "normalize": "multi_enum", "question": "按什么标准生产？GB、ISO 还是 DIN？",
+      "hint": "出口单很看重标准体系", "required": true
+    },
+    {
+      "path": "capability.spec_range", "label": "规格区间", "type": "text",
+      "normalize": "text", "question": "常规做的规格范围是什么？",
+      "hint": "例：M2 到 M24，长度 5 到 200mm", "required": true
+    },
+    {
+      "path": "capability.stock_model", "label": "备货模式", "type": "enum",
+      "enum": ["现货为主", "订单生产", "现货+订单"],
+      "normalize": "enum", "question": "是走现货库存还是接单生产？",
+      "hint": "现货能力直接影响交期", "required": true
+    },
+    {
+      "path": "capability.stock_qty", "label": "常备库存", "type": "text",
+      "normalize": "text", "question": "常备库存大概多少？",
+      "hint": "例：常规规格 500 万件以上", "required": false
+    },
+    {
+      "path": "capability.same_day_ship", "label": "当日发货", "type": "bool",
+      "normalize": "bool", "question": "现货能当天发吗？",
+      "hint": "急单客户的关键指标", "required": false
+    },
+    {
+      "path": "capability.customization", "label": "非标定制", "type": "bool",
+      "normalize": "bool", "question": "能做非标件吗？",
+      "hint": "来图定制能力", "required": false
+    }
+  ],
+  "conflict_rules": []
+}

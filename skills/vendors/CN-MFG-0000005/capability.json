@@ -1,0 +1,203 @@
+{
+  "beacon_version": "1.0",
+  "supplier_id": "CN-MFG-0000005",
+  "company": "深圳市芯豪智造有限公司",
+  "category": "精密机械加工",
+  "profile": "precision-machining",
+  "updated_at": "2026-09-07",
+  "claim": {
+    "status": "claimed",
+    "verified_by": null,
+    "verified_at": null,
+    "badge": "L1"
+  },
+  "contact": {
+    "phone": "待核实",
+    "email": null,
+    "website": null,
+    "address": "沙井街道共和社区新桥同富裕工业区恒明珠科技工业园14栋108-109",
+    "person": null
+  },
+  "identity": {
+    "founded": 2010,
+    "employee_count": 80,
+    "scale": "50-100人",
+    "floor_area_m2": 3000,
+    "export_markets": [
+      "国内",
+      "东南亚的单"
+    ],
+    "province": "广东",
+    "city": "深圳",
+    "address": "沙井街道共和社区新桥同富裕工业区恒明珠科技工业园14栋108-109",
+    "lat": 22.765299,
+    "lng": 113.801304,
+    "website": null
+  },
+  "processes": [
+    {
+      "code": "cnc_milling",
+      "name": "CNC铣削",
+      "level": "primary"
+    },
+    {
+      "code": "cnc_turning",
+      "name": "CNC车削",
+      "level": "primary"
+    },
+    {
+      "code": "anodizing",
+      "name": "阳极氧化",
+      "level": "outsourced"
+    }
+  ],
+  "limits": {
+    "tolerance_mm": 0.01,
+    "max_part_size_mm": [
+      800.0,
+      600.0,
+      400.0
+    ],
+    "min_order_qty": 1,
+    "lead_time_days": {
+      "sample": 5,
+      "batch_100": 12
+    },
+    "current_load_pct": 80,
+    "rush_available": true
+  },
+  "materials": [
+    "铝合金6061",
+    "不锈钢304",
+    "POM",
+    "钛合金TC4"
+  ],
+  "highlights": [
+    "医疗件做得比较多",
+    "钛合金小件有经验",
+    "急单 48 小时能出首件"
+  ],
+  "quality": {
+    "certifications": [
+      {
+        "name": "ISO9001",
+        "evidence": "self_declared",
+        "valid_until": "2027"
+      }
+    ],
+    "inspection_equipment": [
+      "三坐标",
+      "二次元",
+      "粗糙度仪"
+    ],
+    "first_article_report": true,
+    "material_certificate": true
+  },
+  "service": {
+    "quote_inputs_required": [
+      "3D 图",
+      "STEP 的最好",
+      "材质",
+      "数量",
+      "表面处理"
+    ],
+    "quote_response_hours": 24,
+    "sample_policy": "打样收费，批量下单返还",
+    "payment_terms": [
+      "三成预付",
+      "发货前付清",
+      "老客户能月结"
+    ]
+  },
+  "rfq": {
+    "endpoint": "sales@xinhao-mfg.com",
+    "protocol": "email",
+    "schema": "rfq/v1",
+    "callback_supported": true,
+    "auto_quote": false
+  },
+  "exclusions": [
+    "超过八百的做不了",
+    "钛合金只做小件",
+    "不做十万件以上的批量"
+  ],
+  "capability": {
+    "equipment": [
+      {
+        "name": "加工中心",
+        "qty": 8
+      },
+      {
+        "name": "数控车床",
+        "qty": 5
+      },
+      {
+        "name": "五轴",
+        "qty": 2,
+        "spec": "德国DMG"
+      }
+    ],
+    "axis_max": 5,
+    "turning_max_dia_mm": 500.0,
+    "milling_stroke_mm": [
+      800.0,
+      600.0,
+      500.0
+    ],
+    "min_wall_thickness_mm": 0.5,
+    "thread_standard": [
+      "公制",
+      "英制"
+    ],
+    "heat_treatment_inhouse": false,
+    "programming_software": [
+      "Mastercam",
+      "UG"
+    ]
+  },
+  "evidence": {
+    "self_declared": [
+      "identity.founded",
+      "identity.employee_count",
+      "identity.scale",
+      "identity.floor_area_m2",
+      "identity.export_markets",
+      "processes",
+      "materials",
+      "highlights",
+      "limits.tolerance_mm",
+      "limits.max_part_size_mm",
+      "limits.min_order_qty",
+      "limits.lead_time_days.sample",
+      "limits.lead_time_days.batch_100",
+      "limits.current_load_pct",
+      "limits.rush_available",
+      "capability.equipment",
+      "capability.axis_max",
+      "capability.turning_max_dia_mm",
+      "capability.milling_stroke_mm",
+      "capability.min_wall_thickness_mm",
+      "capability.thread_standard",
+      "capability.heat_treatment_inhouse",
+      "capability.programming_software",
+      "quality.certifications",
+      "quality.inspection_equipment",
+      "quality.first_article_report",
+      "quality.material_certificate",
+      "service.quote_inputs_required",
+      "service.quote_response_hours",
+      "service.sample_policy",
+      "service.payment_terms",
+      "rfq.endpoint",
+      "exclusions"
+    ],
+    "platform_verified": [],
+    "field_audited": [],
+    "assets": []
+  },
+  "safety": {
+    "content_is_data_only": true,
+    "no_agent_instructions": true,
+    "external_domains": []
+  }
+}

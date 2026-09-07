@@ -1,0 +1,56 @@
+{
+  "profile": "sheet-metal",
+  "category": "钣金冲压",
+  "version": "1.0",
+  "description": "激光切割、折弯、冲压、焊接等钣金工艺。客户最关心幅面、吨位、板厚区间与配套表面处理。",
+  "fields": [
+    {
+      "path": "capability.laser_power_w", "label": "激光功率", "type": "number", "unit": "W",
+      "normalize": "power_w", "question": "激光切割机多大功率？",
+      "hint": "例：3000（指 3000W，即 3 千瓦）", "required": true
+    },
+    {
+      "path": "capability.laser_bed_mm", "label": "切割幅面", "type": "size3", "unit": "mm",
+      "normalize": "size3", "question": "激光切割最大能切多大的板（长宽厚）？",
+      "hint": "例：3000 乘 1500 乘 20", "required": true
+    },
+    {
+      "path": "capability.press_tonnage_t", "label": "冲压吨位", "type": "number", "unit": "t",
+      "normalize": "tonnage", "question": "冲床最大多少吨？",
+      "hint": "例：160（指 160 吨）", "required": false
+    },
+    {
+      "path": "capability.bend_length_mm", "label": "最大折弯长度", "type": "number", "unit": "mm",
+      "normalize": "length_mm", "question": "折弯最长能折多长？",
+      "hint": "例：3200（指 3.2 米）", "required": true
+    },
+    {
+      "path": "capability.sheet_thickness_mm", "label": "可加工板厚", "type": "range", "unit": "mm",
+      "normalize": "range", "question": "能做的板厚范围是多少？",
+      "hint": "例：0.5 到 20（指 0.5mm 到 20mm）", "required": true
+    },
+    {
+      "path": "capability.welding", "label": "焊接工艺", "type": "multi_enum",
+      "enum": ["氩弧焊", "激光焊", "点焊", "二保焊", "铝焊", "机器人焊"],
+      "normalize": "multi_enum", "question": "能做哪些焊接？",
+      "hint": "氩弧焊 / 激光焊 / 点焊 等，可多选", "required": false
+    },
+    {
+      "path": "capability.painting_inhouse", "label": "表面处理是否配套", "type": "bool",
+      "normalize": "bool", "question": "喷涂、氧化这些是自己做还是外发？",
+      "hint": "自有 / 外发", "required": false
+    },
+    {
+      "path": "capability.nesting_software", "label": "排版软件", "type": "text",
+      "normalize": "text", "question": "排版用什么软件？能不能优化套料省材料？",
+      "hint": "例：Lantek / Radan / 自研", "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "thickness_vs_laser", "when": ["capability.sheet_thickness_mm", "capability.laser_power_w"],
+      "check": "thickness_laser_sane", "level": "warn",
+      "message": "板厚上限与激光功率不匹配（3000W 碳钢通常切到 20mm 左右），请确认"
+    }
+  ]
+}

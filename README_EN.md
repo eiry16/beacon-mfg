@@ -85,4 +85,4 @@ No dependencies, no keys, no network required.
 ## License
 
 - Code: MIT
-- Data: CC BY-NC 4.0 (Attribution-NonCommercial)
+- Data: CC BY 4.0 (Attribution — commercial use allowed)

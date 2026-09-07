@@ -1,0 +1,113 @@
+{
+  "profile": "precision-machining",
+  "category": "精密机械加工",
+  "version": "1.0",
+  "description": "CNC 车削/铣削/五轴加工等减材制造工艺。客户最关心精度、尺寸上限、材料与设备真实性。",
+
+  "fields": [
+    {
+      "path": "capability.equipment",
+      "label": "主要加工设备",
+      "type": "equipment_list",
+      "normalize": "equipment_list",
+      "question": "车间里主要有哪些机床？各几台？",
+      "hint": "例：加工中心 8 台、数控车床 5 台、五轴 2 台（德国 DMG）",
+      "required": true,
+      "why": "设备清单是判断产能与真实性的核心依据，也是招聘信息/官网最常泄露的内容"
+    },
+    {
+      "path": "capability.axis_max",
+      "label": "最高轴数",
+      "type": "enum",
+      "enum": [3, 4, 5],
+      "normalize": "axis",
+      "question": "最高能做几轴？有三轴、四轴还是五轴？",
+      "hint": "三轴 / 四轴 / 五轴",
+      "required": true
+    },
+    {
+      "path": "capability.turning_max_dia_mm",
+      "label": "最大车削直径",
+      "type": "number",
+      "unit": "mm",
+      "normalize": "length_mm",
+      "question": "车削最大能车多大的直径？",
+      "hint": "例：500（指 500mm）",
+      "required": false
+    },
+    {
+      "path": "capability.milling_stroke_mm",
+      "label": "铣削行程",
+      "type": "size3",
+      "unit": "mm",
+      "normalize": "size3",
+      "question": "铣床的工作行程是多少（X/Y/Z）？",
+      "hint": "例：800 乘 600 乘 500",
+      "required": true,
+      "why": "与 limits.max_part_size_mm 做冲突校验：报的最大工件不能超过行程"
+    },
+    {
+      "path": "capability.min_wall_thickness_mm",
+      "label": "最小壁厚",
+      "type": "number",
+      "unit": "mm",
+      "normalize": "length_mm",
+      "question": "最薄能做到多薄？薄壁件容易变形",
+      "hint": "例：0.5（指 0.5mm）",
+      "required": false
+    },
+    {
+      "path": "capability.thread_standard",
+      "label": "螺纹标准",
+      "type": "multi_enum",
+      "enum": ["公制", "英制", "管螺纹", "美制"],
+      "normalize": "thread_standard",
+      "question": "螺纹一般做哪种标准？",
+      "hint": "公制 / 英制 / 管螺纹 / 美制，可多选",
+      "required": false
+    },
+    {
+      "path": "capability.heat_treatment_inhouse",
+      "label": "热处理是否自有",
+      "type": "bool",
+      "normalize": "bool",
+      "question": "热处理是自己做还是外发？",
+      "hint": "自有 / 外发",
+      "required": false
+    },
+    {
+      "path": "capability.programming_software",
+      "label": "编程软件",
+      "type": "multi_enum",
+      "enum": ["Mastercam", "UG", "Powermill", "SolidCAM", "Hypermill", "手工编程"],
+      "normalize": "multi_enum",
+      "question": "编程用什么软件？接受哪些格式的 3D 图？",
+      "hint": "Mastercam / UG / Powermill 等",
+      "required": false
+    }
+  ],
+
+  "conflict_rules": [
+    {
+      "id": "size_exceeds_stroke",
+      "when": ["limits.max_part_size_mm", "capability.milling_stroke_mm"],
+      "check": "max_part_size_le_stroke",
+      "level": "error",
+      "message": "声明的最大工件尺寸超过铣削行程，请确认：是外协、还是填错了？"
+    },
+    {
+      "id": "tolerance_too_tight",
+      "when": ["limits.tolerance_mm"],
+      "check": "tolerance_sane",
+      "level": "warn",
+      "message": "公差小于 0.005mm 属于精密磨削范畴，CNC 常规达不到，请确认"
+    },
+    {
+      "id": "moq_vs_capacity",
+      "when": ["limits.min_order_qty", "limits.monthly_capacity.value"],
+      "check": "moq_capacity_sane",
+      "level": "warn",
+      "message": "MOQ 与月产能组合看起来不合理，请确认单位"
+    }
+  ]
+}
