@@ -28,6 +28,55 @@ CRON_*.md
 .DS_Store
 Thumbs.db
 
+# ---------------------------------------------------------------------------
+# 私有层：不进 Git（2026-09-07 清理）
+# Git 仓库只放引流层：薄名录 + L0 指纹 + 协议规范。
+# 以下都是私有资产，一旦公开等于把商业逻辑送人。
+# ---------------------------------------------------------------------------
+# 注意：gitignore 不支持行尾注释，`path  # 说明` 会把整行当成一个 pattern，
+# 规则静默失效。所有注释必须独占一行。
+#
+# 私有层 API（auth/api_key、routers/claim、services/ranker）
+server/
+# 采集脚本
+run_fetch.ps1
+# 校验脚本
+run_validate.ps1
+# 运行日志
+fetch_log.txt
+# 排名算法 + 认证设计（核心商业逻辑）
+docs/API_RANKING_AUTH_DESIGN.md
+# 内部修复记录
+docs/fix_doc_number_drift_*.md
+
+# ---------------------------------------------------------------------------
+# 商业策略文档与原型（2026-09-08）
+# 写明了护城河分析、定价策略、采集流程，公开等于把打法送人
+# ---------------------------------------------------------------------------
+docs/PROPOSAL_V2_COMMERCIAL.md
+docs/PROPOSAL_VENDOR_SKILL.md
+docs/prototype/
+
+# ---------------------------------------------------------------------------
+# Skill 分层存储（2026-09-07 起）
+#
+# L0 指纹  skills/registry/fingerprint/*.jsonl  → 进 Git（客户 Agent 全量扫这层做初筛）
+# L1 能力卡 skills/vendors/*/capability.json    → 不进 Git（走云端按需拉取）
+# L2 自述   skills/vendors/*/SKILL.md           → 不进 Git（走云端按需拉取）
+#
+# 理由：1200+ 家 × (SKILL.md + capability.json) ≈ 11MB 且持续增长。
+# 客户 Agent 只需 L0 指纹即可完成 95% 的初筛淘汰，命中后才调 API 取 L1/L2。
+# 详见 docs/AUTO_PROFILE_REPORT.md
+# ---------------------------------------------------------------------------
+skills/vendors/*/SKILL.md
+skills/vendors/*/capability.json
+skills/vendors/*/assets/
+skills/registry/capability/
+
+# 例外：保留 1 家已认主样板进 Git，作为「标准长什么样」的参考
+!skills/vendors/CN-MFG-0000005/SKILL.md
+!skills/vendors/CN-MFG-0000005/capability.json
+
 # 运行日志与临时文件
 *.log
 _fixed_*_backup.json
