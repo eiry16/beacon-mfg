@@ -1,0 +1,80 @@
+[
+  {
+    "id": "CN-MFG-0007171",
+    "company": "上海通华不锈钢压力容器工程有限公司",
+    "category": "原材料",
+    "keywords": [
+      "不锈钢"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "浦东北路1039号",
+    "contact_phone": "021-68466855; 021-68466881",
+    "lat": 31.289983,
+    "lng": 121.571139,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3332",
+      "name": "金属压力容器制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 集装箱及金属包装容器制造 > 金属压力容器制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "压力容器"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0009362",
+    "company": "无锡亚克压力容器有限公司",
+    "category": "原材料",
+    "keywords": [
+      "亚克力板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "锡港公路泾西工业小区",
+    "contact_phone": "待核实",
+    "lat": 31.657836,
+    "lng": 120.436447,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHNXRQV",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "锡北",
+      "adcode": "320205",
+      "search_keyword": "亚克力板"
+    },
+    "status": "unverified_poi",
+    "industry": {
+      "code": "3332",
+      "name": "金属压力容器制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 集装箱及金属包装容器制造 > 金属压力容器制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "压力容器"
+    },
+    "is_manufacturer": true
+  }
+]

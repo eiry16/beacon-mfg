@@ -2,12 +2,12 @@
   "metadata": {
     "standard": "GB/T 4754-2017 国民经济行业分类（含 2019 年第 1 号修改单）",
     "full_taxonomy": "data/gb4754-full.json（20 门类 / 97 大类 / 473 中类 / 1382 小类）",
-    "total_suppliers": 20264,
-    "classified": 19558,
+    "total_suppliers": 20265,
+    "classified": 19559,
     "unclassified": 706,
-    "total_codes": 101,
-    "generated_at": "2026-09-08",
-    "usage": "按国标小类代码锁定行业 → 取 ids → 从 data/suppliers/<品类>.json 按 id 读详情",
+    "total_codes": 102,
+    "generated_at": "2026-09-09",
+    "usage": "按国标小类代码锁定行业 → 取 ids → 从 data/gb/<门类>/<大类>/<小类>.json 按 id 读详情（或用 gb-index.json 定位文件）",
     "note": "confidence=low 表示公司名称无明确行业信号，由关键词或原品类兜底推断，采购前需复核"
   },
   "index": {
@@ -20395,100 +20395,6 @@
         "CN-MFG-0020221"
       ]
     },
-    "3872": {
-      "name": "照明灯具制造",
-      "name_en": "Lighting Fixtures",
-      "level": "class",
-      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "38",
-      "l2_name": "电气机械和器材制造业",
-      "l3": "387",
-      "l3_name": "照明器具制造",
-      "is_manufacturing": true,
-      "count": 39,
-      "confidence": {
-        "high": 0,
-        "medium": 39,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "中山",
-          "count": 19
-        },
-        {
-          "city": "深圳",
-          "count": 3
-        },
-        {
-          "city": "佛山",
-          "count": 2
-        },
-        {
-          "city": "惠州",
-          "count": 2
-        },
-        {
-          "city": "绍兴",
-          "count": 2
-        },
-        {
-          "city": "无锡",
-          "count": 2
-        },
-        {
-          "city": "嘉兴",
-          "count": 2
-        },
-        {
-          "city": "常州",
-          "count": 2
-        }
-      ],
-      "ids": [
-        "CN-MFG-0001689",
-        "CN-MFG-0001832",
-        "CN-MFG-0002548",
-        "CN-MFG-0002565",
-        "CN-MFG-0003003",
-        "CN-MFG-0003145",
-        "CN-MFG-0003194",
-        "CN-MFG-0003425",
-        "CN-MFG-0003513",
-        "CN-MFG-0003538",
-        "CN-MFG-0004177",
-        "CN-MFG-0004550",
-        "CN-MFG-0004877",
-        "CN-MFG-0005780",
-        "CN-MFG-0006676",
-        "CN-MFG-0009511",
-        "CN-MFG-0014544",
-        "CN-MFG-0015007",
-        "CN-MFG-0015702",
-        "CN-MFG-0015894",
-        "CN-MFG-0015896",
-        "CN-MFG-0015906",
-        "CN-MFG-0015908",
-        "CN-MFG-0015909",
-        "CN-MFG-0015910",
-        "CN-MFG-0015912",
-        "CN-MFG-0015914",
-        "CN-MFG-0015923",
-        "CN-MFG-0015924",
-        "CN-MFG-0015928",
-        "CN-MFG-0016042",
-        "CN-MFG-0016102",
-        "CN-MFG-0016445",
-        "CN-MFG-0016460",
-        "CN-MFG-0017345",
-        "CN-MFG-0018601",
-        "CN-MFG-0019120",
-        "CN-MFG-0019962",
-        "CN-MFG-0020206"
-      ]
-    },
     "3464": {
       "name": "制冷、空调设备制造",
       "name_en": "Refrigeration & Air-conditioning Equipment",
@@ -20583,6 +20489,100 @@
         "CN-MFG-0020276"
       ]
     },
+    "3872": {
+      "name": "照明灯具制造",
+      "name_en": "Lighting Fixtures",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "38",
+      "l2_name": "电气机械和器材制造业",
+      "l3": "387",
+      "l3_name": "照明器具制造",
+      "is_manufacturing": true,
+      "count": 39,
+      "confidence": {
+        "high": 0,
+        "medium": 39,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "中山",
+          "count": 19
+        },
+        {
+          "city": "深圳",
+          "count": 3
+        },
+        {
+          "city": "佛山",
+          "count": 2
+        },
+        {
+          "city": "惠州",
+          "count": 2
+        },
+        {
+          "city": "绍兴",
+          "count": 2
+        },
+        {
+          "city": "无锡",
+          "count": 2
+        },
+        {
+          "city": "嘉兴",
+          "count": 2
+        },
+        {
+          "city": "常州",
+          "count": 2
+        }
+      ],
+      "ids": [
+        "CN-MFG-0001689",
+        "CN-MFG-0001832",
+        "CN-MFG-0002548",
+        "CN-MFG-0002565",
+        "CN-MFG-0003003",
+        "CN-MFG-0003145",
+        "CN-MFG-0003194",
+        "CN-MFG-0003425",
+        "CN-MFG-0003513",
+        "CN-MFG-0003538",
+        "CN-MFG-0004177",
+        "CN-MFG-0004550",
+        "CN-MFG-0004877",
+        "CN-MFG-0005780",
+        "CN-MFG-0006676",
+        "CN-MFG-0009511",
+        "CN-MFG-0014544",
+        "CN-MFG-0015007",
+        "CN-MFG-0015702",
+        "CN-MFG-0015894",
+        "CN-MFG-0015896",
+        "CN-MFG-0015906",
+        "CN-MFG-0015908",
+        "CN-MFG-0015909",
+        "CN-MFG-0015910",
+        "CN-MFG-0015912",
+        "CN-MFG-0015914",
+        "CN-MFG-0015923",
+        "CN-MFG-0015924",
+        "CN-MFG-0015928",
+        "CN-MFG-0016042",
+        "CN-MFG-0016102",
+        "CN-MFG-0016445",
+        "CN-MFG-0016460",
+        "CN-MFG-0017345",
+        "CN-MFG-0018601",
+        "CN-MFG-0019120",
+        "CN-MFG-0019962",
+        "CN-MFG-0020206"
+      ]
+    },
     "3465": {
       "name": "风动和电动工具制造",
       "name_en": "Pneumatic & Electric Tools",
@@ -20675,96 +20675,6 @@
         "CN-MFG-0020066"
       ]
     },
-    "4011": {
-      "name": "工业自动控制系统装置制造",
-      "name_en": "Industrial Automation Control Devices",
-      "level": "class",
-      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "40",
-      "l2_name": "仪器仪表制造业",
-      "l3": "401",
-      "l3_name": "通用仪器仪表制造",
-      "is_manufacturing": true,
-      "count": 35,
-      "confidence": {
-        "high": 0,
-        "medium": 35,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "无锡",
-          "count": 6
-        },
-        {
-          "city": "东莞",
-          "count": 6
-        },
-        {
-          "city": "深圳",
-          "count": 5
-        },
-        {
-          "city": "苏州",
-          "count": 5
-        },
-        {
-          "city": "宁波",
-          "count": 4
-        },
-        {
-          "city": "惠州",
-          "count": 3
-        },
-        {
-          "city": "杭州",
-          "count": 2
-        },
-        {
-          "city": "温州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0000022",
-        "CN-MFG-0000257",
-        "CN-MFG-0000408",
-        "CN-MFG-0000419",
-        "CN-MFG-0000494",
-        "CN-MFG-0000499",
-        "CN-MFG-0001300",
-        "CN-MFG-0001440",
-        "CN-MFG-0001509",
-        "CN-MFG-0001778",
-        "CN-MFG-0001848",
-        "CN-MFG-0001895",
-        "CN-MFG-0002253",
-        "CN-MFG-0003223",
-        "CN-MFG-0003272",
-        "CN-MFG-0003275",
-        "CN-MFG-0003422",
-        "CN-MFG-0003755",
-        "CN-MFG-0004526",
-        "CN-MFG-0004551",
-        "CN-MFG-0004581",
-        "CN-MFG-0004783",
-        "CN-MFG-0004791",
-        "CN-MFG-0004798",
-        "CN-MFG-0004843",
-        "CN-MFG-0005729",
-        "CN-MFG-0006142",
-        "CN-MFG-0006867",
-        "CN-MFG-0008766",
-        "CN-MFG-0008987",
-        "CN-MFG-0009374",
-        "CN-MFG-0018223",
-        "CN-MFG-0018229",
-        "CN-MFG-0018235",
-        "CN-MFG-0019769"
-      ]
-    },
     "3523": {
       "name": "塑料加工专用设备制造",
       "name_en": "Plastics Processing Machinery",
@@ -20853,6 +20763,96 @@
         "CN-MFG-0008447",
         "CN-MFG-0008452",
         "CN-MFG-0008456"
+      ]
+    },
+    "4011": {
+      "name": "工业自动控制系统装置制造",
+      "name_en": "Industrial Automation Control Devices",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "40",
+      "l2_name": "仪器仪表制造业",
+      "l3": "401",
+      "l3_name": "通用仪器仪表制造",
+      "is_manufacturing": true,
+      "count": 35,
+      "confidence": {
+        "high": 0,
+        "medium": 35,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "无锡",
+          "count": 6
+        },
+        {
+          "city": "东莞",
+          "count": 6
+        },
+        {
+          "city": "深圳",
+          "count": 5
+        },
+        {
+          "city": "苏州",
+          "count": 5
+        },
+        {
+          "city": "宁波",
+          "count": 4
+        },
+        {
+          "city": "惠州",
+          "count": 3
+        },
+        {
+          "city": "杭州",
+          "count": 2
+        },
+        {
+          "city": "温州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0000022",
+        "CN-MFG-0000257",
+        "CN-MFG-0000408",
+        "CN-MFG-0000419",
+        "CN-MFG-0000494",
+        "CN-MFG-0000499",
+        "CN-MFG-0001300",
+        "CN-MFG-0001440",
+        "CN-MFG-0001509",
+        "CN-MFG-0001778",
+        "CN-MFG-0001848",
+        "CN-MFG-0001895",
+        "CN-MFG-0002253",
+        "CN-MFG-0003223",
+        "CN-MFG-0003272",
+        "CN-MFG-0003275",
+        "CN-MFG-0003422",
+        "CN-MFG-0003755",
+        "CN-MFG-0004526",
+        "CN-MFG-0004551",
+        "CN-MFG-0004581",
+        "CN-MFG-0004783",
+        "CN-MFG-0004791",
+        "CN-MFG-0004798",
+        "CN-MFG-0004843",
+        "CN-MFG-0005729",
+        "CN-MFG-0006142",
+        "CN-MFG-0006867",
+        "CN-MFG-0008766",
+        "CN-MFG-0008987",
+        "CN-MFG-0009374",
+        "CN-MFG-0018223",
+        "CN-MFG-0018229",
+        "CN-MFG-0018235",
+        "CN-MFG-0019769"
       ]
     },
     "3576": {
@@ -21017,83 +21017,6 @@
         "CN-MFG-0018525"
       ]
     },
-    "3831": {
-      "name": "电线、电缆制造",
-      "name_en": "Wire & Cable",
-      "level": "class",
-      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 电线、电缆制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "38",
-      "l2_name": "电气机械和器材制造业",
-      "l3": "383",
-      "l3_name": "电线、电缆、光缆及电工器材制造",
-      "is_manufacturing": true,
-      "count": 22,
-      "confidence": {
-        "high": 22,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "惠州",
-          "count": 7
-        },
-        {
-          "city": "广州",
-          "count": 4
-        },
-        {
-          "city": "无锡",
-          "count": 2
-        },
-        {
-          "city": "东莞",
-          "count": 2
-        },
-        {
-          "city": "苏州",
-          "count": 1
-        },
-        {
-          "city": "宁波",
-          "count": 1
-        },
-        {
-          "city": "嘉兴",
-          "count": 1
-        },
-        {
-          "city": "佛山",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0007112",
-        "CN-MFG-0007115",
-        "CN-MFG-0007120",
-        "CN-MFG-0007704",
-        "CN-MFG-0007730",
-        "CN-MFG-0007850",
-        "CN-MFG-0008231",
-        "CN-MFG-0010491",
-        "CN-MFG-0013794",
-        "CN-MFG-0013807",
-        "CN-MFG-0013808",
-        "CN-MFG-0013865",
-        "CN-MFG-0013994",
-        "CN-MFG-0014205",
-        "CN-MFG-0014267",
-        "CN-MFG-0014309",
-        "CN-MFG-0015180",
-        "CN-MFG-0018621",
-        "CN-MFG-0018622",
-        "CN-MFG-0018751",
-        "CN-MFG-0018915",
-        "CN-MFG-0019150"
-      ]
-    },
     "3443": {
       "name": "阀门和旋塞制造",
       "name_en": "Valves & Cocks",
@@ -21169,6 +21092,83 @@
         "CN-MFG-0018983",
         "CN-MFG-0019503",
         "CN-MFG-0020132"
+      ]
+    },
+    "3831": {
+      "name": "电线、电缆制造",
+      "name_en": "Wire & Cable",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 电线、电缆制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "38",
+      "l2_name": "电气机械和器材制造业",
+      "l3": "383",
+      "l3_name": "电线、电缆、光缆及电工器材制造",
+      "is_manufacturing": true,
+      "count": 22,
+      "confidence": {
+        "high": 22,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "惠州",
+          "count": 7
+        },
+        {
+          "city": "广州",
+          "count": 4
+        },
+        {
+          "city": "无锡",
+          "count": 2
+        },
+        {
+          "city": "东莞",
+          "count": 2
+        },
+        {
+          "city": "苏州",
+          "count": 1
+        },
+        {
+          "city": "宁波",
+          "count": 1
+        },
+        {
+          "city": "嘉兴",
+          "count": 1
+        },
+        {
+          "city": "佛山",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0007112",
+        "CN-MFG-0007115",
+        "CN-MFG-0007120",
+        "CN-MFG-0007704",
+        "CN-MFG-0007730",
+        "CN-MFG-0007850",
+        "CN-MFG-0008231",
+        "CN-MFG-0010491",
+        "CN-MFG-0013794",
+        "CN-MFG-0013807",
+        "CN-MFG-0013808",
+        "CN-MFG-0013865",
+        "CN-MFG-0013994",
+        "CN-MFG-0014205",
+        "CN-MFG-0014267",
+        "CN-MFG-0014309",
+        "CN-MFG-0015180",
+        "CN-MFG-0018621",
+        "CN-MFG-0018622",
+        "CN-MFG-0018751",
+        "CN-MFG-0018915",
+        "CN-MFG-0019150"
       ]
     },
     "5165": {
@@ -21792,52 +21792,6 @@
         "CN-MFG-0018701"
       ]
     },
-    "3059": {
-      "name": "其他玻璃制品制造",
-      "name_en": "Other Glass Products",
-      "level": "class",
-      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制品制造 > 其他玻璃制品制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "30",
-      "l2_name": "非金属矿物制品业",
-      "l3": "305",
-      "l3_name": "玻璃制品制造",
-      "is_manufacturing": true,
-      "count": 7,
-      "confidence": {
-        "high": 0,
-        "medium": 7,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "上海",
-          "count": 4
-        },
-        {
-          "city": "中山",
-          "count": 1
-        },
-        {
-          "city": "苏州",
-          "count": 1
-        },
-        {
-          "city": "无锡",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0006299",
-        "CN-MFG-0006336",
-        "CN-MFG-0006340",
-        "CN-MFG-0006725",
-        "CN-MFG-0008517",
-        "CN-MFG-0008576",
-        "CN-MFG-0016856"
-      ]
-    },
     "1773": {
       "name": "窗帘、布艺类产品制造",
       "name_en": null,
@@ -21888,102 +21842,50 @@
         "CN-MFG-0019489"
       ]
     },
-    "51": {
-      "name": "批发业",
-      "name_en": null,
-      "level": "division",
-      "path": "F 批发和零售业 > 批发业",
-      "gate": "F",
-      "gate_name": "批发和零售业",
-      "l2": "51",
-      "l2_name": "批发业",
-      "l3": "",
-      "l3_name": "",
-      "is_manufacturing": false,
-      "count": 6,
-      "confidence": {
-        "high": 0,
-        "medium": 0,
-        "low": 6
-      },
-      "top_cities": [
-        {
-          "city": "中山",
-          "count": 2
-        },
-        {
-          "city": "嘉兴",
-          "count": 2
-        },
-        {
-          "city": "上海",
-          "count": 1
-        },
-        {
-          "city": "南京",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0012964",
-        "CN-MFG-0013630",
-        "CN-MFG-0013736",
-        "CN-MFG-0014572",
-        "CN-MFG-0016729",
-        "CN-MFG-0017005"
-      ]
-    },
-    "3453": {
-      "name": "齿轮及齿轮减、变速箱制造",
-      "name_en": "Gears & Gearboxes",
+    "3059": {
+      "name": "其他玻璃制品制造",
+      "name_en": "Other Glass Products",
       "level": "class",
-      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 齿轮及齿轮减、变速箱制造",
+      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制品制造 > 其他玻璃制品制造",
       "gate": "C",
       "gate_name": "制造业",
-      "l2": "34",
-      "l2_name": "通用设备制造业",
-      "l3": "345",
-      "l3_name": "轴承、齿轮和传动部件制造",
+      "l2": "30",
+      "l2_name": "非金属矿物制品业",
+      "l3": "305",
+      "l3_name": "玻璃制品制造",
       "is_manufacturing": true,
-      "count": 6,
+      "count": 7,
       "confidence": {
-        "high": 6,
-        "medium": 0,
+        "high": 0,
+        "medium": 7,
         "low": 0
       },
       "top_cities": [
         {
-          "city": "深圳",
+          "city": "上海",
+          "count": 4
+        },
+        {
+          "city": "中山",
           "count": 1
         },
         {
-          "city": "东莞",
+          "city": "苏州",
           "count": 1
         },
         {
-          "city": "嘉兴",
-          "count": 1
-        },
-        {
-          "city": "宁波",
-          "count": 1
-        },
-        {
-          "city": "南通",
-          "count": 1
-        },
-        {
-          "city": "绍兴",
+          "city": "无锡",
           "count": 1
         }
       ],
       "ids": [
-        "CN-MFG-0000593",
-        "CN-MFG-0006094",
-        "CN-MFG-0011250",
-        "CN-MFG-0011518",
-        "CN-MFG-0011561",
-        "CN-MFG-0019264"
+        "CN-MFG-0006299",
+        "CN-MFG-0006336",
+        "CN-MFG-0006340",
+        "CN-MFG-0006725",
+        "CN-MFG-0008517",
+        "CN-MFG-0008576",
+        "CN-MFG-0016856"
       ]
     },
     "2437": {
@@ -22076,75 +21978,27 @@
         "CN-MFG-0018713"
       ]
     },
-    "3515": {
-      "name": "建筑材料生产专用机械制造",
-      "name_en": null,
+    "3453": {
+      "name": "齿轮及齿轮减、变速箱制造",
+      "name_en": "Gears & Gearboxes",
       "level": "class",
-      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 齿轮及齿轮减、变速箱制造",
       "gate": "C",
       "gate_name": "制造业",
-      "l2": "35",
-      "l2_name": "专用设备制造业",
-      "l3": "351",
-      "l3_name": "采矿、冶金、建筑专用设备制造",
+      "l2": "34",
+      "l2_name": "通用设备制造业",
+      "l3": "345",
+      "l3_name": "轴承、齿轮和传动部件制造",
       "is_manufacturing": true,
-      "count": 5,
+      "count": 6,
       "confidence": {
-        "high": 5,
+        "high": 6,
         "medium": 0,
         "low": 0
       },
       "top_cities": [
         {
-          "city": "广州",
-          "count": 2
-        },
-        {
-          "city": "惠州",
-          "count": 1
-        },
-        {
-          "city": "宁波",
-          "count": 1
-        },
-        {
-          "city": "苏州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0001756",
-        "CN-MFG-0002584",
-        "CN-MFG-0004600",
-        "CN-MFG-0007936",
-        "CN-MFG-0019134"
-      ]
-    },
-    "3393": {
-      "name": "锻件及粉末冶金制品制造",
-      "name_en": "Forgings & Powder Metallurgy Products",
-      "level": "class",
-      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 锻件及粉末冶金制品制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "33",
-      "l2_name": "金属制品业",
-      "l3": "339",
-      "l3_name": "铸造及其他金属制品制造",
-      "is_manufacturing": true,
-      "count": 5,
-      "confidence": {
-        "high": 5,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "南京",
-          "count": 2
-        },
-        {
-          "city": "绍兴",
+          "city": "深圳",
           "count": 1
         },
         {
@@ -22152,16 +22006,74 @@
           "count": 1
         },
         {
-          "city": "广州",
+          "city": "嘉兴",
+          "count": 1
+        },
+        {
+          "city": "宁波",
+          "count": 1
+        },
+        {
+          "city": "南通",
+          "count": 1
+        },
+        {
+          "city": "绍兴",
           "count": 1
         }
       ],
       "ids": [
-        "CN-MFG-0000358",
-        "CN-MFG-0001076",
-        "CN-MFG-0002585",
-        "CN-MFG-0006004",
-        "CN-MFG-0008598"
+        "CN-MFG-0000593",
+        "CN-MFG-0006094",
+        "CN-MFG-0011250",
+        "CN-MFG-0011518",
+        "CN-MFG-0011561",
+        "CN-MFG-0019264"
+      ]
+    },
+    "51": {
+      "name": "批发业",
+      "name_en": null,
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "gate": "F",
+      "gate_name": "批发和零售业",
+      "l2": "51",
+      "l2_name": "批发业",
+      "l3": "",
+      "l3_name": "",
+      "is_manufacturing": false,
+      "count": 6,
+      "confidence": {
+        "high": 0,
+        "medium": 0,
+        "low": 6
+      },
+      "top_cities": [
+        {
+          "city": "中山",
+          "count": 2
+        },
+        {
+          "city": "嘉兴",
+          "count": 2
+        },
+        {
+          "city": "上海",
+          "count": 1
+        },
+        {
+          "city": "南京",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0012964",
+        "CN-MFG-0013630",
+        "CN-MFG-0013736",
+        "CN-MFG-0014572",
+        "CN-MFG-0016729",
+        "CN-MFG-0017005"
       ]
     },
     "3351": {
@@ -22210,6 +22122,94 @@
         "CN-MFG-0003618",
         "CN-MFG-0004941",
         "CN-MFG-0011314"
+      ]
+    },
+    "3393": {
+      "name": "锻件及粉末冶金制品制造",
+      "name_en": "Forgings & Powder Metallurgy Products",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 锻件及粉末冶金制品制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "33",
+      "l2_name": "金属制品业",
+      "l3": "339",
+      "l3_name": "铸造及其他金属制品制造",
+      "is_manufacturing": true,
+      "count": 5,
+      "confidence": {
+        "high": 5,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "南京",
+          "count": 2
+        },
+        {
+          "city": "绍兴",
+          "count": 1
+        },
+        {
+          "city": "东莞",
+          "count": 1
+        },
+        {
+          "city": "广州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0000358",
+        "CN-MFG-0001076",
+        "CN-MFG-0002585",
+        "CN-MFG-0006004",
+        "CN-MFG-0008598"
+      ]
+    },
+    "3515": {
+      "name": "建筑材料生产专用机械制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "35",
+      "l2_name": "专用设备制造业",
+      "l3": "351",
+      "l3_name": "采矿、冶金、建筑专用设备制造",
+      "is_manufacturing": true,
+      "count": 5,
+      "confidence": {
+        "high": 5,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "广州",
+          "count": 2
+        },
+        {
+          "city": "惠州",
+          "count": 1
+        },
+        {
+          "city": "宁波",
+          "count": 1
+        },
+        {
+          "city": "苏州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0001756",
+        "CN-MFG-0002584",
+        "CN-MFG-0004600",
+        "CN-MFG-0007936",
+        "CN-MFG-0019134"
       ]
     },
     "5146": {
@@ -22299,6 +22299,80 @@
         "CN-MFG-0020208"
       ]
     },
+    "2924": {
+      "name": "泡沫塑料制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 泡沫塑料制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "29",
+      "l2_name": "橡胶和塑料制品业",
+      "l3": "292",
+      "l3_name": "塑料制品业",
+      "is_manufacturing": true,
+      "count": 4,
+      "confidence": {
+        "high": 4,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "嘉兴",
+          "count": 2
+        },
+        {
+          "city": "无锡",
+          "count": 1
+        },
+        {
+          "city": "广州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0002741",
+        "CN-MFG-0003523",
+        "CN-MFG-0008449",
+        "CN-MFG-0013259"
+      ]
+    },
+    "3491": {
+      "name": "工业机器人制造",
+      "name_en": "Industrial Robots",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 其他通用设备制造业 > 工业机器人制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "34",
+      "l2_name": "通用设备制造业",
+      "l3": "349",
+      "l3_name": "其他通用设备制造业",
+      "is_manufacturing": true,
+      "count": 4,
+      "confidence": {
+        "high": 4,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "苏州",
+          "count": 2
+        },
+        {
+          "city": "宁波",
+          "count": 2
+        }
+      ],
+      "ids": [
+        "CN-MFG-0000256",
+        "CN-MFG-0002208",
+        "CN-MFG-0004560",
+        "CN-MFG-0012917"
+      ]
+    },
     "3511": {
       "name": "矿山机械制造",
       "name_en": null,
@@ -22342,45 +22416,6 @@
         "CN-MFG-0011421"
       ]
     },
-    "2924": {
-      "name": "泡沫塑料制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 泡沫塑料制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "29",
-      "l2_name": "橡胶和塑料制品业",
-      "l3": "292",
-      "l3_name": "塑料制品业",
-      "is_manufacturing": true,
-      "count": 4,
-      "confidence": {
-        "high": 4,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "嘉兴",
-          "count": 2
-        },
-        {
-          "city": "无锡",
-          "count": 1
-        },
-        {
-          "city": "广州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0002741",
-        "CN-MFG-0003523",
-        "CN-MFG-0008449",
-        "CN-MFG-0013259"
-      ]
-    },
     "3973": {
       "name": "集成电路制造",
       "name_en": "Integrated Circuits",
@@ -22418,151 +22453,6 @@
         "CN-MFG-0003957",
         "CN-MFG-0009764",
         "CN-MFG-0019355"
-      ]
-    },
-    "3491": {
-      "name": "工业机器人制造",
-      "name_en": "Industrial Robots",
-      "level": "class",
-      "path": "C 制造业 > 通用设备制造业 > 其他通用设备制造业 > 工业机器人制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "34",
-      "l2_name": "通用设备制造业",
-      "l3": "349",
-      "l3_name": "其他通用设备制造业",
-      "is_manufacturing": true,
-      "count": 4,
-      "confidence": {
-        "high": 4,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "苏州",
-          "count": 2
-        },
-        {
-          "city": "宁波",
-          "count": 2
-        }
-      ],
-      "ids": [
-        "CN-MFG-0000256",
-        "CN-MFG-0002208",
-        "CN-MFG-0004560",
-        "CN-MFG-0012917"
-      ]
-    },
-    "3435": {
-      "name": "电梯、自动扶梯及升降机制造",
-      "name_en": "Elevators & Escalators",
-      "level": "class",
-      "path": "C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 电梯、自动扶梯及升降机制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "34",
-      "l2_name": "通用设备制造业",
-      "l3": "343",
-      "l3_name": "物料搬运设备制造",
-      "is_manufacturing": true,
-      "count": 3,
-      "confidence": {
-        "high": 3,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "苏州",
-          "count": 2
-        },
-        {
-          "city": "广州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0006779",
-        "CN-MFG-0006800",
-        "CN-MFG-0007121"
-      ]
-    },
-    "3514": {
-      "name": "建筑工程用机械制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑工程用机械制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "35",
-      "l2_name": "专用设备制造业",
-      "l3": "351",
-      "l3_name": "采矿、冶金、建筑专用设备制造",
-      "is_manufacturing": true,
-      "count": 3,
-      "confidence": {
-        "high": 3,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "上海",
-          "count": 1
-        },
-        {
-          "city": "宁波",
-          "count": 1
-        },
-        {
-          "city": "杭州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0003478",
-        "CN-MFG-0008199",
-        "CN-MFG-0009028"
-      ]
-    },
-    "3481": {
-      "name": "金属密封件制造",
-      "name_en": "Metal Seals",
-      "level": "class",
-      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 金属密封件制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "34",
-      "l2_name": "通用设备制造业",
-      "l3": "348",
-      "l3_name": "通用零部件制造",
-      "is_manufacturing": true,
-      "count": 3,
-      "confidence": {
-        "high": 0,
-        "medium": 3,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "广州",
-          "count": 1
-        },
-        {
-          "city": "嘉兴",
-          "count": 1
-        },
-        {
-          "city": "杭州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0005572",
-        "CN-MFG-0009155",
-        "CN-MFG-0017043"
       ]
     },
     "1784": {
@@ -22667,17 +22557,17 @@
         "CN-MFG-0018383"
       ]
     },
-    "3584": {
-      "name": "医疗、外科及兽医用器械制造",
-      "name_en": "Medical & Surgical Instruments",
+    "3435": {
+      "name": "电梯、自动扶梯及升降机制造",
+      "name_en": "Elevators & Escalators",
       "level": "class",
-      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "path": "C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 电梯、自动扶梯及升降机制造",
       "gate": "C",
       "gate_name": "制造业",
-      "l2": "35",
-      "l2_name": "专用设备制造业",
-      "l3": "358",
-      "l3_name": "医疗仪器设备及器械制造",
+      "l2": "34",
+      "l2_name": "通用设备制造业",
+      "l3": "343",
+      "l3_name": "物料搬运设备制造",
       "is_manufacturing": true,
       "count": 3,
       "confidence": {
@@ -22691,14 +22581,14 @@
           "count": 2
         },
         {
-          "city": "嘉兴",
+          "city": "广州",
           "count": 1
         }
       ],
       "ids": [
-        "CN-MFG-0001755",
-        "CN-MFG-0003527",
-        "CN-MFG-0011282"
+        "CN-MFG-0006779",
+        "CN-MFG-0006800",
+        "CN-MFG-0007121"
       ]
     },
     "3467": {
@@ -22739,6 +22629,116 @@
         "CN-MFG-0018671"
       ]
     },
+    "3481": {
+      "name": "金属密封件制造",
+      "name_en": "Metal Seals",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 金属密封件制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "34",
+      "l2_name": "通用设备制造业",
+      "l3": "348",
+      "l3_name": "通用零部件制造",
+      "is_manufacturing": true,
+      "count": 3,
+      "confidence": {
+        "high": 0,
+        "medium": 3,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "广州",
+          "count": 1
+        },
+        {
+          "city": "嘉兴",
+          "count": 1
+        },
+        {
+          "city": "杭州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0005572",
+        "CN-MFG-0009155",
+        "CN-MFG-0017043"
+      ]
+    },
+    "3514": {
+      "name": "建筑工程用机械制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑工程用机械制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "35",
+      "l2_name": "专用设备制造业",
+      "l3": "351",
+      "l3_name": "采矿、冶金、建筑专用设备制造",
+      "is_manufacturing": true,
+      "count": 3,
+      "confidence": {
+        "high": 3,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "上海",
+          "count": 1
+        },
+        {
+          "city": "宁波",
+          "count": 1
+        },
+        {
+          "city": "杭州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0003478",
+        "CN-MFG-0008199",
+        "CN-MFG-0009028"
+      ]
+    },
+    "3584": {
+      "name": "医疗、外科及兽医用器械制造",
+      "name_en": "Medical & Surgical Instruments",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "35",
+      "l2_name": "专用设备制造业",
+      "l3": "358",
+      "l3_name": "医疗仪器设备及器械制造",
+      "is_manufacturing": true,
+      "count": 3,
+      "confidence": {
+        "high": 3,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "苏州",
+          "count": 2
+        },
+        {
+          "city": "嘉兴",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0001755",
+        "CN-MFG-0003527",
+        "CN-MFG-0011282"
+      ]
+    },
     "3741": {
       "name": "飞机制造",
       "name_en": null,
@@ -22777,17 +22777,17 @@
         "CN-MFG-0017030"
       ]
     },
-    "3332": {
-      "name": "金属压力容器制造",
+    "1771": {
+      "name": "床上用品制造",
       "name_en": null,
       "level": "class",
-      "path": "C 制造业 > 金属制品业 > 集装箱及金属包装容器制造 > 金属压力容器制造",
+      "path": "C 制造业 > 纺织业 > 家用纺织制成品制造 > 床上用品制造",
       "gate": "C",
       "gate_name": "制造业",
-      "l2": "33",
-      "l2_name": "金属制品业",
-      "l3": "333",
-      "l3_name": "集装箱及金属包装容器制造",
+      "l2": "17",
+      "l2_name": "纺织业",
+      "l3": "177",
+      "l3_name": "家用纺织制成品制造",
       "is_manufacturing": true,
       "count": 2,
       "confidence": {
@@ -22797,50 +22797,17 @@
       },
       "top_cities": [
         {
-          "city": "上海",
+          "city": "嘉兴",
           "count": 1
         },
         {
-          "city": "无锡",
+          "city": "惠州",
           "count": 1
         }
       ],
       "ids": [
-        "CN-MFG-0007171",
-        "CN-MFG-0009362"
-      ]
-    },
-    "2645": {
-      "name": "染料制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 染料制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "26",
-      "l2_name": "化学原料和化学制品制造业",
-      "l3": "264",
-      "l3_name": "涂料、油墨、颜料及类似产品制造",
-      "is_manufacturing": true,
-      "count": 2,
-      "confidence": {
-        "high": 2,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "常州",
-          "count": 1
-        },
-        {
-          "city": "绍兴",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0010527",
-        "CN-MFG-0019651"
+        "CN-MFG-0008512",
+        "CN-MFG-0018246"
       ]
     },
     "2452": {
@@ -22876,6 +22843,72 @@
         "CN-MFG-0015876"
       ]
     },
+    "2645": {
+      "name": "染料制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 染料制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "26",
+      "l2_name": "化学原料和化学制品制造业",
+      "l3": "264",
+      "l3_name": "涂料、油墨、颜料及类似产品制造",
+      "is_manufacturing": true,
+      "count": 2,
+      "confidence": {
+        "high": 2,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "常州",
+          "count": 1
+        },
+        {
+          "city": "绍兴",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0010527",
+        "CN-MFG-0019651"
+      ]
+    },
+    "3332": {
+      "name": "金属压力容器制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 集装箱及金属包装容器制造 > 金属压力容器制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "33",
+      "l2_name": "金属制品业",
+      "l3": "333",
+      "l3_name": "集装箱及金属包装容器制造",
+      "is_manufacturing": true,
+      "count": 2,
+      "confidence": {
+        "high": 2,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "上海",
+          "count": 1
+        },
+        {
+          "city": "无锡",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0007171",
+        "CN-MFG-0009362"
+      ]
+    },
     "3432": {
       "name": "生产专用起重机制造",
       "name_en": null,
@@ -22907,68 +22940,6 @@
       "ids": [
         "CN-MFG-0001393",
         "CN-MFG-0011507"
-      ]
-    },
-    "1771": {
-      "name": "床上用品制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 纺织业 > 家用纺织制成品制造 > 床上用品制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "17",
-      "l2_name": "纺织业",
-      "l3": "177",
-      "l3_name": "家用纺织制成品制造",
-      "is_manufacturing": true,
-      "count": 2,
-      "confidence": {
-        "high": 2,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "嘉兴",
-          "count": 1
-        },
-        {
-          "city": "惠州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0008512",
-        "CN-MFG-0018246"
-      ]
-    },
-    "3577": {
-      "name": "棉花加工机械制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 棉花加工机械制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "35",
-      "l2_name": "专用设备制造业",
-      "l3": "357",
-      "l3_name": "农、林、牧、渔专用机械制造",
-      "is_manufacturing": true,
-      "count": 2,
-      "confidence": {
-        "high": 2,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "杭州",
-          "count": 2
-        }
-      ],
-      "ids": [
-        "CN-MFG-0008603",
-        "CN-MFG-0017065"
       ]
     },
     "3463": {
@@ -23004,270 +22975,47 @@
         "CN-MFG-0003887"
       ]
     },
-    "4210": {
-      "name": "金属废料和碎屑加工处理",
+    "3577": {
+      "name": "棉花加工机械制造",
       "name_en": null,
       "level": "class",
-      "path": "C 制造业 > 废弃资源综合利用业 > 金属废料和碎屑加工处理 > 金属废料和碎屑加工处理",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 棉花加工机械制造",
       "gate": "C",
       "gate_name": "制造业",
-      "l2": "42",
-      "l2_name": "废弃资源综合利用业",
-      "l3": "421",
-      "l3_name": "金属废料和碎屑加工处理",
+      "l2": "35",
+      "l2_name": "专用设备制造业",
+      "l3": "357",
+      "l3_name": "农、林、牧、渔专用机械制造",
       "is_manufacturing": true,
-      "count": 1,
+      "count": 2,
       "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "嘉兴",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0007451"
-      ]
-    },
-    "5287": {
-      "name": "陶瓷、石材装饰材料零售",
-      "name_en": null,
-      "level": "class",
-      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 陶瓷、石材装饰材料零售",
-      "gate": "F",
-      "gate_name": "批发和零售业",
-      "l2": "52",
-      "l2_name": "零售业",
-      "l3": "528",
-      "l3_name": "五金、家具及室内装饰材料专门零售",
-      "is_manufacturing": false,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "佛山",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0014314"
-      ]
-    },
-    "3353": {
-      "name": "安全、消防用金属制品制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 安全、消防用金属制品制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "33",
-      "l2_name": "金属制品业",
-      "l3": "335",
-      "l3_name": "建筑、安全用金属制品制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "广州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0014320"
-      ]
-    },
-    "3042": {
-      "name": "特种玻璃制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制造 > 特种玻璃制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "30",
-      "l2_name": "非金属矿物制品业",
-      "l3": "304",
-      "l3_name": "玻璃制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
+        "high": 2,
         "medium": 0,
         "low": 0
       },
       "top_cities": [
         {
           "city": "杭州",
-          "count": 1
+          "count": 2
         }
       ],
       "ids": [
-        "CN-MFG-0017985"
+        "CN-MFG-0008603",
+        "CN-MFG-0017065"
       ]
     },
-    "3033": {
-      "name": "防水建筑材料制造",
+    "1392": {
+      "name": "豆制品制造",
       "name_en": null,
       "level": "class",
-      "path": "C 制造业 > 非金属矿物制品业 > 砖瓦、石材等建筑材料制造 > 防水建筑材料制造",
+      "path": "C 制造业 > 农副食品加工业 > 其他农副食品加工 > 豆制品制造",
       "gate": "C",
       "gate_name": "制造业",
-      "l2": "30",
-      "l2_name": "非金属矿物制品业",
-      "l3": "303",
-      "l3_name": "砖瓦、石材等建筑材料制造",
+      "l2": "13",
+      "l2_name": "农副食品加工业",
+      "l3": "139",
+      "l3_name": "其他农副食品加工",
       "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "绍兴",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0020006"
-      ]
-    },
-    "3422": {
-      "name": "金属成形机床制造",
-      "name_en": "Metal-forming Machine Tools",
-      "level": "class",
-      "path": "C 制造业 > 通用设备制造业 > 金属加工机械制造 > 金属成形机床制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "34",
-      "l2_name": "通用设备制造业",
-      "l3": "342",
-      "l3_name": "金属加工机械制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "杭州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0002765"
-      ]
-    },
-    "3780": {
-      "name": "非公路休闲车及零配件制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 非公路休闲车及零配件制造 > 非公路休闲车及零配件制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "37",
-      "l2_name": "铁路、船舶、航空航天和其他运输设备制造业",
-      "l3": "378",
-      "l3_name": "非公路休闲车及零配件制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "苏州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0010323"
-      ]
-    },
-    "3715": {
-      "name": "铁路机车车辆配件制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 铁路运输设备制造 > 铁路机车车辆配件制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "37",
-      "l2_name": "铁路、船舶、航空航天和其他运输设备制造业",
-      "l3": "371",
-      "l3_name": "铁路运输设备制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "常州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0010715"
-      ]
-    },
-    "2140": {
-      "name": "塑料家具制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 家具制造业 > 塑料家具制造 > 塑料家具制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "21",
-      "l2_name": "家具制造业",
-      "l3": "214",
-      "l3_name": "塑料家具制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "佛山",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0010796"
-      ]
-    },
-    "5131": {
-      "name": "纺织品、针织品及原料批发",
-      "name_en": null,
-      "level": "class",
-      "path": "F 批发和零售业 > 批发业 > 纺织、服装及家庭用品批发 > 纺织品、针织品及原料批发",
-      "gate": "F",
-      "gate_name": "批发和零售业",
-      "l2": "51",
-      "l2_name": "批发业",
-      "l3": "513",
-      "l3_name": "纺织、服装及家庭用品批发",
-      "is_manufacturing": false,
       "count": 1,
       "confidence": {
         "high": 1,
@@ -23281,119 +23029,7 @@
         }
       ],
       "ids": [
-        "CN-MFG-0015451"
-      ]
-    },
-    "3521": {
-      "name": "炼油、化工生产专用设备制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 炼油、化工生产专用设备制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "35",
-      "l2_name": "专用设备制造业",
-      "l3": "352",
-      "l3_name": "化工、木材、非金属加工专用设备制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "无锡",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0003419"
-      ]
-    },
-    "4021": {
-      "name": "环境监测专用仪器仪表制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 仪器仪表制造业 > 专用仪器仪表制造 > 环境监测专用仪器仪表制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "40",
-      "l2_name": "仪器仪表制造业",
-      "l3": "402",
-      "l3_name": "专用仪器仪表制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "南京",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0003624"
-      ]
-    },
-    "5274": {
-      "name": "通信设备零售",
-      "name_en": null,
-      "level": "class",
-      "path": "F 批发和零售业 > 零售业 > 家用电器及电子产品专门零售 > 通信设备零售",
-      "gate": "F",
-      "gate_name": "批发和零售业",
-      "l2": "52",
-      "l2_name": "零售业",
-      "l3": "527",
-      "l3_name": "家用电器及电子产品专门零售",
-      "is_manufacturing": false,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "广州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0013628"
-      ]
-    },
-    "2911": {
-      "name": "轮胎制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 轮胎制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "29",
-      "l2_name": "橡胶和塑料制品业",
-      "l3": "291",
-      "l3_name": "橡胶制品业",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "杭州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0017451"
+        "CN-MFG-0014801"
       ]
     },
     "2033": {
@@ -23424,6 +23060,118 @@
         "CN-MFG-0008116"
       ]
     },
+    "2041": {
+      "name": "竹制品制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 竹、藤、棕、草等制品制造 > 竹制品制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "20",
+      "l2_name": "木材加工和木、竹、藤、棕、草制品业",
+      "l3": "204",
+      "l3_name": "竹、藤、棕、草等制品制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "惠州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0018234"
+      ]
+    },
+    "2140": {
+      "name": "塑料家具制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 塑料家具制造 > 塑料家具制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "21",
+      "l2_name": "家具制造业",
+      "l3": "214",
+      "l3_name": "塑料家具制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "佛山",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0010796"
+      ]
+    },
+    "254": {
+      "name": "生物质燃料加工",
+      "name_en": null,
+      "level": "group",
+      "path": "C 制造业 > 石油、煤炭及其他燃料加工业 > 生物质燃料加工",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "25",
+      "l2_name": "石油、煤炭及其他燃料加工业",
+      "l3": "254",
+      "l3_name": "生物质燃料加工",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 0,
+        "medium": 1,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "常州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0011337"
+      ]
+    },
+    "2911": {
+      "name": "轮胎制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 轮胎制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "29",
+      "l2_name": "橡胶和塑料制品业",
+      "l3": "291",
+      "l3_name": "橡胶制品业",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "杭州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0017451"
+      ]
+    },
     "2925": {
       "name": "塑料人造革、合成革制造",
       "name_en": null,
@@ -23450,6 +23198,146 @@
       ],
       "ids": [
         "CN-MFG-0008422"
+      ]
+    },
+    "3033": {
+      "name": "防水建筑材料制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 砖瓦、石材等建筑材料制造 > 防水建筑材料制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "30",
+      "l2_name": "非金属矿物制品业",
+      "l3": "303",
+      "l3_name": "砖瓦、石材等建筑材料制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "绍兴",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0020006"
+      ]
+    },
+    "3042": {
+      "name": "特种玻璃制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制造 > 特种玻璃制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "30",
+      "l2_name": "非金属矿物制品业",
+      "l3": "304",
+      "l3_name": "玻璃制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "杭州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0017985"
+      ]
+    },
+    "3331": {
+      "name": "集装箱制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 集装箱及金属包装容器制造 > 集装箱制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "33",
+      "l2_name": "金属制品业",
+      "l3": "333",
+      "l3_name": "集装箱及金属包装容器制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "佛山",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0002049"
+      ]
+    },
+    "3353": {
+      "name": "安全、消防用金属制品制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 安全、消防用金属制品制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "33",
+      "l2_name": "金属制品业",
+      "l3": "335",
+      "l3_name": "建筑、安全用金属制品制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "广州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0014320"
+      ]
+    },
+    "3422": {
+      "name": "金属成形机床制造",
+      "name_en": "Metal-forming Machine Tools",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 金属加工机械制造 > 金属成形机床制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "34",
+      "l2_name": "通用设备制造业",
+      "l3": "342",
+      "l3_name": "金属加工机械制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "杭州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0002765"
       ]
     },
     "3423": {
@@ -23480,32 +23368,60 @@
         "CN-MFG-0008561"
       ]
     },
-    "254": {
-      "name": "生物质燃料加工",
+    "3434": {
+      "name": "连续搬运设备制造",
       "name_en": null,
-      "level": "group",
-      "path": "C 制造业 > 石油、煤炭及其他燃料加工业 > 生物质燃料加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 连续搬运设备制造",
       "gate": "C",
       "gate_name": "制造业",
-      "l2": "25",
-      "l2_name": "石油、煤炭及其他燃料加工业",
-      "l3": "254",
-      "l3_name": "生物质燃料加工",
+      "l2": "34",
+      "l2_name": "通用设备制造业",
+      "l3": "343",
+      "l3_name": "物料搬运设备制造",
       "is_manufacturing": true,
       "count": 1,
       "confidence": {
-        "high": 0,
-        "medium": 1,
+        "high": 1,
+        "medium": 0,
         "low": 0
       },
       "top_cities": [
         {
-          "city": "常州",
+          "city": "上海",
           "count": 1
         }
       ],
       "ids": [
-        "CN-MFG-0011337"
+        "CN-MFG-0020317"
+      ]
+    },
+    "3521": {
+      "name": "炼油、化工生产专用设备制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 炼油、化工生产专用设备制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "35",
+      "l2_name": "专用设备制造业",
+      "l3": "352",
+      "l3_name": "化工、木材、非金属加工专用设备制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "无锡",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0003419"
       ]
     },
     "357": {
@@ -23564,6 +23480,62 @@
         "CN-MFG-0012247"
       ]
     },
+    "3715": {
+      "name": "铁路机车车辆配件制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 铁路运输设备制造 > 铁路机车车辆配件制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "37",
+      "l2_name": "铁路、船舶、航空航天和其他运输设备制造业",
+      "l3": "371",
+      "l3_name": "铁路运输设备制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "常州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0010715"
+      ]
+    },
+    "3780": {
+      "name": "非公路休闲车及零配件制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 非公路休闲车及零配件制造 > 非公路休闲车及零配件制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "37",
+      "l2_name": "铁路、船舶、航空航天和其他运输设备制造业",
+      "l3": "378",
+      "l3_name": "非公路休闲车及零配件制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "苏州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0010323"
+      ]
+    },
     "3823": {
       "name": "配电开关控制设备制造",
       "name_en": "Switchgear & Control Equipment",
@@ -23590,90 +23562,6 @@
       ],
       "ids": [
         "CN-MFG-0012427"
-      ]
-    },
-    "1392": {
-      "name": "豆制品制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 农副食品加工业 > 其他农副食品加工 > 豆制品制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "13",
-      "l2_name": "农副食品加工业",
-      "l3": "139",
-      "l3_name": "其他农副食品加工",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "珠海",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0014801"
-      ]
-    },
-    "2041": {
-      "name": "竹制品制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 竹、藤、棕、草等制品制造 > 竹制品制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "20",
-      "l2_name": "木材加工和木、竹、藤、棕、草制品业",
-      "l3": "204",
-      "l3_name": "竹、藤、棕、草等制品制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "惠州",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0018234"
-      ]
-    },
-    "3331": {
-      "name": "集装箱制造",
-      "name_en": null,
-      "level": "class",
-      "path": "C 制造业 > 金属制品业 > 集装箱及金属包装容器制造 > 集装箱制造",
-      "gate": "C",
-      "gate_name": "制造业",
-      "l2": "33",
-      "l2_name": "金属制品业",
-      "l3": "333",
-      "l3_name": "集装箱及金属包装容器制造",
-      "is_manufacturing": true,
-      "count": 1,
-      "confidence": {
-        "high": 1,
-        "medium": 0,
-        "low": 0
-      },
-      "top_cities": [
-        {
-          "city": "佛山",
-          "count": 1
-        }
-      ],
-      "ids": [
-        "CN-MFG-0002049"
       ]
     },
     "3857": {
@@ -23730,6 +23618,146 @@
       ],
       "ids": [
         "CN-MFG-0018341"
+      ]
+    },
+    "4021": {
+      "name": "环境监测专用仪器仪表制造",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 专用仪器仪表制造 > 环境监测专用仪器仪表制造",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "40",
+      "l2_name": "仪器仪表制造业",
+      "l3": "402",
+      "l3_name": "专用仪器仪表制造",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "南京",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0003624"
+      ]
+    },
+    "4210": {
+      "name": "金属废料和碎屑加工处理",
+      "name_en": null,
+      "level": "class",
+      "path": "C 制造业 > 废弃资源综合利用业 > 金属废料和碎屑加工处理 > 金属废料和碎屑加工处理",
+      "gate": "C",
+      "gate_name": "制造业",
+      "l2": "42",
+      "l2_name": "废弃资源综合利用业",
+      "l3": "421",
+      "l3_name": "金属废料和碎屑加工处理",
+      "is_manufacturing": true,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "嘉兴",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0007451"
+      ]
+    },
+    "5131": {
+      "name": "纺织品、针织品及原料批发",
+      "name_en": null,
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 纺织、服装及家庭用品批发 > 纺织品、针织品及原料批发",
+      "gate": "F",
+      "gate_name": "批发和零售业",
+      "l2": "51",
+      "l2_name": "批发业",
+      "l3": "513",
+      "l3_name": "纺织、服装及家庭用品批发",
+      "is_manufacturing": false,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "珠海",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0015451"
+      ]
+    },
+    "5274": {
+      "name": "通信设备零售",
+      "name_en": null,
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 家用电器及电子产品专门零售 > 通信设备零售",
+      "gate": "F",
+      "gate_name": "批发和零售业",
+      "l2": "52",
+      "l2_name": "零售业",
+      "l3": "527",
+      "l3_name": "家用电器及电子产品专门零售",
+      "is_manufacturing": false,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "广州",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0013628"
+      ]
+    },
+    "5287": {
+      "name": "陶瓷、石材装饰材料零售",
+      "name_en": null,
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 陶瓷、石材装饰材料零售",
+      "gate": "F",
+      "gate_name": "批发和零售业",
+      "l2": "52",
+      "l2_name": "零售业",
+      "l3": "528",
+      "l3_name": "五金、家具及室内装饰材料专门零售",
+      "is_manufacturing": false,
+      "count": 1,
+      "confidence": {
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "top_cities": [
+        {
+          "city": "佛山",
+          "count": 1
+        }
+      ],
+      "ids": [
+        "CN-MFG-0014314"
       ]
     }
   }

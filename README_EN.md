@@ -28,11 +28,12 @@ beacon-mfg/
 ├── SKILL.md                    # Agent instructions (Chinese dataset)
 ├── SKILL_EN.md                 # Agent instructions (English dataset)
 ├── data/
-│   ├── index.json              # category → keywords → file path index
+│   ├── gb/                     # Chinese data: GB/T 4754 four-level archive
+│   ├── gb-index.json           # archive index: 4-level tree with counts
+│   ├── gb-alias.json           # procurement-term alias table → GB class codes
 │   ├── industry-index.json     # GB/T 4754 industry index: code → supplier IDs
 │   ├── region-index.json       # region index: city → supplier IDs
-│   ├── suppliers/*.json        # Chinese data (split by category, 8 files)
-│   └── en/*.json               # English mirror data (8 files)
+│   └── en/gb/                  # English mirror (same GB layout)
 ├── schema/supplier.schema.json # record structure definition
 └── docs/                       # contribution guide, category rules, anti-copying
 ```
@@ -55,20 +56,10 @@ No dependencies, no keys, no network required.
 
 ## Data Status
 
-**Chinese** (`data/suppliers/`): **20,264 records total** across 8 categories:
-
-| Category | Total | Verified | Pending |
-|---|---|---|---|
-| Precision Machining (CNC) | 4,816 | 2,571 | 2,245 |
-| Sheet Metal & Stamping | 1,950 | 1,454 | 496 |
-| Injection Molding | 3,139 | 1,398 | 1,741 |
-| Die Casting | 732 | 393 | 339 |
-| Electronic Components | 1,107 | 660 | 446 |
-| Surface Treatment | 1,765 | 851 | 914 |
-| Standard Parts | 2,884 | 2,144 | 740 |
-| Raw Materials | 3,871 | 3,221 | 650 |
-
-> **Verified**: 12,692 records with confirmed phone numbers; 7,571 pending.
+**Chinese** (`data/gb/`, four-level GB/T 4754 archive): **20,265 records total**
+(12,693 phone-verified, 7,571 pending), spanning **23 national divisions** (incl. unclassified).
+Top divisions: General Equipment (34) 5,941 · Metal Products (33) 5,640 · Rubber & Plastics (29) 2,280 ·
+Special Equipment (35) 1,244 · Computer & Electronics (39) 940 · Wholesale (51, non-manufacturer) 1,646.
 
 ### Industry classification (GB/T 4754-2017)
 
@@ -79,7 +70,7 @@ Every supplier carries a national industry class code:
 "is_manufacturer": true
 ```
 
-- **19,610 / 20,264 records classified** into **48 national industry classes** (654 unclassified)
+- **19,559 / 20,265 records classified** into **102 national industry classes** (706 unclassified)
 - `confidence`: `high` = company name matched directly; `medium` / `low` = inferred from keywords or category
 - `is_manufacturer=false` → the company falls under **F51 Wholesale** (trader, not a factory)
 - Rule of thumb: **trust the company name**; search keywords may only fill gaps;
@@ -91,12 +82,12 @@ Every supplier carries a national industry class code:
   This stops a *shop selling mold parts* from being listed as a *mold manufacturer*
   (fixed 2026-09-08, 635 records affected).
 
-Top classes (full list in `data/industry-index.json`): 3484 Machined Parts 3,513 ·
-2929 Plastic Parts 2,022 · 3360 Surface Treatment 1,666 · 3311 Metal Structure 1,511 ·
-3399 Other Metal Products 1,374 · 3525 Molds & Dies 1,105 · 3482 Fasteners 878 · 3130 Steel Rolling 820.
+Top classes (full list in `data/industry-index.json`): 3484 Machined Parts 3,415 ·
+2929 Plastic Parts 2,087 · 3360 Surface Treatment 1,632 · 3311 Metal Structure 1,498 ·
+3399 Other Metal Products 1,374 · 3525 Molds & Dies 1,091 · 3482 Fasteners 876 · 3989 Other Electronic Components 838.
 > **Pending**: 7,571 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
-**English** (`data/en/`): **20,264 English-mirror records** for overseas agents/buyers
+**English** (`data/en/`): **20,265 English-mirror records** for overseas agents/buyers
 (1:1 with the Chinese dataset by `id`; `industry_en` carries the English GB/T 4754 class
 name — 19,610 records, same as the classified count in Chinese).
 

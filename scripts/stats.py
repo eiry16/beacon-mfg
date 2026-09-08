@@ -7,7 +7,8 @@ BeaconMFG 数据统计（生成 data/DATA_STATS.md）
     python scripts/stats.py
 
 说明:
-    - 统计 data/suppliers/*.json 中文主库与 data/en/*.json 英文镜像，输出 markdown。
+    - 统计 data/gb/ 国标归档中文主库与 data/en/gb/ 英文镜像，输出 markdown。
+    - 明细口径为国标大类（GB/T 4754 2 位码），未解析出码的归「未归类」。
     - 状态分类（SPEC §2.4）优先读取 status 字段；旧数据无 status 时按 is_template 兼容推导：
         is_template=false                    → verified（电话完整）
         is_template=true 且公司名含「示例/测试」 → template（示例占位）
@@ -20,21 +21,12 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-INDEX = ROOT / "data" / "index.json"
-SUPPLIERS_DIR = ROOT / "data" / "suppliers"
-EN_DIR = ROOT / "data" / "en"
-STATS_FILE = ROOT / "data" / "DATA_STATS.md"
+sys.path.insert(0, str(ROOT / "scripts"))
 
-EN_FILES = {
-    "精密机械加工": "precision-machining.json",
-    "钣金冲压": "sheet-metal.json",
-    "注塑成型": "injection-molding.json",
-    "压铸": "die-casting.json",
-    "电子元器件": "electronic-components.json",
-    "表面处理": "surface-treatment.json",
-    "标准件": "standard-parts.json",
-    "原材料": "raw-materials.json",
-}
+import gb_store  # noqa: E402
+
+EN_GB_DIR = ROOT / "data" / "en" / "gb"
+STATS_FILE = ROOT / "data" / "DATA_STATS.md"
 
 STATUS_VERIFIED = "verified"
 STATUS_UNVERIFIED = "unverified_poi"
@@ -46,13 +38,15 @@ SOURCE_LABELS = {
     "gov_list": "政府公开名单（专精特新/高企等）",
     "company_website": "企业官网",
     "exhibition": "展会/协会名录",
+    "certification": "企业自主认证（平台核验后回流）",
     "template": "示例占位数据",
 }
 SOURCE_NOTE = {
-    "public_directory": "当前数据 100% 为此来源",
+    "public_directory": "地图 POI 抓取为主要来源",
     "gov_list": "尚未引入",
     "company_website": "尚未引入",
     "exhibition": "尚未引入",
+    "certification": "certify_writeback.py 回流，携带 cl 灯牌",
     "template": "仅 status=template 标识，不作 source 值",
 }
 
@@ -120,83 +114,83 @@ def resolve_status(item):
     return None  # 既无 status 也无 is_template（非法，由 validate.py 报错）
 
 
-def _count_cn(index):
-    """中文主库分品类计数（总数 / verified / unverified_poi / template / 其他）。"""
+def _count_cn():
+    """中文主库按国标大类（2 位码）计数（总数 / verified / unverified_poi / template / 其他）。
+
+    解析不出国标码的记录统一归「未归类」行，一条不丢。
+    """
+    divisions = gb_store._taxonomy()["divisions"]
+    order: list[str] = []
+    acc: dict[str, dict] = {}
+    for it in gb_store.load_all():
+        ind = it.get("industry") or {}
+        loc = gb_store.resolve(ind.get("code"))
+        if loc:
+            div = loc[1]
+            label = f"{div} {divisions.get(div, {}).get('name', '')}"
+        else:
+            label = "未归类"
+        if label not in acc:
+            acc[label] = {s: 0 for s in ALL_STATUSES}
+            acc[label]["unknown"] = 0
+            order.append(label)
+        st = resolve_status(it)
+        acc[label][st if st in ALL_STATUSES else "unknown"] += 1
     rows = []
-    for cat in index["categories"]:
-        path = SUPPLIERS_DIR / cat["file"]
-        items = load_json(path)
-        if items is None:
-            items = []
-        buckets = {s: 0 for s in ALL_STATUSES}
-        buckets["unknown"] = 0
-        for it in items:
-            st = resolve_status(it)
-            key = st if st in ALL_STATUSES else "unknown"
-            buckets[key] += 1
+    for label in order:
+        a = acc[label]
         rows.append({
-            "name": cat["name"],
-            "total": len(items),
-            STATUS_VERIFIED: buckets[STATUS_VERIFIED],
-            STATUS_UNVERIFIED: buckets[STATUS_UNVERIFIED],
-            STATUS_TEMPLATE: buckets[STATUS_TEMPLATE],
-            "unknown": buckets["unknown"],
+            "name": label,
+            "total": a[STATUS_VERIFIED] + a[STATUS_UNVERIFIED] + a[STATUS_TEMPLATE] + a["unknown"],
+            STATUS_VERIFIED: a[STATUS_VERIFIED],
+            STATUS_UNVERIFIED: a[STATUS_UNVERIFIED],
+            STATUS_TEMPLATE: a[STATUS_TEMPLATE],
+            "unknown": a["unknown"],
         })
     return rows
 
 
 def _count_en():
-    """英文镜像分品类计数（仅统计 EN_FILES 映射内的 8 个镜像文件）。"""
+    """英文镜像计数（data/en/gb/ 国标归档总量）。"""
     total = 0
-    per_cat = {}
     problems = []
-    for cat_name, fn in EN_FILES.items():
-        path = EN_DIR / fn
+    if not EN_GB_DIR.exists():
+        return 0, {}, ["data/en/gb/ 不存在（跑 scripts/migrate_en_to_gb.py --apply）"]
+    for path in sorted(EN_GB_DIR.rglob("*.json")):
         items = load_json(path)
         if items is None:
-            problems.append(fn)
+            problems.append(path.relative_to(EN_GB_DIR).as_posix())
             continue
-        per_cat[cat_name] = len(items)
         total += len(items)
-    return total, per_cat, problems
+    return total, {}, problems
 
 
-def _count_cities(index):
+def _count_cities():
     """按中文主库 region.city 统计覆盖城市数（去重）。"""
     cities = set()
-    for cat in index["categories"]:
-        path = SUPPLIERS_DIR / cat["file"]
-        items = load_json(path)
-        if items is None:
-            continue
-        for it in items:
-            r = it.get("region") or {}
-            if isinstance(r, dict) and r.get("city"):
-                cities.add(r["city"])
+    for it in gb_store.load_all():
+        r = it.get("region") or {}
+        if isinstance(r, dict) and r.get("city"):
+            cities.add(r["city"])
     return len(cities)
 
 
-def _field_rates(index):
+def _field_rates():
     """真实数据（verified，is_template=false）的字段非空率。"""
     real_n = 0
     counts = {name: [0, 0] for name, _ in FIELD_LABELS}  # [非空, 样本]
     verified_at_values = set()
-    for cat in index["categories"]:
-        path = SUPPLIERS_DIR / cat["file"]
-        items = load_json(path)
-        if items is None:
+    for it in gb_store.load_all():
+        if resolve_status(it) != STATUS_VERIFIED:
             continue
-        for it in items:
-            if resolve_status(it) != STATUS_VERIFIED:
-                continue
-            real_n += 1
-            for name, fields in FIELD_LABELS:
-                counts[name][1] += 1
-                if all(not _is_empty(it.get(f)) for f in fields):
-                    counts[name][0] += 1
-            v = it.get("verified_at")
-            if isinstance(v, str) and v:
-                verified_at_values.add(v)
+        real_n += 1
+        for name, fields in FIELD_LABELS:
+            counts[name][1] += 1
+            if all(not _is_empty(it.get(f)) for f in fields):
+                counts[name][0] += 1
+        v = it.get("verified_at")
+        if isinstance(v, str) and v:
+            verified_at_values.add(v)
     rates = {}
     for name, _ in FIELD_LABELS:
         nonempty, sample = counts[name]
@@ -206,11 +200,7 @@ def _field_rates(index):
 
 def compute_stats():
     """汇总全部统计，返回 dict（供 render_markdown 与 validate.py 复用）。"""
-    index = load_json(INDEX)
-    if index is None or not index.get("categories"):
-        raise RuntimeError(f"{INDEX} 无法解析或 categories 为空")
-
-    rows = _count_cn(index)
+    rows = _count_cn()
     totals = {s: sum(r[s] for r in rows) for s in ALL_STATUSES}
     cn_total = sum(r["total"] for r in rows)
 
@@ -218,15 +208,12 @@ def compute_stats():
 
     # 来源分布（全部中文记录）
     source_counter = {}
-    for cat in index["categories"]:
-        path = SUPPLIERS_DIR / cat["file"]
-        items = load_json(path) or []
-        for it in items:
-            src = it.get("source")
-            source_counter[src] = source_counter.get(src, 0) + 1
+    for it in gb_store.load_all():
+        src = it.get("source")
+        source_counter[src] = source_counter.get(src, 0) + 1
 
-    cities = _count_cities(index)
-    real_n, field_rates, verified_at_values = _field_rates(index)
+    cities = _count_cities()
+    real_n, field_rates, verified_at_values = _field_rates()
 
     return {
         "generated_on": date.today().isoformat(),
@@ -293,7 +280,7 @@ def render_markdown(st):
     lines.append("")
     lines.append("| 指标 | 数值 |")
     lines.append("|---|---|")
-    lines.append(f"| 品类数 | **{st['n_categories']}** |")
+    lines.append(f"| 国标大类数（有数据） | **{st['n_categories']}** |")
     lines.append(f"| 中文记录总数 | **{st['cn_total']}** |")
     lines.append(f"| 已核实（verified） | **{st['verified_total']}** |")
     lines.append(f"| 待核实（unverified_poi） | **{st['unverified_total']}** |")
@@ -311,9 +298,9 @@ def render_markdown(st):
     lines.append("")
     lines.append("---")
     lines.append("")
-    lines.append("## 各品类明细")
+    lines.append("## 各大类明细（GB/T 4754 国标 2 位大类）")
     lines.append("")
-    lines.append("| 品类 | 总数 | 已核实（verified） | 待核实（unverified_poi） | 模板（template） | 待核实占比 |")
+    lines.append("| 国标大类 | 总数 | 已核实（verified） | 待核实（unverified_poi） | 模板（template） | 待核实占比 |")
     lines.append("|---|---|---|---|---|---|")
     for r in st["categories"]:
         lines.append(

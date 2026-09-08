@@ -37,8 +37,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS_DIR = Path(__file__).resolve().parent
 INDEX = ROOT / "data" / "index.json"
-SUPPLIERS_DIR = ROOT / "data" / "suppliers"
+SUPPLIERS_DIR = ROOT / "data" / "suppliers"      # 8 品类遗留目录，仅用于回退检测
+GB_DIR = ROOT / "data" / "gb"                    # 国标四级归档，2026-09-08 起为权威数据源
+GB_INDEX = ROOT / "data" / "gb-index.json"
 EN_DIR = ROOT / "data" / "en"
+EN_GB_DIR = EN_DIR / "gb"                        # 英文镜像的国标镜像（与 data/gb 一一对应）
 README = ROOT / "README.md"
 
 ID_RE = re.compile(r"^CN-MFG-\d{4,7}$")
@@ -46,7 +49,9 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 PLACEHOLDER_MARKERS = ["XXXX", "xxxx", "占位", "example", "示例"]
 
 STATUS_ENUM = ("verified", "unverified_poi", "template")
-SOURCE_ENUM = ("public_directory", "gov_list", "company_website", "exhibition", "template")
+# certification = 企业自主提交认证申请、经平台核验后入库（certify_writeback 回流）
+SOURCE_ENUM = ("public_directory", "gov_list", "company_website", "exhibition",
+               "template", "certification")
 CLAIM_STATUS_ENUM = ("unclaimed", "claimed", "verified")
 VERIFIED_BY_ENUM = ("wechat", "email", "manual")
 PROTOCOL_ENUM = ("mcp", "skill", "a2a", "native")
@@ -349,15 +354,23 @@ def check_strict_record(item, path):
 
 
 def check_en_mirrors(valid_categories):
-    """英文镜像：存在性 + 内部 id 唯一 + company_en 非空（与中文主库不交叉去重，同 id 是设计）。"""
+    """英文镜像：存在性 + 内部 id 唯一 + company_en 非空 + 归档落位与中文一致。
+
+    英文镜像现在也按国标归档（data/en/gb/），因此除了原有检查，还要确认
+    每条英文记录的落位和中文主库一致 —— 否则客户按某个小类检索时，
+    中英文会给出不同的结果集。
+    """
     ok = True
     total = 0
-    for cat_name, fn in EN_FILES.items():
-        path = EN_DIR / fn
-        if not path.exists():
-            err(f"英文镜像缺失: data/en/{fn}")
-            ok = False
-            continue
+    import gb_store
+
+    if not EN_GB_DIR.exists():
+        err("英文镜像未按国标重构：data/en/gb/ 不存在"
+            "（跑 scripts/migrate_en_to_gb.py --apply）")
+        return False
+
+    for path in sorted(EN_GB_DIR.rglob("*.json")):
+        rel = path.relative_to(EN_GB_DIR).as_posix()[:-5]
         items = load_json(path)
         if items is None:
             ok = False
@@ -366,21 +379,25 @@ def check_en_mirrors(valid_categories):
         for it in items:
             iid = it.get("id")
             if not iid:
-                err(f"data/en/{fn}: 缺少 id 字段")
+                err(f"data/en/gb/{rel}.json: 缺少 id 字段")
                 ok = False
                 continue
             if iid in seen:
-                err(f"data/en/{fn}: 英文镜像内部重复 id: {iid}")
+                err(f"data/en/gb/{rel}.json: 英文镜像内部重复 id: {iid}")
                 ok = False
             seen.add(iid)
             if not it.get("company_en"):
-                warn(f"data/en/{fn} ({iid}): company_en 为空")
+                warn(f"data/en/gb/{rel}.json ({iid}): company_en 为空")
             if it.get("category") not in valid_categories:
-                err(f"data/en/{fn} ({iid}): 未知 category '{it.get('category')}'")
+                err(f"data/en/gb/{rel}.json ({iid}): 未知 category '{it.get('category')}'")
+                ok = False
+            want = gb_store.bucket_of(it)
+            if want != rel:
+                err(f"data/en/gb/{rel}.json ({iid}): 落位错误，按其国标码应归入 {want}")
                 ok = False
         total += len(items)
     if ok and total:
-        print(f"英文镜像校验：{total} 条")
+        print(f"英文镜像校验：{total} 条 / {len(list(EN_GB_DIR.rglob('*.json')))} 个归档桶")
     return ok
 
 
@@ -400,16 +417,39 @@ def warn_verified_rows_with_pending_phone(items_by_cat):
 
 
 def check_index_counts(items_by_cat, index):
-    """index.json 的 count / total_suppliers 与实际文件条数一致性。"""
+    """gb-index.json 的各级计数与实际归档文件条数一致性。
+
+    归档索引是客户 Agent 的主入口：它说某小类有 300 家、实际只有 280 家，
+    客户按它去取就会落空，而且这类错误不会报任何异常 —— 只能靠这里拦。
+    """
     ok = True
-    real_sum = 0
-    for cat in index["categories"]:
-        real_sum += len(items_by_cat.get(cat["name"], []))
-        declared = cat.get("count")
-        actual = len(items_by_cat.get(cat["name"], []))
-        if declared != actual:
-            err(f"index.json: 品类 '{cat['name']}' count={declared} 与实际文件条数 {actual} 不一致")
+    gb = load_json(GB_INDEX)
+    if gb is None:
+        err("gb-index.json 无法解析")
+        return False
+
+    meta = gb.get("metadata", {})
+    real_total = sum(len(v) for v in items_by_cat.values())
+    if meta.get("total_suppliers") != real_total:
+        err(f"gb-index.json: total_suppliers={meta.get('total_suppliers')} "
+            f"与实际归档 {real_total} 不一致")
+        ok = False
+
+    # 逐小类比对
+    declared = {}
+    for gate, g in gb.get("tree", {}).items():
+        for div, d in g.get("divisions", {}).items():
+            for grp, m in d.get("groups", {}).items():
+                for cls, v in m.get("classes", {}).items():
+                    declared["%s/%s/%s" % (gate, div, cls)] = v["count"]
+    for bucket, n in declared.items():
+        actual = len(items_by_cat.get(bucket, []))
+        if actual != n:
+            err(f"gb-index.json: 小类 {bucket} count={n} 与实际 {actual} 不一致")
             ok = False
+    if ok:
+        print(f"归档索引校验：{len(declared)} 个小类计数一致（共 {real_total} 条）")
+    return ok
     declared_total = index.get("total_suppliers")
     if declared_total is not None and declared_total != real_sum:
         err(f"index.json: total_suppliers={declared_total} 与各品类实际合计 {real_sum} 不一致")
@@ -470,7 +510,7 @@ def check_readme_consistency(st):
         sec = text
 
     cmp_metric("中文记录总数", _read_num(re.search(r"(\d[\d,]*)\s*条记录", sec)), st["cn_total"])
-    cmp_metric("品类数", _read_num(re.search(r"(\d[\d,]*)\s*个品类", sec)), st["n_categories"])
+    cmp_metric("品类数", _read_num(re.search(r"(\d[\d,]*)\s*(?:个品类|个国标大类)", sec)), st["n_categories"])
     cmp_metric("已核实数", _read_num(re.search(r"(\d[\d,]*)\s*条(?:电话)?已核实", sec)), st["verified_total"])
     # README 的「待核实」= 电话待核实，对应 status="unverified_poi"。
     # （2026-09-08 已按 SPEC §2.4 重跑迁移，此前 3170 家真实企业被误标 status="template"
@@ -524,24 +564,25 @@ def main():
         sys.exit(1)
     valid_categories = {c["name"] for c in categories}
 
-    # 2. 逐品类校验
+    # 2. 逐归档桶校验（国标四级：门类/大类/小类）
+    import gb_store
+    if not GB_DIR.exists():
+        err("归档目录不存在: data/gb/（先跑 scripts/migrate_to_gb.py --apply）")
+        sys.exit(1)
+
     seen_ids = set()
     total = 0
     classified = unclassified = missing_key_n = 0
     items_by_cat = {}
-    for cat in categories:
-        path = SUPPLIERS_DIR / cat["file"]
-        if not path.exists():
-            err(f"品类 '{cat['name']}' 文件不存在: {cat['file']}")
-            continue
+    for bucket, path in gb_store.iter_buckets():
         items = load_json(path)
         if items is None:
             continue
-        items_by_cat[cat["name"]] = items
+        items_by_cat[bucket] = items
         total += len(items)
         for item in items:
-            check_core_record(item, cat["file"], seen_ids)
-            has_ind, missing_key = check_industry(item, cat["file"])
+            check_core_record(item, bucket, seen_ids)
+            has_ind, missing_key = check_industry(item, bucket)
             if has_ind:
                 classified += 1
             else:
@@ -549,9 +590,14 @@ def main():
                 if missing_key:
                     missing_key_n += 1
             if args.strict:
-                check_strict_record(item, cat["file"])
+                check_strict_record(item, bucket)
                 if item.get("category") not in valid_categories:
-                    err(f"{cat['file']}: 未知 category '{item.get('category')}'")
+                    err(f"{bucket}: 未知 category '{item.get('category')}'")
+                # 归档落位自检：记录的国标码必须真的属于它所在的文件
+                want = gb_store.bucket_of(item)
+                if want != bucket:
+                    err(f"{bucket}: 记录 {item.get('id')} 落位错误，"
+                        f"按其国标码应归入 {want}")
     if total == 0:
         err("没有任何可校验的记录")
 
@@ -579,7 +625,7 @@ def main():
         print(f"\n校验未通过：{len(errors)} 个错误，{len(warnings)} 个警告。请修复后重试。")
         sys.exit(1)
     mode = "严格模式" if args.strict else "核心模式"
-    print(f"校验通过（{mode}）：{len(categories)} 个品类，{total} 条中文记录（{len(warnings)} 个警告）。")
+    print(f"校验通过（{mode}）：国标四级归档，{total} 条中文记录（{len(warnings)} 个警告）。")
     sys.exit(0)
 
 
