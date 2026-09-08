@@ -88,10 +88,11 @@ Every supplier carries a national industry class code:
 Top classes (full list in `data/industry-index.json`): 3484 Machined Parts 2,735 ·
 2929 Plastic Parts 1,589 · 3311 Metal Structure 1,283 · 3360 Surface Treatment 1,259 ·
 3399 Other Metal Products 1,247 · 3451 Bearings 652 · 3482 Fasteners 642 · 3525 Moulds & Dies 621.
-> **Pending**: 4,496 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
+> **Pending**: 5,731 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
-**English** (`data/en/`): **10,781 English-mirror records** for overseas agents/buyers
-(1:1 with the Chinese dataset — full parity reached on 2026-09-08).
+**English** (`data/en/`): **14,625 English-mirror records** for overseas agents/buyers
+(1:1 with the Chinese dataset by `id`; `industry_en` carries the English GB/T 4754 class
+name — 14,098 records, same as the classified count in Chinese).
 
 > **Fast region search:** use `data/region-index.json` to locate companies by city without scanning full category files.
 
