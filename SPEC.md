@@ -71,6 +71,9 @@ data/en/                    # 英文镜像（8个文件，同步维护）
 | `source` | string | `public_directory`（当前）/ `gov_list` / `company_website` / `exhibition` |
 | `verified_at` | string | 信息核实日期 YYYY-MM-DD（当前为导入日期，非真实核验） |
 | `is_template` | boolean | **废弃**，请用 `status` 字段 |
+| `industry` | object\|null | **GB/T 4754-2017 国标行业**，结构见 §2.6；`null` = 未归类 |
+| `is_manufacturer` | boolean | `false` = 批发/贸易类（F51），非生产企业 |
+| `amap` | object | 地图 POI 扩展字段（typecode / alias / website / email / search_keyword） |
 
 #### 增值字段（认领后解锁）
 
@@ -111,7 +114,48 @@ data/en/                    # 英文镜像（8个文件，同步维护）
 > `is_template=true` 的旧数据 → `status: "unverified_poi"`（真实企业，只是电话未核实）
 > `is_template=true` 且 company 含「示例/测试」→ `status: "template"`
 
-### 2.5 数据质量规则
+### 2.5 国标行业分类规范（GB/T 4754-2017）
+
+分类标准：**GB/T 4754-2017《国民经济行业分类》**（本数据集只用制造业 C 的子集 + F51 批发业）。
+
+```json
+"industry": {
+  "code": "3525",
+  "name": "模具制造",
+  "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+  "confidence": "high",
+  "source": "name",
+  "evidence": "模具"
+},
+"is_manufacturer": true
+```
+
+| 字段 | 取值 | 说明 |
+|---|---|---|
+| `code` | 4 位小类码 | 必须在 `scripts/industry_taxonomy.py` 的 CODES 表内 |
+| `name` / `path` | string | 小类名与 `门类 > 大类 > 中类 > 小类` 全路径 |
+| `confidence` | `high` / `medium` / `low` | 见下表 |
+| `source` | `name` / `keyword` / `search_keyword` / `category_fallback` | 证据来源 |
+| `is_manufacturer` | boolean | 代码属 F51/F52 时为 `false` |
+
+| confidence | 含义 | Agent 行为 |
+|---|---|---|
+| `high` | 公司名直接命中行业关键词 | 可直接使用 |
+| `medium` | 公司名命中较弱特征，或关键词规则补位 | 可用，建议复核 |
+| `low` | 公司名无信号，由搜索关键词/原品类兜底推断 | 呈现时说明「行业为推断值」 |
+| `industry = null` | 无任何信号，或属于本数据集不覆盖的门类（食品/纺织/木材/印刷…） | **不要替它猜**，按关键词检索 |
+
+**归类三条红线**（与能力推断一致）：
+
+1. **不硬贴标签**：拿不到信号就 `null`。宁可「未归类」，不可「错归类」。
+2. **只信公司名**：公司名是最强证据；搜索关键词只能补位（`source="search_keyword"`，confidence 固定 `low`）。
+3. **越界行业留空**：粮食/食品/纺织/服装/木材/家具/造纸/印刷/水泥/石材等属于国标其他门类，
+   本数据集不覆盖 → `industry=null`，不得归入制造业代码。
+
+行业索引 `data/industry-index.json`：`code → {name, count, confidence 构成, top_cities, ids}`。
+**抓取新数据后必须重建**（`scripts/gen_industry_index.py`），否则新企业按行业搜不到——静默缺陷。
+
+### 2.6 数据质量规则
 
 1. **id 全局唯一**，无重复
 2. **id 格式**：`CN-MFG-{4-7位数字}`
@@ -119,6 +163,8 @@ data/en/                    # 英文镜像（8个文件，同步维护）
 4. **不编造**：价格、交期、产能、认证——数据里没有的就不展示
 5. **POI 名称清洗**：去除「宿舍楼 / N栋 / N号楼 / （园区）/ 分公司」等后缀
 6. **跨品类去重**：同一企业同一品类只保留一条记录
+7. **行业代码合法**：`industry.code` 必须在 GB/T 4754 代码表内；`confidence` 取值合法；
+   `is_manufacturer` 与代码门类自洽（F51/F52 → `false`）。由 `scripts/validate.py` 强制
 
 ---
 

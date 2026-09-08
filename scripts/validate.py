@@ -10,6 +10,9 @@
     1. data/index.json 是合法 JSON，品类文件路径存在且可解析
     2. 每条中文记录核心必填字段齐全（id/company/category/keywords/region/contact_phone/source）
     3. id 格式合法（CN-MFG-XXXXXXX）且全局唯一
+    4. 国标行业标签（industry）：代码必须在 GB/T 4754 代码表内、confidence 枚举合法、
+       is_manufacturer 与代码门类自洽；industry=null 是合法值（不硬贴标签）
+    5. data/industry-index.json 是否与主库同步（不同步 → 新企业按行业搜不到，静默缺陷）
 
 --strict 模式（在核心检查之上追加）:
     4. status 枚举校验（若存在）；is_template 与 status 一致性
@@ -67,6 +70,14 @@ try:
     from stats import resolve_status as _resolve_status
 except ImportError:  # stats.py 缺失时降级为内置推导，不阻断校验
     _resolve_status = None
+
+try:
+    from industry_taxonomy import CODES as _GB_CODES
+except ImportError:
+    _GB_CODES = {}
+
+GB_CONFIDENCE_ENUM = ("high", "medium", "low")
+INDUSTRY_INDEX = ROOT / "data" / "industry-index.json"
 
 errors = []
 warnings = []
@@ -156,6 +167,76 @@ def check_status_consistency(item, path):
         err(f"{path} ({item.get('id')}): 缺少数据状态字段（新数据请用 status，旧数据保留 is_template）")
         ok = False
     return ok
+
+
+def check_industry(item, path):
+    """国标行业标签校验（GB/T 4754-2017 子集）。
+
+    industry=null 是**合法值**（公司名无行业信号 / 越界行业，不硬贴标签）。
+    只要打了标签，代码、置信度、is_manufacturer 三者必须自洽。
+    """
+    if "industry" not in item:
+        # 不打逐条警告——缺标签的新抓数据可能有几千条，汇总一条更有用
+        return False, True
+    ind = item.get("industry")
+    if ind is None:
+        return False, False
+    if not isinstance(ind, dict) or "code" not in ind:
+        err(f"{path} ({item.get('id')}): industry 结构非法（应为对象且含 code）")
+        return False, False
+    code = ind["code"]
+    if not _GB_CODES:
+        return True, False  # 代码表缺失时不做内容校验
+    if code not in _GB_CODES:
+        err(f"{path} ({item.get('id')}): industry.code '{code}' 不在 GB/T 4754 代码表里")
+        return False, False
+    ok = True
+    if ind.get("name") != _GB_CODES[code]["name"]:
+        warn(f"{path} ({item.get('id')}): industry.name 与代码表不一致"
+             f"（{ind.get('name')} ≠ {_GB_CODES[code]['name']}）")
+        ok = False
+    if ind.get("confidence") not in GB_CONFIDENCE_ENUM:
+        err(f"{path} ({item.get('id')}): industry.confidence 非法 '{ind.get('confidence')}'"
+            f"（应为 {list(GB_CONFIDENCE_ENUM)}）")
+        ok = False
+    want_mfr = not code.startswith(("51", "52"))
+    if item.get("is_manufacturer") is not want_mfr:
+        err(f"{path} ({item.get('id')}): is_manufacturer={item.get('is_manufacturer')} 与 "
+            f"行业 {code}（{'批发业' if not want_mfr else '制造业'}）矛盾")
+        ok = False
+    return ok, False
+
+
+def check_industry_index(total, classified, unclassified):
+    """行业索引是否过期。
+
+    为什么必须查：SKILL.md 要求 Agent「按行业检索先读 industry-index.json」。
+    索引里的 ids 是快照，抓完新数据不重建 → 新企业按行业永远搜不到，且不报错
+    （region-index.json 就曾这样静默失效过）。
+    """
+    if not INDUSTRY_INDEX.exists():
+        err("缺少 data/industry-index.json（跑 scripts/gen_industry_index.py 生成）")
+        return
+    try:
+        data = json.loads(INDUSTRY_INDEX.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as e:
+        err(f"data/industry-index.json 无法解析: {e}")
+        return
+    meta = data.get("metadata", {})
+    if meta.get("total_suppliers") != total:
+        warn("data/industry-index.json 已过期：索引 %s 家 ≠ 实际 %d 家，"
+             "新数据按行业检索会搜不到 → 跑 scripts/gen_industry_index.py"
+             % (meta.get("total_suppliers"), total))
+    elif meta.get("classified") != classified:
+        warn("data/industry-index.json 归类数与主库不一致（索引 %s vs 实际 %d）→ 重建索引"
+             % (meta.get("classified"), classified))
+    for code, v in data["index"].items():
+        if not _GB_CODES:
+            break
+        if code not in _GB_CODES:
+            err(f"industry-index.json 含非法代码 {code}")
+        elif len(v.get("ids", [])) != v.get("count"):
+            err(f"industry-index.json: {code} 的 ids 条数 {len(v.get('ids', []))} ≠ count {v.get('count')}")
 
 
 def check_dates(item, path):
@@ -426,6 +507,7 @@ def main():
     # 2. 逐品类校验
     seen_ids = set()
     total = 0
+    classified = unclassified = missing_key_n = 0
     items_by_cat = {}
     for cat in categories:
         path = SUPPLIERS_DIR / cat["file"]
@@ -439,12 +521,27 @@ def main():
         total += len(items)
         for item in items:
             check_core_record(item, cat["file"], seen_ids)
+            has_ind, missing_key = check_industry(item, cat["file"])
+            if has_ind:
+                classified += 1
+            else:
+                unclassified += 1
+                if missing_key:
+                    missing_key_n += 1
             if args.strict:
                 check_strict_record(item, cat["file"])
                 if item.get("category") not in valid_categories:
                     err(f"{cat['file']}: 未知 category '{item.get('category')}'")
     if total == 0:
         err("没有任何可校验的记录")
+
+    check_industry_index(total, classified, unclassified)
+    if total:
+        print("国标行业覆盖：%d/%d 条已归类（%.1f%%），未归类 %d 条"
+              % (classified, total, 100 * classified / total, unclassified))
+    if missing_key_n:
+        warn("%d 条记录连 industry 字段都没有（新抓未打标签）→ 跑 "
+             "scripts/classify_industry.py --backfill" % missing_key_n)
 
     # 3. 严格模式附加检查
     if args.strict:

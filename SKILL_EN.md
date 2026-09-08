@@ -1,6 +1,6 @@
 ---
 name: beacon-mfg-en
-description: Agent-facing search over a structured directory of Chinese manufacturing suppliers. Use when the user needs to find upstream manufacturers (CNC machining, sheet metal, injection molding, die casting, electronic components, etc.) or filter suppliers by product keyword / region. Data comes from public sources; only public contact info is provided; no transactions.
+description: Agent-facing search over a structured directory of Chinese manufacturing suppliers. Use when the user needs to find upstream manufacturers (CNC machining, sheet metal, injection molding, die casting, moulds, casting, rubber parts, gears, electronic components, etc.) or filter suppliers by GB/T 4754 industry code / product keyword / region. Data comes from public sources; only public contact info is provided; no transactions.
 ---
 
 # BeaconMFG · Supplier Search Skill (English Dataset)
@@ -28,10 +28,35 @@ This skill consumes the **English mirror** dataset at `data/en/`:
 | `data/en/raw-materials.json` | Raw Materials |
 
 Each record contains: `id`, `company_en`, `category_en`, `keywords_en`, `region`
-(English), `address_en`, `contact_phone`, `source`, `verified_at`, `note_en`.
+(English), `address_en`, `contact_phone`, `source`, `verified_at`, `note_en`,
+plus `industry_en` = `{code, name_en, confidence}` — the **GB/T 4754-2017**
+(China's national industry classification) code for that company.
+
+**Industry index** (`data/industry-index.json`): `index[code] → {name, name_en, path, count, ids}`.
+**Prefer this over keyword guessing** — keywords miss a lot (factories rarely call themselves
+"injection molding" in map data; they are listed as "plastic products").
+
+Industry code hierarchy: `gate (C/F) > division (2 digits) > group (3) > class (4)`.
+Prefixes work as levels: `29` = Rubber & Plastics, `339` = Casting & other metal products, `C` = Manufacturing.
+
+Quick reference (full list is in `data/industry-index.json`):
+
+| Code | Industry (EN) | Code | Industry (EN) |
+|---|---|---|---|
+| 3484 | Machined Parts & Components (CNC) | 3391 | Ferrous Metal Casting |
+| 3525 | Moulds & Dies | 3392 | Non-ferrous Metal Casting (die casting) |
+| 3311 | Metal Structure (sheet metal/stamping) | 3393 | Forgings & Powder Metallurgy |
+| 3360 | Metal Surface Treatment & Heat Treatment | 2913 | Rubber Parts |
+| 2929 | Plastic Parts & Other Plastic Products | 3451 | Rolling Bearings |
+| 2921 | Plastic Film | 3453 | Gears & Gearboxes |
+| 2926 | Plastic Packaging Box & Container | 3482 | Fasteners |
+| 2651 | Primary-form Plastics & Synthetic Resin | 3483 | Springs |
+| 3982 | Electronic Circuits (PCB) | 3660 | Automotive Parts & Accessories |
+| 3989 | Other Electronic Components | 5164 | Metals & Metal Ores Wholesale (**not manufacturing**) |
 
 **Region index** (`data/region-index.json`) provides fast city-level lookups:
 `index["province-city"] → list of CN-MFG IDs` — use this to avoid scanning entire category files.
+Intersect it with the industry `ids` set to search "industry X in city Y".
 
 The data is plain JSON — **no scripts, no network, no API key required**. The agent
 just reads the files.
@@ -104,6 +129,7 @@ hits = [r for r in recs
 ```
 Company: Jiaxing Precision Technology Co., Ltd. (Zhejiang · Jiaxing)
 Products: CNC Machining / Precision Components / Small Batch Custom
+Industry: 3484 Machined Parts & Components (confidence: high)
 Phone: 0573-XXXXXXXX     ← full landline, call directly
 Source: public directory · verified 2026-08-13
 ```
@@ -117,8 +143,10 @@ Rules:
 
 ## Data notes
 
-- Current dataset: **6,285 phone-verified + 4,496 pending records (10,781 total Chinese records)**, plus an English mirror (this skill's `data/en/`).
-- Phone-verified records = 6,285 (`status="verified"`). Pending records = 4,496 (`status="unverified_poi"`) — real companies from public map POI, phone pending manual confirmation.
+- Current dataset: **8,894 phone-verified + 5,731 pending records (14,625 total Chinese records)**, plus an English mirror (this skill's `data/en/`).
+- Phone-verified records = 8,894 (`status="verified"`). Pending records = 5,731 (`status="unverified_poi"`) — real companies from public map POI, phone pending manual confirmation.
+- **Industry coverage (GB/T 4754-2017)**: 14,098 of 14,625 classified into **47 national industry classes** (527 unclassified). Concentrated in General-purpose Machinery (4,694), Metal Products (4,487), Rubber & Plastics (1,724); 908 are wholesalers (`is_manufacturer=false`, F51 Wholesale — **not manufacturers**).
+- `industry_en.confidence=low` means the company name carried no industry signal and the class was inferred — present it as inferred, verify before sourcing. `industry_en=null` = unclassified; do not guess one.
 - **`is_template=true` are still real business POIs**: these are genuine companies from the public POI directory; only their phone number is not yet confirmed. The agent should **keep and return them** in search results, not drop them.
 - All data comes from public sources (public POI directory); not individually verified against official websites — contact the supplier to confirm.
 
