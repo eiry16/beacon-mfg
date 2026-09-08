@@ -29,6 +29,8 @@ beacon-mfg/
 ├── SKILL_EN.md                 # Agent instructions (English dataset)
 ├── data/
 │   ├── index.json              # category → keywords → file path index
+│   ├── industry-index.json     # GB/T 4754 industry index: code → supplier IDs
+│   ├── region-index.json       # region index: city → supplier IDs
 │   ├── suppliers/*.json        # Chinese data (split by category, 8 files)
 │   └── en/*.json               # English mirror data (8 files)
 ├── schema/supplier.schema.json # record structure definition
@@ -53,20 +55,39 @@ No dependencies, no keys, no network required.
 
 ## Data Status
 
-**Chinese** (`data/suppliers/`): **10,781 records total** across 8 categories:
+**Chinese** (`data/suppliers/`): **14,625 records total** across 8 categories:
 
 | Category | Total | Verified | Pending |
 |---|---|---|---|
-| Precision Machining (CNC) | 2,093 | 1,087 | 1,006 |
-| Sheet Metal & Stamping | 1,212 | 854 | 358 |
-| Injection Molding | 1,532 | 699 | 833 |
-| Die Casting | 419 | 197 | 222 |
-| Electronic Components | 645 | 291 | 354 |
-| Surface Treatment | 1,149 | 503 | 646 |
-| Standard Parts | 1,778 | 1,164 | 614 |
-| Raw Materials | 1,953 | 1,490 | 463 |
+| Precision Machining (CNC) | 3,914 | 2,132 | 1,782 |
+| Sheet Metal & Stamping | 1,693 | 1,258 | 435 |
+| Injection Molding | 1,968 | 867 | 1,101 |
+| Die Casting | 464 | 226 | 238 |
+| Electronic Components | 657 | 299 | 358 |
+| Surface Treatment | 1,333 | 643 | 690 |
+| Standard Parts | 2,075 | 1,453 | 622 |
+| Raw Materials | 2,521 | 2,016 | 505 |
 
-> **Verified**: 6,285 records with confirmed phone numbers.
+> **Verified**: 8,894 records with confirmed phone numbers; 5,731 pending.
+
+### Industry classification (GB/T 4754-2017)
+
+Every supplier carries a national industry class code:
+
+```json
+"industry": { "code": "3525", "name": "模具制造", "confidence": "high", "source": "name" },
+"is_manufacturer": true
+```
+
+- **14,098 / 14,625 records classified** into **47 national industry classes** (527 unclassified)
+- `confidence`: `high` = company name matched directly; `medium` / `low` = inferred from keywords or category
+- `is_manufacturer=false` → the company falls under **F51 Wholesale** (trader, not a factory)
+- Rule of thumb: **trust the company name**; search keywords may only fill gaps;
+  **an empty code is better than a wrong one**
+
+Top classes (full list in `data/industry-index.json`): 3484 Machined Parts 2,735 ·
+2929 Plastic Parts 1,589 · 3311 Metal Structure 1,283 · 3360 Surface Treatment 1,259 ·
+3399 Other Metal Products 1,247 · 3451 Bearings 652 · 3482 Fasteners 642 · 3525 Moulds & Dies 621.
 > **Pending**: 4,496 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
 **English** (`data/en/`): **10,781 English-mirror records** for overseas agents/buyers

@@ -119,6 +119,41 @@
         "verified": { "type": "boolean", "description": "平台内容审核通过" }
       }
     },
+    "industry": {
+      "type": ["object", "null"],
+      "description": "GB/T 4754-2017 国民经济行业分类（制造业子集 + F51 批发业）。null = 未归类：公司名无行业信号，或属于本数据集不覆盖的门类——不得硬贴标签。完整代码表见 scripts/industry_taxonomy.py",
+      "required": ["code", "name", "confidence"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[0-9]{4}$", "description": "国标小类代码（4 位）" },
+        "name": { "type": "string", "description": "国标小类中文名，须与代码表一致" },
+        "path": { "type": "string", "description": "门类 > 大类 > 中类 > 小类 全路径" },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"], "description": "high=公司名直接命中；medium/low=关键词或品类兜底推断" },
+        "source": { "type": "string", "enum": ["name", "keyword", "search_keyword", "category_fallback"], "description": "证据来源：name 最强，search_keyword 仅补位" },
+        "evidence": { "type": "string", "description": "命中的具体词，便于人工复核" }
+      }
+    },
+    "is_manufacturer": {
+      "type": "boolean",
+      "description": "是否为生产企业。false = 代码属 F51/F52 批发业（贸易/批发商），采购时需确认是否代工"
+    },
+    "amap": {
+      "type": ["object", "null"],
+      "description": "地图 POI 扩展字段（extensions=all 才有），供交叉核对与能力推断用",
+      "properties": {
+        "poi_id": { "type": "string" },
+        "type": { "type": "string", "description": "高德三级分类，如 公司企业;工厂;工厂" },
+        "typecode": { "type": "string" },
+        "alias": { "type": "string" },
+        "tag": { "type": "string" },
+        "keytag": { "type": "string" },
+        "website": { "type": "string" },
+        "email": { "type": "string" },
+        "postcode": { "type": "string" },
+        "business_area": { "type": "string" },
+        "adcode": { "type": "string" },
+        "search_keyword": { "type": "string", "description": "抓到这条记录时用的搜索词（弱证据）" }
+      }
+    },
     "note": { "type": ["string", "null"], "description": "备注，如主营特色、交期、最小起订（公开信息，不编造）" }
   },
   "additionalProperties": false
