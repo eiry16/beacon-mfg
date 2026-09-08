@@ -19,6 +19,10 @@ scripts/*
 # 例外：数据校验与统计脚本对外开放，CI 需要它们
 !scripts/validate.py
 !scripts/stats.py
+# gb_store.py 是国标归档统一访问层（data/gb/ 的读写路径唯一来源），
+# validate.py / stats.py 都依赖它，CI 必须能拿到，否则 data-validate 直接 ModuleNotFound。
+# 它只有标准库依赖，不含密钥与商业逻辑。
+!scripts/gb_store.py
 # CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
 .github/*
 !.github/workflows/
