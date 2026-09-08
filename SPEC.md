@@ -349,7 +349,7 @@ main 分支更新
 - [x] CI 校验脚本增强 + `DATA_STATS.md` 生成
 - [ ] `data/suppliers/*.json` 中 is_template=true 且电话含 XXXX 的记录 → 补全或标记 unverified_poi
 - [ ] POI 名称清洗（去除宿舍楼/N栋等噪声）
-- [ ] 英文镜像数量同步（当前 7915 vs 中文 7962，差 47 条）
+- [x] 英文镜像数量同步（2026-09-08 已补齐至与中文一致；此后名录变更须重跑 `scripts/en_backfill.py`）
 
 ### Phase 1（2-4 周）
 - [ ] 微信服务号注册

@@ -53,24 +53,24 @@ No dependencies, no keys, no network required.
 
 ## Data Status
 
-**Chinese** (`data/suppliers/`): **7,962 records total** across 8 categories:
+**Chinese** (`data/suppliers/`): **10,781 records total** across 8 categories:
 
 | Category | Total | Verified | Pending |
 |---|---|---|---|
-| Precision Machining (CNC) | 1,305 | 603 | 702 |
-| Sheet Metal & Stamping | 1,204 | 879 | 325 |
-| Injection Molding | 282 | 181 | 101 |
-| Die Casting | 418 | 196 | 222 |
-| Electronic Components | 639 | 293 | 346 |
-| Surface Treatment | 1,133 | 505 | 628 |
-| Standard Parts | 1,756 | 1,159 | 597 |
-| Raw Materials | 1,225 | 976 | 249 |
+| Precision Machining (CNC) | 2,093 | 1,092 | 1,001 |
+| Sheet Metal & Stamping | 1,212 | 864 | 348 |
+| Injection Molding | 1,532 | 701 | 831 |
+| Die Casting | 419 | 197 | 222 |
+| Electronic Components | 645 | 291 | 354 |
+| Surface Treatment | 1,149 | 503 | 646 |
+| Standard Parts | 1,778 | 1,165 | 613 |
+| Raw Materials | 1,953 | 1,490 | 463 |
 
-> **Verified** (is_template=false): 4,792 records with confirmed phone numbers.
-> **Pending** (is_template=true): 3,170 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
+> **Verified**: 6,303 records with confirmed phone numbers.
+> **Pending**: 4,478 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
-**English** (`data/en/`): **7,915 English-mirror records** for overseas agents/buyers
-(slight gap vs. Chinese 7,962 due to async sync; source data is the same).
+**English** (`data/en/`): **10,781 English-mirror records** for overseas agents/buyers
+(1:1 with the Chinese dataset — full parity reached on 2026-09-08).
 
 > **Fast region search:** use `data/region-index.json` to locate companies by city without scanning full category files.
 
