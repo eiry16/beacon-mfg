@@ -72,9 +72,24 @@ except ImportError:  # stats.py 缺失时降级为内置推导，不阻断校验
     _resolve_status = None
 
 try:
-    from industry_taxonomy import CODES as _GB_CODES
+    from industry_taxonomy import (
+        CODES as _GB_CODES, CLASSES as _GB_CLASSES, GROUPS as _GB_GROUPS,
+        DIVISIONS as _GB_DIVISIONS, name_of as _gb_name, is_manufacturer as _gb_is_mfr,
+        level_of as _gb_level,
+    )
 except ImportError:
-    _GB_CODES = {}
+    _GB_CODES, _GB_CLASSES, _GB_GROUPS, _GB_DIVISIONS = {}, {}, {}, {}
+    _gb_name = lambda c: ""
+    _gb_is_mfr = lambda c: True
+    _gb_level = lambda c: ""
+
+
+def _gb_valid(code):
+    """分层落地后代码可能是 4 位小类 / 3 位中类 / 2 位大类，按长度分别查表。"""
+    code = str(code)
+    if code[:1].isalpha():
+        return False
+    return {2: _GB_DIVISIONS, 3: _GB_GROUPS, 4: _GB_CLASSES}.get(len(code), {}).__contains__(code)
 
 GB_CONFIDENCE_ENUM = ("high", "medium", "low")
 INDUSTRY_INDEX = ROOT / "data" / "industry-index.json"
@@ -187,19 +202,24 @@ def check_industry(item, path):
     code = ind["code"]
     if not _GB_CODES:
         return True, False  # 代码表缺失时不做内容校验
-    if code not in _GB_CODES:
-        err(f"{path} ({item.get('id')}): industry.code '{code}' 不在 GB/T 4754 代码表里")
+    if not _gb_valid(code):
+        err(f"{path} ({item.get('id')}): industry.code '{code}' 不在 GB/T 4754 代码表里"
+            f"（小类4位/中类3位/大类2位）")
         return False, False
     ok = True
-    if ind.get("name") != _GB_CODES[code]["name"]:
+    if ind.get("name") != _gb_name(code):
         warn(f"{path} ({item.get('id')}): industry.name 与代码表不一致"
-             f"（{ind.get('name')} ≠ {_GB_CODES[code]['name']}）")
+             f"（{ind.get('name')} ≠ {_gb_name(code)}）")
+        ok = False
+    if ind.get("level") != _gb_level(code):
+        err(f"{path} ({item.get('id')}): industry.level '{ind.get('level')}' 与码长 {len(code)} 位不符"
+            f"（应为 {_gb_level(code)}）")
         ok = False
     if ind.get("confidence") not in GB_CONFIDENCE_ENUM:
         err(f"{path} ({item.get('id')}): industry.confidence 非法 '{ind.get('confidence')}'"
             f"（应为 {list(GB_CONFIDENCE_ENUM)}）")
         ok = False
-    want_mfr = not code.startswith(("51", "52"))
+    want_mfr = _gb_is_mfr(code)
     if item.get("is_manufacturer") is not want_mfr:
         err(f"{path} ({item.get('id')}): is_manufacturer={item.get('is_manufacturer')} 与 "
             f"行业 {code}（{'批发业' if not want_mfr else '制造业'}）矛盾")
@@ -233,7 +253,7 @@ def check_industry_index(total, classified, unclassified):
     for code, v in data["index"].items():
         if not _GB_CODES:
             break
-        if code not in _GB_CODES:
+        if not _gb_valid(code):
             err(f"industry-index.json 含非法代码 {code}")
         elif len(v.get("ids", [])) != v.get("count"):
             err(f"industry-index.json: {code} 的 ids 条数 {len(v.get('ids', []))} ≠ count {v.get('count')}")
