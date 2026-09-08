@@ -1,9 +1,9 @@
 {
   "metadata": {
     "standard": "GB/T 4754-2017 国民经济行业分类（制造业子集）",
-    "total_suppliers": 10781,
+    "total_suppliers": 14625,
     "classified": 10356,
-    "unclassified": 425,
+    "unclassified": 4269,
     "total_codes": 44,
     "generated_at": "2026-09-08",
     "usage": "按国标小类代码锁定行业 → 取 ids → 从 data/suppliers/<品类>.json 按 id 读详情",
