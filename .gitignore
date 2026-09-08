@@ -13,9 +13,16 @@ venv/
 
 
 # 内部维护脚本（不对外公开，仅本地维护使用）
-scripts/
+# 注意：用 scripts/* 而不是 scripts/，否则下面两个白名单不生效
+# （Git 不会进入已被整目录忽略的目录去匹配子文件）
+scripts/*
+# 例外：数据校验与统计脚本对外开放，CI 需要它们
+!scripts/validate.py
+!scripts/stats.py
+# CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
+.github/*
+!.github/workflows/
 .workbuddy/
-.github/
 examples/
 docs/promotion/
 docs/charts/
