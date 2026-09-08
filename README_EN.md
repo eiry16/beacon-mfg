@@ -57,17 +57,17 @@ No dependencies, no keys, no network required.
 
 | Category | Total | Verified | Pending |
 |---|---|---|---|
-| Precision Machining (CNC) | 2,093 | 1,092 | 1,001 |
-| Sheet Metal & Stamping | 1,212 | 864 | 348 |
-| Injection Molding | 1,532 | 701 | 831 |
+| Precision Machining (CNC) | 2,093 | 1,087 | 1,006 |
+| Sheet Metal & Stamping | 1,212 | 854 | 358 |
+| Injection Molding | 1,532 | 699 | 833 |
 | Die Casting | 419 | 197 | 222 |
 | Electronic Components | 645 | 291 | 354 |
 | Surface Treatment | 1,149 | 503 | 646 |
-| Standard Parts | 1,778 | 1,165 | 613 |
+| Standard Parts | 1,778 | 1,164 | 614 |
 | Raw Materials | 1,953 | 1,490 | 463 |
 
-> **Verified**: 6,303 records with confirmed phone numbers.
-> **Pending**: 4,478 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
+> **Verified**: 6,285 records with confirmed phone numbers.
+> **Pending**: 4,496 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
 **English** (`data/en/`): **10,781 English-mirror records** for overseas agents/buyers
 (1:1 with the Chinese dataset — full parity reached on 2026-09-08).

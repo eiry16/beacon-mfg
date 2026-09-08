@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 构建发布包
+        run: |
+          pip install -q zipfile
+          python -c "
+          import zipfile, os
+          tag = os.environ['GITHUB_REF_NAME']
+          with zipfile.ZipFile(f'beacon-mfg-{tag}.zip', 'w', zipfile.ZIP_DEFLATED) as zf:
+              for root, dirs, files in os.walk('.'):
+                  dirs[:] = [d for d in dirs if d not in ['.git', '__pycache__', '.github']]
+                  for file in files:
+                      if file.endswith('.pyc'): continue
+                      zf.write(os.path.join(root, file))
+          print(f'打包完成：beacon-mfg-{tag}.zip')
+          "
+      - name: 发布
+        uses: softprops/action-gh-release@v1
+        with:
+          files: beacon-mfg-*.zip

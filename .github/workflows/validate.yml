@@ -1,0 +1,26 @@
+name: data-validate
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "data/**"
+      - "schema/**"
+      - "scripts/**"
+      - ".github/workflows/validate.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 校验数据 + 生成统计
+        run: python scripts/validate.py --strict
+      - name: 上传统计文件
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-stats
+          path: data/DATA_STATS.md
