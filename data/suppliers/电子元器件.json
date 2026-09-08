@@ -23117,7 +23117,16 @@
       "business_area": "光明",
       "adcode": "440311",
       "search_keyword": "PCB"
-    }
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "线路板"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013618",
@@ -23152,7 +23161,16 @@
       "business_area": "沙井",
       "adcode": "440306",
       "search_keyword": "PCB"
-    }
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "PCB"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013619",
@@ -23187,7 +23205,16 @@
       "business_area": "",
       "adcode": "441322",
       "search_keyword": "PCB"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013620",
@@ -23222,7 +23249,16 @@
       "business_area": "",
       "adcode": "320583",
       "search_keyword": "连接器"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连接器"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013621",
@@ -23257,7 +23293,16 @@
       "business_area": "",
       "adcode": "310114",
       "search_keyword": "连接器"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013622",
@@ -23292,7 +23337,16 @@
       "business_area": "嘉定镇",
       "adcode": "310114",
       "search_keyword": "连接器"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连接器"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013623",
@@ -23327,7 +23381,16 @@
       "business_area": "公明",
       "adcode": "440311",
       "search_keyword": "连接器"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连接器"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013624",
@@ -23362,7 +23425,16 @@
       "business_area": "沙井",
       "adcode": "440306",
       "search_keyword": "连接器"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连接器"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013625",
@@ -23397,7 +23469,16 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "连接器"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连接器"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013626",
@@ -23432,7 +23513,16 @@
       "business_area": "横沥",
       "adcode": "440115",
       "search_keyword": "连接器"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013627",
@@ -23467,7 +23557,16 @@
       "business_area": "",
       "adcode": "440118",
       "search_keyword": "连接器"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013628",
@@ -23502,6 +23601,15 @@
       "business_area": "坑口村",
       "adcode": "440103",
       "search_keyword": "连接器"
-    }
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
   }
 ]
