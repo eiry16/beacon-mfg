@@ -117,8 +117,8 @@ Rules:
 
 ## Data notes
 
-- Current dataset: **6,303 phone-verified + 4,478 pending records (10,781 total Chinese records)**, plus an English mirror (this skill's `data/en/`).
-- Phone-verified records = 6,303. Pending records = 4,478 — phone sourced from public map POI, pending manual confirmation.
+- Current dataset: **6,285 phone-verified + 4,496 pending records (10,781 total Chinese records)**, plus an English mirror (this skill's `data/en/`).
+- Phone-verified records = 6,285 (`status="verified"`). Pending records = 4,496 (`status="unverified_poi"`) — real companies from public map POI, phone pending manual confirmation.
 - **`is_template=true` are still real business POIs**: these are genuine companies from the public POI directory; only their phone number is not yet confirmed. The agent should **keep and return them** in search results, not drop them.
 - All data comes from public sources (public POI directory); not individually verified against official websites — contact the supplier to confirm.
 
