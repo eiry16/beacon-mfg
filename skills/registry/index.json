@@ -1,0 +1,19 @@
+{
+  "updated_at": "2026-09-08",
+  "total": 4136,
+  "layers": {
+    "L0_fingerprint": "skills/registry/fingerprint/{品类}.jsonl",
+    "L1_capability": "skills/registry/capability/{id}.json",
+    "L2_self_report": "skills/vendors/{id}/SKILL.md"
+  },
+  "by_category": {
+    "压铸": 238,
+    "原材料": 161,
+    "标准件": 1254,
+    "注塑成型": 523,
+    "电子元器件": 209,
+    "精密机械加工": 581,
+    "表面处理": 707,
+    "钣金冲压": 463
+  }
+}

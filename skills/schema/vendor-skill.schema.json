@@ -412,6 +412,7 @@
                 "type": "string",
                 "enum": [
                   "self_declared",
+                  "public_record",
                   "platform_verified",
                   "field_audited"
                 ]
@@ -624,7 +625,7 @@
       }
     },
     "provenance": {
-      "description": "数据来源与可信度。auto=平台从公开信息自动整理（未经供应商确认，准确性不保证）。",
+      "description": "数据来源与可信度。auto=平台从公开信息自动整理（未经供应商确认，准确性不保证）。fixture=平台自制的链路测试样本，用公开可查信息填制、未经厂商确认，禁止对外发布为真实能力卡。",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -635,6 +636,7 @@
           "type": "string",
           "enum": [
             "auto",
+            "fixture",
             "agent_collected",
             "vendor_claimed",
             "manual_reviewed"
@@ -665,6 +667,13 @@
             "type": "string"
           },
           "description": "由平台推断而非供应商确认的字段路径列表"
+        },
+        "reclassified_from": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "品类改判前的原值。企业名称（强证据）与名录抓取分类（弱证据）冲突时按名称改判，必须在此留痕，否则校验拒绝"
         },
         "note": {
           "type": [
