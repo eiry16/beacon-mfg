@@ -143,9 +143,9 @@ Rules:
 
 ## Data notes
 
-- Current dataset: **8,894 phone-verified + 5,731 pending records (14,625 total Chinese records)**, plus an English mirror (this skill's `data/en/`).
-- Phone-verified records = 8,894 (`status="verified"`). Pending records = 5,731 (`status="unverified_poi"`) — real companies from public map POI, phone pending manual confirmation.
-- **Industry coverage (GB/T 4754-2017)**: 14,098 of 14,625 classified into **47 national industry classes** (527 unclassified). Concentrated in General-purpose Machinery (4,694), Metal Products (4,487), Rubber & Plastics (1,724); 908 are wholesalers (`is_manufacturer=false`, F51 Wholesale — **not manufacturers**).
+- Current dataset: **12,692 phone-verified + 7,572 pending records (20,264 total Chinese records)**, plus an English mirror (this skill's `data/en/`).
+- Phone-verified records = 12,692 (`status="verified"`). Pending records = 7,572 (`status="unverified_poi"`) — real companies from public map POI, phone pending manual confirmation.
+- **Industry coverage (GB/T 4754-2017)**: 19,610 of 20,264 classified into **48 national industry classes** (654 unclassified). Concentrated in General-purpose Machinery (6,042), Metal Products (5,675), Rubber & Plastics (2,198); 1,414 are wholesalers (`is_manufacturer=false`, F51 Wholesale — **not manufacturers**).
 - `industry_en.confidence=low` means the company name carried no industry signal and the class was inferred — present it as inferred, verify before sourcing. `industry_en=null` = unclassified; do not guess one.
 - **`is_template=true` are still real business POIs**: these are genuine companies from the public POI directory; only their phone number is not yet confirmed. The agent should **keep and return them** in search results, not drop them.
 - All data comes from public sources (public POI directory); not individually verified against official websites — contact the supplier to confirm.

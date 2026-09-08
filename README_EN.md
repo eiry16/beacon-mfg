@@ -55,20 +55,20 @@ No dependencies, no keys, no network required.
 
 ## Data Status
 
-**Chinese** (`data/suppliers/`): **14,625 records total** across 8 categories:
+**Chinese** (`data/suppliers/`): **20,264 records total** across 8 categories:
 
 | Category | Total | Verified | Pending |
 |---|---|---|---|
-| Precision Machining (CNC) | 3,914 | 2,132 | 1,782 |
-| Sheet Metal & Stamping | 1,693 | 1,258 | 435 |
-| Injection Molding | 1,968 | 867 | 1,101 |
-| Die Casting | 464 | 226 | 238 |
-| Electronic Components | 657 | 299 | 358 |
-| Surface Treatment | 1,333 | 643 | 690 |
-| Standard Parts | 2,075 | 1,453 | 622 |
-| Raw Materials | 2,521 | 2,016 | 505 |
+| Precision Machining (CNC) | 4,816 | 2,571 | 2,245 |
+| Sheet Metal & Stamping | 1,950 | 1,454 | 496 |
+| Injection Molding | 3,139 | 1,398 | 1,741 |
+| Die Casting | 732 | 393 | 339 |
+| Electronic Components | 1,107 | 660 | 446 |
+| Surface Treatment | 1,765 | 851 | 914 |
+| Standard Parts | 2,884 | 2,144 | 740 |
+| Raw Materials | 3,871 | 3,221 | 650 |
 
-> **Verified**: 8,894 records with confirmed phone numbers; 5,731 pending.
+> **Verified**: 12,692 records with confirmed phone numbers; 7,571 pending.
 
 ### Industry classification (GB/T 4754-2017)
 
@@ -79,20 +79,26 @@ Every supplier carries a national industry class code:
 "is_manufacturer": true
 ```
 
-- **14,098 / 14,625 records classified** into **47 national industry classes** (527 unclassified)
+- **19,610 / 20,264 records classified** into **48 national industry classes** (654 unclassified)
 - `confidence`: `high` = company name matched directly; `medium` / `low` = inferred from keywords or category
 - `is_manufacturer=false` → the company falls under **F51 Wholesale** (trader, not a factory)
 - Rule of thumb: **trust the company name**; search keywords may only fill gaps;
   **an empty code is better than a wrong one**
+- **Shopfront/parts suffixes trigger demotion**: names containing shopfront suffixes
+  (经营部 / 商行 / 五金机电 / 模具配件 — trading post, store, hardware supplier, mold parts)
+  are reclassified to a wholesale code with `is_manufacturer=false`; names containing
+  parts/consumables suffixes (配件 / 耗材) drop from `high` to `medium` confidence.
+  This stops a *shop selling mold parts* from being listed as a *mold manufacturer*
+  (fixed 2026-09-08, 635 records affected).
 
-Top classes (full list in `data/industry-index.json`): 3484 Machined Parts 2,735 ·
-2929 Plastic Parts 1,589 · 3311 Metal Structure 1,283 · 3360 Surface Treatment 1,259 ·
-3399 Other Metal Products 1,247 · 3451 Bearings 652 · 3482 Fasteners 642 · 3525 Moulds & Dies 621.
-> **Pending**: 5,731 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
+Top classes (full list in `data/industry-index.json`): 3484 Machined Parts 3,513 ·
+2929 Plastic Parts 2,022 · 3360 Surface Treatment 1,666 · 3311 Metal Structure 1,511 ·
+3399 Other Metal Products 1,374 · 3525 Molds & Dies 1,105 · 3482 Fasteners 878 · 3130 Steel Rolling 820.
+> **Pending**: 7,571 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
-**English** (`data/en/`): **14,625 English-mirror records** for overseas agents/buyers
+**English** (`data/en/`): **20,264 English-mirror records** for overseas agents/buyers
 (1:1 with the Chinese dataset by `id`; `industry_en` carries the English GB/T 4754 class
-name — 14,098 records, same as the classified count in Chinese).
+name — 19,610 records, same as the classified count in Chinese).
 
 > **Fast region search:** use `data/region-index.json` to locate companies by city without scanning full category files.
 
