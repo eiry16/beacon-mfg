@@ -73,6 +73,10 @@ skills/vendors/*/capability.json
 skills/vendors/*/assets/
 skills/registry/capability/
 
+# 重跑批量整理时归档的旧能力卡（reset_auto.py 生成，确认无误后可自行删除）
+skills/_vendors_backup_*/
+skills/_keep_sample/
+
 # 例外：保留 1 家已认主样板进 Git，作为「标准长什么样」的参考
 !skills/vendors/CN-MFG-0000005/SKILL.md
 !skills/vendors/CN-MFG-0000005/capability.json
