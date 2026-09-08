@@ -8,42 +8,37 @@ description: 面向 Agent 的制造业供应商检索。当用户需要寻找制
 ## 能力概述
 
 本 Skill 帮助 Agent 在 BeaconMFG 结构化供应商名录中检索中国制造业供应商。
-核心价值：把用户的"产品需求"翻译成"**国标行业 → 关键词 → 品类**"，返回**结构化、可溯源**的供应商信息。
+核心价值：把用户的"产品需求"翻译成"**国标行业 → 归档文件**"，返回**结构化、可溯源**的供应商信息。
 
 **边界：** 只提供公开联系方式与基本信息，**不参与**询价、下单、交易；**不**对供应商做推荐评级。
 
 ## 数据在哪
 
-- 中文数据：`data/suppliers/{品类}.json`（8 个品类文件）
-- 英文数据：`data/en/{品类}.json`（对应英文镜像）
-- 品类索引：`data/index.json`（品类 → 关键词词典 → 文件路径）
-- **行业索引**：`data/industry-index.json`（GB/T 4754 国标小类 → 企业 ID 列表，**知道要找什么行业时先用这个**）
+名录按 **GB/T 4754-2017 国标四级归档**（20 门类 / 97 大类 / 473 中类 / 1382 小类）：
+
+- 中文数据：`data/gb/{门类}/{大类}/{小类}.json`（如 `data/gb/C/35/3525.json` = 模具制造）
+  - 只到中类/大类精度的记录在同级 `{中类3位}.json` / `_partial.json`；解析不出码的在 `_unclassified.json`
+- 英文数据：`data/en/gb/`（与中文同构镜像，字段为 `company_en` / `address_en` 等）
+- **归档主索引**：`data/gb-index.json`（四级层级树 + 各级计数，**浏览"有什么行业有货"用它**）
+- **行业索引**：`data/industry-index.json`（国标小类 → 企业 ID 列表，**知道行业时先用这个**）
 - **地区索引**：`data/region-index.json`（城市 → 供应商 ID 列表，**知道城市时先用这个**）
+- **采购词别名表**：`data/gb-alias.json`（采购口语 → 国标小类码，由真实数据推导）
 - 字段结构：`schema/supplier.schema.json`
 
 数据就是普通 JSON 文件，**无需任何脚本、无需网络、无需 API Key**——Agent 直接读取文件即可检索。
 
 ## 使用流程
 
-### 第 0 步（优先）：按 GB/T 4754 国标行业锁定
+### 第 0 步（优先）：把需求翻译成国标代码
 
 **如果用户说的是一个行业/工艺（模具、压铸、电镀、橡胶件、齿轮…），先按行业定位，别用关键词猜。**
 关键词会漏（"注塑"在高德上几乎搜不到厂，厂都叫"塑料制品"），国标代码不会。
 
-每个行业一个 4 位代码，层级是 `门类(C/F) > 大类(2位) > 中类(3位) > 小类(4位)`：
+三条路拿到国标码（按顺序尝试）：
 
-```python
-import json
-idx = json.load(open("data/industry-index.json", encoding="utf-8"))
-m = idx["metadata"]          # 覆盖家数、小类数、生成日期
-code = "3525"                # 模具制造
-item = idx["index"][code]
-print(item["name"], item["count"], item["confidence"])   # 模具制造 621 {'high':..,'medium':..,'low':..}
-target_ids = set(item["ids"])                            # 该行业全部企业 ID
-```
-
-> **注意**：`industry-index.json` 是快照，抓取新数据后必须重建（`scripts/gen_industry_index.py`），
-> 否则新企业按行业永远搜不到——这是一个不会报错的静默缺陷。
+1. **别名表**：采购口语直接查 `data/gb-alias.json`——"CNC加工"→3484、"PCB"→3989、"冲压模具"→3525、"塑料原料"→2651。每条别名都由真实数据统计推导（出现 ≥3 次才收录），每条最多映射 6 个小类，按命中次数降序。
+2. **行业速查表**（下方）。
+3. **归档树浏览**：读 `data/gb-index.json` 的 `tree`，逐级看门类 → 大类 → 中类 → 小类及各家数。
 
 常见行业代码速查（完整清单读索引的 `index` 键）：
 
@@ -60,82 +55,74 @@ target_ids = set(item["ids"])                            # 该行业全部企业
 | 3982 | 电子电路制造（PCB） | 3660 | 汽车零部件及配件制造 |
 | 3989 | 其他电子元件制造 | 5164 | 金属及金属矿批发（**非制造**） |
 
-**行业筛选后再交叉地区索引**（两者都给 ID 列表，取交集），比扫描品类文件快得多：
+### 第 1 步：行业索引锁定 ID 列表
+
+```python
+import json
+idx = json.load(open("data/industry-index.json", encoding="utf-8"))
+m = idx["metadata"]          # 覆盖家数、小类数、生成日期
+code = "3525"                # 模具制造
+item = idx["index"][code]
+print(item["name"], item["count"], item["confidence"])   # 模具制造 1091 {'high':..,'medium':..,'low':..}
+target_ids = set(item["ids"])                            # 该行业全部企业 ID
+```
+
+> **注意**：`industry-index.json` 是快照，抓取新数据后必须重建（`scripts/gen_industry_index.py`），
+> 否则新企业按行业永远搜不到——这是一个不会报错的静默缺陷。
+
+代码前缀可当层级用：`29`=橡胶和塑料制品业（大类）、`339`=铸造及其他金属制品制造（中类）、`C`=制造业（门类）。
+
+### 第 2 步：地区索引取交集（如有地区需求）
 
 ```python
 city_ids = set(json.load(open("data/region-index.json", encoding="utf-8"))["index"]["浙江-宁波"]["ids"])
 hit_ids = target_ids & city_ids
 ```
 
-代码前缀可当层级用：`29`=橡胶和塑料制品业（大类）、`339`=铸造及其他金属制品制造（中类）、`C`=制造业（门类）。
+> 地区索引覆盖 18 个城市（苏州 1812、中山 1725、宁波 1520、杭州 1489、东莞 1443…）。
+> 目标城市不在索引中时，退化为只按行业取 ID，再逐记录核对 `region`。
 
-### 第 1 步：解析需求 → 映射关键词
+### 第 3 步：按 ID 从归档文件读详情
 
-行业代码无法覆盖的口语化描述（"小批量""来图定制"），再对照 `data/index.json` 的品类关键词词典：
+ID 编号与归档文件没有映射关系，两种取法：
 
-| 用户说 | 映射品类 | 检索关键词 |
-|---|---|---|
-| "找能加工小批量铝件的厂" | 精密机械加工 | 小批量, 铝合金, CNC加工 |
-| "要打钣金外壳" | 钣金冲压 | 钣金, 机箱 |
-| "PCB 打样" | 电子元器件 | PCB, PCBA |
-
-关键词匹配失败时，询问用户更具体的产品描述，不要硬猜。
-
-### 第 2 步：地区索引快速定位（如有地区需求）
-
-**优先使用地区索引**，避免全量扫描：
-
-1. 读 `data/region-index.json`
-2. 在 `index` 字段中搜索含目标城市的键（如 `"浙江-嘉兴"` 或直接找包含"嘉兴"的键）
-3. 获取 `ids` 列表（如 `["CN-MFG-0000224", "CN-MFG-0000398", ...]`）
-4. 按品类分组后，从对应 `data/suppliers/{品类}.json` 中按 `id` 精确定位记录
+1. **全量读再过滤**（2 万条约 20MB，环境允许时最简单）：
 
 ```python
-import json
-# 1. 用地区索引快速定位
-idx = json.load(open("data/region-index.json", encoding="utf-8"))
-city_key = next((k for k in idx["index"] if "嘉兴" in k), None)
-target_ids = idx["index"][city_key]["ids"]   # ['CN-MFG-0000224', ...]
-
-# 2. 按品类分组 id
-ids_by_cat = defaultdict(list)
-for fid in target_ids:
-    prefix = int(fid.split("-")[-1])   # 提取编号
-
-# 3. 从对应品类文件按 id 读取完整记录
-recs = json.load(open("data/suppliers/精密机械加工.json", encoding="utf-8"))
-hits = {r["id"]: r for r in recs if r["id"] in target_ids}
+import glob, json
+ids = hit_ids
+hits = []
+for f in glob.glob("data/gb/*/*/*.json"):
+    hits += [r for r in json.load(open(f, encoding="utf-8")) if r["id"] in ids]
 ```
 
-> **注意**：地区索引覆盖 18 个城市（如东莞 1108 家、深圳 920 家、苏州 1347 家），若目标城市不在索引中，回退到第 3 步品类扫描。
-
-### 第 3 步：品类文件关键词 + 地区过滤
-
-1. 读 `data/index.json` → 确认目标关键词属于哪个品类
-2. 读 `data/suppliers/{品类}.json`
-3. 过滤：`region.city == "目标城市"` 且 `keywords` 含目标关键词
+2. **按 `gb-index.json` 只读目标小类的桶文件**：树里每个小类的键就是文件路径
+   （`data/gb/{门类}/{大类}/{小类}.json`），命中 ID 落在哪个小类，去哪个文件取。
 
 记录字段说明：
 - `company`：公司名
-- `keywords`：主营关键词数组（子串匹配）
+- `keywords`：主营关键词数组（子串匹配）；`工艺:`/`材料:` 前缀的是结构化元信息
 - `region`：`{ "province": "...", "city": "..." }`
 - `contact_phone`：座机/400/手机，**完整展示**；缺失时为 `"待核实"`
 - `certifications`：资质标签数组
-- `source` / `source_url` / `verified_at`：来源与核实日期
+- `source` / `source_url` / `verified_at`：来源与核实日期（`source="certification"` 为平台认证回流，带 `cl` 灯牌）
 - `website`：官网（若有）
 - `industry`：国标行业，`{code, name, path, confidence, source}`；`null` = 未归类（拿不到行业信号，**不要替它猜**）
-- `is_manufacturer`：`false` = 批发/贸易商（F51 批发业），不是生产企业
+- `is_manufacturer`：`false` = 批发/贸易商，不是生产企业
+- `cl` / `certification`：凭证等级（L0-L3）与认证档案（仅认证回流记录有）
 - `amap`：地图 POI 扩展字段（typecode / website / email 等），仅供交叉核对
 
-若运行环境支持执行代码，也可用一行过滤：
-```python
-import json
-recs = json.load(open("data/suppliers/精密机械加工.json", encoding="utf-8"))
-hits = [r for r in recs
-        if r["region"]["city"] == "深圳"
-        and any("CNC" in k for k in r["keywords"])]
-# 注：is_template=true 也是真实企业 POI，仅电话待核实，检索时一并保留返回，不要丢弃
+若运行环境支持执行代码，也可用检索脚本一步到位：
+```bash
+python scripts/query.py --industry 3525 --city 宁波 --limit 5   # 模具制造
+python scripts/query.py --industry 29 --city 东莞                 # 橡胶和塑料制品业（大类）
+python scripts/query.py --industry 3360 --manufacturer-only       # 排除批发贸易商
+python scripts/query.py --list-gb                                 # 浏览国标归档树
+python scripts/query.py --keyword "CNC加工" --city 深圳 --limit 5     # 采购词（自动查别名表展开）
+python scripts/query.py --keyword "小批量铝件" --no-alias            # 关闭别名展开，纯关键词匹配
 ```
+
+> `is_template=true` / `status="unverified_poi"` 的记录也是真实企业 POI（仅电话待核实），检索时一并保留返回，不要丢弃。
 
 ### 第 4 步：呈现结果
 
@@ -160,13 +147,13 @@ hits = [r for r in recs
 ## 能力层检索（能做 vs 只存在）
 
 上面的流程只回答"**有这家厂**"。如果还要判断"**这家厂能不能做我的活**"，
-用 `skills/registry/fingerprint/{品类}.jsonl`——每家一行能力指纹，约 120 字。
+用 `skills/registry/fingerprint/*.jsonl`——每家一行能力指纹，约 120 字。
 
 **先粗筛后精读，不要一上来就全量读供应商自述**（8000 家全读会撑爆上下文）：
 
 | 阶段 | 读什么 | 规模 |
 |---|---|---|
-| 1 粗筛 | `fingerprint/{品类}.jsonl`，数值规则过滤 | 全量 → 10-30 家 |
+| 1 粗筛 | `fingerprint/*.jsonl`，数值规则过滤 | 全量 → 10-30 家 |
 | 2 比对 | `capability/{id}.json` | 30 家 → 5 家 |
 | 3 精读 | `vendors/{id}/SKILL.md` | 5 家 → 3 家 |
 
@@ -201,14 +188,6 @@ python scripts/search_capabilities.py --city 深圳 --proc cnc_milling \
 python scripts/search_capabilities.py --industry 3525 --city 宁波
 ```
 
-也可用名录检索脚本按行业查：
-```bash
-python scripts/query.py --industry 3525 --city 宁波 --limit 5   # 模具制造
-python scripts/query.py --industry 29 --city 东莞                 # 橡胶和塑料制品业（大类）
-python scripts/query.py --industry 3360 --manufacturer-only       # 排除批发贸易商
-python scripts/query.py --list-industries                         # 看看哪些行业有货
-```
-
 **规则：**
 1. 工艺码取值域见 `skills/schema/process-codes.json`
 2. `tol` / `moq` / `size` 为 `null` 表示未填——**无法确定性筛选，不要当作合格**
@@ -222,28 +201,26 @@ python scripts/query.py --list-industries                         # 看看哪些
 1. 直接读取 JSON，每次查询重新读取，不缓存数据用于二次分发
 2. 不编造价格、交期、产能
 3. 用户要求"推荐一家最好的" → 说明"本名录不做评级，以下按关键词匹配度排序，请自行核实"
-4. 查不到结果 → 提示用户换关键词（如"CNC加工"→"数控加工"）、换同级国标代码，或缩小/扩大地区范围
+4. 查不到结果 → 先查 `gb-alias.json` 换采购词（如"CNC加工"→"数控加工"），再试同级国标代码，最后缩小/扩大地区范围
 5. 用户想提交/更新供应商信息 → 引导到仓库贡献流程（`docs/CONTRIBUTING.md`），不承诺人工处理时效
 5.5 **行业口径**：`industry.confidence=low` 表示公司名里没有行业信号、由关键词或品类兜底推断，呈现时说明"行业为推断值，采购前需复核"；`industry=null` 就是没归类，不要替它猜一个；`is_manufacturer=false` 要提示"批发/贸易商，非生产企业"
 6. **联系方式完整展示**：座机/400/手机号均完整呈现；如号码缺失显示"待核实"，提示用户可通过企业官网或其他公开渠道核实，不得编造
 
 ## 数据说明
 
-- 当前 **12692 条电话已核实 + 7572 条待核实记录（合计 20264 条中文数据）**，另有英文镜像（见 `SKILL_EN.md` / `data/en/`）
+- 当前 **12693 条电话已核实 + 7571 条待核实 + 1 条示例（合计 20265 条中文数据）**，另有英文镜像 20265 条（`data/en/gb/`，见 `SKILL_EN.md`）
 - 已核实记录（`status="verified"`）联系电话可用；待核实记录（`status="unverified_poi"`）是真实企业 POI，电话待人工确认
-- **待核实记录也是真实企业**：`status="unverified_poi"` 的记录同样是真实存在的企业（来自公开 POI 名录），只是联系电话尚未逐一核实，Agent 检索时应**保留并一并返回**，不要丢弃（只有 `status="template"` 才是示例占位，当前为 0 条）
-- 覆盖品类：精密机械加工、钣金冲压、注塑成型、压铸、电子元器件、表面处理、标准件、原材料
-- **国标行业覆盖**：19610/20264 条已归入 **48 个 GB/T 4754 小类**（654 条未归类），
-  集中在通用设备制造业（6042）、金属制品业（5675）、橡胶和塑料制品业（2198）；
-  另有 1414 家落在 F51 批发业（`is_manufacturer=false`，贸易/批发商）
+- **待核实记录也是真实企业**：检索时**保留并一并返回**，不要丢弃（只有 `status="template"` 才是示例占位，当前 1 条）
+- **国标归档覆盖**：20265 条按 GB/T 4754 四级归档，19559 条已归入 **102 个小类**（706 条未归类）；
+  制造业（C）17911 家、批发业（F）1648 家；前三大类：通用设备（34）5941、金属制品（33）5640、橡塑（29）2280
 - 覆盖地区：18 个城市（长三角：苏州、宁波、上海、无锡、杭州、嘉兴等；珠三角：东莞、深圳、佛山、广州等），明细见 `data/region-index.json`
-  - 2026-09-08 补采：杭州 480→1489、绍兴 181→1251、惠州 174→1386、中山 155→1725、珠海 21→799，五城已铺满全部 8 个品类
-  - **按城市检索**：先用 `data/region-index.json` 快速定位目标城市的所有供应商 ID，再按品类分组精确定位，无需全量扫描
+  - 2026-09-08 补采：杭州 480→1489、绍兴 181→1251、惠州 174→1386、中山 155→1725、珠海 21→799
+  - **按城市检索**：先用 `data/region-index.json` 快速定位目标城市的所有供应商 ID，再按 ID 读详情，无需全量扫描
   - **按行业检索**：先用 `data/industry-index.json` 取目标行业的 ID 列表，再与城市 ID 取交集
 - **数据策略**：座机/400/手机号一律完整展示（公开名录数据，企业自行公开的经营联系方式），不做星号脱敏；禁止编造号码
 - 如企业要求更正/删除联系方式，引导其通过 GitHub Issue 提交
 
 ## 贡献
 
-- 新增/更正供应商：编辑 JSON + 提 PR，见 `docs/CONTRIBUTING.md`
+- 新增/更正供应商：编辑 `data/gb/` 对应小类文件 + 提 PR，见 `docs/CONTRIBUTING.md`
 - 企业申诉更新/删除自己的信息：GitHub Issue

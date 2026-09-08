@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "description": "已认证企业索引。cl = 凭证等级（L0 未核验 / L1 企业自述 / L2 平台已认证 / L3 第三方核验），灯牌由规则引擎算出，不可指定。",
+    "generated_at": "2026-09-09",
+    "counts": {
+      "L2": 1
+    },
+    "total": 1
+  },
+  "index": {
+    "L2": [
+      {
+        "id": "CN-MFG-0020317",
+        "company": "耐特斯传输设备（上海）有限公司",
+        "category": "精密机械加工",
+        "region": {
+          "province": "上海",
+          "city": "上海"
+        },
+        "cl": "L2",
+        "issued_at": "2026-09-08",
+        "expires_at": "2027-09-08",
+        "completeness": 94.1
+      }
+    ]
+  }
+}

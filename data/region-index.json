@@ -1,9 +1,9 @@
 {
   "metadata": {
     "total_cities": 18,
-    "total_suppliers": 20264,
-    "generated_at": "2026-09-08",
-    "usage": "按城市快速定位供应商 ID 列表，再从 data/suppliers/<品类>.json 按 id 读取具体记录"
+    "total_suppliers": 20265,
+    "generated_at": "2026-09-09",
+    "usage": "按城市快速定位供应商 ID 列表，再从 data/gb/<门类>/<大类>/<小类>.json 按 id 读取具体记录（或用 gb-index.json 定位文件）"
   },
   "index": {
     "江苏-苏州": {
@@ -10697,7 +10697,7 @@
       ]
     },
     "上海-上海": {
-      "count": 1270,
+      "count": 1271,
       "ids": [
         "CN-MFG-0000268",
         "CN-MFG-0000269",
@@ -11968,7 +11968,8 @@
         "CN-MFG-0014572",
         "CN-MFG-0014573",
         "CN-MFG-0014574",
-        "CN-MFG-0014575"
+        "CN-MFG-0014575",
+        "CN-MFG-0020317"
       ]
     },
     "浙江-绍兴": {

@@ -143,9 +143,9 @@ Rules:
 
 ## Data notes
 
-- Current dataset: **12,692 phone-verified + 7,572 pending records (20,264 total Chinese records)**, plus an English mirror (this skill's `data/en/`).
+- Current dataset: **12,693 phone-verified + 7,571 pending + 1 sample (20,265 total Chinese records)**, plus a 20,265-record English mirror (`data/en/gb/`, same GB layout).
 - Phone-verified records = 12,692 (`status="verified"`). Pending records = 7,572 (`status="unverified_poi"`) — real companies from public map POI, phone pending manual confirmation.
-- **Industry coverage (GB/T 4754-2017)**: 19,610 of 20,264 classified into **48 national industry classes** (654 unclassified). Concentrated in General-purpose Machinery (6,042), Metal Products (5,675), Rubber & Plastics (2,198); 1,414 are wholesalers (`is_manufacturer=false`, F51 Wholesale — **not manufacturers**).
+- **Industry coverage (GB/T 4754-2017)**: 19,559 of 20,265 classified into **102 national industry classes** (706 unclassified). Concentrated in General-purpose Machinery (34) 5,941, Metal Products (33) 5,640, Rubber & Plastics (29) 2,280; 1,646 are wholesalers (`is_manufacturer=false`, F51 Wholesale — **not manufacturers**). Records are archived as `data/gb/{gate}/{division}/{class}.json`; procurement slang maps to GB codes via `data/gb-alias.json`.
 - `industry_en.confidence=low` means the company name carried no industry signal and the class was inferred — present it as inferred, verify before sourcing. `industry_en=null` = unclassified; do not guess one.
 - **`is_template=true` are still real business POIs**: these are genuine companies from the public POI directory; only their phone number is not yet confirmed. The agent should **keep and return them** in search results, not drop them.
 - All data comes from public sources (public POI directory); not individually verified against official websites — contact the supplier to confirm.
@@ -159,6 +159,6 @@ Rules:
 
 ## Contribution
 
-- Fix/update records: edit `data/en/*.json` (or `data/suppliers/*.json`) and open a PR.
+- Fix/update records: edit the matching class file under `data/gb/` (Chinese) or `data/en/gb/` (English) and open a PR.
   See `docs/CONTRIBUTING.md`.
 - Companies may claim/update their own info via GitHub Issue.
