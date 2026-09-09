@@ -44,7 +44,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013838",
@@ -89,7 +90,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0014025",
@@ -134,7 +136,8 @@
       "source": "name",
       "evidence": "马达"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0017571",
@@ -180,7 +183,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0019988",
@@ -226,7 +230,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0020007",
@@ -272,7 +277,8 @@
       "source": "gb_token",
       "evidence": "电动机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0003412",
@@ -349,7 +355,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0012252",
@@ -394,7 +401,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0004185",
@@ -518,6 +526,7 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   }
 ]

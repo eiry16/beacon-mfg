@@ -42,7 +42,8 @@
       "source": "name",
       "evidence": "配电箱"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0023461",
@@ -87,6 +88,7 @@
       "source": "name",
       "evidence": "配电箱"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   }
 ]
