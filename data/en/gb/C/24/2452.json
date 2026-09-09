@@ -1,5 +1,32 @@
 [
   {
+    "id": "CN-MFG-0008402",
+    "company_en": "Dongguan Hengli Yonghong Plastic Toy Processing Shop",
+    "category": "精密机械加工",
+    "category_en": "Precision Machining",
+    "keywords_en": [
+      "plastic processing",
+      "plastic processing"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 38, Shendian 1st Road",
+    "contact_phone": "18819720936",
+    "source": "public_directory",
+    "verified_at": "2026-08-13",
+    "note_en": "",
+    "industry_en": {
+      "code": "2452",
+      "name_en": null,
+      "level": "class",
+      "name": "塑胶玩具制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/24/2452"
+  },
+  {
     "id": "CN-MFG-0015876",
     "company_en": "中山市联顺塑胶玩具有限公司",
     "category": "注塑成型",
@@ -26,30 +53,29 @@
     "_bucket": "C/24/2452"
   },
   {
-    "id": "CN-MFG-0008402",
-    "company_en": "Dongguan Hengli Yonghong Plastic Toy Processing Shop",
-    "category": "精密机械加工",
-    "category_en": "Precision Machining",
+    "id": "CN-MFG-0020626",
+    "company_en": "Yongsheng Plastic Toys Factory",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
     "keywords_en": [
-      "plastic processing",
-      "plastic processing"
+      "Plastic Products"
     ],
     "region": {
       "province": "Guangdong",
-      "city": "Dongguan"
+      "city": "Huizhou"
     },
-    "address_en": "No. 38, Shendian 1st Road",
-    "contact_phone": "18819720936",
+    "address_en": "Bota Town",
+    "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
+    "_bucket": "C/24/2452",
     "industry_en": {
       "code": "2452",
       "name_en": null,
       "level": "class",
       "name": "塑胶玩具制造",
       "confidence": "high"
-    },
-    "_bucket": "C/24/2452"
+    }
   }
 ]

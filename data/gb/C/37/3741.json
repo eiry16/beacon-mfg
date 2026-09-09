@@ -42,7 +42,8 @@
       "source": "gb_token",
       "evidence": "飞机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0011538",
@@ -87,7 +88,8 @@
       "source": "gb_token",
       "evidence": "飞机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0017030",
@@ -132,6 +134,7 @@
       "source": "gb_token",
       "evidence": "飞机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   }
 ]

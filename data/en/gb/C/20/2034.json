@@ -1,31 +1,5 @@
 [
   {
-    "id": "CN-MFG-0018670",
-    "company_en": "DaZiran Wood Floor (Daya Bay South China City Store)",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "circuit board"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Huizhou"
-    },
-    "address_en": "No. 26, Building 9, South China International Building Materials Market",
-    "contact_phone": "13798565443",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "2034",
-      "name_en": null,
-      "level": "class",
-      "name": "木地板制造",
-      "confidence": "high"
-    },
-    "_bucket": "C/20/2034"
-  },
-  {
     "id": "CN-MFG-0007446",
     "company_en": "Maohuan Anti-corrosion Wood Plastic Flooring and Various Boards Wholesale",
     "category": "原材料",
@@ -39,6 +13,32 @@
     },
     "address_en": "No. 1 Building, Right Side of Jile Shun Building, No. 140 Chang'an Town Changhe Road",
     "contact_phone": "15068382896",
+    "source": "public_directory",
+    "verified_at": "2026-08-13",
+    "note_en": "",
+    "industry_en": {
+      "code": "2034",
+      "name_en": null,
+      "level": "class",
+      "name": "木地板制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/20/2034"
+  },
+  {
+    "id": "CN-MFG-0018670",
+    "company_en": "DaZiran Wood Floor (Daya Bay South China City Store)",
+    "category": "电子元器件",
+    "category_en": "Electronic Components",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Huizhou"
+    },
+    "address_en": "No. 26, Building 9, South China International Building Materials Market",
+    "contact_phone": "13798565443",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
@@ -102,5 +102,31 @@
       "confidence": "high"
     },
     "_bucket": "C/20/2034"
+  },
+  {
+    "id": "CN-MFG-0021664",
+    "company_en": "Qiao Lin Mu Di Tan Piao Fa Zhong Xin",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "Qiaolin Jiedao Jinding Road No. 9 Qiaolin Decoration City D10",
+    "contact_phone": "15151831269",
+    "source": "public_directory",
+    "verified_at": "2026-08-13",
+    "note_en": "",
+    "_bucket": "C/20/2034",
+    "industry_en": {
+      "code": "2034",
+      "name_en": null,
+      "level": "class",
+      "name": "木地板制造",
+      "confidence": "high"
+    }
   }
 ]

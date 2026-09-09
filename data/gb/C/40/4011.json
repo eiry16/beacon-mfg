@@ -733,7 +733,8 @@
       "source": "name",
       "evidence": "自动化"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0018229",
@@ -778,7 +779,8 @@
       "source": "name",
       "evidence": "自动化"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0018235",
@@ -823,7 +825,8 @@
       "source": "name",
       "evidence": "自动化"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0004526",
@@ -1135,7 +1138,8 @@
       "source": "name",
       "evidence": "自动化"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0001440",
@@ -1400,7 +1404,8 @@
       "source": "name",
       "evidence": "自动化"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0022114",
@@ -1445,6 +1450,7 @@
       "source": "name",
       "evidence": "自动化"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   }
 ]
