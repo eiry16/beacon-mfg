@@ -86,6 +86,7 @@ def main() -> int:
     total_co = sum(sup.values())
     n_class = len(sup)
 
+    saved_max = GB.ALIAS_MAX_SUPPLY
     data_alias = GB.load_alias(with_curated=False)
     merged = GB.load_alias()
     curated = {k: v for k, v in merged.items() if k not in data_alias}
@@ -129,12 +130,57 @@ def main() -> int:
     print(f"  补词后可命中            : {reach_after:6d}  "
           f"({reach_after / total_co * 100:5.1f}%)")
 
-    # ── 4. 剩余缺口 ──────────────────────────────────────────────
+    sup_idx = {}
+    try:
+        tree = json.load(open(ROOT / "data" / "gb-index.json", encoding="utf-8"))["tree"]
+        for g in tree.values():
+            for d in (g.get("divisions") or {}).values():
+                for gr in (d.get("groups") or {}).values():
+                    for c, cv in (gr.get("classes") or {}).items():
+                        sup_idx[c] = cv.get("count", 0)
+    except (OSError, KeyError, json.JSONDecodeError):
+        sup_idx = {}
+
+    # 关掉阈值重算一遍，用来对照噪音削减了多少
+    GB.ALIAS_MAX_SUPPLY = None
+    GB._SUPPLY_CACHE = None
+    loose = GB.load_alias()
+    GB.ALIAS_MAX_SUPPLY = saved_max
+    GB._SUPPLY_CACHE = None
+
+    print()
+    print("=" * 72)
+    print("4. 噪音对照：max_supply 阈值关掉 vs 开启")
+    print("=" * 72)
+    print(f"  当前阈值 ALIAS_MAX_SUPPLY = {saved_max}（环境变量 BMFG_ALIAS_MAX_SUPPLY 可覆盖）")
+    print("  首位码永不淘汰，只过滤补位码——否则「钣金」这类词会掉到 0 家。")
+    print()
+    tot_on = tot_off = 0
+    rows = []
+    for w in sorted(set(loose) | set(merged)):
+        off = {e["code"] for e in loose.get(w, [])}
+        on = {e["code"] for e in merged.get(w, [])}
+        if off == on:
+            continue
+        n_off = sum(sup_idx.get(c, 0) for c in off)
+        n_on = sum(sup_idx.get(c, 0) for c in on)
+        tot_off += n_off
+        tot_on += n_on
+        rows.append((w, n_off, n_on, sorted(off - on)))
+    rows.sort(key=lambda r: -(r[1] - r[2]))
+    print(f"  {'采购词':10s}{'关阈值':>9s}{'开阈值':>9s}  被剔除的码")
+    for w, a_, b_, dropped in rows[:14]:
+        print(f"  {w:10s}{a_:9d}{b_:9d}  {','.join(dropped)}")
+    if len(rows) > 14:
+        print(f"  … 另有 {len(rows) - 14} 个词同样被收紧")
+    print()
+    print(f"  受影响词合计：{tot_off} 家 → {tot_on} 家"
+          f"（削减 {tot_off - tot_on} 家，{(1 - tot_on / max(tot_off, 1)) * 100:.0f}%）")
     gaps = [(c, n) for c, n in sup.most_common()
             if c not in merged_codes and n >= a.gap]
     print()
     print("=" * 72)
-    print(f"4. 剩余缺口（供给 >= {a.gap} 家却仍无任何别名入口）")
+    print(f"5. 剩余缺口（供给 >= {a.gap} 家却仍无任何别名入口）")
     print("=" * 72)
     if not gaps:
         print("  无。所有够规模的小类都有采购词入口。")
@@ -145,7 +191,7 @@ def main() -> int:
     # ── 5. 小类明细 ──────────────────────────────────────────────
     print()
     print("=" * 72)
-    print(f"5. 供给 TOP{a.top} 小类：别名入口数（前 / 后）")
+    print(f"6. 供给 TOP{a.top} 小类：别名入口数（前 / 后）")
     print("=" * 72)
     entry_before: Counter = Counter()
     entry_after: Counter = Counter()
@@ -167,7 +213,7 @@ def main() -> int:
     # ── 6. 采购词实测 ────────────────────────────────────────────
     print()
     print("=" * 72)
-    print("6. 采购词实测（解析不出 → 退化为全库扫描，103 请求 / 4.52MB）")
+    print("7. 采购词实测（解析不出 → 退化为全库扫描，103 请求 / 4.52MB）")
     print("=" * 72)
     sys.path.insert(0, str(ROOT / "scripts"))
     import query as Q  # noqa: E402

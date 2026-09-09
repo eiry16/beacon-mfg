@@ -457,6 +457,10 @@ def main():
     parser.add_argument("--list-alias", action="store_true", help="列出采购词→国标码映射")
     parser.add_argument("--no-alias", action="store_true",
                         help="关闭关键词→国标的别名扩展（只做字面匹配，便于对比）")
+    parser.add_argument("--alias-broad", action="store_true",
+                        help="别名扩展不做 max_supply 收敛：召回更全但噪音更大。"
+                             "默认会被收敛——目标小类家数超过阈值的补位码会被剔除，"
+                             "实测削减 70%% 结果量（见 scripts/audit_alias.py 第 4 节）")
     parser.add_argument("--explain", action="store_true", help="打印检索条件是怎么解析的")
     parser.add_argument("--limit", type=int, default=5, help="返回条数上限")
     parser.add_argument("--include-template", action="store_true", help="包含模板示例数据")
@@ -488,6 +492,10 @@ def main():
 
     alias_cache: dict[str, dict] = {}
     if args.keyword and not args.no_alias:
+        if args.alias_broad and GB is not None:
+            # 放宽收敛。必须清缓存，否则 load_alias 用的是上一次的合并结果
+            GB.ALIAS_MAX_SUPPLY = None
+            GB._SUPPLY_CACHE = None
         for k in [x for x in args.keyword.split() if x]:
             ranks = alias_rank_for(k)
             alias_cache[k] = ranks
@@ -508,8 +516,25 @@ def main():
         if args.industry:
             print("未找到匹配供应商。该行业在目标条件下暂无记录——"
                   "可用 --list-industries 看哪些行业有货，或去掉 --city 再试。")
-        else:
-            print("未找到匹配供应商。提示：换关键词（如 CNC加工→数控加工），或放宽地区/认证条件。")
+            sys.exit(0)
+        print("未找到匹配供应商。")
+        # 收敛把结果砍成 0 时，告诉用户放宽能拿到多少——但**不静默放宽**。
+        # 直接返回 0 会让客户误以为「上海没有齿轮厂」，
+        # 而真相是「没有一家被归类为齿轮制造，只有 216 家行业推断」。
+        if (args.keyword and not args.no_alias and not args.alias_broad
+                and GB is not None):
+            saved = GB.ALIAS_MAX_SUPPLY
+            GB.ALIAS_MAX_SUPPLY = None
+            GB._SUPPLY_CACHE = None
+            broad = {k: alias_rank_for(k) for k in args.keyword.split() if k}
+            n = len(search(suppliers, args, industry_codes, broad))
+            GB.ALIAS_MAX_SUPPLY = saved
+            GB._SUPPLY_CACHE = None
+            if n:
+                print("放宽别名收敛（--alias-broad）可得到 %d 家，"
+                      "但全部是按国标行业推断的，企业未确认。" % n)
+                sys.exit(0)
+        print("提示：换关键词（如 CNC加工→数控加工），或放宽地区/认证条件。")
         sys.exit(0)
 
     # 分层说明：别名扩展是"整类扩展"，弱档结果企业没说过自己能做，必须说清楚

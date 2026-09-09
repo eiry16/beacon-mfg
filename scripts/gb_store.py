@@ -48,6 +48,15 @@ GB_FULL = ROOT / "data" / "gb4754-full.json"
 UNCLASSIFIED = "_unclassified"
 PARTIAL = "_partial"
 
+# 策展补位码的供给上限：目标小类家数超过它就不参与别名扩展。
+# 500 是实测拐点——再往下压收益递减（全库总量只再降 2%），
+# 却会开始误伤「传感器→3989 其他电子元件制造」这类合理的补位。
+# 置为 None 可关闭过滤；环境变量 BMFG_ALIAS_MAX_SUPPLY 可覆盖。
+ALIAS_MAX_SUPPLY: int | None = 500
+_env_max = os.environ.get("BMFG_ALIAS_MAX_SUPPLY", "").strip()
+if _env_max:
+    ALIAS_MAX_SUPPLY = None if _env_max.lower() in ("0", "none", "off") else int(_env_max)
+
 # 单个归档文件的最大条数。超过就自动切成 {小类}-p2.json / -p3.json ...
 # 为什么要限：3484 机械零部件加工现在已经 3415 条 / 4 MB，到千万级会是 2 GB 的
 # 单个 JSON —— 客户端无法按需下载，git pack/diff/PR 也全部失效。
@@ -461,10 +470,40 @@ def _load_curated_alias() -> dict[str, list[dict[str, Any]]]:
             continue
         out[word] = [
             {"code": str(c), "name": _class_name(str(c)), "hits": None,
-             "source": "curated", "note": (spec.get("note") if isinstance(spec, dict) else None)}
+             "source": "curated",
+             "note": (spec.get("note") if isinstance(spec, dict) else None),
+             # 逐条覆盖全局 ALIAS_MAX_SUPPLY；个别词确需保留大码时用它，别改全局
+             "max_supply": (spec.get("max_supply") if isinstance(spec, dict) else None)}
             for c in codes
         ]
     return out
+
+
+def _class_supply() -> dict[str, int]:
+    """每个 4 位小类有多少家企业。
+
+    从 data/gb-index.json 的树里读现成计数，**不重新扫归档**（19551 条，太贵）。
+    读不到就返回空表——此时调用方应放弃过滤，而不是按"供给为 0"去过滤，
+    后者会把所有补位码都当成超大收口类清掉。
+    """
+    global _SUPPLY_CACHE
+    if _SUPPLY_CACHE is not None:
+        return _SUPPLY_CACHE
+    out: dict[str, int] = {}
+    try:
+        tree = json.load(open(GB_INDEX, encoding="utf-8")).get("tree") or {}
+    except (OSError, json.JSONDecodeError):
+        return {}
+    for gate in tree.values():
+        for div in (gate.get("divisions") or {}).values():
+            for grp in (div.get("groups") or {}).values():
+                for code, cv in (grp.get("classes") or {}).items():
+                    out[code] = cv.get("count", 0)
+    _SUPPLY_CACHE = out
+    return out
+
+
+_SUPPLY_CACHE: dict[str, int] | None = None
 
 
 def _class_name(code: str) -> str:
@@ -498,11 +537,38 @@ def load_alias(with_curated: bool = True) -> dict[str, list[dict[str, Any]]]:
     for word, entries in _load_curated_alias().items():
         existing = merged.setdefault(word, [])
         seen = {e["code"] for e in existing}
-        for e in entries:
-            if e["code"] not in seen:
-                seen.add(e["code"])
-                existing.append(e)
+        for i, e in enumerate(entries):
+            if e["code"] in seen:
+                continue
+            if i > 0 and _over_supply(e):
+                # 超大收口类不参与补位。注意 i==0 永不淘汰——
+                # 首位码是语义核心，砍掉它「钣金」这类词会直接掉到 0 家。
+                continue
+            seen.add(e["code"])
+            existing.append(e)
     return merged
+
+
+def _over_supply(entry: dict[str, Any]) -> bool:
+    """策展补位码是否因目标小类过大而应被剔除。
+
+    背景：别名扩展是"整类扩展"——命中某个码 = 把这个码下所有企业都算进来。
+    实测「齿轮」首位码 3453 只有 6 家，补位码 3484 却有 3415 家，
+    结果从 6 家膨胀到 3421 家，其中绝大多数只是机械零部件加工厂。
+
+    **首位码不参与本判定**（见 load_alias 的 i > 0 条件）：
+    钣金 → 3311 金属结构制造有 1498 家，看着很宽，但这就是正确答案，
+    一刀切按家数砍会把正确结果砍成 0。
+    """
+    sup = _class_supply()
+    if not sup:  # 拿不到计数就不过滤，宁可噪也不能错杀
+        return False
+    limit = entry.get("max_supply")
+    if limit is None:
+        limit = ALIAS_MAX_SUPPLY
+    if limit is None:  # 显式关闭
+        return False
+    return sup.get(entry["code"], 0) > int(limit)
 
 
 def lookup_alias(word: str) -> list[str]:
