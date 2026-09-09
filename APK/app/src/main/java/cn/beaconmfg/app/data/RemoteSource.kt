@@ -246,6 +246,8 @@ class RemoteSource(private val store: DataStore) {
             val kws = ArrayList<String>()
             val ka = o.optJSONArray("keywords")
             if (ka != null) for (j in 0 until ka.length()) kws.add(ka.optString(j, ""))
+            // 能力卡读的是内置副本，不联网也有。断网时详情页照样能看到工艺位。
+            val gbCode = ind?.safeString("code") ?: ""
             return SupplierDetail(
                 id = id,
                 company = o.safeString("company"),
@@ -255,13 +257,14 @@ class RemoteSource(private val store: DataStore) {
                 phone = o.safeString("contact_phone"),
                 website = o.safeString("website"),
                 keywords = kws,
-                gb = ind?.safeString("code") ?: "",
+                gb = gbCode,
                 gbName = ind?.safeString("name") ?: "",
                 gbPath = ind?.safeString("path") ?: "",
                 certs = certs,
                 status = o.safeString("status"),
                 isManufacturer = o.optBoolean("is_manufacturer", true),
                 verifiedAt = o.safeString("verified_at"),
+                cap = store.capabilityOf(id, gbCode),
             )
         }
         return null

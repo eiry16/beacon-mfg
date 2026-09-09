@@ -250,6 +250,111 @@ class DataStore(private val app: Application) {
         return out
     }
 
+    // ── L1 能力卡（内置 assets/capability/，不依赖网络）─────────────────────
+    /**
+     * 国标码 → 分片相对路径。由 sync_assets.py 生成，
+     * 用它避免为了查一家厂把 41 个分片全读一遍。
+     */
+    @Volatile
+    private var capMap: JSONObject? = null
+
+    /** 分片 → 该片全部能力卡。按片缓存，同小类连续查看只解析一次。 */
+    private val capShards = HashMap<String, Map<String, CapabilityCard>>()
+
+    private fun capIndex(): JSONObject {
+        capMap?.let { return it }
+        val m = readAsset("capability/_map.json")?.let {
+            try {
+                JSONObject(it)
+            } catch (e: Exception) {
+                JSONObject()
+            }
+        } ?: JSONObject()
+        capMap = m
+        return m
+    }
+
+    /**
+     * 按 id 取能力卡。gb 是国标小类码（4 位），用来定位分片。
+     * 取不到返回 null —— 23698 家里只有 4136 家有卡，没有卡是常态不是错误。
+     * 必须在 IO 线程调用（首次会读文件）。
+     */
+    fun capabilityOf(id: String, gb: String): CapabilityCard? {
+        if (id.isEmpty()) return null
+        val rel = capIndex().optString(gb, "").ifEmpty {
+            // 国标码对不上（3 位中类码或未归类）：退到未归类分片里找一遍
+            capIndex().optString("_", "")
+        }
+        if (rel.isEmpty()) return null
+        val shard = capShards[rel] ?: loadCapShard(rel).also { capShards[rel] = it }
+        return shard[id]
+    }
+
+    private fun loadCapShard(rel: String): Map<String, CapabilityCard> {
+        val text = readAsset("capability/$rel") ?: return emptyMap()
+        val out = HashMap<String, CapabilityCard>()
+        val arr = try {
+            org.json.JSONArray(text)
+        } catch (e: Exception) {
+            return emptyMap()
+        }
+        for (i in 0 until arr.length()) {
+            val o = arr.optJSONObject(i) ?: continue
+            val sid = o.safeString("id")
+            if (sid.isEmpty()) continue
+            val procs = ArrayList<ProcItem>()
+            val pa = o.optJSONArray("proc")
+            if (pa != null) {
+                for (j in 0 until pa.length()) {
+                    val p = pa.optJSONObject(j) ?: continue
+                    procs.add(
+                        ProcItem(
+                            code = p.safeString("c"),
+                            name = p.safeString("n"),
+                            level = p.safeString("l"),
+                        )
+                    )
+                }
+            }
+            val lim = LinkedHashMap<String, String>()
+            val lo = o.optJSONObject("lim")
+            if (lo != null) {
+                for (k in lo.keys()) {
+                    val v = lo.opt(k) ?: continue
+                    val s = when (v) {
+                        is org.json.JSONArray -> v.toString()
+                        else -> v.toString()
+                    }
+                    if (s.isNotEmpty() && s != "null") lim[k] = s
+                }
+            }
+            val sk = o.optJSONObject("sk")
+            out[sid] = CapabilityCard(
+                id = sid,
+                company = o.safeString("co"),
+                gb = o.safeString("gb"),
+                gbName = o.safeString("gn"),
+                city = o.safeString("city"),
+                province = o.safeString("prov"),
+                processes = procs,
+                materials = strList(o, "mat"),
+                limits = lim,
+                badge = o.safeString("cl").ifEmpty { "L0" },
+                provenance = o.safeString("pv"),
+                hasPhone = o.optInt("tel", 0) != 0,
+                skillPath = sk?.safeString("u") ?: "",
+                skillVerified = sk?.optBoolean("v", false) ?: false,
+            )
+        }
+        return out
+    }
+
+    fun capabilitySummary(): String {
+        val n = capIndex().length()
+        return if (n == 0) "能力卡：未内置（跑 sync_assets.py）"
+        else "能力卡：内置 $n 个国标小类分片"
+    }
+
     // ── 详情缓存（按需下载的 data/gb/**.json） ──────────────────────────────
     fun cachedDetailContent(code: String): String? {
         val f = File(detailDir, "$code.json")

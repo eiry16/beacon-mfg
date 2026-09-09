@@ -71,6 +71,69 @@ data class SearchOutcome(
     val relaxed: Int = 0,
 )
 
+/**
+ * 一条工艺。level 分三档，来自能力卡的 processes[].level：
+ *  primary 主营 / secondary 兼营 / outsourced 外协。
+ * 不显示 level 的话，客户会以为「外协」也是这家厂自己做——那是误导。
+ */
+data class ProcItem(
+    val code: String,
+    val name: String,
+    val level: String,
+) {
+    val levelLabel: String
+        get() = when (level) {
+            "primary" -> "主营"
+            "secondary" -> "兼营"
+            "outsourced" -> "外协"
+            else -> ""
+        }
+}
+
+/**
+ * L1 能力卡（精简版，内置在 assets/capability/）。
+ *
+ * 字段与 scripts/gen_capability_shards.py 的 slim 版一一对应。
+ * **改这里必须同步改脚本**，否则 App 读到的全是空值且不报错。
+ *
+ * ⚠ 硬指标（limits）几乎全空是诚实结果：4136 张卡里只有 6 张有实质值，
+ * 其余 4130 张是全 null 空壳。所以 limits 为空 map 时 UI 显示「未填报」，
+ * 绝不显示 0——那等于告诉客户这家厂公差能做到 0。
+ */
+data class CapabilityCard(
+    val id: String,
+    val company: String,
+    val gb: String,
+    val gbName: String,
+    val city: String,
+    val province: String,
+    val processes: List<ProcItem>,
+    val materials: List<String>,
+    /** 硬指标，只含有值的键。空 map = 企业未填报。 */
+    val limits: Map<String, String>,
+    val badge: String,
+    /** auto 平台自动整理 / vendor_claimed 厂商自述 */
+    val provenance: String,
+    val hasPhone: Boolean,
+    /** 厂商 skill 相对路径（如 skills/vendors/CN-MFG-0000005/SKILL.md） */
+    val skillPath: String,
+    val skillVerified: Boolean,
+) {
+    val isSelfReported: Boolean get() = provenance == "vendor_claimed"
+
+    /** 把硬指标翻成中文行。没填的键不出现，不编造。 */
+    fun limitLines(): List<String> {
+        val out = ArrayList<String>()
+        limits["tol"]?.let { out.add("公差 ±${it}mm") }
+        limits["size"]?.let { out.add("最大件 ${it}") }
+        limits["moq"]?.let { out.add("起订 ${it}") }
+        limits["lt"]?.let { out.add("交期 ${it}") }
+        limits["load"]?.let { out.add("当前负荷 ${it}%") }
+        if (limits["rush"] == "true") out.add("可接急单")
+        return out
+    }
+}
+
 /** 供应商完整档案（按需从 data/gb/ 下的小类分片拉取，不内置） */
 data class SupplierDetail(
     val id: String,
@@ -88,5 +151,10 @@ data class SupplierDetail(
     val status: String,
     val isManufacturer: Boolean,
     val verifiedAt: String,
+    /**
+     * L1 能力卡。**内置在 APK 里**，不依赖网络——断网也能看到工艺位。
+     * 为 null 表示这家厂还没有能力卡（23698 家里只有 4136 家有，约 17.5%）。
+     */
+    val cap: CapabilityCard? = null,
     val offline: Boolean = false,
 )

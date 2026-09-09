@@ -45,6 +45,7 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
     val messages by vm.messages.collectAsState()
     val busy by vm.busy.collectAsState()
     val status by vm.status.collectAsState()
+    val settings by vm.settings.collectAsState()
     var input by remember { mutableStateOf("") }
 
     val samples = listOf(
@@ -84,7 +85,7 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            items(messages, key = { it.id }) { m -> MessageRow(m) }
+            items(messages, key = { it.id }) { m -> MessageRow(m, settings.dataBase) }
         }
 
         // 快捷问题：手机上打字成本高，给几个真实场景的起手式
@@ -123,7 +124,7 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun MessageRow(m: MainViewModel.UiMessage) {
+private fun MessageRow(m: MainViewModel.UiMessage, skillBase: String = "") {
     val isUser = m.role == MainViewModel.Role.USER
     Box(
         modifier = Modifier.fillMaxWidth(),
@@ -142,7 +143,7 @@ private fun MessageRow(m: MainViewModel.UiMessage) {
                         if (m.hits.isNotEmpty()) Column {
                             m.hits.forEach { SupplierCard(it) }
                         }
-                        m.detail?.let { DetailCard(it) }
+                        m.detail?.let { DetailCard(it, skillBase) }
                     }
                 }
             }
@@ -168,7 +169,7 @@ private fun MessageRow(m: MainViewModel.UiMessage) {
                     if (m.hits.isNotEmpty()) Column(Modifier.padding(top = 6.dp)) {
                         m.hits.forEach { SupplierCard(it) }
                     }
-                    m.detail?.let { DetailCard(it) }
+                    m.detail?.let { DetailCard(it, skillBase) }
                 }
             }
         }
@@ -250,7 +251,11 @@ private fun EvidenceTag(e: Evidence) {
 }
 
 @Composable
-private fun DetailCard(d: cn.beaconmfg.app.data.SupplierDetail) {
+private fun DetailCard(
+    d: cn.beaconmfg.app.data.SupplierDetail,
+    skillBase: String = "",
+) {
+    val uriHandler = androidx.compose.ui.platform.LocalUriHandler.current
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -270,7 +275,111 @@ private fun DetailCard(d: cn.beaconmfg.app.data.SupplierDetail) {
             if (d.certs.isNotEmpty()) {
                 Text("认证：" + d.certs.joinToString("、"), style = MaterialTheme.typography.bodySmall)
             }
+            d.cap?.let { CapabilityBlock(it, skillBase, uriHandler) }
+                ?: Text(
+                    "能力卡：暂无（23698 家里只有 4136 家进了 L1 层）",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
         }
+    }
+}
+
+/**
+ * 工艺位（L1 能力卡）。
+ *
+ * 两条红线在这里体现：
+ *  1. **硬指标没填就写「未填报」**，不显示 0。4136 张卡里只有 6 张有实质硬指标，
+ *     显示 0 会让客户以为这家厂公差能做到 0。
+ *  2. **自动整理的卡必须标注来源**。工艺是平台从企业名称推断的，企业没确认过，
+ *     不标注等于把推断当承诺。
+ */
+@Composable
+private fun CapabilityBlock(
+    cap: cn.beaconmfg.app.data.CapabilityCard,
+    skillBase: String,
+    uriHandler: androidx.compose.ui.platform.UriHandler,
+) {
+    Column(Modifier.padding(top = 6.dp)) {
+        Text(
+            if (cap.isSelfReported) "能力卡 · 厂商自述"
+            else "能力卡 · 平台自动整理（工艺由企业名称推断，未获企业确认）",
+            style = MaterialTheme.typography.labelSmall,
+            color = if (cap.isSelfReported) MaterialTheme.colorScheme.primary
+            else MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+
+        if (cap.processes.isNotEmpty()) {
+            androidx.compose.foundation.layout.FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                modifier = Modifier.padding(top = 4.dp),
+            ) {
+                cap.processes.forEach { ProcChip(it) }
+            }
+        }
+
+        if (cap.materials.isNotEmpty()) {
+            Text(
+                "材料：" + cap.materials.joinToString("、"),
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier.padding(top = 2.dp),
+            )
+        }
+
+        val lims = cap.limitLines()
+        if (lims.isNotEmpty()) {
+            Text(
+                "硬指标：" + lims.joinToString(" · "),
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier.padding(top = 2.dp),
+            )
+        } else {
+            Text(
+                "硬指标：未填报（留空，不填 0）",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 2.dp),
+            )
+        }
+
+        // 厂商 skill（L2 自述层）。CDN 部署前这个 URL 不可达（L2 不进 Git），
+        // 按钮仍然给出路径——采购可以照着路径去仓库找，比藏起来强。
+        if (cap.skillPath.isNotEmpty()) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(top = 4.dp),
+            ) {
+                Text(
+                    "厂商 Skill：${cap.skillPath.substringAfterLast('/').removeSuffix(".md")}" +
+                        if (cap.skillVerified) " · 已核实" else " · 未核实",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.weight(1f),
+                )
+                if (skillBase.isNotBlank()) {
+                    Button(onClick = { uriHandler.openUri(skillBase.trimEnd('/') + "/" + cap.skillPath) }) {
+                        Text("打开")
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ProcChip(p: cn.beaconmfg.app.data.ProcItem) {
+    val primary = p.level == "primary"
+    Surface(
+        color = if (primary) MaterialTheme.colorScheme.primaryContainer
+        else MaterialTheme.colorScheme.surfaceVariant,
+        shape = RoundedCornerShape(6.dp),
+    ) {
+        Text(
+            p.name.ifEmpty { p.code } + (p.levelLabel.takeIf { it.isNotEmpty() }?.let { "·$it" } ?: ""),
+            fontSize = 11.sp,
+            fontWeight = if (primary) FontWeight.SemiBold else FontWeight.Normal,
+            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+        )
     }
 }
 

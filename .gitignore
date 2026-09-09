@@ -32,6 +32,10 @@ scripts/*
 !scripts/query.py
 !scripts/search_capabilities.py
 !scripts/client_search.py
+# gen_capability_shards.py 是 L1 能力卡国标分片的唯一生成器。
+# 不放行的后果：客户照 SKILL.md 想按小类批量取能力卡 → 脚本不存在，
+# 又退化成 4136 次单文件请求。纯标准库，只依赖 gb_store（已放行）。
+!scripts/gen_capability_shards.py
 # industry_taxonomy.py 是 query.py 的国标码表来源。不放行的话：
 # query.py 走到 `except ImportError` 分支 → CODES={} → **任何 --industry 查询都返回
 # "没匹配到任何国标行业"且不报错**（2026-09-09 实测）。纯标准库，仅读 data/gb4754-full.json。
@@ -149,4 +153,6 @@ APK/build/
 APK/app/build/
 APK/local.properties
 APK/app/src/main/assets/
+# 构建产物：19MB 的 apk 不进仓库（要装机的包走本地构建，见 APK/build.sh）
+APK/*.apk
 APK/app/src/androidTest/assets/e2e_expect.json
