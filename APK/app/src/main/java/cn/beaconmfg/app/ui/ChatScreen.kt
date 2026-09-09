@@ -85,7 +85,7 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            items(messages, key = { it.id }) { m -> MessageRow(m, settings.dataBase) }
+            items(messages, key = { it.id }) { m -> MessageRow(m, settings.capabilityBase) }
         }
 
         // 快捷问题：手机上打字成本高，给几个真实场景的起手式

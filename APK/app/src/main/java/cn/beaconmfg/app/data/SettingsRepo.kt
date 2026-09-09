@@ -14,6 +14,18 @@ data class AppSettings(
      *  默认走 fastly 的 jsDelivr：国内实测 0.8s，比 raw.githubusercontent（8s+，常超时）稳。
      *  即便这个源也挂了，RemoteSource 会自动回退到内置的其他镜像。 */
     val dataBase: String = "https://fastly.jsdelivr.net/gh/eiry16/beacon-mfg@main/",
+    /**
+     * L1 能力卡 / L2 厂商 skill 的托管根地址（Cloudflare Pages）。
+     *
+     * **为什么不能复用 dataBase**：这两个地址上的内容是两拨东西——
+     *   - `dataBase`（jsDelivr → GitHub）：L0 指纹分片、`data/gb/` 完整档案、manifest
+     *   - `capabilityBase`（Pages）：`full/`、`slim/`、`skills/vendors/{id}/SKILL.md`
+     *
+     * 后两者**有意不进 Git**（L2 是厂商自述，半私有；分片是构建产物），
+     * 所以 jsDelivr 上根本不存在，反过来 Pages 上也没有 L0 指纹。
+     * 混用 = 一边全 404。谁改成一个，另一边立刻静默失效。
+     */
+    val capabilityBase: String = "https://beacon-mfg.pages.dev/",
     val autoUpdate: Boolean = true,
 )
 
@@ -56,6 +68,8 @@ class SettingsRepo(context: Context) {
             model = p.getString("model", "deepseek-chat") ?: "deepseek-chat",
             apiKey = p.getString("api_key", "") ?: "",
             dataBase = p.getString("data_base", AppSettings().dataBase) ?: AppSettings().dataBase,
+            capabilityBase = p.getString("capability_base", AppSettings().capabilityBase)
+                ?: AppSettings().capabilityBase,
             autoUpdate = p.getBoolean("auto_update", true),
         )
     }
@@ -67,6 +81,7 @@ class SettingsRepo(context: Context) {
             .putString("model", s.model.trim())
             .putString("api_key", s.apiKey.trim())
             .putString("data_base", s.dataBase.trim())
+            .putString("capability_base", s.capabilityBase.trim())
             .putBoolean("auto_update", s.autoUpdate)
             .apply()
     }

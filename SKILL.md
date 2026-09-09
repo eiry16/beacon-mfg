@@ -221,6 +221,18 @@ python scripts/gen_capability_shards.py --apply   # 产出 dist/capability/
 # slim/gb/...                        精简版（只留工艺位），1.19 MB，可整包内置
 ```
 
+**已部署到 CDN（2026-09-09）**，`https://beacon-mfg.pages.dev/` 下可直接取：
+
+```
+GET https://beacon-mfg.pages.dev/manifest.json              # 分片清单 + SHA1
+GET https://beacon-mfg.pages.dev/full/gb/C/35/3525.json     # 3525 模具制造的全部能力卡
+GET https://beacon-mfg.pages.dev/slim/gb/C/33/3399.json     # 精简版
+GET https://beacon-mfg.pages.dev/skills/vendors/{id}/SKILL.md   # 厂商自述（L2）
+```
+
+一次请求拿到该小类全部能力卡。L0 指纹仍在 GitHub（走 jsDelivr），
+两者是不同地址：**L0/L1 分片不混在一个根下**，别拿一个的 base 去拼另一个。
+
 ⚠ **填充率的真相**（别按理想值设计判断逻辑）：
 
 | 字段 | 有值比例 | 说明 |
