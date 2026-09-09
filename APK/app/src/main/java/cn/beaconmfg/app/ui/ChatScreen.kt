@@ -85,19 +85,25 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            items(messages, key = { it.id }) { m -> MessageRow(m, settings.capabilityBase) }
+            items(messages, key = { it.id }) { m ->
+                MessageRow(m, settings.capabilityBase) { h -> vm.capOf(h) }
+            }
         }
 
-        // 快捷问题：手机上打字成本高，给几个真实场景的起手式
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(6.dp),
-        ) {
-            samples.take(2).forEach { q ->
-                Button(
-                    onClick = { input = q; vm.send(q) },
-                    modifier = Modifier.weight(1f),
-                ) { Text(q, maxLines = 1, fontSize = 11.sp) }
+        // 快捷问题：手机上打字成本高，给几个真实场景的起手式。
+        // 只在首页且未输入时显示；一旦开始搜索或已有消息流，立即隐藏，
+        // 避免盖住搜索结果卡片的工艺位/ID。
+        if (messages.isEmpty() && input.isBlank()) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+            ) {
+                samples.take(2).forEach { q ->
+                    Button(
+                        onClick = { input = q; vm.send(q) },
+                        modifier = Modifier.weight(1f),
+                    ) { Text(q, maxLines = 1, fontSize = 11.sp) }
+                }
             }
         }
 
@@ -124,7 +130,11 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun MessageRow(m: MainViewModel.UiMessage, skillBase: String = "") {
+private fun MessageRow(
+    m: MainViewModel.UiMessage,
+    skillBase: String = "",
+    capOf: (Hit) -> cn.beaconmfg.app.data.CapabilityCard? = { null },
+) {
     val isUser = m.role == MainViewModel.Role.USER
     Box(
         modifier = Modifier.fillMaxWidth(),
@@ -141,7 +151,7 @@ private fun MessageRow(m: MainViewModel.UiMessage, skillBase: String = "") {
                     Column(Modifier.padding(8.dp)) {
                         Text(m.text, style = MaterialTheme.typography.bodySmall)
                         if (m.hits.isNotEmpty()) Column {
-                            m.hits.forEach { SupplierCard(it) }
+                            m.hits.forEach { SupplierCard(it, capOf(it), skillBase) }
                         }
                         m.detail?.let { DetailCard(it, skillBase) }
                     }
@@ -167,7 +177,7 @@ private fun MessageRow(m: MainViewModel.UiMessage, skillBase: String = "") {
                         )
                     }
                     if (m.hits.isNotEmpty()) Column(Modifier.padding(top = 6.dp)) {
-                        m.hits.forEach { SupplierCard(it) }
+                        m.hits.forEach { SupplierCard(it, capOf(it), skillBase) }
                     }
                     m.detail?.let { DetailCard(it, skillBase) }
                 }
@@ -177,7 +187,11 @@ private fun MessageRow(m: MainViewModel.UiMessage, skillBase: String = "") {
 }
 
 @Composable
-fun SupplierCard(h: Hit) {
+fun SupplierCard(
+    h: Hit,
+    cap: cn.beaconmfg.app.data.CapabilityCard? = null,
+    skillBase: String = "",
+) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -222,6 +236,20 @@ fun SupplierCard(h: Hit) {
                 Text(
                     "认证：" + h.fp.cert.joinToString("、"),
                     style = MaterialTheme.typography.bodySmall,
+                )
+            }
+            // 工艺位：搜索结果里直接给。采购扫一眼就知道这家能做什么，
+            // 不用等模型再调一次 get_supplier_detail——「减少使用负荷」的硬要求。
+            // 没有 L1 卡就不显示（不编造工艺，不显示「暂无」噪音）。
+            cap?.takeIf { it.processes.isNotEmpty() }?.let { c ->
+                val names = c.processes
+                    .sortedBy { if (it.level == "primary") 0 else 1 }
+                    .map { it.name }
+                Text(
+                    "工艺：" + names.take(4).joinToString("、") +
+                        (if (names.size > 4) " 等 ${names.size} 项" else ""),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
             Text(

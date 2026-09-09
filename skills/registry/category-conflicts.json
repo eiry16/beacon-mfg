@@ -1,1243 +1,1655 @@
 {
   "updated_at": "2026-09-09",
   "total": 625,
-  "note": "名录按国标码重划后的品类 ≠ 能力卡的旧 8 品类标签；id 精确匹配，属口径差异不是错配，待人工决定是否重划",
+  "note": "已定性（2026-09-09）：名录 category 与能力卡 category 是同一套旧 8 品类标签，两边口径不同，不是错配，也不是国标装不下。决定：8 品类降级为展示/采购标签，检索与分片一律走 gb_code（国标）；能力卡 category 保持不动，仅新增 gb_code/gb_name/gb_path。以公司名为裁判实测「以名录为准重划」净负收益（改错 26.2% vs 改对 17.0%），故不重划。本清单保留供人工复核，不阻断任何检索路径。",
   "items": [
     {
       "id": "CN-MFG-0000028",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000044",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0000049",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000098",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000101",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0000103",
       "directory": "钣金冲压",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0000133",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000135",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0000222",
       "directory": "原材料",
       "capability": "压铸",
-      "profile": "die-casting"
+      "profile": "die-casting",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000228",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000229",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000231",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000240",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000241",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000242",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000244",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000250",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000253",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000264",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000268",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0000287",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000301",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000311",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000312",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000314",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000316",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000319",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000321",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000330",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000332",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000336",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000339",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000341",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000345",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000347",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000351",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000352",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000364",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000369",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000381",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000398",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000399",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0000402",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000406",
       "directory": "精密机械加工",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0000421",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000427",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000439",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000440",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000455",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000464",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000467",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000469",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000474",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000476",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000477",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000498",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000502",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000507",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000510",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000513",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000514",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000520",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000522",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000524",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000529",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000535",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000541",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000545",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000569",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0000570",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000572",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000573",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000581",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000585",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000586",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000588",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000593",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3453",
+      "gb_name": "齿轮及齿轮减、变速箱制造"
     },
     {
       "id": "CN-MFG-0000601",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000623",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000624",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000633",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000639",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0000772",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000778",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000801",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000821",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000974",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000976",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0000983",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0000997",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001096",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3451",
+      "gb_name": "滚动轴承制造"
     },
     {
       "id": "CN-MFG-0001108",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2913",
+      "gb_name": "橡胶零件制造"
     },
     {
       "id": "CN-MFG-0001157",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3483",
+      "gb_name": "弹簧制造"
     },
     {
       "id": "CN-MFG-0001268",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001273",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0001289",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0001290",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0001292",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0001296",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0001304",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0001441",
       "directory": "钣金冲压",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0001475",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001481",
       "directory": "钣金冲压",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0001486",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001493",
       "directory": "钣金冲压",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0001523",
       "directory": "钣金冲压",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0001527",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001539",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001555",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001556",
       "directory": "钣金冲压",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0001559",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001561",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001566",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001568",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001570",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001571",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001592",
       "directory": "钣金冲压",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001607",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0001628",
       "directory": "钣金冲压",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001639",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001641",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001647",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001649",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001651",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001653",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001654",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001660",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001668",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001674",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001677",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0001679",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001680",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001681",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001683",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001693",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001696",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001750",
       "directory": "钣金冲压",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001814",
       "directory": "钣金冲压",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001822",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001823",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001837",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001875",
       "directory": "钣金冲压",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0001905",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0001928",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0001977",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002009",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002028",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0002036",
       "directory": "钣金冲压",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002039",
       "directory": "钣金冲压",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0002040",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002042",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002055",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0002059",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002071",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002123",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0002308",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0002321",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0002324",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0002386",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0002415",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002426",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002427",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0002440",
       "directory": "钣金冲压",
       "capability": "压铸",
-      "profile": "die-casting"
+      "profile": "die-casting",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0002446",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0002449",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0002456",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3483",
+      "gb_name": "弹簧制造"
     },
     {
       "id": "CN-MFG-0002497",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002498",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3483",
+      "gb_name": "弹簧制造"
     },
     {
       "id": "CN-MFG-0002505",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002508",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3483",
+      "gb_name": "弹簧制造"
     },
     {
       "id": "CN-MFG-0002513",
       "directory": "钣金冲压",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0002529",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0002541",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002545",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002597",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002600",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002602",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002605",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002607",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002624",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002640",
       "directory": "注塑成型",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0002642",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0002665",
       "directory": "注塑成型",
       "capability": "压铸",
-      "profile": "die-casting"
+      "profile": "die-casting",
+      "gb_code": "3392",
+      "gb_name": "有色金属铸造"
     },
     {
       "id": "CN-MFG-0002667",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0002674",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002684",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002701",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002724",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002725",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002751",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0002752",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002753",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002754",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002756",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002757",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002762",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002771",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002774",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002792",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002793",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0002832",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3483",
+      "gb_name": "弹簧制造"
     },
     {
       "id": "CN-MFG-0002841",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3483",
+      "gb_name": "弹簧制造"
     },
     {
       "id": "CN-MFG-0002984",
       "directory": "压铸",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0003386",
       "directory": "电子元器件",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0003410",
       "directory": "电子元器件",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0003411",
       "directory": "电子元器件",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3576",
+      "gb_name": "农林牧渔机械配件制造"
     },
     {
       "id": "CN-MFG-0003423",
@@ -1249,259 +1661,345 @@
       "id": "CN-MFG-0003512",
       "directory": "电子元器件",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0003514",
       "directory": "电子元器件",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3989",
+      "gb_name": "其他电子元件制造"
     },
     {
       "id": "CN-MFG-0003526",
       "directory": "电子元器件",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3989",
+      "gb_name": "其他电子元件制造"
     },
     {
       "id": "CN-MFG-0003534",
       "directory": "电子元器件",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3989",
+      "gb_name": "其他电子元件制造"
     },
     {
       "id": "CN-MFG-0003893",
       "directory": "表面处理",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0003894",
       "directory": "表面处理",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0003896",
       "directory": "表面处理",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0004303",
       "directory": "表面处理",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0004368",
       "directory": "表面处理",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0004395",
       "directory": "表面处理",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0005021",
       "directory": "标准件",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0005026",
       "directory": "标准件",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0005059",
       "directory": "标准件",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0005229",
       "directory": "标准件",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0005300",
       "directory": "标准件",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0005543",
       "directory": "标准件",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0006622",
       "directory": "标准件",
       "capability": "压铸",
-      "profile": "die-casting"
+      "profile": "die-casting",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0006716",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0006775",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0006779",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3435",
+      "gb_name": "电梯、自动扶梯及升降机制造"
     },
     {
       "id": "CN-MFG-0006782",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0006800",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3435",
+      "gb_name": "电梯、自动扶梯及升降机制造"
     },
     {
       "id": "CN-MFG-0006809",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0006820",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0006821",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0006862",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0006865",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0006875",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0006888",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0006915",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0006933",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0006935",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0006937",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007043",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0007067",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007144",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007164",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007174",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0007206",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007216",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0007230",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007231",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007247",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007278",
@@ -1513,19 +2011,25 @@
       "id": "CN-MFG-0007281",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007287",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007293",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007308",
@@ -1537,2221 +2041,2962 @@
       "id": "CN-MFG-0007313",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007322",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0007324",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007330",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0007335",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007336",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007343",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007350",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0007358",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007363",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007365",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007437",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007448",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007474",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007479",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007571",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0007660",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007673",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007675",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007685",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007688",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007695",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007729",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007747",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007797",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0007818",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0007824",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007828",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0007896",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008021",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008073",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008112",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008115",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008185",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "5174",
+      "gb_name": "五金产品批发"
     },
     {
       "id": "CN-MFG-0008204",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008212",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008220",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008222",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008237",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008260",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008261",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008269",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008271",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008277",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008287",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008295",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008298",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008311",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008323",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008330",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008331",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008334",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008339",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008340",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008342",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008347",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008353",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008354",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008357",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008361",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008362",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008366",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008373",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008376",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008379",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008382",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008390",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008393",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008399",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008400",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008403",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008405",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008409",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008473",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008478",
       "directory": "精密机械加工",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0008479",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008480",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008481",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008483",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008485",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008488",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008489",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008491",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0008493",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008494",
       "directory": "精密机械加工",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008513",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008601",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008613",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008626",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008647",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008659",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2651",
+      "gb_name": "初级形态塑料及合成树脂制造"
     },
     {
       "id": "CN-MFG-0008666",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008668",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0008701",
       "directory": "精密机械加工",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008702",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0008787",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008851",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008861",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008869",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0008979",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "5169",
+      "gb_name": "其他化工产品批发"
     },
     {
       "id": "CN-MFG-0008983",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2651",
+      "gb_name": "初级形态塑料及合成树脂制造"
     },
     {
       "id": "CN-MFG-0009004",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "5169",
+      "gb_name": "其他化工产品批发"
     },
     {
       "id": "CN-MFG-0009006",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2651",
+      "gb_name": "初级形态塑料及合成树脂制造"
     },
     {
       "id": "CN-MFG-0009010",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5169",
+      "gb_name": "其他化工产品批发"
     },
     {
       "id": "CN-MFG-0009012",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2651",
+      "gb_name": "初级形态塑料及合成树脂制造"
     },
     {
       "id": "CN-MFG-0009020",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2651",
+      "gb_name": "初级形态塑料及合成树脂制造"
     },
     {
       "id": "CN-MFG-0009106",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009128",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2651",
+      "gb_name": "初级形态塑料及合成树脂制造"
     },
     {
       "id": "CN-MFG-0009146",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "2651",
+      "gb_name": "初级形态塑料及合成树脂制造"
     },
     {
       "id": "CN-MFG-0009148",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2651",
+      "gb_name": "初级形态塑料及合成树脂制造"
     },
     {
       "id": "CN-MFG-0009185",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0009217",
       "directory": "原材料",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "5169",
+      "gb_name": "其他化工产品批发"
     },
     {
       "id": "CN-MFG-0009222",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2922",
+      "gb_name": "塑料板、管、型材制造"
     },
     {
       "id": "CN-MFG-0009223",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2922",
+      "gb_name": "塑料板、管、型材制造"
     },
     {
       "id": "CN-MFG-0009333",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009340",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "5169",
+      "gb_name": "其他化工产品批发"
     },
     {
       "id": "CN-MFG-0009347",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0009376",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009381",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "5169",
+      "gb_name": "其他化工产品批发"
     },
     {
       "id": "CN-MFG-0009481",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009615",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009628",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009636",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009642",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009649",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009653",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009664",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009665",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009666",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009674",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009685",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009763",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009791",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009814",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009815",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0009855",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009866",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0009929",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010028",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010033",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010069",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010070",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010102",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010119",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010124",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010127",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010138",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0010143",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010149",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010161",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010163",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010170",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010171",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010250",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010252",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010253",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010271",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010288",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010298",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010301",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010323",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3780",
+      "gb_name": "非公路休闲车及零配件制造"
     },
     {
       "id": "CN-MFG-0010358",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010404",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010407",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010423",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010437",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010443",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010492",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010496",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010549",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010594",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010674",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010684",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010686",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010687",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010688",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010689",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3451",
+      "gb_name": "滚动轴承制造"
     },
     {
       "id": "CN-MFG-0010690",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010704",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3576",
+      "gb_name": "农林牧渔机械配件制造"
     },
     {
       "id": "CN-MFG-0010705",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3576",
+      "gb_name": "农林牧渔机械配件制造"
     },
     {
       "id": "CN-MFG-0010708",
       "directory": "注塑成型",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010709",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010722",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010724",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3576",
+      "gb_name": "农林牧渔机械配件制造"
     },
     {
       "id": "CN-MFG-0010775",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010778",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010780",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010783",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010785",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010787",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010790",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010791",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0010793",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "5174",
+      "gb_name": "五金产品批发"
     },
     {
       "id": "CN-MFG-0010795",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010818",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0010832",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3576",
+      "gb_name": "农林牧渔机械配件制造"
     },
     {
       "id": "CN-MFG-0011958",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0011959",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0011965",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0012442",
       "directory": "精密机械加工",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0014678",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0014741",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0014749",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0014793",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0014829",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0014842",
       "directory": "钣金冲压",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0014846",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3989",
+      "gb_name": "其他电子元件制造"
     },
     {
       "id": "CN-MFG-0014849",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014859",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014861",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014900",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014902",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0014905",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014906",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014913",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0014924",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0014940",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014942",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014947",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014953",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0014959",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0014961",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0015014",
       "directory": "压铸",
       "capability": "原材料",
-      "profile": "raw-materials"
+      "profile": "raw-materials",
+      "gb_code": "3392",
+      "gb_name": "有色金属铸造"
     },
     {
       "id": "CN-MFG-0015040",
       "directory": "压铸",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0015058",
       "directory": "表面处理",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "5174",
+      "gb_name": "五金产品批发"
     },
     {
       "id": "CN-MFG-0015066",
       "directory": "表面处理",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0015155",
       "directory": "标准件",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0015187",
       "directory": "标准件",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "5174",
+      "gb_name": "五金产品批发"
     },
     {
       "id": "CN-MFG-0015239",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0015240",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0015249",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0015276",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0015279",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0015295",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3130",
+      "gb_name": "钢压延加工"
     },
     {
       "id": "CN-MFG-0015308",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0015313",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "5165",
+      "gb_name": "建材批发"
     },
     {
       "id": "CN-MFG-0015330",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3130",
+      "gb_name": "钢压延加工"
     },
     {
       "id": "CN-MFG-0015395",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3130",
+      "gb_name": "钢压延加工"
     },
     {
       "id": "CN-MFG-0015444",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0015462",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015465",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015466",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015473",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015474",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015479",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0015481",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015516",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0015536",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0015557",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0015568",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3451",
+      "gb_name": "滚动轴承制造"
     },
     {
       "id": "CN-MFG-0015639",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0015653",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015680",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0015682",
       "directory": "精密机械加工",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0015683",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015691",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015694",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015697",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0015701",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015722",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0015821",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0015857",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0015902",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0015922",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0015925",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0016084",
       "directory": "压铸",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0016297",
       "directory": "电子元器件",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3989",
+      "gb_name": "其他电子元件制造"
     },
     {
       "id": "CN-MFG-0016437",
       "directory": "标准件",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0016637",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0016644",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0016649",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0016655",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0016664",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0016682",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0016694",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3130",
+      "gb_name": "钢压延加工"
     },
     {
       "id": "CN-MFG-0016718",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0016858",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0016884",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0016987",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0016996",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0017118",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0017142",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0017144",
       "directory": "注塑成型",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0017147",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0017193",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0017317",
       "directory": "压铸",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0017482",
       "directory": "电子元器件",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3441",
+      "gb_name": "泵及真空设备制造"
     },
     {
       "id": "CN-MFG-0017510",
       "directory": "标准件",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0017746",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0017802",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0017814",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0017824",
       "directory": "原材料",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0017932",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3483",
+      "gb_name": "弹簧制造"
     },
     {
       "id": "CN-MFG-0017955",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0017965",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0018052",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0018056",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018058",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018067",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018068",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018069",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018081",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018157",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018175",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0018181",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018196",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018216",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018221",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018225",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0018231",
       "directory": "精密机械加工",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018283",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0018285",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0018291",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0018295",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0018308",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0018355",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0018358",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0018368",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0018390",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0018441",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0018445",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0018448",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3989",
+      "gb_name": "其他电子元件制造"
     },
     {
       "id": "CN-MFG-0018455",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0018460",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0018463",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0018510",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0018515",
       "directory": "注塑成型",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0018522",
       "directory": "注塑成型",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0018649",
       "directory": "表面处理",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018741",
       "directory": "标准件",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3484",
+      "gb_name": "机械零部件加工"
     },
     {
       "id": "CN-MFG-0018912",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0018914",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0018918",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0018927",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0018930",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0018932",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0018933",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0018956",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0018959",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0018983",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3443",
+      "gb_name": "阀门和旋塞制造"
     },
     {
       "id": "CN-MFG-0019027",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0019038",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0019043",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0019128",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0019175",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0019264",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3453",
+      "gb_name": "齿轮及齿轮减、变速箱制造"
     },
     {
       "id": "CN-MFG-0019265",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3483",
+      "gb_name": "弹簧制造"
     },
     {
       "id": "CN-MFG-0019274",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3483",
+      "gb_name": "弹簧制造"
     },
     {
       "id": "CN-MFG-0019361",
       "directory": "精密机械加工",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0019412",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0019428",
       "directory": "精密机械加工",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0019443",
       "directory": "精密机械加工",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0019457",
       "directory": "钣金冲压",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0019459",
       "directory": "钣金冲压",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3399",
+      "gb_name": "其他未列明金属制品制造"
     },
     {
       "id": "CN-MFG-0019472",
       "directory": "钣金冲压",
       "capability": "电子元器件",
-      "profile": "electronics"
+      "profile": "electronics",
+      "gb_code": "3130",
+      "gb_name": "钢压延加工"
     },
     {
       "id": "CN-MFG-0019635",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     },
     {
       "id": "CN-MFG-0019702",
       "directory": "压铸",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "3576",
+      "gb_name": "农林牧渔机械配件制造"
     },
     {
       "id": "CN-MFG-0019715",
       "directory": "压铸",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3392",
+      "gb_name": "有色金属铸造"
     },
     {
       "id": "CN-MFG-0020017",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0020018",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3311",
+      "gb_name": "金属结构制造"
     },
     {
       "id": "CN-MFG-0020028",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0020036",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3482",
+      "gb_name": "紧固件制造"
     },
     {
       "id": "CN-MFG-0020038",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3130",
+      "gb_name": "钢压延加工"
     },
     {
       "id": "CN-MFG-0020052",
       "directory": "原材料",
       "capability": "标准件",
-      "profile": "standard-parts"
+      "profile": "standard-parts",
+      "gb_code": "3451",
+      "gb_name": "滚动轴承制造"
     },
     {
       "id": "CN-MFG-0020082",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0020101",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "5164",
+      "gb_name": "金属及金属矿批发"
     },
     {
       "id": "CN-MFG-0020115",
       "directory": "原材料",
       "capability": "表面处理",
-      "profile": "surface-treatment"
+      "profile": "surface-treatment",
+      "gb_code": "3360",
+      "gb_name": "金属表面处理及热处理加工"
     },
     {
       "id": "CN-MFG-0020128",
       "directory": "原材料",
       "capability": "钣金冲压",
-      "profile": "sheet-metal"
+      "profile": "sheet-metal",
+      "gb_code": "3130",
+      "gb_name": "钢压延加工"
     },
     {
       "id": "CN-MFG-0020283",
       "directory": "原材料",
       "capability": "注塑成型",
-      "profile": "injection-molding"
+      "profile": "injection-molding",
+      "gb_code": "3525",
+      "gb_name": "模具制造"
     },
     {
       "id": "CN-MFG-0020293",
       "directory": "注塑成型",
       "capability": "精密机械加工",
-      "profile": "precision-machining"
+      "profile": "precision-machining",
+      "gb_code": "2929",
+      "gb_name": "塑料零件及其他塑料制品制造"
     }
-  ]
+  ],
+  "resolved_by": "gb_code"
 }

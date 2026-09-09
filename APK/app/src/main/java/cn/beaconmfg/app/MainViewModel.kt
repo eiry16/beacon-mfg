@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import cn.beaconmfg.app.data.AppSettings
 import cn.beaconmfg.app.data.DataStore
 import cn.beaconmfg.app.data.GbIndex
+import cn.beaconmfg.app.data.CapabilityCard
 import cn.beaconmfg.app.data.Hit
 import cn.beaconmfg.app.data.RemoteSource
 import cn.beaconmfg.app.data.SettingsRepo
@@ -108,6 +109,14 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         _status.value = "就绪：本地 $n 家供应商，可直接离线检索"
         if (_settings.value.autoUpdate) refreshData()
     }
+
+    /**
+     * 给搜索结果列表项找 L1 能力卡：按 (id, 国标码) 定位分片。
+     * 命中就在 SupplierCard 里直接显示工艺 chips，采购扫一眼就知道这家能做什么，
+     * 不用再让模型调一次 get_supplier_detail。
+     */
+    fun capOf(h: Hit): CapabilityCard? =
+        if (h.fp.id.isEmpty()) null else store.capabilityOf(h.fp.id, h.fp.gb)
 
     private fun refreshDataInfo() {
         _dataInfo.value = listOf(

@@ -168,6 +168,25 @@ for f in glob.glob("data/gb/*/*/*.json"):
 - `cl` / `certification`：凭证等级（L0-L3）与认证档案（仅认证回流记录有）
 - `amap`：地图 POI 扩展字段（typecode / website / email 等），仅供交叉核对
 
+### 关于旧 8 品类标签与 625 家冲突
+
+名录的 `category` 和能力卡的 `category` 都是**同一套旧 8 品类标签**
+（精密机械加工 / 钣金冲压 / 注塑成型 / 表面处理 / 标准件 / 电子元器件 /
+原材料 / 压铸），不是国标码。曾有 625 家两张卡给出的 8 品类不同。
+
+决定（2026-09-09）：
+
+- 8 品类**降级为展示/采购标签**，不再承担归档职责。
+- **检索、分片、CDN 路径一律走 `industry.code`（国标码）**。
+- L1 能力卡新增 `gb_code` / `gb_name` / `gb_path`，从名录 `industry` 同步；
+  `category` / `profile` 保持不动。
+- 以公司名为裁判实测，「以名录为准重划」净负收益，故**不二选一**，冲突自然消解。
+- 名录缺 `industry` 的（能力卡里 11 家），`gb_code` 留 null，不编造。
+
+Agent 在检索/推荐时**不要以 `category` 为过滤条件**，要用 `industry.code`。
+
+> `skills/registry/category-conflicts.json` 已更新为「已定性」说明，不阻塞检索。
+
 若运行环境支持执行代码，也可用检索脚本一步到位：
 ```bash
 python scripts/query.py --industry 3525 --city 宁波 --limit 5   # 模具制造
