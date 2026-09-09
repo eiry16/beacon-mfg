@@ -42,6 +42,12 @@ try:
     from industry_taxonomy import CODES, GATES, gate_of
 except ImportError:  # 单独拷走 query.py 时也能跑，只是行业功能降级
     CODES, GATES, gate_of = {}, {}, lambda c: "C"
+    # 静默降级的代价太大：CODES 为空时 --industry 会返回"没匹配到任何国标行业"，
+    # 客户会以为是数据里没这家厂，实际是码表没加载。必须喊出来。
+    print("[警告] 找不到 industry_taxonomy.py，国标行业过滤已失效——"
+          "此时 --industry 查任何码都会返回 0 条。\n"
+          "       请把 scripts/industry_taxonomy.py 与 query.py 放在一起。",
+          file=sys.stderr)
 
 try:
     import gb_store as GB

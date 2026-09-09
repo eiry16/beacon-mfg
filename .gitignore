@@ -32,6 +32,10 @@ scripts/*
 !scripts/query.py
 !scripts/search_capabilities.py
 !scripts/client_search.py
+# industry_taxonomy.py 是 query.py 的国标码表来源。不放行的话：
+# query.py 走到 `except ImportError` 分支 → CODES={} → **任何 --industry 查询都返回
+# "没匹配到任何国标行业"且不报错**（2026-09-09 实测）。纯标准库，仅读 data/gb4754-full.json。
+!scripts/industry_taxonomy.py
 # CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
 .github/*
 !.github/workflows/
