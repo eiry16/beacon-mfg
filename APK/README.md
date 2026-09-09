@@ -1,24 +1,48 @@
-# 安卓 App 构想 · 可行性评估与实施方案
+# 安卓 App：构想评估 + P1 实施
 
 > 目标：手机端对话式 Agent —— 用三方 LLM API 理解用户需求 → 检索供应商；
 > 同时作为供应商认证、上传资料的客户端。
 >
-> 本文所有数字均为本机实测，不是估算。评估日期 2026-09-09。
+> 评估日期 2026-09-09，P1 实现日期 2026-09-09。本文所有数字均为本机实测，不是估算。
 
 ---
 
 ## 0. 结论先行
 
 **构想成立，且比预想的更有基础——因为仓库已经为"按需取数"改造完了。**
-但有三个硬约束不解决就做不成，按严重度排序：
+
+原先列的三个硬约束，当前状态：
 
 | # | 硬约束 | 严重度 | 现状 |
 |---|---|---|---|
-| 1 | **API key 不能放进客户端** | 🔴 致命 | 无对策，必须先定方案 |
-| 2 | **`server/` 未部署** | 🔴 阻塞 | 认证/上传没有后端可连 |
-| 3 | **数据源在 GitHub raw，国内不稳** | 🟠 高 | 已有 ETag 缓存，但首拉仍可能失败 |
+| 1 | **API key 不能放进客户端** | 🔴 致命 | ✅ **已解决：走 BYOK**，key 存 Keystore 加密的 EncryptedSharedPreferences |
+| 2 | **`server/` 未部署** | 🔴 阻塞 | ⏸ **P1 不依赖**：认证上传推迟到 P2，云部署方案见 [`docs/CLOUD_DEPLOY.md`](docs/CLOUD_DEPLOY.md) |
+| 3 | **数据源在 GitHub raw，国内不稳** | 🟠 高 | ✅ **已解决：内置全量指纹 4.76MB**，离线可用是设计前提而非降级；联网时增量更新 |
 
-好消息是数据侧的条件非常好（见 §3），**这恰好是仓库架构改造埋下的伏笔**。
+### 已拍板的四项（2026-09-09）
+
+| 决策项 | 结论 |
+|---|---|
+| API key | **BYOK**。支持 OpenAI / DeepSeek / 通义 / 智谱 等兼容 OpenAI 格式的端点，用户自己填 key |
+| 云部署 | **P1 只做静态数据面**（对象存储 + CDN，¥0~¥10/月）；认证上传 P2 再上 Serverless |
+| 内置数据 | **接受内置全量指纹**，换离线可用；每次能连通时增量更新 |
+| 阶段 | **直接做 P1**（对话检索），不单独做 P0 |
+
+### P1 实现状态
+
+| 模块 | 文件 | 状态 |
+|---|---|---|
+| 工程骨架 | `settings.gradle.kts` / `build.gradle.kts` / `gradle/libs.versions.toml` | ✅ |
+| 内置数据 | `app/src/main/assets/`（103 分片 + 索引 + 两层别名表） | ✅ 由 `tools/sync_assets.py` 同步 |
+| 检索内核 | `search/AliasIndex.kt` + `search/SearchEngine.kt` | ✅ 三档证据 + max_supply 收敛已移植 |
+| BYOK LLM | `llm/Presets.kt` / `LlmClient.kt`（OkHttp SSE） / `Tools.kt`（function calling） | ✅ |
+| 界面 | `ui/ChatScreen.kt` + `ui/SettingsScreen.kt` | ✅ Compose |
+| 指纹增量更新 | `data/RemoteSource.kt`（ETag + SHA1） | ✅ |
+| 对拍测试 | `tools/e2e_parity.py` + `androidTest/…/SearchEngineParityTest.kt` | ✅ 需真机运行 |
+| 构建验证 | `assembleDebug` / `assembleRelease` | ✅ 均 BUILD SUCCESSFUL，见 §10 |
+
+**检索完全离线可用**：LLM 只做"理解需求 + 组织语言"，供应商数据一律来自本地检索。
+没配 key 也能用（设置页有本地检索自检入口）。
 
 ---
 
@@ -62,6 +86,13 @@ AGP 8.x 对 JDK 25 的支持需实测，不行就降级用 AS 自带的其他 JD
 | `data/region-index.json` | 536 KB | 城市 → 供应商 ID 列表 |
 | `data/gb-alias.json` + `gb-alias-curated.json` | 51 KB | 采购词 → 国标码（**两层都要内置**） |
 | `data/gb-index.json` | 29 KB | 行业层级树与计数 |
+
+> ⚠️ **上表是评估阶段按"服务端检索"思路列的，实现时改了，别照它核对。**
+> 实际内置只有 5 个文件 / **199 KB**（见 §10 实测），`industry-index` 与 `region-index`
+> **没有内置**——因为 P1 的检索内核是把 103 个指纹分片全量读进内存后扫描
+> （`SearchEngine.search()` 直接遍历 `store.fingerprints()`），不需要这两个倒排索引。
+> 代价是首次加载要扫 20265 条；收益是少内置 1.15 MB，且离线检索路径只有一条、不会两套逻辑打架。
+> 如果后续数据量上到百万级，这里必须重新引入倒排索引。
 
 ### 按需下载的分片
 
@@ -225,29 +256,135 @@ Token 成本可控：10 条 × 约 50 token = 500 token/次。
 
 ---
 
-## 9. 待主人拍板
+## 9. 拍板结果（2026-09-09）
 
-1. **API key 走 BYOK 还是平台代理？**（决定 P1 的形态）
-2. **server 部署在哪？**（决定 P2/P3 能否启动——这是目前最大的未知）
-3. **是否接受"内置全量指纹 4.54MB"换取离线可用？**（应对 GitHub 不稳）
-4. **先做 P0 原型验证，还是直接按 P1 目标投入？**
+| 问题 | 拍板 | 影响 |
+|---|---|---|
+| 1. API key 走 BYOK 还是平台代理？ | **BYOK**，OpenAI 兼容格式，支持 OpenAI/DeepSeek/通义/智谱 | P1 可独立交付，不依赖 server |
+| 2. server 部署在哪？ | **P1 不部署**。云方案见 `docs/CLOUD_DEPLOY.md`，推荐腾讯云 COS+CDN（¥0~¥10/月），P2 再上 Cloudflare Workers | 认证上传推迟到 P2 |
+| 3. 是否接受内置全量指纹？ | **接受**（103 分片 4.76MB），换离线可用 | 包体 vs 可用性，选可用性 |
+| 4. 先 P0 还是直接 P1？ | **直接 P1** | 一次做到"能对话找供应商" |
+
+### 仍未拍板（不阻塞 P1）
+
+- 平台代理层（P4）什么时候做 —— 取决于有多少用户卡在"不会申请 key"
+- 供应商认证客户端（P2）做不做 —— 取决于 App 有没有真实供应商愿意用
+- 语音输入 —— `collect.py` 的对话式采集在手机场景优势明显，但要等 P2
 
 ---
 
-## 附：APK 目录建议结构
+## 10. 构建与验证
+
+### 本机构建
+
+Gradle 用 9.7.1。**本项目没有提交 gradlew wrapper**（生成 wrapper 需要联网校验分发包，
+离线环境会失败），统一用 `build.sh`：
+
+```bash
+cd APK
+./build.sh            # = assembleDebug
+./build.sh release    # = assembleRelease（未签名）
+./build.sh clean
+```
+
+`build.sh` 已经写死了本机路径，不用再手动 export：
+
+| 变量 | 值 |
+|---|---|
+| `JAVA_HOME` | `C:/Program Files/Android/Android Studio/jbr`（JDK 25.0.2） |
+| `ANDROID_HOME` | `C:/Users/陆斌/AppData/Local/Android/Sdk` |
+| Gradle | `~/.workbuddy/binaries/gradle/gradle-dist/gradle-9.7.1` |
+
+产物：`app/build/outputs/apk/debug/app-debug.apk`
+
+> ⚠️ **`--no-build-cache` 不能去掉。** 在 WorkBuddy 沙箱下 Gradle 本地构建缓存的
+> `.part` 重命名/删除会被拦截，报 `java.io.IOException: 拒绝访问`，构建在 dex 合并阶段失败
+> （2026-09-09 16:27 与 17:05 各踩一次）。关掉缓存只慢一点，不影响产物。
+> 脱离沙箱（比如直接用 Android Studio 打开）时不受影响。
+
+#### 实测构建结果（2026-09-09 17:00）
+
+| 项 | 结果 |
+|---|---|
+| `assembleDebug` | ✅ BUILD SUCCESSFUL，3m55s（36 任务：25 执行 / 11 复用） |
+| `assembleRelease` | ✅ BUILD SUCCESSFUL，3m36s（47 任务：24 执行 / 23 复用） |
+| APK 体积 | debug **18 MB**；release **14 MB**（均未开启 minify，开启后还能再降） |
+| 包内指纹分片 | 103 个 / 4.54 MB（`noCompress` 生效，未二次压缩） |
+| 包内索引 | 5 个 / 199 KB（manifest 102K + alias 52K + gb-index 29K + builtin 13K） |
+| dex | 9 个 |
+| JDK 25 + AGP 9.4.0 | ✅ 兼容，此前担心的版本问题**不存在** |
+
+**release 产物是未签名的**（`app-release-unsigned.apk`），装不上手机——正式发布需要
+主人提供 keystore 并配 `signingConfigs`。想直接上手机试就装 debug 包（已用 debug key 签名）。
+
+编译期告警（非错误，暂不处理）：`TabRow` 已废弃建议换 `PrimaryTabRow`；
+`security-crypto` 的 `MasterKey` / `EncryptedSharedPreferences` 整类已废弃（需换 Tink 新版 API）。
+
+### ⚠️ 三个 AGP 9 的坑（已踩过，别改回去）
+
+1. **不要再写 `org.jetbrains.kotlin.android` 插件**。AGP 9.0 起 Kotlin 支持已内置，
+   加了这个插件会直接报 `The 'org.jetbrains.kotlin.android' plugin is no longer required`。
+   Compose 编译器插件（`org.jetbrains.kotlin.plugin.compose`）仍然保留。
+2. **`kotlinOptions {}` 已移除**，改为：
+   ```kotlin
+   kotlin { compilerOptions { jvmTarget = JvmTarget.JVM_17 } }
+   ```
+
+### 对拍测试
+
+```bash
+python APK/tools/e2e_parity.py --write    # 从真实数据生成期望值
+cp APK/tools/e2e_expect.json APK/app/src/androidTest/assets/
+./gradlew connectedAndroidTest            # 需真机或模拟器
+```
+
+Python 端 10 个用例的实测结果（2026-09-09，20265 条供应商）：
+
+| 用例 | 总数 | 字面 | 首位码 | 推断 | 放宽可得 |
+|---|---|---|---|---|---|
+| 齿轮·上海 | **0** | 0 | 0 | 0 | 216 |
+| 焊接·上海 | 104 | 0 | 104 | 0 | – |
+| 输送线·上海 | 2 | 0 | 1 | 1 | – |
+| 输送线（全国） | 38 | 0 | 1 | 37 | – |
+| 数控加工·深圳 | 497 | 67 | 215 | 215 | – |
+| 钣金·苏州·制造商 | 171 | 48 | 123 | 0 | – |
+| 注塑·东莞 | 268 | 52 | 216 | 0 | – |
+| 齿轮+焊接（AND） | **0** | 0 | 0 | 0 | 3415 |
+| 行业码 3453 | 6 | 6 | 0 | 0 | – |
+| 不存在的词 | 0 | 0 | 0 | 0 | **0** |
+
+> ⚠️ **值得注意**：「齿轮·上海」和「齿轮+焊接」都被 max_supply 收敛砍成了 0。
+> 这是「宁可给 0 + 放宽提示，也不给 216 家行业推断」的设计选择（数据红线），
+> 但对手机用户来说，旗舰查询返回 0 的体验不好。
+> 后续可以讨论：是否在 App 端对 `total=0 && relaxed>0` 的情况**默认展示前 3 家弱证据结果并明确标注**，
+> 而不是只给一句提示。这需要主人拍板——因为它松动了当前的红线。
+
+---
+
+## 附：APK 目录结构（P1 现状）
 
 ```
 APK/
-├── README.md              # 本文档
-├── app/
-│   ├── build.gradle.kts
-│   └── src/main/
-│       ├── assets/index/  # 内置核心索引（1.30MB）
-│       └── java/.../
-│           ├── search/    # 检索内核（query.py 的 Kotlin 移植）
-│           ├── llm/       # LLM 客户端 + function calling
-│           ├── vendor/    # 供应商认证/采集
-│           └── ui/        # Compose 对话界面
-└── docs/
-    └── E2E_TESTS.md       # 与 audit_alias.py 第 7 节对拍的用例
+├── README.md                    # 本文档
+├── docs/
+│   └── CLOUD_DEPLOY.md          # 云部署低成本方案
+├── tools/
+│   ├── sync_assets.py           # 仓库数据 → assets（指纹/索引/别名表）
+│   ├── e2e_parity.py            # 对拍期望值生成器
+│   └── e2e_expect.json          # 生成产物
+├── gradle/libs.versions.toml
+└── app/src/
+    ├── main/
+    │   ├── assets/
+    │   │   ├── index/           # gb-index.json + 两层别名表
+    │   │   └── fingerprint/     # 103 个 jsonl 分片（4.76MB）
+    │   └── java/cn/beaconmfg/app/
+    │       ├── MainActivity.kt / MainViewModel.kt
+    │       ├── data/            # Model / DataStore / GbIndex / RemoteSource / SettingsRepo
+    │       ├── search/          # AliasIndex + SearchEngine（query.py 的 Kotlin 移植）
+    │       ├── llm/             # Presets / LlmClient / Tools（function calling）
+    │       └── ui/              # ChatScreen + SettingsScreen
+    └── androidTest/
+        ├── assets/e2e_expect.json
+        └── java/cn/beaconmfg/app/SearchEngineParityTest.kt
 ```

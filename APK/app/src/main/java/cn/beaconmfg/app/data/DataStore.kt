@@ -1,0 +1,226 @@
+package cn.beaconmfg.app.data
+
+import android.app.Application
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.File
+import java.security.MessageDigest
+
+/**
+ * 内置数据 + 已更新副本的统一访问层。
+ *
+ * 两条数据来源：
+ *  - **内置**（assets/）：全量指纹 4.7MB + 索引，随 APK 走，装完即可离线检索；
+ *  - **已更新**（filesDir/updates/）：联网时按 manifest 增量拉取的分片，同名覆盖内置。
+ *
+ * 检索永远读「已更新优先、内置兜底」，这样断网时 App 不会退化成空库。
+ */
+class DataStore(private val app: Application) {
+
+    val updateDir: File get() = File(app.filesDir, "updates")
+    val detailDir: File get() = File(app.filesDir, "detail")
+
+    @Volatile
+    private var cached: List<Fingerprint>? = null
+
+    @Volatile
+    private var builtinMeta: JSONObject = JSONObject()
+
+    @Volatile
+    private var updateMeta: JSONObject = JSONObject()
+
+    private val prefs get() = app.getSharedPreferences("bmfg_store", 0)
+
+    // ── 内置索引 ────────────────────────────────────────────────────────────
+    fun readAsset(path: String): String? = try {
+        app.assets.open(path).bufferedReader().use { it.readText() }
+    } catch (e: Exception) {
+        null
+    }
+
+    fun builtinAt(): String = builtinMeta.optString("builtin_at", "未知")
+
+    fun builtinFingerprintSummary(): String {
+        val fp = builtinMeta.optJSONObject("fingerprint")
+            ?: return "内置指纹：未知（跑 APK/tools/sync_assets.py 生成）"
+        return "内置指纹 %d 片 / %.2f MB".format(
+            fp.optInt("shards", 0), fp.optLong("bytes", 0) / 1048576.0
+        )
+    }
+
+    /** 内置分片的 SHA1。用于和 manifest 的 h 字段比对，判断有没有新版本。 */
+    fun builtinShaOf(rel: String): String? {
+        val shards = builtinMeta.optJSONObject("fingerprint")?.optJSONObject("shards")
+            ?: return null
+        return shards.optJSONObject(rel)?.optString("sha1")
+    }
+
+    // ── 已更新副本 ──────────────────────────────────────────────────────────
+    private fun loadUpdateMeta() {
+        val f = File(updateDir, "meta.json")
+        if (f.exists()) {
+            updateMeta = try {
+                JSONObject(f.readText())
+            } catch (e: Exception) {
+                JSONObject()
+            }
+        } else {
+            updateMeta = JSONObject()
+        }
+    }
+
+    fun localShaOf(rel: String): String? {
+        if (updateMeta.length() == 0) loadUpdateMeta()
+        return updateMeta.optJSONObject("shards")?.optString(rel)
+    }
+
+    fun lastUpdateAt(): String {
+        if (updateMeta.length() == 0) loadUpdateMeta()
+        return updateMeta.optString("updated_at", "从未")
+    }
+
+    fun updatedShardCount(): Int {
+        if (updateMeta.length() == 0) loadUpdateMeta()
+        return updateMeta.optJSONObject("shards")?.length() ?: 0
+    }
+
+    /** 写入一个更新后的分片，并登记 SHA1。校验不过就不落盘——宁可留旧数据。 */
+    fun writeShard(rel: String, content: String, expectSha: String): Boolean {
+        if (sha1(content.toByteArray()) != expectSha) return false
+        val target = File(updateDir, rel)
+        target.parentFile?.mkdirs()
+        val tmp = File(target.absolutePath + ".tmp")
+        tmp.writeText(content)
+        if (!tmp.renameTo(target)) return false
+        if (updateMeta.length() == 0) loadUpdateMeta()
+        val shards = updateMeta.optJSONObject("shards") ?: JSONObject().also {
+            updateMeta.put("shards", it)
+        }
+        shards.put(rel, expectSha)
+        persistUpdateMeta()
+        cached = null
+        return true
+    }
+
+    private fun persistUpdateMeta() {
+        updateDir.mkdirs()
+        File(updateDir, "meta.json").writeText(updateMeta.toString())
+    }
+
+    fun manifestEtag(): String? = prefs.getString("manifest_etag", null)
+    fun setManifestEtag(v: String?) = prefs.edit().putString("manifest_etag", v).apply()
+
+    fun lastUpdateCheck(): String = prefs.getString("last_check", "从未") ?: "从未"
+    fun setLastUpdateCheck(v: String) = prefs.edit().putString("last_check", v).apply()
+
+    // ── 指纹装载 ────────────────────────────────────────────────────────────
+    /** 全量指纹。约 2 万条，第一次装载约 300–600ms，必须在 IO 线程调用。 */
+    fun fingerprints(): List<Fingerprint> {
+        cached?.let { return it }
+        if (builtinMeta.length() == 0) {
+            readAsset("index/builtin.json")?.let {
+                builtinMeta = try { JSONObject(it) } catch (e: Exception) { JSONObject() }
+            }
+        }
+        if (updateMeta.length() == 0) loadUpdateMeta()
+
+        val out = ArrayList<Fingerprint>(21000)
+        for (rel in listBuiltinShards()) {
+            val updated = File(updateDir, rel)
+            if (updated.exists()) {
+                parseLines(updated.readText(), out)
+            } else {
+                readAsset("fingerprint/$rel")?.let { parseLines(it, out) }
+            }
+        }
+        // 已更新分片里可能有内置没有的新小类（新增行业），补上
+        val builtinSet = out.mapTo(HashSet()) { it.id }
+        File(updateDir, "gb").walkTopDown().filter { it.isFile && it.extension == "jsonl" }
+            .forEach { f ->
+                parseLines(f.readText(), out, skipKnown = builtinSet)
+            }
+        val list = out
+        cached = list
+        return list
+    }
+
+    /** 枚举 assets/fingerprint 下的全部 jsonl 相对路径（如 gb/C/34/3453.jsonl）。 */
+    private fun listBuiltinShards(): List<String> {
+        val out = ArrayList<String>()
+        walkAssets("fingerprint", out)
+        return out.map { it.removePrefix("fingerprint/") }
+    }
+
+    private fun walkAssets(base: String, out: MutableList<String>) {
+        val items = app.assets.list(base)
+        if (items.isNullOrEmpty()) {
+            out.add(base)
+            return
+        }
+        for (item in items) {
+            walkAssets(if (base.isEmpty()) item else "$base/$item", out)
+        }
+    }
+
+    private fun parseLines(
+        text: String,
+        out: MutableList<Fingerprint>,
+        skipKnown: Set<String>? = null,
+    ) {
+        text.lineSequence().forEach { line ->
+            if (line.isBlank()) return@forEach
+            val o = try {
+                JSONObject(line)
+            } catch (e: Exception) {
+                return@forEach
+            }
+            val id = o.safeString("id")
+            if (id.isEmpty()) return@forEach
+            if (skipKnown != null && skipKnown.contains(id)) return@forEach
+            out.add(
+                Fingerprint(
+                    id = id,
+                    co = o.safeString("co"),
+                    city = o.safeString("city"),
+                    gb = o.safeString("gb"),
+                    mf = o.optInt("mf", 1) != 0,
+                    proc = strList(o, "proc"),
+                    mat = strList(o, "mat"),
+                    cert = strList(o, "cert"),
+                    cl = o.safeString("cl").ifEmpty { "L0" },
+                    pv = o.safeString("pv"),
+                    sc = o.optInt("sc", 0),
+                    tel = o.optInt("tel", 0) != 0,
+                )
+            )
+        }
+    }
+
+    private fun strList(o: JSONObject, key: String): List<String> {
+        val arr: JSONArray = o.optJSONArray(key) ?: return emptyList()
+        val out = ArrayList<String>(arr.length())
+        for (i in 0 until arr.length()) {
+            val v = arr.optString(i, "")
+            if (v.isNotEmpty()) out.add(v)
+        }
+        return out
+    }
+
+    // ── 详情缓存（按需下载的 data/gb/**.json） ──────────────────────────────
+    fun cachedDetailContent(code: String): String? {
+        val f = File(detailDir, "$code.json")
+        return if (f.exists()) f.readText() else null
+    }
+
+    fun cacheDetail(code: String, content: String) {
+        detailDir.mkdirs()
+        File(detailDir, "$code.json").writeText(content)
+    }
+
+    companion object {
+        fun sha1(bytes: ByteArray): String {
+            val md = MessageDigest.getInstance("SHA-1")
+            return md.digest(bytes).joinToString("") { "%02x".format(it) }
+        }
+    }
+}

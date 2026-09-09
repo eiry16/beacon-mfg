@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Compose 项目仍需要一个 Activity 主题：它决定状态栏/窗口背景，
+         Compose 内部的 MaterialTheme 只管内容区。 -->
+    <style name="Theme.BeaconMFG" parent="android:Theme.DeviceDefault.NoActionBar" />
+</resources>

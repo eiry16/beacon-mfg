@@ -1,0 +1,185 @@
+{
+  "generated_by": "APK/tools/e2e_parity.py",
+  "source": "scripts/query.py（Python 参考实现）",
+  "supplier_count": 20265,
+  "top_n": 5,
+  "cases": [
+    {
+      "name": "齿轮·上海（经典用例，混合三档）",
+      "params": {
+        "keyword": "齿轮",
+        "city": "上海",
+        "limit": 10
+      },
+      "total": 0,
+      "literal": 0,
+      "primary": 0,
+      "secondary": 0,
+      "relaxed": 216,
+      "topIds": []
+    },
+    {
+      "name": "焊接·上海（验证 max_supply 收敛后的量级）",
+      "params": {
+        "keyword": "焊接",
+        "city": "上海",
+        "limit": 10
+      },
+      "total": 104,
+      "literal": 0,
+      "primary": 104,
+      "secondary": 0,
+      "relaxed": null,
+      "topIds": [
+        "CN-MFG-0006724",
+        "CN-MFG-0006738",
+        "CN-MFG-0007152",
+        "CN-MFG-0000268",
+        "CN-MFG-0011011"
+      ]
+    },
+    {
+      "name": "输送线·上海（策展别名；预期收敛到耐特斯 1 家）",
+      "params": {
+        "keyword": "输送线",
+        "city": "上海",
+        "limit": 10
+      },
+      "total": 2,
+      "literal": 0,
+      "primary": 1,
+      "secondary": 1,
+      "relaxed": null,
+      "topIds": [
+        "CN-MFG-0020317",
+        "CN-MFG-0001509"
+      ]
+    },
+    {
+      "name": "输送线（全国，策展别名覆盖率验证）",
+      "params": {
+        "keyword": "输送线",
+        "limit": 10
+      },
+      "total": 38,
+      "literal": 0,
+      "primary": 1,
+      "secondary": 37,
+      "relaxed": null,
+      "topIds": [
+        "CN-MFG-0020317",
+        "CN-MFG-0001393",
+        "CN-MFG-0011507",
+        "CN-MFG-0003223",
+        "CN-MFG-0006867"
+      ]
+    },
+    {
+      "name": "数控加工·深圳",
+      "params": {
+        "keyword": "数控加工",
+        "city": "深圳",
+        "limit": 10
+      },
+      "total": 497,
+      "literal": 67,
+      "primary": 215,
+      "secondary": 215,
+      "relaxed": null,
+      "topIds": [
+        "CN-MFG-0011066",
+        "CN-MFG-0000044",
+        "CN-MFG-0000569",
+        "CN-MFG-0000049",
+        "CN-MFG-0000570"
+      ]
+    },
+    {
+      "name": "钣金·苏州·只看制造商",
+      "params": {
+        "keyword": "钣金",
+        "city": "苏州",
+        "manufacturerOnly": true,
+        "limit": 10
+      },
+      "total": 171,
+      "literal": 48,
+      "primary": 123,
+      "secondary": 0,
+      "relaxed": null,
+      "topIds": [
+        "CN-MFG-0001454",
+        "CN-MFG-0012662",
+        "CN-MFG-0001446",
+        "CN-MFG-0001433",
+        "CN-MFG-0001436"
+      ]
+    },
+    {
+      "name": "注塑·东莞",
+      "params": {
+        "keyword": "注塑",
+        "city": "东莞",
+        "limit": 10
+      },
+      "total": 268,
+      "literal": 52,
+      "primary": 216,
+      "secondary": 0,
+      "relaxed": null,
+      "topIds": [
+        "CN-MFG-0000134",
+        "CN-MFG-0000135",
+        "CN-MFG-0000136",
+        "CN-MFG-0000139",
+        "CN-MFG-0000141"
+      ]
+    },
+    {
+      "name": "齿轮 焊接（多词 AND，验证取最弱档）",
+      "params": {
+        "keyword": "齿轮 焊接",
+        "limit": 10
+      },
+      "total": 0,
+      "literal": 0,
+      "primary": 0,
+      "secondary": 0,
+      "relaxed": 3415,
+      "topIds": []
+    },
+    {
+      "name": "行业码 3453（国标小类，不带关键词）",
+      "params": {
+        "industryCode": "3453",
+        "limit": 10
+      },
+      "total": 6,
+      "literal": 6,
+      "primary": 0,
+      "secondary": 0,
+      "relaxed": null,
+      "topIds": [
+        "CN-MFG-0006094",
+        "CN-MFG-0000593",
+        "CN-MFG-0011250",
+        "CN-MFG-0011518",
+        "CN-MFG-0011561"
+      ]
+    },
+    {
+      "name": "不存在的词（验证不静默放宽，必须有 relaxed 计数）",
+      "params": {
+        "keyword": "zzz不存在的采购词zzz",
+        "city": "上海",
+        "limit": 10
+      },
+      "total": 0,
+      "literal": 0,
+      "primary": 0,
+      "secondary": 0,
+      "relaxed": 0,
+      "topIds": []
+    }
+  ]
+}
