@@ -189,7 +189,8 @@
     "company": "兴湘顺·橡胶加工·高压油管·气动配件",
     "category": "原材料",
     "keywords": [
-      "亚克力板"
+      "亚克力板",
+      "塑料配件"
     ],
     "region": {
       "province": "广东",
@@ -1581,7 +1582,8 @@
     "company": "杭州唐元精密轴承·光轴·油封",
     "category": "标准件",
     "keywords": [
-      "轴承"
+      "轴承",
+      "精密机械"
     ],
     "region": {
       "province": "浙江",
@@ -2761,5 +2763,95 @@
       "adcode": "441900",
       "search_keyword": "电镀"
     }
+  },
+  {
+    "id": "CN-MFG-0022038",
+    "company": "批发液压油流动啤喉啤管油缸换油封烧焊",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "万顷沙镇粤海大道九涌段29号102铺",
+    "contact_phone": "13711663938",
+    "lat": 22.675998,
+    "lng": 113.5735,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MB4708IG",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南沙新区",
+      "adcode": "440115",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0022913",
+    "company": "金傲止水钢板钢筋网片鱼鳞网片橡胶止水带厂家",
+    "category": "原材料",
+    "keywords": [
+      "钢板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "温州"
+    },
+    "address": "中兴路127号",
+    "contact_phone": "0577-88335116; 15967891888",
+    "lat": 27.952618,
+    "lng": 120.831532,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IA35ZFDT",
+      "type": "公司企业;公司;公司|公司企业;工厂;工厂",
+      "typecode": "170200|170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330303",
+      "search_keyword": "钢板"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
   }
 ]

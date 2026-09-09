@@ -294,5 +294,96 @@
       "evidence": "新能源"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021193",
+    "company": "东莞市天耀新能源科技有限公司",
+    "category": "压铸",
+    "keywords": [
+      "铝合金压铸",
+      "铝合金"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "上中路139-141号",
+    "contact_phone": "0769-83216755",
+    "lat": 22.96027,
+    "lng": 113.871869,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHH49TT",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "铝合金压铸"
+    },
+    "industry": {
+      "code": "3612",
+      "name": "新能源车整车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车整车制造 > 新能源车整车制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "新能源"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021791",
+    "company": "绿动工坊新能源汽车维修(东港店)",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "凤凰镇镇北路7号",
+    "contact_phone": "13921954603",
+    "lat": 31.795621,
+    "lng": 120.654917,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JU15UPS1",
+      "type": "汽车维修;汽车综合维修;汽车综合维修|汽车服务;汽车养护/装饰;汽车养护|汽车服务;洗车场;洗车场",
+      "typecode": "030100|010400|010500",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3612",
+      "name": "新能源车整车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车整车制造 > 新能源车整车制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "新能源"
+    },
+    "is_manufacturer": true
   }
 ]

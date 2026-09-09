@@ -4,7 +4,8 @@
     "company": "茂全防腐木塑木地板和各种板材批发",
     "category": "原材料",
     "keywords": [
-      "不锈钢"
+      "不锈钢",
+      "钢材"
     ],
     "region": {
       "province": "浙江",
@@ -29,14 +30,29 @@
       "source": "gb_token",
       "evidence": "木地板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0K0O4JQLE",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
+      "typecode": "060603|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "油漆",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "钢材"
+    }
   },
   {
     "id": "CN-MFG-0019156",
     "company": "大自然木地板(大亚湾华南城店)",
     "category": "原材料",
     "keywords": [
-      "铝合金"
+      "铝合金",
+      "线路板"
     ],
     "region": {
       "province": "广东",
@@ -153,6 +169,51 @@
       "postcode": "",
       "business_area": "惠丰城",
       "adcode": "441303",
+      "search_keyword": "线路板"
+    },
+    "industry": {
+      "code": "2034",
+      "name": "木地板制造",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木质制品制造 > 木地板制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "木地板"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021664",
+    "company": "桥林木地板批发中心",
+    "category": "电子元器件",
+    "keywords": [
+      "线路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "桥林街道金鼎路9号桥林装饰城D10",
+    "contact_phone": "15151831269",
+    "lat": 31.950607,
+    "lng": 118.549109,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LK95B0CE",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "地板",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江北新区",
+      "adcode": "320111",
       "search_keyword": "线路板"
     },
     "industry": {

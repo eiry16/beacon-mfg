@@ -94,7 +94,8 @@
     "company": "奥钢联型材(中国)有限公司",
     "category": "原材料",
     "keywords": [
-      "不锈钢"
+      "不锈钢",
+      "钢材"
     ],
     "region": {
       "province": "江苏",
@@ -1891,7 +1892,8 @@
     "company": "嘉兴嘉塑钢材批发·管材批发",
     "category": "原材料",
     "keywords": [
-      "不锈钢"
+      "不锈钢",
+      "钢材"
     ],
     "region": {
       "province": "浙江",
@@ -2612,6 +2614,96 @@
       "confidence": "high",
       "source": "gb_token",
       "evidence": "型材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021070",
+    "company": "陈氏铝合金不锈钢塑钢店",
+    "category": "压铸",
+    "keywords": [
+      "铝合金压铸"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "雪浪房管所富长桥13号",
+    "contact_phone": "13301518959",
+    "lat": 31.472189,
+    "lng": 120.285537,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGOX2YO",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320211",
+      "search_keyword": "铝合金压铸"
+    },
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021136",
+    "company": "胖子塑钢铝合金",
+    "category": "压铸",
+    "keywords": [
+      "铝合金压铸"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "谈家渡路39弄24号",
+    "contact_phone": "13651696668",
+    "lat": 31.2348,
+    "lng": 121.422014,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0015471ED",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "门窗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310107",
+      "search_keyword": "铝合金压铸"
+    },
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
     },
     "is_manufacturer": true
   }

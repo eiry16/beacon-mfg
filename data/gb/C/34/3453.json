@@ -270,5 +270,95 @@
       "evidence": "齿轮"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021836",
+    "company": "连顺变速箱专修连锁(上海分公司)",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "金都路1515号",
+    "contact_phone": "18221811220",
+    "lat": 31.087839,
+    "lng": 121.421212,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J2KD3HYT",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310112",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3453",
+      "name": "齿轮及齿轮减、变速箱制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 齿轮及齿轮减、变速箱制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "变速箱"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021898",
+    "company": "禾创自动变速箱维修服务有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "大桥镇亚中路308号中清长三角人才培养中心7号楼一楼106室",
+    "contact_phone": "待核实",
+    "lat": 30.736214,
+    "lng": 120.836727,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I1F5PVV4",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330402",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3453",
+      "name": "齿轮及齿轮减、变速箱制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 齿轮及齿轮减、变速箱制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "变速箱"
+    },
+    "is_manufacturer": true
   }
 ]

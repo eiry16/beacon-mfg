@@ -390,5 +390,50 @@
       "evidence": "电池"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021772",
+    "company": "骆驼蓄电池汽车电路道路救援搭电补胎换胎",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "西瓜大院停车场",
+    "contact_phone": "18913254351",
+    "lat": 31.371764,
+    "lng": 120.915924,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I06SQQ5N",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "玉山",
+      "adcode": "320583",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3841",
+      "name": "锂离子电池制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电池制造 > 锂离子电池制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "蓄电池"
+    },
+    "is_manufacturer": true
   }
 ]

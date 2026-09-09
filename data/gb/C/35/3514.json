@@ -122,5 +122,50 @@
       "evidence": "建筑工程"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023528",
+    "company": "深圳市立达建筑工程有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "工程塑料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "沙坪路80号(福坑地铁站B口步行450米)",
+    "contact_phone": "13794498533",
+    "lat": 22.634394,
+    "lng": 114.224347,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHQ6XRV",
+      "type": "公司企业;公司;建筑公司",
+      "typecode": "170202",
+      "alias": "",
+      "tag": "",
+      "keytag": "建筑公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横岗",
+      "adcode": "440307",
+      "search_keyword": "工程塑料"
+    },
+    "industry": {
+      "code": "3514",
+      "name": "建筑工程用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑工程用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑工程"
+    },
+    "is_manufacturer": true
   }
 ]

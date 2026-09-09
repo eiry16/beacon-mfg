@@ -4,7 +4,9 @@
     "company": "启东电动工具五金-修理电机",
     "category": "原材料",
     "keywords": [
-      "钢材"
+      "钢材",
+      "螺丝",
+      "螺栓"
     ],
     "region": {
       "province": "浙江",
@@ -471,5 +473,51 @@
       "adcode": "320412",
       "search_keyword": "冲压"
     }
+  },
+  {
+    "id": "CN-MFG-0022297",
+    "company": "高升五金电动工具电机水泵(维修批发)",
+    "category": "标准件",
+    "keywords": [
+      "螺丝",
+      "螺栓"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "胥口镇孙武路817号",
+    "contact_phone": "17715384684",
+    "lat": 31.233339,
+    "lng": 120.476645,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGCAPTS",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "胥口",
+      "adcode": "320506",
+      "search_keyword": "螺丝"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
   }
 ]

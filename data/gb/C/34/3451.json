@@ -4,7 +4,8 @@
     "company": "小丁五金(南京方通轴承科技产业园店)",
     "category": "原材料",
     "keywords": [
-      "不锈钢"
+      "不锈钢",
+      "钢材"
     ],
     "region": {
       "province": "江苏",
@@ -49,7 +50,10 @@
     "company": "嘉宥电动工具世达工具水泵轴承",
     "category": "原材料",
     "keywords": [
-      "钢材"
+      "钢材",
+      "螺丝",
+      "螺栓",
+      "轴承"
     ],
     "region": {
       "province": "浙江",
@@ -4139,7 +4143,21 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B023E03FO2",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "轴承"
+    }
   },
   {
     "id": "CN-MFG-0005651",
@@ -6767,7 +6785,21 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0KUZAHE7E",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "轴承"
+    }
   },
   {
     "id": "CN-MFG-0005736",
@@ -7213,7 +7245,21 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0FFGJ6BAN",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "奉城",
+      "adcode": "310120",
+      "search_keyword": "轴承"
+    }
   },
   {
     "id": "CN-MFG-0005746",
@@ -7383,7 +7429,21 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0JRM7OJ6L",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310115",
+      "search_keyword": "轴承"
+    }
   },
   {
     "id": "CN-MFG-0005750",
@@ -13331,7 +13391,21 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B020700JAC",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "213032",
+      "business_area": "",
+      "adcode": "320411",
+      "search_keyword": "轴承"
+    }
   },
   {
     "id": "CN-MFG-0005914",
@@ -22374,7 +22448,9 @@
     "company": "嘉善胜峰轴承五金润滑油(力王脚轮)",
     "category": "标准件",
     "keywords": [
-      "轴承"
+      "轴承",
+      "螺丝",
+      "螺栓"
     ],
     "region": {
       "province": "浙江",
@@ -22419,7 +22495,11 @@
     "company": "东成五星专营店(得晟机电店)",
     "category": "标准件",
     "keywords": [
-      "轴承"
+      "轴承",
+      "螺丝",
+      "螺栓",
+      "钢材",
+      "钢板"
     ],
     "region": {
       "province": "浙江",
@@ -31022,7 +31102,8 @@
     "company": "哈尔滨轴承 栋王精密轴承",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械"
+      "精密机械",
+      "轴承"
     ],
     "region": {
       "province": "浙江",
@@ -31490,6 +31571,51 @@
     "is_template": true,
     "note": "",
     "status": "unverified_poi",
+    "industry": {
+      "code": "3451",
+      "name": "滚动轴承制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 滚动轴承制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "轴承"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021315",
+    "company": "余姚市锦城轴承有限公司",
+    "category": "表面处理",
+    "keywords": [
+      "热处理"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "朗霞街道创业北路南1路1号",
+    "contact_phone": "15990545446",
+    "lat": 30.172125,
+    "lng": 121.078675,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IK3ALMLQ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "热处理"
+    },
     "industry": {
       "code": "3451",
       "name": "滚动轴承制造",

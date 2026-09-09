@@ -185,5 +185,50 @@
       "adcode": "441324",
       "search_keyword": "喷涂"
     }
+  },
+  {
+    "id": "CN-MFG-0022576",
+    "company": "昌达建筑科技有限公司",
+    "category": "原材料",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "高铁新城新盛路619号",
+    "contact_phone": "15651691888",
+    "lat": 30.670088,
+    "lng": 120.813817,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I15HXH5W",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "建筑公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330402",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "3351",
+      "name": "建筑、家具用金属配件制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 建筑、家具用金属配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑"
+    },
+    "is_manufacturer": true
   }
 ]

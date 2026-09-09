@@ -174,7 +174,8 @@
     "company": "昆山司允塑料制品有限公司",
     "category": "原材料",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "塑料制品"
     ],
     "region": {
       "province": "江苏",
@@ -865,7 +866,8 @@
     "company": "亚克力制品加工厂",
     "category": "原材料",
     "keywords": [
-      "亚克力板"
+      "亚克力板",
+      "加工中心"
     ],
     "region": {
       "province": "上海",
@@ -3165,7 +3167,8 @@
     "company": "亚克力塑料制品厂",
     "category": "原材料",
     "keywords": [
-      "亚克力板"
+      "亚克力板",
+      "塑料制品"
     ],
     "region": {
       "province": "广东",
@@ -3627,7 +3630,8 @@
     "keywords": [
       "铝型材",
       "铝合金",
-      "铜材"
+      "铜材",
+      "工程塑料"
     ],
     "region": {
       "province": "广东",
@@ -3672,7 +3676,8 @@
     "company": "深圳市合进五金塑胶制品有限公司",
     "category": "标准件",
     "keywords": [
-      "弹簧"
+      "弹簧",
+      "冲压"
     ],
     "region": {
       "province": "广东",
@@ -3697,7 +3702,21 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0GRLHLWNT",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "冲压"
+    }
   },
   {
     "id": "CN-MFG-0018817",
@@ -3749,7 +3768,8 @@
     "company": "深圳市盈徳锋科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -3774,7 +3794,21 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0H3R5HSSU",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工业园区",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440306",
+      "search_keyword": "注塑模具"
+    }
   },
   {
     "id": "CN-MFG-0000123",
@@ -3782,7 +3816,8 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -3922,7 +3957,9 @@
     "keywords": [
       "注塑成型",
       "塑料配件",
-      "注塑加工"
+      "注塑加工",
+      "工程塑料",
+      "改性塑料"
     ],
     "region": {
       "province": "广东",
@@ -3970,7 +4007,9 @@
     "keywords": [
       "注塑成型",
       "塑料配件",
-      "注塑加工"
+      "注塑加工",
+      "注塑模具",
+      "冲压模具"
     ],
     "region": {
       "province": "广东",
@@ -4063,7 +4102,8 @@
     "category": "注塑成型",
     "keywords": [
       "注塑成型",
-      "注塑加工"
+      "注塑加工",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -4329,7 +4369,10 @@
     "company": "苏州中创机械科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "数控加工",
+      "机械加工",
+      "塑料原料"
     ],
     "region": {
       "province": "江苏",
@@ -4453,7 +4496,8 @@
     "company": "江苏华疆三维科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "CNC加工"
     ],
     "region": {
       "province": "江苏",
@@ -4478,7 +4522,21 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0K1KHETHB",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320282",
+      "search_keyword": "CNC加工"
+    }
   },
   {
     "id": "CN-MFG-0002598",
@@ -4531,7 +4589,8 @@
     "company": "慈溪市周巷通用配件厂",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "注塑模具"
     ],
     "region": {
       "province": "浙江",
@@ -4578,7 +4637,9 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "塑料配件"
+      "塑料配件",
+      "连接器",
+      "接插件"
     ],
     "region": {
       "province": "浙江",
@@ -4827,7 +4888,8 @@
     "company": "宁波中承模塑有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "注塑模具"
     ],
     "region": {
       "province": "浙江",
@@ -5876,7 +5938,10 @@
     "company": "线切割加工",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "数控加工",
+      "机械加工",
+      "加工中心"
     ],
     "region": {
       "province": "江苏",
@@ -5922,7 +5987,8 @@
     "company": "深圳市盈尔通科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -6138,7 +6204,8 @@
     "company": "东莞市精联精密技术有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "紧固件"
     ],
     "region": {
       "province": "广东",
@@ -6163,7 +6230,21 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0LGZSTTFD",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "紧固件"
+    }
   },
   {
     "id": "CN-MFG-0002683",
@@ -6203,7 +6284,12 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "塑料配件"
+      "塑料配件",
+      "机械加工",
+      "冲压",
+      "注塑模具",
+      "冲压模具",
+      "模具加工"
     ],
     "region": {
       "province": "广东",
@@ -6250,7 +6336,8 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "塑料配件"
+      "塑料配件",
+      "冲压"
     ],
     "region": {
       "province": "广东",
@@ -6296,7 +6383,8 @@
     "company": "东莞哈捷科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -6388,7 +6476,9 @@
     "company": "达诚光电",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "注塑模具",
+      "铝合金压铸"
     ],
     "region": {
       "province": "广东",
@@ -7456,7 +7546,8 @@
     "company": "中亿腾模塑科技(苏州)有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "江苏",
@@ -7502,7 +7593,8 @@
     "company": "苏州瑞德智慧精密科技股份有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "江苏",
@@ -8086,7 +8178,8 @@
     "company": "海盐星火电子科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "弹簧"
     ],
     "region": {
       "province": "浙江",
@@ -8111,7 +8204,21 @@
       "source": "keyword",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B023D0R4EU",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330424",
+      "search_keyword": "弹簧"
+    }
   },
   {
     "id": "CN-MFG-0002755",
@@ -8256,7 +8363,8 @@
     "company": "上海顿和科技发展有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "上海",
@@ -8664,7 +8772,8 @@
     "company": "金宝荣注塑成型",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -8710,7 +8819,8 @@
     "company": "领慧精密(ESI TECH)",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "压铸"
     ],
     "region": {
       "province": "广东",
@@ -8735,7 +8845,21 @@
       "source": "keyword",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0FFL02543",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "压铸"
+    }
   },
   {
     "id": "CN-MFG-0002778",
@@ -8788,7 +8912,8 @@
     "company": "深圳市建泓注塑有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -8834,7 +8959,8 @@
     "company": "深圳市同航时代科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -8859,7 +8985,21 @@
       "source": "keyword",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0JDRCIEXO",
+      "type": "公司企业;公司;网络科技",
+      "typecode": "170206",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "罗田",
+      "adcode": "440306",
+      "search_keyword": "注塑模具"
+    }
   },
   {
     "id": "CN-MFG-0002781",
@@ -8930,7 +9070,9 @@
     "company": "深圳市富盈源科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具",
+      "连接器"
     ],
     "region": {
       "province": "广东",
@@ -9647,7 +9789,8 @@
     "company": "懋昌注塑",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -10122,7 +10265,21 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0FFMB9JHF",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "大良",
+      "adcode": "440606",
+      "search_keyword": "注塑成型"
+    }
   },
   {
     "id": "CN-MFG-0002812",
@@ -10707,7 +10864,8 @@
     "company": "华雄五金注塑制品厂",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -10732,7 +10890,21 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0LGPMHV1C",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "注塑模具"
+    }
   },
   {
     "id": "CN-MFG-0002828",
@@ -11307,7 +11479,8 @@
     "company": "江苏智洁风环保科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "CNC加工"
     ],
     "region": {
       "province": "江苏",
@@ -11332,7 +11505,21 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0J0TSTC8A",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320402",
+      "search_keyword": "CNC加工"
+    }
   },
   {
     "id": "CN-MFG-0007921",
@@ -11340,7 +11527,8 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "塑料配件"
+      "塑料配件",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -11386,7 +11574,8 @@
     "company": "东莞市新秀电子科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -11411,14 +11600,31 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0JAHH4WQ8",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "注塑加工"
+    }
   },
   {
     "id": "CN-MFG-0007923",
     "company": "吉利星激光科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "冲压",
+      "注塑模具",
+      "冲压模具"
     ],
     "region": {
       "province": "广东",
@@ -11443,7 +11649,21 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0L3RZONCL",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "冲压"
+    }
   },
   {
     "id": "CN-MFG-0007924",
@@ -11701,7 +11921,8 @@
     "company": "张家港安达塑料制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "江苏",
@@ -14896,7 +15117,8 @@
     "category": "注塑成型",
     "keywords": [
       "塑料制品",
-      "塑胶制品"
+      "塑胶制品",
+      "注塑模具"
     ],
     "region": {
       "province": "江苏",
@@ -16149,7 +16371,8 @@
     "category": "注塑成型",
     "keywords": [
       "塑料制品",
-      "塑胶制品"
+      "塑胶制品",
+      "塑料模具"
     ],
     "region": {
       "province": "江苏",
@@ -17419,7 +17642,9 @@
     "company": "无锡三和塑料制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑料模具",
+      "塑胶制品"
     ],
     "region": {
       "province": "江苏",
@@ -22097,7 +22322,8 @@
     "company": "余姚市和源塑料制品厂",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "浙江",
@@ -23310,7 +23536,8 @@
     "company": "宁波烁石流体技术有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "机械加工"
     ],
     "region": {
       "province": "浙江",
@@ -24521,7 +24748,8 @@
     "company": "上海臣天塑料制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "上海",
@@ -25267,7 +25495,8 @@
     "company": "上海遂达塑料制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "上海",
@@ -25881,7 +26110,8 @@
     "company": "上海梓妤塑料制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "上海",
@@ -26399,7 +26629,8 @@
     "category": "注塑成型",
     "keywords": [
       "塑料制品",
-      "塑胶制品"
+      "塑胶制品",
+      "塑料模具"
     ],
     "region": {
       "province": "上海",
@@ -26446,7 +26677,8 @@
     "category": "注塑成型",
     "keywords": [
       "塑料制品",
-      "塑胶制品"
+      "塑胶制品",
+      "塑料模具"
     ],
     "region": {
       "province": "上海",
@@ -27332,7 +27564,8 @@
     "category": "注塑成型",
     "keywords": [
       "塑料制品",
-      "塑料模具"
+      "塑料模具",
+      "塑胶制品"
     ],
     "region": {
       "province": "浙江",
@@ -29796,7 +30029,8 @@
     "company": "常州苏越塑胶容器制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "江苏",
@@ -30121,7 +30355,9 @@
     "company": "常州鑫万塑塑料制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑料模具",
+      "塑胶制品"
     ],
     "region": {
       "province": "江苏",
@@ -49318,7 +49554,8 @@
     "company": "杭州华林塑胶机械制造有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑胶制品"
+      "塑胶制品",
+      "机械加工"
     ],
     "region": {
       "province": "浙江",
@@ -51714,7 +51951,8 @@
     "company": "永朗塑胶制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑胶制品"
+      "塑胶制品",
+      "塑料制品"
     ],
     "region": {
       "province": "广东",
@@ -52358,7 +52596,8 @@
     "company": "生利塑胶制品(东莞)有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑胶制品"
+      "塑胶制品",
+      "塑料制品"
     ],
     "region": {
       "province": "广东",
@@ -53510,7 +53749,8 @@
     "category": "注塑成型",
     "keywords": [
       "塑胶制品",
-      "塑料模具"
+      "塑料模具",
+      "塑料制品"
     ],
     "region": {
       "province": "广东",
@@ -55307,7 +55547,11 @@
     "company": "昆山旭挚科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料配件"
+      "塑料配件",
+      "CNC加工",
+      "数控加工",
+      "机械加工",
+      "车铣复合"
     ],
     "region": {
       "province": "江苏",
@@ -55492,7 +55736,8 @@
     "company": "锌合金护角铝角码塑料角码纱窗配件",
     "category": "注塑成型",
     "keywords": [
-      "塑料配件"
+      "塑料配件",
+      "锌合金压铸"
     ],
     "region": {
       "province": "江苏",
@@ -56688,7 +56933,8 @@
     "company": "上海豹宏实业有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料配件"
+      "塑料配件",
+      "连接器"
     ],
     "region": {
       "province": "上海",
@@ -57332,7 +57578,9 @@
     "company": "广东企华工业设备有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料配件"
+      "塑料配件",
+      "阳极氧化",
+      "PCB"
     ],
     "region": {
       "province": "广东",
@@ -57470,7 +57718,10 @@
     "company": "东莞市金晟达塑料制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料配件"
+      "塑料配件",
+      "冲压",
+      "注塑模具",
+      "冲压模具"
     ],
     "region": {
       "province": "广东",
@@ -57654,7 +57905,8 @@
     "company": "锋润塑业(东莞)有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料配件"
+      "塑料配件",
+      "CNC加工"
     ],
     "region": {
       "province": "广东",
@@ -59450,7 +59702,8 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "注塑模具"
+      "注塑模具",
+      "机械加工"
     ],
     "region": {
       "province": "浙江",
@@ -59765,7 +60018,8 @@
     "company": "隆顺注塑机配件机械加工",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -59900,7 +60154,8 @@
     "company": "信尔诺CNC加工激光抄数注塑产品",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "CNC加工"
     ],
     "region": {
       "province": "广东",
@@ -59945,7 +60200,8 @@
     "company": "蓝海3D打印",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -60125,7 +60381,8 @@
     "company": "深圳市奥美特纳米科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑成型"
+      "注塑成型",
+      "注塑模具"
     ],
     "region": {
       "province": "广东",
@@ -61115,7 +61372,10 @@
     "company": "昆山金得胜金属材料有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料模具"
+      "塑料模具",
+      "冲压",
+      "冲压模具",
+      "钢板"
     ],
     "region": {
       "province": "江苏",
@@ -66522,7 +66782,8 @@
     "company": "珠海南安塑胶制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "广东",
@@ -68804,7 +69065,8 @@
     "company": "吉兴达机电(逸鸿花园店)",
     "category": "注塑成型",
     "keywords": [
-      "模具"
+      "模具",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -78845,7 +79107,8 @@
     "company": "惠州市博添诚科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料模具"
+      "塑料模具",
+      "压铸"
     ],
     "region": {
       "province": "广东",
@@ -79211,7 +79474,8 @@
     "keywords": [
       "塑料模具",
       "模具",
-      "模具加工"
+      "模具加工",
+      "CNC加工"
     ],
     "region": {
       "province": "广东",
@@ -83329,7 +83593,9 @@
     "category": "注塑成型",
     "keywords": [
       "模具",
-      "模具加工"
+      "模具加工",
+      "紧固件",
+      "标准件"
     ],
     "region": {
       "province": "广东",
@@ -83734,7 +84000,8 @@
     "company": "广东川旭新材料有限公司",
     "category": "注塑成型",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "连接器"
     ],
     "region": {
       "province": "广东",
@@ -85055,7 +85322,10 @@
     "category": "注塑成型",
     "keywords": [
       "塑料模具",
-      "塑料配件"
+      "塑料配件",
+      "数控加工",
+      "精密机械",
+      "机械加工"
     ],
     "region": {
       "province": "浙江",
@@ -93514,7 +93784,8 @@
     "company": "鸿达伟业有机玻璃工艺制品有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "亚克力加工"
+      "亚克力加工",
+      "激光切割"
     ],
     "region": {
       "province": "广东",
@@ -94692,6 +94963,1949 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "冲压"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020565",
+    "company": "东莞市信恩诺塑胶有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑加工",
+      "塑料配件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "樟木头塑胶市场四期7栋2号",
+    "contact_phone": "13580970245",
+    "lat": 22.91576,
+    "lng": 114.056195,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFM0X3DB",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "注塑加工"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "注塑加工"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020566",
+    "company": "苏州亿诚塑料制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具",
+      "塑料制品",
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "北桥街道生态路13号",
+    "contact_phone": "待核实",
+    "lat": 31.518673,
+    "lng": 120.62285,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3UDGV1F",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020577",
+    "company": "浙江拜迪新材料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具",
+      "改性塑料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "数云路菜鸟智谷二期3幢905",
+    "contact_phone": "19816903159",
+    "lat": 30.262898,
+    "lng": 119.968922,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUZZ740X",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330110",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "注塑成型"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020578",
+    "company": "常州高领塑料机械有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "春江街道圩塘工业园新民东路11号-2华灏厂房隔壁",
+    "contact_phone": "13082511653",
+    "lat": 31.928071,
+    "lng": 120.002679,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KAAZA5I9",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320411",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "注塑成型"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020590",
+    "company": "广州市鼎程塑料制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "南群街与和郁利东路交叉口西北160米",
+    "contact_phone": "待核实",
+    "lat": 23.461775,
+    "lng": 113.227875,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MASCGH2K",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020592",
+    "company": "和承塑料制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "江长公路与西湖汉和南街交叉口西380米",
+    "contact_phone": "待核实",
+    "lat": 23.303975,
+    "lng": 113.244175,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MA4CVCYI",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江高",
+      "adcode": "440111",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020593",
+    "company": "广州德鑫塑料制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "太岗公路与横沥中街交叉口南140米",
+    "contact_phone": "待核实",
+    "lat": 23.335925,
+    "lng": 113.267525,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBMY6RXW",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "人和",
+      "adcode": "440111",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020594",
+    "company": "广州市森柏塑料制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具",
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "太岗路1号太成智创园6楼",
+    "contact_phone": "待核实",
+    "lat": 23.348362,
+    "lng": 113.272451,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUAGZIA1",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "人和",
+      "adcode": "440111",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020598",
+    "company": "众联(佛山市)塑料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "贤谭路31号",
+    "contact_phone": "待核实",
+    "lat": 23.100273,
+    "lng": 113.079415,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAV1A2XN",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "注塑成型"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020603",
+    "company": "惠州市合鸿兴塑料制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "沥林镇英光村狄嘉置业园区内C栋",
+    "contact_phone": "13828121227",
+    "lat": 22.995523,
+    "lng": 114.144358,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K347YO2W",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441302",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020607",
+    "company": "佳尔丽塑料制品厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品",
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "竹香路与祥云路交叉口西140米",
+    "contact_phone": "待核实",
+    "lat": 31.708225,
+    "lng": 119.842475,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MB4CZLYC",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320412",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020608",
+    "company": "东莞市启大塑料制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "旧飞鹅路67号",
+    "contact_phone": "待核实",
+    "lat": 22.943325,
+    "lng": 113.809175,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L095CE67",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020609",
+    "company": "东莞市亿诺达塑胶制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "寮步镇浮竹山村佛岭路32号",
+    "contact_phone": "13553826775; 15989444535",
+    "lat": 22.971035,
+    "lng": 113.845809,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MGPC16A6",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020610",
+    "company": "佛山市维港建塑料编织袋制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "南源路36号",
+    "contact_phone": "待核实",
+    "lat": 23.277342,
+    "lng": 112.933223,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L6BHVBOA",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440607",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020611",
+    "company": "佛山市新彩塑料制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "南水路10号",
+    "contact_phone": "待核实",
+    "lat": 23.256673,
+    "lng": 113.09359,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAALPT4M",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020612",
+    "company": "惠州市润邦塑胶制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品",
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "石湾镇迳茹南路东侧八甲智能装备园2栋8号电梯4层B区",
+    "contact_phone": "待核实",
+    "lat": 23.151275,
+    "lng": 113.953325,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRYKU5Y9",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "电子厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441322",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020613",
+    "company": "惠州市盛明鑫塑胶制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "博罗智能装备产业园园洲片区尚德路3号C1栋9楼",
+    "contact_phone": "13553815964",
+    "lat": 23.11063,
+    "lng": 114.021969,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KRN1N9EI",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441322",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020614",
+    "company": "联润塑胶制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "龙桥大道辅路与环城南路交叉口北220米",
+    "contact_phone": "待核实",
+    "lat": 23.108172,
+    "lng": 114.112205,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDMU7KFU",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441322",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020615",
+    "company": "博罗腾龙鑫塑胶制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "龙溪街道结窝村梦科园智谷12栋1-3层",
+    "contact_phone": "0752-6887066",
+    "lat": 23.154762,
+    "lng": 114.131644,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDASGITL",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441322",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020616",
+    "company": "苏州南益塑胶有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "市塘市镇李港巷路10号",
+    "contact_phone": "13817653802",
+    "lat": 31.825175,
+    "lng": 120.572175,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LR99R0GH",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020618",
+    "company": "塑料制品 周转箱 垃圾桶 托盘五金劳保",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "宜兴五金机电城1期8栋8107",
+    "contact_phone": "18806151996",
+    "lat": 31.390048,
+    "lng": 119.811523,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDM57K8R",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "劳保用品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "宜城",
+      "adcode": "320282",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020619",
+    "company": "上海元财塑胶有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "枫泾镇枫翠路492-498号",
+    "contact_phone": "待核实",
+    "lat": 30.90325,
+    "lng": 121.008696,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JRT520QS",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "枫泾",
+      "adcode": "310116",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020620",
+    "company": "常州力博塑胶植绒有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "玉龙北路558号",
+    "contact_phone": "待核实",
+    "lat": 31.950023,
+    "lng": 119.951125,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I2BSYJL4",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320411",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020621",
+    "company": "东莞市石碣腾盈塑胶制品厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "民兴路10号",
+    "contact_phone": "待核实",
+    "lat": 23.122158,
+    "lng": 113.800939,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAU531KM",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020622",
+    "company": "万晟塑胶制品厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "石碣镇单祠路10号",
+    "contact_phone": "13509811138",
+    "lat": 23.119396,
+    "lng": 113.81116,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LG5U3WEN",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020623",
+    "company": "东莞美同塑胶制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东堤中路2号",
+    "contact_phone": "待核实",
+    "lat": 23.092725,
+    "lng": 113.833925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L33LBY24",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020625",
+    "company": "广州京海塑料制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "鹤前西路二巷1号3楼302室(广州龙邦运输公司对面)",
+    "contact_phone": "18620777912",
+    "lat": 23.322867,
+    "lng": 113.311646,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAJDRP3K",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "人和",
+      "adcode": "440111",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020627",
+    "company": "美吉塑胶制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "创裕路与同乐二路交叉口东100米",
+    "contact_phone": "待核实",
+    "lat": 22.716125,
+    "lng": 113.236125,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDXRZ5ER",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东凤",
+      "adcode": "442000",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020628",
+    "company": "爱佳尔科技有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料配件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "宝龙街道同心社区丰顺路22号",
+    "contact_phone": "18938962423",
+    "lat": 22.710723,
+    "lng": 114.314919,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F38ZEOA",
+      "type": "公司企业;公司;公司|公司企业;工厂;工厂",
+      "typecode": "170200|170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440307",
+      "search_keyword": "塑料配件"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "注塑成型"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020629",
+    "company": "佛山市南海区聚本塑料机械有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料配件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "大沥镇广佛公路石一花苑4-5号商铺",
+    "contact_phone": "待核实",
+    "lat": 23.075496,
+    "lng": 113.104884,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GRZC9AZU",
+      "type": "公司企业;公司;公司|购物服务;专卖店;专营店",
+      "typecode": "170200|061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "塑料配件"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "注塑成型"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020630",
+    "company": "泽晨起重",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料配件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "城北批发市场C区6路11号",
+    "contact_phone": "待核实",
+    "lat": 23.059825,
+    "lng": 113.106874,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFYPOLG",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "汾江南路",
+      "adcode": "440604",
+      "search_keyword": "塑料配件"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "注塑成型"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020878",
+    "company": "苏州帕沃森模塑有限公司注塑部",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "浦金路与东太湖路交叉口南160米",
+    "contact_phone": "待核实",
+    "lat": 31.175292,
+    "lng": 120.505701,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KACLY5KR",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "临湖",
+      "adcode": "320506",
+      "search_keyword": "注塑模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020890",
+    "company": "宁波帅特龙集团有限公司注塑事业部",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "洞桥镇鱼山头村桥前东602号",
+    "contact_phone": "待核实",
+    "lat": 29.742406,
+    "lng": 121.419415,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH2SQVG",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330203",
+      "search_keyword": "注塑模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020892",
+    "company": "宁波天有注塑有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "滨海新区南滨北路1号9幢B01(模具园区一期北区)",
+    "contact_phone": "待核实",
+    "lat": 29.276254,
+    "lng": 121.58027,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I1YS82UV",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330226",
+      "search_keyword": "注塑模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020893",
+    "company": "上海云升注塑制模",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "茸梅路667号",
+    "contact_phone": "021-57783398",
+    "lat": 31.042026,
+    "lng": 121.245657,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3CZ9PMD",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310117",
+      "search_keyword": "注塑模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020948",
+    "company": "翔昆注塑",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东坑镇骏达西路松源创新科技城C栋3楼",
+    "contact_phone": "待核实",
+    "lat": 22.997332,
+    "lng": 113.928982,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI89W48",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "注塑模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020958",
+    "company": "明峰注塑试模",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "燕罗街道塘下涌社区第二工业大道119号2栋厂房102",
+    "contact_phone": "18665344768; 18665347668",
+    "lat": 22.804886,
+    "lng": 113.83967,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LK5ZSH2E",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440306",
+      "search_keyword": "注塑模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020962",
+    "company": "旺利注塑试模",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "山门第三工业区东鹏第二工业园11号",
+    "contact_phone": "18665344768",
+    "lat": 22.781198,
+    "lng": 113.858549,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IDZU8D2J",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "公明",
+      "adcode": "440306",
+      "search_keyword": "注塑模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020964",
+    "company": "众鑫注塑厂",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "新发南路与庄村路交叉口西300米",
+    "contact_phone": "待核实",
+    "lat": 22.720075,
+    "lng": 113.859325,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKDXPIYM",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "注塑模具"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0021196",
+    "company": "豫哲信五金塑胶制品有限公司",
+    "category": "压铸",
+    "keywords": [
+      "铝合金压铸",
+      "铝合金"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "新光路4号",
+    "contact_phone": "待核实",
+    "lat": 22.929542,
+    "lng": 114.130598,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFWIY8G",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "铝合金压铸"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0022142",
+    "company": "东莞市秦洋五金塑胶制品有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "端子"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "大朗镇大井头盈丰路七号",
+    "contact_phone": "待核实",
+    "lat": 22.952088,
+    "lng": 113.949707,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHCCPSE",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "端子"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023529",
+    "company": "深圳市顺利特种工程塑胶制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "工程塑料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "新桥第二工业区白沙路29号一层",
+    "contact_phone": "13926556792",
+    "lat": 22.73673,
+    "lng": 113.84788,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K0ASEWN5",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "工程塑料"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023561",
+    "company": "东莞市美特达塑胶制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料原料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "横沥镇隔坑村忠亚科技园A07栋3-5层",
+    "contact_phone": "待核实",
+    "lat": 23.016913,
+    "lng": 113.950966,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFMBSN8D",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "塑料原料"
     },
     "industry": {
       "code": "2929",

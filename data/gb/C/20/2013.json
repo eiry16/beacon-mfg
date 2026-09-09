@@ -51,7 +51,10 @@
     "company": "南京鑫胜发不锈钢铝单板",
     "category": "原材料",
     "keywords": [
-      "不锈钢"
+      "不锈钢",
+      "激光切割",
+      "线路板",
+      "钢材"
     ],
     "region": {
       "province": "江苏",
@@ -356,7 +359,8 @@
     "company": "律乙幕墙·佛山铝单板厂家",
     "category": "表面处理",
     "keywords": [
-      "阳极氧化"
+      "阳极氧化",
+      "铝板"
     ],
     "region": {
       "province": "广东",
@@ -381,14 +385,30 @@
       "source": "gb_token",
       "evidence": "单板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0L1BZY2RH",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "铝板"
+    }
   },
   {
     "id": "CN-MFG-0012934",
     "company": "星源不锈钢铝单板激光切割",
     "category": "钣金冲压",
     "keywords": [
-      "激光切割"
+      "激光切割",
+      "不锈钢材料",
+      "钢板"
     ],
     "region": {
       "province": "江苏",
@@ -461,6 +481,96 @@
       "business_area": "江北新区直管区",
       "adcode": "320111",
       "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "2013",
+      "name": "单板加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 单板加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "单板"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023161",
+    "company": "泰山石膏板墙板铝单板吸音板(音静云九星店)",
+    "category": "原材料",
+    "keywords": [
+      "铝板"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "嘉松中路4451弄8号1幢123号",
+    "contact_phone": "13818365727",
+    "lat": 31.188529,
+    "lng": 121.223284,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L1SHQ5WO",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "华新",
+      "adcode": "310118",
+      "search_keyword": "铝板"
+    },
+    "industry": {
+      "code": "2013",
+      "name": "单板加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 单板加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "单板"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023211",
+    "company": "上海吉祥铝塑板铝单板",
+    "category": "原材料",
+    "keywords": [
+      "铝板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "友谊北路300号C区6幢10-13",
+    "contact_phone": "13806194221",
+    "lat": 31.621817,
+    "lng": 120.373717,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B01FE1A5I9",
+      "type": "购物服务;家居建材市场;家居建材市场",
+      "typecode": "060600",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320205",
+      "search_keyword": "铝板"
     },
     "industry": {
       "code": "2013",

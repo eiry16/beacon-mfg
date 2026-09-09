@@ -898,5 +898,50 @@
       "evidence": "原材料"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0022684",
+    "company": "雨虹防水堵漏玻璃胶建材批发(现代商城店)",
+    "category": "原材料",
+    "keywords": [
+      "不锈钢材料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "现代商城管道北街39-50号",
+    "contact_phone": "13975307863",
+    "lat": 29.846778,
+    "lng": 121.572483,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I327K09T",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "防水",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330212",
+      "search_keyword": "不锈钢材料"
+    },
+    "industry": {
+      "code": "5165",
+      "name": "建材批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 建材批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建材批发"
+    },
+    "is_manufacturer": false
   }
 ]

@@ -51,7 +51,8 @@
     "category": "原材料",
     "keywords": [
       "铝合金",
-      "亚克力板"
+      "亚克力板",
+      "激光切割"
     ],
     "region": {
       "province": "江苏",
@@ -1353,6 +1354,96 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "自动化设备"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020319",
+    "company": "东莞朝旭自动化科技有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "CNC加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "厦岗社区富荣街5号",
+    "contact_phone": "13244995506",
+    "lat": 22.799072,
+    "lng": 113.742873,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6AAYICY",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "CNC加工"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0022114",
+    "company": "无锡立志德自动化科技有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "端子"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "锡北镇锡港路张泾东段205号(泾新工业园内走到底)",
+    "contact_phone": "18015338181",
+    "lat": 31.66824,
+    "lng": 120.446151,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G13C19B0",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "锡北",
+      "adcode": "320205",
+      "search_keyword": "端子"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化"
     },
     "is_manufacturer": true
   }

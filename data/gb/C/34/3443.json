@@ -100,7 +100,8 @@
     "company": "广州华勋机电阀门有限公司",
     "category": "原材料",
     "keywords": [
-      "不锈钢"
+      "不锈钢",
+      "不锈钢材料"
     ],
     "region": {
       "province": "广东",
@@ -125,7 +126,21 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0G1XHFYUC",
+      "type": "公司企业;公司;商业贸易",
+      "typecode": "170207",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440118",
+      "search_keyword": "不锈钢材料"
+    }
   },
   {
     "id": "CN-MFG-0007871",
@@ -344,7 +359,9 @@
     "company": "温州春阀绍兴分公司.阀门.法兰管件.流量计",
     "category": "原材料",
     "keywords": [
-      "钢板"
+      "钢板",
+      "冲压",
+      "紧固件"
     ],
     "region": {
       "province": "浙江",
@@ -835,6 +852,322 @@
       "business_area": "",
       "adcode": "330603",
       "search_keyword": "冲压"
+    },
+    "industry": {
+      "code": "3443",
+      "name": "阀门和旋塞制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 阀门和旋塞制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "阀门"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0022436",
+    "company": "裕兴水暖阀门不锈钢阀门铜阀门",
+    "category": "标准件",
+    "keywords": [
+      "螺丝",
+      "螺栓"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "创业一路西一巷42号金泰花园",
+    "contact_phone": "13410418807; 18859559418",
+    "lat": 22.562401,
+    "lng": 113.894458,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K21D085O",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "管材管件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新安",
+      "adcode": "440306",
+      "search_keyword": "螺丝"
+    },
+    "industry": {
+      "code": "3443",
+      "name": "阀门和旋塞制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 阀门和旋塞制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "阀门"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0022457",
+    "company": "海宁市华捷阀门配件有限公司",
+    "category": "标准件",
+    "keywords": [
+      "螺栓"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "马桥街道丰收路339号-341号",
+    "contact_phone": "0573-87137339",
+    "lat": 30.481427,
+    "lng": 120.696861,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HUHCMI7V",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "螺栓"
+    },
+    "industry": {
+      "code": "3443",
+      "name": "阀门和旋塞制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 阀门和旋塞制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "阀门|配件型:配件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0022869",
+    "company": "福远阀门管件",
+    "category": "原材料",
+    "keywords": [
+      "钢板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "建材市场一区23幢23-27号",
+    "contact_phone": "15370196888",
+    "lat": 31.648225,
+    "lng": 120.797025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L24MNWJ7",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "管材管件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
+      "search_keyword": "钢板"
+    },
+    "industry": {
+      "code": "3443",
+      "name": "阀门和旋塞制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 阀门和旋塞制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "阀门"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0022908",
+    "company": "埃美柯大高不锈钢阀门管件(众冠商业广场店)",
+    "category": "原材料",
+    "keywords": [
+      "钢板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "众冠商业广场1楼B区11排11号",
+    "contact_phone": "13967852020",
+    "lat": 29.916133,
+    "lng": 121.617808,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J1B5MVFD",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "庄市",
+      "adcode": "330205",
+      "search_keyword": "钢板"
+    },
+    "industry": {
+      "code": "3443",
+      "name": "阀门和旋塞制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 阀门和旋塞制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "阀门"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023380",
+    "company": "埃美柯阀门光复路",
+    "category": "原材料",
+    "keywords": [
+      "铜管"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "光复路859号(靠近恒丰古北家苑小区门口)",
+    "contact_phone": "021-33300328; 13524268147",
+    "lat": 31.238549,
+    "lng": 121.45715,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HK1H8WJE",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "厨卫洁具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310106",
+      "search_keyword": "铜管"
+    },
+    "industry": {
+      "code": "3443",
+      "name": "阀门和旋塞制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 阀门和旋塞制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "阀门"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023387",
+    "company": "埃美柯阀门.配件.铜(旗舰店)",
+    "category": "原材料",
+    "keywords": [
+      "铜管"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "四泾镇泗泾五金城10栋394号",
+    "contact_phone": "18916176568",
+    "lat": 31.115614,
+    "lng": 121.285019,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKM4F7B",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "泗泾",
+      "adcode": "310117",
+      "search_keyword": "铜管"
+    },
+    "industry": {
+      "code": "3443",
+      "name": "阀门和旋塞制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 阀门和旋塞制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "阀门|配件型:配件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023395",
+    "company": "埃美柯阀门·永德信阀门·水表",
+    "category": "原材料",
+    "keywords": [
+      "铜管"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "泗泾镇泗泾五金城15幢323-325号",
+    "contact_phone": "18916176568",
+    "lat": 31.115425,
+    "lng": 121.286025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJ4XSYH",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "泗泾",
+      "adcode": "310117",
+      "search_keyword": "铜管"
     },
     "industry": {
       "code": "3443",

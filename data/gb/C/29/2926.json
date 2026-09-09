@@ -100,7 +100,9 @@
     "company": "常熟市奥罗拉塑料包装有限公司",
     "category": "原材料",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "注塑加工",
+      "注塑模具"
     ],
     "region": {
       "province": "江苏",
@@ -240,7 +242,8 @@
     "company": "常熟市元亨塑料包装制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑料原料"
     ],
     "region": {
       "province": "江苏",
@@ -2868,6 +2871,51 @@
       "confidence": "high",
       "source": "name",
       "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020591",
+    "company": "广州市敬记塑料容器有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "江高镇金沙北路2号4楼A区",
+    "contact_phone": "18826448088",
+    "lat": 23.275426,
+    "lng": 113.22345,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LUURRZ7K",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江高",
+      "adcode": "440111",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料容器"
     },
     "is_manufacturer": true
   }
