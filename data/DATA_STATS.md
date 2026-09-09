@@ -75,7 +75,7 @@
 | status | 100%（15161/15161） | 待迁移（schema 已支持；当前按 is_template 兼容推导） |
 | imported_at / last_verified_at | 0%（0/15161） | Phase 0 拆分启用（schema 已支持） |
 | claim | 0%（0/15161） | Phase 1 认主系统预留 |
-| agent | 0%（3/15161） | Phase 1 供应商官方 Agent 预留 |
+| agent | 20.5%（3110/15161） | Phase 1 供应商官方 Agent 预留 |
 
 ---
 

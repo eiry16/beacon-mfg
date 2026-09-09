@@ -78,7 +78,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006915/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007216",
@@ -128,6 +136,14 @@
       "business_area": "白洋湾",
       "adcode": "320508",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007216/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -175,6 +191,14 @@
       "business_area": "",
       "adcode": "330206",
       "search_keyword": "不锈钢"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007322/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -224,6 +248,14 @@
       "business_area": "",
       "adcode": "330212",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007330/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -272,6 +304,14 @@
       "business_area": "",
       "adcode": "330203",
       "search_keyword": "螺丝"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007350/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -640,7 +680,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0020036/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0020073",
@@ -782,6 +830,14 @@
       "business_area": "平湖",
       "adcode": "440307",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000186/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -829,6 +885,14 @@
       "business_area": "科技园",
       "adcode": "440305",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000188/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -876,6 +940,14 @@
       "business_area": "",
       "adcode": "440307",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000189/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -922,6 +994,14 @@
       "business_area": "平湖",
       "adcode": "440307",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000191/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1062,6 +1142,14 @@
       "business_area": "平湖",
       "adcode": "440307",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000195/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1108,6 +1196,14 @@
       "business_area": "",
       "adcode": "440310",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000199/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1155,6 +1251,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004981/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1390,6 +1494,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004986/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1531,6 +1643,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004989/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1671,6 +1791,14 @@
       "business_area": "",
       "adcode": "330482",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004992/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1765,6 +1893,14 @@
       "business_area": "",
       "adcode": "330481",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004994/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1905,6 +2041,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004997/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1952,6 +2096,14 @@
       "business_area": "",
       "adcode": "330421",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004998/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2046,6 +2198,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005000/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2187,6 +2347,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005003/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2234,6 +2402,14 @@
       "business_area": "",
       "adcode": "330482",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005004/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2328,6 +2504,14 @@
       "business_area": "",
       "adcode": "330421",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005007/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2563,6 +2747,14 @@
       "business_area": "",
       "adcode": "330421",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005012/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2657,6 +2849,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005014/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2798,6 +2998,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005017/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2938,6 +3146,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005020/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2985,6 +3201,14 @@
       "business_area": "元通",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005022/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3063,6 +3287,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005024/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3221,6 +3453,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005029/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3300,6 +3540,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005031/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3601,7 +3849,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005039/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005040",
@@ -3694,6 +3950,14 @@
       "business_area": "",
       "adcode": "330212",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005041/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3740,6 +4004,14 @@
       "business_area": "",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005042/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3834,6 +4106,14 @@
       "business_area": "",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005044/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3880,6 +4160,14 @@
       "business_area": "",
       "adcode": "330281",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005045/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3974,6 +4262,14 @@
       "business_area": "",
       "adcode": "330206",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005048/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4020,6 +4316,14 @@
       "business_area": "九龙湖风景区",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005049/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4114,6 +4418,14 @@
       "business_area": "九龙湖风景区",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005051/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4207,6 +4519,14 @@
       "business_area": "",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005053/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4393,6 +4713,14 @@
       "business_area": "",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005057/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4487,6 +4815,14 @@
       "business_area": "",
       "adcode": "330206",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005060/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4534,6 +4870,14 @@
       "business_area": "宏基广场",
       "adcode": "330206",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005061/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4580,6 +4924,14 @@
       "business_area": "",
       "adcode": "330206",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005062/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4626,6 +4978,14 @@
       "business_area": "",
       "adcode": "330206",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005063/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4673,6 +5033,14 @@
       "business_area": "丹西",
       "adcode": "330225",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005064/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4767,6 +5135,14 @@
       "business_area": "骆驼",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005066/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4860,6 +5236,14 @@
       "business_area": "",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005068/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5000,6 +5384,14 @@
       "business_area": "",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005071/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5047,6 +5439,14 @@
       "business_area": "",
       "adcode": "330211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005072/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5140,6 +5540,14 @@
       "business_area": "",
       "adcode": "330212",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005074/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5187,6 +5595,14 @@
       "business_area": "",
       "adcode": "330282",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005075/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5234,6 +5650,14 @@
       "business_area": "",
       "adcode": "330212",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005076/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5281,6 +5705,14 @@
       "business_area": "",
       "adcode": "330212",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005077/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5594,7 +6026,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005084/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005085",
@@ -5626,7 +6066,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005085/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005086",
@@ -5705,7 +6153,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005087/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005088",
@@ -5752,6 +6208,14 @@
       "business_area": "骆驼",
       "adcode": "330211",
       "search_keyword": "标准件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005088/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5989,7 +6453,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005094/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005095",
@@ -6021,7 +6493,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005095/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005096",
@@ -6085,7 +6565,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005097/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005098",
@@ -6117,7 +6605,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005098/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005099",
@@ -6149,7 +6645,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005099/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005100",
@@ -8790,6 +9294,14 @@
       "business_area": "颛桥",
       "adcode": "310112",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005162/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8836,6 +9348,14 @@
       "business_area": "",
       "adcode": "310116",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005163/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8882,6 +9402,14 @@
       "business_area": "",
       "adcode": "310116",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005164/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8930,6 +9458,14 @@
       "business_area": "",
       "adcode": "310113",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005165/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9024,6 +9560,14 @@
       "business_area": "",
       "adcode": "310116",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005167/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9070,6 +9614,14 @@
       "business_area": "中国(上海)自由贸易试验区临港新片区",
       "adcode": "310120",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005168/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9117,6 +9669,14 @@
       "business_area": "",
       "adcode": "310117",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005169/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9211,6 +9771,14 @@
       "business_area": "",
       "adcode": "310114",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005171/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9304,6 +9872,14 @@
       "business_area": "",
       "adcode": "310118",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005173/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9398,6 +9974,14 @@
       "business_area": "马陆",
       "adcode": "310114",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005175/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9492,6 +10076,14 @@
       "business_area": "",
       "adcode": "310113",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005177/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9538,6 +10130,14 @@
       "business_area": "西渡",
       "adcode": "310120",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005178/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9584,6 +10184,14 @@
       "business_area": "",
       "adcode": "310114",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005179/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9865,6 +10473,14 @@
       "business_area": "",
       "adcode": "310117",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005185/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10053,6 +10669,14 @@
       "business_area": "",
       "adcode": "310114",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005189/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10193,6 +10817,14 @@
       "business_area": "马陆",
       "adcode": "310114",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005192/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10333,6 +10965,14 @@
       "business_area": "",
       "adcode": "310115",
       "search_keyword": "标准件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005195/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10365,7 +11005,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005196/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005197",
@@ -10412,6 +11060,14 @@
       "business_area": "马陆",
       "adcode": "310114",
       "search_keyword": "标准件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005197/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10617,6 +11273,14 @@
       "business_area": "",
       "adcode": "310114",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005203/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10711,6 +11375,14 @@
       "business_area": "",
       "adcode": "310116",
       "search_keyword": "标准件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005205/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10775,7 +11447,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005207/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005208",
@@ -10807,7 +11487,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005208/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005209",
@@ -11095,7 +11783,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005217/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005218",
@@ -11191,7 +11887,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005220/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005221",
@@ -11237,6 +11941,14 @@
       "business_area": "",
       "adcode": "320583",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005221/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -11331,6 +12043,14 @@
       "business_area": "",
       "adcode": "320585",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005223/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -11424,6 +12144,14 @@
       "business_area": "",
       "adcode": "320583",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005225/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -11518,6 +12246,14 @@
       "business_area": "",
       "adcode": "320581",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005227/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -11565,6 +12301,14 @@
       "business_area": "",
       "adcode": "320585",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005228/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -11612,6 +12356,14 @@
       "business_area": "",
       "adcode": "320585",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005230/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -11752,6 +12504,14 @@
       "business_area": "太仓",
       "adcode": "320585",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005233/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -11892,6 +12652,14 @@
       "business_area": "",
       "adcode": "320507",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005236/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -11985,6 +12753,14 @@
       "business_area": "",
       "adcode": "320583",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005238/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12032,6 +12808,14 @@
       "business_area": "",
       "adcode": "320507",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005239/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12172,6 +12956,14 @@
       "business_area": "巴城",
       "adcode": "320583",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005242/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12266,6 +13058,14 @@
       "business_area": "",
       "adcode": "320509",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005244/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12406,6 +13206,14 @@
       "business_area": "",
       "adcode": "320505",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005247/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12452,6 +13260,14 @@
       "business_area": "白洋湾",
       "adcode": "320508",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005248/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12499,6 +13315,14 @@
       "business_area": "",
       "adcode": "320585",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005249/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12591,6 +13415,14 @@
       "business_area": "望亭",
       "adcode": "320507",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005251/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12732,6 +13564,14 @@
       "business_area": "淀山湖镇",
       "adcode": "320583",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005254/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12826,6 +13666,14 @@
       "business_area": "",
       "adcode": "320585",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005256/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -12920,6 +13768,14 @@
       "business_area": "七都",
       "adcode": "320509",
       "search_keyword": "标准件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005258/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -13016,6 +13872,14 @@
       "business_area": "",
       "adcode": "320505",
       "search_keyword": "标准件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005260/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -13048,7 +13912,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005261/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005262",
@@ -13080,7 +13952,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005262/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005263",
@@ -13144,7 +14024,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005265/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005266",
@@ -13240,7 +14128,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005268/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005269",
@@ -13304,7 +14200,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005270/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005271",
@@ -13400,7 +14304,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005273/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005275",
@@ -13432,7 +14344,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005275/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005276",
@@ -13496,7 +14416,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005277/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005278",
@@ -13639,6 +14567,14 @@
       "business_area": "",
       "adcode": "320214",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005281/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -13686,6 +14622,14 @@
       "business_area": "",
       "adcode": "320281",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005282/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -13827,6 +14771,14 @@
       "business_area": "",
       "adcode": "320214",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005285/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -14295,6 +15247,14 @@
       "business_area": "",
       "adcode": "320214",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005295/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -14341,6 +15301,14 @@
       "business_area": "",
       "adcode": "320281",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005296/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -14388,6 +15356,14 @@
       "business_area": "",
       "adcode": "320214",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005297/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -14435,6 +15411,14 @@
       "business_area": "",
       "adcode": "320281",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005298/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -14482,6 +15466,14 @@
       "business_area": "",
       "adcode": "320282",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005299/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -14528,6 +15520,14 @@
       "business_area": "",
       "adcode": "320214",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005301/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -14575,6 +15575,14 @@
       "business_area": "",
       "adcode": "320211",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005302/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -14762,6 +15770,14 @@
       "business_area": "",
       "adcode": "320214",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005306/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -14935,7 +15951,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005310/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005311",
@@ -14981,6 +16005,14 @@
       "business_area": "",
       "adcode": "320206",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005311/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -15013,7 +16045,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005312/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005314",
@@ -15045,7 +16085,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005314/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005315",
@@ -15557,7 +16605,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005331/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005332",
@@ -15589,7 +16645,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005332/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005333",
@@ -15653,7 +16717,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005334/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005335",
@@ -16032,6 +17104,14 @@
       "business_area": "",
       "adcode": "320411",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005344/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -16079,6 +17159,14 @@
       "business_area": "",
       "adcode": "320411",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005345/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -16125,6 +17213,14 @@
       "business_area": "",
       "adcode": "320411",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005346/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -16219,6 +17315,14 @@
       "business_area": "",
       "adcode": "320411",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005348/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -16360,6 +17464,14 @@
       "business_area": "",
       "adcode": "320413",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005351/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -16407,6 +17519,14 @@
       "business_area": "",
       "adcode": "320411",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005352/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -16548,6 +17668,14 @@
       "business_area": "",
       "adcode": "320412",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005355/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -16641,6 +17769,14 @@
       "business_area": "",
       "adcode": "320412",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005359/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -16735,6 +17871,14 @@
       "business_area": "",
       "adcode": "320411",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005361/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -16782,6 +17926,14 @@
       "business_area": "",
       "adcode": "320412",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005362/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -17034,7 +18186,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005368/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005369",
@@ -17066,7 +18226,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005369/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005370",
@@ -17098,7 +18266,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005370/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005371",
@@ -17130,7 +18306,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005371/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005372",
@@ -17162,7 +18346,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005372/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005373",
@@ -17194,7 +18386,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005373/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005374",
@@ -17258,7 +18458,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005375/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005376",
@@ -17354,7 +18562,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005378/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005379",
@@ -17386,7 +18602,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005379/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005380",
@@ -17450,7 +18674,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005381/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005382",
@@ -17514,7 +18746,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005383/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005384",
@@ -17546,7 +18786,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005384/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005385",
@@ -17578,7 +18826,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005385/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005386",
@@ -17642,7 +18898,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005387/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005388",
@@ -17674,7 +18938,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005388/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005389",
@@ -17738,7 +19010,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005390/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005391",
@@ -17866,7 +19146,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005395/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005396",
@@ -18326,7 +19614,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005410/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005411",
@@ -18390,7 +19686,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005412/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005413",
@@ -18454,7 +19758,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005414/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005415",
@@ -18550,7 +19862,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005417/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005418",
@@ -18582,7 +19902,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005418/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005419",
@@ -18646,7 +19974,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005420/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005421",
@@ -18710,7 +20046,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005422/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005423",
@@ -18742,7 +20086,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005423/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005424",
@@ -18820,6 +20172,14 @@
       "business_area": "",
       "adcode": "330603",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005425/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -18869,6 +20229,14 @@
       "business_area": "",
       "adcode": "330602",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005426/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -18915,6 +20283,14 @@
       "business_area": "",
       "adcode": "330603",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005427/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -18962,6 +20338,14 @@
       "business_area": "",
       "adcode": "330604",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005428/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19008,6 +20392,14 @@
       "business_area": "",
       "adcode": "330603",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005429/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19149,6 +20541,14 @@
       "business_area": "",
       "adcode": "330681",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005432/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19195,6 +20595,14 @@
       "business_area": "",
       "adcode": "330603",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005433/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19241,6 +20649,14 @@
       "business_area": "",
       "adcode": "330602",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005434/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19337,6 +20753,14 @@
       "business_area": "",
       "adcode": "330603",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005436/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19431,6 +20855,14 @@
       "business_area": "",
       "adcode": "330603",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005439/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19477,6 +20909,14 @@
       "business_area": "",
       "adcode": "330602",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005440/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19571,6 +21011,14 @@
       "business_area": "",
       "adcode": "330681",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005442/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19618,6 +21066,14 @@
       "business_area": "",
       "adcode": "330602",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005443/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19665,6 +21121,14 @@
       "business_area": "",
       "adcode": "330681",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005444/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19712,6 +21176,14 @@
       "business_area": "",
       "adcode": "330604",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005445/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19758,6 +21230,14 @@
       "business_area": "",
       "adcode": "330683",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005446/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19804,6 +21284,14 @@
       "business_area": "",
       "adcode": "330604",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005447/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19851,6 +21339,14 @@
       "business_area": "",
       "adcode": "330602",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005448/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19897,6 +21393,14 @@
       "business_area": "",
       "adcode": "330602",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005450/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -19943,6 +21447,14 @@
       "business_area": "",
       "adcode": "330602",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005451/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -20129,6 +21641,14 @@
       "business_area": "",
       "adcode": "330604",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005455/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -20223,6 +21743,14 @@
       "business_area": "",
       "adcode": "330624",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005457/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -20317,6 +21845,14 @@
       "business_area": "",
       "adcode": "330683",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005459/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -20409,6 +21945,14 @@
       "business_area": "",
       "adcode": "330602",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005461/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -20489,6 +22033,14 @@
       "business_area": "",
       "adcode": "330604",
       "search_keyword": "螺丝"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005463/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -20659,6 +22211,14 @@
       "business_area": "赤岭",
       "adcode": "441900",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005471/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -20753,6 +22313,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005473/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -20799,6 +22367,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005474/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -20938,6 +22514,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005480/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -21077,6 +22661,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005485/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -21217,6 +22809,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005488/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -21264,6 +22864,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005490/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -21311,6 +22919,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005491/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -21514,7 +23130,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005496/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005497",
@@ -21593,7 +23217,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005498/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005499",
@@ -21735,7 +23367,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005502/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005503",
@@ -22177,6 +23817,14 @@
       "business_area": "新安",
       "adcode": "440306",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005525/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -22224,6 +23872,14 @@
       "business_area": "新安",
       "adcode": "440306",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005527/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -22364,6 +24020,14 @@
       "business_area": "",
       "adcode": "440306",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005530/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -22503,6 +24167,14 @@
       "business_area": "",
       "adcode": "440307",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005533/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -22643,6 +24315,14 @@
       "business_area": "南联",
       "adcode": "440307",
       "search_keyword": "紧固件"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005536/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -22818,7 +24498,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005541/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0005542",
@@ -23100,6 +24788,14 @@
       "business_area": "",
       "adcode": "440306",
       "search_keyword": "轴承"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006092/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -23164,7 +24860,15 @@
       "source": "name",
       "evidence": "垫圈"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006335/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0006638",
@@ -23228,7 +24932,15 @@
       "source": "name",
       "evidence": "螺丝"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006675/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007944",
@@ -23292,7 +25004,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007945/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007946",
@@ -23356,7 +25076,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007947/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007948",
@@ -24952,7 +26680,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013857/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013858",
@@ -24998,7 +26734,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013858/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013859",
@@ -26776,7 +28520,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015137/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015141",
@@ -26825,7 +28577,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015141/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015150",
@@ -26920,7 +28680,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015157/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015159",
@@ -26967,7 +28735,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015159/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015160",
@@ -27015,7 +28791,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015160/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015161",
@@ -27062,7 +28846,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015161/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015163",
@@ -27109,7 +28901,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015163/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015166",
@@ -27203,7 +29003,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015168/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015169",
@@ -27250,7 +29058,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015169/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015171",
@@ -27297,7 +29113,15 @@
       "evidence": "螺丝|配件型:配件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015171/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015174",
@@ -27438,7 +29262,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015178/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015179",
@@ -27579,7 +29411,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015183/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015184",
@@ -27626,7 +29466,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015184/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015188",
@@ -27720,7 +29568,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015190/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015191",
@@ -27767,7 +29623,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015191/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015192",
@@ -27814,7 +29678,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015192/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015193",
@@ -27861,7 +29733,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015193/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015194",
@@ -27908,7 +29788,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015194/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015195",
@@ -27955,7 +29843,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015195/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015196",
@@ -28001,7 +29897,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015196/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015197",
@@ -28139,7 +30043,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015199/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015200",
@@ -28278,7 +30190,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016403/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016404",
@@ -28327,7 +30247,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016404/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016405",
@@ -28887,7 +30815,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016416/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016417",
@@ -29168,7 +31104,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016425/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016426",
@@ -29262,7 +31206,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016427/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016428",
@@ -29309,7 +31261,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016428/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016430",
@@ -29591,7 +31551,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016452/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016453",
@@ -29638,7 +31606,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016453/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016458",
@@ -29685,7 +31661,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016458/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016461",
@@ -29779,7 +31763,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016466/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016467",
@@ -29826,7 +31818,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016467/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016468",
@@ -29920,7 +31920,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016470/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016471",
@@ -29967,7 +31975,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016471/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016473",
@@ -30107,7 +32123,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016477/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016479",
@@ -30154,7 +32178,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016479/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016483",
@@ -30342,7 +32374,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016491/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016492",
@@ -30482,7 +32522,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016495/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016513",
@@ -30620,7 +32668,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016573/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016589",
@@ -30806,7 +32862,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017502/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017503",
@@ -30900,7 +32964,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017504/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017505",
@@ -31228,7 +33300,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017515/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017516",
@@ -31322,7 +33402,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017517/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017518",
@@ -31369,7 +33457,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017518/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017519",
@@ -31416,7 +33512,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017519/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017521",
@@ -31602,7 +33706,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017527/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017528",
@@ -31649,7 +33761,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017528/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017529",
@@ -31931,7 +34051,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017534/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017535",
@@ -32025,7 +34153,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017536/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017537",
@@ -32119,7 +34255,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017538/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017539",
@@ -32401,7 +34545,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017544/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017545",
@@ -32495,7 +34647,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017546/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017547",
@@ -33104,7 +35264,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017570/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017573",
@@ -33198,7 +35366,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017575/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017576",
@@ -33245,7 +35421,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017576/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017577",
@@ -33666,7 +35850,15 @@
       "evidence": "螺栓"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017619/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017620",
@@ -33942,7 +36134,15 @@
       "evidence": "垫圈"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017691/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017702",
@@ -33988,7 +36188,15 @@
       "evidence": "垫圈"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017702/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017721",
@@ -34080,7 +36288,15 @@
       "evidence": "垫圈"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017734/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018730",
@@ -34173,7 +36389,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018733/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018734",
@@ -34359,7 +36583,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018738/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018739",
@@ -34405,7 +36637,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018739/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018740",
@@ -34500,7 +36740,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018742/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018743",
@@ -34741,7 +36989,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018756/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018761",
@@ -34788,7 +37044,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018761/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018765",
@@ -34835,7 +37099,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018765/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018769",
@@ -34929,7 +37201,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018770/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018771",
@@ -35070,7 +37350,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018773/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018775",
@@ -35117,7 +37405,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018775/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018776",
@@ -35164,7 +37460,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018776/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018778",
@@ -35259,7 +37563,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018779/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018780",
@@ -35354,7 +37666,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018782/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018783",
@@ -35401,7 +37721,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018783/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018788",
@@ -35495,7 +37823,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018789/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018790",
@@ -35589,7 +37925,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018791/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018793",
@@ -35636,7 +37980,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018793/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018796",
@@ -35683,7 +38035,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018796/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018797",
@@ -35730,7 +38090,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018797/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018800",
@@ -35777,7 +38145,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018800/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018802",
@@ -35823,7 +38199,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018802/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018847",
@@ -35869,7 +38253,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018847/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018864",
@@ -35915,7 +38307,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018864/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018895",
@@ -36383,7 +38783,15 @@
       "evidence": "紧固件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019954/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0019955",
@@ -36666,7 +39074,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019977/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0019978",
@@ -36901,7 +39317,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019986/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0019989",
@@ -37136,7 +39560,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019997/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0019998",
@@ -37183,7 +39615,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019998/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0019999",
@@ -37230,7 +39670,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019999/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0020001",
@@ -37621,7 +40069,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018052/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002427",
@@ -37653,7 +40109,15 @@
       "source": "name",
       "evidence": "螺丝"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002427/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002471",
@@ -38008,7 +40472,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018285/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018355",
@@ -38054,7 +40526,15 @@
       "evidence": "螺丝"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018355/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018357",
