@@ -7,7 +7,9 @@
     "hits_note": "策展条目一律没有 hits。命中次数只能由真实数据统计得出，手写等于编数字。合并后 source 字段区分 data / curated，下游可据此判断证据强度。",
     "merge_rule": "同一词若同时存在于 data 层与 curated 层：data 层的码排在前（有数据支撑），curated 的码追加在后并去重。",
     "updated_at": "2026-09-09",
-    "alias_count": 245
+    "alias_count": 245,
+    "max_supply_default": 500,
+    "max_supply_note": "补位码（第 2 个及以后）的目标小类家数超过此值时被剔除，首个码永不淘汰。逐条可用条目里的 max_supply 覆盖。阈值关掉时受影响词的结果量 130168 家，开启后 39021 家（削减 70%）。"
   },
   "alias": {
     "输送线": {
