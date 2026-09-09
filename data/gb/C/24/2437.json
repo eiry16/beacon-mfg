@@ -226,7 +226,8 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0019647",
@@ -272,7 +273,8 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0023527",
@@ -317,6 +319,7 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   }
 ]

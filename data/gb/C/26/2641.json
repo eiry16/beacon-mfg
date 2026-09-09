@@ -182,7 +182,8 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0008310",
@@ -384,7 +385,8 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013761",
@@ -429,7 +431,8 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0017369",
@@ -474,7 +477,8 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0017389",
@@ -519,7 +523,8 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0019825",
@@ -564,7 +569,8 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0019827",
@@ -609,6 +615,7 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   }
 ]

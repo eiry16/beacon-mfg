@@ -42,7 +42,8 @@
       "source": "gb_token",
       "evidence": "塑胶玩具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0008402",
@@ -134,6 +135,7 @@
       "source": "gb_token",
       "evidence": "塑胶玩具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   }
 ]

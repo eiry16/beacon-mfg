@@ -42,7 +42,8 @@
       "source": "gb_token",
       "evidence": "首饰"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0012398",
@@ -87,7 +88,8 @@
       "source": "gb_token",
       "evidence": "首饰"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0012434",
@@ -132,7 +134,8 @@
       "source": "gb_token",
       "evidence": "首饰"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0012454",
@@ -177,7 +180,8 @@
       "source": "gb_token",
       "evidence": "首饰"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0014815",
@@ -222,6 +226,7 @@
       "source": "gb_token",
       "evidence": "首饰"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "status": "unverified_poi"
   }
 ]
