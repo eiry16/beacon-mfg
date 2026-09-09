@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
@@ -53,7 +54,14 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
         "304 不锈钢钣金加工，深圳",
     )
 
-    Column(modifier.fillMaxSize().padding(horizontal = 12.dp)) {
+    // imePadding：edge-to-edge 下系统不再替我们把内容顶上去，
+    // 软键盘弹出时必须自己吃掉 IME 高度，否则输入框整条被键盘盖住。
+    Column(
+        modifier
+            .fillMaxSize()
+            .padding(horizontal = 12.dp)
+            .imePadding()
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -191,11 +199,23 @@ fun SupplierCard(h: Hit) {
                 listOf(
                     h.fp.city.ifEmpty { "城市未知" },
                     if (h.fp.gb.isNotEmpty()) "${h.fp.gb} ${h.fp.gbName}" else "",
-                    if (h.fp.tel) "有电话" else "无电话",
                     "灯牌 ${h.fp.cl}",
                 ).filter { it.isNotEmpty() }.joinToString(" · "),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            // 电话单独一行：有号码就直给（采购最关心的就是这个），
+            // 取不到就如实说「待核实」，绝不拿占位值或猜的号充数。
+            Text(
+                when {
+                    h.fp.phone.isNotEmpty() -> "☎ ${h.fp.phone}"
+                    h.fp.tel -> "☎ 有电话，但源数据为「待核实」，号码未收录"
+                    else -> "☎ 未收录电话"
+                },
+                style = MaterialTheme.typography.bodySmall,
+                fontWeight = if (h.fp.phone.isNotEmpty()) FontWeight.SemiBold else FontWeight.Normal,
+                color = if (h.fp.phone.isNotEmpty()) MaterialTheme.colorScheme.primary
+                else MaterialTheme.colorScheme.onSurfaceVariant,
             )
             if (h.fp.cert.isNotEmpty()) {
                 Text(

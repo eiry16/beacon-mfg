@@ -257,6 +257,19 @@ python scripts/search_capabilities.py --industry 3525 --city 宁波
 4. `sc` 是**资料完整度**（不是评级），仅用于排序
 5. 没有提交 Skill 的供应商在指纹库里查不到——回退到前面的名录检索即可，不影响使用
 
+## 手机端 App（给人用，不是给 Agent 用）
+
+`APK/` 是一个安卓客户端，内置全量 L0 指纹（4.76 MB），**离线可检索**；
+接入用户自己的 LLM Key（BYOK，存 Keystore）后可用自然语言找供应商。
+
+对 **Agent** 来说这条路不适用——你直接读文件更快也更省。这里提一句只是说明：
+本仓库同时服务两类使用者，**你的用法不受影响，也不需要 Key**。
+
+- 检索内核是 `scripts/query.py` 的 Kotlin 移植（`APK/app/src/main/java/cn/beaconmfg/app/search/`）
+- 三档证据（字面 / 别名首位码 / 行业推断）、`max_supply` 收敛规则与 Python 端一致，
+  靠 `APK/tools/e2e_parity.py` 对拍保证不漂移
+- 云部署方案见 `APK/docs/CLOUD_DEPLOY.md`
+
 ## 使用规则（强制）
 
 1. 直接读取 JSON，每次查询重新读取，不缓存数据用于二次分发

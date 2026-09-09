@@ -101,7 +101,15 @@ class SearchEngine(
             if (fp.gb.isNotEmpty()) append(" | ").append(fp.gb).append(" ").append(GbIndex.nameOf(fp.gb))
             append(" | 证据=").append(h.evidence.label)
             if (fp.cert.isNotEmpty()) append(" | 认证=").append(fp.cert.joinToString("、"))
-            append(" | 电话=").append(if (fp.tel) "有" else "无")
+            // 有号码就回灌给模型，省掉一轮 get_supplier_detail；
+            // 号码是「待核实」占位值时如实标注，模型不许自己编一个。
+            append(" | 电话=").append(
+                when {
+                    fp.phone.isNotEmpty() -> fp.phone
+                    fp.tel -> "有（号码待核实）"
+                    else -> "无"
+                }
+            )
             append(" | 灯牌=").append(fp.cl)
         }
     }

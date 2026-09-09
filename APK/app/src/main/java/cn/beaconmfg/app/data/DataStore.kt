@@ -29,6 +29,10 @@ class DataStore(private val app: Application) {
     @Volatile
     private var updateMeta: JSONObject = JSONObject()
 
+    /** 内置号码索引 id → 电话。构建期由 sync_assets.py 从 data/gb 完整档案抽出。 */
+    @Volatile
+    private var phoneMap: Map<String, String>? = null
+
     private val prefs get() = app.getSharedPreferences("bmfg_store", 0)
 
     // ── 内置索引 ────────────────────────────────────────────────────────────
@@ -53,6 +57,45 @@ class DataStore(private val app: Application) {
         val shards = builtinMeta.optJSONObject("fingerprint")?.optJSONObject("shards")
             ?: return null
         return shards.optJSONObject(rel)?.optString("sha1")
+    }
+
+    // ── 号码索引（assets/index/phone-index.jsonl，每行 id,phone）─────────────
+    /** 约 1.5 万条，第一次装载几十毫秒。必须在 IO 线程调用。 */
+    private fun phones(): Map<String, String> {
+        phoneMap?.let { return it }
+        val m = HashMap<String, String>(17000)
+        // 已更新副本优先、内置兜底——和指纹同一套路，断网时不退化成「无号码」
+        val f = File(updateDir, "phone-index.jsonl")
+        val text = if (f.exists()) f.readText() else readAsset("index/phone-index.jsonl")
+        text?.lineSequence()?.forEach { line ->
+            if (line.isBlank()) return@forEach
+            val i = line.indexOf(',')
+            if (i <= 0) return@forEach
+            m[line.substring(0, i)] = line.substring(i + 1)
+        }
+        phoneMap = m
+        return m
+    }
+
+    /** 取号码。取不到返回空串——源数据是「待核实」占位值时就是这样，不猜号。 */
+    fun phoneOf(id: String): String = phones()[id].orEmpty()
+
+    fun phoneIndexSummary(): String = "号码索引 ${phones().size} 家（其余源数据为占位值，留空）"
+
+    /** 已装号码索引的内容 SHA1，用于和 manifest 的 h 比对该不该重下。 */
+    fun localPhoneSha(): String? = prefs.getString("phone_sha", null)
+
+    /** 写入更新后的号码索引。SHA1 对不上就不落盘——宁可留旧的，也不能写入半截索引。 */
+    fun writePhoneIndex(content: String, expectSha: String): Boolean {
+        if (sha1(content.toByteArray()) != expectSha) return false
+        updateDir.mkdirs()
+        val target = File(updateDir, "phone-index.jsonl")
+        val tmp = File(target.absolutePath + ".tmp")
+        tmp.writeText(content)
+        if (!tmp.renameTo(target)) return false
+        prefs.edit().putString("phone_sha", expectSha).apply()
+        phoneMap = null          // 下次读取时重载
+        return true
     }
 
     // ── 已更新副本 ──────────────────────────────────────────────────────────
@@ -191,6 +234,7 @@ class DataStore(private val app: Application) {
                     pv = o.safeString("pv"),
                     sc = o.optInt("sc", 0),
                     tel = o.optInt("tel", 0) != 0,
+                    phone = phoneOf(id),
                 )
             )
         }

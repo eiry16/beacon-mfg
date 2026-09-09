@@ -33,6 +33,13 @@ data class Fingerprint(
     val pv: String,          // 来源 auto / vendor_claimed / derived / fixture
     val sc: Int,             // 能力画像分（无卡为 0）
     val tel: Boolean,        // 是否有可用电话
+    /**
+     * 电话号码。指纹层刻意不存它（L0 要保持最小、可被 Agent 全量扫描），
+     * 由 DataStore 在装载时用内置索引 assets/index/phone-index.jsonl 补上
+     * （构建期从 data/gb 完整档案抽出，见 tools/sync_assets.py）。
+     * 空串 = 源数据里是「待核实」占位值，按红线留空、不猜号。
+     */
+    val phone: String = "",
 ) {
     /** 公司名：co 的第一段。指纹层为省字节把关键词也拼进去了。 */
     val name: String get() = co.substringBefore(' ').ifBlank { co }

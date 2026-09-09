@@ -24,6 +24,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import shutil
 import sys
 from datetime import date
@@ -42,6 +43,7 @@ INDEX_FILES = {
 }
 FP_SRC = ROOT / "skills" / "registry" / "fingerprint" / "gb"
 FP_DST = ASSETS / "fingerprint" / "gb"
+GB_SRC = ROOT / "data" / "gb"          # 完整档案（含 contact_phone）
 
 
 def sha1(path: Path) -> str:
@@ -99,6 +101,83 @@ def sync_fingerprint(apply: bool, clean: bool) -> dict:
     return {"shards": len(shards), "bytes": total, "detail": detail}
 
 
+def pick_phone(raw: str) -> str:
+    """从 contact_phone 里挑出一个可用号码；挑不出就返回空串。
+
+    源数据里三种情况都得处理，且**不能用占位值冒充号码**：
+      - 单号码：18938530580
+      - 多号码：'13630046699; 18566403616'、'0510-86230800; 0510-86230825' → 取第一个
+      - 占位/垃圾：'待核实' → 判为无效，宁可留空（卡片显示「号码待核实」）
+    判定口径：去掉非数字后长度 7–15 位。这样 400 热线、带区号固话、手机号都能过。
+    """
+    raw = (raw or "").strip()
+    if not raw:
+        return ""
+    if 7 <= len(re.sub(r"\D", "", raw)) <= 15:
+        return raw
+    for part in re.split(r"[;；,，、/|]+", raw):
+        p = part.strip()
+        if 7 <= len(re.sub(r"\D", "", p)) <= 15:
+            return p
+    return ""
+
+
+def sync_phone_index(apply: bool) -> dict:
+    """从完整档案里抽出 id → 电话，生成 App 内置的号码索引。
+
+    为什么不放进指纹层
+    ------------------
+    指纹（L0）是给 Agent 生态全量扫描的公开数据层，刻意保持最小：一条 ~120 字节，
+    2.4 万条才 4.7MB。电话号码放进去，既撑大每次全量扫描的成本，也让「最小可用字段集」
+    这个契约破功。而 App 卡片要直接显示号码，若靠联网现拉 2.4 万份完整档案，
+    离线时又变成「有电话」——等于白改。
+
+    所以：构建期抽一份 id→phone 的映射（jsonl，约 1MB）塞进 assets，
+    App 启动时和指纹一起装载。离线也能直接显示号码，且不动 L0 的数据契约。
+    """
+    if not GB_SRC.exists():
+        print(f"[缺失] {GB_SRC} —— 号码索引跳过（卡片将只显示『有电话』）")
+        return {"entries": 0, "bytes": 0}
+
+    rows: dict[str, str] = {}
+    total = 0
+    for p in sorted(GB_SRC.rglob("*.json")):
+        try:
+            arr = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if not isinstance(arr, list):
+            continue
+        for o in arr:
+            if not isinstance(o, dict):
+                continue
+            rid = (o.get("id") or "").strip()
+            if not rid:
+                continue
+            total += 1
+            phone = pick_phone(o.get("contact_phone"))
+            if phone:
+                rows[rid] = phone          # 后出现的覆盖前面的
+
+    dst = ASSETS / "index" / "phone-index.jsonl"
+    # 同一份内容也要落到仓库 data/ 下：manifest.json 会给它登记一条 t=phone，
+    # App 就能像指纹分片一样增量拉取更新（否则新企业永远没号码）。
+    repo_dst = ROOT / "data" / "phone-index.jsonl"
+    payload = "".join(f"{k},{v}\n" for k, v in sorted(rows.items()))
+    if apply:
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_text(payload, encoding="utf-8")
+        repo_dst.parent.mkdir(parents=True, exist_ok=True)
+        repo_dst.write_text(payload, encoding="utf-8")
+    return {
+        "entries": len(rows),
+        "total": total,
+        "missing": total - len(rows),
+        "bytes": len(payload.encode("utf-8")),
+        "sha1": hashlib.sha1(payload.encode("utf-8")).hexdigest(),
+    }
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="同步仓库数据到 App assets")
     ap.add_argument("--apply", action="store_true", help="真正写入（默认只预览）")
@@ -107,11 +186,13 @@ def main() -> None:
 
     files = sync_index(a.apply)
     fp = sync_fingerprint(a.apply, a.clean)
+    phones = sync_phone_index(a.apply)
 
     builtin = {
         "builtin_at": date.today().isoformat(),
         "source_repo": "beacon-mfg",
         "fingerprint": fp,
+        "phone_index": phones,
         "files": files,
         "notes": "本文件由 APK/tools/sync_assets.py 生成，请勿手改。"
                  "字段 sha1 用于核对内置副本与仓库数据是否一致。",
@@ -120,7 +201,11 @@ def main() -> None:
     for rel, meta in files.items():
         print("  %-32s %8d B  %s" % (rel, meta["bytes"], meta["sha1"][:12]))
     print("内置指纹：%d 片 / %.2f MB" % (fp["shards"], fp["bytes"] / 1048576))
-    print("合计：%.2f MB" % ((fp["bytes"] + sum(m["bytes"] for m in files.values()))
+    print("号码索引：%d/%d 条有号码（%d 条源数据为占位值，留空）/ %.2f MB"
+          % (phones["entries"], phones["total"], phones["missing"],
+             phones["bytes"] / 1048576))
+    print("合计：%.2f MB" % ((fp["bytes"] + phones["bytes"]
+                            + sum(m["bytes"] for m in files.values()))
                             / 1048576))
 
     if a.apply:

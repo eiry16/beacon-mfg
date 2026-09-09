@@ -5,10 +5,16 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONObject
+import java.io.IOException
+import java.net.ConnectException
+import java.net.SocketTimeoutException
+import java.net.URI
+import java.net.UnknownHostException
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import java.util.concurrent.TimeUnit
+import javax.net.ssl.SSLException
 
 /**
  * 联网数据：指纹增量更新 + 完整档案按需下载。
@@ -16,6 +22,10 @@ import java.util.concurrent.TimeUnit
  * 设计前提：**内置数据已经够用**，联网只是让它更新。所以任何一步失败
  * 都必须「保持现状 + 明确告知」，绝不能把失败的更新写成空文件——
  * 那等于把能用的离线库搞坏。
+ *
+ * 另一个现实前提：主源 raw.githubusercontent.com 在国内经常连不上。
+ * 所以所有联网动作都走「候选源依次尝试」，第一个能连通的就用，
+ * 全挂才如实报错——不让用户因为一个 CDN 抽风就以为 App 坏了。
  */
 class RemoteSource(private val store: DataStore) {
     data class UpdateResult(
@@ -27,16 +37,45 @@ class RemoteSource(private val store: DataStore) {
         val message: String = "",
     )
 
+    companion object {
+        /**
+         * 内置候选源，按国内实测可达性排序（2026-09 实测：fastly 0.8s / cdn 2.7s / raw 8s+）。
+         * 用户在设置里填的源永远排在最前。
+         */
+        val MIRRORS = listOf(
+            "https://fastly.jsdelivr.net/gh/eiry16/beacon-mfg@main/",
+            "https://cdn.jsdelivr.net/gh/eiry16/beacon-mfg@main/",
+            "https://raw.githubusercontent.com/eiry16/beacon-mfg/main/",
+        )
+    }
+
     private val http = OkHttpClient.Builder()
-        .connectTimeout(10, TimeUnit.SECONDS)
-        .readTimeout(30, TimeUnit.SECONDS)
+        .connectTimeout(5, TimeUnit.SECONDS)   // 5s 连不上就换源，别让用户干等
+        .readTimeout(20, TimeUnit.SECONDS)
+        .callTimeout(60, TimeUnit.SECONDS)
         .build()
 
     private fun now(): String =
         SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA).format(Date())
 
+    /** 候选源：用户填的优先，其后是内置镜像，去重。 */
+    private fun candidates(base: String): List<String> {
+        val root = if (base.endsWith("/")) base else "$base/"
+        return (listOf(root) + MIRRORS).distinct()
+    }
+
+    private fun hostOf(root: String): String = runCatching { URI(root).host ?: root }.getOrDefault(root)
+
+    private fun friendly(e: Throwable): String = when (e) {
+        is SocketTimeoutException -> "连接超时"
+        is UnknownHostException -> "域名解析失败"
+        is ConnectException -> "连接被拒绝"
+        is SSLException -> "TLS 握手失败"
+        else -> e.message?.take(60)?.ifEmpty { null } ?: e.javaClass.simpleName
+    }
+
     /**
-     * 按 manifest 增量更新指纹分片。
+     * 按 manifest 增量更新指纹分片。逐个候选源尝试，第一个能连通的就用。
      *
      * 只比对 SHA1：内置分片的 SHA1 写在 index/builtin.json 里（由 sync_assets.py 生成），
      * 已更新分片的 SHA1 记在 updates/meta.json。两边都对不上才下载。
@@ -45,100 +84,133 @@ class RemoteSource(private val store: DataStore) {
         base: String,
         onProgress: (String) -> Unit = {},
     ): UpdateResult = withContext(Dispatchers.IO) {
-        val root = if (base.endsWith("/")) base else "$base/"
-        try {
-            val req = Request.Builder()
-                .url("${root}data/manifest.json")
-                .apply { store.manifestEtag()?.let { header("If-None-Match", it) } }
-                .build()
-            http.newCall(req).execute().use { resp ->
-                when (resp.code) {
-                    304 -> {
-                        store.setLastUpdateCheck(now())
-                        return@withContext UpdateResult(
-                            true, message = "manifest 未变更，无需下载（HTTP 304）"
-                        )
-                    }
+        val roots = candidates(base)
+        val errors = ArrayList<String>()
 
-                    else -> if (!resp.isSuccessful) {
-                        return@withContext UpdateResult(false, message = "manifest 拉取失败：HTTP ${resp.code}")
-                    }
+        roots.forEachIndexed { i, root ->
+            if (i > 0) onProgress("主源不通，换备用源 ${hostOf(root)}…")
+            val r = runCatching { trySource(root, onProgress) }
+                .getOrElse { e ->
+                    errors += "${hostOf(root)}（${friendly(e)}）"
+                    null
                 }
-                store.setManifestEtag(resp.header("ETag"))
-                val body = resp.body?.string() ?: return@withContext UpdateResult(
-                    false, message = "manifest 响应为空"
-                )
-                val shards = JSONObject(body).optJSONArray("shards")
-                    ?: return@withContext UpdateResult(false, message = "manifest 格式异常：无 shards")
+            if (r != null) return@withContext r
+        }
 
-                val fps = ArrayList<Triple<String, String, String>>() // rel, url, sha1
+        UpdateResult(
+            false,
+            message = "${roots.size} 个数据源均不可达：${errors.joinToString("、")}。" +
+                "内置数据不受影响，可继续离线检索。"
+        )
+    }
+
+    /**
+     * 单个源的完整更新流程。
+     * 抛异常 = 这个源不通（换下一个）；正常返回 = 源可用（含 HTTP 304 无需更新）。
+     */
+    private suspend fun trySource(root: String, onProgress: (String) -> Unit): UpdateResult {
+        val req = Request.Builder()
+            .url("${root}data/manifest.json")
+            .apply { store.manifestEtag()?.let { header("If-None-Match", it) } }
+            .build()
+
+        http.newCall(req).execute().use { resp ->
+            if (resp.code == 304) {
+                store.setLastUpdateCheck(now())
+                return UpdateResult(true, message = "manifest 未变更，无需下载")
+            }
+            if (!resp.isSuccessful) throw IOException("manifest HTTP ${resp.code}")
+
+            store.setManifestEtag(resp.header("ETag"))
+            val body = resp.body?.string() ?: throw IOException("manifest 响应为空")
+            val shards = JSONObject(body).optJSONArray("shards")
+                ?: throw IOException("manifest 格式异常：无 shards")
+
+            val fps = ArrayList<Triple<String, String, String>>() // rel, url, sha1
+            for (i in 0 until shards.length()) {
+                val s = shards.optJSONObject(i) ?: continue
+                if (s.safeString("t") != "fp") continue
+                val p = s.safeString("p")
+                val h = s.safeString("h")
+                if (p.isEmpty() || h.isEmpty()) continue
+                val rel = p.removePrefix("skills/registry/fingerprint/")
+                val local = store.localShaOf(rel) ?: store.builtinShaOf(rel)
+                if (local == h) continue
+                fps.add(Triple(rel, root + p, h))
+            }
+
+            var downloaded = 0
+            var failed = 0
+            var bytes = 0L
+            fps.forEachIndexed { idx, (rel, url, sha) ->
+                onProgress("下载分片 ${idx + 1}/${fps.size}：$rel")
+                try {
+                    val r = Request.Builder().url(url).build()
+                    http.newCall(r).execute().use { rr ->
+                        if (!rr.isSuccessful) {
+                            failed++
+                            return@use
+                        }
+                        val content = rr.body?.string() ?: run { failed++; return@use }
+                        if (store.writeShard(rel, content, sha)) {
+                            downloaded++
+                            bytes += content.length
+                        } else {
+                            failed++   // SHA1 校验不过：宁可留旧数据
+                        }
+                    }
+                } catch (e: Exception) {
+                    failed++
+                }
+            }
+            // 号码索引（t=phone）：不按国标归档，是横跨全库的 id→phone 映射，单独一项。
+            // 它失败不该连坐整个更新——最坏只是新增企业没号码，不能因此判更新失败。
+            runCatching {
                 for (i in 0 until shards.length()) {
                     val s = shards.optJSONObject(i) ?: continue
-                    if (s.safeString("t") != "fp") continue
-                    val p = s.safeString("p")
-                    val h = s.safeString("h")
-                    if (p.isEmpty() || h.isEmpty()) continue
-                    val rel = p.removePrefix("skills/registry/fingerprint/")
-                    val local = store.localShaOf(rel) ?: store.builtinShaOf(rel)
-                    if (local == h) continue
-                    fps.add(Triple(rel, root + p, h))
-                }
-
-                var downloaded = 0
-                var failed = 0
-                var bytes = 0L
-                fps.forEachIndexed { idx, (rel, url, sha) ->
-                    onProgress("下载分片 ${idx + 1}/${fps.size}：$rel")
-                    try {
-                        val r = Request.Builder().url(url).build()
-                        http.newCall(r).execute().use { rr ->
-                            if (!rr.isSuccessful) {
-                                failed++
-                                return@use
-                            }
-                            val content = rr.body?.string() ?: run { failed++; return@use }
-                            if (store.writeShard(rel, content, sha)) {
-                                downloaded++
-                                bytes += content.length
-                            } else {
-                                failed++   // SHA1 校验不过：宁可留旧数据
-                            }
-                        }
-                    } catch (e: Exception) {
-                        failed++
+                    if (s.safeString("t") != "phone") continue
+                    val sha = s.safeString("h")
+                    if (sha.isEmpty() || sha == store.localPhoneSha()) break
+                    onProgress("更新号码索引…")
+                    val pr = Request.Builder().url(root + s.safeString("p")).build()
+                    http.newCall(pr).execute().use { rr ->
+                        if (!rr.isSuccessful) return@use
+                        val body = rr.body?.string() ?: return@use
+                        store.writePhoneIndex(body, sha)
                     }
+                    break
                 }
-                store.setLastUpdateCheck(now())
-                UpdateResult(
-                    true, checked = fps.size, downloaded = downloaded,
-                    failed = failed, bytes = bytes,
-                    message = if (downloaded == 0 && failed == 0) "已是最新"
-                    else "更新 $downloaded 片（${bytes / 1024} KB）" +
-                        if (failed > 0) "，失败 $failed 片" else ""
-                )
             }
-        } catch (e: Exception) {
-            UpdateResult(false, message = "更新失败：${e.message ?: e.javaClass.simpleName}")
+
+            store.setLastUpdateCheck(now())
+            return UpdateResult(
+                true, checked = fps.size, downloaded = downloaded,
+                failed = failed, bytes = bytes,
+                message = if (downloaded == 0 && failed == 0) "已是最新（${hostOf(root)}）"
+                else "更新 $downloaded 片（${bytes / 1024} KB）" +
+                    if (failed > 0) "，失败 $failed 片" else ""
+            )
         }
     }
 
-    /** 完整档案：按国标码定位 data/gb/ 下的小类分片，下载后缓存。 */
+    /** 完整档案：按国标码定位 data/gb/ 下的小类分片，下载后缓存。同样走候选源。 */
     suspend fun fetchDetail(base: String, code: String, id: String): SupplierDetail? =
         withContext(Dispatchers.IO) {
             val cached = store.cachedDetailContent(code)
             val content = cached ?: run {
-                val root = if (base.endsWith("/")) base else "$base/"
                 val path = zhPathOf(code) ?: return@withContext null
-                try {
-                    val req = Request.Builder().url(root + path).build()
-                    http.newCall(req).execute().use { resp ->
-                        if (!resp.isSuccessful) return@withContext null
-                        val body = resp.body?.string() ?: return@withContext null
-                        store.cacheDetail(code, body)
-                        body
+                candidates(base).firstNotNullOfOrNull { root ->
+                    try {
+                        val req = Request.Builder().url(root + path).build()
+                        http.newCall(req).execute().use { resp ->
+                            if (!resp.isSuccessful) return@use null
+                            val body = resp.body?.string() ?: return@use null
+                            store.cacheDetail(code, body)
+                            body
+                        }
+                    } catch (e: Exception) {
+                        null
                     }
-                } catch (e: Exception) {
-                    null
                 }
             } ?: return@withContext null
             parseDetail(content, id)
@@ -195,14 +267,18 @@ class RemoteSource(private val store: DataStore) {
         return null
     }
 
-    /** 连通性自检：只拉 manifest 的头部，用来告诉用户「数据源通不通」。 */
+    /** 连通性自检：逐个候选源打一次 HEAD，让用户看到哪个源能用。 */
     suspend fun ping(base: String): String = withContext(Dispatchers.IO) {
-        val root = if (base.endsWith("/")) base else "$base/"
-        try {
-            val req = Request.Builder().url("${root}data/manifest.json").head().build()
-            http.newCall(req).execute().use { "数据源可达（HTTP ${it.code}）" }
-        } catch (e: Exception) {
-            "数据源不可达：${e.message ?: e.javaClass.simpleName}"
+        candidates(base).joinToString("\n") { root ->
+            val t0 = System.currentTimeMillis()
+            try {
+                val req = Request.Builder().url("${root}data/manifest.json").head().build()
+                http.newCall(req).execute().use {
+                    "✓ ${hostOf(root)}：HTTP ${it.code}（${System.currentTimeMillis() - t0}ms）"
+                }
+            } catch (e: Exception) {
+                "✗ ${hostOf(root)}：${friendly(e)}"
+            }
         }
     }
 }

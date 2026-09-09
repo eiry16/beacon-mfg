@@ -84,7 +84,8 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 3. 查不到就直说查不到，并给出下一步建议（换说法 / 放宽地区 / 看有哪些行业）。不要硬凑。
 4. 用户的口语要先翻译成检索条件：如「上海有没有做输送线的」→ keyword=输送线, city=上海。
 5. 回答用中文，简洁。默认只推荐 3–5 家，给出公司名、城市、主营、证据档位；用户要看更多再补充。
-6. 完整档案（地址/电话/官网）需要调用 get_supplier_detail 获取，不要在搜索结果里编电话号码。
+6. 搜索结果已带电话号码，可直接引用；完整地址/官网需调用 get_supplier_detail 获取。
+   结果里写「号码待核实」的，就如实告诉用户号码待核实，**不要编造或猜测电话号码**。
 """
     }
 
@@ -112,6 +113,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         _dataInfo.value = listOf(
             store.builtinFingerprintSummary(),
             "内置于 ${store.builtinAt()}",
+            store.phoneIndexSummary(),
             "已更新分片 ${store.updatedShardCount()} 个",
             "上次检查 ${store.lastUpdateCheck()}",
             if (GbIndex.isLoaded()) GbIndex.summary() else "国标索引未加载",
@@ -125,10 +127,13 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                 _status.value = msg
             }
             refreshDataInfo()
-            _status.value = if (r.ok) {
-                "数据更新完成：${r.message}"
+            if (r.ok) {
+                _status.value = "数据更新完成：${r.message}"
             } else {
-                "数据更新未完成（内置数据仍可用）：${r.message}"
+                // 数据源不通不是 App 坏了——内置的离线库照样能检索。
+                // 顶部只给一句人话，详细原因放设置页的 dataInfo 里，不吓人。
+                _status.value = "数据源暂不可达，内置 ${store.fingerprints().size} 家可离线检索"
+                _dataInfo.value = _dataInfo.value + "\n\n【最近一次更新】\n" + r.message
             }
         }
     }

@@ -10,8 +10,10 @@ data class AppSettings(
     val baseUrl: String = "https://api.deepseek.com/v1",
     val model: String = "deepseek-chat",
     val apiKey: String = "",
-    /** 数据源根地址（manifest / 分片都挂在这个前缀下），可换成镜像或自建 CDN */
-    val dataBase: String = "https://raw.githubusercontent.com/eiry16/beacon-mfg/main/",
+    /** 数据源根地址（manifest / 分片都挂在这个前缀下），可换成镜像或自建 CDN。
+     *  默认走 fastly 的 jsDelivr：国内实测 0.8s，比 raw.githubusercontent（8s+，常超时）稳。
+     *  即便这个源也挂了，RemoteSource 会自动回退到内置的其他镜像。 */
+    val dataBase: String = "https://fastly.jsdelivr.net/gh/eiry16/beacon-mfg@main/",
     val autoUpdate: Boolean = true,
 )
 
