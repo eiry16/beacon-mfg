@@ -43,5 +43,50 @@
       "evidence": "业机械"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020460",
+    "company": "佛山市精业机械制造有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "西南街道锦翔路北7号9座101",
+    "contact_phone": "待核实",
+    "lat": 23.186692,
+    "lng": 112.83373,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K6O5UO8S",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440607",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "357",
+      "name": "农、林、牧、渔专用机械制造",
+      "level": "group",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "业机械"
+    },
+    "is_manufacturer": true
   }
 ]
