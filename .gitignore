@@ -1,5 +1,8 @@
 # 敏感信息（API Key 等）
 .env
+# .env 的备份同样含密钥（AMAP/ZHIPU/CF），必须一并挡住
+.env.bak*
+
 .env.local
 .env.*.local
 secrets/
@@ -32,6 +35,10 @@ scripts/*
 !scripts/query.py
 !scripts/search_capabilities.py
 !scripts/client_search.py
+# deploy_pages.py 是 L1/L2 上 CDN 的唯一入口（封装 wrangler）。
+# 不放行：别人 clone 后只能自己摸索 CF 的上传格式，而那个 API 是会静默成功的
+# （2026-09-09 实测：三种写法全部返回 success，站点却全线 404）。
+!scripts/deploy_pages.py
 # gen_capability_shards.py 是 L1 能力卡国标分片的唯一生成器。
 # 不放行的后果：客户照 SKILL.md 想按小类批量取能力卡 → 脚本不存在，
 # 又退化成 4136 次单文件请求。纯标准库，只依赖 gb_store（已放行）。
