@@ -23,6 +23,9 @@ scripts/*
 # validate.py / stats.py 都依赖它，CI 必须能拿到，否则 data-validate 直接 ModuleNotFound。
 # 它只有标准库依赖，不含密钥与商业逻辑。
 !scripts/gb_store.py
+# test_sharding.py 是 gb_store 分片逻辑的回归测试（临时目录跑，不碰真实数据）。
+# 白名单理由同 gb_store：分片是归档写入路径的一部分，必须可回归。
+!scripts/test_sharding.py
 # CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
 .github/*
 !.github/workflows/
@@ -99,3 +102,5 @@ _fixed_*_backup.json
 en_backfill_*
 en_watchdog*
 cjk_fix_*
+# 列式导出产物（构建物，不进 Git）
+dist/

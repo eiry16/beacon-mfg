@@ -23,9 +23,30 @@ description: 面向 Agent 的制造业供应商检索。当用户需要寻找制
 - **行业索引**：`data/industry-index.json`（国标小类 → 企业 ID 列表，**知道行业时先用这个**）
 - **地区索引**：`data/region-index.json`（城市 → 供应商 ID 列表，**知道城市时先用这个**）
 - **采购词别名表**：`data/gb-alias.json`（采购口语 → 国标小类码，由真实数据推导）
+- **分片清单（推荐入口）**：`data/manifest.json`（列出全部分片的路径/条数/字节/SHA1）
+- **L0 能力指纹**：`skills/registry/fingerprint/gb/{门类}/{大类}/{小类}.jsonl`（235 B/条，100% 覆盖）
 - 字段结构：`schema/supplier.schema.json`
 
-数据就是普通 JSON 文件，**无需任何脚本、无需网络、无需 API Key**——Agent 直接读取文件即可检索。
+数据就是普通文件，**无需任何脚本、无需网络、无需 API Key**——Agent 直接读取文件即可检索。
+
+### 只想查一两个小类？用 manifest 按需拉取，别 clone 全库
+
+| 方式 | 传输量 |
+|---|---|
+| `git clone` 全库 | 4 MB（千万级约 2 GB） |
+| 拉 manifest + 命中的小类分片 | **约 0.3 MB** |
+
+```python
+import json, urllib.request
+base = "https://raw.githubusercontent.com/eiry16/beacon-mfg/main"
+man = json.loads(urllib.request.urlopen(f"{base}/data/manifest.json").read())
+hit = [s for s in man["shards"] if s["t"] == "fp" and s["c"] == "3525"]
+rows = [json.loads(l) for l in
+        urllib.request.urlopen(f"{base}/{hit[0]['p']}").read().decode().splitlines() if l.strip()]
+# 带 If-None-Match: 分片["h"] 可走 304 缓存，二次查询近乎零流量
+```
+
+参考实现见 `scripts/client_search.py`。
 
 ## 使用流程
 
@@ -147,22 +168,27 @@ python scripts/query.py --keyword "小批量铝件" --no-alias            # 关�
 ## 能力层检索（能做 vs 只存在）
 
 上面的流程只回答"**有这家厂**"。如果还要判断"**这家厂能不能做我的活**"，
-用 `skills/registry/fingerprint/*.jsonl`——每家一行能力指纹，约 120 字。
+用 `skills/registry/fingerprint/gb/{门类}/{大类}/{小类}.jsonl`——每家一行能力指纹，235 B，**覆盖全部 20265 家**。
 
-**先粗筛后精读，不要一上来就全量读供应商自述**（8000 家全读会撑爆上下文）：
+**先粗筛后精读，不要一上来就全量读供应商自述**（2 万家全读会撑爆上下文）：
 
 | 阶段 | 读什么 | 规模 |
 |---|---|---|
-| 1 粗筛 | `fingerprint/*.jsonl`，数值规则过滤 | 全量 → 10-30 家 |
+| 1 粗筛 | 该小类的 `fingerprint/gb/.../{小类}.jsonl`，数值规则过滤 | 单小类 → 10-30 家 |
 | 2 比对 | `capability/{id}.json` | 30 家 → 5 家 |
 | 3 精读 | `vendors/{id}/SKILL.md` | 5 家 → 3 家 |
+
+**只查某个小类时只读那一个分片**（如 3525 模具制造 = 0.23 MB），不要全量扫描 4.5 MB 的指纹库。
 
 指纹行字段（刻意用短键，省钱）：
 
 ```
-id / co(公司) / city / proc(工艺码) / mat(材料) / tol(公差mm)
-size([长,宽,高]mm) / moq / lt([打样天,百件天]) / cert / rt(回价小时) / cl(凭证等级) / sc(完整度)
+id / co(公司) / city / gb(国标码) / mf(是否制造商) / proc(工艺码) / mat(材料)
+cert / cl(凭证等级) / pv(来源: auto 能力卡 / derived 国标推导) / sc(画像分) / tel(有电话)
+tol / size / moq / lt / rt —— 仅能力卡厂商才有，无值不占位
 ```
+
+`pv=derived` 的厂商是按国标码推导的工艺（无能力卡），**sc=0 不是评分低，是尚未画像**。
 
 按需求做确定性过滤：
 

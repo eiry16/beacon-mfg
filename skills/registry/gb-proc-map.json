@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "description": "国标码 → 工艺码映射。**由能力卡真实数据反推**：统计每个国标小类下被能力卡确认过的工艺，出现 >= 3 次才收录。仅用于无能力卡厂商的推导，有卡的以卡为准。",
+    "generated_at": "2026-09-09",
+    "min_hits": 3,
+    "codes": 22
+  },
+  "map": {
+    "2651": [
+      "metal_stamping"
+    ],
+    "2913": [
+      "bearing"
+    ],
+    "2929": [
+      "injection_molding",
+      "metal_stamping",
+      "electronic_component",
+      "cnc_milling"
+    ],
+    "3130": [
+      "metal_material",
+      "laser_cutting",
+      "cutting_service",
+      "bending",
+      "metal_stamping"
+    ],
+    "3252": [
+      "metal_material"
+    ],
+    "3311": [
+      "laser_cutting",
+      "stamping",
+      "bending",
+      "welding",
+      "cutting_service",
+      "metal_stamping",
+      "cnc_milling"
+    ],
+    "3312": [
+      "metal_material"
+    ],
+    "3360": [
+      "electroplating",
+      "spray_painting",
+      "heat_treatment",
+      "powder_coating",
+      "mold_making",
+      "anodizing",
+      "cnc_milling"
+    ],
+    "3392": [
+      "die_casting"
+    ],
+    "3399": [
+      "metal_stamping",
+      "laser_cutting",
+      "metal_material",
+      "cnc_milling",
+      "cutting_service",
+      "bending",
+      "welding",
+      "electronic_component",
+      "spray_painting"
+    ],
+    "3451": [
+      "bearing"
+    ],
+    "3482": [
+      "fastener",
+      "spring"
+    ],
+    "3483": [
+      "spring"
+    ],
+    "3484": [
+      "cnc_milling",
+      "cnc_turning",
+      "metal_stamping",
+      "wire_cutting",
+      "laser_cutting",
+      "electronic_component",
+      "bending",
+      "cutting_service",
+      "cnc_5axis",
+      "grinding",
+      "welding"
+    ],
+    "3525": [
+      "mold_making",
+      "die_casting",
+      "injection_molding",
+      "wire_cutting",
+      "stamping",
+      "welding"
+    ],
+    "3576": [
+      "cnc_milling"
+    ],
+    "3982": [
+      "pcb_fab"
+    ],
+    "3989": [
+      "connector",
+      "electronic_component",
+      "pcb_fab",
+      "cnc_milling"
+    ],
+    "5164": [
+      "metal_material",
+      "cutting_service",
+      "bending",
+      "electronic_component",
+      "cnc_milling",
+      "laser_cutting"
+    ],
+    "5169": [
+      "metal_stamping"
+    ],
+    "5174": [
+      "fastener",
+      "mold_making"
+    ],
+    "5179": [
+      "mold_making"
+    ]
+  }
+}
