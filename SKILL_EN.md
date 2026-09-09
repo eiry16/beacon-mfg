@@ -205,6 +205,20 @@ will blow up your context):
 
 **Read only the class shard you need** (e.g. 3525 Moulds & Dies ≈ 0.25 MB), not the whole 5.3 MB.
 
+**L1 capability cards are also served by class** (deployed to CDN 2026-09-09):
+
+```
+GET https://beacon-mfg.pages.dev/manifest.json              # shard list + SHA1
+GET https://beacon-mfg.pages.dev/full/gb/C/35/3525.json     # every capability card in 3525
+GET https://beacon-mfg.pages.dev/skills/vendors/{id}/SKILL.md   # vendor self-report (L2)
+```
+
+One request returns all capability cards for that class. Note that **L0 fingerprints live on
+GitHub (jsDelivr), not here** — the two layers have different base URLs. Don't mix them.
+
+Honest fill rates: `processes` 100% (inferred from company name, **not confirmed by the company**),
+`materials` 15.3%, `limits` **0.1% (6 of 4136)**. A missing hard metric means "not reported" — never 0.
+
 Fingerprint fields (short keys on purpose, to save tokens):
 
 ```
