@@ -29,7 +29,15 @@
       "source": "name",
       "evidence": "PCB"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003251/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003258",
@@ -61,7 +69,15 @@
       "source": "name",
       "evidence": "PCB"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003258/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003270",
@@ -93,7 +109,15 @@
       "source": "name",
       "evidence": "PCB"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003270/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003271",
@@ -125,7 +149,15 @@
       "source": "name",
       "evidence": "PCB"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003271/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003279",
@@ -205,7 +237,15 @@
       "source": "name",
       "evidence": "线路板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003281/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003286",
@@ -237,7 +277,15 @@
       "source": "name",
       "evidence": "PCB"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003286/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003288",
@@ -269,7 +317,15 @@
       "source": "name",
       "evidence": "PCB"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003288/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003289",
@@ -411,6 +467,14 @@
       "business_area": "沙井",
       "adcode": "440306",
       "search_keyword": "PCBA"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003313/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -457,6 +521,14 @@
       "business_area": "沙井",
       "adcode": "440306",
       "search_keyword": "PCBA"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003314/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -644,7 +716,15 @@
       "evidence": "电路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015072/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015073",
@@ -738,7 +818,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015074/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015075",
@@ -925,7 +1013,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015081/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015082",
@@ -971,7 +1067,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015082/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015083",
@@ -1157,7 +1261,15 @@
       "evidence": "电子电路"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015092/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016246",
@@ -1204,7 +1316,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016246/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016247",
@@ -1484,7 +1604,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016252/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016253",
@@ -1530,7 +1658,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016253/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016254",
@@ -1576,7 +1712,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016254/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016255",
@@ -1623,7 +1767,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016255/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016256",
@@ -1717,7 +1869,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016257/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016259",
@@ -1809,7 +1969,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016260/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016262",
@@ -1855,7 +2023,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016262/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016263",
@@ -1901,7 +2077,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016263/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016264",
@@ -1993,7 +2177,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016265/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016266",
@@ -2039,7 +2231,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016266/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016267",
@@ -2085,7 +2285,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016267/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016268",
@@ -2131,7 +2339,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016268/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016269",
@@ -2177,7 +2393,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016269/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016270",
@@ -2223,7 +2447,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016270/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016271",
@@ -2269,7 +2501,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016271/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016272",
@@ -2361,7 +2601,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016273/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016275",
@@ -2407,7 +2655,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016275/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016276",
@@ -2453,7 +2709,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016276/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016277",
@@ -2591,7 +2855,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016279/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016281",
@@ -3097,7 +3369,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016292/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016293",
@@ -3742,7 +4022,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017424/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018654",
@@ -3789,7 +4077,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018654/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018655",
@@ -3836,7 +4132,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018655/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018656",
@@ -4024,7 +4328,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018659/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018660",
@@ -4258,7 +4570,15 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018668/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018669",

@@ -2807,6 +2807,14 @@
       "business_area": "罗村",
       "adcode": "440605",
       "search_keyword": "铝合金"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000212/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -2853,6 +2861,14 @@
       "business_area": "",
       "adcode": "440604",
       "search_keyword": "铝合金"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000214/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3597,7 +3613,15 @@
       "source": "name",
       "evidence": "门业"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006756/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0006760",
@@ -4419,7 +4443,15 @@
       "source": "name",
       "evidence": "门业"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006896/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0006898",
@@ -4988,7 +5020,15 @@
       "source": "name",
       "evidence": "卷闸门"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006974/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0006975",

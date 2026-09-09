@@ -1044,7 +1044,15 @@
       "source": "name",
       "evidence": "亚克力加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009316/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009319",
@@ -1274,7 +1282,15 @@
       "source": "name",
       "evidence": "有机玻璃"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009333/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009343",
@@ -3717,6 +3733,14 @@
       "business_area": "沙井",
       "adcode": "440306",
       "search_keyword": "冲压"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006660/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -3763,7 +3787,15 @@
       "evidence": "塑料制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018817/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0000121",
@@ -4050,7 +4082,15 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000135/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0000136",
@@ -4459,6 +4499,14 @@
       "business_area": "苏州工业园区高端制造与国际贸易区",
       "adcode": "320506",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002593/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -4680,7 +4728,15 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002602/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002603",
@@ -4805,7 +4861,15 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002605/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002606",
@@ -4883,7 +4947,15 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002607/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002609",
@@ -5058,7 +5130,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002613/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002614",
@@ -5090,7 +5170,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002614/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002615",
@@ -5137,6 +5225,14 @@
       "business_area": "",
       "adcode": "330113",
       "search_keyword": "注塑模具"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002615/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5233,7 +5329,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002619/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002620",
@@ -5329,7 +5433,15 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002624/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002626",
@@ -5933,6 +6045,14 @@
       "business_area": "",
       "adcode": "320411",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002673/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -5982,6 +6102,14 @@
       "business_area": "",
       "adcode": "320404",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002674/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -6153,6 +6281,14 @@
       "business_area": "南环路",
       "adcode": "441900",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002680/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -6330,7 +6466,15 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002684/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002690",
@@ -6611,6 +6755,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002699/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -6888,6 +7040,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002708/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -7371,6 +7531,14 @@
       "business_area": "丹灶",
       "adcode": "440605",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002729/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -7417,6 +7585,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002730/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -7463,6 +7639,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002731/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -7541,6 +7725,14 @@
       "business_area": "北滘",
       "adcode": "440606",
       "search_keyword": "注塑加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002735/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -7911,6 +8103,14 @@
       "business_area": "",
       "adcode": "330482",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002745/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8003,6 +8203,14 @@
       "business_area": "",
       "adcode": "330402",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002747/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8095,6 +8303,14 @@
       "business_area": "",
       "adcode": "330481",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002750/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8127,7 +8343,15 @@
       "source": "keyword",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002752/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002753",
@@ -8173,6 +8397,14 @@
       "business_area": "",
       "adcode": "330421",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002753/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8220,6 +8452,14 @@
       "business_area": "",
       "adcode": "330424",
       "search_keyword": "弹簧"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002754/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8312,6 +8552,14 @@
       "business_area": "",
       "adcode": "330281",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002756/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8358,6 +8606,14 @@
       "business_area": "",
       "adcode": "330282",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002757/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8451,6 +8707,14 @@
       "business_area": "",
       "adcode": "310112",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002762/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8643,7 +8907,15 @@
       "source": "keyword",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002771/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002773",
@@ -8721,6 +8993,14 @@
       "business_area": "",
       "adcode": "320412",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002774/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -8954,6 +9234,14 @@
       "business_area": "松岗",
       "adcode": "440306",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002779/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9205,6 +9493,14 @@
       "business_area": "平湖",
       "adcode": "440307",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002785/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9522,6 +9818,14 @@
       "business_area": "罗村",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002792/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9554,7 +9858,15 @@
       "source": "keyword",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002793/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002794",
@@ -9646,6 +9958,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002795/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9692,6 +10012,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002796/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9738,6 +10066,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002797/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9784,6 +10120,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002798/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9831,6 +10175,14 @@
       "business_area": "丹灶",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002799/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9877,6 +10229,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002800/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -9941,7 +10301,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002803/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002804",
@@ -9987,6 +10355,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002804/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10033,6 +10409,14 @@
       "business_area": "",
       "adcode": "440608",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002805/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10079,6 +10463,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002806/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10111,7 +10503,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002807/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002808",
@@ -10143,7 +10543,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002808/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002809",
@@ -10189,6 +10597,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002809/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10235,6 +10651,14 @@
       "business_area": "",
       "adcode": "440606",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002810/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10281,6 +10705,14 @@
       "business_area": "大良",
       "adcode": "440606",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002811/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10377,7 +10809,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002814/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002815",
@@ -10423,6 +10863,14 @@
       "business_area": "",
       "adcode": "440606",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002815/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10501,6 +10949,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002817/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10533,7 +10989,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002818/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002819",
@@ -10565,7 +11029,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002819/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002820",
@@ -10611,6 +11083,14 @@
       "business_area": "里水",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002820/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10735,7 +11215,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002823/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002824",
@@ -10781,6 +11269,14 @@
       "business_area": "",
       "adcode": "440606",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002824/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10827,6 +11323,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑成型"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002825/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10906,6 +11410,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "注塑模具"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002827/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -10938,7 +11450,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002828/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002829",
@@ -10970,7 +11490,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002829/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002830",
@@ -11002,7 +11530,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002830/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002831",
@@ -11034,7 +11570,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002831/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002833",
@@ -11222,7 +11766,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002837/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002838",
@@ -12979,7 +13531,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009615/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009616",
@@ -13492,7 +14052,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009628/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009629",
@@ -14098,7 +14666,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009642/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009643",
@@ -14466,7 +15042,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009653/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009654",
@@ -14973,7 +15557,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009665/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009667",
@@ -15807,7 +16399,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009685/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009686",
@@ -16459,7 +17059,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009699/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009700",
@@ -17922,7 +18530,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009730/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009731",
@@ -18807,7 +19423,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009750/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009751",
@@ -18854,7 +19478,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009751/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009752",
@@ -19134,7 +19766,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009757/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009758",
@@ -19273,7 +19913,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009760/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009761",
@@ -19320,7 +19968,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009761/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009762",
@@ -19414,7 +20070,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009763/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009765",
@@ -19831,7 +20495,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009773/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009774",
@@ -20211,7 +20883,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009783/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009784",
@@ -20352,7 +21032,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009786/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009787",
@@ -20587,7 +21275,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009791/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009792",
@@ -23438,7 +24134,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009855/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009856",
@@ -23952,7 +24656,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009866/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009867",
@@ -26858,7 +27570,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009929/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009930",
@@ -29978,7 +30698,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0009998/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0009999",
@@ -30211,7 +30939,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010004/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010005",
@@ -30350,7 +31086,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010007/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010008",
@@ -30492,7 +31236,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010010/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010011",
@@ -30538,7 +31290,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010011/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010012",
@@ -31238,7 +31998,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010028/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010029",
@@ -31473,7 +32241,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010033/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010034",
@@ -32824,7 +33600,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010069/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010072",
@@ -34732,7 +35516,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010124/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010125",
@@ -35475,7 +36267,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010143/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010144",
@@ -36220,7 +37020,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010163/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010164",
@@ -36548,7 +37356,15 @@
       "source": "keyword",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010171/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010172",
@@ -39673,7 +40489,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010250/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010251",
@@ -39767,7 +40591,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010253/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010254",
@@ -40517,7 +41349,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010271/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010272",
@@ -41310,7 +42150,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010288/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010289",
@@ -41682,7 +42530,15 @@
       "source": "keyword",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010298/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010299",
@@ -41774,7 +42630,15 @@
       "source": "keyword",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010301/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010302",
@@ -45455,7 +46319,15 @@
       "source": "keyword",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010394/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010395",
@@ -45547,7 +46419,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010396/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010397",
@@ -45915,7 +46795,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010404/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010405",
@@ -46651,7 +47539,15 @@
       "source": "keyword",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010423/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010424",
@@ -47295,7 +48191,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010437/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010438",
@@ -47525,7 +48429,15 @@
       "source": "keyword",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010443/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010444",
@@ -49457,7 +50369,15 @@
       "source": "name",
       "evidence": "塑料制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010492/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010493",
@@ -49596,7 +50516,15 @@
       "source": "keyword",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010496/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010497",
@@ -55962,7 +56890,15 @@
       "source": "category_fallback",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010674/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010675",
@@ -56192,7 +57128,15 @@
       "source": "category_fallback",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010684/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010685",
@@ -56284,7 +57228,15 @@
       "source": "category_fallback",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010686/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010688",
@@ -56330,7 +57282,15 @@
       "source": "category_fallback",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010688/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010690",
@@ -56376,7 +57336,15 @@
       "source": "category_fallback",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010690/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010691",
@@ -56928,7 +57896,15 @@
       "source": "name",
       "evidence": "塑料配件|配件型:配件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010708/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010711",
@@ -57205,7 +58181,15 @@
       "source": "category_fallback",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010722/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010723",
@@ -58361,7 +59345,15 @@
       "source": "name",
       "evidence": "塑料配件|配件型:配件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010775/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010779",
@@ -58453,7 +59445,15 @@
       "source": "name",
       "evidence": "塑料配件|配件型:配件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010780/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010781",
@@ -58637,7 +59637,15 @@
       "source": "name",
       "evidence": "塑料配件|配件型:配件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010787/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010789",
@@ -58775,7 +59783,15 @@
       "source": "name",
       "evidence": "塑胶配件|配件型:配件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010795/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010798",
@@ -59236,7 +60252,15 @@
       "source": "category_fallback",
       "evidence": "注塑成型"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010818/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0010820",
@@ -65735,7 +66759,15 @@
       "evidence": "塑料制品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014849/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014850",
@@ -65973,7 +67005,15 @@
       "evidence": "塑料制品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014859/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014861",
@@ -66021,7 +67061,15 @@
       "evidence": "塑料制品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014861/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014866",
@@ -66746,7 +67794,15 @@
       "evidence": "塑料制品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014900/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014905",
@@ -66793,7 +67849,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014905/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014906",
@@ -66840,7 +67904,15 @@
       "evidence": "塑料制品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014906/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014907",
@@ -68343,7 +69415,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014940/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014941",
@@ -68435,7 +69515,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014942/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014943",
@@ -68667,7 +69755,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014947/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014948",
@@ -69128,7 +70224,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014959/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014960",
@@ -69360,7 +70464,15 @@
       "evidence": "注塑"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014998/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015441",
@@ -69545,7 +70657,15 @@
       "evidence": "注塑成型"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015444/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015445",
@@ -69776,7 +70896,15 @@
       "evidence": "注塑"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015743/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015744",
@@ -69914,7 +71042,15 @@
       "evidence": "注塑"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015747/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015751",
@@ -69960,7 +71096,15 @@
       "evidence": "注塑"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015751/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015757",
@@ -72992,7 +74136,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015857/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015858",
@@ -74834,7 +75986,15 @@
       "evidence": "注塑成型"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015902/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015903",
@@ -75432,7 +76592,15 @@
       "evidence": "塑料配件|配件型:配件"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015925/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015926",
@@ -77504,7 +78672,15 @@
       "evidence": "注塑成型"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016987/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016988",
@@ -77918,7 +79094,15 @@
       "evidence": "注塑成型"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016996/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016997",
@@ -78838,7 +80022,15 @@
       "evidence": "注塑成型"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017193/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017194",
@@ -79068,7 +80260,15 @@
       "evidence": "注塑"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018362/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018365",
@@ -79207,7 +80407,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018368/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018371",
@@ -79253,7 +80461,15 @@
       "evidence": "注塑"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018371/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018372",
@@ -79763,7 +80979,15 @@
       "evidence": "注塑"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018393/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018395",
@@ -80464,7 +81688,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018441/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018442",
@@ -80650,7 +81882,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018445/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018446",
@@ -81068,7 +82308,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018455/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018456",
@@ -81394,7 +82642,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018463/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018464",
@@ -83425,7 +84681,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018510/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018511",
@@ -83655,7 +84919,15 @@
       "evidence": "塑胶加工"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018515/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018516",
@@ -83931,7 +85203,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018522/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018523",
@@ -88950,7 +90230,15 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019635/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0019637",
@@ -89962,7 +91250,15 @@
       "evidence": "注塑成型"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0020293/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0020294",
@@ -91605,7 +92901,15 @@
       "source": "name",
       "evidence": "塑胶加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008323/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008332",
@@ -91746,7 +93050,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008340/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008351",
@@ -91840,7 +93152,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008357/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008360",
@@ -91981,7 +93301,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008366/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008368",
@@ -92263,7 +93591,15 @@
       "source": "name",
       "evidence": "塑胶加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008382/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008391",
@@ -92404,7 +93740,15 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008399/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008403",
@@ -92451,7 +93795,15 @@
       "source": "name",
       "evidence": "塑胶加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008403/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008404",
@@ -93619,7 +94971,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008480/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008485",
@@ -93665,7 +95025,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008485/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008491",
@@ -93711,7 +95079,15 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008491/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008495",
@@ -94309,7 +95685,15 @@
       "source": "name",
       "evidence": "有机玻璃制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008759/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008760",
@@ -95525,6 +96909,14 @@
       "business_area": "沙井",
       "adcode": "440306",
       "search_keyword": "冲压"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002426/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {

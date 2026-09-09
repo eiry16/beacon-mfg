@@ -91,7 +91,15 @@
       "source": "name",
       "evidence": "自动化"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006867/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008987",
@@ -872,6 +880,14 @@
       "business_area": "",
       "adcode": "320206",
       "search_keyword": "喷涂"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004526/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
