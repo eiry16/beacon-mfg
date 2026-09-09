@@ -2,7 +2,8 @@
  "metadata": {
   "schema": "1.0",
   "description": "分片清单。客户 Agent 只需拉本文件，即可定位并按需下载命中的国标小类分片，无需 clone 整个仓库。",
-  "usage": "1) 拉本文件 2) 按 c（国标码）筛分片 3) 带 If-None-Match: h 拉分片 4) 命中后按 id 调详情 API 取完整档案",
+  "usage": "1) 拉本文件 2) 按 c（国标码）筛分片 3) 缓存本次响应返回的 ETag，下次带 If-None-Match 拉分片（命中返回 304，零传输） 4) 命中后按 id 调详情 API 取完整档案",
+  "field_note": "h = 分片内容 SHA1，用于下载后校验完整性；做增量更新请用服务端响应头里的 ETag，不要用 h。",
   "generated_at": "2026-09-09",
   "total_shards": 412,
   "total_bytes": 45002101,

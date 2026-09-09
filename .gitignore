@@ -26,6 +26,12 @@ scripts/*
 # test_sharding.py 是 gb_store 分片逻辑的回归测试（临时目录跑，不碰真实数据）。
 # 白名单理由同 gb_store：分片是归档写入路径的一部分，必须可回归。
 !scripts/test_sharding.py
+# 以下是客户 Agent 真正要跑的检索入口，SKILL.md 直接引用了它们。
+# 不入库的后果：客户照着 SKILL.md 敲命令 → 文件不存在（2026-09-09 实测踩到）。
+# 三者都是纯标准库（search_capabilities 依赖 gb_store，已放行），不含密钥与商业逻辑。
+!scripts/query.py
+!scripts/search_capabilities.py
+!scripts/client_search.py
 # CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
 .github/*
 !.github/workflows/

@@ -88,8 +88,10 @@ print(item["name"], item["count"], item["confidence"])   # 模具制造 1091 {'h
 target_ids = set(item["ids"])                            # 该行业全部企业 ID
 ```
 
-> **注意**：`industry-index.json` 是快照，抓取新数据后必须重建（`scripts/gen_industry_index.py`），
+> **注意**：`industry-index.json` 是快照，抓取新数据后必须重建（维护脚本
+> `scripts/gen_industry_index.py`，属内部维护脚本、不随仓库分发），
 > 否则新企业按行业永远搜不到——这是一个不会报错的静默缺陷。
+> 若你检索时发现某小类条数明显偏少，优先怀疑索引没重建，而不是数据缺失。
 
 代码前缀可当层级用：`29`=橡胶和塑料制品业（大类）、`339`=铸造及其他金属制品制造（中类）、`C`=制造业（门类）。
 
