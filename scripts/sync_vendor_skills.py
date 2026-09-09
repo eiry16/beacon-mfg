@@ -1,0 +1,181 @@
+# -*- coding: utf-8 -*-
+"""把供应商 Skill 同步进检索链路（CI 流程的第 ⑤⑥ 步）
+
+PROPOSAL_VENDOR_SKILL.md §12 里写的提交流程是：
+
+    capability.json 校验 → 生成/更新 fingerprint 行 → 回写 data/ 的 agent 字段
+
+但这两步**历史上从未实现**，结果是：
+  - `skills/registry/capability/` 是空目录
+    → SKILL.md 教客户 Agent「按 id 读 capability/{id}.json」，实际读不到任何东西
+  - 名录 `agent` 字段 0/20264
+    → 客户 Agent 检索命中后拿不到 skill_url，链路断在这里
+
+本脚本补上这两步。三件事，全部幂等：
+
+  1. `skills/vendors/{id}/capability.json` → `skills/registry/capability/{id}.json`
+     （L1 能力卡的常读入口，按 id 单文件读）
+  2. 更新 `skills/registry/fingerprint/{品类}.jsonl`
+     （L0 指纹行，按 id 覆盖而非追加，避免重跑产生幽灵数据）
+  3. 名录记录的 `agent` 字段经 supplier_loader.persist_supplier 写回 data/gb/
+     （skill_url / protocol / capabilities / verified）
+
+用法：
+    python scripts/sync_vendor_skills.py --ids CN-MFG-0002786,CN-MFG-0002908
+    python scripts/sync_vendor_skills.py --all
+    python scripts/sync_vendor_skills.py --all --dry-run
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from datetime import date
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+SERVER_DIR = REPO_ROOT / "server"
+VENDOR_DIR = REPO_ROOT / "skills" / "vendors"
+REGISTRY_DIR = REPO_ROOT / "skills" / "registry"
+CAPABILITY_DIR = REGISTRY_DIR / "capability"
+FINGERPRINT_DIR = REGISTRY_DIR / "fingerprint"
+REGISTRY_INDEX = REGISTRY_DIR / "index.json"
+CONFLICT_REPORT = REGISTRY_DIR / "category-conflicts.json"
+
+# 每次 --all 收集到的「名录品类 vs 能力卡品类」冲突，收尾写进 CONFLICT_REPORT
+CONFLICTS: list[dict] = []
+
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+sys.path.insert(0, str(SERVER_DIR))
+
+from collect.render import render_fingerprint, append_fingerprint  # noqa: E402
+from collect.batch_auto_profile import completeness  # noqa: E402
+from loaders import supplier_loader  # noqa: E402
+
+
+def capabilities_of(cap: dict) -> list[str]:
+    """从能力卡推断 agent.capabilities（SPEC 2.3 取值域：catalog/rfq/live_chat/quote）。"""
+    caps = ["catalog"]
+    rfq = cap.get("rfq") or {}
+    if rfq.get("endpoint"):
+        caps.append("rfq")
+        if rfq.get("auto_quote"):
+            caps.append("quote")
+    return caps
+
+
+def sync_one(sid: str, dry_run: bool = False) -> tuple[bool, str]:
+    vdir = VENDOR_DIR / sid
+    cfile = vdir / "capability.json"
+    if not cfile.exists():
+        return False, "缺少 capability.json"
+
+    try:
+        cap = json.loads(cfile.read_text(encoding="utf-8"))
+    except Exception as exc:
+        return False, f"capability.json 解析失败: {exc}"
+
+    cat = cap.get("category")
+    mode = (cap.get("provenance") or {}).get("mode", "?")
+    detail = []
+
+    if dry_run:
+        return True, f"[{mode}] {cat} （dry-run，未写入）"
+
+    # ── 1. L1 能力卡入口 ────────────────────────────────────────────────
+    CAPABILITY_DIR.mkdir(parents=True, exist_ok=True)
+    (CAPABILITY_DIR / f"{sid}.json").write_text(
+        json.dumps(cap, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    detail.append("capability ✓")
+
+    # ── 2. L0 指纹行（append_fingerprint 内部按 id 去重，重复跑不会产生幽灵数据）
+    append_fingerprint(cap, completeness(cap))
+    detail.append(f"fingerprint ✓(sc={completeness(cap)})")
+
+    # ── 3. 回写名录 agent 字段（复用已验证的原子落盘逻辑）────────────────
+    rec = supplier_loader.get_supplier(sid)
+    if rec is None:
+        return True, f"[{mode}] {cat} {' '.join(detail)} 名录无此 ID，跳过 agent 回写"
+    if rec.get("category") != cat:
+        # 国标迁移后名录按国标码重划了品类，能力卡还挂着旧的 8 品类标签。
+        # 这是归类口径变化，不是身份错配（id 精确匹配），用它阻断 agent 回写
+        # 会让 15% 的卡永远进不了检索链路。所以只记冲突、不阻断。
+        CONFLICTS.append({"id": sid, "directory": rec.get("category"),
+                          "capability": cat, "profile": cap.get("profile")})
+        detail.append(f"⚠品类冲突(名录 {rec.get('category')} ≠ 卡 {cat})")
+
+    updated = dict(rec)
+    updated["agent"] = {
+        "skill_url": f"skills/vendors/{sid}/SKILL.md",
+        "protocol": "skill",
+        "capabilities": capabilities_of(cap),
+        "verified": False,
+    }
+    if not supplier_loader.persist_supplier(sid, updated):
+        return False, f"agent 字段落盘失败（前面 capability/fingerprint 已写入）"
+    detail.append("agent ✓")
+
+    return True, f"[{mode}] {cat} {' '.join(detail)}"
+
+
+def rebuild_registry_index(dry_run: bool = False) -> None:
+    """index.json 的权威入口是 scripts/gen_fingerprint.py，本脚本不再写它。
+
+    原来这里按扁平的 8 品类 `fingerprint/*.jsonl` 统计，而现行指纹是国标四级
+    `fingerprint/gb/{门类}/{大类}/{小类}.jsonl` —— glob("*.jsonl") 恒为空，
+    跑一次 --all 就会把 index.json 覆盖成 total=0 的空壳，而且不报错。
+    gen_fingerprint.py 写的那份带 field_spec / by_gate / shards，两边各写一份
+    只会互相覆盖，所以这里改成只提示。
+    """
+    print("\n提示：registry/index.json 由 `python scripts/gen_fingerprint.py --apply` 重建"
+          "（本脚本不再写，避免两份实现互相覆盖）")
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description="同步供应商 Skill 到检索链路")
+    ap.add_argument("--ids", help="逗号分隔的 supplier_id 列表")
+    ap.add_argument("--all", action="store_true", help="同步全部供应商 Skill")
+    ap.add_argument("--dry-run", action="store_true", help="只报告不写入")
+    args = ap.parse_args()
+
+    if not args.ids and not args.all:
+        ap.error("需要 --ids 或 --all")
+
+    if args.all:
+        targets = sorted(p.name for p in VENDOR_DIR.iterdir()
+                         if p.is_dir() and (p / "capability.json").exists())
+    else:
+        targets = [s.strip() for s in args.ids.split(",") if s.strip()]
+
+    if not args.dry_run:
+        supplier_loader.load()
+
+    failed = 0
+    for sid in targets:
+        ok, msg = sync_one(sid, dry_run=args.dry_run)
+        if not ok:
+            failed += 1
+            print(f"[FAIL] {sid}: {msg}")
+        else:
+            print(f"[ OK ] {sid}: {msg}")
+
+    rebuild_registry_index(dry_run=args.dry_run)
+
+    if CONFLICTS and not args.dry_run:
+        REGISTRY_DIR.mkdir(parents=True, exist_ok=True)
+        CONFLICT_REPORT.write_text(
+            json.dumps({"updated_at": date.today().isoformat(),
+                        "total": len(CONFLICTS),
+                        "note": "名录按国标码重划后的品类 ≠ 能力卡的旧 8 品类标签；"
+                                "id 精确匹配，属口径差异不是错配，待人工决定是否重划",
+                        "items": CONFLICTS}, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8")
+        print(f"品类冲突 {len(CONFLICTS)} 家已记录 → {CONFLICT_REPORT.relative_to(REPO_ROOT)}")
+
+    print(f"\n同步 {len(targets)} 家，失败 {failed} 家"
+          + ("（dry-run，未写入任何文件）" if args.dry_run else ""))
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

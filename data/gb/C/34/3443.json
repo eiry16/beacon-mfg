@@ -93,7 +93,15 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007449/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007638",
@@ -356,7 +364,15 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018983/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0020132",

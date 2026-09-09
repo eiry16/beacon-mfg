@@ -89,6 +89,14 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "压铸"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003145/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -1638,6 +1646,14 @@
       "business_area": "",
       "adcode": "442000",
       "search_keyword": "冲压"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002548/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {

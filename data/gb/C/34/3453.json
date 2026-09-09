@@ -89,6 +89,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "数控加工"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000593/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -273,7 +281,15 @@
       "evidence": "齿轮"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019264/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0021836",
