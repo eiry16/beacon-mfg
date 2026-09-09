@@ -6,6 +6,8 @@ import cn.beaconmfg.app.data.Hit
 import cn.beaconmfg.app.data.RemoteSource
 import cn.beaconmfg.app.data.SearchParams
 import cn.beaconmfg.app.data.SupplierDetail
+import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Strings
 import cn.beaconmfg.app.search.SearchEngine
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -30,9 +32,14 @@ class ToolBox(
     private val store: DataStore,
     private val remote: RemoteSource,
     private val dataBase: () -> String,
+    /** 语言是**每次调用时取**，不是构造时固定——用户在设置里切完立刻生效，不用重启。 */
+    private val lang: () -> Lang = { Lang.ZH },
 ) {
 
+    private fun str(): Strings = Strings(lang())
+
     fun definitions(): JSONArray {
+        val en = lang() == Lang.EN
         fun fn(
             name: String,
             desc: String,
@@ -58,47 +65,120 @@ class ToolBox(
             .put(
                 fn(
                     "search_suppliers",
-                    "按采购需求检索制造业供应商。关键词可以是产品名、工艺名或采购词" +
-                        "（如 齿轮、注塑、输送线、阳极氧化）。返回结果按证据强度排序，务必如实说明证据档位。",
+                    if (en) {
+                        "Search manufacturing suppliers by sourcing need. The keyword can be a product " +
+                            "name, a process name or a sourcing term (e.g. gear, injection molding, " +
+                            "conveyor line, anodizing). Results are ordered by evidence strength — " +
+                            "always report the evidence tier honestly."
+                    } else {
+                        "按采购需求检索制造业供应商。关键词可以是产品名、工艺名或采购词" +
+                            "（如 齿轮、注塑、输送线、阳极氧化）。返回结果按证据强度排序，务必如实说明证据档位。"
+                    },
                     JSONObject()
-                        .put("keyword", str("采购词或产品关键词，多个词用空格分隔表示同时满足"))
-                        .put("city", str("城市名，如 上海、东莞、宁波。不带「市」也可以"))
-                        .put("industry_code", str("国标行业代码，支持 34 大类 / 343 中类 / 3434 小类"))
-                        .put("cert", str("认证名称，如 高新技术企业、ISO9001"))
+                        .put(
+                            "keyword",
+                            str(
+                            if (en) {
+                                "Sourcing term or product keyword; space-separated words are ANDed. " +
+                                    "The directory is Chinese — translate the buyer's request first " +
+                                    "(gear -> 齿轮, conveyor line -> 输送线, die casting -> 压铸)."
+                            } else {
+                                "采购词或产品关键词，多个词用空格分隔表示同时满足"
+                            }
+                            )
+                        )
+                        .put(
+                            "city",
+                            str(
+                                if (en) "City name, e.g. Shanghai, Dongguan, Ningbo"
+                                else "城市名，如 上海、东莞、宁波。不带「市」也可以"
+                            )
+                        )
+                        .put(
+                            "industry_code",
+                            str(
+                                if (en) "National-standard industry code: 34 division / 343 group / 3434 class"
+                                else "国标行业代码，支持 34 大类 / 343 中类 / 3434 小类"
+                            )
+                        )
+                        .put(
+                            "cert",
+                            str(
+                                if (en) "Certification name, e.g. High-tech Enterprise, ISO9001"
+                                else "认证名称，如 高新技术企业、ISO9001"
+                            )
+                        )
                         .put(
                             "manufacturer_only",
                             JSONObject().put("type", "boolean")
-                                .put("description", "是否只返回生产企业（排除批发贸易）")
+                                .put(
+                                    "description",
+                                    if (en) "Only manufacturers (exclude wholesale/trading)"
+                                    else "是否只返回生产企业（排除批发贸易）"
+                                )
                         )
                         .put(
                             "with_phone_only",
                             JSONObject().put("type", "boolean")
-                                .put("description", "是否只返回有联系电话的供应商")
+                                .put(
+                                    "description",
+                                    if (en) "Only suppliers with a contact phone"
+                                    else "是否只返回有联系电话的供应商"
+                                )
                         )
                         .put(
                             "limit",
                             JSONObject().put("type", "integer")
-                                .put("description", "返回条数上限，默认 10")
+                                .put(
+                                    "description",
+                                    if (en) "Max number of results, default 10"
+                                    else "返回条数上限，默认 10"
+                                )
                         ),
                 )
             )
             .put(
                 fn(
                     "get_supplier_detail",
-                    "取某家供应商的完整档案（地址、电话、官网、主营）。需要联网下载该行业分片；" +
-                        "离线时只返回索引层已有的摘要字段。",
-                    JSONObject().put("id", str("供应商 ID，形如 CN-MFG-0000593")),
+                    if (en) {
+                        "Fetch a supplier's full profile (address, phone, website, main business). " +
+                            "Requires downloading that industry shard; offline it only returns the " +
+                            "summary fields already in the index."
+                    } else {
+                        "取某家供应商的完整档案（地址、电话、官网、主营）。需要联网下载该行业分片；" +
+                            "离线时只返回索引层已有的摘要字段。"
+                    },
+                    JSONObject().put(
+                        "id",
+                        str(
+                            if (en) "Supplier ID, e.g. CN-MFG-0000593"
+                            else "供应商 ID，形如 CN-MFG-0000593"
+                        )
+                    ),
                     listOf("id")
                 )
             )
             .put(
                 fn(
                     "list_categories",
-                    "列出库里有货的国标行业小类（带家数）。当用户的需求词检索不到、" +
-                        "或需要判断该用哪个行业码时先调它。",
+                    if (en) {
+                        "List national-standard industry subclasses that actually have suppliers " +
+                            "(with counts). Call this first when the user's term returns nothing, " +
+                            "or when you need to decide which industry code to use."
+                    } else {
+                        "列出库里有货的国标行业小类（带家数）。当用户的需求词检索不到、" +
+                            "或需要判断该用哪个行业码时先调它。"
+                    },
                     JSONObject().put(
                         "parent",
-                        str("可选。门类 C / 大类 34 / 中类 343，或中文名子串如「模具」。留空返回最多的通用小类")
+                        str(
+                            if (en) {
+                                "Optional. Division C / group 34 / class 343, or a name substring. " +
+                                    "Leave empty for the largest generic subclasses"
+                            } else {
+                                "可选。门类 C / 大类 34 / 中类 343，或中文名子串如「模具」。留空返回最多的通用小类"
+                            }
+                        )
                     )
                 )
             )
@@ -119,6 +199,8 @@ class ToolBox(
     }
 
     private fun search(a: JSONObject): ToolResult {
+        val s = str()
+        val en = s.lang == Lang.EN
         val keyword = a.optString("keyword", "").ifBlank { null }
         val city = a.optString("city", "").ifBlank { null }
         val code = a.optString("industry_code", "").ifBlank { null }
@@ -137,56 +219,116 @@ class ToolBox(
         if (out.hits.isEmpty()) {
             if (out.relaxed > 0) {
                 return ToolResult(
-                    "当前条件下 0 家。放宽别名收敛可得 ${out.relaxed} 家，" +
-                        "但全部是按国标行业推断的（企业未确认）——" +
-                        "请如实告诉用户「没有一家被归类为该行业，只有行业推断的结果」，不要说成已有对口供应商。"
+                    if (en) {
+                        "0 suppliers under these conditions. Relaxing the alias convergence would " +
+                            "yield ${out.relaxed}, but all of them are industry inferences " +
+                            "(not confirmed by the companies) — tell the user plainly that no " +
+                            "company is classified under that industry, only inferred ones. " +
+                            "Do not present them as matching suppliers."
+                    } else {
+                        "当前条件下 0 家。放宽别名收敛可得 ${out.relaxed} 家，" +
+                            "但全部是按国标行业推断的（企业未确认）——" +
+                            "请如实告诉用户「没有一家被归类为该行业，只有行业推断的结果」，不要说成已有对口供应商。"
+                    }
                 )
             }
             return ToolResult(
-                "0 家。请换个说法或放宽地区/认证条件；也可先调 list_categories 看库里有哪些行业。"
+                if (en) {
+                    "0 suppliers. Try different wording, or relax the region/certification filters; " +
+                        "you can also call list_categories to see which industries exist."
+                } else {
+                    "0 家。请换个说法或放宽地区/认证条件；也可先调 list_categories 看库里有哪些行业。"
+                }
             )
         }
-        val head = "共 ${out.total} 家，返回前 ${out.hits.size} 家。" +
-            "构成：字面命中 ${out.literal} · 别名首位码 ${out.aliasPrimary} · 行业推断 ${out.aliasSecondary}。"
-        val lines = out.hits.map { engine.toBrief(it) }
-        val tail = "注意：标注「行业推断」的是按国标行业推断，企业未确认，" +
-            "不要说成「这家做 XX」，应说明是行业推断结果。"
+        val head = if (en) {
+            "Total ${out.total}, returning the first ${out.hits.size}. " +
+                "Breakdown: exact ${out.literal} · top alias class ${out.aliasPrimary} · " +
+                "industry inference ${out.aliasSecondary}."
+        } else {
+            "共 ${out.total} 家，返回前 ${out.hits.size} 家。" +
+                "构成：字面命中 ${out.literal} · 别名首位码 ${out.aliasPrimary} · 行业推断 ${out.aliasSecondary}。"
+        }
+        val lines = out.hits.map { engine.toBrief(it, s) }
+        val tail = if (en) {
+            "Note: anything marked industry inference is inferred from the industry code and " +
+                "not confirmed by the company — never say \"this company makes XX\"; state that " +
+                "it is an industry inference."
+        } else {
+            "注意：标注「行业推断」的是按国标行业推断，企业未确认，" +
+                "不要说成「这家做 XX」，应说明是行业推断结果。"
+        }
         return ToolResult((listOf(head) + lines + tail).joinToString("\n"), out.hits)
     }
 
     private suspend fun detail(a: JSONObject): ToolResult {
+        val s = str()
+        val en = s.lang == Lang.EN
         val id = a.optString("id", "").trim()
         val fp = engine.byId(id)
-            ?: return ToolResult("没有 ID 为 $id 的供应商。请先用 search_suppliers 找到 ID。")
+            ?: return ToolResult(
+                if (en) "No supplier with ID $id. Call search_suppliers first to get an ID."
+                else "没有 ID 为 $id 的供应商。请先用 search_suppliers 找到 ID。"
+            )
         val d = remote.fetchDetail(dataBase(), fp.gb, id)
         if (d == null) {
             return ToolResult(
-                "【离线，仅索引层摘要】$id | ${fp.name} | ${fp.city} | " +
-                    "${fp.gb} ${fp.gbName} | 电话=${if (fp.tel) "有" else "无"} | " +
-                    "灯牌=${fp.cl}。完整档案（地址/电话/官网）需要联网下载该行业分片。",
+                if (en) {
+                    "[Offline — index summary only] $id | ${fp.name} | ${fp.city} | " +
+                        "${fp.gb} ${fp.gbName} | phone=${if (fp.tel) "yes" else "no"} | " +
+                        "beacon=${fp.cl}. The full profile (address/phone/website) needs the " +
+                        "industry shard to be downloaded."
+                } else {
+                    "【离线，仅索引层摘要】$id | ${fp.name} | ${fp.city} | " +
+                        "${fp.gb} ${fp.gbName} | 电话=${if (fp.tel) "有" else "无"} | " +
+                        "灯牌=${fp.cl}。完整档案（地址/电话/官网）需要联网下载该行业分片。"
+                },
                 hits = listOf(Hit(fp, Evidence.LITERAL))
             )
         }
         val text = buildString {
-            append(d.company).append("（").append(d.province).append("·").append(d.city).append("）\n")
-            append("主营：").append(d.keywords.joinToString(" / ").ifEmpty { "未填写" }).append("\n")
-            if (d.gb.isNotEmpty()) append("行业：").append(d.gb).append(" ").append(d.gbName).append("\n")
-            if (d.gbPath.isNotEmpty()) append("路径：").append(d.gbPath).append("\n")
-            append("地址：").append(d.address.ifEmpty { "未填写" }).append("\n")
-            append("电话：").append(d.phone.ifEmpty { "未填写" }).append("\n")
-            if (d.website.isNotEmpty()) append("官网：").append(d.website).append("\n")
-            append("认证：").append(d.certs.joinToString("、").ifEmpty { "无" }).append("\n")
-            append("数据来源：公开渠道，核实于 ").append(d.verifiedAt.ifEmpty { "?" })
-            if (!d.isManufacturer) append("\n⚠ 批发/贸易类，非生产企业")
+            if (en) {
+                append(d.company).append(" (").append(d.province).append(" / ").append(d.city).append(")\n")
+                append("Main business: ").append(d.keywords.joinToString(" / ").ifEmpty { "not filled" }).append("\n")
+                if (d.gb.isNotEmpty()) append("Industry: ").append(d.gb).append(" ").append(d.gbName).append("\n")
+                if (d.gbPath.isNotEmpty()) append("Path: ").append(d.gbPath).append("\n")
+                append("Address: ").append(d.address.ifEmpty { "not filled" }).append("\n")
+                append("Phone: ").append(d.phone.ifEmpty { "not filled" }).append("\n")
+                if (d.website.isNotEmpty()) append("Website: ").append(d.website).append("\n")
+                append("Certifications: ").append(d.certs.joinToString(", ").ifEmpty { "none" }).append("\n")
+                append("Source: public channels, verified at ").append(d.verifiedAt.ifEmpty { "?" })
+                if (!d.isManufacturer) append("\n⚠ Wholesale/trading — not a manufacturer")
+            } else {
+                append(d.company).append("（").append(d.province).append("·").append(d.city).append("）\n")
+                append("主营：").append(d.keywords.joinToString(" / ").ifEmpty { "未填写" }).append("\n")
+                if (d.gb.isNotEmpty()) append("行业：").append(d.gb).append(" ").append(d.gbName).append("\n")
+                if (d.gbPath.isNotEmpty()) append("路径：").append(d.gbPath).append("\n")
+                append("地址：").append(d.address.ifEmpty { "未填写" }).append("\n")
+                append("电话：").append(d.phone.ifEmpty { "未填写" }).append("\n")
+                if (d.website.isNotEmpty()) append("官网：").append(d.website).append("\n")
+                append("认证：").append(d.certs.joinToString("、").ifEmpty { "无" }).append("\n")
+                append("数据来源：公开渠道，核实于 ").append(d.verifiedAt.ifEmpty { "?" })
+                if (!d.isManufacturer) append("\n⚠ 批发/贸易类，非生产企业")
+            }
         }
         return ToolResult(text, listOf(Hit(fp, Evidence.LITERAL)), d)
     }
 
     private fun categories(a: JSONObject): ToolResult {
+        val s = str()
+        val en = s.lang == Lang.EN
         val parent = a.optString("parent", "").ifBlank { null }
         val list = engine.categories(parent, 30)
-        if (list.isEmpty()) return ToolResult("没有匹配「${parent ?: ""}」的行业小类。")
-        val text = list.joinToString("\n") { "${it.code} ${it.name}（${it.count} 家）" }
-        return ToolResult("有货的国标小类（按家数降序）：\n$text")
+        if (list.isEmpty()) return ToolResult(
+            if (en) "No industry subclass matching \"${parent ?: ""}\"."
+            else "没有匹配「${parent ?: ""}」的行业小类。"
+        )
+        val text = list.joinToString("\n") {
+            if (en) "${it.code} ${it.name} (${it.count})" else "${it.code} ${it.name}（${it.count} 家）"
+        }
+        return ToolResult(
+            if (en) "Industry subclasses with suppliers (by count, desc):\n$text"
+            else "有货的国标小类（按家数降序）：\n$text"
+        )
     }
 }

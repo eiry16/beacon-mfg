@@ -1,9 +1,13 @@
 package cn.beaconmfg.app.ui
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -23,22 +27,34 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.platform.UriHandler
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cn.beaconmfg.app.MainViewModel
+import cn.beaconmfg.app.data.CapabilityCard
 import cn.beaconmfg.app.data.Evidence
 import cn.beaconmfg.app.data.Hit
 import cn.beaconmfg.app.data.SupplierDetail
+import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Strings
 
 @Composable
 fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
@@ -46,14 +62,14 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
     val busy by vm.busy.collectAsState()
     val status by vm.status.collectAsState()
     val settings by vm.settings.collectAsState()
+    val s = remember(settings.lang) { Strings(Lang.of(settings.lang)) }
     var input by remember { mutableStateOf("") }
 
-    val samples = listOf(
-        "上海有没有做输送线的厂",
-        "东莞做齿轮的小厂，要有电话",
-        "找宁波的压铸厂",
-        "304 不锈钢钣金加工，深圳",
-    )
+    // 能力卡展开状态按供应商 ID 存，不放在卡片内部——
+    // 卡片滑出列表再滑回来时 remember 会重置，用户刚点开的又缩回去了。
+    val capOpen = remember { mutableStateMapOf<String, Boolean>() }
+
+    val samples = s.samples()
 
     // imePadding：edge-to-edge 下系统不再替我们把内容顶上去，
     // 软键盘弹出时必须自己吃掉 IME 高度，否则输入框整条被键盘盖住。
@@ -86,7 +102,13 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             items(messages, key = { it.id }) { m ->
-                MessageRow(m, settings.capabilityBase) { h -> vm.capOf(h) }
+                MessageRow(
+                    m = m,
+                    s = s,
+                    skillBase = settings.capabilityBase,
+                    isOpen = { id -> capOpen[id] ?: m.autoOpenCap },
+                    onToggle = { id -> capOpen[id] = !(capOpen[id] ?: m.autoOpenCap) },
+                )
             }
         }
 
@@ -100,7 +122,7 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
             ) {
                 samples.take(2).forEach { q ->
                     Button(
-                        onClick = { input = q; vm.send(q) },
+                        onClick = { input = ""; vm.send(q) },
                         modifier = Modifier.weight(1f),
                     ) { Text(q, maxLines = 1, fontSize = 11.sp) }
                 }
@@ -117,14 +139,14 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                 value = input,
                 onValueChange = { input = it },
                 modifier = Modifier.weight(1f),
-                placeholder = { Text("想找什么供应商？") },
+                placeholder = { Text(s.inputHint) },
                 maxLines = 3,
             )
             Button(
                 onClick = { vm.send(input); input = "" },
                 modifier = Modifier.padding(start = 8.dp),
                 enabled = !busy,
-            ) { Text("发送") }
+            ) { Text(s.send) }
         }
     }
 }
@@ -132,8 +154,10 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
 @Composable
 private fun MessageRow(
     m: MainViewModel.UiMessage,
-    skillBase: String = "",
-    capOf: (Hit) -> cn.beaconmfg.app.data.CapabilityCard? = { null },
+    s: Strings,
+    skillBase: String,
+    isOpen: (String) -> Boolean,
+    onToggle: (String) -> Unit,
 ) {
     val isUser = m.role == MainViewModel.Role.USER
     Box(
@@ -141,21 +165,14 @@ private fun MessageRow(
         contentAlignment = if (isUser) Alignment.CenterEnd else Alignment.CenterStart,
     ) {
         when {
-            m.role == MainViewModel.Role.SYSTEM && m.text.startsWith("调用 ") -> {
-                // 工具调用回显：折叠成一行，点开看完整返回没必要，UI 只给结论
-                Surface(
-                    color = MaterialTheme.colorScheme.surfaceVariant,
-                    shape = RoundedCornerShape(8.dp),
-                    modifier = Modifier.fillMaxWidth(0.95f),
-                ) {
-                    Column(Modifier.padding(8.dp)) {
-                        Text(m.text, style = MaterialTheme.typography.bodySmall)
-                        if (m.hits.isNotEmpty()) Column {
-                            m.hits.forEach { SupplierCard(it, capOf(it), skillBase) }
-                        }
-                        m.detail?.let { DetailCard(it, skillBase) }
-                    }
-                }
+            // 工具回显：**只显示一行状态**。
+            // 卡片曾经在这里和最终回答各渲染一遍 → 同一次搜索出现两轮一模一样的灯牌。
+            m.isTool -> Surface(
+                color = MaterialTheme.colorScheme.surfaceVariant,
+                shape = RoundedCornerShape(8.dp),
+                modifier = Modifier.fillMaxWidth(0.95f),
+            ) {
+                Text(m.text, style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(8.dp))
             }
 
             else -> Surface(
@@ -177,20 +194,84 @@ private fun MessageRow(
                         )
                     }
                     if (m.hits.isNotEmpty()) Column(Modifier.padding(top = 6.dp)) {
-                        m.hits.forEach { SupplierCard(it, capOf(it), skillBase) }
+                        if (m.fallback) {
+                            Text(
+                                s.localFallback,
+                                style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.padding(bottom = 2.dp),
+                            )
+                        }
+                        m.hits.forEach { h ->
+                            SupplierCard(
+                                h = h,
+                                cap = m.caps[h.fp.id],
+                                s = s,
+                                skillBase = skillBase,
+                                open = isOpen(h.fp.id),
+                                onToggle = { onToggle(h.fp.id) },
+                            )
+                        }
                     }
-                    m.detail?.let { DetailCard(it, skillBase) }
+                    m.detail?.let { d ->
+                        DetailCard(d, s, skillBase, m.caps[d.id] ?: d.cap)
+                    }
                 }
             }
         }
     }
 }
 
+/**
+ * 拨号意图。**用 ACTION_DIAL 不是 ACTION_CALL**——
+ * 只把号码预填进拨号盘，由用户自己按拨出键。
+ * 直接呼出既不合规（会静默产生通话），也需要 CALL_PHONE 权限；DIAL 两者都不需要。
+ */
+private fun dialIntent(raw: String): Intent? {
+    // 源数据里一条记录可能带多个号（; ， 、 / 分隔），取第一个可用的
+    val first = raw.split(';', '；', '，', ',', '、', '/', ' ')
+        .firstOrNull { it.isNotBlank() }
+        ?.trim()
+        .orEmpty()
+    val digits = first.filter { it.isDigit() || it == '+' }
+    // 少于 7 位不可能是有效电话——不跳拨号盘，免得点一下什么也没发生
+    if (digits.length < 7) return null
+    return Intent(Intent.ACTION_DIAL, Uri.parse("tel:$digits"))
+        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+}
+
+/** 可点击的电话行：点一下带着号码进拨号盘。号码缺失/待核实时不可点，也不假装有号。 */
+@Composable
+private fun PhoneLine(text: String, rawNumber: String, s: Strings) {
+    val ctx = LocalContext.current
+    Text(
+        buildAnnotatedString {
+            withStyle(
+                SpanStyle(
+                    color = MaterialTheme.colorScheme.primary,
+                    fontWeight = FontWeight.SemiBold,
+                    textDecoration = TextDecoration.Underline,
+                )
+            ) { append(text) }
+        },
+        style = MaterialTheme.typography.bodySmall,
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable {
+                dialIntent(rawNumber)?.let { runCatching { ctx.startActivity(it) } }
+            }
+            .padding(vertical = 2.dp),
+    )
+}
+
 @Composable
 fun SupplierCard(
     h: Hit,
-    cap: cn.beaconmfg.app.data.CapabilityCard? = null,
-    skillBase: String = "",
+    cap: CapabilityCard?,
+    s: Strings,
+    skillBase: String,
+    open: Boolean,
+    onToggle: () -> Unit,
 ) {
     Card(
         modifier = Modifier
@@ -208,50 +289,80 @@ fun SupplierCard(
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.weight(1f),
                 )
-                EvidenceTag(h.evidence)
+                EvidenceTag(h.evidence, s)
             }
             Text(
                 listOf(
-                    h.fp.city.ifEmpty { "城市未知" },
+                    h.fp.city.ifEmpty { s.cityUnknown },
                     if (h.fp.gb.isNotEmpty()) "${h.fp.gb} ${h.fp.gbName}" else "",
-                    "灯牌 ${h.fp.cl}",
-                ).filter { it.isNotEmpty() }.joinToString(" · "),
+                    s.beacon(h.fp.cl),
+                ).filter { it.isNotEmpty() }.joinToString(s.dotSep),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             // 电话单独一行：有号码就直给（采购最关心的就是这个），
             // 取不到就如实说「待核实」，绝不拿占位值或猜的号充数。
-            Text(
-                when {
-                    h.fp.phone.isNotEmpty() -> "☎ ${h.fp.phone}"
-                    h.fp.tel -> "☎ 有电话，但源数据为「待核实」，号码未收录"
-                    else -> "☎ 未收录电话"
-                },
-                style = MaterialTheme.typography.bodySmall,
-                fontWeight = if (h.fp.phone.isNotEmpty()) FontWeight.SemiBold else FontWeight.Normal,
-                color = if (h.fp.phone.isNotEmpty()) MaterialTheme.colorScheme.primary
-                else MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-            if (h.fp.cert.isNotEmpty()) {
+            // 有号就整行可点：点进去是预填好的拨号盘，**不自动呼出**。
+            if (h.fp.phone.isNotEmpty()) {
+                PhoneLine(s.phone(h.fp.phone), h.fp.phone, s)
+            } else {
                 Text(
-                    "认证：" + h.fp.cert.joinToString("、"),
-                    style = MaterialTheme.typography.bodySmall,
-                )
-            }
-            // 工艺位：搜索结果里直接给。采购扫一眼就知道这家能做什么，
-            // 不用等模型再调一次 get_supplier_detail——「减少使用负荷」的硬要求。
-            // 没有 L1 卡就不显示（不编造工艺，不显示「暂无」噪音）。
-            cap?.takeIf { it.processes.isNotEmpty() }?.let { c ->
-                val names = c.processes
-                    .sortedBy { if (it.level == "primary") 0 else 1 }
-                    .map { it.name }
-                Text(
-                    "工艺：" + names.take(4).joinToString("、") +
-                        (if (names.size > 4) " 等 ${names.size} 项" else ""),
+                    if (h.fp.tel) s.phonePending else s.phoneNone,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
+            if (h.fp.cert.isNotEmpty()) {
+                Text(
+                    s.certLabel + h.fp.cert.joinToString(s.sep),
+                    style = MaterialTheme.typography.bodySmall,
+                )
+            }
+            // 折叠态给一行工艺摘要，采购扫一眼就知道这家能做什么，
+            // 不用等模型再调一次 get_supplier_detail——「减少使用负荷」的硬要求。
+            // 展开后由 CapabilityBlock 给完整 chips，这里就不再重复。
+            if (cap != null && !open && cap.processes.isNotEmpty()) {
+                val names = cap.processes
+                    .sortedBy { if (it.level == "primary") 0 else 1 }
+                    .map { it.name }
+                Text(
+                    s.procLabel + names.take(4).joinToString(s.sep) +
+                        (if (names.size > 4) s.procMore(names.size) else ""),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+
+            // 能力卡入口：以前只有模型主动调 get_supplier_detail 才看得到，
+            // 触发条件太苛刻。这里每家都给「打开」按钮，一点即展。
+            if (cap != null) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(top = 2.dp),
+                ) {
+                    Text(
+                        if (cap.processes.isEmpty()) s.capEmpty else s.capCount(cap.processes.size),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.weight(1f),
+                    )
+                    TextButton(onClick = onToggle) {
+                        Text(if (open) s.capHide else s.capOpen)
+                    }
+                }
+                if (open) {
+                    val uriHandler = LocalUriHandler.current
+                    CapabilityBlock(cap, s, skillBase, uriHandler)
+                }
+            } else {
+                Text(
+                    s.capNoCard,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 2.dp),
+                )
+            }
+
             Text(
                 h.fp.id,
                 style = MaterialTheme.typography.labelSmall,
@@ -262,7 +373,7 @@ fun SupplierCard(
 }
 
 @Composable
-private fun EvidenceTag(e: Evidence) {
+private fun EvidenceTag(e: Evidence, s: Strings) {
     val (bg, fg) = when (e) {
         Evidence.LITERAL -> Color(0xFF1B5E20) to Color.White
         Evidence.ALIAS_PRIMARY -> Color(0xFF0D47A1) to Color.White
@@ -270,7 +381,7 @@ private fun EvidenceTag(e: Evidence) {
     }
     Surface(color = bg, shape = RoundedCornerShape(6.dp)) {
         Text(
-            e.label,
+            e.label(s),
             color = fg,
             fontSize = 10.sp,
             modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
@@ -280,10 +391,11 @@ private fun EvidenceTag(e: Evidence) {
 
 @Composable
 private fun DetailCard(
-    d: cn.beaconmfg.app.data.SupplierDetail,
-    skillBase: String = "",
+    d: SupplierDetail,
+    s: Strings,
+    skillBase: String,
+    cap: CapabilityCard?,
 ) {
-    val uriHandler = androidx.compose.ui.platform.LocalUriHandler.current
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -295,20 +407,27 @@ private fun DetailCard(
         Column(Modifier.padding(10.dp)) {
             Text(d.company, fontWeight = FontWeight.Bold)
             Text(
-                "${d.province}·${d.city}  ${d.address}",
+                "${d.province}${s.dotSep}${d.city}  ${d.address}",
                 style = MaterialTheme.typography.bodySmall,
             )
-            if (d.phone.isNotEmpty()) Text("电话：${d.phone}", style = MaterialTheme.typography.bodySmall)
-            if (d.website.isNotEmpty()) Text("官网：${d.website}", style = MaterialTheme.typography.bodySmall)
-            if (d.certs.isNotEmpty()) {
-                Text("认证：" + d.certs.joinToString("、"), style = MaterialTheme.typography.bodySmall)
+            if (d.phone.isNotEmpty()) {
+                PhoneLine(s.detailPhone + d.phone, d.phone, s)
             }
-            d.cap?.let { CapabilityBlock(it, skillBase, uriHandler) }
-                ?: Text(
-                    "能力卡：暂无（23698 家里只有 4136 家进了 L1 层）",
+            if (d.website.isNotEmpty()) {
+                Text(s.detailSite + d.website, style = MaterialTheme.typography.bodySmall)
+            }
+            if (d.certs.isNotEmpty()) {
+                Text(s.detailCerts + d.certs.joinToString(s.sep), style = MaterialTheme.typography.bodySmall)
+            }
+            if (cap != null) {
+                CapabilityBlock(cap, s, skillBase, LocalUriHandler.current)
+            } else {
+                Text(
+                    s.capNoneInDetail,
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
+            }
         }
     }
 }
@@ -324,46 +443,46 @@ private fun DetailCard(
  */
 @Composable
 private fun CapabilityBlock(
-    cap: cn.beaconmfg.app.data.CapabilityCard,
+    cap: CapabilityCard,
+    s: Strings,
     skillBase: String,
-    uriHandler: androidx.compose.ui.platform.UriHandler,
+    uriHandler: UriHandler,
 ) {
     Column(Modifier.padding(top = 6.dp)) {
         Text(
-            if (cap.isSelfReported) "能力卡 · 厂商自述"
-            else "能力卡 · 平台自动整理（工艺由企业名称推断，未获企业确认）",
+            if (cap.isSelfReported) s.capSelf else s.capAuto,
             style = MaterialTheme.typography.labelSmall,
             color = if (cap.isSelfReported) MaterialTheme.colorScheme.primary
             else MaterialTheme.colorScheme.onSurfaceVariant,
         )
 
         if (cap.processes.isNotEmpty()) {
-            androidx.compose.foundation.layout.FlowRow(
+            FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(4.dp),
                 modifier = Modifier.padding(top = 4.dp),
             ) {
-                cap.processes.forEach { ProcChip(it) }
+                cap.processes.forEach { ProcChip(it, s) }
             }
         }
 
         if (cap.materials.isNotEmpty()) {
             Text(
-                "材料：" + cap.materials.joinToString("、"),
+                s.matLabel + cap.materials.joinToString(s.sep),
                 style = MaterialTheme.typography.bodySmall,
                 modifier = Modifier.padding(top = 2.dp),
             )
         }
 
-        val lims = cap.limitLines()
+        val lims = cap.limitLines(s)
         if (lims.isNotEmpty()) {
             Text(
-                "硬指标：" + lims.joinToString(" · "),
+                s.limLabel + lims.joinToString(s.dotSep),
                 style = MaterialTheme.typography.bodySmall,
                 modifier = Modifier.padding(top = 2.dp),
             )
         } else {
             Text(
-                "硬指标：未填报（留空，不填 0）",
+                s.limLabel + s.limEmpty,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 2.dp),
@@ -378,16 +497,18 @@ private fun CapabilityBlock(
                 modifier = Modifier.padding(top = 4.dp),
             ) {
                 Text(
-                    "厂商 Skill：${cap.skillPath.substringAfterLast('/').removeSuffix(".md")}" +
-                        if (cap.skillVerified) " · 已核实" else " · 未核实",
+                    s.skillLabel + cap.skillPath.substringAfterLast('/').removeSuffix(".md") +
+                        s.dotSep + (if (cap.skillVerified) s.verified else s.unverified),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.weight(1f),
                 )
                 if (skillBase.isNotBlank()) {
-                    Button(onClick = { uriHandler.openUri(skillBase.trimEnd('/') + "/" + cap.skillPath) }) {
-                        Text("打开")
-                    }
+                    Button(
+                        onClick = {
+                            uriHandler.openUri(skillBase.trimEnd('/') + "/" + cap.skillPath)
+                        }
+                    ) { Text(s.openSkill) }
                 }
             }
         }
@@ -395,15 +516,16 @@ private fun CapabilityBlock(
 }
 
 @Composable
-private fun ProcChip(p: cn.beaconmfg.app.data.ProcItem) {
+private fun ProcChip(p: cn.beaconmfg.app.data.ProcItem, s: Strings) {
     val primary = p.level == "primary"
+    val label = p.levelLabel(s)
     Surface(
         color = if (primary) MaterialTheme.colorScheme.primaryContainer
         else MaterialTheme.colorScheme.surfaceVariant,
         shape = RoundedCornerShape(6.dp),
     ) {
         Text(
-            p.name.ifEmpty { p.code } + (p.levelLabel.takeIf { it.isNotEmpty() }?.let { "·$it" } ?: ""),
+            p.name.ifEmpty { p.code } + (label.takeIf { it.isNotEmpty() }?.let { s.dotSep + it } ?: ""),
             fontSize = 11.sp,
             fontWeight = if (primary) FontWeight.SemiBold else FontWeight.Normal,
             modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),

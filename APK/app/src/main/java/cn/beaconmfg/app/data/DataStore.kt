@@ -1,6 +1,7 @@
 package cn.beaconmfg.app.data
 
 import android.app.Application
+import cn.beaconmfg.app.i18n.Strings
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
@@ -42,13 +43,17 @@ class DataStore(private val app: Application) {
         null
     }
 
-    fun builtinAt(): String = builtinMeta.optString("builtin_at", "未知")
+    fun builtinAt(s: Strings): String {
+        val v = builtinMeta.optString("builtin_at", "")
+        return if (v.isEmpty()) s.unknown else v
+    }
 
-    fun builtinFingerprintSummary(): String {
+    fun builtinFingerprintSummary(s: Strings): String {
         val fp = builtinMeta.optJSONObject("fingerprint")
-            ?: return "内置指纹：未知（跑 APK/tools/sync_assets.py 生成）"
-        return "内置指纹 %d 片 / %.2f MB".format(
-            fp.optInt("shards", 0), fp.optLong("bytes", 0) / 1048576.0
+            ?: return s.builtinFpUnknown
+        return s.builtinFp(
+            fp.optInt("shards", 0),
+            "%.2f".format(fp.optLong("bytes", 0) / 1048576.0)
         )
     }
 
@@ -80,7 +85,7 @@ class DataStore(private val app: Application) {
     /** 取号码。取不到返回空串——源数据是「待核实」占位值时就是这样，不猜号。 */
     fun phoneOf(id: String): String = phones()[id].orEmpty()
 
-    fun phoneIndexSummary(): String = "号码索引 ${phones().size} 家（其余源数据为占位值，留空）"
+    fun phoneIndexSummary(s: Strings): String = s.phoneIndexMsg(phones().size)
 
     /** 已装号码索引的内容 SHA1，用于和 manifest 的 h 比对该不该重下。 */
     fun localPhoneSha(): String? = prefs.getString("phone_sha", null)
@@ -153,7 +158,7 @@ class DataStore(private val app: Application) {
     fun manifestEtag(): String? = prefs.getString("manifest_etag", null)
     fun setManifestEtag(v: String?) = prefs.edit().putString("manifest_etag", v).apply()
 
-    fun lastUpdateCheck(): String = prefs.getString("last_check", "从未") ?: "从未"
+    fun lastUpdateCheck(s: Strings): String = prefs.getString("last_check", null) ?: s.never
     fun setLastUpdateCheck(v: String) = prefs.edit().putString("last_check", v).apply()
 
     // ── 指纹装载 ────────────────────────────────────────────────────────────

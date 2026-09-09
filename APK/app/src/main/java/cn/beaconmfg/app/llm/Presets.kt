@@ -1,5 +1,7 @@
 package cn.beaconmfg.app.llm
 
+import cn.beaconmfg.app.i18n.Lang
+
 /** 支持的服务商预设。全部是 OpenAI 兼容的 /chat/completions 端点，key 由用户自己填。 */
 enum class Preset(
     val id: String,
@@ -32,6 +34,14 @@ enum class Preset(
 
     companion object {
         fun of(id: String): Preset = entries.firstOrNull { it.id == id } ?: DEEPSEEK
+    }
+
+    /** 品牌名本身不翻译，只把中文括注换掉。 */
+    fun label(lang: Lang): String = when (this) {
+        QWEN -> if (lang == Lang.EN) "Qwen (Alibaba Bailian)" else label
+        ZHIPU -> if (lang == Lang.EN) "Zhipu GLM" else label
+        CUSTOM -> if (lang == Lang.EN) "Custom (OpenAI-compatible)" else label
+        else -> label
     }
 }
 

@@ -27,6 +27,12 @@ data class AppSettings(
      */
     val capabilityBase: String = "https://beacon-mfg.pages.dev/",
     val autoUpdate: Boolean = true,
+    /**
+     * 界面/对话语言。存 code 字符串（"zh"/"en"，见 i18n.Lang），不存序号。
+     * 切这个会同时换：UI 文案、给模型的系统提示词、工具回显与回灌给模型的标签。
+     * 不变的是数据本身——公司名/地址/工艺名来自企业公开资料，翻译即编造。
+     */
+    val lang: String = "zh",
 )
 
 /**
@@ -71,6 +77,7 @@ class SettingsRepo(context: Context) {
             capabilityBase = p.getString("capability_base", AppSettings().capabilityBase)
                 ?: AppSettings().capabilityBase,
             autoUpdate = p.getBoolean("auto_update", true),
+            lang = p.getString("lang", "zh") ?: "zh",
         )
     }
 
@@ -83,6 +90,7 @@ class SettingsRepo(context: Context) {
             .putString("data_base", s.dataBase.trim())
             .putString("capability_base", s.capabilityBase.trim())
             .putBoolean("auto_update", s.autoUpdate)
+            .putString("lang", s.lang)
             .apply()
     }
 

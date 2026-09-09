@@ -19,13 +19,14 @@ object GbIndex {
     private val paths = HashMap<String, String>()
     private val categories = ArrayList<Category>()
     private var loaded = false
-    private var summary = ""
+    /** 只存时间戳，文案在 summary() 里按当前语言拼——切语言时不用重新 load 索引。 */
+    private var generatedAt = ""
 
     fun load(json: JSONObject) {
         if (loaded) return
         val tree = json.optJSONObject("tree") ?: return
         val meta = json.optJSONObject("metadata")
-        summary = meta?.optString("generated_at")?.let { "索引生成于 $it" } ?: ""
+        generatedAt = meta?.optString("generated_at").orEmpty()
 
         val gates = tree.keys()
         while (gates.hasNext()) {
@@ -72,7 +73,8 @@ object GbIndex {
     fun supplyOf(code: String): Int = supply[code] ?: 0
 
     fun isLoaded(): Boolean = loaded
-    fun summary(): String = summary
+    fun summary(s: cn.beaconmfg.app.i18n.Strings): String =
+        if (generatedAt.isEmpty()) s.gbIndexNoMeta else s.gbIndexGeneratedAt(generatedAt)
 
     /**
      * 列出有货的小类。parent 可以是门类（C）、大类（34）、中类（343）或空（全部）。

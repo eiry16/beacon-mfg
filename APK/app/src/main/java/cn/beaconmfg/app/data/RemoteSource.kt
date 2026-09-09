@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import java.util.concurrent.TimeUnit
+import cn.beaconmfg.app.i18n.Strings
 import javax.net.ssl.SSLException
 
 /**
@@ -66,11 +67,11 @@ class RemoteSource(private val store: DataStore) {
 
     private fun hostOf(root: String): String = runCatching { URI(root).host ?: root }.getOrDefault(root)
 
-    private fun friendly(e: Throwable): String = when (e) {
-        is SocketTimeoutException -> "连接超时"
-        is UnknownHostException -> "域名解析失败"
-        is ConnectException -> "连接被拒绝"
-        is SSLException -> "TLS 握手失败"
+    private fun friendly(e: Throwable, s: Strings): String = when (e) {
+        is SocketTimeoutException -> s.connTimeout
+        is UnknownHostException -> s.dnsFail
+        is ConnectException -> s.connRefused
+        is SSLException -> s.tlsFail
         else -> e.message?.take(60)?.ifEmpty { null } ?: e.javaClass.simpleName
     }
 
@@ -82,33 +83,34 @@ class RemoteSource(private val store: DataStore) {
      */
     suspend fun updateFingerprints(
         base: String,
+        s: Strings,
         onProgress: (String) -> Unit = {},
     ): UpdateResult = withContext(Dispatchers.IO) {
         val roots = candidates(base)
         val errors = ArrayList<String>()
 
         roots.forEachIndexed { i, root ->
-            if (i > 0) onProgress("主源不通，换备用源 ${hostOf(root)}…")
-            val r = runCatching { trySource(root, onProgress) }
+            if (i > 0) onProgress(s.switchMirror(hostOf(root)))
+            val r = runCatching { trySource(root, s, onProgress) }
                 .getOrElse { e ->
-                    errors += "${hostOf(root)}（${friendly(e)}）"
+                    errors += "${hostOf(root)}（${friendly(e, s)}）"
                     null
                 }
             if (r != null) return@withContext r
         }
 
-        UpdateResult(
-            false,
-            message = "${roots.size} 个数据源均不可达：${errors.joinToString("、")}。" +
-                "内置数据不受影响，可继续离线检索。"
-        )
+        UpdateResult(false, message = s.allSourcesDown(roots.size, errors.joinToString("、")))
     }
 
     /**
      * 单个源的完整更新流程。
      * 抛异常 = 这个源不通（换下一个）；正常返回 = 源可用（含 HTTP 304 无需更新）。
      */
-    private suspend fun trySource(root: String, onProgress: (String) -> Unit): UpdateResult {
+    private suspend fun trySource(
+        root: String,
+        st: Strings,
+        onProgress: (String) -> Unit,
+    ): UpdateResult {
         val req = Request.Builder()
             .url("${root}data/manifest.json")
             .apply { store.manifestEtag()?.let { header("If-None-Match", it) } }
@@ -117,7 +119,7 @@ class RemoteSource(private val store: DataStore) {
         http.newCall(req).execute().use { resp ->
             if (resp.code == 304) {
                 store.setLastUpdateCheck(now())
-                return UpdateResult(true, message = "manifest 未变更，无需下载")
+                return UpdateResult(true, message = st.manifestUnchanged)
             }
             if (!resp.isSuccessful) throw IOException("manifest HTTP ${resp.code}")
 
@@ -143,7 +145,7 @@ class RemoteSource(private val store: DataStore) {
             var failed = 0
             var bytes = 0L
             fps.forEachIndexed { idx, (rel, url, sha) ->
-                onProgress("下载分片 ${idx + 1}/${fps.size}：$rel")
+                onProgress(st.downloadingShard(idx + 1, fps.size, rel))
                 try {
                     val r = Request.Builder().url(url).build()
                     http.newCall(r).execute().use { rr ->
@@ -171,7 +173,7 @@ class RemoteSource(private val store: DataStore) {
                     if (s.safeString("t") != "phone") continue
                     val sha = s.safeString("h")
                     if (sha.isEmpty() || sha == store.localPhoneSha()) break
-                    onProgress("更新号码索引…")
+                    onProgress(st.updatingPhoneIndex)
                     val pr = Request.Builder().url(root + s.safeString("p")).build()
                     http.newCall(pr).execute().use { rr ->
                         if (!rr.isSuccessful) return@use
@@ -186,9 +188,9 @@ class RemoteSource(private val store: DataStore) {
             return UpdateResult(
                 true, checked = fps.size, downloaded = downloaded,
                 failed = failed, bytes = bytes,
-                message = if (downloaded == 0 && failed == 0) "已是最新（${hostOf(root)}）"
-                else "更新 $downloaded 片（${bytes / 1024} KB）" +
-                    if (failed > 0) "，失败 $failed 片" else ""
+                message = if (downloaded == 0 && failed == 0) st.alreadyLatest(hostOf(root))
+                else st.updatedShardsMsg(downloaded, bytes / 1024) +
+                    if (failed > 0) st.updatedShardsFailed(failed) else ""
             )
         }
     }
@@ -271,16 +273,16 @@ class RemoteSource(private val store: DataStore) {
     }
 
     /** 连通性自检：逐个候选源打一次 HEAD，让用户看到哪个源能用。 */
-    suspend fun ping(base: String): String = withContext(Dispatchers.IO) {
+    suspend fun ping(base: String, s: Strings): String = withContext(Dispatchers.IO) {
         candidates(base).joinToString("\n") { root ->
             val t0 = System.currentTimeMillis()
             try {
                 val req = Request.Builder().url("${root}data/manifest.json").head().build()
                 http.newCall(req).execute().use {
-                    "✓ ${hostOf(root)}：HTTP ${it.code}（${System.currentTimeMillis() - t0}ms）"
+                    s.pingOk(hostOf(root), it.code, System.currentTimeMillis() - t0)
                 }
             } catch (e: Exception) {
-                "✗ ${hostOf(root)}：${friendly(e)}"
+                s.pingFail(hostOf(root), friendly(e, s))
             }
         }
     }

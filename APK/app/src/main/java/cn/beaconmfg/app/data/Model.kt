@@ -9,14 +9,18 @@ package cn.beaconmfg.app.data
  *
  * 三档与 scripts/query.py 的 _alias_rank 一一对应，不要各改各的。
  */
-enum class Evidence(val code: Int, val label: String, val hint: String) {
-    LITERAL(0, "字面命中", "企业自己写了这个词"),
-    ALIAS_PRIMARY(1, "别名首位码", "按国标小类匹配，语义最贴近"),
-    ALIAS_SECONDARY(2, "行业推断", "按国标行业推断，企业未确认");
+enum class Evidence(val code: Int) {
+    LITERAL(0),
+    ALIAS_PRIMARY(1),
+    ALIAS_SECONDARY(2);
 
     companion object {
         fun of(code: Int): Evidence = entries.firstOrNull { it.code == code } ?: ALIAS_SECONDARY
     }
+
+    /** 档位名的文案放在 Strings 里（zh/en 两套），这里不硬编码。 */
+    fun label(s: cn.beaconmfg.app.i18n.Strings): String = s.evidenceLabel(code)
+    fun hint(s: cn.beaconmfg.app.i18n.Strings): String = s.evidenceHint(code)
 }
 
 /** L0 指纹层的一条记录。字段刻意用短键，这一层要被全量装载进内存。 */
@@ -81,13 +85,8 @@ data class ProcItem(
     val name: String,
     val level: String,
 ) {
-    val levelLabel: String
-        get() = when (level) {
-            "primary" -> "主营"
-            "secondary" -> "兼营"
-            "outsourced" -> "外协"
-            else -> ""
-        }
+    /** 主营/兼营/外协 → 随界面语言切换。不显示的话客户会把「外协」当成自家产能。 */
+    fun levelLabel(s: cn.beaconmfg.app.i18n.Strings): String = s.levelLabel(level)
 }
 
 /**
@@ -121,15 +120,15 @@ data class CapabilityCard(
 ) {
     val isSelfReported: Boolean get() = provenance == "vendor_claimed"
 
-    /** 把硬指标翻成中文行。没填的键不出现，不编造。 */
-    fun limitLines(): List<String> {
+    /** 把硬指标翻成展示行。没填的键不出现，不编造。文案随界面语言切换。 */
+    fun limitLines(s: cn.beaconmfg.app.i18n.Strings): List<String> {
         val out = ArrayList<String>()
-        limits["tol"]?.let { out.add("公差 ±${it}mm") }
-        limits["size"]?.let { out.add("最大件 ${it}") }
-        limits["moq"]?.let { out.add("起订 ${it}") }
-        limits["lt"]?.let { out.add("交期 ${it}") }
-        limits["load"]?.let { out.add("当前负荷 ${it}%") }
-        if (limits["rush"] == "true") out.add("可接急单")
+        limits["tol"]?.let { out.add(s.limitTol(it)) }
+        limits["size"]?.let { out.add(s.limitSize(it)) }
+        limits["moq"]?.let { out.add(s.limitMoq(it)) }
+        limits["lt"]?.let { out.add(s.limitLt(it)) }
+        limits["load"]?.let { out.add(s.limitLoad(it)) }
+        if (limits["rush"] == "true") out.add(s.limitRush)
         return out
     }
 }

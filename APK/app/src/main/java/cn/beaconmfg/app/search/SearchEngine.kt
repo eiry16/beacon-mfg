@@ -7,6 +7,7 @@ import cn.beaconmfg.app.data.GbIndex
 import cn.beaconmfg.app.data.Hit
 import cn.beaconmfg.app.data.SearchOutcome
 import cn.beaconmfg.app.data.SearchParams
+import cn.beaconmfg.app.i18n.Strings
 
 /**
  * 检索内核 —— scripts/query.py:search 的 Kotlin 移植。
@@ -92,25 +93,29 @@ class SearchEngine(
     fun categories(parent: String?, limit: Int): List<GbIndex.Category> =
         GbIndex.categories(parent, limit)
 
-    /** 给 LLM 回灌的精简字段。字段刻意少——传多了费 token，也更容易被模型添油加醋。 */
-    fun toBrief(h: Hit): String {
+    /**
+     * 给 LLM 回灌的精简字段。字段刻意少——传多了费 token，也更容易被模型添油加醋。
+     * 标签随界面语言走：英文模式下模型拿到英文标签，才会用英文组织回答。
+     */
+    fun toBrief(h: Hit, s: Strings): String {
         val fp = h.fp
         return buildString {
             append(fp.id).append(" | ").append(fp.name)
-            append(" | ").append(fp.city.ifEmpty { "城市未知" })
+            append(" | ").append(fp.city.ifEmpty { s.cityUnknown })
             if (fp.gb.isNotEmpty()) append(" | ").append(fp.gb).append(" ").append(GbIndex.nameOf(fp.gb))
-            append(" | 证据=").append(h.evidence.label)
-            if (fp.cert.isNotEmpty()) append(" | 认证=").append(fp.cert.joinToString("、"))
+            append(" | ").append(s.briefEvidence).append("=").append(h.evidence.label(s))
+            if (fp.cert.isNotEmpty()) append(" | ").append(s.briefCert).append("=")
+                .append(fp.cert.joinToString(s.sep))
             // 有号码就回灌给模型，省掉一轮 get_supplier_detail；
             // 号码是「待核实」占位值时如实标注，模型不许自己编一个。
-            append(" | 电话=").append(
+            append(" | ").append(s.briefPhone).append("=").append(
                 when {
                     fp.phone.isNotEmpty() -> fp.phone
-                    fp.tel -> "有（号码待核实）"
-                    else -> "无"
+                    fp.tel -> s.phoneOnFile
+                    else -> s.phoneNo
                 }
             )
-            append(" | 灯牌=").append(fp.cl)
+            append(" | ").append(s.beacon(fp.cl))
         }
     }
 }

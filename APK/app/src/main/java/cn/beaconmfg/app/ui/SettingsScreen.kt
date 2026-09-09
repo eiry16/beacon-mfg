@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -25,6 +26,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import cn.beaconmfg.app.MainViewModel
+import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Strings
 import cn.beaconmfg.app.llm.Preset
 
 @Composable
@@ -32,6 +35,7 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
     val s by vm.settings.collectAsState()
     val dataInfo by vm.dataInfo.collectAsState()
     val status by vm.status.collectAsState()
+    val st = remember(s.lang) { Strings(Lang.of(s.lang)) }
 
     var baseUrl by remember(s.baseUrl) { mutableStateOf(s.baseUrl) }
     var model by remember(s.model) { mutableStateOf(s.model) }
@@ -48,15 +52,44 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
             .verticalScroll(rememberScrollState())
             .padding(12.dp)
     ) {
-        Text("模型服务商（BYOK）", style = MaterialTheme.typography.titleMedium)
+        // ── 语言 ────────────────────────────────────────────────────────────
+        // 放最上面：主人看得见才切得动，埋在底部等于没有。
+        Text(st.secLanguage, style = MaterialTheme.typography.titleMedium)
+        Row(Modifier.fillMaxWidth().padding(top = 6.dp)) {
+            Lang.entries.forEach { l ->
+                val selected = Lang.of(s.lang) == l
+                Button(
+                    onClick = { vm.updateSettings(s.copy(lang = l.code)) },
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(end = if (l == Lang.entries.first()) 6.dp else 0.dp),
+                    colors = if (selected) {
+                        ButtonDefaults.buttonColors()
+                    } else {
+                        ButtonDefaults.outlinedButtonColors()
+                    },
+                ) { Text(l.label) }
+            }
+        }
         Text(
-            "key 只保存在本机 Keystore 加密区，请求直连你选的服务商，不经过本项目任何服务器。",
+            st.langNote,
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+
+        Text(
+            st.secProvider,
+            style = MaterialTheme.typography.titleMedium,
+            modifier = Modifier.padding(top = 16.dp),
+        )
+        Text(
+            st.keyNote,
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         if (!vm.secureStorageAvailable) {
             Text(
-                "⚠ 本机 Keystore 不可用，key 将明文存储。建议换一台设备再填。",
+                st.keystoreWarn,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.error,
             )
@@ -70,7 +103,7 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                         model = p.models.firstOrNull().orEmpty()
                     },
                     modifier = Modifier.weight(1f),
-                ) { Text(p.label) }
+                ) { Text(p.label(Lang.of(s.lang))) }
                 Text(
                     p.models.joinToString(" / "),
                     style = MaterialTheme.typography.bodySmall,
@@ -85,21 +118,21 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
         OutlinedTextField(
             value = baseUrl,
             onValueChange = { baseUrl = it },
-            label = { Text("API 端点（OpenAI 兼容）") },
+            label = { Text(st.labelEndpoint) },
             modifier = Modifier.fillMaxWidth().padding(top = 6.dp),
             singleLine = true,
         )
         OutlinedTextField(
             value = model,
             onValueChange = { model = it },
-            label = { Text("模型名") },
+            label = { Text(st.labelModel) },
             modifier = Modifier.fillMaxWidth().padding(top = 6.dp),
             singleLine = true,
         )
         OutlinedTextField(
             value = apiKey,
             onValueChange = { apiKey = it },
-            label = { Text("API Key") },
+            label = { Text(st.labelApiKey) },
             modifier = Modifier.fillMaxWidth().padding(top = 6.dp),
             singleLine = true,
             visualTransformation = PasswordVisualTransformation(),
@@ -115,39 +148,39 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                             dataBase = dataBase.trim(),
                         )
                     )
-                    testResult = "已保存"
+                    testResult = st.saved
                 },
                 modifier = Modifier.padding(end = 8.dp),
-            ) { Text("保存") }
+            ) { Text(st.save) }
             Button(onClick = {
-                testResult = "测试中…"
+                testResult = st.testing
                 vm.testLlm { testResult = it }
-            }) { Text("测试连接") }
+            }) { Text(st.testConn) }
         }
         if (testResult.isNotEmpty()) {
             Text(testResult, style = MaterialTheme.typography.bodySmall)
         }
 
         Text(
-            "数据源与更新",
+            st.secData,
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.padding(top = 16.dp),
         )
         OutlinedTextField(
             value = dataBase,
             onValueChange = { dataBase = it },
-            label = { Text("数据源根地址") },
+            label = { Text(st.labelDataBase) },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
         )
         Row(Modifier.padding(top = 8.dp)) {
             Button(onClick = { vm.refreshData() }, modifier = Modifier.padding(end = 8.dp)) {
-                Text("立即更新")
+                Text(st.updateNow)
             }
-            Button(onClick = { vm.pingData { testResult = it } }) { Text("检测连通性") }
+            Button(onClick = { vm.pingData { testResult = it } }) { Text(st.ping) }
         }
         Row(Modifier.padding(vertical = 6.dp)) {
-            Text("联网时自动更新指纹", style = MaterialTheme.typography.bodyMedium)
+            Text(st.autoUpdate, style = MaterialTheme.typography.bodyMedium)
             Switch(
                 checked = s.autoUpdate,
                 onCheckedChange = { vm.updateSettings(s.copy(autoUpdate = it)) },
@@ -165,21 +198,21 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
         }
 
         Text(
-            "本地自检（不经过 LLM）",
+            st.secProbe,
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.padding(top = 16.dp),
         )
         OutlinedTextField(
             value = probe,
             onValueChange = { probe = it },
-            label = { Text("输入采购词，如 齿轮 / 输送线") },
+            label = { Text(st.probeHint) },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
         )
         Row(Modifier.padding(top = 8.dp)) {
             Button(onClick = {
                 probeOut = vm.aliasExplain(probe) + "\n" + vm.localSearch(probe)
-            }) { Text("本地检索") }
+            }) { Text(st.probeRun) }
         }
         if (probeOut.isNotEmpty()) {
             Text(
@@ -189,7 +222,7 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
             )
         }
         Text(
-            "别名表 ${vm.aliasSize()} 条",
+            st.aliasCount(vm.aliasSize()),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )

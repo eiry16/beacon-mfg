@@ -4,18 +4,23 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import cn.beaconmfg.app.data.AppSettings
+import cn.beaconmfg.app.data.CapabilityCard
 import cn.beaconmfg.app.data.DataStore
 import cn.beaconmfg.app.data.GbIndex
-import cn.beaconmfg.app.data.CapabilityCard
 import cn.beaconmfg.app.data.Hit
 import cn.beaconmfg.app.data.RemoteSource
+import cn.beaconmfg.app.data.SearchParams
 import cn.beaconmfg.app.data.SettingsRepo
 import cn.beaconmfg.app.data.SupplierDetail
+import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Strings
+import cn.beaconmfg.app.i18n.systemPrompt
 import cn.beaconmfg.app.llm.ChatMsg
 import cn.beaconmfg.app.llm.LlmClient
 import cn.beaconmfg.app.llm.LlmConfig
 import cn.beaconmfg.app.llm.Preset
 import cn.beaconmfg.app.llm.ToolBox
+import cn.beaconmfg.app.llm.ToolResult
 import cn.beaconmfg.app.search.AliasIndex
 import cn.beaconmfg.app.search.SearchEngine
 import kotlinx.coroutines.Dispatchers
@@ -43,6 +48,20 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         val hits: List<Hit> = emptyList(),
         val detail: SupplierDetail? = null,
         val streaming: Boolean = false,
+        /**
+         * 工具回显行。**只显示一行状态，不再跟着渲染卡片**——
+         * 之前工具消息和最终回答各渲染一遍，同一次搜索会看到两轮一模一样的灯牌。
+         */
+        val isTool: Boolean = false,
+        /**
+         * 本条消息命中的能力卡（id → 卡）。在 IO 线程预先解析好再交给 UI，
+         * 不在 Compose 组合期读 assets。
+         */
+        val caps: Map<String, CapabilityCard> = emptyMap(),
+        /** 本次会话第一次搜索：能力卡默认展开，让「能力卡在哪」一眼可见。 */
+        val autoOpenCap: Boolean = false,
+        /** 卡片来自本地直检兜底（模型这一轮没调检索）。UI 会如实标注，不让用户误以为是模型筛的。 */
+        val fallback: Boolean = false,
     )
 
     private val store = DataStore(app)
@@ -50,14 +69,20 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     private val engine = SearchEngine(store, alias)
     private val remote = RemoteSource(store)
     private val repo = SettingsRepo(app)
-    private val toolBox = ToolBox(engine, store, remote) { _settings.value.dataBase }
+    private val toolBox = ToolBox(
+        engine, store, remote,
+        dataBase = { _settings.value.dataBase },
+        lang = { Lang.of(_settings.value.lang) },
+    )
 
     private var seq = 0L
+    /** 会话内第几次提问。只影响「首次搜索默认展开能力卡」。 */
+    private var turnIndex = 0
 
     private val _messages = MutableStateFlow<List<UiMessage>>(emptyList())
     val messages: StateFlow<List<UiMessage>> = _messages.asStateFlow()
 
-    private val _status = MutableStateFlow("正在装载本地索引…")
+    private val _status = MutableStateFlow(Strings(Lang.ZH).booting)
     val status: StateFlow<String> = _status.asStateFlow()
 
     private val _busy = MutableStateFlow(false)
@@ -71,24 +96,8 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     val secureStorageAvailable: Boolean = repo.secureStorageAvailable
 
-    companion object {
-        const val SYSTEM_PROMPT = """
-你是「供应商灯塔」App 的检索助手，帮制造业采购人员在中国制造业名录里找供应商。
-
-硬规则（违反即为错误回答）：
-1. 所有供应商信息必须来自工具返回的真实数据。**严禁凭记忆或推测编造**公司名、电话、城市、认证、产能。
-2. 检索结果带「证据」档位，必须如实转述：
-   - 字面命中：企业自己的资料里写了这个词；
-   - 别名首位码：按国标小类匹配，语义最贴近；
-   - 行业推断：只是按国标行业推断，**企业未确认**。说的时候必须带「按行业推断，企业未确认」，
-     不许说成「这家做 XX」。
-3. 查不到就直说查不到，并给出下一步建议（换说法 / 放宽地区 / 看有哪些行业）。不要硬凑。
-4. 用户的口语要先翻译成检索条件：如「上海有没有做输送线的」→ keyword=输送线, city=上海。
-5. 回答用中文，简洁。默认只推荐 3–5 家，给出公司名、城市、主营、证据档位；用户要看更多再补充。
-6. 搜索结果已带电话号码，可直接引用；完整地址/官网需调用 get_supplier_detail 获取。
-   结果里写「号码待核实」的，就如实告诉用户号码待核实，**不要编造或猜测电话号码**。
-"""
-    }
+    /** 当前界面语言。切语言后所有 Composable 靠它重算文案。 */
+    private fun strings(): Strings = Strings(Lang.of(_settings.value.lang))
 
     init {
         viewModelScope.launch {
@@ -97,65 +106,81 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     private suspend fun boot() = withContext(Dispatchers.IO) {
-        _status.value = "装载国标索引…"
+        val s = strings()
+        _status.value = s.loadGb
         store.readAsset("index/gb-index.json")?.let {
             runCatching { GbIndex.load(JSONObject(it)) }
         }
-        _status.value = "装载采购词别名表…"
+        _status.value = s.loadAlias
         alias.load()
-        _status.value = "装载全量指纹…"
+        _status.value = s.loadFp
         val n = store.fingerprints().size
         refreshDataInfo()
-        _status.value = "就绪：本地 $n 家供应商，可直接离线检索"
+        _status.value = s.ready(n)
         if (_settings.value.autoUpdate) refreshData()
     }
 
     /**
      * 给搜索结果列表项找 L1 能力卡：按 (id, 国标码) 定位分片。
-     * 命中就在 SupplierCard 里直接显示工艺 chips，采购扫一眼就知道这家能做什么，
-     * 不用再让模型调一次 get_supplier_detail。
+     * 命中就在 SupplierCard 里直接显示工艺位，采购扫一眼就知道这家能做什么。
+     * **必须在 IO 线程调用**——首次会读 assets 分片。
      */
     fun capOf(h: Hit): CapabilityCard? =
         if (h.fp.id.isEmpty()) null else store.capabilityOf(h.fp.id, h.fp.gb)
 
+    private suspend fun resolveCaps(hits: List<Hit>): Map<String, CapabilityCard> =
+        withContext(Dispatchers.IO) {
+            val m = HashMap<String, CapabilityCard>()
+            for (h in hits) {
+                val c = runCatching { capOf(h) }.getOrNull() ?: continue
+                m[h.fp.id] = c
+            }
+            m
+        }
+
     private fun refreshDataInfo() {
+        val s = strings()
         _dataInfo.value = listOf(
-            store.builtinFingerprintSummary(),
-            "内置于 ${store.builtinAt()}",
-            store.phoneIndexSummary(),
-            "已更新分片 ${store.updatedShardCount()} 个",
-            "上次检查 ${store.lastUpdateCheck()}",
-            if (GbIndex.isLoaded()) GbIndex.summary() else "国标索引未加载",
+            store.builtinFingerprintSummary(s),
+            s.builtinAtLabel(store.builtinAt(s)),
+            store.phoneIndexSummary(s),
+            s.updatedShards(store.updatedShardCount()),
+            s.lastCheck(store.lastUpdateCheck(s)),
+            if (GbIndex.isLoaded()) GbIndex.summary(s) else s.gbIndexNotLoaded,
         ).joinToString("\n")
     }
 
     fun refreshData() {
         viewModelScope.launch {
-            _status.value = "检查数据更新…"
-            val r = remote.updateFingerprints(_settings.value.dataBase) { msg ->
+            val s = strings()
+            _status.value = s.checkingUpdate
+            val r = remote.updateFingerprints(_settings.value.dataBase, s) { msg ->
                 _status.value = msg
             }
             refreshDataInfo()
             if (r.ok) {
-                _status.value = "数据更新完成：${r.message}"
+                _status.value = s.updateDone(r.message)
             } else {
                 // 数据源不通不是 App 坏了——内置的离线库照样能检索。
                 // 顶部只给一句人话，详细原因放设置页的 dataInfo 里，不吓人。
-                _status.value = "数据源暂不可达，内置 ${store.fingerprints().size} 家可离线检索"
-                _dataInfo.value = _dataInfo.value + "\n\n【最近一次更新】\n" + r.message
+                _status.value = s.sourceDownN(store.fingerprints().size)
+                _dataInfo.value = _dataInfo.value + "\n\n" + s.lastUpdateNote + "\n" + r.message
             }
         }
     }
 
     fun pingData(onDone: (String) -> Unit) {
         viewModelScope.launch {
-            onDone(remote.ping(_settings.value.dataBase))
+            onDone(remote.ping(_settings.value.dataBase, strings()))
         }
     }
 
     fun updateSettings(s: AppSettings) {
+        val langChanged = s.lang != _settings.value.lang
         _settings.value = s
         repo.save(s)
+        // 数据信息卡是生成好的字符串，不跟着 recompose——切语言要手动重算一次
+        if (langChanged) refreshDataInfo()
     }
 
     fun testLlm(onDone: (String) -> Unit) {
@@ -178,6 +203,8 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     fun clearChat() {
         _messages.value = emptyList()
+        // 清空后下一次提问又算「第一次搜索」，能力卡重新默认展开
+        turnIndex = 0
     }
 
     fun send(raw: String) {
@@ -196,30 +223,29 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     private suspend fun runTurn(userText: String) {
         val s = _settings.value
+        val lang = Lang.of(s.lang)
+        val str = Strings(lang)
         val cfg = LlmConfig(s.presetId, s.baseUrl, s.model, s.apiKey)
         if (!cfg.ready()) {
-            append(
-                UiMessage(
-                    seq++, Role.SYSTEM,
-                    "还没配置 API key。到「设置」里选服务商、填自己的 key 就能用——" +
-                        "key 只存在本机（Keystore 加密），不会发给除你所选端点以外的任何地方。"
-                )
-            )
+            append(UiMessage(seq++, Role.SYSTEM, str.noKey))
             return
         }
 
         val history = ArrayList<ChatMsg>()
-        history.add(ChatMsg("system", SYSTEM_PROMPT))
+        history.add(ChatMsg("system", systemPrompt(lang)))
         _messages.value.filter { it.role != Role.SYSTEM }.takeLast(8).forEach {
             history.add(ChatMsg(if (it.role == Role.USER) "user" else "assistant", it.text))
         }
         history.add(ChatMsg("user", userText))
 
         val tools = toolBox.definitions()
+        val autoOpen = turnIndex == 0
+        turnIndex++
+
         var rounds = 0
         var answerId: Long? = null
-        var anyHits: List<Hit> = emptyList()
-        var anyDetail: SupplierDetail? = null
+        var hits: List<Hit> = emptyList()
+        var detail: SupplierDetail? = null
 
         while (rounds < 4) {
             rounds++
@@ -233,12 +259,20 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             }
             if (result.error != null) {
                 remove(answerId)
-                append(UiMessage(seq++, Role.SYSTEM, "模型调用失败：${result.error}"))
+                append(UiMessage(seq++, Role.SYSTEM, str.callFailed(result.error)))
                 return
             }
             if (result.toolCalls.isEmpty()) {
-                // 最终回答
-                setText(answerId, result.content.ifBlank { "（模型没有返回内容）" }, anyHits, anyDetail)
+                // 最终回答：卡片只在这里渲染一次
+                val fb = hits.isEmpty()
+                val finalHits = finalizeHits(userText, hits)
+                val caps = resolveCaps(finalHits)
+                setText(
+                    answerId,
+                    result.content.ifBlank { str.emptyAnswer },
+                    finalHits, detail, caps, autoOpen,
+                    fallback = fb && finalHits.isNotEmpty(),
+                )
                 return
             }
 
@@ -254,20 +288,74 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
             for (call in result.toolCalls) {
                 val tr = withContext(Dispatchers.IO) { toolBox.run(call.name, call.arguments) }
-                if (tr.hits.isNotEmpty()) anyHits = tr.hits
-                tr.detail?.let { anyDetail = it }
-                append(
-                    UiMessage(
-                        seq++, Role.SYSTEM,
-                        "调用 ${call.name}：" + tr.text.lineSequence().first(),
-                        hits = tr.hits,
-                        detail = tr.detail,
-                    )
-                )
+                hits = mergeHits(hits, tr.hits)
+                tr.detail?.let { detail = it }
+                // 回显只给一行人话：**不出现内部函数名**
+                append(UiMessage(seq++, Role.SYSTEM, toolLabel(call.name, tr, str), isTool = true))
                 history.add(ChatMsg("tool", content = tr.text, toolCallId = call.id))
             }
         }
-        append(UiMessage(seq++, Role.SYSTEM, "工具调用轮次已达上限，已停止。可以换个更具体的说法再问。"))
+        val fb = hits.isEmpty()
+        val finalHits = finalizeHits(userText, hits)
+        val caps = resolveCaps(finalHits)
+        if (answerId != null) {
+            setText(
+                answerId, str.roundLimit, finalHits, detail, caps, autoOpen,
+                fallback = fb && finalHits.isNotEmpty(),
+            )
+        } else {
+            // 最后一轮是工具调用：answerId 已被置空，这里必须**新追加**一条。
+            // 用 `answerId ?: seq++` 会去 update 一个不存在的 id，消息被静默丢掉。
+            append(
+                UiMessage(
+                    seq++, Role.SYSTEM, str.roundLimit,
+                    hits = finalHits, detail = detail, caps = caps,
+                    autoOpenCap = autoOpen, fallback = fb && finalHits.isNotEmpty(),
+                )
+            )
+        }
+    }
+
+    /**
+     * 合并多轮工具命中，按 id 去重、取证据更强的一档。
+     *
+     * 之前是 `if (tr.hits.isNotEmpty()) anyHits = tr.hits`——最后一次调用直接覆盖前面的结果。
+     * 于是「先 search 再 get_supplier_detail」时，8 家结果被 1 家档案顶掉，卡片时有时无。
+     */
+    private fun mergeHits(base: List<Hit>, add: List<Hit>): List<Hit> {
+        if (add.isEmpty()) return base
+        val m = LinkedHashMap<String, Hit>()
+        base.forEach { m[it.fp.id] = it }
+        add.forEach { h ->
+            val prev = m[h.fp.id]
+            if (prev == null || h.evidence.code < prev.evidence.code) m[h.fp.id] = h
+        }
+        return m.values.toList()
+    }
+
+    /**
+     * 兜底：模型这一轮压根没调工具（DeepSeek 在 auto 模式下经常直接作答），
+     * 用户就只看到一段文字、看不到任何灯牌。
+     * 这里用原始提问在本地直检一次，能检到就附上——**检不到就不硬凑**。
+     */
+    private suspend fun finalizeHits(userText: String, hits: List<Hit>): List<Hit> {
+        if (hits.isNotEmpty()) return hits
+        val q = userText.trim()
+        if (q.length < 2) return hits
+        return withContext(Dispatchers.IO) {
+            runCatching {
+                engine.search(SearchParams(keyword = q, limit = 5)).hits
+            }.getOrDefault(emptyList())
+        }
+    }
+
+    /** 工具回显文案。**绝不能出现函数名**——那是内部实现，用户不需要知道。 */
+    private fun toolLabel(name: String, tr: ToolResult, s: Strings): String = when (name) {
+        "search_suppliers" ->
+            if (tr.hits.isEmpty()) s.toolSearchNone else s.toolSearch(tr.hits.size)
+        "get_supplier_detail" -> s.toolDetail
+        "list_categories" -> s.toolCats
+        else -> s.toolDone
     }
 
     // ── 消息列表的小工具 ────────────────────────────────────────────────────
@@ -285,20 +373,38 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
-    private fun setText(id: Long, text: String, hits: List<Hit>, detail: SupplierDetail?) {
+    private fun setText(
+        id: Long,
+        text: String,
+        hits: List<Hit>,
+        detail: SupplierDetail?,
+        caps: Map<String, CapabilityCard>,
+        autoOpenCap: Boolean,
+        fallback: Boolean = false,
+    ) {
         _messages.value = _messages.value.map {
-            if (it.id == id) it.copy(text = text, hits = hits, detail = detail, streaming = false)
-            else it
+            if (it.id == id) {
+                it.copy(
+                    text = text, hits = hits, detail = detail,
+                    caps = caps, autoOpenCap = autoOpenCap, streaming = false,
+                    fallback = fallback,
+                )
+            } else it
         }
     }
 
     /** 直接本地检索（不经过 LLM）。用于「设置」页的自检，以及没配 key 时的兜底。 */
     fun localSearch(keyword: String, city: String? = null): String {
-        val out = engine.search(
-            cn.beaconmfg.app.data.SearchParams(keyword = keyword, city = city, limit = 5)
-        )
-        if (out.hits.isEmpty()) return "本地检索 0 家${if (out.relaxed > 0) "（放宽可得 ${out.relaxed} 家行业推断）" else ""}"
-        return out.hits.joinToString("\n") { engine.toBrief(it) }
+        val s = strings()
+        val out = engine.search(SearchParams(keyword = keyword, city = city, limit = 5))
+        if (out.hits.isEmpty()) {
+            return if (s.lang == Lang.EN) {
+                "0 local hits" + (if (out.relaxed > 0) " (relaxing would give ${out.relaxed} industry inferences)" else "")
+            } else {
+                "本地检索 0 家" + (if (out.relaxed > 0) "（放宽可得 ${out.relaxed} 家行业推断）" else "")
+            }
+        }
+        return out.hits.joinToString("\n") { engine.toBrief(it, s) }
     }
 
     fun aliasExplain(word: String): String = alias.explain(word)

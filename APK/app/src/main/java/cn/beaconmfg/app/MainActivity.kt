@@ -13,6 +13,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
@@ -23,6 +24,8 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Strings
 import cn.beaconmfg.app.ui.ChatScreen
 import cn.beaconmfg.app.ui.SettingsScreen
 
@@ -42,6 +45,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BeaconApp(vm: MainViewModel = viewModel()) {
     var tab by remember { mutableIntStateOf(0) }
+    val settings by vm.settings.collectAsState()
+    val s = remember(settings.lang) { Strings(Lang.of(settings.lang)) }
 
     Scaffold(
         topBar = {
@@ -51,13 +56,13 @@ fun BeaconApp(vm: MainViewModel = viewModel()) {
                 title = {
                     Text(
                         buildAnnotatedString {
-                            append("炫招灯塔")
+                            append(s.appTitle)
                             withStyle(
                                 SpanStyle(
                                     fontSize = 11.sp,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
-                            ) { append("——让AI世界看见") }
+                            ) { append(s.appSubtitle) }
                         },
                         maxLines = 1,
                     )
@@ -65,11 +70,11 @@ fun BeaconApp(vm: MainViewModel = viewModel()) {
                 actions = {
                     // 清空只在对话页出现——设置页没有可清的内容
                     if (tab == 0) {
-                        TextButton(onClick = { vm.clearChat() }) { Text("清空") }
+                        TextButton(onClick = { vm.clearChat() }) { Text(s.actionClear) }
                     }
                     // 设置入口从底部 TabRow 挪到这里：底部导航条会吃掉手势区的点击
                     TextButton(onClick = { tab = if (tab == 0) 1 else 0 }) {
-                        Text(if (tab == 0) "设置" else "对话")
+                        Text(if (tab == 0) s.actionSettings else s.actionChat)
                     }
                 },
             )
