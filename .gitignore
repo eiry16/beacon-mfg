@@ -36,6 +36,10 @@ scripts/*
 # query.py 走到 `except ImportError` 分支 → CODES={} → **任何 --industry 查询都返回
 # "没匹配到任何国标行业"且不报错**（2026-09-09 实测）。纯标准库，仅读 data/gb4754-full.json。
 !scripts/industry_taxonomy.py
+# audit_alias.py 量的是「别名表到底让客户能搜到多少家」——覆盖率、供给覆盖率、
+# 剩余缺口、采购词实测。客户和贡献者都要能自己复现这个结论，不能只有我说了算。
+# 只依赖上面已放行的 gb_store / query，纯标准库。
+!scripts/audit_alias.py
 # CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
 .github/*
 !.github/workflows/

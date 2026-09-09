@@ -130,6 +130,47 @@ def alias_codes_for(keyword: str, exact_top: int = 3, fuzzy_top: int = 1):
     return set(exact) if exact else set(fuzzy)
 
 
+def alias_rank_for(keyword: str, exact_top: int = 3, fuzzy_top: int = 1) -> dict[str, int]:
+    """采购词 → {国标码: 证据等级}，等级越小越强。
+
+      0 = 企业自身关键词里就有这个词（最强，由调用方判定，不在这里）
+      1 = 别名表的**首位**小类 —— 语义最贴近采购词
+      2 = 别名表的**其余**小类 —— 按行业推断，企业没说过自己能做
+
+    为什么必须分级：别名扩展是"整类扩展"而不是"同义词扩展"。搜「齿轮」
+    命中 3453 齿轮制造（全国 6 家）的同时，也会把 3484 机械零部件加工
+    的 3415 家一起带进来——实测放大 3421 倍。不分级的话客户 Agent 分不清
+    「这家真做齿轮」和「这家只是被归在这一类」，只能全盘接受或全部放弃。
+
+    分级后按等级排序，前面是强命中，Agent 想截断随时能截。
+    """
+    if GB is None:
+        return {}
+    alias = GB.load_alias()
+    if not alias:
+        return {}
+    kw = (keyword or "").strip()
+    if not kw:
+        return {}
+    low = kw.lower()
+    exact: dict[str, int] = {}
+    fuzzy: dict[str, int] = {}
+    for word, entries in alias.items():
+        wl = word.lower()
+        if wl == low:
+            target, top = exact, exact_top
+        elif wl in low or low in wl:
+            target, top = fuzzy, fuzzy_top
+        else:
+            continue
+        for i, e in enumerate(entries[:top]):
+            rank = 1 if i == 0 else 2
+            code = e["code"]
+            if code not in target or rank < target[code]:
+                target[code] = rank
+    return exact if exact else fuzzy
+
+
 def cert_names(record):
     """认证名称列表。兼容两种写法：
     - POI 抓取的记录：["高新技术企业"]（字符串）
@@ -227,20 +268,29 @@ def search(suppliers, args, industry_codes=None, alias_cache=None):
             kws = [k for k in args.keyword.split() if k]
             ind_code = (industry_of(s) or {}).get("code")
             ok = True
+            worst = 0
             for k in kws:
                 hit = match(s, k)
+                rank = 0  # 0 = 企业自己就写了这个词
                 if not hit and not args.no_alias:
-                    codes = alias_cache.get(k)
-                    if codes is None:
-                        codes = alias_codes_for(k)
-                        alias_cache[k] = codes
-                    hit = bool(codes) and ind_code in codes
+                    ranks = alias_cache.get(k)
+                    if ranks is None:
+                        ranks = alias_rank_for(k)
+                        alias_cache[k] = ranks
+                    rank = ranks.get(ind_code, 0) if ind_code else 0
+                    hit = rank > 0
                 if not hit:
                     ok = False
                     break
+                # 多词 AND 时取最弱的一环——整条结果的可信度由短板决定
+                worst = max(worst, rank)
             if not ok:
                 continue
+            s["_alias_rank"] = worst
         results.append(s)
+    # 强命中排前面：字面 > 别名首位码 > 别名其余码。
+    # 稳定排序，同档内保持原顺序（分片内按 ID）。
+    results.sort(key=lambda r: r.get("_alias_rank", 0))
     return results
 
 
@@ -347,12 +397,20 @@ def list_alias(top=50):
     if not alias:
         print("还没有别名表，先跑：python scripts/gb_store.py --realias")
         return
-    print("采购词 → 国标小类（由真实数据推导，括号为命中次数）\n")
-    items = sorted(alias.items(), key=lambda x: -x[1][0]["hits"])[:top]
+    n_cur = sum(1 for v in alias.values() if v[0].get("source") == "curated")
+    print("采购词 → 国标小类（共 %d 条：数据推导 %d，人工策展 %d）"
+          % (len(alias), len(alias) - n_cur, n_cur))
+    print("data=由真实数据推导（括号为命中次数）；curated=人工策展（无命中数，不可编）\n")
+    # 策展条目 hits 为 None，按 0 排（有数据的排前面）
+    items = sorted(alias.items(),
+                   key=lambda x: -(x[1][0].get("hits") or 0))[:top]
     for word, entries in items:
-        s = "、".join("%s %s(%d)" % (e["code"], e["name"][:12], e["hits"])
-                      for e in entries[:3])
-        print("  %-16s → %s" % (word, s))
+        parts = []
+        for e in entries[:3]:
+            hit = e.get("hits")
+            tail = "(%d)" % hit if hit is not None else "(curated)"
+            parts.append("%s %s%s" % (e["code"], e["name"][:12], tail))
+        print("  %-16s → %s" % (word, "、".join(parts)))
     print("\n共 %d 条。用法：python scripts/query.py --keyword %s"
           % (len(alias), items[0][0] if items else "模具"))
 
@@ -428,14 +486,17 @@ def main():
             sys.exit(0)
         print("行业范围：%s" % "；".join(labels[:6]))
 
-    alias_cache: dict[str, set] = {}
+    alias_cache: dict[str, dict] = {}
     if args.keyword and not args.no_alias:
         for k in [x for x in args.keyword.split() if x]:
-            codes = alias_codes_for(k)
-            alias_cache[k] = codes
-            if args.explain and codes:
-                names = "、".join(sorted(codes)[:6])
-                print("采购词「%s」→ 国标小类 %s" % (k, names))
+            ranks = alias_rank_for(k)
+            alias_cache[k] = ranks
+            if args.explain and ranks:
+                strong = [c for c, r in ranks.items() if r == 1]
+                weak = [c for c, r in ranks.items() if r == 2]
+                print("采购词「%s」→ 强相关 %s%s"
+                      % (k, "、".join(sorted(strong)) or "（无）",
+                         ("；行业推断 " + "、".join(sorted(weak))) if weak else ""))
 
     suppliers = load_all_suppliers(english=args.en)
     if not suppliers and args.en:
@@ -451,8 +512,22 @@ def main():
             print("未找到匹配供应商。提示：换关键词（如 CNC加工→数控加工），或放宽地区/认证条件。")
         sys.exit(0)
 
+    # 分层说明：别名扩展是"整类扩展"，弱档结果企业没说过自己能做，必须说清楚
+    if args.keyword and not args.no_alias:
+        n_strong = sum(1 for r in results if r.get("_alias_rank", 0) == 0)
+        n_top = sum(1 for r in results if r.get("_alias_rank", 0) == 1)
+        n_weak = sum(1 for r in results if r.get("_alias_rank", 0) == 2)
+        if n_top or n_weak:
+            print("命中构成：字面关键词 %d 家 · 别名首位码 %d 家 · 行业推断 %d 家"
+                  % (n_strong, n_top, n_weak))
+            print("（后两档是按国标行业推断的，企业未确认；已按强度排序，前 %d 家为最强档）"
+                  % max(n_strong, 1))
+            print()
+
     print(f"共匹配 {len(results)} 家，展示前 {min(args.limit, len(results))} 家：\n")
     for r in results[: args.limit]:
+        if r.get("_alias_rank", 0) == 2:
+            print("[行业推断·未确认]")
         print(fmt(r))
         print("-" * 46)
 

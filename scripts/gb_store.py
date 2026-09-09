@@ -42,6 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 GB_DIR = ROOT / "data" / "gb"
 GB_INDEX = ROOT / "data" / "gb-index.json"
 GB_ALIAS = ROOT / "data" / "gb-alias.json"
+GB_ALIAS_CURATED = ROOT / "data" / "gb-alias-curated.json"
 GB_FULL = ROOT / "data" / "gb4754-full.json"
 
 UNCLASSIFIED = "_unclassified"
@@ -439,11 +440,69 @@ def rebuild_alias(min_hits: int = 3, max_codes: int = 6) -> dict[str, Any]:
     return payload["metadata"]
 
 
-def load_alias() -> dict[str, list[dict[str, Any]]]:
-    if not GB_ALIAS.exists():
+def _load_curated_alias() -> dict[str, list[dict[str, Any]]]:
+    """人工策展层。文件缺失或写坏时返回空表并告警——不静默吞掉。
+
+    策展条目没有 hits（命中次数只能由真实数据统计得出，手写就是编数字），
+    统一标 source=curated，下游可据此判断证据强度。
+    """
+    if not GB_ALIAS_CURATED.exists():
         return {}
+    try:
+        with open(GB_ALIAS_CURATED, encoding="utf-8") as f:
+            raw = json.load(f).get("alias") or {}
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"[warn] gb-alias-curated.json 解析失败，策展别名未加载：{e}")
+        return {}
+    out: dict[str, list[dict[str, Any]]] = {}
+    for word, spec in raw.items():
+        codes = spec.get("codes") if isinstance(spec, dict) else spec
+        if not codes:
+            continue
+        out[word] = [
+            {"code": str(c), "name": _class_name(str(c)), "hits": None,
+             "source": "curated", "note": (spec.get("note") if isinstance(spec, dict) else None)}
+            for c in codes
+        ]
+    return out
+
+
+def _class_name(code: str) -> str:
+    try:
+        return _taxonomy()["classes"].get(code, {}).get("name", "")
+    except Exception:
+        return ""
+
+
+def load_alias(with_curated: bool = True) -> dict[str, list[dict[str, Any]]]:
+    """数据推导层 + 人工策展层合并后的别名表。
+
+    **为什么分两个文件**：rebuild_alias() 会整体覆写 gb-alias.json。
+    策展词若混在里面，任何人跑一次 --realias 就会把它们静默清空，
+    而 diff 上只表现为"删了几百行"，没人看得出来是误删。分文件存放，
+    策展层在重建后依然存活。
+
+    **同词冲突**：data 层的码排在前（有真实命中数支撑），
+    curated 的码追加在后并去重。证据强的压不住证据弱的，但弱的不覆盖强的。
+    """
+    if not GB_ALIAS.exists():
+        return _load_curated_alias() if with_curated else {}
     with open(GB_ALIAS, encoding="utf-8") as f:
-        return json.load(f).get("alias") or {}
+        data_alias = json.load(f).get("alias") or {}
+    if not with_curated:
+        return data_alias
+
+    merged: dict[str, list[dict[str, Any]]] = {}
+    for word, entries in data_alias.items():
+        merged[word] = [dict(e, source="data") for e in entries]
+    for word, entries in _load_curated_alias().items():
+        existing = merged.setdefault(word, [])
+        seen = {e["code"] for e in existing}
+        for e in entries:
+            if e["code"] not in seen:
+                seen.add(e["code"])
+                existing.append(e)
+    return merged
 
 
 def lookup_alias(word: str) -> list[str]:
