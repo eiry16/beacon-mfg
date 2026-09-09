@@ -49,6 +49,17 @@ scripts/*
 # Jaccard ≥0.62 校验）。结论是命中率 2.5%、不建议全量跑——这个数字必须能被
 # 别人自己复现，不能只有我说了算。纯标准库，只走公开 POI 接口，密钥读环境变量。
 !scripts/backfill_phone.py
+# sync_vendor_skills.py 是 L1 能力卡入口（registry/capability/{id}.json）的
+# 唯一同步器，并把名录的 agent.skill_url 字段回写。脚本和 collect/render.py
+# 互相依赖（前者 import 后者的 append_fingerprint），任一缺则 sync 流程不可
+# 复现（2026-09-09 实测：脚本从不在白名单里、9-08 起的 sync 流程实际断链，
+# 导致 registry/capability 只落地 4 家，635 家能力卡断在链路外）。两个一起放行。
+!scripts/sync_vendor_skills.py
+# collect/ 是 sync_vendor_skills 依赖的能力卡渲染子系统（render.py 在里面），
+# 整个目录需要可重建——否则别人 clone 后跑 sync 会 ImportError（2026-09-09 实测）。
+# fixtures 是测试夹具不进仓（CN-MFG-0000005.json 是个固定 fixture，与真实能力卡同 id 会被覆盖）。
+!scripts/collect/
+scripts/collect/fixtures/
 # CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
 .github/*
 !.github/workflows/
