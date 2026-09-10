@@ -3672,7 +3672,21 @@
       "source": "name",
       "evidence": "弹簧"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0FFHDJ1LL",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "弹簧"
+    }
   },
   {
     "id": "CN-MFG-0006223",
@@ -32655,5 +32669,53 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi"
+  },
+  {
+    "id": "CN-MFG-0023860",
+    "company": "东莞市品邦精密弹簧有限公司",
+    "category": "标准件",
+    "keywords": [
+      "弹簧"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "虎门镇赤岗富马路16号5栋",
+    "contact_phone": "待核实",
+    "lat": 22.855015,
+    "lng": 113.711376,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKK5HD0",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "弹簧"
+    },
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "is_manufacturer": true
   }
 ]

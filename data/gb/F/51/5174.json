@@ -216,7 +216,8 @@
     "keywords": [
       "不锈钢",
       "喷涂",
-      "钢材"
+      "钢材",
+      "机械加工"
     ],
     "region": {
       "province": "江苏",
@@ -7046,7 +7047,8 @@
     "company": "宁波合泰五金机电",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械"
+      "精密机械",
+      "模具"
     ],
     "region": {
       "province": "浙江",
@@ -13958,7 +13960,10 @@
     "company": "东成五金工具(吉兴电动工具商行)",
     "category": "钣金冲压",
     "keywords": [
-      "激光切割"
+      "激光切割",
+      "螺丝",
+      "螺栓",
+      "轴承"
     ],
     "region": {
       "province": "广东",
@@ -16621,5 +16626,53 @@
     },
     "is_manufacturer": false,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023844",
+    "company": "昌顺达模具五金机电",
+    "category": "注塑成型",
+    "keywords": [
+      "模具加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "横江大道与横江南七街交叉口西南80米",
+    "contact_phone": "待核实",
+    "lat": 23.101523,
+    "lng": 112.906483,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDJDJ8H6",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丹灶",
+      "adcode": "440605",
+      "search_keyword": "模具加工"
+    },
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:五金机电"
+    },
+    "is_manufacturer": false
   }
 ]
