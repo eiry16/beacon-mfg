@@ -14899,5 +14899,53 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi"
+  },
+  {
+    "id": "CN-MFG-0023869",
+    "company": "专营各种铜材(万江华庭店)",
+    "category": "原材料",
+    "keywords": [
+      "铜材"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "浒山街道教场山南路255号",
+    "contact_phone": "0574-63894361; 13805819156; 18058247567",
+    "lat": 30.173097,
+    "lng": 121.238666,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFWGWQZ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "朱家桥老铜店",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "浒山",
+      "adcode": "330282",
+      "search_keyword": "铜材"
+    },
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜材"
+    },
+    "is_manufacturer": true
   }
 ]

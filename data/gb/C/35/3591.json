@@ -631,5 +631,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023775",
+    "company": "广州晟源环保设备通风工程有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "屏山石材城7号门东北90米",
+    "contact_phone": "13620469668",
+    "lat": 22.956503,
+    "lng": 113.289597,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KBDZG2Y6",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "钟村",
+      "adcode": "440113",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3591",
+      "name": "环境保护专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 环境保护专用设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "环保设备"
+    },
+    "is_manufacturer": true
   }
 ]

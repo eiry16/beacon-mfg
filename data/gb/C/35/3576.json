@@ -1016,13 +1016,13 @@
       "city": "珠海"
     },
     "address": "582县道与珠海大道交叉口南420米",
-    "contact_phone": "待核实",
+    "contact_phone": "13929510435",
     "lat": 22.040425,
     "lng": 113.219875,
     "source": "public_directory",
     "source_url": "",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "amap": {
       "poi_id": "B0L3AST6N0",
@@ -1048,7 +1048,7 @@
       "evidence": "机械配件"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0014753",
@@ -1371,5 +1371,53 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi"
+  },
+  {
+    "id": "CN-MFG-0023766",
+    "company": "武进区前黄玉霞机械配件加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "东沙村290号",
+    "contact_phone": "待核实",
+    "lat": 31.568462,
+    "lng": 119.896764,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LR7CJIPW",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320412",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3576",
+      "name": "农林牧渔机械配件制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 农林牧渔机械配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "机械配件"
+    },
+    "is_manufacturer": true
   }
 ]

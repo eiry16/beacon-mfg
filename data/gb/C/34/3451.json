@@ -8515,6 +8515,20 @@
         "catalog"
       ],
       "verified": false
+    },
+    "amap": {
+      "poi_id": "B0FFKKYUMP",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310115",
+      "search_keyword": "轴承"
     }
   },
   {
@@ -16665,6 +16679,20 @@
         "catalog"
       ],
       "verified": false
+    },
+    "amap": {
+      "poi_id": "B020701LU5",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320412",
+      "search_keyword": "轴承"
     }
   },
   {
@@ -35044,5 +35072,101 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023755",
+    "company": "Lk国兴轴承",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "惠山大道赛格二期7-118",
+    "contact_phone": "13961714333; 15152259888",
+    "lat": 31.628799,
+    "lng": 120.305119,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGJHR0YM",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "黄巷",
+      "adcode": "320206",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "3451",
+      "name": "滚动轴承制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 滚动轴承制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "轴承"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023858",
+    "company": "泰豪轴承",
+    "category": "标准件",
+    "keywords": [
+      "轴承"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "龙观西路64-3号(下早新村二区北门西70米)",
+    "contact_phone": "13670294502",
+    "lat": 22.658062,
+    "lng": 114.008572,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F38SUT9",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙华",
+      "adcode": "440309",
+      "search_keyword": "轴承"
+    },
+    "industry": {
+      "code": "3451",
+      "name": "滚动轴承制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 滚动轴承制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "轴承"
+    },
+    "is_manufacturer": true
   }
 ]

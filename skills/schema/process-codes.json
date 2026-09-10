@@ -1,144 +1,64 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "description": "BeaconMFG 统一工艺码表。跨品类可比，是 L0 指纹行 proc 字段与客户 Agent 过滤的取值域。新增工艺需提 PR 并说明所属品类。",
+  "gb_note": "gb = 该工艺适用的 GB/T 4754 **大类码（2 位）**。加工类工艺通常横跨多个大类，故为数组。用途：① 校验 gb-proc-map 的推导结果是否落在合理范围；② 给尚无能力卡的企业按国标码推荐候选工艺；③ 让码表与国标行业分类对齐（1.0 版只有 8 品类 category，覆盖不到成套设备制造）。",
+  "out_of_scope_gb": {
+    "13": "农副食品加工——项目越界红线（粮/食），名字信号不用于推断工艺",
+    "17": "纺织业——越界红线（纺/服装）",
+    "20": "木材加工——越界红线",
+    "21": "家具制造——越界红线",
+    "51": "批发业——贸易/分销主体，无生产工艺；名录保留展示但 proc 留空",
+    "52": "零售业——同上",
+    "24": "文教工美体育娱乐用品——样本 10 家，暂无可靠工艺信号，留空不猜",
+    "25": "石油煤炭及其他燃料加工——样本 1 家，留空不猜",
+    "30": "非金属矿物制品——样本 9 家，留空不猜",
+    "42": "废弃资源综合利用——样本 2 家，留空不猜"
+  },
   "codes": {
-    "cnc_turning": {
-      "name": "CNC车削",
-      "category": "精密机械加工"
-    },
-    "cnc_milling": {
-      "name": "CNC铣削",
-      "category": "精密机械加工"
-    },
-    "cnc_5axis": {
-      "name": "五轴加工",
-      "category": "精密机械加工"
-    },
-    "wire_cutting": {
-      "name": "线切割",
-      "category": "精密机械加工"
-    },
-    "edm": {
-      "name": "电火花",
-      "category": "精密机械加工"
-    },
-    "grinding": {
-      "name": "磨削",
-      "category": "精密机械加工"
-    },
-    "laser_cutting": {
-      "name": "激光切割",
-      "category": "钣金冲压"
-    },
-    "bending": {
-      "name": "折弯",
-      "category": "钣金冲压"
-    },
-    "stamping": {
-      "name": "冲压",
-      "category": "钣金冲压"
-    },
-    "welding": {
-      "name": "焊接",
-      "category": "钣金冲压"
-    },
-    "sheet_assembly": {
-      "name": "钣金组装",
-      "category": "钣金冲压"
-    },
-    "injection_molding": {
-      "name": "注塑成型",
-      "category": "注塑成型"
-    },
-    "mold_making": {
-      "name": "模具制造",
-      "category": "注塑成型"
-    },
-    "two_shot": {
-      "name": "双色注塑",
-      "category": "注塑成型"
-    },
-    "die_casting": {
-      "name": "压铸",
-      "category": "压铸"
-    },
-    "cnc_post_machine": {
-      "name": "压铸后加工",
-      "category": "压铸"
-    },
-    "pcb_assembly": {
-      "name": "PCBA",
-      "category": "电子元器件"
-    },
-    "smt": {
-      "name": "SMT贴片",
-      "category": "电子元器件"
-    },
-    "wire_harness": {
-      "name": "线束",
-      "category": "电子元器件"
-    },
-    "pcb_fab": {
-      "name": "PCB制板",
-      "category": "电子元器件"
-    },
-    "anodizing": {
-      "name": "阳极氧化",
-      "category": "表面处理"
-    },
-    "electroplating": {
-      "name": "电镀",
-      "category": "表面处理"
-    },
-    "spray_painting": {
-      "name": "喷涂",
-      "category": "表面处理"
-    },
-    "powder_coating": {
-      "name": "粉末喷涂",
-      "category": "表面处理"
-    },
-    "heat_treatment": {
-      "name": "热处理",
-      "category": "表面处理"
-    },
-    "blackening": {
-      "name": "发黑",
-      "category": "表面处理"
-    },
-    "fastener": {
-      "name": "紧固件",
-      "category": "标准件"
-    },
-    "bearing": {
-      "name": "轴承",
-      "category": "标准件"
-    },
-    "spring": {
-      "name": "弹簧",
-      "category": "标准件"
-    },
-    "gear": {
-      "name": "齿轮",
-      "category": "标准件"
-    },
-    "metal_material": {
-      "name": "金属材料",
-      "category": "原材料"
-    },
-    "plastic_material": {
-      "name": "塑料原料",
-      "category": "原材料"
-    },
-    "cutting_service": {
-      "name": "零切服务",
-      "category": "原材料"
-    },
-    "connector": "连接器",
-    "sensor": "传感器",
-    "relay": "继电器",
-    "electronic_component": "电子元件",
-    "metal_stamping": "五金冲压"
+    "cnc_turning": { "name": "CNC车削", "category": "精密机械加工", "gb": ["33", "34", "35", "36", "38", "40"] },
+    "cnc_milling": { "name": "CNC铣削", "category": "精密机械加工", "gb": ["33", "34", "35", "36", "37", "38", "40"] },
+    "cnc_5axis": { "name": "五轴加工", "category": "精密机械加工", "gb": ["34", "35", "36", "37", "40"] },
+    "wire_cutting": { "name": "线切割", "category": "精密机械加工", "gb": ["33", "34", "35", "40"] },
+    "edm": { "name": "电火花", "category": "精密机械加工", "gb": ["33", "34", "35", "40"] },
+    "grinding": { "name": "磨削", "category": "精密机械加工", "gb": ["33", "34", "35", "38", "40"] },
+    "laser_cutting": { "name": "激光切割", "category": "钣金冲压", "gb": ["33", "34", "35", "36", "38"] },
+    "bending": { "name": "折弯", "category": "钣金冲压", "gb": ["33", "34", "35", "36", "38"] },
+    "stamping": { "name": "冲压", "category": "钣金冲压", "gb": ["33", "34", "35", "36", "38"] },
+    "welding": { "name": "焊接", "category": "钣金冲压", "gb": ["33", "34", "35", "36", "37", "38"] },
+    "sheet_assembly": { "name": "钣金组装", "category": "钣金冲压", "gb": ["33", "34", "35", "36", "38"] },
+    "injection_molding": { "name": "注塑成型", "category": "注塑成型", "gb": ["29", "34", "35", "36", "38", "39", "40"] },
+    "mold_making": { "name": "模具制造", "category": "注塑成型", "gb": ["29", "33", "34", "35", "36", "40"] },
+    "two_shot": { "name": "双色注塑", "category": "注塑成型", "gb": ["29", "36", "38"] },
+    "die_casting": { "name": "压铸", "category": "压铸", "gb": ["32", "33", "34", "35", "36", "38"] },
+    "cnc_post_machine": { "name": "压铸后加工", "category": "压铸", "gb": ["32", "33", "36"] },
+    "pcb_assembly": { "name": "PCBA", "category": "电子元器件", "gb": ["38", "39", "40"] },
+    "smt": { "name": "SMT贴片", "category": "电子元器件", "gb": ["38", "39", "40"] },
+    "wire_harness": { "name": "线束", "category": "电子元器件", "gb": ["36", "38", "39", "40"] },
+    "pcb_fab": { "name": "PCB制板", "category": "电子元器件", "gb": ["39", "40"] },
+    "anodizing": { "name": "阳极氧化", "category": "表面处理", "gb": ["32", "33", "34", "35", "36", "38"] },
+    "electroplating": { "name": "电镀", "category": "表面处理", "gb": ["32", "33", "34", "35", "36", "38"] },
+    "spray_painting": { "name": "喷涂", "category": "表面处理", "gb": ["29", "33", "34", "35", "36", "38"] },
+    "powder_coating": { "name": "粉末喷涂", "category": "表面处理", "gb": ["33", "34", "35", "36", "38"] },
+    "heat_treatment": { "name": "热处理", "category": "表面处理", "gb": ["33", "34", "35", "36", "38"] },
+    "blackening": { "name": "发黑", "category": "表面处理", "gb": ["33", "34", "35", "36"] },
+    "fastener": { "name": "紧固件", "category": "标准件", "gb": ["33", "34", "35", "36", "38"] },
+    "bearing": { "name": "轴承", "category": "标准件", "gb": ["34", "35", "36", "37", "38"] },
+    "spring": { "name": "弹簧", "category": "标准件", "gb": ["33", "34", "35", "36", "38"] },
+    "gear": { "name": "齿轮", "category": "标准件", "gb": ["34", "35", "36", "37", "38"] },
+    "metal_material": { "name": "金属材料", "category": "原材料", "gb": ["31", "32", "33"] },
+    "plastic_material": { "name": "塑料原料", "category": "原材料", "gb": ["26", "29"] },
+    "cutting_service": { "name": "零切服务", "category": "原材料", "gb": ["31", "32", "33"] },
+    "connector": { "name": "连接器", "category": "电子元器件", "gb": ["38", "39", "40"] },
+    "sensor": { "name": "传感器", "category": "电子元器件", "gb": ["38", "39", "40"] },
+    "relay": { "name": "继电器", "category": "电子元器件", "gb": ["38", "39", "40"] },
+    "electronic_component": { "name": "电子元件", "category": "电子元器件", "gb": ["38", "39", "40"] },
+    "metal_stamping": { "name": "五金冲压", "category": "钣金冲压", "gb": ["33", "34", "35", "36", "38"] },
+
+    "equipment_assembly": { "name": "成套设备装配", "category": "成套设备制造", "gb": ["34", "35", "36", "37", "38", "40"] },
+    "line_integration": { "name": "产线集成", "category": "成套设备制造", "gb": ["34", "35"] },
+    "control_panel_integration": { "name": "电控系统集成", "category": "成套设备制造", "gb": ["34", "35", "38", "39", "40"] },
+    "sheet_metal_general": { "name": "钣金（未细化到工序）", "category": "成套设备制造", "gb": ["33", "34", "35", "36", "38"], "note": "仅在企业只说了「钣金」这类泛称时用；说了具体工序必须落 laser_cutting/bending/stamping 等具体码" },
+    "machining_general": { "name": "机加工（未细化到工序）", "category": "成套设备制造", "gb": ["33", "34", "35", "36", "37", "38", "40"], "note": "同上，仅在企业只说「机加工」时用" }
   },
   "aliases": {
     "数控车": "cnc_turning",
@@ -197,6 +117,23 @@
     "传感器": "sensor",
     "继电器": "relay",
     "电子元件": "electronic_component",
-    "五金冲压": "metal_stamping"
+    "五金冲压": "metal_stamping",
+    "装配": "equipment_assembly",
+    "总装": "equipment_assembly",
+    "整机装配": "equipment_assembly",
+    "成套设备": "equipment_assembly",
+    "非标设备": "equipment_assembly",
+    "输送线": "line_integration",
+    "流水线": "line_integration",
+    "产线": "line_integration",
+    "风送线": "line_integration",
+    "自动化线": "line_integration",
+    "电控": "control_panel_integration",
+    "电控系统集成": "control_panel_integration",
+    "PLC": "control_panel_integration",
+    "配电柜": "control_panel_integration",
+    "钣金": "sheet_metal_general",
+    "机加工": "machining_general",
+    "机械加工": "machining_general"
   }
 }

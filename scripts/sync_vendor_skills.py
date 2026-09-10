@@ -64,6 +64,19 @@ def capabilities_of(cap: dict) -> list[str]:
     return caps
 
 
+def content_reviewed(cap: dict) -> bool:
+    """agent.verified：卡内容是否经过平台审核。
+
+    SPEC §2.3 定义 agent.verified = 「平台内容审核通过」。
+    认证流程里的卡带有 claim.status + claim.verified_at（审核日期），
+    满足即视为已审核；自动整理卡这两个字段为空 → False。
+    """
+    claim = cap.get("claim") or {}
+    return claim.get("status") in ("claimed", "verified", "audited") and bool(
+        claim.get("verified_at")
+    )
+
+
 def sync_one(sid: str, dry_run: bool = False) -> tuple[bool, str]:
     vdir = VENDOR_DIR / sid
     cfile = vdir / "capability.json"
@@ -109,7 +122,12 @@ def sync_one(sid: str, dry_run: bool = False) -> tuple[bool, str]:
         "skill_url": f"skills/vendors/{sid}/SKILL.md",
         "protocol": "skill",
         "capabilities": capabilities_of(cap),
-        "verified": False,
+        # SPEC §2.3：agent.verified = **平台内容审核通过**。
+        # 原实现恒写 False，对已通过认证审核的企业是明显低估（其卡内容逐项核过）。
+        # 判定：卡已认领/核验（status ∈ claimed|verified|audited）**且**有审核日期。
+        # 自动整理卡（status=unclaimed / verified_at=null）仍为 False——
+        # 未经审核的内容不能对外宣称已审核。
+        "verified": content_reviewed(cap),
     }
     if not supplier_loader.persist_supplier(sid, updated):
         return False, f"agent 字段落盘失败（前面 capability/fingerprint 已写入）"

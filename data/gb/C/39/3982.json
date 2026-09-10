@@ -10779,13 +10779,13 @@
       "city": "东莞"
     },
     "address": "石排镇下沙解放路29号",
-    "contact_phone": "待核实",
+    "contact_phone": "13926826581",
     "lat": 23.063821,
     "lng": 113.960494,
     "source": "public_directory",
     "source_url": "",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "amap": {
       "poi_id": "B0I6RSUAQV",
@@ -10811,7 +10811,7 @@
       "evidence": "线路板"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0021740",
@@ -23467,5 +23467,197 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023850",
+    "company": "老鲍顶墙柜高端定制",
+    "category": "电子元器件",
+    "keywords": [
+      "线路板"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "宝钱公路5000弄上海五金城213-3号",
+    "contact_phone": "13917911359",
+    "lat": 31.379059,
+    "lng": 121.148647,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L06UNHZ4",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "线路板"
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023851",
+    "company": "上海合成汽车修理有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "江杨南路1558弄-67号",
+    "contact_phone": "021-36415680; 13003203207",
+    "lat": 31.334774,
+    "lng": 121.464558,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00156O1SR",
+      "type": "汽车维修;汽车综合维修;汽车综合维修",
+      "typecode": "030100",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "泗塘小区",
+      "adcode": "310113",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023852",
+    "company": "宁波胜垚汽车维修有限公司(长兴路店)",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "长兴路482-486号(盛世嘉苑西南门东80米)",
+    "contact_phone": "13386637308",
+    "lat": 29.943134,
+    "lng": 121.47889,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH65R8M",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修|汽车销售;汽车销售;汽车销售",
+      "typecode": "010400|030000|020000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330205",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023853",
+    "company": "捷盛钣喷中心(万江店)",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "蚬涌工业路20号",
+    "contact_phone": "13377782221",
+    "lat": 23.067976,
+    "lng": 113.706915,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H0C5XAH8",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "补胎",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
   }
 ]

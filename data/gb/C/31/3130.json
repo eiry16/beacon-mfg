@@ -24541,15 +24541,15 @@
       "city": "东莞"
     },
     "address": "东城街道中堂镇袁鹤路2号111室",
-    "contact_phone": "待核实",
+    "contact_phone": "13929476486",
     "lat": 23.105466,
     "lng": 113.689968,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": {
       "code": "3130",
       "name": "钢压延加工",
@@ -37508,7 +37508,8 @@
     "company": "腾达不锈钢经营部",
     "category": "原材料",
     "keywords": [
-      "不锈钢材料"
+      "不锈钢材料",
+      "钢板"
     ],
     "region": {
       "province": "江苏",
@@ -46342,5 +46343,197 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023793",
+    "company": "铁山钢铁",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "G228百合美陶瓷西南侧约110米",
+    "contact_phone": "13825450098; 18707623201",
+    "lat": 22.846207,
+    "lng": 114.529511,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI5C9Q5",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
+      "typecode": "060603|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441303",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢铁"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023861",
+    "company": "宁波市飞宏特种钢制品有限公司",
+    "category": "原材料",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "高桥镇宋家漕村68号",
+    "contact_phone": "0574-88016886",
+    "lat": 29.871944,
+    "lng": 121.498139,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E11H64",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330203",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023863",
+    "company": "肥隆钢材隔热瓦夹芯板",
+    "category": "原材料",
+    "keywords": [
+      "不锈钢材料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "白陈公路与永安路交叉口东南120米",
+    "contact_phone": "15363681328; 17322737903",
+    "lat": 23.022627,
+    "lng": 113.201059,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGT7Y46A",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "桂城",
+      "adcode": "440605",
+      "search_keyword": "不锈钢材料"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023864",
+    "company": "乐盛钢材",
+    "category": "原材料",
+    "keywords": [
+      "钢板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "温州"
+    },
+    "address": "乐成街道长乐路口钢材市场",
+    "contact_phone": "13905873667; 18967755367",
+    "lat": 28.114686,
+    "lng": 120.961273,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JGB76TYP",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330382",
+      "search_keyword": "钢板"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true
   }
 ]

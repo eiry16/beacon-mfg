@@ -15580,13 +15580,13 @@
       "city": "苏州"
     },
     "address": "巴城镇益伸路299号",
-    "contact_phone": "待核实",
+    "contact_phone": "18826814434",
     "lat": 31.497425,
     "lng": 120.915301,
     "source": "public_directory",
     "source_url": "",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "amap": {
       "poi_id": "B0LKT5X86G",
@@ -15612,7 +15612,7 @@
       "evidence": "压铸"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013573",
@@ -28915,5 +28915,101 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023847",
+    "company": "二手压铸机买卖",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "沙电路与鸿兴路交叉口东南40米",
+    "contact_phone": "待核实",
+    "lat": 22.754667,
+    "lng": 113.680963,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUSY9MTL",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "旧货",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3392",
+      "name": "有色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 有色金属铸造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "压铸"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023848",
+    "company": "无锡市国安铝合金经营部",
+    "category": "压铸",
+    "keywords": [
+      "铝合金压铸"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "新东风钢材市场",
+    "contact_phone": "18961712668",
+    "lat": 31.663851,
+    "lng": 120.417009,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I6ZHE8I3",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "门窗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320205",
+      "search_keyword": "铝合金压铸"
+    },
+    "industry": {
+      "code": "3392",
+      "name": "有色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 有色金属铸造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "压铸"
+    },
+    "is_manufacturer": true
   }
 ]

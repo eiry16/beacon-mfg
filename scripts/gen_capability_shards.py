@@ -51,7 +51,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import sys
+import time
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
@@ -74,6 +76,24 @@ LIMIT_KEYS = [
     ("current_load_pct", "load"),
     ("rush_available", "rush"),
 ]
+
+
+def _unlink_with_retry(path: Path, retries: int = 3) -> None:
+    """删文件，失败按 0.2s / 0.4s 退避重试。
+
+    为什么：流水线里清理旧分片时，Windows 的文件占用会让 unlink 抛 WinError 32。
+    一次抖动不该让整 db 的重建失败（更糟的是只删一半，留下残缺分片）。
+    """
+    for i in range(retries):
+        try:
+            path.unlink()
+            return
+        except FileNotFoundError:
+            return
+        except OSError:
+            if i == retries - 1:
+                raise
+            time.sleep(0.2 * (i + 1))
 
 
 def has_phone(rec: dict) -> int:
@@ -227,12 +247,19 @@ def main() -> int:
     do_slim = not a.full_only
 
     def write_layer(name: str, data: dict[str, list[dict]]) -> tuple[int, int, dict]:
+        """写一层（full / slim）。
+
+        以前是「先删掉整层再重写」，两个毛病：
+          1. 删除 42+ 个文件，任何批量删除保护/杀软都会把整条流水线红掉；
+          2. 删完到写完之间文件不存在，正好在读的那个 App/Agent 会拿 404。
+        改成**原子替换 + 只清理孤儿**：
+          - 每次往 .tmp 写完再 os.replace，读者看到的永远是完整文件；
+          - 只有「这次没产出、但旧版里有」的分片才需要删（通常是 0 个）。
+        """
         base = out / name
-        if base.exists():
-            for f in base.rglob("*.json"):
-                f.unlink()
         n = 0
         shards = {}
+        written: set[Path] = set()
         for bucket, rows in data.items():
             rows = sorted(rows, key=lambda r: (r.get("id") or r.get("supplier_id") or ""))
             if bucket == UNCLASSIFIED:
@@ -241,7 +268,10 @@ def main() -> int:
                 p = base / "gb" / ("%s.json" % bucket)
             p.parent.mkdir(parents=True, exist_ok=True)
             payload = json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
-            p.write_text(payload, encoding="utf-8")
+            tmp = p.with_name(p.name + ".tmp")
+            tmp.write_text(payload, encoding="utf-8")
+            os.replace(tmp, p)
+            written.add(p)
             n += len(rows)
             rel = p.relative_to(out).as_posix()
             shards[rel] = {
@@ -251,6 +281,17 @@ def main() -> int:
                 "z": p.stat().st_size,
                 "h": hashlib.sha1(payload.encode("utf-8")).hexdigest(),
             }
+
+        # 清理孤儿：这批没产出的旧分片（如某小类一张卡都没有了）
+        orphan = 0
+        if base.exists():
+            for f in base.rglob("*.json"):
+                if f in written:
+                    continue
+                _unlink_with_retry(f)
+                orphan += 1
+        if orphan:
+            print("   清理旧分片 %d 个（该目录下已无对应能力卡）" % orphan)
         total_bytes = sum(s["z"] for s in shards.values())
         return n, total_bytes, shards
 

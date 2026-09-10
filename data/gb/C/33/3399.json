@@ -839,7 +839,8 @@
       "钢材",
       "不锈钢材料",
       "铝合金",
-      "铜管"
+      "铜管",
+      "钢板"
     ],
     "region": {
       "province": "广东",
@@ -8654,15 +8655,15 @@
       "city": "深圳"
     },
     "address": "马田街道深圳市恒泰五金有限公司大围沙河工业区",
-    "contact_phone": "待核实",
+    "contact_phone": "13431931931",
     "lat": 22.763612,
     "lng": 113.916477,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": {
       "code": "3399",
       "name": "其他未列明金属制品制造",
@@ -10197,7 +10198,8 @@
     "company": "东莞市高港五金制品有限公司",
     "category": "标准件",
     "keywords": [
-      "紧固件"
+      "紧固件",
+      "铝合金压铸"
     ],
     "region": {
       "province": "广东",
@@ -10954,7 +10956,8 @@
     "company": "深圳市耀达精密五金有限公司",
     "category": "标准件",
     "keywords": [
-      "紧固件"
+      "紧固件",
+      "弹簧"
     ],
     "region": {
       "province": "广东",
@@ -17732,7 +17735,10 @@
     "company": "景程五金供应链",
     "category": "标准件",
     "keywords": [
-      "弹簧"
+      "弹簧",
+      "塑料模具",
+      "模具",
+      "模具加工"
     ],
     "region": {
       "province": "广东",
@@ -18631,15 +18637,15 @@
       "city": "深圳"
     },
     "address": "龙华观澜桔岭新村金桔路270-1号厂房1楼",
-    "contact_phone": "待核实",
+    "contact_phone": "13632665253",
     "lat": 22.727815,
     "lng": 114.018362,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "amap": {
       "poi_id": "B0I39Z0DIN",
       "type": "公司企业;公司;公司",
@@ -48294,15 +48300,15 @@
       "city": "东莞"
     },
     "address": "铭通工业园A2栋3楼E车间",
-    "contact_phone": "待核实",
+    "contact_phone": "15377770229",
     "lat": 23.00129,
     "lng": 113.909555,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": {
       "code": "3399",
       "name": "其他未列明金属制品制造",
@@ -50300,15 +50306,15 @@
       "city": "深圳"
     },
     "address": "松岗街道江边创业一路振泰工业城B栋",
-    "contact_phone": "待核实",
+    "contact_phone": "13725516318",
     "lat": 22.771278,
     "lng": 113.813674,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": {
       "code": "3399",
       "name": "其他未列明金属制品制造",
@@ -50588,15 +50594,15 @@
       "city": "东莞"
     },
     "address": "黄江村北二街8号",
-    "contact_phone": "待核实",
+    "contact_phone": "13652401722; 18027006108",
     "lat": 22.881525,
     "lng": 113.997275,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": {
       "code": "3399",
       "name": "其他未列明金属制品制造",
@@ -50738,7 +50744,8 @@
     "category": "钣金冲压",
     "keywords": [
       "钣金加工",
-      "不锈钢材料"
+      "不锈钢材料",
+      "钢板"
     ],
     "region": {
       "province": "江苏",
@@ -61868,7 +61875,8 @@
     "company": "御龙金属制品有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械"
+      "精密机械",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -62008,7 +62016,10 @@
     "keywords": [
       "机械加工",
       "钣金加工",
-      "激光切割"
+      "激光切割",
+      "精密机械",
+      "塑料模具",
+      "模具加工"
     ],
     "region": {
       "province": "江苏",
@@ -68088,7 +68099,8 @@
     "category": "标准件",
     "keywords": [
       "螺丝",
-      "螺栓"
+      "螺栓",
+      "喷涂"
     ],
     "region": {
       "province": "广东",
@@ -70442,5 +70454,245 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi"
+  },
+  {
+    "id": "CN-MFG-0023772",
+    "company": "虎门创林机械五金加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "翻身六巷15号",
+    "contact_phone": "待核实",
+    "lat": 22.771742,
+    "lng": 113.722803,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MD2R7CAR",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金加工"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023786",
+    "company": "珠海高捷特金属制品有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "珠海"
+    },
+    "address": "珠海高栏港区平沙镇广新路82号",
+    "contact_phone": "待核实",
+    "lat": 22.115448,
+    "lng": 113.201397,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGBMD3D",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440404",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "金属制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023810",
+    "company": "东莞市志逸鸿五金塑胶有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东长路6号",
+    "contact_phone": "待核实",
+    "lat": 23.031324,
+    "lng": 113.943563,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBDMFKW4",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023854",
+    "company": "振平五金",
+    "category": "标准件",
+    "keywords": [
+      "螺丝"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "泰旗路207号",
+    "contact_phone": "13967399359; 15888337097",
+    "lat": 30.675938,
+    "lng": 120.664218,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023D041VV",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330411",
+      "search_keyword": "螺丝"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023856",
+    "company": "晶晶五金百货",
+    "category": "标准件",
+    "keywords": [
+      "螺栓"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "江阴高新技术产业开发区锦隆小区一村芙蓉路212号第二实验小学对面",
+    "contact_phone": "待核实",
+    "lat": 31.917192,
+    "lng": 120.308205,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B01FE15STG",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "城东开发区",
+      "adcode": "320281",
+      "search_keyword": "螺栓"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -1,0 +1,92 @@
+{
+  "profile": "equipment_assembly",
+  "category": "成套设备制造",
+  "version": "1.0",
+  "description": "成套设备 / 非标产线制造（输送线、包装线、装配线、专用设备等）。按项目定制交付，客户最关心交付形态、产能计量口径、是否含电控与现场安装，而不是单件公差。",
+
+  "_why_this_profile_exists": "8 品类枚举（精密机械加工/钣金冲压/注塑成型/压铸/表面处理/标准件/电子元器件/原材料）全是零件加工导向，装不下「做整条产线」的企业。认证侧早在 CERT-20260908-0317 就用了 equipment_assembly，本文件是能力卡层的补齐。详见 docs/GAP_EQUIPMENT_ASSEMBLY.md。",
+
+  "_field_path_warning": "check_profile 只在 cap['capability'] 里按 path 取键（path 以 capability. 开头时截掉前缀，否则用完整 path 当 key）。所以本文件的 path 必须都是 capability.*，写 service.installation 会静默查错地方、永远取不到值。",
+
+  "fields": [
+    {
+      "path": "capability.deliverable_scope",
+      "label": "交付形态",
+      "type": "multi_enum",
+      "enum": ["整线交付", "单机设备", "产线改造", "备件配套", "安装调试服务"],
+      "normalize": "multi_enum",
+      "question": "你们一般交到哪一步？整条线、单台设备、还是老线改造？",
+      "hint": "可多选。例：整线交付 + 安装调试服务",
+      "required": true,
+      "why": "成套设备最关键的定位信息。只做单机却按整线询单，是双方最大的时间浪费"
+    },
+    {
+      "path": "capability.capacity_unit",
+      "label": "产能计量单位",
+      "type": "enum",
+      "enum": ["米", "台", "套", "条", "吨", "平方米"],
+      "normalize": "enum",
+      "question": "你们的产能按什么单位算？",
+      "hint": "输送线常用「米」，专机常用「台/套」",
+      "required": true,
+      "why": "不写单位，月产能 500 无法判断是 500 米产线还是 500 台设备——这是成套设备报价最常见的误解来源"
+    },
+    {
+      "path": "capability.control_integration",
+      "label": "电控系统集成",
+      "type": "enum",
+      "enum": ["自研集成", "外购集成", "不含电控", "未说明"],
+      "normalize": "enum",
+      "question": "电控（PLC/柜体/程序）是自己做还是外购？",
+      "hint": "自研集成 / 外购集成 / 不含电控 / 未说明",
+      "required": false,
+      "why": "含不含电控直接决定报价口径与交期，也是判断技术能力的关键"
+    },
+    {
+      "path": "capability.line_length_m",
+      "label": "可承接产线长度",
+      "type": "number",
+      "unit": "m",
+      "normalize": "length_m",
+      "question": "单条线最长能接多少米？",
+      "hint": "例：200（指 200 米）",
+      "required": false
+    },
+    {
+      "path": "capability.installation",
+      "label": "是否含现场安装调试",
+      "type": "bool",
+      "normalize": "bool",
+      "question": "报价里含不含到客户现场的安装调试？",
+      "hint": "含 / 不含",
+      "required": false,
+      "why": "认证采集里这一项的缺失率最高，且是询单必问项"
+    },
+    {
+      "path": "capability.equipment",
+      "label": "主要设备",
+      "type": "equipment_list",
+      "normalize": "equipment_list",
+      "question": "厂里主要有哪些设备？各几台？",
+      "hint": "例：折弯机 2 台、氩弧焊机 8 台、加工中心 3 台",
+      "required": false
+    }
+  ],
+
+  "conflict_rules": [
+    {
+      "id": "tolerance_too_tight",
+      "when": ["limits.tolerance_mm"],
+      "check": "tolerance_sane",
+      "level": "warn",
+      "message": "成套设备一般没有统一公差，公差小于 0.005mm 属于精密磨削范畴，请确认是不是填错或另指零件级精度"
+    },
+    {
+      "id": "moq_vs_capacity",
+      "when": ["limits.min_order_qty", "limits.monthly_capacity.value"],
+      "check": "moq_capacity_sane",
+      "level": "warn",
+      "message": "MOQ 与月产能组合看起来不合理，请确认单位（台/套/米）"
+    }
+  ]
+}

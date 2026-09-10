@@ -17271,15 +17271,15 @@
       "city": "深圳"
     },
     "address": "福城街道茜坑社区葆合莱工业区第2栋厂房",
-    "contact_phone": "待核实",
+    "contact_phone": "15815529448; 15994702799",
     "lat": 22.687036,
     "lng": 114.033384,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": {
       "code": "3252",
       "name": "铝压延加工",
@@ -18250,15 +18250,15 @@
       "city": "深圳"
     },
     "address": "新湖街道楼村第一工业区楼一工一路29号1栋",
-    "contact_phone": "待核实",
+    "contact_phone": "13530100758",
     "lat": 22.777779,
     "lng": 113.921815,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": {
       "code": "3252",
       "name": "铝压延加工",
@@ -29564,5 +29564,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023868",
+    "company": "上海政海再生资源回收中心",
+    "category": "原材料",
+    "keywords": [
+      "铝板"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "淞沪路与民府路交叉口西北40米",
+    "contact_phone": "13816620078; 18817510818",
+    "lat": 31.316302,
+    "lng": 121.506003,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I0VM928R",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "回收服务",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江湾",
+      "adcode": "310110",
+      "search_keyword": "铝板"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": true
   }
 ]

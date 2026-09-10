@@ -24185,15 +24185,15 @@
       "city": "深圳"
     },
     "address": "公明街道西田社区展辉路60号蜂巢科创厂2栋803室",
-    "contact_phone": "待核实",
+    "contact_phone": "13528841339",
     "lat": 22.807125,
     "lng": 113.90094,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": null,
     "is_manufacturer": true,
     "amap": {
@@ -28550,5 +28550,125 @@
     "industry": null,
     "is_manufacturer": true,
     "status": "unverified_poi"
+  },
+  {
+    "id": "CN-MFG-0023761",
+    "company": "迈思文广告塘桥店",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "南京路222号",
+    "contact_phone": "18962285716",
+    "lat": 31.817075,
+    "lng": 120.634842,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LA7SVYAB",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "广告设计",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "机械加工"
+    },
+    "industry": null,
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023788",
+    "company": "奥格星7A纺织品抗菌太空舱加工中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "钟村街钟盛路44号新明亮工业园2栋1层",
+    "contact_phone": "18938012132",
+    "lat": 22.970925,
+    "lng": 113.295225,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDGCK355",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "钟村",
+      "adcode": "440113",
+      "search_keyword": "加工中心"
+    },
+    "industry": null,
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023873",
+    "company": "改性塑料研发超市",
+    "category": "注塑成型",
+    "keywords": [
+      "改性塑料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "舜宇路与兴诚路交叉口东160米",
+    "contact_phone": "待核实",
+    "lat": 30.090254,
+    "lng": 121.158833,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-10",
+    "imported_at": "2026-09-10",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUZ98BIR",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "购物服务,购物相关场所,购物相关场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "改性塑料"
+    },
+    "industry": null,
+    "is_manufacturer": true
   }
 ]

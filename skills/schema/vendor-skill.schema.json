@@ -51,6 +51,73 @@
       "type": "string",
       "format": "date"
     },
+    "gb_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9]{4}$",
+      "description": "GB/T 4754 小类码。由 scripts/sync_gb_code.py 从名录 industry 同步；名录缺 industry 时留 null（红线：不猜、不填兜底值）。归档/分片/检索一律走它，8 品类 category 已降级为展示标签。"
+    },
+    "gb_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "国标小类名称，如「连续搬运设备制造」"
+    },
+    "gb_path": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "国标完整路径，如「C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 连续搬运设备制造」"
+    },
+    "not_applicable": {
+      "type": "array",
+      "description": "企业**明确判定不适用**的字段及理由。不适用 ≠ 未填：成套设备没有统一公差是业务事实，写成 null 会被下游当成「没问到」。这个区分本身就是数据可信度的一部分，禁止与 null 合并。",
+      "items": {
+        "type": "object",
+        "required": [
+          "field",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "process_self_report": {
+      "type": "object",
+      "description": "工艺的企业原话溯源。码表有对应码时必须落 processes；本字段只留原话与说明，不得当作工艺位的替代品。",
+      "additionalProperties": false,
+      "properties": {
+        "quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
     "claim": {
       "type": "object",
       "additionalProperties": false,
@@ -92,6 +159,20 @@
             "L2",
             "L3"
           ]
+        },
+        "app_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "认证申请档案号（如 CERT-20260908-0317），溯源唯一入口"
+        },
+        "valid_until": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "凭证有效期（YYYY-MM-DD）。过期判断依据"
         }
       }
     },
@@ -182,6 +263,48 @@
           "items": {
             "type": "string"
           }
+        },
+        "uscc": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "统一社会信用代码。认主的法律主体锚点，18 位"
+        },
+        "legal_person": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "法定代表人（公开记录，非联系人）"
+        },
+        "registered_address": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "工商注册地址。可能与生产地址不同，是地址差异核验的依据"
+        },
+        "business_nature": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "manufacturer",
+            "trader",
+            "mixed",
+            null
+          ],
+          "description": "经营性质。执照登记口径与自述冲突时按「自述 > 公开记录」取自述值，登记口径在 provenance.note 留痕"
+        },
+        "employee_outsource": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "在场人数中的劳务外包人数。不写会让人高估自有产能（例：在场 23 人里 20 人是外包）"
         }
       }
     },
@@ -524,6 +647,13 @@
             "string",
             "null"
           ]
+        },
+        "installation": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "是否含现场安装调试。成套设备（equipment_assembly）询单必问项，认证采集中缺失率最高的一项"
         }
       }
     },
@@ -591,6 +721,13 @@
           "items": {
             "type": "string"
           }
+        },
+        "public_record": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "公开记录（工商/专利/资质公示等）。**未经第三方核验**，是独立于 self_declared 的证据档，禁止合并——合并会让「公开可查」被当成「企业自己说的」"
         },
         "assets": {
           "type": "array",
