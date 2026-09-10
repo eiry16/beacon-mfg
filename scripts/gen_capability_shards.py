@@ -338,7 +338,14 @@ def main() -> int:
     (out / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    print("\n清单 → %s" % (out / "manifest.json").relative_to(ROOT))
+    # ⚠ 手写 --out 可能给相对路径，resolve() 一下再取相对路径，
+    #   否则 relative_to(ROOT) 抛 ValueError —— 东西已经写完了才崩，最冤。
+    mf = (out / "manifest.json").resolve()
+    try:
+        mf_rel = mf.relative_to(ROOT)
+    except ValueError:
+        mf_rel = mf
+    print("\n清单 → %s" % mf_rel)
     print("上传 Pages 直接把这个目录传上去即可：%s" % out)
     return 0
 

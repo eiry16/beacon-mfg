@@ -1,187 +1,325 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""把 L1 能力卡 + L2 厂商 skill 部署到 Cloudflare Pages
+"""组装 dist/site 并部署到 Cloudflare Pages（用 wrangler，不再手写 API）。
 
-⚠ 为什么用 wrangler 而不是手写 API
------------------------------------
-第一版是纯标准库手写 `POST /pages/projects/{name}/deployments`（multipart）。
-实测三种写法**全部返回 success、部署状态 deploy success，但站点全线 404**：
+为什么改用 wrangler
+-------------------
+2026-09-10 踩过一次大的：手写 multipart 打
+`POST /accounts/{a}/pages/projects/{p}/deployments`（manifest + 每文件以 hash
+为字段名）**接口返回 success、deployment 也建出来了，但资产从未真正落库**，
+取的时候边缘层 500（空 body，CF-RAY 打到法兰克福）。更糟的是它把上一个能用的
+部署（08c9bc7c，4136 家 SKILL.md 真实可下载）覆盖成了只有 1 个 index.html 的
+空壳 —— 全站 500，4137 家全部取不到。
 
-  1. 文件字段名 = 相对路径
-  2. 文件字段名 = 内容哈希（manifest 做 路径→哈希 映射）
-  3. manifest 放在文件字段之前
+官方现行协议（cloudflare/workers-sdk，packages/wrangler/src/pages/upload.ts）
+是 `upload-token → check-missing → assets/upload(JSON 数组 + base64) →
+upsert-hashes → deployments` 五步，没文档、会变、且失败时假装成功。
+**结论：不要手写官方协议。** wrangler 直接读 CLOUDFLARE_API_TOKEN /
+CLOUDFLARE_ACCOUNT_ID，不需要交互登录，也不多一个要维护的凭据。
+（上一版脚本里"不用 wrangler 少一个凭据"的理由是错的，已在事故里证伪。）
 
-CF 不报错，文件却一个都没存进去——典型静默成功。改用官方 wrangler 后
-同样的内容一次就 200。**结论：别手写这个 API，用 wrangler。**
+站点里装什么
+------------
+    dist/site/
+      index.html                      人类入口
+      skills/vendors/{id}/SKILL.md    L2 自述 ← App 唯一依赖的一层
+      full/gb/**                      L1 完整能力卡分片（对外 Agent 按需拉）
+      slim/gb/**                      L1 精简分片
+      manifest.json                   分片清单
 
-传什么
-------
-    dist/capability/manifest.json              客户端入口（分片清单 + SHA1）
-    dist/capability/full/gb/**/*.json          完整能力卡，按需拉取
-    dist/capability/slim/gb/**/*.json          精简版，App 内置那份的源头
-    skills/vendors/{id}/SKILL.md               厂商自述（L2）
+App 拉的是 `capabilityBase + "/" + skillPath`，skillPath =
+`skills/vendors/{id}/SKILL.md`（ChatScreen.kt:608 / Model.kt:188）。
+旧部署 08c9bc7c 实测也只有 SKILL.md（capability.json、data/manifest.json
+全是 404）。full/ slim/ 是给外部 Agent 用的完整卡，SettingsRepo 注释里也写了
+Pages 承担这两层，所以一并传 —— 总共约 4200 文件 / 24 MB，远低于 Pages 上限。
 
-**vendors 的路径必须原样保留**：App 里 `skillPath` 写死是
-`skills/vendors/{id}/SKILL.md`，部署后拼上域名就能直接打开，
-改一层目录 App 那边就 404。
+能力卡分片交给 `scripts/gen_capability_shards.py` 产，**不要自己拼**。
 
-当前规模：4219 个文件 / 约 14 MB（Pages 上限 20000 文件、单文件 25 MB）。
+⚠ 根因（比部署协议更重要）
+--------------------------
+耐特斯 CN-MFG-0020317 404 的真因不是"从来没传过"，是**发布快照是一次性手工
+动作**：它当天才建档，而 09-09 的部署快照早于它 → URL 在大盘上不存在。
+App 侧的 HEAD 探活只是止血。要根治，部署必须能被低成本重复触发 —— 这就是
+本脚本存在的意义：新供应商建档后重跑一次即可，不用等人记得。
 
-准备
+用法
 ----
-1. 仓库根目录 .env 里写（.env 已被 .gitignore 排除，
-   **不要写进任何会被提交的文件**）：
+    python scripts/deploy_pages.py --build     # 只组装 dist/site，不上传
+    python scripts/deploy_pages.py             # 组装 + 部署 + 验证（默认）
+    python scripts/deploy_pages.py --verify    # 只做部署后抽样验证
+    python scripts/deploy_pages.py --deploy-only  # 跳过组装直接部署
+    python scripts/deploy_pages.py --dry-run   # 只打印 wrangler 命令
 
-    CLOUDFLARE_ACCOUNT_ID=...
-    CLOUDFLARE_API_TOKEN=...
-
-   Token 最小权限：`Account > Cloudflare Pages: Edit`。不需要任何 Zone 权限。
-
-2. 装 wrangler（只需一次）：
-
-    cd <node workspace> && npm install wrangler
-
-用法:
-    python scripts/deploy_pages.py              # 预览（只构建 staging，不上传）
-    python scripts/deploy_pages.py --apply      # 构建并上传
-    python scripts/deploy_pages.py --apply --no-vendors   # 不传 L2 厂商 skill
-    python scripts/deploy_pages.py --apply --project other-name
+环境变量：CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID（写在 .env 里，
+**等号两侧不要留空格** —— bash 会 command not found，Python 取到带尾空格的
+键名，不报错只静默失效）。wrangler / node 路径可用 WRANGLER_JS / NODE_BIN 覆盖。
 """
+
 from __future__ import annotations
 
 import argparse
-import glob
 import os
 import shutil
 import subprocess
 import sys
+import time
+import urllib.error
+import urllib.request
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-ENV_FILE = ROOT / ".env"
-CAP_DIR = ROOT / "dist" / "capability"
-VENDOR_DIR = ROOT / "skills" / "vendors"
-STAGING = ROOT / "dist" / "site"
+REPO_ROOT = Path(__file__).resolve().parents[1]
+PAGES_SRC = REPO_ROOT / "pages"
+VENDORS = REPO_ROOT / "skills" / "vendors"
+DIST = REPO_ROOT / "dist" / "site"
 
-DEFAULT_PROJECT = "beacon-mfg"
+PROJECT_NAME = "beacon-mfg"
+BRANCH = "main"
+BASE_URL = "https://beacon-mfg.pages.dev"
 
-# wrangler 的兜底路径（本项目 node workspace）。有环境变量或 PATH 时优先用那些。
-NODE_BIN = r"C:/Users/陆斌/.workbuddy/binaries/node/versions/22.22.2-2/node.exe"
-WRANGLER_JS = r"C:/Users/陆斌/.workbuddy/binaries/node/workspace/node_modules/wrangler/bin/wrangler.js"
+NODE_BIN = os.environ.get(
+    "NODE_BIN", r"C:/Users/陆斌/.workbuddy/binaries/node/versions/22.22.2-2/node.exe")
+WRANGLER_JS = os.environ.get(
+    "WRANGLER_JS",
+    r"C:/Users/陆斌/.workbuddy/binaries/node/workspace/node_modules/wrangler/bin/wrangler.js")
 
 
 def load_env() -> tuple[str, str]:
-    if not ENV_FILE.exists():
-        sys.exit(f"缺少 {ENV_FILE}；把 CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN 写进去")
-    vals: dict[str, str] = {}
-    for line in ENV_FILE.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        k, v = line.split("=", 1)
-        vals[k.strip()] = v.strip()
-    acct = vals.get("CLOUDFLARE_ACCOUNT_ID", "")
-    token = vals.get("CLOUDFLARE_API_TOKEN", "")
-    if not acct or not token:
-        sys.exit(".env 里缺少 CLOUDFLARE_ACCOUNT_ID 或 CLOUDFLARE_API_TOKEN")
-    return acct, token
+    """读 .env。键和值都要 strip（09-10 踩过等号带空格 → 静默失效的坑）。"""
+    env_file = REPO_ROOT / ".env"
+    if env_file.exists():
+        for line in env_file.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip())
+
+    token = os.environ.get("CLOUDFLARE_API_TOKEN", "")
+    account = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "")
+    if not token or not account:
+        print("✗ 缺少 CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID（写在 .env 里）",
+              file=sys.stderr)
+        sys.exit(1)
+    return token, account
 
 
-def build_staging(with_vendors: bool) -> int:
-    """把两拨内容合成一个站点目录。返回文件数。"""
-    if not CAP_DIR.exists():
-        sys.exit(f"缺少 {CAP_DIR}；先跑 python scripts/gen_capability_shards.py --apply")
-    if STAGING.exists():
-        shutil.rmtree(STAGING)
-    STAGING.mkdir(parents=True)
+def build(verbose: bool = True) -> dict:
+    """组装 dist/site。返回统计。"""
+    t0 = time.time()
 
-    n = 0
-    for p in sorted(CAP_DIR.rglob("*")):
-        if p.is_file():
-            dst = STAGING / p.relative_to(CAP_DIR)
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(p, dst)
-            n += 1
+    # 1) 覆盖式写入，不做批量删除
+    #    为什么不先清空：09-10「gen_capability_shards 删除风暴」的教训 —— 任何批量
+    #    删除保护/杀软都会让流水线红掉，且删完到写完之间有窗口让读方 404。
+    #    这里更进一步：环境的 safe-delete 会拦截 rmtree（实测删 dist/site/full
+    #    直接抛 OSError）。所以只覆盖、只增补，孤儿（供应商已下线但仍留在 dist 里的
+    #    文件）**只报告不删**，由人决定。
+    DIST.mkdir(parents=True, exist_ok=True)
 
-    m = 0
-    if with_vendors and VENDOR_DIR.exists():
-        for p in sorted(glob.glob(str(VENDOR_DIR / "*" / "SKILL.md"))):
-            src = Path(p).resolve()
-            dst = STAGING / src.relative_to(ROOT)
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dst)
-            m += 1
+    # 2) 人类入口 + 404 页（pages/*.html）
+    #    404.html 不只是好看：Pages 对未匹配路径默认**回退 index.html 并返回 200**，
+    #    有了 404.html 才能给出真的 404 —— App 的 HEAD 探活靠这个区分
+    #    「已发布 / 还没进快照」。
+    for html in sorted(PAGES_SRC.glob("*.html")):
+        shutil.copy2(html, DIST / html.name)
 
-    files = [f for f in STAGING.rglob("*") if f.is_file()]
-    total = sum(f.stat().st_size for f in files)
-    print("staging：%d 个文件 / %.2f MB（能力卡 %d + 厂商 skill %d）"
-          % (len(files), total / 1048576, n, m))
-    return len(files)
+    # 3) L2 自述：skills/vendors/{id}/SKILL.md —— App 唯一依赖的一层
+    n_skill, missing = 0, []
+    written_ids: set[str] = set()
+    if VENDORS.exists():
+        for vendor_dir in sorted(VENDORS.iterdir()):
+            if not vendor_dir.is_dir():
+                continue
+            src = vendor_dir / "SKILL.md"
+            if not src.exists():
+                missing.append(vendor_dir.name)
+                continue
+            dst_dir = DIST / "skills" / "vendors" / vendor_dir.name
+            dst_dir.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dst_dir / "SKILL.md")
+            written_ids.add(vendor_dir.name)
+            n_skill += 1
+
+    # 4) L1 能力卡分片（full/ slim/ manifest.json）—— 交给专业脚本，不自己拼
+    shard = REPO_ROOT / "scripts" / "gen_capability_shards.py"
+    if shard.exists():
+        # ⚠ 必须带 --apply：该脚本默认是**预览模式不写盘**，且退出码仍是 0。
+        #    漏了这个参数 = full/ slim/ manifest.json 静默停留在上一版，
+        #    而 stdout 照样打出漂亮的统计（09-10 踩过：4181 文件里分片全是旧的）。
+        proc = subprocess.run(
+            [sys.executable, str(shard), "--out", str(DIST), "--apply"],
+            cwd=str(REPO_ROOT), capture_output=True, text=True)
+        if proc.returncode != 0:
+            print("✗ gen_capability_shards.py 失败：", file=sys.stderr)
+            print(proc.stdout[-2000:], "\n", proc.stderr[-2000:], file=sys.stderr)
+            sys.exit(1)
+        if "预览模式" in proc.stdout or "未写盘" in proc.stdout:
+            print("✗ gen_capability_shards.py 仍在预览模式，分片没写盘", file=sys.stderr)
+            sys.exit(1)
+        if verbose:
+            for line in proc.stdout.strip().splitlines()[-4:]:
+                print(f"  {line}")
+    else:
+        print("⚠ 没找到 gen_capability_shards.py，跳过 full/ slim/ 分片")
+
+    # 孤儿：dist 里还留着、但源里已经没有的供应商（覆盖式写入不会自动清）
+    dist_vendor_root = DIST / "skills" / "vendors"
+    orphans = sorted(
+        {p.parent.name for p in dist_vendor_root.glob("*/SKILL.md")} - written_ids
+    ) if dist_vendor_root.exists() else []
+
+    files = [f for f in DIST.rglob("*") if f.is_file()]
+    size_mb = sum(f.stat().st_size for f in files) / 1e6
+    stats = {
+        "skill_md": n_skill,
+        "missing_skill_md": missing,
+        "orphans": orphans,
+        "files": len(files),
+        "mb": round(size_mb, 2),
+        "seconds": round(time.time() - t0, 1),
+    }
+    if verbose:
+        print(f"\n✓ dist/site 组装完成：{n_skill} 份 SKILL.md · 共 {len(files)} 文件 · "
+              f"{size_mb:.1f} MB · {stats['seconds']}s")
+        if missing:
+            print(f"⚠ {len(missing)} 家缺 SKILL.md：{missing[:5]}"
+                  f"{' …' if len(missing) > 5 else ''}")
+        if orphans:
+            print(f"⚠ {len(orphans)} 个孤儿目录（源里已无，dist 仍会上传）："
+                  f"{orphans[:5]}{' …' if len(orphans) > 5 else ''}")
+    return stats
 
 
-def find_wrangler() -> list[str] | None:
-    """找 wrangler。优先环境变量，其次 PATH，最后兜底到本项目 node workspace。"""
-    custom = os.environ.get("WRANGLER")
-    if custom:
-        return [custom]
-    which = shutil.which("wrangler")
-    if which:
-        return [which]
-    if os.path.exists(WRANGLER_JS) and os.path.exists(NODE_BIN):
-        return [NODE_BIN, WRANGLER_JS]
-    return None
+def deploy(dry_run: bool = False) -> int:
+    token, account = load_env()
+
+    if not Path(WRANGLER_JS).exists():
+        print(f"✗ 找不到 wrangler：{WRANGLER_JS}", file=sys.stderr)
+        sys.exit(1)
+
+    cmd = [
+        NODE_BIN, WRANGLER_JS, "pages", "deploy", str(DIST),
+        "--project-name", PROJECT_NAME,
+        "--branch", BRANCH,
+        # 工作区几乎总有未提交改动，不打这个标 wrangler 每次都要刷一行警告
+        "--commit-dirty=true",
+    ]
+    env = dict(os.environ)
+    env["CLOUDFLARE_API_TOKEN"] = token
+    env["CLOUDFLARE_ACCOUNT_ID"] = account
+    env["WRANGLER_SEND_METRICS"] = "false"
+
+    print("› " + " ".join(cmd))
+    if dry_run:
+        print("（--dry-run，未执行）")
+        return 0
+
+    return subprocess.run(cmd, cwd=str(DIST), env=env).returncode
+
+
+def _sample_ids() -> list[str]:
+    """从 dist 里挑真实存在的 id（首/中/尾 + 固定关注的两家）。
+
+    ⚠ 不要写死 id 当样本：4137 家里挑一个号段中不存在的号（比如 CN-MFG-0012000）
+    会得到 index.html + 200（见下方 SPA 回退），验证就变成假绿。
+    """
+    vroot = DIST / "skills" / "vendors"
+    ids = sorted(p.parent.name for p in vroot.glob("*/SKILL.md")) if vroot.exists() else []
+    if not ids:
+        return ["CN-MFG-0020317", "CN-MFG-0000005"]
+    pick = [ids[0], ids[len(ids) // 2], ids[-1]]
+    for fixed in ("CN-MFG-0020317", "CN-MFG-0000005"):  # 耐特斯 + 旧部署基准
+        if fixed in ids:
+            pick.append(fixed)
+    # 去重保序
+    return list(dict.fromkeys(pick))
+
+
+def verify() -> int:
+    """抽样验证。**只有全绿才敢写「404 已修」。**
+
+    ⚠ Pages 的 SPA 回退：路径不存在时**不返回 404，而是返回 index.html + 200**
+    （2026-09-10 实测：CN-MFG-0023533 本地根本没有 SKILL.md，线上照样 200，
+    内容和 index.html 一模一样）。所以**只看状态码是假绿**，必须验内容。
+    ——同一个坑也打在 App 侧：ChatScreen 的 HEAD 探活因此永远成功。
+    """
+    checks = ["/", "/index.html", "/manifest.json", "/full/_unclassified.json"]
+    checks += [f"/skills/vendors/{i}/SKILL.md" for i in _sample_ids()]
+
+    bad = 0
+    for path in checks:
+        url = BASE_URL + path
+        try:
+            req = urllib.request.Request(
+                url, headers={"Cache-Control": "no-cache",
+                              "User-Agent": "beaconmfg-verify/1.0"})
+            with urllib.request.urlopen(req, timeout=25) as r:
+                body = r.read()
+                ok = r.status == 200 and bool(body)
+                note = ""
+                # 内容是不是被回退成了 HTML 页（index.html / 404.html）
+                if body.lstrip()[:16].lower().startswith((b"<!doctype", b"<html")):
+                    if not path.endswith((".html", "/")):
+                        ok, note = False, "  ✗ 回退成 HTML 页（该路径其实不存在）"
+                print(f"  {r.status}  {len(body):>9,} B  {path}{note}"
+                      + ("" if ok else "   ✗"))
+                if not ok:
+                    bad += 1
+        except urllib.error.HTTPError as e:
+            print(f"  {e.code}  {'':>9}      {path}   ✗")
+            bad += 1
+        except Exception as e:  # noqa: BLE001
+            print(f"  ERR {'':>9}      {path}   ✗ {type(e).__name__}: {e}")
+            bad += 1
+
+    # 反向探测：一个肯定不存在的路径，期望 404。
+    # ⚠ 必须带 User-Agent：实测无 UA 的请求会被 CF 直接 403，
+    #   而 403 会被误读成「有 404 行为」——2026-09-10 就差点这么骗过自己。
+    probe = "/skills/vendors/CN-MFG-9999999/SKILL.md"
+    try:
+        req = urllib.request.Request(
+            BASE_URL + probe,
+            headers={"Cache-Control": "no-cache", "User-Agent": "beaconmfg-verify/1.0"})
+        with urllib.request.urlopen(req, timeout=25) as r:
+            print(f"\n⚠ 不存在的路径 {probe} 返回 {r.status} —— Pages 在做 SPA 回退，"
+                  f"App 的 HEAD 探活会永远判为「已发布」（检查 404.html 传上去没有）")
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            print(f"\n✓ 不存在的路径正确返回 404（404.html 生效，App 探活可用）")
+        else:
+            print(f"\n⚠ 不存在的路径返回 {e.code}（预期 404，需人工确认）")
+
+    print()
+    if bad:
+        print(f"✗ {bad}/{len(checks)} 项未通过 —— 不要写「404 已修」")
+    else:
+        print(f"✓ {len(checks)}/{len(checks)} 全绿")
+    return 1 if bad else 0
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="部署 L1/L2 到 Cloudflare Pages（走 wrangler）")
-    ap.add_argument("--apply", action="store_true", help="真正上传（默认只构建 staging）")
-    ap.add_argument("--no-vendors", action="store_true", help="不传 L2 厂商 skill")
-    ap.add_argument("--project", default=DEFAULT_PROJECT, help=f"项目名（默认 {DEFAULT_PROJECT}）")
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--build", action="store_true", help="只组装 dist/site")
+    ap.add_argument("--verify", action="store_true", help="只做部署后抽样验证")
+    ap.add_argument("--deploy-only", action="store_true", help="跳过组装直接部署")
+    ap.add_argument("--dry-run", action="store_true", help="只打印 wrangler 命令")
     a = ap.parse_args()
 
-    count = build_staging(not a.no_vendors)
-    if not a.apply:
-        print("\n（预览模式，未上传。加 --apply 执行）")
+    if a.verify:
+        return verify()
+
+    if not a.deploy_only:
+        build()
+    if a.build:
         return 0
 
-    acct, token = load_env()
-    w = find_wrangler()
-    if not w:
-        sys.exit(
-            "找不到 wrangler。装一次：\n"
-            "  cd <node workspace> && npm install wrangler\n"
-            "或设置环境变量 WRANGLER=/path/to/wrangler"
-        )
+    rc = deploy(dry_run=a.dry_run)
+    if rc != 0:
+        print(f"✗ wrangler 退出码 {rc}", file=sys.stderr)
+        return rc
+    if a.dry_run:
+        return 0
 
-    env = dict(os.environ)
-    env["CLOUDFLARE_ACCOUNT_ID"] = acct
-    env["CLOUDFLARE_API_TOKEN"] = token
-
-    cmd = w + [
-        "pages", "deploy", str(STAGING),
-        "--project-name", a.project,
-        "--branch", "main",
-        "--commit-dirty=true",
-    ]
-    print("\n上传 %d 个文件…" % count)
-    r = subprocess.run(cmd, cwd=str(STAGING), env=env,
-                       capture_output=True, text=True)
-    out = (r.stdout or "") + (r.stderr or "")
-    if r.returncode != 0:
-        sys.exit("部署失败：\n" + out[-2000:])
-
-    print(out.strip()[-800:])
-    url = f"https://{a.project}.pages.dev"
-    print("\n✅ 部署完成：%s" % url)
-    print("""
-验证（部署后需 30~60s 生效）：
-  curl -s -o /dev/null -w 'manifest.json  %%{http_code}\\n' {u}/manifest.json
-  curl -s -o /dev/null -w '3525 分片      %%{http_code}\\n' {u}/full/gb/C/35/3525.json
-  curl -s -o /dev/null -w '厂商 skill     %%{http_code}\\n' {u}/skills/vendors/CN-MFG-0000005/SKILL.md
-
-注意：CF 会把 /index.html 重定向到 /（308），这是正常的，不是失败。""".format(u=url))
-    return 0
+    print("\n=== 验证（生产域名，可能要等 CDN 生效）===")
+    return verify()
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    sys.exit(main())
