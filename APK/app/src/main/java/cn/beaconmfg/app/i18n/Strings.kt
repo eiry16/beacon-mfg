@@ -96,6 +96,16 @@ class Strings(val lang: Lang) {
     val verified get() = t("已核实", "verified")
     val unverified get() = t("未核实", "unverified")
     val openSkill get() = t("打开", "Open")
+    val skillChecking get() = t("检查中…", "Checking…")
+    /**
+     * 点了「打开」但网页端没有这份自述。
+     * L2 内容不进 Git、靠单独部署，新卡没部署就是没有——这句要说清是"没发布"，
+     * 不能让采购以为是自己网络坏了或者这家厂没能力。
+     */
+    val skillUnreachable get() = t(
+        "这份完整自述还没发布到网页端（L2 内容不进 Git，需单独部署）",
+        "This write-up isn't published to the web yet (L2 content isn't in Git; it needs a separate deploy)"
+    )
 
     // ── 完整档案 ───────────────────────────────────────────────────────────
     val detailPhone get() = t("电话：", "Phone: ")
@@ -273,6 +283,18 @@ class Strings(val lang: Lang) {
     fun limitSize(v: String) = t("最大件 $v", "Max part $v")
     fun limitMoq(v: String) = t("起订 $v", "MOQ $v")
     fun limitLt(v: String) = t("交期 $v", "Lead time $v")
+    /** 天数。交期可能是对象（样品/批量分开报），拆开后每档都要带单位。 */
+    fun days(n: String) = t("${n} 天", "${n} d")
+    /**
+     * 交期里的一档。`key` 是数据里的原字段名：
+     * 认得出的（sample / batch_100 / batch_1000）翻成人话，认不出的原样给——不猜含义。
+     */
+    fun leadPart(key: String, n: String): String = when (key) {
+        "sample" -> t("样品 ${days(n)}", "Sample ${days(n)}")
+        "batch_100" -> t("100 件 ${days(n)}", "100 pcs ${days(n)}")
+        "batch_1000" -> t("1000 件 ${days(n)}", "1000 pcs ${days(n)}")
+        else -> t("${key} ${days(n)}", "$key ${days(n)}")
+    }
     fun limitLoad(v: String) = t("当前负荷 ${v}%", "Current load ${v}%")
     val limitRush get() = t("可接急单", "Rush orders accepted")
 

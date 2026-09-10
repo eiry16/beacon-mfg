@@ -193,13 +193,60 @@ data class CapabilityCard(
     /** 把硬指标翻成展示行。没填的键不出现，不编造。文案随界面语言切换。 */
     fun limitLines(s: cn.beaconmfg.app.i18n.Strings): List<String> {
         val out = ArrayList<String>()
-        limits["tol"]?.let { out.add(s.limitTol(it)) }
-        limits["size"]?.let { out.add(s.limitSize(it)) }
-        limits["moq"]?.let { out.add(s.limitMoq(it)) }
-        limits["lt"]?.let { out.add(s.limitLt(it)) }
-        limits["load"]?.let { out.add(s.limitLoad(it)) }
+        scalar("tol")?.let { out.add(s.limitTol(it)) }
+        scalar("size")?.let { out.add(s.limitSize(it)) }
+        scalar("moq")?.let { out.add(s.limitMoq(it)) }
+        leadTimeText(s)?.let { out.add(s.limitLt(it)) }
+        scalar("load")?.let { out.add(s.limitLoad(it)) }
         if (limits["rush"] == "true") out.add(s.limitRush)
         return out
+    }
+
+    /**
+     * 标量型硬指标（公差/最大件/起订/负荷）。
+     *
+     * 这些键本来都该是标量，但源数据一旦变成对象，Kotlin 侧拿到的就是一段 JSON 文本。
+     * 这时候**宁可整行不显示，也不把 JSON 原文甩给采购**——他看不懂，
+     * 还可能把 `{"sample":30}` 当成"交期 30"。
+     */
+    private fun scalar(key: String): String? {
+        val v = limits[key]?.trim() ?: return null
+        if (v.isEmpty() || v == "null" || v.startsWith("{")) return null
+        return v
+    }
+
+    /**
+     * 交期。`lead_time_days` 在数据里是分档对象（样品/批量各报一个数），
+     * slim 卡把整块搬过来，到这里就是一段 JSON 文本——直接显示会变成
+     * 「交期 {"sample":30,"batch_100":null}」（真机已复现）。
+     *
+     * 规则：认得出的档位翻成人话；**值是 null 的档位整条不出现**
+     *（没填 ≠ 0，更不能拿样品的 30 天当批量交期）；一个非 null 都没有就整行不显示。
+     */
+    private fun leadTimeText(s: cn.beaconmfg.app.i18n.Strings): String? {
+        val raw = limits["lt"]?.trim() ?: return null
+        if (raw.isEmpty() || raw == "null") return null
+        if (!raw.startsWith("{")) return s.days(raw) // 老格式：就是一个天数
+        val obj = try {
+            org.json.JSONObject(raw)
+        } catch (e: Exception) {
+            return null
+        }
+        val known = listOf("sample", "batch_100", "batch_1000")
+        val rest = ArrayList<String>()
+        val keys = obj.keys()
+        while (keys.hasNext()) {
+            val k = keys.next()
+            if (k !in known) rest.add(k)
+        }
+        val out = ArrayList<String>()
+        for (k in known + rest) {
+            if (obj.isNull(k)) continue
+            val v = obj.opt(k)?.toString()?.trim().orEmpty()
+            if (v.isEmpty() || v == "null") continue
+            out.add(s.leadPart(k, v))
+        }
+        return out.takeIf { it.isNotEmpty() }?.joinToString(s.sep)
     }
 }
 

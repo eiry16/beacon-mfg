@@ -56,6 +56,13 @@ import cn.beaconmfg.app.data.Hit
 import cn.beaconmfg.app.data.SupplierDetail
 import cn.beaconmfg.app.i18n.Lang
 import cn.beaconmfg.app.i18n.Strings
+import androidx.compose.runtime.rememberCoroutineScope
+import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 @Composable
 fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
@@ -574,9 +581,15 @@ private fun CapabilityBlock(
             )
         }
 
-        // 厂商 skill（L2 自述层）。CDN 部署前这个 URL 不可达（L2 不进 Git），
-        // 按钮仍然给出路径——采购可以照着路径去仓库找，比藏起来强。
+        // 厂商 skill（L2 自述层）。
+        // ⚠ `skills/vendors/` 不进 Git，只活在 Pages 部署里——**新卡在下次部署前必然 404**
+        //（真机复现：耐特斯今天建档，点「打开」直接跳「找不到网页」）。
+        // 所以不能「有路径就当能打开」：点之前先探一次，探不到就如实说还没发布，
+        // 而不是把采购送进一个 404 页面。
         if (cap.skillPath.isNotEmpty()) {
+            var checking by remember(cap.id) { mutableStateOf(false) }
+            var unreachable by remember(cap.id) { mutableStateOf(false) }
+            val scope = rememberCoroutineScope()
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(top = 4.dp),
@@ -590,14 +603,49 @@ private fun CapabilityBlock(
                 )
                 if (skillBase.isNotBlank()) {
                     Button(
+                        enabled = !checking,
                         onClick = {
-                            uriHandler.openUri(skillBase.trimEnd('/') + "/" + cap.skillPath)
+                            val url = skillBase.trimEnd('/') + "/" + cap.skillPath
+                            checking = true
+                            unreachable = false
+                            scope.launch(Dispatchers.IO) {
+                                val ok = urlReachable(url)
+                                withContext(Dispatchers.Main) {
+                                    checking = false
+                                    if (ok) uriHandler.openUri(url) else unreachable = true
+                                }
+                            }
                         }
-                    ) { Text(s.openSkill) }
+                    ) { Text(if (checking) s.skillChecking else s.openSkill) }
                 }
+            }
+            if (unreachable) {
+                Text(
+                    s.skillUnreachable,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.error,
+                    modifier = Modifier.padding(top = 2.dp),
+                )
             }
         }
     }
+}
+
+/**
+ * 这个 URL 现在能不能打开。只探一次 HEAD，不下载正文。
+ *
+ * 用来在「点开厂商自述」之前确认它真的发布了——L2 内容不进 Git，
+ * 没部署就是没有，猜不得。任何异常都按「打不开」处理。
+ */
+private fun urlReachable(url: String): Boolean = try {
+    val client = OkHttpClient.Builder()
+        .connectTimeout(6, TimeUnit.SECONDS)
+        .readTimeout(6, TimeUnit.SECONDS)
+        .build()
+    val req = Request.Builder().url(url).head().build()
+    client.newCall(req).execute().use { it.isSuccessful }
+} catch (e: Exception) {
+    false
 }
 
 @Composable
