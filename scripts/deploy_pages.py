@@ -101,7 +101,7 @@ def load_env() -> tuple[str, str]:
     return token, account
 
 
-def build(verbose: bool = True) -> dict:
+def build(verbose: bool = True, with_worker: bool = False) -> dict:
     """组装 dist/site。返回统计。"""
     t0 = time.time()
 
@@ -119,6 +119,33 @@ def build(verbose: bool = True) -> dict:
     #    「已发布 / 还没进快照」。
     for html in sorted(PAGES_SRC.glob("*.html")):
         shutil.copy2(html, DIST / html.name)
+
+    # Pages Functions 入口（P0 第 4 步）：/skills/** 转发到 R2，其余走静态资源。
+    #
+    # ⚠ 默认**不带** worker，必须显式 `--with-worker`：
+    #   Pages 的 R2 binding 没有公开写入 API（PATCH 一律 400），只能在 Dashboard 配。
+    #   binding 没配上就把 _worker.js 传上去 = /skills/** 全部 503（env.CAPS 判空分支），
+    #   而静态首页还是 200 —— 看起来"没坏"，实际 App 里 4137 家全打不开。
+    #   2026-09-10 已经因为部署把站点搞挂过一次，这里不能再赌。
+    #
+    # 配好 binding 后的启用方式：
+    #   python scripts/deploy_pages.py --with-worker
+    worker = PAGES_SRC / "_worker.js"
+    toml = PAGES_SRC / "wrangler.toml"
+    if with_worker and worker.exists():
+        shutil.copy2(worker, DIST / "_worker.js")
+        if toml.exists():
+            shutil.copy2(toml, DIST / "wrangler.toml")
+        if verbose:
+            print("  Functions 入口：_worker.js（/skills/** → R2 binding CAPS）")
+    else:
+        # 静态模式：确保 dist 里没有残留的 worker（否则会静默接管路由）
+        for stray in ("_worker.js", "wrangler.toml"):
+            f = DIST / stray
+            if f.exists():
+                f.unlink()
+                if verbose:
+                    print(f"  移除 dist 里的 {stray}（静态模式不需要，留着会接管 /skills）")
 
     # 3) L2 自述：skills/vendors/{id}/SKILL.md —— App 唯一依赖的一层
     n_skill, missing = 0, []
@@ -187,8 +214,12 @@ def build(verbose: bool = True) -> dict:
     return stats
 
 
-def deploy(dry_run: bool = False) -> int:
+def deploy(dry_run: bool = False, branch: str = BRANCH) -> int:
     token, account = load_env()
+
+    if (DIST / "_worker.js").exists():
+        print("⚠ 本次部署带 _worker.js —— /skills/** 将改由 R2 binding CAPS 提供。"
+              "binding 没配上这些路径会全站 503（首页仍 200，最容易看漏）。")
 
     if not Path(WRANGLER_JS).exists():
         print(f"✗ 找不到 wrangler：{WRANGLER_JS}", file=sys.stderr)
@@ -197,7 +228,7 @@ def deploy(dry_run: bool = False) -> int:
     cmd = [
         NODE_BIN, WRANGLER_JS, "pages", "deploy", str(DIST),
         "--project-name", PROJECT_NAME,
-        "--branch", BRANCH,
+        "--branch", branch,
         # 工作区几乎总有未提交改动，不打这个标 wrangler 每次都要刷一行警告
         "--commit-dirty=true",
     ]
@@ -300,17 +331,28 @@ def main() -> int:
     ap.add_argument("--verify", action="store_true", help="只做部署后抽样验证")
     ap.add_argument("--deploy-only", action="store_true", help="跳过组装直接部署")
     ap.add_argument("--dry-run", action="store_true", help="只打印 wrangler 命令")
+    ap.add_argument("--branch", default=BRANCH,
+                    help=f"部署分支（默认 {BRANCH} = 生产；"
+                         f"填别的名字会部署到 preview 子域，不影响生产）")
+    ap.add_argument("--with-worker", action="store_true",
+                    help="带上 pages/_worker.js（/skills/** 走 R2）。"
+                         "**只有在 Pages 项目已绑定 R2 bucket CAPS 之后才能用**，"
+                         "否则 /skills/** 全站 503")
     a = ap.parse_args()
 
     if a.verify:
         return verify()
 
     if not a.deploy_only:
-        build()
+        build(with_worker=a.with_worker)
     if a.build:
         return 0
 
-    rc = deploy(dry_run=a.dry_run)
+    if a.branch != BRANCH:
+        print(f"\n⚠ 部署到 preview 分支 '{a.branch}' —— "
+              f"生产 {BASE_URL} 不受影响，验证地址见下方输出")
+
+    rc = deploy(dry_run=a.dry_run, branch=a.branch)
     if rc != 0:
         print(f"✗ wrangler 退出码 {rc}", file=sys.stderr)
         return rc

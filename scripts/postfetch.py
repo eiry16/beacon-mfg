@@ -39,10 +39,13 @@
       ↓  必须在 validate 之前：抓完新数据，README 与 DATA_STATS.md 必然打架。
     validate   --strict 全量校验 + 重生成 DATA_STATS
       ↓
+    r2         增量上传能力卡到 R2（云端真源；Git 只是发布快照）
+      ↓
     pages      发布到 Cloudflare Pages（L1 分片 + L2 厂商自述）
 
-最后一步为什么是发布：新供应商建档后如果没人手动部署，App 里点开就是 404
-（2026-09-10 耐特斯就是这个真因）。**validate 没过不会发布**（见 run() 里的闸）。
+最后两步为什么是上传/发布：新供应商建档后如果没人手动跑，App 里点开就是 404
+（2026-09-10 耐特斯就是这个真因）。**validate 没过不会上传也不会发布**
+（见 run() 里的闸）。
 
 失败策略
 --------
@@ -85,7 +88,7 @@ except Exception:
 
 # 顺序即依赖，见文件头。别乱排。
 ALL_STEPS = ("classify", "gbindex", "index", "fingerprint", "shards",
-             "manifest", "assets", "readme", "validate", "pages")
+             "manifest", "assets", "readme", "validate", "r2", "pages")
 
 # gen_manifest 的列式层（pq）依赖 pyarrow，缺省就静默少一层 —— 清单看着变绿，
 # 实则少了 pq。这里的兜底顺序：当前解释器 → 环境变量 BMFG_PY_PQ → 本机已知 venv。
@@ -110,6 +113,7 @@ _STEP_DESC = {
     "assets": "同步 App 内置资产（APK assets）",
     "readme": "同步 README.md 里的统计数字",
     "validate": "全量严格校验 + 重生成 DATA_STATS",
+    "r2": "增量上传能力卡到 Cloudflare R2（云端真源）",
     "pages": "发布到 Cloudflare Pages（能力卡 + 厂商自述）",
 }
 
@@ -316,6 +320,31 @@ def step_validate(dry_run: bool = False) -> None:
         )
 
 
+def step_r2(dry_run: bool = False) -> None:
+    """把 L1/L2 产物增量上传到 Cloudflare R2 —— **云端真源**。
+
+    Git 里的 skills/ 只是发布快照，**R2 才是真源**（P0 的核心决策）。
+    这一步不做，新供应商的能力卡就只活在某人电脑的磁盘上。
+
+    ⚠ 速率限制（2026-09-10 16:35 亲测）：免费账户约 1200 请求 / 5 分钟，
+    12 并发跑 12411 个文件 → 成功 4543、失败 7868（全是 429），15 分钟只完成 37%。
+    修法已写进 publish_r2.py：并发降到 4、429/5xx 指数退避、默认跳过已存在的对象。
+    **日常增量（每天约 100 家 = 300 文件）几十秒就完事**，只有首次全量才慢。
+
+    排在 validate 之后：校验没过的数据不上云。不想传就 `--skip r2`。
+    """
+    tool = ROOT / "scripts" / "publish_r2.py"
+    if not tool.exists():
+        print("   （跳过：仓库里没有 scripts/publish_r2.py）")
+        return
+    if dry_run:
+        print("   （--dry-run：不上传 R2）")
+        return
+    done = subprocess.run([sys.executable, str(tool), "--all"], cwd=str(ROOT))
+    if done.returncode:
+        raise RuntimeError(f"publish_r2.py 返回 {done.returncode}")
+
+
 def step_pages(dry_run: bool = False) -> None:
     """把 L1 能力卡分片 + L2 厂商自述发布到 Cloudflare Pages。
 
@@ -350,6 +379,7 @@ _STEP_FN = {
     "assets": step_assets,
     "readme": step_readme,
     "validate": step_validate,
+    "r2": step_r2,
     "pages": step_pages,
 }
 
@@ -414,10 +444,10 @@ def run(skip: set[str] | frozenset[str] | list[str] | None = None,
         # 发布这道闸：validate 没过（或压根没跑）就不许上线。
         # run() 默认是「失败不中断」，不拦的话校验红灯的产物也会被推到生产。
         # 要单独发布就直跑 scripts/deploy_pages.py。
-        if name == "pages" and ("validate" in failed or "validate" not in steps):
+        if name in ("r2", "pages") and ("validate" in failed or "validate" not in steps):
             skipped.append(name)
-            print("   ⊘ 跳过发布：本轮 validate 未通过或未执行，"
-                  "不把未校验的产物推上线（要单独发布请跑 scripts/deploy_pages.py）")
+            print("   ⊘ 跳过：本轮 validate 未通过或未执行，不把未校验的产物推上线"
+                  "（要单独跑请直跑 scripts/publish_r2.py / deploy_pages.py）")
             continue
         if not quiet:
             print("\n[%d/%d] %s —— %s" % (i, len(steps), name, _STEP_DESC[name]))

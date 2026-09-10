@@ -1,0 +1,19 @@
+# Pages Functions 绑定配置
+#
+# 为什么有这个文件
+# ----------------
+# `_worker.js` 要把 /skills/** 转发到 R2，需要 binding `CAPS`。
+# 而 Pages 项目的 bindings **没有公开的写入 API**（2026-09-10 实测：
+# PATCH deployment_configs 的 r2_buckets 一律 400 "Request body is incorrect"），
+# 官方文档只给了 Dashboard 一条路。wrangler 部署时会读这个文件把 binding 同步上去，
+# 于是"绑定"这件事也能进版本库、也能被脚本重放 —— 不用人去点控制台。
+#
+# ⚠ 如果 wrangler 忽略了它（Pages 对 wrangler.toml 的支持随版本变），
+#   表现是 /skills/** 全部 503（_worker.js 里 env.CAPS 判空的那条分支），
+#   而静态首页照常 200 —— 别把"首页还活着"当成链路通了。
+name = "beacon-mfg"
+compatibility_date = "2026-09-10"
+
+[[r2_buckets]]
+binding = "CAPS"
+bucket_name = "beacon-mfg-caps"
