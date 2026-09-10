@@ -51,6 +51,17 @@ data class AppSettings(
      * 开发时填 `http://127.0.0.1:8000` + `adb reverse tcp:8000 tcp:8000` 即可真机联调。
      */
     val apiBase: String = "",
+    /**
+     * 设备级匿名凭证（UUID，首次启动生成后持久化）。
+     *
+     * **为什么需要它**：企业注册（`/v1/certify/apply`）发生在**认领之前** ——
+     * 那时还没有 claim_token，而平台的写接口要求「写入必须可追溯」。
+     * 设备凭证解决这个先有鸡还是先有蛋的问题：它只标识"是同一次安装发起的写入"，
+     * 不含手机号、不含任何个人身份信息，也不用于跨设备识别。
+     *
+     * 认领之后写操作优先用 claim_token（更精确、更短时），它只作兜底。
+     */
+    val deviceId: String = "",
 )
 
 /**
@@ -98,11 +109,17 @@ class SettingsRepo(context: Context) {
             lang = p.getString("lang", "zh") ?: "zh",
             role = p.getString("role", "buyer") ?: "buyer",
             apiBase = p.getString("api_base", "") ?: "",
+            // 首次读取时生成一次并落盘。**不是每次读都随机**——那样凭证每次都变，
+            // 「可追溯」就失去意义了。
+            deviceId = p.getString("device_id", "").orEmpty().ifBlank {
+                java.util.UUID.randomUUID().toString()
+                    .also { p.edit().putString("device_id", it).apply() }
+            },
         )
     }
 
     fun save(s: AppSettings) {
-        (secure ?: plain).edit()
+        val edit = (secure ?: plain).edit()
             .putString("preset_id", s.presetId)
             .putString("base_url", s.baseUrl.trim())
             .putString("model", s.model.trim())
@@ -113,7 +130,10 @@ class SettingsRepo(context: Context) {
             .putString("lang", s.lang)
             .putString("role", s.role)
             .putString("api_base", s.apiBase.trim())
-            .apply()
+        // deviceId 由设备自己生成，不由 UI 传入。空值不覆盖已有的——
+        // 否则一次以默认值构造的 save 就会把凭证抹掉。
+        if (s.deviceId.isNotBlank()) edit.putString("device_id", s.deviceId)
+        edit.apply()
     }
 
     fun hasKey(): Boolean = (secure ?: plain).getString("api_key", "").orEmpty().isNotBlank()

@@ -151,4 +151,34 @@ class PlatformApi(
             "POST", "/v1/collect/$supplierId/confirm",
             JSONObject().put("overwrite_existing", overwrite), auth = true,
         )
+
+    // ── 企业注册 / 建档（server/routers/certification.py，前缀 /v1/certify）────
+
+    /**
+     * 企业主动注册建档。名录里**没有**这家企业时走这条 —— 平台新分配一个 supplier_id
+     * 并建立认证档案；名录里**已经有**时服务端会复用既有 ID 并回 `matched_existing=true`，
+     * 那种情况其实该走认领（claim），不是注册（调用方要按这个字段分流）。
+     *
+     * 服务端要求：`company` ≥2 字、`claimed_address` ≥4 字，且**名录未命中时 category 必填**
+     * （否则回 CATEGORY_REQUIRED）。这三个门禁在 App 侧先拦一道，避免白跑一趟网络。
+     *
+     * `public_address_records` 有意不传：服务端用它比对「自报地址 vs 公开展示地址」，
+     * 而 App 手上没有公开地址数据。传空数组的语义是「平台没有可比对的公开记录」，
+     * 这是事实，不是省略。
+     */
+    suspend fun certifyApply(
+        company: String,
+        claimedAddress: String,
+        category: String? = null,
+        contactName: String? = null,
+        contactPhone: String? = null,
+    ): JSONObject {
+        val body = JSONObject()
+            .put("company", company)
+            .put("claimed_address", claimedAddress)
+        category?.takeIf { it.isNotBlank() }?.let { body.put("category", it) }
+        contactName?.takeIf { it.isNotBlank() }?.let { body.put("contact_name", it) }
+        contactPhone?.takeIf { it.isNotBlank() }?.let { body.put("contact_phone", it) }
+        return call("POST", "/v1/certify/apply", body, auth = true)
+    }
 }

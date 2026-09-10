@@ -41,6 +41,20 @@ class VendorSession {
     var uscc: String? = null
 
     /**
+     * 认证申请号（`/v1/certify/apply` 返回，形如 `CERT-20260910-0317`）。
+     * 只有**本次注册进来的**企业才有——认领名录里已收录的企业时它是空的。
+     */
+    var appId: String? = null
+
+    /**
+     * 这家企业是本次对话里**新注册**的（名录原本没有），而不是认领来的。
+     *
+     * 为什么要区分：两者之后要交代的话不一样 —— 认领是「接上已有档案」，
+     * 注册是「新建了档案，名录原来没有这家」。说混了，对方会以为平台早就收录过自己。
+     */
+    var registeredHere: Boolean = false
+
+    /**
      * 平台**当前正等着回答的那一题**（null = 没在采集，或已经问完了）。
      *
      * 为什么要记这个：模型（tool_choice=auto）经常**不调工具直接作答**——
@@ -60,6 +74,8 @@ class VendorSession {
         claimToken = null
         supplierId = null
         uscc = null
+        appId = null
+        registeredHere = false
         pending = null
     }
 }
@@ -155,6 +171,38 @@ class VendorToolBox(
                         )
                     ),
                     listOf("keyword")
+                )
+            )
+            .put(
+                fn(
+                    "register_company",
+                    t(
+                        "把**名录里还没有的**企业登记进来，平台会分配一个新的供应商 ID。" +
+                            "必须先调 find_my_company，**确实搜不到才用它**——名录里已经有的企业走认领，不走注册。" +
+                            "需要三样，缺一不可：营业执照上的公司全称、经营地址、主品类。" +
+                            "成功之后照常发验证码核验手机号，再开始采集资料。",
+                        "Register a company the directory does not have yet; the platform assigns a new " +
+                            "supplier ID. **Call find_my_company first — only use this when it truly finds " +
+                            "nothing.** Companies already in the directory go through claiming instead. " +
+                            "Needs three things, none optional: the full legal name on the licence, the " +
+                            "business address, and the main category. Afterwards verify their phone by SMS."
+                    ),
+                    JSONObject()
+                        .put(
+                            "company",
+                            s(t("营业执照上的企业全称，一个字都不能省、不能改", "Full legal name exactly as on the licence"))
+                        )
+                        .put(
+                            "address",
+                            s(t("对方申报的经营地址（至少 4 个字，写到门牌/园区）", "The business address they state (at least 4 characters)"))
+                        )
+                        .put(
+                            "category",
+                            s(t("主品类，用中文，如「精密钣金」「注塑」「齿轮加工」。太泛的「做五金」不行", "Main category, in Chinese, e.g. 精密钣金 / 注塑 / 齿轮加工"))
+                        )
+                        .put("contact_name", s(t("联系人姓名，可留空", "Contact name; optional")))
+                        .put("contact_phone", s(t("对方提供的 11 位手机号，可留空", "Their 11-digit mobile number; optional"))),
+                    listOf("company", "address", "category")
                 )
             )
             .put(
@@ -267,6 +315,7 @@ class VendorToolBox(
         return try {
             when (name) {
                 "find_my_company" -> findMyCompany(args)
+                "register_company" -> registerCompany(args)
                 "claim_start" -> claimStart(args)
                 "claim_verify" -> claimVerify(args)
                 "collect_begin" -> collectBegin(args)
@@ -383,7 +432,7 @@ class VendorToolBox(
         if (similar.isNotEmpty()) return matchResult(similar, confident = false)
 
         // 全都不中时也**不能只说"没有"**：给三条最像的让人眼过一遍，
-        // 否则老板会以为"我们厂在灯塔上不存在"。
+        // 否则老板会以为"我们厂在炫招灯塔上不存在"。
         val nearest = ranked.filter { it.second > 0.3 }.map { it.first }.take(3)
         val sb = StringBuilder()
         sb.append(
@@ -482,6 +531,148 @@ class VendorToolBox(
      */
     private fun targetId(a: JSONObject): String =
         session.supplierId.orEmpty().ifBlank { a.optString("supplier_id", "").trim() }
+
+    /**
+     * 登记名录里还没有的企业。
+     *
+     * 与认领的**根本区别**：认领是「名录里已经收录了这家，你来认领」，
+     * 注册是「名录里本来没有，现在给它建一条」。服务端 `POST /v1/certify/apply`
+     * 同时接住了两者 —— 它内部先查名录：命中就复用既有 ID 并回 `matched_existing=true`，
+     * 那说明**该走认领而不是注册**，我们会如实让模型退回去走认领，
+     * 而不是把"名录里本来就有"说成"帮你注册好了"。
+     */
+    private suspend fun registerCompany(a: JSONObject): ToolResult {
+        val company = a.optString("company", "").trim()
+        val address = a.optString("address", "").trim()
+        val category = a.optString("category", "").trim()
+
+        // 三个门禁在本地先拦一道：服务端同样会拒（company≥2 / address≥4 / 未命中时 category 必填），
+        // 但白跑一趟网络再报错，对方要干等十几秒，不如当场说清楚缺什么。
+        if (company.length < 2) {
+            return failed(
+                t(
+                    "公司全称至少要 2 个字。要营业执照上的完整名称。",
+                    "The legal name needs at least 2 characters — use the full name on the licence."
+                )
+            )
+        }
+        if (address.length < 4) {
+            return failed(
+                t(
+                    "经营地址太短。要写到门牌或园区名（至少 4 个字）。",
+                    "The business address is too short — include the street or park name (at least 4 characters)."
+                )
+            )
+        }
+        if (category.isEmpty()) {
+            return failed(
+                t(
+                    "还缺主品类。注册得先知道这家厂做什么才能归到正确的行业下面——" +
+                        "「做五金」这种太泛，要具体到「精密钣金」「注塑」这一层。",
+                    "The main category is missing. Registration needs to know what they make so the company " +
+                        "lands in the right industry — \"metalwork\" is too broad; be specific."
+                )
+            )
+        }
+
+        // 手机号洗不出 11 位就不传（不猜）。服务端 contact_phone 本来就是可选字段。
+        val phone = a.optString("contact_phone", "").trim().takeIf { it.isNotBlank() }?.let { cnPhone(it) }
+        val name = a.optString("contact_name", "").trim().ifBlank { null }
+
+        val r = api.certifyApply(company, address, category, name, phone)
+        val sid = r.optString("supplier_id").takeIf { it.isNotBlank() }
+        val matched = r.optBoolean("matched_existing", false)
+
+        // ── 名录里本来就有：这不是注册，退回去走认领 ──
+        if (matched) {
+            if (sid != null) session.supplierId = sid
+            return ToolResult(
+                t(
+                    "这家企业在名录里**原本就有**（平台复用了已有档案" +
+                        (sid?.let { "：$it" } ?: "") + "），所以这不是新注册。" +
+                        "请按认领流程走：向对方要登记的手机号，发验证码核验后再采集资料。",
+                    "This company **already exists** in the directory (the platform reused its record" +
+                        (sid?.let { ": $it" } ?: "") + "), so this is not a new registration. Go through " +
+                        "claiming instead: ask for their registered phone, verify the SMS code, then collect."
+                ),
+                echo = t("名录里已有这家，转认领", "Already in the directory — switch to claiming"),
+            )
+        }
+
+        session.supplierId = sid
+        session.appId = r.optString("app_id").takeIf { it.isNotBlank() }
+        session.registeredHere = true
+
+        val sb = StringBuilder()
+        sb.append(
+            t(
+                "已登记：这家企业名录里原来没有，平台新建了档案。",
+                "Registered: the directory did not have this company, so a new record was created."
+            )
+        ).append('\n')
+        if (sid != null) {
+            sb.append(t("供应商 ID：$sid", "Supplier ID: $sid")).append('\n')
+        }
+        if (session.appId != null) {
+            sb.append(t("认证申请号：${session.appId}", "Application ID: ${session.appId}")).append('\n')
+        }
+
+        // ── 地址比对差异：如实带出来，但**不替平台定性** ──
+        // compare_address 在"没有可比对的公开记录"时也会给一条 level=info 的说明，
+        // 那说的是「无数据可比」，不是「地址有问题」。混为一谈会冤枉对方。
+        val disc = r.optJSONArray("discrepancies")
+        if (disc != null && disc.length() > 0) {
+            val items = (0 until disc.length()).mapNotNull { disc.optJSONObject(it) }
+            val comparable = items.filter { !it.optString("message").contains("未提供") }
+            val noData = items.size - comparable.size
+
+            if (comparable.isNotEmpty()) {
+                sb.append(
+                    t(
+                        "平台比对了申报地址与公开记录，有 ${comparable.size} 处不一致（**只提示，不代表申报有假**）：",
+                        "The platform compared the stated address with public records and found " +
+                            "${comparable.size} difference(s) (**informational — not a finding of falsehood**):"
+                    )
+                ).append('\n')
+                comparable.forEach { d ->
+                    sb.append("  - [").append(d.optString("level")).append("] ")
+                        .append(d.optString("message")).append('\n')
+                }
+                sb.append(
+                    t(
+                        "要把这几条念给对方听，让他自己确认哪边是对的；平台不判定谁真谁假。",
+                        "Read these back to the person and let them confirm which side is right; the " +
+                            "platform does not decide who is correct."
+                    )
+                ).append('\n')
+            }
+            if (noData > 0) {
+                sb.append(
+                    t(
+                        "另有 $noData 条是「平台手上没有可交叉比对的公开地址记录」——" +
+                            "这说明**暂时核不了**，不等于地址有问题。不要把它说成地址不一致。",
+                        "$noData item(s) say the platform has no public address record to cross-check " +
+                            "against — that means **it cannot be checked yet**, not that the address is " +
+                            "wrong. Do not describe it as a mismatch."
+                    )
+                ).append('\n')
+            }
+        }
+
+        sb.append(
+            t(
+                "下一步照常核验身份：向对方要他名下的手机号，发验证码。核验通过后再开始采集资料。" +
+                    "**登记不等于已核验**——刚建的那条档案，还没有任何一项被证实过。",
+                "Next, verify identity as usual: ask for their mobile number and send a code. Only after " +
+                    "that succeeds should collection begin. **Registering is not verification** — nothing " +
+                    "in the new record has been proven yet."
+            )
+        )
+        return ToolResult(
+            sb.toString().trimEnd(),
+            echo = t("已登记新企业 $company", "Registered $company"),
+        )
+    }
 
     private suspend fun claimStart(a: JSONObject): ToolResult {
         // 模型可能不带 supplier_id（它觉得"刚查过"就够了）。查到过就替它补上——

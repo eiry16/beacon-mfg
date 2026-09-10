@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -29,6 +30,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateMapOf
@@ -109,7 +111,19 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
             }
             if (busy) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
 
+            // 新消息到达就滚到底。
+            //
+            // 为什么要显式做：LazyColumn 默认不跟着新内容滚。消息一多，新来的助手回复
+            // 就落在视口下方 —— 实测踩到过：注册成功那条回复得手动上滑才看得见，
+            // 而用户的第一反应是「发出去了但没反应」，会重复发送。
+            // 按 messages.size 触发而不是每次重组，避免打字时被反复打断。
+            val listState = rememberLazyListState()
+            LaunchedEffect(messages.size) {
+                if (messages.isNotEmpty()) listState.animateScrollToItem(messages.lastIndex)
+            }
+
             LazyColumn(
+                state = listState,
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxWidth(),

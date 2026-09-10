@@ -113,7 +113,14 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     private val vendorApi = PlatformApi(
         base = { _settings.value.apiBase },
-        token = { vendorSession.claimToken },
+        // 认领后优先用 claim_token（短时、精确）；**还没认领时退回设备凭证**。
+        // 企业注册发生在认领之前，而平台要求所有写入都可追溯（无凭证直接 401），
+        // 没有这一步注册就会死在第一跳。设备凭证只标识「同一次安装」，
+        // 不含手机号、不做跨设备识别，认领后立刻让位给 claim_token。
+        token = {
+            vendorSession.claimToken?.takeIf { it.isNotBlank() }
+                ?: _settings.value.deviceId.takeIf { it.isNotBlank() }
+        },
     )
 
     /**
