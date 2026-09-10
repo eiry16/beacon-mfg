@@ -27,6 +27,17 @@ object Uscc {
     private val CANDIDATE = Regex("[0-9A-HJ-NPQRTUWXY]{18}")
 
     /**
+     * 号码里常见的分组分隔符。
+     *
+     * 空格类交给 `isWhitespace()`（覆盖半角/全角空格、tab、换行），
+     * 这里只列非空白的那些：号码从文档里复制出来时经常带连字符或中点。
+     *
+     * **刻意不剥 `.`**：URL 里点太多（www.gsxt.gov.cn），剥掉容易把不相干的内容
+     * 粘成一个假号码。带点的号码分组本身也罕见，不值得冒这个险。
+     */
+    private val SEPARATORS = setOf('-', '－', '—', '·', '\u00A0')
+
+    /**
      * 校验一段文本是不是合法的 USCC。
      *
      * 返回 (是否合法, 说明)。说明会直接给用户看，所以要把"错在哪"讲清楚。
@@ -56,13 +67,20 @@ object Uscc {
      * - 扫码直接解出 18 位号码
      * - 扫出的是 URL，号码藏在路径或查询参数里
      * - 用户手输时前面带了空格、换行、"统一社会信用代码：" 之类前缀
+     * - 用户按 4-4-4-4-2 分组打了空格或连字符（手输 18 位时的常见做法）
      *
-     * 多个候选时**优先返回校验位通过的那个**——手输/扫码都可能带噪声，
-     * 能通过校验位的那个几乎一定是真的。
+     * **必须先剥掉分隔符再匹配**：早期版本直接拿原文匹配，结果
+     * `9131 0000 7664 9225 6E` 和 `9131-0000-7664-9225-6E` 一条都提不出来——
+     * 而手机上这么打的人很多，从文档里复制的人也很多。
+     * 剥掉分隔符不会误连无关内容：中文、标点都不在字符集里，天然断开。
+     *
+     * 多个候选时**优先返回校验位通过的那个**——扫码/手输都可能带噪声，
+     * 能过校验位的那个几乎一定是真的。
      */
     fun extract(text: String?): String? {
         if (text.isNullOrBlank()) return null
-        val cands = CANDIDATE.findAll(text.uppercase()).map { it.value }.toList()
+        val flat = text.uppercase().filter { !it.isWhitespace() && it !in SEPARATORS }
+        val cands = CANDIDATE.findAll(flat).map { it.value }.toList()
         if (cands.isEmpty()) return null
         return cands.firstOrNull { check(it).first } ?: cands.first()
     }

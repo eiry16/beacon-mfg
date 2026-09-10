@@ -239,6 +239,7 @@ class Strings(val lang: Lang) {
         get() = t("手动输入 18 位统一社会信用代码", "Type the 18-digit USCC manually")
     val scanNoCamera
         get() = t("这台设备上没有可用的相机。", "No usable camera on this device.")
+    val cameraFailed get() = t("相机启动失败。", "Failed to start the camera.")
     /**
      * 扫码成功后替用户发出的那句话。
      *

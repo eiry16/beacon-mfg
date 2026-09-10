@@ -46,8 +46,12 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import cn.beaconmfg.app.data.Uscc
 import cn.beaconmfg.app.i18n.Strings
-import com.google.mlkit.vision.barcode.BarcodeScanning
-import com.google.mlkit.vision.common.InputImage
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.BinaryBitmap
+import com.google.zxing.DecodeHintType
+import com.google.zxing.MultiFormatReader
+import com.google.zxing.PlanarYUVLuminanceSource
+import com.google.zxing.common.HybridBinarizer
 import java.util.concurrent.Executors
 
 private const val TAG = "BeaconScan"
@@ -133,6 +137,7 @@ fun ScanScreen(
                     error != null -> CenteredText(error!!)
 
                     else -> CameraPreview(
+                        s = s,
                         onPayload = { text ->
                             val code = Uscc.extract(text)
                             if (code != null && Uscc.check(code).first) {
@@ -226,35 +231,49 @@ private fun CenteredText(text: String) {
 }
 
 /**
- * CameraX 预览 + MLKit 条码解析。
+ * CameraX 预览 + zxing 解码。
  *
  * 解析到第一个有效载荷就回调一次，之后不再回调（用 `consumed` 闸住）——
  * 相机每秒 30 帧，不闸住的话 onPayload 会被刷爆。
  */
 @Composable
 private fun CameraPreview(
+    s: Strings,
     onPayload: (String) -> Unit,
     onError: (String) -> Unit,
 ) {
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
     val executor = remember { Executors.newSingleThreadExecutor() }
-    val scanner = remember { BarcodeScanning.getClient() }
+
+    // 只开需要的格式：营业执照上是 QR，另加两种常见一维条码做兜底。
+    // 格式列表越短，解码越快——每帧都要试一遍，这是实打实的开销。
+    val reader = remember {
+        MultiFormatReader().apply {
+            setHints(
+                mapOf<DecodeHintType, Any>(
+                    DecodeHintType.POSSIBLE_FORMATS to listOf(
+                        BarcodeFormat.QR_CODE,
+                        BarcodeFormat.CODE_128,
+                        BarcodeFormat.CODE_39,
+                    )
+                )
+            )
+        }
+    }
+
     // 闸：第一帧命中后立刻置 true。放在 Compose 状态里也行，但这是个纯回调侧的开关，
-    // 用普通对象更直接，也避免重组带来的歧义。
+    // 用普通数组更直接，也避免重组带来的歧义。
     val consumed = remember { booleanArrayOf(false) }
 
     DisposableEffect(Unit) {
-        onDispose {
-            runCatching { scanner.close() }
-            executor.shutdown()
-        }
+        onDispose { executor.shutdown() }
     }
 
     // 只保留最新一帧：营业执照是静态的，堆着处理旧帧没有意义，
     // 而且 STRATEGY_KEEP_ONLY_LATEST 能避免低端机上分析器积压。
     val analyzer = remember {
-        ImageAnalysis.Analyzer { proxy -> analyze(proxy, scanner, consumed, onPayload) }
+        ImageAnalysis.Analyzer { proxy -> analyze(proxy, reader, consumed, onPayload) }
     }
 
     AndroidView(
@@ -265,7 +284,7 @@ private fun CameraPreview(
                 future.addListener({
                     val provider = runCatching { future.get() }.getOrNull()
                     if (provider == null) {
-                        onError(ctx.cameraErrorMessage())
+                        onError(ctx.cameraErrorMessage(s))
                         return@addListener
                     }
                     val preview = Preview.Builder().build().also {
@@ -283,20 +302,40 @@ private fun CameraPreview(
                             preview,
                             analysis,
                         )
-                    }.onFailure { onError(it.message ?: ctx.cameraErrorMessage()) }
+                    }.onFailure { onError(it.message ?: ctx.cameraErrorMessage(s)) }
                 }, ContextCompat.getMainExecutor(ctx))
             }
         },
     )
 }
 
-private fun Context.cameraErrorMessage(): String =
-    packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY)
-        .let { has -> if (has) "相机启动失败" else "这台设备上没有可用的相机" }
+private fun Context.cameraErrorMessage(s: Strings): String =
+    if (packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY)) s.cameraFailed
+    else s.scanNoCamera
 
+/**
+ * 从相机的一帧里解码。
+ *
+ * ## 为什么只取 Y 平面
+ *
+ * YUV_420_888 的 Y 通道本身就是灰度图，而 zxing 的解码只需要亮度信息。
+ * 所以直接拿 Y 平面喂 `PlanarYUVLuminanceSource`，**不需要任何 RGB 转换**——
+ * 那一步是纯浪费，还会拖慢每帧的处理速度。
+ *
+ * ## rowStride 不等于 width
+ *
+ * 相机给的 Y 平面每行末尾可能有对齐填充，`rowStride >= width`。
+ * 用 width 当行宽会把图像拧斜，解码必然失败。所以行宽用 rowStride，
+ * 再用 crop 参数把右侧填充裁掉。
+ *
+ * ## 旋转怎么办
+ *
+ * 这里**不做手动旋转**，依赖 zxing 的定位图案检测（QR 四角有 finder pattern，
+ * 90/180/270 都能认出来）。如果实测斜着/倒着扫不出来，再补旋转逻辑。
+ */
 private fun analyze(
     proxy: ImageProxy,
-    scanner: com.google.mlkit.vision.barcode.BarcodeScanner,
+    reader: MultiFormatReader,
     consumed: BooleanArray,
     onPayload: (String) -> Unit,
 ) {
@@ -304,22 +343,38 @@ private fun analyze(
         proxy.close()
         return
     }
-    val media = proxy.image
-    if (media == null) {
-        proxy.close()
-        return
-    }
-    val image = InputImage.fromMediaImage(media, proxy.imageInfo.rotationDegrees)
-    scanner.process(image)
-        .addOnSuccessListener { barcodes ->
-            // rawValue 拿不到时退回 displayValue：有些码（尤其一维码）只填后者
-            val text = barcodes.firstNotNullOfOrNull { it.rawValue ?: it.displayValue }
-            if (!text.isNullOrBlank() && !consumed[0]) {
-                consumed[0] = true
-                onPayload(text)
-            }
+    try {
+        val plane = proxy.planes[0]
+        val buffer = plane.buffer
+        val data = ByteArray(buffer.remaining())
+        buffer.get(data)
+
+        val rowStride = plane.rowStride
+        val height = proxy.height
+        val source = PlanarYUVLuminanceSource(
+            data,
+            rowStride,
+            height,
+            0,
+            0,
+            minOf(proxy.width, rowStride),
+            height,
+            false,
+        )
+        val text = runCatching { reader.decodeWithState(BinaryBitmap(HybridBinarizer(source))) }
+            .getOrNull()
+            ?.text
+        if (!text.isNullOrBlank() && !consumed[0]) {
+            consumed[0] = true
+            onPayload(text)
         }
-        .addOnFailureListener { Log.w(TAG, "barcode failed", it) }
+    } catch (t: Throwable) {
+        // 单帧解码失败是常态（模糊、角度不对、没有码），不值得刷日志
+        Log.d(TAG, "frame skipped: ${t.message}")
+    } finally {
+        // reset 必须调：MultiFormatReader 是有状态的，不重置会让下一帧继续用上一次的中间状态
+        runCatching { reader.reset() }
         // 无论成败都必须 close，否则 CameraX 的帧缓冲会被卡死，预览直接冻住
-        .addOnCompleteListener { proxy.close() }
+        proxy.close()
+    }
 }
