@@ -7,6 +7,7 @@ import cn.beaconmfg.app.data.Fingerprint
 import cn.beaconmfg.app.data.Hit
 import cn.beaconmfg.app.data.PlatformApi
 import cn.beaconmfg.app.data.PlatformApiException
+import cn.beaconmfg.app.data.Uscc
 import cn.beaconmfg.app.i18n.Lang
 import cn.beaconmfg.app.i18n.Strings
 import org.json.JSONArray
@@ -30,6 +31,16 @@ class VendorSession {
     var supplierId: String? = null
 
     /**
+     * 对方提供的统一社会信用代码（18 位），校验位已通过。
+     *
+     * 现在它**不能用来检索名录**——名录 2.3 万条里还没有 USCC 字段。
+     * 记下来的意义是：它是唯一且权威的法律主体锚点，等名录补上 USCC 索引后
+     * 就能做 100% 精确匹配，彻底消掉"名字报不准"这一整类问题。
+     * 在此之前它随认领一起提交，作为主体凭证。
+     */
+    var uscc: String? = null
+
+    /**
      * 平台**当前正等着回答的那一题**（null = 没在采集，或已经问完了）。
      *
      * 为什么要记这个：模型（tool_choice=auto）经常**不调工具直接作答**——
@@ -48,6 +59,7 @@ class VendorSession {
         claimSessionId = null
         claimToken = null
         supplierId = null
+        uscc = null
         pending = null
     }
 }
@@ -132,9 +144,13 @@ class VendorToolBox(
                         s(
                             t(
                                 "公司名或其片段，如「耐特斯」「上海耐特斯传输设备」。" +
-                                    "也可以直接给 18 位统一社会信用代码，或供应商 ID（形如 CN-MFG-0020317）。",
-                                "Company name or a fragment of it. An 18-digit USCC or a supplier ID " +
-                                    "(e.g. CN-MFG-0020317) also works."
+                                    "也可以是供应商 ID（形如 CN-MFG-0020317），或 18 位统一社会信用代码" +
+                                    "（扫码或手输均可）。给号码时会先校验格式，但**名录暂不支持按号码定位**，" +
+                                    "拿到号码后仍须再要一次公司全称。",
+                                "Company name or a fragment of it. A supplier ID (e.g. CN-MFG-0020317) or " +
+                                    "an 18-digit USCC (scanned or typed) also works. Numbers are validated " +
+                                    "for format, but the directory **cannot be searched by USCC yet** — " +
+                                    "you still need the full legal name afterwards."
                             )
                         )
                     ),
@@ -293,6 +309,52 @@ class VendorToolBox(
                     " | ${s.briefBeacon}=${CertTier.of(fp.cl).label(s)}",
                 hits = listOf(Hit(fp, Evidence.LITERAL)),
                 echo = s.toolVendorMatch(1),
+            )
+        }
+
+        // 统一社会信用代码（18 位）：可能是扫码解出来的，也可能是一串手输的号码。
+        //
+        // 这里必须如实交代一个反直觉的事实：**名录里现在还没有 USCC 字段**，
+        // 所以就算号码是对的，也定位不到企业。但号码本身有独立价值——
+        // 它是唯一且权威的法律主体锚点，先记下来随认领提交；等名录补上 USCC 索引
+        // 就能做精确匹配，消掉"名字报不准"这一整类问题。
+        // 绝不假装能搜：搜不到就说搜不到，并把原因讲清楚。
+        val uscc = Uscc.extract(kw)
+        if (uscc != null) {
+            val (ok, why) = Uscc.check(uscc)
+            if (!ok) {
+                return failed(
+                    t(
+                        "这串统一社会信用代码不对：$why。请对照营业执照重新输入。",
+                        "This USCC is invalid: $why. Please re-enter it from the business licence."
+                    )
+                )
+            }
+            session.uscc = uscc
+            val region = Uscc.regionOf(uscc)
+            val sb = StringBuilder()
+            sb.append(t("统一社会信用代码 $uscc 校验通过。", "USCC $uscc passed the checksum.")).append('\n')
+            if (region != null) {
+                sb.append(
+                    t(
+                        "登记机关在「$region」。请对方确认对得上——拿错执照就会认领到别家去。",
+                        "Registration authority is in \"$region\". Ask them to confirm it matches — " +
+                            "the wrong licence means claiming someone else's company."
+                    )
+                ).append('\n')
+            }
+            sb.append(
+                t(
+                    "注意：名录目前还没有统一社会信用代码索引，**光凭这个号码定位不到企业**。"
+                        + "请再给一次营业执照上的公司全称，我用名字找；号码已经记下，会随认领一起提交。",
+                    "Note: the directory has no USCC index yet, so **this number alone cannot locate the "
+                        + "company**. Please also give the full legal name from the licence — the number "
+                        + "is recorded and will be submitted with the claim."
+                )
+            )
+            return ToolResult(
+                sb.toString().trimEnd(),
+                echo = t("已记录统一社会信用代码", "USCC recorded")
             )
         }
 

@@ -52,6 +52,7 @@ class Strings(val lang: Lang) {
     val appTitle get() = t("炫招灯塔", "BeaconMFG")
     val appSubtitle get() = t("——让AI世界看见", " — be seen by AI")
     val actionClear get() = t("清空", "Clear")
+    val actionCancel get() = t("取消", "Cancel")
     val actionSettings get() = t("设置", "Settings")
     val actionChat get() = t("对话", "Chat")
 
@@ -196,6 +197,59 @@ class Strings(val lang: Lang) {
      * （实测：跳过验证码直接调采集，被平台拒了还不重试）。把状态和"下一步该干什么"
      * 每轮摆在它面前，比只在提示词里写一遍流程管用得多。
      */
+    // ── 扫码认领 ─────────────────────────────────────────────────────────────
+
+    /**
+     * 扫码按钮的文案里**不提「电子营业执照」**。
+     *
+     * 原因：新版营业执照上的企业码，只有电子营业执照小程序（或已获接入资质的系统）
+     * 才能解出照面信息；我们用通用扫码器扫，可能只拿到一串内部 ID。
+     * 说"扫电子营业执照"会让对方以为扫完就完成了身份核验，那是**误导**。
+     * 所以只说"扫营业执照上的码"，拿到什么算什么，解不出就让他手输。
+     */
+    val scanButton get() = t("扫码", "Scan")
+    val scanTitle get() = t("扫描营业执照上的码", "Scan the code on the licence")
+    val scanHint
+        get() = t(
+            "对准营业执照上的二维码。能识别出 18 位统一社会信用代码就自动填入。",
+            "Point at the QR code on the business licence. If an 18-digit USCC is found, it fills in automatically."
+        )
+    val scanPermissionNeeded
+        get() = t("需要相机权限才能扫码", "Camera permission is needed to scan")
+    val scanPermissionDenied
+        get() = t(
+            "相机权限被拒绝了。可在系统设置里打开，或者直接手输 18 位统一社会信用代码。",
+            "Camera permission was denied. Enable it in system settings, or just type the 18-digit USCC."
+        )
+    val scanNoUscc
+        get() = t(
+            "这个码里没有 18 位统一社会信用代码。",
+            "No 18-digit USCC found in this code."
+        )
+    val scanRawPrefix get() = t("扫到的内容：", "Scanned content: ")
+    val scanWhyNot
+        get() = t(
+            "新版营业执照的「企业码」只有电子营业执照小程序能解出照面信息，通用扫码器读不出。" +
+                "所以扫不出来是**正常情况**，不是坏了——直接手输 18 位统一社会信用代码就行。",
+            "The new-style licence code can only be decoded by the official e-licence mini-program; " +
+                "a generic scanner can't read it. Not finding anything is **normal**, not a bug — " +
+                "just type the 18-digit USCC."
+        )
+    val scanManualHint
+        get() = t("手动输入 18 位统一社会信用代码", "Type the 18-digit USCC manually")
+    val scanNoCamera
+        get() = t("这台设备上没有可用的相机。", "No usable camera on this device.")
+    /**
+     * 扫码成功后替用户发出的那句话。
+     *
+     * 为什么要走"发一句话"而不是直接调工具：整条供应商链路都是对话驱动的，
+     * 状态由平台掌管。直接塞结果会绕过平台，也会让用户看不懂"刚才发生了什么"。
+     * 发一句他能看懂的话，再由模型去调工具，用户所见即所得。
+     */
+    fun scanSubmit(code: String) =
+        t("我的统一社会信用代码是 $code", "My USCC is $code")
+    val usccLabel get() = t("统一社会信用代码", "USCC")
+
     val vendorStateHeader
         get() = t(
             "【平台当前状态】（每次回答前先看这里，按它决定下一步动作）",

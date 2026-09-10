@@ -74,6 +74,8 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
     val s = remember(settings.lang) { Strings(Lang.of(settings.lang)) }
     val supplier = Role.of(settings.role) == Role.SUPPLIER
     var input by remember { mutableStateOf("") }
+    // 扫码只在供应商模式出现：买家是纯检索，给他扫码按钮只会引出「为什么让我扫执照」的困惑。
+    var showScan by remember { mutableStateOf(false) }
 
     // 能力卡展开状态按供应商 ID 存，不放在卡片内部——
     // 卡片滑出列表再滑回来时 remember 会重置，用户刚点开的又缩回去了。
@@ -84,85 +86,102 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
 
     // imePadding：edge-to-edge 下系统不再替我们把内容顶上去，
     // 软键盘弹出时必须自己吃掉 IME 高度，否则输入框整条被键盘盖住。
-    Column(
-        modifier
-            .fillMaxSize()
-            .padding(horizontal = 12.dp)
-            .imePadding()
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 6.dp),
-            verticalAlignment = Alignment.CenterVertically,
+    Box(modifier.fillMaxSize()) {
+        Column(
+            Modifier
+                .fillMaxSize()
+                .padding(horizontal = 12.dp)
+                .imePadding()
         ) {
-            if (busy) CircularProgressIndicator(modifier = Modifier.padding(end = 8.dp))
-            Text(
-                status,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                maxLines = 2,
-            )
-        }
-        if (busy) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
-
-        LazyColumn(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            items(messages, key = { it.id }) { m ->
-                MessageRow(
-                    m = m,
-                    s = s,
-                    skillBase = settings.capabilityBase,
-                    isOpen = { id -> capOpen[id] ?: m.autoOpenCap },
-                    onToggle = { id -> capOpen[id] = !(capOpen[id] ?: m.autoOpenCap) },
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 6.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                if (busy) CircularProgressIndicator(modifier = Modifier.padding(end = 8.dp))
+                Text(
+                    status,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    maxLines = 2,
                 )
             }
-        }
+            if (busy) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
 
-        // 快捷问题：手机上打字成本高，给几个真实场景的起手式。
-        // 只在首页且未输入时显示；一旦开始搜索或已有消息流，立即隐藏，
-        // 避免盖住搜索结果卡片的工艺位/ID。
-        //
-        // 判据是「有没有真正开始对话」，**不是 messages 是否为空**：
-        // 切换身份会插一条系统提示，用 isEmpty() 会让起手式在切身份后消失——
-        // 而切到供应商模式的那一刻恰恰是最需要它的时候（手机上打不出中文长句）。
-        val started = messages.any { it.sender != MainViewModel.Sender.SYSTEM }
-        if (!started && input.isBlank()) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(6.dp),
+            LazyColumn(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                samples.take(2).forEach { q ->
-                    Button(
-                        onClick = { input = ""; vm.send(q) },
-                        modifier = Modifier.weight(1f),
-                    ) { Text(q, maxLines = 1, fontSize = 11.sp) }
+                items(messages, key = { it.id }) { m ->
+                    MessageRow(
+                        m = m,
+                        s = s,
+                        skillBase = settings.capabilityBase,
+                        isOpen = { id -> capOpen[id] ?: m.autoOpenCap },
+                        onToggle = { id -> capOpen[id] = !(capOpen[id] ?: m.autoOpenCap) },
+                    )
                 }
+            }
+
+            // 快捷问题：手机上打字成本高，给几个真实场景的起手式。
+            // 只在首页且未输入时显示；一旦开始搜索或已有消息流，立即隐藏，
+            // 避免盖住搜索结果卡片的工艺位/ID。
+            //
+            // 判据是「有没有真正开始对话」，**不是 messages 是否为空**：
+            // 切换身份会插一条系统提示，用 isEmpty() 会让起手式在切身份后消失——
+            // 而切到供应商模式的那一刻恰恰是最需要它的时候（手机上打不出中文长句）。
+            val started = messages.any { it.sender != MainViewModel.Sender.SYSTEM }
+            if (!started && input.isBlank()) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                ) {
+                    samples.take(2).forEach { q ->
+                        Button(
+                            onClick = { input = ""; vm.send(q) },
+                            modifier = Modifier.weight(1f),
+                        ) { Text(q, maxLines = 1, fontSize = 11.sp) }
+                    }
+                }
+            }
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                OutlinedTextField(
+                    value = input,
+                    onValueChange = { input = it },
+                    modifier = Modifier.weight(1f),
+                    placeholder = { Text(if (supplier) s.vendorInputHint else s.inputHint) },
+                    maxLines = 3,
+                )
+                if (supplier) {
+                    TextButton(onClick = { showScan = true }, enabled = !busy) {
+                        Text(s.scanButton, fontSize = 12.sp)
+                    }
+                }
+                Button(
+                    onClick = { vm.send(input); input = "" },
+                    modifier = Modifier.padding(start = 8.dp),
+                    enabled = !busy,
+                ) { Text(s.send) }
             }
         }
 
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 8.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            OutlinedTextField(
-                value = input,
-                onValueChange = { input = it },
-                modifier = Modifier.weight(1f),
-                placeholder = { Text(if (supplier) s.vendorInputHint else s.inputHint) },
-                maxLines = 3,
+        // 扫码认领：扫到号码后走「发一句话」，让模型照常调 find_my_company。
+        // 不直接把结果塞给工具——那样会绕过平台，用户也看不懂刚才发生了什么。
+        if (showScan) {
+            ScanScreen(
+                s = s,
+                onUscc = { code -> showScan = false; vm.send(s.scanSubmit(code)) },
+                onClose = { showScan = false },
             )
-            Button(
-                onClick = { vm.send(input); input = "" },
-                modifier = Modifier.padding(start = 8.dp),
-                enabled = !busy,
-            ) { Text(s.send) }
         }
     }
 }
