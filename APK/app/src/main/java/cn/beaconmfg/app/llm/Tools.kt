@@ -1,5 +1,6 @@
 package cn.beaconmfg.app.llm
 
+import cn.beaconmfg.app.data.CertTier
 import cn.beaconmfg.app.data.DataStore
 import cn.beaconmfg.app.data.Evidence
 import cn.beaconmfg.app.data.Hit
@@ -109,6 +110,21 @@ class ToolBox(
                             )
                         )
                         .put(
+                            "min_beacon",
+                            str(
+                                if (en) {
+                                    "Minimum certification beacon: L1 (claimed) / L2 (verified) / " +
+                                        "L3 (audited). Leave empty for no filter. Note most suppliers " +
+                                        "are L0 (public listing, nothing verified) — filtering L2+ " +
+                                        "usually returns very few or zero results."
+                                } else {
+                                    "认证等级下限：L1 已认领 / L2 已认证 / L3 已验厂。留空为不限。" +
+                                        "注意绝大多数企业是 L0（公开名录、未核验），" +
+                                        "筛 L2 以上通常很少甚至 0 家"
+                                }
+                            )
+                        )
+                        .put(
                             "manufacturer_only",
                             JSONObject().put("type", "boolean")
                                 .put(
@@ -206,11 +222,16 @@ class ToolBox(
         val code = a.optString("industry_code", "").ifBlank { null }
         val cert = a.optString("cert", "").ifBlank { null }
         val limit = a.optInt("limit", 10).coerceIn(1, 30)
+        // 等级认不出（比如模型传了 "L2+"/"已认证" 这种非标准值）就按不限处理，
+        // 而不是退化成 L0 下限让搜索结果错得不明不白。
+        val minBeacon = a.optString("min_beacon", "").trim().uppercase()
+            .takeIf { it.matches(Regex("L[123]")) }
         val params = SearchParams(
             keyword = keyword,
             city = city,
             industryCode = code,
             cert = cert,
+            minBeacon = minBeacon,
             manufacturerOnly = a.optBoolean("manufacturer_only", false),
             withPhoneOnly = a.optBoolean("with_phone_only", false),
             limit = limit,
@@ -234,10 +255,12 @@ class ToolBox(
             }
             return ToolResult(
                 if (en) {
-                    "0 suppliers. Try different wording, or relax the region/certification filters; " +
+                    "0 suppliers. Try different wording, or relax the region/certification/" +
+                        "beacon filters (most entries are L0 = public listing, nothing verified); " +
                         "you can also call list_categories to see which industries exist."
                 } else {
-                    "0 家。请换个说法或放宽地区/认证条件；也可先调 list_categories 看库里有哪些行业。"
+                    "0 家。请换个说法或放宽地区/认证/灯牌等级条件" +
+                        "（库里绝大多数是 L0 未核验）；也可先调 list_categories 看库里有哪些行业。"
                 }
             )
         }
@@ -276,12 +299,14 @@ class ToolBox(
                 if (en) {
                     "[Offline — index summary only] $id | ${fp.name} | ${fp.city} | " +
                         "${fp.gb} ${fp.gbName} | phone=${if (fp.tel) "yes" else "no"} | " +
-                        "beacon=${fp.cl}. The full profile (address/phone/website) needs the " +
+                        "beacon=${CertTier.of(fp.cl).label(s)} (${fp.cl}). The full profile " +
+                        "(address/phone/website) needs the " +
                         "industry shard to be downloaded."
                 } else {
                     "【离线，仅索引层摘要】$id | ${fp.name} | ${fp.city} | " +
                         "${fp.gb} ${fp.gbName} | 电话=${if (fp.tel) "有" else "无"} | " +
-                        "灯牌=${fp.cl}。完整档案（地址/电话/官网）需要联网下载该行业分片。"
+                        "认证=${CertTier.of(fp.cl).label(s)}（${fp.cl}）。" +
+                        "完整档案（地址/电话/官网）需要联网下载该行业分片。"
                 },
                 hits = listOf(Hit(fp, Evidence.LITERAL))
             )
@@ -307,11 +332,48 @@ class ToolBox(
                 append("电话：").append(d.phone.ifEmpty { "未填写" }).append("\n")
                 if (d.website.isNotEmpty()) append("官网：").append(d.website).append("\n")
                 append("认证：").append(d.certs.joinToString("、").ifEmpty { "无" }).append("\n")
+                beaconLines(d, s, en).let { if (it.isNotEmpty()) append(it) }
                 append("数据来源：公开渠道，核实于 ").append(d.verifiedAt.ifEmpty { "?" })
                 if (!d.isManufacturer) append("\n⚠ 批发/贸易类，非生产企业")
             }
         }
         return ToolResult(text, listOf(Hit(fp, Evidence.LITERAL)), d)
+    }
+
+    /**
+     * 回灌给模型的认证信息（灯牌等级 + 含义 + 存证日期）。
+     *
+     * 为什么要写全：只给一个 "L2"，模型很可能顺着补全成「已验厂并通过质量审核」
+     * 这类数据里没有的话。给 label + hint 明确「核验到什么程度」，等于把边界交给它。
+     * 注意 beacon 说的是**信息核验程度**，不是这家厂好不好 —— CERTIFICATION_V1 §1 同款红线。
+     */
+    private fun beaconLines(d: SupplierDetail, s: Strings, en: Boolean): String {
+        val tier = CertTier.of(d.beacon)
+        val out = StringBuilder()
+        if (en) {
+            out.append("Beacon: ").append(tier.code).append(" ").append(tier.label(s))
+                .append(" — ").append(tier.hint(s)).append("\n")
+            d.certification?.let { c ->
+                if (c.issuedAt.isNotBlank()) out.append("Issued: ").append(c.issuedAt).append("\n")
+                if (c.expiresAt.isNotBlank()) out.append("Valid until: ").append(c.expiresAt).append("\n")
+                if (d.certExpired) out.append("⚠ Expired — do not call it verified.\n")
+            }
+            if (tier.acceptsAutoRfq) out.append("Accepts automated RFQ: yes\n")
+            out.append("NB: the beacon is not a quality rating. Do not describe a company as ")
+                .append("\"high quality\" / \"audited\" based on it.\n")
+        } else {
+            out.append("灯牌：").append(tier.code).append(" ").append(tier.label(s))
+                .append("——").append(tier.hint(s)).append("\n")
+            d.certification?.let { c ->
+                if (c.issuedAt.isNotBlank()) out.append("签发：").append(c.issuedAt).append("\n")
+                if (c.expiresAt.isNotBlank()) out.append("有效期至：").append(c.expiresAt).append("\n")
+                if (d.certExpired) out.append("⚠ 存证已过期，不要再说成「已认证」。\n")
+            }
+            if (tier.acceptsAutoRfq) out.append("可接自动询价：是\n")
+            out.append("注意：灯牌描述的是信息核验程度，不是质量评级，" +
+                "不要据此说这家厂「质量好」「验过厂」。\n")
+        }
+        return out.toString()
     }
 
     private fun categories(a: JSONObject): ToolResult {

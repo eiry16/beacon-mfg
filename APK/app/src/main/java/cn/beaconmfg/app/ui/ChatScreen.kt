@@ -50,6 +50,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cn.beaconmfg.app.MainViewModel
 import cn.beaconmfg.app.data.CapabilityCard
+import cn.beaconmfg.app.data.CertTier
 import cn.beaconmfg.app.data.Evidence
 import cn.beaconmfg.app.data.Hit
 import cn.beaconmfg.app.data.SupplierDetail
@@ -289,13 +290,15 @@ fun SupplierCard(
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.weight(1f),
                 )
+                // 认证徽章放在公司名后面：采购扫一眼就知道这份信息核验到什么程度。
+                // 等级来自数据；缺失或不在 L0–L3 里的值一律按「未核验」显示。
+                CertBadge(h.fp.cl, s)
                 EvidenceTag(h.evidence, s)
             }
             Text(
                 listOf(
                     h.fp.city.ifEmpty { s.cityUnknown },
                     if (h.fp.gb.isNotEmpty()) "${h.fp.gb} ${h.fp.gbName}" else "",
-                    s.beacon(h.fp.cl),
                 ).filter { it.isNotEmpty() }.joinToString(s.dotSep),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -389,6 +392,36 @@ private fun EvidenceTag(e: Evidence, s: Strings) {
     }
 }
 
+/**
+ * 认证徽章（灯牌）。
+ *
+ * 配色沿用 docs/CERTIFICATION_V1.md §1：未核验灰 / 已认领蓝 / 已认证金 / 已验厂深金。
+ * 这里**不做任何升级判断**：传进来什么等级就画什么等级，
+ * 绝大多数企业是 L0（自动收录、未核验），如实画灰色即可 —— 藏起来才是对采购的误导。
+ */
+@Composable
+private fun CertBadge(cl: String, s: Strings) {
+    val tier = CertTier.of(cl)
+    val (bg, fg) = when (tier) {
+        CertTier.L1 -> Color(0xFF1565C0) to Color.White
+        CertTier.L2 -> Color(0xFFF57F17) to Color.White
+        CertTier.L3 -> Color(0xFF7A4F01) to Color.White
+        CertTier.L0 -> Color(0xFF3A3A3A) to Color(0xFFBDBDBD)
+    }
+    Surface(
+        color = bg,
+        shape = RoundedCornerShape(6.dp),
+        modifier = Modifier.padding(end = 4.dp),
+    ) {
+        Text(
+            "${tier.code} ${tier.label(s)}",
+            color = fg,
+            fontSize = 10.sp,
+            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+        )
+    }
+}
+
 @Composable
 private fun DetailCard(
     d: SupplierDetail,
@@ -404,10 +437,44 @@ private fun DetailCard(
             containerColor = MaterialTheme.colorScheme.tertiaryContainer
         ),
     ) {
-        Column(Modifier.padding(10.dp)) {
-            Text(d.company, fontWeight = FontWeight.Bold)
-            Text(
-                "${d.province}${s.dotSep}${d.city}  ${d.address}",
+    val todayIso = remember {
+        java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.CHINA).format(java.util.Date())
+    }
+    Column(Modifier.padding(10.dp)) {
+        Text(d.company, fontWeight = FontWeight.Bold)
+        // 认证：等级 + 含义 + 存证日期。能不能接自动询价也是从这里判的（L2 起）。
+        Row(verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(top = 2.dp)) {
+            Text(s.detailBeacon, style = MaterialTheme.typography.bodySmall)
+            CertBadge(d.beacon, s)
+        }
+        Text(CertTier.of(d.beacon).hint(s),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
+        d.certification?.let { cert ->
+            val bits = ArrayList<String>()
+            if (cert.issuedAt.isNotBlank()) bits.add(s.beaconIssued(cert.issuedAt))
+            if (cert.expiresAt.isNotBlank()) bits.add(s.beaconValidUntil(cert.expiresAt))
+            cert.completeness?.let { bits.add(s.beaconCompleteness("%.1f".format(it))) }
+            if (bits.isNotEmpty()) {
+                Text(bits.joinToString(s.dotSep), style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            if (cert.expired(todayIso) || d.certExpired) {
+                Text(s.beaconExpired, style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error)
+            }
+        }
+        if (CertTier.of(d.beacon).acceptsAutoRfq) {
+            Text(s.beaconAutoRfq, style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.primary)
+        }
+        // 灯牌不是评级，这句限定必须在详情页出现一次，
+        // 否则采购看到金色徽章会理解成「这家厂质量好」。
+        Text(s.beaconNote, style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(
+                locationLine(d.province, d.city, d.address, s),
                 style = MaterialTheme.typography.bodySmall,
             )
             if (d.phone.isNotEmpty()) {
@@ -430,6 +497,24 @@ private fun DetailCard(
             }
         }
     }
+}
+
+/**
+ * 详情页那行「省 · 市  地址」。
+ *
+ * 两处去重，都是为了不把同一件事说三遍（真机实测：上海的企业会显示成
+ * 「上海 · 上海  上海市奉贤区宏杨路158号」）：
+ *  1. 直辖市 `province == city`（上海/北京/天津/重庆），只留一个；
+ *  2. 地址常常已经以城市名开头（「上海市奉贤区…」），此时前缀整个省掉。
+ * 拿不准就只显示地址——少说一句，也比重复强。
+ */
+private fun locationLine(province: String, city: String, address: String, s: Strings): String {
+    val parts = listOf(province, city).filter { it.isNotBlank() }.distinct()
+    val prefix = parts.joinToString(s.dotSep)
+    if (prefix.isBlank()) return address
+    if (address.isBlank()) return prefix
+    if (parts.any { address.startsWith(it) }) return address
+    return "$prefix  $address"
 }
 
 /**

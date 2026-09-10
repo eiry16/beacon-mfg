@@ -59,6 +59,37 @@ class RemoteSource(private val store: DataStore) {
     private fun now(): String =
         SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA).format(Date())
 
+    /** 今天（ISO yyyy-MM-dd），给认证有效期判断用。 */
+    private fun todayIso(): String =
+        SimpleDateFormat("yyyy-MM-dd", Locale.CHINA).format(Date())
+
+    /**
+     * 解析认证存证块（data/gb 完整档案里的 `certification`）。
+     *
+     * 多数企业没有这块 —— 返回 null，UI 里就当作「未认证」处理。
+     * completeness（硬指标完成度）缺失时留 null：**没算出来就不显示**，不填 0，
+     * 显示 0% 会让人以为这家厂硬指标一项没过关。
+     */
+    private fun certOf(o: JSONObject?): Certification? {
+        if (o == null || o.length() == 0) return null
+        val appId = o.safeString("app_id")
+        if (appId.isEmpty()) return null
+        val comp = o.opt("completeness")
+        val completeness = when (comp) {
+            is Number -> comp.toDouble()
+            is String -> comp.trim().toDoubleOrNull()
+            else -> null
+        }
+        return Certification(
+            appId = appId,
+            badge = o.safeString("badge").ifEmpty { o.safeString("cl") },
+            issuedAt = o.safeString("issued_at"),
+            expiresAt = o.safeString("expires_at"),
+            reviewer = o.safeString("reviewer"),
+            completeness = completeness,
+        )
+    }
+
     /** 候选源：用户填的优先，其后是内置镜像，去重。 */
     private fun candidates(base: String): List<String> {
         val root = if (base.endsWith("/")) base else "$base/"
@@ -250,6 +281,7 @@ class RemoteSource(private val store: DataStore) {
             if (ka != null) for (j in 0 until ka.length()) kws.add(ka.optString(j, ""))
             // 能力卡读的是内置副本，不联网也有。断网时详情页照样能看到工艺位。
             val gbCode = ind?.safeString("code") ?: ""
+            val certification = certOf(o.optJSONObject("certification"))
             return SupplierDetail(
                 id = id,
                 company = o.safeString("company"),
@@ -266,6 +298,11 @@ class RemoteSource(private val store: DataStore) {
                 status = o.safeString("status"),
                 isManufacturer = o.optBoolean("is_manufacturer", true),
                 verifiedAt = o.safeString("verified_at"),
+                // 认证等级 / 存证。**绝大多数企业没有这个块**——没认证就是没有，
+                // 缺失时留空（beacon=""）与 null，UI 按 L0 处理，不许客户端补默认值。
+                beacon = o.safeString("cl"),
+                certification = certification,
+                certExpired = certification?.expired(todayIso()) ?: false,
                 cap = store.capabilityOf(id, gbCode),
             )
         }

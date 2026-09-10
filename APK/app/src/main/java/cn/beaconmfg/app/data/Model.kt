@@ -55,11 +55,81 @@ data class Hit(
     val evidence: Evidence,
 )
 
+/**
+ * 供应商认证等级（对外叫「灯牌」）。等级定义见 docs/CERTIFICATION_V1.md §1。
+ *
+ * 客户端的两条红线和服务端一样：
+ *  1. **等级只能来自数据**。它是服务端 `evaluate` 算出来的（没有 set_badge 这种接口），
+ *     App 不许自己升级、也不许「看着像 L2」就美化：认不出 / 缺失的值一律按 L0 展示。
+ *  2. **灯牌 ≠ 评级**。它说的是「这家企业的信息被核验到什么程度」，不说这家厂好不好。
+ *     所以凡有徽章的地方都要能点到看到这句限定（详情页给出提示行）。
+ */
+enum class CertTier(val code: String, val rank: Int) {
+    /** 自动收录的公开名录，未经任何核验 */
+    L0("L0", 0),
+
+    /** 主体已认领，信息由企业自述 */
+    L1("L1", 1),
+
+    /** 营业执照核验 + 材料齐备 + 人工复核 */
+    L2("L2", 2),
+
+    /** 第三方实地验厂或客户案例佐证 */
+    L3("L3", 3),
+    ;
+
+    companion object {
+        fun of(raw: String?): CertTier {
+            val c = raw?.trim()?.uppercase() ?: ""
+            return entries.firstOrNull { it.code == c } ?: L0
+        }
+
+        /** 可接自动询价的最低等级（CERTIFICATION_V1 §1：L2 起）。 */
+        const val AUTO_RFQ_RANK = 2
+    }
+
+    fun label(s: cn.beaconmfg.app.i18n.Strings): String = s.tierLabel(code)
+    fun hint(s: cn.beaconmfg.app.i18n.Strings): String = s.tierHint(code)
+
+    val acceptsAutoRfq: Boolean get() = rank >= AUTO_RFQ_RANK
+}
+
+/**
+ * 认证存证的公开摘要（来自完整档案的 `certification` 块）。
+ *
+ * 字段可能整体缺失（未认证的企業就没有这个块）——那是常态不是错误，
+ * UI 按「没 Certification 对象」处理，不许反推出一个假的默认值。
+ */
+data class Certification(
+    val appId: String,
+    val badge: String,
+    val issuedAt: String,
+    val expiresAt: String,
+    val reviewer: String,
+    val completeness: Double?,
+) {
+    val tier: CertTier get() = CertTier.of(badge)
+
+    /**
+     * 有效期是否已过。日期是 ISO yyyy-MM-dd，字典序即时间序，直接比字符串。
+     * 注意：**过期不等于降级**——降级由服务端规则做，App 只是把事实说出来，
+     * 让用户知道这份材料是哪一年的。
+     */
+    fun expired(todayIso: String): Boolean =
+        expiresAt.isNotBlank() && todayIso.isNotBlank() && todayIso > expiresAt
+}
+
 data class SearchParams(
     val keyword: String? = null,
     val city: String? = null,
     val industryCode: String? = null,
     val cert: String? = null,
+    /**
+     * 认证等级下限："L1" / "L2" / "L3"。null = 不限。
+     * 灯牌由规则算出、绝大多数企业目前是 L0，所以筛 L2 常常只有个位数结果——
+     * 检索会如实返回 0 并告知放宽条件，绝不为了给结果悄悄降级。
+     */
+    val minBeacon: String? = null,
     val manufacturerOnly: Boolean = false,
     val withPhoneOnly: Boolean = false,
     val limit: Int = 10,
@@ -150,6 +220,18 @@ data class SupplierDetail(
     val status: String,
     val isManufacturer: Boolean,
     val verifiedAt: String,
+    /**
+     * 认证等级（灯牌 L0/L1/L2/L3）。来自完整档案的 `cl` 字段；
+     * 读不到就按 L0「未认领」展示——宁可显示得低，也不猜。
+     */
+    val beacon: String = "",
+    /** 认证存证摘要。未认证的企业没有这个块，保持 null。 */
+    val certification: Certification? = null,
+    /**
+     * 存证是否已过期（解析当天判一次，UI 直接用）。
+     * 过期 ≠ 降级：降级由服务端规则做，这里只标个事实。
+     */
+    val certExpired: Boolean = false,
     /**
      * L1 能力卡。**内置在 APK 里**，不依赖网络——断网也能看到工艺位。
      * 为 null 表示这家厂还没有能力卡（23698 家里只有 4136 家有，约 17.5%）。

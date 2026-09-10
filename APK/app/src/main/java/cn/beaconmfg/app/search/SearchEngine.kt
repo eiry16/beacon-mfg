@@ -1,5 +1,6 @@
 package cn.beaconmfg.app.search
 
+import cn.beaconmfg.app.data.CertTier
 import cn.beaconmfg.app.data.DataStore
 import cn.beaconmfg.app.data.Evidence
 import cn.beaconmfg.app.data.Fingerprint
@@ -45,6 +46,11 @@ class SearchEngine(
                     if (fp.gb.isEmpty() || !fp.gb.startsWith(p.industryCode)) continue
                 }
                 if (!p.cert.isNullOrBlank() && fp.cert.none { it.contains(p.cert) }) continue
+                // 认证等级下限。等级是服务端规则算的，这里只做筛选，不做推算。
+                if (!p.minBeacon.isNullOrBlank()) {
+                    val need = CertTier.of(p.minBeacon).rank
+                    if (CertTier.of(fp.cl).rank < need) continue
+                }
 
                 var worst = 0
                 var ok = true
@@ -115,7 +121,10 @@ class SearchEngine(
                     else -> s.phoneNo
                 }
             )
-            append(" | ").append(s.beacon(fp.cl))
+            // 认证等级。以前回灌的是裸的「灯牌 L0」，模型常常自己脑补成「已核实」；
+            // 现在给可读标签（未核验 / 已认领 / 已认证 / 已验厂），减少它编造的空间。
+            append(" | ").append(s.briefBeacon).append("=")
+                .append(CertTier.of(fp.cl).label(s))
         }
     }
 }

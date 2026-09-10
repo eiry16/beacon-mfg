@@ -171,6 +171,43 @@ class Strings(val lang: Lang) {
         )
     val lastUpdateNote get() = t("【最近一次更新】", "[Last update attempt]")
 
+    // ── 供应商认证等级（灯牌，定义见 docs/CERTIFICATION_V1.md §1）──────────
+    fun tierLabel(code: String): String = when (code) {
+        "L1" -> t("已认领", "Claimed")
+        "L2" -> t("已认证", "Verified")
+        "L3" -> t("已验厂", "Audited")
+        else -> t("未核验", "Unverified")
+    }
+
+    /** 徽章旁边那句「被核验到什么程度」。含核验范围，也含没核验的部分。 */
+    fun tierHint(code: String): String = when (code) {
+        "L1" -> t("企业已认领，信息由企业自述，平台未核验",
+            "Claimed by the company — details are self-declared, not verified by the platform")
+        "L2" -> t("营业执照已核验 + 材料齐备 + 人工复核",
+            "Business licence checked, materials complete, human-reviewed")
+        "L3" -> t("第三方实地核验或客户案例佐证",
+            "Verified on site by a third party, or backed by client references")
+        else -> t("公开名录自动收录，未经任何核验",
+            "Auto-listed from public records — nothing verified")
+    }
+
+    /** 灯牌不是评级。这句限定必须跟着徽章出现，不能只在文档里写。 */
+    val beaconNote get() = t(
+        "灯牌说明的是「信息被核验到什么程度」，不代表这家厂好不好——平台不做评级。",
+        "A beacon says how far the information was verified — not whether the factory " +
+            "is any good. The platform does not rate suppliers."
+    )
+    val beaconExpired get() = t(
+        "存证有效期已过（降级与否以平台为准）",
+        "Certification expired (downgrades are decided by the platform)"
+    )
+    fun beaconIssued(x: String) = t("签发于 $x", "Issued $x")
+    fun beaconValidUntil(x: String) = t("有效期至 $x", "Valid until $x")
+    fun beaconCompleteness(pct: String) = t("硬指标完成度 ${pct}%", "Hard-spec completeness ${pct}%")
+    val beaconAutoRfq get() = t("可接自动询价", "Accepts automated RFQ")
+    val detailBeacon get() = t("认证：", "Beacon: ")
+    val briefBeacon get() = t("认证", "Beacon")
+
     // ── 设置页 ─────────────────────────────────────────────────────────────
     val secLanguage get() = t("语言", "Language")
     val langNote
@@ -335,6 +372,10 @@ Hard rules (breaking any of them counts as a wrong answer):
      不许说成「这家做 XX」。
 3. 查不到就直说查不到，并给出下一步建议（换说法 / 放宽地区 / 看有哪些行业）。不要硬凑。
 4. 用户的口语要先翻译成检索条件：如「上海有没有做输送线的」→ keyword=输送线, city=上海。
+4b. 结果里的**认证等级（灯牌）**说的是「这家企业的信息被核验到什么程度」：
+   L0 未核验（公开名录自动收录）/ L1 已认领（企业自述）/ L2 已认证（执照已核验）/
+   L3 已验厂。必须按这个口径如实转述：L0 就说是未核验，**不许升级说成已认证/已验厂**，
+   也不许据此推断这家厂质量好不好——灯牌不是评级。绝大多数企业目前是 L0。
 5. 回答用中文，简洁。默认只推荐 3–5 家，给出公司名、城市、主营、证据档位；用户要看更多再补充。
 6. 搜索结果已带电话号码，可直接引用；完整地址/官网需调用 get_supplier_detail 获取。
    结果里写「号码待核实」的，就如实告诉用户号码待核实，**不要编造或猜测电话号码**。
