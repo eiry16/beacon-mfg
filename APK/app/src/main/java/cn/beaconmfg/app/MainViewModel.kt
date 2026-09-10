@@ -47,8 +47,22 @@ import org.json.JSONObject
  */
 class MainViewModel(app: Application) : AndroidViewModel(app) {
 
-    /** 一轮对话的总时限（毫秒）。本地检索 + 最多 4 次模型调用都得在这个框里跑完。 */
-    private val TURN_TIMEOUT_MS = 180_000L
+    /**
+     * 一轮对话的「模型迭代上限」+「总时限」，按身份区分：
+     * - 买家侧是「一问一答」检索，4 轮 + 3 分钟足够，且能快速兜底卡死；
+     * - 供应商侧是「认领→核验→采集29题→定稿→认证→灯牌」长流程，约 36 步，
+     *   4 轮会在采集开头被腰斩，所以放宽为 40 轮 + 10 分钟（真卡死仍会被超时兜底）。
+     */
+    private val BUYER_MAX_ROUNDS = 4
+    private val VENDOR_MAX_ROUNDS = 40
+    private val BUYER_TURN_TIMEOUT_MS = 180_000L
+    private val VENDOR_TURN_TIMEOUT_MS = 600_000L
+
+    private fun maxRounds(role: Role): Int =
+        if (role == Role.SUPPLIER) VENDOR_MAX_ROUNDS else BUYER_MAX_ROUNDS
+
+    private fun turnTimeoutMs(role: Role): Long =
+        if (role == Role.SUPPLIER) VENDOR_TURN_TIMEOUT_MS else BUYER_TURN_TIMEOUT_MS
 
     /**
      * 排障日志。tag 统一 BeaconMFG，用 `adb logcat -s BeaconMFG` 只看这些：
@@ -303,10 +317,11 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             val t0 = System.currentTimeMillis()
             log("turn start: $text")
             try {
-                // 总闸：一轮对话（含最多 4 次模型调用 + 本地检索）超过上限就整体放弃。
+                // 总闸（双保险）：一轮对话的「模型迭代次数」和「总耗时」都按身份设上限
+                // ——买家检索 4 轮 / 3 分钟，供应商长流程 40 轮 / 10 分钟。超过就整体放弃。
                 // 没有这道闸，任何一处挂起都会让 _busy 永久为 true——界面一直转圈、
                 // Send 一直禁用，用户只能杀进程。宁可如实报错，也不能静默卡死。
-                withTimeout(TURN_TIMEOUT_MS) { runTurn(text) }
+                withTimeout(turnTimeoutMs(role())) { runTurn(text) }
             } catch (e: TimeoutCancellationException) {
                 log("turn TIMEOUT after ${System.currentTimeMillis() - t0}ms")
                 append(UiMessage(seq++, Sender.SYSTEM, str.turnTimeout))
@@ -350,10 +365,11 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         var detail: SupplierDetail? = null
         /** 本轮有没有发生过写操作。供应商侧用它判断"模型是不是说了却没提交"。 */
         var wrote = false
-        // 一轮里最多 4 次模型调用，客户端只建一次（内部共用 OkHttpClient）
+        // 一轮里的模型迭代上限按身份区分：买家 4 轮、供应商 40 轮（长流程需要）。
+        // 客户端只建一次 LlmClient（内部共用 OkHttpClient）。
         val llm = LlmClient(cfg, str)
 
-        while (rounds < 4) {
+        while (rounds < maxRounds(role())) {
             rounds++
             if (answerId == null) {
                 val id = seq++
