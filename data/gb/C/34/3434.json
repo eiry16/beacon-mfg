@@ -44,6 +44,16 @@
       "profile": "equipment_assembly",
       "completeness": 94.1
     },
-    "is_template": false
+    "is_template": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0020317/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog",
+        "rfq",
+        "quote"
+      ],
+      "verified": true
+    }
   }
 ]
