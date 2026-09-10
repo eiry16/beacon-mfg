@@ -1,6 +1,7 @@
 package cn.beaconmfg.app
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import cn.beaconmfg.app.data.AppSettings
@@ -28,7 +29,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeout
 import org.json.JSONObject
 
 /**
@@ -38,6 +41,16 @@ import org.json.JSONObject
  * 回灌给模型的结果一律带证据档位，系统提示词里也写死禁止编造。
  */
 class MainViewModel(app: Application) : AndroidViewModel(app) {
+
+    /** 一轮对话的总时限（毫秒）。本地检索 + 最多 4 次模型调用都得在这个框里跑完。 */
+    private val TURN_TIMEOUT_MS = 180_000L
+
+    /**
+     * 排障日志。tag 统一 BeaconMFG，用 `adb logcat -s BeaconMFG` 只看这些：
+     * 一轮对话里「模型调用/工具执行」每一步的耗时都会打出来，
+     * 卡住时能直接看出卡在哪一步（这是实测卡死后加的，别删）。
+     */
+    private fun log(msg: String) = Log.d("BeaconMFG", msg)
 
     enum class Role { USER, ASSISTANT, SYSTEM }
 
@@ -186,7 +199,8 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     fun testLlm(onDone: (String) -> Unit) {
         val s = _settings.value
         viewModelScope.launch {
-            onDone(LlmClient(LlmConfig(s.presetId, s.baseUrl, s.model, s.apiKey)).test())
+            val str = Strings(Lang.of(s.lang))
+            onDone(LlmClient(LlmConfig(s.presetId, s.baseUrl, s.model, s.apiKey), str).test())
         }
     }
 
@@ -213,9 +227,19 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             _busy.value = true
             append(UiMessage(seq++, Role.USER, text))
+            val str = Strings(Lang.of(_settings.value.lang))
+            val t0 = System.currentTimeMillis()
+            log("turn start: $text")
             try {
-                runTurn(text)
+                // 总闸：一轮对话（含最多 4 次模型调用 + 本地检索）超过上限就整体放弃。
+                // 没有这道闸，任何一处挂起都会让 _busy 永久为 true——界面一直转圈、
+                // Send 一直禁用，用户只能杀进程。宁可如实报错，也不能静默卡死。
+                withTimeout(TURN_TIMEOUT_MS) { runTurn(text) }
+            } catch (e: TimeoutCancellationException) {
+                log("turn TIMEOUT after ${System.currentTimeMillis() - t0}ms")
+                append(UiMessage(seq++, Role.SYSTEM, str.turnTimeout))
             } finally {
+                log("turn end: ${System.currentTimeMillis() - t0}ms, busy=false")
                 _busy.value = false
             }
         }
@@ -246,6 +270,8 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         var answerId: Long? = null
         var hits: List<Hit> = emptyList()
         var detail: SupplierDetail? = null
+        // 一轮里最多 4 次模型调用，客户端只建一次（内部共用 OkHttpClient）
+        val llm = LlmClient(cfg, str)
 
         while (rounds < 4) {
             rounds++
@@ -254,9 +280,15 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                 answerId = id
                 append(UiMessage(id, Role.ASSISTANT, "", streaming = true))
             }
-            val result = LlmClient(cfg).chat(history, tools) { piece ->
+            val t1 = System.currentTimeMillis()
+            log("round $rounds: chat start")
+            val result = llm.chat(history, tools) { piece ->
                 bump(answerId!!, piece)
             }
+            log(
+                "round $rounds: chat done ${System.currentTimeMillis() - t1}ms, " +
+                    "error=${result.error}, toolCalls=${result.toolCalls.size}"
+            )
             if (result.error != null) {
                 remove(answerId)
                 append(UiMessage(seq++, Role.SYSTEM, str.callFailed(result.error)))
@@ -287,7 +319,13 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             answerId = null
 
             for (call in result.toolCalls) {
+                val t2 = System.currentTimeMillis()
+                log("round $rounds: tool ${call.name} start")
                 val tr = withContext(Dispatchers.IO) { toolBox.run(call.name, call.arguments) }
+                log(
+                    "round $rounds: tool ${call.name} done " +
+                        "${System.currentTimeMillis() - t2}ms, hits=${tr.hits.size}"
+                )
                 hits = mergeHits(hits, tr.hits)
                 tr.detail?.let { detail = it }
                 // 回显只给一行人话：**不出现内部函数名**

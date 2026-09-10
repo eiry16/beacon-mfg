@@ -7,6 +7,8 @@ import cn.beaconmfg.app.data.DataStore
 import cn.beaconmfg.app.data.Evidence
 import cn.beaconmfg.app.data.GbIndex
 import cn.beaconmfg.app.data.SearchParams
+import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Strings
 import cn.beaconmfg.app.search.AliasIndex
 import cn.beaconmfg.app.search.SearchEngine
 import org.json.JSONObject
@@ -119,12 +121,14 @@ class SearchEngineParityTest {
     /** 行业推断档必须带弱证据标签，否则 LLM 会说成"这家做 XX"。 */
     @Test
     fun secondaryHitsCarryWeakEvidence() {
+        val s = Strings(Lang.ZH)
         val out = engine.search(SearchParams(keyword = "输送线", limit = 20))
         val weak = out.hits.filter { it.evidence == Evidence.ALIAS_SECONDARY }
         if (weak.isNotEmpty()) {
+            val label = weak.first().evidence.label(s)
             assertTrue(
-                "弱证据结果必须带「未确认」语义的标签，实际是：${weak.first().evidence.label}",
-                weak.first().evidence.label.contains("推断")
+                "弱证据结果必须带「未确认」语义的标签，实际是：$label",
+                label.contains("推断")
             )
         }
     }

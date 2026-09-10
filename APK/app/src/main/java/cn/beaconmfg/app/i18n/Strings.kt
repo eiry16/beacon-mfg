@@ -130,6 +130,34 @@ class Strings(val lang: Lang) {
                 "to the endpoint you chose."
         )
     fun callFailed(e: String) = t("模型调用失败：$e", "Model call failed: $e")
+
+    // ── 网络/端点错误（LlmClient 用；英文模式下不能蹦中文）─────────────────
+    val err401 get() = t("API key 无效或已过期（HTTP 401）", "Invalid or expired API key (HTTP 401)")
+    val err429 get() = t("触发限流（HTTP 429），稍后再试", "Rate limited (HTTP 429) — try again later")
+    fun errHttp(code: Int, detail: String) = t(
+        "请求失败 HTTP $code：$detail",
+        "Request failed — HTTP $code: $detail"
+    )
+    fun errNetwork(msg: String) = t("网络错误：$msg", "Network error: $msg")
+    fun errTimeout(sec: Int) = t(
+        "模型 ${sec} 秒没有响应，已放弃这次请求（可以再说一次）。",
+        "The model did not respond within ${sec}s — request abandoned. You can ask again."
+    )
+    val turnTimeout
+        get() = t(
+            "这一轮处理超时，已停止。可以换个更具体的说法再问一次。",
+            "This turn timed out and was stopped. Try a more specific wording."
+        )
+    val errNoBytes get() = t(
+        "模型连接长时间没有数据，已断开。",
+        "The model connection went silent for too long and was dropped."
+    )
+    fun testOk(model: String) = t("连通正常（HTTP 200，模型 $model）", "Connected (HTTP 200, model $model)")
+    fun testFail(code: Int, detail: String) = t(
+        "失败 HTTP $code：$detail",
+        "Failed — HTTP $code: $detail"
+    )
+    fun testConnErr(msg: String) = t("连接失败：$msg", "Connection failed: $msg")
     val emptyAnswer get() = t("（模型没有返回内容）", "(the model returned nothing)")
     val roundLimit
         get() = t(

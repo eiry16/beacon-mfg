@@ -1,8 +1,12 @@
 package cn.beaconmfg.app.llm
 
+import android.util.Log
+import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Strings
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -58,12 +62,24 @@ data class LlmResult(
  * SettingsRepo 用 Keystore 加密存）。这是 BYOK 方案的底线：本 App 永远不持有平台 key，
  * 也不会把用户的 key 发到除用户所选端点以外的任何地方。
  */
-class LlmClient(private val cfg: LlmConfig) {
+class LlmClient(private val cfg: LlmConfig, private val str: Strings) {
 
-    private val client = OkHttpClient.Builder()
-        .connectTimeout(15, TimeUnit.SECONDS)
-        .readTimeout(0, TimeUnit.SECONDS)   // 流式：读取超时交给 SSE 心跳
-        .build()
+    /** 一轮对话的总时限。超时后取消 SSE 并如实报错——否则界面会一直转圈、点发送没反应。 */
+    private val chatTimeoutMs = 150_000L
+
+    companion object {
+        /**
+         * 全局共用一个 OkHttpClient。之前是每个 LlmClient 各建一个——一轮对话里
+         * LlmClient 会被新建多次，每个都带自己的连接池与线程池，连接和线程都泄漏。
+         */
+        private val client = OkHttpClient.Builder()
+            .connectTimeout(15, TimeUnit.SECONDS)
+            // 流式的读取超时**不能设 0**：那是「永不超时」。服务端挂起不返回时，
+            // done.await() 会永远等下去，_busy 卡在 true，之后所有发送都被静默丢弃。
+            // 90 秒没有任何字节（含心跳）才判定断流，正常推理不会被误杀。
+            .readTimeout(90, TimeUnit.SECONDS)
+            .build()
+    }
 
     private fun endpoint(): String {
         val b = cfg.baseUrl.trim().trimEnd('/')
@@ -91,6 +107,7 @@ class LlmClient(private val cfg: LlmConfig) {
             .post(body.toString().toRequestBody("application/json".toMediaType()))
             .build()
 
+        var source: EventSource? = null
         val done = CompletableDeferred<LlmResult>()
         val text = StringBuilder()
         val calls = LinkedHashMap<Int, MutableMap<String, String>>()
@@ -133,6 +150,7 @@ class LlmClient(private val cfg: LlmConfig) {
             }
 
             override fun onFailure(eventSource: EventSource, t: Throwable?, response: okhttp3.Response?) {
+                Log.d("BeaconMFG", "sse onFailure: code=${response?.code} err=${t?.javaClass?.simpleName}")
                 val code = response?.code
                 val detail = try {
                     response?.body?.string()?.take(300)
@@ -143,16 +161,18 @@ class LlmClient(private val cfg: LlmConfig) {
                     LlmResult(
                         text.toString(), emptyList(),
                         when {
-                            code == 401 -> "API key 无效或已过期（HTTP 401）"
-                            code == 429 -> "触发限流（HTTP 429），稍后再试"
-                            code != null -> "请求失败 HTTP $code：${detail ?: ""}"
-                            else -> "网络错误：${t?.message ?: "未知"}"
+                            code == 401 -> str.err401
+                            code == 429 -> str.err429
+                            code != null -> str.errHttp(code, detail ?: "")
+                            t is java.net.SocketTimeoutException -> str.errNoBytes
+                            else -> str.errNetwork(t?.message ?: "unknown")
                         }
                     )
                 )
             }
 
             override fun onClosed(eventSource: EventSource) {
+                Log.d("BeaconMFG", "sse onClosed: ${text.length} chars, ${calls.size} toolCalls")
                 val list = calls.values.mapNotNull {
                     val name = it["name"].orEmpty()
                     if (name.isEmpty()) null
@@ -162,8 +182,21 @@ class LlmClient(private val cfg: LlmConfig) {
             }
         }
 
-        EventSources.createFactory(client).newEventSource(request, listener)
-        return@withContext done.await()
+        Log.d("BeaconMFG", "sse open: ${endpoint()}")
+        source = EventSources.createFactory(client).newEventSource(request, listener)
+        // 兜底总超时：SSE 既不 onClosed 也不 onFailure 时（服务端挂着不响应），
+        // await 会永远挂起。这里到点就取消连接并如实报错，让界面能恢复可用。
+        val r = withTimeoutOrNull(chatTimeoutMs) { done.await() }
+        if (r == null) {
+            Log.d("BeaconMFG", "sse TIMEOUT ${chatTimeoutMs}ms — cancelling")
+            source.cancel()
+            return@withContext LlmResult(
+                text.toString(),
+                emptyList(),
+                str.errTimeout((chatTimeoutMs / 1000).toInt())
+            )
+        }
+        return@withContext r
     }
 
     /** 连通性自检：只发一条极短的消息，验证 key + 端点 + 模型是否可用。 */
@@ -185,13 +218,13 @@ class LlmClient(private val cfg: LlmConfig) {
         try {
             client.newCall(request).execute().use { resp ->
                 if (resp.isSuccessful) {
-                    "连通正常（HTTP 200，模型 ${cfg.model}）"
+                    str.testOk(cfg.model)
                 } else {
-                    "失败 HTTP ${resp.code}：" + (resp.body?.string()?.take(200) ?: "")
+                    str.testFail(resp.code, resp.body?.string()?.take(200) ?: "")
                 }
             }
         } catch (e: Exception) {
-            "连接失败：${e.message ?: e.javaClass.simpleName}"
+            str.testConnErr(e.message ?: e.javaClass.simpleName)
         }
     }
 }
