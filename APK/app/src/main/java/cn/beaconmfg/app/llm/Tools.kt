@@ -19,27 +19,57 @@ data class ToolResult(
     val text: String,
     val hits: List<Hit> = emptyList(),
     val detail: SupplierDetail? = null,
+    /**
+     * 这次工具调用**没成功**（接口未配置 / 网络不通 / 服务端拒绝）。
+     * UI 会把回显行标红——「宁可红，不要假绿」：把失败渲染成灰色小字，
+     * 用户会以为是自己没看懂，而不是没做成。
+     */
+    val failed: Boolean = false,
+    /**
+     * 工具自己给的**回显文案**（对用户的一句话），为空时由 MainViewModel 按工具名兜底。
+     *
+     * 为什么需要它：回显原来一律按 `hits.size` 猜，但有些工具的结果**不是命中的企业列表**
+     * （比如按名称相似度匹配、或者"没找到但给了相近候选"）——那时 hits 是空的，
+     * 回显就会谎报「没有匹配的企业」，而模型其实已经查到了。回显和实情不一致是误导，
+     * 所以让**最清楚实情的那个工具**自己说。
+     */
+    val echo: String? = null,
 )
 
 /**
- * 给 LLM 的三个工具。
+ * 一套工具的契约。**买家侧与供应商侧各实现一套，一次只加载一套**。
+ *
+ * 为什么要抽这层：身份切换不是「同一个工具箱多几个工具」，而是换一个人格。
+ * 采购侧反复强调「不编造、如实说证据档位」，供应商侧要的是「鼓励把话说完、帮他补全」——
+ * 两套提示词塞进一段 system prompt，两边都做不好；更危险的是，采购问到一半
+ * 模型手上握着写入工具，调错的代价是**污染数据**（见 docs/vendor-onboarding-design.html §3.1）。
+ */
+interface ToolSet {
+    fun definitions(): JSONArray
+    suspend fun run(name: String, arguments: String): ToolResult
+}
+
+/**
+ * 买家侧：三个**只读**工具。
  *
  * 关键设计：**不让 LLM 背数据，只让它调工具**。App 本地执行真实检索，
  * 把精简结果回灌给它组织语言。回灌时必须带证据档位，否则模型会把
  * 「行业推断」说成「这家做齿轮」——那是本项目的数据红线。
+ *
+ * 这里**永远不出现写操作**。需要写入的一律在 VendorToolBox 里，别往这儿加。
  */
-class ToolBox(
+class BuyerToolBox(
     private val engine: SearchEngine,
     private val store: DataStore,
     private val remote: RemoteSource,
     private val dataBase: () -> String,
     /** 语言是**每次调用时取**，不是构造时固定——用户在设置里切完立刻生效，不用重启。 */
     private val lang: () -> Lang = { Lang.ZH },
-) {
+) : ToolSet {
 
     private fun str(): Strings = Strings(lang())
 
-    fun definitions(): JSONArray {
+    override fun definitions(): JSONArray {
         val en = lang() == Lang.EN
         fun fn(
             name: String,
@@ -200,19 +230,20 @@ class ToolBox(
             )
     }
 
-    suspend fun run(name: String, arguments: String): ToolResult = withContext(Dispatchers.IO) {
-        val args = try {
-            if (arguments.isBlank()) JSONObject() else JSONObject(arguments)
-        } catch (e: Exception) {
-            JSONObject()
+    override suspend fun run(name: String, arguments: String): ToolResult =
+        withContext(Dispatchers.IO) {
+            val args = try {
+                if (arguments.isBlank()) JSONObject() else JSONObject(arguments)
+            } catch (e: Exception) {
+                JSONObject()
+            }
+            when (name) {
+                "search_suppliers" -> search(args)
+                "get_supplier_detail" -> detail(args)
+                "list_categories" -> categories(args)
+                else -> ToolResult("未知工具：$name")
+            }
         }
-        when (name) {
-            "search_suppliers" -> search(args)
-            "get_supplier_detail" -> detail(args)
-            "list_categories" -> categories(args)
-            else -> ToolResult("未知工具：$name")
-        }
-    }
 
     private fun search(a: JSONObject): ToolResult {
         val s = str()

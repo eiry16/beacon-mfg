@@ -55,6 +55,7 @@ import cn.beaconmfg.app.data.Evidence
 import cn.beaconmfg.app.data.Hit
 import cn.beaconmfg.app.data.SupplierDetail
 import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Role
 import cn.beaconmfg.app.i18n.Strings
 import androidx.compose.runtime.rememberCoroutineScope
 import java.util.concurrent.TimeUnit
@@ -71,13 +72,15 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
     val status by vm.status.collectAsState()
     val settings by vm.settings.collectAsState()
     val s = remember(settings.lang) { Strings(Lang.of(settings.lang)) }
+    val supplier = Role.of(settings.role) == Role.SUPPLIER
     var input by remember { mutableStateOf("") }
 
     // 能力卡展开状态按供应商 ID 存，不放在卡片内部——
     // 卡片滑出列表再滑回来时 remember 会重置，用户刚点开的又缩回去了。
     val capOpen = remember { mutableStateMapOf<String, Boolean>() }
 
-    val samples = s.samples()
+    // 起手式按身份换：供应商不需要"找输送线厂"，他要的是"认领我的企业"
+    val samples = if (supplier) s.vendorSamples() else s.samples()
 
     // imePadding：edge-to-edge 下系统不再替我们把内容顶上去，
     // 软键盘弹出时必须自己吃掉 IME 高度，否则输入框整条被键盘盖住。
@@ -123,7 +126,12 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
         // 快捷问题：手机上打字成本高，给几个真实场景的起手式。
         // 只在首页且未输入时显示；一旦开始搜索或已有消息流，立即隐藏，
         // 避免盖住搜索结果卡片的工艺位/ID。
-        if (messages.isEmpty() && input.isBlank()) {
+        //
+        // 判据是「有没有真正开始对话」，**不是 messages 是否为空**：
+        // 切换身份会插一条系统提示，用 isEmpty() 会让起手式在切身份后消失——
+        // 而切到供应商模式的那一刻恰恰是最需要它的时候（手机上打不出中文长句）。
+        val started = messages.any { it.sender != MainViewModel.Sender.SYSTEM }
+        if (!started && input.isBlank()) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(6.dp),
@@ -147,7 +155,7 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                 value = input,
                 onValueChange = { input = it },
                 modifier = Modifier.weight(1f),
-                placeholder = { Text(s.inputHint) },
+                placeholder = { Text(if (supplier) s.vendorInputHint else s.inputHint) },
                 maxLines = 3,
             )
             Button(
@@ -167,7 +175,7 @@ private fun MessageRow(
     isOpen: (String) -> Boolean,
     onToggle: (String) -> Unit,
 ) {
-    val isUser = m.role == MainViewModel.Role.USER
+    val isUser = m.sender == MainViewModel.Sender.USER
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = if (isUser) Alignment.CenterEnd else Alignment.CenterStart,
@@ -175,18 +183,32 @@ private fun MessageRow(
         when {
             // 工具回显：**只显示一行状态**。
             // 卡片曾经在这里和最终回答各渲染一遍 → 同一次搜索出现两轮一模一样的灯牌。
+            // 失败的那一步标红：灰色小字会让用户以为是自己没看懂，而不是没做成。
             m.isTool -> Surface(
-                color = MaterialTheme.colorScheme.surfaceVariant,
+                color = if (m.toolFailed) {
+                    MaterialTheme.colorScheme.errorContainer
+                } else {
+                    MaterialTheme.colorScheme.surfaceVariant
+                },
                 shape = RoundedCornerShape(8.dp),
                 modifier = Modifier.fillMaxWidth(0.95f),
             ) {
-                Text(m.text, style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(8.dp))
+                Text(
+                    m.text,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (m.toolFailed) {
+                        MaterialTheme.colorScheme.onErrorContainer
+                    } else {
+                        MaterialTheme.colorScheme.onSurface
+                    },
+                    modifier = Modifier.padding(8.dp),
+                )
             }
 
             else -> Surface(
-                color = when (m.role) {
-                    MainViewModel.Role.USER -> MaterialTheme.colorScheme.primaryContainer
-                    MainViewModel.Role.SYSTEM -> MaterialTheme.colorScheme.surfaceVariant
+                color = when (m.sender) {
+                    MainViewModel.Sender.USER -> MaterialTheme.colorScheme.primaryContainer
+                    MainViewModel.Sender.SYSTEM -> MaterialTheme.colorScheme.surfaceVariant
                     else -> MaterialTheme.colorScheme.secondaryContainer
                 },
                 shape = RoundedCornerShape(12.dp),

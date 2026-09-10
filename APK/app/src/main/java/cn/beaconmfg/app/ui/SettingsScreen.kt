@@ -27,6 +27,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import cn.beaconmfg.app.MainViewModel
 import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Role
 import cn.beaconmfg.app.i18n.Strings
 import cn.beaconmfg.app.llm.Preset
 
@@ -41,6 +42,8 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
     var model by remember(s.model) { mutableStateOf(s.model) }
     var apiKey by remember(s.apiKey) { mutableStateOf(s.apiKey) }
     var dataBase by remember(s.dataBase) { mutableStateOf(s.dataBase) }
+    var apiBase by remember(s.apiBase, s.role) { mutableStateOf(s.apiBase) }
+    var apiSaved by remember { mutableStateOf(false) }
     var testResult by remember { mutableStateOf("") }
     var probe by remember { mutableStateOf("") }
     var probeOut by remember { mutableStateOf("") }
@@ -73,6 +76,36 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
         }
         Text(
             st.langNote,
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+
+        // ── 身份 ────────────────────────────────────────────────────────────
+        // 紧挨着语言放：这两个是「我是谁、我说什么话」，都是切换整套人格的开关，
+        // 埋在下面会让人以为只是个偏好设置。
+        Text(
+            st.secRole,
+            style = MaterialTheme.typography.titleMedium,
+            modifier = Modifier.padding(top = 16.dp),
+        )
+        Row(Modifier.fillMaxWidth().padding(top = 6.dp)) {
+            Role.entries.forEach { r ->
+                val selected = Role.of(s.role) == r
+                Button(
+                    onClick = { vm.updateSettings(s.copy(role = r.code)) },
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(end = if (r == Role.entries.first()) 6.dp else 0.dp),
+                    colors = if (selected) {
+                        ButtonDefaults.buttonColors()
+                    } else {
+                        ButtonDefaults.outlinedButtonColors()
+                    },
+                ) { Text(if (r == Role.SUPPLIER) st.roleVendor else st.roleBuyer) }
+            }
+        }
+        Text(
+            st.roleNote,
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
@@ -159,6 +192,46 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
         }
         if (testResult.isNotEmpty()) {
             Text(testResult, style = MaterialTheme.typography.bodySmall)
+        }
+
+        // ── 供应商功能的平台接口 ─────────────────────────────────────────────
+        // 只在供应商身份下展示。买家侧是纯本地的，给他看这个只会徒增困惑。
+        if (Role.of(s.role) == Role.SUPPLIER) {
+            Text(
+                st.secVendorApi,
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(top = 16.dp),
+            )
+            Text(
+                st.apiBaseNote,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            OutlinedTextField(
+                value = apiBase,
+                onValueChange = { apiBase = it },
+                label = { Text(st.labelApiBase) },
+                modifier = Modifier.fillMaxWidth().padding(top = 6.dp),
+                singleLine = true,
+            )
+            Row(Modifier.padding(top = 8.dp)) {
+                Button(onClick = {
+                    vm.updateSettings(s.copy(apiBase = apiBase.trim()))
+                    testResult = st.saved
+                    apiSaved = true
+                }) { Text(st.save) }
+            }
+            if (apiSaved) {
+                Text(
+                    if (s.apiBase.isBlank()) st.apiBaseNotConfigured else s.apiBase,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (s.apiBase.isBlank()) {
+                        MaterialTheme.colorScheme.error
+                    } else {
+                        MaterialTheme.colorScheme.onSurfaceVariant
+                    },
+                )
+            }
         }
 
         Text(

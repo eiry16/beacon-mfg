@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="EoJbcvzgYxdUNyg8PNiElI">
+<head data-page-node-id="q3r8c5zJZo4MBedApeWdUm">
+<meta charset="UTF-8" data-page-node-id="DOGA6jpCtvg0ABtHbZNwtf">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="mDc7TATC999mxdRYk90CLA">
+<title>BeaconMFG 供应商入驻设计 · 身份切换 + 对话式采集 + 云端存储 + 实名核身</title>
+<style>
+:root{
+  --bg:#12141a; --panel:#1a1d26; --panel2:#212533; --line:#2c3140;
+  --tx:#e6e8ee; --tx2:#a2a9bd; --tx3:#6f7688;
+  --blue:#5b9cf8; --teal:#3fc79a; --amber:#e5a33d; --red:#e2685f; --purple:#9b8cf5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:15px;line-height:1.75}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 28px 100px}
+header{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:40px}
+h1{font-size:26px;font-weight:600;margin:0 0 10px;letter-spacing:-.3px}
+.sub{color:var(--tx2);font-size:14px;margin:0}
+.meta{color:var(--tx3);font-size:13px;margin-top:14px}
+h2{font-size:20px;font-weight:600;margin:56px 0 16px;padding-top:28px;border-top:1px solid var(--line);letter-spacing:-.2px}
+h2:first-of-type{border-top:none;padding-top:0}
+h3{font-size:16px;font-weight:600;margin:32px 0 10px;color:var(--tx)}
+h4{font-size:14px;font-weight:600;margin:20px 0 8px;color:var(--tx2)}
+p{margin:12px 0}
+ul,ol{margin:12px 0;padding-left:22px}
+li{margin:7px 0}
+code{background:var(--panel2);padding:2px 6px;border-radius:4px;font-size:13px;
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+  padding:16px;overflow-x:auto;font-size:13px;line-height:1.6}
+pre code{background:none;padding:0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+th{background:var(--panel2);text-align:left;padding:10px 12px;font-weight:600;
+  border-bottom:1px solid var(--line);color:var(--tx2);font-size:13px}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.callout{border-left:3px solid var(--amber);background:rgba(229,163,61,.07);
+  padding:14px 18px;margin:20px 0;border-radius:0 6px 6px 0}
+.callout.red{border-color:var(--red);background:rgba(226,104,95,.07)}
+.callout.teal{border-color:var(--teal);background:rgba(63,199,154,.07)}
+.callout.blue{border-color:var(--blue);background:rgba(91,156,248,.07)}
+.callout p:first-child{margin-top:0}
+.callout p:last-child{margin-bottom:0}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;
+  font-weight:600;letter-spacing:.3px;vertical-align:middle}
+.t-free{background:rgba(63,199,154,.15);color:var(--teal)}
+.t-pay{background:rgba(229,163,61,.15);color:var(--amber)}
+.t-hard{background:rgba(226,104,95,.15);color:var(--red)}
+.t-core{background:rgba(155,140,245,.15);color:var(--purple)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
+.card h4{margin-top:0;color:var(--tx)}
+.card p{font-size:13.5px;color:var(--tx2);margin:8px 0}
+.flow{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;margin:20px 0}
+.flow-step{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.flow-step:last-child{border-bottom:none}
+.flow-n{flex:0 0 26px;height:26px;border-radius:50%;background:var(--panel2);
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:600;color:var(--tx2)}
+.flow-b{flex:1}
+.flow-b strong{display:block;font-size:14px;margin-bottom:2px}
+.flow-b span{font-size:13px;color:var(--tx2)}
+.foot{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);
+  color:var(--tx3);font-size:13px}
+.q{background:var(--panel);border-left:3px solid var(--purple);padding:14px 18px;margin:14px 0;border-radius:0 6px 6px 0}
+.q strong{color:var(--tx)}
+.strike{text-decoration:line-through;color:var(--tx3)}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.wrap{padding:28px 18px 60px}}
+</style>
+</head>
+<body data-page-node-id="7EKRkXMEG8B1lUWflWqPCZ">
+<div class="wrap" data-page-node-id="kSg75wayjIgyY5C08xNTNZ">
+
+<header data-page-node-id="nCriQcByQI1nE3l1SPpcSr">
+<h1 data-page-node-id="vBlLpBbBCsgj1yHQsxnjqw">供应商入驻设计</h1>
+<p class="sub" data-page-node-id="7Uj78ETKnppcgNuG9zttwO">App 内身份切换 → 对话式采集 30 题 → 云端存储 → 实名核身</p>
+<p class="meta" data-page-node-id="CHzgqxwHQyTB95ZA6udsfd">BeaconMFG · 2026-09-10 · 状态：P0 已拍板，等主人下令动手 · 作者：小布</p>
+<p class="meta" data-page-node-id="NEW01-decision" style="margin-top:8px;color:var(--teal)"><strong data-page-node-id="NEW02-d2">主人最新决策（2026-09-10 15:32）：</strong>存储走 Cloudflare 全家桶（不引入 Supabase / Postgres）；核身走电子营业执照扫码（主人有公司主体）；同意状态机掌管一切；同意 5.1 的「Git 从真源降级为快照」。P0 现在就动手。</p>
+</header>
+
+<div class="callout" data-page-node-id="klSHtBOknf9dcVmz97zM03">
+<p data-page-node-id="P7932Q1jwSEUlr0d8RpLS2"><strong data-page-node-id="SQRKyB1HzCx0yWSkTMgC4t">先纠正我上一轮的偷懒。</strong>我建议"网页端做采集"时把它和"填表"划了等号 —— 这是错的。网页端同样可以是 LLM 对话，对话式采集和载体无关，只和<strong data-page-node-id="YcMj2G3Pzj7yb85QuUeymv">谁掌管状态</strong>有关。主人这个反驳是对的，本方案按"App 内身份切换 + 同一套 LLM 问答"展开。</p>
+</div>
+
+<h2 data-page-node-id="fTvworCW4q7TtX9pLqMG0F">一、现状：先说清楚三个硬约束</h2>
+
+<p data-page-node-id="MAOlwygdyvaovKVfLD5645">动手设计前，我把现有资产和坑摸了一遍。有三个事实会直接决定方案走向：</p>
+
+<h3 data-page-node-id="fBEMPa7N3dfLV25abUZ7kW">1.1 采集引擎已经很完整，但"云端"不存在</h3>
+
+<p data-page-node-id="QE8DjHi7lrOQwxiFnixdvw"><code data-page-node-id="unLiEbIHNvTZIKWiHWT4fA">server/routers/collect.py</code>（527 行）已经是一套完整的状态机采集引擎：5 组题目（基础信息 / 能力 / 硬指标 / 质量 / 商务），口述风格提问（"咱们是哪年开的？"），<code data-page-node-id="VEqHXP01zh8LnhiXCvW62K">normalize.py</code> 做确定性归一化（"一丝" → 0.01mm），会话可跨请求跨天继续。API 也齐了：</p>
+
+<pre data-page-node-id="XcyZNszMYqEgwmrn9rhGYo"><code data-page-node-id="nWCV2bfFQCsCd1OmC9Z45A">POST /v1/collect/session          建会话
+POST /v1/collect/{id}/autofill    名录预填
+POST /v1/collect/{id}/turn        回答一题
+GET  /v1/collect/{id}/state       当前进度
+POST /v1/collect/{id}/confirm     定稿落盘</code></pre>
+
+<p data-page-node-id="rsd8wFsfFu38kyqwVowxBq">但产物落盘是这样的：</p>
+
+<table data-page-node-id="gfbzM1IHyQhcnM8ZFDIjgv">
+<tr data-page-node-id="HXZQ2ClHWz35ogaBnIyYit"><th data-page-node-id="mAtQaz5JGs7z20R2Qf9JIY">产物</th><th data-page-node-id="tijszECnQjIliTzfqaAZ05">路径</th><th data-page-node-id="UzZ2yyt3aJP7k5geSMqn8u">进 Git？</th><th data-page-node-id="gB4z6oFhhzPOrrJaYODMoh">后果</th></tr>
+<tr data-page-node-id="Q18gFtdXpjxnqxoJO1bLoQ"><td data-page-node-id="HECAKawe57uIAeCGwPOOlR">能力卡（L1）</td><td data-page-node-id="I4LG2knsrcBMAqbH52alpj"><code data-page-node-id="JsylBeGGUDNgHWSsf8CEib">skills/registry/capability/{id}.json</code></td><td data-page-node-id="7R6Dj08x3LjFkdHrXDkpZI">进</td><td data-page-node-id="EGyETNv7uuZZzfMRUeGNtB">可用</td></tr>
+<tr data-page-node-id="btzq3gPzPraoaA2m9GyGJA"><td data-page-node-id="Ka5VMKUlQlbkXX9YEXM08v">自述（L2）</td><td data-page-node-id="HzQ1rO670EStC7lsHPdtJC"><code data-page-node-id="FmQBWhcNk4hECjkQ970QkK">skills/vendors/{id}/SKILL.md</code></td><td data-page-node-id="uVBJDg3TJRKxBHBdPMW0Os"><span class="tag t-hard" data-page-node-id="5dcBEsn0BGSJOqIAoowniu">不进</span></td><td data-page-node-id="2cv0CeRaxtNCEe8lo0Yxmq">CDN 上没有 → 404</td></tr>
+<tr data-page-node-id="LfAnlLRHAwQzvF7VdPzo2x"><td data-page-node-id="fUxNlysjih4b0lyLI2i0Y6">会话态</td><td data-page-node-id="oegn4EejbhL4uaFN1Cg97f"><code data-page-node-id="8C9rMhru5odvVtcEgKjT3T">server/.data/collect/{id}.json</code></td><td data-page-node-id="WIfWlvle2cuqV7lyQVpzDD">不进</td><td data-page-node-id="CMr6OfrR37MFe6xGJJcQ4l">本地磁盘，重启/多实例即丢</td></tr>
+</table>
+
+<div class="callout red" data-page-node-id="zTKnwvBuivDrrhXht3SZkU">
+<p data-page-node-id="Tl8zKgDIjit9r5bW8Cnr0Z"><strong data-page-node-id="8ST01j4dkkRz54nqaaBNM1">今天那个 404 的真正根因在这里。</strong><code data-page-node-id="uV2lFpgGTNsEkn5qRay4sa">.gitignore</code> 第 127 行注释写着"L1/L2 不进 Git，走云端按需拉取" —— 但 <code data-page-node-id="oWSCFlsLbxXvBFnsuDosYx">server/requirements.txt</code> 里只有 fastapi / uvicorn / pydantic / httpx / python-multipart，<strong data-page-node-id="1HfWb66z0BEwBtbiBu7sHO">全仓库没有任何数据库</strong>。那个"云端"目前不存在。所以不是部署没跟上，是这条路根本没修通。</p>
+<p data-page-node-id="x4AdJsdFWyFA5NEyBoAIbU">我在 App 侧做的 HEAD 探活只是止血，让采购看到一句人话而不是 404 页面。真正的修法是<strong data-page-node-id="y5ouZNMsrScHohGcMfW2gw">先把云端存储建起来</strong>，这是下面所有事的前置。</p>
+</div>
+
+<h3 data-page-node-id="92LTeX8zfSVSxCDuOvVyCw">1.2 App 侧零写入能力</h3>
+
+<p data-page-node-id="QMNqKPoBTEMkkeEkQHPfaj"><code data-page-node-id="46TelCwZ00oeF73A8v3bvB">ToolBox.definitions()</code> 只注册了 <code data-page-node-id="UVTPs8UT7y8mIFZqkFGBph">search_suppliers</code> / <code data-page-node-id="GgsExPLbHDzO7DBHSpIMdq">get_supplier_detail</code> / <code data-page-node-id="KBvpAV0hdu8IsvkehQMobX">list_categories</code> 三个只读工具。没有 HTTP 写入通道，没有供应商身份，<code data-page-node-id="bKmrGCSx8JftYKq4bkJ0oW">collect</code> 的 <code data-page-node-id="y70XfXk5LDaLnHlvxDNcBV">require_operator</code> 目前只是把 Bearer token 做个 sha256 当指纹。</p>
+
+<h3 data-page-node-id="ZxGCocgOpyyyRr3Kx6cyCQ">1.3 人脸是法律高压线，不是技术选型</h3>
+
+<p data-page-node-id="VP0r2jAeaQ7GDY1ygFEKAs">这条最重要，先摆事实（《人脸识别技术应用安全管理办法》，2025-06-01 施行）：</p>
+
+<table data-page-node-id="KmY0yeZUlDqRxUzufB1aza">
+<tr data-page-node-id="dvo4f9hzp215vKM0vjw8fX"><th data-page-node-id="UIqHxV0CLZA20UKOuiN1Xs">条款</th><th data-page-node-id="mXNgD3QzA5RDMsLc3EufCd">要求</th><th data-page-node-id="SGzzZCRWQz6M1PieQsMYE5">对本项目的含义</th></tr>
+<tr data-page-node-id="31NP3tDiiSpmgajT7oOWeP"><td data-page-node-id="TffdzAdlURBjKwqqqZ4IKB">第 10 条</td><td data-page-node-id="QoD36XZ6alOgzfNycmK4Uo">存在其他非人脸方式可实现同等目的的，<strong data-page-node-id="bAPxhPstBb2OrKEnQH2Tw3">不得将人脸识别作为唯一验证方式</strong></td><td data-page-node-id="8t4AXa6UCqFs6F3uYsHm0G">必须提供不刷脸的替代路径</td></tr>
+<tr data-page-node-id="k4OC6gFCLtzDHjoZdlMxHn"><td data-page-node-id="Yy779dvg7Z1P4oXtKVaEC6">第 8 条</td><td data-page-node-id="3ZlzEFe6CsMr7bapUxoHgF">人脸信息应存储于本地设备或境内服务器并加密；<strong data-page-node-id="v7wQzuRkfaOlEBSUJPu9kT">通过互联网对外传输须取得单独同意</strong></td><td data-page-node-id="yPPgf27xJpDm0cONH0Bd4v">不能自己收图像传云端</td></tr>
+<tr data-page-node-id="8dza4KyzCPnTCTtLmjgeF5"><td data-page-node-id="AepcVnSEPeMBMiirBKVPRk">第 6 条</td><td data-page-node-id="LAGbP3rpPhj68WoXF5ZGlG">需取得个人在充分知情下<strong data-page-node-id="Gg2PPXd1XN34buDDALmpCB">自愿、明确作出的单独同意</strong></td><td data-page-node-id="nKoQkFUd3CMBKCNVcTBPrI">不能混在用户协议里打勾</td></tr>
+<tr data-page-node-id="QcOikxQ4Lf0ayr6QYGh6hv"><td data-page-node-id="D4vZPcaeSANibfntEZZ8Tc">第 11 条</td><td data-page-node-id="UB9TjwqpIx1fGtOmauzagf">应用前须进行个人信息保护影响评估（PIA）并记录</td><td data-page-node-id="EeEHUPM4PklninQnRj1IYn">上线前要出一份 PIA</td></tr>
+<tr data-page-node-id="ggRHHEZc3iBW0l4XfaYnnb"><td data-page-node-id="n4H6fK07LckCBV0lJBCXd1">第 15 条</td><td data-page-node-id="MFFFArDBZhIdgZ42G2bnbV">处理人脸信息<strong data-page-node-id="z4nkaXorrQBuzDd8bBlgYp">达到 10 万人</strong>须 30 个工作日内向省级以上网信部门备案</td><td data-page-node-id="pvNuM7S6gbvbMiic1nhFpL">短期不触发，但架构要留口</td></tr>
+</table>
+
+<div class="callout teal" data-page-node-id="P7kbB6nLGzefImokmwbm6q">
+<p data-page-node-id="DV3cBBHgXlHz9MbTXh7fXk"><strong data-page-node-id="h6AMVrfkrf22s0QSLWp2Ov">结论：BeaconMFG 一行人脸图像都不该碰。</strong>正确姿势是让第三方核身服务商（腾讯云慧眼等）在自己的 SDK 里完成采集、活体、比对，只把<strong data-page-node-id="Q8NmgdFBJzGEIkfVccWmNx">结论</strong>（通过/不通过、比对分数、流水号 BizToken）回传给我们。我们存的是"这家企业的法定代表人于某时通过核身，流水号 XXX"，不是任何一张脸。这样上面第 8、11、15 条的压力全部落在有资质的服务商身上，我们只承担"接收并妥善保管结论"的责任。</p>
+</div>
+
+<h2 data-page-node-id="W4VNapxqYncSQXr4gnvCJs">二、总体架构</h2>
+
+<p data-page-node-id="LkwhItBgzuUwrFcvieSm8Y">一句话：<strong data-page-node-id="7n7waAcDNTm63RZO7sYLPD">LLM 当嘴，状态机当脑；采集写云端，Git 只是发布快照。</strong></p>
+
+<div class="flow" data-page-node-id="oTwJ34GSdjz1SNi1AtAlaF">
+<div class="flow-step" data-page-node-id="UTTGhDl2StW0Y0A9bpqH5f"><div class="flow-n" data-page-node-id="3BcozVWG9GE2GAkDcM5p4m">1</div><div class="flow-b" data-page-node-id="7d3YG3g09dkDyRfnmd0FPE"><strong data-page-node-id="cCcNKgXzizFUWpPdrgIFZw">身份切换</strong><span data-page-node-id="PVNJQo1lDkTJdJd5nt9th1">顶栏「我是供应商」，切换后换一整套系统提示词 + 工具集，与采购模式物理隔离</span></div></div>
+<div class="flow-step" data-page-node-id="ooUYNHRaBRpTIhO0ZCJDqz"><div class="flow-n" data-page-node-id="6XDYg0nyNBNyZ84dCD70M0">2</div><div class="flow-b" data-page-node-id="3FV9e7uLFoLQO8U3kvJYYs"><strong data-page-node-id="p6LRKvVDXk2HHgRcHGZrQQ">认领</strong><span data-page-node-id="EBBf8Ibr87tUbGXLSrGbwh">手机号验证码 + 统一社会信用代码匹配名录 → 拿到 claim_token（L1 已认领）</span></div></div>
+<div class="flow-step" data-page-node-id="m5NfGmFRwntX8x0aRjk41q"><div class="flow-n" data-page-node-id="eZQRzngCASElAm5nifzxs0">3</div><div class="flow-b" data-page-node-id="LYGFBgb7YNjdjF7cnO6Q04"><strong data-page-node-id="MUs5c9v0bwW6ndfD22SRDi">对话式采集</strong><span data-page-node-id="ARKvobdBOdI8nAjAxqU6Vn">状态机逐题推进，LLM 只负责把题目说成人话、把口述抽成字段</span></div></div>
+<div class="flow-step" data-page-node-id="nlRDtqzLngE0doRO6MfDYq"><div class="flow-n" data-page-node-id="WmmPEDscxsdAIUU8s1O03K">4</div><div class="flow-b" data-page-node-id="TDZo0ruRs0TC3CJj0F0Ijh"><strong data-page-node-id="AmaFtPhDymzQ6tEDO13xhV">资料提交</strong><span data-page-node-id="QHwr2B4AR07EaqWKhf7HEw">证照/证书原件传私有对象存储，只把"有这份材料"的事实写进能力卡</span></div></div>
+<div class="flow-step" data-page-node-id="DTR1SOjFvdnerAQVdyyWUy"><div class="flow-n" data-page-node-id="haNXIFHFXrn8tz5qMpRh1C">5</div><div class="flow-b" data-page-node-id="XgiIjWV1WnyUbLdhWl6FHM"><strong data-page-node-id="fPzAzodVOpau1KomIMJxag">核身升级</strong><span data-page-node-id="hDf4RFLLLOISJjl1WtIN8t">法定代表人核身 + 营业执照核验 → L2 已认证（此时才碰人脸，且零接触）</span></div></div>
+<div class="flow-step" data-page-node-id="Ks4e5Fyxt1EDFrpw7Hbfbf"><div class="flow-n" data-page-node-id="KcsFuMErokItGogtEPVvug">6</div><div class="flow-b" data-page-node-id="G0guUIPBgtz0tKclwacNWS"><strong data-page-node-id="r3CKDBB50xUhDWfAoDuyIx">发布</strong><span data-page-node-id="CDC8VWLsS1w51FACjMbhrz">云端为唯一真源；定时任务生成快照 commit 到 Git → Pages → CDN</span></div></div>
+</div>
+
+<h2 data-page-node-id="tn7WGQRvFL1qvYfahoXbsC">三、身份切换设计</h2>
+
+<h3 data-page-node-id="WFYBnHDxtJkPGWSVaAR6Ef">3.1 为什么必须物理隔离，而不是加几个工具</h3>
+
+<p data-page-node-id="Ix2jjOhjQlphmKGwaOgDZw">最省事的做法是在现有 ToolBox 里加几个写入工具。我不建议，理由：</p>
+
+<ul data-page-node-id="YsnnPUK2Gavcob3HiyCXBC">
+<li data-page-node-id="IFdKM4XuxziCQklwmPxvXC"><strong data-page-node-id="KZXd2T9nB2Dnk2opIMSGaX">误触发风险。</strong>采购问"上海做输送线的厂"，模型手上有 <code data-page-node-id="eW53Uy0kJEPVzn2oQpUDok">submit_capability</code>，就有概率调错。写入操作调错的代价比读操作大得多 —— 它会污染数据。</li>
+<li data-page-node-id="Di54KIxFkqHfF73Y0D5ghw"><strong data-page-node-id="hiOEibfegg6fiYWCb8Har8">提示词打架。</strong>采购侧提示词反复强调"不编造数字、如实说明证据档位"；供应商侧要的是"鼓励他把话说完、帮他补全"。两套人格塞进一段 system prompt，两边都做不好。</li>
+<li data-page-node-id="rTzf0ttie5GoGjz2vNRklr"><strong data-page-node-id="zy5OBJYdrQ6a6txD4MF9cD">攻击面。</strong>买家端平白多出写入接口，纯属自找麻烦。</li>
+</ul>
+
+<p data-page-node-id="an6z9ujq1hTNYVKGgEkFKH">所以：<strong data-page-node-id="s9D3X4thkf6ME07cvPak7W">两套 system prompt、两套工具集、一次只加载一套。</strong>切换身份 = 重建 <code data-page-node-id="FxTCs7FYsGlbhf2Ifgfyl4">ToolBox</code> 实例 + 清空会话（明确提示用户"切换身份会开始新对话"）。</p>
+
+<h3 data-page-node-id="UczNUvOrwVZm5IUrKHPWGc">3.2 App 侧改动</h3>
+
+<pre data-page-node-id="8U3Uq7VXmXvyrr6WFVnZ2i"><code data-page-node-id="UsDEagEYTtRfwzWTCxK8W2">// 顶栏 actions：身份开关（不是底部 Tab —— 手势导航条会吃掉点击区）
+enum class RoleMode { BUYER, VENDOR }
+
+// ToolBox 按模式构造
+val tools = when (mode) {
+    BUYER  -&gt; BuyerTools(engine, store, remote)   // 现有 3 个只读工具
+    VENDOR -&gt; VendorTools(api, claimToken)         // 新增，见下
+}</code></pre>
+
+<p data-page-node-id="awdaNH4HtrAP3WlHe6hl3T">供应商模式的工具集（对应 <code data-page-node-id="6UAxeFLpzDQEd4Ub6XByKn">collect</code> 现有 API，不另起炉灶）：</p>
+
+<table>
+<tr><th>工具</th><th>对应后端（以 <code>server/routers</code> 实际代码为准）</th><th>作用</th></tr>
+<tr><td><code>find_my_company</code></td><td>本地名录检索，<strong>不联网</strong></td><td>按公司名 / 18 位统一社会信用代码 / 供应商 ID 找自家企业，拿到 supplier_id。三层匹配：归一化互含 → 2-gram 相似度 → 给相近候选（名字像不等于确认命中，必须让对方指认）</td></tr>
+<tr><td><code>claim_start</code></td><td>POST <code>/claim/verify-start</code> + POST <code>/claim/send-code</code></td><td>发起认领并发验证码（两个端点合成一个工具，模型少记一步）</td></tr>
+<tr><td><code>claim_verify</code></td><td>POST <code>/claim/verify-code</code></td><td>提交 6 位验证码，换 claim_token</td></tr>
+<tr><td><code>claim_confirm</code></td><td>POST <code>/claim/confirm</code></td><td>确认认领</td></tr>
+<tr><td><code>collect_begin</code></td><td>POST <code>/v1/collect/session</code> + POST <code>/v1/collect/{id}/autofill</code></td><td>开始/继续采集，带名录预填（预填 ≠ 自述，要逐条念给老板确认）</td></tr>
+<tr><td><code>collect_answer</code></td><td>POST <code>/v1/collect/{id}/turn</code></td><td>提交当前题的回答；text 传空 = 跳过（字段留空，不填默认值）</td></tr>
+<tr><td><code>collect_progress</code></td><td>GET <code>/v1/collect/{id}/state</code></td><td>进度、缺失必填、冲突项、会话存储位置（storage=d1 才是云端）</td></tr>
+<tr><td><code>collect_confirm</code></td><td>POST <code>/v1/collect/{id}/confirm</code></td><td>定稿生成能力卡（门禁：必填齐 + 无 error 冲突）</td></tr>
+<tr><td><code>upload_material</code></td><td>POST <code>/v1/materials</code></td><td><strong>未实现</strong>，故意不给工具：要 multipart + 私有对象存储签名 URL，后端这条通道还没通。宁可不给，也不给一个点了没反应的按钮</td></tr>
+</table>
+
+<div class="callout">
+<p><strong>两条实现后修正的设计（原稿写错了，以代码为准）：</strong></p>
+<p>① 路由前缀写错了：claim.py 是 <code>APIRouter(prefix="/claim")</code>，<strong>没有 <code>/v1</code></strong>（collect 才有 <code>/v1/collect</code>）。照原稿的 <code>/v1/claim/verify-start</code> 写会直接 404。</p>
+<p>② <strong>内部句柄不给模型</strong>：<code>session_id</code> / <code>supplier_id</code> 一律由 App 自己记，不作为工具参数暴露。实测暴露给模型后，它拿不到值就自己猜——把 supplier_id 当 session_id 传回来，服务端回 <code>INVALID_SESSION</code>。状态归状态机管，模型只管说话。</p>
+<p>③ <strong>每轮必须回灌平台状态</strong>：模型的 <code>tool_choice=auto</code> 会不调工具直接说「记下了」然后自己编下一题（平台一步没动），也会跳步骤（跳过验证码直接调采集）。所以每轮系统提示词都附「认领走到哪一步 / 采集当前是哪一题 / 必须提交」，并且这一轮真没提交时界面如实标红。</p>
+</div>
+
+<h2 data-page-node-id="zn6f9A3va8KVdPTJk9B38R">四、对话式采集：嘴脑分离</h2>
+
+<div class="callout blue" data-page-node-id="nVF4xYpDAVZIwcPVQn9LZX">
+<p data-page-node-id="XqjIzjDGolJ5EHoVbYNBGJ"><strong data-page-node-id="SQmPNFi1f3EaX02xTbv19W">这是整个方案的技术核心，也是我最想和主人确认的一点。</strong></p>
+</div>
+
+<h3 data-page-node-id="8plwW4C98oGX6rM57mDMHP">4.1 陷阱：不能让 LLM 自己掌管 30 题</h3>
+
+<p data-page-node-id="gNvqN8NpHVywGOG2RZMLDR">直觉做法是给 LLM 一份 30 题清单，让它自己问完。这条路走不远：</p>
+
+<ul data-page-node-id="Bs1PUNRsOYhJzsoxmofG4R">
+<li data-page-node-id="nrYphIxhlTP9eC5BDaO61S"><strong data-page-node-id="ofJx1hCC6paQiGj66i1wjC">会漏题、会重复问。</strong>LLM 没有可靠的位置记忆，聊到 20 题以后基本在乱走。</li>
+<li data-page-node-id="8BYQp1FXaHie6KsDK5Kfh7"><strong data-page-node-id="kGLcCU2u7Sj6gZCQRi11hD">上下文爆炸。</strong>30 轮往返 × 每题几百字，后期每轮都在烧 token，延迟和成本都失控。</li>
+<li data-page-node-id="A9UqPSTkGnsxqcShr7mLl1"><strong data-page-node-id="YCgoANhAK8Ht7xjEu7wGyV">归一化不能靠猜。</strong>"一丝"、"一个道"、"头发丝的三分之一" 都是 0.01mm 量级的说法，<code data-page-node-id="1kt5XBhdg7vezrEhXVsX0l">normalize.py</code> 里是确定性规则 + 词表。让 LLM 归一化等于把硬指标交给概率 —— 这直接违反项目"不编造数字"的红线。</li>
+</ul>
+
+<h3 data-page-node-id="Tf9hMjn4LQUDGKHL9B4smJ">4.2 正解：状态机掌管一切，LLM 只做翻译</h3>
+
+<p data-page-node-id="2qfnFlgVm7xySj2wt5BXGG">已有的 <code data-page-node-id="mmVOOXKxVOLPpB5Sy0xvid">collect</code> 引擎就是那个状态机。分工：</p>
+
+<div class="grid" data-page-node-id="H9LwiB70HiTjb9mC2Me7p8">
+<div class="card" data-page-node-id="JPo6BDe1CRaEDI2csd9tp2">
+<h4 data-page-node-id="Raml7ryigqcC2fvKfuSuRk">状态机（脑）· 已有</h4>
+<p data-page-node-id="kgZtgUrGHty4z7oCckgajv">决定<strong data-page-node-id="zNtdlwHRGjJfARAx08eD9L">问第几题</strong>（<code data-page-node-id="dqfq3gX2EEBe0HMLLQJsRf">ses.i</code> 指向 <code data-page-node-id="MARcSQ0gAsBPMRYlhQFvQc">flat</code> 列表）</p>
+<p data-page-node-id="29U4Uy1sayMeKrtdsSVkim">接受答案 → <code data-page-node-id="ZPx4PF1FHlIeNWevEEKrOq">normalize_field()</code> 确定性归一化</p>
+<p data-page-node-id="jmfAQrBTXFG4Fs00ZnIc7k">检测冲突（<code data-page-node-id="3kiHuCq3TkdnrEW3anie1a">ses.conflicts()</code>）</p>
+<p data-page-node-id="cX2zUcfwvcMsQ6xrA71854">算完整度、判必填是否齐</p>
+<p data-page-node-id="8DbeYuZ1G3tZxsKCf6oReU">落盘、跨天续聊</p>
+</div>
+<div class="card" data-page-node-id="EgGoHEgp8bkGyTb8e6kIkv">
+<h4 data-page-node-id="BHXrTbwsH1Gnadlot1UbNw">LLM（嘴）· 新增一层</h4>
+<p data-page-node-id="AmAm6Z0O239tFuQRNHRa1D">把干巴巴的题面<strong data-page-node-id="qQNOEbOzuqYDhikZ108EoT">改写成口语</strong>，带一点共情和举例</p>
+<p data-page-node-id="ByuSBc3EBYktkeHd9KyBWK">把供应商的口述<strong data-page-node-id="WL4EXeBNrDKUrmcc80F0iG">抽成结构化片段</strong>交给状态机</p>
+<p data-page-node-id="zh2A3HhnhLNEJBBtwkly51">识别"这题我不会" / "回头再填" / 答非所问</p>
+<p data-page-node-id="YgECBjemcYlUCuh4HSLJWE"><strong data-page-node-id="jz4QTPeYt5bf7SQXhRD5jx">不碰</strong>进度、不碰归一化、不碰冲突</p>
+</div>
+</div>
+
+<p data-page-node-id="KmWp6wtaPdv2pFL9pu3VCj">一次往返长这样：</p>
+
+<pre data-page-node-id="3YbVJa11CCtY0ZZDz5Xpcq"><code data-page-node-id="IFU6eWC7FZQdp7u8mjs0B0">供应商: "大概一丝吧，精加工能做到半丝"
+
+  ┌─ LLM（嘴）：提取，不判断
+  │   → {"tol": "0.01", "note": "精加工可达 0.005"}
+  └─ 交给状态机
+
+  ┌─ 状态机（脑）：确定性处理
+  │   normalize("0.01") → tol = 0.01mm
+  │   与上一题"最大件 800×600"做冲突检测 → 无 error
+  │   ses.i++ → 下一题「做一百件呢？」
+  └─ 返回下一题题干
+
+  ┌─ LLM（嘴）：把题干说成人话
+  │   "那做一百件的话大概要几天？"
+  └─ 输出给供应商</code></pre>
+
+<p data-page-node-id="zEZ3OQgYaGW4CCyOoUDnOU">LLM 挂了怎么办？<strong data-page-node-id="g2b5Xuljq1MnC9oIS9a1gw">直接把状态机的原始题干吐出来</strong>——"打个样要几天？" 照样能问完。采集流程对 LLM 是<strong data-page-node-id="U3dAKj23sFFDaES71oM3KH">软依赖</strong>，这是稳定性的关键。</p>
+
+<h3 data-page-node-id="H68AEP2KeUv3zWtzvsazjO">4.3 题面改写的具体要求</h3>
+
+<p data-page-node-id="JcnWc4HLF44CSzSB0Wo7Ub">给 LLM 的改写提示词要写死几条（沿用项目"不编造"纪律）：</p>
+
+<ul data-page-node-id="8rYbOGua4QzDJH78P2n16p">
+<li data-page-node-id="UHGpaDcsAJiBvqXDOePxAw"><strong data-page-node-id="QlVMnffyWIK4OTMqViC58m">不许替供应商回答。</strong>不许出现"您应该是 2010 年建厂的对吧？"这种引导。</li>
+<li data-page-node-id="3ApJ6tMelSEuF8o8PTdoi3"><strong data-page-node-id="aNyFGL8vJSp6u6v2dNCrAW">举例只能是题干里自带的 hint。</strong>状态机给的 hint 是"例：五天"，LLM 可以说"比如五天"，但不能自己发明"像贵司这种规模一般七天"。</li>
+<li data-page-node-id="LKXKGjRo2iHoBaHEQ2JALm"><strong data-page-node-id="hD3GPCeHNCzxkn4UcFmeNN">一次只问一题。</strong>人话可以铺垫，但不能顺手把后面两题也问了 —— 状态机一次只接一个字段。</li>
+<li data-page-node-id="iaDaPoeEyEBjHhp8X3QJoY"><strong data-page-node-id="S83Zo24XmtOVeEPBjvMEyo">没听清就再问一遍，不许猜着填。</strong>猜出来的进 <code data-page-node-id="f34A4WZDr54eatAA1cXJxc">self_declared</code> 就是污染。</li>
+</ul>
+
+<h2 data-page-node-id="LV1vzuFAqgnqfkGZHIEdIg">五、存储：分层，且 Git 降级为发布快照</h2>
+
+<p data-page-node-id="4hfGDuxwfQgKZaqd4awLhr">主人问"资料是否也挂云端储存" —— 答案是<strong data-page-node-id="4zrbNbyFxaNS0fy19HYm9X">必须</strong>，而且今天这个 404 就是不用云端的代价。但不能所有东西一股脑丢上去，要分层。</p>
+
+<table data-page-node-id="5G7BnlUAgi8BDAPesWNzOJ">
+<tr data-page-node-id="haXcr7le0CSUVhUgMxPBUc"><th data-page-node-id="F2Ste4IpqVEmdtEVz480Bb">层</th><th data-page-node-id="1fFsNENq4oeMwl9pcFbFik">内容</th><th data-page-node-id="SYPxZG8zTGr14X9ZCb4ts8">存储位置</th><th data-page-node-id="VkZ2DzurpisdozLL0mFpx5">公开性</th><th data-page-node-id="ulWbptRLtESYcQxIN7C6CD">进 Git？</th></tr>
+<tr data-page-node-id="QCyRoUEM6ZBLCTW152KuiU"><td data-page-node-id="tz9ZooUrrduV7DaTuAFY28"><span class="tag t-core" data-page-node-id="GdIlQ5YuFP5mbkGecmrIX0">L0</span> 指纹</td><td data-page-node-id="RKn0PGrk8GyUNOvKXJVWOL">最小字段 ~120B</td><td data-page-node-id="4cHMdCfae8T1rRH4kieGeV">云端 DB → 导出 jsonl</td><td data-page-node-id="YSYjuVGKGBKzRM8EayYAkE">公开，供 Agent 全量扫描</td><td data-page-node-id="dWE2In7nv3U2CvXPLsLLHO">是（发布快照）</td></tr>
+<tr data-page-node-id="34VI1WI84QgeQsnRTZgLEY"><td data-page-node-id="VRDHU7ybf4f3X55X1ma5tl"><span class="tag t-core" data-page-node-id="5BrMVSQV0FiYvoHRMzyGww">L1</span> 能力卡</td><td data-page-node-id="mWvXoXktTGbo0AvCetKv0j">结构化硬指标</td><td data-page-node-id="CtBDADw2m9HoKngtiYvdIs"><strong data-page-node-id="bxJCvKm4MjY8CSYa0iOgdM">云端 DB（唯一真源）</strong></td><td data-page-node-id="HIpbd0knTlJraY3r5sktFv">公开</td><td data-page-node-id="BYE6TYhFvhp7kk6yoHljXK">是（快照副本）</td></tr>
+<tr data-page-node-id="qsr8hvL062gfQJ627TH5PX"><td data-page-node-id="D1AX6TSQKy2UozyLIz3tlS"><span class="tag t-core" data-page-node-id="xf5b4pFOM6rSeIJKbbaTl0">L2</span> 自述</td><td data-page-node-id="6A21fJjKRpeS3F43SeXGoU">SKILL.md</td><td data-page-node-id="H8B1CTMD4gvpiGFx0HvZMA">云端 DB</td><td data-page-node-id="jQK2Os0MQsmoAgvqNrfVL4">公开</td><td data-page-node-id="D8UUGC50IOPYGxcWsGTa6V">是（快照副本）</td></tr>
+<tr data-page-node-id="RrGhc9xhq5iAR0HD1zEjbX"><td data-page-node-id="uQ0s4j7DtCR0Iwq0QHsgnY"><span class="tag t-pay" data-page-node-id="w8N8oHAqC43gGZ2LAiL6W7">证照原件</span></td><td data-page-node-id="PNgg77Ge7umF5NlQhKuntT">营业执照、ISO 证书扫描件</td><td data-page-node-id="4FROlUF8PyvEHg0qQFX6i7"><strong data-page-node-id="MgR5oLTavyuEYlkRflBYfC">私有对象存储</strong></td><td data-page-node-id="Q9tzPAFTtdQcQoi8UXkYbe">不公开，签名 URL + 有效期</td><td data-page-node-id="8kQvKIpuAfaK7WfkRrDo0P">否</td></tr>
+<tr data-page-node-id="hKzJJN73Z1DbikDHKxF0BG"><td data-page-node-id="rOgmguxgviDTOwYePZgByJ"><span class="tag t-hard" data-page-node-id="sPaBJym7Hs0GTrnhc6Gn5x">核身记录</span></td><td data-page-node-id="UPARpyyugVGKvu1Za4J9An">姓名、证件号（加密）、BizToken、结论</td><td data-page-node-id="eR4ln8T3UnMwJQQeS2ANAL"><strong data-page-node-id="2brt1QAg1dH6Wv9BxRqBEm">独立加密库</strong></td><td data-page-node-id="bh9PxUlAdUjOHZuOZG51QG">绝不公开，访问审计</td><td data-page-node-id="1DvK2wKXv14iLqvHNyevpH">否</td></tr>
+<tr data-page-node-id="dPfXzIZzBzNbxGM4kPCuh7"><td data-page-node-id="ctxlEdWDjyPoV296HeB3sB">会话态</td><td data-page-node-id="mf1nxnmE0vCLB5lMfAkJpH">未完成的采集会话</td><td data-page-node-id="zXOcUJMoFC5lbfNRDUecUk">云端 DB</td><td data-page-node-id="8wdxoYlr1wsNYVjINzxWt7">不公开</td><td data-page-node-id="aHf1pIg8iKuLTVUFtTpvdZ">否</td></tr>
+</table>
+
+<h3 data-page-node-id="0H4TraWUaHR1pl79rGGbyK">5.1 关键改动：Git 从"真源"降级为"快照"</h3>
+
+<p data-page-node-id="j8xZUqEerYf97Tp6FueZ8i">现在是反的 —— 产物直接写进仓库目录，能不能被外界看到全看它进不进 Git。改成：</p>
+
+<pre data-page-node-id="Nd6XsJNCIAARnzuIZKw8zc"><code data-page-node-id="6Fr9oeSxDzzXMS3mnSYevn">供应商提交 ──写──&gt; 云端 DB（立即可见，唯一真源）
+                        │
+                        │ 定时任务（每小时 / 每次 confirm）
+                        ▼
+              生成快照 ──commit──&gt; Git ──&gt; Pages ──&gt; CDN（只读副本）</code></pre>
+
+<p data-page-node-id="RKXMxYKqY8kXZb4v7Guof7">好处：<strong data-page-node-id="MMZAyB76WpZx1HHxV7gQlE">供应商提交完立刻在 App 里能看到自己的卡</strong>，不用等下一次部署；CDN 仍然是公开只读副本，Agent 该怎么扫还怎么扫。今天的 404 从根上消失。</p>
+
+<h3 data-page-node-id="CX71Qj1ESmRD0SFzg8gq0n">5.2 选型建议</h3>
+
+<p data-page-node-id="ExJuu4e347MeIlWxzs2kIv">项目现在是纯静态 + FastAPI，建议别上来就上重家伙：</p>
+
+<ul data-page-node-id="Qa4j6fHaEABFUK5LrBoya0">
+<li data-page-node-id="w7shYAnqWPFLp1WvyjDQ72"><strong data-page-node-id="Ydcw6w5AyQC2HuS0SuNfCr">结构化数据</strong>：<span class="tag t-core" data-page-node-id="NEW03-d3">Cloudflare D1</span>（账户内 SQLite 兼容 Serverless DB）。能力卡字段不固定，主表用 <code data-page-node-id="NEW04-d4">JSON</code> 列存 <code data-page-node-id="thOXDbSGxfYLd6v90LBLDe">data</code>，同时把检索要用的字段（gb 码、city、cl、tel、updated_at）提成真列建索引。会话态放同库的 <code data-page-node-id="Q1BVXU4C7VjL0wCvIy3qDb">collect_session</code> 表（用 Pages Functions 的 D1 binding 调用，零外部依赖）。</li>
+<li data-page-node-id="hdpne57xZHKBDP3ZN7hlys"><strong data-page-node-id="aJ3ANrfZ8uCgM3PJ6my6LG">证照/原件</strong>：<span class="tag t-core" data-page-node-id="NEW05-d5">Cloudflare R2</span>（对象存储，<strong data-page-node-id="NEW06-d6">出口流量免费</strong>，同生态一个账单）。私有 bucket，App 侧拿签名 URL，有效期 15 分钟。</li>
+<li data-page-node-id="NEW07-cert-stor"><strong data-page-node-id="NEW08-cert-stor2">核身记录 / 临时凭证</strong>：<span class="tag t-core" data-page-node-id="NEW09-cert-stor3">Cloudflare KV</span>（带 TTL 的最终一致 KV）。验证码 5 分钟过期，BizToken 30 分钟过期；电子营业执照核验结论单独存一行审计记录，密钥走 Workers Secrets。</li>
+<li data-page-node-id="UbaBFOrMUFxvKBYryH38bi"><strong data-page-node-id="VLjhGkymBJa7AnlbWETXBg">核身记录</strong>：D1 单独 schema + 列级加密，密钥走 Workers Secrets，不和主库共用账号。</li>
+</ul>
+
+<div class="callout teal" data-page-node-id="NEW10-why-cf">
+<p data-page-node-id="NEW11-why-cf2"><strong data-page-node-id="NEW12-why-cf3">为什么不用 Supabase / Postgres：</strong>主人手里已经有 Cloudflare 账户和 API Token，Pages 项目也已存在。R2/D1/KV 全在同一个账单、同一个身份下、同一个 API Token 调通——一份 Token 覆盖 90% 的存储需求，**不需要再开第二个 SaaS 账号**。这点主人拍板时专门点了出来：</p>
+<blockquote data-page-node-id="NEW13-quote" style="margin:8px 0 0;padding:6px 12px;border-left:2px solid var(--teal);color:var(--tx2);font-style:italic">"这个里面的 skill 没有了？如果能存 skill，难道不能存供应商的认证资料？看看是否可行，是否一定要用 Supabase？"</blockquote>
+<p data-page-node-id="NEW14-why-cf4" style="margin-top:10px">答：Cloudflare Pages 不只是静态站点托管，背后挂了 R2（对象）/ D1（SQLite）/ KV（带 TTL）/ Workers（函数运行时）。skill 既然能存，认证资料同样能存，**且都在一个账户、一份 Token、一个账单下**。</p>
+</div>
+
+<div class="callout" data-page-node-id="hWfcvYUPRAo5RmwTBbCYC9">
+<p data-page-node-id="7P42C3ra8hjGnPGdx9BFvt"><strong data-page-node-id="iTYn1orlywcbUjSalwhKZ6">一条纪律：证照原件永不公开。</strong>能力卡里只记"已提交营业执照并通过核验"这个<strong data-page-node-id="KPuOQDDQ0KWQGfqXjALpR5">事实</strong>和材料 ID，不放大图、不放可直链的文件地址。采购能看见"有"，不能看见"是什么"。这既是保护供应商商业秘密，也避免我们变成证照泄露的源头。</p>
+</div>
+
+<h2 data-page-node-id="x50AAnnQTb5bdUhHDv4VuP">六、身份验证：分级，且不急着刷脸</h2>
+
+<p data-page-node-id="JicQTirW8JcvynFoHzgwtG">不要一上来就上人脸。按灯牌等级分三级，每一级解决不同的问题：</p>
+
+<table data-page-node-id="IkzLvEZR5J9JUsHA6U3lsY">
+<tr data-page-node-id="ymvIjfhAEm4lDaJ1oqooD4"><th data-page-node-id="NcetqgUjqPMHNBoJd1rHHk">等级</th><th data-page-node-id="CUt5oSfT0s88j6UAZi4fsZ">要证明的事</th><th data-page-node-id="pFsLOMGqbrNnsiVmH8ZFxW">手段</th><th data-page-node-id="dxjnsfQ2s0vGXBkQyff5zV">成本</th><th data-page-node-id="IgjiJQ23UzsDWQSCpkSprc">人脸？</th></tr>
+<tr data-page-node-id="OzGh1UdAsm3hyCGFD3lc4f"><td data-page-node-id="FH7NotW1hH8a3lGgCJnrU4"><strong data-page-node-id="2BzsAev55wmGakocZJcmqQ">L1 已认领</strong></td><td data-page-node-id="wxubTihEje0YCQANuoGByr">这个手机号/人确实在这家企业</td><td data-page-node-id="PnYCfCqlBqeyeBefCCOkRt">手机号验证码 + 统一社会信用代码匹配名录</td><td data-page-node-id="1fd6K6GQccLSXvJI10B6P0"><span class="tag t-free" data-page-node-id="IXh9nYWpLxH8nAN2Wa9zbs">≈0</span></td><td data-page-node-id="APzBGU1oE7rG4zcBRLCkMK">否</td></tr>
+<tr data-page-node-id="u1f1HDjrhZlXlh4GAqfhW9"><td data-page-node-id="LURKSr246gF2Pv6QEEnHDO"><strong data-page-node-id="0nq2PXGZ2prhRcmYohZVZk">L2 已认证</strong></td><td data-page-node-id="1TsPRzW21xnOHjr2RBCSHD">操作人是法定代表人本人</td><td data-page-node-id="aDqhknSMD6uLjUAScaARLb">营业执照 OCR 核验 + 法定代表人核身</td><td data-page-node-id="l2G73FtUETANrPphfrvKsZ"><span class="tag t-pay" data-page-node-id="rJ96W8akLJJAi9kXt40rzE">≈1 元/次</span></td><td data-page-node-id="QFuSxBABkRfGr1czbJ4cVe">是（第三方）</td></tr>
+<tr data-page-node-id="hqBtBcuKzoquLAWe8E75EG"><td data-page-node-id="E2fhxoNzmHvVxXHcyOmM1a"><strong data-page-node-id="Mfqqk9nq4lFPhX27SY0FXS">L3 已验厂</strong></td><td data-page-node-id="1pwGXV7kqvWWOKQPEcwdrI">现场真实存在、产能属实</td><td data-page-node-id="a1aUjhjLH1Qc1o9FEDeFiM">第三方验厂 / 视频验厂</td><td data-page-node-id="GuMKtKRJzCcFqDhHUmxRfw"><span class="tag t-pay" data-page-node-id="lBb1f4LfgIFuW9TmSA2XJm">数百元/次</span></td><td data-page-node-id="XO36kPzVMXBKiFvkCnU7hE">否</td></tr>
+</table>
+
+<h3 data-page-node-id="yncpa7Bu7e3AnxafD0ctfC">6.1 L2 的三条路径（按推荐度排序）</h3>
+
+<h4 data-page-node-id="1UDWFZUzXMMW3bBEAYRWuI">路径 A：电子营业执照扫码授权 <span class="tag t-free" data-page-node-id="bWEcOD4ODeThcrDIXwnRkE">免费</span> <span class="tag t-hard" data-page-node-id="aOEQP4bNpgMhgNlejescie">有资质门槛</span></h4>
+
+<p data-page-node-id="YqHVMCQGBdkmbQvIVUGiUn">市场监管总局官方的"电子营业执照"微信/支付宝小程序，<strong data-page-node-id="aNDOmdG81dgPb91GImpvHa">法人在下载执照时已经做过人脸识别</strong>。它支持"扫码登录"：我们的系统出示一个二维码，法人用小程序扫一下并确认，我们就能拿到"这家企业的法定代表人刚刚授权了"这个结论。</p>
+
+<p data-page-node-id="YKz2K5Ich11PjlFNcGWCou">对我们来说这是<strong data-page-node-id="FC0b0V8VQBSIH8wiu3EOgr">最优解</strong>：权威源是国家市场监管总局，我们零接触人脸数据，成本为零。</p>
+
+<div class="callout" data-page-node-id="zdkhC9WDP2SdztkLtD6Xzz">
+<p data-page-node-id="jHmIDt34k7bK3X5K3jGfQi"><strong data-page-node-id="HiFz00nhogtTfz2rYD5Il2">门槛：需要公司主体资质。</strong>接入需向<strong data-page-node-id="f9ZQeb7a52p76qGErKyNoP">省级市场监管部门</strong>提出申请，填写《电子营业执照应用接入信息表》并签订数据共享保密协议，省局内部审批后报市场监管总局备案；跨省应用还需省局向总局申请。</p>
+<p data-page-node-id="NEW15-corp" style="margin-top:8px"><strong data-page-node-id="NEW16-corp2">2026-09-10 主人拍板：</strong>主人确认<strong data-page-node-id="NEW17-corp3">已有公司主体</strong>，愿意去申请电子营业执照开放平台接入。P3 不再卡资质，可以做。立即启动的步骤（详见本文 §6.3）：</p>
+<ol style="margin:8px 0 0 18px;font-size:13.5px;color:var(--tx2)">
+<li data-page-node-id="NEW18-step1">法人本人微信 → 搜「电子营业执照」小程序 → 法人本人登录（这一步会做人脸核验，<strong data-page-node-id="NEW19-step1b">法人在下载执照时已经做过人脸</strong>，我们零接触）；</li>
+<li data-page-node-id="NEW20-step2">小程序内 →「开放平台」→「第三方应用接入」；</li>
+<li data-page-node-id="NEW21-step3">提交《电子营业执照第三方应用接入申请表》+ 营业执照扫描件 + 对公账户（小额打款验证 0.01–0.99 元随机金额）+ 技术对接人身份证；</li>
+<li data-page-node-id="NEW22-step4">回调地址填 <code data-page-node-id="NEW23-step4b">https://&lt;pages&gt;.pages.dev/claim/callback</code>（P2 阶段建）；</li>
+<li data-page-node-id="NEW24-step5">5–10 个工作日审核通过，拿到 AppID + AppSecret；</li>
+<li data-page-node-id="NEW25-step6">用 AppID 调 <code data-page-node-id="NEW26-step6b">/api/v1/qualification/getEntInfo</code> 验真，字段：统一社会信用代码、企业名称、法人姓名（<strong data-page-node-id="NEW27-step6c">只用于核验不入库，核完即弃</strong>）、注册地址。</li>
+</ol>
+<p data-page-node-id="NEW28-step7" style="margin-top:8px"><strong data-page-node-id="NEW29-step7b">与 P0 的关系：</strong>电照接入依赖 P2 的 callback 路由，因此建议 <strong style="color:var(--teal)">P0 → P1 → P2 → P3 串行推进</strong>，但 P3 的资质申请（P2/P3 之间）和 P1/P2 的代码可以<strong style="color:var(--teal)">并行启动</strong>，不等审核通过。</p>
+</div>
+
+<h4 data-page-node-id="rUCp1rSdBkgZlTG9H7Pq6l">路径 B：腾讯云慧眼核身 <span class="tag t-pay" data-page-node-id="UpjqCP4GLqtbZSs4mUmyei">付费</span> <span class="tag t-free" data-page-node-id="Umi1oO9pFBKLh3MnzfM19V">现在就能做</span></h4>
+
+<p data-page-node-id="YbL7S5EmeZsuZv9dEanaAW">接入快、资质要求低（需企业实名认证的腾讯云账号，个人主体可先用基础版试）。价格（2026 年公开报价）：</p>
+
+<table data-page-node-id="BeV465l5qyGq3dnREQzrZW">
+<tr data-page-node-id="X6Gf2ht5mYFaZdiFisAo6w"><th data-page-node-id="XmkHnZKoRxxdsZL8gdLL9r">能力</th><th data-page-node-id="UqBwq9G3nkxD8dEiOdY4C1">后付费</th><th data-page-node-id="cB5tfcSGJ8m2dG2Ey0UCPz">资源包</th><th data-page-node-id="wTsyMtMJTMpBpX9BVtpGuy">说明</th></tr>
+<tr data-page-node-id="DSsXthmcN80Evvjq9z1wsM"><td data-page-node-id="PqLtiC2Y2MO9RGJnOyfdeM">基础版人脸核身（权威库）</td><td data-page-node-id="FIIx0HbN1gtIhZ9UiIZVDo">约 0.93 元/次</td><td data-page-node-id="0jV9HEjyIdP7C5tyO8nHLO">1000 次 744 元（≈0.74）</td><td data-page-node-id="zapxerBDnRPlKLOKQY7utj">姓名+身份证+活体，比对公安库</td></tr>
+<tr data-page-node-id="m0vm84yTpESViHfIKCP6on"><td data-page-node-id="wO9JKGI8tWHJF2MZKkrAwz">Plus 权威库核身</td><td data-page-node-id="TW9HC7j3YBVwLvADmtrHor">1.5 元/次</td><td data-page-node-id="6Q5ud45MBd2qaUpKN91xER">—</td><td data-page-node-id="BjqAuwKGwD4kFKDKsTgnqx">更高安全等级</td></tr>
+<tr data-page-node-id="RKEI8LlRhhJMEzVKMSMpuR"><td data-page-node-id="4H6pxnSArHbuglkxlVnhFU">身份信息二要素核验</td><td data-page-node-id="KnwAE74QhkXxDEMy7D7yAD">0.3 元/次</td><td data-page-node-id="Q2qzrR27wXjrtWGA6U3qYh">1000 次 300 元</td><td data-page-node-id="gavCYfdfIAeXfaFEH28IJ8">只验姓名+身份证号是否匹配</td></tr>
+<tr data-page-node-id="pxJUATEsBbK2foPxh6R1JX"><td data-page-node-id="AAlw27Ip5mWvkzL5x0LtP2">新用户</td><td colspan="3" data-page-node-id="QgjkJvvxReaEmGriMU8iiu">各 100 次免费体验额度</td></tr>
+</table>
+
+<p data-page-node-id="2C4IBIAr3CC0EvWX5WlJrn">假设 1000 家供应商走 L2：<strong data-page-node-id="w9sZeKB9hHUYk5ZnphPMZP">约 740 ~ 1500 元</strong>，对冷启动不算压力。</p>
+
+<p data-page-node-id="9nyBEPGBYgRKh3tK68Ojmq"><strong data-page-node-id="ErsfXBBulGlup4Bhlz7aqD">接入姿势（这决定了合规与否）：</strong></p>
+
+<ul data-page-node-id="KJgDYBXkHRQFf8KJtqWC23">
+<li data-page-node-id="I0dqanFby3lBUTfZOUUamk">用慧眼 <strong data-page-node-id="vR1sF6g5iExZOlreSHr4kH">H5/小程序 SDK</strong>，采集、活体、比对全在腾讯侧完成。</li>
+<li data-page-node-id="LpXC6rQjEWBNtAh5hDD95G">我们只接收 <code data-page-node-id="f2qloWyexJ9Joaw9ZMwgfw">BizToken</code> + <code data-page-node-id="GDBdFZPWpQGaHz88JIgd5Y">结果码</code> + <code data-page-node-id="a6J1CjB3R4E7RbiVlqbkgf">比对分数</code>。<strong data-page-node-id="1TmCEyr2k5lHyBZm3CxD4d">不要</strong>求原始图像、<strong data-page-node-id="AphslYR5QhdW7cC9EGyzEG">不要</strong>存照片、<strong data-page-node-id="L3alfMwvEHrjtREijqhjrf">不要</strong>存视频。</li>
+<li data-page-node-id="yg3H5oqPZgTlTOilQKqHf7">数据库里存的是一条审计记录：<code data-page-node-id="98r9ozzK1AQlf57AV648IX">{supplier_id, 核身时间, BizToken, 结论, 分数}</code>。</li>
+</ul>
+
+<h4 data-page-node-id="IglhP1usR0ODVXAuMYLYrM">路径 C：人工兜底 <span class="tag t-free" data-page-node-id="U4qH8zQYXEdplPp8SGLPyU">免费</span> <span class="tag t-hard" data-page-node-id="Xpy4GJBUET6XnERZ4lJFyG">法律强制要求</span></h4>
+
+<p data-page-node-id="bUhimIj37iqoOjGG0V9xW3">《人脸识别技术应用安全管理办法》第 10 条要求：<strong data-page-node-id="T7TvyxWsOkw1PJvfaPSoAB">存在其他非人脸方式可实现同等目的的，不得将人脸识别作为唯一验证方式。</strong>所以下面这条路<strong data-page-node-id="uFF66S0K81ZydzfQnzWUOt">必须存在</strong>，不是可选项：</p>
+
+<ul data-page-node-id="DFWpdWF2igWwNO6YdMjw1b">
+<li data-page-node-id="EQXzF2ix74mxQ7bI5nXZGE">上传营业执照 + 加盖公章的授权书 → 人工审核 → 判 L2</li>
+<li data-page-node-id="DpcrwiY0YhPMju6zd3rt23">或对公账户小额打款验证（回填金额）</li>
+</ul>
+
+<p data-page-node-id="CUXV5jSGlKus0twAgky05D">界面上必须给出"刷脸验证"和"其他验证方式"两个<strong data-page-node-id="VQAYCJyAxx2RubuOIxHA4a">并列</strong>入口，不能把刷脸前置为默认。</p>
+
+<h3 data-page-node-id="HNbg3hNaFS2SrX3p4elYlj">6.2 人脸相关的三条铁律（写进代码注释那种）</h3>
+
+<ol data-page-node-id="enA6gg9WfLnJwB8iB61Nah">
+<li data-page-node-id="s3F5WdoXvMyDoAOYBPQksV"><strong data-page-node-id="PpCHJBbdfHvo0rCln8Z4iQ">我们绝不采集、传输、存储人脸原始图像。</strong>只存第三方返回的流水号与结论。</li>
+<li data-page-node-id="AeT5d91TjXwNR4MBRqYvBt"><strong data-page-node-id="Bp3hQfhb7Y0EqG77jN8UvP">人脸永远不是唯一路径。</strong>任何核身入口旁边必须有等效的替代方式。</li>
+<li data-page-node-id="QaLEHQ5vbNReAHlQTRrvcQ"><strong data-page-node-id="wyDlFxYaYDVGGvosJiPtmj">单独同意。</strong>核身前弹独立授权页，说清"为什么需要、由谁处理、存多久、如何撤回"，不能和用户协议合并打勾。撤回同意后删除对应记录（BizToken 保留做审计，不保留结论）。</li>
+</ol>
+
+<h2 data-page-node-id="D5zifdeVYAimfUCrO2zEFQ">七、实施路线</h2>
+
+<p data-page-node-id="Vk5DWFW7eek88KIGTVZT0M">建议分四期，每期都有可交付的东西，不搞大爆炸：</p>
+
+<table data-page-node-id="XK8NJfo1YFFvYQyAFC67HX">
+<tr data-page-node-id="pFrt9BsezuZ3fXEnu6Zg73"><th data-page-node-id="RJjnNGTo0lAAeWUoXcHJwe">阶段</th><th data-page-node-id="NOrsQBM9a5rtcqNDCxQBLQ">内容</th><th data-page-node-id="UlfkvG4sJ3gZMaDOaKyFwq">产出</th><th data-page-node-id="WqqUIE8sTjTbLUm7pMsxSm">依赖</th></tr>
+<tr data-page-node-id="S0l8Z11HawVV6NE7wNXnqC"><td data-page-node-id="HWRUxdYMiQ37QDx2Lbru05"><strong data-page-node-id="qxkWBGPI4xcP1WcBnqgEJ7">P0 存储落地</strong></td><td data-page-node-id="ZzA55je8SixgyhIUsBvRfV"><strong data-page-node-id="NEW30-p0-1">sync 脚本写 R2 + Pages Functions 路由；D1 接 collect 会话态；Pages 通过 Direct Upload 自动部署；Git 降级为发布快照</strong></td><td data-page-node-id="HYJDAAZwKavSh0f1f3Ml7S">404 从根上消失；会话不再丢；同步→可见秒级</td><td data-page-node-id="e59YUpyATyjpmK7JVUQQaF">CF Token + R2/D1 在 Dashboard 启用</td></tr>
+<tr data-page-node-id="XJ9wRCgbUGTqd9yVADCVXH"><td data-page-node-id="2ae03PRCDpNVwJaCKjEwSu"><strong data-page-node-id="94nToTvUjiG9NRf4vqhnDM">P1 身份 + 采集</strong></td><td data-page-node-id="dXfhxTe5U3XEdwX16rHl7T">App 身份切换；供应商工具集；LLM 嘴脑分离接入；手机号认领</td><td data-page-node-id="6Qf49rr0W5BB8oHWrIsSrw">供应商能在 App 里聊完 30 题，达 L1</td><td data-page-node-id="1Nqelg2HPAmt99aFiTAxOu">P0</td></tr>
+<tr data-page-node-id="GmTraaCMMNdljyyh4nCMOt"><td data-page-node-id="lppGyWURR8BCLTvoqtfSYC"><strong data-page-node-id="eO9SzowIb1Z3ceVmBjp0I4">P2 材料 + 核身</strong></td><td data-page-node-id="Kedg2ZcFk4Vab5jqkoOEyI">证照上传 → 私有对象存储；营业执照 OCR；慧眼核身 + 人工兜底</td><td data-page-node-id="UKAWsMmZWp4iVfJjXDDfTa">可升到 L2 已认证</td><td data-page-node-id="N8N78hyjyxLkjShDxZzcNn">P1 + 腾讯云账号</td></tr>
+<tr data-page-node-id="GDYDbE9Q2Bd5UN8GiZInxB"><td data-page-node-id="SqHfveMH4a0l7Y2ExNrNSo"><strong data-page-node-id="LwMM0vOTsHPSfZ0z8RsTmn">P3 电子执照</strong></td><td data-page-node-id="vQOl6YRCVWGMbe02ejbSBN">电子营业执照扫码授权适配器（市场监管总局开放平台）</td><td data-page-node-id="VqiFxZ1rDuNGsVHbsz3CQb">权威源、零成本、<strong style="color:var(--teal)">零人脸</strong></td><td data-page-node-id="hCgUCXgTgYI0HpGqotuJdI">P2 + <strong style="color:var(--teal)">公司主体资质（已有）</strong></td></tr>
+</table>
+
+<div class="callout teal" data-page-node-id="OQzCNnL11UNjVQdRua5r6O">
+<p data-page-node-id="Gg8ySXEP6bcd3JmM8cxkBK"><strong data-page-node-id="F4Se70kC4H87J1qRU0Vanu">P0 是其他一切的前置，建议先做这个。</strong>它同时解决今天这个 404、会话丢失、以及"供应商提交后要等下次部署才看得见"三个问题。而且它不依赖任何外部审批，纯工程量，两天内能完成。</p>
+</div>
+
+<h2 data-page-node-id="00Jay4PwLLUu12HRsNBuZj">八、需要主人拍板的四件事</h2>
+
+<div class="q" data-page-node-id="qIlHpnzpSIaVKvMPw8iKDQ">
+<p data-page-node-id="ZXKelShm0jbXLyFq4UUyey"><strong data-page-node-id="laFRK9yh6f2bi8eyrdBfZI">Q1 · 存储选型</strong> —— <strong data-page-node-id="NEW31-q1d" style="color:var(--teal)">已定：Cloudflare 全家桶（R2 + D1 + KV + Pages Functions），不引入 Supabase / Postgres。</strong>主人原话："这个里面的 skill 没有了？如果能存 skill，难道不能存供应商的认证资料？" → 答：能，且都在一份 Token 下。R2 在 Dashboard 启用即可开始写入（费用：存储 0.015 USD/GB·月，<strong data-page-node-id="NEW32-q1e">出流量免费</strong>）。</p>
+</div>
+
+<div class="q" data-page-node-id="nFUSY03HpBwVjSiTcEGle9">
+<p data-page-node-id="MsBUBIl9UhBVMOxtHqTW3d"><strong data-page-node-id="sI2vM53ffAWxTFfxFa97Ye">Q2 · LLM 在采集里的权限边界</strong> —— <strong data-page-node-id="NEW33-q2d" style="color:var(--teal)">已同意。</strong>状态机掌管进度/归一化，LLM 只做翻译和抽取。LLM 挂了降级为原始题干直出。</p>
+</div>
+
+<div class="q" data-page-node-id="fBxk0EypdG5CwrSeOEgnBM">
+<p data-page-node-id="8Adm6NNtfBwMgRp3k6KbLo"><strong data-page-node-id="06RDIcBXAyKUYWAEeKFUMM">Q3 · P2 核身走哪条</strong> —— <strong data-page-node-id="NEW34-q3d" style="color:var(--teal)">已定：只接电子营业执照（P3）。暂不做腾讯云慧眼。</strong>原因：① 主人有公司主体，电照是最优解；② 慧眼需要企业实名腾讯云账号，且要付钱买核身次数；③ 电照路径零成本、零人脸、权威源。等电照走通后再看是否要补慧眼做兜底。</p>
+</div>
+
+<div class="q" data-page-node-id="AcGfXdcQSmEqmNrMRYU87b">
+<p data-page-node-id="hUlZlCaEVBlfwykCjXL9uf"><strong data-page-node-id="RaLaXu0CCCae5AiqGu60Ow">Q4 · 项目主体</strong> —— <strong data-page-node-id="NEW35-q4d" style="color:var(--teal)">已确认主人有公司主体。</strong>P3 电照接入立即可申请，5–10 个工作日审核。申请与 P1/P2 代码并行启动。</p>
+</div>
+
+<h2 data-page-node-id="NEW36-p0-plan">九、P0 即时执行路径（主人已拍板）</h2>
+
+<p data-page-node-id="NEW37-p0-intro">主人已确认 Cloudflare 路线 + 公司主体。本节给出 P0 的完整可执行步骤——<strong data-page-node-id="NEW38-p0-now">今天下午就能开始跑</strong>，两天内能完成。</p>
+
+<h3 data-page-node-id="NEW39-cloud-check">9.1 摸底：CF 账户现状（已核实）</h3>
+
+<table data-page-node-id="NEW40-cf-state">
+<tr data-page-node-id="NEW41-cf-h"><th data-page-node-id="NEW42-cf-h1">资源</th><th data-page-node-id="NEW43-cf-h2">状态</th><th data-page-node-id="NEW44-cf-h3">下一步</th></tr>
+<tr data-page-node-id="NEW45-r2"><td data-page-node-id="NEW46-r2n">R2</td><td data-page-node-id="NEW47-r2s"><span class="tag t-hard" data-page-node-id="NEW48-r2st">未开通</span></td><td data-page-node-id="NEW49-r2nx">主人去 Dashboard 一键 enable（免费 10GB 存储）</td></tr>
+<tr data-page-node-id="NEW50-d1"><td data-page-node-id="NEW51-d1n">D1</td><td data-page-node-id="NEW52-d1s"><span class="tag t-pay" data-page-node-id="NEW53-d1st">需 Token 授权</span></td><td data-page-node-id="NEW54-d1nx">Dashboard 建库，记下 database_id；Token 加 D1:Edit 权限（轮换时一起加）</td></tr>
+<tr data-page-node-id="NEW55-kv"><td data-page-node-id="NEW56-kvn">K</td><td data-page-node-id="NEW57-kvs"><span class="tag t-pay" data-page-node-id="NEW58-kvst">需 Token 授权</span></td><td data-page-node-id="NEW59-kvnx">同上，建 namespace；Token 加 KV:Edit</td></tr>
+<tr data-page-node-id="NEW60-pg"><td data-page-node-id="NEW61-pgn">Pages 项目</td><td data-page-node-id="NEW62-pgs"><span class="tag t-free" data-page-node-id="NEW63-pgst">已存在</span></td><td data-page-node-id="NEW64-pgnx">存在但空：<strong data-page-node-id="NEW65-pgx">没绑 GitHub、没 build 命令、没 output 目录</strong>，昨天那次部署是从 Dashboard 拖的空目录</td></tr>
+</table>
+
+<p data-page-node-id="NEW66-r2-det" style="margin-top:10px"><strong data-page-node-id="NEW67-r2-det2">实测记录：</strong></p>
+<ul data-page-node-id="NEW68-r2-det3">
+<li data-page-node-id="NEW69-token-ok">Token verify 成功，status=active，2028-02 到期。</li>
+<li data-page-node-id="NEW70-pg-det">Pages 项目 <code data-page-node-id="NEW71-pg-c">beacon-mfg</code> 存在，subdomain <code data-page-node-id="NEW72-pg-s">beacon-mfg.pages.dev</code>。</li>
+<li data-page-node-id="NEW73-r2-det4">R2 API 返回 <code data-page-node-id="NEW74-r2-c">"Please enable R2 through the Cloudflare Dashboard"</code>——必须主人手动点，API 启不了。</li>
+<li data-page-node-id="NEW75-d1-det">D1 / KV API 返回 Authentication error，原因是 Token 当前没这些产品的权限。主人轮换 Token 时一并加上。</li>
+</ul>
+
+<div class="callout teal" data-page-node-id="NEW200-done">
+<p data-page-node-id="NEW201-done2"><strong data-page-node-id="NEW202-done3">2026-09-10 16:15 已全部建好（小布用 API 直接生成，主人不用去 Dashboard 点）：</strong></p>
+<ul data-page-node-id="NEW203-done4" style="margin:8px 0 0 18px">
+<li data-page-node-id="NEW204-d1">D1 数据库 <code data-page-node-id="NEW205-d1n">beacon-mfg</code>，region <strong data-page-node-id="NEW206-d1r">APAC</strong>，uuid 已写入 <code data-page-node-id="NEW207-d1e">.env</code> 的 <code data-page-node-id="NEW208-d1k">CLOUDFLARE_D1_DATABASE_ID</code></li>
+<li data-page-node-id="NEW209-kv">KV namespace <code data-page-node-id="NEW210-kvn">beacon-mfg-kv</code>，id 已写入 <code data-page-node-id="NEW211-kve">CLOUDFLARE_KV_NAMESPACE_ID</code></li>
+<li data-page-node-id="NEW212-r2">R2 bucket <code data-page-node-id="NEW213-r2n">beacon-mfg-caps</code>，已写入 <code data-page-node-id="NEW214-r2e">CLOUDFLARE_R2_BUCKET</code>。<strong data-page-node-id="NEW215-r2w" style="color:var(--amber)">注意：location 是 EEUR（欧洲东部），不是 APAC。</strong></li>
+</ul>
+<p data-page-node-id="NEW216-r2note" style="margin-top:10px"><strong data-page-node-id="NEW217-r2note2">关于 R2 落在欧洲这件事（如实说明，不美化）：</strong>我用 <code data-page-node-id="NEW218-r2h">locationHint:"apac"</code> 建过测试桶，返回确实是 <code data-page-node-id="NEW219-r2h2">APAC</code>；但删掉同名桶重建时又被打回 <code data-page-node-id="NEW220-r2h3">EEUR</code>——R2 对「删掉的同名桶」有位置记忆。换名字能拿到 APAC，但桶名就不干净了。</p>
+<p data-page-node-id="NEW221-r2dec" style="margin-top:6px">我的判断是<strong data-page-node-id="NEW222-r2dec2">接受 EEUR，不再折腾</strong>：Cloudflare 在中国大陆本来就没有节点，无论 EEUR 还是 APAC 都要绕；而 R2 前面的 Worker 有 <code data-page-node-id="NEW223-r2c">Cache-Control</code> 缓存，热数据第二次就命中边缘节点，冷启动差的那 200ms 只在首次。如果主人实测国内确实慢，再换名重建（现在桶里数据可随时重传，迁移成本很低）。</p>
+</div>
+
+<h3 data-page-node-id="NEW224-now">9.1b 顺手修掉的两个坑</h3>
+
+<div class="callout" data-page-node-id="NEW225-fix1">
+<p data-page-node-id="NEW226-fix1b"><strong data-page-node-id="NEW227-fix1c">坑 1 · <code data-page-node-id="NEW228-fix1d">.env</code> 等号两侧有空格。</strong>CF 那三行写成了 <code data-page-node-id="NEW229-fix1e">CLOUDFLARE_ACCOUNT_ID = xxx</code>，后果是 bash <code data-page-node-id="NEW230-fix1f">. ./.env</code> 报 command not found，Python <code data-page-node-id="NEW231-fix1g">os.environ</code> 取到的键名带尾空格 → 取值为 None。<strong data-page-node-id="NEW232-fix1h">这种错不会报错，只会静默失效</strong>，是最难查的一类。已修正（备份在 <code data-page-node-id="NEW233-fix1i">.env.bak-20260910-161019</code>）。</p>
+</div>
+
+<div class="callout" data-page-node-id="NEW234-fix2">
+<p data-page-node-id="NEW235-fix2b"><strong data-page-node-id="NEW236-fix2c">坑 2 · <code data-page-node-id="NEW237-fix2d">/user/tokens/verify</code> 报 Invalid API Token 是<strong data-page-node-id="NEW238-fix2e">假警报</strong>。</strong>那个端点只认 <em data-page-node-id="NEW239-fix2f">User 级</em> Token；主人签发的是 <em data-page-node-id="NEW240-fix2g">Account 级</em> Token，所以必然失败。<strong data-page-node-id="NEW241-fix2h">判断 Token 是否有效的正确方法是拿它调业务接口</strong>——R2/D1/KV 三个都返回 success，就说明 Token 完全正常。</p>
+</div>
+
+<h3 data-page-node-id="NEW76-p0-steps">9.2 P0 四步走（按依赖顺序）</h3>
+
+<div class="flow" data-page-node-id="NEW77-flow">
+<div class="flow-step" data-page-node-id="NEW78-fs1">
+<div class="flow-n" data-page-node-id="NEW79-fs1n">1</div>
+<div class="flow-b" data-page-node-id="NEW80-fs1b">
+<strong data-page-node-id="NEW81-fs1t">主人启用 R2 + 建 D1/KV + 轮换 Token（10 分钟）</strong>
+<span data-page-node-id="NEW82-fs1d">操作全在 Cloudflare Dashboard：Storage & Database → R2 → Enable；Workers → D1 → Create database；Workers → KV → Create namespace；Profile → API Tokens → Revoke 旧 Token → Create new Token（模板选 "Edit Cloudflare Workers"，勾上 D1:Edit / R2:Edit / KV:Edit / Pages:Edit）。把新 Token 写回 <code data-page-node-id="NEW83-fs1e">.env</code>（覆盖 <code data-page-node-id="NEW84-fs1e2">CLOUDFLARE_API_TOKEN</code>）。</span>
+</div>
+</div>
+<div class="flow-step" data-page-node-id="NEW85-fs2">
+<div class="flow-n" data-page-node-id="NEW86-fs2n">2</div>
+<div class="flow-b" data-page-node-id="NEW87-fs2b">
+<strong data-page-node-id="NEW88-fs2t">改造 <code data-page-node-id="NEW89-fs2e">sync_vendor_skills.py</code>，产物写 R2（半天）</strong>
+<span data-page-node-id="NEW90-fs2d">保留原代码骨架（生成能力卡 JSON、SKILL.md、registry、data 分片都不变），把最后的 <code data-page-node-id="NEW91-fs2w">os.makedirs</code>/<code data-page-node-id="NEW92-fs2w2">open().write</code> 替换成 R2 PUT 调用（用 <code data-page-node-id="NEW93-fs2w3">boto3</code> 兼容 SDK，Cloudflare R2 走 S3 兼容 API）。Key 命名沿用原路径（如 <code data-page-node-id="NEW94-fs2p">skills/vendors/{id}/SKILL.md</code>）保持 URL 不变——<strong data-page-node-id="NEW95-fs2k">App 不需要改一行代码</strong>。新增长度校验（&gt; 5MB 报警）、断点续传（&gt; 5MB 自动 multipart）。</span>
+</div>
+</div>
+<div class="flow-step" data-page-node-id="NEW96-fs3">
+<div class="flow-n" data-page-node-id="NEW97-fs3n">3</div>
+<div class="flow-b" data-page-node-id="NEW98-fs3b">
+<strong data-page-node-id="NEW99-fs3t">改造 <code data-page-node-id="NEW100-fs3e">collect.py</code>，会话态上 D1（半天）</strong>
+<span data-page-node-id="NEW101-fs3d">原会话态在 <code data-page-node-id="NEW102-fs3p">server/.data/collect/</code> 本地磁盘。换成 D1：建 <code data-page-node-id="NEW103-fs3t">collect_session</code> 表（<code data-page-node-id="NEW104-fs3c">id TEXT PK, vendor_id TEXT, current_q TEXT, answers_json TEXT, updated_at INTEGER</code>），会话读写作 D1 调用。collect 的 API 形态不变（/session /autofill /turn /state /confirm 都保留）。<strong data-page-node-id="NEW105-fs3b">这一步是把"云端"真正建起来的关键。</strong></span>
+</div>
+</div>
+<div class="flow-step" data-page-node-id="NEW106-fs4">
+<div class="flow-n" data-page-node-id="NEW107-fs4n">4</div>
+<div class="flow-b" data-page-node-id="NEW108-fs4b">
+<strong data-page-node-id="NEW109-fs4t">Pages 接 R2 直拉（1 小时）</strong>
+<span data-page-node-id="NEW110-fs4d">Pages 项目当前是空的、没绑 GitHub。<strong data-page-node-id="NEW111-fs4b">最简方案</strong>：在 Pages 项目里放一个 <code data-page-node-id="NEW112-fs4f">_worker.js</code>（Pages Functions），把所有 <code data-page-node-id="NEW113-fs4p">/skills/vendors/*</code> / <code data-page-node-id="NEW114-fs4p2">/data/*</code> 路径转发到 R2（用 Pages 的 R2 binding）。静态资源（<code data-page-node-id="NEW115-fs4s">index.html</code> 等）继续放 Pages。然后写个 <code data-page-node-id="NEW116-fs4w">scripts/publish_pages.py</code>：调用 Cloudflare API 创建 Pages deployment（<code data-page-node-id="NEW117-fs4api">POST /accounts/{id}/pages/projects/{name}/deployments</code>，multipart/form-data 上传 zip），sync 脚本跑完后自动触发。</span>
+</div>
+</div>
+</div>
+
+<h3 data-page-node-id="NEW118-p0-verify">9.3 P0 验收标准</h3>
+
+<ol data-page-node-id="NEW119-verify-list">
+<li data-page-node-id="NEW120-v1">跑 <code data-page-node-id="NEW121-v1c">python scripts/sync_vendor_skills.py</code> 后，<code data-page-node-id="NEW122-v1u">https://beacon-mfg.pages.dev/skills/vendors/CN-MFG-0020317/SKILL.md</code> 返回 200（耐特斯的那个 URL），body 是 markdown 不是 404 页面。</li>
+<li data-page-node-id="NEW123-v2">App 装最新 debug 包，灯牌点「打开」按钮 → <code data-page-node-id="NEW124-v2d">mCurrentFocus</code> 仍是 App（而不是被拉起浏览器），卡片下方显示红字"这份完整自述还没发布到网页端"——<strong data-page-node-id="NEW125-v2c" style="color:var(--teal)">这一步 08d234f 已经做完了，P0 跑通后这句文案就不会再出现</strong>。</li>
+<li data-page-node-id="NEW126-v3">新建一家供应商（用 collect 接口跑完 30 题），不重启 Pages、不重新部署，30 秒内 <code data-page-node-id="NEW127-v3u">https://beacon-mfg.pages.dev/skills/vendors/{new_id}/SKILL.md</code> 能拉到内容。</li>
+<li data-page-node-id="NEW128-v4">杀掉 server 重启，collect 会话不丢（<code data-page-node-id="NEW129-v4c">/session/{id}/state</code> 还能续上）。</li>
+<li data-page-node-id="NEW130-v5">把仓库 <code data-page-node-id="NEW131-v5f">skills/vendors/</code> 目录 rm -rf 后 <code data-page-node-id="NEW132-v5g">git status</code> 干净——Git 里没有 vendor 产物，<strong data-page-node-id="NEW133-v5i">真源真的在云端</strong>。</li>
+</ol>
+
+<div class="callout red" data-page-node-id="NEW300-429">
+<p data-page-node-id="NEW301-429b"><strong data-page-node-id="NEW302-429c">实测教训：Cloudflare API 有速率限制，并发调高会撞死（2026-09-10 16:35 亲测）。</strong></p>
+<p data-page-node-id="NEW303-429d" style="margin-top:8px">第一次全量上传用了 <strong data-page-node-id="NEW304-429e">12 并发</strong>，12411 个文件里<strong data-page-node-id="NEW305-429f">成功 4543、失败 7868</strong>，失败原因<strong data-page-node-id="NEW306-429g">全部是 HTTP 429</strong>，耗时 942 秒只完成 37%。免费账户约 1200 请求/5 分钟，并发一高就从某个点开始全程被拒，剩下的全白跑。</p>
+<p data-page-node-id="NEW307-429h" style="margin-top:8px"><strong data-page-node-id="NEW308-429i">修法（已写进 <code data-page-node-id="NEW309-429j">publish_r2.py</code>）：</strong></p>
+<ul data-page-node-id="NEW310-429k" style="margin:6px 0 0 18px">
+<li data-page-node-id="NEW311-w">并发从 12 降到 <strong data-page-node-id="NEW312-w2">4</strong></li>
+<li data-page-node-id="NEW313-r">429 / 5xx 指数退避重试（1→2→4→8→16 秒），服务端给 <code data-page-node-id="NEW314-ra">Retry-After</code> 就听它的</li>
+<li data-page-node-id="NEW315-s">默认<strong data-page-node-id="NEW316-s2">跳过已存在的对象</strong>，只补传缺失的（<code data-page-node-id="NEW317-s3">--no-skip</code> 可强制覆盖）</li>
+</ul>
+<p data-page-node-id="NEW318-429l" style="margin-top:8px">宁可慢一点一次跑完，也不要「一半成功一半失败」的半成品 —— 那种结果最难收尾。</p>
+</div>
+
+<div class="callout teal" data-page-node-id="NEW134-p0-risk">
+<p data-page-node-id="NEW135-p0-risk2"><strong data-page-node-id="NEW136-p0-risk3">P0 唯一外部依赖：</strong>R2 在 Dashboard 启用（10 秒）+ 新 Token 加 D1/R2/KV 权限（5 分钟）。其余全是本地代码，<strong data-page-node-id="NEW137-p0-risk4">今晚就能起跑</strong>。</p>
+</div>
+
+<h3 data-page-node-id="NEW138-tokwarn">9.4 Token 安全提醒</h3>
+
+<div class="callout red" data-page-node-id="NEW139-tokred">
+<p data-page-node-id="NEW140-tokred2"><strong data-page-node-id="NEW141-tokred3">主人刚才在聊天里把 <code data-page-node-id="NEW142-tokred4">CLOUDFLARE_API_TOKEN</code> 整段贴出来了（截图也一样）。</strong>这段 Token 现在已经进入：① 模型上下文；② 聊天存档；③ 可能的日志副本。<strong data-page-node-id="NEW143-tokred5">应当作泄露处理：立即去 Cloudflare Dashboard Revoke 旧 Token，重新签发一个最小权限 Token</strong>（Pages:Edit + R2:Edit + D1:Edit + KV:Edit + Workers Scripts:Edit，去掉其他所有权限），并把新 Token 只放在本地 <code data-page-node-id="NEW144-tokred6">.env</code> 里，以后贴环境变量名而非值。</p>
+<p data-page-node-id="NEW145-tokred7" style="margin-top:8px">小布写代码时<strong data-page-node-id="NEW146-tokred8">不会回显任何 token</strong>，所有 token 引用都用 <code data-page-node-id="NEW147-tokred9">$CLOUDFLARE_API_TOKEN</code> 这种环境变量名。</p>
+</div>
+
+<div class="foot" data-page-node-id="a6TlrbGCJ4tCjm5nJtIqk5">
+<p data-page-node-id="Jr77cpH1EGXwpnBOdBEIz3">BeaconMFG 供应商入驻设计 · 2026-09-10 修订 · 小布</p>
+<p data-page-node-id="5UHXPewvD5zmLRpaqq9k44">文中法律条款引自《人脸识别技术应用安全管理办法》（2025-06-01 施行）、《个人信息保护法》、GB/T 45574-2025 及国家网信办 2026-01 政策问答；价格引自腾讯云 2026 年公开报价页面，实际以控制台为准。电子营业执照接入流程引自省级市场监管部门公布的管理办法。</p>
+</div>
+
+</div>
+</body>
+</html>

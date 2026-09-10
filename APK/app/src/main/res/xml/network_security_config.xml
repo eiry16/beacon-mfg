@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  网络安全性配置。
+
+  为什么需要这个文件：Android 9（API 28）起**默认禁止明文 HTTP**，
+  而本地联调要走 `adb reverse tcp:8000 tcp:8000` + `http://127.0.0.1:8000`，
+  它就是明文（报错原话：CLEARTEXT communication to 127.0.0.1 not permitted by
+  network security policy）。
+
+  为什么不用 android:usesCleartextTraffic="true"：那会把**整个 App** 的明文
+  流量打开，包括将来指向平台服务端和模型端点的请求——为了联调方便而放弃
+  全站 HTTPS 是不划算的。所以只对回环地址开口子，其余一律要求 HTTPS。
+
+  生产环境的 apiBase 必须是 https://，填 http:// 会被系统直接拦下
+  （这是我们希望的行为，不是 bug）。
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- adb reverse / 本机联调 -->
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <domain includeSubdomains="false">localhost</domain>
+        <!-- Android 模拟器里宿主机的别名 -->
+        <domain includeSubdomains="false">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>

@@ -16,6 +16,25 @@ enum class Lang(val code: String, val label: String) {
 }
 
 /**
+ * 使用者身份：买家（找供应商）/ 供应商（认领自家企业）。
+ *
+ * **为什么要物理隔离成两套**：买家侧是只读检索，供应商侧要写入（认领、提交材料）。
+ * 混在一套 ToolBox 里，模型会在采购对话中误触发写入动作 —— 那是会污染数据的。
+ * 所以一次只加载一套工具 + 一套提示词，切身份等于换一个人格。
+ *
+ * 和 Lang 一样**只存 code 字符串**，不存序号。
+ */
+enum class Role(val code: String) {
+    BUYER("buyer"),
+    SUPPLIER("supplier"),
+    ;
+
+    companion object {
+        fun of(code: String?): Role = entries.firstOrNull { it.code == code } ?: BUYER
+    }
+}
+
+/**
  * 双语文案表。
  *
  * 边界（想清楚再改）：**只有「界面语言」和「给模型看的提示词/工具返回」跟着切**，
@@ -118,6 +137,148 @@ class Strings(val lang: Lang) {
     val toolDetail get() = t("已取到完整档案", "Full profile retrieved")
     val toolCats get() = t("已列出可检索的行业小类", "Industry categories listed")
     val toolDone get() = t("检索完成", "Search finished")
+
+    // ── 身份切换 ───────────────────────────────────────────────────────────
+    val secRole get() = t("我的身份", "My role")
+    val roleBuyer get() = t("我是采购", "I'm a buyer")
+    val roleVendor get() = t("我是供应商", "I'm a supplier")
+    val roleNote
+        get() = t(
+            // 注意：这段话直接进 Compose 的 Text，**不渲染 Markdown**——
+            // 写 **xx** 会原样显示成星号（已经踩过一次），强调只能用「」。
+            "采购侧只能检索；供应商侧才能认领企业、提交资料。两边用的是两套工具和两套提示词，" +
+                "「切换身份会开始一段新对话」——避免采购对话里误触发写入动作。",
+            "Buyers can only search; suppliers can claim their company and submit materials. " +
+                "The two sides use separate tools and prompts, and switching starts a new " +
+                "conversation, so a write action can never fire inside a sourcing chat."
+        )
+    fun roleSwitched(r: String) =
+        t("已切换到「$r」，已开始新对话", "Switched to $r — a new conversation has started")
+    val roleBadgeBuyer get() = t("采购模式", "Buyer mode")
+    val roleBadgeVendor get() = t("供应商模式", "Supplier mode")
+
+    // ── 供应商侧 / 认领与采集 ───────────────────────────────────────────────
+    val vendorInputHint
+        get() = t("说「我要认领我的企业」，或者直接报公司名", "Say \"claim my company\" or just name it")
+    fun vendorSamples(): List<String> = if (en) {
+        listOf(
+            "I want to claim my company",
+            "Find my company in the directory: 上海耐特斯传输设备有限公司",
+            "What's still missing in my profile?",
+        )
+    } else {
+        listOf(
+            "我要认领我的企业",
+            "帮我找找 上海耐特斯传输设备有限公司 在不在名录里",
+            "我的资料还缺什么？",
+        )
+    }
+    val vendorApiMissing
+        get() = t(
+            "平台接口地址还没配置，认领和资料采集暂时用不了。" +
+                "到「设置 → 平台接口地址」填上服务端地址再试。" +
+                "（本地自检/检索不受影响）",
+            "The platform API address isn't configured yet, so claiming and profile collection " +
+                "are unavailable. Set it under Settings → Platform API address. " +
+                "(Local search is unaffected.)"
+        )
+    val vendorUnreachable get() = t("平台接口没连上：", "Platform API unreachable: ")
+    val vendorNotClaimed
+        get() = t(
+            "这家企业还没被认领。认领需要企业实名的凭证，走不了捷径。",
+            "This company hasn't been claimed yet. Claiming requires a real business credential."
+        )
+
+    /**
+     * 每轮塞进系统提示词的「平台当前状态」标题。
+     *
+     * 为什么必须每轮塞：模型（tool_choice=auto）会**不调工具直接作答**，也会**跳步骤**
+     * （实测：跳过验证码直接调采集，被平台拒了还不重试）。把状态和"下一步该干什么"
+     * 每轮摆在它面前，比只在提示词里写一遍流程管用得多。
+     */
+    val vendorStateHeader
+        get() = t(
+            "【平台当前状态】（每次回答前先看这里，按它决定下一步动作）",
+            "[Platform state] (check this before every reply; it decides your next action)"
+        )
+
+    val vsClaimNone
+        get() = t(
+            "认领：还没开始。顺序是固定的——先查企业 → 向对方要手机号发起认领 → 收到验证码并验证 → " +
+                "**验证通过后才能开始录资料**。跳过任何一步都会被平台拒绝。",
+            "Claim: not started. The order is fixed — find the company → ask for the phone number " +
+                "and start the claim → verify the code → **only then can you collect the profile**. " +
+                "Skipping a step gets rejected by the platform."
+        )
+
+    val vsClaimPending
+        get() = t(
+            "认领：验证码已发出，**正在等对方报这 6 位数字**。拿到后必须用「验证」把码提交上去。",
+            "Claim: the code has been sent — **waiting for them to read the 6 digits**. Once you have " +
+                "it, submit it with the verify tool."
+        )
+
+    val vsClaimDone
+        get() = t("认领：已通过。可以做资料采集了。", "Claim: verified. Profile collection is available.")
+
+    val vsCollectNone
+        get() = t(
+            "采集：还没开始。认领通过后用「开始采集」把已有信息带出来。",
+            "Collection: not started. Once the claim is verified, start collection to pull in what " +
+                "we already have."
+        )
+
+    /**
+     * 采集进行中时的那一题。
+     *
+     * 为什么必须每轮塞：模型会不调工具直接说「记下了」然后自己编下一题，而平台一步没动。
+     * 把当前题面和"必须提交"写进提示词，是让工具调用从"可选项"变成"这一轮的作业"。
+     */
+    fun vendorTurnContext(
+        index: Int,
+        total: Int,
+        path: String,
+        question: String,
+        hint: String,
+        required: Boolean,
+    ): String = t(
+        "采集：进度 ${index + 1}/$total（字段 $path）。当前这一题：$question" +
+            (if (hint.isBlank()) "" else "（${hint}）") +
+            (if (required) "。这是必填项。" else "。这是选填项，答不上来可以跳过。") +
+            "\n对方的下一条消息就是这道题的回答：**必须调用提交工具把他的话交上去**" +
+            "（答不上来就传空 text 表示跳过）。**不提交就等于没记下**——" +
+            "绝对不要自己说「记下了」然后接着问下一题，平台那边一步都没动。",
+        "Collection: progress ${index + 1}/$total (field $path). Current question: " +
+            "$question" + (if (hint.isBlank()) "" else " ($hint)") +
+            (if (required) " This one is required." else " This one is optional; they may skip it.") +
+            "\nTheir next message answers this question: **you must call the submit tool** " +
+            "(pass empty text to skip). **Not submitting means nothing was recorded** — never say " +
+            "\"noted\" and move on by yourself; the platform will not have moved."
+    )
+
+    val vendorNothingSubmitted
+        get() = t(
+            "这一轮没有任何内容提交到平台（进度没变）。如果刚才是在回答问题，麻烦再说一次。",
+            "Nothing was submitted to the platform this turn (no progress). If you were answering " +
+                "the question, please send it again."
+        )
+
+    // ── 供应商侧工具回显 ───────────────────────────────────────────────────
+    fun toolVendorMatch(n: Int) =
+        t("在名录里找到 $n 家匹配的企业", "Matched $n companies in the directory")
+    fun toolVendorMatchSimilar(n: Int) =
+        t(
+            "没有完全一致的名字，按相似度列出 $n 家候选",
+            "No exact name match — listed $n similar candidates"
+        )
+    val toolVendorMatchNone get() = t("名录里没有匹配的企业", "No matching company in the directory")
+    val toolClaimStart get() = t("已发起认领", "Claim started")
+    val toolClaimCode get() = t("验证通过", "Code verified")
+    val toolCollectBegin get() = t("已开始资料采集", "Profile collection started")
+    val toolCollectAnswer get() = t("已记录这一题", "Answer recorded")
+    val toolCollectProgress get() = t("已取到填写进度", "Progress retrieved")
+    val toolCollectConfirm get() = t("能力卡已生成", "Capability card generated")
+    val toolVendorDone get() = t("完成", "Done")
 
     // ── 运行状态 ───────────────────────────────────────────────────────────
     val booting get() = t("正在装载本地索引…", "Loading local index…")
@@ -259,6 +420,24 @@ class Strings(val lang: Lang) {
     val probeRun get() = t("本地检索", "Search locally")
     fun aliasCount(n: Int) = t("别名表 $n 条", "Alias index: $n entries")
 
+    // ── 供应商侧后端地址 ───────────────────────────────────────────────────
+    val secVendorApi get() = t("供应商功能（平台接口）", "Supplier features (platform API)")
+    val labelApiBase get() = t("平台接口地址", "Platform API address")
+    val apiBaseNotConfigured
+        get() = t(
+            "未配置 —— 供应商侧的认领与资料采集不可用（点开会显示未开通，不会假装成功）。",
+            "Not configured — claiming and profile collection are unavailable " +
+                "(attempts report it instead of pretending to succeed)."
+        )
+    val apiBaseNote
+        get() = t(
+            "认领企业、提交资料要走平台服务端（本机检索不经过它）。留空则供应商侧功能显示为未开通，" +
+                "不会假装成功。开发时可填 http://127.0.0.1:8000 并用 adb reverse 转发。",
+            "Claiming and submitting materials go through the platform server (local search does " +
+                "not). Leave it blank and supplier features show as unavailable — they never " +
+                "pretend to succeed. For development use http://127.0.0.1:8000 with adb reverse."
+        )
+
     // ── 数据层标签（卡片、给模型回灌的文本都用）─────────────────────────────
     fun evidenceLabel(code: Int): String = when (code) {
         0 -> t("字面命中", "Exact match")
@@ -350,7 +529,19 @@ class Strings(val lang: Lang) {
     val dotSep: String get() = " · "
 }
 
-/** 给模型的系统提示词。切语言必须换这一份，否则英文模式下模型还在用中文答。 */
+/**
+ * 按身份取系统提示词。**两套提示词人格不同，一次只给一套**——
+ * 理由见 `Role` 的注释，以及 docs/vendor-onboarding-design.html §3.1。
+ */
+fun systemPrompt(role: Role, lang: Lang): String = when (role) {
+    Role.SUPPLIER -> vendorSystemPrompt(lang)
+    Role.BUYER -> systemPrompt(lang)
+}
+
+/**
+ * 买家侧：检索助手。
+ * 切语言必须换这一份，否则英文模式下模型还在用中文答。
+ */
 fun systemPrompt(lang: Lang): String = if (lang == Lang.EN) {
     """
 You are the search assistant inside the BeaconMFG app. You help manufacturing buyers
@@ -374,6 +565,8 @@ Hard rules (breaking any of them counts as a wrong answer):
    Report company names in their original Chinese — do not transliterate them.
 5. Answer in English. Keep it short. Recommend 3-5 suppliers by default, giving
    company name, city, main business and evidence tier; add more only if asked.
+   **Plain text only — the app does not render Markdown.** Never emit `**`, `#` or
+   `-` list markers; use blank lines and plain numbering instead.
 6. Search results already include phone numbers — quote them directly; full address
    and website need get_supplier_detail. If a result says the number is "to be
    verified", say exactly that and **never invent or guess a phone number**.
@@ -399,9 +592,92 @@ Hard rules (breaking any of them counts as a wrong answer):
    L3 已验厂。必须按这个口径如实转述：L0 就说是未核验，**不许升级说成已认证/已验厂**，
    也不许据此推断这家厂质量好不好——灯牌不是评级。绝大多数企业目前是 L0。
 5. 回答用中文，简洁。默认只推荐 3–5 家，给出公司名、城市、主营、证据档位；用户要看更多再补充。
+   **只用纯文本，App 不渲染 Markdown**：不要出现 `**`、`#` 这类标记，列点用换行和「1. 2.」。
 6. 搜索结果已带电话号码，可直接引用；完整地址/官网需调用 get_supplier_detail 获取。
    结果里写「号码待核实」的，就如实告诉用户号码待核实，**不要编造或猜测电话号码**。
 7. **永远不要提及工具名、函数名、JSON 或「我调用了某某工具」这类话**
    （比如不许出现「调用 search_suppliers」「我已调用检索工具」）。直接用自然语言给出结论。
+""".trimIndent()
+}
+
+/**
+ * 供应商侧：认领 + 资料采集助手。
+ *
+ * 与买家侧**人格完全不同**——买家侧怕它多说，供应商侧怕它少问。
+ * 但两条底线两边一样：不编造数字、灯牌不是评级。
+ *
+ * 这里刻意写死「自动预填 ≠ 企业自述」：服务端 autofill 会用公司名/名录 POI 预填字段，
+ * 模型很容易顺手说成「已确认」。那会把平台推断洗成企业自述，违反「弱证据不覆盖强证据」。
+ */
+fun vendorSystemPrompt(lang: Lang): String = if (lang == Lang.EN) {
+    """
+You are the supplier-side assistant inside the BeaconMFG app. The person you are talking to
+is the owner or an employee of a Chinese manufacturing company. They are here to claim their
+own company and fill in its profile.
+
+Who you are / who you are not:
+- You are NOT a sourcing assistant. They are not looking for suppliers — they are registering
+  themselves. Never recommend other suppliers to them.
+- Your one job: help them complete their profile by talking (roughly 30 questions), then
+  produce a capability card. Factory owners will not write JSON or fill a 40-field form,
+  but they will answer questions.
+
+Hard rules:
+1. **Never invent a number.** Tolerance, capacity, lead time and MOQ may only come from what
+   the owner actually says. If they didn't say it, leave it blank — do not fill in an
+   "industry typical" value. Blank is honest; inventing is a red line.
+2. **Record what they said, don't interpret it.** Terms like "one silk" (0.01 mm) are
+   normalised by the system, which has a deterministic word list. Don't do the conversion
+   yourself and don't guess the value.
+3. **Auto-filled is not self-declared.** The system may pre-fill city, address or processes
+   from the company name or the directory record. Read each one back for confirmation; if
+   the owner corrects it, their version wins. Never call a pre-filled field "confirmed".
+4. Claiming goes through the process: the company's identity must be verified with a real
+   business credential. **"I am the owner" is not proof.** Don't promise a tier or a go-live
+   date before that.
+5. Tiers: L1 claimed (self-declared) / L2 verified (licence checked) / L3 audited.
+   You can only help them submit; **the tier is computed by platform rules** — you cannot
+   set it and must not promise a specific one.
+6. Ask one question at a time and wait. If they can't answer, skip it — a skip means blank,
+   never a default value. They may walk away; the session resumes across days.
+7. Answer in English, in a colleague-like tone, not customer-service boilerplate.
+   **Plain text only — the app does not render Markdown.** Never emit `**`, `#` or
+   `-` list markers.
+8. **Never mention tool names, function names, JSON, or that you called anything.**
+   Say "I found…" or "noted".
+9. Keep each reply short. If something is missing, name exactly what's missing —
+   never paper over it with "your profile is complete".
+""".trimIndent()
+} else {
+    """
+你是「供应商灯塔」App 的供应商侧助手。对面是**制造业企业的老板或员工**，
+他来这里是为了认领自己的企业、把资料补全。
+
+你是谁、你不是谁：
+- 你**不是采购助手**。他不是来找供应商的，是来登记自己的。不要给他推荐别的供应商。
+- 你只有一件事：帮他**用说话的方式**把企业资料补全（大概 30 个问题），最后生成一张能力卡。
+  制造业老板不会写 JSON、也不会填 40 个字段的表单，但他会回答问题。把填表成本从 2 小时
+  压到 15 分钟对话，这件事才有意义。
+
+硬规则（违反即为错误回答）：
+1. **绝不编造任何数字。** 公差、产能、交期、起订量只能来自老板亲口说的。他没说就留空，
+   不许按"行业惯例"填一个。留空是诚实的，编造是红线。
+2. **录他说的原话，不要替他换算。** "一丝"、"一个道"、"头发丝的三分之一"这类说法
+   由系统用确定性词表归一化。你不要自己换算成数字，更不要猜。
+3. **自动预填 ≠ 企业自述。** 系统可能根据公司名或名录记录预填了城市、地址、工艺。
+   这些必须**逐条念给老板确认**，他改口就按他说的算。没确认过的字段，
+   绝不要说成"已确认"——那会把平台推断洗成企业自述，违反"弱证据不覆盖强证据"。
+4. 认领必须走流程：企业身份要用**企业实名的凭证**核验，不能因为对方说"我就是老板"就通过。
+   核验通过之前，不要承诺任何等级或上架时间。
+5. 等级口径：L1 已认领（企业自述）/ L2 已认证（执照已核验）/ L3 已验厂。
+   你只能帮他把资料补齐、提交，**等级由平台规则算出**，不由你也不由他说了算，
+   不许承诺具体等级。
+6. 一次只问一个问题，等他答完再问下一题。他答不上来就跳过——**跳过就是留空，不是默认值**。
+   他聊到一半去车间了也没关系，会话能跨天接着答。
+7. 回答用中文，语气像同事，不像客服。别用"尊敬的客户"这类话。
+   **只用纯文本，App 不渲染 Markdown**：不要出现 `**`、`#` 这类标记。
+8. **永远不要提及工具名、函数名、JSON 或「我调用了某某工具」这类话。**
+   直接说"我查到了"、"已经记下了"。
+9. 每轮回答尽量短。资料有缺就直说缺哪一项，别用"资料已经完善"糊过去。
 """.trimIndent()
 }

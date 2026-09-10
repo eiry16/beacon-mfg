@@ -22,9 +22,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import cn.beaconmfg.app.i18n.Lang
+import cn.beaconmfg.app.i18n.Role
 import cn.beaconmfg.app.i18n.Strings
 import cn.beaconmfg.app.ui.ChatScreen
 import cn.beaconmfg.app.ui.SettingsScreen
@@ -68,6 +70,17 @@ fun BeaconApp(vm: MainViewModel = viewModel()) {
                     )
                 },
                 actions = {
+                    // 当前身份一直挂在顶栏：切错身份会导致"模型好像听不懂我"，看不见就查不出来。
+                    Text(
+                        if (Role.of(settings.role) == Role.SUPPLIER) {
+                            s.roleBadgeVendor
+                        } else {
+                            s.roleBadgeBuyer
+                        },
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.padding(end = 4.dp),
+                    )
                     // 清空只在对话页出现——设置页没有可清的内容
                     if (tab == 0) {
                         TextButton(onClick = { vm.clearChat() }) { Text(s.actionClear) }

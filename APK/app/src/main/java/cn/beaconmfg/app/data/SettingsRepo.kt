@@ -33,6 +33,24 @@ data class AppSettings(
      * 不变的是数据本身——公司名/地址/工艺名来自企业公开资料，翻译即编造。
      */
     val lang: String = "zh",
+    /**
+     * 当前身份：`buyer`（找供应商）/ `supplier`（认领自家企业）。
+     *
+     * **为什么要有这一项**：买家侧只有只读工具，供应商侧有写工具（认领、采集）。
+     * 混在一套里，采购对话中误触发写入会**污染数据**——所以两套工具 + 两套提示词，
+     * 一次只加载一套。存 code 不存序号，同 [lang]。
+     */
+    val role: String = "buyer",
+    /**
+     * 平台服务端根地址（供应商侧用）。**留空是合法状态**——
+     * 留空时供应商侧功能显示为「未开通」，而不是静默失败。
+     *
+     * 为什么与 [dataBase]/[capabilityBase] 分开：那两个是**只读静态托管**（Edge/CDN），
+     * 这个是**有写操作的后端**。合在一起会让"换 CDN 镜像"顺手把写通道也换掉。
+     *
+     * 开发时填 `http://127.0.0.1:8000` + `adb reverse tcp:8000 tcp:8000` 即可真机联调。
+     */
+    val apiBase: String = "",
 )
 
 /**
@@ -78,6 +96,8 @@ class SettingsRepo(context: Context) {
                 ?: AppSettings().capabilityBase,
             autoUpdate = p.getBoolean("auto_update", true),
             lang = p.getString("lang", "zh") ?: "zh",
+            role = p.getString("role", "buyer") ?: "buyer",
+            apiBase = p.getString("api_base", "") ?: "",
         )
     }
 
@@ -91,6 +111,8 @@ class SettingsRepo(context: Context) {
             .putString("capability_base", s.capabilityBase.trim())
             .putBoolean("auto_update", s.autoUpdate)
             .putString("lang", s.lang)
+            .putString("role", s.role)
+            .putString("api_base", s.apiBase.trim())
             .apply()
     }
 
