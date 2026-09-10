@@ -55,7 +55,15 @@ class VendorSession {
     var registeredHere: Boolean = false
 
     /**
-     * 平台**当前正等着回答的那一题**（null = 没在采集，或已经问完了）。
+     * 这家企业的全称（我们**从名录查到、或对方注册时亲口给的**）。
+     *
+     * 为什么要单独记：认证档案要靠「公司全称 + supplier_id」两样才能建起来
+     * （`/v1/certify/ensure`）。模型手上不一定一直带着这个值，
+     * 而它是我们确知的事实，不该让它去记忆。
+     */
+    var companyName: String? = null
+
+    /** 平台**当前正等着回答的那一题**（null = 没在采集，或已经问完了）。
      *
      * 为什么要记这个：模型（tool_choice=auto）经常**不调工具直接作答**——
      * 实测它就干过「好，80 人记下了」然后自己编下一题，而平台那边一步没动。
@@ -73,6 +81,7 @@ class VendorSession {
         claimSessionId = null
         claimToken = null
         supplierId = null
+        companyName = null
         uscc = null
         appId = null
         registeredHere = false
@@ -198,7 +207,18 @@ class VendorToolBox(
                         )
                         .put(
                             "category",
-                            s(t("主品类，用中文，如「精密钣金」「注塑」「齿轮加工」。太泛的「做五金」不行", "Main category, in Chinese, e.g. 精密钣金 / 注塑 / 齿轮加工"))
+                            s(
+                                t(
+                                    "主品类，**必须从平台品类表里选最接近的一个**：" +
+                                        "精密机械加工 / 钣金冲压 / 注塑成型 / 压铸 / 电子元器件 / " +
+                                        "表面处理 / 标准件 / 原材料 / 其他。" +
+                                        "对方说的业务不在前八个里就用「其他」——" +
+                                        "不要自造词（如「精密钣金」「五金」），那些存不进系统。",
+                                    "Main category — **must be one of**: 精密机械加工 / 钣金冲压 / 注塑成型 / " +
+                                        "压铸 / 电子元器件 / 表面处理 / 标准件 / 原材料 / 其他. " +
+                                        "Use 其他 when nothing fits; do not invent your own label."
+                                )
+                            )
                         )
                         .put("contact_name", s(t("联系人姓名，可留空", "Contact name; optional")))
                         .put("contact_phone", s(t("对方提供的 11 位手机号，可留空", "Their 11-digit mobile number; optional"))),
@@ -302,6 +322,71 @@ class VendorToolBox(
                         )
                 )
             )
+            .put(
+                fn(
+                    "certify_submit_identity",
+                    t(
+                        "提交营业执照上的主体信息做**核验**（灯牌 L1/L2 的依据之一）。" +
+                            "要一次拿到能问到的：18 位统一社会信用代码、执照上的企业全称、法定代表人；" +
+                            "顺带问企业性质（制造商/贸易商/两者都有）和在场人数。" +
+                            "**公司全称要与执照一字不差**——与申报名称对不上会被记成待解释的差异。" +
+                            "传什么记什么，没问到的就别传，不要替对方补。",
+                        "Submit the licence details for **verification** (one of the grounds for badges " +
+                            "L1/L2): 18-digit USCC, the legal name exactly as printed, and the legal " +
+                            "representative; also ask whether they are a manufacturer/trader/both and how " +
+                            "many people work on site. **The legal name must match the licence character " +
+                            "for character** — a mismatch is recorded as a discrepancy to explain. Submit " +
+                            "only what they told you; never fill in the blanks for them."
+                    ),
+                    JSONObject()
+                        .put("uscc", s(t("18 位统一社会信用代码（扫码或对方读给你）", "The 18-digit USCC")))
+                        .put("license_company_name", s(t("营业执照上的企业全称，一字不差", "Legal name exactly as on the licence")))
+                        .put("legal_person", s(t("法定代表人姓名", "Legal representative")))
+                        .put(
+                            "business_nature",
+                            JSONObject().put("type", "string")
+                                .put("enum", JSONArray().put("manufacturer").put("trader").put("both"))
+                                .put(
+                                    "description",
+                                    t(
+                                        "企业自述的实际业务性质（manufacturer/trader/both）。" +
+                                            "执照登记口径常与实际不符（登记批发、实际制造），按自述记，登记口径留痕。",
+                                        "Their stated nature: manufacturer / trader / both."
+                                    )
+                                )
+                        )
+                        .put(
+                            "employee_count",
+                            JSONObject().put("type", "integer")
+                                .put("description", t("在场总人数（含外包）；没问到就别传", "People on site incl. outsourced; omit if not asked"))
+                        )
+                )
+            )
+            .put(
+                fn(
+                    "certify_submit_capability",
+                    t(
+                        "把**刚定稿的能力卡**提交为认证材料（灯牌 L1→L2 的完成度依据）。" +
+                            "必须在 collect_confirm 成功之后调用。提交后会返回完整度和还差什么。",
+                        "Submit the **finalised capability card** as certification material (drives the " +
+                            "completeness check for L1→L2). Call it only after collect_confirm succeeded. " +
+                            "Returns completeness and what is still missing."
+                    ),
+                    JSONObject()
+                )
+            )
+            .put(
+                fn(
+                    "certify_badge",
+                    t(
+                        "查当前灯牌等级，以及**升到下一级还差什么**。" +
+                            "对方问「我这是什么等级」「还差什么」时用它，不要凭印象回答。",
+                        "Check the current badge level and **what is still missing to reach the next one**. " +
+                            "Use this whenever they ask about their level — never answer from memory."
+                    ),
+                    JSONObject()
+                )
+            )
     }
 
     // ── 执行 ───────────────────────────────────────────────────────────────
@@ -322,6 +407,9 @@ class VendorToolBox(
                 "collect_answer" -> collectAnswer(args)
                 "collect_progress" -> collectProgress(args)
                 "collect_confirm" -> collectConfirm(args)
+                "certify_submit_identity" -> certifySubmitIdentity(args)
+                "certify_submit_capability" -> certifySubmitCapability(args)
+                "certify_badge" -> certifyBadge(args)
                 else -> ToolResult(t("未知工具：$name", "Unknown tool: $name"), failed = true)
             }
         } catch (e: PlatformApiException) {
@@ -353,6 +441,7 @@ class VendorToolBox(
                     )
                 )
             session.supplierId = fp.id
+            session.companyName = fp.name
             return ToolResult(
                 "${fp.id} | ${fp.name} | ${fp.city.ifEmpty { s.cityUnknown }}" +
                     " | ${s.briefBeacon}=${CertTier.of(fp.cl).label(s)}",
@@ -472,7 +561,10 @@ class VendorToolBox(
         val top = hits.take(10)
         // 唯一确认命中 → 记下 ID。后面认领时模型就算没带 supplier_id 也能接上
         // （这是我们自己刚查到的事实，替它补上不等于编造）。
-        if (confident && top.size == 1) session.supplierId = top[0].id
+        if (confident && top.size == 1) {
+            session.supplierId = top[0].id
+            session.companyName = top[0].name
+        }
         val head = if (confident) {
             t("名录里找到 ${top.size} 家匹配：", "Found ${top.size} matching companies:")
         } else {
@@ -600,6 +692,7 @@ class VendorToolBox(
         }
 
         session.supplierId = sid
+        session.companyName = company
         session.appId = r.optString("app_id").takeIf { it.isNotBlank() }
         session.registeredHere = true
 
@@ -690,17 +783,54 @@ class VendorToolBox(
                 )
             )
         }
+        // 先开认证档案、再发码。顺序不能反：核验结果（contact_verified）是被
+        // **服务端**在验证码通过时写进档案的，App 事后补写就晚了、也没有依据。
+        // 失败不拦认领（认领才是主操作），但会如实带出来一行。
+        val ensureNote = ensureProfile(id)
         val r = api.claimStart(id)
         val sid = r.optString("session_id")
         session.claimSessionId = sid
         session.supplierId = id
         session.claimToken = null
-        return ToolResult(
+        val sb = StringBuilder()
+        sb.append(
             t(
                 "已向 $phone 发出验证码。让对方向你读一下这 6 位数字。",
                 "A verification code has been sent to $phone. Ask them to read you the 6 digits."
             )
         )
+        ensureNote?.let { sb.append('\n').append(it) }
+        return ToolResult(sb.toString())
+    }
+
+    /**
+     * 确保认证档案存在（幂等）。正常时返回 null，异常时返回**要如实转述**的提示行。
+     *
+     * 没有档案的后果不是"报个错"：主体核验、能力登记、灯牌全都没地方挂，
+     * 企业走完全程灯牌还是「未认领」，而界面上看不出到底缺什么。
+     */
+    private suspend fun ensureProfile(supplierId: String): String? {
+        if (session.appId != null) return null
+        val company = session.companyName.orEmpty()
+        if (company.isBlank()) return null
+        return try {
+            val r = api.certifyEnsure(supplierId, company)
+            val appId = r.optString("app_id").takeIf { it.isNotBlank() }
+            if (appId == null) {
+                t(
+                    "⚠ 认证档案没建起来（服务端没回档案号），本次核验结果暂时无法归档。",
+                    "⚠ Could not open a certification file (no app id returned) — this cannot be filed yet."
+                )
+            } else {
+                session.appId = appId
+                null
+            }
+        } catch (e: PlatformApiException) {
+            t(
+                "⚠ 认证档案没建起来：${e.code}。认领不受影响，但核验结果暂时无法归档。",
+                "⚠ Could not open a certification file: ${e.code}. Claiming still works, but this cannot be filed yet."
+            )
+        }
     }
 
     /**
@@ -863,6 +993,185 @@ class VendorToolBox(
             ).append('\n')
         }
         return ToolResult(sb.toString().trimEnd())
+    }
+
+    // ── 认证与灯牌 ─────────────────────────────────────────────────────────
+
+    /** 档案号。没有就先补一份（认领过但没注册的主体只在这种情况才会缺）。 */
+    private suspend fun requireAppId(): String? {
+        session.appId?.takeIf { it.isNotBlank() }?.let { return it }
+        val id = session.supplierId.orEmpty()
+        if (id.isEmpty()) return null
+        ensureProfile(id)
+        return session.appId?.takeIf { it.isNotBlank() }
+    }
+
+    private suspend fun certifySubmitIdentity(a: JSONObject): ToolResult {
+        requireClaim()?.let { return it }
+        val appId = requireAppId()
+            ?: return failed(
+                t(
+                    "还没有这家企业的认证档案。先查到企业、走完手机号验证，再来交执照信息。",
+                    "No certification file for this company yet. Find it and verify the phone first."
+                )
+            )
+
+        val uscc = a.optString("uscc", "").trim().let { raw ->
+            if (raw.isBlank()) null else Uscc.extract(raw) ?: raw
+        }
+        // 号码先本地校验：校验位错的号码交上去只会变成一条待解释的差异，
+        // 不如当场说清楚，让对方对着执照重念一遍。
+        if (uscc != null) {
+            val (ok, why) = Uscc.check(uscc)
+            if (!ok) {
+                return failed(
+                    t(
+                        "统一社会信用代码不对：$why。请对照营业执照重念一遍。",
+                        "That USCC is invalid: $why. Please re-read it from the licence."
+                    )
+                )
+            }
+            session.uscc = uscc
+        }
+
+        val licenseName = a.optString("license_company_name", "").trim().ifBlank { null }
+        val legalPerson = a.optString("legal_person", "").trim().ifBlank { null }
+        val nature = a.optString("business_nature", "").trim()
+            .takeIf { it in setOf("manufacturer", "trader", "both") }
+        val employees = if (a.has("employee_count") && !a.isNull("employee_count")) {
+            a.optInt("employee_count").takeIf { it >= 0 }
+        } else null
+
+        if (uscc == null && licenseName == null && legalPerson == null) {
+            return failed(
+                t(
+                    "至少要拿到执照上的企业全称，或者 18 位统一社会信用代码——不然这一项没东西可核验。",
+                    "Need at least the legal name or the 18-digit USCC — otherwise there is nothing to verify."
+                )
+            )
+        }
+
+        val r = api.certifyIdentity(
+            appId = appId,
+            uscc = uscc,
+            licenseCompanyName = licenseName,
+            legalPerson = legalPerson,
+            businessNature = nature,
+            employeeCount = employees,
+        )
+
+        val sb = StringBuilder()
+        sb.append(t("主体信息已提交。", "Licence details submitted.")).append('\n')
+        r.optJSONObject("uscc_check")?.let { c ->
+            sb.append(t("统一社会信用代码：", "USCC: "))
+                .append(if (c.optBoolean("ok")) t("校验位通过", "checksum passed")
+                else t("未通过（${c.optString("reason")}）", "failed (${c.optString("reason")})"))
+                .append('\n')
+        }
+        if (r.has("name_match")) {
+            sb.append(t("执照名称与申报名称：", "Licence name vs declared name: "))
+                .append(
+                    if (r.optBoolean("name_match")) t("一致", "match")
+                    else t("**不一致**（已记为待解释的差异）", "**mismatch** (recorded as a discrepancy)")
+                ).append('\n')
+        }
+        r.optJSONArray("materials")?.let { m ->
+            if (m.length() > 0) {
+                sb.append(
+                    t(
+                        "已登记材料：${(0 until m.length()).joinToString("、") { m.optString(it) }}" +
+                            "（**企业自报，平台未核验原件**）。",
+                        "Materials registered: ${(0 until m.length()).joinToString(", ") { m.optString(it) }} " +
+                            "(**self-declared; the platform has not seen the original**)."
+                    )
+                ).append('\n')
+            }
+        }
+        appendBadge(sb, r.optJSONObject("badge_preview"))
+        return ToolResult(sb.toString().trimEnd(), echo = t("已提交主体核验信息", "Licence details submitted"))
+    }
+
+    private suspend fun certifySubmitCapability(a: JSONObject): ToolResult {
+        requireClaim()?.let { return it }
+        val appId = requireAppId()
+            ?: return failed(t("还没有认证档案，无法登记能力卡。", "No certification file to file the card under."))
+        val r = api.certifyCapabilityFromCollect(appId)
+        val sb = StringBuilder()
+        sb.append(t("定稿的能力卡已登记为认证材料。", "The finalised capability card has been filed as certification material.")).append('\n')
+        r.optJSONObject("completeness")?.let { c ->
+            sb.append(t("完成度 ", "Completeness ")).append(c.opt("score")).append("%\n")
+        }
+        // 用的哪套字段表要如实说：采集侧 10 种业务形态，认证侧只有两张字段表，
+        // 对不上的按零件加工打分——不是错，但用户有权知道尺子换了。
+        r.optString("profile_note").takeIf { it.isNotBlank() && it != "同名直用" }?.let {
+            sb.append(t("说明：", "Note: ")).append(it).append('\n')
+        }
+        appendBadge(sb, r.optJSONObject("badge_preview"))
+        return ToolResult(sb.toString().trimEnd(), echo = t("已登记能力卡", "Capability card filed"))
+    }
+
+    private suspend fun certifyBadge(a: JSONObject): ToolResult {
+        requireClaim()?.let { return it }
+        val appId = requireAppId()
+            ?: return failed(t("还没有认证档案。先查到企业、验证手机号。", "No certification file yet."))
+        val r = api.certifyBadge(appId)
+        val sb = StringBuilder()
+        appendBadge(sb, r)
+        return ToolResult(sb.toString().trimEnd(), echo = t("已查询灯牌状态", "Badge status checked"))
+    }
+
+    /**
+     * 灯牌状态回灌。
+     *
+     * `warnings` **必须原样带出去**：它是"这一级虽然达成、但含水分"的如实交代
+     * （开发桩验证、材料是企业自报……）。只报等级不报前提，对方会以为已经被核验过了。
+     */
+    private fun appendBadge(sb: StringBuilder, ev: JSONObject?) {
+        if (ev == null) return
+        val badge = ev.optString("badge")
+        if (badge.isBlank()) return
+        sb.append(
+            t(
+                "当前灯牌：$badge ${ev.optString("label")}",
+                "Current badge: $badge ${ev.optString("label")}"
+            )
+        ).append('\n')
+        val next = ev.optString("next_level")
+        val blockers = ev.optJSONArray("blockers")
+        if (next.isNotBlank() && blockers != null && blockers.length() > 0) {
+            sb.append(
+                t(
+                    "升到 $next 还差 ${blockers.length()} 项：",
+                    "${blockers.length()} item(s) missing for $next:"
+                )
+            ).append('\n')
+            for (i in 0 until blockers.length()) {
+                val b = blockers.optJSONObject(i) ?: continue
+                sb.append("  - ").append(b.optString("label"))
+                    .append(b.optString("reason").takeIf { it.isNotBlank() }?.let { "：$it" } ?: "")
+                    .append('\n')
+            }
+        } else if (next.isBlank()) {
+            sb.append(t("已是最高一级。", "Already at the highest level.")).append('\n')
+        }
+        val warns = ev.optJSONArray("warnings")
+        if (warns != null && warns.length() > 0) {
+            sb.append(
+                t(
+                    "⚠ 注意事项（要如实转述，不要省略）：",
+                    "⚠ Caveats (must be relayed, do not omit):"
+                )
+            ).append('\n')
+            for (i in 0 until warns.length()) {
+                sb.append("  - ").append(warns.optString(i)).append('\n')
+            }
+        }
+        sb.append(
+            t(
+                "灯牌只表示**信息被核验的程度**，不是对企业好坏的评级。",
+                "A badge reflects **how much has been verified**, not how good the company is."
+            )
+        ).append('\n')
     }
 
     // ── 回灌文本 ───────────────────────────────────────────────────────────

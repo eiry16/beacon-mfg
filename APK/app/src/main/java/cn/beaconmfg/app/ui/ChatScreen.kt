@@ -37,6 +37,7 @@ import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -66,6 +67,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
+
+/** 贴底用的超大像素偏移：LazyColumn 会把它夹到列表末尾，效果就是"滚到底"。 */
+private const val STICK_BOTTOM = 100_000
+
+/** 判定"已经在底部"的容差（像素）。太小会在流式增长时误判成"用户上滑了"。 */
+private const val BOTTOM_SLACK = 96
 
 @Composable
 fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
@@ -111,15 +118,37 @@ fun ChatScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
             }
             if (busy) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
 
-            // 新消息到达就滚到底。
+            // 内容一有变化就贴底。
             //
-            // 为什么要显式做：LazyColumn 默认不跟着新内容滚。消息一多，新来的助手回复
-            // 就落在视口下方 —— 实测踩到过：注册成功那条回复得手动上滑才看得见，
-            // 而用户的第一反应是「发出去了但没反应」，会重复发送。
-            // 按 messages.size 触发而不是每次重组，避免打字时被反复打断。
+            // 为什么要显式做：LazyColumn 默认不跟着新内容滚。这里踩过两个坑，
+            // 都写下来免得下次再踩：
+            //
+            // 1. **只按 `messages.size` 触发是错的。** 助手回复是**流式**长出来的，
+            //    消息条数一直不变 —— 于是从第二个字开始就再也不滚了。采购模式正是
+            //    这种情况：一轮问答只有「我 + 助手」两条，回复长过一屏之后新增内容
+            //    全落在视口外，看起来像"没反应"。把最后一条的文本长度并进触发键，
+            //    才算真的"内容变了"。
+            // 2. **`animateScrollToItem(lastIndex)` 是顶部对齐**，不是贴底：它把该条
+            //    的**上边缘**对齐视口顶部，回复比屏幕高时新增部分照样在视口外。
+            //    要贴底就得给一个足够大的像素偏移，让它自然夹到列表末尾。
             val listState = rememberLazyListState()
-            LaunchedEffect(messages.size) {
-                if (messages.isNotEmpty()) listState.animateScrollToItem(messages.lastIndex)
+            val contentKey = messages.size to (messages.lastOrNull()?.text?.length ?: 0)
+
+            // 但也不要抢用户的方向盘：他主动上滑查历史时，新内容不该把他拽回底部。
+            // 判据是"最后一条的下边缘进了视口"，松紧由 BOTTOM_SLACK 定。
+            val stick = remember { mutableStateOf(true) }
+            LaunchedEffect(listState) {
+                snapshotFlow {
+                    val info = listState.layoutInfo
+                    val last = info.visibleItemsInfo.lastOrNull()
+                    last == null || (last.index >= info.totalItemsCount - 1 &&
+                        last.offset + last.size <= info.viewportEndOffset + BOTTOM_SLACK)
+                }.collect { stick.value = it }
+            }
+            LaunchedEffect(contentKey) {
+                if (messages.isNotEmpty() && stick.value) {
+                    listState.scrollToItem(messages.lastIndex, STICK_BOTTOM)
+                }
             }
 
             LazyColumn(

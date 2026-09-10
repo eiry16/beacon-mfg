@@ -138,11 +138,13 @@
           ],
           "enum": [
             "wechat",
+            "sms",
             "email",
             "manual",
             "third_party",
             null
-          ]
+          ],
+          "description": "核验通道。sms 为短信验证码（App 认领流程）；若走开发桩，档案里记更细的通道名，卡上仍是 sms"
         },
         "verified_at": {
           "type": [

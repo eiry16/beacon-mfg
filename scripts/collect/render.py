@@ -120,9 +120,20 @@ def _fmt_equip(items):
 
 # ---------------------------------------------------------------- capability.json
 
-def render_capability(session, base: Optional[dict] = None) -> dict:
-    """生成能力卡。base 为 data/ 中的原始 POI 记录，用于继承已知字段。"""
+def render_capability(session, base: Optional[dict] = None,
+                      declared: Optional[dict] = None, claim: Optional[dict] = None) -> dict:
+    """生成能力卡。
+
+    - `base`：data/ 名录里的原始 POI 记录，用于继承已知字段。
+    - `declared`：**企业自己在认证流程里申报**的联系方式（`contact_phone` /
+      `claimed_address` / `contact_name`）。名录里没有这家（新注册）时，这是唯一
+      的联系方式来源——企业既然自己认证过，这份自述就该进卡，而不是留个空。
+      ⚠ 来源必须标出来：并入 `evidence.self_declared`，**不能挂在公开记录名下**。
+    - `claim`：灯牌块。由调用方从认证档案实算（`certification.claim_block`）。
+      不传就如实标 L0/未认领——能力卡渲染器**没有**判定灯牌资格的输入。
+    """
     base = base or {}
+    declared = declared or {}
     d = session.data
     today = date.today().isoformat()
 
@@ -142,12 +153,36 @@ def render_capability(session, base: Optional[dict] = None) -> dict:
         rfq.setdefault("callback_supported", True)
         rfq.setdefault("auto_quote", False)
 
-    claim_status = _g(base, "agent.verified")
-    claim = {
-        "status": "claimed" if claim_status else "claimed",
-        "verified_by": None,
-        "verified_at": None,
-        "badge": "L1",
+    # 联系方式：名录（公开可查）优先，名录没有才用企业自报。
+    # 混在一起的代价是下游分不清"我上网一查就能对上"和"只有他自己这么说"，
+    # 所以哪个字段来自自报，就写进 evidence.self_declared。
+    contact = {
+        "phone": base.get("contact_phone"),
+        "email": None,
+        "website": base.get("website"),
+        "address": base.get("address"),
+        "person": None,
+    }
+    from_declared: list[str] = []
+    if not contact["phone"] and declared.get("phone"):
+        contact["phone"] = declared["phone"]
+        from_declared.append("contact.phone")
+    if declared.get("email") and not contact["email"]:
+        contact["email"] = declared["email"]
+        from_declared.append("contact.email")
+    if not contact["address"] and declared.get("address"):
+        contact["address"] = declared["address"]
+        from_declared.append("contact.address")
+    if declared.get("name"):
+        contact["person"] = declared["name"]
+        from_declared.append("contact.person")
+
+    # 灯牌：**只能从材料算出来**。以前这里硬编码 L1（"claimed"），
+    # 于是只注册、连手机号都没验过的企业，出去的卡也顶着「已认领」。
+    # 渲染器手上没有判定灯牌的输入，所以缺省就是未认领，由调用方传入实算结果。
+    claim = claim or {
+        "status": "unclaimed", "verified_by": None, "verified_at": None,
+        "badge": "L0", "app_id": None, "valid_until": None,
     }
 
     cap = {
@@ -158,13 +193,13 @@ def render_capability(session, base: Optional[dict] = None) -> dict:
         "profile": session.profile,
         "updated_at": today,
         "claim": claim,
-        "contact": {
-            "phone": base.get("contact_phone"),
-            "email": None,
-            "website": base.get("website"),
-            "address": base.get("address"),
-            "person": None,
-        },
+        # ⚠ 这里必须用上面 159-178 行算好的 `contact`，**不能重新构造一个**。
+        # 曾经这里又写了一遍「只读名录 base」的 contact：新注册企业名录里没有它，
+        # contact 全是 None → 被下面"清空壳"逻辑 pop 掉 → 卡上根本没有联系方式，
+        # 而 evidence.self_declared 里却还标着 contact.phone/contact.address。
+        # 结果是"证据说这个字段是企业自报的，但字段本身不存在"——自相矛盾，
+        # 且企业自己申报的电话地址就此丢掉（需求：注册时申报的电话和地址要进能力卡）。
+        "contact": contact,
         "identity": idt,
         "processes": d.get("processes") or [],
         "limits": d.get("limits") or {},
@@ -187,14 +222,28 @@ def render_capability(session, base: Optional[dict] = None) -> dict:
             "external_domains": _domains(idt.get("website"), rfq.get("endpoint")),
         },
     }
-    # 清理空壳，避免污染 schema
-    for k in ("rfq", "contact", "capability"):
-        if k in cap and cap[k] is not None and not any(
-            v not in (None, "", [], {}) for v in cap[k].values()
-        ):
-            cap[k] = None if k != "capability" else {}
+    # 清理空壳：**空的可选块直接删掉，不要写成 null**。
+    # schema 里 contact / rfq 都是 `type: object`（不许 null），原来这里写成 None，
+    # 结果「名录里没有、又没留电话」的企业在定稿时直接被 Schema 校验拒掉
+    # （"None is not of type 'object'"），而报错只说是 capability 不合法，
+    # 现场看不出是联系方式为空导致的。capability 是必填对象，留 {}。
+    for k in ("rfq", "contact"):
+        if k in cap and not any(v not in (None, "", [], {}) for v in (cap[k] or {}).values()):
+            cap.pop(k, None)
+    if cap.get("capability") is None:
+        cap["capability"] = {}
     if not cap["limits"]:
         cap["limits"] = {}
+
+    # 证据分档：企业自报 vs 公开记录。**禁止合并**——合并会让"上网一查就有"
+    # 被当成"他自己说的"，反过来也一样。
+    ev = cap["evidence"]
+    ev["self_declared"] = sorted(set(ev["self_declared"]) | set(from_declared))
+    public = [f for f, v in (("contact.phone", base.get("contact_phone")),
+                             ("contact.address", base.get("address")),
+                             ("contact.website", base.get("website"))) if v]
+    if public:
+        ev["public_record"] = public
     return cap
 
 

@@ -516,6 +516,9 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     /** 会改变平台数据的工具。用于判断"这一轮到底提交没提交"。 */
     private fun isWriteTool(name: String): Boolean = name in setOf(
         "claim_start", "claim_verify", "collect_begin", "collect_answer", "collect_confirm",
+        // 认证链路这三条会产生服务端写操作（主体核验、能力登记），
+        // 不列为写工具的话，"模型说了却没提交"的兜底提示会误报。
+        "certify_submit_identity", "certify_submit_capability",
     )
 
     /**
@@ -560,6 +563,9 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             "collect_answer" -> s.toolCollectAnswer
             "collect_progress" -> s.toolCollectProgress
             "collect_confirm" -> s.toolCollectConfirm
+            "certify_submit_identity" -> s.toolCertifyIdentity
+            "certify_submit_capability" -> s.toolCertifyCapability
+            "certify_badge" -> s.toolCertifyBadge
             else -> if (role() == Role.SUPPLIER) s.toolVendorDone else s.toolDone
         }
     }

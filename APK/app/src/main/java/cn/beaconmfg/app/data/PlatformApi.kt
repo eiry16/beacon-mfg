@@ -6,6 +6,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONArray
 import org.json.JSONObject
 import java.util.concurrent.TimeUnit
 
@@ -181,4 +182,79 @@ class PlatformApi(
         contactPhone?.takeIf { it.isNotBlank() }?.let { body.put("contact_phone", it) }
         return call("POST", "/v1/certify/apply", body, auth = true)
     }
+
+    // ── 认证与灯牌（server/routers/certification.py，前缀 /v1/certify）────────
+    //
+    // 为什么要有这几条：App 原先接完 `apply` 就断了 —— 企业走了认领/注册，
+    // 资料也采了，但**没有人把结果交给认证链路**，于是灯牌永远停在「未认领」，
+    // 而界面上看不出到底缺什么。这一段就是补上主体核验、能力登记与灯牌查询。
+    //
+    // ⚠ `review`（人工复核）**故意不接**：它要求审核员身份，是平台侧的人工动作，
+    // 企业端能自己批自己，灯牌就一文不值了。
+
+    /**
+     * POST /v1/certify/ensure → 确保这家企业有一份认证档案（**幂等**，已有就复用）。
+     *
+     * 认领名录里已收录的企业时没有「注册」那一步，App 手上只有 supplier_id ——
+     * 而核验结果必须挂在档案上，否则无处可写。
+     */
+    suspend fun certifyEnsure(
+        supplierId: String,
+        company: String,
+        category: String? = null,
+        claimedAddress: String? = null,
+    ): JSONObject {
+        val body = JSONObject().put("supplier_id", supplierId).put("company", company)
+        category?.takeIf { it.isNotBlank() }?.let { body.put("category", it) }
+        claimedAddress?.takeIf { it.isNotBlank() }?.let { body.put("claimed_address", it) }
+        return call("POST", "/v1/certify/ensure", body, auth = true)
+    }
+
+    /**
+     * POST /v1/certify/{app_id}/identity → 主体核验。
+     *
+     * `materials` 里登记营业执照时**必须带 self_declared=true**：平台拿到的是企业
+     * 自报的号码，没有影像件、也没核验过原件。这根标记决定了灯牌能不能说实话。
+     */
+    suspend fun certifyIdentity(
+        appId: String,
+        uscc: String? = null,
+        licenseCompanyName: String? = null,
+        legalPerson: String? = null,
+        businessNature: String? = null,
+        employeeCount: Int? = null,
+    ): JSONObject {
+        val body = JSONObject()
+        uscc?.takeIf { it.isNotBlank() }?.let { body.put("uscc", it) }
+        licenseCompanyName?.takeIf { it.isNotBlank() }?.let { body.put("license_company_name", it) }
+        legalPerson?.takeIf { it.isNotBlank() }?.let { body.put("legal_person", it) }
+        businessNature?.takeIf { it.isNotBlank() }?.let { body.put("business_nature", it) }
+        employeeCount?.let { body.put("employee_count", it) }
+        if (uscc != null && uscc.isNotBlank()) {
+            body.put(
+                "materials",
+                JSONArray().put(
+                    JSONObject()
+                        .put("type", "business_license")
+                        .put("ref", "USCC-$uscc")
+                        // 如实标注：企业自报，未见影像件
+                        .put("self_declared", true)
+                )
+            )
+        }
+        return call("POST", "/v1/certify/$appId/identity", body, auth = true)
+    }
+
+    /** GET /v1/certify/{app_id}/badge → 当前灯牌 + 还差什么（blockers/warnings）。 */
+    suspend fun certifyBadge(appId: String): JSONObject =
+        call("GET", "/v1/certify/$appId/badge", auth = true)
+
+    /**
+     * POST /v1/certify/{app_id}/capability/from-collect → 把**已定稿**的能力卡登记为认证材料。
+     *
+     * 不带 card 参数：那份数据服务端本来就有，App 转手一遍只会多一个能丢字段的环节。
+     * 没定稿会被服务端拒（CAPABILITY_NOT_FOUND）——草稿不参与灯牌判定。
+     */
+    suspend fun certifyCapabilityFromCollect(appId: String): JSONObject =
+        call("POST", "/v1/certify/$appId/capability/from-collect", JSONObject(), auth = true)
 }
