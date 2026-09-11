@@ -23804,5 +23804,101 @@
       "evidence": "电路板"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024131",
+    "company": "泰山石膏板",
+    "category": "电子元器件",
+    "keywords": [
+      "线路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "未来社产业社区北门东100米",
+    "contact_phone": "15806211266",
+    "lat": 31.330775,
+    "lng": 120.657525,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH4414L",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区金鸡湖中央商务区",
+      "adcode": "320505",
+      "search_keyword": "线路板"
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024132",
+    "company": "志胜汽车电路维修",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "思义路1650号(桃根工业园东南门旁)",
+    "contact_phone": "18616222306",
+    "lat": 31.332902,
+    "lng": 121.305918,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGSI9Y0",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "马陆",
+      "adcode": "310114",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
   }
 ]

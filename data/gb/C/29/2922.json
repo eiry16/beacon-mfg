@@ -2735,5 +2735,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0024088",
+    "company": "上海三厘塑胶管路有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "上海市松江区佘山镇吉业路245号8幢",
+    "contact_phone": "13482567164",
+    "lat": 31.125945,
+    "lng": 121.19118,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GRJANE67",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "佘山",
+      "adcode": "310117",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑胶管"
+    },
+    "is_manufacturer": true
   }
 ]

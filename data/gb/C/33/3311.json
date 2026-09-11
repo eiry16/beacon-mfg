@@ -549,7 +549,8 @@
     "company": "筛网批发丝网大全护栏网厂家",
     "category": "原材料",
     "keywords": [
-      "不锈钢"
+      "不锈钢",
+      "钢材"
     ],
     "region": {
       "province": "浙江",
@@ -20648,6 +20649,20 @@
         "catalog"
       ],
       "verified": false
+    },
+    "amap": {
+      "poi_id": "B0FFH9BS5H",
+      "type": "公司企业;工厂;工厂|生活服务;生活服务场所;生活服务场所",
+      "typecode": "170300|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "低塘",
+      "adcode": "330281",
+      "search_keyword": "激光切割"
     }
   },
   {
@@ -35988,7 +36003,21 @@
       "source": "name",
       "evidence": "冲压"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0JK0SNO1X",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "冲压"
+    }
   },
   {
     "id": "CN-MFG-0002383",
@@ -37202,7 +37231,8 @@
     "company": "深圳市金元顺精密技术有限公司",
     "category": "钣金冲压",
     "keywords": [
-      "冲压"
+      "冲压",
+      "端子"
     ],
     "region": {
       "province": "广东",
@@ -42026,7 +42056,8 @@
     "company": "无锡利同电子商务有限公司",
     "category": "钣金冲压",
     "keywords": [
-      "激光切割"
+      "激光切割",
+      "连接器"
     ],
     "region": {
       "province": "江苏",
@@ -42051,7 +42082,21 @@
       "source": "keyword",
       "evidence": "激光切割"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0MAM56GX7",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "联合办公",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320205",
+      "search_keyword": "连接器"
+    }
   },
   {
     "id": "CN-MFG-0008085",
@@ -70393,6 +70438,198 @@
       "confidence": "low",
       "source": "keyword",
       "evidence": "冲压"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024028",
+    "company": "深圳柏林兴风管加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "凤凰机械城B区B7",
+    "contact_phone": "13538261436",
+    "lat": 22.683752,
+    "lng": 113.837994,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JAL77WU7",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "管材管件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "福永",
+      "adcode": "440306",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "风管"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024045",
+    "company": "联诺不锈钢(上海诗林店)",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金加工"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "九亭大街49号联诺不锈钢剪板·折边·刨槽金属制品",
+    "contact_phone": "13918149645; 18964825530",
+    "lat": 31.134057,
+    "lng": 121.339891,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHQDQJJ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "九亭",
+      "adcode": "310117",
+      "search_keyword": "钣金加工"
+    },
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "钣金加工"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024046",
+    "company": "苏州昊冉正祺机械有限公司",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "经济开发区交通北路6333号内2号厂房",
+    "contact_phone": "18625078066",
+    "lat": 31.215419,
+    "lng": 120.661322,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJKBNXT",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "激光切割"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024047",
+    "company": "翔臻金属激光切割",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "乐创物流中心东北门西北120米",
+    "contact_phone": "待核实",
+    "lat": 30.101513,
+    "lng": 120.418813,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUDRJFLO",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330603",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "激光切割"
     },
     "is_manufacturer": true
   }

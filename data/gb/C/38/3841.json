@@ -444,5 +444,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0024133",
+    "company": "鸿运汽车空调电路锂电池维修",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "福永街道怀德南路1号(福围地铁站B1口步行300米)",
+    "contact_phone": "18759138789",
+    "lat": 22.657288,
+    "lng": 113.82515,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K1DCKL06",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "福永",
+      "adcode": "440306",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3841",
+      "name": "锂离子电池制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电池制造 > 锂离子电池制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "锂电池"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -18632,7 +18632,8 @@
     "keywords": [
       "注塑加工",
       "塑料配件",
-      "钣金加工"
+      "钣金加工",
+      "冲压"
     ],
     "region": {
       "province": "广东",
@@ -19826,7 +19827,8 @@
     "company": "深圳市得佳力塑胶五金制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "广东",
@@ -20248,7 +20250,8 @@
     "company": "广州市恒立塑胶五金制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "广东",
@@ -20480,7 +20483,9 @@
     "company": "佛山市南海区煜骏塑料五金厂",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "模具",
+      "模具加工"
     ],
     "region": {
       "province": "广东",
@@ -46151,7 +46156,8 @@
     "company": "广州市佳美五金制品有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "五金加工"
+      "五金加工",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -53893,7 +53899,8 @@
     "category": "钣金冲压",
     "keywords": [
       "钣金加工",
-      "冲压"
+      "冲压",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -70959,7 +70966,8 @@
     "company": "顶峰五金",
     "category": "标准件",
     "keywords": [
-      "螺丝"
+      "螺丝",
+      "螺栓"
     ],
     "region": {
       "province": "上海",
@@ -71007,7 +71015,8 @@
     "company": "晶晶五金百货批发",
     "category": "标准件",
     "keywords": [
-      "螺栓"
+      "螺栓",
+      "螺丝"
     ],
     "region": {
       "province": "江苏",
@@ -71038,6 +71047,150 @@
       "business_area": "城东开发区",
       "adcode": "320281",
       "search_keyword": "螺栓"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024015",
+    "company": "正沃金属制品(上海)有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "白鹤镇鹤中路149-151号",
+    "contact_phone": "13564328256",
+    "lat": 31.251675,
+    "lng": 121.139925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KR4ASLYE",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "白鹤",
+      "adcode": "310118",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "金属制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024041",
+    "company": "广州泽圳金属制品有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "大榄地路16号",
+    "contact_phone": "待核实",
+    "lat": 23.00451,
+    "lng": 113.272947,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JARO5TMH",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440113",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "金属制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024048",
+    "company": "佛山市南海区雄裕五金厂",
+    "category": "钣金冲压",
+    "keywords": [
+      "冲压"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "劳边村村前街二巷8号",
+    "contact_phone": "待核实",
+    "lat": 23.101884,
+    "lng": 112.935777,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUDUJJ0N",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "冲压"
     },
     "industry": {
       "code": "3399",

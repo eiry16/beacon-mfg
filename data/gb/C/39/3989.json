@@ -381,22 +381,23 @@
     "company": "深圳恒瑞佳电子科技有限公司",
     "category": "电子元器件",
     "keywords": [
-      "PCB"
+      "PCB",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
       "city": "深圳"
     },
     "address": "福永街道凤凰社区兴业一路6号兴围第三工业区15栋3层",
-    "contact_phone": "待核实",
+    "contact_phone": "15986796015",
     "lat": 22.700338,
     "lng": 113.846355,
     "source": "public_directory",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "source_url": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": {
       "code": "3989",
       "name": "其他电子元件制造",
@@ -406,7 +407,21 @@
       "source": "category_fallback",
       "evidence": "电子元器件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0JDPZLP9W",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "机械加工"
+    }
   },
   {
     "id": "CN-MFG-0000174",

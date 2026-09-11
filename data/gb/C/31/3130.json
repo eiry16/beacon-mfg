@@ -5467,7 +5467,8 @@
     "company": "广州启圆钢材加工有限公司",
     "category": "原材料",
     "keywords": [
-      "不锈钢"
+      "不锈钢",
+      "钢材"
     ],
     "region": {
       "province": "广东",
@@ -5492,7 +5493,21 @@
       "source": "name",
       "evidence": "钢材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B00141I83X",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440112",
+      "search_keyword": "钢材"
+    }
   },
   {
     "id": "CN-MFG-0007618",
@@ -8821,7 +8836,8 @@
     "keywords": [
       "不锈钢",
       "螺丝",
-      "螺栓"
+      "螺栓",
+      "钢材"
     ],
     "region": {
       "province": "浙江",
@@ -46981,6 +46997,102 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "钢材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024136",
+    "company": "明亮不锈钢(炬光园店)",
+    "category": "原材料",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "温州"
+    },
+    "address": "蛟凤北路与炬光园中路交叉口北100米",
+    "contact_phone": "18857722027",
+    "lat": 27.97473,
+    "lng": 120.658218,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KD7O003K",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330302",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024137",
+    "company": "余姚辉科弹性材料(不锈钢)有限公司",
+    "category": "原材料",
+    "keywords": [
+      "不锈钢材料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "河姆渡镇寺慈线路边",
+    "contact_phone": "13738859771; 18958270912; 19805849114",
+    "lat": 29.978449,
+    "lng": 121.355368,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GU47UOQP",
+      "type": "公司企业;工厂;工厂|公司企业;公司;公司",
+      "typecode": "170300|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "不锈钢材料"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
     },
     "is_manufacturer": true
   }

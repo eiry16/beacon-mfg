@@ -9084,7 +9084,8 @@
     "company": "江庆模具配件",
     "category": "注塑成型",
     "keywords": [
-      "模具"
+      "模具",
+      "塑料模具"
     ],
     "region": {
       "province": "江苏",
@@ -11389,6 +11390,102 @@
       "confidence": "low",
       "source": "name",
       "evidence": "供应链"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0024055",
+    "company": "模具配件数控刀具",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "外青松公路5064号",
+    "contact_phone": "021-59701982; 13761139868; 13918544016",
+    "lat": 31.189188,
+    "lng": 121.118857,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G22OXV11",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
+      "typecode": "060603|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310118",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0024058",
+    "company": "浩远模具配件",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "新淳东路与新安路交叉口南20米",
+    "contact_phone": "待核实",
+    "lat": 29.938767,
+    "lng": 119.454365,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I2L4YDMP",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "分水",
+      "adcode": "330122",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
     },
     "is_manufacturer": false
   }
