@@ -140,7 +140,7 @@ hit_ids = target_ids & city_ids
 
 IDs carry no path information. Two options:
 
-1. **Read everything and filter** (23,698 records ≈ 27 MB — simplest if your environment allows):
+1. **Read everything and filter** (24,085 records ≈ 27 MB — simplest if your environment allows):
 
 ```python
 import glob, json
@@ -192,9 +192,9 @@ Rules:
 
 The flow above answers "**does this factory exist**". To judge "**can this factory do my job**",
 use `skills/registry/fingerprint/gb/{gate}/{division}/{class}.jsonl` — one capability fingerprint
-per company, 234 B, **covering all 23,698**.
+per company, 234 B, **covering all 24,085**.
 
-**Coarse-filter first, then read deeply** — do not load all self-reports at once (23,698 rows
+**Coarse-filter first, then read deeply** — do not load all self-reports at once (24,085 rows
 will blow up your context):
 
 | Stage | Read what | Scale |
@@ -262,14 +262,14 @@ For **agents** this path does not apply — reading the files directly is faster
 
 ## Data notes
 
-- Current dataset: **23,698 Chinese records — 15,161 phone-verified + 8,537 pending verification**,
+- Current dataset: **24,085 Chinese records — 15,468 phone-verified + 8,617 pending verification**,
   with an English mirror at `data/en/gb/` (same GB layout, joined by `id`).
 - Phone-verified = `status="verified"`. Pending = real companies from the public POI directory whose
   phone number has not been confirmed yet.
 - **Pending records are real companies**: **keep and return them** in results, do not drop them.
   Only `status="template"` would be placeholder data; there are currently **0**.
-- **Industry coverage (GB/T 4754-2017)**: 22,898 of 23,698 classified into **106 national industry
-  classes** (800 unclassified). Manufacturing (C) 21,141; wholesale/retail (F) 1,757.
+- **Industry coverage (GB/T 4754-2017)**: 23,280 of 24,085 classified into **107 national industry
+  classes** (805 unclassified). Manufacturing (C) 21,514; wholesale/retail (F) 1,766.
   Largest divisions: Metal Products (33) 6,473, General-purpose Machinery (34) 6,330,
   Rubber & Plastics (29) 2,332.
 - **Coverage**: 18 cities — Yangtze Delta (Suzhou, Ningbo, Shanghai, Wuxi, Hangzhou, Jiaxing…) and
