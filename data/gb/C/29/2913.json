@@ -2967,5 +2967,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023985",
+    "company": "恒达轴承·油封",
+    "category": "标准件",
+    "keywords": [
+      "轴承"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "中兴路23号",
+    "contact_phone": "0769-85614000",
+    "lat": 22.904569,
+    "lng": 113.837327,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF04UMD",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "大岭山镇中心城区",
+      "adcode": "441900",
+      "search_keyword": "轴承"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
   }
 ]
