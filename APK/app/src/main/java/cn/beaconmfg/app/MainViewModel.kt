@@ -256,6 +256,35 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    /**
+     * 设置页「刷新地址」：从数据源的指针取当前平台接口地址，探活通过后直接保存。
+     *
+     * **为什么手机不能自己"拉起服务"**：那等于跨设备在 PC 上启动进程 ——
+     * Android 沙箱不允许，NAT 之后的 PC 也不可能被手机主动唤起。
+     * 拉起 uvicorn / cloudflared 由 PC 端 `scripts/endpoint_watch.py` 负责
+     * （`--watch` 常驻看护，挂了自动重启并把新地址写进指针）。
+     * 手机这边只做它能做也必须做的半件事：取最新地址 + 验活 + 保存。
+     *
+     * @param onDone 第一个参数是探活通过的地址（失败为 null），第二个是给用户的提示文案
+     */
+    fun refreshEndpoint(onDone: (String?, String) -> Unit) {
+        viewModelScope.launch {
+            val s = strings()
+            _status.value = s.endpointFetching
+            val r = remote.fetchEndpoint(_settings.value.dataBase)
+            val msg = when {
+                r.url != null -> {
+                    updateSettings(_settings.value.copy(apiBase = r.url))
+                    s.endpointUpdated(r.url)
+                }
+                r.tried.isEmpty() -> s.endpointNoPointer
+                else -> s.endpointAllDead
+            }
+            _status.value = msg
+            onDone(r.url, msg)
+        }
+    }
+
     fun updateSettings(s: AppSettings) {
         val langChanged = s.lang != _settings.value.lang
         val roleChanged = Role.of(s.role) != Role.of(_settings.value.role)

@@ -106,6 +106,57 @@ class RemoteSource(private val store: DataStore) {
         else -> e.message?.take(60)?.ifEmpty { null } ?: e.javaClass.simpleName
     }
 
+    /** 探活要快：地址可能有好几个，一个个试不能让用户干等。 */
+    private val probeHttp = OkHttpClient.Builder()
+        .connectTimeout(3, TimeUnit.SECONDS)
+        .readTimeout(5, TimeUnit.SECONDS)
+        .callTimeout(10, TimeUnit.SECONDS)
+        .build()
+
+    /** 取地址的结果。[tried] 为空 = 根本没拿到指针；非空但 [url] 为 null = 地址都探活失败。 */
+    data class EndpointResult(val url: String?, val tried: List<String>)
+
+    /**
+     * 取平台接口地址（apiBase）。
+     *
+     * 指针 = 数据源上的 `data/endpoint.json`，由 `scripts/endpoint_watch.py` 维护：
+     * PC 端隧道一换地址就写进去并推到仓库。这里多源拉取指针，再把「当前地址 +
+     * 历史地址」逐个 `/health` 探活，挑第一个真能用的。
+     *
+     * 为什么要探活而不是直接采信：指针经 CDN 分发，可能还是几分钟前的旧值，
+     * 而旧地址在隧道重启后就死了 —— 不验就直接填，用户会以为刷新成功了其实没通。
+     *
+     * @return 探活通过的地址放在 [EndpointResult.url]；拿不到指针或全都不通时为 null
+     */
+    suspend fun fetchEndpoint(base: String): EndpointResult = withContext(Dispatchers.IO) {
+        val found = ArrayList<String>()
+        for (root in candidates(base)) {
+            val url = (if (root.endsWith("/")) root else "$root/") + "data/endpoint.json"
+            val txt = runCatching {
+                http.newCall(Request.Builder().url(url).build()).execute().use { r ->
+                    if (!r.isSuccessful) null else r.body?.string()
+                }
+            }.getOrNull() ?: continue
+            val o = runCatching { JSONObject(txt) }.getOrNull() ?: continue
+            o.safeString("base_url").takeIf { it.isNotBlank() }?.let { found += it }
+            o.optJSONArray("history")?.let { arr ->
+                for (i in 0 until arr.length()) {
+                    arr.optJSONObject(i)?.safeString("url")
+                        ?.takeIf { it.isNotBlank() }?.let { found += it }
+                }
+            }
+            if (found.isNotEmpty()) break // 第一个给出地址的源就够了，不必每个源都拉一遍
+        }
+        val tried = found.map { it.trim().trimEnd('/') }.distinct()
+        EndpointResult(tried.firstOrNull { probe(it) }, tried)
+    }
+
+    /** 后端 `/health` 探活。 */
+    private fun probe(base: String): Boolean = runCatching {
+        probeHttp.newCall(Request.Builder().url("$base/health").build())
+            .execute().use { it.isSuccessful }
+    }.getOrDefault(false)
+
     /**
      * 强制核对时，这个源说「一个分片都不用下」。
      *

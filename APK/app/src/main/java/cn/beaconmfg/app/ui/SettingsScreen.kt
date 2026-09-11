@@ -215,11 +215,26 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
                 singleLine = true,
             )
             Row(Modifier.padding(top = 8.dp)) {
+                Button(
+                    onClick = {
+                        vm.updateSettings(s.copy(apiBase = apiBase.trim()))
+                        testResult = st.saved
+                        apiSaved = true
+                    },
+                    modifier = Modifier.padding(end = 8.dp),
+                ) { Text(st.save) }
+                // 「刷新地址」：从数据源的指针取当前后端地址，验活通过后填入并保存。
+                // 它**不会**去拉起服务 —— 手机没法跨设备在 PC 上启动进程，那是
+                // scripts/endpoint_watch.py 的活（PC 端常驻看护 + 自动发布新地址）。
                 Button(onClick = {
-                    vm.updateSettings(s.copy(apiBase = apiBase.trim()))
-                    testResult = st.saved
-                    apiSaved = true
-                }) { Text(st.save) }
+                    vm.refreshEndpoint { url, msg ->
+                        testResult = msg
+                        if (url != null) {
+                            apiBase = url
+                            apiSaved = true
+                        }
+                    }
+                }) { Text(st.refreshAddr) }
             }
             if (apiSaved) {
                 Text(
