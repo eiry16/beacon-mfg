@@ -56,10 +56,10 @@ No dependencies, no keys, no network required.
 
 ## Data Status
 
-**Chinese** (`data/gb/`, four-level GB/T 4754 archive): **23,698 records total**
-(15,161 phone-verified, 8,536 pending), spanning **23 national divisions** (incl. unclassified).
-Top divisions: Metal Products (33) 6,473 · General Equipment (34) 6,330 · Rubber & Plastics (29) 2,332 ·
-Wholesale (51, non-manufacturer) 1,755 · Special Equipment (35) 1,709 · Computer & Electronics (39) 1,440.
+**Chinese** (`data/gb/`, four-level GB/T 4754 archive): **24,085 records total**
+(15,468 phone-verified, 8,617 pending), spanning **23 national divisions** (incl. unclassified).
+Top divisions: Metal Products (33) 6,515 · General Equipment (34) 6,438 · Rubber & Plastics (29) 2,392 ·
+Wholesale (51, non-manufacturer) 1,764 · Special Equipment (35) 1,829 · Computer & Electronics (39) 1,450.
 
 ### Industry classification (GB/T 4754-2017)
 
@@ -70,7 +70,7 @@ Every supplier carries a national industry class code:
 "is_manufacturer": true
 ```
 
-- **22,898 / 23,698 records classified** into **106 national industry classes** (800 unclassified)
+- **23,280 / 24,085 records classified** into **107 national industry classes** (805 unclassified)
 - `confidence`: `high` = company name matched directly; `medium` / `low` = inferred from keywords or category
 - `is_manufacturer=false` → the company falls under **F51 Wholesale** (trader, not a factory)
 - Rule of thumb: **trust the company name**; search keywords may only fill gaps;
@@ -82,15 +82,15 @@ Every supplier carries a national industry class code:
   This stops a *shop selling mold parts* from being listed as a *mold manufacturer*
   (fixed 2026-09-08, 635 records affected).
 
-Top classes (full list in `data/industry-index.json`): 3484 Machined Parts 3,606 ·
-2929 Plastic Parts 2,130 · 3360 Surface Treatment 1,989 · 3311 Metal Structure 1,567 ·
-3399 Other Metal Products 1,563 · 3525 Molds & Dies 1,545 · 3130 Steel Rolling 1,025 · 3482 Fasteners 1,011.
-> **Pending**: 8,536 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
+Top classes (full list in `data/industry-index.json`): 3484 Machined Parts 3,696 ·
+2929 Plastic Parts 2,185 · 3360 Surface Treatment 1,999 · 3311 Metal Structure 1,574 ·
+3399 Other Metal Products 1,578 · 3525 Molds & Dies 1,660 · 3130 Steel Rolling 1,040 · 3482 Fasteners 1,016.
+> **Pending**: 8,617 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
-**English** (`data/en/`): **20,265 English-mirror records** for overseas agents/buyers.
-The mirror currently lags the Chinese dataset by **3,433 records** (new Chinese additions from the
-latest fetch are not mirrored yet); run `scripts/en_backfill.py` to bring it back to 1:1 by `id`.
-`industry_en` carries the English GB/T 4754 class name for existing mirrored records.
+**English** (`data/en/gb/`, same four-level GB archive): **24,085 English-mirror records**
+for overseas agents/buyers — kept at **1:1 by `id`** with the Chinese dataset via
+`scripts/en_backfill.py` (incremental, resumable) + `scripts/en_sync_industry.py` for
+the `industry_en` label (English GB/T 4754 class names).
 
 > **Fast region search:** use `data/region-index.json` to locate companies by city without scanning full category files.
 
