@@ -247,7 +247,9 @@ fun SettingsScreen(vm: MainViewModel, modifier: Modifier = Modifier) {
             singleLine = true,
         )
         Row(Modifier.padding(top = 8.dp)) {
-            Button(onClick = { vm.refreshData() }, modifier = Modifier.padding(end = 8.dp)) {
+            // 手点「立即更新」= 强制全量核对：不发送 If-None-Match，
+            // 否则 CDN 边缘节点缓存回一个 304 就什么都不下，用户会以为数据没变。
+            Button(onClick = { vm.refreshData(force = true) }, modifier = Modifier.padding(end = 8.dp)) {
                 Text(st.updateNow)
             }
             Button(onClick = { vm.pingData { testResult = it } }) { Text(st.ping) }

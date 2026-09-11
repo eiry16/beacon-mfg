@@ -18,6 +18,7 @@ import cn.beaconmfg.app.i18n.Lang
 import cn.beaconmfg.app.i18n.Role
 import cn.beaconmfg.app.i18n.Strings
 import cn.beaconmfg.app.i18n.systemPrompt
+import cn.beaconmfg.app.llm.ToolCall
 import cn.beaconmfg.app.llm.BuyerToolBox
 import cn.beaconmfg.app.llm.ChatMsg
 import cn.beaconmfg.app.llm.LlmClient
@@ -194,7 +195,10 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         val n = store.fingerprints().size
         refreshDataInfo()
         _status.value = s.ready(n)
-        if (_settings.value.autoUpdate) refreshData()
+        // 强制核对：manifest 只有 ~78KB，ETag 省不了多少流量，却会因为 CDN 边缘缓存
+        // 回 304 而漏掉新数据（2026-09-11 赤兔案例）。真正的流量大头是分片，
+        // 那部分靠 SHA1 比对，只有真变了才下。
+        if (_settings.value.autoUpdate) refreshData(force = true)
     }
 
     /**
@@ -227,11 +231,11 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         ).joinToString("\n")
     }
 
-    fun refreshData() {
+    fun refreshData(force: Boolean = false) {
         viewModelScope.launch {
             val s = strings()
             _status.value = s.checkingUpdate
-            val r = remote.updateFingerprints(_settings.value.dataBase, s) { msg ->
+            val r = remote.updateFingerprints(_settings.value.dataBase, s, force) { msg ->
                 _status.value = msg
             }
             refreshDataInfo()
@@ -412,6 +416,19 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                         isTool = true, toolFailed = tr.failed,
                     )
                 )
+                // 补一条带 tool_calls 的 assistant 消息：codefallback 是模型没调工具时
+                // 我们替它执行的，若只塞孤零零的 role=tool 消息，DeepSeek 会返回
+                // HTTP 400（Messages with role 'tool' must be a response to a preceding
+                // message with 'tool_calls'）。配对上 assistant(tool_calls) 才合法。
+                history.add(
+                    ChatMsg(
+                        "assistant",
+                        content = null,
+                        toolCalls = listOf(
+                            ToolCall("codefallback-$rounds", "claim_verify", """{"code":"$codeDigits"}""")
+                        ),
+                    )
+                )
                 history.add(ChatMsg("tool", content = tr.text, toolCallId = "codefallback-$rounds"))
                 continue
             }
@@ -469,6 +486,16 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                             isTool = true, toolFailed = cr.failed,
                         )
                     )
+                    // 同上：补 assistant(tool_calls) 配对，否则孤立 tool 消息触发 HTTP 400。
+                    history.add(
+                        ChatMsg(
+                            "assistant",
+                            content = null,
+                            toolCalls = listOf(
+                                ToolCall("collectfallback-$rounds", "collect_confirm", "{}")
+                            ),
+                        )
+                    )
                     history.add(ChatMsg("tool", content = cr.text, toolCallId = "collectfallback-$rounds"))
                     continue
                 }
@@ -505,6 +532,10 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             )
         }
         warnIfNothingSubmitted(str, wrote)
+        // 本机刚写入过数据（认领 / 注册 / 采集定稿）→ 云端名录已经变了，
+        // 但本机的检索库还是旧的，用户搜不到自己刚提交的企业。
+        // 立刻强制核对一次：不带 ETag，避免被 CDN 边缘缓存用 304 挡回去。
+        if (wrote) refreshData(force = true)
     }
 
     /**

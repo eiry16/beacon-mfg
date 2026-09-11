@@ -57,11 +57,59 @@ class DataStore(private val app: Application) {
         )
     }
 
-    /** 内置分片的 SHA1。用于和 manifest 的 h 字段比对，判断有没有新版本。 */
+    /**
+     * 内置分片的 SHA1。用于和 manifest 的 h 字段比对，判断有没有新版本。
+     *
+     * **别信 builtin.json 里的 fingerprint.shards**——它实际是个整数计数（分片个数），
+     * 不是 per-shard 哈希表，所以 `optJSONObject("shards")` 恒为 null，这个函数原来
+     * 永远返回 null。后果：每次更新都把全部 108 个 fp 分片重新下一遍（5.6MB），
+     * 弱网下极易超时、只下一半。现在退化为「读内置资产现算 SHA1」，结果按 rel 缓存。
+     * 必须在 IO 线程调用（要读 assets）。
+     */
     fun builtinShaOf(rel: String): String? {
-        val shards = builtinMeta.optJSONObject("fingerprint")?.optJSONObject("shards")
-            ?: return null
-        return shards.optJSONObject(rel)?.optString("sha1")
+        builtinMeta.optJSONObject("fingerprint")?.optJSONObject("shards")
+            ?.optJSONObject(rel)?.optString("sha1")
+            ?.takeIf { it.isNotEmpty() }
+            ?.let { return it }
+        return builtinShaCache[rel] ?: computeBuiltinSha(rel)?.also {
+            builtinShaCache[rel] = it
+        }
+    }
+
+    /**
+     * 内置资产的 SHA1，按 **LF 归一化**后计算。算一次就够，进程内复用。
+     *
+     * 为什么必须归一化：manifest 里的 h 也是归一化后算的（见 gen_manifest.py:sha1_of）。
+     * 仓库在 core.autocrlf=true 下工作树是 CRLF、进仓库和 CDN 下发的是 LF。
+     * 若这里按 CRLF 算，内置分片永远和 manifest 对不上 → 每次更新都把全部 108 个
+     * 分片重新下一遍（5.6MB）；而不归一化 CDN 侧则会导致校验失败、一条都下不来。
+     */
+    private val builtinShaCache = java.util.concurrent.ConcurrentHashMap<String, String>()
+
+    private fun computeBuiltinSha(rel: String): String? = try {
+        val raw = app.assets.open("fingerprint/$rel").use { it.readBytes() }
+        sha1(normalizeLf(raw))
+    } catch (e: Exception) {
+        null
+    }
+
+    /** CRLF → LF。与 Python 端 `data.replace(b"\r\n", b"\n")` 等价。 */
+    private fun normalizeLf(src: ByteArray): ByteArray {
+        var cr = 0
+        for (b in src) if (b == CR) cr++
+        if (cr == 0) return src
+        val out = ByteArray(src.size - cr)
+        var i = 0
+        var j = 0
+        while (i < src.size) {
+            if (src[i] == CR && i + 1 < src.size && src[i + 1] == LF) {
+                out[j++] = LF
+                i += 2
+            } else {
+                out[j++] = src[i++]
+            }
+        }
+        return if (j == out.size) out else out.copyOf(j)
     }
 
     // ── 号码索引（assets/index/phone-index.jsonl，每行 id,phone）─────────────
@@ -157,6 +205,21 @@ class DataStore(private val app: Application) {
 
     fun manifestEtag(): String? = prefs.getString("manifest_etag", null)
     fun setManifestEtag(v: String?) = prefs.edit().putString("manifest_etag", v).apply()
+
+    /**
+     * 本机的 manifest 副本是否真的落地过一次（拿到 200 并按分片处理完）。
+     *
+     * **只有为真时才允许带 If-None-Match。** 否则会死锁：本机一个更新分片都没有
+     * （`files/updates/` 压根不存在），却拿一个陈旧 ETag 去问服务端；中间任何一层
+     * （CDN 边缘节点缓存）回了 304 = “你已是最新”，于是永远不下载，
+     * 数据一直停在 APK 内置的老版本。
+     *
+     * 2026-09-11 赤兔案例就是这样：手机上存的是 103995 字节那份旧 manifest 的 ETag，
+     * 实际 manifest 已变成 78528 字节，但边缘节点缓存命中 → 304 → 新供应商永远搜不到。
+     */
+    fun manifestApplied(): Boolean = prefs.getBoolean("manifest_applied", false)
+
+    fun setManifestApplied(v: Boolean) = prefs.edit().putBoolean("manifest_applied", v).apply()
 
     fun lastUpdateCheck(s: Strings): String = prefs.getString("last_check", null) ?: s.never
     fun setLastUpdateCheck(v: String) = prefs.edit().putString("last_check", v).apply()
@@ -372,6 +435,9 @@ class DataStore(private val app: Application) {
     }
 
     companion object {
+        private const val CR: Byte = 0x0D
+        private const val LF: Byte = 0x0A
+
         fun sha1(bytes: ByteArray): String {
             val md = MessageDigest.getInstance("SHA-1")
             return md.digest(bytes).joinToString("") { "%02x".format(it) }

@@ -107,29 +107,60 @@ class RemoteSource(private val store: DataStore) {
     }
 
     /**
+     * 强制核对时，这个源说「一个分片都不用下」。
+     *
+     * 这通常不是真的没变，而是这一层 CDN 还在给旧 manifest
+     * （实测 fastly / cdn / raw 三家的边缘缓存彼此独立，新旧常常不一致）。
+     * 抛出后由 updateFingerprints 换下一个源再核一次。
+     */
+    private class NoChangeOnForce : IOException()
+
+    /**
+     * 这一层的 manifest 与它自己给出的分片内容自相矛盾：按它给的 h 去下载，
+     * 一个都校验不过。典型是 manifest 是边缘节点上的旧缓存、分片文件已是新内容
+     * （2026-09-12 实测：108 个分片全部 SHA1 校验失败）。换下一个源重来。
+     */
+    private class ManifestStale : IOException()
+
+    /**
      * 按 manifest 增量更新指纹分片。逐个候选源尝试，第一个能连通的就用。
      *
      * 只比对 SHA1：内置分片的 SHA1 写在 index/builtin.json 里（由 sync_assets.py 生成），
      * 已更新分片的 SHA1 记在 updates/meta.json。两边都对不上才下载。
+     *
+     * [force] = 强制全量核对，不发送 If-None-Match。用于用户手点「立即更新」、
+     * 以及本机刚写入过数据（认领/注册/采集）之后——这两种情况下「服务端说没变」
+     * 是不可信的：CDN 边缘节点缓存可能还停在旧版本。
      */
     suspend fun updateFingerprints(
         base: String,
         s: Strings,
+        force: Boolean = false,
         onProgress: (String) -> Unit = {},
     ): UpdateResult = withContext(Dispatchers.IO) {
         val roots = candidates(base)
         val errors = ArrayList<String>()
 
+        var noChange = false
         roots.forEachIndexed { i, root ->
             if (i > 0) onProgress(s.switchMirror(hostOf(root)))
-            val r = runCatching { trySource(root, s, onProgress) }
+            val r = runCatching { trySource(root, s, onProgress, force) }
                 .getOrElse { e ->
-                    errors += "${hostOf(root)}（${friendly(e, s)}）"
+                    when (e) {
+                        is NoChangeOnForce -> noChange = true
+                        is ManifestStale ->
+                            errors += "${hostOf(root)}（manifest 与分片内容不一致，已跳过）"
+                        else -> errors += "${hostOf(root)}（${friendly(e, s)}）"
+                    }
                     null
                 }
             if (r != null) return@withContext r
         }
 
+        // 强制核对时**所有**源都说「没有要下的分片」，那才是真的已是最新。
+        if (noChange) {
+            return@withContext UpdateResult(true, message = s.alreadyLatest(hostOf(roots.last())))
+        }
         UpdateResult(false, message = s.allSourcesDown(roots.size, errors.joinToString("、")))
     }
 
@@ -141,20 +172,28 @@ class RemoteSource(private val store: DataStore) {
         root: String,
         st: Strings,
         onProgress: (String) -> Unit,
+        force: Boolean = false,
     ): UpdateResult {
+        // 只有本机真的落地过 manifest，才允许用 ETag 做条件请求。
+        // 否则本机一个分片都没有，服务端/CND 回 304 会被误读成「你已是最新」→ 永远不更新。
+        val canUseEtag = !force && store.manifestApplied()
         val req = Request.Builder()
             .url("${root}data/manifest.json")
-            .apply { store.manifestEtag()?.let { header("If-None-Match", it) } }
+            .apply { if (canUseEtag) store.manifestEtag()?.let { header("If-None-Match", it) } }
             .build()
 
         http.newCall(req).execute().use { resp ->
             if (resp.code == 304) {
+                if (!canUseEtag) {
+                    // 没发条件请求却回 304：这一层缓存不可信，换下一个源。
+                    throw IOException("manifest 意外 304（未发送 If-None-Match）")
+                }
                 store.setLastUpdateCheck(now())
                 return UpdateResult(true, message = st.manifestUnchanged)
             }
             if (!resp.isSuccessful) throw IOException("manifest HTTP ${resp.code}")
 
-            store.setManifestEtag(resp.header("ETag"))
+            val etag = resp.header("ETag")
             val body = resp.body?.string() ?: throw IOException("manifest 响应为空")
             val shards = JSONObject(body).optJSONArray("shards")
                 ?: throw IOException("manifest 格式异常：无 shards")
@@ -170,6 +209,10 @@ class RemoteSource(private val store: DataStore) {
                 val local = store.localShaOf(rel) ?: store.builtinShaOf(rel)
                 if (local == h) continue
                 fps.add(Triple(rel, root + p, h))
+            }
+
+            if (force && fps.isEmpty()) {
+                throw NoChangeOnForce()
             }
 
             var downloaded = 0
@@ -196,6 +239,12 @@ class RemoteSource(private val store: DataStore) {
                     failed++
                 }
             }
+            // 一个都没下成、且全军覆没 = 这份 manifest 不可信（多半是边缘节点上的旧缓存，
+            // 与它自己指向的新分片内容对不上）。换下一个源重来，别死磕这一层。
+            if (fps.isNotEmpty() && downloaded == 0 && failed == fps.size) {
+                throw ManifestStale()
+            }
+
             // 号码索引（t=phone）：不按国标归档，是横跨全库的 id→phone 映射，单独一项。
             // 它失败不该连坐整个更新——最坏只是新增企业没号码，不能因此判更新失败。
             runCatching {
@@ -216,6 +265,21 @@ class RemoteSource(private val store: DataStore) {
             }
 
             store.setLastUpdateCheck(now())
+            // ETag 与「已落地」标记只在这一次 manifest 真正处理完、且没有分片失败时才写。
+            // 原来是在读 body 之前就存 ETag——一旦后面的分片下载超时/校验失败，
+            // 下次启动带着这个 ETag 会被 304 挡回去，缺口永远补不上。
+            if (force) {
+                // 强制核对的结果不产生可信 ETag（这一层可能还在给旧 manifest），
+                // 直接清掉，免得下次被一个陈旧 ETag 用 304 挡回去。
+                store.setManifestEtag(null)
+                if (failed == 0) store.setManifestApplied(true)
+            } else if (failed == 0) {
+                if (etag != null) store.setManifestEtag(etag)
+                store.setManifestApplied(true)
+            } else {
+                store.setManifestEtag(null)
+                store.setManifestApplied(false)
+            }
             return UpdateResult(
                 true, checked = fps.size, downloaded = downloaded,
                 failed = failed, bytes = bytes,
