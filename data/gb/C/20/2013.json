@@ -591,5 +591,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0024130",
+    "company": "广东星舰铝单板",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "狮山镇狮南工业区大岗社大道10号",
+    "contact_phone": "待核实",
+    "lat": 23.13221,
+    "lng": 112.970098,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUDCJKR2",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "2013",
+      "name": "单板加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 单板加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "单板"
+    },
+    "is_manufacturer": true
   }
 ]

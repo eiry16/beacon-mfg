@@ -3492,5 +3492,53 @@
       "evidence": "制冷"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024032",
+    "company": "东莞市深迪机械有限公司(东华制冷)",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "长安镇厦岗康明街3号1号楼101室",
+    "contact_phone": "待核实",
+    "lat": 22.799644,
+    "lng": 113.746518,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L1CZ5R93",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "制冷"
+    },
+    "is_manufacturer": true
   }
 ]
