@@ -43,6 +43,20 @@ scripts/*
 # 不放行的后果：客户照 SKILL.md 想按小类批量取能力卡 → 脚本不存在，
 # 又退化成 4136 次单文件请求。纯标准库，只依赖 gb_store（已放行）。
 !scripts/gen_capability_shards.py
+# gen_manifest.py 生成 data/manifest.json（客户 Agent 增量拉取的清单指针）。
+# 不放行：客户无法自建/校验清单，只能信任仓库里那份（2026-09-11 已在
+# publish_registry.py 中调用它刷新 SHA1，白名单需配套）。
+!scripts/gen_manifest.py
+# publish_registry.py / endpoint_watch.py：注册发布与后端地址刷新入口
+# （2026-09-11 放行 publish_registry，2026-09-12 补 endpoint_watch）。
+!scripts/publish_registry.py
+!scripts/endpoint_watch.py
+# fetch_gaode_poi.py + fetch_batch.py + gui_app.py：采集与一键工具入口。
+# 采集侧是数据生产路径，且 gui_app 依赖这两个模块；
+# 不放行的后果：修好的采集脚本只存在于本地，换机器/换人就回到旧 bug。
+!scripts/fetch_gaode_poi.py
+!scripts/fetch_batch.py
+!scripts/gui_app.py
 # sync_gb_code.py 给 4136 张能力卡回写国标码，是 625 家品类冲突的解决方案入口。
 # 不放行：别人没法复现冲突消解，也没法在名录国标变化后重新同步。纯标准库。
 !scripts/sync_gb_code.py
