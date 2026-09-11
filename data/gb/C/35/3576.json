@@ -1419,5 +1419,53 @@
       "evidence": "机械配件"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024031",
+    "company": "邦辉机械配件加工",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "伟民路与汇京路交叉口西100米",
+    "contact_phone": "待核实",
+    "lat": 22.969075,
+    "lng": 113.769825,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L1SLRHO9",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3576",
+      "name": "农林牧渔机械配件制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 农林牧渔机械配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "机械配件"
+    },
+    "is_manufacturer": true
   }
 ]

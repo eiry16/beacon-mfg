@@ -136,5 +136,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0024056",
+    "company": "上海科泽包装机械有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "泗泾镇九干路220号21号楼405室",
+    "contact_phone": "待核实",
+    "lat": 31.130101,
+    "lng": 121.284813,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HRYSGK7H",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310117",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3467",
+      "name": "包装专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 包装专用设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "包装机械"
+    },
+    "is_manufacturer": true
   }
 ]
