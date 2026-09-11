@@ -56,11 +56,30 @@ TYPE_PHONE = "phone"      # 号码索引（id→phone），构建期产物，非
 
 
 def sha1_of(path: Path) -> str:
-    """内容哈希。当 ETag 用：内容没变就返回 304，省掉重传。"""
+    """内容哈希。当 ETag 用：内容没变就返回 304，省掉重传。
+
+    **必须按「git 存进仓库的样子」算，不能按工作树的字节算。**
+
+    本机 core.autocrlf=true：工作树是 CRLF，提交进仓库（以及 CDN 下发给客户端）的是 LF。
+    直接哈希工作树会把 CR 也算进哈希，于是 manifest 里的 h 与客户端真正下载到的文件
+    **永远对不上** → 客户端按「宁可留旧数据」把分片丢掉 → 任何内容变化都更新不下去。
+
+    2026-09-11 赤兔案例：现象是「manifest 未变更 / 切片永远不变」，
+    实际是 108 个分片全是 CRLF，改一个字哈希就对不上，一条新数据都进不了手机。
+    """
     h = hashlib.sha1()
+    # 分块读取，块尾可能把 \r\n 拆开，留一个字节的进位
+    carry = b""
     with open(path, "rb") as f:
         for chunk in iter(lambda: f.read(1 << 20), b""):
-            h.update(chunk)
+            buf = carry + chunk
+            if buf.endswith(b"\r"):
+                carry, buf = buf[-1:], buf[:-1]
+            else:
+                carry = b""
+            h.update(buf.replace(b"\r\n", b"\n"))
+    if carry:
+        h.update(carry)
     return h.hexdigest()
 
 
