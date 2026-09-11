@@ -54,6 +54,9 @@ scripts/*
 # 剩余缺口、采购词实测。客户和贡献者都要能自己复现这个结论，不能只有我说了算。
 # 只依赖上面已放行的 gb_store / query，纯标准库。
 !scripts/audit_alias.py
+# publish_registry.py 是注册自动发布管线的唯一入口（刷新 manifest SHA1 + 提交 + push
+# 检索云）。纯标准库，不含密钥与商业逻辑；CI 与换机复现都需要它。
+!scripts/publish_registry.py
 # gen_manifest.py 生成 data/manifest.json——那是 CDN 上对外发布的分片索引，
 # 客户 Agent 与安卓端靠它做增量更新。生成器不入库 = 已发布产物无法复现
 # （2026-09-09 给 manifest 加 t=phone 分片类型时暴露）。
@@ -105,6 +108,14 @@ Thumbs.db
 #
 # 私有层 API（auth/api_key、routers/claim、services/ranker）
 server/
+# 例外：仅放开注册自动发布接线 collect.py（confirm 已接入 publish_registry）。
+# server/ 是整目录忽略，必须按「放开目录 → server/** 重新忽略全部 → 再放开单文件」
+# 顺序，否则 git 不会进入被忽略目录匹配子文件，且会连带暴露 auth/.data/logs/config 等私有资产。
+!server/
+server/**
+!server/routers/
+!server/routers/collect.py
+
 # 采集脚本
 run_fetch.ps1
 # 校验脚本
