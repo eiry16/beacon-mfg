@@ -17437,7 +17437,21 @@
       "source": "name",
       "evidence": "连接器"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0MUKSX5VG",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "连接器"
+    }
   },
   {
     "id": "CN-MFG-0003752",
@@ -30627,7 +30641,8 @@
     "keywords": [
       "线路板",
       "不锈钢材料",
-      "钢板"
+      "钢板",
+      "钢材"
     ],
     "region": {
       "province": "广东",
@@ -39876,5 +39891,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023976",
+    "company": "德昌端子汽车配件有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "端子"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "康湖路与康阳一街交叉口北80米",
+    "contact_phone": "待核实",
+    "lat": 22.915925,
+    "lng": 114.033425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUSRDLL9",
+      "type": "汽车服务;汽车配件销售;汽车配件销售",
+      "typecode": "010800",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "端子"
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "端子"
+    },
+    "is_manufacturer": true
   }
 ]
