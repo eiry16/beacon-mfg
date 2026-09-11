@@ -91,6 +91,55 @@ def refresh_manifest(apply: bool) -> tuple[bool, str]:
     return True, "已刷新 data/manifest.json 分片哈希"
 
 
+# ── CDN 边缘缓存 ────────────────────────────────────────────────────────────
+REPO = "eiry16/beacon-mfg"
+# 手机端会读、且会随注册变化的文件。manifest 必须清；_unclassified 是注册商的落点。
+CDN_PURGE_PATHS = [
+    "data/manifest.json",
+    "skills/registry/fingerprint/gb/_unclassified.jsonl",
+]
+
+
+def purge_cdn(apply: bool, timeout: int = 30) -> tuple[bool, str]:
+    """请求 jsDelivr 清除边缘缓存（best-effort，失败不影响发布结果）。
+
+    为什么需要：jsDelivr 对**分支 URL**（@main）的响应头是
+    `Cache-Control: public, max-age=604800, s-maxage=43200`——边缘节点可缓存 12 小时。
+    实测（2026-09-11）：
+      - 客户端带 `Cache-Control: no-cache` → 被忽略，照样 HIT；
+      - 加 `?_=随机` 查询参数 → 被忽略，照样 HIT；
+    也就是说**客户端无法自己破缓存**，只能服务端主动 purge。
+
+    另一个更严重的坑：App 用 ETag 做条件请求，边缘节点拿缓存副本一比就回 304，
+    于是新数据最长 12 小时到不了手机（赤兔案例就是这个）。
+    """
+    if not apply:
+        return True, "（预览）将请求 jsDelivr 清除 %d 个路径的边缘缓存" % len(CDN_PURGE_PATHS)
+    import json as _json
+    import urllib.request
+
+    # 显式关掉代理：本机可能挂着 Clash，会掩盖真实结果
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    done: list[str] = []
+    failed: list[str] = []
+    for p in CDN_PURGE_PATHS:
+        url = "https://purge.jsdelivr.net/gh/%s@main/%s" % (REPO, p)
+        try:
+            with opener.open(url, timeout=timeout) as r:
+                d = _json.loads(r.read().decode("utf-8"))
+            if d.get("status") == "finished":
+                done.append(p)
+            else:
+                failed.append("%s（%s）" % (p, d.get("status") or "未知状态"))
+        except Exception as exc:
+            failed.append("%s（%s）" % (p, exc))
+    if done and not failed:
+        return True, "已请求清除 CDN 缓存：%s" % "、".join(done)
+    if done:
+        return False, "部分清除成功（%s），失败：%s" % ("、".join(done), "；".join(failed))
+    return False, "CDN 缓存清除失败：%s" % "；".join(failed)
+
+
 def publish(apply: bool = False, push: bool = True, deploy_l1: bool = False,
             timeout: int = 120) -> dict:
     """核心发布逻辑。返回结构化结果，便于后端把结论写进响应。
@@ -155,6 +204,12 @@ def publish(apply: bool = False, push: bool = True, deploy_l1: bool = False,
                 res["ok"] = True  # 提交成功，push 可稍后补
                 return res
             res["pushed"] = True
+            # 推送完主动清 CDN 边缘缓存。清不掉也不算发布失败——
+            # 最坏情况是手机最长 12 小时后才会拉到新数据。
+            ok, msg = purge_cdn(apply, timeout=30)
+            res["cdn_purge"] = msg
+            if not ok:
+                res["cdn_note"] = msg
 
         # ⑤（可选）L1 卡 Pages 部署
         if deploy_l1:
