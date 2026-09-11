@@ -57,6 +57,12 @@ scripts/*
 !scripts/fetch_gaode_poi.py
 !scripts/fetch_batch.py
 !scripts/gui_app.py
+# publish_vendor.py 是「认证档案 → 买家可见」六步发布链路的唯一一键入口
+# （skill §15）。不放行：换台机器就退化成人手逐个脚本敲。
+# sync_readme_numbers.py 同步 README 数字（预览 / --apply 两档），
+# 不放行：每次采集后手改 30 多个数字，漏一个 CI 就红灯。
+!scripts/publish_vendor.py
+!scripts/sync_readme_numbers.py
 # sync_gb_code.py 给 4136 张能力卡回写国标码，是 625 家品类冲突的解决方案入口。
 # 不放行：别人没法复现冲突消解，也没法在名录国标变化后重新同步。纯标准库。
 !scripts/sync_gb_code.py
