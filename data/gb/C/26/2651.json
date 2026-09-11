@@ -27714,5 +27714,101 @@
       "evidence": "色母"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024007",
+    "company": "鸿祥塑胶原料行",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料原料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "迪福路与腾联路交叉口北40米",
+    "contact_phone": "18825211476",
+    "lat": 22.599338,
+    "lng": 113.849216,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHR81L1",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440306",
+      "search_keyword": "塑料原料"
+    },
+    "industry": {
+      "code": "2651",
+      "name": "初级形态塑料及合成树脂制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 合成材料制造 > 初级形态塑料及合成树脂制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶原料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024008",
+    "company": "滨海塑料",
+    "category": "注塑成型",
+    "keywords": [
+      "改性塑料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "思源路876号",
+    "contact_phone": "待核实",
+    "lat": 30.169778,
+    "lng": 120.649054,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUSHB90H",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330603",
+      "search_keyword": "改性塑料"
+    },
+    "industry": {
+      "code": "2651",
+      "name": "初级形态塑料及合成树脂制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 合成材料制造 > 初级形态塑料及合成树脂制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "注塑成型"
+    },
+    "is_manufacturer": true
   }
 ]

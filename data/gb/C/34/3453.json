@@ -382,5 +382,53 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi"
+  },
+  {
+    "id": "CN-MFG-0023905",
+    "company": "齿轮加工中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "五金城包家路57号",
+    "contact_phone": "0574-62633167; 13484226222; 18605845070",
+    "lat": 30.058114,
+    "lng": 121.159493,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I3JA4885",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "3453",
+      "name": "齿轮及齿轮减、变速箱制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 齿轮及齿轮减、变速箱制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "齿轮"
+    },
+    "is_manufacturer": true
   }
 ]

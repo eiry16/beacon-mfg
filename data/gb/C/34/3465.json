@@ -2188,5 +2188,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023969",
+    "company": "好得快电动工具",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "西丽镇大磡村沁园路26-1",
+    "contact_phone": "13058011971; 17727962441",
+    "lat": 22.621158,
+    "lng": 113.97804,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKY778B",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440305",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3465",
+      "name": "风动和电动工具制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 风动和电动工具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电动工具"
+    },
+    "is_manufacturer": true
   }
 ]

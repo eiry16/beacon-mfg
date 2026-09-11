@@ -7464,6 +7464,20 @@
         "catalog"
       ],
       "verified": false
+    },
+    "amap": {
+      "poi_id": "B00156EMCD",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "白鹤",
+      "adcode": "310118",
+      "search_keyword": "弹簧"
     }
   },
   {
@@ -32705,6 +32719,54 @@
       "postcode": "",
       "business_area": "",
       "adcode": "441900",
+      "search_keyword": "弹簧"
+    },
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023988",
+    "company": "凡恩精密弹簧",
+    "category": "标准件",
+    "keywords": [
+      "弹簧"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "正强路与奥园路交叉口东120米",
+    "contact_phone": "0519-88819591",
+    "lat": 31.832572,
+    "lng": 119.920196,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH2WCUI",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320411",
       "search_keyword": "弹簧"
     },
     "industry": {

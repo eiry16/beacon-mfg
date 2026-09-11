@@ -2953,5 +2953,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023921",
+    "company": "东莞市富林环保塑料包装制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "寮步镇药勒工业区祥富路522号",
+    "contact_phone": "18925471806",
+    "lat": 22.988275,
+    "lng": 113.863925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LALCLIYF",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
   }
 ]

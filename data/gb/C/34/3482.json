@@ -8523,7 +8523,8 @@
     "company": "温州恒辉紧固件有限公司",
     "category": "标准件",
     "keywords": [
-      "紧固件"
+      "紧固件",
+      "标准件"
     ],
     "region": {
       "province": "浙江",
@@ -19431,7 +19432,8 @@
     "company": "海盐勤业紧固件厂",
     "category": "标准件",
     "keywords": [
-      "紧固件"
+      "紧固件",
+      "标准件"
     ],
     "region": {
       "province": "浙江",
@@ -19456,7 +19458,21 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0FFL02NI2",
+      "type": "公司企业;公司;冶金化工",
+      "typecode": "170205",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330424",
+      "search_keyword": "标准件"
+    }
   },
   {
     "id": "CN-MFG-0005406",
@@ -24402,7 +24418,21 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0KG7DYGGG",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南联",
+      "adcode": "440307",
+      "search_keyword": "紧固件"
+    }
   },
   {
     "id": "CN-MFG-0005538",
@@ -28293,7 +28323,10 @@
       "弹簧",
       "冲压",
       "注塑模具",
-      "冲压模具"
+      "冲压模具",
+      "塑料模具",
+      "模具",
+      "模具加工"
     ],
     "region": {
       "province": "广东",
@@ -47006,6 +47039,150 @@
       "poi_id": "B0GD0SAAOL",
       "type": "公司企业;公司;冶金化工",
       "typecode": "170205",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "螺栓"
+    },
+    "industry": {
+      "code": "3482",
+      "name": "紧固件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 紧固件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "螺丝"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023977",
+    "company": "利达螺丝总汇",
+    "category": "标准件",
+    "keywords": [
+      "紧固件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "塘龙中路371号",
+    "contact_phone": "13790334878",
+    "lat": 22.799221,
+    "lng": 114.064303,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MD4CJ2NE",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "紧固件"
+    },
+    "industry": {
+      "code": "3482",
+      "name": "紧固件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 紧固件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "螺丝"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023981",
+    "company": "亿齐螺丝总汇",
+    "category": "标准件",
+    "keywords": [
+      "螺栓"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "温州"
+    },
+    "address": "平瑞路504号",
+    "contact_phone": "0577-63776689; 13388527321",
+    "lat": 27.674253,
+    "lng": 120.565804,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFQTBS7",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "昆阳镇",
+      "adcode": "330326",
+      "search_keyword": "螺栓"
+    },
+    "industry": {
+      "code": "3482",
+      "name": "紧固件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 紧固件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "螺丝"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023983",
+    "company": "合谐螺丝",
+    "category": "标准件",
+    "keywords": [
+      "螺栓"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "厚街镇汀山村东浦小组广联尾路中通快递对面",
+    "contact_phone": "待核实",
+    "lat": 22.938482,
+    "lng": 113.7005,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI8J7PH",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
       "alias": "",
       "tag": "",
       "keytag": "公司",

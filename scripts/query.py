@@ -219,7 +219,7 @@ def resolve_industry(selector):
     if codes:
         lvl = {2: "大类", 3: "中类"}.get(len(sel), "前缀")
         return codes, ["%s %s（%s，%d 个小类）" % (sel, lvl, "、".join(sorted(codes)), len(codes))]
-    codes = {c for c in CODES if sel in CODES[c]["name"] or sel in CODES[c]["en"]}
+    codes = {c for c in CODES if sel in (CODES[c].get("name") or "") or sel in (CODES[c].get("en") or "")}
     return (codes or set()), ["%s %s" % (c, CODES[c]["name"]) for c in sorted(codes)]
 
 

@@ -3444,5 +3444,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023979",
+    "company": "海丽制冷配件批发行",
+    "category": "标准件",
+    "keywords": [
+      "螺丝"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "福永社区西环路一巷15号",
+    "contact_phone": "0755-27217791; 15818698263",
+    "lat": 22.664104,
+    "lng": 113.811157,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG4A7YY",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "福永",
+      "adcode": "440306",
+      "search_keyword": "螺丝"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "制冷"
+    },
+    "is_manufacturer": true
   }
 ]

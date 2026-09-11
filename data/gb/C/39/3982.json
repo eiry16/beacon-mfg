@@ -12387,7 +12387,8 @@
     "company": "昆山爱派克斯电子有限公司",
     "category": "电子元器件",
     "keywords": [
-      "电路板"
+      "电路板",
+      "线路板"
     ],
     "region": {
       "province": "江苏",
@@ -23657,6 +23658,150 @@
       "confidence": "low",
       "source": "search_keyword",
       "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023973",
+    "company": "胜兴达建材",
+    "category": "电子元器件",
+    "keywords": [
+      "线路板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "新安街道创业一路西一巷93号",
+    "contact_phone": "13686819013; 15899980101",
+    "lat": 22.56343,
+    "lng": 113.893105,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KGMCNVUS",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新安",
+      "adcode": "440306",
+      "search_keyword": "线路板"
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023974",
+    "company": "桐乡市高德汽车维修有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "高桥镇工业区南日加油站西180米",
+    "contact_phone": "0573-88928818; 18857337778",
+    "lat": 30.550839,
+    "lng": 120.545492,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGXF677",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330483",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0023975",
+    "company": "深圳市大川电路板有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "沙井镇沙一鼎丰科技园三栋二楼",
+    "contact_phone": "待核实",
+    "lat": 22.725925,
+    "lng": 113.78358,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFFFZQ3",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3982",
+      "name": "电子电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 电子电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电路板"
     },
     "is_manufacturer": true
   }

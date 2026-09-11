@@ -11295,5 +11295,101 @@
     },
     "is_manufacturer": false,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0023912",
+    "company": "济川模具配件",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "金大笔业东门旁",
+    "contact_phone": "13777584485",
+    "lat": 29.923366,
+    "lng": 119.428924,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I3F1YAC8",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "分水",
+      "adcode": "330122",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0023972",
+    "company": "江苏中增供应链管理有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "线路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "港区一支路与洛神路交叉口西南120米",
+    "contact_phone": "18168387798",
+    "lat": 31.617141,
+    "lng": 120.172095,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-11",
+    "imported_at": "2026-09-11",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDVNJBGX",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320206",
+      "search_keyword": "线路板"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "供应链"
+    },
+    "is_manufacturer": false
   }
 ]
