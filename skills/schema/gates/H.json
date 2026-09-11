@@ -1,0 +1,246 @@
+{
+  "$comment": "H 门类（住宿和餐饮业）能力卡 schema 片段。与 gates/C.json 完全独立，业务字段互不共用：这里没有 processes / 公差 / 最大工件尺寸 / PPAP，因为问餐厅这些是荒谬的。共享的只有 envelope.json 定义的信封字段（supplier_id / gate / contact / caps_index / evidence / provenance 等），其名字与语义必须与 C 逐字一致。",
+  "gate": "H",
+  "gate_name": "住宿和餐饮业",
+  "gate_range": "61 住宿业 / 62 餐饮业",
+  "id_prefix": "H",
+  "id_prefix_note": "新门类用 CN-H-{7位序号}。制造业的 CN-MFG- 是历史前缀，不迁移。",
+  "cap_domain": "restaurant",
+  "default_profile": "restaurant",
+  "profile_by_category": {
+    "正餐": "restaurant",
+    "快餐": "restaurant",
+    "火锅": "restaurant",
+    "烧烤": "restaurant",
+    "饮品烘焙": "restaurant",
+    "团餐": "restaurant",
+    "宴席": "restaurant",
+    "住宿": "restaurant",
+    "其他餐饮": "restaurant"
+  },
+
+  "caps_index_from": [
+    "capability.cuisines[]",
+    "capability.service_modes[]",
+    "capability.venue_features[]",
+    "capability.time_slots[]",
+    "quality.certifications[].name",
+    "category"
+  ],
+
+  "poi_types": {
+    "$comment": "高德 POI type（分号分隔的三级类目）→ GB/T 4754 小类码。前缀匹配。这张表比公司名特征词可靠得多：POI 类目是平台自己标的，而餐饮公司名几乎不含菜系信息。",
+    "prefix": {
+      "餐饮服务;中餐厅": { "code": "6210", "name": "正餐服务" },
+      "餐饮服务;外国餐厅": { "code": "6210", "name": "正餐服务" },
+      "餐饮服务;快餐厅": { "code": "6220", "name": "快餐服务" },
+      "餐饮服务;咖啡厅": { "code": "6232", "name": "咖啡馆服务" },
+      "餐饮服务;茶艺馆": { "code": "6231", "name": "茶馆服务" },
+      "餐饮服务;冷饮店": { "code": "6239", "name": "其他饮料及冷饮服务" },
+      "餐饮服务;甜品店": { "code": "6239", "name": "其他饮料及冷饮服务" },
+      "餐饮服务;酒吧": { "code": "6233", "name": "酒吧服务" },
+      "住宿服务;宾馆酒店;五星级宾馆": { "code": "6110", "name": "旅游饭店" },
+      "住宿服务;宾馆酒店;四星级宾馆": { "code": "6110", "name": "旅游饭店" },
+      "住宿服务;宾馆酒店;三星级宾馆": { "code": "6110", "name": "旅游饭店" },
+      "住宿服务;宾馆酒店;经济型连锁酒店": { "code": "6121", "name": "经济型连锁酒店" },
+      "住宿服务;宾馆酒店": { "code": "6129", "name": "其他一般旅馆" },
+      "住宿服务;旅馆招待所": { "code": "6129", "name": "其他一般旅馆" },
+      "住宿服务;民宿": { "code": "6130", "name": "民宿服务" },
+      "住宿服务;露营地": { "code": "6140", "name": "露营地服务" }
+    },
+    "ambiguous": {
+      "餐饮服务;糕饼店": "前店后厂：主体可能是零售（F52），也可能是食品制造（C14），要看营业执照经营范围。不猜，gb_code 留 null。",
+      "餐饮服务;餐饮相关场所;餐饮相关": "太泛，无法定位业态。",
+      "餐饮服务;休闲餐饮场所": "可能是 6239 饮料冷饮，也可能是 6210 正餐，取决于实际业态。",
+      "餐饮服务;小吃店": "小吃服务是 6291，但高德把很多正餐店也标成小吃店 —— 名录侧不可靠，需采集时确认。"
+    }
+  },
+
+  "schema_extra": {
+    "required": ["limits", "capability"],
+
+    "properties": {
+      "category": {
+        "type": "string",
+        "enum": [
+          "正餐",
+          "快餐",
+          "火锅",
+          "烧烤",
+          "饮品烘焙",
+          "团餐",
+          "宴席",
+          "住宿",
+          "其他餐饮"
+        ],
+        "description": "业态展示标签。菜系不在这里 —— 菜系是 capability.cuisines，一个企业可以有多个。"
+      },
+
+      "limits": {
+        "type": "object",
+        "description": "接待硬边界。企业客户的一票否决项主要落在这几个数上",
+        "additionalProperties": false,
+        "properties": {
+          "min_order_qty": {
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "description": "最少接几桌/几份"
+          },
+          "min_order_value_cny": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "description": "最低消费（元）"
+          },
+          "max_party_size": {
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "description": "最大接待人数"
+          },
+          "max_tables": {
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "description": "最大桌数"
+          },
+          "advance_booking_days": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "宴席需提前几天预订"
+          },
+          "current_load_pct": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "maximum": 100,
+            "description": "当前上座率。与制造业的产线负荷同义（当前占用度），只是被占用的资源不同"
+          },
+          "rush_available": {
+            "type": ["boolean", "null"],
+            "description": "能否临时加桌/加位"
+          }
+        }
+      },
+
+      "capability": {
+        "type": "object",
+        "description": "餐饮能力块。字段由本文件与 skills/profiles/restaurant.json 共同定义。",
+        "additionalProperties": false,
+        "properties": {
+          "cuisines": {
+            "type": "array",
+            "items": { "type": "string", "x-enum-from": "restaurant:菜系" },
+            "description": "菜系码列表。枚举由 cap-codes/restaurant.json 的「菜系」组运行时注入"
+          },
+          "service_modes": {
+            "type": "array",
+            "items": { "type": "string", "x-enum-from": "restaurant:服务形态" },
+            "description": "服务形态码列表（宴席/团餐/外卖/包场…）"
+          },
+          "venue_features": {
+            "type": "array",
+            "items": { "type": "string", "x-enum-from": "restaurant:场地" },
+            "description": "场地条件码（大包间/宴会厅/停车场…）"
+          },
+          "time_slots": {
+            "type": "array",
+            "items": { "type": "string", "x-enum-from": "restaurant:时段" },
+            "description": "营业时段码"
+          },
+          "seats": {
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "description": "总座位数"
+          },
+          "private_rooms": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "包间数量。0 是有效答案（真没有包间），不等于未填"
+          },
+          "max_banquet_tables": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "最大可摆宴席桌数"
+          },
+          "avg_price_cny": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "description": "人均消费（元）"
+          },
+          "business_hours": {
+            "type": ["string", "null"],
+            "description": "营业时间原文，如「10:00-14:00, 17:00-21:30」。保留原话不归一化 —— 餐饮营业时间五花八门，归一化会丢信息"
+          },
+          "signature_dishes": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "招牌菜。客户 Agent 判断口味与档位的最强信号"
+          },
+          "delivery_platforms": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "外卖平台，如 美团 / 饿了么"
+          }
+        }
+      },
+
+      "service": {
+        "type": "object",
+        "description": "接待与结算服务。与 C 门类的 service 同名但字段完全不同 —— 制造业问的是图纸格式和贸易条款，餐饮问的是预订与开票。",
+        "additionalProperties": false,
+        "properties": {
+          "booking_channels": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "预订渠道，如 电话 / 微信 / 美团 / 大众点评"
+          },
+          "invoice_available": {
+            "type": ["boolean", "null"],
+            "description": "能否开票。企业客户报销的硬条件，实测高频问项"
+          },
+          "deposit_required": {
+            "type": ["boolean", "null"],
+            "description": "宴席是否需付定金"
+          },
+          "cancellation_policy": { "type": ["string", "null"] },
+          "payment_terms": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "languages": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+
+      "quality": {
+        "type": "object",
+        "description": "食品与卫生资质",
+        "additionalProperties": false,
+        "properties": {
+          "certifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "additionalProperties": false,
+              "properties": {
+                "name": { "type": "string" },
+                "number": { "type": ["string", "null"] },
+                "valid_until": { "type": ["string", "null"] },
+                "evidence": {
+                  "type": "string",
+                  "enum": ["self_declared", "public_record", "platform_verified", "field_audited"]
+                }
+              }
+            },
+            "description": "食品经营许可证 / HACCP / ISO22000 等"
+          },
+          "hygiene_grade": {
+            "type": ["string", "null"],
+            "enum": ["A", "B", "C", "未评定", null],
+            "description": "餐饮服务食品安全监督量化分级"
+          }
+        }
+      }
+    }
+  }
+}

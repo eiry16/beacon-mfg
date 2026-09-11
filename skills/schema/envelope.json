@@ -1,0 +1,274 @@
+{
+  "$comment": "灯塔能力卡【共享信封】。各门类 schema 文件互相独立、业务字段互不共用，但信封字段的**名字与语义必须逐字一致** —— L0 指纹与检索层只认这一份契约，不读各门类私有块。改这里等于改所有门类，必须回归全部门类样本。合并规则见 scripts/gate_schema.py：信封是基底，门类 gates/{GATE}.json 的 schema_extra 逐键覆盖（门类赢）。",
+  "envelope_version": "1.0",
+
+  "$comment_required": "必填项只放「已有、或可从卡片自身无损耗推导」的字段。gate 由 supplier_id 前缀推导，caps_index 由 caps_index_expression 派生 —— 两者都是确定性的，可以在写入时补，不需要向企业再问一遍。**故意不放进必填**：exclusions（旧卡片从未被问过这一题，强制必填等于逼人编造）、safety（旧 schema 只约束了子字段，没有顶层必填）。",
+  "required": [
+    "beacon_version",
+    "supplier_id",
+    "gate",
+    "company",
+    "category",
+    "profile",
+    "updated_at",
+    "caps_index"
+  ],
+
+  "properties": {
+    "beacon_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "supplier_id": {
+      "type": "string",
+      "pattern": "^CN-(MFG|[A-Z])-[0-9]{4,7}$",
+      "description": "名录 id。制造业沿用历史前缀 CN-MFG-（23823 条已发，不迁移）；其余门类用 CN-{门类字母}-，如 CN-H-0001234。"
+    },
+    "gate": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T"],
+      "description": "GB/T 4754 门类字母。决定用哪份门类 schema、哪个能力码表域、哪套采集问句。"
+    },
+    "company": {
+      "type": "string",
+      "minLength": 2
+    },
+    "category": {
+      "type": "string",
+      "description": "门类内的展示标签。枚举由各门类 gates/{GATE}.json 收窄；它是展示用标签，检索主键是 gb_code 与 caps_index。"
+    },
+    "profile": {
+      "type": "string",
+      "description": "对应 skills/profiles/{profile}.json"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "caps_index": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "可检索能力键的扁平索引。**由各门类自己从私有块派生**（gate_schema.derive_caps_index），制造业导出工艺码、餐饮导出菜系码。L0 指纹与检索层只读这个字段，不解析 capability 内部结构 —— 这是「门类 schema 独立」与「检索层单一」之间的桥。"
+    },
+
+    "gb_code": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{4}$",
+      "description": "GB/T 4754 小类码。由 scripts/sync_gb_code.py 从名录 industry 同步；名录缺 industry 时留 null（红线：不猜、不填兜底值）。归档/分片/检索一律走它。"
+    },
+    "gb_name": {
+      "type": ["string", "null"],
+      "description": "国标小类名称，如「正餐服务」「连续搬运设备制造」"
+    },
+    "gb_path": {
+      "type": ["string", "null"],
+      "description": "国标完整路径，如「H 住宿和餐饮业 > 餐饮业 > 正餐服务」"
+    },
+    "gb_level": {
+      "type": ["string", "null"],
+      "enum": ["class", "group", "division", "gate", null],
+      "description": "分类置信层级。证据只够到中类/大类时如实降级，硬判到 4 位等于编造。"
+    },
+
+    "limits": {
+      "type": "object",
+      "description": "硬边界：客户 Agent 淘汰供应商的主要依据，禁止虚报。**子字段由各门类定义**（制造业是公差/最大工件尺寸，餐饮是最低桌数/最低消费）。"
+    },
+
+    "rfq": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "询价投递契约。**放在信封层而非门类层** —— 它是客户 Agent 把询单送进来的传输协议，不是供应商的业务能力；各门类共享同一份，下游投递逻辑才不用按门类分支。protocol 枚举含制造业与生活服务业两种通道。",
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "enum": ["email", "webhook", "mcp", "form", "wechat", "phone"]
+        },
+        "endpoint": { "type": ["string", "null"] },
+        "schema": { "type": "string", "const": "rfq/v1" },
+        "callback_supported": { "type": "boolean" },
+        "auto_quote": { "type": "boolean" }
+      }
+    },
+    "capability": {
+      "type": "object",
+      "description": "门类私有能力块。字段由 gates/{GATE}.json 与 skills/profiles/{profile}.json 共同定义。**L0 指纹不得读取本块内部结构**，只读 caps_index。"
+    },
+
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "企业身份。全部门类共用同一语义。",
+      "properties": {
+        "province": { "type": ["string", "null"] },
+        "city": { "type": ["string", "null"] },
+        "district": { "type": ["string", "null"] },
+        "address": { "type": ["string", "null"] },
+        "lat": { "type": ["number", "null"] },
+        "lng": { "type": ["number", "null"] },
+        "website": { "type": ["string", "null"] },
+        "founded": {
+          "type": ["integer", "null"],
+          "minimum": 1900,
+          "maximum": 2035
+        },
+        "scale": {
+          "type": ["string", "null"],
+          "enum": ["<50人", "50-100人", "100-500人", "500-1000人", ">1000人", null]
+        },
+        "employee_count": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "floor_area_m2": {
+          "type": ["integer", "null"],
+          "minimum": 1,
+          "description": "经营场所面积。制造业是厂房，餐饮/娱乐是营业面积，农户是用地面积 —— 语义同一个：能承接生意的物理空间。"
+        },
+        "export_markets": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "uscc": {
+          "type": ["string", "null"],
+          "description": "统一社会信用代码。认主的法律主体锚点，18 位"
+        },
+        "legal_person": {
+          "type": ["string", "null"],
+          "description": "法定代表人（公开记录，非联系人）"
+        },
+        "registered_address": {
+          "type": ["string", "null"],
+          "description": "工商注册地址。可能与经营地址不同，是地址差异核验的依据"
+        },
+        "business_nature": {
+          "type": ["string", "null"],
+          "enum": ["manufacturer", "trader", "mixed", "service_provider", "individual", "farm", null],
+          "description": "经营性质。manufacturer/trader/mixed 为制造与流通；service_provider 服务业；individual 个体工商户；farm 农林牧渔生产者。登记口径与自述冲突时按「自述 > 公开记录」取自述值，登记口径在 provenance.note 留痕。"
+        },
+        "employee_outsource": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "在场人数中的劳务外包人数。不写会让人高估自有产能（例：在场 23 人里 20 人是外包）"
+        }
+      }
+    },
+
+    "contact": {
+      "type": "object",
+      "description": "联系方式。优先从 data/ 名录继承，供应商可在采集时更正。禁止填写法人/股东个人手机。",
+      "additionalProperties": false,
+      "properties": {
+        "phone": { "type": ["string", "null"] },
+        "email": { "type": ["string", "null"] },
+        "website": { "type": ["string", "null"] },
+        "address": { "type": ["string", "null"] },
+        "person": {
+          "type": ["string", "null"],
+          "description": "业务联系人（企业自填，非必填）"
+        }
+      }
+    },
+
+    "exclusions": {
+      "type": "array",
+      "description": "主动声明不接的活。渲染进 SKILL.md 边界段，帮客户 Agent 秒淘汰。**空数组是有信息的答案**（「没有明确不接的」），不等于未提供 —— 两者在 evidence 里分档记录。",
+      "items": { "type": "string" }
+    },
+
+    "not_applicable": {
+      "type": "array",
+      "description": "企业**明确判定不适用**的字段及理由。不适用 ≠ 未填：没有统一公差的成套设备供应商、没有包间的快餐店，写成 null 会被下游当成「没问到」。这个区分本身就是数据可信度的一部分，禁止与 null 合并。",
+      "items": {
+        "type": "object",
+        "required": ["field", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "field": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["unclaimed", "claimed", "verified", "audited"]
+        },
+        "verified_by": {
+          "type": ["string", "null"],
+          "enum": ["wechat", "sms", "email", "manual", "third_party", null],
+          "description": "核验通道。sms 为短信验证码（App 认领流程）；走开发桩时档案里记更细的通道名，卡上仍是 sms"
+        },
+        "verified_at": { "type": ["string", "null"], "format": "date" },
+        "badge": { "type": "string", "enum": ["L0", "L1", "L2", "L3"] },
+        "app_id": {
+          "type": ["string", "null"],
+          "description": "认证申请档案号（如 CERT-20260908-0317），溯源唯一入口"
+        },
+        "valid_until": {
+          "type": ["string", "null"],
+          "description": "凭证有效期（YYYY-MM-DD）。过期判断依据"
+        }
+      }
+    },
+
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "self_declared": { "type": "array", "items": { "type": "string" } },
+        "platform_verified": { "type": "array", "items": { "type": "string" } },
+        "field_audited": { "type": "array", "items": { "type": "string" } },
+        "public_record": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "公开记录（工商/专利/资质公示等）。**未经第三方核验**，是独立于 self_declared 的证据档，禁止合并 —— 合并会让「公开可查」被当成「企业自己说的」"
+        },
+        "assets": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_is_data_only", "no_agent_instructions"],
+      "properties": {
+        "content_is_data_only": { "type": "boolean", "const": true },
+        "no_agent_instructions": { "type": "boolean", "const": true },
+        "external_domains": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "provenance": {
+      "description": "数据来源与可信度。auto=平台从公开信息自动整理（未经供应商确认，准确性不保证）。fixture=平台自制的链路测试样本，用公开可查信息填制、未经厂商确认，禁止对外发布为真实能力卡。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["auto", "fixture", "agent_collected", "vendor_claimed", "manual_reviewed"]
+        },
+        "source": { "type": ["string", "null"], "description": "来源说明，如 public_directory / vendor_interview" },
+        "confidence": {
+          "type": ["string", "null"],
+          "enum": ["high", "medium", "low", null]
+        },
+        "inferred_fields": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "由平台推断而非供应商确认的字段路径列表"
+        },
+        "reclassified_from": {
+          "type": ["string", "null"],
+          "description": "品类改判前的原值。企业名称（强证据）与名录抓取分类（弱证据）冲突时按名称改判，必须在此留痕，否则校验拒绝"
+        },
+        "note": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "profile": "retail-shop",
+  "category": "零售",
+  "gate": "F",
+  "version": "1.0",
+  "description": "零售/批发商户档案。字段与 skills/schema/gates/F.json 的 capability 块一一对应。**与 O 门类的 resident-service 是两份独立档案**：虽然 F/O 共用 retail-service 码表域，但问「在售 SKU 数、起订单位」给修车师傅是荒谬的，问「师傅几个人、上门半径」给五金店也一样。共用码表只发生在真的同构的那几组字段上，画像不共用。",
+  "fields": [
+    {
+      "path": "capability.sku_count", "label": "在售品类数", "type": "integer",
+      "normalize": "integer", "unit": "种",
+      "question": "店里大概有多少种货在卖？",
+      "hint": "例：300。说不清就估个数量级（几十 / 几百 / 上千）",
+      "required": true
+    },
+    {
+      "path": "limits.min_order_qty", "label": "最少起订量", "type": "integer",
+      "normalize": "integer",
+      "question": "最少买多少才卖？单件卖就说 1。",
+      "hint": "例：1（零售）、10（整箱起）",
+      "required": true
+    },
+    {
+      "path": "capability.purchase_unit", "label": "起订单位", "type": "text",
+      "normalize": "text",
+      "question": "这个量是按什么单位算的？件、箱、还是吨？",
+      "hint": "例：箱。保留原话 —— 统一换算成「件」会假设错（一箱多少件各家不一样）",
+      "required": true
+    },
+    {
+      "path": "limits.stock_available", "label": "是否有现货", "type": "bool",
+      "normalize": "bool",
+      "question": "常规货有现货吗？",
+      "hint": "有 / 没有。没现货就变成订货，交期完全是另一回事",
+      "required": true
+    },
+    {
+      "path": "capability.business_hours", "label": "营业时间", "type": "text",
+      "normalize": "text",
+      "question": "营业时间是怎么排的？",
+      "hint": "例：08:00-20:00，全年无休",
+      "required": false
+    },
+    {
+      "path": "limits.delivery_days", "label": "发货/到货天数", "type": "integer",
+      "normalize": "integer", "unit": "天",
+      "question": "下单后几天能发货或到货？",
+      "hint": "例：2。有现货的话通常当天到 2 天",
+      "required": false
+    },
+    {
+      "path": "capability.brands", "label": "主营品牌", "type": "list",
+      "normalize": "list",
+      "question": "主要卖哪些品牌的货？",
+      "hint": "例：公牛、正泰。没品牌就写「杂牌」或直接跳过",
+      "required": false
+    },
+    {
+      "path": "limits.delivery_radius_km", "label": "配送半径", "type": "number",
+      "normalize": "number", "unit": "公里",
+      "question": "同城送货最远送多少公里？",
+      "hint": "例：30。超出就转快递或物流，成本结构不一样",
+      "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "sku_vs_min_order",
+      "when": ["capability.sku_count", "limits.min_order_qty"],
+      "check": "sku_vs_min_order",
+      "level": "warn",
+      "message": "起订量比在售品类总数还多，请确认单位（是不是把「箱」填成了「件」）"
+    }
+  ]
+}

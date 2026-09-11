@@ -1,0 +1,404 @@
+{
+  "$comment": "F 门类（批发和零售业）能力卡 schema 片段。与 gates/C.json、gates/H.json、gates/R.json 完全独立。F 与 O 共用 retail-service 码表域，但**私有块各写各的**：F 问「卖什么货、怎么发货」，O 问「做什么服务、上不上门」—— 共用码表的只是那几组真的同构的字段（经营方式/交付方式/门店设施）。",
+  "gate": "F",
+  "gate_name": "批发和零售业",
+  "gate_range": "51 批发业 / 52 零售业",
+  "id_prefix": "F",
+  "id_prefix_note": "新门类用 CN-F-{7位序号}。制造业的 CN-MFG- 是历史前缀，不迁移。",
+  "cap_domain": "retail-service",
+  "default_profile": "retail-shop",
+  "profile_by_category": {
+    "零售门店": "retail-shop",
+    "批发商行": "retail-shop",
+    "批零兼营": "retail-shop",
+    "专营专卖": "retail-shop",
+    "综合超市": "retail-shop",
+    "网店电商": "retail-shop",
+    "市场摊位": "retail-shop",
+    "其他零售": "retail-shop"
+  },
+  "caps_index_from": [
+    "capability.retail_categories[]",
+    "capability.business_modes[]",
+    "capability.delivery_modes[]",
+    "capability.store_features[]",
+    "quality.certifications[].name",
+    "category"
+  ],
+  "poi_types": {
+    "$comment": "高德 POI type → GB/T 4754 小类码。**最长前缀命中者赢**（gate_schema.poi_to_gb）：`ambiguous` 与 `prefix` 两张表一起比长度，更具体的规则胜出。",
+    "prefix": {
+      "购物服务;便民商店/便利店": {
+        "code": "5213",
+        "name": "便利店零售"
+      },
+      "购物服务;超级市场": {
+        "code": "5212",
+        "name": "超级市场零售"
+      },
+      "购物服务;商场;购物中心": {
+        "code": "5211",
+        "name": "百货零售"
+      },
+      "购物服务;商场;普通商场": {
+        "code": "5211",
+        "name": "百货零售"
+      },
+      "购物服务;食品烟酒;粮油生鲜": {
+        "code": "5229",
+        "name": "其他食品零售"
+      },
+      "购物服务;食品烟酒": {
+        "code": "5229",
+        "name": "其他食品零售"
+      },
+      "购物服务;专卖店;服装鞋帽皮具店": {
+        "code": "5232",
+        "name": "服装零售"
+      },
+      "购物服务;专卖店;体育用品店": {
+        "code": "5242",
+        "name": "体育用品及器材零售"
+      },
+      "购物服务;专卖店;图书报刊店": {
+        "code": "5243",
+        "name": "图书、报刊零售"
+      },
+      "购物服务;专卖店;文具店": {
+        "code": "5241",
+        "name": "文具用品零售"
+      },
+      "购物服务;医药保健销售店;药店": {
+        "code": "5251",
+        "name": "西药零售"
+      },
+      "购物服务;医药保健销售店": {
+        "code": "5251",
+        "name": "西药零售"
+      },
+      "购物服务;汽车销售;汽车配件销售": {
+        "code": "5263",
+        "name": "汽车零配件零售"
+      },
+      "购物服务;汽车销售": {
+        "code": "5261",
+        "name": "汽车新车零售"
+      },
+      "购物服务;专卖店;家电电子卖场": {
+        "code": "5273",
+        "name": "计算机、软件及辅助设备零售"
+      },
+      "购物服务;专卖店;手机销售": {
+        "code": "5274",
+        "name": "通信设备零售"
+      },
+      "购物服务;家居建材市场;五金店": {
+        "code": "5281",
+        "name": "五金零售"
+      },
+      "购物服务;家居建材市场;家具城": {
+        "code": "5283",
+        "name": "家具零售"
+      },
+      "购物服务;家居建材市场": {
+        "code": "5281",
+        "name": "五金零售"
+      },
+      "购物服务;花鸟鱼虫市场;花卉市场": {
+        "code": "5299",
+        "name": "其他未列明零售业"
+      },
+      "购物服务;宠物用品店": {
+        "code": "5297",
+        "name": "宠物食品用品零售"
+      },
+      "购物服务;综合市场;农副产品市场": {
+        "code": "5229",
+        "name": "其他食品零售"
+      },
+      "购物服务": {
+        "code": "5211",
+        "name": "百货零售"
+      }
+    },
+    "ambiguous": {
+      "购物服务;食品烟酒;糕饼店": "前店后厂：主体可能是零售（F52），也可能是食品制造（C14），要看营业执照经营范围。不猜，gb_code 留 null。",
+      "购物服务;家居建材市场;建材五金市场": "可能只卖货（F5281 五金零售），也可能带施工（E 建筑业）。要按实际经营范围判。",
+      "购物服务;汽车销售;二手车": "二手车零售是 5262，但个体户常兼做经纪（L 租赁和商务服务业），业态需确认。",
+      "购物服务;市场摊位": "摊位与流动货摊（5291）界限模糊，高德数据本身不可靠，需采集时确认。"
+    }
+  },
+  "schema_extra": {
+    "required": [
+      "limits",
+      "capability"
+    ],
+    "properties": {
+      "category": {
+        "type": "string",
+        "enum": [
+          "零售门店",
+          "批发商行",
+          "批零兼营",
+          "专营专卖",
+          "综合超市",
+          "网店电商",
+          "市场摊位",
+          "其他零售"
+        ],
+        "description": "经营形态展示标签。**卖什么货不在这里** —— 那是 capability.retail_categories，一个店可以同时卖很多品类。"
+      },
+      "limits": {
+        "type": "object",
+        "description": "交易硬边界。采购方的一票否决项主要落在这几个数上",
+        "additionalProperties": false,
+        "properties": {
+          "min_order_qty": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "最少起订量（件/箱/吨，单位见 capability.purchase_unit）"
+          },
+          "min_order_value_cny": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "起批金额（元）"
+          },
+          "stock_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "是否有现货。没现货就变成订货，交期完全不同"
+          },
+          "delivery_days": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "常规发货/到货天数"
+          },
+          "delivery_radius_km": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "同城配送半径（公里）。超出就转快递或物流"
+          },
+          "max_daily_orders": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "日最大接单量"
+          },
+          "current_load_pct": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100,
+            "description": "当前忙碌度/备货压力"
+          },
+          "rush_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "能否加急发货"
+          }
+        }
+      },
+      "capability": {
+        "type": "object",
+        "description": "零售能力块。字段由本文件与 skills/profiles/retail-shop.json 共同定义。",
+        "additionalProperties": false,
+        "properties": {
+          "retail_categories": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "retail-service:零售品类"
+            },
+            "description": "经营品类码列表。枚举由 cap-codes/retail-service.json 的「零售品类」组运行时注入"
+          },
+          "business_modes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "retail-service:经营方式"
+            },
+            "description": "经营方式码（门店零售/批发/网店/直播带货…）"
+          },
+          "delivery_modes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "retail-service:交付方式"
+            },
+            "description": "交付方式码（自提/同城配送/快递/物流托运…）"
+          },
+          "store_features": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "retail-service:门店设施"
+            },
+            "description": "门店设施码（冷库/仓储/可开票…）"
+          },
+          "sku_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "在售 SKU 数量。判断是杂货铺还是批发商的粗粒度信号"
+          },
+          "brands": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "主营品牌 / 代理品牌"
+          },
+          "purchase_unit": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "起订单位原文，如「件」「箱」「吨」「米」。保留原话 —— 换算成统一单位会假设错"
+          },
+          "business_hours": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "营业时间原文"
+          }
+        }
+      },
+      "service": {
+        "type": "object",
+        "description": "交易与结算服务",
+        "additionalProperties": false,
+        "properties": {
+          "quote_inputs_required": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "询价需提供什么，如 品名、规格、数量、收货地"
+          },
+          "quote_response_hours": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "报价响应时效（小时）"
+          },
+          "wholesale_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "是否接批发"
+          },
+          "invoice_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "能否开票。企业采购入账的硬条件"
+          },
+          "return_policy": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "退换货政策原文"
+          },
+          "payment_terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "quality": {
+        "type": "object",
+        "description": "经营资质与货源可信度",
+        "additionalProperties": false,
+        "properties": {
+          "certifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "valid_until": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "evidence": {
+                  "type": "string",
+                  "enum": [
+                    "self_declared",
+                    "public_record",
+                    "platform_verified",
+                    "field_audited"
+                  ]
+                }
+              }
+            },
+            "description": "食品经营许可证 / 烟草专卖零售许可证 / 药品经营许可证 / 酒类流通备案 等"
+          },
+          "brand_authorized": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "是否为品牌授权经销。采购方判断货源正规性的关键信号"
+          },
+          "source_note": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "货源说明原文，如「厂家直供」「一级代理」「市场拿货」"
+          }
+        }
+      }
+    }
+  }
+}

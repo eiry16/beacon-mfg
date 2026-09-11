@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="z7MDYnDYfKi7SqR5dpXxZ3">
+<head data-page-node-id="M1E7uOTaWwdzgx2LGpCtQR">
+<meta charset="UTF-8" data-page-node-id="S7x6BsDSEJo8IDtEzm0Rrv">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="DOtMnOVM1JsoUTnb19jsTS">
+<title>BeaconMFG 门类扩展设计 · 共享信封 + 门类私有 schema（P1 已落地）</title>
+<style>
+:root{
+  --bg:#12141a; --panel:#1a1d26; --panel2:#212533; --line:#2c3140;
+  --tx:#e6e8ee; --tx2:#a2a9bd; --tx3:#6f7688;
+  --blue:#5b9cf8; --teal:#3fc79a; --amber:#e5a33d; --red:#e2685f; --purple:#9b8cf5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:15px;line-height:1.75}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 28px 100px}
+header{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:40px}
+h1{font-size:26px;font-weight:600;margin:0 0 10px;letter-spacing:-.3px}
+.sub{color:var(--tx2);font-size:14px;margin:0}
+.meta{color:var(--tx3);font-size:13px;margin-top:14px}
+h2{font-size:20px;font-weight:600;margin:56px 0 16px;padding-top:28px;border-top:1px solid var(--line);letter-spacing:-.2px}
+h2:first-of-type{border-top:none;padding-top:0}
+h3{font-size:16px;font-weight:600;margin:32px 0 10px;color:var(--tx)}
+h4{font-size:14px;font-weight:600;margin:20px 0 8px;color:var(--tx2)}
+p{margin:12px 0}
+ul,ol{margin:12px 0;padding-left:22px}
+li{margin:7px 0}
+code{background:var(--panel2);padding:2px 6px;border-radius:4px;font-size:13px;
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+pre{background:var(--panel2);border:1px solid var(--line);border-radius:8px;
+  padding:16px;overflow-x:auto;font-size:13px;line-height:1.6}
+pre code{background:none;padding:0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+th{background:var(--panel2);text-align:left;padding:10px 12px;font-weight:600;
+  border-bottom:1px solid var(--line);color:var(--tx2);font-size:13px}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.callout{border-left:3px solid var(--amber);background:rgba(229,163,61,.07);
+  padding:14px 18px;margin:20px 0;border-radius:0 6px 6px 0}
+.callout.red{border-color:var(--red);background:rgba(226,104,95,.07)}
+.callout.teal{border-color:var(--teal);background:rgba(63,199,154,.07)}
+.callout.blue{border-color:var(--blue);background:rgba(91,156,248,.07)}
+.callout p:first-child{margin-top:0}
+.callout p:last-child{margin-bottom:0}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;
+  font-weight:600;letter-spacing:.3px;vertical-align:middle}
+.t-free{background:rgba(63,199,154,.15);color:var(--teal)}
+.t-pay{background:rgba(229,163,61,.15);color:var(--amber)}
+.t-hard{background:rgba(226,104,95,.15);color:var(--red)}
+.t-core{background:rgba(155,140,245,.15);color:var(--purple)}
+.t-blue{background:rgba(91,156,248,.15);color:var(--blue)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
+.card h4{margin-top:0;color:var(--tx)}
+.card p{font-size:13.5px;color:var(--tx2);margin:8px 0}
+.flow{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;margin:20px 0}
+.flow-step{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.flow-step:last-child{border-bottom:none}
+.flow-n{flex:0 0 26px;height:26px;border-radius:50%;background:var(--panel2);
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:600;color:var(--tx2)}
+.flow-b{flex:1}
+.flow-b strong{display:block;font-size:14px;margin-bottom:2px}
+.flow-b span{font-size:13px;color:var(--tx2)}
+.foot{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);
+  color:var(--tx3);font-size:13px}
+.q{background:var(--panel);border-left:3px solid var(--purple);padding:14px 18px;margin:14px 0;border-radius:0 6px 6px 0}
+.q strong{color:var(--tx)}
+.strike{text-decoration:line-through;color:var(--tx3)}
+.ok{color:var(--teal);font-weight:600}
+.no{color:var(--red);font-weight:600}
+.dim{color:var(--tx3)}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.wrap{padding:28px 18px 60px}}
+</style>
+</head>
+<body data-page-node-id="yLRiYkZu9fkLALGs11ze1I">
+<div class="wrap" data-page-node-id="CTlHdl2G1grA3tIG8DVBQQ">
+
+<header data-page-node-id="aqOoYmLjK9Ga7YCLZvRmXN">
+<h1 data-page-node-id="ihWrU0H1DGnKjhqkDN4YOU">门类扩展设计 · 共享信封 + 门类私有 schema</h1>
+<p class="sub" data-page-node-id="wxKwTLMA9owcJbiqaCQ9IL">把「供应商灯塔」从制造业扩到全部 20 个国标门类 —— 底座不用动，动的是画像层</p>
+<p class="meta" data-page-node-id="8T6iyC9QpPGxWKtZYO5Pm5">BeaconMFG / 炫招灯塔 · 2026-09-11 · 状态：<span class="ok" data-page-node-id="Ft8bhMRODhHTTAEFPUzYew">P1 已落地并全绿</span> · 作者：小布</p>
+<p class="meta" style="margin-top:8px;color:var(--teal)" data-page-node-id="iMCHDAPnEfbYugkNwBOgmF"><strong data-page-node-id="mH89rwckYF6iJGQ81Hiz7Y">主人四项拍板（已按此实施）：</strong>
+① 单池多门类，ID 带门类字母（<code data-page-node-id="nmKTbRYyMpCU0rh7BeL1Us">CN-H-0001234</code>，制造业保留历史前缀 <code data-page-node-id="uvwy09qXAwBDgKIpQ5QKQK">CN-MFG-</code>）；
+② 农林水产只建框架、暂不填数；
+③ 首个验证门类选餐饮（H）；
+④ 每个门类独立 schema，互不共用。
+</p>
+</header>
+
+<div class="callout blue" data-page-node-id="LjYSCw89gloCrvpHkLJOHu">
+<p data-page-node-id="NYvO4ybF2juat3Dbb6FARV"><strong data-page-node-id="fj519UokVCR9a85cFcIB7b">先说一句结论。</strong>这次扩展没有碰国标底座 —— 20 门类 / 97 大类 / 473 中类 / 1382 小类本来就在 <code data-page-node-id="hG9MB9mpTgAt4EIaFsCcsr">data/gb4754-full.json</code> 里，存储层 <code data-page-node-id="i4D331BOIyYb2M5vWLy8Z5">gb_store.bucket_of_code()</code> 对任意门类码都能出桶。真正写死成制造业的只有<strong data-page-node-id="eWDsygY0J2YYW6lOvbzhM0">画像层</strong>的四堵墙。把画像层拆开，门类就通了。</p>
+</div>
+
+<h2 data-page-node-id="tBQSL3CYDYFcReStOa57Y9">一、底座现状：已经是全行业的</h2>
+
+<table data-page-node-id="o2A61mkAPvTgt7zaRIGxRb">
+<tr data-page-node-id="vdyuAo4Un9Krv3hDF59FvP"><th data-page-node-id="CpE6v6yexkyJ8rCLCxYm44">层</th><th data-page-node-id="BDFbmHu32Jwi5ZQ773t78I">现状</th><th data-page-node-id="fH678AYlpSNPyQMD5IVMgW">要不要改</th></tr>
+<tr data-page-node-id="Nt4OCtbuqIdExxuG4PX26o"><td data-page-node-id="hn7DwjS9Xnpm4xaNxAVW8m">国标数据 <code data-page-node-id="mO47PTIf1Ciqz1gjoKlJFX">data/gb4754-full.json</code></td><td data-page-node-id="8chK5wGVflrHYlO8RxoAcc">20 门类 / 97 大类 / 473 中类 / 1382 小类，全量</td><td data-page-node-id="lHDYadIrIzQ0WnQ3je4YwC"><span class="tag t-free" data-page-node-id="7kRyBVRevGwRJlKn0KYcHW">不用改</span></td></tr>
+<tr data-page-node-id="h32TFooYFCatxG3EqiCZap"><td data-page-node-id="FLtQsAG0e3gKy0vtupEHLs">归档存储 <code data-page-node-id="nj0t1tOeLaYkYnaxFFKDKm">scripts/gb_store.py</code></td><td data-page-node-id="dq2BAVHv2u6NO9dFnDSasp"><code data-page-node-id="T8sU5BffAQpU3UmcdGbLH7">bucket_of_code()</code> 走 <code data-page-node-id="v7CpsZv2Zk8gHCeaP6CnB6">resolve(code)</code>，<code data-page-node-id="6CU2KbFsxDJNZgvnlWNipi">I/65/6513</code> 这类非制造码照样出桶</td><td data-page-node-id="6njC7NOBHrVK23QuN7gjXn"><span class="tag t-free" data-page-node-id="qvbnA7q51SgXP0xuO54VwG">不用改</span></td></tr>
+<tr data-page-node-id="mNthAtWEcu5xyUJzK2HpKJ"><td data-page-node-id="72thnvHpbTPxK7YPz8hbpC">主索引 <code data-page-node-id="2RxfzDb5e584hp2ZpDgZIs">gb_code</code> / <code data-page-node-id="iXuF5m5QrxGVvU2YkWU4FB">gb_path</code></td><td data-page-node-id="SfhrDcwEslbMhCvtV1Lj18">已是检索主键；旧的 8 品类 <code data-page-node-id="85qJ2e3zPgfrUWpbLH4mAd">category</code> 早已降级为展示标签</td><td data-page-node-id="Dp8nCqFQCcpNfSm7FEb1jX"><span class="tag t-free" data-page-node-id="TJnP0tkqpPO7NXRIHrojQu">不用改</span></td></tr>
+<tr data-page-node-id="D9omrBx11CJGwlQKu4t8rB"><td data-page-node-id="iacaOynSXLvGY5PJYmj243"><strong data-page-node-id="qs9oLVO9GUAxkyilAH33O9">画像层</strong>（schema / 采集问句 / 品类推断 / 分类器）</td><td data-page-node-id="HDFGQgZKjTIeU1eG5arQkg">4 处写死制造业</td><td data-page-node-id="7DzCrZ7D7Sy5eDrIgD6pHn"><span class="tag t-hard" data-page-node-id="eyM2mhuEUNx1dkDrmpXOMc">要改</span></td></tr>
+</table>
+
+<h3 data-page-node-id="zpOT1gcGg1YHFn15XYUita">1.1 门类全景（GB/T 4754-2017，含 2019 年第 1 号修改单）</h3>
+
+<table data-page-node-id="QPNE4f0kbqzmcm2qeKChLa">
+<tr data-page-node-id="9MM7HZ36BbbxzLBY4D2wKJ"><th data-page-node-id="OgunBFLml7qvQeVV0fMIPx">门类</th><th data-page-node-id="A7vDo47htOdCfe4Cg1RGWd">名称</th><th data-page-node-id="mDX2r5XOAmL8sNC5QPJiaX">大类</th><th data-page-node-id="A8v4vbtvCSwAn0ep3zMv7e">中类</th><th data-page-node-id="ptDzuehKxW6lO4QF9UOMW8">小类</th><th data-page-node-id="F9AV4c28CQzySypc9uLzu6">扩展状态</th></tr>
+<tr data-page-node-id="v3djei9jdWx7puGprG5xpl"><td data-page-node-id="CdtceHzSqe5GUECavgoFRu">C</td><td data-page-node-id="ob0BlFIRsBR1TpW6sEW1lw">制造业</td><td data-page-node-id="uBUAZp4ZrVblt1Kei8ttpI">31</td><td data-page-node-id="OyJY5hC1uXbF0RhEjs6rxT">179</td><td data-page-node-id="ji6AdNqz8whf3iHMt3vwnu">609</td><td data-page-node-id="1edbZwgi6ebfRr9Fe4y0vH"><span class="tag t-free" data-page-node-id="6GW1G9g1D7KQvIM4EudNF4">已上线</span></td></tr>
+<tr data-page-node-id="tooZ3zpJisnzbdj5ufQTLg"><td data-page-node-id="z14uySkxALupydAbnJw3jv">H</td><td data-page-node-id="JZtvVj32tXiMOGKt6ha946">住宿和餐饮业</td><td data-page-node-id="ab04CGmwnqDBFpqHDzqZg7">2</td><td data-page-node-id="gHAvyUYupLGEJy6l24yFoZ">10</td><td data-page-node-id="R0RQBry5bz7jhOSUaGlf3X">16</td><td data-page-node-id="Q6dodLidEIwXHN1713DIkv"><span class="tag t-free" data-page-node-id="cpMRbV3AMw4V8716OY9LAX">P1 已完成</span></td></tr>
+<tr data-page-node-id="oWhjCL9hENNb06q15KzXqr"><td data-page-node-id="8Q64CAKQpWA6uuwLE0Jk6N">R</td><td data-page-node-id="RRDhxB5HQwCp4Xb5S3CiUE">文化、体育和娱乐业</td><td data-page-node-id="QtjemCvasCucxOdiRHgcUf">5</td><td data-page-node-id="IyuCkxldOiwfEAS5n5zvow">27</td><td data-page-node-id="sHoKECWbTCo2O7qNHvNSV2">48</td><td data-page-node-id="kbDAP9K9uWkVk8gVXvelbB"><span class="tag t-pay" data-page-node-id="Z7wvXEcbQZMVG8cYzTuFwc">P2</span></td></tr>
+<tr data-page-node-id="qUz3YaW8wbwu1RmB3CWq7j"><td data-page-node-id="XL37XT12aGZWSkMHsd8mKI">F</td><td data-page-node-id="hiDCdLKD0oeXMKoCA5r6b1">批发和零售业</td><td data-page-node-id="FBvTT2zSLrBAeuXBzsPWpb">2</td><td data-page-node-id="7MRExNN6Db7PUOFie8u14J">18</td><td data-page-node-id="YoAAIz2M5M3CFnw9sjzWBE">128</td><td data-page-node-id="0vvgpeKEmHZPxEjLevObOU"><span class="tag t-pay" data-page-node-id="7CuLlnvyHjPLf5ys56Vobv">P2</span></td></tr>
+<tr data-page-node-id="WKBfrwaRahBeCPdc3VmnoW"><td data-page-node-id="A6FpCm17ef31iXW0LYIVVI">O</td><td data-page-node-id="z5TNfDrK81lsqVEDkQtqhi">居民服务、修理和其他服务业</td><td data-page-node-id="jzNtmrLTe6J5Z4XVd7awwM">3</td><td data-page-node-id="wC8zZG0smSSpFHcvjBg5Nd">16</td><td data-page-node-id="HjAiLdrB4Z9S2hgaSBOuYF">32</td><td data-page-node-id="dL8I2LUKh2FedVaF1VCmcw"><span class="tag t-pay" data-page-node-id="9vna1ZkJmkGncfBtUQFjoM">P2</span></td></tr>
+<tr data-page-node-id="4yaALrbFx42fFYNaip0ktH"><td data-page-node-id="CIwOkO3kYuIU8VKEv7eT2D">I</td><td data-page-node-id="rUdc6SETQyAEYzXrqCDfh3">信息传输、软件和信息技术服务业</td><td data-page-node-id="iHlkU7FPwazKxNfzygz8B3">3</td><td data-page-node-id="1ErERSJ3uJQtD7EKQqB7vE">17</td><td data-page-node-id="jvyN93MtJP6HGwhs51AZZg">34</td><td data-page-node-id="QnkVqMu1FUrJPHQIAqGhmi"><span class="tag t-pay" data-page-node-id="AGEaaRnDH57ieWyPXKkuHU">P2</span></td></tr>
+<tr data-page-node-id="XHvS1w7ml7uLzyGdVjffys"><td data-page-node-id="imsEx6GiyPZ9y5Yuzk9Gsb">M</td><td data-page-node-id="IKzGYgzdumxyRy8yj6RCN9">科学研究和技术服务业</td><td data-page-node-id="1L8qvtbNuOyHScVIDeJD6C">3</td><td data-page-node-id="TbKE8YdkFKzHhEG1bDbPxY">19</td><td data-page-node-id="kygK9HsimccYoW5yqHPYej">48</td><td data-page-node-id="LtKbhbE0KpJond9GSZXoWA"><span class="tag t-pay" data-page-node-id="Nggcy4hq83yewCjWOtA8Nn">P2</span></td></tr>
+<tr data-page-node-id="wAlzssuVFLd7BzHSFORK9v"><td data-page-node-id="DbYOoR1HWTfP5NM1enMGel">A</td><td data-page-node-id="ByVuEHpqYh5F04rFNPexMb">农、林、牧、渔业</td><td data-page-node-id="Q20YGt0UqxbSo2GUL6EJsV">5</td><td data-page-node-id="QNw77ArSdG1MJPjCGh78N2">24</td><td data-page-node-id="TLhlS4sIcgapudSSnC3LKQ">72</td><td data-page-node-id="z5wZ9VMVjb0mBP1bXbjNRP"><span class="tag t-hard" data-page-node-id="cCUlqVtuebWUa2QzSaKJEs">P3 仅框架</span></td></tr>
+<tr data-page-node-id="jTr6BNygo2XR9f5x30oKsx"><td colspan="2" class="dim" data-page-node-id="yMbHn2sWmyk0MzxgxoumEb">其余 12 门类（B/D/E/G/J/K/L/N/P/Q/S/T）</td><td data-page-node-id="262kj52FjRnpBnK24dQm0C">43</td><td data-page-node-id="aDgtoI1EsiRvp39RKSvC60">163</td><td data-page-node-id="6i9Z3KHuBWf6T8wsHxEAwk">395</td><td class="dim" data-page-node-id="oUeGAzyXn136uSgew6BZm6">未规划</td></tr>
+<tr data-page-node-id="ZIaFCJ7MrICjjv6ARurEv4"><td colspan="2" data-page-node-id="VqNx8gRYRHhgC9JXO5k2UL"><strong data-page-node-id="v7f2MdLvHFiN7KmJdVkypE">合计</strong></td><td data-page-node-id="hExubgl9kmMlZwJhBf6P33"><strong data-page-node-id="aRCMBCKzRUdo7D9PXhgb18">97</strong></td><td data-page-node-id="ot0k3XMnEDLijF0B94zfFy"><strong data-page-node-id="34bJI8TX8G191SKRbFBoZF">473</strong></td><td data-page-node-id="mdWHL5ZfRMtb4I7kQoNUGn"><strong data-page-node-id="iKnQFxTKvKEjtrLh65jVR2">1382</strong></td><td data-page-node-id="VM5HEWKZE0jzz7OxRSh76p"></td></tr>
+</table>
+
+<p class="dim" data-page-node-id="C7O0yAkQJmnRCfChPC3Ycs">说明：B/D/E/G/J/K/L/N/P/Q/S/T 未进规划，不是遗漏 —— 采矿（B）、电热气水（D）、公共管理（S）、国际组织（T）基本没有「向客户 Agent 投标接单」的场景，金融（J）涉牌照，教育（P）、卫生（Q）涉资质准入，都不适合本项目的开放名录模型。<strong data-page-node-id="fM4LVkR6AHrHlYtZsY4iah">先做能做的，别摊大饼。</strong></p>
+
+<h3 data-page-node-id="MdGN1veJUJL6BrPO8fhtt5">1.2 写死的四堵墙</h3>
+
+<table data-page-node-id="AhlBRcMMIZzn5KuHbAw5vZ">
+<tr data-page-node-id="xQaYSjcqltaNnQciYZz415"><th data-page-node-id="uEHW5vmJwHDdC5CuvnfvL9">#</th><th data-page-node-id="WAIHs1c5Yut2dtAOa7gElX">文件</th><th data-page-node-id="9xuAhf8RzgtDdJAnDFBpDO">写死的东西</th><th data-page-node-id="xJBxH3eKhL6m5drkjAO0t6">后果</th></tr>
+<tr data-page-node-id="V9TdV8f4ECcOyjUP8ZF7to"><td data-page-node-id="AIFCg9wYBqSBiBc8qDtQfP">1</td><td data-page-node-id="13lz02roQj9Ik5ieJDI8Fo"><code data-page-node-id="5ovwQ5hAatMK6m8tcChDlS">skills/schema/vendor-skill.schema.json</code></td>
+<td data-page-node-id="14nPg8pafTM3R4JPSdfMrY"><code data-page-node-id="49YS2ffEoaQxuxCtXvgXFA">processes</code> 在<strong data-page-node-id="66kTqfjPq85ICTHF85VHRA">顶层 required 且 minItems:1</strong>，而 <code data-page-node-id="b3vy9W8Z6AUQ2FAckfm2ys">process-codes.json</code> 的 43 条码全是加工工艺；另有 <code data-page-node-id="Go2qo95aPVVrmo9uot13n7">supplier_id</code> 写死 <code data-page-node-id="Q8WokKMbjJkaa9vN9z0TsW">^CN-MFG-</code>、<code data-page-node-id="zk45nT4G7KZ52AsCJ5eP4Q">category</code> 只有 9 个制造品类、<code data-page-node-id="mgpjeQyTxeFD072N2tBsHR">business_nature</code> 只有 manufacturer/trader/mixed</td>
+<td data-page-node-id="nnKTjw2DdK68BrfOu6cW5c">非制造企业<strong data-page-node-id="fBiqKUdWatJdPQqDHaJcik">填不出必填项</strong>，卡死在门口</td></tr>
+<tr data-page-node-id="JAWOdfEGYFQayBIXdVpcy3"><td data-page-node-id="13OMJlICGV7ByCKdeEOnpf">2</td><td data-page-node-id="chaS9IaOIki18qJ5eIhnh3"><code data-page-node-id="lTnZQdF4uNuCIuzrFma75p">scripts/collect/session.py</code></td>
+<td data-page-node-id="EvjDeanvhCfIToPMd5hEAG"><code data-page-node-id="BOicMJ3KV3gXbQ6akDGAlt">COMMON_STEPS</code> 33 个字段里，公差 / 最大工件尺寸 / 打样周期 / 百件交期 / 产线负荷 / 材质单 / 首件报告 / PPAP 全是制造专属，且大半 <code data-page-node-id="EaFAICt6I8d4JRDE3wcyYr">required: True</code></td>
+<td data-page-node-id="iInEUEphWmnMqaateEP0V1">问餐厅「最薄能压多薄的壁」不只是尴尬，是<strong data-page-node-id="P71uWPgVbknOBDeuNw6kM6">必填门禁把流程锁死</strong>（真机实测就这样卡住的）</td></tr>
+<tr data-page-node-id="xdLDqqa1cwJhQWrTZtJrej"><td data-page-node-id="bxwsbcdEUI3YFDFeW6Vwuo">3</td><td data-page-node-id="t9cdBDh0Cs4as8FXRVj4nj"><code data-page-node-id="5CLB8qNIAjYKAuGBi3X4kI">scripts/collect/auto_profile.py</code></td>
+<td data-page-node-id="3kh8zNtLj8vHzeGWzuTHwz"><code data-page-node-id="oFR6fKwiGF9lTBCqpCQKJj">CATEGORY_PROFILE</code> 只映射 8 个制造品类；<code data-page-node-id="3JZ1i0U8jLMsueDecdapQ3">CATEGORY_FALLBACK</code> / <code data-page-node-id="yBxUO6rRfDvdAbSwaHqxd3">CATEGORY_PROCESSES</code> / <code data-page-node-id="MknudCBj2rLwMGRLyZv2Dc">MATERIAL_RULES</code> 同样只覆盖制造</td>
+<td data-page-node-id="ldLmImBYos701KiLW2ICSE">非制造一律落 <code data-page-node-id="MDsELmOAP5EQsNeXqaHq65">custom</code> 兜底，画像空白</td></tr>
+<tr data-page-node-id="vHhrP1ARGh6yvTshmvbbC4"><td data-page-node-id="xhTxI8cO58NozW6ag8cW8F">4</td><td data-page-node-id="nKG45uCeDLK7OxUSTZ2zaq"><code data-page-node-id="OqHBCJHFFKn0hHSWiXDgiU">scripts/industry_taxonomy.py</code></td>
+<td data-page-node-id="mBsI8GY8LJCXeR3abzAMCo"><code data-page-node-id="F3en0Hk3lEgPKewSt3Xu4d">is_manufacturer()</code> 判 <code data-page-node-id="I80etghvsGTUEdi32e8jQt">gate=="C"</code>；<code data-page-node-id="KL71w02ajQaBHZm8VF38XL">CATEGORY_OF_CODE</code> 只有 8 个制造品类；<code data-page-node-id="iOBxUeoumHeogOk0k6Cg5d">TOKEN_INDEX</code> 按注释刻意限定 C/F 门类</td>
+<td data-page-node-id="tgN56bcr1WRemh58GgWoRS">分类管道对非制造门类直接判否</td></tr>
+</table>
+
+<div class="callout" data-page-node-id="WN9l1bDeO2gaEok1guGLL6">
+<p data-page-node-id="W3bPIq0Fn7IkEpBA7TgVXI"><strong data-page-node-id="9x8C6kduOIibPzeB22dtyF">一处需要保住的旧语义。</strong><code data-page-node-id="9AHBNkA4BbfP6BY4s14GGC">process-codes.json</code> 里的 <code data-page-node-id="y4v0Oh6U7NbUI3aOAMa5Qn">out_of_scope_gb</code> 把 13 / 17 / 20 / 21（农副食品、纺织、木材、家具）列为「越界红线」—— 那是<strong data-page-node-id="1f33FhNMvDA79EAzDHQGPX">制造业内部子行业</strong>的越界（这些码属于 C 门类，但不属于我们的 43 条工艺码），和门类级扩展不冲突。<strong data-page-node-id="NPtL4NZeH5GkCJVwbEM5I2">语义必须保留，别当历史包袱删掉。</strong></p>
+</div>
+
+<h2 data-page-node-id="9Yeu9VQlYHNiZ4IkDQxnc5">二、数据源现实：先讲清楚，否则会变成「凑数」</h2>
+
+<p data-page-node-id="46x9fj8ZljivXj2F3dxYrO">现有 23,823 家全部来自高德 POI（<code data-page-node-id="88eC2lsRfgbL6Hkr4Mlq5h">scripts/fetch_gaode_poi.py</code>），入库时靠 <code data-page-node-id="OXz9DhLyGmbEVOJFgaCos7">AMAP_TYPE_POSITIVE = 工厂|制造|工业</code> 过滤，再用公司名特征词推断品类。<strong data-page-node-id="1qRrm4B81Bv1PsV3ZGcCNq">换门类就是换数据源</strong>，每个门类的可得性差别极大 —— 这决定了分期顺序，不是拍脑袋排的。</p>
+
+<table data-page-node-id="PS39ZFaTjdQESsIjOAjRz8">
+<tr data-page-node-id="hyAhtNqNb9EHa12P3is7Sy"><th data-page-node-id="VFtqJHACLY9xfdAG7znAg5">门类</th><th data-page-node-id="3sxOkE8wZgHNCDsACZaFIR">GB</th><th data-page-node-id="OcVbEAOAn40OgVRrXH5DDf">高德侧信号</th><th data-page-node-id="VMC4JkZ0QtPYe7kE8FC5ne">判定</th></tr>
+<tr data-page-node-id="FZGWAP250p9aaaJM0qZUZm"><td data-page-node-id="6l7x40m91QuYwp8dtetpPO">餐饮</td><td data-page-node-id="R6KJkJHcSWFOmSJl8yy4r9">H</td><td data-page-node-id="ndFU6MjW74wEN1K0m0bnFx">POI 四级类目 <code data-page-node-id="aVXAu1dEFrCNH9xDDEmouz">餐饮服务;中餐厅;川菜</code>，比工厂类目还细</td><td data-page-node-id="EkW0AExZX7pLFGjyRPJB68"><span class="tag t-free" data-page-node-id="8s1FGpn70ayJEnstFfT7RI">好</span></td></tr>
+<tr data-page-node-id="NRydSYkkaUi8Ublfu0ocwD"><td data-page-node-id="BxaoV5ajweYjgXLucw6SUu">娱乐</td><td data-page-node-id="VH8B1g9XMx5bTjOYg8d6sB">R</td><td data-page-node-id="G0uIOyBs69VwWM380WtbIY"><code data-page-node-id="QXScrerHPolSJCF6BKvAe8">体育休闲服务;娱乐场所;KTV</code> 等，类目齐全</td><td data-page-node-id="s5M8rRR4pPDwI6H4y0du3Z"><span class="tag t-free" data-page-node-id="2dApeHEYdk6i57YFNZ49nT">好</span></td></tr>
+<tr data-page-node-id="4xnpEB4Tvzm28sJkqGKXAn"><td data-page-node-id="fcQszpJVgsEQlaGgC2zjKX">个体商户</td><td data-page-node-id="FisN1MVGga95MRAxTAN8iP">F + O</td><td data-page-node-id="GRMMkMLqpnbOkKeIEUNM56">POI 有，但字段薄（无规模、无能力）</td><td data-page-node-id="jGzfkjB7uIWMtHJP0b0B7L"><span class="tag t-pay" data-page-node-id="2E4Z7aMOQLrUYDxkbgRwF1">中</span></td></tr>
+<tr data-page-node-id="sKEAWewFNSkBs3d5G2ukBp"><td data-page-node-id="AmPOdc0SI5jsdbnBlMl7bn">技术服务</td><td data-page-node-id="k7CskNVORoVxm8ZejBqd4h">I + M</td><td data-page-node-id="451KUPtWe0SQpkU0VzlBBz"><code data-page-node-id="y0Iyn4HXCtbKyz1K532jBU">公司企业;公司;…</code> 信号弱；科研院校走 <code data-page-node-id="lzA1Hylgt5nCNhiHl6Cjwb">科教文化服务;学校;高等院校</code></td><td data-page-node-id="hgrt0mdxUcsI51FjynIiiG"><span class="tag t-pay" data-page-node-id="KGv0fLDjEuKUHlxJz4RVlA">中</span></td></tr>
+<tr data-page-node-id="RcCDmDr3wjbCKlFA2ixqbI"><td data-page-node-id="9nBIMzm6GcHDU2PEGKRzAw">农林水产</td><td data-page-node-id="o5ndKjYOHgPapSJHSzpLUP">A</td><td data-page-node-id="KfF867HvEhBnrbHF1X3Zr8"><strong data-page-node-id="qcbhbXkCLeeESBbtJpzW2H">基本没有 POI</strong> —— 菜农/果农/养殖户没有门店</td><td data-page-node-id="2KalTmtrPIPBdpZeFL8wVo"><span class="tag t-hard" data-page-node-id="Z7o6jCBJUXB9Zg9Fd91XyH">差</span></td></tr>
+</table>
+
+<div class="callout red" data-page-node-id="ym70ecYvFsOlbQ0VqN6ioP">
+<p data-page-node-id="3SGleAvgVQaqMSttGXhK5r"><strong data-page-node-id="DaD0EWAbLDorkMt6Nuwzza">农林水产为什么只建框架。</strong>硬抓会违反主人定的红线「数据宁可留空也不编造」。要另找来源（农民专业合作社登记名录 / 农业农村部 / 惠农网），那是<strong data-page-node-id="m1S6jZxdumZ78hUY2cP2uU">另一条数据线</strong>，不属于本次改造。<strong data-page-node-id="sUUc65QnuEIoxvCfGI1Csn">不要为了凑数先抓。</strong></p>
+</div>
+
+<h2 data-page-node-id="CI70YlGWuiNoigyVp999HI">三、架构：共享信封 + 门类私有 schema</h2>
+
+<p data-page-node-id="uqCsCX1eQQAZ3GS8ZGwf1L">主人选了「每个门类独立 schema，互不共用」。我完全同意 —— 但独立 schema 有个必须补的前提，否则 L0 指纹和检索层会被迫按门类分叉。<strong data-page-node-id="ovV8mbhZJExqUTx4yHnkqW">那个前提就是信封（envelope）必须共享。</strong></p>
+
+<pre data-page-node-id="a95BMnckFQuJaa211VccUJ"><code data-page-node-id="GBxzLdiPwxFxyRGaa2O8qC">skills/schema/
+├─ envelope.json          ← 共享信封：全门类字段名与语义逐字一致
+├─ gates/
+│   ├─ C.json             ← 制造业私有：processes / 公差 / 最大工件尺寸 / PPAP
+│   └─ H.json             ← 餐饮私有：菜系 / 席位 / 包间 / 宴会厅（没有 processes）
+├─ cap-codes/
+│   ├─ _registry.json     ← 能力码表域注册表（manufacturing / restaurant / …）
+│   └─ restaurant.json    ← 餐饮码表：菜系 34 + 服务形态 13 + 场地 7 + 时段 6
+└─ process-codes.json     ← 既有 43 条工艺码，正式登记为 manufacturing 域（零迁移）
+
+scripts/gate_schema.py    ← 运行时装配器：信封为基底，门类 schema_extra 逐键覆盖
+</code></pre>
+
+<div class="flow" data-page-node-id="8zaGS27z6h4ESfSb33dcF9">
+<div class="flow-step" data-page-node-id="BJQpVFOQuLVsVSjuDEd6hE"><div class="flow-n" data-page-node-id="GB0lL2pf1CWGVsPgNt9CF6">1</div><div class="flow-b" data-page-node-id="pnIgoiWqXHtuf9fnpa08RF"><strong data-page-node-id="SozZxahVGqj3PoZrju9qbd">装配：信封当基底，门类赢</strong><span data-page-node-id="yCiAfx32ORDQwI7KH4mnsx"><code data-page-node-id="xJrEiymeZyeKLJXau86POe">_deep_override()</code>：业务键按门类覆盖；<code data-page-node-id="1GnSgiSl32yHv5742WF8P5">properties</code> 逐键合并；<code data-page-node-id="sdSq6H69SRvFNgDRxbSRO1">required</code> 取并集。顶层 <code data-page-node-id="b2J0RU3hKuvzZV4vb1XObB">additionalProperties: false</code> 让独立性成为硬约束 —— 餐饮卡带上 <code data-page-node-id="DX0ZSuIAMxE9C5L7m5OQGd">capability.cuisines</code> 会被制造业 schema 拒绝。</span></div></div>
+<div class="flow-step" data-page-node-id="27zi08SHztfI5EHG3rW6ap"><div class="flow-n" data-page-node-id="EKCaHyqKVMbkoVu6X8QkvS">2</div><div class="flow-b" data-page-node-id="Z0cLAzFhCkL9IF54OR4kRn"><strong data-page-node-id="9cIDpAScBJZqjCML5cwUNM">枚举注入：码表是唯一真源</strong><span data-page-node-id="eoyBQIxIxvGy8uaFMxTfIi">门类 schema 里写 <code data-page-node-id="VhFwomdDQbCyzmdlpGzSIC">x-enum-from: "restaurant:菜系"</code>，装配时从码表注入 enum。菜系清单只存在于 <code data-page-node-id="e93jYrnmlAWOkAT0xV685T">cap-codes/restaurant.json</code> 一处，不在 schema 里重复一遍。</span></div></div>
+<div class="flow-step" data-page-node-id="cUSFd5PfhoHYjxGhkz90Ge"><div class="flow-n" data-page-node-id="XzWzNl4nMJTZOgaKdPmKnN">3</div><div class="flow-b" data-page-node-id="5KeBy88wwFOyi6Eernc7jX"><strong data-page-node-id="noCjKTI9deyi7PZZ2SLa7S">caps_index：独立与统一之间的桥</strong><span data-page-node-id="BlDwockVmGadE0aHydI9KZ">每个门类自己写 <code data-page-node-id="daZzgCzRoEEl14HnA0fuAZ">caps_index_from</code> 表达式（制造业导出工艺码、餐饮导出菜系/场地/时段码），<code data-page-node-id="4SlFLRuYqAmoF2cxZ65nwy">derive_caps_index()</code> 算出扁平字符串数组。<strong data-page-node-id="xOfQpq8pFqLTkIYT0DD7yD">L0 指纹与检索层只读这个字段，永不解析门类私有块。</strong></span></div></div>
+<div class="flow-step" data-page-node-id="04CZzvKT9DBraREktF0wFr"><div class="flow-n" data-page-node-id="anXgjh6EGGGwOGBv0vybhN">4</div><div class="flow-b" data-page-node-id="LZ7yUN0FSjYy8IlQE2ovet"><strong data-page-node-id="0AEWGLyB1dofw3sV2b1A6v">采集问句分层</strong><span data-page-node-id="GF7De4O2IKQDIegr9ArNB1"><code data-page-node-id="oIHX6lLHGQKDZthuaNhsfn">STEPS_HEAD</code>（通用：谁、多大、在哪）+ <code data-page-node-id="4FGLeKB20NDfgFkjB3v97R">STEPS_BY_GATE</code>（门类主体）+ profile 字段 + <code data-page-node-id="SYaJRi8rZfen9lAfqsMD8x">STEPS_TAIL</code>（询价通道 + 主动声明边界）。同一个字段在门类间换措辞用 <code data-page-node-id="KLkOn3gAXZkrNCGSBnAC3Q">label_by_gate</code> / <code data-page-node-id="yLwy3ztzteRcXzCNeBRDJ9">question_by_gate</code> 覆盖，<strong data-page-node-id="7GiQhok9NEIprszLuDnEyj">不覆盖时用默认值 —— 而 C 的默认值就是改造前原文，所以制造业问句一个字节都没动。</strong></span></div></div>
+</div>
+
+<div class="callout teal" data-page-node-id="ykGRdhMHhK9TDjjJMp8pLb">
+<p data-page-node-id="FnWyZDMkbVw6wOyD6K5Q7Y"><strong data-page-node-id="RfA8RJDl4XoI0TQwVyTfxw">为什么不拆成两份独立数据？</strong>「营业面积 / 厂房面积 / 门店面积 / 用地面积」是同一个语义（能承接生意的物理空间），只是叫法不同。拆成字段就意味着检索层要按门类分支，而这正是本次改造要消灭的东西。<strong data-page-node-id="GlCasuA9kGzBSXTjGuz6Nv">所以：私有块可以完全不同，信封字段必须逐字相同。</strong></p>
+</div>
+
+<h3 data-page-node-id="lLcB41dK3cBgcZ1eCwOFaI">3.1 信封里放了什么</h3>
+
+<p data-page-node-id="ODf3BEgrMN6apoXV7z2Ehu"><code data-page-node-id="OvTVBrpfAQ5UH5EqlZ09TN">envelope.json</code> 定义 <code data-page-node-id="WSoz12vYfVIAvuR4iBkKPN">supplier_id</code>（<code data-page-node-id="fFDHyi9KUuS2jBMwpOkUFL">^CN-(MFG|[A-Z])-[0-9]{4,7}$</code>）、<code data-page-node-id="0dNxzYsjq4B7wx08orRtqL">gate</code>（A–T 枚举）、<code data-page-node-id="zLsUJSbe791RFrJrEr3Rvb">category</code>、<code data-page-node-id="lUdqMmGR1xnpvF5N4F7cLw">gb_code/gb_name/gb_path/gb_level</code>、<code data-page-node-id="qbDICiw9WUlGlRiWH5SBEb">identity</code>、<code data-page-node-id="gZlUbqdxuM9fWI56iJgyn5">contact</code>、<code data-page-node-id="6e4P1E7RAwOwcU0O1wPbm7">limits</code>、<code data-page-node-id="hqpWl6UKEY3P9MqE0YW4iJ">rfq</code>、<code data-page-node-id="jnamTVtSaJCjilTmVZ0DV6">exclusions</code>、<code data-page-node-id="wTh7ZLlxWNtvVYrTqghHLM">not_applicable</code>、<code data-page-node-id="h8buptI5xt2cE8CpqAxXjr">claim</code>、<code data-page-node-id="slC254MP74cR04TTIDMNXH">evidence</code>、<code data-page-node-id="9MXnxxHIZ8EZ1QaspysOza">safety</code>、<code data-page-node-id="UK6jk0uBZm2JzwFN7dOVGx">provenance</code>、<code data-page-node-id="NDxbgwKH3KCP3dl9lfOnyX">caps_index</code>。</p>
+
+<p data-page-node-id="eeO89DnXIdo3ksrzhnfgls">三个刻意的设计决定：</p>
+<ul data-page-node-id="QAXPdRRvVdH4JUoWmfS5uw">
+<li data-page-node-id="Cg7fMPsG4rDjehxfXFIhzz"><strong data-page-node-id="RFBD5TfSLEssyjhsQ5NMPT"><code data-page-node-id="wSQ841m78KiFcdiwYGaTsc">rfq</code> 放在信封层，不放门类层。</strong>它是客户 Agent 把询单送进来的<strong data-page-node-id="OM9XCsh3T0MwVfZSZklS4I">传输协议</strong>，不是供应商的业务能力。<code data-page-node-id="I96oZemxsoUuUAyhc4xxid">protocol</code> 枚举含 <code data-page-node-id="R5M5vYOEUCKBzcppbviYlw">email/webhook/mcp/form/wechat/phone</code> —— 餐饮门类默认走 <code data-page-node-id="fvmHFkkQMszPF5blM0rt1e">phone</code>，制造业默认 <code data-page-node-id="6MinB9R9aAGPAcuoFnsatA">email</code>，但契约只有一份，下游投递逻辑不用按门类分叉。</li>
+<li data-page-node-id="9ZKYHI4qlwESFJBxG4Kru2"><strong data-page-node-id="lbtRsZt1uwd1srAZNypmZ6">必填项只放「已有、或能无损耗推导」的字段。</strong><code data-page-node-id="1ze5Y6UGlbx6F0Bg8HF10i">gate</code> 由 ID 前缀推导，<code data-page-node-id="oEaUqkWLSsi9dc9Jrsezao">caps_index</code> 由表达式派生，两者都是确定性的，写入时补即可。<strong data-page-node-id="VN1tNE6xfrIBd2jC81FYfH">故意不放进必填</strong>：<code data-page-node-id="jSrWzFMpSreAJXjFxrsJXw">exclusions</code>（旧卡从未被问过这一题，强制必填等于逼人编造）、<code data-page-node-id="kprkkIyH7hzlWuJmPbFufy">safety</code>（旧 schema 只约束了子字段，没有顶层必填）。</li>
+<li data-page-node-id="iaRlcvm4rTj6g2m1mhTa6r"><strong data-page-node-id="wl3gtRSBf64akJ7rkxTcHC"><code data-page-node-id="kkIkdAhugkH3JBdbzkZZbM">business_nature</code> 扩了三档：</strong><code data-page-node-id="WM2nVl3IgDqmTYfQGd1ba9">service_provider</code> / <code data-page-node-id="a3Ek9ejXIY2ct6TlbaBHw1">individual</code> / <code data-page-node-id="iWpp7dCvi0nXDjce81G3yn">farm</code> —— 原来的 manufacturer / trader / mixed 只覆盖制造与流通。</li>
+</ul>
+
+<h3 data-page-node-id="FZIdxLcJuBlrkCM7aEUtCf">3.2 门类私有块长什么样（以餐饮 H 为例）</h3>
+
+<table data-page-node-id="rTjgvdxvgCFmCIuYGMWtxg">
+<tr data-page-node-id="tK9gVB9PcA2Bc0UCuGMOxb"><th data-page-node-id="qsy8NMFKDd95bjGMte3CD3">块</th><th data-page-node-id="dNlYthCo9ynwyIEK7pdmHF">字段</th><th data-page-node-id="CWGidYqevRGtY6L6XQhutl">说明</th></tr>
+<tr data-page-node-id="vZpTEuQzuCxrjnIirXlrwl"><td data-page-node-id="90IFD0OoBAftWWBmDjGiHW"><code data-page-node-id="5MA5pe9MTxw6SMcqNkd6JJ">capability</code></td><td data-page-node-id="LLL2ShhEbuEUlsHInc0rIm">cuisines* / service_modes* / venue_features* / time_slots* / seats / private_rooms / max_banquet_tables / avg_price_cny / business_hours / signature_dishes / delivery_platforms</td><td data-page-node-id="LBX7o47Wwn9cRgZAOgnUKa"><code data-page-node-id="9Gg7mtGMwGNbBmRDVB5lDH">*</code> 的枚举由 <code data-page-node-id="r9W4VL0850wgD0iexMcSRz">restaurant</code> 码表注入。<strong data-page-node-id="Wrsv2OYQLUA9Kzdy6vGFbR">没有 processes</strong> —— 问餐厅工艺是荒谬的</td></tr>
+<tr data-page-node-id="HXdVtynRfNRx8HWyzRFkXG"><td data-page-node-id="Omyy2owYXEs4nDfP3OUwCM"><code data-page-node-id="tEKYZNRWI1BviWGVaJmVFH">limits</code>（接待硬边界）</td><td data-page-node-id="1FMGALFLKytAqDCOoF9FjX">min_order_qty / min_order_value_cny / max_party_size / max_tables / advance_booking_days / current_load_pct / rush_available</td><td data-page-node-id="mX3CSi1hJewgy8fhmPNZtX">企业客户的一票否决项主要落在这几个数上。注意 <code data-page-node-id="jBdTN83k72YFXWroPisBHK">current_load_pct</code> 与制造业的产线负荷<strong data-page-node-id="xO2g8OE9gwSsAOKRCg9JkV">同义</strong>（当前占用度），只是被占用的资源不同</td></tr>
+<tr data-page-node-id="9W9bNj4rHkjplllFFXmXqu"><td data-page-node-id="PkTBTTQRVp156vcWqRLcpv"><code data-page-node-id="Gv3CeYR8ODREZlbwHlGpGi">service</code>（接待与结算）</td><td data-page-node-id="Ri3HYOToPnAPMBpAXIFxq4">booking_channels / invoice_available / deposit_required / cancellation_policy / payment_terms / languages</td><td data-page-node-id="e57UuWbKoJ9J3eP7Soinxu">与 C 的 <code data-page-node-id="zkyheoXFwYFuBHXCyxdIxR">service</code> <strong data-page-node-id="1l5TdOER4lgGCVf722wQVz">同名但字段完全不同</strong>：制造业问图纸格式与贸易条款，餐饮问预订与开票</td></tr>
+<tr data-page-node-id="akrdbwMTzsJdfXC8YMDcLF"><td data-page-node-id="AfLH3i8a0G3T2t0tzWJgrk"><code data-page-node-id="JAF8g6wSZVk2cirUPGdVyZ">quality</code></td><td data-page-node-id="iaFHdF3x53OFXEYkI3q2Zu">certifications[]（name / number / valid_until / evidence）/ hygiene_grade（A/B/C/未评定）</td><td data-page-node-id="Ywva4io5Y7Po2TjA0epuyy">食品经营许可证 / HACCP / ISO22000；餐饮服务食品安全监督量化分级</td></tr>
+</table>
+
+<h3 data-page-node-id="c3HtShDEbuONcx8fh8ce5X">3.3 POI → 国标映射（餐饮为什么准）</h3>
+
+<p data-page-node-id="JsZ1rgKro0YD6c8oT2eldW">制造业靠<strong data-page-node-id="30vHSVyboRXwkJAZptfYw0">公司名特征词</strong>推断品类，因为工厂名里有「精密机械」「模具」这类强信号。餐饮几乎相反 —— 「川味小馆」「老王饭店」里根本没有菜系信息。<strong data-page-node-id="TIKwGbAJomtPxYNImKtmA2">但高德的 POI 类目是平台自己标的，比公司名可靠得多。</strong>所以 <code data-page-node-id="8T6GlzXLiYrP80aipFBYcl">gates/H.json</code> 带了一张前缀匹配表：</p>
+
+<pre data-page-node-id="BJWgW5Gk0fV5XjbA1qbOKn"><code data-page-node-id="A0d5cDv0W3y2ytlORTdmyK">"餐饮服务;中餐厅"        → 6210 正餐服务
+"餐饮服务;快餐厅"        → 6220 快餐服务
+"餐饮服务;咖啡厅"        → 6232 咖啡馆服务
+"住宿服务;民宿"          → 6130 民宿服务
+"住宿服务;宾馆酒店;五星级宾馆" → 6110 旅游饭店
+</code></pre>
+
+<p data-page-node-id="3CmkZazeCC5EzqB2jKjTxh">拿不准的<strong data-page-node-id="IjwV00BeVrkDGqsr4FYHx2">不猜</strong>，进 <code data-page-node-id="sW8rVT3AdYkjr1aqV3jApq">ambiguous</code> 列表并让 <code data-page-node-id="xhCcFKxK7Nnt5Gy4JhFfrn">gb_code</code> 留 null，交给采集时确认。例如：</p>
+<ul data-page-node-id="KeFr2bg00FDepP7m7OdRhj">
+<li data-page-node-id="FBZ6A5A0i91tLegVp5RTyh"><code data-page-node-id="0oGC9PyWBMUdHQDeugm7SM">餐饮服务;糕饼店</code> —— 前店后厂：主体可能是零售（F52），也可能是食品制造（C14），<strong data-page-node-id="IwqV3OoHEqQbz0k4vr2F6F">要看营业执照经营范围</strong>。</li>
+<li data-page-node-id="pa25yHA0JJQw2LZLua1go9"><code data-page-node-id="jBzYJnI1xlhkD93RHsDwX8">餐饮服务;小吃店</code> —— 小吃服务是 6291，但高德把很多正餐店也标成小吃店，<strong data-page-node-id="bD5DZxPN4uzDB6lyd0sOCi">名录侧不可靠</strong>，需采集时确认。</li>
+</ul>
+
+<h2 data-page-node-id="v9qDfFD0Qf9UypKuX76BLs">四、端到端样本：餐饮</h2>
+
+<p data-page-node-id="DzZfLfw6jLwFnM3eRC0t8p"><code data-page-node-id="lbHF5CizMaR3Ib6bKVMcYx">examples/gate-expansion-H/</code> 是一张完整跑通的餐饮卡（示例数据，<code data-page-node-id="yZm1j3DeQe1BM5ExXFy4IP">provenance.mode = fixture</code>，不得对外发布）。它证明了整条链路：</p>
+
+<div class="flow" data-page-node-id="4sQGQk479VSdd6n4iDoXUz">
+<div class="flow-step" data-page-node-id="kB9XrGGJSKZz6hne5U3D6q"><div class="flow-n" data-page-node-id="zUgz7btKZnsc6CZOHQFgur">1</div><div class="flow-b" data-page-node-id="HwTF6sG6uLREdUzT9aI3ZK"><strong data-page-node-id="9QWtOTmmhjYLXKkvTSOleJ">会话</strong><span data-page-node-id="yhtc7BEzwdYP2DpJ0C2Ecw"><code data-page-node-id="CR5jMgAFNpjQY3er7GLMQB">POST /v1/collect/session {supplier_id: "CN-H-0000001"}</code> → 门类由 ID 前缀回判为 H，加载餐饮问句集（10 个必填，不多于 C）</span></div></div>
+<div class="flow-step" data-page-node-id="YzqYcatcHW3mxWABasI4wh"><div class="flow-n" data-page-node-id="xkBJuJ7C2qEuFUv9xTxVb7">2</div><div class="flow-b" data-page-node-id="70GD5XHuVBLd4TIdVLoqeR"><strong data-page-node-id="2KUwrGNcj729lg7DEgiGHY">作答归一化</strong><span data-page-node-id="i7OUw1VnLq8TD0n7aae5jZ">「川菜和湘菜」→ <code data-page-node-id="DcxPieD6Qlb3vehNwKttaE">["cuisine_sichuan","cuisine_hunan"]</code>；「能办宴席」→ <code data-page-node-id="e3hAGi88XHM7fW256Gbp9D">svc_banquet</code>；「有停车场」→ <code data-page-node-id="zwgN7G4jEhAnUE3U3894IT">venue_parking</code>。「不收定金」→ <code data-page-node-id="OmpgMCcDs3aXMoG6hQDdin">deposit_required: false</code>（<strong data-page-node-id="dEellHJ0QLBY4WbastLNCn">false 是有效答案，不是未填</strong>）</span></div></div>
+<div class="flow-step" data-page-node-id="ZcTx1FCTGhPfPqicFDRTy6"><div class="flow-n" data-page-node-id="ov7xNPKXOGQ9tRKr7R1Ywr">3</div><div class="flow-b" data-page-node-id="zca1K7mWLNxoDTiG6vcCr9"><strong data-page-node-id="y13t3gbDpJmkpkA9TVdcmE">定稿渲染</strong><span data-page-node-id="5iAUzHtcPHSKpowGtWYj7V">派发到 H 渲染器，产出 L1 能力卡（含 <code data-page-node-id="IsUFvQw3XBV9RIkTPdSFva">caps_index</code>）+ L0 指纹行 + L2 <code data-page-node-id="8EkJHbGOgUAKRcUFe4CDPg">SKILL.md</code>（8 段，<strong data-page-node-id="gfHaU9tmdxbQ9ykwOAqU15">全文无制造业术语</strong>）</span></div></div>
+<div class="flow-step" data-page-node-id="4U3NxJFNHHann9ZB2XQoac"><div class="flow-n" data-page-node-id="qV8lxj4fwBo5pr6oG9gHy5">4</div><div class="flow-b" data-page-node-id="ErJpN4VIscgQW3PxeLXKoe"><strong data-page-node-id="MSWaObvfim18umAP9YFr3i">校验</strong><span data-page-node-id="tDQxtdhlMu6JAFyDDA8Ion">按卡片自己的门类选 schema 验证；<code data-page-node-id="WpYpQTvhOO8Zf0bmAp79w7">caps_index</code> 与派生值不一致就硬失败</span></div></div>
+</div>
+
+<p data-page-node-id="a9TCSrEKDmBtqJc3zvD4dW">L0 指纹（一条 ~120 字节，给客户 Agent 全量扫）泛化成了门类中立的形状：</p>
+
+<pre data-page-node-id="2iuIdvynl8HCuMDCY6osTr"><code data-page-node-id="c4rB4TkxfWIWmjNI42CZkY">{"id":"CN-H-0000001","co":"…","g":"H","city":"上海市",
+ "cap":["cuisine_sichuan","cuisine_hunan","svc_banquet","venue_parking","time_lunch", …],
+ "proc":[], "seat":180, "pp":150.0, "cert":["食品经营许可证","HACCP"], "sc":70}
+</code></pre>
+
+<p data-page-node-id="y5O2XiFGF0Ic9reBVz7c5y"><code data-page-node-id="CkH4a3WSpWfj6iooTwCN6B">proc</code> 保留为空数组（餐饮没有工艺），新增 <code data-page-node-id="r8jmOBGzAAYIkwYw18vzPC">g</code>（门类字母）、<code data-page-node-id="aROAyptbtracsHImMhiDpx">cap</code>（跨门类能力码）、<code data-page-node-id="g34SP7F83t7qXn2yI8tox3">seat</code>（席位）、<code data-page-node-id="EmKiIcMTxwW3P1cSmFTx3m">pp</code>（人均）—— <strong data-page-node-id="6XFz3aOAx96sED1y5j4SYK">检索层读的还是同一批字段，不需要知道门类细节。</strong></p>
+
+<h2 data-page-node-id="EOjsW8ZaKHyWwjYNEGyenc">五、零回归证据</h2>
+
+<p data-page-node-id="ErBVACqSsgIIZdayVE2FHI">这次改造最重要的验收标准不是「餐饮能跑」，而是「制造业一点没动」。两套回归套件共 <strong data-page-node-id="uyu1VCCUxty5UuJ08ASgFa">336 条断言</strong>，全绿。</p>
+
+<h3 data-page-node-id="srT7SJPM9wVwLQxKort7Lg">5.1 <code data-page-node-id="2VfGUnwtzrWL2wsNFEgUIf">scripts/test_gate_expansion.py</code> —— 317 条</h3>
+
+<table data-page-node-id="aEWwDBKIlDoIrUKM2psYlS">
+<tr data-page-node-id="sCHpAVnKDdtsePZBqMoFEq"><th data-page-node-id="fEhqDd32D02fet39Z0sCfD">组</th><th data-page-node-id="oo1tiUMJXJ1HK96gE567Eu">验的是什么</th></tr>
+<tr data-page-node-id="pDRVGkSSHQ7S9AWJMPJkAv"><td data-page-node-id="sROpRYV5kMqqC4X5TyQ0dZ">T1</td><td data-page-node-id="J66G2S93ZnlMzBko0TJiJb"><strong data-page-node-id="FTUUD118hQB6wXlmTyrOT2">制造业零回归</strong>：4137 张既有 C 卡在新装配下校验结果与旧 schema 逐条一致</td></tr>
+<tr data-page-node-id="qNkGAFDb1LxwGm9ng3QNGr"><td data-page-node-id="XMNvVvjv6e5iDeSjnqj5vB">T2</td><td data-page-node-id="Fhxa96fFAKmofmhYSl28Mz">信封字段在门类间逐字一致</td></tr>
+<tr data-page-node-id="OoU0Sy8FJ3wRDoEahwDDC5"><td data-page-node-id="bYnA6gLrAw5OYNxPv352AC">T3</td><td data-page-node-id="J6pt95t9zZMnyWRG9b6eX2"><strong data-page-node-id="o9894torQDZr7uZmGAcXen">独立性</strong>：带餐饮私有块的卡被 C schema 拒绝（反向亦然）</td></tr>
+<tr data-page-node-id="FcLAgDjE0ty9V3aUQjG5uw"><td data-page-node-id="9lTIoBBBQGCixybu7KkYM6">T4 / T5</td><td data-page-node-id="IXl59zCCYoZUBJ98BTXHBt">枚举注入正确；<code data-page-node-id="eBFOG3diZUrwJAzEldWiA7">caps_index</code> 派生与存储值一致</td></tr>
+<tr data-page-node-id="MkEiTedz4uG8J1BPFc6Oqv"><td data-page-node-id="4mP0Sghh7pHKHeCJ146XHT">T6 / T7</td><td data-page-node-id="4yHCp4E8Ge5E4W3L7Y6ivA">POI → 国标映射；ID 方案（<code data-page-node-id="tp5nOi7xKmaYE9i2xxF7Ao">CN-MFG-</code> 与 <code data-page-node-id="mBWWshZo3In98Fys2atmrE">CN-{字母}-</code> 并存）</td></tr>
+<tr data-page-node-id="TaAOff93iIozwDlQkrucNs"><td data-page-node-id="wF4BFTtVUur19CvmXANgv2">T8</td><td data-page-node-id="Dxfvj2FTR9IbcTGttOyswq"><strong data-page-node-id="KXuIpzH9wBdwBKLOirEJSN">C 问句集逐字段零回归</strong>：与 git HEAD 基线对比，只有 2 处已登记的有意变更（§12 真机修复）</td></tr>
+<tr data-page-node-id="hWWQd7dwGZBu2n1iOzDMkX"><td data-page-node-id="XejFx8Nbo8DZfBJGviDzVN">T9 / T10</td><td data-page-node-id="lSbuV942Nj4jhdgEYEDeJa">H 问句集；餐饮端到端</td></tr>
+<tr data-page-node-id="PFKcaOMMHvPCloylATewMT"><td data-page-node-id="nWDk6Hw55SQPbkVsBRcWd1">T11 / T12</td><td data-page-node-id="am4VQOnFKL14a0bApKp1c1">空答案语义（<code data-page-node-id="IEjfmA5Nk38AIAlpi1k0j2">[]</code> vs <code data-page-node-id="f29u1vYdniGIagOEWXaakW">0</code> vs null）；卡能渲染且通过校验</td></tr>
+<tr data-page-node-id="QbiHVoNecclMHMB88GiVol"><td data-page-node-id="OB4jhmgfRNLXLPXjYe6CV2">T13</td><td data-page-node-id="xTSYk1JFbg7slOMywLe1tg"><strong data-page-node-id="El3hrDlWB7S93krSf6BuDC">400 张既有制造卡的渲染输出与改造前逐字节相同</strong></td></tr>
+<tr data-page-node-id="KqZsat22Wyqlakoddcuh45"><td data-page-node-id="UAFy8QCBXr94srIfXD4g2P">T14</td><td data-page-node-id="SgnIKqtFFxZzMVGGrSsrmx">能力卡只搬本门类认得的字段（C 有 processes，H 不加 processes）</td></tr>
+<tr data-page-node-id="p2T15KqZsat22Wyqlakod"><td data-page-node-id="p2T15tidUAFy8QCBXr9">T15–T16</td><td data-page-node-id="p2T15detSgnIKqtFFxZz">P2 五个门类问句集与娱乐端到端：门类判定 / 档案段位置 / 必填不超制造业 / 码解析 / 证照否定语境 / SKILL.md 无串门类术语</td></tr>
+<tr data-page-node-id="p2T17KqZsat22Wyqlakod"><td data-page-node-id="p2T17tidUAFy8QCBXr9">T17</td><td data-page-node-id="p2T17detSgnIKqtFFxZz">枚举注入与 caps_index 隔离：I/M 同名字段两套枚举、码值不跨域撞车、布尔不入索引</td></tr>
+<tr data-page-node-id="p2T18KqZsat22Wyqlakod"><td data-page-node-id="p2T18tidUAFy8QCBXr9">T18</td><td data-page-node-id="p2T18detSgnIKqtFFxZz">新门类 POI → 国标码，含<strong data-page-node-id="p2T18strongSgnIKqtFF">最长前缀赢</strong>（泛类目不吞掉精确类目）</td></tr>
+<tr data-page-node-id="p2T19KqZsat22Wyqlakod"><td data-page-node-id="p2T19tidUAFy8QCBXr9">T19</td><td data-page-node-id="p2T19detSgnIKqtFFxZz">六条新冲突规则：该报的报、不该报的不报（含一条判据方向写反的修正）</td></tr>
+<tr data-page-node-id="p2T20KqZsat22Wyqlakod"><td data-page-node-id="p2T20tidUAFy8QCBXr9">T20</td><td data-page-node-id="p2T20detSgnIKqtFFxZz">档案与门类一致性：路径不越界、<strong data-page-node-id="p2T20strongSgnIKqt">规则依赖的字段必须真被问到</strong>（防死配置）、20 个门类无归属遗漏</td></tr>
+<tr data-page-node-id="p2T21KqZsat22Wyqlakod"><td data-page-node-id="p2T21tidUAFy8QCBXr9">T21</td><td data-page-node-id="p2T21detSgnIKqtFFxZz">归一化不编造数据（红线）：证照否定语境、bool「没有≠不知道」、列表不丢字不拆词、码表无重复键</td></tr>
+</table>
+
+<h3 data-page-node-id="BExkgosHAXoJPwcSGEJGOZ">5.2 <code data-page-node-id="oCbcey1IQ5blJZidLOW50L">scripts/test_collect_gate.py</code> —— 19 条</h3>
+
+<p data-page-node-id="bDCCu1WuN6VkXb4e0oPnse">打真实 HTTP，覆盖「不接的活」这个必填字段把真机流程卡死的那条链：confirm 被拒时必须说清缺什么/怎么救、<code data-page-node-id="H5WQoMzPL3c5WHv6hooDwp">fix-missing</code> 退回游标、必填禁止静默 skip、答「没有」记为 <code data-page-node-id="XxRAX7M4GOLvqV7p2mG0Zr">[]</code>、编号复用导致的会话串档被识别。</p>
+
+<div class="callout" data-page-node-id="wQC6YRp7yPPYMwX4rDPZs2">
+<p data-page-node-id="qaOL8ODGSCDFCplzyyrWrD"><strong data-page-node-id="tRhBNKdw9E8b5VG9DcrI0s">顺手修掉的一个测试反模式。</strong>这个套件原来隐含依赖外部状态 —— 上一轮能过是因为手工调试把会话填满了；跑完一轮后会话变成 complete，第二轮就从「什么都答完了」起步，5 条断言集体误报失败。这<strong data-page-node-id="nCEhXoqyp9y76QZs5mXtav">不是产品回归，是测试继承了上一轮的残留</strong>。修法是 T0 先显式 <code data-page-node-id="EZxBQrM8IKZxowhnKg6vCr">reset</code> 出一个确定起点。<strong data-page-node-id="XsatsxEh0zNzXHskqxOyvs">连跑三轮 19/0，幂等。</strong></p>
+</div>
+
+<h2 data-page-node-id="2X6b2jJPUdktMA1TxKPEJi">六、分期与状态</h2>
+
+<table data-page-node-id="HWwAD9XmAZeC9zc23LbCuK">
+<tr data-page-node-id="7eIHPSg5vvRsyrcEvSVSlp"><th data-page-node-id="VrrGSJHxlTFQ8XQqBRdtoM">期</th><th data-page-node-id="T0Y0yPwkgGB8lEYKAyM6pD">内容</th><th data-page-node-id="BssQyTBdB1YruwKoYFY72D">状态</th></tr>
+<tr data-page-node-id="FzxsTYLvmO8PFD1GD3pSQs"><td data-page-node-id="qPSHxlrST6lu9duWFj3GXN"><strong data-page-node-id="1N67NezOnHOdLAh5uHsUJG">P1</strong></td><td data-page-node-id="LLHjNrnNflCxLjhiPLRLeE">schema 解耦骨架（envelope + gates + 装配器）、能力码表分域、采集问句分层、餐饮 profile + 端到端、回归套件</td><td data-page-node-id="IS0I9jVVEhJhD93EKwtpMv"><span class="tag t-free" data-page-node-id="WrXXmV7lMGyJ1ohOYca1iC">已完成</span></td></tr>
+<tr data-page-node-id="bXT7EObqGABBuMw7ejorMv"><td data-page-node-id="3YUZdT22UBEjFCfeYaUiGp"><strong data-page-node-id="csAnVoiEUeH8JKrHpn3fsX">P2</strong></td><td data-page-node-id="DylCtYGlJKhOmqsHEMfAgw">娱乐 R → 个体商户 F+O → 技术服务 I+M。每门类 = profile + gate steps + cap-codes 域 + POI 映射 + 渲染器</td><td data-page-node-id="92fOoS4R0a2s807tpdTS4y"><span class="tag t-free" data-page-node-id="TMhaswIgTHSRBCIlK9yQYq">已完成</span></td></tr>
+<tr data-page-node-id="KEN4mnwmVwrPPXtUSHD1se"><td data-page-node-id="ypzszOAnIqxUmxYRP4Mho8"><strong data-page-node-id="OgoXOvcrVRTeFG9mVZELrg">P3</strong></td><td data-page-node-id="XPFHsDOdEtCREYDaB3RVkX">农林水产 A：只建框架，数据源另议</td><td data-page-node-id="1BTU36bF4z0VeRavsDAbNd"><span class="tag t-pay" data-page-node-id="VnAAejow84NGzwgCHLYqzm">未开始</span></td></tr>
+</table>
+
+<h3 data-page-node-id="yTuV8gObLVch4jLYhAUYvw">6.1 P2 每个门类要交付的五件套</h3>
+
+<div class="grid" data-page-node-id="dGm3wyjcg2ssIbNzLT3EhB">
+<div class="card" data-page-node-id="z39Ccuj4XzqjnakQmUv833"><h4 data-page-node-id="OZ1nMA2TfwiDdy9zE3fHGI">1. <code data-page-node-id="AiNgBL7hgOoRoBmWy0EwaP">skills/profiles/{name}.json</code></h4><p data-page-node-id="kDlBDD5tpiNGPaSNyFPxPx">画像字段 + 必填标记 + <code data-page-node-id="PGh4nsY59Cu1Nvho5FXQk9">zero_is_answer</code> / <code data-page-node-id="EGOUf8BDwVyzMtK7RbHW6w">empty_is_answer</code> 语义（「没有包间」要记 0，不是 null）</p></div>
+<div class="card" data-page-node-id="QRYWR0jeWhsiNs4VLdpWVD"><h4 data-page-node-id="Nqfodi2jjgB3roccGCbRU2">2. <code data-page-node-id="t9RlDPNpuHPBgEiL9fefpa">skills/schema/gates/{G}.json</code></h4><p data-page-node-id="VD1XF2UvolEIOB67f4hMJ0">门类私有 schema、<code data-page-node-id="7WJ3MGponsefGKBEjdDQBb">caps_index_from</code> 表达式、<code data-page-node-id="aOpesFSEMI3b91Ej1JmUQW">poi_types</code> 映射表、<code data-page-node-id="UOFs2sjuM0TYRMPemQnuSL">id_prefix</code>、<code data-page-node-id="qLClxNuU5V9qxmN5ZtZq66">default_profile</code></p></div>
+<div class="card" data-page-node-id="h6m2pY6YefQhi0fRsjBp87"><h4 data-page-node-id="aETJnMPmRX0bBSYRItQlT6">3. <code data-page-node-id="WIPgQuSnezsWmA34AxOjem">skills/schema/cap-codes/{domain}.json</code></h4><p data-page-node-id="ncAjQq1nW7st3gq26UX3vp">能力码表（含别名表，把口述说法映射到码）+ 在 <code data-page-node-id="8HDcqmY0XQqEyFIAsxY05M">_registry.json</code> 登记</p></div>
+<div class="card" data-page-node-id="eRhTGnH3ljnjaxSLE2Wole"><h4 data-page-node-id="JW2ycBrnEKwPFaDg9ETRig">4. <code data-page-node-id="lLrUVdTkuR2oFXUyTOYtFF">STEPS_BY_GATE[G]</code></h4><p data-page-node-id="NmRHLzZzxFYefZKtsLBjHZ">门类问句集 + <code data-page-node-id="6rIjcEtW8JSrHv4vzVXOpd">label_by_gate</code> 措辞覆盖；<strong data-page-node-id="VgluhBIj8Ht4Qt1hODjpEr">必填数不得超过制造业的 15 个</strong>（实测：C=15，H=6，R/F/O/I=10，M=11）。档案段与门类主体**刻意不重复问同一件事**</p></div>
+<div class="card" data-page-node-id="fe1M0HnPa3d44qxYizTNPA"><h4 data-page-node-id="S6CJvBXESC9WSjy79hejmx">5. <code data-page-node-id="K55sKfyPvlnEXwC2oVAu5P">_MD_SPECS[G]</code></h4><p data-page-node-id="2Wy53eh1cXeHtCzrHo2BvY">L2 自述渲染器。<strong data-page-node-id="mAJFJto39bdsCcc40VIBzV">P2 的五个门类共用一个数据驱动的渲染器</strong>，往表里加一条即接入 —— 不再复制一份两百行的函数（复制出来的那份迟早与别处不同步）。自检<strong data-page-node-id="mAJFJto39bdsCcc40VIBz2">全文无别的门类的术语</strong></p></div>
+<div class="card" data-page-node-id="FcR7JUiZ1vVHLyrDC9KUH0"><h4 data-page-node-id="VdKsvFwzLcIuaRrCVNF2Fi">+ 回归</h4><p data-page-node-id="9klk7T8gAEyBSp3acF6sVp">每加一个门类就往 <code data-page-node-id="IJaB3tCvGQ1NXjWfI8TTkL">test_gate_expansion.py</code> 加一组断言，且 T1/T8/T13 的制造业零回归必须保持全绿</p></div>
+</div>
+
+<h3 data-page-node-id="p2Sec62hdwyTuV8gObLVc">6.2 P2 实际交付（数字均为实测）</h3>
+
+<table data-page-node-id="p2Table62hdwyTuV8gOb">
+<tr data-page-node-id="p2T62hdr01hdwyTuV8g"><th data-page-node-id="p2T62c01hdwyTuV8g">门类</th><th data-page-node-id="p2T62c02hdwyTuV8g">能力码域</th><th data-page-node-id="p2T62c03hdwyTuV8g">码 / 别名</th><th data-page-node-id="p2T62c04hdwyTuV8g">档案</th><th data-page-node-id="p2T62c05hdwyTuV8g">字段 / 必填</th></tr>
+<tr data-page-node-id="p2T62hdr02hdwyTuV8g"><td data-page-node-id="p2T62c11hdwyTuV8g">R 文化体育娱乐</td><td data-page-node-id="p2T62c12hdwyTuV8g"><code data-page-node-id="p2T62c12ahdwyTuV8g">entertainment</code></td><td data-page-node-id="p2T62c13hdwyTuV8g">47 / 99</td><td data-page-node-id="p2T62c14hdwyTuV8g"><code data-page-node-id="p2T62c14ahdwyTuV8g">entertainment</code></td><td data-page-node-id="p2T62c15hdwyTuV8g">30 / 10</td></tr>
+<tr data-page-node-id="p2T62hdr03hdwyTuV8g"><td data-page-node-id="p2T62c21hdwyTuV8g">F 批发和零售</td><td data-page-node-id="p2T62c22hdwyTuV8g"><code data-page-node-id="p2T62c22ahdwyTuV8g">retail-service</code></td><td data-page-node-id="p2T62c23hdwyTuV8g">72 / 140（与 O 共用）</td><td data-page-node-id="p2T62c24hdwyTuV8g"><code data-page-node-id="p2T62c24ahdwyTuV8g">retail-shop</code></td><td data-page-node-id="p2T62c25hdwyTuV8g">31 / 10</td></tr>
+<tr data-page-node-id="p2T62hdr04hdwyTuV8g"><td data-page-node-id="p2T62c31hdwyTuV8g">O 居民服务修理</td><td data-page-node-id="p2T62c32hdwyTuV8g"><code data-page-node-id="p2T62c32ahdwyTuV8g">retail-service</code></td><td data-page-node-id="p2T62c33hdwyTuV8g">同上（取「服务项目」组）</td><td data-page-node-id="p2T62c34hdwyTuV8g"><code data-page-node-id="p2T62c34ahdwyTuV8g">resident-service</code></td><td data-page-node-id="p2T62c35hdwyTuV8g">31 / 10</td></tr>
+<tr data-page-node-id="p2T62hdr05hdwyTuV8g"><td data-page-node-id="p2T62c41hdwyTuV8g">I 信息传输软件</td><td data-page-node-id="p2T62c42hdwyTuV8g"><code data-page-node-id="p2T62c42ahdwyTuV8g">tech-service</code></td><td data-page-node-id="p2T62c43hdwyTuV8g">87 / 153（与 M 共用）</td><td data-page-node-id="p2T62c44hdwyTuV8g"><code data-page-node-id="p2T62c44ahdwyTuV8g">it-service</code></td><td data-page-node-id="p2T62c45hdwyTuV8g">31 / 10</td></tr>
+<tr data-page-node-id="p2T62hdr06hdwyTuV8g"><td data-page-node-id="p2T62c51hdwyTuV8g">M 科学研究技术服务</td><td data-page-node-id="p2T62c52hdwyTuV8g"><code data-page-node-id="p2T62c52ahdwyTuV8g">tech-service</code></td><td data-page-node-id="p2T62c53hdwyTuV8g">同上（取「科研技术方向」组）</td><td data-page-node-id="p2T62c54hdwyTuV8g"><code data-page-node-id="p2T62c54ahdwyTuV8g">tech-research</code></td><td data-page-node-id="p2T62c55hdwyTuV8g">30 / 11</td></tr>
+</table>
+
+<p data-page-node-id="p2Note62hdwyTuV8gOb"><strong data-page-node-id="p2Note62ahdwyTuV8g">共用码表域的前提是码值在域内唯一</strong>：O 取 <code data-page-node-id="p2N62c1hdwyTuV8g">srv_</code>、F 取 <code data-page-node-id="p2N62c2hdwyTuV8g">rtl_</code>，否则分不出「卖汽配」和「修汽车」。同理 I 的「信息技术方向」与 M 的「科研技术方向」是两组枚举 —— 让软件公司去选「工程勘察设计」是噪音。</p>
+
+<h4 data-page-node-id="p2BugsHdwyTuV8gObLVc">顺手抓到并修掉的真实缺陷</h4>
+
+<p data-page-node-id="p2BugsIntroHdwyTuV8g">P2 的价值不只在新门类。写测试的过程把几个**不报错、只是悄悄改错数据**的问题翻了出来 —— 这类问题比崩溃难发现得多，也正好都踩在「数据宁可留空也不编造」这条红线上。</p>
+
+<table data-page-node-id="p2BugsTableHdwyTuV8g">
+<tr data-page-node-id="p2Bh01hdwyTuV8g"><th data-page-node-id="p2Bh01chdwyTuV8g">问题</th><th data-page-node-id="p2Bh01dhhdwyTuV8g">后果（不修的话）</th></tr>
+<tr data-page-node-id="p2Bh02hdwyTuV8g"><td data-page-node-id="p2B02c1hdwyTuV8g"><strong data-page-node-id="p2B02s1hdwyTuV8g">定稿校验用错 schema</strong>（服务端仍读退役的单份制造业 schema）</td><td data-page-node-id="p2B02c2hdwyTuV8g">每一张定稿卡都判 <code data-page-node-id="p2B02c2ahdwyTuV8g">Additional properties ('gate','caps_index')</code> → <strong data-page-node-id="p2B02s2hdwyTuV8g">企业采集定稿 100% 422，整条链路掐断</strong>。此前被一个跑不起来的测试遮住了</td></tr>
+<tr data-page-node-id="p2Bh03hdwyTuV8g"><td data-page-node-id="p2B03c1hdwyTuV8g">证照否定语境被当成「持有」：「没有 ISO9001」记成有 ISO9001</td><td data-page-node-id="p2B03c2hdwyTuV8g">往名录里写假资质</td></tr>
+<tr data-page-node-id="p2Bh04hdwyTuV8g"><td data-page-node-id="p2B04c1hdwyTuV8g">bool 字段的「没有」被丢弃（记为「未提供」）</td><td data-page-node-id="p2B04c2hdwyTuV8g">企业答了等于没答。M 门类的问句里甚至写着「没有就说没有」</td></tr>
+<tr data-page-node-id="p2Bh05hdwyTuV8g"><td data-page-node-id="p2B05c1hdwyTuV8g">列表归一化把「主题密室」拆成「题密室」（正则 <code data-page-node-id="p2B05c1ahdwyTuV8g">主要?是?</code> 实际匹配的是「主」）</td><td data-page-node-id="p2B05c2hdwyTuV8g">证书以外的一切列表字段都在悄悄丢字</td></tr>
+<tr data-page-node-id="p2Bh06hdwyTuV8g"><td data-page-node-id="p2B06c1hdwyTuV8g">「和」盲拆：<code data-page-node-id="p2B06c1ahdwyTuV8g">和面机</code> → <code data-page-node-id="p2B06c1bhdwyTuV8g">面机</code></td><td data-page-node-id="p2B06c2hdwyTuV8g">凭空造出不存在的条目（编造）</td></tr>
+<tr data-page-node-id="p2Bh07hdwyTuV8g"><td data-page-node-id="p2B07c1hdwyTuV8g">包间数冲突规则判据写反</td><td data-page-node-id="p2B07c2hdwyTuV8g">正常的场所天天误报，真正填错的静默通过</td></tr>
+<tr data-page-node-id="p2Bh08hdwyTuV8g"><td data-page-node-id="p2B08c1hdwyTuV8g">5 条冲突规则是「死配置」：声明了 check 名却没有实现</td><td data-page-node-id="p2B08c2hdwyTuV8g">看着配了，实际永不触发。已全部实现并加测试逐个断言</td></tr>
+<tr data-page-node-id="p2Bh09hdwyTuV8g"><td data-page-node-id="p2B09c1hdwyTuV8g">M 门类 CMA/CNAS 字段路径错位（写在 <code data-page-node-id="p2B09c1ahdwyTuV8g">capability</code>，schema 在 <code data-page-node-id="p2B09c1bhdwyTuV8g">quality</code>）</td><td data-page-node-id="p2B09c2hdwyTuV8g">M 门类卡必被 schema 拒（该门类当时还不合法）</td></tr>
+<tr data-page-node-id="p2Bh10hdwyTuV8g"><td data-page-node-id="p2B10c1hdwyTuV8g">POI 映射按表顺序判定，泛类目吞掉精确映射（6 处码值写错）</td><td data-page-node-id="p2B10c2hdwyTuV8g">「个体户维修」这类精确类目静默落到 null；码值错误会把企业归到别的行业</td></tr>
+<tr data-page-node-id="p2Bh11hdwyTuV8g"><td data-page-node-id="p2B11c1hdwyTuV8g"><code data-page-node-id="p2B11c1ahdwyTuV8g">safety.external_domains</code> 把询价电话串当域名</td><td data-page-node-id="p2B11c2hdwyTuV8g">安全声明变成假的（比留空更糟）</td></tr>
+</table>
+
+<h2 data-page-node-id="HFks5T1kejjMgnwBREhFQe">七、未决与风险</h2>
+
+<table data-page-node-id="RJw2J0IFHrCH0eZNJjboLp">
+<tr data-page-node-id="FTykPt5q0e27Nm1HjoH06K"><th data-page-node-id="fTAcmj03VqIeKEgTcrcVAE">项</th><th data-page-node-id="BgoxezK7ZpxoOqS5tkNWhw">现状</th><th data-page-node-id="HYZTsKcdXuo6ZyKhRHn2qM">要主人定</th></tr>
+<tr data-page-node-id="zlRqkPsuBanUBhJTbSnXRE"><td data-page-node-id="FyJPVmciWgwmpX1u2TDWk5">git 提交</td><td data-page-node-id="jj55bZuAwma4scbpRv0nxl"><code data-page-node-id="0xdTufcDZsxtvcZkbJv3GQ">skills/schema/{envelope.json,gates/,cap-codes/}</code> 与 <code data-page-node-id="i5sX9X5TaCN17IlHfSgAmp">skills/profiles/restaurant.json</code> 是新增公开产物、尚未提交；<code data-page-node-id="j7DSi4Ybg1aoJGpge3qa5S">APK/*.kt</code> 有 6 个文件改动未提交；<code data-page-node-id="9Yj8MRlcWS3eGgQLCd3XJk">scripts/*</code> 按设计不进 git</td><td data-page-node-id="rEJWHqZRSlszAlsSjNdDyP">是否现在提交这批 <code data-page-node-id="dK1JFavM8V4CB7VbFTuaGa">skills/</code> 产物</td></tr>
+<tr data-page-node-id="wSsF7x1R3Vl71n66K62sPO"><td data-page-node-id="FetbfnhmZ8lGMZgKaaGc3Q">生产实例</td><td data-page-node-id="xkBAwrvnF9XBbiVbVYu7oi"><strong data-page-node-id="p2Prod8000hdwyTuV8g">8000 已切新代码</strong>（2026-09-11 重启，日志见 <code data-page-node-id="p2Prodc1hdwyTuV8g">server/uvicorn-dev.log</code>）；19 条采集门禁回归打的就是它。临时的 8001 已下线</td><td data-page-node-id="AJnw3TE1xbJZzWAVCOWfSS">真机联调请确认 <code data-page-node-id="FEBtmYzAFiJJUS5MMXSH1U">adb reverse tcp:8000 tcp:8000</code> 仍在</td></tr>
+<tr data-page-node-id="2oy8zZW4ymT7vRYhpOoSgu"><td data-page-node-id="6VMhIxPsKKwBNTiB5mg4yt">命名隧道</td><td data-page-node-id="xuQBvW1s8ez8A9AkuUG2wW">未完成 —— 需要主人的域名 + <code data-page-node-id="GX35JQBCYqeCeFmuTEX3mA">cloudflared login</code></td><td data-page-node-id="xCbsH0lZLzLfghJbSmcPj9">何时推进</td></tr>
+<tr data-page-node-id="WLKt2kq9uGhh5jziPmbnHm"><td data-page-node-id="1u6Af8VmrDo4ELGNZOFEhy">测试债</td><td data-page-node-id="IebFomxvJiBW0jfEAXdpQm"><code data-page-node-id="p2StaleC2ahdwyTuV8g">test_api_badge_chain.py</code> 本轮未跑通（跑很久无输出，未及细查）；<code data-page-node-id="p2StaleC2bhdwyTuV8g">test_api_collect.py</code> 引用的指纹路径是退役布局（<code data-page-node-id="p2StaleC2chdwyTuV8g">fingerprint/{品类}.jsonl</code>），已改为按国标码现算 —— 正是修好它才暴露出「定稿校验用错 schema」那个 P0</td><td data-page-node-id="lIfpVzPc5wDudjxIbFPxAE">badge_chain 是否本轮一起收拾</td></tr>
+</table>
+
+<div class="foot" data-page-node-id="lQqyvJ71TMLvbNTk5TNR2d">
+<p data-page-node-id="EJoHFd20xtSY5VVSItdcmc">BeaconMFG / 炫招灯塔 · 门类扩展设计 · P1 落地于 2026-09-11 · P2（娱乐 / 个体商户 / 技术服务）同日落地 · 回归 317 + 19 全绿<br data-page-node-id="3R64Tbq7B05BJryppplzSU">
+文档里的所有数字（门类/大类/中类/小类计数、码表条数、字段与必填数、断言数）均来自实际读取与实跑，未估算。</p>
+</div>
+
+</div>
+</body>
+</html>

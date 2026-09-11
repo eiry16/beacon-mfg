@@ -1,0 +1,254 @@
+{
+  "$comment": "R 门类（文化、体育和娱乐业）能力卡 schema 片段。与 gates/C.json、gates/H.json 完全独立，业务字段互不共用：这里没有 processes / 公差，也没有菜系 —— 问 KTV「最薄能压多薄的壁」和问它「做不做川菜」一样荒谬。共享的只有 envelope.json 定义的信封字段，其名字与语义必须与 C/H 逐字一致。",
+  "gate": "R",
+  "gate_name": "文化、体育和娱乐业",
+  "gate_range": "86 新闻和出版业 / 87 广播、电视、电影和录音制作业 / 88 文化艺术业 / 89 体育 / 90 娱乐业",
+  "id_prefix": "R",
+  "id_prefix_note": "新门类用 CN-R-{7位序号}。制造业的 CN-MFG- 是历史前缀，不迁移。",
+  "cap_domain": "entertainment",
+  "default_profile": "entertainment",
+  "profile_by_category": {
+    "KTV": "entertainment",
+    "影院": "entertainment",
+    "网吧网咖": "entertainment",
+    "游乐园": "entertainment",
+    "密室桌游": "entertainment",
+    "棋牌台球": "entertainment",
+    "健身运动": "entertainment",
+    "球馆泳池": "entertainment",
+    "洗浴休闲": "entertainment",
+    "按摩足疗": "entertainment",
+    "剧场演出": "entertainment",
+    "酒吧Livehouse": "entertainment",
+    "儿童乐园": "entertainment",
+    "其他娱乐": "entertainment"
+  },
+
+  "caps_index_from": [
+    "capability.venue_types[]",
+    "capability.service_modes[]",
+    "capability.venue_features[]",
+    "capability.time_slots[]",
+    "quality.certifications[].name",
+    "category"
+  ],
+
+  "poi_types": {
+    "$comment": "高德 POI type（分号分隔的多级类目）→ GB/T 4754 小类码。**最长前缀命中者赢**（gate_schema.poi_to_gb）：具体类目与泛类目同时匹配时，更长的那个胜出；`ambiguous` 与 `prefix` 两张表放在一起比长度，所以泛类目可以安全地挡住乱猜，又不会吞掉更精确的映射。",
+    "prefix": {
+      "体育休闲服务;娱乐场所;KTV": { "code": "9011", "name": "歌舞厅娱乐活动" },
+      "体育休闲服务;娱乐场所;夜总会": { "code": "9011", "name": "歌舞厅娱乐活动" },
+      "体育休闲服务;娱乐场所;歌舞厅": { "code": "9011", "name": "歌舞厅娱乐活动" },
+      "体育休闲服务;娱乐场所;游戏厅": { "code": "9012", "name": "电子游艺厅娱乐活动" },
+      "体育休闲服务;娱乐场所;网吧": { "code": "9013", "name": "网吧活动" },
+      "体育休闲服务;娱乐场所;棋牌室": { "code": "9019", "name": "其他室内娱乐活动" },
+      "体育休闲服务;娱乐场所;游乐园": { "code": "9020", "name": "游乐园" },
+      "体育休闲服务;娱乐场所;垂钓园": { "code": "9030", "name": "休闲观光活动" },
+      "体育休闲服务;娱乐场所;电影院": { "code": "8760", "name": "电影放映" },
+      "体育休闲服务;影院剧场;电影院": { "code": "8760", "name": "电影放映" },
+      "体育休闲服务;影院剧场;剧场": { "code": "8820", "name": "艺术表演场馆" },
+      "体育休闲服务;影院剧场;音乐厅": { "code": "8820", "name": "艺术表演场馆" },
+      "体育休闲服务;运动场馆;游泳馆": { "code": "8921", "name": "体育场馆管理" },
+      "体育休闲服务;运动场馆;健身中心": { "code": "8930", "name": "健身休闲活动" },
+      "体育休闲服务;运动场馆;健身": { "code": "8930", "name": "健身休闲活动" },
+      "体育休闲服务;运动场馆": { "code": "8921", "name": "体育场馆管理" },
+      "体育休闲服务;娱乐场所": { "code": "9019", "name": "其他室内娱乐活动" }
+    },
+    "ambiguous": {
+      "体育休闲服务;娱乐场所;酒吧": "酒吧在国标里是 **6233 酒吧服务，属 H62 餐饮业**，不是 R 娱乐业。要按门类判，不能只看高德把它放在「娱乐场所」下 —— 归类到 H 还是 R 取决于业态，需采集时确认。",
+      "风景名胜;公园广场": "**公园管理属 N78 公共设施管理业，不是 R 娱乐业。** 高德把公园和游乐园放在相近的类目下，但国标分属两个门类，不能一起归 R。",
+      "体育休闲服务;影剧院": "太泛，可能是电影院（8760）也可能是剧场（8820）。不猜。",
+      "体育休闲服务;娱乐场所;娱乐场所": "泛类目，无法定位业态。",
+      "体育休闲服务": "只有一级类目，信息量不足。",
+      "休闲娱乐": "高德部分数据只有笼统的「休闲娱乐」，没有下沉类目。不猜。"
+    }
+  },
+
+  "schema_extra": {
+    "required": ["limits", "capability"],
+
+    "properties": {
+      "category": {
+        "type": "string",
+        "enum": [
+          "KTV",
+          "影院",
+          "网吧网咖",
+          "游乐园",
+          "密室桌游",
+          "棋牌台球",
+          "健身运动",
+          "球馆泳池",
+          "洗浴休闲",
+          "按摩足疗",
+          "剧场演出",
+          "酒吧Livehouse",
+          "儿童乐园",
+          "其他娱乐"
+        ],
+        "description": "业态展示标签。细分能力不在这里 —— 一个 KTV 可以有多个服务形态（包场、团建、派对），那是 capability.service_modes。"
+      },
+
+      "limits": {
+        "type": "object",
+        "description": "接待硬边界。企业客户包场/团建的一票否决项主要落在这几个数上",
+        "additionalProperties": false,
+        "properties": {
+          "min_order_qty": {
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "description": "最少接几人/几间起"
+          },
+          "min_order_value_cny": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "description": "最低消费或包场起步价（元）"
+          },
+          "max_party_size": {
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "description": "最大接待人数"
+          },
+          "max_private_rooms": {
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "description": "同时可开放的包间数上限"
+          },
+          "advance_booking_days": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "包场/团体需提前几天预订"
+          },
+          "current_load_pct": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "maximum": 100,
+            "description": "当前场地使用率。与制造业的产线负荷、餐饮的上座率同义（当前占用度），只是被占用的资源不同"
+          },
+          "rush_available": {
+            "type": ["boolean", "null"],
+            "description": "能否临时加场/加位"
+          }
+        }
+      },
+
+      "capability": {
+        "type": "object",
+        "description": "娱乐场所能力块。字段由本文件与 skills/profiles/entertainment.json 共同定义。",
+        "additionalProperties": false,
+        "properties": {
+          "venue_types": {
+            "type": "array",
+            "items": { "type": "string", "x-enum-from": "entertainment:场所类型" },
+            "description": "场所类型码列表。枚举由 cap-codes/entertainment.json 的「场所类型」组运行时注入"
+          },
+          "service_modes": {
+            "type": "array",
+            "items": { "type": "string", "x-enum-from": "entertainment:服务形态" },
+            "description": "服务形态码列表（包场/团建/派对/团体票…）"
+          },
+          "venue_features": {
+            "type": "array",
+            "items": { "type": "string", "x-enum-from": "entertainment:场地设施" },
+            "description": "场地设施码（停车位/无障碍/可供餐饮/舞台音响…）"
+          },
+          "time_slots": {
+            "type": "array",
+            "items": { "type": "string", "x-enum-from": "entertainment:时段" },
+            "description": "营业时段码"
+          },
+          "capacity": {
+            "type": ["integer", "null"],
+            "minimum": 1,
+            "description": "同时可容纳人数。包场与团建的第一道筛选条件"
+          },
+          "private_rooms": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "包间数量。0 是有效答案（真没有包间），不等于未填"
+          },
+          "price_per_person_cny": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "description": "人均消费或票价（元）"
+          },
+          "min_duration_hours": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "description": "单次最短时长（小时）。KTV/棋牌/桌游按场次计费时必问"
+          },
+          "business_hours": {
+            "type": ["string", "null"],
+            "description": "营业时间原文，如「12:00-次日 02:00」。保留原话不归一化 —— 娱乐场所跨夜营业很常见，硬拆成时段会丢信息"
+          },
+          "signature_items": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "招牌项目 / 特色内容。需求方 Agent 判断好不好玩、值不值得去的最强信号"
+          }
+        }
+      },
+
+      "service": {
+        "type": "object",
+        "description": "接待与结算服务。与 C/H 门类同名但字段完全不同。",
+        "additionalProperties": false,
+        "properties": {
+          "booking_channels": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "预订渠道，如 电话 / 微信 / 美团 / 大众点评"
+          },
+          "invoice_available": {
+            "type": ["boolean", "null"],
+            "description": "能否开票。企业客户报销/团建入账的硬条件"
+          },
+          "deposit_required": {
+            "type": ["boolean", "null"],
+            "description": "包场是否需付定金"
+          },
+          "cancellation_policy": { "type": ["string", "null"] },
+          "payment_terms": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "languages": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+
+      "quality": {
+        "type": "object",
+        "description": "经营资质与安全",
+        "additionalProperties": false,
+        "properties": {
+          "certifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "additionalProperties": false,
+              "properties": {
+                "name": { "type": "string" },
+                "number": { "type": ["string", "null"] },
+                "valid_until": { "type": ["string", "null"] },
+                "evidence": {
+                  "type": "string",
+                  "enum": ["self_declared", "public_record", "platform_verified", "field_audited"]
+                }
+              }
+            },
+            "description": "娱乐经营许可证 / 网络文化经营许可证 / 电影放映经营许可证 / 营业性演出许可证 / 消防验收 等"
+          },
+          "hygiene_grade": {
+            "type": ["string", "null"],
+            "enum": ["A", "B", "C", "未评定", null],
+            "description": "公共场所卫生监督量化分级。洗浴、游泳馆、影剧院适用"
+          }
+        }
+      }
+    }
+  }
+}

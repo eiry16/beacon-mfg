@@ -1,0 +1,51 @@
+{
+  "version": "1.1",
+  "description": "能力码表域注册表。每个域 = 一组能力码 + 它服务哪些门类。门类 schema 通过 gates/{GATE}.json 的 cap_domain 指到这里，采集归一化与 L0 指纹派生都走注册表，不再硬编码某个码表文件。",
+  "path_base": "skills/schema/",
+  "domains": {
+    "manufacturing": {
+      "file": "process-codes.json",
+      "gates": ["C"],
+      "label": "生产工艺",
+      "note": "沿用既有 process-codes.json，零迁移。采集归一化、validate_vendor_skills、auto_profile、gen_fingerprint 现在都在读它，本注册表只是把它正式登记为 manufacturing 域，不改文件内容。"
+    },
+    "restaurant": {
+      "file": "cap-codes/restaurant.json",
+      "gates": ["H"],
+      "label": "餐饮业态与接待能力",
+      "note": "菜系 / 服务形态 / 场地 / 时段四组。是 H 门类 caps_index 的取值域，也是 gates/H.json 里 cuisines 与 service_modes 枚举的来源（x-enum-from 注入）。"
+    },
+    "entertainment": {
+      "file": "cap-codes/entertainment.json",
+      "gates": ["R"],
+      "label": "娱乐场所类型与场地规格",
+      "note": "场所类型 / 服务形态 / 场地设施 / 时段四组。码前缀用 ent_，刻意与 restaurant 域的 venue_ / time_ 区分 —— caps_index 是跨门类的扁平数组，码值一旦撞车，需求方 Agent 按「有停车场」筛选就会把餐厅和 KTV 混在一起。"
+    },
+    "retail-service": {
+      "file": "cap-codes/retail-service.json",
+      "gates": ["F", "O"],
+      "label": "个体商户经营范围与服务项",
+      "note": "一个域服务两个门类：F 取「零售品类」组，O 取「服务项目」组，「经营方式 / 交付方式 / 门店设施」三组两边共用。共用域的前提是**码值在 F/O 间唯一**（卖货 rtl_ / 卖服务 srv_），否则分不出「卖汽配」和「修汽车」。"
+    },
+    "tech-service": {
+      "file": "cap-codes/tech-service.json",
+      "gates": ["I", "M"],
+      "label": "技术服务与技术栈",
+      "note": "一个域服务两个门类：I 取「信息技术方向」+「技术栈」，M 取「科研技术方向」，「服务模式 / 交付成果 / 团队构成」三组共用。技术方向刻意拆成两组枚举 —— 让软件公司选「工程勘察」是噪音。"
+    }
+  },
+  "planned": {
+    "agriculture": {
+      "gates": ["A"],
+      "label": "农林牧渔品类与产能",
+      "status": "P3 框架先行，暂不填数",
+      "note": "高德基本没有农林牧渔 POI（菜农/果农/养殖户无门店），数据源需另找（农民专业合作社登记名录 / 农业农村部 / 惠农网）。**不要为了凑数先抓** —— 硬抓会违反「数据宁可留空也不编造」这条红线。"
+    }
+  },
+  "not_planned": {
+    "$comment": "下面这些门类**不是遗漏，是刻意不做**。写在这里是为了让后来的人不必重新论证一遍。",
+    "gates": ["B", "D", "E", "G", "J", "K", "L", "N", "P", "Q", "S", "T"],
+    "reason": "B 采矿 / D 电热气水：没有「向客户 Agent 投标接单」的场景，且多为特许经营。E 建筑 / G 交通仓储 / K 房地产 / L 租赁商务：主要靠资质与招投标，不适合开放名录模型。J 金融：涉牌照。P 教育 / Q 卫生：涉执业准入，且广告合规风险高。S 公共管理 / T 国际组织：非市场主体。N 水利环境公共设施：多为政府购买服务。**先做能做的，别摊大饼。**"
+  },
+  "why_domains_not_one_table": "把「菜系」「KTV 包厢」「检验检测资质」塞进一张工业工艺码表会污染分类：跨门类检索会串味，码表 gb 映射也无法自洽。域之间不共享码值，只在 caps_index 这一层统一成扁平字符串，检索层因此不需要知道门类细节。"
+}

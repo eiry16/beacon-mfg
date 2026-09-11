@@ -189,6 +189,16 @@ class Strings(val lang: Lang) {
                 "(Local search is unaffected.)"
         )
     val vendorUnreachable get() = t("平台接口没连上：", "Platform API unreachable: ")
+
+    /**
+     * 平台**明确拒绝**了这次提交（服务端给了业务错误码），不是"连不上"。
+     *
+     * 为什么必须和 [vendorUnreachable] 分开：以前两者共用一句「平台接口没连上」，
+     * 实测把模型带偏过——它据此判断是网络问题、让用户去改接口地址，
+     * 而真因是它自己提交的内容不合格。文案错了，下一步就全错。
+     */
+    fun vendorRejected(code: String, msg: String) =
+        t("平台拒绝了这次提交：", "The platform rejected this submission: ") + "$code：$msg"
     val vendorNotClaimed
         get() = t(
             "这家企业还没被认领。认领需要企业实名的凭证，走不了捷径。",

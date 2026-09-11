@@ -1,0 +1,95 @@
+{
+  "profile": "tech-research",
+  "category": "科研与技术服务",
+  "gate": "M",
+  "version": "1.0",
+  "description": "科研、检验检测与专业技术服务档案。字段与 skills/schema/gates/M.json 的 capability 块一一对应。**与 I 门类的 it-service 是两份独立档案**（理由见 it-service.json）。设计依据：甲方委托检测/设计/研发时要筛的是资质与设备（没有 CMA 出的报告不采信、没有那台仪器就做不了这个项目），其次才是排期与价格。",
+  "fields": [
+    {
+      "path": "quality.cma_accredited", "label": "是否有 CMA 资质", "type": "bool",
+      "normalize": "bool",
+      "question": "有 CMA（检验检测机构资质认定）吗？没有就说没有。",
+      "hint": "★ **没有 CMA，出的报告不能用于司法/行政/社会公证** —— 这是甲方第一道筛选。不做检测的机构直接跳过这题",
+      "required": false
+    },
+    {
+      "path": "quality.cnas_accredited", "label": "是否有 CNAS 认可", "type": "bool",
+      "normalize": "bool",
+      "question": "有 CNAS（实验室认可）吗？没有就说没有。",
+      "hint": "国际互认，做出口相关检测的硬门槛。没有就直说没有",
+      "required": false
+    },
+    {
+      "path": "capability.key_instruments", "label": "关键仪器设备", "type": "list",
+      "normalize": "list",
+      "question": "有哪些关键仪器设备？",
+      "hint": "例：三坐标测量机、光谱仪、环境试验箱。★ **能不能做这项检测就看有没有这台机器** —— 比资质更硬的能力证据",
+      "required": false
+    },
+    {
+      "path": "capability.team_size", "label": "团队人数", "type": "integer",
+      "normalize": "integer", "unit": "人",
+      "question": "团队一共多少人？",
+      "hint": "含自己。有外包的请在后面的员工人数里如实说明",
+      "required": true
+    },
+    {
+      "path": "capability.researcher_count", "label": "研发/技术人员数", "type": "integer",
+      "normalize": "integer", "unit": "人",
+      "question": "其中研发或技术人员有多少？全是行政后勤就说没有。",
+      "hint": "决定能不能接研发类委托，还是只能做常规检测。「没有」是有效答案，会记成 0",
+      "required": false, "zero_is_answer": true
+    },
+    {
+      "path": "limits.report_days", "label": "出报告天数", "type": "integer",
+      "normalize": "integer", "unit": "天",
+      "question": "常规多久出报告？",
+      "hint": "例：5。检测/校准类最关键的硬指标，客户排产要等它",
+      "required": true
+    },
+    {
+      "path": "limits.min_order_value_cny", "label": "最低委托金额", "type": "number",
+      "normalize": "number", "unit": "元",
+      "question": "最低接多少金额的单？",
+      "hint": "例：500。太小不接就说个数，决定小项目能不能找你们",
+      "required": true
+    },
+    {
+      "path": "limits.response_hours", "label": "响应时效", "type": "number",
+      "normalize": "number", "unit": "小时",
+      "question": "客户提需求后多久能给回音？含现场采样的到场时效。",
+      "hint": "例：24",
+      "required": true
+    },
+    {
+      "path": "service.sample_return", "label": "样品是否退还", "type": "bool",
+      "normalize": "bool",
+      "question": "检测完样品退还吗？",
+      "hint": "退还 / 不退还。破坏性检测不能退，甲方要提前知道",
+      "required": false
+    },
+    {
+      "path": "service.nda_accepted", "label": "是否接受保密协议", "type": "bool",
+      "normalize": "bool",
+      "question": "能签保密协议吗？",
+      "hint": "能 / 不能。研发外包与专利服务的前置条件",
+      "required": true
+    },
+    {
+      "path": "capability.portfolio", "label": "代表案例", "type": "list",
+      "normalize": "list",
+      "question": "有什么代表性的项目？说说做过什么、给谁做的。",
+      "hint": "例：为某市环保局做的年度水质监测。**写具体项目，不要写「技术实力雄厚」**",
+      "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "researcher_vs_team",
+      "when": ["capability.researcher_count", "capability.team_size"],
+      "check": "researcher_vs_team",
+      "level": "warn",
+      "message": "研发/技术人员数超过了团队总人数，请确认这两个数是不是有一个填的是含外包的人数"
+    }
+  ]
+}

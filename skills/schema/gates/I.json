@@ -1,0 +1,350 @@
+{
+  "$comment": "I 门类（信息传输、软件和信息技术服务业）能力卡 schema 片段。与 gates/M.json 共用 tech-service 码表域，但私有块故意不同：I 有 tech_stacks（技术栈，甲方点名要 Java/Go 时的硬筛选）与 open_source，M 没有；M 有 cma_accredited / key_instruments，I 没有。共用码表的只是那几组真的同构的字段（服务模式/交付成果/团队构成）。",
+  "gate": "I",
+  "gate_name": "信息传输、软件和信息技术服务业",
+  "gate_range": "63 电信、广播电视和卫星传输服务 / 64 互联网和相关服务 / 65 软件和信息技术服务业",
+  "id_prefix": "I",
+  "id_prefix_note": "新门类用 CN-I-{7位序号}。制造业的 CN-MFG- 是历史前缀，不迁移。",
+  "cap_domain": "tech-service",
+  "default_profile": "it-service",
+  "profile_by_category": {
+    "软件开发": "it-service",
+    "移动应用": "it-service",
+    "互联网平台": "it-service",
+    "大数据与AI": "it-service",
+    "云计算": "it-service",
+    "网络安全": "it-service",
+    "系统集成与物联网": "it-service",
+    "运维服务": "it-service",
+    "信息技术咨询": "it-service",
+    "游戏数字内容": "it-service",
+    "集成电路设计": "it-service",
+    "其他信息服务": "it-service"
+  },
+  "caps_index_from": [
+    "capability.tech_directions[]",
+    "capability.service_modes[]",
+    "capability.deliverables[]",
+    "capability.tech_stacks[]",
+    "capability.team_roles[]",
+    "quality.certifications[].name",
+    "category"
+  ],
+  "poi_types": {
+    "$comment": "高德 POI type → GB/T 4754 小类码。**最长前缀命中者赢**（gate_schema.poi_to_gb）。注意：高德对公司企业的类目极粗（`公司企业;公司;…` 基本不区分行业），所以**技术服务的 gb_code 主要靠公司名 + 经营范围文本判**，POI 表只覆盖几类高德确实分得开的。",
+    "prefix": {
+      "公司企业;公司;网络科技": {
+        "code": "6432",
+        "name": "互联网生活服务平台"
+      },
+      "公司企业;公司;软件": {
+        "code": "6513",
+        "name": "应用软件开发"
+      },
+      "公司企业;公司;信息技术": {
+        "code": "6560",
+        "name": "信息技术咨询服务"
+      },
+      "公司企业;公司;电子科技": {
+        "code": "6513",
+        "name": "应用软件开发"
+      },
+      "公司企业;公司;网络": {
+        "code": "6432",
+        "name": "互联网生活服务平台"
+      },
+      "公司企业;公司;通信": {
+        "code": "6311",
+        "name": "固定电信服务"
+      },
+      "公司企业;公司;动漫": {
+        "code": "6579",
+        "name": "其他数字内容服务"
+      },
+      "公司企业;公司;游戏": {
+        "code": "6422",
+        "name": "互联网游戏服务"
+      }
+    },
+    "ambiguous": {
+      "公司企业;公司": "高德把绝大多数公司都归到「公司企业;公司;XX」甚至只到「公司企业;公司」，**这个类目说明不了行业**。落到这一层时不要猜 gb_code，留 null —— 用公司名与经营范围判，那才是强证据。",
+      "公司企业": "只有一级类目，无信息量。",
+      "公司企业;公司;科技": "「科技」是万金油词，可能落在 C/M/I 任何一个门类，必须按实际业务判。",
+      "公司企业;公司;电子商务": "可能是自营零售（F 门类 5292 互联网零售），也可能是电商平台技术服务（I 门类 6431）—— 取决于它卖货还是提供服务，不猜。"
+    }
+  },
+  "schema_extra": {
+    "required": [
+      "limits",
+      "capability"
+    ],
+    "properties": {
+      "category": {
+        "type": "string",
+        "enum": [
+          "软件开发",
+          "移动应用",
+          "互联网平台",
+          "大数据与AI",
+          "云计算",
+          "网络安全",
+          "系统集成与物联网",
+          "运维服务",
+          "信息技术咨询",
+          "游戏数字内容",
+          "集成电路设计",
+          "其他信息服务"
+        ],
+        "description": "业态展示标签。**具体会做什么不在这里** —— 那是 capability.tech_directions，一家公司常常同时做前后端与运维。"
+      },
+      "limits": {
+        "type": "object",
+        "description": "承接硬边界。甲方立项时的一票否决项主要落在这几个数上",
+        "additionalProperties": false,
+        "properties": {
+          "min_order_days": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0.5,
+            "description": "最小接单量（人天）。小于这个量不接 —— 决定小需求能不能找他们"
+          },
+          "min_order_value_cny": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "最低项目金额（元）"
+          },
+          "response_hours": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "需求响应时效（小时）。SLA 谈判的起点"
+          },
+          "delivery_days": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "常规交付周期（天）。指一个标准规模需求从启动到可验收"
+          },
+          "max_concurrent_projects": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "同时在制项目数上限。超出就是排期，不是能力"
+          },
+          "current_load_pct": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100,
+            "description": "当前团队负荷。与制造业产线负荷同义，只是被占用的资源是人天"
+          },
+          "rush_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "能否加急投入资源"
+          }
+        }
+      },
+      "capability": {
+        "type": "object",
+        "description": "信息技术能力块。字段由本文件与 skills/profiles/it-service.json 共同定义。",
+        "additionalProperties": false,
+        "properties": {
+          "tech_directions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "tech-service:信息技术方向"
+            },
+            "description": "技术方向码列表。枚举由 cap-codes/tech-service.json 的「信息技术方向」组运行时注入"
+          },
+          "service_modes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "tech-service:服务模式"
+            },
+            "description": "服务模式码（项目制/驻场/人力外包/年框/SaaS…）"
+          },
+          "deliverables": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "tech-service:交付成果"
+            },
+            "description": "交付成果码（源码/API/部署上线/验收报告…）"
+          },
+          "tech_stacks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "tech-service:技术栈"
+            },
+            "description": "技术栈码。甲方点名要 Java 或 Go 时这是硬筛选条件"
+          },
+          "team_roles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "tech-service:团队构成"
+            },
+            "description": "团队构成码。有没有架构师/测试，决定能接复杂项目还是只能出人手"
+          },
+          "team_size": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "技术团队人数（含外包，须在 identity.employee_outsource 如实说明外包人数）"
+          },
+          "open_source": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "是否有公开开源作品。技术能力最硬的可查证据"
+          },
+          "portfolio": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "代表案例原文。写具体项目，不要写形容词"
+          },
+          "support_hours": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "技术支持时段原文，如「工作日 9:00-18:00」「7×24 值班」。**不要用 business_hours 这个名字** —— 软件公司不是按营业时间营业的"
+          }
+        }
+      },
+      "service": {
+        "type": "object",
+        "description": "商务与售后",
+        "additionalProperties": false,
+        "properties": {
+          "quote_inputs_required": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "报价需提供什么，如 需求文档、原型、接口文档、预算区间"
+          },
+          "quote_response_hours": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "报价响应时效（小时）"
+          },
+          "payment_terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "付款方式，如 3-3-3-1 分期、验收后付款"
+          },
+          "invoice_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "能否开票"
+          },
+          "nda_accepted": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "是否接受 NDA。涉及核心业务系统的项目这是前置条件"
+          },
+          "maintenance_months": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "免费维保月数。0 是有效答案（不提供免费维保），不等于未填"
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "quality": {
+        "type": "object",
+        "description": "资质与可查成果",
+        "additionalProperties": false,
+        "properties": {
+          "certifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "valid_until": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "evidence": {
+                  "type": "string",
+                  "enum": [
+                    "self_declared",
+                    "public_record",
+                    "platform_verified",
+                    "field_audited"
+                  ]
+                }
+              }
+            },
+            "description": "ISO27001 / CMMI / 高新技术企业 / 双软认证 / 等保测评资质 / 信息系统集成资质 等"
+          },
+          "software_copyright_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "软件著作权数量。0 是有效答案，不等于未填"
+          }
+        }
+      }
+    }
+  }
+}

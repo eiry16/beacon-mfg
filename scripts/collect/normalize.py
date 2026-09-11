@@ -340,12 +340,22 @@ def norm_moq(text: str) -> tuple[Optional[int], str]:
 
 
 def norm_bool(text: str) -> tuple[Optional[bool], str]:
-    """是否判断。'有'/'能做'/'能出'→True；'外发'/'不做'/'不能'→False"""
+    """是否判断。'有'/'能做'/'能出'→True；'外发'/'不做'/'不能'→False
+
+    否定词表覆盖生活服务业的说法（2026-09-11 门类扩展时补）：
+    原先只认「能 / 有 / 可以」，餐饮问句里最常见的答案「收 / 不收」「要 / 不要」
+    一律返回「无法判断是/否」—— 企业答了等于没答，字段留空，下游还以为是没问到。
+    制造业里同样有受影响的问题（`service.nda_accepted` 提示企业答「接受」）。
+
+    判定顺序**必须否定在前**：'不要' 含 '要'、'不收' 含 '收'，反过来就先命中肯定词了。
+    同理「不收费」不该被判成 True（'收' 命中）—— 所以否定的正则要吃掉整个短语。
+    """
     t = text.strip()
     # 否定先判，避免「没有」被后面的「有」命中
-    if re.search(r"外[发协]|外包|不能|没法|不行|不(做|接|提供|太)|没有|无|不确定", t):
+    if re.search(r"外[发协]|外包|不能|没法|不行|不是|不(做|接|提供|太|收|要|需|用|含|支持|接受)|"
+                 r"没有|无|不确定|否|拒绝|谢绝|免[费收]|不需要|不收取", t):
         return False, f"「{t}」→ False"
-    if re.search(r"能|可以|支持|有|自有|会|行|ok|OK", t):
+    if re.search(r"能|可以|支持|有|自有|会|行|ok|OK|收|要|需要|含|接受|是|提供", t):
         return True, f"「{t}」→ True"
     return None, "无法判断是/否"
 
@@ -433,11 +443,54 @@ def norm_equipment_list(text: str) -> tuple[Optional[list], str]:
     return out, note
 
 
+# 口述列表里剥掉开头的引导词。
+# ⚠ 原实现用正则 `主要?是?` —— 它匹配的是「主」+ 可选的「要」，**不是「主要」**。
+# 于是「主题密室」被剥成「题密室」、「主营」不受影响、还得靠别的分支兜。
+# 这类 bug 不报错、不返回 None，只是把数据悄悄改错，是最难被发现的一种。
+# 修正三条：(1) 「主要/主营」写成完整词；(2) 长词排前面（正则逐个尝试，先命中者赢）；
+# (3) 单字引导词碰到构词不许剥 —— 「有机食品」不能说成「机食品」。
+_LEAD_WORDS = ("主要是", "主要做", "主营", "主要", "包括有", "包括", "也做点", "做点",
+               "另外", "还有", "以及", "也上", "也做", "有", "做")
+_LEAD_GUARD = ("有机", "有色金属", "有声", "有限", "做法")
+
+
+def _strip_lead(p: str) -> str:
+    if any(p.startswith(g) for g in _LEAD_GUARD):
+        return p
+    for w in _LEAD_WORDS:
+        if p.startswith(w):
+            return p[len(w):].strip()
+    return p
+
+
+# 拆条时「和」不能盲拆：「和面机」「和牛」「和田玉」会被拆成「面机」「牛」「田玉」。
+# 拆错是往卡里写**不存在的条目**（编造），漏拆只是少一条（但仍是真话）——
+# 两害相权，宁可漏拆。所以先把这些构词保护起来，拆完再还原。
+_HE_COMPOUND = ("和面", "和牛", "和田", "和平", "和睦", "和谐", "和美",
+                "和风", "和声", "和服", "和尚", "和硕", "和顺")
+
+
+def _split_items(text: str) -> list[str]:
+    saved: list[str] = []
+
+    def _protect(m):
+        saved.append(m.group(0))
+        return "\x00%d\x00" % (len(saved) - 1)
+
+    for g in _HE_COMPOUND:
+        text = re.sub(re.escape(g), _protect, text)
+    parts = re.split(r"[、,，;；/]|以及|还有|和|\s{2,}", text)
+    out = []
+    for p in parts:
+        p = re.sub(r"\x00(\d+)\x00", lambda m: saved[int(m.group(1))], p).strip()
+        if p:
+            out.append(p)
+    return out
+
+
 def norm_list(text: str) -> tuple[Optional[list], str]:
     """普通字符串列表。'304、316L、6061'→['304','316L','6061']"""
-    parts = re.split(r"[、,，;；/]|和|以及|\s{2,}", text)
-    out = [p.strip() for p in parts if p.strip() and len(p.strip()) > 0]
-    out = [re.sub(r"^(有|主要?是?|做|包括?|也做点|做点|另外|还有|以及)\s*", "", p) for p in out]
+    out = [_strip_lead(p) for p in _split_items(text)]
     out = [p for p in out if p]
     if not out:
         return None, "未识别到列表项"
@@ -509,6 +562,71 @@ def norm_thread_standard(text: str) -> tuple[Optional[list], str]:
 # ---------------------------------------------------------------- 分发表
 
 
+# 「没有 / 无 / 不填 / 不确定 …」这类回答：对**绝大多数**字段，它等于"没提供"，
+# 所以 normalize() 见到就直接返回 None。这是对的。
+#
+# 但有个别字段，它恰恰是**有效答案**——最典型的是 `exclusions`（「有什么活是你们
+# 明确不接的？」）：一家什么活都接的企业，诚实的回答就是"没有"。这类字段在定义里
+# 带 `empty_is_answer: true`，由调用方（session.normalize_field）**先行截获**，
+# 记成空列表（= 明确为空），而不是丢掉。
+#
+# 为什么必须显式区分：丢掉它不只是少一个字段。`exclusions` 是 required，
+# 值丢了 → collect_confirm 的必填门禁永远通不过 → 整个登记流程卡死在一个
+# **用户已经回答过**的问题上，且现场再也看不到是哪一题（2026-09-11 真机实测）。
+#
+# 这张表必须与 session.normalize_field 用的是同一份，否则会出现
+# 「normalize 拦住、调用方不认」的静默不一致。
+EMPTY_ANSWERS: tuple[str, ...] = ("不填", "没有", "无", "不确定", "不知道", "待定")
+
+# 「确实没有」的口语变体。只在 `empty_is_answer` 字段上使用（见 is_empty_answer）。
+#
+# 为什么需要它：老板不会只说"没有"，更多是「暂时没有」「没有特别不接的」
+# 「没什么不接的活」。这些如果不识别，就会被当成**列表项**记下来，
+# 于是在 SKILL.md 的「我们不做的（边界）」里出现一条 `- 暂时没有`——
+# 那是把"什么都接"写成了一条边界，属于轻微编造。
+#
+# 必须**只匹配"否定 + 无内容"**：`不做医疗器械`、`不做硬件` 是有内容的边界声明，
+# 绝不能落进这里。所以 不做/不接 之后只允许出现 的/活/单/东西/业务/限制/要求。
+_EMPTY_PAT = re.compile(
+    r"^(?:暂时|目前|现在|基本|一般|通常|都|也)*"
+    r"(?:没什么|没啥|没有|没|无)"
+    r"(?:特别|其他|其它|别的)*"
+    r"(?:不接|不做)?"
+    r"(?:的)?"
+    r"(?:活|单|东西|业务|限制|要求)?$"
+)
+
+
+def is_empty_answer(text: str) -> bool:
+    """这句话是不是「明确说没有」。供 `empty_is_answer` 字段使用。"""
+    t = (text or "").strip().rstrip("。.!！")
+    return bool(t) and (t in EMPTY_ANSWERS or bool(_EMPTY_PAT.match(t)))
+
+
+# bool 字段的「明确否」。
+#
+# 为什么必须单独一张表：`normalize()` 见到「没有 / 无」会直接返回 None（= 未提供），
+# 于是问答里最自然的那句回答对企业答了等于没答。M 门类的问句甚至在提示里写着
+# 「没有就说没有」，而那时的实现会把这句话丢掉 —— 属于「明确没有」被记成
+# 「没问到」，正是本项目红线禁止的那种失真。
+#
+# 但**不能把 EMPTY_ANSWERS 整张表搬过来**：`不确定 / 不知道 / 待定 / 不填`
+# 不是「否」，它们是真的没答案，必须留在 None。把「不知道」记成 False 是编造。
+#
+# 用全匹配（`$`）而非包含：`不锈钢`、`无线网`、`不动产` 都不该被判成否。
+_BOOL_NO = re.compile(
+    r"^(?:暂时|目前|现在|基本|一般|通常|都|也|确实|真|并)?"
+    r"(?:没有|没|无|否|不是|不能|不行|不可以|不支持|不接受|不需要|不做|不接"
+    r"|不提供|不含|不具备|未取得|未办)$"
+)
+
+
+def is_bool_no(text: str) -> bool:
+    """bool 字段：这句话是不是**明确的「否」**（而不是「不知道」）。"""
+    t = (text or "").strip().rstrip("。.!！")
+    return bool(t) and bool(_BOOL_NO.match(t))
+
+
 def normalize(kind: str, text: str, enum: Optional[list] = None) -> tuple[Any, str]:
     """
     按归一化类型处理文本。统一入口。
@@ -516,7 +634,7 @@ def normalize(kind: str, text: str, enum: Optional[list] = None) -> tuple[Any, s
     返回 (value, note)；失败时 value 为 None。
     """
     t = (text or "").strip()
-    if not t or t in ("不填", "没有", "无", "不确定", "不知道", "待定"):
+    if not t or t in EMPTY_ANSWERS:
         return None, "未提供"
 
     table = {

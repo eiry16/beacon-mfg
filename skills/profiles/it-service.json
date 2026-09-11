@@ -1,0 +1,90 @@
+{
+  "profile": "it-service",
+  "category": "信息技术服务",
+  "gate": "I",
+  "version": "1.0",
+  "description": "软件与信息技术服务档案。字段与 skills/schema/gates/I.json 的 capability 块一一对应。**与 M 门类的 tech-research 是两份独立档案**：虽然 I/M 共用 tech-service 码表域，但问一家软件公司「CMA 资质、关键仪器」是荒谬的，问检测机构「技术栈用 Java 还是 Go」也一样。",
+  "fields": [
+    {
+      "path": "capability.team_size", "label": "技术团队人数", "type": "integer",
+      "normalize": "integer", "unit": "人",
+      "question": "技术团队有多少人？",
+      "hint": "含自己。有外包的请在后面员工人数里如实说明外包多少",
+      "required": true
+    },
+    {
+      "path": "limits.min_order_days", "label": "最小接单人天", "type": "number",
+      "normalize": "number", "unit": "人天",
+      "question": "最少接多大的活？按人天算个大概。",
+      "hint": "例：10（十天一人）。决定小需求能不能找你们",
+      "required": true
+    },
+    {
+      "path": "limits.response_hours", "label": "需求响应时效", "type": "number",
+      "normalize": "number", "unit": "小时",
+      "question": "客户提需求后多久能给回音？",
+      "hint": "例：24。SLA 谈判的起点",
+      "required": true
+    },
+    {
+      "path": "capability.tech_stacks", "label": "技术栈", "type": "cap_multi",
+      "cap_from": "tech-service:技术栈",
+      "normalize": "cap_multi",
+      "question": "主要用什么技术栈？Java、Python、Go 这些。",
+      "hint": "可多选。甲方点名要某个语言时，这是硬筛选条件",
+      "required": false
+    },
+    {
+      "path": "capability.deliverables", "label": "交付成果", "type": "cap_multi",
+      "cap_from": "tech-service:交付成果",
+      "normalize": "cap_multi",
+      "question": "一般交付什么？给源码、还是只交付上线结果？",
+      "hint": "可多选。要不要源码直接决定合同和报价",
+      "required": false
+    },
+    {
+      "path": "capability.portfolio", "label": "代表案例", "type": "list",
+      "normalize": "list",
+      "question": "有什么代表性的项目？说说做了什么、给谁做的。",
+      "hint": "例：给某车企做的 MES 系统。**写具体项目，不要写「经验丰富」**",
+      "required": false
+    },
+    {
+      "path": "service.maintenance_months", "label": "免费维保月数", "type": "integer",
+      "normalize": "integer", "unit": "月",
+      "question": "上线后免费维保多久？不维保就说没有。",
+      "hint": "例：12。「不提供」是有效答案，会记成 0",
+      "required": false, "zero_is_answer": true
+    },
+    {
+      "path": "service.nda_accepted", "label": "是否接受 NDA", "type": "bool",
+      "normalize": "bool",
+      "question": "能签保密协议吗？",
+      "hint": "能 / 不能。涉及核心业务系统的项目这是前置条件",
+      "required": true
+    },
+    {
+      "path": "capability.support_hours", "label": "技术支持时段", "type": "text",
+      "normalize": "text",
+      "question": "技术支持是什么时段？",
+      "hint": "例：工作日 9:00-18:00 / 7×24 值班。保留原话 —— 软件公司不是按营业时间营业的",
+      "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "team_vs_concurrent",
+      "when": ["capability.team_size", "limits.max_concurrent_projects"],
+      "check": "team_vs_concurrent",
+      "level": "warn",
+      "message": "按同时在制项目数算，每个项目摊不到 3 个人，请确认排期（一个正经项目至少占 3 人）"
+    },
+    {
+      "id": "min_days_vs_delivery",
+      "when": ["limits.min_order_days", "limits.delivery_days"],
+      "check": "min_days_vs_delivery",
+      "level": "warn",
+      "message": "最小接单量（人天）已经超过常规交付周期天数，算术上不成立，请确认两个数的单位"
+    }
+  ]
+}

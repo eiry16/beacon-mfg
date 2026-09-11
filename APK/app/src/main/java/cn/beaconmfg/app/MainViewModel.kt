@@ -365,6 +365,9 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         var detail: SupplierDetail? = null
         /** 本轮有没有发生过写操作。供应商侧用它判断"模型是不是说了却没提交"。 */
         var wrote = false
+        // 平台状态被改动过的标记由工具侧置位（目前只有"定稿被拒后自动退回补答"这一条），
+        // 每轮清零：它描述的是**这一轮**发生的事。
+        vendorSession.progressed = false
         // 一轮里的模型迭代上限按身份区分：买家 4 轮、供应商 40 轮（长流程需要）。
         // 客户端只建一次 LlmClient（内部共用 OkHttpClient）。
         val llm = LlmClient(cfg, str)
@@ -389,6 +392,28 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                 remove(answerId)
                 append(UiMessage(seq++, Sender.SYSTEM, str.callFailed(result.error)))
                 return
+            }
+            // 确定性兜底：模型没调任何工具，但认领流程正在等验证码、用户这轮回来的
+            // 正好是 6 位数字 → 直接走 claim_verify，不依赖模型判断。
+            // 开发期 DeepSeek 常把验证码当普通聊天（toolCalls=0），导致永远验不过、
+            // 卡在验证码环节。这是「状态归状态机管」的延伸：验证码回填是确定信号，
+            // 不该交给模型去猜该调哪个工具。
+            val codeDigits = userText.trim().filter { it.isDigit() }
+            if (result.toolCalls.isEmpty() && set.isAwaitingCode() && codeDigits.length == 6) {
+                val tr = withContext(Dispatchers.IO) { set.run("claim_verify", """{"code":"$codeDigits"}""") }
+                log(
+                    "round $rounds: [codefallback] claim_verify auto, failed=${tr.failed}" +
+                        if (tr.failed) " :: ${tr.text.take(160)}" else ""
+                )
+                hits = mergeHits(hits, tr.hits)
+                append(
+                    UiMessage(
+                        seq++, Sender.SYSTEM, toolLabel("claim_verify", tr, str),
+                        isTool = true, toolFailed = tr.failed,
+                    )
+                )
+                history.add(ChatMsg("tool", content = tr.text, toolCallId = "codefallback-$rounds"))
+                continue
             }
             if (result.toolCalls.isEmpty()) {
                 // 最终回答：卡片只在这里渲染一次
@@ -426,6 +451,27 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
                         // 「本地校验拦住、模型却猜成网络问题」那次加的）
                         if (tr.failed) " :: ${tr.text.take(200)}" else ""
                 )
+                // 根因④兜底：采集已全部答完时，collect_answer 会返回 COLLECT_FINISHED
+                // （服务端 collect.py:395 当 ses.current() is None）。模型此时常陷入
+                // 「重复提交 collect_answer → COLLECT_FINISHED」死循环，不会主动调
+                // collect_confirm 生成能力卡。这是确定信号，直接定稿，不靠模型判断。
+                if (call.name == "collect_answer" && tr.failed && tr.text.contains("COLLECT_FINISHED")) {
+                    val cr = withContext(Dispatchers.IO) { set.run("collect_confirm", "{}") }
+                    log(
+                        "round $rounds: [collectfallback] collect_confirm auto, failed=${cr.failed}" +
+                            if (cr.failed) " :: ${cr.text.take(160)}" else ""
+                    )
+                    hits = mergeHits(hits, cr.hits)
+                    cr.detail?.let { detail = it }
+                    append(
+                        UiMessage(
+                            seq++, Sender.SYSTEM, toolLabel("collect_confirm", cr, str),
+                            isTool = true, toolFailed = cr.failed,
+                        )
+                    )
+                    history.add(ChatMsg("tool", content = cr.text, toolCallId = "collectfallback-$rounds"))
+                    continue
+                }
                 hits = mergeHits(hits, tr.hits)
                 tr.detail?.let { detail = it }
                 if (!tr.failed && isWriteTool(call.name)) wrote = true
@@ -543,10 +589,14 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
      * 为什么不能不管：模型（tool_choice=auto）会不调工具直接说「记下了」然后自己编下一题，
      * 用户以为答完了，平台那边一步没动——这是会丢数据的假成功。
      * 不去替它重试（重试可能把同一句话提交两遍），而是把状态如实摆出来让人再说一次。
+     *
+     * [VendorSession.progressed] 也算"提交过"：定稿被必填门禁拒绝时，App 会自动把流程
+     * **退回**到缺的那一题（平台真的动了），那种情况下再说一句「进度没变」就是假话。
      */
     private fun warnIfNothingSubmitted(str: Strings, wrote: Boolean) {
         if (role() != Role.SUPPLIER) return
-        if (wrote || vendorSession.pending == null) return
+        if (wrote || vendorSession.progressed) return
+        if (vendorSession.pending == null) return
         append(
             UiMessage(
                 seq++, Sender.SYSTEM, str.vendorNothingSubmitted,

@@ -1,0 +1,76 @@
+{
+  "profile": "restaurant",
+  "category": "餐饮",
+  "gate": "H",
+  "version": "1.0",
+  "description": "餐饮业态档案。字段与 skills/schema/gates/H.json 的 capability 块一一对应（validate_vendor_skills 会二次校验）。设计依据是「客户 Agent 替企业找餐厅时要筛什么」：席位与包间决定能不能接，人均与菜系决定合不合适，营业时段决定来不来得及。",
+  "fields": [
+    {
+      "path": "capability.seats", "label": "总座位数", "type": "integer",
+      "normalize": "integer", "unit": "座",
+      "question": "店里一共能坐多少人？",
+      "hint": "例：120。算上包间里的座位",
+      "required": true
+    },
+    {
+      "path": "capability.private_rooms", "label": "包间数", "type": "integer",
+      "normalize": "integer", "unit": "间",
+      "question": "有几个包间？没有的话直说没有。",
+      "hint": "「没有包间」是有效答案，会记成 0（而不是没填）—— 客户 Agent 拿它做硬筛选",
+      "required": true, "zero_is_answer": true
+    },
+    {
+      "path": "capability.avg_price_cny", "label": "人均消费", "type": "number",
+      "normalize": "number", "unit": "元",
+      "question": "人均大概多少钱？",
+      "hint": "例：120",
+      "required": true
+    },
+    {
+      "path": "capability.business_hours", "label": "营业时间", "type": "text",
+      "normalize": "text",
+      "question": "营业时间是怎么排的？",
+      "hint": "例：10:00-14:00, 17:00-21:30。保留原话不归一化 —— 餐饮营业时间五花八门，硬拆成时段会丢信息",
+      "required": true
+    },
+    {
+      "path": "capability.time_slots", "label": "营业时段", "type": "cap_multi",
+      "cap_from": "restaurant:时段",
+      "normalize": "cap_multi",
+      "question": "这几个时段里做哪几个？早餐、午市、晚市、夜宵。",
+      "hint": "可多选。夜宵和 24 小时是稀缺供给，写清楚有溢价",
+      "required": false
+    },
+    {
+      "path": "capability.max_banquet_tables", "label": "最大宴席桌数", "type": "integer",
+      "normalize": "integer", "unit": "桌",
+      "question": "办宴席最多能摆几桌？不做宴席就说没有。",
+      "hint": "不做宴席直说「没有」，会记成 0",
+      "required": false, "zero_is_answer": true
+    },
+    {
+      "path": "capability.venue_features", "label": "场地条件", "type": "cap_multi",
+      "cap_from": "restaurant:场地",
+      "normalize": "cap_multi",
+      "question": "场地有什么便利条件？比如停车场、大包间、宴会厅、露台、儿童区？",
+      "hint": "可多选。停车场往往是企业客户的一票否决项",
+      "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "seats_vs_tables",
+      "when": ["capability.seats", "capability.max_banquet_tables"],
+      "check": "banquet_tables_le_seats",
+      "level": "warn",
+      "message": "宴席桌数乘以 10 人已超过总座位数，请确认是否含临时加桌"
+    },
+    {
+      "id": "private_rooms_vs_seats",
+      "when": ["capability.private_rooms", "capability.seats"],
+      "check": "private_rooms_sane",
+      "level": "warn",
+      "message": "包间数与座位数组合异常，请确认单位"
+    }
+  ]
+}

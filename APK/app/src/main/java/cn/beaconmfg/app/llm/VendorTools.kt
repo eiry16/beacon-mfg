@@ -72,6 +72,17 @@ class VendorSession {
      */
     var pending: PendingQuestion? = null
 
+    /**
+     * 这一轮**平台状态被真实改动过**（即使是"后退"式的改动）。
+     *
+     * 为什么需要它：`warnIfNothingSubmitted` 用「这一轮有没有写操作成功」判断
+     * 模型是不是"说了却没提交"。但定稿被必填门禁拒绝时，App 会自动把流程**退回**到
+     * 缺的那一题——平台确实动了，只是那个动作在工具层面是 `failed=true`
+     * （定稿确实没成功）。不记这一笔，界面会在流程明明前进了一步的情况下说
+     * 「进度没变」，那是假话。
+     */
+    var progressed = false
+
     val claimed: Boolean get() = !claimToken.isNullOrBlank()
 
     /** 验证码已发出、还没验过。用来告诉模型"现在该等对方报码"。 */
@@ -86,6 +97,7 @@ class VendorSession {
         appId = null
         registeredHere = false
         pending = null
+        progressed = false
     }
 }
 
@@ -131,6 +143,8 @@ class VendorToolBox(
     private fun t(zh: String, e: String) = if (en()) e else zh
 
     // ── 工具定义 ───────────────────────────────────────────────────────────
+
+    override fun isAwaitingCode(): Boolean = session.claimPending
 
     override fun definitions(): JSONArray {
         fun fn(
@@ -276,15 +290,28 @@ class VendorToolBox(
                 fn(
                     "collect_answer",
                     t(
-                        "提交对方对当前这一题的口述回答。**原话照录**，不要替他换算成数字。" +
-                            "他说答不上来/跳过，就把 text 留空，系统会把该字段留空而不是填默认值。" +
-                            "返回下一题。",
-                        "Submit the person's spoken answer to the current question. Record it **verbatim** — " +
-                            "do not convert units yourself. If they can't answer, leave `text` empty: the " +
-                            "field stays blank rather than getting a default. Returns the next question."
+                        "提交对方对当前这一题的口述回答。**原话照录**，不要替他换算或总结。" +
+                            "关键：区分「有效回答」与「真正跳过」——" +
+                            "• 有效回答（含否定/排除陈述）：只要对方说了具体内容，都必须原话放进 text。" +
+                            "特别是「不做什么业务」这类排除题，像「我们没有机加工业务」「只做软件、不接五金件」" +
+                            "「这个不做」都是有效答案，否定本身就是答案，绝不能留空。" +
+                            "• 真正跳过：仅当对方明确说「这题答不上来」「不知道」「跳过」「先空着」时，才把 text 留空。" +
+                            "返回下一题。" +
+                            "注意：若工具返回 COLLECT_FINISHED（所有问题已答完），说明采集已结束，" +
+                            "应立即改调 collect_confirm 生成能力卡，不要再重复提交本题。",
+                        "Submit the person's spoken answer to the current question. **Record it verbatim** — " +
+                            "do not convert units or summarise. " +
+                            "Key: distinguish a real answer from a genuine skip — " +
+                            "• Valid answer (incl. negative/exclusion statements): whenever they say anything concrete, " +
+                            "put it in `text` verbatim. Especially for 'what they do NOT do' questions, statements like " +
+                            "'we have no machining business', 'software only, no hardware', 'we don't do this' ARE valid " +
+                            "answers — the negation IS the answer; never leave text empty. " +
+                            "• Genuine skip: only when they explicitly say 'can't answer', 'don't know', 'skip', " +
+                            "'leave it blank' should `text` be left empty. " +
+                            "Returns the next question."
                     ),
                     JSONObject()
-                        .put("text", s(t("他的原话；留空表示跳过这一题（字段留空）", "Their words; leave empty to skip (field stays blank)")))
+                        .put("text", s(t("他的原话；除非对方明确说不知道/跳过，否则不要留空（否定/排除陈述也照录）", "Their words; do NOT leave empty unless they explicitly say they don't know/skip (negative/exclusion answers also go here verbatim)")))
                 )
             )
             .put(
@@ -418,9 +445,16 @@ class VendorToolBox(
         }
     }
 
+    /**
+     * 把平台异常翻成人话。**必须区分「服务端明确拒绝」和「根本没连上」**：
+     * 业务拒绝（服务端给了 code）时套一句「平台接口没连上」是错的 ——
+     * 它会把模型引向"网络问题"（实测发生过：模型据此让用户去改接口地址），
+     * 而真因是它自己提交的内容不合格。两件事的处置方式完全不同。
+     */
     private fun apiErrorText(e: PlatformApiException): String = when (e.code) {
         "NOT_CONFIGURED" -> str().vendorApiMissing
-        else -> str().vendorUnreachable + "${e.code}：${e.message}"
+        "NETWORK", "BAD_RESPONSE" -> str().vendorUnreachable + "${e.code}：${e.message}"
+        else -> str().vendorRejected(e.code, e.message)
     }
 
     private fun failed(text: String) = ToolResult(text, failed = true)
@@ -958,7 +992,17 @@ class VendorToolBox(
         requireClaim()?.let { return it }
         val id = targetId(a)
         if (id.isEmpty()) return failed(t("缺供应商 ID。", "Missing supplier ID."))
-        val r = api.collectConfirm(id, a.optBoolean("overwrite_existing", false))
+        val r = try {
+            api.collectConfirm(id, a.optBoolean("overwrite_existing", false))
+        } catch (e: PlatformApiException) {
+            // 必填未齐**不能让模型自己去想办法**：会话已经走到末尾（turn 一律回
+            // COLLECT_FINISHED），它没有任何手段补答，只能反复重试同一个必然失败的定稿。
+            // 2026-09-11 真机实测就是这个死循环：4 轮 confirm→MISSING_REQUIRED，
+            // 用户看到的现象是"卡在最后一题不动"。缺哪些项是服务端给的确定信号，
+            // 该由状态机兜底，不该交给模型猜。
+            if (e.code != "MISSING_REQUIRED") throw e
+            return recoverMissingRequired(id, e)
+        }
         if (r.optString("status") != "generated") {
             return failed(t("定稿没有成功：", "Finalising did not succeed: ") + r.toString())
         }
@@ -993,6 +1037,46 @@ class VendorToolBox(
             ).append('\n')
         }
         return ToolResult(sb.toString().trimEnd())
+    }
+
+    /**
+     * 定稿被「必填未齐」拒绝后的**确定性补救**：让服务端把流程退回缺的那一题。
+     *
+     * 为什么不能只把错误原样抛给模型：会话已经走到末尾，`collect_answer` 一律回
+     * COLLECT_FINISHED，模型根本没有补答的手段，只能一遍遍重试同一个必然失败的定稿
+     * （2026-09-11 真机实测：连续 4 轮 confirm → MISSING_REQUIRED，用户看到的是
+     * "卡在最后一题不动"）。缺哪几项是服务端算出来的**确定信号**，
+     * 不该交给模型去猜 —— 与验证码兜底、COLLECT_FINISHED 兜底同一个道理。
+     */
+    private suspend fun recoverMissingRequired(id: String, e: PlatformApiException): ToolResult {
+        val labels = e.details?.optJSONArray("missing_labels")
+        val names = (0 until (labels?.length() ?: 0)).map { labels!!.optString(it) }
+
+        val r = runCatching { api.collectFixMissing(id) }.getOrNull()
+        if (r == null || r.optJSONObject("next_question") == null) {
+            // 连"退回"都没做成 —— 如实说，不许编一句"已经帮你补上了"
+            return failed(
+                e.message + t(
+                    "（缺的必填项：${names.joinToString("、")}。自动退回补答也没成功，" +
+                        "请让对方把资料补齐后再说一次。）",
+                    " (Missing: ${names.joinToString(", ")}. Automatic rollback also failed — " +
+                        "ask the supplier for the missing items and try again.)"
+                )
+            )
+        }
+        session.progressed = true
+        // questionBlock 会把这一题重新挂进 session.pending（下一轮系统提示词就带上它），
+        // 并返回可以直接照着问的题面。
+        val q = questionBlock(r)
+        return failed(
+            t(
+                "定稿被拒：还差 ${names.size} 项必填（${names.joinToString("、")}）。" +
+                    "流程已退回那一题，现在就照下面的问题问对方，答完再定稿。",
+                "Finalisation rejected: ${names.size} required field(s) still missing " +
+                    "(${names.joinToString(", ")}). The flow has been rolled back to that question — " +
+                    "ask it now, then finalise again."
+            ) + "\n" + q
+        )
     }
 
     // ── 认证与灯牌 ─────────────────────────────────────────────────────────

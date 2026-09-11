@@ -47,6 +47,8 @@ data class ToolResult(
 interface ToolSet {
     fun definitions(): JSONArray
     suspend fun run(name: String, arguments: String): ToolResult
+    /** 当前是否正在等对方回填验证码（已发码、未核验）。默认 false；供应商侧会实返回。 */
+    fun isAwaitingCode(): Boolean = false
 }
 
 /**

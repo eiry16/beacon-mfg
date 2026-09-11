@@ -1,0 +1,443 @@
+{
+  "$comment": "O 门类（居民服务、修理和其他服务业）能力卡 schema 片段。与 gates/F.json 共用 retail-service 码表域，但私有块**故意不同**：O 没有 retail_categories / sku_count / brands（个体服务户不备货、不做品牌代理），多出 technician_count / service_radius_km / warranty_days —— 修车和家政的筛选条件与卖货完全是两回事。",
+  "gate": "O",
+  "gate_name": "居民服务、修理和其他服务业",
+  "gate_range": "80 居民服务业 / 81 机动车、电子产品和日用产品修理业 / 82 其他服务业",
+  "id_prefix": "O",
+  "id_prefix_note": "新门类用 CN-O-{7位序号}。制造业的 CN-MFG- 是历史前缀，不迁移。",
+  "cap_domain": "retail-service",
+  "default_profile": "resident-service",
+  "profile_by_category": {
+    "家政服务": "resident-service",
+    "洗衣洗染": "resident-service",
+    "美容美发": "resident-service",
+    "洗浴养生": "resident-service",
+    "摄影婚庆": "resident-service",
+    "汽车维修": "resident-service",
+    "家电数码维修": "resident-service",
+    "水电开锁疏通": "resident-service",
+    "清洁搬家": "resident-service",
+    "宠物服务": "resident-service",
+    "托育照护": "resident-service",
+    "其他服务": "resident-service"
+  },
+  "caps_index_from": [
+    "capability.service_items[]",
+    "capability.business_modes[]",
+    "capability.delivery_modes[]",
+    "capability.store_features[]",
+    "quality.certifications[].name",
+    "category"
+  ],
+  "poi_types": {
+    "$comment": "高德 POI type → GB/T 4754 小类码。**最长前缀命中者赢**（gate_schema.poi_to_gb）：`ambiguous` 与 `prefix` 两张表一起比长度，更具体的规则胜出。",
+    "prefix": {
+      "生活服务;洗衣店": {
+        "code": "8030",
+        "name": "洗染服务"
+      },
+      "生活服务;美容美发店;理发店": {
+        "code": "8040",
+        "name": "理发及美容服务"
+      },
+      "生活服务;美容美发店;美容店": {
+        "code": "8040",
+        "name": "理发及美容服务"
+      },
+      "生活服务;美容美发店": {
+        "code": "8040",
+        "name": "理发及美容服务"
+      },
+      "生活服务;洗浴推拿场所;洗浴中心": {
+        "code": "8051",
+        "name": "洗浴服务"
+      },
+      "生活服务;洗浴推拿场所;按摩": {
+        "code": "8053",
+        "name": "养生保健服务"
+      },
+      "生活服务;洗浴推拿场所;足疗": {
+        "code": "8053",
+        "name": "养生保健服务"
+      },
+      "生活服务;洗浴推拿场所": {
+        "code": "8051",
+        "name": "洗浴服务"
+      },
+      "生活服务;摄影冲印店": {
+        "code": "8060",
+        "name": "摄影扩印服务"
+      },
+      "生活服务;婚庆服务": {
+        "code": "8070",
+        "name": "婚姻服务"
+      },
+      "生活服务;殡葬服务": {
+        "code": "8080",
+        "name": "殡葬服务"
+      },
+      "汽车服务;汽车维修": {
+        "code": "8111",
+        "name": "汽车修理与维护"
+      },
+      "汽车服务;汽车保养": {
+        "code": "8111",
+        "name": "汽车修理与维护"
+      },
+      "汽车服务;摩托车维修": {
+        "code": "8113",
+        "name": "摩托车修理与维护"
+      },
+      "生活服务;维修服务;家电维修": {
+        "code": "8131",
+        "name": "家用电子产品修理"
+      },
+      "生活服务;维修服务;手机维修": {
+        "code": "8122",
+        "name": "通讯设备修理"
+      },
+      "生活服务;维修服务;电脑维修": {
+        "code": "8121",
+        "name": "计算机和辅助设备修理"
+      },
+      "生活服务;维修服务;办公设备维修": {
+        "code": "8121",
+        "name": "计算机和辅助设备修理"
+      },
+      "生活服务;搬家公司": {
+        "code": "8090",
+        "name": "其他居民服务业"
+      },
+      "生活服务;清洁服务": {
+        "code": "8211",
+        "name": "建筑物清洁服务"
+      },
+      "生活服务;家政服务": {
+        "code": "8010",
+        "name": "家庭服务"
+      },
+      "生活服务;月嫂育儿": {
+        "code": "8010",
+        "name": "家庭服务"
+      },
+      "生活服务;宠物服务;宠物医院": {
+        "code": "8222",
+        "name": "宠物医院服务"
+      },
+      "生活服务;宠物服务;宠物美容": {
+        "code": "8223",
+        "name": "宠物美容服务"
+      },
+      "生活服务;宠物服务": {
+        "code": "8229",
+        "name": "其他宠物服务"
+      },
+      "生活服务;开锁换锁": {
+        "code": "8090",
+        "name": "其他居民服务业"
+      },
+      "生活服务;管道疏通": {
+        "code": "8090",
+        "name": "其他居民服务业"
+      },
+      "科教文化服务;托儿所": {
+        "code": "8020",
+        "name": "托儿所服务"
+      }
+    },
+    "ambiguous": {
+      "生活服务;维修服务": "**没有子类目就不要猜。** 高德只标到「维修服务」时，主体可能是家电（8131）、手机（8122）、电脑办公设备（8121），也可能落在「其他日用产品修理业」（814）—— 而 **814 这个中类在国标里没有列出小类**，我们本地库同样取不到 8140，硬填一个不存在的码会让 gb_store 解析失败。留 null，采集时确认。",
+      "生活服务;维修服务;汽车维修": "汽车维修属 81 门类下的 8111，但高德有时把它放在「生活服务;维修服务」下 —— 类目归属与国标不一致，要按**实际业务**判，不按高德的树。",
+      "生活服务;洗浴推拿场所;洗浴中心": "洗浴（8051 洗浴服务）与按摩足疗（8053 养生保健服务）常同店经营，高德类目混用，需采集时确认主营。",
+      "生活服务": "只有一级类目，无法判断是家政、维修还是清洁。不猜。",
+      "生活服务;其他": "泛类目。",
+      "科教文化服务;培训机构": "教育培训属 P 教育门类，不是 O 居民服务业 —— 但「课后托管」（srv_tutoring）在业态上确属居民服务，边界要按实际经营范围判。"
+    }
+  },
+  "schema_extra": {
+    "required": [
+      "limits",
+      "capability"
+    ],
+    "properties": {
+      "category": {
+        "type": "string",
+        "enum": [
+          "家政服务",
+          "洗衣洗染",
+          "美容美发",
+          "洗浴养生",
+          "摄影婚庆",
+          "汽车维修",
+          "家电数码维修",
+          "水电开锁疏通",
+          "清洁搬家",
+          "宠物服务",
+          "托育照护",
+          "其他服务"
+        ],
+        "description": "服务业态展示标签。**具体会干什么不在这里** —— 那是 capability.service_items，一个师傅可以同时修家电和装空调。"
+      },
+      "limits": {
+        "type": "object",
+        "description": "服务硬边界。客户找服务时的一票否决项主要落在这几个数上",
+        "additionalProperties": false,
+        "properties": {
+          "min_order_qty": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "最少起接量（单/台/次）"
+          },
+          "min_order_value_cny": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "起步价（元）。0 是有效答案（不收上门费）"
+          },
+          "response_hours": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "上门/响应时长（小时）。急修场景的硬指标"
+          },
+          "service_radius_km": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "服务半径（公里）。超范围就不接或加价，是第一个要看的数"
+          },
+          "max_daily_orders": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "日最大接单量"
+          },
+          "advance_booking_days": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "需提前几天预约"
+          },
+          "current_load_pct": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100,
+            "description": "当前接单饱和度"
+          },
+          "rush_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "能否加急上门"
+          }
+        }
+      },
+      "capability": {
+        "type": "object",
+        "description": "居民服务能力块。字段由本文件与 skills/profiles/resident-service.json 共同定义。",
+        "additionalProperties": false,
+        "properties": {
+          "service_items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "retail-service:服务项目"
+            },
+            "description": "服务项目码列表。枚举由 cap-codes/retail-service.json 的「服务项目」组运行时注入"
+          },
+          "business_modes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "retail-service:经营方式"
+            },
+            "description": "经营方式码（门店服务/上门服务/连锁加盟…）"
+          },
+          "delivery_modes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "retail-service:交付方式"
+            },
+            "description": "服务交付方式码（上门施工/取送件/寄修…）"
+          },
+          "store_features": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "retail-service:门店设施"
+            },
+            "description": "门店设施码（停车位/可开票/夜间营业…）"
+          },
+          "technician_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "师傅/技工人数。决定能不能同时接多单，是产能口径（老板自己干就是 1）"
+          },
+          "service_guarantee": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "服务保障原文，如「不满意返工」「原厂配件」"
+          },
+          "business_hours": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "营业/接单时间原文"
+          }
+        }
+      },
+      "service": {
+        "type": "object",
+        "description": "接单与结算服务",
+        "additionalProperties": false,
+        "properties": {
+          "booking_channels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "接单渠道，如 电话 / 微信 / 美团 / 58同城"
+          },
+          "quote_inputs_required": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "报价需提供什么，如 照片、品牌型号、地址"
+          },
+          "quote_response_hours": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "报价响应时效（小时）"
+          },
+          "warranty_days": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "质保天数。0 是有效答案（不质保），不等于未填"
+          },
+          "price_list_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "是否有标准价目表。有价目表的更好比价"
+          },
+          "invoice_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "能否开票"
+          },
+          "payment_terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "quality": {
+        "type": "object",
+        "description": "经营资质与人员资格",
+        "additionalProperties": false,
+        "properties": {
+          "certifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "valid_until": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "evidence": {
+                  "type": "string",
+                  "enum": [
+                    "self_declared",
+                    "public_record",
+                    "platform_verified",
+                    "field_audited"
+                  ]
+                }
+              }
+            },
+            "description": "机动车维修经营备案 / 特种设备安装改造维修许可证 / 再生资源回收经营者备案 等"
+          },
+          "technician_certified": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "师傅是否持职业资格证/上岗证。家政、月嫂、维修的信任锚点"
+          },
+          "hygiene_grade": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "未评定",
+              null
+            ],
+            "description": "公共场所卫生监督量化分级。理发美容、洗浴适用"
+          }
+        }
+      }
+    }
+  }
+}

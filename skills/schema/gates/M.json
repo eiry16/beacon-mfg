@@ -1,0 +1,383 @@
+{
+  "$comment": "M 门类（科学研究和技术服务业）能力卡 schema 片段。与 gates/I.json 共用 tech-service 码表域，但私有块故意不同：M 有 cma_accredited / cnas_accredited / key_instruments / researcher_count（检测机构与研究院所的核心资质与资产），I 有 tech_stacks / open_source。共用码表的只是那几组真的同构的字段。",
+  "gate": "M",
+  "gate_name": "科学研究和技术服务业",
+  "gate_range": "73 研究和试验发展 / 74 专业技术服务业 / 75 科技推广和应用服务业",
+  "id_prefix": "M",
+  "id_prefix_note": "新门类用 CN-M-{7位序号}。制造业的 CN-MFG- 是历史前缀，不迁移。**注意别混淆**：CN-MFG- 里的 MFG 是历史前缀，M 是门类字母，两者共存且语义不同，判定一律走 cap_codes.gate_of_id。",
+  "cap_domain": "tech-service",
+  "default_profile": "tech-research",
+  "profile_by_category": {
+    "检验检测": "tech-research",
+    "计量校准": "tech-research",
+    "认证认可": "tech-research",
+    "环境监测": "tech-research",
+    "测绘地理信息": "tech-research",
+    "工程勘察设计": "tech-research",
+    "工程监理": "tech-research",
+    "工业设计": "tech-research",
+    "技术研发": "tech-research",
+    "生物医药研发": "tech-research",
+    "新材料研发": "tech-research",
+    "节能环保": "tech-research",
+    "知识产权服务": "tech-research",
+    "科技中介": "tech-research",
+    "其他技术服务": "tech-research"
+  },
+  "caps_index_from": [
+    "capability.tech_directions[]",
+    "capability.service_modes[]",
+    "capability.deliverables[]",
+    "capability.team_roles[]",
+    "quality.certifications[].name",
+    "quality.cma_accredited:CMA",
+    "quality.cnas_accredited:CNAS",
+    "category"
+  ],
+  "poi_types": {
+    "$comment": "高德 POI type → GB/T 4754 小类码。**最长前缀命中者赢**（gate_schema.poi_to_gb）。高德对企业类目极粗，M 门类的判定主要靠公司名（「XX 检测」「XX 设计院」「XX 研究院」这类强特征）+ 经营范围，POI 表只覆盖它确实分得开的几类。",
+    "prefix": {
+      "科教文化服务;科研机构": {
+        "code": "7320",
+        "name": "工程和技术研究和试验发展"
+      },
+      "公司企业;公司;检测": {
+        "code": "7452",
+        "name": "检测服务"
+      },
+      "公司企业;公司;检验": {
+        "code": "7451",
+        "name": "检验检疫服务"
+      },
+      "公司企业;公司;计量": {
+        "code": "7453",
+        "name": "计量服务"
+      },
+      "公司企业;公司;认证": {
+        "code": "7455",
+        "name": "认证认可服务"
+      },
+      "公司企业;公司;勘察设计": {
+        "code": "7484",
+        "name": "工程设计活动"
+      },
+      "公司企业;公司;设计院": {
+        "code": "7484",
+        "name": "工程设计活动"
+      },
+      "公司企业;公司;监理": {
+        "code": "7482",
+        "name": "工程监理服务"
+      },
+      "公司企业;公司;测绘": {
+        "code": "7441",
+        "name": "遥感测绘服务"
+      },
+      "公司企业;公司;知识产权": {
+        "code": "7520",
+        "name": "知识产权服务"
+      },
+      "公司企业;公司;生物": {
+        "code": "7512",
+        "name": "生物技术推广服务"
+      },
+      "公司企业;公司;新材料": {
+        "code": "7513",
+        "name": "新材料技术推广服务"
+      },
+      "公司企业;公司;环保": {
+        "code": "7516",
+        "name": "环保技术推广服务"
+      }
+    },
+    "ambiguous": {
+      "公司企业;公司;科技": "「科技」是万金油词，可能落在 C（制造）/ M（研发服务）/ I（软件）任何一个门类。必须按实际业务判，不猜。",
+      "公司企业;公司;研究院": "叫「研究院」不一定是 M 门类 —— 很多企业内设研究院只是部门，主体仍是制造或软件。要按经营范围判。",
+      "公司企业;公司": "高德把绝大多数公司归到这一层，**类目说明不了行业**。落在这里时与 prefix 表的最长前缀比较后无命中，gb_code 留 null，用公司名 + 经营范围判。",
+      "公司企业": "只有一级类目，无信息量。",
+      "科教文化服务;学校;高等院校": "高校属 **P 教育门类**，不是 M 科研服务业。但高校下属的检测中心/设计院若独立登记，属 M —— 取决于登记主体，需确认。"
+    }
+  },
+  "schema_extra": {
+    "required": [
+      "limits",
+      "capability"
+    ],
+    "properties": {
+      "category": {
+        "type": "string",
+        "enum": [
+          "检验检测",
+          "计量校准",
+          "认证认可",
+          "环境监测",
+          "测绘地理信息",
+          "工程勘察设计",
+          "工程监理",
+          "工业设计",
+          "技术研发",
+          "生物医药研发",
+          "新材料研发",
+          "节能环保",
+          "知识产权服务",
+          "科技中介",
+          "其他技术服务"
+        ],
+        "description": "业态展示标签。**具体能做什么不在这里** —— 那是 capability.tech_directions，一家检测机构常同时具备多个资质范围。"
+      },
+      "limits": {
+        "type": "object",
+        "description": "委托硬边界。甲方立项时的一票否决项主要落在这几个数上",
+        "additionalProperties": false,
+        "properties": {
+          "min_order_qty": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "最少起做量（样本数/件数）。小于这个量不接"
+          },
+          "min_order_value_cny": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "最低委托金额（元）"
+          },
+          "report_days": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "常规出报告天数。检测/校准类最关键的硬指标"
+          },
+          "response_hours": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "响应时效（小时）。含现场采样类服务的到场时效"
+          },
+          "max_concurrent_projects": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "同时在制项目数上限"
+          },
+          "current_load_pct": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100,
+            "description": "当前排期负荷。实验室与工程师时间是主要瓶颈"
+          },
+          "rush_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "能否加急出报告"
+          }
+        }
+      },
+      "capability": {
+        "type": "object",
+        "description": "科研技术能力块。字段由本文件与 skills/profiles/tech-research.json 共同定义。",
+        "additionalProperties": false,
+        "properties": {
+          "tech_directions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "tech-service:科研技术方向"
+            },
+            "description": "技术方向码列表。枚举由 cap-codes/tech-service.json 的「科研技术方向」组运行时注入"
+          },
+          "service_modes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "tech-service:服务模式"
+            },
+            "description": "服务模式码（委托检测/驻场服务/联合研发/技术转移…）"
+          },
+          "deliverables": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "tech-service:交付成果"
+            },
+            "description": "交付成果码（检测报告/校准证书/设计图纸/专利软著…）"
+          },
+          "team_roles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-enum-from": "tech-service:团队构成"
+            },
+            "description": "团队构成码。有没有研究员/检测工程师，决定能接研发还是只能接常规检测"
+          },
+          "team_size": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "团队人数"
+          },
+          "researcher_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "description": "研发/技术人员数。0 是有效答案（全员非技术），不等于未填"
+          },
+          "key_instruments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "关键仪器设备，如 三坐标测量机、光谱仪、环境试验箱。**能不能做这项检测就看有没有这台机器**，是比资质更硬的能力证据"
+          },
+          "portfolio": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "代表案例原文。写具体项目与委托方类型，不要写形容词"
+          },
+          "support_hours": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "服务时段原文，如「工作日 9:00-17:30」「采样 7×24 接单」"
+          }
+        }
+      },
+      "service": {
+        "type": "object",
+        "description": "委托与结算",
+        "additionalProperties": false,
+        "properties": {
+          "quote_inputs_required": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "报价需提供什么，如 样品、检测项目、执行标准、报告用途"
+          },
+          "quote_response_hours": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "报价响应时效（小时）"
+          },
+          "payment_terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "invoice_available": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "能否开票"
+          },
+          "nda_accepted": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "是否接受保密协议。研发外包与专利服务的前置条件"
+          },
+          "sample_return": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "样品是否退还。破坏性检测不能退，甲方要提前知道"
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "报告语言 / 对接语言"
+          }
+        }
+      },
+      "quality": {
+        "type": "object",
+        "description": "资质与认可。**这一块是 M 门类的信任核心**：检测报告能不能被采信，全看下面三个字段",
+        "additionalProperties": false,
+        "properties": {
+          "cma_accredited": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "是否具备 CMA（检验检测机构资质认定）。**没有 CMA 出的报告不能用于司法/行政/社会公证**，这是甲方第一道筛选"
+          },
+          "cnas_accredited": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "是否具备 CNAS（实验室认可）。国际互认，出口相关检测的硬门槛"
+          },
+          "certifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "valid_until": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "evidence": {
+                  "type": "string",
+                  "enum": [
+                    "self_declared",
+                    "public_record",
+                    "platform_verified",
+                    "field_audited"
+                  ]
+                }
+              }
+            },
+            "description": "CMA 证书 / CNAS 认可证书 / ISO17025 / 高新技术企业 / 工程勘察设计资质 / 工程设计资质 等"
+          }
+        }
+      }
+    }
+  }
+}

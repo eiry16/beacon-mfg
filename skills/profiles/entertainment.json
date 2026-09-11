@@ -1,0 +1,68 @@
+{
+  "profile": "entertainment",
+  "category": "娱乐",
+  "gate": "R",
+  "version": "1.0",
+  "description": "娱乐场所档案。字段与 skills/schema/gates/R.json 的 capability 块一一对应（validate_vendor_skills 会二次校验）。设计依据是「需求方 Agent 替企业找场地时要筛什么」：容量决定装不装得下、包间数决定有没有私密空间、人均决定预算合不合、营业时段决定来不来得及。",
+  "fields": [
+    {
+      "path": "capability.capacity", "label": "同时可容纳人数", "type": "integer",
+      "normalize": "integer", "unit": "人",
+      "question": "同时最多能容纳多少人？",
+      "hint": "例：200。团建、包场单最先看这个数",
+      "required": true
+    },
+    {
+      "path": "capability.private_rooms", "label": "包间数", "type": "integer",
+      "normalize": "integer", "unit": "间",
+      "question": "有几个包间/包厢？没有的话直说没有。",
+      "hint": "「没有包间」是有效答案，会记成 0（而不是没填）—— 需求方 Agent 拿它做硬筛选",
+      "required": true, "zero_is_answer": true
+    },
+    {
+      "path": "capability.price_per_person_cny", "label": "人均消费", "type": "number",
+      "normalize": "number", "unit": "元",
+      "question": "人均大概多少钱？",
+      "hint": "例：80。票价、人均消费、钟点费都算进来",
+      "required": true
+    },
+    {
+      "path": "capability.business_hours", "label": "营业时间", "type": "text",
+      "normalize": "text",
+      "question": "营业时间是怎么排的？",
+      "hint": "例：12:00-次日 02:00。保留原话不归一化 —— 跨夜营业很常见，硬拆成时段会丢信息",
+      "required": true
+    },
+    {
+      "path": "capability.time_slots", "label": "营业时段", "type": "cap_multi",
+      "cap_from": "entertainment:时段",
+      "normalize": "cap_multi",
+      "question": "这几个时段里做哪几个？上午、日场、晚场、通宵。",
+      "hint": "可多选。通宵和 24 小时是稀缺供给，写清楚有溢价",
+      "required": false
+    },
+    {
+      "path": "capability.min_duration_hours", "label": "单次最短时长", "type": "number",
+      "normalize": "number", "unit": "小时",
+      "question": "客人最少玩多久起算？",
+      "hint": "例：2（KTV 按小时算的就是这个）。按场次卖就填一场的时长",
+      "required": false
+    },
+    {
+      "path": "capability.signature_items", "label": "招牌项目", "type": "list",
+      "normalize": "list",
+      "question": "有什么招牌项目或者特色玩法？",
+      "hint": "例：VR 赛车、主题密室、驻场乐队。需求方选场地最先看这个",
+      "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "capacity_vs_private_rooms",
+      "when": ["capability.capacity", "capability.private_rooms"],
+      "check": "capacity_vs_private_rooms",
+      "level": "warn",
+      "message": "按包间数算，每个包间要挤 40 人以上，请确认包间数与总容量是不是填反了单位"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "profile": "resident-service",
+  "category": "居民服务",
+  "gate": "O",
+  "version": "1.0",
+  "description": "居民服务/修理个体户档案。字段与 skills/schema/gates/O.json 的 capability 块一一对应。**与 F 门类的 retail-shop 是两份独立档案**（理由见 retail-shop.json）。设计依据是「客户报修/找服务时要筛什么」：服务半径决定来不来、师傅人数决定排期、响应时长决定来不来得及、质保决定敢不敢用。",
+  "fields": [
+    {
+      "path": "capability.technician_count", "label": "师傅人数", "type": "integer",
+      "normalize": "integer", "unit": "人",
+      "question": "能出手的师傅有几个？自己干活就填 1。",
+      "hint": "含自己。这是产能口径 —— 决定能不能同时接多单",
+      "required": true
+    },
+    {
+      "path": "limits.service_radius_km", "label": "服务半径", "type": "number",
+      "normalize": "number", "unit": "公里",
+      "question": "上门最远跑多少公里？",
+      "hint": "例：15。超范围就不接或加价，客户第一个要看的数",
+      "required": true
+    },
+    {
+      "path": "limits.min_order_value_cny", "label": "起步价", "type": "number",
+      "normalize": "number", "unit": "元",
+      "question": "上门起步价多少？不收上门费就说没有。",
+      "hint": "「不收上门费」是有效答案，直说「没有」会记成 0（而不是没填）",
+      "required": true, "zero_is_answer": true
+    },
+    {
+      "path": "limits.response_hours", "label": "上门响应时长", "type": "number",
+      "normalize": "number", "unit": "小时",
+      "question": "报修后多久能上门？",
+      "hint": "例：4。急修场景的硬指标，说不清就填大概",
+      "required": true
+    },
+    {
+      "path": "capability.business_hours", "label": "接单时间", "type": "text",
+      "normalize": "text",
+      "question": "一般什么时候接单？",
+      "hint": "例：08:00-20:00 / 7×24 接单",
+      "required": false
+    },
+    {
+      "path": "service.warranty_days", "label": "质保天数", "type": "integer",
+      "normalize": "integer", "unit": "天",
+      "question": "修完/干完保多久？不保就说没有。",
+      "hint": "例：90。「不保」是有效答案，会记成 0",
+      "required": false, "zero_is_answer": true
+    },
+    {
+      "path": "capability.service_guarantee", "label": "服务保障", "type": "text",
+      "normalize": "text",
+      "question": "有什么服务保障？比如不满意返工、用原厂配件。",
+      "hint": "照原话说，别改写成形容词",
+      "required": false
+    },
+    {
+      "path": "limits.max_daily_orders", "label": "日最大接单量", "type": "integer",
+      "normalize": "integer", "unit": "单",
+      "question": "一天最多接多少单？",
+      "hint": "例：8。超过就会排到第二天，客户要提前知道",
+      "required": false
+    }
+  ],
+  "conflict_rules": [
+    {
+      "id": "technician_vs_daily_orders",
+      "when": ["capability.technician_count", "limits.max_daily_orders"],
+      "check": "technician_vs_daily_orders",
+      "level": "warn",
+      "message": "按师傅人数算，每人每天要跑 8 单以上，请确认日接单量是不是填成了月接单量"
+    }
+  ]
+}

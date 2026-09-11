@@ -16,8 +16,16 @@ import java.util.concurrent.TimeUnit
  * FastAPI 侧是统一格式 `{"error": {"code", "message", "details"}}`
  * （见 server/main.py 的异常处理器）。**`code` 要原样带出来**——
  * 「必填未齐」和「网络不通」对供应商是两件完全不同的事，糊成一句"失败"等于没说。
+ *
+ * [details] 同样必须带出来：`code` 只说"必填未齐"，而 `details.missing_labels`
+ * 才说得清**缺哪几项**。少了它，调用方只能反复重试一个必然失败的请求——
+ * 2026-09-11 真机卡死就是这么来的（App 把 details 丢了，模型永远不知道该补什么）。
  */
-class PlatformApiException(val code: String, override val message: String) : Exception(message)
+class PlatformApiException(
+    val code: String,
+    override val message: String,
+    val details: JSONObject? = null,
+) : Exception(message)
 
 /**
  * 平台服务端（`server/`，FastAPI）的最小客户端。
@@ -145,6 +153,16 @@ class PlatformApi(
     /** GET /v1/collect/{sid}/state → 完整度 / 缺失必填 / 冲突 / storage */
     suspend fun collectState(supplierId: String): JSONObject =
         call("GET", "/v1/collect/$supplierId/state", auth = true)
+
+    /**
+     * POST /v1/collect/{sid}/fix-missing → 把流程**退回第一个必填空缺的题**，返回该题。
+     *
+     * 用途单一：`collectConfirm` 被 MISSING_REQUIRED 拒了之后的补救。
+     * 会话已经走到末尾时 `turn` 一律回 COLLECT_FINISHED（本题不能重答），
+     * `back` 又只能一次退一步 —— 缺的字段可能在任意位置，所以必须由服务端定位。
+     */
+    suspend fun collectFixMissing(supplierId: String): JSONObject =
+        call("POST", "/v1/collect/$supplierId/fix-missing", JSONObject(), auth = true)
 
     /** POST /v1/collect/{sid}/confirm → 生成能力卡。门禁不过会抛 MISSING_REQUIRED / UNRESOLVED_CONFLICTS。 */
     suspend fun collectConfirm(supplierId: String, overwrite: Boolean = false): JSONObject =
