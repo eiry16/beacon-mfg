@@ -44,7 +44,10 @@ EN_DIR = ROOT / "data" / "en"
 EN_GB_DIR = EN_DIR / "gb"                        # 英文镜像的国标镜像（与 data/gb 一一对应）
 README = ROOT / "README.md"
 
-ID_RE = re.compile(r"^CN-MFG-\d{4,7}$")
+# id 形状：CN-{门类前缀}-{4~7 位序号}。
+# 门类前缀由 cap_codes.gate_of_id 判定（MFG = 制造业历史前缀，其余门类用单字母，
+# 如 CN-I-0000001），本正则只做粗筛形状，不放行任意前缀。
+ID_RE = re.compile(r"^CN-[A-Za-z]{1,3}-\d{4,7}$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 PLACEHOLDER_MARKERS = ["XXXX", "xxxx", "占位", "example", "示例"]
 
@@ -75,6 +78,11 @@ try:
     from stats import resolve_status as _resolve_status
 except ImportError:  # stats.py 缺失时降级为内置推导，不阻断校验
     _resolve_status = None
+
+try:
+    import cap_codes  # id 前缀 → 门类，口径与采集/发号共用一份
+except ImportError:  # 缺模块时降级为只做形状校验
+    cap_codes = None
 
 try:
     from industry_taxonomy import (
@@ -155,7 +163,12 @@ def check_core_record(item, path, seen_ids):
         ok = False
     if "id" in item:
         if not ID_RE.match(item["id"]):
-            err(f"{path} ({item['id']}): id 格式应为 CN-MFG-XXXXXXX（4-7位数字）")
+            err(f"{path} ({item['id']}): id 格式应为 CN-{{门类}}-XXXXXXX"
+                f"（制造业 CN-MFG-，其余门类单字母如 CN-I-0000001；序号 4-7 位）")
+            ok = False
+        elif cap_codes is not None and not cap_codes.gate_of_id(item["id"]):
+            err(f"{path} ({item['id']}): id 前缀无法判定门类"
+                f"（MFG = 制造业历史前缀，其余用单字母）")
             ok = False
         if item["id"] in seen_ids:
             err(f"重复 id: {item['id']}")
@@ -562,7 +575,18 @@ def main():
     if not categories:
         err("index.json: categories 为空")
         sys.exit(1)
+    # index.json 的 8 个品类名只覆盖制造业门类（C）——那是旧品类时代的口径。
+    # 非制造业企业（门类 F/H/I/M/O/R 等，例如注册进来的信息服务商）归档时
+    # 用门类名当 category，否则只能被强塞进"精密机械加工"，属于错标。
+    # 所以合法值域 = 8 品类名 ∪ 各门类 gate_name。
     valid_categories = {c["name"] for c in categories}
+    for gate_file in sorted((ROOT / "skills" / "schema" / "gates").glob("*.json")):
+        try:
+            gname = json.loads(gate_file.read_text(encoding="utf-8")).get("gate_name")
+        except Exception:
+            continue
+        if gname:
+            valid_categories.add(gname)
 
     # 2. 逐归档桶校验（国标四级：门类/大类/小类）
     import gb_store

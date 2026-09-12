@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-09-12",
-  "total": 24085,
+  "total": 24086,
   "coverage": 100.0,
   "layout": "国标四级分片，与 data/gb/ 同构",
   "layers": {
@@ -23,7 +23,7 @@
     "sc": "能力画像分（无卡为 0）",
     "tel": "有可用电话 1/0"
   },
-  "bytes_total": 5644521,
+  "bytes_total": 5644713,
   "bytes_per_record": 234.4,
   "by_gate": {
     "C": 95,
@@ -138,6 +138,6 @@
     "F/51/_partial": 8,
     "F/52/5274": 1,
     "F/52/5287": 1,
-    "_unclassified": 805
+    "_unclassified": 806
   }
 }
