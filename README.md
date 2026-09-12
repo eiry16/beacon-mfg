@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/code-MIT-3fb68a)](LICENSE)
 [![Data](https://img.shields.io/badge/data-CC%20BY--NC%204.0-blue)](DATA_LICENSE.md)
-[![Records](https://img.shields.io/badge/records-24085-58a6ff)](data/)
+[![Records](https://img.shields.io/badge/records-24086-58a6ff)](data/)
 [![Categories](https://img.shields.io/badge/categories-23-58a6ff)](data/gb-index.json)
 [![Industry](https://img.shields.io/badge/industry-GB%2FT%204754--2017%20%C2%B7%20107%20%E5%B0%8F%E7%B1%BB-orange)](data/industry-index.json)
 [![Stars](https://img.shields.io/github/stars/eiry16/beacon-mfg?style=social)](https://github.com/eiry16/beacon-mfg)
@@ -57,11 +57,11 @@ Agent 直接读取 JSON 即可检索，使用方式见 `SKILL.md` / `SKILL_EN.md
 
 ## 数据现状
 
-**中文数据集**（`data/gb/`，国标四级归档）：**24085 条记录**（其中 **15468 条电话已核实**，**8617 条待核实**），拆为 **23 个国标大类**（含未归类）：
+**中文数据集**（`data/gb/`，国标四级归档）：**24086 条记录**（其中 **15469 条电话已核实**，**8617 条待核实**），拆为 **23 个国标大类**（含未归类）：
 
 | 国标大类 | 总记录 | 电话已核实 | 待核实 |
 |---|---|---|---|
-| 未归类 | 805 | 619 | 186 |
+| 未归类 | 806 | 620 | 186 |
 | 13 农副食品加工业 | 1 | 1 | 0 |
 | 17 纺织业 | 12 | 12 | 0 |
 | 20 木材加工和木、竹、藤、棕、草制品业 | 21 | 19 | 2 |
@@ -110,7 +110,7 @@ Agent 直接读取 JSON 即可检索，使用方式见 `SKILL.md` / `SKILL_EN.md
 "is_manufacturer": true
 ```
 
-- **23280 / 24085 条已归类**，覆盖 **107 个国标小类码**（另有个别记录只精确到大类/中类，归入 `_partial.json`）；805 条未归类（公司名无行业信号，或属于本数据集不覆盖的门类）
+- **23280 / 24086 条已归类**，覆盖 **107 个国标小类码**（另有个别记录只精确到大类/中类，归入 `_partial.json`）；806 条未归类（公司名无行业信号，或属于本数据集不覆盖的门类）
 - `confidence`：`high`=公司名直接命中、`medium`/`low`=关键词或品类兜底推断
 - `is_manufacturer=false` 表示落在 **F51 批发业**（贸易/批发商，不是生产企业）
 - 归类原则：**只信公司名**，搜索关键词只能补位；**宁可留空也不硬贴标签**
