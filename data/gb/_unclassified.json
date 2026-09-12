@@ -28750,5 +28750,37 @@
     },
     "industry": null,
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-I-0000001",
+    "company": "赤兔智能工业（苏州）有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "信息传输、软件和信息技术服务业"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "江苏省苏州市虎丘区苏州工业园星湖街青创港二期",
+    "contact_phone": null,
+    "source": "certification",
+    "source_url": null,
+    "verified_at": "2026-09-11",
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": null,
+    "is_manufacturer": false,
+    "cl": "L1",
+    "agent": {
+      "skill_url": "skills/vendors/CN-I-0000001/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog",
+        "rfq"
+      ],
+      "verified": true
+    }
   }
 ]

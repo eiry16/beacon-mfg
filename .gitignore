@@ -29,6 +29,9 @@ scripts/*
 # test_sharding.py 是 gb_store 分片逻辑的回归测试（临时目录跑，不碰真实数据）。
 # 白名单理由同 gb_store：分片是归档写入路径的一部分，必须可回归。
 !scripts/test_sharding.py
+# test_registration_archive.py 锁「注册企业必须落在归档 + 指纹层」——
+# 2026-09-12 赤兔丢失（有卡无归档 → 重建后指纹被冲掉）的探测器。只读，不改数据。
+!scripts/test_registration_archive.py
 # 以下是客户 Agent 真正要跑的检索入口，SKILL.md 直接引用了它们。
 # 不入库的后果：客户照着 SKILL.md 敲命令 → 文件不存在（2026-09-09 实测踩到）。
 # 三者都是纯标准库（search_capabilities 依赖 gb_store，已放行），不含密钥与商业逻辑。
@@ -66,6 +69,10 @@ scripts/*
 # sync_gb_code.py 给 4136 张能力卡回写国标码，是 625 家品类冲突的解决方案入口。
 # 不放行：别人没法复现冲突消解，也没法在名录国标变化后重新同步。纯标准库。
 !scripts/sync_gb_code.py
+# certify_writeback.py 是「认证结果 → 公开名录」的唯一回写入口（认证企业不进归档
+# 就等于认证白做，客户搜不到）。它同时提供 split_region（地址→省/市，口径与归档
+# 一致），sync_vendor_skills.py 的注册建档复用它。不放行：认证回流链路无法回归。
+!scripts/certify_writeback.py
 # industry_taxonomy.py 是 query.py 的国标码表来源。不放行的话：
 # query.py 走到 `except ImportError` 分支 → CODES={} → **任何 --industry 查询都返回
 # "没匹配到任何国标行业"且不报错**（2026-09-09 实测）。纯标准库，仅读 data/gb4754-full.json。

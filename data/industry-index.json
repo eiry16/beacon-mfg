@@ -2,9 +2,9 @@
   "metadata": {
     "standard": "GB/T 4754-2017 国民经济行业分类（含 2019 年第 1 号修改单）",
     "full_taxonomy": "data/gb4754-full.json（20 门类 / 97 大类 / 473 中类 / 1382 小类）",
-    "total_suppliers": 24085,
+    "total_suppliers": 24086,
     "classified": 23280,
-    "unclassified": 805,
+    "unclassified": 806,
     "total_codes": 107,
     "generated_at": "2026-09-12",
     "usage": "按国标小类代码锁定行业 → 取 ids → 从 data/gb/<门类>/<大类>/<小类>.json 按 id 读详情（或用 gb-index.json 定位文件）",
