@@ -150,10 +150,10 @@ skills/vendors/*/capability.json    4137 张，其中   1 张带 gb_code  → �
 | 字段 | 内容 | 为什么不能删 |
 |---|---|---|
 | `identity.uscc` | 91310000766492256E | 平台已核验（GB 32100-2015 校验位通过），是认主的法律主体锚点 |
-| `identity.legal_person` | 陆斌 | 公开记录 |
-| `identity.registered_address` | 上海市闵行区庙泾路66号I175室 | 与生产地址不同，是地址差异核验的依据 |
+| `identity.legal_person` | 陆* | 公开记录（自然人名已脱敏，原始核验留私有认主档案） |
+| `identity.registered_address` | 上海市闵行区（门牌脱敏） | 与生产地址不同，是地址差异核验的依据 |
 | `identity.business_nature` | manufacturer | 执照登记为批发，企业自述制造商，按「自述 > 公开记录」保留 |
-| `identity.employee_outsource` | 20（外包/共 23 人） | 在场 23 人里 20 人是劳务外包——不写就是误导 |
+| `identity.employee_outsource` | 部分岗位为劳务外包（精确比例见私有认主档案） | 用工结构差异是核验依据，精确比例留私有层不公开 |
 | `claim.app_id` | CERT-20260908-0317 | 认证档案溯源唯一入口 |
 | `claim.valid_until` | 2027-09-08 | 凭证有效期，过期判断要看它 |
 | `evidence.public_record` | 高企认定 / 专利软著 / 法人 | 「公开记录、未经第三方核验」是独立证据档，不能并进 self_declared |
