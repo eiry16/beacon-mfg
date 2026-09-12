@@ -1747,7 +1747,8 @@
     "company": "锦合顺特种铝材",
     "category": "原材料",
     "keywords": [
-      "铝合金"
+      "铝合金",
+      "铝型材"
     ],
     "region": {
       "province": "江苏",
@@ -1772,7 +1773,21 @@
       "source": "name",
       "evidence": "铝材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0LRKZHBEX",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "铝型材"
+    }
   },
   {
     "id": "CN-MFG-0006801",
@@ -6195,7 +6210,8 @@
     "company": "铧威铝业",
     "category": "原材料",
     "keywords": [
-      "铝合金"
+      "铝合金",
+      "铝型材"
     ],
     "region": {
       "province": "广东",
@@ -6220,7 +6236,21 @@
       "source": "name",
       "evidence": "铝业"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B02F50XBTL",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "铝型材"
+    }
   },
   {
     "id": "CN-MFG-0007069",
@@ -29947,6 +29977,54 @@
       "confidence": "low",
       "source": "search_keyword",
       "evidence": "原材料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024164",
+    "company": "瑞光铝业",
+    "category": "原材料",
+    "keywords": [
+      "铝型材"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "古镇新兴大道23号",
+    "contact_phone": "15322110227; 15362156151",
+    "lat": 22.631265,
+    "lng": 113.194384,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JGXU33MU",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "铝型材"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝业"
     },
     "is_manufacturer": true
   }

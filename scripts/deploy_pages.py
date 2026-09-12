@@ -75,8 +75,32 @@ PROJECT_NAME = "beacon-mfg"
 BRANCH = "main"
 BASE_URL = "https://beacon-mfg.pages.dev"
 
-NODE_BIN = os.environ.get(
-    "NODE_BIN", os.path.expanduser(r"~/.workbuddy/binaries/node/versions/22.22.2-2/node.exe"))
+def _resolve_node_bin() -> str:
+    """解析 node 可执行文件。
+
+    别硬编码版本目录：托管 runtime 升级会把 22.22.2-2 换成 22.22.2-3，
+    旧路径消失后 wrangler 子进程会 FileNotFoundError [WinError 2]（09-12 踩过）。
+    顺序：env NODE_BIN → 扫 ~/.workbuddy/binaries/node/versions/*/node.exe 取最高版本 → PATH。
+    """
+    env_bin = os.environ.get("NODE_BIN")
+    if env_bin and Path(env_bin).exists():
+        return env_bin
+
+    versions_dir = Path(os.path.expanduser("~/.workbuddy/binaries/node/versions"))
+    if versions_dir.is_dir():
+        def _key(p: Path) -> tuple:
+            nums = []
+            for part in p.name.replace("-", ".").split("."):
+                nums.append(int(part) if part.isdigit() else -1)
+            return tuple(nums)
+        cands = [p for p in versions_dir.glob("*/node.exe") if p.exists()]
+        if cands:
+            return str(max(cands, key=lambda p: _key(p.parent)))
+
+    return shutil.which("node") or "node"
+
+
+NODE_BIN = _resolve_node_bin()
 WRANGLER_JS = os.environ.get(
     "WRANGLER_JS",
     os.path.expanduser(r"~/.workbuddy/binaries/node/workspace/node_modules/wrangler/bin/wrangler.js"))

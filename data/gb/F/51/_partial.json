@@ -366,5 +366,53 @@
     },
     "is_manufacturer": false,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0024141",
+    "company": "励.城.钢.材批发商行",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "沙头街道金地社区沙嘴路65号楼怡和楼103-2",
+    "contact_phone": "13418473189; 15818685062",
+    "lat": 22.524227,
+    "lng": 114.037597,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-12",
+    "imported_at": "2026-09-12",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L12UV3X3",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "上沙",
+      "adcode": "440304",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "材批发"
+    },
+    "is_manufacturer": false
   }
 ]
