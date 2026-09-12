@@ -2,8 +2,8 @@
   "metadata": {
     "standard": "GB/T 4754-2017 国民经济行业分类（含 2019 年第 1 号修改单）",
     "full_taxonomy": "data/gb4754-full.json（20 门类 / 97 大类 / 473 中类 / 1382 小类）",
-    "total_suppliers": 24086,
-    "classified": 23280,
+    "total_suppliers": 24114,
+    "classified": 23308,
     "unclassified": 806,
     "total_codes": 107,
     "generated_at": "2026-09-12",
@@ -23,20 +23,20 @@
       "l3": "348",
       "l3_name": "通用零部件制造",
       "is_manufacturing": true,
-      "count": 3696,
+      "count": 3699,
       "confidence": {
-        "high": 2550,
+        "high": 2552,
         "medium": 17,
-        "low": 1129
+        "low": 1130
       },
       "top_cities": [
         {
           "city": "苏州",
-          "count": 356
+          "count": 358
         },
         {
           "city": "东莞",
-          "count": 354
+          "count": 355
         },
         {
           "city": "深圳",
@@ -3759,7 +3759,10 @@
         "CN-MFG-0024040",
         "CN-MFG-0024042",
         "CN-MFG-0024043",
-        "CN-MFG-0024044"
+        "CN-MFG-0024044",
+        "CN-MFG-0024138",
+        "CN-MFG-0024139",
+        "CN-MFG-0024140"
       ]
     },
     "2929": {
@@ -3774,11 +3777,11 @@
       "l3": "292",
       "l3_name": "塑料制品业",
       "is_manufacturing": true,
-      "count": 2185,
+      "count": 2187,
       "confidence": {
-        "high": 1341,
+        "high": 1342,
         "medium": 61,
-        "low": 783
+        "low": 784
       },
       "top_cities": [
         {
@@ -3791,7 +3794,7 @@
         },
         {
           "city": "中山",
-          "count": 192
+          "count": 193
         },
         {
           "city": "东莞",
@@ -3811,7 +3814,7 @@
         },
         {
           "city": "广州",
-          "count": 138
+          "count": 139
         }
       ],
       "ids": [
@@ -5999,7 +6002,9 @@
         "CN-MFG-0024090",
         "CN-MFG-0024092",
         "CN-MFG-0024093",
-        "CN-MFG-0024094"
+        "CN-MFG-0024094",
+        "CN-MFG-0024147",
+        "CN-MFG-0024152"
       ]
     },
     "3360": {
@@ -6014,9 +6019,9 @@
       "l3": "336",
       "l3_name": "金属表面处理及热处理加工",
       "is_manufacturing": true,
-      "count": 1999,
+      "count": 2003,
       "confidence": {
-        "high": 1448,
+        "high": 1452,
         "medium": 533,
         "low": 18
       },
@@ -6031,7 +6036,7 @@
         },
         {
           "city": "东莞",
-          "count": 175
+          "count": 176
         },
         {
           "city": "佛山",
@@ -8053,7 +8058,11 @@
         "CN-MFG-0023971",
         "CN-MFG-0024127",
         "CN-MFG-0024128",
-        "CN-MFG-0024129"
+        "CN-MFG-0024129",
+        "CN-MFG-0024154",
+        "CN-MFG-0024155",
+        "CN-MFG-0024156",
+        "CN-MFG-0024157"
       ]
     },
     "3525": {
@@ -8068,20 +8077,20 @@
       "l3": "352",
       "l3_name": "化工、木材、非金属加工专用设备制造",
       "is_manufacturing": true,
-      "count": 1660,
+      "count": 1669,
       "confidence": {
-        "high": 1589,
+        "high": 1597,
         "medium": 36,
-        "low": 35
+        "low": 36
       },
       "top_cities": [
         {
           "city": "东莞",
-          "count": 209
+          "count": 212
         },
         {
           "city": "苏州",
-          "count": 203
+          "count": 204
         },
         {
           "city": "深圳",
@@ -8093,7 +8102,7 @@
         },
         {
           "city": "宁波",
-          "count": 147
+          "count": 148
         },
         {
           "city": "佛山",
@@ -9768,7 +9777,16 @@
         "CN-MFG-0024123",
         "CN-MFG-0024124",
         "CN-MFG-0024125",
-        "CN-MFG-0024126"
+        "CN-MFG-0024126",
+        "CN-MFG-0024142",
+        "CN-MFG-0024143",
+        "CN-MFG-0024145",
+        "CN-MFG-0024146",
+        "CN-MFG-0024148",
+        "CN-MFG-0024149",
+        "CN-MFG-0024150",
+        "CN-MFG-0024151",
+        "CN-MFG-0024153"
       ]
     },
     "3399": {
@@ -13045,11 +13063,11 @@
       "l3": "313",
       "l3_name": "钢压延加工",
       "is_manufacturing": true,
-      "count": 1040,
+      "count": 1044,
       "confidence": {
         "high": 0,
-        "medium": 892,
-        "low": 148
+        "medium": 895,
+        "low": 149
       },
       "top_cities": [
         {
@@ -13066,7 +13084,7 @@
         },
         {
           "city": "广州",
-          "count": 82
+          "count": 83
         },
         {
           "city": "惠州",
@@ -13078,7 +13096,7 @@
         },
         {
           "city": "佛山",
-          "count": 70
+          "count": 71
         },
         {
           "city": "中山",
@@ -14125,7 +14143,11 @@
         "CN-MFG-0023997",
         "CN-MFG-0023998",
         "CN-MFG-0024136",
-        "CN-MFG-0024137"
+        "CN-MFG-0024137",
+        "CN-MFG-0024159",
+        "CN-MFG-0024160",
+        "CN-MFG-0024161",
+        "CN-MFG-0024162"
       ]
     },
     "3482": {
@@ -14140,9 +14162,9 @@
       "l3": "348",
       "l3_name": "通用零部件制造",
       "is_manufacturing": true,
-      "count": 1016,
+      "count": 1017,
       "confidence": {
-        "high": 938,
+        "high": 939,
         "medium": 48,
         "low": 30
       },
@@ -14161,7 +14183,7 @@
         },
         {
           "city": "东莞",
-          "count": 82
+          "count": 83
         },
         {
           "city": "宁波",
@@ -15196,7 +15218,8 @@
         "CN-MFG-0023857",
         "CN-MFG-0023977",
         "CN-MFG-0023981",
-        "CN-MFG-0023983"
+        "CN-MFG-0023983",
+        "CN-MFG-0024158"
       ]
     },
     "3989": {
@@ -18721,10 +18744,10 @@
       "l3": "331",
       "l3_name": "结构性金属制品制造",
       "is_manufacturing": true,
-      "count": 699,
+      "count": 700,
       "confidence": {
         "high": 0,
-        "medium": 699,
+        "medium": 700,
         "low": 0
       },
       "top_cities": [
@@ -18750,7 +18773,7 @@
         },
         {
           "city": "宁波",
-          "count": 42
+          "count": 43
         },
         {
           "city": "嘉兴",
@@ -19460,7 +19483,8 @@
         "CN-MFG-0023866",
         "CN-MFG-0023904",
         "CN-MFG-0023994",
-        "CN-MFG-0024000"
+        "CN-MFG-0024000",
+        "CN-MFG-0024163"
       ]
     },
     "3252": {
@@ -19475,16 +19499,16 @@
       "l3": "325",
       "l3_name": "有色金属压延加工",
       "is_manufacturing": true,
-      "count": 667,
+      "count": 668,
       "confidence": {
         "high": 0,
-        "medium": 573,
+        "medium": 574,
         "low": 94
       },
       "top_cities": [
         {
           "city": "中山",
-          "count": 82
+          "count": 83
         },
         {
           "city": "佛山",
@@ -20182,7 +20206,8 @@
         "CN-MFG-0024003",
         "CN-MFG-0024004",
         "CN-MFG-0024005",
-        "CN-MFG-0024006"
+        "CN-MFG-0024006",
+        "CN-MFG-0024164"
       ]
     },
     "3392": {
@@ -20885,9 +20910,9 @@
       "l3": "265",
       "l3_name": "合成材料制造",
       "is_manufacturing": true,
-      "count": 603,
+      "count": 604,
       "confidence": {
-        "high": 545,
+        "high": 546,
         "medium": 0,
         "low": 58
       },
@@ -20902,7 +20927,7 @@
         },
         {
           "city": "深圳",
-          "count": 77
+          "count": 78
         },
         {
           "city": "苏州",
@@ -21528,7 +21553,8 @@
         "CN-MFG-0023874",
         "CN-MFG-0023875",
         "CN-MFG-0024007",
-        "CN-MFG-0024008"
+        "CN-MFG-0024008",
+        "CN-MFG-0024165"
       ]
     },
     "3982": {
@@ -23228,10 +23254,10 @@
       "l3": "517",
       "l3_name": "机械设备、五金产品及电子产品批发",
       "is_manufacturing": false,
-      "count": 254,
+      "count": 255,
       "confidence": {
         "high": 0,
-        "medium": 158,
+        "medium": 159,
         "low": 96
       },
       "top_cities": [
@@ -23522,7 +23548,8 @@
         "CN-MFG-0023912",
         "CN-MFG-0023972",
         "CN-MFG-0024055",
-        "CN-MFG-0024058"
+        "CN-MFG-0024058",
+        "CN-MFG-0024144"
       ]
     },
     "3464": {
@@ -25640,11 +25667,11 @@
       "l3": "",
       "l3_name": "",
       "is_manufacturing": false,
-      "count": 8,
+      "count": 9,
       "confidence": {
         "high": 0,
         "medium": 0,
-        "low": 8
+        "low": 9
       },
       "top_cities": [
         {
@@ -25666,6 +25693,10 @@
         {
           "city": "东莞",
           "count": 1
+        },
+        {
+          "city": "深圳",
+          "count": 1
         }
       ],
       "ids": [
@@ -25676,7 +25707,8 @@
         "CN-MFG-0016729",
         "CN-MFG-0017005",
         "CN-MFG-0021635",
-        "CN-MFG-0022504"
+        "CN-MFG-0022504",
+        "CN-MFG-0024141"
       ]
     },
     "1773": {
