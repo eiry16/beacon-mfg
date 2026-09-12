@@ -50,6 +50,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 # 仅这些路径会被纳入发布（避免把 L1 卡/本地数据/无关改动一起 commit）
 STAGE_PATHS = [
     "skills/registry/fingerprint/gb",
+    "skills/registry/index.json",      # gen_fingerprint 重建的指纹清单（字段说明 + 分片计数）
+    "skills/registry/gb-proc-map.json",  # 国标码 → 工艺映射，gen_fingerprint 顺带重算
+    "data/gb",                         # 归档。注册建档（insert_supplier）写这里，是名录权威来源
     "data/manifest.json",
 ]
 MANIFEST = ROOT / "data" / "manifest.json"
@@ -76,19 +79,32 @@ def _git(args: list[str], timeout: int | None = None) -> tuple[int, str, str]:
 
 
 def refresh_manifest(apply: bool) -> tuple[bool, str]:
-    """刷新 data/manifest.json 的分片哈希。
+    """从归档重建指纹分片，再刷新 data/manifest.json 的分片哈希。
 
-    用 gen_manifest.py：它只 walk 磁盘现有文件算 SHA1 写进 manifest，
-    **不重建指纹内容**（那是 gen_fingerprint.py 的职责，会让不在 data/gb 的
-    注册商丢失，禁用）。
+    顺序不能反，两个脚本职责不同：
+      1. `gen_fingerprint.py --apply`：**从 data/gb 归档全量重建**指纹层。
+         sync_one 的 `append_fingerprint` 走的是另一套字段（render_fingerprint），
+         与 gen 的字段混写会在同一分片里留下两种 schema（实测赤兔行多出
+         g/cap/seat/pp/tol/… 一整套字段，单行从 234 B 涨到 400 B —— 这一层是按
+         字节计费的全量扫描层）。跑一次重建就把格式拉齐，而且**归档是唯一权威**：
+         归档里没有的不会被写进来，归档里有的不会丢。
+      2. `gen_manifest.py`：只 walk 磁盘现有文件算 SHA1 写进 manifest，不改内容。
+
+    历史：这个函数以前**故意不跑** gen_fingerprint —— 因为那时注册商不进归档，
+    一重建就把注册商从指纹层抹掉（2026-09-12 赤兔案例）。现在注册链路会建档
+    （supplier_loader.insert_supplier），重建已安全，所以恢复重建。
     """
     py = sys.executable
     if not apply:
-        return True, "（预览）将运行 `gen_manifest.py` 刷新 data/manifest.json 分片哈希"
-    rc, out, err = _run([py, "scripts/gen_manifest.py"], timeout=120)
+        return True, ("（预览）将运行 `gen_fingerprint.py --apply` 重建指纹分片，"
+                      "再运行 `gen_manifest.py` 刷新 data/manifest.json 分片哈希")
+    rc, out, err = _run([py, "scripts/gen_fingerprint.py", "--apply"], timeout=300)
     if rc != 0:
-        return False, "gen_manifest.py 失败（rc=%d）：%s" % (rc, (err or out).strip()[-600:])
-    return True, "已刷新 data/manifest.json 分片哈希"
+        return False, "gen_fingerprint.py 失败（rc=%d）：%s" % (rc, (err or out).strip()[-600:])
+    rc2, out2, err2 = _run([py, "scripts/gen_manifest.py"], timeout=180)
+    if rc2 != 0:
+        return False, "gen_manifest.py 失败（rc=%d）：%s" % (rc2, (err2 or out2).strip()[-600:])
+    return True, "已从归档重建指纹分片，并刷新 data/manifest.json 分片哈希"
 
 
 # ── CDN 边缘缓存 ────────────────────────────────────────────────────────────
@@ -97,6 +113,7 @@ REPO = "eiry16/beacon-mfg"
 CDN_PURGE_PATHS = [
     "data/manifest.json",
     "skills/registry/fingerprint/gb/_unclassified.jsonl",
+    "data/gb/_unclassified.json",      # 注册建档的归档落点（详情页读它）
 ]
 
 
