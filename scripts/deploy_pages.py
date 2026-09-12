@@ -76,10 +76,10 @@ BRANCH = "main"
 BASE_URL = "https://beacon-mfg.pages.dev"
 
 NODE_BIN = os.environ.get(
-    "NODE_BIN", r"C:/Users/陆斌/.workbuddy/binaries/node/versions/22.22.2-2/node.exe")
+    "NODE_BIN", os.path.expanduser(r"~/.workbuddy/binaries/node/versions/22.22.2-2/node.exe"))
 WRANGLER_JS = os.environ.get(
     "WRANGLER_JS",
-    r"C:/Users/陆斌/.workbuddy/binaries/node/workspace/node_modules/wrangler/bin/wrangler.js")
+    os.path.expanduser(r"~/.workbuddy/binaries/node/workspace/node_modules/wrangler/bin/wrangler.js"))
 
 
 def load_env() -> tuple[str, str]:

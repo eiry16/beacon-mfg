@@ -54,8 +54,9 @@ ENDPOINT_PATH = ROOT / "data" / "endpoint.json"
 CFD_LOG = SERVER_DIR / "cloudflared.log"
 UVICORN_LOG = SERVER_DIR / "uvicorn-dev.log"
 
-DEFAULT_PY = r"C:/Users/陆斌/.workbuddy/binaries/python/envs/default/Scripts/python.exe"
-DEFAULT_CFD = r"C:/Users/陆斌/bin/cloudflared.exe"
+DEFAULT_PY = os.environ.get("PYTHON") or os.path.expanduser(
+    r"~/.workbuddy/binaries/python/envs/default/Scripts/python.exe")
+DEFAULT_CFD = os.environ.get("CLOUDFLARED") or os.path.expanduser(r"~/bin/cloudflared.exe")
 
 URL_RE = re.compile(r"https://[a-z0-9-]+\.trycloudflare\.com")
 REPO = "eiry16/beacon-mfg"
@@ -262,6 +263,13 @@ def run_once(py: str, cfd: str, port: int, push: bool) -> str | None:
     url = ensure_cloudflared(cfd, port, last_url_in_log())
     if not url:
         return None
+    # ⚠ 快速隧道（*.trycloudflare.com）地址随重启回收，有被第三方重建劫持、截获写入的风险，
+    # 绝不写进公开仓库。稳定地址请走命名隧道，或设 BEACON_ENDPOINT_URL 后由本脚本发布。
+    if URL_RE.search(url):
+        print(f"[watch] ⚠ 检测到快速隧道 {url}：仅本地留档，不写入公开仓库（域名回收有劫持风险）。")
+        print(f"[watch]   如需公开稳定地址：改用命名隧道（scripts/setup_named_tunnel.sh）或设 BEACON_ENDPOINT_URL。")
+        write_endpoint(url, port)  # 本地留档，不 push
+        return url
     publish(url, port, push)
     return url
 
@@ -276,6 +284,16 @@ def main() -> int:
     ap.add_argument("--py", default=os.environ.get("PYTHON", DEFAULT_PY))
     ap.add_argument("--cfd", default=os.environ.get("CLOUDFLARED", DEFAULT_CFD))
     args = ap.parse_args()
+
+    env_url = os.environ.get("BEACON_ENDPOINT_URL")
+    if env_url:
+        print(f"[watch] 使用 BEACON_ENDPOINT_URL 固定地址：{env_url}")
+        if args.no_push:
+            write_endpoint(env_url, args.port)
+            print(f"[watch] 已写本地（--no-push）：{ENDPOINT_PATH.relative_to(ROOT)}")
+        else:
+            publish(env_url, args.port, push=True)
+        return 0
 
     if args.do_print:
         if ENDPOINT_PATH.exists():

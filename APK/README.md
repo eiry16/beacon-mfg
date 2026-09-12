@@ -287,12 +287,12 @@ cd APK
 ./build.sh clean
 ```
 
-`build.sh` 已经写死了本机路径，不用再手动 export：
+`build.sh` 改用 `$HOME` / 环境变量解析本机路径，通常无需手动 export（如需覆盖可设置 `ANDROID_HOME` / `GRADLE_BIN`）：
 
 | 变量 | 值 |
 |---|---|
 | `JAVA_HOME` | `C:/Program Files/Android/Android Studio/jbr`（JDK 25.0.2） |
-| `ANDROID_HOME` | `C:/Users/陆斌/AppData/Local/Android/Sdk` |
+| `ANDROID_HOME` | `$HOME/AppData/Local/Android/Sdk`（可被环境变量覆盖） |
 | Gradle | `~/.workbuddy/binaries/gradle/gradle-dist/gradle-9.7.1` |
 
 产物：`app/build/outputs/apk/debug/app-debug.apk`

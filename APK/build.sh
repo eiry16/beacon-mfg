@@ -6,9 +6,9 @@ set -uo pipefail
 APK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 export JAVA_HOME="C:/Program Files/Android/Android Studio/jbr"
-export ANDROID_HOME="C:/Users/陆斌/AppData/Local/Android/Sdk"
+export ANDROID_HOME="${ANDROID_HOME:-$HOME/AppData/Local/Android/Sdk}"
 export ANDROID_SDK_ROOT="$ANDROID_HOME"
-GRADLE_BIN="C:/Users/陆斌/.workbuddy/binaries/gradle/gradle-dist/gradle-9.7.1/bin/gradle"
+GRADLE_BIN="${GRADLE_BIN:-$HOME/.workbuddy/binaries/gradle/gradle-dist/gradle-9.7.1/bin/gradle}"
 
 TARGET="${1:-debug}"
 

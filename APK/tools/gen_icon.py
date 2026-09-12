@@ -14,7 +14,7 @@ from PIL import Image
 from pathlib import Path
 from collections import Counter
 
-ROOT = Path(r"C:/DATA/QClaw/Workspace/beacon-mfg/APK")
+ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "Beacon.jpg"
 RES = ROOT / "app/src/main/res"
 

@@ -48,15 +48,14 @@ data class AppSettings(
      * 为什么与 [dataBase]/[capabilityBase] 分开：那两个是**只读静态托管**（Edge/CDN），
      * 这个是**有写操作的后端**。合在一起会让"换 CDN 镜像"顺手把写通道也换掉。
      *
-     * 默认走 Cloudflare 快速隧道（2026-09-11 起），手机无需 USB/PC 即可联调后端：
-     *   https://monday-rider-fur-large.trycloudflare.com
-     * ⚠ 快速隧道地址**随 cloudflared 每次重启变化**，源码里的默认值只是"最近一次本机起的那个"；
-     *   已装机的 App 存的是 EncryptedSharedPreferences 里的旧值（load() 不会取新默认），
-     *   换隧道后要去「设置 → 平台接口地址」手动改一次。真正常驻要改用命名隧道固定域名
-     *   （见 scripts/setup_named_tunnel.sh）。
+     * 默认留空（未配置）：供应商侧功能显示「未开通」，而非静默失败。
+     * 源码里**不要**写死 Cloudflare 快速隧道（*.trycloudflare.com）域名——其地址随
+     * cloudflared 重启回收，有被第三方重建劫持、截获用户写入的风险（2026-09-11 曾因此把
+     * 本机 8000 端口短暂开到公网）。稳定地址请用命名隧道固定域名
+     * （见 scripts/setup_named_tunnel.sh），或运行时在 App 设置 → 平台接口地址 填入。
      * 开发时仍可填 `http://127.0.0.1:8000` + `adb reverse tcp:8000 tcp:8000` 本地联调。
      */
-    val apiBase: String = "https://monday-rider-fur-large.trycloudflare.com",
+    val apiBase: String = "",
     /**
      * 设备级匿名凭证（UUID，首次启动生成后持久化）。
      *

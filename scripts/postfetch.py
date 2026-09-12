@@ -92,7 +92,8 @@ ALL_STEPS = ("classify", "gbindex", "index", "fingerprint", "shards",
 
 # gen_manifest 的列式层（pq）依赖 pyarrow，缺省就静默少一层 —— 清单看着变绿，
 # 实则少了 pq。这里的兜底顺序：当前解释器 → 环境变量 BMFG_PY_PQ → 本机已知 venv。
-_DEFAULT_PQ_PY = r"C:/Users/陆斌/.workbuddy/binaries/python/envs/default/Scripts/python.exe"
+_DEFAULT_PQ_PY = os.environ.get("BMFG_PY_PQ") or os.path.expanduser(
+    r"~/.workbuddy/binaries/python/envs/default/Scripts/python.exe")
 
 # 最近一次 run() 里失败的步骤名。run() 返回的是「失败步数」，
 # 调用方想知道**具体哪一步**挂了（比如要不要继续发布）时读这个。
