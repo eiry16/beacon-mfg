@@ -1,7 +1,7 @@
 {
-  "base_url": "https://door-guarantees-summary-imposed.trycloudflare.com",
-  "updated_at": "2026-09-12T01:31:12+08:00",
+  "base_url": "",
+  "updated_at": "2026-09-12T13:09:00+08:00",
   "port": 8000,
   "history": [],
-  "_note": "App 设置 → 平台接口地址 点『刷新地址』自动取这里。由 scripts/endpoint_watch.py 维护。"
+  "_note": "平台接口地址（供应商侧写后端）。base_url 为空是合法状态：App 端供应商侧功能显示「未开通」，而非静默失败。切勿写入 Cloudflare 快速隧道（*.trycloudflare.com）域名——其地址随 cloudflared 重启回收，有被第三方重建劫持、截获用户写入的风险。稳定公开地址请用命名隧道固定域名（scripts/setup_named_tunnel.sh），或设置环境变量 BEACON_ENDPOINT_URL 后由 scripts/endpoint_watch.py 维护。App 设置 → 平台接口地址 点『刷新地址』即取这里。"
 }
