@@ -44,5 +44,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0027252",
+    "company": "昆山锡光电子机械制造有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "千灯镇支浦路14号",
+    "contact_phone": "待核实",
+    "lat": 31.28469,
+    "lng": 120.979865,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I0XZD6SO",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3976",
+      "name": "光电子器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 光电子器件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "光电子"
+    },
+    "is_manufacturer": true
   }
 ]

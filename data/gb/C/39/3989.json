@@ -1541,7 +1541,8 @@
     "company": "苏州迎创电子科技有限公司",
     "category": "电子元器件",
     "keywords": [
-      "PCBA"
+      "PCBA",
+      "机械加工"
     ],
     "region": {
       "province": "江苏",
@@ -1566,7 +1567,21 @@
       "source": "category_fallback",
       "evidence": "电子元器件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0J11KX5AB",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320509",
+      "search_keyword": "机械加工"
+    }
   },
   {
     "id": "CN-MFG-0003300",
@@ -2744,7 +2759,8 @@
     "company": "惠州市盛茂泰电子有限公司",
     "category": "电子元器件",
     "keywords": [
-      "PCBA"
+      "PCBA",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -2777,6 +2793,20 @@
         "catalog"
       ],
       "verified": false
+    },
+    "amap": {
+      "poi_id": "B0KR27LOYM",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441302",
+      "search_keyword": "机械加工"
     }
   },
   {

@@ -14961,5 +14961,54 @@
       "evidence": "铜材"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024166",
+    "company": "浙江奕富铜业有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "CNC加工",
+      "数控加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "店口镇江东社区东大路2号",
+    "contact_phone": "待核实",
+    "lat": 29.914261,
+    "lng": 120.308383,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGIGOSG",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330681",
+      "search_keyword": "CNC加工"
+    },
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜业"
+    },
+    "is_manufacturer": true
   }
 ]

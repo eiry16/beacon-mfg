@@ -293,5 +293,53 @@
       "evidence": "玻璃加工"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0028861",
+    "company": "凯鑫特种钢化玻璃加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "蒲基中心路",
+    "contact_phone": "待核实",
+    "lat": 23.080655,
+    "lng": 113.599943,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LK0U8A5Y",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "3059",
+      "name": "其他玻璃制品制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制品制造 > 其他玻璃制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢化玻璃"
+    },
+    "is_manufacturer": true
   }
 ]

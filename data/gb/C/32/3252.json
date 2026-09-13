@@ -18344,7 +18344,21 @@
       "source": "name",
       "evidence": "铝业"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0L3HH8ACH",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
+      "typecode": "060603|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "钣金加工"
+    }
   },
   {
     "id": "CN-MFG-0001849",
@@ -21964,7 +21978,8 @@
     "company": "连进不锈钢大型激光切割剪板折弯开槽",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "激光切割"
     ],
     "region": {
       "province": "上海",
@@ -22195,7 +22210,8 @@
     "company": "库奇铝板批发加工铝板剪板折边激光切割铝板冲孔刨槽",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "激光切割"
     ],
     "region": {
       "province": "上海",
@@ -23943,7 +23959,8 @@
     "company": "激光切割剪折加工",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "激光切割"
     ],
     "region": {
       "province": "江苏",
@@ -24495,7 +24512,8 @@
     "company": "激光切割铜板铝板不锈钢板",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "激光切割"
     ],
     "region": {
       "province": "江苏",
@@ -24771,7 +24789,8 @@
     "company": "普济激光切割折弯",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "激光切割"
     ],
     "region": {
       "province": "浙江",
@@ -26657,7 +26676,8 @@
     "company": "日顺源金属激切割剪折刨弯圆不锈钢铝板铁板",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "激光切割"
     ],
     "region": {
       "province": "广东",
@@ -28497,7 +28517,8 @@
     "company": "忠达激光剪折板",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "激光切割"
     ],
     "region": {
       "province": "广东",
@@ -28957,7 +28978,8 @@
     "company": "镭电激光板管切割(合创大厦店)",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "激光切割"
     ],
     "region": {
       "province": "广东",
@@ -30025,6 +30047,150 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "铝业"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029164",
+    "company": "听泉铝材加工",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "工业中心道西五路7号",
+    "contact_phone": "待核实",
+    "lat": 22.594537,
+    "lng": 113.181202,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRMOYLFU",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029165",
+    "company": "听泉铝材加工",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "工业中心道西五路7号",
+    "contact_phone": "待核实",
+    "lat": 22.594537,
+    "lng": 113.181202,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRMOYLFU",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029180",
+    "company": "鑫胜铝材配件加工",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "工业中心道西六路与西岸南路交叉口西南140米",
+    "contact_phone": "待核实",
+    "lat": 22.592875,
+    "lng": 113.180175,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LK25QXRB",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
     },
     "is_manufacturer": true
   }
