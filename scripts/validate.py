@@ -384,6 +384,10 @@ def check_en_mirrors(valid_categories):
 
     for path in sorted(EN_GB_DIR.rglob("*.json")):
         rel = path.relative_to(EN_GB_DIR).as_posix()[:-5]
+        # 逻辑桶名去掉分片后缀：C/34/3484-p2 -> C/34/3484
+        _parts = rel.split("/")
+        _parts[-1] = gb_store.base_of_stem(_parts[-1])
+        rel_bucket = "/".join(_parts)
         items = load_json(path)
         if items is None:
             ok = False
@@ -405,7 +409,7 @@ def check_en_mirrors(valid_categories):
                 err(f"data/en/gb/{rel}.json ({iid}): 未知 category '{it.get('category')}'")
                 ok = False
             want = gb_store.bucket_of(it)
-            if want != rel:
+            if want != rel_bucket:
                 err(f"data/en/gb/{rel}.json ({iid}): 落位错误，按其国标码应归入 {want}")
                 ok = False
         total += len(items)
@@ -599,7 +603,10 @@ def main():
     classified = unclassified = missing_key_n = 0
     items_by_cat = {}
     for bucket, path in gb_store.iter_buckets():
-        items = load_json(path)
+        # 必须用 load_bucket 而不是直接读 path：一个逻辑桶超过 MAX_PER_FILE
+        # 会自动切成 -pN 多片，load_bucket 会跨分片合并；直接读 path 只会拿到
+        # 主分片，导致总数/小类计数比实际少，gb-index 一致性检查全线误报。
+        items = gb_store.load_bucket(bucket)
         if items is None:
             continue
         items_by_cat[bucket] = items

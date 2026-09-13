@@ -1,6 +1,6 @@
 ---
 name: beacon-mfg-en
-description: Agent-facing search over a structured directory of Chinese manufacturing suppliers. Use when the user needs to find upstream manufacturers (CNC machining, sheet metal, injection molding, die casting, moulds, casting, rubber parts, gears, electronic components, etc.) or filter suppliers by GB/T 4754 industry code / product keyword / region. Data comes from public sources; only public contact info is provided; no transactions.
+description: Agent-facing search over a structured directory of Chinese suppliers (manufacturing + wholesale/retail). Use when the user needs to find suppliers, factories, OEM/ODM vendors (CNC machining, sheet metal, injection molding, die casting, moulds, casting, fasteners, gears, rubber parts, electronic components), or wholesalers / distributors / trading companies, or filter by GB/T 4754 industry code, product keyword, or region; also covers Chinese-language sourcing requests. Public POI data only; contact info only, no transactions. NOT for restaurants, local services, or consumer point-of-interest search (not covered — do not load this skill for those).
 ---
 
 # BeaconMFG · Supplier Search Skill (English Dataset)
