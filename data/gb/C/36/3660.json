@@ -1299,5 +1299,101 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi"
+  },
+  {
+    "id": "CN-MFG-0027887",
+    "company": "浙江三花汽车零部件有限公司-金加工工艺科",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "下沙浙江三花汽车零部件有限公司",
+    "contact_phone": "待核实",
+    "lat": 30.290896,
+    "lng": 120.37246,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGHAL7N",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司企业,公司企业,公司企业",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330114",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3660",
+      "name": "汽车车身、挂车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车车身、挂车制造 > 汽车车身、挂车制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车零部件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029476",
+    "company": "三维激光切割上海骄荣汽车配件有限公司",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "菊城路311号3幢",
+    "contact_phone": "021-59900063; 137****1155",
+    "lat": 31.351125,
+    "lng": 121.218675,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IRSUBR31",
+      "type": "汽车服务;汽车配件销售;汽车配件销售",
+      "typecode": "010800",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "3660",
+      "name": "汽车车身、挂车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车车身、挂车制造 > 汽车车身、挂车制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车配件"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -210,7 +210,8 @@
       "模具加工",
       "机械加工",
       "钣金加工",
-      "激光切割"
+      "激光切割",
+      "精密机械"
     ],
     "region": {
       "province": "浙江",
@@ -505,7 +506,21 @@
       "source": "name",
       "evidence": "环保设备"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0G22GRSMM",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "桥头广场",
+      "adcode": "441900",
+      "search_keyword": "钣金加工"
+    }
   },
   {
     "id": "CN-MFG-0001819",
@@ -537,7 +552,21 @@
       "source": "name",
       "evidence": "净化设备"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0JUO1EWSX",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "堰桥",
+      "adcode": "320206",
+      "search_keyword": "激光切割"
+    }
   },
   {
     "id": "CN-MFG-0002074",
@@ -667,6 +696,102 @@
       "postcode": "",
       "business_area": "钟村",
       "adcode": "440113",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3591",
+      "name": "环境保护专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 环境保护专用设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "环保设备"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0027951",
+    "company": "浙江三迪环保设备有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "陶朱街道宝利路8号越烽大厦9楼",
+    "contact_phone": "待核实",
+    "lat": 29.729326,
+    "lng": 120.197678,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIMAG51",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330681",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3591",
+      "name": "环境保护专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 环境保护专用设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "环保设备"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0028050",
+    "company": "环保设备激光加工切割",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "上园路辅路与博园路交叉口南200米",
+    "contact_phone": "待核实",
+    "lat": 23.116871,
+    "lng": 114.004509,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JG1LN5MT",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441322",
       "search_keyword": "机械加工"
     },
     "industry": {

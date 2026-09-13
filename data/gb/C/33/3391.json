@@ -565,5 +565,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0026126",
+    "company": "广东启新精密铸造股份有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "里水镇花园大道北侧和顺小学路以西3号地块",
+    "contact_phone": "待核实",
+    "lat": 23.26043,
+    "lng": 113.142649,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDHCSRX4",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "和顺和",
+      "adcode": "440605",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "3391",
+      "name": "黑色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 黑色金属铸造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "铸造"
+    },
+    "is_manufacturer": true
   }
 ]

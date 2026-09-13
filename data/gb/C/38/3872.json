@@ -1281,7 +1281,8 @@
     "company": "古粤灯饰数控加工中心",
     "category": "精密机械加工",
     "keywords": [
-      "加工中心"
+      "加工中心",
+      "数控加工"
     ],
     "region": {
       "province": "广东",
@@ -1678,6 +1679,150 @@
     "is_template": false,
     "note": "",
     "status": "verified",
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0024852",
+    "company": "洪庆灯饰数控加工",
+    "category": "精密机械加工",
+    "keywords": [
+      "数控加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "贤兴路与金星一街二巷交叉口西160米",
+    "contact_phone": "待核实",
+    "lat": 22.58474,
+    "lng": 113.203249,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MGCLFLW3",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "灯具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "数控加工"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0025314",
+    "company": "常州名启精密机械有限公司(中邦照明内)",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "孙李线与073村道交叉口南180米",
+    "contact_phone": "待核实",
+    "lat": 31.772875,
+    "lng": 120.115675,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KUF6W9A8",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320412",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "照明"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029057",
+    "company": "宛东灯饰加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "金沙西联五甲开发区南1号",
+    "contact_phone": "0757-86610865",
+    "lat": 23.090608,
+    "lng": 112.939346,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHVEBFU",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "加工中心"
+    },
     "industry": {
       "code": "3872",
       "name": "照明灯具制造",
