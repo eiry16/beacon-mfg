@@ -124,5 +124,53 @@
       "evidence": "升降机"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0026712",
+    "company": "苏州博鳌特升降机械制造有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "望亭镇腾飞中路15号",
+    "contact_phone": "15050117007",
+    "lat": 31.418144,
+    "lng": 120.43392,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HKMS757T",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "望亭",
+      "adcode": "320507",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3435",
+      "name": "电梯、自动扶梯及升降机制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 电梯、自动扶梯及升降机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "升降机"
+    },
+    "is_manufacturer": true
   }
 ]

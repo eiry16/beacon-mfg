@@ -528,5 +528,149 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0026929",
+    "company": "常州市松电机械制造有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "新丰路与剑横公路交叉口西南300米",
+    "contact_phone": "待核实",
+    "lat": 31.733901,
+    "lng": 120.073248,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K6579MQL",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320412",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0027212",
+    "company": "益龙机电(经营维修电机水泵空压机螺杆机)",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "乍浦镇建港路170号",
+    "contact_phone": "13806723172",
+    "lat": 30.602534,
+    "lng": 121.086727,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG8NDFC",
+      "type": "购物服务;家居建材市场;建材五金市场|购物服务;专卖店;专营店|生活服务;维修站点;维修站点",
+      "typecode": "060603|061200|071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330482",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0028625",
+    "company": "北京精雕加工电机",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "环城西路 163 号",
+    "contact_phone": "13906841655; 15857414180",
+    "lat": 30.176805,
+    "lng": 121.393583,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M607MEAB",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
   }
 ]

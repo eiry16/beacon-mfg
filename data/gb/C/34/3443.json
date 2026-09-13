@@ -1213,5 +1213,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0029795",
+    "company": "佛山恒源不锈钢阀门管件有限公司",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "乐从钢铁世界不锈钢B区钢铁北路27-38号",
+    "contact_phone": "13380502188",
+    "lat": 22.9239,
+    "lng": 113.109646,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H1AZ2R2B",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "乐从镇",
+      "adcode": "440606",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "3443",
+      "name": "阀门和旋塞制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 阀门和旋塞制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "阀门"
+    },
+    "is_manufacturer": true
   }
 ]

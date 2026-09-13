@@ -414,5 +414,101 @@
       "evidence": "材批发"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0029251",
+    "company": "恒峰大型激光切割·板材批发",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "交通南路2751-2753号",
+    "contact_phone": "13801557296",
+    "lat": 31.152566,
+    "lng": 120.652538,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHRTNRE",
+      "type": "购物服务;家居建材市场;建材五金市场|生活服务;生活服务场所;生活服务场所",
+      "typecode": "060603|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松陵",
+      "adcode": "320509",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "材批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0029614",
+    "company": "焊机焊材批发出租维修",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "鹊山新村60号一楼(元芬地铁站B口步行360米)",
+    "contact_phone": "13534091190",
+    "lat": 22.658605,
+    "lng": 114.005511,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKYESYT",
+      "type": "购物服务;家居建材市场;建材五金市场|购物服务;专卖店;专营店|生活服务;生活服务场所;生活服务场所",
+      "typecode": "060603|061200|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙华",
+      "adcode": "440309",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "材批发"
+    },
+    "is_manufacturer": false
   }
 ]

@@ -196,14 +196,29 @@ def render_capability(session, base: Optional[dict] = None,
     }
 
     gate = (getattr(session, "gate", None) or "").upper() or "C"
-    allowed = set(gs.build_schema(gate)["properties"])
+    _gate_schema = gs.build_schema(gate)
+    allowed = set(_gate_schema["properties"])
+
+    # ── category 归一化：登记层粗分类 → 门类 schema 细分类 ──
+    # C 门类两枚举重合（直通）；其余门类 schema 用的是细分类业态标签
+    # （I：软件开发/移动应用/…），而认证/采集层只有粗分类（如「信息技术服务」），
+    # 采集问句也不含细分类题。粗分类不在细分类枚举时，落入门类预留的「其他*」
+    # 兜底桶 —— 那是 schema 为「未细分业态」设计的诚实标签，不是编造；
+    # 具体会做什么由 capability.tech_directions 等字段如实呈现。
+    # （2026-09-11 赤兔 confirm 422 根因：粗分类直接进卡被门类 schema 拒绝）
+    _category = getattr(session, "category", None) or ""
+    _cat_enum = ((_gate_schema.get("properties") or {}).get("category") or {}).get("enum") or []
+    if _cat_enum and _category not in _cat_enum:
+        _fallback = next((v for v in _cat_enum if str(v).startswith("其他")), "")
+        if _fallback:
+            _category = _fallback
 
     cap = {
         "beacon_version": "1.0",
         "supplier_id": session.supplier_id,
         "gate": gate,
         "company": session.company,
-        "category": session.category,
+        "category": _category,
         "profile": session.profile,
         "updated_at": today,
         "claim": claim,

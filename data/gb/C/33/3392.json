@@ -9461,7 +9461,8 @@
     "company": "东莞市典雅五金制品有限公司压铸事业部",
     "category": "压铸",
     "keywords": [
-      "压铸"
+      "压铸",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -15162,7 +15163,8 @@
     "category": "压铸",
     "keywords": [
       "压铸",
-      "锌合金压铸"
+      "锌合金压铸",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -23218,7 +23220,8 @@
     "keywords": [
       "压铸",
       "铝合金压铸",
-      "CNC加工"
+      "CNC加工",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -29104,6 +29107,54 @@
       "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 有色金属铸造",
       "confidence": "low",
       "source": "search_keyword",
+      "evidence": "压铸"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0026034",
+    "company": "广州源方精密压铸科技股份有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "新塘镇白石村邵白路11号",
+    "contact_phone": "020-82798473",
+    "lat": 23.152391,
+    "lng": 113.644362,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IRL9NSQN",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440118",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "3392",
+      "name": "有色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 有色金属铸造",
+      "confidence": "high",
+      "source": "name",
       "evidence": "压铸"
     },
     "is_manufacturer": true

@@ -44,5 +44,101 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0028428",
+    "company": "豆制品加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "堰江镇锡澄路北段49号(艾迪佳时尚美食营运中心)旁",
+    "contact_phone": "待核实",
+    "lat": 31.714904,
+    "lng": 120.279911,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JUMS6A7H",
+      "type": "公司企业;公司;冶金化工|公司企业;工厂;工厂",
+      "typecode": "170205|170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320281",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1392",
+      "name": "豆制品制造",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 其他农副食品加工 > 豆制品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "豆制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029170",
+    "company": "正宇豆制品加工坊",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "横栏镇富横西路16号中山市横栏镇茂辉二手交易中心",
+    "contact_phone": "待核实",
+    "lat": 22.537475,
+    "lng": 113.244775,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L6US9QWD",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1392",
+      "name": "豆制品制造",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 其他农副食品加工 > 豆制品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "豆制品"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -238,7 +238,9 @@ def plan(tier="core", industries=None, category=None, keyword=None, city=None):
 
 def main():
     parser = argparse.ArgumentParser(description="BeaconMFG 批量抓取（按 GB/T 4754 国标小类）")
-    parser.add_argument("--limit", type=int, default=60, help="每个任务抓取上限")
+    parser.add_argument("--limit", type=int, default=200,
+                        help="每个任务抓取上限。默认 200 = 高德同参数翻页硬上限（翻到底）。"
+                             "以前默认 60/40 只翻 2 页，抓到的永远是排序最前那一批")
     parser.add_argument("--dry-run", action="store_true", help="只打印计划")
     parser.add_argument("--tier", default=None, choices=["core", "extended", "service", "all"],
                         help="core=现有制造覆盖；extended=补制造新行业；service=非制造新门类"
@@ -257,6 +259,20 @@ def main():
                              "旧写法 --no-index 等价于跳其中的 index 步")
     parser.add_argument("--no-index", action="store_true",
                         help="只跳过行业/地域索引重建（兼容旧用法，新脚本请用 --no-post）")
+    parser.add_argument("--no-schedule", action="store_true",
+                        help="关闭抓取账本调度（默认开启）。关掉就退回改造前的固定顺序："
+                             "每次都从 JOBS 字典序第一个任务开始，配额只喂给头部那批任务")
+    parser.add_argument("--no-district", action="store_true",
+                        help="不按区县 adcode 分片展开。默认开启：一个组合翻到底（200 条）"
+                             "且召回量很大时，自动拆成区县再抓 —— 官方 200 条上限是按"
+                             "请求参数算的，换 adcode 就是全新的 200 条")
+    parser.add_argument("--quota", type=int, default=1000,
+                        help="本轮请求上限（默认 1000，即高德日配额）。配合账本调度使用："
+                             "跑不完的任务下一轮接着跑，且只挑能完整跑完的任务，"
+                             "不会让最后一个任务翻页翻到一半被掐断")
+    parser.add_argument("--autoprofile", action="store_true",
+                        help="抓取完给本轮新抓到的城市自动补「未认证」能力卡（调 batch_auto_profile，"
+                             "烧 LLM、慢；默认关）。仅增量补本轮城市、不清空已有卡")
     args = parser.parse_args()
 
     tier = args.tier or ("all" if args.industry else "core")
@@ -269,6 +285,41 @@ def main():
             tasks += plan(tier, industries, args.category, args.keyword, c)
     else:
         tasks = plan(tier, industries, args.category, args.keyword)
+
+    # ---------------------------------------------------------------- 账本调度
+    # 不排序的话，每次运行都从 JOBS 字典序第一个任务开始，配额全喂给头部那批任务，
+    # 后面 60%（extended / service 全部新行业都在里面）一次都轮不到。
+    # 账本按「从未跑过 > 久未跑且上次产量高」排序，并跳过冷却期内的分片，
+    # 把「一轮跑完」改成「多天分批跑完」。详见 scripts/fetch_cursor.py 顶部说明。
+    cursor = None
+    ledger = None
+    if not args.no_schedule:
+        import fetch_cursor as cursor  # noqa: E402
+        ledger = cursor.load()
+
+        # 翻到底还不够的组合，按区县 adcode 再切片。官方 200 条上限是**按请求参数**算的，
+        # 换 adcode 就是全新的 200 条（实测全市 vs 虎丘区第 1 页只重叠 1 条）。
+        # dry-run 不展开：那会真的去查行政区划接口，白花请求。
+        if not args.no_district and not args.dry_run:
+            tasks, n_exp = cursor.expand(tasks, ledger, key=fetcher.AMAP_KEY)
+            if n_exp:
+                print("[账本] %d 个组合已翻到底且货很多 → 拆成区县分片（各再得 200 条）"
+                      % n_exp)
+                cursor.save(ledger)  # expanded 标记要落盘，否则下轮会重复展开
+
+        before = cursor.summary(tasks, ledger)
+        print("[账本] 分片 %d 个（其中区县层 %d）：从未跑过 %d / 已到期 %d / 冷却中跳过 %d"
+              % (before["total"], before["districts"], before["never"],
+                 before["due"], before["cooling"]))
+        # 单任务请求数：ceil(min(limit,200)/25)，上限 8 页
+        per_task = max(1, min(cursor.DEEP_PAGES,
+                              -(-min(int(args.limit or 200), 200) // cursor.PAGE_SIZE)))
+        tasks = cursor.order(tasks, ledger, budget=args.quota, per_task=per_task)
+        print("[账本] 本轮预算 %d 请求，选中 %d 个任务（没跑过的先跑）"
+              % (args.quota, len(tasks)))
+        if before["orphan"]:
+            print("[账本] 提示：%d 个分片已不在当前 JOBS 矩阵里（矩阵改过？可忽略）"
+                  % before["orphan"])
 
     missing, bad = self_check()
     # 说明：self_check 查的是 legacy 采购品类表 CATEGORY_OF_CODE 的覆盖率，
@@ -309,21 +360,56 @@ def main():
     if not fetcher.AMAP_KEY:
         print("请先设置 API Key：export AMAP_KEY=你的key")
         raise SystemExit(1)
+    # 本轮请求硬上限。翻页过程中也要检查（fetcher 内部已有护栏），
+    # 只在任务之间看一眼是不够的——一个多页任务照样能打穿上限。
+    if args.quota:
+        fetcher.MAX_REQUESTS = args.quota
 
     done = 0
     total_new = 0
     touched = set()
+    cities = set()  # 本轮抓到的城市（城市层，供「自动补能力卡」用）
     for code, cat, kw, c in tasks:
+        # 配额护栏放在任务开头：跑完才发现超了，那个任务的请求已经花出去了
+        if getattr(fetcher, "QUOTA_EXHAUSTED", False):
+            print("\n>>> 高德返回配额已用尽，停止采集（未跑完的下一轮接着跑）")
+            break
+        if fetcher.MAX_REQUESTS and fetcher.REQUEST_COUNT >= fetcher.MAX_REQUESTS:
+            print("\n>>> 已达本轮请求上限 %d，停止采集（未跑完的下一轮接着跑）"
+                  % fetcher.MAX_REQUESTS)
+            break
         print("\n[%d/%d] %s %s × %s × %s → %s"
               % (done + 1, len(tasks), code, CODES[code]["name"], kw, c, cat))
+        pois = []
+        added = 0
         try:
             pois = fetcher.fetch(kw, c, args.limit, types=args.types or None)
-            total_new += fetcher.save_suppliers(pois, cat, kw, industry_code=code)
+            added = fetcher.save_suppliers(pois, cat, kw, industry_code=code)
+            total_new += added
             touched.add(cat)
+            if not (c.isdigit() and len(c) == 6):
+                cities.add(c)  # 城市层任务（非区县 adcode）才纳入自动补卡范围
         except Exception as e:
             print(f"  失败: {e}")
+        # 写账本：抓多抓少都要记。不记的话这个分片下轮还被当成「从未跑过」排到队首，
+        # 又重复占用配额 —— 那账本就白做了。
+        if cursor is not None:
+            # 用 fetch() 自己报的元信息，别靠 len(pois) < limit 猜：
+            # 撞上 200 条上限时 pois 正好等于 limit，猜会误判成「还没到底」
+            meta = getattr(fetcher, "LAST_FETCH", None) or {}
+            exhausted = meta.get("exhausted", len(pois) < args.limit)
+            cursor.record(cursor.key_of(code, kw, c), len(pois), added, exhausted,
+                          int(meta.get("requests", 0) or 0), ledger)
+            if (done + 1) % cursor.FLUSH_EVERY == 0:
+                cursor.save(ledger)
         done += 1
         time.sleep(1)
+
+    if cursor is not None and ledger is not None:
+        cursor.save(ledger)
+        print("\n[账本] 已落盘 %s（累计记录 %d 个分片）；"
+              "想看还剩多少没跑过：python scripts/fetch_cursor.py --stats --tier all"
+              % (cursor.LEDGER.name, len(ledger.get("shards", {}))))
 
     print(f"\n完成：{done} 个任务，新增 {total_new} 条。")
 
@@ -347,7 +433,10 @@ def main():
         skip.append("classify")
     if args.no_index:
         skip.append("index")
-    failed = postfetch_run(skip=skip)
+    if not args.autoprofile:
+        skip.append("autoprofile")
+    autoprofile_cities = ",".join(sorted(cities)) if args.autoprofile else None
+    failed = postfetch_run(skip=skip, autoprofile_cities=autoprofile_cities)
 
     if failed:
         print("\n[警告] 抓后流水线有 %d 步失败 → %s" % (failed, "、".join(last_failed())))

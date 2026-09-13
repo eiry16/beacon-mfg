@@ -1113,5 +1113,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0027588",
+    "company": "鑫红图金属回收(电线电缆)",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "广州市广红软木厂东北门东南50米",
+    "contact_phone": "18148651915",
+    "lat": 23.103919,
+    "lng": 113.211118,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0ID77N2SG",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "废品回收",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440103",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3831",
+      "name": "电线、电缆制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 电线、电缆制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电线"
+    },
+    "is_manufacturer": true
   }
 ]

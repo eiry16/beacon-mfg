@@ -87,7 +87,7 @@ except Exception:
     pass
 
 # 顺序即依赖，见文件头。别乱排。
-ALL_STEPS = ("classify", "gbindex", "index", "fingerprint", "shards",
+ALL_STEPS = ("classify", "gbindex", "index", "fingerprint", "autoprofile", "shards",
              "manifest", "assets", "readme", "validate", "r2", "pages")
 
 # gen_manifest 的列式层（pq）依赖 pyarrow，缺省就静默少一层 —— 清单看着变绿，
@@ -109,6 +109,7 @@ _STEP_DESC = {
     "gbindex": "重建 gb-index.json（id→文件主索引）",
     "index": "重建行业/地域索引 + 品类计数",
     "fingerprint": "重建 L0 指纹国标分片",
+    "autoprofile": "给本轮新抓城市补未认证能力卡（调 batch_auto_profile）",
     "shards": "重建 L1 能力卡国标分片",
     "manifest": "重算分片清单（sha1/行数）",
     "assets": "同步 App 内置资产（APK assets）",
@@ -214,6 +215,36 @@ def step_fingerprint(dry_run: bool = False) -> None:
     rc = _call("gen_fingerprint", *([] if dry_run else ["--apply"]))
     if rc:
         raise RuntimeError(f"gen_fingerprint 返回 {rc}")
+
+
+_AUTOPROFILE_CITIES = None  # run() 经 autoprofile_cities= 注入；step_autoprofile 读取
+
+
+def step_autoprofile(dry_run: bool = False) -> None:
+    """给本轮新抓到的城市补「未认证」能力卡（skills/vendors/{id}/SKILL.md + capability.json）。
+
+    这不是每次都跑的轻活：调 collect/batch_auto_profile.py，会按城市筛选名录、
+    调 LLM 推断工艺、渲染卡片 —— 慢且烧钱。故默认 skip（fetch_batch / GUI 不传
+    --autoprofile / 不勾选「自动补能力卡」就 skip）。勾选时只对传入 cities 增量补，
+    不加 --clean，已生成的卡不会被清空。
+
+    放 shards 之前：新生成的 L2 自述 + capability.json 要被 gen_capability_shards 切进
+    L1 分片，再被 r2/pages 上传，链路才完整。
+    """
+    cities = _AUTOPROFILE_CITIES
+    if not cities:
+        print("   （跳过：未指定要补卡的城市）")
+        return
+    tool = ROOT / "scripts" / "collect" / "batch_auto_profile.py"
+    if not tool.exists():
+        print("   （跳过：仓库里没有 scripts/collect/batch_auto_profile.py）")
+        return
+    if dry_run:
+        print("   （--dry-run：不补卡）")
+        return
+    done = subprocess.run([sys.executable, str(tool), "--cities", cities], cwd=str(ROOT))
+    if done.returncode:
+        raise RuntimeError(f"batch_auto_profile 返回 {done.returncode}")
 
 
 def step_shards(dry_run: bool = False) -> None:
@@ -375,6 +406,7 @@ _STEP_FN = {
     "gbindex": step_gbindex,
     "index": step_index,
     "fingerprint": step_fingerprint,
+    "autoprofile": step_autoprofile,
     "shards": step_shards,
     "manifest": step_manifest,
     "assets": step_assets,
@@ -419,8 +451,15 @@ def sync_index_counts() -> None:
 def run(skip: set[str] | frozenset[str] | list[str] | None = None,
         only: set[str] | frozenset[str] | list[str] | None = None,
         dry_run: bool = False,
-        quiet: bool = False) -> int:
-    """跑完（或部分跑完）抓后流水线。返回失败步数（0 = 全通过）。"""
+        quiet: bool = False,
+        autoprofile_cities: str | None = None) -> int:
+    """跑完（或部分跑完）抓后流水线。返回失败步数（0 = 全通过）。
+
+    autoprofile_cities: 逗号分隔的城市名；非空时 autoprofile 步会调 batch_auto_profile
+    给这些城市补「未认证」能力卡。为空则 autoprofile 步跳过（默认行为，避免每轮烧 LLM）。
+    """
+    global _AUTOPROFILE_CITIES
+    _AUTOPROFILE_CITIES = autoprofile_cities
     skip = set(skip or ())
     if only:
         steps = [s for s in ALL_STEPS if s in set(only)]
@@ -511,6 +550,9 @@ def _main() -> int:
                     help="只跑某些步骤，逗号分隔")
     ap.add_argument("--dry-run", action="store_true",
                     help="不写盘（依赖子脚本自身的预览模式）")
+    ap.add_argument("--autoprofile-cities", default="",
+                    help="逗号分隔的城市名；非空时 autoprofile 步给这些城市补未认证能力卡"
+                         "（对应 GUI「自动补能力卡」勾选框 / fetch_batch --autoprofile）")
     args = ap.parse_args()
 
     skip = {s.strip() for s in args.skip.split(",") if s.strip()}
@@ -520,7 +562,8 @@ def _main() -> int:
         print("未知步骤：%s（可选 %s）" % ("、".join(sorted(bad)), ",".join(ALL_STEPS)))
         return 2
 
-    return 1 if run(skip=skip, only=only, dry_run=args.dry_run) else 0
+    return 1 if run(skip=skip, only=only, dry_run=args.dry_run,
+                   autoprofile_cities=args.autoprofile_cities or None) else 0
 
 
 if __name__ == "__main__":

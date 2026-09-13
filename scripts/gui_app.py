@@ -87,6 +87,14 @@ def load_env():
     return env
 
 
+# 把 .env 里的变量补进运行环境（只补缺失的，不覆盖已显式设置的系统值），
+# 让子进程（postfetch → deploy_pages / publish_r2 → 读 CLOUDFLARE_* / AMAP_KEY）能拿到凭证。
+# 否则 run_cmd 用的是 os.environ.copy()（系统环境），.env 里的 Cloudflare 凭证对子进程不可见，
+# 即便去掉 --skip r2,pages，发布也会因缺凭证失败。
+for _k, _v in load_env().items():
+    os.environ.setdefault(_k, _v)
+
+
 def git_run(args, log):
     """在仓库目录执行 git 命令（UTF-8 解码，中文路径也不会崩）"""
     return run_cmd(["git"] + args, log)
@@ -155,7 +163,9 @@ class App:
                  insertbackground="#fff", relief="flat", highlightthickness=1,
                  highlightbackground="#2a3340").pack(side="left", padx=6)
         tk.Label(param, text="每任务条数：", bg="#10151d", fg="#9aa7b8").pack(side="left", padx=(16, 0))
-        self.limit_var = tk.StringVar(value="40")
+        # 默认 200 = 高德同参数翻页硬上限（翻到底）。以前默认 40 只翻 2 页，
+        # 抓到的永远是排序最前那一批，去重后新增常年为 0。
+        self.limit_var = tk.StringVar(value="200")
         tk.Entry(param, textvariable=self.limit_var, width=6, bg="#161b23", fg="#fff",
                  insertbackground="#fff", relief="flat", highlightthickness=1,
                  highlightbackground="#2a3340").pack(side="left", padx=6)
@@ -166,11 +176,23 @@ class App:
         self.do_validate = tk.BooleanVar(value=True)
         self.do_english = tk.BooleanVar(value=False)
         self.do_git = tk.BooleanVar(value=True)
+        self.do_schedule = tk.BooleanVar(value=True)
+        self.do_district = tk.BooleanVar(value=True)
+        self.do_publish = tk.BooleanVar(value=True)   # 发布到 Cloudflare（R2 + Pages）
+        self.do_profile = tk.BooleanVar(value=False)  # 自动补能力卡（仅补本轮新抓城市，烧 LLM，故默认关）
         tk.Checkbutton(opt, text="校验数据", variable=self.do_validate, bg="#10151d", fg="#c9d6e8",
+                       selectcolor="#1d242e", activebackground="#10151d").pack(side="left", padx=6)
+        tk.Checkbutton(opt, text="账本调度", variable=self.do_schedule, bg="#10151d", fg="#c9d6e8",
+                       selectcolor="#1d242e", activebackground="#10151d").pack(side="left", padx=6)
+        tk.Checkbutton(opt, text="区县分片", variable=self.do_district, bg="#10151d", fg="#c9d6e8",
                        selectcolor="#1d242e", activebackground="#10151d").pack(side="left", padx=6)
         tk.Checkbutton(opt, text="生成英文版（GLM 翻译）", variable=self.do_english, bg="#10151d", fg="#c9d6e8",
                        selectcolor="#1d242e", activebackground="#10151d").pack(side="left", padx=6)
         tk.Checkbutton(opt, text="提交并推送 GitHub", variable=self.do_git, bg="#10151d", fg="#c9d6e8",
+                       selectcolor="#1d242e", activebackground="#10151d").pack(side="left", padx=6)
+        tk.Checkbutton(opt, text="发布到 Cloudflare", variable=self.do_publish, bg="#10151d", fg="#c9d6e8",
+                       selectcolor="#1d242e", activebackground="#10151d").pack(side="left", padx=6)
+        tk.Checkbutton(opt, text="自动补能力卡", variable=self.do_profile, bg="#10151d", fg="#c9d6e8",
                        selectcolor="#1d242e", activebackground="#10151d").pack(side="left", padx=6)
 
         # 设置 + 开始按钮
@@ -301,6 +323,7 @@ class App:
         sys.path.insert(0, str(ROOT / "scripts"))
         import fetch_gaode_poi as fetcher
         import fetch_batch as batch
+        import fetch_cursor as cursor
         fetcher.AMAP_KEY = amap_key
         fetcher.REQUEST_COUNT = 0
         fetcher.QUOTA_EXHAUSTED = False
@@ -322,7 +345,35 @@ class App:
         tasks = batch.plan(tier=tier, industries=industries)
         self.log(f"计划 {len(tasks)} 个任务（{scope}）："
                  f"{'、'.join(preview)}{' …' if len(preview) == 12 else ''}")
+
+        # 账本调度：不排序的话每次都从 JOBS 字典序第一个任务开始，配额全喂给头部，
+        # 后面 60%（extended / service 全部新行业）一次都轮不到。
+        ledger = None
+        if self.do_schedule.get():
+            ledger = cursor.load()
+            # 翻到底还不够的组合，按区县 adcode 再切片：官方 200 条上限是按请求参数算的，
+            # 换 adcode 就是全新的 200 条（实测全市 vs 虎丘区第 1 页只重叠 1 条）
+            if self.do_district.get():
+                tasks, n_exp = cursor.expand(tasks, ledger, key=fetcher.AMAP_KEY)
+                if n_exp:
+                    self.log(f"[账本] {n_exp} 个组合已翻到底且货很多 → 拆成区县分片"
+                             f"（各再得 200 条）")
+                    cursor.save(ledger)
+            st = cursor.summary(tasks, ledger)
+            self.log(f"[账本] 分片 {st['total']} 个（区县层 {st['districts']}）："
+                     f"从未跑过 {st['never']} / 已到期 {st['due']} / 冷却中跳过 {st['cooling']}")
+            per_task = max(1, min(cursor.DEEP_PAGES,
+                                  -(-min(limit, 200) // cursor.PAGE_SIZE)))
+            tasks = cursor.order(tasks, ledger, budget=quota, per_task=per_task)
+            self.log(f"[账本] 预算 {quota} 请求，选中 {len(tasks)} 个任务"
+                     f"（没跑过的先跑；只挑能完整跑完的，不让翻页半途被掐断）")
+            if not tasks:
+                self.log("[账本] 所有分片都在冷却期内，本轮无可跑任务")
+        else:
+            self.log("[账本] 已关闭调度，按 JOBS 固定顺序跑（每次都从同一个任务开始）")
+
         self.log(f"每日配额上限 {quota} 次请求，每任务目标 {limit} 条")
+        self._profile_cities = set()  # 本轮抓到的城市（城市层，供「自动补能力卡」用）
         for i, (code, cat, kw, city) in enumerate(tasks, 1):
             if fetcher.REQUEST_COUNT >= quota:
                 self.log(f">>> 已用满 {quota} 次配额，停止采集（次日 00:00 重置）")
@@ -331,6 +382,10 @@ class App:
                 self.log(">>> 高德返回配额已用尽，停止采集（次日 00:00 重置）")
                 break
             self.log(f"[{i}/{len(tasks)}] {cat} × {kw} × {city}")
+            if not (city.isdigit() and len(city) == 6):
+                self._profile_cities.add(city)  # 城市层任务（非区县 adcode）才纳入自动补卡
+            pois = []
+            added = 0
             try:
                 pois = fetcher.fetch(kw, city, limit)
                 # industry_code=code 把国标小类码传给入库分类器做兜底证据，
@@ -339,14 +394,42 @@ class App:
                 self.log(f"  新增 {added} 条；本次已用请求 {fetcher.REQUEST_COUNT}/{quota}")
             except Exception as e:
                 self.log(f"  失败: {e}")
+            # 抓多抓少都要记账：不记的话下轮它还排「从未跑过」的队首，重复烧配额
+            if ledger is not None:
+                # 用 fetch() 自己报的元信息，别靠 len(pois) < limit 猜：
+                # 撞上 200 条上限时 pois 正好等于 limit，猜会误判成「还没到底」
+                meta = getattr(fetcher, "LAST_FETCH", None) or {}
+                cursor.record(cursor.key_of(code, kw, city), len(pois), added,
+                              meta.get("exhausted", len(pois) < limit),
+                              int(meta.get("requests", 0) or 0), ledger)
+                if i % cursor.FLUSH_EVERY == 0:
+                    cursor.save(ledger)
             time.sleep(1)
 
-        # 1.5 重建派生层（索引/指纹/能力卡分片/清单/校验）
-        # 只写 data/gb/** 原始名录不够——客户 Agent / Pages / App 读的是派生层；
-        # 漏跑会静默过期、新门类在检索里搜不到。r2/pages（上云发布）需凭证，
-        # 本地一键跑不传，故 --skip，避免 GUI 因缺凭证而整体失败。
-        self.log("\n== 重建派生层（索引/指纹/分片/清单，跳过上云发布）==")
-        ok = run_cmd([PY, str(ROOT / "scripts" / "postfetch.py"), "--skip", "r2,pages"],
+        if ledger is not None:
+            cursor.save(ledger)
+            self.log(f"[账本] 已保存 {cursor.LEDGER.name}"
+                     f"（累计 {len(ledger.get('shards', {}))} 个分片）")
+
+        # 1.5 重建派生层（索引/指纹/能力卡分片/清单/校验/上云发布）
+        # r2/pages（上传 R2 + 发布 Cloudflare Pages）现已接入：.env 的 CLOUDFLARE_* 凭证
+        # 已由模块顶部注入 os.environ，子进程（deploy_pages/publish_r2）读得到。
+        # 默认勾选「发布到 Cloudflare」即会跑；不想上云就取消勾选。
+        # 「自动补能力卡」仅对本轮抓到的城市增量补（不 --clean），烧 LLM，默认关。
+        skip = ["r2", "pages"]
+        if self.do_publish.get():
+            skip = []
+        apo = []
+        if self.do_profile.get():
+            cities = ",".join(sorted(getattr(self, "_profile_cities", set())))
+            if cities:
+                apo = ["--autoprofile-cities", cities]
+                self.log(f"  自动补能力卡范围：{cities}（仅增量，不清空已有卡）")
+            else:
+                self.log("  （本轮无城市层任务，跳过自动补卡）")
+        self.log("\n== 重建派生层" + (" + 上云发布 ==" if self.do_publish.get()
+                 else "（本次跳过上云发布）=="))
+        ok = run_cmd([PY, str(ROOT / "scripts" / "postfetch.py"), "--skip", ",".join(skip)] + apo,
                      self.log, tail=40)
         if ok:
             self.log("  派生层重建完成 ✓")

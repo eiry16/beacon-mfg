@@ -144,5 +144,53 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0027005",
+    "company": "常州剑飞机械制造有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "棕榈路51号",
+    "contact_phone": "13861158252",
+    "lat": 31.791625,
+    "lng": 119.877275,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I07UNFLZ",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320404",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3741",
+      "name": "飞机制造",
+      "level": "class",
+      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 航空、航天器及设备制造 > 飞机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "飞机"
+    },
+    "is_manufacturer": true
   }
 ]

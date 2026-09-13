@@ -4940,7 +4940,8 @@
     "company": "宁海坤秀塑料电器厂",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "数控加工"
     ],
     "region": {
       "province": "浙江",
@@ -4973,6 +4974,20 @@
         "catalog"
       ],
       "verified": false
+    },
+    "amap": {
+      "poi_id": "B0KR9LGFOI",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330226",
+      "search_keyword": "数控加工"
     }
   },
   {
@@ -5722,7 +5737,8 @@
     "company": "靖江德灿木制品加工厂",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "机械加工"
     ],
     "region": {
       "province": "浙江",
@@ -5747,7 +5763,21 @@
       "source": "keyword",
       "evidence": "注塑加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0H3PD2X3Q",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330109",
+      "search_keyword": "机械加工"
+    }
   },
   {
     "id": "CN-MFG-0002643",
@@ -6361,7 +6391,8 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "紧固件"
+      "紧固件",
+      "精密机械"
     ],
     "region": {
       "province": "广东",
@@ -7510,7 +7541,8 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "注塑成型"
+      "注塑成型",
+      "加工中心"
     ],
     "region": {
       "province": "广东",
@@ -12149,7 +12181,8 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "注塑模具"
+      "注塑模具",
+      "CNC加工"
     ],
     "region": {
       "province": "广东",
@@ -12198,7 +12231,8 @@
       "注塑加工",
       "冲压",
       "注塑模具",
-      "冲压模具"
+      "冲压模具",
+      "激光切割"
     ],
     "region": {
       "province": "广东",
@@ -58850,7 +58884,8 @@
     "company": "大型中走丝线切割加工厂(信汇)祺鑫",
     "category": "注塑成型",
     "keywords": [
-      "塑料配件"
+      "塑料配件",
+      "机械加工"
     ],
     "region": {
       "province": "广东",
@@ -70964,7 +70999,8 @@
     "company": "桂中注塑加工",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "加工中心"
     ],
     "region": {
       "province": "广东",
@@ -80045,7 +80081,8 @@
     "company": "世林机械线切割手板模型",
     "category": "注塑成型",
     "keywords": [
-      "模具"
+      "模具",
+      "机械加工"
     ],
     "region": {
       "province": "浙江",
@@ -85651,7 +85688,8 @@
     "company": "立优专业注塑机配件",
     "category": "注塑成型",
     "keywords": [
-      "模具"
+      "模具",
+      "精密机械"
     ],
     "region": {
       "province": "广东",
@@ -92028,7 +92066,21 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0KDZ5PNIE",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "霄边",
+      "adcode": "441900",
+      "search_keyword": "CNC加工"
+    }
   },
   {
     "id": "CN-MFG-0008134",
@@ -95570,7 +95622,8 @@
     "company": "亚克力加工",
     "category": "精密机械加工",
     "keywords": [
-      "亚克力加工"
+      "亚克力加工",
+      "激光切割"
     ],
     "region": {
       "province": "江苏",
@@ -96500,7 +96553,8 @@
     "company": "一格亚克力工艺有机玻璃加工uv打印",
     "category": "精密机械加工",
     "keywords": [
-      "亚克力加工"
+      "亚克力加工",
+      "激光切割"
     ],
     "region": {
       "province": "广东",
@@ -101832,6 +101886,486 @@
       "confidence": "high",
       "source": "name",
       "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0026120",
+    "company": "力松高速精密注塑机",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "众裕路与S47广佛江珠高速辅路交叉口北360米",
+    "contact_phone": "待核实",
+    "lat": 22.802175,
+    "lng": 113.190725,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKSUIQH0",
+      "type": "购物服务;专卖店;专营店|公司企业;公司;公司",
+      "typecode": "061200|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440606",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0026425",
+    "company": "瑞宝注塑机",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "熙元大厦南侧",
+    "contact_phone": "待核实",
+    "lat": 23.128287,
+    "lng": 113.894567,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJRGQJW",
+      "type": "购物服务;专卖店;专营店|公司企业;公司;公司",
+      "typecode": "061200|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石湾",
+      "adcode": "441322",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0026471",
+    "company": "宁波恩格精密注塑机",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "黄圃镇兴圃大道中52号之一",
+    "contact_phone": "18933363558",
+    "lat": 22.697098,
+    "lng": 113.35694,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HGK7ITJV",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0026511",
+    "company": "富强鑫精密注塑机",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "金湾装饰广场D栋-104号",
+    "contact_phone": "0760-22113497; 18825398859",
+    "lat": 22.324421,
+    "lng": 113.46859,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG7F9LD",
+      "type": "购物服务;专卖店;专营店|公司企业;公司;公司",
+      "typecode": "061200|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0028182",
+    "company": "春佳注塑机机械配件加工",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "小榄裕民大道39号春佳注塑配件加工",
+    "contact_phone": "13590870294",
+    "lat": 22.643587,
+    "lng": 113.281307,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HKCS8B4Y",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "注塑|配件型:配件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0028788",
+    "company": "永朝塑胶加工店",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东坑镇东坑村中心中路64号",
+    "contact_phone": "13412116443",
+    "lat": 22.982378,
+    "lng": 113.945248,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I6KADO8I",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶加工"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0028789",
+    "company": "永朝塑胶加工店",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东坑镇东坑村中心中路64号",
+    "contact_phone": "13412116443",
+    "lat": 22.982378,
+    "lng": 113.945248,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I6KADO8I",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶加工"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029671",
+    "company": "艺宣亚克力有机玻璃雕刻",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "公明长春北路222-2号",
+    "contact_phone": "13510538330",
+    "lat": 22.789958,
+    "lng": 113.897096,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHGEXP2",
+      "type": "购物服务;家居建材市场;建材五金市场|生活服务;生活服务场所;生活服务场所",
+      "typecode": "060603|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "广告设计",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "公明",
+      "adcode": "440311",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "有机玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029680",
+    "company": "有机玻璃雕刻",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "沙头第四工业区门口",
+    "contact_phone": "18922865087",
+    "lat": 22.726013,
+    "lng": 113.800806,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKBO3FS",
+      "type": "购物服务;家居建材市场;建材五金市场|生活服务;生活服务场所;生活服务场所",
+      "typecode": "060603|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "有机玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029734",
+    "company": "一格有机玻璃批发零售",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "塘厦大道南与新围大道交叉口西北100米",
+    "contact_phone": "0769-82168960; 18925520907",
+    "lat": 22.775202,
+    "lng": 114.113809,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG6ZF69",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "有机玻璃"
     },
     "is_manufacturer": true
   }

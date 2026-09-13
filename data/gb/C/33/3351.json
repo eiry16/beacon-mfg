@@ -232,5 +232,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0028109",
+    "company": "日丰管波纹管沙井盖建筑机械厂家直销",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "惠州大道马安段55号",
+    "contact_phone": "18316336222",
+    "lat": 23.066517,
+    "lng": 114.475961,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GRMSXTIM",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441302",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3351",
+      "name": "建筑、家具用金属配件制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 建筑、家具用金属配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑"
+    },
+    "is_manufacturer": true
   }
 ]

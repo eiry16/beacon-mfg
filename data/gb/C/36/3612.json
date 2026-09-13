@@ -295,7 +295,21 @@
       "source": "gb_token",
       "evidence": "新能源"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0KA6ULC2R",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "图文快印",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "福永",
+      "adcode": "440306",
+      "search_keyword": "激光切割"
+    }
   },
   {
     "id": "CN-MFG-0021193",
@@ -389,5 +403,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0026687",
+    "company": "太仓合众新能源科技有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "茜泾路与新港公路交叉口南80米",
+    "contact_phone": "待核实",
+    "lat": 31.559453,
+    "lng": 121.24227,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K1CZN5C1",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3612",
+      "name": "新能源车整车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车整车制造 > 新能源车整车制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "新能源"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -305,7 +305,21 @@
       "source": "name",
       "evidence": "锂电池"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0MBMU7QC6",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440309",
+      "search_keyword": "CNC加工"
+    }
   },
   {
     "id": "CN-MFG-0012604",
@@ -490,6 +504,54 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "锂电池"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0028189",
+    "company": "汽车尾板 电动叉车 蓄电池 啤喉压管 数控车床加工",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "三乡镇新圩金湾装饰广场D栋105号",
+    "contact_phone": "13360772099",
+    "lat": 22.324414,
+    "lng": 113.468633,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HA7BYYA8",
+      "type": "汽车服务;汽车服务相关;汽车服务相关",
+      "typecode": "010000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3841",
+      "name": "锂离子电池制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电池制造 > 锂离子电池制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "蓄电池"
     },
     "is_manufacturer": true
   }

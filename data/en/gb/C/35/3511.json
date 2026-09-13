@@ -1,18 +1,18 @@
 [
   {
-    "id": "CN-MFG-0011239",
-    "company_en": "嘉兴市日山机械制造有限公司",
-    "category": "精密机械加工",
-    "category_en": "Precision Machining",
+    "id": "CN-MFG-0006042",
+    "company_en": "Tengyuan Mining Machinery Equipment",
+    "category": "标准件",
+    "category_en": "Standard Parts",
     "keywords_en": [
-      "机械加工"
+      "Bearings"
     ],
     "region": {
-      "province": "Zhejiang",
-      "city": "Jiaxing"
+      "province": "Guangdong",
+      "city": "Dongguan"
     },
-    "address_en": "加创路与新农路交叉口西北200米",
-    "contact_phone": "Pending verification",
+    "address_en": "No. 10-11 Wangying South Road",
+    "contact_phone": "13717315519",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
@@ -24,6 +24,32 @@
       "confidence": "high"
     },
     "_bucket": "C/35/3511"
+  },
+  {
+    "id": "CN-MFG-0011239",
+    "company_en": "Jiaxing Rishan Machinery Manufacturing Co., Ltd.",
+    "category": "标准件",
+    "category_en": "Standard Parts",
+    "keywords_en": [
+      "Machine Processing"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "200 meters northwest of the intersection of Jiachuang Road and Xinong Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-08-13",
+    "note_en": "",
+    "_bucket": "C/35/3511",
+    "industry_en": {
+      "code": "3511",
+      "name_en": null,
+      "level": "class",
+      "name": "矿山机械制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0011311",
@@ -78,29 +104,55 @@
     "_bucket": "C/35/3511"
   },
   {
-    "id": "CN-MFG-0006042",
-    "company_en": "Tengyuan Mining Machinery Equipment",
+    "id": "CN-MFG-0027034",
+    "company_en": "Ningbo Panshan Machinery Manufacturing Co., Ltd.",
     "category": "标准件",
     "category_en": "Standard Parts",
     "keywords_en": [
-      "Bearings"
+      "Machine Processing"
     ],
     "region": {
-      "province": "Guangdong",
-      "city": "Dongguan"
+      "province": "Zhejiang",
+      "city": "Ningbo"
     },
-    "address_en": "No. 10-11 Wangying South Road",
-    "contact_phone": "13717315519",
+    "address_en": "No. 7 West Building, Liutong Village, Lüluo Street Industrial Area",
+    "contact_phone": "0574-86581053; 13957409453",
     "source": "public_directory",
-    "verified_at": "2026-08-13",
+    "verified_at": "2026-09-13",
     "note_en": "",
+    "_bucket": "C/35/3511",
     "industry_en": {
       "code": "3511",
       "name_en": null,
       "level": "class",
       "name": "矿山机械制造",
       "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0027712",
+    "company_en": "Guangdong Xiaomoshan Machinery Manufacturing Co., Ltd.",
+    "category": "标准件",
+    "category_en": "Standard Parts",
+    "keywords_en": [
+      "Machine Processing"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Foshan"
     },
-    "_bucket": "C/35/3511"
+    "address_en": "2nd Floor, Ding Sheng Shengwei Smart Industrial Park, beside He Shun Garden Avenue",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-13",
+    "note_en": "",
+    "_bucket": "C/35/3511",
+    "industry_en": {
+      "code": "3511",
+      "name_en": null,
+      "level": "class",
+      "name": "矿山机械制造",
+      "confidence": "high"
+    }
   }
 ]

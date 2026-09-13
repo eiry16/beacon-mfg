@@ -26,6 +26,19 @@ from pathlib import Path
 AMAP_KEY = ""  # TODO: 填入高德 Web 服务 Key，或通过环境变量 AMAP_KEY 传入
 BASE = "https://restapi.amap.com/v3/place/text"
 
+# 高德 place/text 的翻页硬限制（2026-09 官方说明 + 实测）：
+#   - offset（每页条数）官方强烈建议 ≤ 25，传更大值不认
+#   - **同一组请求参数翻页最多返回 200 条**，第 201 条起拿不到
+# 于是「翻到底」= 25 条/页 × 8 页 = 200 条。想要更多只能换请求参数，
+# 最有效的办法是按区县 adcode 分片（见 scripts/districts.py）。
+AMAP_OFFSET_MAX = 25
+AMAP_DEEP_CAP = 200
+AMAP_MAX_PAGES = AMAP_DEEP_CAP // AMAP_OFFSET_MAX  # 8
+
+# 最近一次 fetch() 的元信息：{"pages": 翻到第几页, "exhausted": 是否翻到底,
+# "requests": 本次实际请求数}。给抓取账本记账用，避免调用方自己猜。
+LAST_FETCH = {"pages": 0, "exhausted": False, "requests": 0}
+
 REQUEST_COUNT = 0  # 本次运行累计 API 请求次数（配额统计用）
 
 # 本次运行的请求硬上限（None = 不限）。给调用方（如 GUI）设置，用来保证
@@ -40,8 +53,8 @@ QUOTA_EXHAUSTED = False
 ROOT = Path(__file__).resolve().parent.parent
 
 
-def fetch(keyword, city, limit, offset=20, delay=0.5, types=None):
-    """分页拉取高德 POI，直到拿满 limit 或没有更多数据。自动统计请求次数（REQUEST_COUNT）。
+def fetch(keyword, city, limit=AMAP_DEEP_CAP, offset=AMAP_OFFSET_MAX, delay=0.5, types=None):
+    """分页拉取高德 POI，直到拿满 limit、翻到底、或撞上请求上限。自动统计请求次数。
 
     types: POI 类型过滤。默认 None = 不限制（全召回）。
       历史默认值 "商务住宅|科教文化服务|公司企业" 问题很大：
@@ -49,11 +62,34 @@ def fetch(keyword, city, limit, offset=20, delay=0.5, types=None):
         不限 types 能多抓到「电火花中走丝精密CNC加工中心」这类真加工点
       - 引入噪声：「商务住宅」会把住宅小区、公寓抓进来
       故改为默认全召回 + 保存 type/typecode，把噪声判断交给下游 auto_profile。
+
+    深度（2026-09-13 改）：
+      以前 limit 默认 40、offset 20，只翻 2 页 —— 而高德排序稳定，每次都是同一批
+      头部，去重后新增常年为 0。实测「模具×苏州」前 2 页只有 1 条是新的，第 3~10 页
+      还有 135 条新的。所以默认改成翻到底。
+
+      翻到底的边界（高德官方限制，别想当然）：
+        - offset（每页条数）官方强烈建议 ≤ 25，超过不认
+        - **同一组请求参数翻页最多返回 200 条**，第 201 条起拿不到
+      故 target = min(limit, 200)，最多 8 页。真要更多只能换请求参数 —— 见
+      scripts/districts.py 的按区县 adcode 分片。
+
+    元信息：跑完读模块级 LAST_FETCH（pages / exhausted / requests）。
+    不改返回值是为了不破坏已有调用方（save_suppliers(pois, ...) 到处都是）。
     """
-    global REQUEST_COUNT, QUOTA_EXHAUSTED
+    global REQUEST_COUNT, QUOTA_EXHAUSTED, LAST_FETCH
     pois_all = []
     page = 1
-    while len(pois_all) < limit:
+    requests = 0
+    exhausted = False
+    target = min(int(limit or 0), AMAP_DEEP_CAP)
+    if offset > AMAP_OFFSET_MAX:
+        offset = AMAP_OFFSET_MAX  # 高德不认 >25 的 offset，静默取 25
+
+    while len(pois_all) < target:
+        if page > AMAP_MAX_PAGES:
+            exhausted = True  # 撞到 200 条硬上限
+            break
         # 翻页内的配额护栏：任务间检查会漏掉同一任务的多页请求
         if MAX_REQUESTS is not None and REQUEST_COUNT >= MAX_REQUESTS:
             print(f"  >>> 已达本次请求上限 {MAX_REQUESTS}，停止翻页（已取 {len(pois_all)} 条）")
@@ -77,6 +113,7 @@ def fetch(keyword, city, limit, offset=20, delay=0.5, types=None):
             print(f"请求失败: {e}")
             break
         REQUEST_COUNT += 1  # 成功请求才计数（避免空结果也扣配额）
+        requests += 1
         if data.get("status") != "1":
             info = data.get("info", "")
             print(f"API 返回错误: {info}")
@@ -86,11 +123,20 @@ def fetch(keyword, city, limit, offset=20, delay=0.5, types=None):
             break
         pois = data.get("pois", [])
         pois_all.extend(pois)
-        print(f"  第 {page} 页: +{len(pois)} 条（累计 {len(pois_all)} / 目标 {limit}，本次已用请求 {REQUEST_COUNT}）")
+        print(f"  第 {page} 页: +{len(pois)} 条（累计 {len(pois_all)} / 目标 {target}，"
+              f"本次已用请求 {REQUEST_COUNT}）")
         if len(pois) < offset:
-            break  # 没有更多数据
+            exhausted = True  # 最后一页不满 = API 给不出更多了
+            break
         page += 1
         time.sleep(delay)  # 尊重 API 配额
+    else:
+        # 拿满 target 退出：只有 target 本身到了 API 上限才算翻到底
+        exhausted = target >= AMAP_DEEP_CAP
+
+    # pages 取实际发过的页数（=requests）。循环正常结束时 page 已经多加了一次，
+    # 直接报它会出现「翻了 9 页但只发了 8 次请求」这种自相矛盾的元数据。
+    LAST_FETCH = {"pages": requests, "exhausted": exhausted, "requests": requests}
     return pois_all
 
 

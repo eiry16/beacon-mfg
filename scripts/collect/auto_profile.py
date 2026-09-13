@@ -45,6 +45,14 @@ CATEGORY_PROFILE = {
     "表面处理": "surface-treatment",
     "标准件": "standard-parts",
     "原材料": "raw-materials",
+    "成套设备制造": "equipment_assembly",
+    "信息技术服务": "it-service",
+    "餐饮": "restaurant",
+    "居民服务": "resident-service",
+    "娱乐": "entertainment",
+    "科研与技术服务": "tech-research",
+    "零售": "retail-shop",
+    "其他": "custom",
 }
 
 # ------------------------------------------------------------------ 名称清洗

@@ -1,0 +1,1255 @@
+{
+ "shards": {
+  "3311|激光切割|上海": {
+   "exhausted": true,
+   "last_new": 88,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.44
+  },
+  "3311|激光切割|东莞": {
+   "exhausted": true,
+   "last_new": 92,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.46
+  },
+  "3311|激光切割|中山": {
+   "exhausted": true,
+   "last_new": 96,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.48
+  },
+  "3311|激光切割|佛山": {
+   "exhausted": true,
+   "last_new": 108,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.54
+  },
+  "3311|激光切割|南京": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 42,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3311|激光切割|嘉兴": {
+   "exhausted": true,
+   "last_new": 25,
+   "last_run": "2026-09-13",
+   "last_seen": 77,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3247
+  },
+  "3311|激光切割|宁波": {
+   "exhausted": true,
+   "last_new": 78,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.39
+  },
+  "3311|激光切割|常州": {
+   "exhausted": true,
+   "last_new": 35,
+   "last_run": "2026-09-13",
+   "last_seen": 99,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3535
+  },
+  "3311|激光切割|无锡": {
+   "exhausted": true,
+   "last_new": 61,
+   "last_run": "2026-09-13",
+   "last_seen": 157,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3885
+  },
+  "3311|激光切割|昆山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 52,
+   "requests": 3,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3311|激光切割|深圳": {
+   "exhausted": true,
+   "last_new": 96,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.48
+  },
+  "3311|激光切割|苏州": {
+   "exhausted": true,
+   "last_new": 69,
+   "last_run": "2026-09-13",
+   "last_seen": 194,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3557
+  },
+  "3311|钣金加工|上海": {
+   "exhausted": true,
+   "last_new": 2,
+   "last_run": "2026-09-13",
+   "last_seen": 53,
+   "requests": 3,
+   "runs": 1,
+   "state": "cold",
+   "yield": 0.0377
+  },
+  "3311|钣金加工|东莞": {
+   "exhausted": true,
+   "last_new": 40,
+   "last_run": "2026-09-13",
+   "last_seen": 129,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3101
+  },
+  "3311|钣金加工|中山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 16,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|佛山": {
+   "exhausted": true,
+   "last_new": 6,
+   "last_run": "2026-09-13",
+   "last_seen": 62,
+   "requests": 3,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.0968
+  },
+  "3311|钣金加工|南京": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 1,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|嘉兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 4,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|宁波": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 33,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3311|钣金加工|常州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 18,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|广州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 33,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3311|钣金加工|惠州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 18,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|无锡": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 21,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|昆山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 13,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|杭州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 8,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|深圳": {
+   "exhausted": true,
+   "last_new": 3,
+   "last_run": "2026-09-13",
+   "last_seen": 56,
+   "requests": 3,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.0536
+  },
+  "3311|钣金加工|珠海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|绍兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 6,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3311|钣金加工|苏州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 37,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|CNC加工|上海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 14,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|CNC加工|东莞": {
+   "exhausted": true,
+   "last_new": 93,
+   "last_run": "2026-09-13",
+   "last_seen": 175,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5314
+  },
+  "3484|CNC加工|中山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 55,
+   "requests": 3,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|CNC加工|佛山": {
+   "exhausted": true,
+   "last_new": 32,
+   "last_run": "2026-09-13",
+   "last_seen": 78,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.4103
+  },
+  "3484|CNC加工|嘉兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 2,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|CNC加工|宁波": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 21,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|CNC加工|常州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 6,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|CNC加工|广州": {
+   "exhausted": true,
+   "last_new": 1,
+   "last_run": "2026-09-13",
+   "last_seen": 29,
+   "requests": 2,
+   "runs": 1,
+   "state": "cold",
+   "yield": 0.0345
+  },
+  "3484|CNC加工|惠州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 37,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|CNC加工|无锡": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 2,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|CNC加工|昆山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 9,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|CNC加工|杭州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|CNC加工|深圳": {
+   "exhausted": true,
+   "last_new": 30,
+   "last_run": "2026-09-13",
+   "last_seen": 118,
+   "requests": 5,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.2542
+  },
+  "3484|CNC加工|珠海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 2,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|CNC加工|绍兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 5,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|CNC加工|苏州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 22,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|加工中心|上海": {
+   "exhausted": true,
+   "last_new": 79,
+   "last_run": "2026-09-13",
+   "last_seen": 132,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5985
+  },
+  "3484|加工中心|东莞": {
+   "exhausted": true,
+   "last_new": 130,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.65
+  },
+  "3484|加工中心|中山": {
+   "exhausted": true,
+   "last_new": 58,
+   "last_run": "2026-09-13",
+   "last_seen": 134,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.4328
+  },
+  "3484|加工中心|佛山": {
+   "exhausted": true,
+   "last_new": 128,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.64
+  },
+  "3484|加工中心|嘉兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 30,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|加工中心|宁波": {
+   "exhausted": true,
+   "last_new": 125,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.625
+  },
+  "3484|加工中心|常州": {
+   "exhausted": true,
+   "last_new": 37,
+   "last_run": "2026-09-13",
+   "last_seen": 93,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3978
+  },
+  "3484|加工中心|广州": {
+   "exhausted": true,
+   "last_new": 100,
+   "last_run": "2026-09-13",
+   "last_seen": 148,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6757
+  },
+  "3484|加工中心|惠州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 56,
+   "requests": 3,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|加工中心|无锡": {
+   "exhausted": true,
+   "last_new": 125,
+   "last_run": "2026-09-13",
+   "last_seen": 178,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7022
+  },
+  "3484|加工中心|昆山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 21,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|加工中心|杭州": {
+   "exhausted": true,
+   "last_new": 35,
+   "last_run": "2026-09-13",
+   "last_seen": 103,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3398
+  },
+  "3484|加工中心|深圳": {
+   "exhausted": true,
+   "last_new": 67,
+   "last_run": "2026-09-13",
+   "last_seen": 123,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5447
+  },
+  "3484|加工中心|珠海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 26,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|加工中心|绍兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 59,
+   "requests": 3,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|加工中心|苏州": {
+   "exhausted": true,
+   "last_new": 66,
+   "last_run": "2026-09-13",
+   "last_seen": 130,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5077
+  },
+  "3484|数控加工|上海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 40,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|数控加工|东莞": {
+   "exhausted": true,
+   "last_new": 103,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.515
+  },
+  "3484|数控加工|中山": {
+   "exhausted": true,
+   "last_new": 109,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.545
+  },
+  "3484|数控加工|佛山": {
+   "exhausted": true,
+   "last_new": 139,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.695
+  },
+  "3484|数控加工|嘉兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 10,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|数控加工|宁波": {
+   "exhausted": true,
+   "last_new": 104,
+   "last_run": "2026-09-13",
+   "last_seen": 188,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5532
+  },
+  "3484|数控加工|常州": {
+   "exhausted": true,
+   "last_new": 22,
+   "last_run": "2026-09-13",
+   "last_seen": 68,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3235
+  },
+  "3484|数控加工|广州": {
+   "exhausted": true,
+   "last_new": 22,
+   "last_run": "2026-09-13",
+   "last_seen": 71,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3099
+  },
+  "3484|数控加工|惠州": {
+   "exhausted": true,
+   "last_new": 1,
+   "last_run": "2026-09-13",
+   "last_seen": 52,
+   "requests": 3,
+   "runs": 1,
+   "state": "cold",
+   "yield": 0.0192
+  },
+  "3484|数控加工|无锡": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 13,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|数控加工|昆山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 7,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|数控加工|杭州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 17,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|数控加工|深圳": {
+   "exhausted": true,
+   "last_new": 39,
+   "last_run": "2026-09-13",
+   "last_seen": 107,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3645
+  },
+  "3484|数控加工|珠海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 5,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|数控加工|绍兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 33,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|数控加工|苏州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 29,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|机械加工|上海": {
+   "exhausted": true,
+   "last_new": 128,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.64
+  },
+  "3484|机械加工|东莞": {
+   "exhausted": true,
+   "last_new": 119,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.595
+  },
+  "3484|机械加工|中山": {
+   "exhausted": true,
+   "last_new": 110,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.55
+  },
+  "3484|机械加工|佛山": {
+   "exhausted": true,
+   "last_new": 140,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7
+  },
+  "3484|机械加工|嘉兴": {
+   "exhausted": true,
+   "last_new": 75,
+   "last_run": "2026-09-13",
+   "last_seen": 131,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5725
+  },
+  "3484|机械加工|宁波": {
+   "exhausted": true,
+   "last_new": 140,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7
+  },
+  "3484|机械加工|常州": {
+   "exhausted": true,
+   "last_new": 120,
+   "last_run": "2026-09-13",
+   "last_seen": 175,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6857
+  },
+  "3484|机械加工|广州": {
+   "exhausted": true,
+   "last_new": 123,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.615
+  },
+  "3484|机械加工|惠州": {
+   "exhausted": true,
+   "last_new": 118,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.59
+  },
+  "3484|机械加工|无锡": {
+   "exhausted": true,
+   "last_new": 146,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.73
+  },
+  "3484|机械加工|昆山": {
+   "exhausted": true,
+   "last_new": 74,
+   "last_run": "2026-09-13",
+   "last_seen": 154,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.4805
+  },
+  "3484|机械加工|杭州": {
+   "exhausted": true,
+   "last_new": 114,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.57
+  },
+  "3484|机械加工|深圳": {
+   "exhausted": true,
+   "last_new": 94,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.47
+  },
+  "3484|机械加工|珠海": {
+   "exhausted": true,
+   "last_new": 4,
+   "last_run": "2026-09-13",
+   "last_seen": 66,
+   "requests": 3,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.0606
+  },
+  "3484|机械加工|绍兴": {
+   "exhausted": true,
+   "last_new": 102,
+   "last_run": "2026-09-13",
+   "last_seen": 176,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5795
+  },
+  "3484|机械加工|苏州": {
+   "exhausted": true,
+   "last_new": 108,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.54
+  },
+  "3484|精密机械|上海": {
+   "exhausted": true,
+   "last_new": 141,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.705
+  },
+  "3484|精密机械|东莞": {
+   "exhausted": true,
+   "last_new": 127,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.635
+  },
+  "3484|精密机械|中山": {
+   "exhausted": true,
+   "last_new": 90,
+   "last_run": "2026-09-13",
+   "last_seen": 153,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5882
+  },
+  "3484|精密机械|佛山": {
+   "exhausted": true,
+   "last_new": 128,
+   "last_run": "2026-09-13",
+   "last_seen": 175,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7314
+  },
+  "3484|精密机械|嘉兴": {
+   "exhausted": true,
+   "last_new": 133,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.665
+  },
+  "3484|精密机械|宁波": {
+   "exhausted": true,
+   "last_new": 112,
+   "last_run": "2026-09-13",
+   "last_seen": 175,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.64
+  },
+  "3484|精密机械|常州": {
+   "exhausted": true,
+   "last_new": 137,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.685
+  },
+  "3484|精密机械|广州": {
+   "exhausted": true,
+   "last_new": 108,
+   "last_run": "2026-09-13",
+   "last_seen": 175,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6171
+  },
+  "3484|精密机械|惠州": {
+   "exhausted": true,
+   "last_new": 62,
+   "last_run": "2026-09-13",
+   "last_seen": 128,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.4844
+  },
+  "3484|精密机械|无锡": {
+   "exhausted": true,
+   "last_new": 137,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.685
+  },
+  "3484|精密机械|昆山": {
+   "exhausted": true,
+   "last_new": 82,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.41
+  },
+  "3484|精密机械|杭州": {
+   "exhausted": true,
+   "last_new": 111,
+   "last_run": "2026-09-13",
+   "last_seen": 175,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6343
+  },
+  "3484|精密机械|深圳": {
+   "exhausted": true,
+   "last_new": 135,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.675
+  },
+  "3484|精密机械|珠海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 61,
+   "requests": 3,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|精密机械|绍兴": {
+   "exhausted": true,
+   "last_new": 32,
+   "last_run": "2026-09-13",
+   "last_seen": 93,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3441
+  },
+  "3484|精密机械|苏州": {
+   "exhausted": true,
+   "last_new": 128,
+   "last_run": "2026-09-13",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.64
+  },
+  "3484|车铣复合|上海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 1,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|东莞": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 16,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|中山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 5,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|佛山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 7,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|嘉兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 19,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|宁波": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 5,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|常州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|广州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 2,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|惠州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 1,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|无锡": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 2,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|昆山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|杭州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|深圳": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 4,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|珠海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 2,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|车铣复合|绍兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 25,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|车铣复合|苏州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-13",
+   "last_seen": 6,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  }
+ },
+ "version": 1
+}
