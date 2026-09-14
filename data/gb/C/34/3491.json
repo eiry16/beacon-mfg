@@ -168,5 +168,53 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0031258",
+    "company": "元宝机器人(深圳)有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "软件公司"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "深圳市软件产业基地2栋C座",
+    "contact_phone": "待核实",
+    "lat": 22.524575,
+    "lng": 113.938475,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MU5CU0QI",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "后海",
+      "adcode": "440305",
+      "search_keyword": "软件公司"
+    },
+    "industry": {
+      "code": "3491",
+      "name": "工业机器人制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 其他通用设备制造业 > 工业机器人制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "机器人"
+    },
+    "is_manufacturer": true
   }
 ]

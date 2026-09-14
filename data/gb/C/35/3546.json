@@ -69,7 +69,8 @@
     "category": "原材料",
     "keywords": [
       "铝合金",
-      "不锈钢材料"
+      "不锈钢材料",
+      "不锈钢材料批发"
     ],
     "region": {
       "province": "广东",
@@ -1935,7 +1936,8 @@
     "company": "卓胜宁吸音板隔音板隔音毡岩棉玻璃棉批发(常生路店)",
     "category": "表面处理",
     "keywords": [
-      "喷涂"
+      "喷涂",
+      "板材批发"
     ],
     "region": {
       "province": "江苏",
@@ -1960,7 +1962,21 @@
       "source": "gb_token",
       "evidence": "玻璃"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0L02UO1P9",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "木材板材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
+      "search_keyword": "板材批发"
+    }
   },
   {
     "id": "CN-MFG-0013717",
@@ -3075,6 +3091,54 @@
       "business_area": "",
       "adcode": "442000",
       "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0030674",
+    "company": "南京雨田幕墙外墙玻璃更换清洗打胶工程有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "软件开发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "高新开发区星火路南京软件园动漫大厦",
+    "contact_phone": "待核实",
+    "lat": 32.16075,
+    "lng": 118.696926,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRYKUBK2",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江北新区直管区",
+      "adcode": "320111",
+      "search_keyword": "软件开发"
     },
     "industry": {
       "code": "3546",

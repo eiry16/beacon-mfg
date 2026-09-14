@@ -505,7 +505,8 @@
     "company": "泰山石膏板墙板铝单板吸音板(音静云九星店)",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "系统集成"
     ],
     "region": {
       "province": "上海",
@@ -628,6 +629,54 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "2013",
+      "name": "单板加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 单板加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "单板"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0030991",
+    "company": "吉祥牌铝塑板铝单板批发(港龙木材胶合板批发市场店)",
+    "category": "原材料",
+    "keywords": [
+      "板材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "开发区港龙胶合板市场综合二区E排1-4号",
+    "contact_phone": "0512-57082811; 0512-87887275; 139****8355",
+    "lat": 31.413632,
+    "lng": 120.997013,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02001BTJH",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "木材板材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "周市",
+      "adcode": "320583",
+      "search_keyword": "板材批发"
     },
     "industry": {
       "code": "2013",

@@ -6579,7 +6579,8 @@
     "category": "注塑成型",
     "keywords": [
       "注塑加工",
-      "注塑模具"
+      "注塑模具",
+      "工业设计"
     ],
     "region": {
       "province": "广东",
@@ -6865,7 +6866,8 @@
     "company": "东莞市米佳科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工"
+      "注塑加工",
+      "产品设计"
     ],
     "region": {
       "province": "广东",
@@ -12134,7 +12136,8 @@
       "塑料配件",
       "注塑模具",
       "冲压",
-      "冲压模具"
+      "冲压模具",
+      "产品设计"
     ],
     "region": {
       "province": "广东",
@@ -95154,7 +95157,8 @@
     "company": "东莞市顶点五金塑胶制品有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "塑胶加工"
+      "塑胶加工",
+      "产品设计"
     ],
     "region": {
       "province": "广东",
@@ -102398,6 +102402,84 @@
       "confidence": "high",
       "source": "name",
       "evidence": "有机玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0002648",
+    "company": "江兰食品加工坊",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "常绿镇五联村塘头11号(原锦顺年糕加工厂)",
+    "contact_phone": "150****0700; 158****8656",
+    "lat": 29.834825,
+    "lng": 120.091225,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "注塑加工"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0009735",
+    "company": "峙晟商用厨具厨房设备酒店用品",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "五洲国际惠生活馆四楼4212号",
+    "contact_phone": "159****6598",
+    "lat": 31.614605,
+    "lng": 120.217315,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDMHDAN0",
+      "type": "购物服务;家居建材市场;厨卫市场",
+      "typecode": "060604",
+      "alias": "",
+      "tag": "",
+      "keytag": "厨具餐具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "钱桥街道",
+      "adcode": "320206",
+      "search_keyword": "塑料制品"
+    },
+    "status": "verified",
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "塑料制品"
     },
     "is_manufacturer": true
   }

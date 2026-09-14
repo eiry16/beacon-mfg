@@ -4301,7 +4301,8 @@
       "注塑加工",
       "注塑成型",
       "注塑模具",
-      "CNC加工"
+      "CNC加工",
+      "产品设计"
     ],
     "region": {
       "province": "广东",
@@ -44774,6 +44775,20 @@
         "catalog"
       ],
       "verified": false
+    },
+    "amap": {
+      "poi_id": "B0M6UOSS9Q",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310120",
+      "search_keyword": "精密机械"
     }
   },
   {
@@ -52612,7 +52627,8 @@
     "category": "钣金冲压",
     "keywords": [
       "冲压",
-      "冲压模具"
+      "冲压模具",
+      "精密机械"
     ],
     "region": {
       "province": "上海",
@@ -59097,7 +59113,8 @@
     "company": "模具材料批发(高速钢)",
     "category": "注塑成型",
     "keywords": [
-      "模具"
+      "模具",
+      "装饰材料批发"
     ],
     "region": {
       "province": "浙江",
@@ -75223,7 +75240,11 @@
     "company": "顺德尚钢模具工业城",
     "category": "原材料",
     "keywords": [
-      "钢材"
+      "钢材",
+      "五金批发",
+      "五金店",
+      "五金机电",
+      "五金工具"
     ],
     "region": {
       "province": "广东",
@@ -75942,7 +75963,9 @@
     "company": "上海印原工业产品设计有限公司",
     "category": "注塑成型",
     "keywords": [
-      "模具"
+      "模具",
+      "工业设计",
+      "产品设计"
     ],
     "region": {
       "province": "上海",
@@ -90963,5 +90986,1033 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0032385",
+    "company": "仕泰隆模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发",
+      "五金店",
+      "五金机电",
+      "五金工具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "陆家镇陆丰东路3号",
+    "contact_phone": "0512-86188888",
+    "lat": 31.311834,
+    "lng": 121.080544,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020017RN1",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032395",
+    "company": "昆山市玉山镇富利洋模具五金批发中心",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "玉山镇水秀路908号",
+    "contact_phone": "0512-57887758; 132****6958",
+    "lat": 31.408724,
+    "lng": 120.942865,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGFP8J4",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "玉山",
+      "adcode": "320583",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032497",
+    "company": "中国(宁海)模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发",
+      "五金店",
+      "五金机电",
+      "五金工具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "跃龙街道模具城j5-6",
+    "contact_phone": "0574-65539902",
+    "lat": 29.309622,
+    "lng": 121.419964,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHGJU5K",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "桃源",
+      "adcode": "330226",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032500",
+    "company": "余姚模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发",
+      "五金店",
+      "五金机电",
+      "五金工具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "冶山路与金盛二路交叉口东北40米",
+    "contact_phone": "138****2831",
+    "lat": 30.069425,
+    "lng": 121.168725,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HU1OEHX7",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032503",
+    "company": "浙东模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "观海卫镇工业园东区师桥村",
+    "contact_phone": "159****5179",
+    "lat": 30.141492,
+    "lng": 121.431024,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E03FJV",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032607",
+    "company": "金铭国际机械模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发",
+      "五金店",
+      "五金机电",
+      "五金工具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "长安镇厦岗建安路911号",
+    "contact_phone": "0769-82282222; 180****3988",
+    "lat": 22.769234,
+    "lng": 113.740665,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B03017UO2R",
+      "type": "购物服务;家居建材市场;建材五金市场|购物服务;家居建材市场;布艺市场|购物服务;专卖店;专营店",
+      "typecode": "060603|060605|061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032611",
+    "company": "普田模具五金批发部(东莞兴大五金建材城店)",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "鹿湖西路165号清溪五金建材城",
+    "contact_phone": "0769-87307998; 0769-87333298; 136****7596",
+    "lat": 22.831101,
+    "lng": 114.170558,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFSE0S4",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032618",
+    "company": "博越五金模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "长安镇振安中路60号新恒泰国际公寓",
+    "contact_phone": "0769-81888333",
+    "lat": 22.776676,
+    "lng": 113.784882,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGIC40B",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032622",
+    "company": "昌达模具五金批发行(东坑店)",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东坑镇东坑大道中81号",
+    "contact_phone": "0769-83881866; 0769-83889866",
+    "lat": 22.993371,
+    "lng": 113.933894,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B03017W98O",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "昌达模具五金批发行(骏发三路)",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032711",
+    "company": "新天地模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发",
+      "五金店",
+      "五金机电",
+      "五金工具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "罗村镇沙坑村",
+    "contact_phone": "139****8229",
+    "lat": 23.060829,
+    "lng": 113.065992,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F50WI6M",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "罗村",
+      "adcode": "440605",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032714",
+    "company": "佛山模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "里水镇一环路盐南路出口",
+    "contact_phone": "0757-85611818",
+    "lat": 23.152105,
+    "lng": 113.16334,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F50X0X1",
+      "type": "购物服务;家居建材市场;建材五金市场|购物服务;专卖店;专营店",
+      "typecode": "060603|061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "里水",
+      "adcode": "440605",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032804",
+    "company": "沙井模具五金城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发",
+      "五金店",
+      "五金机电",
+      "五金工具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "新桥街道上寮社区上寮商业街53号",
+    "contact_phone": "136****3313",
+    "lat": 22.713834,
+    "lng": 113.839646,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F37VDOJ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0032997",
+    "company": "虹北模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "温州"
+    },
+    "address": "虹桥镇新市街358号",
+    "contact_phone": "176****0530",
+    "lat": 28.221439,
+    "lng": 121.025518,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JG5LDQQV",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "虹桥",
+      "adcode": "330382",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0033906",
+    "company": "胜兵模具工具配件批发部",
+    "category": "原材料",
+    "keywords": [
+      "工具批发"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "温州"
+    },
+    "address": "柳市长虹长治路43号",
+    "contact_phone": "0577-27839399; 131****2981",
+    "lat": 28.041993,
+    "lng": 120.908408,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGB8TGI",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330382",
+      "search_keyword": "工具批发"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|配件型:配件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0035330",
+    "company": "东莞市弋进扬模具工业设计有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "工业设计"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "新村路与新村一巷交叉口西南20米",
+    "contact_phone": "134****3987",
+    "lat": 23.020315,
+    "lng": 113.95494,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G1S65QBT",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "工业设计"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0035954",
+    "company": "一创模具设计工作室",
+    "category": "注塑成型",
+    "keywords": [
+      "产品设计"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "望江路与震阳路交叉口西240米",
+    "contact_phone": "待核实",
+    "lat": 31.274375,
+    "lng": 120.883225,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAT7ZG7C",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "设计服务",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "产品设计"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0036078",
+    "company": "东莞恒易鑫模具有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "产品设计"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "凤岗镇雁田村水库路9号9-6",
+    "contact_phone": "153****5996",
+    "lat": 22.677563,
+    "lng": 114.167554,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2OHWPV9",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "产品设计"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0037276",
+    "company": "佛山联沙模具城",
+    "category": "原材料",
+    "keywords": [
+      "五金店",
+      "五金机电",
+      "五金工具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "樵金北路与联沙大道交叉路口东北侧",
+    "contact_phone": "173****9742",
+    "lat": 23.109367,
+    "lng": 112.920255,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F508F86",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丹灶",
+      "adcode": "440605",
+      "search_keyword": "五金店"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0039346",
+    "company": "耀敏模具五金数控刀具",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "航南公路177号",
+    "contact_phone": "131****3069; 150****6609",
+    "lat": 31.022548,
+    "lng": 121.590502,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HK1HC0HA",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "综合超市",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "航头",
+      "adcode": "310115",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0039602",
+    "company": "上海超日精密模具有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "芝云路111号",
+    "contact_phone": "021-54385555",
+    "lat": 30.938962,
+    "lng": 121.422088,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH7NFLB",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310120",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0039697",
+    "company": "上海水谷精密模具制造有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "顾村镇宝安公路959号航发机械公司7号楼",
+    "contact_phone": "021-36040101",
+    "lat": 31.367406,
+    "lng": 121.407184,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G0G7J71C",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "顾村",
+      "adcode": "310113",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "3525",
+      "name": "模具制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 模具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "模具"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -2511,7 +2511,8 @@
     "company": "晟丰亚克力板材直销仓库",
     "category": "精密机械加工",
     "keywords": [
-      "亚克力加工"
+      "亚克力加工",
+      "板材批发"
     ],
     "region": {
       "province": "广东",
@@ -2781,6 +2782,54 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "塑胶管"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0031902",
+    "company": "苏州朗通新型材料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "软件公司"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "培源路3号软件大厦",
+    "contact_phone": "待核实",
+    "lat": 31.334775,
+    "lng": 120.420025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUAL3PML",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "科技城",
+      "adcode": "320505",
+      "search_keyword": "软件公司"
+    },
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "型材"
     },
     "is_manufacturer": true
   }
