@@ -39984,5 +39984,51 @@
       "evidence": "端子"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0022009",
+    "company": "东莞市富合大震印刷设备有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "虎门镇沙角社区凤凰二路114号",
+    "contact_phone": "136****6310",
+    "lat": 22.753102,
+    "lng": 113.695731,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B030104AEN",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "status": "verified"
   }
 ]

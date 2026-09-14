@@ -3049,5 +3049,51 @@
       "evidence": "塑料容器"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0020301",
+    "company": "绍兴上虞医药塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "改性塑料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "百官街道118号城东工业园区",
+    "contact_phone": "待核实",
+    "lat": 30.036813,
+    "lng": 120.90647,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B023F0P5HR",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "上虞市医药塑料包装有限公司",
+      "tag": "",
+      "keytag": "医药公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330604",
+      "search_keyword": "改性塑料"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   }
 ]

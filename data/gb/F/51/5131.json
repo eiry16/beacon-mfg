@@ -2,7 +2,7 @@
   {
     "id": "CN-MFG-0015451",
     "company": "岭峰商行奶茶原料批发(华策·岭峰国际店)",
-    "category": "注塑成型",
+    "category": "批发和零售业",
     "keywords": [
       "塑料原料"
     ],
@@ -44,5 +44,178 @@
     },
     "is_manufacturer": false,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0007308",
+    "company": "江阴市沛力不锈钢纺织机械有限公司",
+    "category": "批发和零售业",
+    "keywords": [
+      "不锈钢"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "华士民企一路22号",
+    "contact_phone": "0510-86971302",
+    "lat": 31.799647,
+    "lng": 120.427546,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5131",
+      "name": "纺织品、针织品及原料批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 纺织、服装及家庭用品批发 > 纺织品、针织品及原料批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "纺织"
+    },
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007308/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0010669",
+    "company": "江阴市棉铃塑料纺织配件有限公司",
+    "category": "批发和零售业",
+    "keywords": [
+      "塑料配件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "徐霞客镇璜塘璜溪路69号",
+    "contact_phone": "0510-86531216",
+    "lat": 31.755748,
+    "lng": 120.337715,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKU3Y9J",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320281",
+      "search_keyword": "塑料配件"
+    },
+    "status": "verified",
+    "industry": {
+      "code": "5131",
+      "name": "纺织品、针织品及原料批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 纺织、服装及家庭用品批发 > 纺织品、针织品及原料批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "纺织"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0003423",
+    "company": "无锡市恒宏祥纺织机械厂",
+    "category": "批发和零售业",
+    "keywords": [
+      "连接器"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "南开路80号7幢",
+    "contact_phone": "0510-85262065",
+    "lat": 31.46145,
+    "lng": 120.425471,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5131",
+      "name": "纺织品、针织品及原料批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 纺织、服装及家庭用品批发 > 纺织品、针织品及原料批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "纺织"
+    },
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003423/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0000432",
+    "company": "无锡艾力克纺织设备厂",
+    "category": "批发和零售业",
+    "keywords": [
+      "数控加工",
+      "机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "前洲工业园龙潭路18号",
+    "contact_phone": "138****3105",
+    "lat": 31.686485,
+    "lng": 120.231972,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5131",
+      "name": "纺织品、针织品及原料批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 纺织、服装及家庭用品批发 > 纺织品、针织品及原料批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "纺织"
+    },
+    "is_manufacturer": false,
+    "amap": {
+      "poi_id": "B0G2BZ90VK",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "前洲",
+      "adcode": "320206",
+      "search_keyword": "数控加工"
+    }
   }
 ]

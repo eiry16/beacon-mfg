@@ -476,5 +476,53 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0036797",
+    "company": "龙岗二次供水泵房运维服务站",
+    "category": "精密机械加工",
+    "keywords": [
+      "运维服务"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "牛角龙新村(锦龙地铁站B口步行430米)",
+    "contact_phone": "待核实",
+    "lat": 22.678075,
+    "lng": 114.335925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MAYU1UX7",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "坪山",
+      "adcode": "440310",
+      "search_keyword": "运维服务"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
   }
 ]

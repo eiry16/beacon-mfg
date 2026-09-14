@@ -396,5 +396,56 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0032613",
+    "company": "赢大聚和国际机床五金刀具城",
+    "category": "原材料",
+    "keywords": [
+      "五金批发",
+      "五金店",
+      "五金机电",
+      "五金工具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "振安东路287号",
+    "contact_phone": "待核实",
+    "lat": 22.781781,
+    "lng": 113.795727,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIC9X51",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3321",
+      "name": "切削工具制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属工具制造 > 切削工具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "刀具"
+    },
+    "is_manufacturer": true
   }
 ]

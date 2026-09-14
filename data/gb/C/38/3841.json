@@ -562,5 +562,53 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0031080",
+    "company": "上海机动车检测认证技术研究中心有限公司(氢能与燃料电池检测基地)",
+    "category": "电子元器件",
+    "keywords": [
+      "检测技术"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "谢春路1168号",
+    "contact_phone": "待核实",
+    "lat": 31.289958,
+    "lng": 121.227616,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J3CCIVIX",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "检测技术"
+    },
+    "industry": {
+      "code": "3841",
+      "name": "锂离子电池制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电池制造 > 锂离子电池制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电池"
+    },
+    "is_manufacturer": true
   }
 ]

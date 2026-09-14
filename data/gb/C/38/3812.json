@@ -688,5 +688,101 @@
       "evidence": "电机"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0033000",
+    "company": "鳌江电机市场",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "温州"
+    },
+    "address": "育才街与西浦街交叉口南60米",
+    "contact_phone": "156****5929",
+    "lat": 27.601624,
+    "lng": 120.546559,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIZUMOS",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330326",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0033776",
+    "company": "合兴五金水电机电建材批发",
+    "category": "原材料",
+    "keywords": [
+      "工具批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "东环街市新路181号",
+    "contact_phone": "159****7223",
+    "lat": 22.962405,
+    "lng": 113.377489,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGCTBFF",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东环",
+      "adcode": "440113",
+      "search_keyword": "工具批发"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
   }
 ]
