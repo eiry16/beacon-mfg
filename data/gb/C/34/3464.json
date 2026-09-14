@@ -2298,7 +2298,8 @@
     "category": "标准件",
     "keywords": [
       "螺丝",
-      "螺栓"
+      "螺栓",
+      "工具批发"
     ],
     "region": {
       "province": "浙江",
@@ -3220,7 +3221,8 @@
     "company": "旭磊制冷配件批发",
     "category": "原材料",
     "keywords": [
-      "铜管"
+      "铜管",
+      "工具批发"
     ],
     "region": {
       "province": "广东",
@@ -3450,7 +3452,8 @@
     "company": "海丽制冷配件批发行",
     "category": "标准件",
     "keywords": [
-      "螺丝"
+      "螺丝",
+      "工具批发"
     ],
     "region": {
       "province": "广东",
@@ -3596,5 +3599,102 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0031288",
+    "company": "新旧货买卖回收维修空调洗衣机(杨美店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "洗衣",
+      "洗衣店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "杨美旺塘四巷八号(地铁站C口步行420米)",
+    "contact_phone": "15986735750; 18895412958",
+    "lat": 22.628691,
+    "lng": 114.081811,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H12793HI",
+      "type": "购物服务;家电电子卖场;家电电子卖场",
+      "typecode": "060300",
+      "alias": "",
+      "tag": "",
+      "keytag": "旧货市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "坂田",
+      "adcode": "440307",
+      "search_keyword": "洗衣"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0031290",
+    "company": "新旧货市场买卖二手物资回收二手空调冰箱洗衣机",
+    "category": "精密机械加工",
+    "keywords": [
+      "洗衣"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "民治大道38横岭一区8栋负一楼",
+    "contact_phone": "13417500845; 13714366544",
+    "lat": 22.607975,
+    "lng": 114.045875,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKJEEFD",
+      "type": "购物服务;综合市场;旧货市场|生活服务;维修站点;维修站点",
+      "typecode": "060702|071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具电器回收",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "民治村",
+      "adcode": "440309",
+      "search_keyword": "洗衣"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -12026,5 +12026,51 @@
     },
     "is_manufacturer": false,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0009548",
+    "company": "盛彩木业广州白云区总店",
+    "category": "原材料",
+    "keywords": [
+      "亚克力板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "黄石西路333号101铺",
+    "contact_phone": "13527667407",
+    "lat": 23.206271,
+    "lng": 113.253022,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I3FLUMP9",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "木材板材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440111",
+      "search_keyword": "亚克力板"
+    },
+    "status": "verified",
+    "industry": {
+      "code": "5169",
+      "name": "其他化工产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 其他化工产品批发",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": false
   }
 ]

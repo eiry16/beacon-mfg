@@ -29166,5 +29166,83 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0003121",
+    "company": "东莞市正衍压铸工程技术研究院",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "横沥镇兴泰路兴泰一街9号",
+    "contact_phone": "18938530580",
+    "lat": 23.021853,
+    "lng": 113.986899,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3392",
+      "name": "有色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 有色金属铸造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "压铸"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0019728",
+    "company": "乐祥新型铝合金材料研究院",
+    "category": "压铸",
+    "keywords": [
+      "铝合金压铸"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "斗门镇外谷社村",
+    "contact_phone": "待核实",
+    "lat": 30.056883,
+    "lng": 120.598464,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-08-13",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF9UZPF",
+      "type": "科教文化服务;科研机构;科研机构",
+      "typecode": "141300",
+      "alias": "",
+      "tag": "",
+      "keytag": "科研机构",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330602",
+      "search_keyword": "铝合金压铸"
+    },
+    "industry": {
+      "code": "3392",
+      "name": "有色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 有色金属铸造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "压铸"
+    },
+    "is_manufacturer": true,
+    "status": "unverified_poi"
   }
 ]

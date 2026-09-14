@@ -613,5 +613,53 @@
       "evidence": "铸造"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0039601",
+    "company": "上海万泽精密铸造有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "肖业路8弄5-6号",
+    "contact_phone": "15601733715",
+    "lat": 30.959222,
+    "lng": 121.428418,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI0I9VL",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310120",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "3391",
+      "name": "黑色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 黑色金属铸造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "铸造"
+    },
+    "is_manufacturer": true
   }
 ]

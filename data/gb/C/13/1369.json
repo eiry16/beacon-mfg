@@ -1,0 +1,98 @@
+[
+  {
+    "id": "CN-MFG-0036992",
+    "company": "渔港码头",
+    "category": "制造业",
+    "keywords": [
+      "私房菜"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "丹西街道丹河路商业街9幢165、167号",
+    "contact_phone": "19817377436",
+    "lat": 29.448914,
+    "lng": 121.876896,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J0YGEVDJ",
+      "type": "交通设施服务;交通服务相关;交通服务相关|餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "150000|050000",
+      "alias": "",
+      "tag": "",
+      "keytag": "港口码头",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丹西",
+      "adcode": "330225",
+      "search_keyword": "私房菜"
+    },
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "渔港"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0029086",
+    "company": "佛山市妃厨食品水产加工中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "南国二路与平安大道交叉口东南180米",
+    "contact_phone": "待核实",
+    "lat": 23.104857,
+    "lng": 113.157053,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M66M9WOI",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "水产"
+    },
+    "is_manufacturer": true
+  }
+]

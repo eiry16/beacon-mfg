@@ -44,5 +44,149 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0032726",
+    "company": "胡子饮食店",
+    "category": "精密机械加工",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "虹桥路5号(全创人力资源对面)",
+    "contact_phone": "18962178980",
+    "lat": 31.303981,
+    "lng": 120.59216,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02000HQVJ",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "金花菜,毛血旺,水煮牛肉,辣子鸡,家常菜,酸菜鱼",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "三香路沿线",
+      "adcode": "320508",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "3594",
+      "name": "商业、饮食、服务专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 商业、饮食、服务专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "饮食"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0039646",
+    "company": "良友饮食店(南新四路店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "便当"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "南新四路29号",
+    "contact_phone": "0757-86221437",
+    "lat": 23.030245,
+    "lng": 113.146698,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F503NMX",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "啫啫生肠拼竹肠,啫啫牛肉,啫牛蛙,五柳炸蛋,啫啫黄鳝煲,萝卜牛杂煲,大排档,牛肉,鸡肉",
+      "keytag": "小吃快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "桂城",
+      "adcode": "440605",
+      "search_keyword": "便当"
+    },
+    "industry": {
+      "code": "3594",
+      "name": "商业、饮食、服务专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 商业、饮食、服务专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "饮食"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0028917",
+    "company": "广州旭丰餐饮食材加工配送中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "石岗东村金达西路10号",
+    "contact_phone": "020-22625629",
+    "lat": 22.930051,
+    "lng": 113.401919,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-13",
+    "imported_at": "2026-09-13",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGPMEJH",
+      "type": "公司企业;公司;公司|生活服务;物流速递;物流速递",
+      "typecode": "170200|070500",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石碁",
+      "adcode": "440113",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "3594",
+      "name": "商业、饮食、服务专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 商业、饮食、服务专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "饮食"
+    },
+    "is_manufacturer": true
   }
 ]

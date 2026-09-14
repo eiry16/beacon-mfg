@@ -186,5 +186,101 @@
       "evidence": "建筑材"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0031676",
+    "company": "上海外安建筑材料批发仓库",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "外青松公路899号",
+    "contact_phone": "待核实",
+    "lat": 31.307866,
+    "lng": 121.14273,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL3Q1NF",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "3515",
+      "name": "建筑材料生产专用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0035099",
+    "company": "中国新型建筑材料工业杭州设计研究院",
+    "category": "精密机械加工",
+    "keywords": [
+      "工业设计"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "中山北路462号",
+    "contact_phone": "0571-85067239",
+    "lat": 30.269469,
+    "lng": 120.16759,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKOYRRB",
+      "type": "科教文化服务;科研机构;科研机构",
+      "typecode": "141300",
+      "alias": "",
+      "tag": "",
+      "keytag": "科研机构",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "天水",
+      "adcode": "330105",
+      "search_keyword": "工业设计"
+    },
+    "industry": {
+      "code": "3515",
+      "name": "建筑材料生产专用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑材"
+    },
+    "is_manufacturer": true
   }
 ]

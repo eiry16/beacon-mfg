@@ -2,7 +2,7 @@
   {
     "id": "CN-MFG-0012241",
     "company": "黄金首饰品牌维修中心",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "加工中心"
     ],
@@ -48,7 +48,7 @@
   {
     "id": "CN-MFG-0012398",
     "company": "昆山商厦黄金首饰加工维修服务中心",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "加工中心"
     ],
@@ -94,7 +94,7 @@
   {
     "id": "CN-MFG-0012434",
     "company": "名奢汇奢侈品名表名包首饰翡翠回收销售中心(新街口店)- 不收黄金",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "加工中心"
     ],
@@ -140,7 +140,7 @@
   {
     "id": "CN-MFG-0012454",
     "company": "首饰加工服务中心(杭州解百A座店)",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "加工中心"
     ],
@@ -186,7 +186,7 @@
   {
     "id": "CN-MFG-0014815",
     "company": "首饰加工",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "加工中心"
     ],
@@ -232,7 +232,7 @@
   {
     "id": "CN-MFG-0027384",
     "company": "万利首饰器材",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "机械加工"
     ],
@@ -280,7 +280,7 @@
   {
     "id": "CN-MFG-0028699",
     "company": "珈福首饰加工店",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "加工中心"
     ],
@@ -328,7 +328,7 @@
   {
     "id": "CN-MFG-0028711",
     "company": "周至福首饰加工(富德人人购物广场店)",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "加工中心"
     ],
@@ -376,7 +376,7 @@
   {
     "id": "CN-MFG-0028712",
     "company": "金银首饰加工",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "加工中心"
     ],
@@ -424,7 +424,7 @@
   {
     "id": "CN-MFG-0028962",
     "company": "俏佳银首饰店(番禺华丰汇店)",
-    "category": "精密机械加工",
+    "category": "批发和零售业",
     "keywords": [
       "加工中心"
     ],
@@ -457,6 +457,54 @@
       "business_area": "市桥",
       "adcode": "440113",
       "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "5146",
+      "name": "首饰、工艺品及收藏品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 文化、体育用品及器材批发 > 首饰、工艺品及收藏品批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "首饰"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0032448",
+    "company": "香港金六福珠宝首饰有限公司(丹灶店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "检测服务"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "丹灶镇商业大道1号珍丰广场一楼",
+    "contact_phone": "13690428900",
+    "lat": 23.039287,
+    "lng": 112.920456,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-14",
+    "imported_at": "2026-09-14",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L117LLH9",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "首饰回收",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丹灶",
+      "adcode": "440605",
+      "search_keyword": "检测服务"
     },
     "industry": {
       "code": "5146",
