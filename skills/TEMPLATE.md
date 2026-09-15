@@ -1,9 +1,12 @@
 ---
-name: bmfg-{supplier_id}
+name: beacon-mfg-vendor-{supplier_id 小写，如 cn-mfg-0001234}
 description: {企业全称}（{省}·{市}）供应商能力卡。主营 {工艺}；材料覆盖 {材料}；
   公差 ±{公差}mm，最大加工 {尺寸}mm；MOQ {MOQ} 件起，样品 {打样天数} 天、百件 {百件天数} 天；
   {认证}。当用户需要{关键词}时使用。
 ---
+
+<!-- 这是**供应商数据卡**模板（name 前缀 beacon-mfg-vendor-*），不是可安装的 Skill。
+     本仓库唯一可安装的 Skill 入口是根目录 SKILL.md / SKILL_EN.md（name: beacon-mfg）。 -->
 
 # {企业全称}
 

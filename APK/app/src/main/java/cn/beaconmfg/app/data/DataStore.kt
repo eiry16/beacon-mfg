@@ -140,11 +140,13 @@ class DataStore(private val app: Application) {
 
     /** 写入更新后的号码索引。SHA1 对不上就不落盘——宁可留旧的，也不能写入半截索引。 */
     fun writePhoneIndex(content: String, expectSha: String): Boolean {
-        if (sha1(content.toByteArray()) != expectSha) return false
+        // 与 writeShard 同口径：先归一化再校验、再落盘（见 writeShard 注释）
+        val norm = normalizeLf(content.toByteArray())
+        if (sha1(norm) != expectSha) return false
         updateDir.mkdirs()
         val target = File(updateDir, "phone-index.jsonl")
         val tmp = File(target.absolutePath + ".tmp")
-        tmp.writeText(content)
+        tmp.writeBytes(norm)
         if (!tmp.renameTo(target)) return false
         prefs.edit().putString("phone_sha", expectSha).apply()
         phoneMap = null          // 下次读取时重载
@@ -182,11 +184,17 @@ class DataStore(private val app: Application) {
 
     /** 写入一个更新后的分片，并登记 SHA1。校验不过就不落盘——宁可留旧数据。 */
     fun writeShard(rel: String, content: String, expectSha: String): Boolean {
-        if (sha1(content.toByteArray()) != expectSha) return false
+        // ⚠ 必须先 CRLF→LF 再校验：manifest 里每个分片的 h 是 gen_manifest.sha1_of 算的，
+        // 它内部 replace(\r\n → \n)（仓库 core.autocrlf=true，工作树 CRLF、发布口径 LF）。
+        // 不做这一步，发布侧只要漏了归一化（2026-09-14 事故：108 片只成功 9 片），
+        // 这里就会把**每一片**判为校验失败并静默丢弃 —— 不报错、不重试、数据永远不更新。
+        // 归一化后再落盘，本地副本与线上字节也一致，后续 builtinShaOf/localShaOf 比对同口径。
+        val norm = normalizeLf(content.toByteArray())
+        if (sha1(norm) != expectSha) return false
         val target = File(updateDir, rel)
         target.parentFile?.mkdirs()
         val tmp = File(target.absolutePath + ".tmp")
-        tmp.writeText(content)
+        tmp.writeBytes(norm)
         if (!tmp.renameTo(target)) return false
         if (updateMeta.length() == 0) loadUpdateMeta()
         val shards = updateMeta.optJSONObject("shards") ?: JSONObject().also {

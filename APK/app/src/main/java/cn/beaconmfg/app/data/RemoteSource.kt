@@ -24,9 +24,9 @@ import javax.net.ssl.SSLException
  * 都必须「保持现状 + 明确告知」，绝不能把失败的更新写成空文件——
  * 那等于把能用的离线库搞坏。
  *
- * 另一个现实前提：主源 raw.githubusercontent.com 在国内经常连不上。
- * 所以所有联网动作都走「候选源依次尝试」，第一个能连通的就用，
- * 全挂才如实报错——不让用户因为一个 CDN 抽风就以为 App 坏了。
+ * 另一个现实前提：主源（dataBase，默认 beacon-mfg.pages.dev）在国内手机端可达，
+ * 但任何单点 CDN 都可能抽风。所以所有联网动作都走「候选源依次尝试」，
+ * 第一个能连通的就用，全挂才如实报错——不让用户因为一个 CDN 抽风就以为 App 坏了。
  */
 class RemoteSource(private val store: DataStore) {
     data class UpdateResult(
@@ -40,20 +40,39 @@ class RemoteSource(private val store: DataStore) {
 
     companion object {
         /**
-         * 内置候选源，按国内实测可达性排序（2026-09 实测：fastly 0.8s / cdn 2.7s / raw 8s+）。
-         * 用户在设置里填的源永远排在最前。
+         * 内置候选源（回退用）。用户在设置里填的 dataBase 永远排在最前，
+         * 这几个是「dataBase 也连不上时」的兜底。顺序按历史可达性排，但
+         * 2026-09-14 起主源已是 beacon-mfg.pages.dev（手机端可达），
+         * 这三者主要服务能直连 GitHub 的网络环境。
          */
         val MIRRORS = listOf(
             "https://fastly.jsdelivr.net/gh/eiry16/beacon-mfg@main/",
             "https://cdn.jsdelivr.net/gh/eiry16/beacon-mfg@main/",
             "https://raw.githubusercontent.com/eiry16/beacon-mfg/main/",
         )
+
+        /**
+         * 单个分片的下载重试策略。
+         *
+         * 为什么需要：移动网络到 Cloudflare 实测 RTT ~166ms、丢包 ~20%
+         * （2026-09-14 三星 A55 实测，ping 20 包丢 4 包）。原实现每片只发一次请求，
+         * 失败即计入 failed —— 实测 108 片只成功 29 片，一次丢包就被判成「源不通」，
+         * 于是切到手机根本连不上的 jsDelivr，整轮更新作废。
+         * 单发失败率约 73%，重试 3 次后全败概率降到约 39%。
+         */
+        const val SHARD_MAX_TRY = 3
+        const val SHARD_RETRY_MS = 300L
     }
 
     private val http = OkHttpClient.Builder()
-        .connectTimeout(5, TimeUnit.SECONDS)   // 5s 连不上就换源，别让用户干等
+        // 移动网络到 Cloudflare 实测 RTT ~166ms、丢包 ~20%（2026-09-14 三星 A55 实测）：
+        // 5s 连接超时在这条链路上会大量误判成「源不通」，故放宽到 10s。
+        .connectTimeout(10, TimeUnit.SECONDS)
         .readTimeout(20, TimeUnit.SECONDS)
         .callTimeout(60, TimeUnit.SECONDS)
+        // ⚠ 必须带 User-Agent：Cloudflare 的浏览器签名校验会把无 UA 的请求打成
+        //   403 `error code: 1010`，现象就是「主源不通」（2026-09-15 真机复现）。
+        .addInterceptor(beaconIdentityInterceptor())
         .build()
 
     private fun now(): String =
@@ -111,6 +130,8 @@ class RemoteSource(private val store: DataStore) {
         .connectTimeout(3, TimeUnit.SECONDS)
         .readTimeout(5, TimeUnit.SECONDS)
         .callTimeout(10, TimeUnit.SECONDS)
+        // 探活同样要走 Cloudflare，无 UA 会被 403/1010 判死，进而误以为「所有源都挂了」
+        .addInterceptor(beaconIdentityInterceptor())
         .build()
 
     /** 取地址的结果。[tried] 为空 = 根本没拿到指针；非空但 [url] 为 null = 地址都探活失败。 */
@@ -193,12 +214,17 @@ class RemoteSource(private val store: DataStore) {
         val errors = ArrayList<String>()
 
         var noChange = false
+        // 上一个源是「连通但没更新」还是「真的不通」——两种情况下一句文案会骗人：
+        // 明明主源 200，界面却显示「主源不通」，排查方向直接被带偏（2026-09-15）。
+        var prevNoChange = false
+        var verified = 0
         roots.forEachIndexed { i, root ->
-            if (i > 0) onProgress(s.switchMirror(hostOf(root)))
+            if (i > 0) onProgress(if (prevNoChange) s.verifyMirror(hostOf(root)) else s.switchMirror(hostOf(root)))
             val r = runCatching { trySource(root, s, onProgress, force) }
                 .getOrElse { e ->
+                    prevNoChange = e is NoChangeOnForce
                     when (e) {
-                        is NoChangeOnForce -> noChange = true
+                        is NoChangeOnForce -> { noChange = true; verified++ }
                         is ManifestStale ->
                             errors += "${hostOf(root)}（manifest 与分片内容不一致，已跳过）"
                         else -> errors += "${hostOf(root)}（${friendly(e, s)}）"
@@ -210,7 +236,7 @@ class RemoteSource(private val store: DataStore) {
 
         // 强制核对时**所有**源都说「没有要下的分片」，那才是真的已是最新。
         if (noChange) {
-            return@withContext UpdateResult(true, message = s.alreadyLatest(hostOf(roots.last())))
+            return@withContext UpdateResult(true, message = s.alreadyLatestVerified(verified, roots.size))
         }
         UpdateResult(false, message = s.allSourcesDown(roots.size, errors.joinToString("、")))
     }
@@ -271,24 +297,35 @@ class RemoteSource(private val store: DataStore) {
             var bytes = 0L
             fps.forEachIndexed { idx, (rel, url, sha) ->
                 onProgress(st.downloadingShard(idx + 1, fps.size, rel))
-                try {
-                    val r = Request.Builder().url(url).build()
-                    http.newCall(r).execute().use { rr ->
-                        if (!rr.isSuccessful) {
-                            failed++
-                            return@use
+                var ok = false       // 下载并落盘成功
+                var giveUp = false   // 内容本身有问题（SHA 不过），重试也没意义
+                for (attempt in 1..SHARD_MAX_TRY) {
+                    try {
+                        val r = Request.Builder().url(url).build()
+                        http.newCall(r).execute().use { rr ->
+                            if (!rr.isSuccessful) return@use
+                            val content = rr.body?.string() ?: return@use
+                            if (store.writeShard(rel, content, sha)) {
+                                downloaded++
+                                bytes += content.length
+                                ok = true
+                            } else {
+                                // SHA1 校验不过：宁可留旧数据，也不是网络问题，不必重试
+                                giveUp = true
+                            }
                         }
-                        val content = rr.body?.string() ?: run { failed++; return@use }
-                        if (store.writeShard(rel, content, sha)) {
-                            downloaded++
-                            bytes += content.length
-                        } else {
-                            failed++   // SHA1 校验不过：宁可留旧数据
+                    } catch (e: Exception) {
+                        // 网络/IO 类异常：交给下面的重试
+                    }
+                    if (ok || giveUp) break
+                    if (attempt < SHARD_MAX_TRY) {
+                        try {
+                            Thread.sleep(SHARD_RETRY_MS * attempt)
+                        } catch (_: InterruptedException) {
                         }
                     }
-                } catch (e: Exception) {
-                    failed++
                 }
+                if (!ok) failed++
             }
             // 一个都没下成、且全军覆没 = 这份 manifest 不可信（多半是边缘节点上的旧缓存，
             // 与它自己指向的新分片内容对不上）。换下一个源重来，别死磕这一层。

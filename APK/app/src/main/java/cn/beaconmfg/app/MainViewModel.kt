@@ -195,10 +195,13 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         val n = store.fingerprints().size
         refreshDataInfo()
         _status.value = s.ready(n)
-        // 强制核对：manifest 只有 ~78KB，ETag 省不了多少流量，却会因为 CDN 边缘缓存
-        // 回 304 而漏掉新数据（2026-09-11 赤兔案例）。真正的流量大头是分片，
-        // 那部分靠 SHA1 比对，只有真变了才下。
-        if (_settings.value.autoUpdate) refreshData(force = true)
+        // 启动：轻量校验（force=false）。只发 If-None-Match，服务端/manifest 没变就 304，
+        // 零下载、几乎无感——满足「启动不重拉」。真正可能漏掉的新数据，由用户手点
+        // 「立即更新」按钮（SettingsScreen 传 force=true）兜底；本机刚写入过数据后
+        // （认领/注册/采集）也会强制 force=true 同步，见 runTurn 末尾。
+        // 代价：若 CDN 边缘节点这次给的是旧 manifest 的 304，启动这次会晚一点看到新数据，
+        // 但下次手动更新或写入后即纠正，可接受。
+        if (_settings.value.autoUpdate) refreshData(force = false)
     }
 
     /**

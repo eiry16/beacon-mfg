@@ -1,17 +1,52 @@
 ---
 name: beacon-mfg-en
-description: Agent-facing search over a structured directory of Chinese suppliers (manufacturing + wholesale/retail). Use when the user needs to find suppliers, factories, OEM/ODM vendors (CNC machining, sheet metal, injection molding, die casting, moulds, casting, fasteners, gears, rubber parts, electronic components), or wholesalers / distributors / trading companies, or filter by GB/T 4754 industry code, product keyword, or region; also covers Chinese-language sourcing requests. Public POI data only; contact info only, no transactions. NOT for restaurants, local services, or consumer point-of-interest search (not covered — do not load this skill for those).
+description: Agent-facing directory of Chinese companies and local businesses, archived by GB/T 4754-2017 national industry gate. Covers 7 gates — C Manufacturing, F Wholesale & Retail, H Accommodation & Catering, I IT & Software, M Scientific & Technical Services, O Residential Services & Repair, R Culture/Sports/Entertainment. Use when the user needs suppliers, factories, OEM/ODM vendors (CNC machining, sheet metal, injection molding, die casting, moulds, fasteners, electronic components), wholesalers / distributors / trading companies, food & beverage venues (restaurant, hotpot, fast food, coffee, tea & bubble tea, bakery, bar, hotel, B&B), local service businesses (hair & beauty salon, laundry, auto repair, appliance repair, gym, KTV, internet cafe, cinema, amusement park, pet services), or technical service providers (software development, system integration, cybersecurity, big data, third-party testing, calibration, certification, industrial design, environmental monitoring); also for filtering by GB/T 4754 industry code, product keyword, or city/region. Handles Chinese-language sourcing requests too. Public POI directory with contact info only — no transactions.
 ---
 
 # BeaconMFG · Supplier Search Skill (English Dataset)
 
 ## Capability
 
-Search a structured directory of China manufacturing suppliers by product keywords,
+Search a structured directory of Chinese companies and local businesses by product keyword,
 region, and **GB/T 4754-2017 national industry code**. Returns **structured, traceable**
-supplier records with public contact info.
+records with public contact info.
 
 **Scope:** information only — no quoting, ordering, or transactions; no ratings or recommendations.
+
+### Coverage: 7 national industry gates
+
+The design covers **all** of the gates below. Check the "Records" column before searching —
+**a registered gate is not the same as having data**. Collection rolls out in batches;
+gates without data are marked *pending*. Never infer volume from the design scope.
+
+| Gate | Name | Records | Typical queries |
+|---|---|---|---|
+| C | Manufacturing | 28213 | CNC machining, sheet metal, injection molding, die casting, moulds, fasteners, electronics |
+| F | Wholesale & Retail | 2603 | wholesalers, distributors, trading companies, hardware/building materials, convenience stores, pharmacies |
+| H | Accommodation & Catering | 2578 | restaurant, hotpot, fast food, coffee, bubble tea, bakery, bar, hotel, B&B |
+| R | Culture, Sports & Entertainment | 1905 | gym, KTV, internet cafe, cinema, amusement park, sports venues |
+| O | Residential Services & Repair | 1372 | hair & beauty, laundry, auto repair, appliance repair, pet services |
+| I | IT & Software | 1039 | software development, system integration, cybersecurity, big data, ops |
+| M | Scientific & Technical | 954 | third-party testing, calibration, certification, industrial design, environmental monitoring |
+
+> Plus **1033** records with no industry code yet (`industry` is null — no label is
+> invented); **39697** in total. Counts change daily — `data/DATA_STATS.md` is the source
+> of truth.
+
+> **When a gate comes up short:** read `data/gb-index.json` → `tree` to check how many
+> records that gate actually has, then report that number honestly. **Do not** substitute
+> approximate results from another gate — that would be fabrication.
+
+### Two kinds of SKILL.md in this repo — don't confuse them
+
+| | Name prefix | Location | Nature |
+|---|---|---|---|
+| **Search entry skill (this doc)** | `beacon-mfg` | repo root `SKILL.md` | **Instructions** — how to search |
+| **Vendor data card** | `beacon-mfg-vendor-*` | `skills/vendors/{id}/SKILL.md` | **Data** — one company's capability profile, no instructions |
+
+The thousands of `SKILL.md` files under `skills/vendors/` are **data records indexed by
+vendor ID**, not installable sub-skills. If you see `beacon-mfg-vendor-xxxx` in a skill list,
+it is a capability card (fetched on demand in step 3) — **do not** load it as a standalone skill.
 
 ## Data location
 

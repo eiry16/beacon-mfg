@@ -228,13 +228,18 @@ def classify_at_ingest(rec, industry_code=None):
     （confidence=low, source="search_keyword"）。拿不到信号就留 null，不硬贴。
     """
     try:
-        from classify_industry import classify, build_industry
+        from classify_industry import classify, build_industry, is_manufacturer
     except ImportError:  # 直接单跑本脚本时 scripts/ 可能不在 path 上
         return None, True
     code, conf, src, ev = classify(rec, expected_code=industry_code)
     if code is None:
         return None, True
-    return build_industry(code, conf, src, ev), not code.startswith(("51", "52"))
+    # 2026-09-14：原来写的是 `not code.startswith(("51", "52"))`，只把批发零售
+    # 排除掉。门类扩到 7 个以后，餐饮 6210 / 健身 8930 / 软件开发 6513 全都会被
+    # 判成 is_manufacturer=true —— validate.py 要求
+    # `is_manufacturer == is_manufacturer(code)`，于是每来一条服务业数据就报一条错。
+    # 判定口径统一交给 industry_taxonomy：只有 C 制造业才是制造商。
+    return build_industry(code, conf, src, ev), is_manufacturer(code)
 
 
 def to_supplier(poi, category, keyword, seq, industry_code=None):

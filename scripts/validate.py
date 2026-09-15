@@ -88,13 +88,14 @@ try:
     from industry_taxonomy import (
         CODES as _GB_CODES, CLASSES as _GB_CLASSES, GROUPS as _GB_GROUPS,
         DIVISIONS as _GB_DIVISIONS, name_of as _gb_name, is_manufacturer as _gb_is_mfr,
-        level_of as _gb_level,
+        level_of as _gb_level, gate_of as _gb_gate,
     )
 except ImportError:
     _GB_CODES, _GB_CLASSES, _GB_GROUPS, _GB_DIVISIONS = {}, {}, {}, {}
     _gb_name = lambda c: ""
     _gb_is_mfr = lambda c: True
     _gb_level = lambda c: ""
+    _gb_gate = lambda c: ""
 
 
 def _gb_valid(code):
@@ -239,8 +240,13 @@ def check_industry(item, path):
         ok = False
     want_mfr = _gb_is_mfr(code)
     if item.get("is_manufacturer") is not want_mfr:
+        # 2026-09-14：原来写死「批发业/制造业」二选一。门类扩到 7 个以后，
+        # 6110 旅游饭店会被报成「（批发业）矛盾」——排查的人照着「批发业」去找，
+        # 只会越查越远。改成按真实门类名说。
+        _g = _gb_gate(code) or "?"
         err(f"{path} ({item.get('id')}): is_manufacturer={item.get('is_manufacturer')} 与 "
-            f"行业 {code}（{'批发业' if not want_mfr else '制造业'}）矛盾")
+            f"行业 {code}（门类 {_g} {'制造业' if want_mfr else '非制造业'}）矛盾"
+            f"（应为 is_manufacturer={want_mfr}）")
         ok = False
     return ok, False
 

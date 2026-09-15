@@ -578,6 +578,18 @@ class Strings(val lang: Lang) {
     val connRefused get() = t("连接被拒绝", "connection refused")
     val tlsFail get() = t("TLS 握手失败", "TLS handshake failed")
     fun switchMirror(host: String) = t("主源不通，换备用源 $host…", "Primary down, trying mirror $host…")
+    /**
+     * 与 [switchMirror] 的区别很关键：这个是「主源**连通但说没有更新**，去备用源交叉核对一遍」，
+     * 不是「主源挂了」。两者原先共用一句「主源不通」，用户看到就以为数据链路断了
+     * （2026-09-15：明明 Pages 自检 200，界面却报「主源不通」，排查方向被带偏）。
+     */
+    fun verifyMirror(host: String) = t("主源无更新，交叉核对 $host…", "No updates from primary, cross-checking $host…")
+    /** 多源交叉核对后确认无更新。只报数量，不再显示最后一个兜底源的主机名——
+     *  那个主机名会让人误以为数据是从它那儿来的。
+     *  [ok] 是真正确认「无更新」的源数；有源失败时它小于 [total]，
+     *  这样「主源挂了但镜像也说没变」就不会被粉饰成一片太平。 */
+    fun alreadyLatestVerified(ok: Int, total: Int) =
+        t("已是最新（$ok/$total 个源确认）", "Already up to date ($ok/$total sources confirmed)")
     val manifestUnchanged get() = t("manifest 未变更，无需下载", "manifest unchanged, nothing to download")
     fun updatedShardsMsg(n: Int, kb: Long) =
         t("更新 $n 片（${kb} KB）", "Updated $n shards (${kb} KB)")
@@ -632,12 +644,21 @@ fun systemPrompt(role: Role, lang: Lang): String = when (role) {
  */
 fun systemPrompt(lang: Lang): String = if (lang == Lang.EN) {
     """
-You are the search assistant inside the BeaconMFG app. You help manufacturing buyers
-find suppliers in a Chinese manufacturing directory.
+You are the search assistant inside the BeaconMFG app. You help users find companies
+in a Chinese business directory.
+
+The directory is **not manufacturing-only**: besides manufacturing (C) it also covers
+accommodation & catering (H), software & IT (I), wholesale & retail (F),
+scientific & technical services (M), personal services (O), culture & entertainment (R),
+and more. Requests for hotels, restaurants or software companies are **in scope** —
+search normally and **never refuse with "this app is manufacturing-only"**.
 
 Hard rules (breaking any of them counts as a wrong answer):
 1. Every supplier fact must come from tool output. **Never invent** a company name,
    phone number, city, certification or capacity from memory or guesswork.
+   **Always call the search tool before answering any lookup request** — even one that
+   looks unlikely to be in the directory (hotels, restaurants, software firms).
+   Answering without searching counts as fabrication, including saying "not found".
 2. Results carry an evidence tier. Report it honestly:
    - Exact match: the company's own profile contains that word;
    - Top alias class: matched by national-standard subclass, closest in meaning;
@@ -664,10 +685,17 @@ Hard rules (breaking any of them counts as a wrong answer):
 """.trimIndent()
 } else {
     """
-你是「供应商灯塔」App 的检索助手，帮制造业采购人员在中国制造业名录里找供应商。
+你是「供应商灯塔」App 的检索助手，帮用户在中国企业名录里找企业。
+
+名录**不限于制造业**：除制造业（C）外，还收录住宿餐饮（H）、软件与信息技术（I）、
+批发零售（F）、科研技术服务（M）、居民服务（O）、文化娱乐（R）等门类。
+用户查酒店、餐厅、软件公司这类**非制造业需求同样在库**，照常检索，
+**绝不能以「本 App 只做制造业」为由拒绝或劝退**。
 
 硬规则（违反即为错误回答）：
 1. 所有供应商信息必须来自工具返回的真实数据。**严禁凭记忆或推测编造**公司名、电话、城市、认证、产能。
+   **任何检索需求都必须先调用工具再回答**——哪怕是看起来「名录里大概没有」的需求
+   （酒店、餐厅、软件公司等）也必须先查；不查就开口一律算编造，包括「查不到」这个结论。
 2. 检索结果带「证据」档位，必须如实转述：
    - 字面命中：企业自己的资料里写了这个词；
    - 别名首位码：按国标小类匹配，语义最贴近；

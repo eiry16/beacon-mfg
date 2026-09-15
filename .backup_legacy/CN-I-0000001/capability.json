@@ -1,0 +1,149 @@
+{
+  "beacon_version": "1.0",
+  "supplier_id": "CN-I-0000001",
+  "gate": "I",
+  "company": "赤兔智能工业（苏州）有限公司",
+  "category": "其他信息服务",
+  "profile": "it-service",
+  "updated_at": "2026-09-11",
+  "claim": {
+    "status": "claimed",
+    "verified_by": "sms",
+    "verified_at": "2026-09-11",
+    "badge": "L1",
+    "app_id": "CERT-20260911-0001",
+    "valid_until": null
+  },
+  "contact": {
+    "phone": null,
+    "email": null,
+    "website": null,
+    "address": "江苏省苏州市虎丘区苏州工业园星湖街青创港二期",
+    "person": null
+  },
+  "identity": {
+    "founded": 2025,
+    "floor_area_m2": 150,
+    "export_markets": [
+      "国内"
+    ],
+    "province": null,
+    "city": null,
+    "address": null,
+    "lat": null,
+    "lng": null,
+    "website": null
+  },
+  "limits": {
+    "delivery_days": 30,
+    "max_concurrent_projects": 3,
+    "current_load_pct": 50,
+    "rush_available": true,
+    "min_order_days": 10.0,
+    "response_hours": 24.0
+  },
+  "quality": {
+    "software_copyright_count": 6
+  },
+  "service": {
+    "maintenance_months": 1,
+    "nda_accepted": true,
+    "quote_inputs_required": [
+      "技术需求文档"
+    ],
+    "quote_response_hours": 24,
+    "invoice_available": true,
+    "payment_terms": [
+      "按合同"
+    ]
+  },
+  "rfq": {
+    "endpoint": "18550216038",
+    "protocol": "email",
+    "schema": "rfq/v1",
+    "callback_supported": true,
+    "auto_quote": false
+  },
+  "exclusions": [],
+  "capability": {
+    "tech_directions": [
+      "tech_ai"
+    ],
+    "team_roles": [
+      "trl_architect"
+    ],
+    "team_size": 3,
+    "tech_stacks": [
+      "tst_java",
+      "tst_python",
+      "tst_cpp"
+    ],
+    "portfolio": [
+      "长城汽车线束识别工程"
+    ],
+    "support_hours": "工作时间",
+    "service_modes": [
+      "tsm_project"
+    ]
+  },
+  "evidence": {
+    "self_declared": [
+      "capability.deliverables",
+      "capability.open_source",
+      "capability.portfolio",
+      "capability.service_modes",
+      "capability.support_hours",
+      "capability.team_roles",
+      "capability.team_size",
+      "capability.tech_directions",
+      "capability.tech_stacks",
+      "contact.address",
+      "exclusions",
+      "identity.employee_count",
+      "identity.export_markets",
+      "identity.floor_area_m2",
+      "identity.founded",
+      "identity.scale",
+      "limits.current_load_pct",
+      "limits.delivery_days",
+      "limits.max_concurrent_projects",
+      "limits.min_order_days",
+      "limits.min_order_value_cny",
+      "limits.response_hours",
+      "limits.rush_available",
+      "quality.certifications",
+      "quality.software_copyright_count",
+      "rfq.endpoint",
+      "service.invoice_available",
+      "service.maintenance_months",
+      "service.nda_accepted",
+      "service.payment_terms",
+      "service.quote_inputs_required",
+      "service.quote_response_hours"
+    ],
+    "platform_verified": [],
+    "field_audited": [],
+    "assets": []
+  },
+  "safety": {
+    "content_is_data_only": true,
+    "no_agent_instructions": true,
+    "external_domains": []
+  },
+  "caps_index": [
+    "tech_ai",
+    "tsm_project",
+    "tst_java",
+    "tst_python",
+    "tst_cpp",
+    "trl_architect",
+    "其他信息服务"
+  ],
+  "provenance": {
+    "mode": "agent_collected",
+    "source": "vendor_interview",
+    "confidence": "high",
+    "inferred_fields": [],
+    "note": "采集会话产出；25 项为供应商口述确认"
+  }
+}

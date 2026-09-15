@@ -36,44 +36,61 @@ PY = os.environ.get("BEACON_PY") or sys.executable
 
 
 def run_cmd(args, log, tail=40, timeout=None):
-    """统一跑子进程：强制 UTF-8 编解码。
+    """统一跑子进程：强制 UTF-8 编解码，并**流式**回传输出到 GUI 日志框。
 
-    坑：Windows 中文环境下 locale 编码是 gbk，subprocess.run(text=True) 默认
-    用 locale 解码子进程输出，一旦子进程输出 UTF-8 中文（postfetch 的进度、
-    git 的中文路径）就在读取线程里抛
-    UnicodeDecodeError: 'gbk' codec can't decode byte 0x92 —— 而且是在后台
-    线程抛的，主流程拿不到 returncode，整个采集卡死在半路。
-    故：给子进程设 PYTHONUTF8/PYTHONIOENCODING 保证它吐 UTF-8，
-    父进程用 utf-8 + errors=replace 解码（解不了的替换掉，绝不再崩）。
+    坑1（编码）：Windows 中文环境下 locale 编码是 gbk，子进程若不强制 UTF-8，
+    输出中文会在读取线程里抛 UnicodeDecodeError。故给子进程设
+    PYTHONUTF8/PYTHONIOENCODING，父进程用 utf-8 + errors=replace 解码。
+
+    坑2（看不到进度）：旧实现用 subprocess.run(capture_output=True)，会等子进程
+    彻底跑完才一次性把输出倒进日志框 —— 英文翻译这种跑几十分钟的步骤，期间 GUI
+    日志框全程停在标题行、毫无滚动，看着像卡死。现改为 Popen + 双读线程：stdout /
+    stderr 各开一个后台线程实时逐行回传 log()，GUI 日志框跟着滚动，长跑也能看到进度。
+    （tail 参数保留以兼容旧调用方，但流式模式不再截断，全部实时显示。）
     """
     env = os.environ.copy()
     env["PYTHONUTF8"] = "1"
     env["PYTHONIOENCODING"] = "utf-8"
     log(f"$ {' '.join(str(a) for a in args)}")
     try:
-        r = subprocess.run([str(a) for a in args], cwd=str(ROOT), env=env,
-                           capture_output=True, text=True, encoding="utf-8",
-                           errors="replace", timeout=timeout)
-    except subprocess.TimeoutExpired:
-        log(f"[超时] {' '.join(str(a) for a in args)}（{timeout}s）")
-        return False
+        p = subprocess.Popen(
+            [str(a) for a in args], cwd=str(ROOT), env=env,
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            text=True, encoding="utf-8", errors="replace", bufsize=1,
+        )
     except OSError as e:
         log(f"[启动失败] {e}")
         return False
-    out = (r.stdout or "").strip()
-    err = (r.stderr or "").strip()
-    lines = out.splitlines()
-    if tail and len(lines) > tail:
-        log("  …（略去前 %d 行）" % (len(lines) - tail))
-        lines = lines[-tail:]
-    for line in lines:
-        log("  " + line)
-    if err:
-        for line in err.splitlines()[-15:]:
-            log("  [stderr] " + line)
-    if r.returncode != 0:
-        log(f"  [返回码 {r.returncode}]")
-    return r.returncode == 0
+
+    # 两个管道各开一个读线程，避免某一侧写满导致死锁；逐行实时回传 log()。
+    # log() 内部用 root.after(0, ...) 把更新调度回主线程，跨线程更新 tkinter 安全。
+    def _pump(pipe, prefix):
+        try:
+            for line in pipe:
+                log(prefix + line.rstrip("\r\n"))
+        except Exception:
+            pass
+
+    t_out = threading.Thread(target=_pump, args=(p.stdout, "  "), daemon=True)
+    t_err = threading.Thread(target=_pump, args=(p.stderr, "  [stderr] "), daemon=True)
+    t_out.start()
+    t_err.start()
+    try:
+        rc = p.wait(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        log(f"[超时] {' '.join(str(a) for a in args)}（{timeout}s）")
+        try:
+            p.kill()
+        except Exception:
+            pass
+        t_out.join()
+        t_err.join()
+        return False
+    t_out.join()
+    t_err.join()
+    if rc != 0:
+        log(f"  [返回码 {rc}]")
+    return rc == 0
 
 
 def load_env():
@@ -135,8 +152,12 @@ class App:
 
         # 采集层级：直接对应 fetch_batch.plan(tier=...) 的过滤口径
         #   - 全部：plan(tier="all", industries=手工勾选的品类)
-        #   - core / extended / service：整层跑，忽略手工勾选
+        #   - core / extended / service / retail / tech / leisure：整层跑，忽略手工勾选
         #     （否则会出现"界面选了 service、却因没勾码而跑空"的陷阱）
+        #
+        # 2026-09-14：补上 retail/tech/leisure 三层。它们与 service 一起构成
+        # 非制造门类（F/H/I/M/O/R），缺了这三项下拉，界面上根本选不到新门类，
+        # 只能靠命令行 —— 那等于把「7 大门类全覆盖」的设计面藏起来。
         tier_row = tk.Frame(root, bg="#10151d")
         tier_row.pack(fill="x", padx=20, pady=(0, 2))
         tk.Label(tier_row, text="采集层级：", bg="#10151d", fg="#9aa7b8",
@@ -145,7 +166,10 @@ class App:
             "all": "全部（按上方勾选的品类）",
             "core": "core · 现有制造覆盖",
             "extended": "extended · 补制造新行业",
-            "service": "service · 非制造新门类",
+            "service": "service · 住宿餐饮 + 居民服务修理",
+            "retail": "retail · F 批发零售",
+            "tech": "tech · I 信息技术 + M 科研技术",
+            "leisure": "leisure · R 文体娱乐",
         }
         self.tier_var = tk.StringVar(value=self.tier_map["all"])
         om = tk.OptionMenu(tier_row, self.tier_var, *self.tier_map.values())
@@ -451,8 +475,12 @@ class App:
                 # 是 2026-09-08 已退役的 8 品类布局，一进来就报「目录不存在」直接退出 ——
                 # 勾了「生成英文版」等于啥也没干。现役脚本是 en_backfill.py
                 # （国标四级、增量、断点续跑），跑完再补 industry_en 标签。
+                # 2026-09-15：Key 不再走命令行参数（--key），改为注入环境变量，
+                # 否则 Get-CimInstance/ps 能直接看到明文 Key。en_backfill.py 优先读
+                # ZHIPU_API_KEY 环境变量，没有才回退读 .env。
+                os.environ["ZHIPU_API_KEY"] = zhipu
                 self.log("\n== 英文翻译（GLM-4-Flash · 增量补齐）==")
-                if run_cmd([PY, str(ROOT / "scripts" / "en_backfill.py"), "--key", zhipu],
+                if run_cmd([PY, str(ROOT / "scripts" / "en_backfill.py")],
                            self.log, tail=40):
                     run_cmd([PY, str(ROOT / "scripts" / "en_sync_industry.py")],
                             self.log, tail=20)

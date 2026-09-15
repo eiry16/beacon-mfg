@@ -25,6 +25,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 import gb_store  # noqa: E402
+import cap_codes  # noqa: E402  能力码表域（restaurant / retail-service / tech-service / entertainment）
+import gate_schema  # noqa: E402 门类 schema 装配 / 校验 / caps_index 派生
 PROCESS_CODES = json.loads(
     (REPO_ROOT / "skills" / "schema" / "process-codes.json").read_text(encoding="utf-8")
 )
@@ -53,7 +55,62 @@ CATEGORY_PROFILE = {
     "科研与技术服务": "tech-research",
     "零售": "retail-shop",
     "其他": "custom",
+    # 非 C 门类的**完整门类名**：category_of() 对非 C 门类返回的是门类名
+    # （「住宿和餐饮业」等），不是上面那些简称。缺这几条时 get(cat, "custom")
+    # 一律兜底成 custom，客户 Agent 拿到的卡片模板就是错的。
+    "住宿和餐饮业": "restaurant",
+    "信息传输、软件和信息技术服务业": "it-service",
+    "科学研究和技术服务业": "tech-research",
+    "居民服务、修理和其他服务业": "resident-service",
+    "文化、体育和娱乐业": "entertainment",
+    "批发和零售业": "retail-shop",
 }
+
+# ------------------------------------------------------------------ 门类守卫
+# 自动工艺推断**只对 C 制造业成立**。
+#
+# 2026-09-14 实测（名录扩到 7 大门类后）：
+#   嘉兴市老百姓大药房（F 零售 5251）→ 品类「原材料」→ 兜底 metal_material
+#   嘉兴经开区美宜佳便利店（F 零售 5213）→ 同上
+# 药房、便利店、火锅店、软件公司根本没有「CNC / 注塑 / 钣金」可言，
+# infer 却会拿制造业词典从字面硬凑一个出来 —— 这是**编造**，触碰项目红线
+# （数据宁可留空也不编造）。故按门类守卫：非 C 门类一律不推断工艺。
+#
+# 这不是「设计面收缩」：名录抓取、能力卡渲染、供应商自填三条链路都覆盖全门类，
+# 只有「从公司名自动推断工艺」这一条能力以制造业为界。餐饮的"工艺"
+# 无法从店名推断，硬推就是造假。
+try:  # industry_taxonomy 在 scripts/ 下，已加入 sys.path
+    import industry_taxonomy as _it
+
+    def gate_of_code(code: str) -> str:
+        try:
+            return _it.gate_of(str(code)) or ""
+        except Exception:  # noqa: BLE001
+            return ""
+
+    # 门类名（中文）→ 门类字母：无国标码时按名录粗分类回判门类
+    _GATE_OF_NAME = {v: k for k, v in _it.GATES.items()}
+
+    def gate_of_category_name(cat_name: str) -> str:
+        return _GATE_OF_NAME.get((cat_name or "").strip(), "")
+except Exception:  # noqa: BLE001
+    def gate_of_code(code: str) -> str:  # type: ignore[misc]
+        c = str(code or "")
+        return c[:1] if c[:1].isalpha() else ""
+
+    def gate_of_category_name(cat_name: str) -> str:  # type: ignore[misc]
+        return ""
+
+
+def is_manufacturing(rec: dict) -> bool:
+    """只有 C 制造业才做自动工艺推断。
+
+    无行业码的旧数据按 is_manufacturer 标志兜底（老名录全是制造业）。
+    """
+    code = (rec.get("industry") or {}).get("code") or ""
+    if not code:
+        return bool(rec.get("is_manufacturer", True))
+    return gate_of_code(code) == "C"
 
 # ------------------------------------------------------------------ 名称清洗
 
@@ -79,30 +136,36 @@ def clean_name(raw: str) -> str:
 
 # ------------------------------------------------------------------ 噪声过滤
 
-# 明确不是制造业主体的 POI（地图误抓）
+# 明确不是「供应商主体」的 POI / 非经营主体（地图误抓）。
+#
+# 2026-09-14 重新梳理：下列词**只保留真正非经营的误抓对象**。
+# 凡属于「已登记门类」的主体一律放行 —— 餐饮(H)/住宿(H)/零售(F)/居民服务(O)/
+# 信息技术(I)/科研技术(M)/娱乐(R) 都是合法供应商，它们的店名/业态词
+# （餐饮/饭店/酒店/美容/理发/超市/便利店/门窗/窗帘/服装/批发…）**不是噪音**。
+# 旧版把它们当噪音，等于把整片新门类挡在自动整理门外，与「全门类自动补卡」目标冲突。
+#
+# 仍保留为噪音的：
+#   - A 农林牧渔（农场/果园/养殖…，未登记门类，且非供应商主体）
+#   - 公共设施 / 机构 / 物流场站 / 生活配套（非经营主体）
+#   - 注塑机/挤出机/吹塑机/造粒机（极具体的塑料设备名，几乎只出现在设备商/维修商名中，
+#     留在 C 门类的工艺误判防护里；几乎不会出现在服务业名中，对 F/O/I/M/R 无副作用）
+# 注意：批发/经销/自动化科技等已从噪音移除 —— 「XX奶茶原料批发」是 F 门类的正常主体，
+# 「XX自动化科技」是 I 门类的正常主体，旧版把它们误杀。
 NOISE_PATTERNS = [
-    # 农业 / 养殖 / 生活
-    r"农场|果园|花卉|种植|苗木|水产|养殖|牧场|菜地|桃园|葡萄|垂钓|农家乐|民宿|客栈",
-    # 零售 / 家装 / 生活服务
-    r"窗帘|门窗|卫浴|陶瓷|地板|灯具|家具|家居|服装|鞋|帽|超市|便利店|"
-    r"门市部|建材|装饰|广告|图文|摄影|美容|理发|餐饮|饭店|酒店|浴场",
-    # 公共设施 / 非经营主体
+    # 农业 / 养殖 / 生活（A 门类未登记，且非经营主体）
+    r"农场|果园|花卉|种植|苗木|水产|养殖|牧场|菜地|桃园|葡萄|垂钓|农家乐",
+    # 公共设施 / 非经营主体（POI 误抓）
     r"公厕|垃圾|变电|配电|泵站|公墓|陵园|寺庙|教堂|景区|旅游|公园|广场",
-    # 机构
+    # 机构（非经营主体）
     r"幼儿园|小学|中学|大学|学院|学校|医院|诊所|银行|保险|律师|会计师|"
     r"税务|工商|村委会|居委会|派出所",
-    # 纯物流 / 仓储（非生产）
+    # 纯物流 / 仓储（非经营主体）
     r"停车场|加油站|充电站|服务区",
-    # 非生产主体：销售点 / 管理机构 / 生活配套
+    # 非经营主体：销售点 / 管理机构 / 生活配套
     r"营销中心|营销部|办事处|展示中心|体验店|旗舰店|总部|"
     r"职工公寓|公寓|宿舍|食堂|生活区",
-    # 纯销售/批发（不是生产主体）。2026-09-08 补：实测抓到「上海顺雨篷布批发」
-    r"批发|经销|总经销|代理商|代销",
-    # 设备商，不是加工厂。2026-09-08 补：查「嘉兴注塑厂」返回「注塑智能装备」
-    # 「注塑机工业自动化」—— 这两家卖注塑机，工艺却被推成 injection_molding。
-    # 「注塑机」是设备名，名字里带它的几乎都是设备/维修商。
+    # 设备名词（保护 C 不被「注塑机」类设备商误判为加工厂；极具体，对服务业无副作用）
     r"注塑机|挤出机|吹塑机|造粒机",
-    r"智能装备|工业自动化|自动化设备|自动化科技",
 ]
 _NOISE_RE = re.compile("|".join(NOISE_PATTERNS))
 
@@ -420,38 +483,237 @@ def amap_extra_text(rec: dict) -> str:
     return " ".join(b for b in bits if b).strip()
 
 
+# ------------------------------------------------------------------ 非 C 门类能力推断
+#
+# 2026-09-14 改造：自动整理从「仅制造业」扩展到全 7 大门类。
+# 非 C 门类**不推断「工艺」**（餐饮没有 CNC、理发没有注塑），而是用各门类的
+# 能力码表域（restaurant / retail-service / tech-service / entertainment）从公司名
+# 推断相应的业务能力码（菜系 / 零售品类 / 技术方向 / 场所类型 …）。
+# 这是与制造业「名义能力」同类的推断，同样**不编造数值**（座位/桌数/价格/工时一律留空）。
+#
+# 推断文本 = 清洗后公司名 + 抓取关键词 + 高德 alias/tag/keytag 自述。
+# 各域 resolve() 按「别名(长优先) → 码名」匹配，命中即记码，绝不兜底成编造值。
+
+NON_MFG_CAPABILITY: dict[str, dict] = {
+    "H": {  # 住宿和餐饮业 → restaurant 域
+        "domain": "restaurant",
+        "groups": {
+            "cuisines": "菜系",
+            "service_modes": "服务形态",
+            "venue_features": "场地",
+            "time_slots": "时段",
+        },
+    },
+    "F": {  # 批发和零售业 → retail-service 域（取「零售品类」组）
+        "domain": "retail-service",
+        "groups": {
+            "retail_categories": "零售品类",
+            "business_modes": "经营方式",
+            "delivery_modes": "交付方式",
+            "store_features": "门店设施",
+        },
+    },
+    "O": {  # 居民服务、修理和其他服务业 → retail-service 域（取「服务项目」组）
+        "domain": "retail-service",
+        "groups": {
+            "service_items": "服务项目",
+            "business_modes": "经营方式",
+            "delivery_modes": "交付方式",
+            "store_features": "门店设施",
+        },
+    },
+    "I": {  # 信息传输、软件和信息技术服务业 → tech-service 域（取「信息技术方向」）
+        "domain": "tech-service",
+        "groups": {
+            "tech_directions": "信息技术方向",
+            "service_modes": "服务模式",
+            "deliverables": "交付成果",
+            "tech_stacks": "技术栈",
+            "team_roles": "团队构成",
+        },
+    },
+    "M": {  # 科学研究和技术服务业 → tech-service 域（取「科研技术方向」）
+        "domain": "tech-service",
+        "groups": {
+            "tech_directions": "科研技术方向",
+            "service_modes": "服务模式",
+            "deliverables": "交付成果",
+            "team_roles": "团队构成",
+        },
+    },
+    "R": {  # 文化、体育和娱乐业 → entertainment 域
+        "domain": "entertainment",
+        "groups": {
+            "venue_types": "场所类型",
+            "service_modes": "服务形态",
+            "venue_features": "场地设施",
+            "time_slots": "时段",
+        },
+    },
+}
+
+
+def _infer_text(rec: dict, cleaned: str) -> str:
+    """非 C 门类的能力推断文本：公司名（硬证据）+ 抓取关键词 + 高德自述。"""
+    parts = [cleaned or ""]
+    kw = rec.get("keywords") or []
+    if kw:
+        parts.append(" ".join(str(k) for k in kw))
+    extra = amap_extra_text(rec)
+    if extra:
+        parts.append(extra)
+    return " ".join(p for p in parts if p)
+
+
+def infer_non_mfg_capability(gate: str, text: str) -> dict:
+    """按门类把自由文本解析成各能力字段的码列表（分组互不串用）。"""
+    spec = NON_MFG_CAPABILITY.get(gate)
+    if not spec:
+        return {}
+    domain = spec["domain"]
+    out: dict[str, list[str]] = {}
+    for field, group in spec["groups"].items():
+        out[field] = cap_codes.resolve(domain, text, group=group)
+    return out
+
+
+def _non_mfg_confidence(inf: dict) -> str:
+    """非 C 门类：按推断命中条数给置信度（与制造业 high/medium/low 同档）。"""
+    n = sum(len(v) for v in inf.values() if isinstance(v, list))
+    if n >= 3:
+        return "high"
+    if n >= 1:
+        return "medium"
+    return "low"
+
+
+# 国标小类/中类码 → 门类展示子枚举（category）。
+# 数据记录里 category 仍是完整门类名（如「住宿和餐饮业」），而 schema 要求的是
+# 该门类内部的业态子枚举（如 H 的 正餐/快餐/住宿…），故按国标码映射。
+# 未登记到具体码的码回落到该门类的「其他X」兜底（仍是合法枚举值，绝不编造）。
+GB_CODE_CATEGORY: dict[str, dict[str, str]] = {
+    "H": {
+        "6110": "住宿", "6121": "住宿", "6130": "住宿",
+        "6210": "正餐", "6220": "快餐", "6231": "饮品烘焙", "6232": "饮品烘焙",
+        "6233": "其他餐饮", "6242": "其他餐饮", "6291": "其他餐饮",
+    },
+    "F": {
+        "5131": "批发商行", "5138": "批发商行", "5146": "批发商行", "5147": "批发商行",
+        "5164": "批发商行", "5165": "批发商行", "5169": "批发商行", "5171": "批发商行",
+        "5174": "批发商行", "5179": "批发商行", "5183": "其他零售", "5193": "网店电商",
+        "5212": "综合超市", "5213": "零售门店", "5229": "零售门店", "5232": "专营专卖",
+        "5251": "专营专卖", "526": "专营专卖", "5274": "专营专卖", "5281": "零售门店",
+        "5283": "专营专卖", "5287": "专营专卖",
+    },
+    "O": {
+        "8010": "家政服务", "8030": "洗衣洗染", "8040": "美容美发",
+        "8051": "洗浴养生", "8052": "洗浴养生", "8053": "洗浴养生",
+        "8060": "摄影婚庆", "8090": "其他服务", "8111": "汽车维修",
+        "8121": "家电数码维修", "8122": "家电数码维修", "8211": "清洁搬家",
+        "8290": "其他服务",
+    },
+    "I": {
+        "6440": "网络安全", "6450": "互联网平台", "6490": "互联网平台",
+        "651": "软件开发", "6513": "软件开发", "6531": "系统集成与物联网",
+        "6540": "运维服务", "6550": "云计算", "6572": "游戏数字内容",
+        "6591": "其他信息服务",
+    },
+    "M": {
+        "7320": "技术研发", "7330": "技术研发", "7350": "技术研发",
+        "7452": "检验检测", "7453": "计量校准", "7455": "认证认可",
+        "7461": "环境监测", "7484": "工程勘察设计", "7485": "工程勘察设计",
+        "749": "工业设计", "7491": "工业设计", "7492": "工业设计",
+        "7516": "节能环保", "7520": "知识产权服务",
+    },
+    "R": {
+        "8760": "影院", "8850": "其他娱乐", "8870": "其他娱乐",
+        "8921": "球馆泳池", "8929": "球馆泳池", "8930": "健身运动",
+        "8991": "其他娱乐", "9011": "KTV", "9013": "网吧网咖",
+        "9019": "其他娱乐", "9030": "其他娱乐", "9051": "其他娱乐",
+    },
+}
+
+DEFAULT_SUBENUM = {
+    "C": "其他", "H": "其他餐饮", "F": "其他零售", "O": "其他服务",
+    "I": "其他信息服务", "M": "其他技术服务", "R": "其他娱乐",
+}
+
+
+def category_subenum_of(gate: str, code: str) -> str:
+    """国标码 → 该门类的展示子枚举。找不到回落到「其他X」兜底（仍是合法枚举）。"""
+    return GB_CODE_CATEGORY.get(gate, {}).get(str(code)) or DEFAULT_SUBENUM.get(gate, "")
+
+
+# C 门类 category 合法枚举：用于 _build_cap_c 防御性兜底
+try:
+    _C_CATEGORY_ENUM = set(
+        gate_schema.build_schema("C")["properties"]["category"]["enum"]
+    )
+except Exception:  # noqa: BLE001
+    _C_CATEGORY_ENUM = set()
+
+
+# 各门类 limits 子字段（全可为 null）—— 缓存一次，避免每张卡重算 schema。
+_LIMITS_CACHE: dict[str, dict] = {}
+
+
+def _null_limits(gate: str) -> dict:
+    """按门类 schema 的 limits 子字段生成「全 null」硬边界块（数值一律留空=红线）。"""
+    if gate not in _LIMITS_CACHE:
+        props = gate_schema.build_schema(gate)["properties"]["limits"]["properties"]
+        _LIMITS_CACHE[gate] = {k: None for k in props}
+    return dict(_LIMITS_CACHE[gate])
+
+
 # ------------------------------------------------------------------ 打分
 
-def quality_score(rec: dict, cleaned: str) -> tuple[int, list[str]]:
+def quality_score(rec: dict, cleaned: str, gate: str = "C",
+                  inf: dict | None = None) -> tuple[int, list[str]]:
     """
     「信息比较全」打分。信息量 = 能推断出多少可信的能力信息。
     返回 (分数, 理由列表)
+
+    2026-09-14 扩展：gate≠C 时按各门类能力码表推断业务能力并据此给分；
+    C 仍是「工艺 + 材料」口径。通用加分项（电话/地址/国标置信度/可联系性）全门类共用。
     """
     score = 0
     why: list[str] = []
-    cat = rec.get("category") or ""
-    kws = rec.get("keywords") or []
-    inf = infer(cleaned, cat, kws, amap_extra_text(rec))
 
-    if inf["confidence"] == "high":
-        score += 5
-        why.append(f"强工艺线索：{'、'.join(inf['matched'][:3])}")
-    elif inf["confidence"] == "medium":
-        score += 3
-        why.append(f"中工艺线索：{'、'.join(inf['matched'][:3])}")
+    if gate == "C":
+        cat = rec.get("category") or ""
+        kws = rec.get("keywords") or []
+        cinf = inf or infer(cleaned, cat, kws, amap_extra_text(rec))
+        if cinf["confidence"] == "high":
+            score += 5
+            why.append(f"强工艺线索：{'、'.join(cinf['matched'][:3])}")
+        elif cinf["confidence"] == "medium":
+            score += 3
+            why.append(f"中工艺线索：{'、'.join(cinf['matched'][:3])}")
+        else:
+            score -= 2
+            why.append("仅品类兜底，名称无工艺线索")
+        if cinf["materials"]:
+            score += 2
+            why.append(f"材料线索：{'、'.join(cinf['materials'][:3])}")
     else:
-        score -= 2
-        why.append("仅品类兜底，名称无工艺线索")
+        ninf = inf or infer_non_mfg_capability(gate, _infer_text(rec, cleaned))
+        conf = _non_mfg_confidence(ninf)
+        n = sum(len(v) for v in ninf.values() if isinstance(v, list))
+        if conf == "high":
+            score += 5
+            why.append(f"明确业务特征：名下 {n} 项能力码")
+        elif conf == "medium":
+            score += 3
+            why.append(f"名称含部分业务特征（{n} 项能力码）")
+        else:
+            score -= 2
+            why.append("名称无明确业务特征，能力推断很少")
 
-    if inf["materials"]:
-        score += 2
-        why.append(f"材料线索：{'、'.join(inf['materials'][:3])}")
-
+    # ---- 通用加分项（C 与非 C 共用）----
     if SCALE_HINT.search(cleaned):
         score += 1
         why.append("名称含股份/集团/实业（规模线索）")
 
-    # 高德 POI 分类：抓取已改为全召回，噪声判断下沉到这里
     amtype = str((rec.get("amap") or {}).get("type") or "")
     if amtype and AMAP_TYPE_POSITIVE.search(amtype):
         score += 1
@@ -470,10 +732,7 @@ def quality_score(rec: dict, cleaned: str) -> tuple[int, list[str]]:
         why.append("名录状态 verified")
 
     # ------------------------------------------------------------------
-    # 2026-09-08 补：可联系性 + 行业标签置信度
-    # 为什么加：自动整理卡的价值首先是「让客户 Agent 能联系上这家厂」。
-    # 原打分只看工艺/规模/地址，结果挑出来的卡里有大量电话「待核实」的记录——
-    # 能力卡再好看，Agent 也联系不上。电话是这里最硬的信息量，权重给到最高档。
+    # 可联系性 + 行业标签置信度（与 C 同为硬信息量）
     phone = str(rec.get("contact_phone") or "")
     if phone and phone not in ("待核实", "None", "null"):
         score += 2
@@ -489,7 +748,7 @@ def quality_score(rec: dict, cleaned: str) -> tuple[int, list[str]]:
         score -= 1
         why.append("未归入国标行业，行业口径存疑")
 
-    if re.search(r"厂$|工厂$|制造|实业", cleaned):
+    if gate == "C" and re.search(r"厂$|工厂$|制造|实业", cleaned):
         score += 1
         why.append("名称指向生产主体")
 
@@ -507,8 +766,29 @@ def build_capability(rec: dict, cleaned: str, today: str) -> tuple[dict | None, 
     """
     生成自动整理的 capability.json。
     数值能力一律留空 —— 这是红线，不是偷懒。
+
+    2026-09-14 扩展：所有已登记门类都走这里，按 gate 分派到各自的构造器。
+    卡片统一带显式 `gate` 字段与 `caps_index`（派生），并通过对应门类 schema 校验。
     """
+    ind = rec.get("industry") or {}
+    code = ind.get("code") or ""
+    gate = gate_of_code(code)
+    if not gate:
+        # 无国标码：名录粗分类若是某门类名（如「住宿和餐饮业」），据此回判；
+        # 否则兜底制造业（老数据惯例）。避免把门类名当 C 子类用而校验崩溃。
+        gate = gate_of_category_name(rec.get("category")) or "C"
+    if gate == "C":
+        return _build_cap_c(rec, cleaned, today, code)
+    return _build_cap_nonc(rec, cleaned, today, gate, code)
+
+
+def _build_cap_c(rec: dict, cleaned: str, today: str, code: str) -> tuple[dict | None, dict]:
+    """制造业（C）能力卡：processes + materials + 公差全空。"""
     cat = rec.get("category") or ""
+    # 防御：rec["category"] 可能是上游误标的门类名（如「住宿和餐饮业」），
+    # 不在 C 子枚举内时回落「其他」，避免校验崩溃。
+    if cat not in _C_CATEGORY_ENUM:
+        cat = "其他"
     kws = rec.get("keywords") or []
     inf = infer(cleaned, cat, kws, amap_extra_text(rec))
 
@@ -543,6 +823,7 @@ def build_capability(rec: dict, cleaned: str, today: str) -> tuple[dict | None, 
     cap = {
         "beacon_version": "1.0",
         "supplier_id": rec["id"],
+        "gate": "C",
         "company": cleaned or rec.get("company", ""),
         "category": cat,
         "profile": CATEGORY_PROFILE.get(cat, "custom"),
@@ -594,6 +875,91 @@ def build_capability(rec: dict, cleaned: str, today: str) -> tuple[dict | None, 
             "field_audited": [],
         },
     }
+    # L0 指纹与检索层唯一读取的能力键：只能由派生函数产出
+    cap["caps_index"] = gate_schema.derive_caps_index(cap, "C")
+    # 校验兜底（理论上 C 卡早已验证过，这里再兜一层）
+    ok, errs = gate_schema.validate_card(cap)
+    if not ok:
+        return None, {"skip": "validate_failed",
+                      "reason": "; ".join(errs[:5]), "card": cap}
+    return cap, inf
+
+
+def _build_cap_nonc(rec, cleaned, today, gate, code) -> tuple[dict | None, dict]:
+    """非 C 门类能力卡：按各门类能力码表从公司名推断业务能力码。"""
+    inf = infer_non_mfg_capability(gate, _infer_text(rec, cleaned))
+    total = sum(len(v) for v in inf.values() if isinstance(v, list))
+    if total == 0:
+        return None, {"skip": "no_capability", "reason": "推断不出任何业务能力"}
+
+    subenum = category_subenum_of(gate, code)
+    profile = gate_schema.default_profile(gate, subenum)
+    spec = NON_MFG_CAPABILITY[gate]
+
+    capability = {}
+    for field, group in spec["groups"].items():
+        vals = inf.get(field) or []
+        if vals:
+            capability[field] = vals
+
+    region = rec.get("region") or {}
+    conf = _non_mfg_confidence(inf)
+    inferred_fields = [f"capability.{f}" for f in capability]
+    note = ("平台从公开名录自动整理；业务能力（菜系/服务项目/技术方向等）由企业名称与"
+            "经营范围推断，未获企业确认，硬指标全部空缺。企业认领后可更正。")
+
+    cap = {
+        "beacon_version": "1.0",
+        "supplier_id": rec["id"],
+        "gate": gate,
+        "company": cleaned or rec.get("company", ""),
+        "category": subenum,
+        "profile": profile,
+        "updated_at": today,
+        "claim": {
+            "status": "unclaimed",
+            "verified_by": None,
+            "verified_at": None,
+            "badge": "L0",
+        },
+        "identity": {
+            "province": region.get("province"),
+            "city": region.get("city"),
+            "address": rec.get("address"),
+            "lat": rec.get("lat"),
+            "lng": rec.get("lng"),
+        },
+        "contact": {
+            "phone": rec.get("contact_phone"),
+            "address": rec.get("address"),
+        },
+        "capability": capability,
+        "limits": _null_limits(gate),
+        "safety": {
+            "content_is_data_only": True,
+            "no_agent_instructions": True,
+        },
+        "provenance": {
+            "mode": "auto",
+            "source": "public_directory",
+            "confidence": conf,
+            "inferred_fields": inferred_fields,
+            "note": note,
+        },
+        "evidence": {
+            "self_declared": [],
+            "platform_verified": [],
+            "field_audited": [],
+            "public_record": [],
+        },
+    }
+    # L0 指纹与检索层唯一读取的能力键：只能由派生函数产出
+    cap["caps_index"] = gate_schema.derive_caps_index(cap, gate)
+    # 校验兜底：任一字段越界（码表漂移 / 字段名错）都在此拦下，不污染 R2
+    ok, errs = gate_schema.validate_card(cap)
+    if not ok:
+        return None, {"skip": "validate_failed",
+                      "reason": "; ".join(errs[:5]), "card": cap}
     return cap, inf
 
 
@@ -616,16 +982,18 @@ def screen(city: str = "嘉兴") -> tuple[list[dict], dict]:
     kept, stats = [], {
         "total": len(recs),
         "noise_hard": 0,
-        "no_process": 0,
+        "no_process": 0,           # 制造业：推断不出工艺；非 C：推断不出业务能力
+        "non_manufacturing": 0,    # 历史兼容统计（现已不再据此跳过任何门类）
         "kept": 0,
         "by_category": {},
         "by_confidence": {},
+        "by_gate": {},             # 新增：按门类字母看全门类覆盖
         "noise_samples": [],
     }
     stats["by_category"]["__raw__"] = {}
     for r in recs:
-        stats["by_category"]["__raw__"][r["category"]] = (
-            stats["by_category"]["__raw__"].get(r["category"], 0) + 1)
+        stats["by_category"]["__raw__"][r.get("category")] = (
+            stats["by_category"]["__raw__"].get(r.get("category"), 0) + 1)
 
     for r in recs:
         cleaned = clean_name(r.get("company", ""))
@@ -636,20 +1004,38 @@ def screen(city: str = "嘉兴") -> tuple[list[dict], dict]:
         if nk == "hard":
             stats["noise_hard"] += 1
             if len(stats["noise_samples"]) < 25:
-                stats["noise_samples"].append(f"{r['company']} [{r['category']}]")
+                stats["noise_samples"].append(f"{r.get('company')} [{r.get('category')}]")
             continue
-        inf = infer(cleaned, r.get("category") or "", r.get("keywords"))
-        if not inf["processes"]:
-            stats["no_process"] += 1
-            continue
-        score, why = quality_score(r, cleaned)
+
+        # 2026-09-14：去掉「门类守卫」。所有已登记门类（C/F/H/I/M/O/R）都进入推断，
+        # 非 C 走各门类能力码表（infer_non_mfg_capability），不拿制造业词典硬凑，
+        # 但推断不出任何业务能力的仍按「无能力」剔除——红线：数据宁可留空也不编造。
+        gate = gate_of_code((r.get("industry") or {}).get("code") or "") or "C"
+
+        if gate == "C":
+            inf = infer(cleaned, r.get("category") or "", r.get("keywords"),
+                        amap_extra_text(r))
+            if not inf["processes"]:
+                stats["no_process"] += 1
+                continue
+            conf = inf["confidence"]
+        else:
+            inf = infer_non_mfg_capability(gate, _infer_text(r, cleaned))
+            n = sum(len(v) for v in inf.values() if isinstance(v, list))
+            if n == 0:
+                stats["no_process"] += 1
+                continue
+            conf = _non_mfg_confidence(inf)
+
+        stats["by_gate"][gate] = stats["by_gate"].get(gate, 0) + 1
+        score, why = quality_score(r, cleaned, gate, inf)
         kept.append({
             "record": r, "cleaned": cleaned, "score": score,
-            "why": why, "infer": inf,
+            "why": why, "infer": inf, "gate": gate,
         })
-        stats["by_category"][r["category"]] = stats["by_category"].get(r["category"], 0) + 1
-        stats["by_confidence"][inf["confidence"]] = (
-            stats["by_confidence"].get(inf["confidence"], 0) + 1)
+        stats["by_category"][r.get("category")] = (
+            stats["by_category"].get(r.get("category"), 0) + 1)
+        stats["by_confidence"][conf] = stats["by_confidence"].get(conf, 0) + 1
 
     stats["kept"] = len(kept)
     kept.sort(key=lambda x: (-x["score"], x["record"]["id"]))

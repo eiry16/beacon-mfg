@@ -99,13 +99,17 @@ class BuyerToolBox(
                 fn(
                     "search_suppliers",
                     if (en) {
-                        "Search manufacturing suppliers by sourcing need. The keyword can be a product " +
-                            "name, a process name or a sourcing term (e.g. gear, injection molding, " +
-                            "conveyor line, anodizing). Results are ordered by evidence strength — " +
-                            "always report the evidence tier honestly."
+                        "Search companies in a Chinese business directory by keyword. Covers all " +
+                            "industries, not just manufacturing: the keyword may be a product or " +
+                            "process (gear, injection molding, conveyor line, anodizing) or a " +
+                            "service/business type (hotel, restaurant, software, logistics). " +
+                            "Results are ordered by evidence strength — always report the " +
+                            "evidence tier honestly."
                     } else {
-                        "按采购需求检索制造业供应商。关键词可以是产品名、工艺名或采购词" +
-                            "（如 齿轮、注塑、输送线、阳极氧化）。返回结果按证据强度排序，务必如实说明证据档位。"
+                        "按关键词检索中国企业名录，覆盖全部行业门类，不限于制造业。" +
+                            "关键词可以是产品名、工艺名或采购词" +
+                            "（如 齿轮、注塑、输送线、阳极氧化），也可以是经营/服务类型" +
+                            "（如 酒店、餐厅、软件、物流）。返回结果按证据强度排序，务必如实说明证据档位。"
                     },
                     JSONObject()
                         .put(

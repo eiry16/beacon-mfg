@@ -202,13 +202,16 @@ class VendorToolBox(
                     t(
                         "把**名录里还没有的**企业登记进来，平台会分配一个新的供应商 ID。" +
                             "必须先调 find_my_company，**确实搜不到才用它**——名录里已经有的企业走认领，不走注册。" +
-                            "需要三样，缺一不可：营业执照上的公司全称、经营地址、主品类。" +
-                            "成功之后照常发验证码核验手机号，再开始采集资料。",
+                            "需要三样，缺一不可：营业执照上的公司全称、经营地址、门类（gate）。" +
+                            "**登记的第一件事就是问『你们公司是做什么的』**，据回答先定 gate——" +
+                            "绝不能默认成制造业。成功之后照常发验证码核验手机号，再开始采集资料。",
                         "Register a company the directory does not have yet; the platform assigns a new " +
                             "supplier ID. **Call find_my_company first — only use this when it truly finds " +
                             "nothing.** Companies already in the directory go through claiming instead. " +
                             "Needs three things, none optional: the full legal name on the licence, the " +
-                            "business address, and the main category. Afterwards verify their phone by SMS."
+                            "business address, and the industry gate. **The first registration question " +
+                            "must be 'what does your company do?'** — decide the gate from the answer; " +
+                            "never default to manufacturing. Afterwards verify their phone by SMS."
                     ),
                     JSONObject()
                         .put(
@@ -223,20 +226,39 @@ class VendorToolBox(
                             "category",
                             s(
                                 t(
-                                    "主品类，**必须从平台品类表里选最接近的一个**：" +
-                                        "精密机械加工 / 钣金冲压 / 注塑成型 / 压铸 / 电子元器件 / " +
-                                        "表面处理 / 标准件 / 原材料 / 其他。" +
-                                        "对方说的业务不在前八个里就用「其他」——" +
+                                    "主品类，按门类从平台品类表里选最接近的一个。" +
+                                        "制造业（C）：精密机械加工 / 钣金冲压 / 注塑成型 / 压铸 / " +
+                                        "电子元器件 / 表面处理 / 标准件 / 原材料 / 成套设备制造 / 其他；" +
+                                        "非制造业可选：信息技术服务 / 餐饮 / 居民服务 / 娱乐 / " +
+                                        "科研与技术服务 / 零售，不确定就留空、只填 gate。" +
+                                        "对方说的业务不在表里就用「其他」——" +
                                         "不要自造词（如「精密钣金」「五金」），那些存不进系统。",
-                                    "Main category — **must be one of**: 精密机械加工 / 钣金冲压 / 注塑成型 / " +
-                                        "压铸 / 电子元器件 / 表面处理 / 标准件 / 原材料 / 其他. " +
+                                    "Main category — pick the closest from the platform list, by gate. " +
+                                        "Manufacturing (C): 精密机械加工 / 钣金冲压 / 注塑成型 / 压铸 / " +
+                                        "电子元器件 / 表面处理 / 标准件 / 原材料 / 成套设备制造 / 其他. " +
+                                        "Non-manufacturing: 信息技术服务 / 餐饮 / 居民服务 / 娱乐 / " +
+                                        "科研与技术服务 / 零售 — or leave blank and set gate only. " +
                                         "Use 其他 when nothing fits; do not invent your own label."
                                 )
                             )
                         )
+                        .put(
+                            "gate",
+                            s(t(
+                                "**必填。企业所属 GB/T 4754 门类字母：制造业=C，软件/信息技术=I，" +
+                                    "餐饮/住宿=H，居民服务/修理=O，零售=F，科研/检测/设计=M，文化娱乐=R。" +
+                                    "必须在登记前问清『你们是做什么的』来定，绝不能默认成 C。" +
+                                    "它决定采集问句模板和认证评分口径。",
+                                "**Required.** GB/T 4754 gate letter: C=manufacturing, I=software/IT, " +
+                                    "H=hospitality, O=resident services/repair, F=retail, M=R&D/technical, " +
+                                    "R=entertainment. Ask 'what does your company do?' FIRST and decide " +
+                                    "from the answer — never default to C. It decides the interview " +
+                                    "template and how certification is scored."
+                            ))
+                        )
                         .put("contact_name", s(t("联系人姓名，可留空", "Contact name; optional")))
                         .put("contact_phone", s(t("对方提供的 11 位手机号，可留空", "Their 11-digit mobile number; optional"))),
-                    listOf("company", "address", "category")
+                    listOf("company", "address", "gate")
                 )
             )
             .put(
@@ -671,6 +693,7 @@ class VendorToolBox(
         val company = a.optString("company", "").trim()
         val address = a.optString("address", "").trim()
         val category = a.optString("category", "").trim()
+        val gate = a.optString("gate", "").trim()
 
         // 三个门禁在本地先拦一道：服务端同样会拒（company≥2 / address≥4 / 未命中时 category 必填），
         // 但白跑一趟网络再报错，对方要干等十几秒，不如当场说清楚缺什么。
@@ -690,13 +713,18 @@ class VendorToolBox(
                 )
             )
         }
-        if (category.isEmpty()) {
+        if (category.isEmpty() && gate.isEmpty()) {
             return failed(
                 t(
-                    "还缺主品类。注册得先知道这家厂做什么才能归到正确的行业下面——" +
-                        "「做五金」这种太泛，要具体到「精密钣金」「注塑」这一层。",
-                    "The main category is missing. Registration needs to know what they make so the company " +
-                        "lands in the right industry — \"metalwork\" is too broad; be specific."
+                    "还缺门类信息，而且**不能默认成制造业**。回到对方那句话：「你们公司是做什么的？」" +
+                        "据回答定门类字母 gate（制造业=C、软件/信息技术=I、餐饮/住宿=H、" +
+                        "居民服务/修理=O、零售=F、科研/检测/设计=M、文化娱乐=R）；" +
+                        "拿不准就复述他的业务让他确认。",
+                    "The industry gate is missing — and never default to manufacturing. Go back and ask " +
+                        "\"What does your company do?\", then set the gate letter from the answer " +
+                        "(C=manufacturing, I=software/IT, H=hospitality, O=resident services/repair, " +
+                        "F=retail, M=R&D/technical, R=entertainment). If unsure, read their business " +
+                        "back and let them confirm."
                 )
             )
         }
@@ -705,7 +733,7 @@ class VendorToolBox(
         val phone = a.optString("contact_phone", "").trim().takeIf { it.isNotBlank() }?.let { cnPhone(it) }
         val name = a.optString("contact_name", "").trim().ifBlank { null }
 
-        val r = api.certifyApply(company, address, category, name, phone)
+        val r = api.certifyApply(company, address, category, name, phone, gate = gate)
         val sid = r.optString("supplier_id").takeIf { it.isNotBlank() }
         val matched = r.optBoolean("matched_existing", false)
 

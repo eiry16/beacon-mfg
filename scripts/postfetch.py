@@ -87,8 +87,9 @@ except Exception:
     pass
 
 # 顺序即依赖，见文件头。别乱排。
-ALL_STEPS = ("classify", "gbindex", "index", "fingerprint", "autoprofile", "shards",
-             "manifest", "assets", "readme", "validate", "r2", "pages")
+ALL_STEPS = ("classify", "gbindex", "recat", "enrefile", "index", "fingerprint",
+             "autoprofile", "shards", "manifest", "git", "assets", "readme", "validate",
+             "r2", "pages")
 
 # gen_manifest 的列式层（pq）依赖 pyarrow，缺省就静默少一层 —— 清单看着变绿，
 # 实则少了 pq。这里的兜底顺序：当前解释器 → 环境变量 BMFG_PY_PQ → 本机已知 venv。
@@ -107,11 +108,14 @@ def last_failed() -> list[str]:
 _STEP_DESC = {
     "classify": "补写国标行业标签",
     "gbindex": "重建 gb-index.json（id→文件主索引）",
+    "enrefile": "英文镜像按国标码重新落位（重分类后必须搬）",
+    "recat": "category 重算为 industry.code 的派生值（清错标残留）",
     "index": "重建行业/地域索引 + 品类计数",
     "fingerprint": "重建 L0 指纹国标分片",
     "autoprofile": "给本轮新抓城市补未认证能力卡（调 batch_auto_profile）",
     "shards": "重建 L1 能力卡国标分片",
     "manifest": "重算分片清单（sha1/行数）",
+    "git": "提交并推送 L0 数据到 GitHub（让 jsDelivr/Pages 拿到新鲜分片）",
     "assets": "同步 App 内置资产（APK assets）",
     "readme": "同步 README.md 里的统计数字",
     "validate": "全量严格校验 + 重生成 DATA_STATS",
@@ -185,6 +189,32 @@ def step_gbindex(dry_run: bool = False) -> None:
     after = (meta or {}).get("total_suppliers")
     if before and after:
         print("   [gb-index] 主索引 %d → %d 家" % (before, after))
+
+
+def step_enrefile(dry_run: bool = False) -> None:
+    """英文镜像按国标码重新落位。
+
+    为什么必须单列一步（2026-09-14）：中文库重分类后（比如把「粮食/食品/纺织」
+    这些原本被 OUT_OF_SCOPE 丢成 industry=null 的记录改判到真实国标码），
+    英文镜像不会自动跟着搬 —— 它们还躺在 data/en/gb/_unclassified.json，
+    validate 于是报 254 条「落位错误」，r2/pages 全被跳过。
+    """
+    rc = _call("en_refile", *([] if dry_run else ["--apply"]))
+    if rc:
+        raise RuntimeError(f"en_refile.py 返回 {rc}")
+
+
+def step_recat(dry_run: bool = False) -> None:
+    """category 重算为 industry.code 的派生值。
+
+    classify 会修正 industry.code，却不会回头更新 category —— 后者停留在
+    抓取时按关键词写入的旧值，于是和门类对不上（2026-09-14 实测 1426 条，
+    典型如药店 5251 被标成制造业的「原材料」）。客户 Agent 按品类检索
+    会因此错配。必须在 index（重算品类计数）之前跑。
+    """
+    rc = _call("recat", *([] if dry_run else ["--apply"]))
+    if rc:
+        raise RuntimeError(f"recat.py 返回 {rc}")
 
 
 def _index_total() -> int | None:
@@ -401,14 +431,76 @@ def step_pages(dry_run: bool = False) -> None:
         raise RuntimeError(f"deploy_pages.py 返回 {done.returncode}")
 
 
+def step_git(dry_run: bool = False) -> None:
+    """把本轮重建出来的 L0 数据提交并推送到 GitHub。
+
+    为什么必须有这一步（2026-09-14 复盘）：抓后流水线一直只做「派生层重建 → 上传 R2
+    → 发布 Pages」，从没有一步把 L0 数据回写 git。于是 jsDelivr（乃至 Pages 的 L0 镜像）
+    永远停在旧快照——本地 584 个分片、GitHub HEAD 只有 346 个，新门类（H/I/M/O/R）
+    整批进不了 App。用户端表现就是「主源不通 / 数据永远是旧的那版」。
+
+    **只提交 L0 数据目录**，不碰源码、文档、APK、.backup_legacy 等：抓取流水线
+    的职责是数据，源码改动由开发者单独 review 提交。
+
+    推送走仓库已配好的 core.sshCommand（中文路径 id_ed25519 + 跳过 known_hosts），
+    不需要额外的凭据。没有改动就静默跳过（不是失败）。
+    """
+    L0_PATHS = (
+        "data/gb", "data/en", "data/manifest.json", "data/index.json",
+        "data/gb-index.json", "data/phone-index.jsonl", "data/region-index.json",
+        "data/fetch_cursor.json", "skills/registry/fingerprint",
+        "skills/registry/index.json", "skills/registry/gb-proc-map.json",
+    )
+
+    def _g(args: list[str]) -> tuple[int, str]:
+        p = subprocess.run(["git", "-C", str(ROOT)] + args,
+                           capture_output=True, text=True)
+        return p.returncode, (p.stdout + p.stderr).strip()
+
+    # 先看这些路径里有没有改动，没有就别硬提交
+    rc, out = _g(["status", "--porcelain", "--", *L0_PATHS])
+    if rc:
+        raise RuntimeError(f"git status 返回 {rc}: {out}")
+    changed = [ln for ln in out.splitlines() if ln.strip()]
+    if not changed:
+        print("   （跳过：L0 数据无改动）")
+        return
+    if dry_run:
+        print("   （--dry-run：以下 L0 改动不提交，仅预览）")
+        for ln in changed[:20]:
+            print("     " + ln)
+        if len(changed) > 20:
+            print(f"     … 还有 {len(changed) - 20} 条")
+        return
+
+    # 仅 add 指定的 L0 路径（绝不用 git add -A，避免把源码/APK 一起卷进去）
+    for p in L0_PATHS:
+        subprocess.run(["git", "-C", str(ROOT), "add", "--", p],
+                       capture_output=True, text=True)
+    rc, out = _g(["commit", "-m",
+                  "chore(data): 自动同步 L0 分片（%d 个文件）" % len(changed)])
+    if rc:
+        # commit 在没东西可提交时会返回 1，但这里已经确认有改动；真失败就抛出
+        raise RuntimeError(f"git commit 返回 {rc}: {out}")
+    print("   [git] 已提交 L0 数据 %d 个文件" % len(changed))
+    rc, out = _g(["push", "origin", "main"])
+    if rc:
+        # 推送失败不要把已提交的数据丢掉，但要让流水线知道没同步上去
+        raise RuntimeError(f"git push 返回 {rc}: {out}")
+    print("   [git] 已推送到 origin/main")
+
+
 _STEP_FN = {
     "classify": step_classify,
     "gbindex": step_gbindex,
+    "enrefile": step_enrefile,
+    "recat": step_recat,
     "index": step_index,
     "fingerprint": step_fingerprint,
     "autoprofile": step_autoprofile,
     "shards": step_shards,
     "manifest": step_manifest,
+    "git": step_git,
     "assets": step_assets,
     "readme": step_readme,
     "validate": step_validate,

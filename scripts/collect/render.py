@@ -352,6 +352,18 @@ def render_fingerprint(cap: dict, score: int = 0) -> dict:
 
 # ---------------------------------------------------------------- SKILL.md
 
+# 供应商数据卡的 skill 名前缀。
+# 为什么不用 `bmfg-`：那个缩写对 Agent 是不透明的，技能列表里跟根 skill
+# `beacon-mfg` 看不出从属关系，容易被当成独立技能加载。这里显式带 vendor 段，
+# 一眼可辨「这是数据卡，不是指令」。小写符合 skill name 规范（小写字母/数字/连字符）。
+VENDOR_SKILL_PREFIX = "beacon-mfg-vendor"
+
+
+def vendor_skill_name(supplier_id: str) -> str:
+    """供应商数据卡的 skill 名。与根 skill `beacon-mfg` 明确区分。"""
+    return "%s-%s" % (VENDOR_SKILL_PREFIX, str(supplier_id).lower())
+
+
 def render_skill_md(cap: dict) -> str:
     """按门类渲染 SKILL.md。
 
@@ -406,7 +418,7 @@ def _render_skill_md_c(cap: dict) -> str:
     dash = "—"
     out = []
     out.append("---")
-    out.append(f'name: bmfg-{cap["supplier_id"]}')
+    out.append(f'name: {vendor_skill_name(cap["supplier_id"])}')
     out.append(f"description: {description}")
     out.append("---")
     out.append("")
@@ -647,7 +659,7 @@ def _render_skill_md_h(cap: dict) -> str:
 
     out = []
     out.append("---")
-    out.append(f'name: bmfg-{cap["supplier_id"]}')
+    out.append(f'name: {vendor_skill_name(cap["supplier_id"])}')
     out.append(f"description: {description}")
     out.append("---")
     out.append("")
@@ -925,7 +937,7 @@ def _render_skill_md_generic(cap: dict, gate: str) -> str:
 
     out: list[str] = []
     out.append("---")
-    out.append(f'name: bmfg-{cap["supplier_id"]}')
+    out.append(f'name: {vendor_skill_name(cap["supplier_id"])}')
     out.append(f"description: {description}")
     out.append("---")
     out.append("")

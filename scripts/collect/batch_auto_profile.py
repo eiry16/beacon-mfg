@@ -131,7 +131,10 @@ def run_city(city: str, limit: int, min_score: int, dry_run: bool,
             append_fingerprint(cap, sc)
             ok += 1
             cat_cnt[cap["category"]] += 1
-            conf_cnt[inf["confidence"]] += 1
+            # 置信度统一从卡的 provenance 读：C 的 inf 有 confidence 键，
+            # 但非 C 的 inf 是能力码字典（无 confidence 键），直接 inf["confidence"]
+            # 会 KeyError。provenance.confidence 两分支都有且语义一致。
+            conf_cnt[cap.get("provenance", {}).get("confidence")] += 1
             scores.append(sc)
         except Exception as e:
             failed.append((p["record"]["id"], f"{type(e).__name__}: {e}"))

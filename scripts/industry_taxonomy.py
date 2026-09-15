@@ -184,37 +184,56 @@ CATEGORY_OF_CODE = {
     "3130": "原材料", "3240": "原材料", "3251": "原材料", "3252": "原材料",
     "3259": "原材料", "5164": "原材料", "5165": "原材料", "5169": "原材料",
     "5174": "原材料", "5179": "原材料",
-    # 非制造新门类（service tier）：实体门店服务，与制造/批发互补
-    # 让 legacy category 字段落到正确品类名，而不是被 DEFAULT_CATEGORY 误标成"精密机械加工"
-    "6210": "餐饮", "6220": "餐饮", "6231": "餐饮", "6232": "餐饮", "6233": "餐饮",
-    "6291": "餐饮", "6299": "餐饮",
-    "6110": "住宿", "6120": "住宿", "6130": "住宿", "6190": "住宿",
-    "8010": "居民服务", "8020": "居民服务", "8030": "居民服务", "8040": "居民服务",
-    "8051": "居民服务", "8052": "居民服务", "8053": "居民服务",
-    "8060": "居民服务", "8070": "居民服务", "8090": "居民服务",
-    "8111": "修理", "8112": "修理", "8113": "修理", "8119": "修理",
-    "8121": "修理", "8122": "修理", "8129": "修理",
-    "8210": "其他服务", "8220": "其他服务", "8290": "其他服务",
+    # 非制造门类不在此表登记 —— 走下面的「门类兜底」。
+    # 2026-09-14 前这里写的是 6210->"餐饮"、8040->"居民服务" 之类的中文标签，
+    # 但那不是合法值：validate.py 的 category 值域 = 8 个制造业品类名 ∪ 门类 gate_name
+    # （见 validate.py valid_categories）。写"餐饮"会让 CI 报「未知 category」，
+    # 于是服务业数据一进来就红。改成按门类兜底返回 gate_name，口径与
+    # sync_vendor_skills.py「非 C 门类用门类名」一致。
 }
 
-# 大类 → 品类兜底（手工映射未覆盖时用）
+# 大类 → 品类兜底（手工映射未覆盖时用）。只登记制造业/批发零售的大类。
 _DIVISION_CATEGORY = {
     "33": "钣金冲压", "34": "精密机械加工", "35": "精密机械加工",
     "36": "精密机械加工", "37": "精密机械加工", "38": "电子元器件",
     "39": "电子元器件", "40": "精密机械加工", "29": "注塑成型",
     "26": "原材料", "30": "原材料", "31": "原材料", "32": "原材料",
-    "51": "原材料", "52": "原材料",
+    # ⚠ 51（批发业）/ 52（零售业）**不能**再映射成「原材料」——那是 C 制造业的
+    # 品类名。F 门类现在已是登记门类，让它们回落到 GATES["F"] = 「批发和零售业」。
+    # 旧口径实测把 2018 条 F 记录（药店 5251、便利店 5213、超市 5212…）全标成
+    # 制造业的「原材料」，客户 Agent 查「原材料」时返回一堆药店 —— 纯错标。
 }
 DEFAULT_CATEGORY = "精密机械加工"
 
 
+def _registered_gates() -> tuple:
+    """已登记门类字母（读 skills/schema/gates/*.json，不 import gate_schema 避免循环）。"""
+    d = ROOT / "skills" / "schema" / "gates"
+    if d.is_dir():
+        g = tuple(sorted(p.stem for p in d.glob("*.json")))
+        if g:
+            return g
+    return ("C", "F")
+
+
 def category_of(code: str) -> str:
-    """国标代码 → 存储品类文件名（不含 .json）。"""
+    """国标代码 → 存储品类（C 门类）/ 门类名（非 C 门类）。
+
+    非 C 门类**必须**在 DEFAULT_CATEGORY 之前拦掉：
+    不拦的话 6513 应用软件开发、8930 健身休闲活动 都会被标成「精密机械加工」，
+    客户 Agent 看到的就是错标数据。门类名是 validate.py 认可的合法值，
+    也与 sync_vendor_skills.py 建档时的口径一致。
+    """
     code = str(code)
     if code in CATEGORY_OF_CODE:
         return CATEGORY_OF_CODE[code]
     if not code[:1].isalpha() and len(code) >= 2:
-        return _DIVISION_CATEGORY.get(code[:2], DEFAULT_CATEGORY)
+        div = code[:2]
+        if div in _DIVISION_CATEGORY:
+            return _DIVISION_CATEGORY[div]
+        g = gate_of(code)
+        if g in GATES:
+            return GATES[g]
     return DEFAULT_CATEGORY
 
 
@@ -252,14 +271,21 @@ def _feature_tokens(name: str) -> list:
     return toks
 
 
-def build_token_index(scope_gates=("C", "F")):
-    """特征词 → 命中的小类集合（限定制造/批发，其余门类不在本数据集范围）。
+def build_token_index(scope_gates=None):
+    """特征词 → 命中的小类集合。
+
+    **scope_gates=None 表示全部已登记门类**（默认，2026-09-14 起）。
+    此前写死 `("C", "F")` —— 后果是抓来的餐饮/维修/IT 企业名永远判不出国标码，
+    只能落 `_unclassified`，等于「覆盖了新门类」只是句空话。
+    门类 schema 登记到哪，特征词索引就建到哪，两者不能各说各话。
 
     除了完整特征词，还会把长度 ≥2 的**后缀**一并入索引：
     「滚动轴承」「滑动轴承」都能让「XX轴承厂」命中，两者同属中类 345，
     于是自动降级到 group —— 这正是我们要的保守行为。
     """
     idx = {}
+    if scope_gates is None:
+        scope_gates = _registered_gates()
     for code, v in CLASSES.items():
         if gate_of(code) not in scope_gates:
             continue

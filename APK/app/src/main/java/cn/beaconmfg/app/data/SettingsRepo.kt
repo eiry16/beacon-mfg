@@ -10,21 +10,20 @@ data class AppSettings(
     val baseUrl: String = "https://api.deepseek.com/v1",
     val model: String = "deepseek-chat",
     val apiKey: String = "",
-    /** 数据源根地址（manifest / 分片都挂在这个前缀下），可换成镜像或自建 CDN。
-     *  默认走 fastly 的 jsDelivr：国内实测 0.8s，比 raw.githubusercontent（8s+，常超时）稳。
-     *  即便这个源也挂了，RemoteSource 会自动回退到内置的其他镜像。 */
-    val dataBase: String = "https://fastly.jsdelivr.net/gh/eiry16/beacon-mfg@main/",
+    /** 数据源根地址（L0 的 manifest / 指纹分片 / 完整档案都挂在这个前缀下）。
+     *  2026-09-14 改指 Pages：原默认 fastly.jsdelivr.net，但手机端（即便开 flash 代理）
+     *  实测连不上 fastly 子域，而 beacon-mfg.pages.dev 可达，故主源换成手机已实测可达的 Pages。
+     *  RemoteSource.MIRRORS 里仍保留 fastly/cdn jsDelivr、raw.githubusercontent 作为回退。 */
+    val dataBase: String = "https://beacon-mfg.pages.dev/",
     /**
      * L1 能力卡 / L2 厂商 skill 的托管根地址（Cloudflare Pages）。
      *
-     * **为什么不能复用 dataBase**：这两个地址上的内容是两拨东西——
-     *   - `dataBase`（jsDelivr → GitHub）：L0 指纹分片、`data/gb/` 完整档案、manifest
-     *   - `capabilityBase`（Pages）：`full/`、`slim/`、`skills/vendors/{id}/SKILL.md`
-     *
-     * 后两者**有意不进 Git**（L2 是厂商自述，半私有；分片是构建产物），
-     * 所以 jsDelivr 上根本不存在，反过来 Pages 上也没有 L0 指纹。
-     * 混用 = 一边全 404。谁改成一个，另一边立刻静默失效。
-     */
+     * 现在 dataBase 与 capabilityBase 都是 Pages，但挂的内容不同（子路径互斥）：
+     *   - `dataBase`：`data/`（manifest、gb/ 中文档案、en/ 英文档案、号码索引、endpoint 指针）
+     *     + `skills/registry/fingerprint/`（指纹增量分片）
+     *   - `capabilityBase`：`full/`、`slim/`、`skills/vendors/{id}/SKILL.md`
+     * 二者都来自同一份仓库构建产物，路径不重叠，不会出现「一边全 404」。
+     * 厂商私有 skill（L2）经 R2 另有公开入口，供客户的 agent 调用（见 R2 桶 beacon-mfg-caps）。 */
     val capabilityBase: String = "https://beacon-mfg.pages.dev/",
     val autoUpdate: Boolean = true,
     /**

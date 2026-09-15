@@ -57,6 +57,8 @@ class PlatformApi(
             .connectTimeout(10, TimeUnit.SECONDS)
             .readTimeout(60, TimeUnit.SECONDS)
             .writeTimeout(60, TimeUnit.SECONDS)
+            // 平台 API 同样挂在 Cloudflare 后面：无 UA 会被 403 `error code: 1010` 拒掉
+            .addInterceptor(beaconIdentityInterceptor())
             .build()
     }
 
@@ -191,11 +193,13 @@ class PlatformApi(
         category: String? = null,
         contactName: String? = null,
         contactPhone: String? = null,
+        gate: String? = null,
     ): JSONObject {
         val body = JSONObject()
             .put("company", company)
             .put("claimed_address", claimedAddress)
         category?.takeIf { it.isNotBlank() }?.let { body.put("category", it) }
+        gate?.takeIf { it.isNotBlank() }?.let { body.put("gate", it) }
         contactName?.takeIf { it.isNotBlank() }?.let { body.put("contact_name", it) }
         contactPhone?.takeIf { it.isNotBlank() }?.let { body.put("contact_phone", it) }
         return call("POST", "/v1/certify/apply", body, auth = true)
