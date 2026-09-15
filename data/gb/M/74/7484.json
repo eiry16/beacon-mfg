@@ -94,5 +94,53 @@
       "evidence": "工程设计"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050784",
+    "company": "Costa Coffee(中信设计院店)",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "四维路8号(三阳路地铁站L3口步行230米)",
+    "contact_phone": "027-82280398",
+    "lat": 30.599055,
+    "lng": 114.305143,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I37CUFQQ",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "coffee",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "永清",
+      "adcode": "420102",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "7484",
+      "name": "工程设计活动",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工程技术与设计服务 > 工程设计活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "设计院"
+    },
+    "is_manufacturer": false
   }
 ]

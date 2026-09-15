@@ -94,5 +94,53 @@
       "evidence": "水产"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0045281",
+    "company": "渔港老码头户外运动游乐场",
+    "category": "制造业",
+    "keywords": [
+      "游乐场"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "长兴岛渔家乐路199弄渔港老码头",
+    "contact_phone": "15000551777",
+    "lat": 31.346679,
+    "lng": 121.7902,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFK205FZ",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "游乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310151",
+      "search_keyword": "游乐场"
+    },
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "渔港"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -348,5 +348,53 @@
       "evidence": "服饰"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0040323",
+    "company": "杭品鑫激光服饰雕花切割",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "乔笕线与万佳路交叉口西南80米",
+    "contact_phone": "待核实",
+    "lat": 30.349391,
+    "lng": 120.261836,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHGHPY1",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "乔司",
+      "adcode": "330113",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    },
+    "is_manufacturer": true
   }
 ]

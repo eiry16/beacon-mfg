@@ -2827,5 +2827,53 @@
       "evidence": "灯饰"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0041388",
+    "company": "联欣照明工业园",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "小金口街道柏岗路南97号",
+    "contact_phone": "13763200178",
+    "lat": 23.182525,
+    "lng": 114.452725,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JAJR08IB",
+      "type": "商务住宅;产业园区;产业园区|公司企业;公司;公司",
+      "typecode": "120100|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "灯具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441302",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "照明"
+    },
+    "is_manufacturer": true
   }
 ]

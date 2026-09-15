@@ -110,5 +110,101 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0040319",
+    "company": "大型光纤激光切割",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "人社服务窗口(运河街道杭信村)东南侧80米",
+    "contact_phone": "待核实",
+    "lat": 30.500203,
+    "lng": 120.270642,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLJYH0V",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330113",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "3832",
+      "name": "光纤制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 光纤制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "光纤"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0040335",
+    "company": "大型光纤激光切割机门市部",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "环城北路718号",
+    "contact_phone": "13906815577",
+    "lat": 30.248989,
+    "lng": 119.710312,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHOSZCF",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330112",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "3832",
+      "name": "光纤制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 光纤制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "光纤"
+    },
+    "is_manufacturer": true
   }
 ]

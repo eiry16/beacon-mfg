@@ -190,5 +190,102 @@
       "evidence": "精酿"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0042587",
+    "company": "满粥(酒吧街总店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东城街道东城南路黄旗新村三巷14号",
+    "contact_phone": "19877861836",
+    "lat": 23.023342,
+    "lng": 113.775461,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG0KWA7",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "牛肉丸,生蚝,米粉,面点,凤爪,点心,肠粉",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "旗峰路",
+      "adcode": "441900",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "6233",
+      "name": "酒吧服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 饮料及冷饮服务 > 酒吧服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒吧"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0046925",
+    "company": "游乐园全女酒吧",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "游乐场"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "红光大道85号",
+    "contact_phone": "待核实",
+    "lat": 30.769475,
+    "lng": 103.951775,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MATLXRYB",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "酒吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "红光",
+      "adcode": "510117",
+      "search_keyword": "游乐场"
+    },
+    "industry": {
+      "code": "6233",
+      "name": "酒吧服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 饮料及冷饮服务 > 酒吧服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒吧"
+    },
+    "is_manufacturer": false
   }
 ]

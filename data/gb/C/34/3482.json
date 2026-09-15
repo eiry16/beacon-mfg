@@ -40159,7 +40159,8 @@
       "CNC加工",
       "精密机械",
       "钣金加工",
-      "机械加工"
+      "机械加工",
+      "激光切割"
     ],
     "region": {
       "province": "广东",
@@ -40278,7 +40279,21 @@
       "source": "name",
       "evidence": "螺丝"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0KGGCZ3HJ",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙头",
+      "adcode": "441900",
+      "search_keyword": "冲压"
+    }
   },
   {
     "id": "CN-MFG-0002493",
@@ -47984,5 +47999,101 @@
     },
     "is_manufacturer": true,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0045398",
+    "company": "宁波合鑫标准件有限公司-冲压5厂",
+    "category": "钣金冲压",
+    "keywords": [
+      "冲压"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "新碶街道南海路1号",
+    "contact_phone": "待核实",
+    "lat": 29.909352,
+    "lng": 121.802591,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LATL1Z29",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330206",
+      "search_keyword": "冲压"
+    },
+    "industry": {
+      "code": "3482",
+      "name": "紧固件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 紧固件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "标准件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0046660",
+    "company": "信和螺丝总汇",
+    "category": "钣金冲压",
+    "keywords": [
+      "冲压"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "黄岐广佛五金城综合市场A16号A1-A3档",
+    "contact_phone": "0757-81139887; 18925962828",
+    "lat": 23.111794,
+    "lng": 113.178141,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFTRZ26",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "黄岐",
+      "adcode": "440605",
+      "search_keyword": "冲压"
+    },
+    "industry": {
+      "code": "3482",
+      "name": "紧固件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 紧固件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "螺丝"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -52,7 +52,8 @@
     "company": "麦当劳(食品一店)",
     "category": "批发和零售业",
     "keywords": [
-      "汉堡"
+      "汉堡",
+      "小吃店"
     ],
     "region": {
       "province": "上海",
@@ -188,6 +189,102 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040982",
+    "company": "几多全新鲜食品商店(广州番禺店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "简餐"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "汉溪大道东389号番禺万达广场奈雪的茶楼上",
+    "contact_phone": "19065459870",
+    "lat": 23.007246,
+    "lng": 113.35043,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6RZZALB",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "小吃快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "长隆",
+      "adcode": "440113",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0043536",
+    "company": "巴卜蚁超好抓零食(萧山开元广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "游乐园"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "市心南路1216号萧山开元广场L3层",
+    "contact_phone": "15858109827",
+    "lat": 30.135355,
+    "lng": 120.266622,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDC9UICV",
+      "type": "体育休闲服务;娱乐场所;娱乐场所|购物服务;专卖店;专营店",
+      "typecode": "080300|061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "蜀山",
+      "adcode": "330109",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "零食"
     },
     "is_manufacturer": false
   }
