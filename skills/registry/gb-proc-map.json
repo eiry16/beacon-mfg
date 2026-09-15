@@ -3,7 +3,7 @@
     "description": "国标码 → 工艺码映射。**由能力卡真实数据反推**：统计每个国标小类下被能力卡确认过的工艺，出现 >= 3 次才收录。仅用于无能力卡厂商的推导，有卡的以卡为准。",
     "generated_at": "2026-09-15",
     "min_hits": 3,
-    "codes": 37
+    "codes": 38
   },
   "map": {
     "1499": [
@@ -155,7 +155,16 @@
       "wire_cutting",
       "stamping",
       "welding",
-      "edm"
+      "edm",
+      "metal_stamping",
+      "electronic_component",
+      "cnc_milling",
+      "metal_material",
+      "cnc_turning",
+      "laser_cutting",
+      "spray_painting",
+      "bending",
+      "cutting_service"
     ],
     "357": [
       "cnc_milling"
@@ -204,6 +213,24 @@
     ],
     "5179": [
       "mold_making"
+    ],
+    "6233": [
+      "injection_molding",
+      "metal_stamping",
+      "cnc_milling",
+      "metal_material",
+      "electronic_component",
+      "cnc_turning",
+      "welding",
+      "stamping",
+      "mold_making",
+      "die_casting",
+      "wire_cutting",
+      "edm",
+      "laser_cutting",
+      "bending",
+      "cutting_service",
+      "spray_painting"
     ]
   }
 }

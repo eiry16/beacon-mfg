@@ -106,7 +106,8 @@
     "company": "华工自动化",
     "category": "原材料",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "塑料模具"
     ],
     "region": {
       "province": "浙江",
@@ -1353,7 +1354,8 @@
     "company": "无锡节百力自动化设备有限公司",
     "category": "钣金冲压",
     "keywords": [
-      "冲压"
+      "冲压",
+      "塑料模具"
     ],
     "region": {
       "province": "江苏",
@@ -1378,7 +1380,21 @@
       "source": "name",
       "evidence": "自动化设备"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0G3R7CFW6",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320214",
+      "search_keyword": "塑料模具"
+    }
   },
   {
     "id": "CN-MFG-0020319",
@@ -1912,6 +1928,102 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "自动化"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0062676",
+    "company": "昆山市易普多自动化设备厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "昆山市周市镇市东河路8号创佳模具1栋西侧电梯4楼",
+    "contact_phone": "待核实",
+    "lat": 31.434264,
+    "lng": 120.996189,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LR97Q2C4",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "周市",
+      "adcode": "320583",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化设备"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0062470",
+    "company": "昆山市易普多自动化设备厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "昆山市周市镇市东河路8号创佳模具1栋西侧电梯4楼",
+    "contact_phone": "待核实",
+    "lat": 31.434264,
+    "lng": 120.996189,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LR97Q2C4",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "周市",
+      "adcode": "320583",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化设备"
     },
     "is_manufacturer": true
   }

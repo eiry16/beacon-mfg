@@ -1545,7 +1545,8 @@
     "company": "无锡市万镑机械配件加工厂",
     "category": "精密机械加工",
     "keywords": [
-      "机械加工"
+      "机械加工",
+      "塑料模具"
     ],
     "region": {
       "province": "江苏",
@@ -2212,5 +2213,101 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0062866",
+    "company": "锡山区宏悦机械配件厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "锡北镇泾达南路4-1",
+    "contact_phone": "18351578055; 18362390607",
+    "lat": 31.655089,
+    "lng": 120.442801,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G0XAXDAB",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "张泾",
+      "adcode": "320205",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3576",
+      "name": "农林牧渔机械配件制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 农林牧渔机械配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "机械配件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0062660",
+    "company": "锡山区宏悦机械配件厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "锡北镇泾达南路4-1",
+    "contact_phone": "18351578055; 18362390607",
+    "lat": 31.655089,
+    "lng": 120.442801,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G0XAXDAB",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "张泾",
+      "adcode": "320205",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3576",
+      "name": "农林牧渔机械配件制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 农林牧渔机械配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "机械配件"
+    },
+    "is_manufacturer": true
   }
 ]

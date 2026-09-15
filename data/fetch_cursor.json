@@ -2,13 +2,13 @@
  "shards": {
   "2929|塑料模具|嘉兴": {
    "exhausted": true,
-   "last_new": 123,
+   "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
-   "state": "hot",
-   "yield": 0.615
+   "state": "exhausted",
+   "yield": 0.0
   },
   "2929|塑料模具|宁波": {
    "exhausted": true,
@@ -4806,13 +4806,13 @@
   },
   "6231|奶茶|佛山": {
    "exhausted": true,
-   "last_new": 200,
+   "last_new": 199,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "hot",
-   "yield": 1.0
+   "yield": 0.995
   },
   "6231|奶茶|宁波": {
    "exhausted": true,
@@ -4956,13 +4956,13 @@
   },
   "6231|茶饮|东莞": {
    "exhausted": true,
-   "last_new": 181,
+   "last_new": 175,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "hot",
-   "yield": 0.905
+   "yield": 0.875
   },
   "6231|茶饮|佛山": {
    "exhausted": true,
@@ -4976,13 +4976,13 @@
   },
   "6231|茶饮|宁波": {
    "exhausted": true,
-   "last_new": 173,
+   "last_new": 170,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "hot",
-   "yield": 0.865
+   "yield": 0.85
   },
   "6231|茶饮|广州": {
    "exhausted": true,
@@ -5036,23 +5036,23 @@
   },
   "6231|茶馆|东莞": {
    "exhausted": true,
-   "last_new": 11,
+   "last_new": 10,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "warm",
-   "yield": 0.055
+   "yield": 0.05
   },
   "6231|茶馆|佛山": {
    "exhausted": true,
-   "last_new": 16,
+   "last_new": 17,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "warm",
-   "yield": 0.08
+   "yield": 0.085
   },
   "6231|茶馆|宁波": {
    "exhausted": true,
@@ -5194,23 +5194,23 @@
   },
   "6232|咖啡店|上海": {
    "exhausted": true,
-   "last_new": 19,
+   "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
-   "state": "warm",
-   "yield": 0.095
+   "state": "exhausted",
+   "yield": 0.0
   },
   "6232|咖啡店|南京": {
    "exhausted": true,
-   "last_new": 6,
+   "last_new": 7,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "cold",
-   "yield": 0.03
+   "yield": 0.035
   },
   "6232|咖啡店|广州": {
    "exhausted": true,
@@ -5244,13 +5244,13 @@
   },
   "6232|咖啡店|武汉": {
    "exhausted": true,
-   "last_new": 0,
+   "last_new": 6,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
-   "state": "exhausted",
-   "yield": 0.0
+   "state": "cold",
+   "yield": 0.03
   },
   "6232|咖啡店|深圳": {
    "exhausted": true,
@@ -5329,13 +5329,13 @@
   },
   "6232|咖啡馆|武汉": {
    "exhausted": true,
-   "last_new": 163,
+   "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
-   "state": "hot",
-   "yield": 0.815
+   "state": "exhausted",
+   "yield": 0.0
   },
   "6232|咖啡馆|深圳": {
    "exhausted": true,
@@ -8078,13 +8078,13 @@
   },
   "8053|SPA|武汉": {
    "exhausted": true,
-   "last_new": 98,
+   "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
-   "state": "hot",
-   "yield": 0.49
+   "state": "exhausted",
+   "yield": 0.0
   },
   "8053|SPA|深圳": {
    "exhausted": true,
@@ -8110,13 +8110,13 @@
   },
   "8053|保健|上海": {
    "exhausted": true,
-   "last_new": 177,
+   "last_new": 9,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
-   "state": "hot",
-   "yield": 0.885
+   "state": "cold",
+   "yield": 0.045
   },
   "8053|保健|南京": {
    "exhausted": true,
@@ -8130,43 +8130,43 @@
   },
   "8053|保健|广州": {
    "exhausted": true,
-   "last_new": 163,
+   "last_new": 164,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "hot",
-   "yield": 0.815
+   "yield": 0.82
   },
   "8053|保健|杭州": {
    "exhausted": true,
-   "last_new": 173,
+   "last_new": 172,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "hot",
-   "yield": 0.865
+   "yield": 0.86
   },
   "8053|保健|武汉": {
    "exhausted": true,
-   "last_new": 151,
+   "last_new": 150,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "hot",
-   "yield": 0.755
+   "yield": 0.75
   },
   "8053|保健|深圳": {
    "exhausted": true,
-   "last_new": 151,
+   "last_new": 150,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "hot",
-   "yield": 0.755
+   "yield": 0.75
   },
   "8053|保健|苏州": {
    "exhausted": true,
@@ -8334,33 +8334,33 @@
   },
   "8111|汽修|上海": {
    "exhausted": true,
-   "last_new": 196,
+   "last_new": 195,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "hot",
-   "yield": 0.98
+   "yield": 0.975
   },
   "8111|汽修|东莞": {
    "exhausted": true,
-   "last_new": 82,
+   "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
-   "state": "hot",
-   "yield": 0.41
+   "state": "exhausted",
+   "yield": 0.0
   },
   "8111|汽修|佛山": {
    "exhausted": true,
-   "last_new": 73,
+   "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
-   "state": "hot",
-   "yield": 0.365
+   "state": "cold",
+   "yield": 0.005
   },
   "8111|汽修|南京": {
    "exhausted": true,
@@ -8384,13 +8384,13 @@
   },
   "8111|汽修|宁波": {
    "exhausted": true,
-   "last_new": 55,
+   "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
-   "state": "warm",
-   "yield": 0.275
+   "state": "exhausted",
+   "yield": 0.0
   },
   "8111|汽修|常州": {
    "exhausted": true,
@@ -8484,13 +8484,13 @@
   },
   "8111|汽车修理|南京": {
    "exhausted": true,
-   "last_new": 3,
+   "last_new": 4,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "cold",
-   "yield": 0.015
+   "yield": 0.02
   },
   "8111|汽车修理|宁波": {
    "exhausted": true,
@@ -8594,16 +8594,6 @@
   },
   "8111|汽车维修|宁波": {
    "exhausted": true,
-   "last_new": 198,
-   "last_run": "2026-09-15",
-   "last_seen": 200,
-   "requests": 8,
-   "runs": 1,
-   "state": "hot",
-   "yield": 0.99
-  },
-  "8111|汽车维修|常州": {
-   "exhausted": true,
    "last_new": 200,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8611,6 +8601,16 @@
    "runs": 1,
    "state": "hot",
    "yield": 1.0
+  },
+  "8111|汽车维修|常州": {
+   "exhausted": true,
+   "last_new": 199,
+   "last_run": "2026-09-15",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.995
   },
   "8111|汽车维修|广州": {
    "exhausted": true,
@@ -8624,13 +8624,13 @@
   },
   "8111|汽车维修|无锡": {
    "exhausted": true,
-   "last_new": 197,
+   "last_new": 196,
    "last_run": "2026-09-15",
    "last_seen": 200,
    "requests": 8,
    "runs": 1,
    "state": "hot",
-   "yield": 0.985
+   "yield": 0.98
   },
   "8111|汽车维修|杭州": {
    "exhausted": true,

@@ -16189,5 +16189,53 @@
       "evidence": "影院"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0056510",
+    "company": "LuckHaHa好运椰(阪急万达影城店)",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "奶茶"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "海晏北路189号6层607店铺",
+    "contact_phone": "18057441605",
+    "lat": 29.861825,
+    "lng": 121.614125,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L0PD05KZ",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "苹果大红袍冰果茶,高香茉莉冰萃茶,好运椰粉,新鲜椰子水,羽衣甘蓝荔枝饮,栀子乌龙冰萃茶",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "福明",
+      "adcode": "330212",
+      "search_keyword": "奶茶"
+    },
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影城"
+    },
+    "is_manufacturer": false
   }
 ]
