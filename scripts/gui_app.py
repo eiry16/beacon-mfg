@@ -354,6 +354,10 @@ class App:
         # 翻页内也要有护栏：只在任务之间检查配额，一个多页任务照样能打穿上限
         fetcher.MAX_REQUESTS = quota
 
+        if not fetcher.acquire_fetch_lock():
+            self.log("⛔ 另一抓取进程已在进行，本次采集中止以避免 id 区间重叠碰撞。请稍后重试。")
+            return
+
         # tier 下拉语义：
         #  - "all"：按手工勾选的品类运行（plan 不过滤 tier，仅 industries 交集）
         #  - 具体层(core/extended/service)：整层跑，industries=None 忽略手工勾选，

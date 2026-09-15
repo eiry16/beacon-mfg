@@ -332,6 +332,8 @@ def main():
     parser.add_argument("--autoprofile", action="store_true",
                         help="抓取完给本轮新抓到的城市自动补「未认证」能力卡（调 batch_auto_profile，"
                              "烧 LLM、慢；默认关）。仅增量补本轮城市、不清空已有卡")
+    parser.add_argument("--no-lock", action="store_true",
+                        help="跳过单实例抓取锁（不推荐：并发会撞 id）")
     args = parser.parse_args()
 
     # 2026-09-14：默认从 core 改为 all。设计面含 7 个已登记门类，默认只跑 core
@@ -426,6 +428,12 @@ def main():
     # 只在任务之间看一眼是不够的——一个多页任务照样能打穿上限。
     if args.quota:
         fetcher.MAX_REQUESTS = args.quota
+
+    if not getattr(args, "no_lock", False):
+        if not fetcher.acquire_fetch_lock():
+            print("⛔ 另一抓取进程已在进行（持有 data 写入锁），本次退出以避免 id 区间重叠碰撞。")
+            print("   如需强制并发（不推荐），加 --no-lock。")
+            raise SystemExit(3)
 
     done = 0
     total_new = 0

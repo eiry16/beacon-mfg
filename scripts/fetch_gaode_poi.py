@@ -22,6 +22,9 @@ import urllib.parse
 import urllib.request
 from datetime import date
 from pathlib import Path
+import atexit
+import os
+import tempfile
 
 AMAP_KEY = ""  # TODO: 填入高德 Web 服务 Key，或通过环境变量 AMAP_KEY 传入
 BASE = "https://restapi.amap.com/v3/place/text"
@@ -51,6 +54,53 @@ MAX_REQUESTS = None
 QUOTA_EXHAUSTED = False
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+# ---- 单实例抓取锁（2026-09-15 根因修复）----
+# 根因：fetch 用「进程级 max_id 计数器 + 磁盘扫描」分配 CN-MFG id，跨进程无任何
+# 协调。两个抓取进程（每日 cron / GUI / 手动 CLI）时间重叠时，都从同一份磁盘
+# max_id 起号，把不同真实公司写成同一批 id → 5817 个碰撞。加进程级互斥锁，
+# 同一时刻只允许一个进程写 data/gb/ 的 id 空间。
+# 用 msvcrt 咨询锁（Windows）：进程崩溃时 OS 自动释放句柄 → 锁随之释放，不会死锁。
+_FETCH_LOCK_FD = None
+_FETCH_LOCK_PATH = Path(tempfile.gettempdir()) / "beacon_mfg_fetch.lock"
+
+
+def acquire_fetch_lock(wait: bool = False) -> bool:
+    """拿到锁返回 True；已被别的进程持有返回 False（wait=False 时非阻塞）。"""
+    global _FETCH_LOCK_FD
+    if _FETCH_LOCK_FD is not None:
+        return True
+    try:
+        import msvcrt
+    except ImportError:
+        msvcrt = None
+    fd = os.open(str(_FETCH_LOCK_PATH), os.O_CREAT | os.O_RDWR, 0o644)
+    if msvcrt is not None:
+        try:
+            msvcrt.locking(fd, msvcrt.LK_LOCK if wait else msvcrt.LK_NBLCK, 1)
+        except OSError:
+            os.close(fd)
+            return False
+    _FETCH_LOCK_FD = fd
+    atexit.register(release_fetch_lock)
+    return True
+
+
+def release_fetch_lock() -> None:
+    global _FETCH_LOCK_FD
+    if _FETCH_LOCK_FD is None:
+        return
+    try:
+        import msvcrt
+        msvcrt.locking(_FETCH_LOCK_FD, msvcrt.LK_UNLCK, 1)
+    except Exception:
+        pass
+    try:
+        os.close(_FETCH_LOCK_FD)
+    except Exception:
+        pass
+    _FETCH_LOCK_FD = None
 
 
 def fetch(keyword, city, limit=AMAP_DEEP_CAP, offset=AMAP_OFFSET_MAX, delay=0.5, types=None):
