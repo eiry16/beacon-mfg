@@ -2080,7 +2080,8 @@
     "company": "星巴克(广州新光百货店)",
     "category": "批发和零售业",
     "keywords": [
-      "咖啡"
+      "咖啡",
+      "茶饮"
     ],
     "region": {
       "province": "广东",
@@ -2128,7 +2129,8 @@
     "company": "星巴克臻选(庆春银泰百货店)",
     "category": "批发和零售业",
     "keywords": [
-      "咖啡"
+      "咖啡",
+      "茶饮"
     ],
     "region": {
       "province": "浙江",
@@ -2408,6 +2410,2077 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0056403",
+    "company": "宁波新振福新能源汽车超市",
+    "category": "批发和零售业",
+    "keywords": [
+      "汽车维修",
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "富强路666号",
+    "contact_phone": "136****9567",
+    "lat": 29.825238,
+    "lng": 121.612445,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G1GZOIYX",
+      "type": "汽车销售;汽车销售;汽车销售|汽车维修;汽车维修;汽车维修",
+      "typecode": "020000|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330212",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "超市"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0056519",
+    "company": "茉酸奶( 宁波阪急百货店 )",
+    "category": "批发和零售业",
+    "keywords": [
+      "奶茶"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "海晏北路189号宁波阪急F5层",
+    "contact_phone": "183****5097",
+    "lat": 29.862125,
+    "lng": 121.614525,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JGP7ISEL",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "巧克力",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "福明",
+      "adcode": "330212",
+      "search_keyword": "奶茶"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0056640",
+    "company": "蜜雪冰城(宁波甬润超市回龙店店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "奶茶"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "华祥压铸厂西北门南60米(回龙地铁站B口步行80米)",
+    "contact_phone": "189****3080",
+    "lat": 29.817938,
+    "lng": 121.627918,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I3T64LAV",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330212",
+      "search_keyword": "奶茶"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "超市"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0057696",
+    "company": "CHAGEE霸王茶姬(上海第一百货商业中心店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南京东路800号第一百货C馆1层G10-03F01-01-0006铺(星巴克旁)",
+    "contact_phone": "待核实",
+    "lat": 31.235254,
+    "lng": 121.475256,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KBBHJUH8",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "花田乌龙,桂馥兰香,桂子飘香,伯牙绝弦,青青糯山,春日桃桃",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北京路",
+      "adcode": "310101",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0056877",
+    "company": "益禾堂(东莞塘厦镇亨达百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "奶茶"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "高裕北路219号1栋134室",
+    "contact_phone": "130****3618",
+    "lat": 23.020536,
+    "lng": 113.751765,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G01GRW0A",
+      "type": "餐饮服务;休闲餐饮场所;休闲餐饮场所",
+      "typecode": "050400",
+      "alias": "",
+      "tag": "",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南城",
+      "adcode": "441900",
+      "search_keyword": "奶茶"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058050",
+    "company": "星巴克(苏州久光百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "旺墩路268号苏州久光百货1F层",
+    "contact_phone": "0512-68239561",
+    "lat": 31.319358,
+    "lng": 120.714035,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHQ713M",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "湖东",
+      "adcode": "320506",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058121",
+    "company": "星巴克(天虹百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "苏雅路388号天虹商场B座F1层1014室",
+    "contact_phone": "0512-62568607",
+    "lat": 31.315868,
+    "lng": 120.665595,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFSMJYB",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区金鸡湖中央商务区",
+      "adcode": "320506",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058448",
+    "company": "奈雪的茶(东门太阳百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "解放路2001号太阳百货一楼188",
+    "contact_phone": "0755-83161714",
+    "lat": 22.54504,
+    "lng": 114.118779,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLK7EDM",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "霸气芝士草莓,霸气芝士葡萄,霸气柠檬油柑,果茶,奶油,杨枝甘露",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "国贸",
+      "adcode": "440303",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058516",
+    "company": "奈雪的茶(深圳趣坊购物广场PRO店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "福田街道水围社区金田路1013号银庄大厦裙楼1层A106铺",
+    "contact_phone": "0755-83161714",
+    "lat": 22.521568,
+    "lng": 114.064597,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HKVG92EK",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "霸气芝士草莓,霸气芝士葡萄,霸气柠檬油柑,杨枝甘露,果茶",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "皇岗",
+      "adcode": "440304",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058520",
+    "company": "东方墨兰(深圳罗湖太阳百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "东门太阳百货1层L125",
+    "contact_phone": "133****2529",
+    "lat": 22.545328,
+    "lng": 114.118677,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L36M95NU",
+      "type": "餐饮服务;休闲餐饮场所;休闲餐饮场所",
+      "typecode": "050400",
+      "alias": "",
+      "tag": "柠檬茶,鲜奶茶",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东门",
+      "adcode": "440303",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0057711",
+    "company": "CHAGEE霸王茶姬(上海第一百货商业中心店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南京东路800号第一百货C馆1层G10-03F01-01-0006铺(星巴克旁)",
+    "contact_phone": "待核实",
+    "lat": 31.235254,
+    "lng": 121.475256,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KBBHJUH8",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "花田乌龙,桂馥兰香,桂子飘香,伯牙绝弦,青青糯山,春日桃桃",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北京路",
+      "adcode": "310101",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058812",
+    "company": "星巴克(领展购物广场1层店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "恩宁路261号",
+    "contact_phone": "020-81717969",
+    "lat": 23.109943,
+    "lng": 113.240356,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00141R5DZ",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西关",
+      "adcode": "440103",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058064",
+    "company": "星巴克(苏州久光百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "旺墩路268号苏州久光百货1F层",
+    "contact_phone": "0512-68239561",
+    "lat": 31.319358,
+    "lng": 120.714035,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHQ713M",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "湖东",
+      "adcode": "320506",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058135",
+    "company": "星巴克(天虹百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "苏雅路388号天虹商场B座F1层1014室",
+    "contact_phone": "0512-62568607",
+    "lat": 31.315868,
+    "lng": 120.665595,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFSMJYB",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区金鸡湖中央商务区",
+      "adcode": "320506",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059251",
+    "company": "星巴克(西湖银泰百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "延安路98号西湖银泰城一层顾客服务台旁",
+    "contact_phone": "0571-85035592",
+    "lat": 30.243675,
+    "lng": 120.16528,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGPEJZJ",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "抹茶星冰乐,拿铁,摩卡星冰乐,焦糖玛奇朵,可可碎片星冰乐,卡布奇诺,香草星冰乐,美式咖啡,下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "吴山",
+      "adcode": "330102",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059260",
+    "company": "星巴克臻选(中大银泰百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "东新路822号中大银泰城一层L108单元",
+    "contact_phone": "0571-89773528",
+    "lat": 30.326818,
+    "lng": 120.174821,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFP9SB2",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "摩卡星冰乐,焦糖玛奇朵,可可碎片星冰乐,香草拿铁,太妃榛果拿铁,卡布奇诺,香草星冰乐,点心,下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "杭州新天地",
+      "adcode": "330105",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059301",
+    "company": "星巴克(银隆百货B座店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "北干街道市心中路268号银隆B座1层",
+    "contact_phone": "0571-82821140",
+    "lat": 30.170882,
+    "lng": 120.267923,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IB1HFQDD",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "萧绍路",
+      "adcode": "330109",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058461",
+    "company": "奈雪的茶(东门太阳百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "解放路2001号太阳百货一楼188",
+    "contact_phone": "0755-83161714",
+    "lat": 22.54504,
+    "lng": 114.118779,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLK7EDM",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "霸气芝士草莓,霸气芝士葡萄,霸气柠檬油柑,果茶,奶油,杨枝甘露",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "国贸",
+      "adcode": "440303",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058529",
+    "company": "奈雪的茶(深圳趣坊购物广场PRO店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "福田街道水围社区金田路1013号银庄大厦裙楼1层A106铺",
+    "contact_phone": "0755-83161714",
+    "lat": 22.521568,
+    "lng": 114.064597,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HKVG92EK",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "霸气芝士草莓,霸气芝士葡萄,霸气柠檬油柑,杨枝甘露,果茶",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "皇岗",
+      "adcode": "440304",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058533",
+    "company": "东方墨兰(深圳罗湖太阳百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "东门太阳百货1层L125",
+    "contact_phone": "133****2529",
+    "lat": 22.545328,
+    "lng": 114.118677,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L36M95NU",
+      "type": "餐饮服务;休闲餐饮场所;休闲餐饮场所",
+      "typecode": "050400",
+      "alias": "",
+      "tag": "柠檬茶,鲜奶茶",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东门",
+      "adcode": "440303",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059593",
+    "company": "星巴克(慈溪银泰百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "青少年宫南路99号银泰百货(慈溪店)1F层(停车场出入口附近)",
+    "contact_phone": "0574-63907469",
+    "lat": 30.170601,
+    "lng": 121.248281,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E0ZB01",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "抹茶星冰乐,拿铁,摩卡星冰乐,可可碎片星冰乐,抹茶拿铁,香草星冰乐,美式咖啡,馥芮白,单人餐,星冰乐,三明治,下午茶",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "浒山",
+      "adcode": "330282",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059707",
+    "company": "星巴克(宁波奉化太平洋百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "南山路174号奉化太平洋百货S1F-9商铺",
+    "contact_phone": "0574-88512016",
+    "lat": 29.670438,
+    "lng": 121.413128,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HBT13LE0",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太平洋百货",
+      "adcode": "330213",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058825",
+    "company": "星巴克(领展购物广场1层店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "恩宁路261号",
+    "contact_phone": "020-81717969",
+    "lat": 23.109943,
+    "lng": 113.240356,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00141R5DZ",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西关",
+      "adcode": "440103",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059968",
+    "company": "星巴克臻选(东莞君尚百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东纵路111号中银广场首层1-001单元",
+    "contact_phone": "0769-23660916",
+    "lat": 23.038375,
+    "lng": 113.771905,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG6S45J",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "单人餐,下午茶",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东纵路",
+      "adcode": "441900",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060063",
+    "company": "星巴克(东莞清溪润升百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "清溪镇鹿鸣路盛和新都会3幢商铺1024自编号为1002的铺位",
+    "contact_phone": "0769-82851092",
+    "lat": 22.836427,
+    "lng": 114.166894,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HD1M2R1T",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "香芒东路",
+      "adcode": "441900",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059263",
+    "company": "星巴克(西湖银泰百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "延安路98号西湖银泰城一层顾客服务台旁",
+    "contact_phone": "0571-85035592",
+    "lat": 30.243675,
+    "lng": 120.16528,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGPEJZJ",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "抹茶星冰乐,拿铁,摩卡星冰乐,焦糖玛奇朵,可可碎片星冰乐,卡布奇诺,香草星冰乐,美式咖啡,下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "吴山",
+      "adcode": "330102",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059272",
+    "company": "星巴克臻选(中大银泰百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "东新路822号中大银泰城一层L108单元",
+    "contact_phone": "0571-89773528",
+    "lat": 30.326818,
+    "lng": 120.174821,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFP9SB2",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "摩卡星冰乐,焦糖玛奇朵,可可碎片星冰乐,香草拿铁,太妃榛果拿铁,卡布奇诺,香草星冰乐,点心,下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "杭州新天地",
+      "adcode": "330105",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059313",
+    "company": "星巴克(银隆百货B座店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "北干街道市心中路268号银隆B座1层",
+    "contact_phone": "0571-82821140",
+    "lat": 30.170882,
+    "lng": 120.267923,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IB1HFQDD",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "萧绍路",
+      "adcode": "330109",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060452",
+    "company": "茶理宜世(吉利购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "南庄镇南庄二马路89号吉利商业城首层商铺编号为D01A号",
+    "contact_phone": "189****5692",
+    "lat": 22.969504,
+    "lng": 113.01601,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JRGH0VWS",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "郁郁幽兰,月桂酿,特浓抹茶与白,贪杯乌龙,慢熬黑糖珠珠烤奶茶,白日梦椰椰,绿野干酪草莓派,星河筑影,翠枝玉露,画中游,龙井绿茶奶沫,一整块金砖港奶,凤凰单丛,鲜葡萄多肉,轻芝金桂乌龙,烟雨乌龙,生椰玉露,蓝莓之夜,水牛奶奶,莺莺,月中桂,单丛好彩香柠茶,明前龙井,轻芝茉莉毛尖,沉香普洱,水牛奶木薯大满贯,鲜芒老椰甘露,焦糖脆脆咸法酪·茉莉,骏眉红茶,焦糖脆脆咸法酪·骏眉红,芭乐莓莓干酪（轻芝云酪顶）,轻芝明前龙井,400次熔岩鸳鸯,茉莉毛尖,红豆薏米乳,青青玉露,焦糖脆脆咸法酪锡兰红,焦糖脆脆咸法酪普洱,长安,茉莉好彩香柠,焦糖脆脆咸法酪·单丛,轻芝凤凰单丛,二重浓抹咸法酪,水牛奶炖桃胶木薯芋圆,生椰木薯大满贯,长乐未央,素颜幽兰,芝士乳酪草莓星球,星天外,心芭上（中杯）,芭乐莓莓干酪（咸法酪酱）,画中游·千目抹茶特调,轻芝锡兰红茶,金桂乌龙,芋圆,奶油",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440604",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060460",
+    "company": "CoCo都可(吉利购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "南庄镇南庄二马路89号吉利购物广场F1层(南门附近)",
+    "contact_phone": "133****4241",
+    "lat": 22.969131,
+    "lng": 113.015401,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG8QCOQ",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "杨枝甘露,珍珠奶茶,冰美式,芋头",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440604",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059604",
+    "company": "星巴克(慈溪银泰百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "青少年宫南路99号银泰百货(慈溪店)1F层(停车场出入口附近)",
+    "contact_phone": "0574-63907469",
+    "lat": 30.170601,
+    "lng": 121.248281,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E0ZB01",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "抹茶星冰乐,拿铁,摩卡星冰乐,可可碎片星冰乐,抹茶拿铁,香草星冰乐,美式咖啡,馥芮白,单人餐,星冰乐,三明治,下午茶",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "浒山",
+      "adcode": "330282",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059716",
+    "company": "星巴克(宁波奉化太平洋百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "南山路174号奉化太平洋百货S1F-9商铺",
+    "contact_phone": "0574-88512016",
+    "lat": 29.670438,
+    "lng": 121.413128,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HBT13LE0",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太平洋百货",
+      "adcode": "330213",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060581",
+    "company": "INTIME365车服务中心(银泰百货杭州西湖店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "延安路98号银泰百货(杭州西湖店)B2层(4号门进入直行10m,扶梯下到B2可见)",
+    "contact_phone": "待核实",
+    "lat": 30.244546,
+    "lng": 120.165779,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJRW5OY",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车服务;汽车救援;汽车救援|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|010700|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "吴山片区",
+      "adcode": "330102",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059973",
+    "company": "星巴克臻选(东莞君尚百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东纵路111号中银广场首层1-001单元",
+    "contact_phone": "0769-23660916",
+    "lat": 23.038375,
+    "lng": 113.771905,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG6S45J",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "单人餐,下午茶",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东纵路",
+      "adcode": "441900",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060066",
+    "company": "星巴克(东莞清溪润升百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "清溪镇鹿鸣路盛和新都会3幢商铺1024自编号为1002的铺位",
+    "contact_phone": "0769-82851092",
+    "lat": 22.836427,
+    "lng": 114.166894,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HD1M2R1T",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "香芒东路",
+      "adcode": "441900",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060903",
+    "company": "宁波新振福新能源汽车超市",
+    "category": "批发和零售业",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "富强路666号",
+    "contact_phone": "136****9567",
+    "lat": 29.825238,
+    "lng": 121.612445,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G1GZOIYX",
+      "type": "汽车销售;汽车销售;汽车销售|汽车维修;汽车维修;汽车维修",
+      "typecode": "020000|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330212",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "超市"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0061104",
+    "company": "壹生藏(繁花中心购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶室",
+      "茶馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "人民路4555号繁花中心3幢403室",
+    "contact_phone": "137****5168",
+    "lat": 31.358925,
+    "lng": 120.607275,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HK9H21JV",
+      "type": "餐饮服务;茶艺馆;茶艺馆",
+      "typecode": "050600",
+      "alias": "",
+      "tag": "",
+      "keytag": "茶座",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "茶室"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060455",
+    "company": "茶理宜世(吉利购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "南庄镇南庄二马路89号吉利商业城首层商铺编号为D01A号",
+    "contact_phone": "189****5692",
+    "lat": 22.969504,
+    "lng": 113.01601,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JRGH0VWS",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "郁郁幽兰,月桂酿,特浓抹茶与白,贪杯乌龙,慢熬黑糖珠珠烤奶茶,白日梦椰椰,绿野干酪草莓派,星河筑影,翠枝玉露,画中游,龙井绿茶奶沫,一整块金砖港奶,凤凰单丛,鲜葡萄多肉,轻芝金桂乌龙,烟雨乌龙,生椰玉露,蓝莓之夜,水牛奶奶,莺莺,月中桂,单丛好彩香柠茶,明前龙井,轻芝茉莉毛尖,沉香普洱,水牛奶木薯大满贯,鲜芒老椰甘露,焦糖脆脆咸法酪·茉莉,骏眉红茶,焦糖脆脆咸法酪·骏眉红,芭乐莓莓干酪（轻芝云酪顶）,轻芝明前龙井,400次熔岩鸳鸯,茉莉毛尖,红豆薏米乳,青青玉露,焦糖脆脆咸法酪锡兰红,焦糖脆脆咸法酪普洱,长安,茉莉好彩香柠,焦糖脆脆咸法酪·单丛,轻芝凤凰单丛,二重浓抹咸法酪,水牛奶炖桃胶木薯芋圆,生椰木薯大满贯,长乐未央,素颜幽兰,芝士乳酪草莓星球,星天外,心芭上（中杯）,芭乐莓莓干酪（咸法酪酱）,画中游·千目抹茶特调,轻芝锡兰红茶,金桂乌龙,芋圆,奶油",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440604",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060463",
+    "company": "CoCo都可(吉利购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "南庄镇南庄二马路89号吉利购物广场F1层(南门附近)",
+    "contact_phone": "133****4241",
+    "lat": 22.969131,
+    "lng": 113.015401,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG8QCOQ",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "杨枝甘露,珍珠奶茶,冰美式,芋头",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440604",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060584",
+    "company": "INTIME365车服务中心(银泰百货杭州西湖店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "延安路98号银泰百货(杭州西湖店)B2层(4号门进入直行10m,扶梯下到B2可见)",
+    "contact_phone": "待核实",
+    "lat": 30.244546,
+    "lng": 120.165779,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJRW5OY",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车服务;汽车救援;汽车救援|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|010700|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "吴山片区",
+      "adcode": "330102",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0061052",
+    "company": "壹生藏(繁花中心购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "茶室",
+      "茶馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "人民路4555号繁花中心3幢403室",
+    "contact_phone": "137****5168",
+    "lat": 31.358925,
+    "lng": 120.607275,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HK9H21JV",
+      "type": "餐饮服务;茶艺馆;茶艺馆",
+      "typecode": "050600",
+      "alias": "",
+      "tag": "",
+      "keytag": "茶座",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "茶室"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0063229",
+    "company": "HI BOOM CLUB(悠方购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "殷行路1388号(新江湾城地铁站1号口步行90米)悠方购物中心L3层",
+    "contact_phone": "135****3464",
+    "lat": 31.330144,
+    "lng": 121.509451,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JROAU7J3",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "夜店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江湾",
+      "adcode": "310110",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062901",
+    "company": "HI BOOM CLUB(悠方购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "殷行路1388号(新江湾城地铁站1号口步行90米)悠方购物中心L3层",
+    "contact_phone": "135****3464",
+    "lat": 31.330144,
+    "lng": 121.509451,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JROAU7J3",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "夜店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江湾",
+      "adcode": "310110",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
     },
     "is_manufacturer": false
   }

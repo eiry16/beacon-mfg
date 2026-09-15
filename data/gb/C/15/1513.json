@@ -4,7 +4,8 @@
     "company": "老六啤酒",
     "category": "制造业",
     "keywords": [
-      "咖啡"
+      "咖啡",
+      "酒吧"
     ],
     "region": {
       "province": "上海",
@@ -43,6 +44,102 @@
       "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
       "confidence": "high",
       "source": "name",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0063267",
+    "company": "啤酒阿姨(八号桥艺术空间店)",
+    "category": "制造业",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南苏州路1247号(新闸路地铁站1号口步行160米)",
+    "contact_phone": "021-53863393",
+    "lat": 31.239954,
+    "lng": 121.466415,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIDML40",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "啤酒屋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北京路",
+      "adcode": "310101",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0062939",
+    "company": "啤酒阿姨(八号桥艺术空间店)",
+    "category": "制造业",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南苏州路1247号(新闸路地铁站1号口步行160米)",
+    "contact_phone": "021-53863393",
+    "lat": 31.239954,
+    "lng": 121.466415,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIDML40",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "啤酒屋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北京路",
+      "adcode": "310101",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "gb_token",
       "evidence": "啤酒"
     },
     "is_manufacturer": true

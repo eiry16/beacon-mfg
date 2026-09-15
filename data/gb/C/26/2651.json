@@ -1064,7 +1064,8 @@
     "company": "兰蒂奇工程塑料有限公司",
     "category": "原材料",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "塑料模具"
     ],
     "region": {
       "province": "江苏",
@@ -1892,7 +1893,8 @@
     "company": "苏州市强丰工程塑料有限公司",
     "category": "原材料",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "塑料模具"
     ],
     "region": {
       "province": "江苏",
@@ -2905,7 +2907,8 @@
     "company": "江阴市百祥工程塑料有限公司",
     "category": "原材料",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "塑料模具"
     ],
     "region": {
       "province": "江苏",
@@ -3227,7 +3230,8 @@
     "company": "江阴市伟创工程塑料有限公司",
     "category": "原材料",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "塑料模具"
     ],
     "region": {
       "province": "江苏",
@@ -3319,7 +3323,8 @@
     "company": "无锡强大工程塑料有限公司",
     "category": "原材料",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "塑料模具"
     ],
     "region": {
       "province": "江苏",
@@ -6111,7 +6116,8 @@
     "company": "汉特工程塑料浙江有限公司",
     "category": "原材料",
     "keywords": [
-      "工程塑料"
+      "工程塑料",
+      "塑料模具"
     ],
     "region": {
       "province": "浙江",
@@ -27953,6 +27959,102 @@
       "confidence": "high",
       "source": "name",
       "evidence": "改性塑料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0062902",
+    "company": "宜兴市阳洋塑料助剂有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "官林镇三木集团总部化工集中区(官林镇都新街457号)",
+    "contact_phone": "待核实",
+    "lat": 31.494851,
+    "lng": 119.692197,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKDZV6F",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320282",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2651",
+      "name": "初级形态塑料及合成树脂制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 合成材料制造 > 初级形态塑料及合成树脂制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料助剂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0062696",
+    "company": "宜兴市阳洋塑料助剂有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "官林镇三木集团总部化工集中区(官林镇都新街457号)",
+    "contact_phone": "待核实",
+    "lat": 31.494851,
+    "lng": 119.692197,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKDZV6F",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320282",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2651",
+      "name": "初级形态塑料及合成树脂制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 合成材料制造 > 初级形态塑料及合成树脂制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料助剂"
     },
     "is_manufacturer": true
   }

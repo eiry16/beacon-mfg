@@ -32443,7 +32443,8 @@
     "company": "1691cafebar",
     "category": "住宿和餐饮业",
     "keywords": [
-      "简餐"
+      "简餐",
+      "酒吧"
     ],
     "region": {
       "province": "上海",
@@ -35475,7 +35476,9 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "简餐",
-      "小吃店"
+      "小吃店",
+      "茶室",
+      "茶馆"
     ],
     "region": {
       "province": "江苏",
@@ -63071,7 +63074,9 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "简餐",
-      "小吃店"
+      "小吃店",
+      "茶室",
+      "茶馆"
     ],
     "region": {
       "province": "广东",
@@ -67769,7 +67774,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "简餐",
-      "小吃店"
+      "小吃店",
+      "茶馆"
     ],
     "region": {
       "province": "广东",
@@ -95077,6 +95083,102 @@
       "business_area": "蛇口",
       "adcode": "440305",
       "search_keyword": "咖啡馆"
+    },
+    "industry": {
+      "code": "6220",
+      "name": "快餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 快餐服务 > 快餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汉堡"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0057774",
+    "company": "汉堡奶茶好多多",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "大连路535号地铁4/12号线四号出口左转20米",
+    "contact_phone": "021-55572105",
+    "lat": 31.258969,
+    "lng": 121.51184,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LUVGDZ4W",
+      "type": "餐饮服务;快餐厅;快餐厅",
+      "typecode": "050300",
+      "alias": "",
+      "tag": "汉堡奶茶",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "上海北外滩中心",
+      "adcode": "310109",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "6220",
+      "name": "快餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 快餐服务 > 快餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汉堡"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0057789",
+    "company": "汉堡奶茶好多多",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "大连路535号地铁4/12号线四号出口左转20米",
+    "contact_phone": "021-55572105",
+    "lat": 31.258969,
+    "lng": 121.51184,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LUVGDZ4W",
+      "type": "餐饮服务;快餐厅;快餐厅",
+      "typecode": "050300",
+      "alias": "",
+      "tag": "汉堡奶茶",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "上海北外滩中心",
+      "adcode": "310109",
+      "search_keyword": "茶饮"
     },
     "industry": {
       "code": "6220",
