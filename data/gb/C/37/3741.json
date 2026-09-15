@@ -200,5 +200,152 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0044050",
+    "company": "升降飞机",
+    "category": "精密机械加工",
+    "keywords": [
+      "游乐园",
+      "游乐场"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "龙蟠路100号(近玄武湖公园)情侣园游乐场内",
+    "contact_phone": "待核实",
+    "lat": 32.070139,
+    "lng": 118.810448,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GKJUZODP",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "alias": "",
+      "tag": "",
+      "keytag": "游乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320102",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "3741",
+      "name": "飞机制造",
+      "level": "class",
+      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 航空、航天器及设备制造 > 飞机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "飞机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0044495",
+    "company": "成都空港飞机乐园",
+    "category": "精密机械加工",
+    "keywords": [
+      "游乐园",
+      "游乐场",
+      "水上乐园"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "牧华路一段700号",
+    "contact_phone": "131****6888",
+    "lat": 30.513796,
+    "lng": 103.932832,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L6GRGLJJ",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "四川天府新区成都直管区",
+      "adcode": "510116",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "3741",
+      "name": "飞机制造",
+      "level": "class",
+      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 航空、航天器及设备制造 > 飞机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "飞机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0045354",
+    "company": "自控飞机",
+    "category": "精密机械加工",
+    "keywords": [
+      "游乐场"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "虹桥路2381号(近虹井路)上海动物园内(西南角)",
+    "contact_phone": "待核实",
+    "lat": 31.191046,
+    "lng": 121.361435,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFDIBO5",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "游乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "动物园",
+      "adcode": "310105",
+      "search_keyword": "游乐场"
+    },
+    "industry": {
+      "code": "3741",
+      "name": "飞机制造",
+      "level": "class",
+      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 航空、航天器及设备制造 > 飞机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "飞机"
+    },
+    "is_manufacturer": true
   }
 ]

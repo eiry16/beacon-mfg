@@ -54,7 +54,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "网吧",
-      "网咖"
+      "网咖",
+      "电竞馆"
     ],
     "region": {
       "province": "湖北",
@@ -103,7 +104,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "网吧",
-      "网咖"
+      "网咖",
+      "电竞馆"
     ],
     "region": {
       "province": "湖北",
@@ -134,6 +136,54 @@
       "business_area": "大智路",
       "adcode": "420102",
       "search_keyword": "网吧"
+    },
+    "industry": {
+      "code": "6231",
+      "name": "茶馆服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 饮料及冷饮服务 > 茶馆服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "茶室"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040830",
+    "company": "摩非电竞茶室(梦的啦店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "纺织路1号华罗利广场负一层D06号梦的啦网咖摩非电竞茶室",
+    "contact_phone": "191****3896",
+    "lat": 30.483246,
+    "lng": 114.396133,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G26SLNSV",
+      "type": "体育休闲服务;娱乐场所;网吧",
+      "typecode": "080308",
+      "alias": "",
+      "tag": "",
+      "keytag": "网吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "光谷",
+      "adcode": "420111",
+      "search_keyword": "电竞馆"
     },
     "industry": {
       "code": "6231",

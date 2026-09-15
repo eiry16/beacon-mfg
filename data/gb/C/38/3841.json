@@ -610,5 +610,53 @@
       "evidence": "电池"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0046073",
+    "company": "电池车",
+    "category": "电子元器件",
+    "keywords": [
+      "游乐场"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "东风西路163号流花湖公园榕荫游乐场内",
+    "contact_phone": "待核实",
+    "lat": 23.137896,
+    "lng": 113.250071,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFK8D50Q",
+      "type": "风景名胜;风景名胜相关;旅游景点",
+      "typecode": "110000",
+      "alias": "",
+      "tag": "",
+      "keytag": "游乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东风",
+      "adcode": "440104",
+      "search_keyword": "游乐场"
+    },
+    "industry": {
+      "code": "3841",
+      "name": "锂离子电池制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电池制造 > 锂离子电池制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电池"
+    },
+    "is_manufacturer": true
   }
 ]

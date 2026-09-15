@@ -54,5 +54,53 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0041401",
+    "company": "宝佳大型激光金属切割",
+    "category": "钣金冲压",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "秋宝路",
+    "contact_phone": "待核实",
+    "lat": 22.782747,
+    "lng": 114.391918,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIKQJO2",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "秋长",
+      "adcode": "441303",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "3424",
+      "name": "金属切割及焊接设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 金属加工机械制造 > 金属切割及焊接设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "金属切割"
+    },
+    "is_manufacturer": true
   }
 ]

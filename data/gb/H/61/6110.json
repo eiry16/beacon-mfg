@@ -1593,7 +1593,9 @@
     "keywords": [
       "洗浴",
       "温泉",
-      "澡堂"
+      "澡堂",
+      "养生",
+      "水上乐园"
     ],
     "region": {
       "province": "上海",
@@ -1741,7 +1743,8 @@
     "keywords": [
       "洗浴",
       "温泉",
-      "澡堂"
+      "澡堂",
+      "养生"
     ],
     "region": {
       "province": "广东",
@@ -1840,7 +1843,8 @@
     "keywords": [
       "洗浴",
       "澡堂",
-      "足浴"
+      "足浴",
+      "养生"
     ],
     "region": {
       "province": "广东",
@@ -1890,7 +1894,8 @@
     "keywords": [
       "洗浴",
       "温泉",
-      "澡堂"
+      "澡堂",
+      "养生"
     ],
     "region": {
       "province": "浙江",
@@ -1989,7 +1994,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "洗浴",
-      "澡堂"
+      "澡堂",
+      "养生"
     ],
     "region": {
       "province": "江苏",
@@ -2040,7 +2046,8 @@
       "洗浴",
       "水疗",
       "澡堂",
-      "足浴"
+      "足浴",
+      "养生"
     ],
     "region": {
       "province": "湖北",
@@ -2664,7 +2671,8 @@
     "company": "上海曲水兰亭酒店",
     "category": "住宿和餐饮业",
     "keywords": [
-      "温泉"
+      "温泉",
+      "养生"
     ],
     "region": {
       "province": "上海",
@@ -5064,7 +5072,8 @@
     "company": "杭州临安湍口众安汇尊温泉度假村",
     "category": "住宿和餐饮业",
     "keywords": [
-      "温泉"
+      "温泉",
+      "水上乐园"
     ],
     "region": {
       "province": "浙江",
@@ -7129,7 +7138,9 @@
     "company": "麦当劳(深圳东站莱卡酒店店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "汉堡"
+      "汉堡",
+      "简餐",
+      "小吃店"
     ],
     "region": {
       "province": "广东",
@@ -7178,7 +7189,9 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "汉堡",
-      "便当"
+      "便当",
+      "简餐",
+      "小吃店"
     ],
     "region": {
       "province": "广东",
@@ -7226,7 +7239,9 @@
     "company": "麦当劳(杭州西湖东坡酒店店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "汉堡"
+      "汉堡",
+      "简餐",
+      "小吃店"
     ],
     "region": {
       "province": "浙江",
@@ -7275,7 +7290,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "网吧",
-      "网咖"
+      "网咖",
+      "电竞馆"
     ],
     "region": {
       "province": "湖北",
@@ -7324,7 +7340,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "网吧",
-      "网咖"
+      "网咖",
+      "电竞馆"
     ],
     "region": {
       "province": "四川",
@@ -7547,6 +7564,2126 @@
       "business_area": "五里桥",
       "adcode": "310101",
       "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040144",
+    "company": "糖小兔Loft电竞酒店(南京工业大学江北虹悦城店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "毅达汇创中心5栋14层",
+    "contact_phone": "199****3818",
+    "lat": 32.067453,
+    "lng": 118.643453,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H10ATBG6",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "经济型",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江浦",
+      "adcode": "320111",
+      "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040786",
+    "company": "零距离电竞酒店(南湖店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "泛悦mall南湖店二楼",
+    "contact_phone": "133****1972",
+    "lat": 30.504675,
+    "lng": 114.324875,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KACH137T",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "网吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丁字桥",
+      "adcode": "420106",
+      "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040909",
+    "company": "麦当劳(江南酒店店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "江南大道中348号珀丽酒店1层(昌岗地铁站C2口旁)",
+    "contact_phone": "020-84237632; 4008597597",
+    "lat": 23.091097,
+    "lng": 113.27636,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00140T5PE",
+      "type": "餐饮服务;快餐厅;麦当劳",
+      "typecode": "050302",
+      "alias": "",
+      "tag": "麦辣鸡腿堡,安格斯系列,家有金桶（脆鸡版）,可乐鸡翅,大脆鸡扒麦满分组合,人气美味尽享套餐,麦当劳超值嗨餐,（2-3人餐）,原味板烧鸡腿麦满分组合,板烧美味三件套,麦辣美味三件套,巨无霸汉堡,家有金桶（汉堡版）,薯条,双人餐,汉堡,鸡翅",
+      "keytag": "西式快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江南中",
+      "adcode": "440105",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041122",
+    "company": "华足泰足道·泰式·SPA休闲中心(胜利宾馆店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "泡脚",
+      "SPA"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "沙面北街与沙面二街交叉口西南40米",
+    "contact_phone": "198****4208",
+    "lat": 23.107775,
+    "lng": 113.245425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LBA9JYBG",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "SPA",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙面",
+      "adcode": "440103",
+      "search_keyword": "泡脚"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宾馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041133",
+    "company": "万福荟宾馆棋牌沐足",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "泡脚"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "万福路136号3楼(北京路地铁站出入口步行430米)",
+    "contact_phone": "待核实",
+    "lat": 23.12015,
+    "lng": 113.273976,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IRF7812G",
+      "type": "住宿服务;宾馆酒店;宾馆酒店|生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "100100|071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "建设",
+      "adcode": "440104",
+      "search_keyword": "泡脚"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宾馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041148",
+    "company": "广州南美元生态大酒店(海珠店)-足浴",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "泡脚"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "滨江西路海鸣街16号广东元生态大酒店",
+    "contact_phone": "待核实",
+    "lat": 23.10423,
+    "lng": 113.25057,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG2RB8N",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "洪德",
+      "adcode": "440105",
+      "search_keyword": "泡脚"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041211",
+    "company": "和光玩家国度H·ROG电竞酒店(成都金沙博物馆蜀汉路东地铁站店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "同善街5号7楼(蜀汉路东地铁站A口步行60米)",
+    "contact_phone": "191****1867",
+    "lat": 30.683783,
+    "lng": 104.026944,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3HUZ0A3",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "电竞酒店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "金沙",
+      "adcode": "510106",
+      "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041225",
+    "company": "和光玩家国度H·ROG电竞酒店(成都博物馆天府广场店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "顺城大街139号附1号",
+    "contact_phone": "191****5597",
+    "lat": 30.660762,
+    "lng": 104.070498,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2VU9K9B",
+      "type": "住宿服务;住宿服务相关;住宿服务相关",
+      "typecode": "100000",
+      "alias": "光链玩家国度X·ROG电竞酒店(成都天府广场春熙路店)",
+      "tag": "",
+      "keytag": "电竞酒店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "顺城大街",
+      "adcode": "510104",
+      "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041278",
+    "company": "Biu biu电竞酒店(玉林东路省体育馆店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "玉林东路1号3楼",
+    "contact_phone": "188****0367",
+    "lat": 30.629425,
+    "lng": 104.064025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGO96H09",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "电竞酒店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "玉林",
+      "adcode": "510107",
+      "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041290",
+    "company": "星耀-CE电竞酒店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "金沙横街53号-附1号2楼",
+    "contact_phone": "133****2590",
+    "lat": 30.693376,
+    "lng": 104.046497,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKH5QEKF",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "网吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "金沙",
+      "adcode": "510106",
+      "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041372",
+    "company": "美娱·星峰电竞酒店(成都双流国际机场航都大街地铁站店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "商都路718号三楼",
+    "contact_phone": "193****6708",
+    "lat": 30.597569,
+    "lng": 103.937127,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MU57TCVN",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "经济型",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东升",
+      "adcode": "510116",
+      "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041557",
+    "company": "宋杰老鸭粉丝馆(杭州古翠路地铁站杭州忆邦酒店店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "益乐路37号(蓝海国际对面)",
+    "contact_phone": "159****6202; 159****9733",
+    "lat": 30.279384,
+    "lng": 120.113803,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG3BMKW",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "鸭肠,鸭血,鸭血粉丝,老鸭粉丝汤,葱油饼,鸭肉,鸭血粉丝汤",
+      "keytag": "米粉",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西湖",
+      "adcode": "330106",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041832",
+    "company": "浦东嘉里大酒店儿童探险乐园",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "游乐园"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "花木路1388号浦东嘉里大酒店4层",
+    "contact_phone": "021-61698878",
+    "lat": 31.213175,
+    "lng": 121.563775,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B001574ZOK",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310115",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0042815",
+    "company": "千润·康和足道(金盾酒店店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "泡脚"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "青年路350号金盾舒悦酒店2-3楼(酒店正门进入,乘电梯上2楼)",
+    "contact_phone": "027-88300003",
+    "lat": 30.600064,
+    "lng": 114.263612,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLELDT4",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西北湖",
+      "adcode": "420103",
+      "search_keyword": "泡脚"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0043349",
+    "company": "GM瑰幂(远洋宾馆店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "修脚"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "东大名路1171号301室",
+    "contact_phone": "021-65666065",
+    "lat": 31.252649,
+    "lng": 121.510053,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MAA59WLJ",
+      "type": "购物服务;服装鞋帽皮具店;服装鞋帽皮具店",
+      "typecode": "061100",
+      "alias": "",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北外滩",
+      "adcode": "310109",
+      "search_keyword": "修脚"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宾馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0044239",
+    "company": "鹤祥宫·影院足道·SPA连锁·万豪(福朋喜来登酒店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "修脚",
+      "养生"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "新安街道甲岸社区宝民一路70号建设大厦401室",
+    "contact_phone": "0755-23577452; 180****6295",
+    "lat": 22.562413,
+    "lng": 113.90181,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IKPU302W",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "按摩",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新安",
+      "adcode": "440306",
+      "search_keyword": "修脚"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0044287",
+    "company": "郑远元专业修脚房(罗湖大酒店店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "修脚"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "南湖街道嘉北社区南湖路3012号罗湖大酒店101",
+    "contact_phone": "待核实",
+    "lat": 22.541682,
+    "lng": 114.120849,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBTRDB4B",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "修脚",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "国贸·SPRING(装修中)",
+      "adcode": "440303",
+      "search_keyword": "修脚"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0045105",
+    "company": "儒之堂足道会所(万华国际酒店店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "修脚"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "香积寺路60号杭州万华国际酒店2楼",
+    "contact_phone": "待核实",
+    "lat": 30.307678,
+    "lng": 120.179062,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HGZ92WPX",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西联广场",
+      "adcode": "330105",
+      "search_keyword": "修脚"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0045381",
+    "company": "乡悦华亭度假村",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "游乐场"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "华亭镇联康路277弄2号",
+    "contact_phone": "199****3966",
+    "lat": 31.479677,
+    "lng": 121.291517,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J1KH42KR",
+      "type": "体育休闲服务;度假疗养场所;度假疗养场所",
+      "typecode": "080400",
+      "alias": "",
+      "tag": "",
+      "keytag": "度假村",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "游乐场"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "度假村"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047058",
+    "company": "泰享受·泰式按摩·SPA(中酒店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "养生"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "盘福路63号府上酒店三楼313-315",
+    "contact_phone": "180****2541",
+    "lat": 23.135649,
+    "lng": 113.260022,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAVS2B2L",
+      "type": "生活服务;美容美发店;美容美发店",
+      "typecode": "071100",
+      "alias": "",
+      "tag": "",
+      "keytag": "推拿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "解放北",
+      "adcode": "440104",
+      "search_keyword": "养生"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047068",
+    "company": "泰享受·泰式按摩·SPA(中酒店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "养生",
+      "按摩",
+      "SPA"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "盘福路63号府上酒店三楼313-315",
+    "contact_phone": "180****2541",
+    "lat": 23.135649,
+    "lng": 113.260022,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAVS2B2L",
+      "type": "生活服务;美容美发店;美容美发店",
+      "typecode": "071100",
+      "alias": "",
+      "tag": "",
+      "keytag": "推拿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "解放北",
+      "adcode": "440104",
+      "search_keyword": "养生"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047248",
+    "company": "武汉光谷希尔顿酒店亲子游乐园",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "游乐场"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "武汉光谷希尔顿酒店会议中心西南侧110米",
+    "contact_phone": "待核实",
+    "lat": 30.550375,
+    "lng": 114.490475,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LK3U05CW",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "420111",
+      "search_keyword": "游乐场"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047552",
+    "company": "太阳岛度假村沙滩水世界",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "朱家角镇沈太路2588号太阳岛旅游度假区",
+    "contact_phone": "待核实",
+    "lat": 31.035375,
+    "lng": 121.074075,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDUL1NXH",
+      "type": "体育休闲服务;休闲场所;水上活动中心",
+      "typecode": "080505",
+      "alias": "",
+      "tag": "",
+      "keytag": "水上活动中心",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310118",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "度假村"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047614",
+    "company": "上海极乐汤川沙温泉酒店室外水乐园",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "川周公路7076弄2号",
+    "contact_phone": "021-67822777",
+    "lat": 31.167617,
+    "lng": 121.685963,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IRDMJV44",
+      "type": "体育休闲服务;休闲场所;水上活动中心",
+      "typecode": "080505",
+      "alias": "",
+      "tag": "",
+      "keytag": "温泉洗浴",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310115",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047617",
+    "company": "上海极乐汤川沙温泉酒店室外水乐园",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "川周公路7076弄2号",
+    "contact_phone": "021-67822777",
+    "lat": 31.167617,
+    "lng": 121.685963,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IRDMJV44",
+      "type": "体育休闲服务;休闲场所;水上活动中心",
+      "typecode": "080505",
+      "alias": "",
+      "tag": "",
+      "keytag": "温泉洗浴",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310115",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047964",
+    "company": "星巴克(古象大酒店店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "九江路595号古象大酒店",
+    "contact_phone": "021-33050960",
+    "lat": 31.234175,
+    "lng": 121.479475,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI71O7E",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北京路",
+      "adcode": "310101",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0048030",
+    "company": "URBAN Cafe(上海素凯泰酒店店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "威海路380号上海素凯泰酒店1层",
+    "contact_phone": "待核实",
+    "lat": 31.227529,
+    "lng": 121.464391,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJDS1QB",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "猪肉",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "淮海路",
+      "adcode": "310106",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0048262",
+    "company": "百花山庄度假村",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "荔城街百花路88号",
+    "contact_phone": "020-82618888; 180****1030",
+    "lat": 23.31066,
+    "lng": 113.795713,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00140CK28",
+      "type": "住宿服务;宾馆酒店;四星级宾馆",
+      "typecode": "100103",
+      "alias": "",
+      "tag": "",
+      "keytag": "高档型",
+      "website": "www.zcbhsz.com",
+      "email": "",
+      "postcode": "511300",
+      "business_area": "",
+      "adcode": "440118",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "度假村"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0048270",
+    "company": "世外桃源度假村",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "钟落潭镇寮采村093乡道(近激流赛场)",
+    "contact_phone": "020-36616628; 020-36616638; 181****8167",
+    "lat": 23.409061,
+    "lng": 113.364386,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00141UACN",
+      "type": "体育休闲服务;度假疗养场所;度假村|住宿服务;宾馆酒店;三星级宾馆",
+      "typecode": "080401|100104",
+      "alias": "",
+      "tag": "",
+      "keytag": "度假村",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440111",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "度假村"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0048401",
+    "company": "祈福酒店-水上乐园(暂停营业)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "市广路8号祈福度假俱乐部负一楼",
+    "contact_phone": "020-84718151",
+    "lat": 22.969316,
+    "lng": 113.334871,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLEZWN0",
+      "type": "体育休闲服务;休闲场所;水上活动中心",
+      "typecode": "080505",
+      "alias": "",
+      "tag": "",
+      "keytag": "水上活动中心",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "祈福",
+      "adcode": "440113",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0048866",
+    "company": "Club Med地中海邻境·千岛湖度假村",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "界首乡锦秀路88号(千岛湖旅游度假区)",
+    "contact_phone": "0571-56638888",
+    "lat": 29.54688,
+    "lng": 118.84618,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IAYZQXQZ",
+      "type": "体育休闲服务;度假疗养场所;度假村|住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "080401|100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "体育休闲服务,度假疗养场所,度假村|住宿服务,宾馆酒店,宾馆酒店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "界首区块-千岛湖国家级旅游度假区",
+      "adcode": "330127",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "度假村"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0049224",
+    "company": "Club Med地中海白日方舟·南京仙林度假村",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "大浦塘东路3号",
+    "contact_phone": "025-68376666",
+    "lat": 32.080072,
+    "lng": 118.926762,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IGNZYUFX",
+      "type": "体育休闲服务;度假疗养场所;度假村",
+      "typecode": "080401",
+      "alias": "",
+      "tag": "",
+      "keytag": "豪华型",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320113",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "度假村"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0049344",
+    "company": "星巴克臻选(广州中国大酒店店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "流花路1号中国大酒店商业大厦1层S125及S155",
+    "contact_phone": "020-22048006",
+    "lat": 23.140006,
+    "lng": 113.260557,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00140C22H",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "www.starbucks.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "东风",
+      "adcode": "440104",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0049623",
+    "company": "沐春风度假村",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "兴义镇附近",
+    "contact_phone": "028-28005961; 028-69598888; 028-82588988",
+    "lat": 30.486216,
+    "lng": 103.797204,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HAOMG9XO",
+      "type": "体育休闲服务;度假疗养场所;度假村",
+      "typecode": "080401",
+      "alias": "",
+      "tag": "",
+      "keytag": "度假酒店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "510118",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "度假村"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0049723",
+    "company": "三岔湖长岛天堂洲际酒店水乐园(暂停营业)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "丹景街道新湖街5号(三岔湖风景区)",
+    "contact_phone": "028-27069999",
+    "lat": 30.285889,
+    "lng": 104.2502,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHR64RR",
+      "type": "体育休闲服务;休闲场所;水上活动中心",
+      "typecode": "080505",
+      "alias": "",
+      "tag": "",
+      "keytag": "水上乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东部新区",
+      "adcode": "510185",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0049755",
+    "company": "杭州国际会议中心洲际酒店-康桥大堂吧",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "四季青街道解放东路2号杭州洲际酒店5层",
+    "contact_phone": "0571-89810000; 0571-89810311",
+    "lat": 30.241991,
+    "lng": 120.213684,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B1CL6K",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "钱江新城",
+      "adcode": "330102",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050089",
+    "company": "和平农庄度假村-儿童乐园",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "武昌大道特8号和平农庄度假村",
+    "contact_phone": "待核实",
+    "lat": 30.378883,
+    "lng": 114.30918,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJ82741",
+      "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+      "typecode": "080000",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "420115",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "度假村"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050431",
+    "company": "杭州爱情故事酒店有限公司",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "按摩",
+      "SPA"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "庆春路48号五洋宾馆5F",
+    "contact_phone": "0571-87805550",
+    "lat": 30.258178,
+    "lng": 120.180446,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG3U8AZ",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "SPA",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西湖",
+      "adcode": "330105",
+      "search_keyword": "按摩"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050492",
+    "company": "首座万豪酒店·大堂吧",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "天府大道北段999号万豪酒店1楼",
+    "contact_phone": "028-80647758",
+    "lat": 30.586965,
+    "lng": 104.069413,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHJSTBC",
+      "type": "住宿服务;宾馆酒店;五星级宾馆",
+      "typecode": "100102",
+      "alias": "",
+      "tag": "自助早餐",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "交子商圈",
+      "adcode": "510107",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050495",
+    "company": "羿庭·大堂吧(华尔道夫酒店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "天府大道北段1199号华尔道夫酒店49楼(近银泰中心in99)",
+    "contact_phone": "028-68706051",
+    "lat": 30.584515,
+    "lng": 104.06893,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIABXBA",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "交子商圈",
+      "adcode": "510107",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050681",
+    "company": "木棉Kapok·SPA(洲际酒店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "按摩",
+      "SPA"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "中央路与书仁巷交叉口西20米",
+    "contact_phone": "待核实",
+    "lat": 32.060925,
+    "lng": 118.783875,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKRN5GP7",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "SPA",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "湖北路",
+      "adcode": "320106",
+      "search_keyword": "按摩"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0051329",
+    "company": "上海外滩瑞吉酒店瑞吉水疗中心",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "SPA"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "小东门街道中山东二路538号上海外滩瑞吉酒店2层",
+    "contact_phone": "待核实",
+    "lat": 31.227775,
+    "lng": 121.496725,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBA59PCO",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "SPA",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "城隍庙",
+      "adcode": "310101",
+      "search_keyword": "SPA"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0052002",
+    "company": "熹境泰式按摩BRILLIANT SPA(广州花园酒店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "SPA"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "华乐街道环市东路368号广州花园酒店大堂G03铺",
+    "contact_phone": "待核实",
+    "lat": 23.135565,
+    "lng": 113.285661,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDMBVVAF",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "泰式按摩",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东风",
+      "adcode": "440104",
+      "search_keyword": "SPA"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0052589",
+    "company": "晋辛阁·SPA·影院足道(夫子庙状元楼大酒店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "SPA"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "状元境9号南京金陵状元楼大酒店三层",
+    "contact_phone": "134****5233",
+    "lat": 32.022125,
+    "lng": 118.788125,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KB1X9BNE",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "SPA",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "夫子庙",
+      "adcode": "320104",
+      "search_keyword": "SPA"
     },
     "industry": {
       "code": "6110",

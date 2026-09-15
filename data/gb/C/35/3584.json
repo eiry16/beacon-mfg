@@ -266,5 +266,53 @@
       "evidence": "医疗"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0044572",
+    "company": "小猴快跑医疗器械(武侯店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "游乐园"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "飞云三巷128号2楼附218号",
+    "contact_phone": "待核实",
+    "lat": 30.617679,
+    "lng": 104.078096,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K0FUH6OS",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "桂溪",
+      "adcode": "510107",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医疗器械"
+    },
+    "is_manufacturer": true
   }
 ]

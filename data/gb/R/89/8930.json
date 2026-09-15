@@ -7714,7 +7714,8 @@
     "category": "文化、体育和娱乐业",
     "keywords": [
       "健身房",
-      "健身中心"
+      "健身中心",
+      "水上乐园"
     ],
     "region": {
       "province": "湖北",
@@ -21761,6 +21762,102 @@
       "business_area": "光谷",
       "adcode": "420111",
       "search_keyword": "球馆"
+    },
+    "industry": {
+      "code": "8930",
+      "name": "健身休闲活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 体育 > 健身休闲活动 > 健身休闲活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "健身"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047573",
+    "company": "艾汕健身 潜水",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "中国上海自由贸易试验区临港新片区松萝路355、395、399号6幢",
+    "contact_phone": "153****2990",
+    "lat": 30.911268,
+    "lng": 121.908853,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3U7I8FT",
+      "type": "体育休闲服务;运动场馆;健身中心",
+      "typecode": "080111",
+      "alias": "",
+      "tag": "",
+      "keytag": "水上活动中心",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中国(上海)自由贸易试验区临港新片区",
+      "adcode": "310115",
+      "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "8930",
+      "name": "健身休闲活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 体育 > 健身休闲活动 > 健身休闲活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "健身"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0049234",
+    "company": "秦淮区全民健身水上运动基地",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "水上乐园"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "后标营52号月牙湖公园内(西南角)",
+    "contact_phone": "025-51805008",
+    "lat": 32.025809,
+    "lng": 118.825753,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HROAIHIH",
+      "type": "体育休闲服务;娱乐场所;娱乐场所",
+      "typecode": "080300",
+      "alias": "",
+      "tag": "",
+      "keytag": "水上活动中心",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "月牙湖",
+      "adcode": "320104",
+      "search_keyword": "水上乐园"
     },
     "industry": {
       "code": "8930",
