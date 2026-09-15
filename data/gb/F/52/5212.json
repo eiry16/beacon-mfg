@@ -536,7 +536,9 @@
     "category": "批发和零售业",
     "keywords": [
       "汉堡",
-      "便当"
+      "便当",
+      "简餐",
+      "小吃店"
     ],
     "region": {
       "province": "江苏",
@@ -584,7 +586,9 @@
     "company": "麦当劳(西湖银泰百货店)",
     "category": "批发和零售业",
     "keywords": [
-      "汉堡"
+      "汉堡",
+      "简餐",
+      "小吃店"
     ],
     "region": {
       "province": "浙江",
@@ -1052,5 +1056,1359 @@
     },
     "is_manufacturer": false,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0039989",
+    "company": "大唐足韵旗舰店(绿宝百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "泡脚",
+      "按摩"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "苏州高新区长江路436号绿宝休闲购物广场1幢2楼L2-01单元",
+    "contact_phone": "待核实",
+    "lat": 31.302431,
+    "lng": 120.548326,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I0HDTV0E",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320505",
+      "search_keyword": "泡脚"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040281",
+    "company": "趣玩汇(南京时尚莱迪购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "洪武路38号正洪大厦1&2楼",
+    "contact_phone": "025-86213820",
+    "lat": 32.039605,
+    "lng": 118.787361,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKPI847",
+      "type": "体育休闲服务;娱乐场所;游戏厅|体育休闲服务;休闲场所;游乐场",
+      "typecode": "080305|080501",
+      "alias": "风云再起(南京时尚莱迪购物广场店)",
+      "tag": "",
+      "keytag": "抓娃娃",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新街口",
+      "adcode": "320104",
+      "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040410",
+    "company": "韩国炸酱面友利家超市",
+    "category": "批发和零售业",
+    "keywords": [
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "南光路鸿瑞花园三期65-15号",
+    "contact_phone": "132****5830; 181****6877",
+    "lat": 22.521478,
+    "lng": 113.927167,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJ1W91W",
+      "type": "购物服务;便民商店/便利店;便民商店/便利店|餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "060200|050000",
+      "alias": "",
+      "tag": "年糕,泡菜,冷面,炸酱面",
+      "keytag": "韩国料理",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "桂庙路口",
+      "adcode": "440305",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "超市"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040438",
+    "company": "麦当劳(大鹏昌宏百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "大鹏新区迎宾路18号滨海阳光花园1层101、101B 、103、104、106号",
+    "contact_phone": "0755-23250016; 4000517117",
+    "lat": 22.594413,
+    "lng": 114.476235,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF4NMD8",
+      "type": "餐饮服务;快餐厅;麦当劳",
+      "typecode": "050302",
+      "alias": "",
+      "tag": "脆香油条,脆皮枫糖风味鸡翅,香橙拿铁,香辣鸡腿堡,美汁源阳光橙,热朱古力,芝士蛋糕,纽约芝士雪糕,桑格利亚,巧克力麦芬,好运鸡柳,火腿扒早餐,培根蔬萃汉堡,鸡巴毛,红豆珍珠奶茶,薯条,双人餐,汉堡",
+      "keytag": "西式快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440307",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040889",
+    "company": "McDonald's(东方宝泰购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "林和街道林和中路63号东方宝泰购物广场首层",
+    "contact_phone": "020-38615467",
+    "lat": 23.14835,
+    "lng": 113.325479,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJKW8CY",
+      "type": "餐饮服务;快餐厅;麦当劳|餐饮服务;甜品店;甜品店",
+      "typecode": "050302|050900",
+      "alias": "",
+      "tag": "经典麦辣鸡腿汉堡,原味特级板烧鸡腿堡,炸鸡翅,麦辣鸡翅堡,全职高手那么大圆筒抹茶味,猪柳麦满分餐,黄桃冰沙,麦吐司,那么大鸡排满碗饭,脆香油条,爆米花口味麦旋风,火腿扒,吉士蛋,健康杂菜卷,不素之霸双层牛肉堡精选套餐,薯条,汉堡",
+      "keytag": "西式快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "林和",
+      "adcode": "440106",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041559",
+    "company": "米村拌饭(萧山银隆百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "北干街道市心中路268号银隆百货B座地下第一层第B-124号商铺,银隆百货地铁口右转100米",
+    "contact_phone": "139****0722",
+    "lat": 30.170779,
+    "lng": 120.268196,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KGJPUWXL",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "拌饭",
+      "keytag": "小吃快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北干",
+      "adcode": "330109",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0041838",
+    "company": "卡通尼(百联中环购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "游乐园",
+      "游乐场"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "真光路1258号百联中环购物广场2F层A-L222/L223",
+    "contact_phone": "021-61392349",
+    "lat": 31.244763,
+    "lng": 121.384261,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJ1M63X",
+      "type": "体育休闲服务;休闲场所;游乐场|体育休闲服务;娱乐场所;娱乐场所",
+      "typecode": "080501|080300",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "www.cartoonyworld.com",
+      "email": "",
+      "postcode": "",
+      "business_area": "长征",
+      "adcode": "310107",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0042109",
+    "company": "苏莲足道(山西路百货大楼店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "泡脚",
+      "按摩"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "中山北路107-141号山西路百货大楼F3层(东北2门进入直行20m,扶梯上到F3可见)",
+    "contact_phone": "180****7555",
+    "lat": 32.067432,
+    "lng": 118.773784,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IKABN8FP",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "湖南路",
+      "adcode": "320106",
+      "search_keyword": "泡脚"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0042390",
+    "company": "宝拉的创意乐园(茂业百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "游乐园"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "东门中路2047号茂业百货F5层",
+    "contact_phone": "158****4479",
+    "lat": 22.547094,
+    "lng": 114.121249,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I17PJ9NP",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东门",
+      "adcode": "440303",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0042538",
+    "company": "麦当劳(润升百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "广场中路润昇百货1层",
+    "contact_phone": "0769-82111649; 4008517517",
+    "lat": 22.960689,
+    "lng": 114.148683,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B03017UMMJ",
+      "type": "餐饮服务;快餐厅;麦当劳",
+      "typecode": "050302",
+      "alias": "",
+      "tag": "麦辣鸡腿汉堡包,香蕉麦芬蛋糕,芒果雪冰,板烧鸡腿早晨全餐配鲜煮咖啡,杂果缤纷奇乐酷,火腿扒蛋麦煎饼组合,开心乐园餐配小薯条,鸡腿包配麦旋风组合,樱花甜筒,摩卡,柠檬红茶,优品豆浆,麦乐鸡大套餐,大脆鸡扒麦满分组合,不素之霸双层牛肉堡精选套餐,薯条,双人餐,汉堡",
+      "keytag": "西式快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0042667",
+    "company": "臻品足道·点点餐(新世界百货国贸店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "泡脚"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "建设大道568号新世界国贸大厦I座4层L04F041号商铺",
+    "contact_phone": "156****7722",
+    "lat": 30.595227,
+    "lng": 114.270149,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF67LP4",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "建设大道",
+      "adcode": "420103",
+      "search_keyword": "泡脚"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0042962",
+    "company": "星光动力城(广州万民百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "游乐园"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "石井街道石沙路181-183号庆丰商业广场3F层",
+    "contact_phone": "189****1958",
+    "lat": 23.21205,
+    "lng": 113.228334,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI8BMPU",
+      "type": "体育休闲服务;娱乐场所;娱乐场所",
+      "typecode": "080300",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石井",
+      "adcode": "440111",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0043908",
+    "company": "卓玛海洋探险乐园(金源百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "游乐园",
+      "游乐场"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "栖霞大道28号金源百货市场2层",
+    "contact_phone": "025-69692622; 025-69692626",
+    "lat": 32.119337,
+    "lng": 118.839065,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH2MV76",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "万寿商业街",
+      "adcode": "320113",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0044015",
+    "company": "镭战X勇士(同曦假日百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "游乐园"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "同曦万尚城负一楼(苏果后门旁)",
+    "contact_phone": "191****3505",
+    "lat": 31.942319,
+    "lng": 118.822343,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H1TRJ66T",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "真人CS",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "双龙大道",
+      "adcode": "320115",
+      "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0044164",
+    "company": "麦当劳(大东方百货店)-团餐优惠10元3件套",
+    "category": "批发和零售业",
+    "keywords": [
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "中山路343号大东方百货负一楼",
+    "contact_phone": "0510-82843419",
+    "lat": 31.576188,
+    "lng": 120.298988,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKQOL23",
+      "type": "餐饮服务;快餐厅;麦当劳",
+      "typecode": "050302",
+      "alias": "",
+      "tag": "堂食,薯条,牛肉,汉堡",
+      "keytag": "西式快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "崇安寺",
+      "adcode": "320213",
+      "search_keyword": "简餐"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0045635",
+    "company": "京东宝贝乐园(信和购物广场)",
+    "category": "批发和零售业",
+    "keywords": [
+      "游乐场"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "南海大道2088号信和购物广场L1层",
+    "contact_phone": "189****6846",
+    "lat": 22.506664,
+    "lng": 113.925084,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J1U9XMD4",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "蛇口",
+      "adcode": "440305",
+      "search_keyword": "游乐场"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0045666",
+    "company": "乐童大梦想游乐中心(坪地宜城购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "游乐场"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "龙岗大道3018号坪地宜城购物广场F2层",
+    "contact_phone": "待核实",
+    "lat": 22.767191,
+    "lng": 114.306718,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J22AWDUT",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "坪地",
+      "adcode": "440307",
+      "search_keyword": "游乐场"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0046716",
+    "company": "金梦之都养生会所(华信购物广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "养生"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "华荣路278号华信购物广场F1层",
+    "contact_phone": "136****7842",
+    "lat": 22.672443,
+    "lng": 113.998638,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH84314",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "大浪",
+      "adcode": "440309",
+      "search_keyword": "养生"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047192",
+    "company": "开心贝儿(黄陂广场中百百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "游乐场"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "黄陂大道387号中百百货3层",
+    "contact_phone": "027-61106123; 027-61106393",
+    "lat": 30.880275,
+    "lng": 114.376925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGFZY0M",
+      "type": "体育休闲服务;休闲场所;游乐场",
+      "typecode": "080501",
+      "alias": "",
+      "tag": "",
+      "keytag": "儿童乐园",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "前川",
+      "adcode": "420116",
+      "search_keyword": "游乐场"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0047934",
+    "company": "星巴克(第一百货商业中心C馆4F)",
+    "category": "批发和零售业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南京东路830号第一百货C馆1层",
+    "contact_phone": "021-63132238",
+    "lat": 31.235085,
+    "lng": 121.475427,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I1A4ANXH",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "美式拿铁,摩卡低脂星冰乐,抹茶星冰乐和香草星冰乐,太妃榛果焦糖风味拿铁,低脂摩卡星冰乐,黑森林蛋糕,马斯卡波尼果香芝士蛋糕,香辣肉松,香草星冰乐冰,蓝莓cheese蛋糕,葡萄干烤饼,荔枝山竹复合果汁,草莓杯子蛋糕,草莓夏洛特,芒果豆奶星星乐,单人餐,下午茶",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北京路",
+      "adcode": "310101",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0049263",
+    "company": "ManTwo Cafe(北京路分新大新百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "中山五路昌兴街15号首层",
+    "contact_phone": "131****8034",
+    "lat": 23.126242,
+    "lng": 113.268367,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KRYRXP22",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "椰子水",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "广卫",
+      "adcode": "440104",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0049420",
+    "company": "星巴克(广州新光百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "康王中路666号新光城市广场首层101-1",
+    "contact_phone": "020-22290290",
+    "lat": 23.12418,
+    "lng": 113.248091,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00140T08P",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,牛肉,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "康王路",
+      "adcode": "440103",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0049823",
+    "company": "星巴克臻选(庆春银泰百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "景昙路18-26号银泰百货庆春店一楼",
+    "contact_phone": "0571-86533336",
+    "lat": 30.259703,
+    "lng": 120.205005,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B13OY0",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐,奶油",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "城东",
+      "adcode": "330102",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050160",
+    "company": "星巴克(新世界百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "珠江路88号新世界百货大楼1楼正门旁",
+    "contact_phone": "025-57047030",
+    "lat": 32.049633,
+    "lng": 118.787993,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKJVTLY",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "单人餐,下午茶",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新街口",
+      "adcode": "320102",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050247",
+    "company": "MANNER COFFEE(新世界百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "珠江路88号新世界百货F1层",
+    "contact_phone": "196****1724",
+    "lat": 32.049443,
+    "lng": 118.787718,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M69687BY",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "coffee",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新街口",
+      "adcode": "320102",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050871",
+    "company": "星巴克(中心百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "咖啡"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "江汉路129号中心百货1楼",
+    "contact_phone": "027-82240040",
+    "lat": 30.581745,
+    "lng": 114.290098,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G2CR9XXV",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "前进",
+      "adcode": "420103",
+      "search_keyword": "咖啡"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0051306",
+    "company": "丽妍雅集(芮欧百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "SPA"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南京西路1601号芮欧百货4楼(静安寺地铁站4号口旁)",
+    "contact_phone": "021-62883482; 021-62883483",
+    "lat": 31.223201,
+    "lng": 121.447504,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LA55KBYT",
+      "type": "生活服务;美容美发店;美容美发店",
+      "typecode": "071100",
+      "alias": "",
+      "tag": "",
+      "keytag": "美容",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "静安寺",
+      "adcode": "310106",
+      "search_keyword": "SPA"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0052322",
+    "company": "守田肩颈(银泰百货杭州西湖店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "SPA"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "延安路98号银泰百货(杭州西湖店)3F层",
+    "contact_phone": "132****6741",
+    "lat": 30.243803,
+    "lng": 120.1651,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3CHJ8US",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "SPA",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "吴山片区",
+      "adcode": "330102",
+      "search_keyword": "SPA"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
   }
 ]

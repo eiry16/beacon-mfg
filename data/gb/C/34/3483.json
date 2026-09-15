@@ -32219,7 +32219,21 @@
       "source": "name",
       "evidence": "弹簧"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0MU6UVJNK",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320509",
+      "search_keyword": "冲压"
+    }
   },
   {
     "id": "CN-MFG-0002402",
@@ -32233,15 +32247,15 @@
       "city": "宁波"
     },
     "address": "金山路298号",
-    "contact_phone": "待核实",
+    "contact_phone": "136****8782",
     "lat": 29.959746,
     "lng": 121.487266,
     "source": "public_directory",
     "source_url": "",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
-    "status": "unverified_poi",
+    "status": "verified",
     "industry": {
       "code": "3483",
       "name": "弹簧制造",
@@ -32251,7 +32265,21 @@
       "source": "name",
       "evidence": "弹簧"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "amap": {
+      "poi_id": "B0MD3DFJ1M",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330205",
+      "search_keyword": "冲压"
+    }
   },
   {
     "id": "CN-MFG-0002420",
@@ -32962,5 +32990,53 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0045401",
+    "company": "宁波一阳弹簧有限公司",
+    "category": "钣金冲压",
+    "keywords": [
+      "冲压"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "镇大路399-1号",
+    "contact_phone": "151****5069",
+    "lat": 29.899752,
+    "lng": 121.801521,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GDL7KM9M",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330206",
+      "search_keyword": "冲压"
+    },
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "is_manufacturer": true
   }
 ]

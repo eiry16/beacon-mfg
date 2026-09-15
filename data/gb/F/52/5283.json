@@ -1014,5 +1014,101 @@
       "evidence": "家居"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0040832",
+    "company": "网鱼电竞(武汉硚口汉西三路香江家居店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "电竞馆"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "韩家墩街道汉西二路59-61号香江家居商场A3栋二层A",
+    "contact_phone": "待核实",
+    "lat": 30.598082,
+    "lng": 114.221577,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6MRV9JT",
+      "type": "体育休闲服务;娱乐场所;网吧",
+      "typecode": "080308",
+      "alias": "",
+      "tag": "",
+      "keytag": "网吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "古田",
+      "adcode": "420104",
+      "search_keyword": "电竞馆"
+    },
+    "industry": {
+      "code": "5283",
+      "name": "家具零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 家具零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家居"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0046098",
+    "company": "囤囤馒头商店(阮家居店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "小吃店"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "丰登街170号",
+    "contact_phone": "199****3872",
+    "lat": 30.298701,
+    "lng": 120.111823,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JD575QCJ",
+      "type": "餐饮服务;快餐厅;快餐厅",
+      "typecode": "050300",
+      "alias": "",
+      "tag": "土豆泥,特色小吃,火腿,牛肉丸",
+      "keytag": "小吃快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "文新",
+      "adcode": "330105",
+      "search_keyword": "小吃店"
+    },
+    "industry": {
+      "code": "5283",
+      "name": "家具零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 家具零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家居"
+    },
+    "is_manufacturer": false
   }
 ]

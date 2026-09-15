@@ -429,5 +429,103 @@
     },
     "is_manufacturer": false,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0046795",
+    "company": "楽·按摩研究所(福田卓悦中心店)",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "养生",
+      "按摩"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "福田街道福华一路348号卓悦中心西区4层401-402号",
+    "contact_phone": "180****2544",
+    "lat": 22.535678,
+    "lng": 114.065147,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JU7N6DVL",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "推拿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "岗厦",
+      "adcode": "440304",
+      "search_keyword": "养生"
+    },
+    "industry": {
+      "code": "7320",
+      "name": "工程和技术研究和试验发展",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 研究和试验发展 > 工程和技术研究和试验发展 > 工程和技术研究和试验发展",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "研究所"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0050340",
+    "company": "睡小鸭SPA·失眠研究所(钱江新城店)",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "按摩",
+      "SPA"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "四季青街道民心路88号东方君悦2幢1楼",
+    "contact_phone": "待核实",
+    "lat": 30.251111,
+    "lng": 120.219711,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KKAZG5QA",
+      "type": "生活服务;美容美发店;美容美发店",
+      "typecode": "071100",
+      "alias": "",
+      "tag": "",
+      "keytag": "SPA",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "钱江新城",
+      "adcode": "330102",
+      "search_keyword": "按摩"
+    },
+    "industry": {
+      "code": "7320",
+      "name": "工程和技术研究和试验发展",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 研究和试验发展 > 工程和技术研究和试验发展 > 工程和技术研究和试验发展",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "研究所"
+    },
+    "is_manufacturer": false
   }
 ]
