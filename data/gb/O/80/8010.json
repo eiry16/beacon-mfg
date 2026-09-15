@@ -480,5 +480,105 @@
       "evidence": "家政"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0057140",
+    "company": "汽车保姆(绿景店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "汽车维修",
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "绿景一路5号首层456号铺",
+    "contact_phone": "待核实",
+    "lat": 23.002024,
+    "lng": 113.105337,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFWY6GE",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车服务;洗车场;洗车场|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|010500|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石湾",
+      "adcode": "440604",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "保姆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0057156",
+    "company": "汽车保姆(绿景店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "汽车维修",
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "绿景一路5号首层456号铺",
+    "contact_phone": "待核实",
+    "lat": 23.002024,
+    "lng": 113.105337,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFWY6GE",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车服务;洗车场;洗车场|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|010500|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石湾",
+      "adcode": "440604",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "保姆"
+    },
+    "is_manufacturer": false
   }
 ]

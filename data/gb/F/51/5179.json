@@ -9136,7 +9136,8 @@
     "company": "瑞丰模具配件",
     "category": "原材料",
     "keywords": [
-      "模具"
+      "模具",
+      "塑料模具"
     ],
     "region": {
       "province": "浙江",
@@ -15834,6 +15835,2139 @@
       "confidence": "low",
       "source": "name",
       "evidence": "物资"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0057841",
+    "company": "德国马牌轮胎(惠伦萃汽车配件商店)",
+    "category": "原材料",
+    "keywords": [
+      "汽车维修",
+      "汽修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "大通路南湖家园135-10号",
+    "contact_phone": "130****3282",
+    "lat": 31.508925,
+    "lng": 120.320825,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIRNZKB",
+      "type": "汽车服务;汽车配件销售;汽车配件销售|汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010800|010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "落霞苑",
+      "adcode": "320211",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "汽车配件|门店型:配件商店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0057170",
+    "company": "佛山市安迪鑫汽车贸易有限公司",
+    "category": "原材料",
+    "keywords": [
+      "汽车维修",
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "国际车城北区2座8-10号",
+    "contact_phone": "0757-82781971; 0757-82783729",
+    "lat": 23.006984,
+    "lng": 113.09982,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GRAA393V",
+      "type": "汽车销售;汽车销售;汽车销售|汽车维修;汽车维修;汽车维修",
+      "typecode": "020000|030000",
+      "alias": "斯威汽车4S店(佛山安迪鑫车城店)",
+      "tag": "",
+      "keytag": "汽车销售",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石湾",
+      "adcode": "440604",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "贸易"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058752",
+    "company": "嘉兴市铭峥贸易有限公司(电瓶世界)",
+    "category": "原材料",
+    "keywords": [
+      "汽车维修",
+      "汽修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "东升东路2426-2430号",
+    "contact_phone": "0573-83966568; 153****2777",
+    "lat": 30.776732,
+    "lng": 120.72875,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIOXGA4",
+      "type": "购物服务;专卖店;专营店|汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "061200|010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车救援",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东升东路",
+      "adcode": "330411",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "贸易"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058778",
+    "company": "嘉兴市振达汽配商行",
+    "category": "原材料",
+    "keywords": [
+      "汽车维修",
+      "汽修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "中环西路1293号",
+    "contact_phone": "0573-82110425; 0573-82111483; 135****9548",
+    "lat": 30.764592,
+    "lng": 120.726388,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023D0QAIW",
+      "type": "汽车服务;汽车配件销售;汽车配件销售|汽车维修;汽车维修;汽车维修",
+      "typecode": "010800|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "洪波路",
+      "adcode": "330411",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "汽配|门店型:商行"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0057856",
+    "company": "德国马牌轮胎(惠伦萃汽车配件商店)",
+    "category": "原材料",
+    "keywords": [
+      "汽车维修",
+      "汽修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "大通路南湖家园135-10号",
+    "contact_phone": "130****3282",
+    "lat": 31.508925,
+    "lng": 120.320825,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIRNZKB",
+      "type": "汽车服务;汽车配件销售;汽车配件销售|汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010800|010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "落霞苑",
+      "adcode": "320211",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "汽车配件|门店型:配件商店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058765",
+    "company": "嘉兴市铭峥贸易有限公司(电瓶世界)",
+    "category": "原材料",
+    "keywords": [
+      "汽车维修",
+      "汽修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "东升东路2426-2430号",
+    "contact_phone": "0573-83966568; 153****2777",
+    "lat": 30.776732,
+    "lng": 120.72875,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIOXGA4",
+      "type": "购物服务;专卖店;专营店|汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "061200|010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车救援",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东升东路",
+      "adcode": "330411",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "贸易"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0058791",
+    "company": "嘉兴市振达汽配商行",
+    "category": "原材料",
+    "keywords": [
+      "汽车维修",
+      "汽修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "中环西路1293号",
+    "contact_phone": "0573-82110425; 0573-82111483; 135****9548",
+    "lat": 30.764592,
+    "lng": 120.726388,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023D0QAIW",
+      "type": "汽车服务;汽车配件销售;汽车配件销售|汽车维修;汽车维修;汽车维修",
+      "typecode": "010800|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "洪波路",
+      "adcode": "330411",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "汽配|门店型:商行"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059846",
+    "company": "流动补胎救援搭电蓄电池(的发汽车配件商行)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "下沙村4坊5号102",
+    "contact_phone": "139****1053",
+    "lat": 22.524094,
+    "lng": 114.025553,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F38R72S",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车服务;汽车救援;汽车救援|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|010700|030000",
+      "alias": "修车补胎电池救援搭电",
+      "tag": "",
+      "keytag": "汽车救援",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙头",
+      "adcode": "440304",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "蓄电池|门店型:商行"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060075",
+    "company": "LINLEE·手打柠檬茶(大朗环球贸易广场店)",
+    "category": "原材料",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "大朗镇富康路229号环球贸易广场F1层",
+    "contact_phone": "133****5687",
+    "lat": 22.956525,
+    "lng": 113.919925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J2M9P92U",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "手打柠檬茶",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "环球贸易广场",
+      "adcode": "441900",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "贸易"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060190",
+    "company": "常满汽车用品经营部(恒福路旗舰店)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "恒福路294号首层(恒福阁2座正门东北70米)",
+    "contact_phone": "待核实",
+    "lat": 23.144353,
+    "lng": 113.293379,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JRYD95Y6",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车服务;汽车配件销售;汽车配件销售|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|010800|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "登峰",
+      "adcode": "440104",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "车用|门店型:经营部"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060248",
+    "company": "瓦尔塔蓄电池(科技星立商行)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "林和西横路5号(瓦尔塔蓄电池店)",
+    "contact_phone": "137****1915",
+    "lat": 23.145711,
+    "lng": 113.315867,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFCOYB4",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "天河北",
+      "adcode": "440106",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "蓄电池|门店型:商行"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060260",
+    "company": "德国马牌轮胎(超哥汽车配件经营部)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "怡乐路56-4号",
+    "contact_phone": "136****9840",
+    "lat": 23.096961,
+    "lng": 113.289527,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHQV2JU",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新港",
+      "adcode": "440105",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "汽车配件|门店型:经营部"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060287",
+    "company": "别克-广东物资君豪(机场路店)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "暖居青年公寓西北侧100米",
+    "contact_phone": "020-86329090",
+    "lat": 23.185018,
+    "lng": 113.261363,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M67ZXVR5",
+      "type": "汽车销售;通用特约销售;别克销售|汽车维修;通用特约维修;别克维修",
+      "typecode": "020402|030502",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车销售",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新市",
+      "adcode": "440111",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "物资"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0059855",
+    "company": "流动补胎救援搭电蓄电池(的发汽车配件商行)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "下沙村4坊5号102",
+    "contact_phone": "139****1053",
+    "lat": 22.524094,
+    "lng": 114.025553,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F38R72S",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车服务;汽车救援;汽车救援|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|010700|030000",
+      "alias": "修车补胎电池救援搭电",
+      "tag": "",
+      "keytag": "汽车救援",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙头",
+      "adcode": "440304",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "蓄电池|门店型:商行"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060078",
+    "company": "LINLEE·手打柠檬茶(大朗环球贸易广场店)",
+    "category": "原材料",
+    "keywords": [
+      "茶饮"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "大朗镇富康路229号环球贸易广场F1层",
+    "contact_phone": "133****5687",
+    "lat": 22.956525,
+    "lng": 113.919925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J2M9P92U",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "手打柠檬茶",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "环球贸易广场",
+      "adcode": "441900",
+      "search_keyword": "茶饮"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "贸易"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060193",
+    "company": "常满汽车用品经营部(恒福路旗舰店)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "恒福路294号首层(恒福阁2座正门东北70米)",
+    "contact_phone": "待核实",
+    "lat": 23.144353,
+    "lng": 113.293379,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JRYD95Y6",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车服务;汽车配件销售;汽车配件销售|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|010800|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "登峰",
+      "adcode": "440104",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "车用|门店型:经营部"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060251",
+    "company": "瓦尔塔蓄电池(科技星立商行)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "林和西横路5号(瓦尔塔蓄电池店)",
+    "contact_phone": "137****1915",
+    "lat": 23.145711,
+    "lng": 113.315867,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFCOYB4",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "天河北",
+      "adcode": "440106",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "蓄电池|门店型:商行"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060263",
+    "company": "德国马牌轮胎(超哥汽车配件经营部)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "怡乐路56-4号",
+    "contact_phone": "136****9840",
+    "lat": 23.096961,
+    "lng": 113.289527,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHQV2JU",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新港",
+      "adcode": "440105",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "汽车配件|门店型:经营部"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0060290",
+    "company": "别克-广东物资君豪(机场路店)",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "暖居青年公寓西北侧100米",
+    "contact_phone": "020-86329090",
+    "lat": 23.185018,
+    "lng": 113.261363,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M67ZXVR5",
+      "type": "汽车销售;通用特约销售;别克销售|汽车维修;通用特约维修;别克维修",
+      "typecode": "020402|030502",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车销售",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新市",
+      "adcode": "440111",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "物资"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0061428",
+    "company": "佛山市安迪鑫汽车贸易有限公司",
+    "category": "原材料",
+    "keywords": [
+      "汽修",
+      "汽车修理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "国际车城北区2座8-10号",
+    "contact_phone": "0757-82781971; 0757-82783729",
+    "lat": 23.006984,
+    "lng": 113.09982,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GRAA393V",
+      "type": "汽车销售;汽车销售;汽车销售|汽车维修;汽车维修;汽车维修",
+      "typecode": "020000|030000",
+      "alias": "斯威汽车4S店(佛山安迪鑫车城店)",
+      "tag": "",
+      "keytag": "汽车销售",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石湾",
+      "adcode": "440604",
+      "search_keyword": "汽修"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "贸易"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0061955",
+    "company": "积余行·茶馆·酒馆·茶叶烟酒批发",
+    "category": "原材料",
+    "keywords": [
+      "茶室",
+      "茶馆"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "杭州湾新区世纪城辰山路211号积余行",
+    "contact_phone": "137****7168",
+    "lat": 30.331561,
+    "lng": 121.229954,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H2LC6NYC",
+      "type": "购物服务;便民商店/便利店;便民商店/便利店",
+      "typecode": "060200",
+      "alias": "",
+      "tag": "",
+      "keytag": "烟酒",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "茶室"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0061749",
+    "company": "积余行·茶馆·酒馆·茶叶烟酒批发",
+    "category": "原材料",
+    "keywords": [
+      "茶室",
+      "茶馆"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "杭州湾新区世纪城辰山路211号积余行",
+    "contact_phone": "137****7168",
+    "lat": 30.331561,
+    "lng": 121.229954,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H2LC6NYC",
+      "type": "购物服务;便民商店/便利店;便民商店/便利店",
+      "typecode": "060200",
+      "alias": "",
+      "tag": "",
+      "keytag": "烟酒",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "茶室"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062617",
+    "company": "苏州迪安模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "映月二路与望江路交叉口北100米",
+    "contact_phone": "待核实",
+    "lat": 31.275378,
+    "lng": 120.879989,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K6JHXH9B",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
+      "typecode": "060603|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "甪直",
+      "adcode": "320506",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062637",
+    "company": "鼎瑞鸿模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "甪直镇迎宾西路28号",
+    "contact_phone": "139****5291",
+    "lat": 31.273531,
+    "lng": 120.86091,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JUS7F5PO",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "甪直",
+      "adcode": "320506",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062411",
+    "company": "苏州迪安模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "映月二路与望江路交叉口北100米",
+    "contact_phone": "待核实",
+    "lat": 31.275378,
+    "lng": 120.879989,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K6JHXH9B",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
+      "typecode": "060603|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "甪直",
+      "adcode": "320506",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062431",
+    "company": "鼎瑞鸿模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "甪直镇迎宾西路28号",
+    "contact_phone": "139****5291",
+    "lat": 31.273531,
+    "lng": 120.86091,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JUS7F5PO",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "甪直",
+      "adcode": "320506",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062841",
+    "company": "无锡子元塑料贸易有限公司",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "江苏省无锡市锡山区团结中路26号",
+    "contact_phone": "0510-81813759; 158****3303",
+    "lat": 31.595777,
+    "lng": 120.392843,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H6HZECME",
+      "type": "公司企业;公司;商业贸易",
+      "typecode": "170207",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320205",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "贸易"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062940",
+    "company": "众赢模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "闸口街152号",
+    "contact_phone": "166****6404",
+    "lat": 30.374217,
+    "lng": 120.75744,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KAOU2LRR",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062952",
+    "company": "嘉程模具商行",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "康乐新村",
+    "contact_phone": "待核实",
+    "lat": 30.705094,
+    "lng": 121.004024,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LBLDNSOD",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "平湖",
+      "adcode": "330482",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:商行"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062970",
+    "company": "忠春模具配件(华东建材市场南区店)",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "华东建材市场南区",
+    "contact_phone": "130****6223",
+    "lat": 30.8495,
+    "lng": 120.911547,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I64H1VNB",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "体育南路",
+      "adcode": "330421",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0063002",
+    "company": "新丰模具配件店",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "园林路与妙峰路交叉路口西侧(夏家小区)",
+    "contact_phone": "137****4946; 139****8347",
+    "lat": 30.697519,
+    "lng": 120.915448,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLPOV7H",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330402",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0063010",
+    "company": "嘉善亿嘉模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "体育北路190号",
+    "contact_phone": "131****2288",
+    "lat": 30.849598,
+    "lng": 120.911498,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKWBZSM",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "体育南路",
+      "adcode": "330421",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0063020",
+    "company": "模具配件店",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "百禾路与福田弄交叉口西北40米",
+    "contact_phone": "135****6736",
+    "lat": 30.537976,
+    "lng": 120.781364,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJCSCXV",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330424",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0063031",
+    "company": "冲床模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "浙江省嘉善县",
+    "contact_phone": "待核实",
+    "lat": 30.850524,
+    "lng": 120.911664,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHTQBRR",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "体育南路",
+      "adcode": "330421",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062635",
+    "company": "无锡子元塑料贸易有限公司",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "江苏省无锡市锡山区团结中路26号",
+    "contact_phone": "0510-81813759; 158****3303",
+    "lat": 31.595777,
+    "lng": 120.392843,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H6HZECME",
+      "type": "公司企业;公司;商业贸易",
+      "typecode": "170207",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320205",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "贸易"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0063108",
+    "company": "强诺模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "宁穿路292号聚金家园",
+    "contact_phone": "0574-87701254",
+    "lat": 29.867997,
+    "lng": 121.581012,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LBGS2D88",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330212",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062733",
+    "company": "众赢模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "闸口街152号",
+    "contact_phone": "166****6404",
+    "lat": 30.374217,
+    "lng": 120.75744,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KAOU2LRR",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062745",
+    "company": "嘉程模具商行",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "康乐新村",
+    "contact_phone": "待核实",
+    "lat": 30.705094,
+    "lng": 121.004024,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LBLDNSOD",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "平湖",
+      "adcode": "330482",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:商行"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062763",
+    "company": "忠春模具配件(华东建材市场南区店)",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "华东建材市场南区",
+    "contact_phone": "130****6223",
+    "lat": 30.8495,
+    "lng": 120.911547,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I64H1VNB",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "体育南路",
+      "adcode": "330421",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062795",
+    "company": "新丰模具配件店",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "园林路与妙峰路交叉路口西侧(夏家小区)",
+    "contact_phone": "137****4946; 139****8347",
+    "lat": 30.697519,
+    "lng": 120.915448,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLPOV7H",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330402",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062803",
+    "company": "嘉善亿嘉模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "体育北路190号",
+    "contact_phone": "131****2288",
+    "lat": 30.849598,
+    "lng": 120.911498,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKWBZSM",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "体育南路",
+      "adcode": "330421",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062813",
+    "company": "模具配件店",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "百禾路与福田弄交叉口西北40米",
+    "contact_phone": "135****6736",
+    "lat": 30.537976,
+    "lng": 120.781364,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJCSCXV",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330424",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062824",
+    "company": "冲床模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "浙江省嘉善县",
+    "contact_phone": "待核实",
+    "lat": 30.850524,
+    "lng": 120.911664,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHTQBRR",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "体育南路",
+      "adcode": "330421",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0062780",
+    "company": "强诺模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "宁穿路292号聚金家园",
+    "contact_phone": "0574-87701254",
+    "lat": 29.867997,
+    "lng": 121.581012,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LBGS2D88",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330212",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
     },
     "is_manufacturer": false
   }

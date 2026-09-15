@@ -7079,7 +7079,8 @@
     "category": "原材料",
     "keywords": [
       "精密机械",
-      "模具"
+      "模具",
+      "塑料模具"
     ],
     "region": {
       "province": "浙江",
@@ -24584,5 +24585,101 @@
     },
     "is_manufacturer": false,
     "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0062978",
+    "company": "俊名五金模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "钮扣路与声宝路交叉口西南80米",
+    "contact_phone": "135****1398",
+    "lat": 30.98316,
+    "lng": 120.893001,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HRVR0SH0",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330421",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0063043",
+    "company": "五金模具配件",
+    "category": "原材料",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "四喜街与塘东街交叉口东100米",
+    "contact_phone": "139****5951",
+    "lat": 30.62094,
+    "lng": 120.719725,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-15",
+    "imported_at": "2026-09-15",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHCTB0U",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330411",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "is_manufacturer": false
   }
 ]
