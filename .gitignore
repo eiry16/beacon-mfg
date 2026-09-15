@@ -93,6 +93,12 @@ scripts/*
 # Jaccard ≥0.62 校验）。结论是命中率 2.5%、不建议全量跑——这个数字必须能被
 # 别人自己复现，不能只有我说了算。纯标准库，只走公开 POI 接口，密钥读环境变量。
 !scripts/backfill_phone.py
+# classify_industry.py 是「公司名 → 国标码」的归类引擎，也是门类覆盖的唯一落点：
+# 2026-09-14 把餐饮/美容/软件开发等服务业从 NOISE_PATTERNS 里捞出来建成
+# SERVICE_RULES，全在这一个文件里。不放行的后果与 fetch_batch 同构 ——
+# 门类覆盖规则只存在于本地，换机/换人就退回「服务业全被当噪音丢掉」的旧行为。
+# 纯标准库，只依赖已放行的 industry_taxonomy / gb_store，不含密钥与商业逻辑。
+!scripts/classify_industry.py
 # sync_vendor_skills.py 是 L1 能力卡入口（registry/capability/{id}.json）的
 # 唯一同步器，并把名录的 agent.skill_url 字段回写。脚本和 collect/render.py
 # 互相依赖（前者 import 后者的 append_fingerprint），任一缺则 sync 流程不可
