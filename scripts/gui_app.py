@@ -439,92 +439,106 @@ class App:
             self.log(f"[账本] 已保存 {cursor.LEDGER.name}"
                      f"（累计 {len(ledger.get('shards', {}))} 个分片）")
 
-        # 1.5 重建派生层（索引/指纹/能力卡分片/清单/校验/上云发布）
-        # r2/pages（上传 R2 + 发布 Cloudflare Pages）现已接入：.env 的 CLOUDFLARE_* 凭证
-        # 已由模块顶部注入 os.environ，子进程（deploy_pages/publish_r2）读得到。
-        # 默认勾选「发布到 Cloudflare」即会跑；不想上云就取消勾选。
-        # 「自动补能力卡」仅对本轮抓到的城市增量补（不 --clean），烧 LLM，默认关。
-        skip = ["r2", "pages"]
-        if self.do_publish.get():
-            skip = []
-        apo = []
-        if self.do_profile.get():
-            cities = ",".join(sorted(getattr(self, "_profile_cities", set())))
-            if cities:
-                apo = ["--autoprofile-cities", cities]
-                self.log(f"  自动补能力卡范围：{cities}（仅增量，不清空已有卡）")
-            else:
-                self.log("  （本轮无城市层任务，跳过自动补卡）")
+        # 1.5 核心流水线：分类 → 派生层 → 校验 → 上云 → git（慢活一个都不在这里跑）
+        #
+        # 慢活（english / autoprofile）刻意挪到 1.6 单独一段：它们在 postfetch 里排在
+        # r2/pages **之前**，一旦把这一轮拖到被杀，当天已经重建好的数据就发不出去了
+        # —— 2026-09-15 晚上「本地全是新的、手机还是两天前的」就是这么来的。
+        # 分两段之后，慢活失败再多次也只是「这轮没增强」，不会把发布一起赔进去。
+        #
+        # r2/pages：勾了「发布到 Cloudflare」才跑（凭证由模块顶部从 .env 注入 os.environ）。
+        # git：交给 postfetch 的 git 步 —— L0 白名单 + validate 通过才 push（**不是** add -A）。
+        zhipu = env.get("ZHIPU_API_KEY", "")
+        if zhipu:
+            # Key 只走环境变量，不走命令行参数（否则 ps / Get-CimInstance 能看到明文）
+            os.environ["ZHIPU_API_KEY"] = zhipu
+
+        skip = ["english", "autoprofile"]
+        if not self.do_publish.get():
+            skip += ["r2", "pages"]
+        if not self.do_git.get():
+            skip += ["git"]
         self.log("\n== 重建派生层" + (" + 上云发布 ==" if self.do_publish.get()
                  else "（本次跳过上云发布）=="))
-        ok = run_cmd([PY, str(ROOT / "scripts" / "postfetch.py"), "--skip", ",".join(skip)] + apo,
+        ok = run_cmd([PY, str(ROOT / "scripts" / "postfetch.py"), "--skip", ",".join(skip)],
                      self.log, tail=40)
         if ok:
             self.log("  派生层重建完成 ✓")
         else:
             self.log("  [警告] 派生层重建未成功返回（详见上方输出）；本地索引可能未完全更新")
 
+        # 1.6 增强段：慢活（自动补能力卡 / 英文镜像）+ 重新过一遍发布。
+        #     英文以前挂在流水线**最后**单独跑，于是永远比中文晚一天上云；现在它作为
+        #     postfetch 的 english 步排在 shards/manifest 之前，当轮就能跟着发出去。
+        enhance = []
+        want_profile = False
+        if self.do_profile.get():
+            cities = ",".join(sorted(getattr(self, "_profile_cities", set())))
+            if cities:
+                enhance += ["--autoprofile-cities", cities]
+                want_profile = True
+                self.log(f"  自动补能力卡范围：{cities}（仅增量，不清空已有卡）")
+            else:
+                self.log("  （本轮无城市层任务，跳过自动补卡）")
+        if self.do_english.get():
+            if not zhipu:
+                self.log("  （跳过英文镜像：.env 缺少 ZHIPU_API_KEY）")
+            else:
+                enhance.append("--english")
+        if enhance:
+            steps = ["shards", "manifest", "readme", "validate"]
+            if want_profile:
+                steps.insert(0, "autoprofile")
+            if "--english" in enhance:
+                steps.insert(0, "english")
+            if self.do_publish.get():
+                steps += ["r2", "pages"]
+            if self.do_git.get():
+                steps.append("git")
+            self.log("\n== 增强段：能力卡 / 英文 + 重新发布 ==")
+            run_cmd([PY, str(ROOT / "scripts" / "postfetch.py"),
+                     "--only", ",".join(steps)] + enhance, self.log, tail=40)
+        else:
+            self.log("\n（增强段无事可做：未勾选「自动补能力卡」/「生成英文版」）")
+
         # 2. 校验
         if self.do_validate.get():
             self.log("\n== 数据校验 ==")
             run_cmd([PY, str(ROOT / "scripts" / "validate.py")], self.log, tail=40)
 
-        # 3. 英文翻译
-        if self.do_english.get():
-            zhipu = env.get("ZHIPU_API_KEY", "")
-            if not zhipu:
-                self.log("跳过英文翻译：.env 缺少 ZHIPU_API_KEY")
-            else:
-                # 2026-09-12：这里原来调 translate_en.py，但它读的 data/suppliers
-                # 是 2026-09-08 已退役的 8 品类布局，一进来就报「目录不存在」直接退出 ——
-                # 勾了「生成英文版」等于啥也没干。现役脚本是 en_backfill.py
-                # （国标四级、增量、断点续跑），跑完再补 industry_en 标签。
-                # 2026-09-15：Key 不再走命令行参数（--key），改为注入环境变量，
-                # 否则 Get-CimInstance/ps 能直接看到明文 Key。en_backfill.py 优先读
-                # ZHIPU_API_KEY 环境变量，没有才回退读 .env。
-                os.environ["ZHIPU_API_KEY"] = zhipu
-                self.log("\n== 英文翻译（GLM-4-Flash · 增量补齐）==")
-                if run_cmd([PY, str(ROOT / "scripts" / "en_backfill.py")],
-                           self.log, tail=40):
-                    run_cmd([PY, str(ROOT / "scripts" / "en_sync_industry.py")],
-                            self.log, tail=20)
+        # 3. 英文翻译：不再在这里单独起子进程了 —— 交给 1.6 增强段的 postfetch english 步。
+        #    以前挂在流水线最后单独跑（en_backfill → 才算完），结果英文永远比中文
+        #    晚一天才 publish。现在它是流水线里的一步，排在 shards/manifest 之前。
+        #    （2026-09-12 遗留说明：旧实现调 translate_en.py，而它读的 data/suppliers
+        #     是 2026-09-08 已退役的 8 品类布局，一进来就报「目录不存在」，勾了等于没勾。）
 
-        # 4. 上传 git
+        # 4. GitHub 同步：已由 1.5 / 1.6 里的 postfetch git 步完成。
+        #    那里用的是 **L0 白名单**（不再是 git add -A），且 validate 未通过就不 push ——
+        #    与每日 cron 走同一份实现，不会出现「GUI 一套、cron 另一套」。
+        #    这里只把白名单之外、仍然需要你亲自 review 的改动列出来。
+        self.log("\n== GitHub 同步 ==")
         if self.do_git.get():
-            self.log("\n== 提交并推送 GitHub ==")
-            # 先亮清单：git add -A 会把仓库里任何改动（含与本次采集无关的）
-            # 一起卷进 commit。列出来，避免「不知情地提交了别人的改动」。
-            st = subprocess.run(["git", "status", "--short"], cwd=str(ROOT),
-                                capture_output=True, text=True, encoding="utf-8",
-                                errors="replace")
-            st_lines = [l for l in (st.stdout or "").splitlines() if l.strip()]
-            if st_lines:
-                self.log(f"  待提交 {len(st_lines)} 项（前 20 行）：")
-                for line in st_lines[:20]:
-                    self.log("    " + line)
-                if len(st_lines) > 20:
-                    self.log(f"    …另有 {len(st_lines) - 20} 项")
-            else:
-                self.log("  工作区无改动")
-                return
-            if not git_run(["add", "-A"], self.log):
-                self.log("git add 失败")
-                return
-            ts = time.strftime("%Y-%m-%d %H:%M")
-            msg = f"Auto update via GUI tool @ {ts}"
-            r = subprocess.run(["git", "commit", "-m", msg], cwd=str(ROOT),
-                               capture_output=True, text=True, encoding="utf-8",
-                               errors="replace", env={**os.environ, "PYTHONUTF8": "1"})
-            if "nothing to commit" in (r.stdout + r.stderr):
-                self.log("无变更，跳过提交")
-            elif r.returncode == 0:
-                self.log("提交成功")
-            else:
-                self.log(f"提交输出: {(r.stdout + r.stderr).strip()[-300:]}")
-            if not git_run(["push"], self.log):
-                self.log("推送失败，请检查 SSH/网络")
-            else:
-                self.log("已推送 GitHub ✓")
+            self.log("  L0 数据已由流水线的 git 步提交推送（未通过校验则不会推）。")
+        else:
+            self.log("  （未勾选「提交并推送 GitHub」：本轮不推送）")
+        try:
+            from postfetch import L0_PATHS as _l0
+        except Exception:
+            _l0 = ()
+        st = subprocess.run(["git", "status", "--short"], cwd=str(ROOT),
+                            capture_output=True, text=True, encoding="utf-8",
+                            errors="replace")
+        st_lines = [l for l in (st.stdout or "").splitlines() if l.strip()]
+        outside = [l for l in st_lines
+                   if not any(p in l for p in _l0)] if _l0 else st_lines
+        if outside:
+            self.log(f"  以下 {len(outside)} 项不在 L0 白名单内，仍需你单独 review 提交：")
+            for line in outside[:20]:
+                self.log("    " + line)
+            if len(outside) > 20:
+                self.log(f"    …另有 {len(outside) - 20} 项")
+        else:
+            self.log("  白名单外无遗留改动")
 
 
 if __name__ == "__main__":
