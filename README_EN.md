@@ -56,8 +56,8 @@ No dependencies, no keys, no network required.
 
 ## Data Status
 
-**Chinese** (`data/gb/`, four-level GB/T 4754 archive): **24,085 records total**
-(15,468 phone-verified, 8,617 pending), spanning **23 national divisions** (incl. unclassified).
+**Chinese** (`data/gb/`, four-level GB/T 4754 archive): **79555 records total**
+(58349 phone-verified, 21206 pending), spanning **45 national divisions** (incl. unclassified).
 Top divisions: Metal Products (33) 6,515 · General Equipment (34) 6,438 · Rubber & Plastics (29) 2,392 ·
 Wholesale (51, non-manufacturer) 1,764 · Special Equipment (35) 1,829 · Computer & Electronics (39) 1,450.
 
@@ -70,7 +70,7 @@ Every supplier carries a national industry class code:
 "is_manufacturer": true
 ```
 
-- **23,280 / 24,085 records classified** into **107 national industry classes** (805 unclassified)
+- **78120 / 79555 records classified** into **250 national industry classes** (1435 unclassified)
 - `confidence`: `high` = company name matched directly; `medium` / `low` = inferred from keywords or category
 - `is_manufacturer=false` → the company falls under **F51 Wholesale** (trader, not a factory)
 - Rule of thumb: **trust the company name**; search keywords may only fill gaps;
@@ -82,12 +82,10 @@ Every supplier carries a national industry class code:
   This stops a *shop selling mold parts* from being listed as a *mold manufacturer*
   (fixed 2026-09-08, 635 records affected).
 
-Top classes (full list in `data/industry-index.json`): 3484 Machined Parts 3,696 ·
-2929 Plastic Parts 2,185 · 3360 Surface Treatment 1,999 · 3311 Metal Structure 1,574 ·
-3399 Other Metal Products 1,578 · 3525 Molds & Dies 1,660 · 3130 Steel Rolling 1,040 · 3482 Fasteners 1,016.
+Top classes (full list in `data/industry-index.json`): 6232 Cafe Service 8,056 · 3484 Machined Parts & Components 7,955 · 8053 Healthcare & Wellness Services 5,422 · 2929 Plastic Parts & Other Plastic Products 5,173 · 3525 Molds & Dies 3,636 · 6231 Tea House Service 3,505 · 6291 Snack Service 2,506 · 9020 游乐园 2,390.
 > **Pending**: 8,617 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
-**English** (`data/en/gb/`, same four-level GB archive): **24,085 English-mirror records**
+**English** (`data/en/gb/`, same four-level GB archive): **71309 English-mirror records**
 for overseas agents/buyers — kept at **1:1 by `id`** with the Chinese dataset via
 `scripts/en_backfill.py` (incremental, resumable) + `scripts/en_sync_industry.py` for
 the `industry_en` label (English GB/T 4754 class names).
