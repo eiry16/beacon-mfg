@@ -47,7 +47,8 @@
       "source": "name",
       "evidence": "LED"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3975"
   },
   {
     "id": "CN-MFG-0035735",
@@ -96,7 +97,8 @@
       "source": "name",
       "evidence": "LED"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3975"
   },
   {
     "id": "CN-MFG-0036480",
@@ -146,7 +148,8 @@
       "source": "name",
       "evidence": "LED"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3975"
   },
   {
     "id": "CN-MFG-0036491",
@@ -196,7 +199,8 @@
       "source": "name",
       "evidence": "LED"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3975"
   },
   {
     "id": "CN-MFG-0036688",
@@ -244,7 +248,8 @@
       "source": "name",
       "evidence": "LED"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3975"
   },
   {
     "id": "CN-MFG-0036750",
@@ -292,7 +297,8 @@
       "source": "name",
       "evidence": "LED"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3975"
   },
   {
     "id": "CN-MFG-0036960",
@@ -340,7 +346,8 @@
       "source": "name",
       "evidence": "LED"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3975"
   },
   {
     "id": "CN-MFG-0037017",
@@ -378,6 +385,55 @@
       "business_area": "关山",
       "adcode": "420111",
       "search_keyword": "影城"
+    },
+    "industry": {
+      "code": "3975",
+      "name": "半导体照明器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 半导体照明器件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "LED"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/39/3975"
+  },
+  {
+    "id": "CN-MFG-0088915",
+    "company": "龙腾电脑维修回收·监控维修安装·LED屏维修安装",
+    "category": "电子元器件",
+    "keywords": [
+      "电脑上门维修"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "双安东巷1号附47号(龙福苑东门北70米)",
+    "contact_phone": "189****9801",
+    "lat": 30.644377,
+    "lng": 104.018177,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFCOSYA",
+      "type": "购物服务;家电电子卖场;数码电子",
+      "typecode": "060306",
+      "alias": "龙芯电脑",
+      "tag": "",
+      "keytag": "电脑维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "双楠",
+      "adcode": "510107",
+      "search_keyword": "电脑上门维修"
     },
     "industry": {
       "code": "3975",

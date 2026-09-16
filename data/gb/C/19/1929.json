@@ -46,7 +46,8 @@
       "source": "name",
       "evidence": "皮具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/19/1929"
   },
   {
     "id": "CN-MFG-0029189",
@@ -84,6 +85,55 @@
       "business_area": "",
       "adcode": "442000",
       "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1929",
+      "name": "其他皮革制品制造",
+      "level": "class",
+      "path": "C 制造业 > 皮革、毛皮、羽毛及其制品和制鞋业 > 皮革制品制造 > 其他皮革制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "皮革"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/19/1929"
+  },
+  {
+    "id": "CN-MFG-0080022",
+    "company": "浙江省皮革塑料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "江陵路1916号星耀城2期1号楼21层",
+    "contact_phone": "待核实",
+    "lat": 30.21209,
+    "lng": 120.21634,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIWQU01",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330108",
+      "search_keyword": "塑料模具"
     },
     "industry": {
       "code": "1929",

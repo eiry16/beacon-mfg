@@ -43,7 +43,8 @@
       "evidence": "塑胶玩具"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/24/2452"
   },
   {
     "id": "CN-MFG-0008402",
@@ -90,7 +91,8 @@
       "source": "gb_token",
       "evidence": "塑胶玩具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/24/2452"
   },
   {
     "id": "CN-MFG-0020626",
@@ -136,6 +138,103 @@
       "evidence": "塑胶玩具"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/24/2452"
+  },
+  {
+    "id": "CN-MFG-0088804",
+    "company": "先力塑胶玩具厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "旱塘路与旱塘二路交叉口北40米",
+    "contact_phone": "待核实",
+    "lat": 22.653525,
+    "lng": 114.205675,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBAXB1Q0",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横岗",
+      "adcode": "440307",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2452",
+      "name": "塑胶玩具制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 玩具制造 > 塑胶玩具制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "塑胶玩具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0088842",
+    "company": "深圳市伟力发塑胶玩具有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "广东省深圳市龙岗区园山街道保安社区旱塘二路46-6号",
+    "contact_phone": "0755-28682018",
+    "lat": 22.655059,
+    "lng": 114.205721,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0ID9DNBCE",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横岗",
+      "adcode": "440307",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2452",
+      "name": "塑胶玩具制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 玩具制造 > 塑胶玩具制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "塑胶玩具"
+    },
+    "is_manufacturer": true
   }
 ]

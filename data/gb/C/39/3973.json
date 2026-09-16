@@ -4,7 +4,8 @@
     "company": "桐乡市晶圆塑料制品厂",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "浙江",
@@ -51,7 +52,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/39/3973"
   },
   {
     "id": "CN-MFG-0003256",
@@ -83,7 +85,8 @@
       "source": "name",
       "evidence": "半导体"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3973"
   },
   {
     "id": "CN-MFG-0019355",
@@ -129,7 +132,8 @@
       "evidence": "半导体"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/39/3973"
   },
   {
     "id": "CN-MFG-0003957",
@@ -161,7 +165,8 @@
       "source": "name",
       "evidence": "半导体"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3973"
   },
   {
     "id": "CN-MFG-0030884",
@@ -209,7 +214,8 @@
       "source": "name",
       "evidence": "晶圆"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3973"
   },
   {
     "id": "CN-MFG-0031351",
@@ -257,7 +263,8 @@
       "source": "name",
       "evidence": "半导体"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3973"
   },
   {
     "id": "CN-MFG-0033382",
@@ -305,7 +312,8 @@
       "source": "name",
       "evidence": "集成电路"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3973"
   },
   {
     "id": "CN-MFG-0033463",
@@ -353,7 +361,8 @@
       "source": "name",
       "evidence": "集成电路"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/39/3973"
   },
   {
     "id": "CN-MFG-0033464",
@@ -400,6 +409,106 @@
       "confidence": "high",
       "source": "name",
       "evidence": "集成电路"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/39/3973"
+  },
+  {
+    "id": "CN-MFG-0084221",
+    "company": "修能手芯片级数码维修中心(南沙万达店)",
+    "category": "电子元器件",
+    "keywords": [
+      "电脑维修",
+      "笔记本维修"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "南沙街道环市大道中25号155房(南沙万达店)",
+    "contact_phone": "173****8858",
+    "lat": 22.795428,
+    "lng": 113.533804,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JU9LCZOQ",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "数码维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南沙新区",
+      "adcode": "440115",
+      "search_keyword": "电脑维修"
+    },
+    "industry": {
+      "code": "3973",
+      "name": "集成电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 集成电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "芯片"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0086376",
+    "company": "电脑主板芯片级维修·电脑回收",
+    "category": "电子元器件",
+    "keywords": [
+      "电脑维修",
+      "笔记本维修",
+      "电脑上门维修"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "新都街道清源路509号一层电脑主板芯片级维修回收",
+    "contact_phone": "181****7279; 183****8478",
+    "lat": 30.816251,
+    "lng": 104.171403,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HDJDUP5T",
+      "type": "购物服务;家电电子卖场;数码电子|生活服务;维修站点;维修站点",
+      "typecode": "060306|071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "电脑维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新都体育森林公园",
+      "adcode": "510114",
+      "search_keyword": "电脑维修"
+    },
+    "industry": {
+      "code": "3973",
+      "name": "集成电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 集成电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "芯片"
     },
     "is_manufacturer": true
   }

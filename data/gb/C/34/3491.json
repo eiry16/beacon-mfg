@@ -29,7 +29,8 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/34/3491"
   },
   {
     "id": "CN-MFG-0004560",
@@ -75,7 +76,8 @@
       "business_area": "",
       "adcode": "330282",
       "search_keyword": "喷涂"
-    }
+    },
+    "_bucket": "C/34/3491"
   },
   {
     "id": "CN-MFG-0002208",
@@ -121,7 +123,8 @@
       "business_area": "",
       "adcode": "320583",
       "search_keyword": "冲压"
-    }
+    },
+    "_bucket": "C/34/3491"
   },
   {
     "id": "CN-MFG-0012917",
@@ -167,7 +170,8 @@
       "evidence": "机器人"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3491"
   },
   {
     "id": "CN-MFG-0031258",
@@ -215,7 +219,8 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/34/3491"
   },
   {
     "id": "CN-MFG-0041796",
@@ -263,7 +268,8 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/34/3491"
   },
   {
     "id": "CN-MFG-0042347",
@@ -311,7 +317,8 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/34/3491"
   },
   {
     "id": "CN-MFG-0048738",
@@ -359,7 +366,8 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/34/3491"
   },
   {
     "id": "CN-MFG-0051562",
@@ -397,6 +405,55 @@
       "business_area": "南门",
       "adcode": "320508",
       "search_keyword": "SPA"
+    },
+    "industry": {
+      "code": "3491",
+      "name": "工业机器人制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 其他通用设备制造业 > 工业机器人制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "机器人"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/34/3491"
+  },
+  {
+    "id": "CN-MFG-0089100",
+    "company": "科沃斯扫地机机器人服务中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "吉祥路108号",
+    "contact_phone": "待核实",
+    "lat": 31.265358,
+    "lng": 121.487263,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6H7BKGG",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "宝山路",
+      "adcode": "310109",
+      "search_keyword": "家电维修"
     },
     "industry": {
       "code": "3491",

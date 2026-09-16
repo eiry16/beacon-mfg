@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/21/2190"
   },
   {
     "id": "CN-MFG-0030618",
@@ -93,7 +94,8 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/21/2190"
   },
   {
     "id": "CN-MFG-0030636",
@@ -141,7 +143,8 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/21/2190"
   },
   {
     "id": "CN-MFG-0031444",
@@ -189,7 +192,8 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/21/2190"
   },
   {
     "id": "CN-MFG-0032290",
@@ -239,7 +243,8 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/21/2190"
   },
   {
     "id": "CN-MFG-0032391",
@@ -287,7 +292,8 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/21/2190"
   },
   {
     "id": "CN-MFG-0014107",
@@ -333,6 +339,103 @@
       "evidence": "家具"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/21/2190"
+  },
+  {
+    "id": "CN-MFG-0088650",
+    "company": "南京回收二手空调电脑家电家具",
+    "category": "制造业",
+    "keywords": [
+      "电脑上门维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "天印大道金宝跳蚤市场2区",
+    "contact_phone": "139****2767",
+    "lat": 31.944888,
+    "lng": 118.863117,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDHYRPV8",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具电器回收",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "竹山路沿线",
+      "adcode": "320115",
+      "search_keyword": "电脑上门维修"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0088657",
+    "company": "上门回收空调家具电器",
+    "category": "制造业",
+    "keywords": [
+      "电脑上门维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "建邺区福园街凤栖苑125-4号回收空调电脑桌椅上下床仓库积压物资",
+    "contact_phone": "132****8388; 138****9285; 138****5235",
+    "lat": 32.031237,
+    "lng": 118.744806,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF90VE5",
+      "type": "生活服务;生活服务场所;生活服务场所|购物服务;购物相关场所;购物相关场所",
+      "typecode": "070000|060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "设备维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "茶南",
+      "adcode": "320105",
+      "search_keyword": "电脑上门维修"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
   }
 ]

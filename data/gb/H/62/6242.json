@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "外卖"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/62/6242"
   },
   {
     "id": "CN-MFG-0037647",
@@ -93,7 +94,8 @@
       "source": "name",
       "evidence": "外卖"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/62/6242"
   },
   {
     "id": "CN-MFG-0037721",
@@ -131,6 +133,55 @@
       "business_area": "进香河",
       "adcode": "320102",
       "search_keyword": "快餐"
+    },
+    "industry": {
+      "code": "6242",
+      "name": "外卖送餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 餐饮配送及外卖送餐服务 > 外卖送餐服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "外卖"
+    },
+    "is_manufacturer": false,
+    "_bucket": "H/62/6242"
+  },
+  {
+    "id": "CN-MFG-0084701",
+    "company": "知味观(解放路外卖店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "烘焙"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "解放路156号",
+    "contact_phone": "0571-56758067",
+    "lat": 30.250706,
+    "lng": 120.169907,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B02WNS",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "小笼,猫耳朵,东坡肉,西湖醋鱼,素烧鹅,鸡爪,桂花糖藕,糯米糕,夹沙糕,酱鸭胗,青团,鲜肉小笼,蟹黄汤包,桂花糕,滋饭糕,熏鱼,堂食,小蛋糕,桃酥,面面,牛尾,豆沙",
+      "keytag": "江浙菜",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "吴山",
+      "adcode": "330102",
+      "search_keyword": "烘焙"
     },
     "industry": {
       "code": "6242",

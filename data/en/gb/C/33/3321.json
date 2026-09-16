@@ -229,6 +229,43 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/33/3321"
+    "_bucket": "C/33/3321",
+    "industry": {
+      "code": "3321",
+      "name": "切削工具制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属工具制造 > 切削工具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "刀具"
+    }
+  },
+  {
+    "id": "CN-MFG-0071045",
+    "company_en": "Shengwangda Cutting Tools and Hardware",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 632 He'an Road, Linhu Town",
+    "contact_phone": "155****7090",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/33/3321",
+    "industry": {
+      "code": "3321",
+      "name": "切削工具制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属工具制造 > 切削工具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "刀具|配件型:模配"
+    }
   }
 ]

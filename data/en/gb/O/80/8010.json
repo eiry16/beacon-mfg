@@ -260,5 +260,93 @@
       "name": "家庭服务",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0067978",
+    "company_en": "Qiche Baomu (Lüjing Store)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Automobile Maintenance",
+      "Auto Repair",
+      "Car Repair"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Foshan"
+    },
+    "address_en": "No. 5, 1st Floor, Shop 456, Lüjing 1st Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-15",
+    "note_en": "",
+    "_bucket": "O/80/8010",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "保姆"
+    }
+  },
+  {
+    "id": "CN-MFG-0083464",
+    "company_en": "Xiuwang (Qinren Computer Baomu)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Computer Repair",
+      "Laptop Repair",
+      "On-site Computer Repair"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "A0, 1st Floor, Building 6, A District, New Caoyang Group High-tech Industrial Park",
+    "contact_phone": "134****2066; 139****9062",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "O/80/8010",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "保姆"
+    }
+  },
+  {
+    "id": "CN-MFG-0089890",
+    "company_en": "Hangzhou Hangxiu Family Service Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Appliance Repair"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "No. 8, E-122, Side of the Village Committee of Gaoqiao Village, Cangqian Street, Xianggao Line",
+    "contact_phone": "192****0909",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "O/80/8010",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "家庭服务"
+    }
   }
 ]

@@ -17,6 +17,15 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/40/_partial"
+    "_bucket": "C/40/_partial",
+    "industry": {
+      "code": "40",
+      "name": "仪器仪表制造业",
+      "level": "division",
+      "path": "C 制造业 > 仪器仪表制造业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "测量仪器"
+    }
   }
 ]

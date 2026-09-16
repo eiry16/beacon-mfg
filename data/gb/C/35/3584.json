@@ -29,7 +29,8 @@
       "source": "gb_token",
       "evidence": "医疗"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/35/3584"
   },
   {
     "id": "CN-MFG-0011282",
@@ -75,7 +76,8 @@
       "evidence": "医疗"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/35/3584"
   },
   {
     "id": "CN-MFG-0001755",
@@ -121,7 +123,8 @@
       "business_area": "",
       "adcode": "320507",
       "search_keyword": "激光切割"
-    }
+    },
+    "_bucket": "C/35/3584"
   },
   {
     "id": "CN-MFG-0031541",
@@ -169,7 +172,8 @@
       "source": "gb_token",
       "evidence": "医疗"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/35/3584"
   },
   {
     "id": "CN-MFG-0033841",
@@ -217,7 +221,8 @@
       "source": "gb_token",
       "evidence": "医疗"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/35/3584"
   },
   {
     "id": "CN-MFG-0039213",
@@ -265,7 +270,8 @@
       "source": "gb_token",
       "evidence": "医疗"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/35/3584"
   },
   {
     "id": "CN-MFG-0044572",
@@ -312,6 +318,823 @@
       "confidence": "high",
       "source": "name",
       "evidence": "医疗器械"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/35/3584"
+  },
+  {
+    "id": "CN-MFG-0069805",
+    "company": "瑞幸咖啡(高科医疗器械园店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "咖啡馆"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "高新大道818号高科医疗器械园龙眼餐厅一层大堂",
+    "contact_phone": "4000100100",
+    "lat": 30.485174,
+    "lng": 114.529297,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J1VC9HKQ",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "柠檬茶,生椰拿铁",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "420115",
+      "search_keyword": "咖啡馆"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医疗器械"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0069876",
+    "company": "瑞幸咖啡(高科医疗器械园南区店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "咖啡馆"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉"
+    },
+    "address": "高科园二路8号",
+    "contact_phone": "4000100100",
+    "lat": 30.482916,
+    "lng": 114.52963,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LB5M11VV",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "420115",
+      "search_keyword": "咖啡馆"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医疗器械"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0073075",
+    "company": "上海市外高桥保税区医疗保健中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "外高桥保税华京路2号三联大厦",
+    "contact_phone": "021-50462809",
+    "lat": 31.320515,
+    "lng": 121.606265,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JAVA1CV0",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310115",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0074000",
+    "company": "老年医学科国际医疗保健中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "武进路与吴淞路交叉口东北160米",
+    "contact_phone": "待核实",
+    "lat": 31.253812,
+    "lng": 121.489335,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDYSW009",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "四平路",
+      "adcode": "310109",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0074212",
+    "company": "卓正医疗静安国际诊所",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "长安路958号静安国际中心C座L203",
+    "contact_phone": "待核实",
+    "lat": 31.243261,
+    "lng": 121.452218,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HG0SXZCF",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "诊所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "不夜城",
+      "adcode": "310106",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0075054",
+    "company": "霍医森医疗器械(青浦店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "海盈路187号(海盈新村北门旁)",
+    "contact_phone": "193****5798",
+    "lat": 31.150711,
+    "lng": 121.109564,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K0HZPINV",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗器械",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310118",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医疗器械"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0075489",
+    "company": "上海东月医疗保健用品有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "陈川西路7号",
+    "contact_phone": "021-56048676",
+    "lat": 31.471555,
+    "lng": 121.320357,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B001556UQC",
+      "type": "公司企业;公司;医药公司",
+      "typecode": "170203",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗器械",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310113",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0075519",
+    "company": "叮当猫博士医疗器械(美兰湖店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "罗芬路1306号-2",
+    "contact_phone": "137****1559",
+    "lat": 31.405414,
+    "lng": 121.346836,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L1460I3R",
+      "type": "购物服务;专卖店;儿童用品店",
+      "typecode": "061207",
+      "alias": "",
+      "tag": "",
+      "keytag": "呼吸机",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "罗店",
+      "adcode": "310113",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医疗器械"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0075528",
+    "company": "上海康林仁和家庭医疗保健用品有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "呼兰西路与长临路交叉口东180米",
+    "contact_phone": "待核实",
+    "lat": 31.338915,
+    "lng": 121.432982,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUUOYNVS",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "庙行镇",
+      "adcode": "310113",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0075845",
+    "company": "福康臣医疗器械(长风店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "中江路106号",
+    "contact_phone": "156****5535",
+    "lat": 31.220858,
+    "lng": 121.39332,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K0FCJAVW",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗器械",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "周家桥",
+      "adcode": "310107",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医疗器械"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0076257",
+    "company": "康林仁和家庭医疗保健用品(平江店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "平江路234-9号(近中山医院)",
+    "contact_phone": "021-64043316",
+    "lat": 31.199417,
+    "lng": 121.453301,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGZOI3N",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗器械",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "岳阳",
+      "adcode": "310104",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0076262",
+    "company": "益恒通医疗器械(徐汇店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "吴中路8号锦辉大厦1楼113-114室",
+    "contact_phone": "191****4850",
+    "lat": 31.189175,
+    "lng": 121.419725,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2C7UBUP",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗器械",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310104",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医疗器械"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0076590",
+    "company": "上海麦迪芬医疗保健器材有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "涞寅路1898号日同大厦F3层",
+    "contact_phone": "021-37633283; 021-37633530",
+    "lat": 31.135108,
+    "lng": 121.293511,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00155Q4T0",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗器械",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "九亭",
+      "adcode": "310117",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0077679",
+    "company": "苏州市母子医疗保健中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "道前街26号(乐桥地铁站3号口步行480米)",
+    "contact_phone": "0512-62362222; 0512-62362266",
+    "lat": 31.30183,
+    "lng": 120.620489,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020001STZ",
+      "type": "医疗保健服务;专科医院;专科医院",
+      "typecode": "090200",
+      "alias": "",
+      "tag": "",
+      "keytag": "专科医院",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南门",
+      "adcode": "320508",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0077689",
+    "company": "益恒通医疗器械(姑苏店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "念珠街10号",
+    "contact_phone": "133****3262",
+    "lat": 31.29798,
+    "lng": 120.613735,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3918Q42",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗器械",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "盘门",
+      "adcode": "320508",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医疗器械"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0078940",
+    "company": "乐美康医疗保健用品有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "永安路1152号",
+    "contact_phone": "0512-58153167; 139****0849",
+    "lat": 31.878117,
+    "lng": 120.528817,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020015S7X",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗器械",
+      "website": "www.zjglmk.com",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0079666",
+    "company": "上海富达医用器材有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "宏祥北路83弄万祥标准厂房区22号楼",
+    "contact_phone": "待核实",
+    "lat": 30.986775,
+    "lng": 121.808064,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G2ZRIL3H",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中国(上海)自由贸易试验区临港新片区",
+      "adcode": "310115",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医用器材"
     },
     "is_manufacturer": true
   }

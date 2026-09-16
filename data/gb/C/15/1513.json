@@ -5,7 +5,8 @@
     "category": "制造业",
     "keywords": [
       "咖啡",
-      "酒吧"
+      "酒吧",
+      "咖啡店"
     ],
     "region": {
       "province": "上海",
@@ -46,7 +47,8 @@
       "source": "name",
       "evidence": "啤酒"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/15/1513"
   },
   {
     "id": "CN-MFG-0063267",
@@ -94,44 +96,528 @@
       "source": "gb_token",
       "evidence": "啤酒"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/15/1513"
   },
   {
-    "id": "CN-MFG-0062939",
-    "company": "啤酒阿姨(八号桥艺术空间店)",
+    "id": "CN-MFG-0079903",
+    "company": "猫员外啤酒馆(购物公园店)",
     "category": "制造业",
     "keywords": [
-      "酒吧"
+      "酒吧",
+      "清吧"
     ],
     "region": {
-      "province": "上海",
-      "city": "上海"
+      "province": "广东",
+      "city": "深圳"
     },
-    "address": "南苏州路1247号(新闸路地铁站1号口步行160米)",
-    "contact_phone": "021-53863393",
-    "lat": 31.239954,
-    "lng": 121.466415,
+    "address": "民田路138号购物公园B口步行220m",
+    "contact_phone": "138****9261",
+    "lat": 22.534945,
+    "lng": 114.053849,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
     "status": "verified",
     "is_template": false,
     "note": "",
     "amap": {
-      "poi_id": "B0FFIDML40",
+      "poi_id": "B0FFLJF3KC",
       "type": "体育休闲服务;娱乐场所;酒吧",
       "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "主题餐厅",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "购物公园",
+      "adcode": "440304",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0079935",
+    "company": "猫员外啤酒馆(中洲华府店)",
+    "category": "制造业",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "新安街道大浪社区26区中洲华府1期5栋103",
+    "contact_phone": "199****9770",
+    "lat": 22.572747,
+    "lng": 113.904182,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKUBIKS",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
       "alias": "",
       "tag": "",
       "keytag": "啤酒屋",
       "website": "",
       "email": "",
       "postcode": "",
-      "business_area": "北京路",
-      "adcode": "310101",
+      "business_area": "新安",
+      "adcode": "440306",
       "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0080502",
+    "company": "Mr.Beer啤酒先生(悠方店)",
+    "category": "制造业",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "交子大道300号酒吧街UB1-1+2",
+    "contact_phone": "028-68091008",
+    "lat": 30.582899,
+    "lng": 104.055301,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HU1XEIIC",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "酒吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石羊场",
+      "adcode": "510107",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0080750",
+    "company": "东河啤酒EastRiver Brewing(黄龙店)",
+    "category": "制造业",
+    "keywords": [
+      "酒吧",
+      "清吧"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "黄龙路1号黄龙体育中心南塔A16区",
+    "contact_phone": "待核实",
+    "lat": 30.264831,
+    "lng": 120.133993,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JRTH3FXS",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "清吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北山",
+      "adcode": "330106",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0080881",
+    "company": "TASTEROOM风味啤酒屋·大本营",
+    "category": "制造业",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "文二西路71号南都银座东楼拐角处",
+    "contact_phone": "153****5593; 180****4885",
+    "lat": 30.281318,
+    "lng": 120.114031,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDZKIBPM",
+      "type": "购物服务;专卖店;烟酒专卖店",
+      "typecode": "061210",
+      "alias": "",
+      "tag": "",
+      "keytag": "啤酒屋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西湖",
+      "adcode": "330106",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0080908",
+    "company": "TAPDOG 热狗·咖啡·啤酒",
+    "category": "制造业",
+    "keywords": [
+      "酒吧",
+      "清吧"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "中山中路188号(定安路地铁站D口步行280米)",
+    "contact_phone": "135****2912",
+    "lat": 30.244933,
+    "lng": 120.170808,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J2CC9FVP",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "",
+      "keytag": "清吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "吴山",
+      "adcode": "330102",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0081364",
+    "company": "猫员外啤酒馆(乐民店)",
+    "category": "制造业",
+    "keywords": [
+      "清吧"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "布吉乐民路32号",
+    "contact_phone": "153****5923",
+    "lat": 22.601409,
+    "lng": 114.116817,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKPVX2H",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "",
+      "keytag": "主题餐厅",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "布吉",
+      "adcode": "440307",
+      "search_keyword": "清吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0081420",
+    "company": "猫员外啤酒馆(石厦店)",
+    "category": "制造业",
+    "keywords": [
+      "清吧"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "石厦社区石厦北二街02号石厦花园商铺13号",
+    "contact_phone": "191****5001",
+    "lat": 22.519775,
+    "lng": 114.052195,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HDL7XVXK",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "",
+      "keytag": "主题餐厅",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石厦",
+      "adcode": "440304",
+      "search_keyword": "清吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0081432",
+    "company": "猫员外啤酒馆(悦和路店)",
+    "category": "制造业",
+    "keywords": [
+      "清吧"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "悦和路6-49号(泰华阳光海西南门旁)",
+    "contact_phone": "130****4298",
+    "lat": 22.570594,
+    "lng": 113.856648,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HKNZRGUF",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "",
+      "keytag": "主题餐厅",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "七巧国",
+      "adcode": "440306",
+      "search_keyword": "清吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0081920",
+    "company": "板凳鲜酿·精酿啤酒(东郊记忆站)",
+    "category": "制造业",
+    "keywords": [
+      "清吧"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "建设南路32号附6号",
+    "contact_phone": "135****2666; 184****1007",
+    "lat": 30.669638,
+    "lng": 104.1203,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JKVHJEMA",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "",
+      "keytag": "清吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "圣灯",
+      "adcode": "510108",
+      "search_keyword": "清吧"
+    },
+    "industry": {
+      "code": "1513",
+      "name": "啤酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 啤酒制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "啤酒"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0081966",
+    "company": "M99BEER世界啤酒兴隆店",
+    "category": "制造业",
+    "keywords": [
+      "清吧"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都"
+    },
+    "address": "天府新区兴隆街道天府大道南二段3999号3栋1单元2层203号204号205号",
+    "contact_phone": "185****8518",
+    "lat": 30.390201,
+    "lng": 104.074554,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKAC9XYD",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "清吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "四川天府新区成都直管区",
+      "adcode": "510116",
+      "search_keyword": "清吧"
     },
     "industry": {
       "code": "1513",

@@ -354,7 +354,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/18/1819"
+    "_bucket": "C/18/1819",
+    "industry": {
+      "code": "1819",
+      "name": "其他机织服装制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 机织服装制造 > 其他机织服装制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服装"
+    }
   },
   {
     "id": "CN-MFG-0032392",
@@ -373,6 +382,43 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/18/1819"
+    "_bucket": "C/18/1819",
+    "industry": {
+      "code": "1819",
+      "name": "其他机织服装制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 机织服装制造 > 其他机织服装制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服装"
+    }
+  },
+  {
+    "id": "CN-MFG-0062890",
+    "company_en": "Jianming Plastic Factory (Wuxi Biyue Garment Accessories Co., Ltd.)",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "Gelu Town Gannan Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-15",
+    "note_en": "",
+    "_bucket": "C/18/1819",
+    "industry": {
+      "code": "1819",
+      "name": "其他机织服装制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 机织服装制造 > 其他机织服装制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服装"
+    }
   }
 ]

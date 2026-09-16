@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "宠物"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/82/8229"
   },
   {
     "id": "CN-MFG-0048778",
@@ -83,6 +84,55 @@
       "business_area": "",
       "adcode": "330111",
       "search_keyword": "水上乐园"
+    },
+    "industry": {
+      "code": "8229",
+      "name": "其他宠物服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 其他服务业 > 宠物服务 > 其他宠物服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宠物"
+    },
+    "is_manufacturer": false,
+    "_bucket": "O/82/8229"
+  },
+  {
+    "id": "CN-MFG-0079483",
+    "company": "星巴克(太仓点金商业广场店宠物友好)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "咖啡店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "南郊书院路101号3号楼地上1层155、156、157单元",
+    "contact_phone": "0512-63106297",
+    "lat": 31.422268,
+    "lng": 121.128759,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H2FSL96P",
+      "type": "餐饮服务;咖啡厅;星巴克咖啡",
+      "typecode": "050501",
+      "alias": "",
+      "tag": "下午茶,单人餐",
+      "keytag": "饮品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "咖啡店"
     },
     "industry": {
       "code": "8229",

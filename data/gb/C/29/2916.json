@@ -43,7 +43,8 @@
       "evidence": "运动场地"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/29/2916"
   },
   {
     "id": "CN-MFG-0033173",
@@ -91,7 +92,8 @@
       "source": "gb_token",
       "evidence": "运动场"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/29/2916"
   },
   {
     "id": "CN-MFG-0034199",
@@ -139,7 +141,8 @@
       "source": "gb_token",
       "evidence": "运动场"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/29/2916"
   },
   {
     "id": "CN-MFG-0034209",
@@ -187,7 +190,8 @@
       "source": "gb_token",
       "evidence": "运动场"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/29/2916"
   },
   {
     "id": "CN-MFG-0035363",
@@ -235,7 +239,8 @@
       "source": "gb_token",
       "evidence": "运动场"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/29/2916"
   },
   {
     "id": "CN-MFG-0045067",
@@ -282,6 +287,103 @@
       "confidence": "high",
       "source": "gb_token",
       "evidence": "运动场"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/29/2916"
+  },
+  {
+    "id": "CN-MFG-0088383",
+    "company": "上海海昌医用塑胶有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "罗泾镇罗东路1399号",
+    "contact_phone": "待核实",
+    "lat": 31.455488,
+    "lng": 121.367068,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKYW9OB",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310113",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2916",
+      "name": "运动场地用塑胶制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 运动场地用塑胶制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "用塑胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0089788",
+    "company": "浙江振新药用塑胶有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "梅渚镇镇前路12号",
+    "contact_phone": "0575-86123604",
+    "lat": 29.466293,
+    "lng": 120.814459,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGYCTSV",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330624",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2916",
+      "name": "运动场地用塑胶制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 运动场地用塑胶制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "用塑胶"
     },
     "is_manufacturer": true
   }

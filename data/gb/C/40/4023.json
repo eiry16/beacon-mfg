@@ -6,7 +6,8 @@
     "keywords": [
       "汽车维修",
       "汽修",
-      "汽车修理"
+      "汽车修理",
+      "修车"
     ],
     "region": {
       "province": "上海",
@@ -47,56 +48,7 @@
       "source": "gb_token",
       "evidence": "导航"
     },
-    "is_manufacturer": true
-  },
-  {
-    "id": "CN-MFG-0054386",
-    "company": "车耀兴·车衣改色·导航360改装中心",
-    "category": "精密机械加工",
-    "keywords": [
-      "汽车维修",
-      "汽修",
-      "汽车修理"
-    ],
-    "region": {
-      "province": "上海",
-      "city": "上海"
-    },
-    "address": "柳营路777号盛源生活广场B2层",
-    "contact_phone": "待核实",
-    "lat": 31.26416,
-    "lng": 121.455596,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
-    "last_verified_at": null,
-    "status": "unverified_poi",
-    "is_template": true,
-    "note": "",
-    "amap": {
-      "poi_id": "B0J1R7ISIH",
-      "type": "汽车维修;汽车维修;汽车维修",
-      "typecode": "030000",
-      "alias": "",
-      "tag": "",
-      "keytag": "补胎",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "和田",
-      "adcode": "310106",
-      "search_keyword": "汽车维修"
-    },
-    "industry": {
-      "code": "4023",
-      "name": "导航、测绘、气象及海洋专用仪器制造",
-      "level": "class",
-      "path": "C 制造业 > 仪器仪表制造业 > 专用仪器仪表制造 > 导航、测绘、气象及海洋专用仪器制造",
-      "confidence": "high",
-      "source": "gb_token",
-      "evidence": "导航"
-    },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/40/4023"
   }
 ]

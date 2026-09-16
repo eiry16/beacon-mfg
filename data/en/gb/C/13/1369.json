@@ -42,7 +42,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/13/1369"
+    "_bucket": "C/13/1369",
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "渔港"
+    }
   },
   {
     "id": "CN-MFG-0045281",
@@ -61,6 +70,43 @@
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "C/13/1369"
+    "_bucket": "C/13/1369",
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "渔港"
+    }
+  },
+  {
+    "id": "CN-MFG-0075375",
+    "company_en": "Mi Xue Bing Cheng (Shuichan West Road)",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Coffee Shop"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 1019, 1st Floor, Shuichan West Road",
+    "contact_phone": "185****7740",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/13/1369",
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "水产"
+    }
   }
 ]
