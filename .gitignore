@@ -115,6 +115,12 @@ scripts/collect/fixtures/
 # ——新供应商在所有检索里静默搜不到（2026-09-08 实测：cl 0 → 名录 23823 → 索引 0）。
 # 纯标准库、无外部凭据，与 fetch_batch 互补。放行后 cron 跑得起来。
 !scripts/postfetch.py
+# mask_phones.py 是 git clean filter 的实现（.gitattributes 引用），必须进仓，
+# 否则 clone 后 filter 命令指向的脚本不存在、入库脱敏失效。纯标准库，无密钥。
+!scripts/mask_phones.py
+# _backfill_source_url.py 是审计议题 #1 的 source_url 回填工具，纯标准库、只读公开 POI，
+# 需可复现（覆盖率结论不能只有我说了算）。
+!scripts/_backfill_source_url.py
 # CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
 .github/*
 !.github/workflows/
@@ -195,6 +201,8 @@ skills/_keep_sample/
 
 # 运行日志与临时文件
 *.log
+# 单实例抓取锁（fetch_batch.py 仓库内 PID 锁，防双实例并发抓取到账本）
+.fetch_batch.lock
 _fixed_*_backup.json
 en_backfill_*
 en_watchdog*
