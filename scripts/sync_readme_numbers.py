@@ -6,7 +6,7 @@
 ------------------
 每次抓取之后，README 里 30 多个数字会集体过期：徽章、总数、已核实/待核实、
 品类表、行业 TOP、大类分布。英文 README 同理（记录总数、已核实/待核实、
-国标大类数、已归类、TOP 类、英文镜像数）。以前靠手改 —— 改漏一个
+国标大类数、已归类、Top classes、Top divisions、英文镜像数）。以前靠手改 —— 改漏一个
 validate.py --strict 就红灯，天天红灯的下场是没人再看。
 
 做法上保守一点：
@@ -46,6 +46,7 @@ INDUSTRY_INDEX = ROOT / "data" / "industry-index.json"
 TOP_N = 12          # 「行业家数 TOP」表行数
 DIST_N = 6          # 「大类分布」句子里提到的品类数
 EN_TOP_N = 8        # 英文 README「Top classes」列出的类数
+EN_TOP_DIV = 8       # 英文 README「Top divisions」列出的大类(2位 l2)数
 
 
 def _meta() -> dict:
@@ -111,6 +112,87 @@ def _industry_name_en(code: str):
         return None
     idx = json.loads(INDUSTRY_INDEX.read_text(encoding="utf-8")).get("index") or {}
     return (idx.get(code) or {}).get("name_en")
+
+
+# ── 大类(2位 l2)英文映射 ──────────────────────────────────────────────
+# gb4754-en.json 只收 4 位小类，不覆盖 2 位大类，故此处静态维护。
+# 译名尽量与 README 既有写法一致（Metal Products / General Equipment 等）。
+# 缺失时回退中文名 + WARN；不机翻、不编造。
+L2_EN = {
+    "13": "Farm Products Processing",
+    "14": "Food Manufacturing",
+    "15": "Beverages & Refined Tea Manufacturing",
+    "17": "Textile Industry",
+    "18": "Apparel & Clothing",
+    "19": "Leather, Fur, Feather & Footwear",
+    "20": "Wood & Bamboo Products",
+    "21": "Furniture Manufacturing",
+    "22": "Paper & Paper Products",
+    "23": "Printing & Reproduction of Recordings",
+    "24": "Cultural, Educational & Sports Goods",
+    "25": "Petroleum, Coal & Fuel Processing",
+    "26": "Chemical Raw Materials & Products",
+    "27": "Pharmaceutical Manufacturing",
+    "29": "Rubber & Plastics",
+    "30": "Non-metallic Mineral Products",
+    "31": "Ferrous Metal Smelting & Rolling",
+    "32": "Non-ferrous Metal Smelting & Rolling",
+    "33": "Metal Products",
+    "34": "General Equipment",
+    "35": "Special Equipment",
+    "36": "Automobile Manufacturing",
+    "37": "Railway, Shipbuilding & Aerospace",
+    "38": "Electrical Machinery & Equipment",
+    "39": "Computer & Electronics",
+    "40": "Instruments & Meters",
+    "42": "Waste Resources Utilization",
+    "43": "Metal & Machinery Repair",
+    "51": "Wholesale",
+    "52": "Retail",
+    "61": "Accommodation",
+    "62": "Catering",
+    "64": "Internet & Related Services",
+    "65": "Software & IT Services",
+    "73": "Research & Development",
+    "74": "Professional Technical Services",
+    "75": "Science & Technology Promotion",
+    "80": "Residential Services",
+    "81": "Motor Vehicle & Electronics Repair",
+    "82": "Other Services",
+    "87": "Radio, Film & Recording",
+    "88": "Culture & Arts",
+    "89": "Sports",
+    "90": "Entertainment",
+}
+# 制造业(门类 C)的大类码集合 —— 用于「Top divisions」里给非制造业加 (non-manufacturer) 注记
+_MANUFACTURING = {
+    "13", "14", "15", "17", "18", "19", "20", "21", "22", "23", "24", "25",
+    "26", "27", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38",
+    "39", "40", "42", "43",
+}
+
+
+def top_divisions_en(n: int) -> list[tuple[str, str, int, bool]]:
+    """英文 README「Top divisions」：按 l2 大类(2位)聚合，用 L2_EN 静态映射。
+
+    返回 [(code, en_or_zh_name, count, missing_flag)]；缺失映射时回退中文名。
+    """
+    if not INDUSTRY_INDEX.exists():
+        return []
+    idx = json.loads(INDUSTRY_INDEX.read_text(encoding="utf-8")).get("index") or {}
+    agg: dict[str, list] = {}
+    for v in idx.values():
+        l2 = v.get("l2")
+        if not l2:
+            continue
+        agg.setdefault(l2, [0, v.get("l2_name", "")])
+        agg[l2][0] += int(v.get("count", 0))
+    rows = sorted(agg.items(), key=lambda kv: (-kv[1][0], kv[0]))[:n]
+    out = []
+    for l2, (cnt, zh) in rows:
+        en = L2_EN.get(l2)
+        out.append((l2, en or zh, cnt, en is None))
+    return out
 
 
 def build(st: dict, quiet: bool) -> tuple[str, int]:
@@ -262,6 +344,26 @@ def build_en(st: dict, quiet: bool) -> tuple[str, int]:
             text = text[:m.start()] + repl + text[m.end():]
         else:
             changes.append("   WARN  没找到英文「Top classes」段落，跳过")
+
+    # ── 6b. Top divisions 整块重建（按 l2 大类聚合，静态英文映射）────────
+    divs = top_divisions_en(EN_TOP_DIV)
+    if divs:
+        parts = []
+        for code, en, cnt, missing in divs:
+            if missing:
+                changes.append("   WARN  大类 %s 缺英文映射，回退中文「%s」" % (code, en))
+            note = ", non-manufacturer" if code not in _MANUFACTURING else ""
+            parts.append("%s (%s%s) %s" % (en, code, note, "{:,}".format(cnt)))
+        body = " · ".join(parts) + "."
+        repl = "Top divisions: " + body
+        pat = re.compile(r"Top divisions:\s*.*?(?=\n\n|\n#|\Z)", re.S)
+        m = pat.search(text)
+        if m:
+            if m.group(0).strip() != repl.strip():
+                changes.append("   EN Top divisions：%d 大类已刷新（静态英文映射）" % len(divs))
+            text = text[:m.start()] + repl + text[m.end():]
+        else:
+            changes.append("   WARN  没找到英文「Top divisions」段落，跳过")
 
     if not quiet:
         print("README_EN 数字同步（来源：stats.compute_stats / industry-index.json）")
