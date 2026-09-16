@@ -92,5 +92,53 @@
     "is_manufacturer": true,
     "status": "unverified_poi",
     "_bucket": "C/35/3577"
+  },
+  {
+    "id": "CN-MFG-0091193",
+    "company": "新疆棉花加工店",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "贵州升永盛工程机械有限公司西门旁",
+    "contact_phone": "158****0259",
+    "lat": 26.575175,
+    "lng": 106.667675,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3N7NU37",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520103",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3577",
+      "name": "棉花加工机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 棉花加工机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "棉花加"
+    },
+    "is_manufacturer": true
   }
 ]

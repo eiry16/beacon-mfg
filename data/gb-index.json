@@ -2,51 +2,66 @@
   "metadata": {
     "standard": "GB/T 4754-2017 国民经济行业分类（含 2019 年第 1 号修改单）",
     "description": "厂商数据库按国标四级归档索引。门类 1 位字母 / 大类 2 位 / 中类 3 位 / 小类 4 位。客户 Agent 可按任意层级检索。",
-    "generated_at": "2026-09-16",
+    "generated_at": "2026-09-17",
     "counts": {
       "gates_in_standard": 20,
       "divisions_in_standard": 97,
       "groups_in_standard": 473,
       "classes_in_standard": 1382,
       "gates_used": 7,
-      "divisions_used": 44,
-      "groups_used": 156,
-      "classes_used": 240
+      "divisions_used": 45,
+      "groups_used": 165,
+      "classes_used": 255
     },
-    "total_suppliers": 79555,
-    "classified": 78120,
-    "unclassified": 1435,
+    "total_suppliers": 113190,
+    "classified": 111322,
+    "unclassified": 1868,
     "layout": "data/gb/{gate}/{division}/{class}.json，无码记录见 _unclassified.json"
   },
   "tree": {
     "C": {
       "name": "制造业",
-      "count": 33887,
+      "count": 38914,
       "divisions": {
         "13": {
           "name": "农副食品加工业",
-          "count": 25,
+          "count": 44,
           "direct": 0,
           "groups": {
+            "131": {
+              "name": "谷物磨制",
+              "count": 2,
+              "direct": 0,
+              "classes": {
+                "1313": {
+                  "name": "玉米加工",
+                  "count": 1
+                },
+                "1314": {
+                  "name": "杂粮加工",
+                  "count": 1
+                }
+              }
+            },
             "132": {
               "name": "饲料加工",
-              "count": 1,
+              "count": 2,
               "direct": 0,
               "classes": {
                 "1329": {
                   "name": "其他饲料加工",
-                  "count": 1
+                  "count": 2
                 }
               }
             },
             "135": {
               "name": "屠宰及肉类加工",
-              "count": 6,
+              "count": 10,
               "direct": 0,
               "classes": {
                 "1351": {
                   "name": "牲畜屠宰",
-                  "count": 6
+                  "count": 10
                 }
               }
             },
@@ -63,27 +78,27 @@
             },
             "137": {
               "name": "蔬菜、菌类、水果和坚果加工",
-              "count": 1,
+              "count": 3,
               "direct": 0,
               "classes": {
                 "1371": {
                   "name": "蔬菜加工",
-                  "count": 1
+                  "count": 3
                 }
               }
             },
             "139": {
               "name": "其他农副食品加工",
-              "count": 13,
+              "count": 23,
               "direct": 0,
               "classes": {
                 "1392": {
                   "name": "豆制品制造",
-                  "count": 3
+                  "count": 4
                 },
                 "1399": {
                   "name": "其他未列明农副食品加工",
-                  "count": 10
+                  "count": 19
                 }
               }
             }
@@ -91,7 +106,7 @@
         },
         "14": {
           "name": "食品制造业",
-          "count": 54,
+          "count": 75,
           "direct": 0,
           "groups": {
             "142": {
@@ -118,7 +133,7 @@
             },
             "149": {
               "name": "其他食品制造",
-              "count": 47,
+              "count": 68,
               "direct": 0,
               "classes": {
                 "1495": {
@@ -127,7 +142,7 @@
                 },
                 "1499": {
                   "name": "其他未列明食品制造",
-                  "count": 46
+                  "count": 67
                 }
               }
             }
@@ -135,25 +150,25 @@
         },
         "15": {
           "name": "酒、饮料和精制茶制造业",
-          "count": 25,
+          "count": 42,
           "direct": 0,
           "groups": {
             "151": {
               "name": "酒的制造",
-              "count": 16,
+              "count": 30,
               "direct": 0,
               "classes": {
                 "1511": {
                   "name": "酒精制造",
-                  "count": 1
+                  "count": 2
                 },
                 "1512": {
                   "name": "白酒制造",
-                  "count": 1
+                  "count": 3
                 },
                 "1513": {
                   "name": "啤酒制造",
-                  "count": 13
+                  "count": 24
                 },
                 "1515": {
                   "name": "葡萄酒制造",
@@ -163,23 +178,41 @@
             },
             "152": {
               "name": "饮料制造",
-              "count": 1,
+              "count": 2,
               "direct": 0,
               "classes": {
                 "1529": {
                   "name": "茶饮料及其他饮料制造",
-                  "count": 1
+                  "count": 2
                 }
               }
             },
             "153": {
               "name": "精制茶加工",
-              "count": 8,
+              "count": 10,
               "direct": 0,
               "classes": {
                 "1530": {
                   "name": "精制茶加工",
-                  "count": 8
+                  "count": 10
+                }
+              }
+            }
+          }
+        },
+        "16": {
+          "name": "烟草制品业",
+          "count": 1,
+          "direct": 0,
+          "groups": {
+            "162": {
+              "name": "卷烟制造",
+              "count": 1,
+              "direct": 0,
+              "classes": {
+                "1620": {
+                  "name": "卷烟制造",
+                  "count": 1
                 }
               }
             }
@@ -187,7 +220,7 @@
         },
         "17": {
           "name": "纺织业",
-          "count": 28,
+          "count": 30,
           "direct": 0,
           "groups": {
             "171": {
@@ -203,7 +236,7 @@
             },
             "177": {
               "name": "家用纺织制成品制造",
-              "count": 10,
+              "count": 12,
               "direct": 0,
               "classes": {
                 "1771": {
@@ -212,7 +245,7 @@
                 },
                 "1773": {
                   "name": "窗帘、布艺类产品制造",
-                  "count": 7
+                  "count": 9
                 }
               }
             },
@@ -231,17 +264,17 @@
         },
         "18": {
           "name": "纺织服装、服饰业",
-          "count": 26,
+          "count": 29,
           "direct": 0,
           "groups": {
             "181": {
               "name": "机织服装制造",
-              "count": 16,
+              "count": 19,
               "direct": 0,
               "classes": {
                 "1819": {
                   "name": "其他机织服装制造",
-                  "count": 16
+                  "count": 19
                 }
               }
             },
@@ -260,17 +293,17 @@
         },
         "19": {
           "name": "皮革、毛皮、羽毛及其制品和制鞋业",
-          "count": 3,
+          "count": 4,
           "direct": 0,
           "groups": {
             "192": {
               "name": "皮革制品制造",
-              "count": 3,
+              "count": 4,
               "direct": 0,
               "classes": {
                 "1929": {
                   "name": "其他皮革制品制造",
-                  "count": 3
+                  "count": 4
                 }
               }
             }
@@ -278,21 +311,25 @@
         },
         "20": {
           "name": "木材加工和木、竹、藤、棕、草制品业",
-          "count": 110,
+          "count": 151,
           "direct": 0,
           "groups": {
             "201": {
               "name": "木材加工",
-              "count": 101,
+              "count": 138,
               "direct": 0,
               "classes": {
+                "2012": {
+                  "name": "木片加工",
+                  "count": 1
+                },
                 "2013": {
                   "name": "单板加工",
-                  "count": 14
+                  "count": 16
                 },
                 "2019": {
                   "name": "其他木材加工",
-                  "count": 87
+                  "count": 121
                 }
               }
             },
@@ -309,7 +346,7 @@
             },
             "203": {
               "name": "木质制品制造",
-              "count": 5,
+              "count": 9,
               "direct": 0,
               "classes": {
                 "2033": {
@@ -318,7 +355,7 @@
                 },
                 "2034": {
                   "name": "木地板制造",
-                  "count": 4
+                  "count": 8
                 }
               }
             },
@@ -337,7 +374,7 @@
         },
         "21": {
           "name": "家具制造业",
-          "count": 10,
+          "count": 18,
           "direct": 0,
           "groups": {
             "214": {
@@ -353,12 +390,12 @@
             },
             "219": {
               "name": "其他家具制造",
-              "count": 9,
+              "count": 17,
               "direct": 0,
               "classes": {
                 "2190": {
                   "name": "其他家具制造",
-                  "count": 9
+                  "count": 17
                 }
               }
             }
@@ -366,17 +403,17 @@
         },
         "22": {
           "name": "造纸和纸制品业",
-          "count": 6,
+          "count": 10,
           "direct": 0,
           "groups": {
             "223": {
               "name": "纸制品制造",
-              "count": 6,
+              "count": 10,
               "direct": 0,
               "classes": {
                 "2239": {
                   "name": "其他纸制品制造",
-                  "count": 6
+                  "count": 10
                 }
               }
             }
@@ -384,17 +421,17 @@
         },
         "23": {
           "name": "印刷和记录媒介复制业",
-          "count": 30,
+          "count": 35,
           "direct": 0,
           "groups": {
             "231": {
               "name": "印刷",
-              "count": 30,
+              "count": 35,
               "direct": 0,
               "classes": {
                 "2319": {
                   "name": "包装装潢及其他印刷",
-                  "count": 30
+                  "count": 35
                 }
               }
             }
@@ -402,14 +439,18 @@
         },
         "24": {
           "name": "文教、工美、体育和娱乐用品制造业",
-          "count": 21,
+          "count": 29,
           "direct": 0,
           "groups": {
             "241": {
               "name": "文教办公用品制造",
-              "count": 1,
+              "count": 2,
               "direct": 0,
               "classes": {
+                "2411": {
+                  "name": "文具制造",
+                  "count": 1
+                },
                 "2414": {
                   "name": "墨水、墨汁制造",
                   "count": 1
@@ -418,27 +459,27 @@
             },
             "243": {
               "name": "工艺美术及礼仪用品制造",
-              "count": 15,
+              "count": 21,
               "direct": 0,
               "classes": {
                 "2432": {
                   "name": "金属工艺品制造",
-                  "count": 1
+                  "count": 2
                 },
                 "2437": {
                   "name": "地毯、挂毯制造",
-                  "count": 14
+                  "count": 19
                 }
               }
             },
             "245": {
               "name": "玩具制造",
-              "count": 5,
+              "count": 6,
               "direct": 0,
               "classes": {
                 "2452": {
                   "name": "塑胶玩具制造",
-                  "count": 5
+                  "count": 6
                 }
               }
             }
@@ -459,17 +500,17 @@
         },
         "26": {
           "name": "化学原料和化学制品制造业",
-          "count": 626,
+          "count": 679,
           "direct": 0,
           "groups": {
             "264": {
               "name": "涂料、油墨、颜料及类似产品制造",
-              "count": 16,
+              "count": 19,
               "direct": 0,
               "classes": {
                 "2641": {
                   "name": "涂料制造",
-                  "count": 12
+                  "count": 15
                 },
                 "2645": {
                   "name": "染料制造",
@@ -479,12 +520,12 @@
             },
             "265": {
               "name": "合成材料制造",
-              "count": 609,
+              "count": 659,
               "direct": 0,
               "classes": {
                 "2651": {
                   "name": "初级形态塑料及合成树脂制造",
-                  "count": 609
+                  "count": 659
                 }
               }
             },
@@ -532,31 +573,31 @@
         },
         "29": {
           "name": "橡胶和塑料制品业",
-          "count": 5742,
+          "count": 6510,
           "direct": 0,
           "groups": {
             "291": {
               "name": "橡胶制品业",
-              "count": 250,
+              "count": 330,
               "direct": 0,
               "classes": {
                 "2911": {
                   "name": "轮胎制造",
-                  "count": 177
+                  "count": 243
                 },
                 "2913": {
                   "name": "橡胶零件制造",
-                  "count": 65
+                  "count": 78
                 },
                 "2916": {
                   "name": "运动场地用塑胶制造",
-                  "count": 8
+                  "count": 9
                 }
               }
             },
             "292": {
               "name": "塑料制品业",
-              "count": 5492,
+              "count": 6180,
               "direct": 0,
               "classes": {
                 "2921": {
@@ -565,11 +606,11 @@
                 },
                 "2922": {
                   "name": "塑料板、管、型材制造",
-                  "count": 68
+                  "count": 101
                 },
                 "2924": {
                   "name": "泡沫塑料制造",
-                  "count": 5
+                  "count": 7
                 },
                 "2925": {
                   "name": "塑料人造革、合成革制造",
@@ -577,7 +618,7 @@
                 },
                 "2926": {
                   "name": "塑料包装箱及容器制造",
-                  "count": 238
+                  "count": 274
                 },
                 "2928": {
                   "name": "人造草坪制造",
@@ -585,7 +626,7 @@
                 },
                 "2929": {
                   "name": "塑料零件及其他塑料制品制造",
-                  "count": 5173
+                  "count": 5790
                 }
               }
             }
@@ -593,39 +634,39 @@
         },
         "30": {
           "name": "非金属矿物制品业",
-          "count": 118,
+          "count": 149,
           "direct": 0,
           "groups": {
             "301": {
               "name": "水泥、石灰和石膏制造",
-              "count": 83,
+              "count": 85,
               "direct": 0,
               "classes": {
                 "3011": {
                   "name": "水泥制造",
-                  "count": 83
+                  "count": 85
                 }
               }
             },
             "302": {
               "name": "石膏、水泥制品及类似制品制造",
-              "count": 3,
+              "count": 7,
               "direct": 0,
               "classes": {
                 "3021": {
                   "name": "水泥制品制造",
-                  "count": 3
+                  "count": 7
                 }
               }
             },
             "303": {
               "name": "砖瓦、石材等建筑材料制造",
-              "count": 23,
+              "count": 45,
               "direct": 0,
               "classes": {
                 "3032": {
                   "name": "建筑用石加工",
-                  "count": 22
+                  "count": 44
                 },
                 "3033": {
                   "name": "防水建筑材料制造",
@@ -646,12 +687,12 @@
             },
             "305": {
               "name": "玻璃制品制造",
-              "count": 8,
+              "count": 11,
               "direct": 0,
               "classes": {
                 "3059": {
                   "name": "其他玻璃制品制造",
-                  "count": 8
+                  "count": 11
                 }
               }
             }
@@ -659,17 +700,17 @@
         },
         "31": {
           "name": "黑色金属冶炼和压延加工业",
-          "count": 1149,
+          "count": 1798,
           "direct": 0,
           "groups": {
             "313": {
               "name": "钢压延加工",
-              "count": 1149,
+              "count": 1798,
               "direct": 0,
               "classes": {
                 "3130": {
                   "name": "钢压延加工",
-                  "count": 1149
+                  "count": 1798
                 }
               }
             }
@@ -677,21 +718,32 @@
         },
         "32": {
           "name": "有色金属冶炼和压延加工业",
-          "count": 1032,
+          "count": 1570,
           "direct": 0,
           "groups": {
+            "324": {
+              "name": "有色金属合金制造",
+              "count": 1,
+              "direct": 0,
+              "classes": {
+                "3240": {
+                  "name": "有色金属合金制造",
+                  "count": 1
+                }
+              }
+            },
             "325": {
               "name": "有色金属压延加工",
-              "count": 1032,
+              "count": 1569,
               "direct": 0,
               "classes": {
                 "3251": {
                   "name": "铜压延加工",
-                  "count": 332
+                  "count": 342
                 },
                 "3252": {
                   "name": "铝压延加工",
-                  "count": 698
+                  "count": 1225
                 },
                 "3253": {
                   "name": "贵金属压延加工",
@@ -703,43 +755,43 @@
         },
         "33": {
           "name": "金属制品业",
-          "count": 8082,
+          "count": 9306,
           "direct": 0,
           "groups": {
             "331": {
               "name": "结构性金属制品制造",
-              "count": 3063,
+              "count": 3844,
               "direct": 0,
               "classes": {
                 "3311": {
                   "name": "金属结构制造",
-                  "count": 2355
+                  "count": 2578
                 },
                 "3312": {
                   "name": "金属门窗制造",
-                  "count": 708
+                  "count": 1266
                 }
               }
             },
             "332": {
               "name": "金属工具制造",
-              "count": 10,
+              "count": 11,
               "direct": 0,
               "classes": {
                 "3321": {
                   "name": "切削工具制造",
-                  "count": 10
+                  "count": 11
                 }
               }
             },
             "333": {
               "name": "集装箱及金属包装容器制造",
-              "count": 4,
+              "count": 6,
               "direct": 0,
               "classes": {
                 "3331": {
                   "name": "集装箱制造",
-                  "count": 1
+                  "count": 3
                 },
                 "3332": {
                   "name": "金属压力容器制造",
@@ -764,42 +816,42 @@
             },
             "335": {
               "name": "建筑、安全用金属制品制造",
-              "count": 28,
+              "count": 43,
               "direct": 0,
               "classes": {
                 "3351": {
                   "name": "建筑、家具用金属配件制造",
-                  "count": 14
+                  "count": 19
                 },
                 "3353": {
                   "name": "安全、消防用金属制品制造",
-                  "count": 14
+                  "count": 24
                 }
               }
             },
             "336": {
               "name": "金属表面处理及热处理加工",
-              "count": 2014,
+              "count": 2147,
               "direct": 0,
               "classes": {
                 "3360": {
                   "name": "金属表面处理及热处理加工",
-                  "count": 2014
+                  "count": 2147
                 }
               }
             },
             "339": {
               "name": "铸造及其他金属制品制造",
-              "count": 2962,
+              "count": 3254,
               "direct": 0,
               "classes": {
                 "3391": {
                   "name": "黑色金属铸造",
-                  "count": 15
+                  "count": 19
                 },
                 "3392": {
                   "name": "有色金属铸造",
-                  "count": 631
+                  "count": 700
                 },
                 "3393": {
                   "name": "锻件及粉末冶金制品制造",
@@ -807,7 +859,7 @@
                 },
                 "3399": {
                   "name": "其他未列明金属制品制造",
-                  "count": 2310
+                  "count": 2529
                 }
               }
             }
@@ -815,7 +867,7 @@
         },
         "34": {
           "name": "通用设备制造业",
-          "count": 11109,
+          "count": 12392,
           "direct": 0,
           "groups": {
             "341": {
@@ -850,7 +902,7 @@
             },
             "343": {
               "name": "物料搬运设备制造",
-              "count": 7,
+              "count": 9,
               "direct": 0,
               "classes": {
                 "3432": {
@@ -863,18 +915,18 @@
                 },
                 "3435": {
                   "name": "电梯、自动扶梯及升降机制造",
-                  "count": 4
+                  "count": 6
                 }
               }
             },
             "344": {
               "name": "泵、阀门、压缩机及类似机械制造",
-              "count": 94,
+              "count": 113,
               "direct": 0,
               "classes": {
                 "3441": {
                   "name": "泵及真空设备制造",
-                  "count": 12
+                  "count": 23
                 },
                 "3442": {
                   "name": "气体压缩机械制造",
@@ -882,32 +934,32 @@
                 },
                 "3443": {
                   "name": "阀门和旋塞制造",
-                  "count": 62
+                  "count": 66
                 },
                 "3444": {
                   "name": "液压动力机械及元件制造",
-                  "count": 19
+                  "count": 23
                 }
               }
             },
             "345": {
               "name": "轴承、齿轮和传动部件制造",
-              "count": 814,
+              "count": 1012,
               "direct": 0,
               "classes": {
                 "3451": {
                   "name": "滚动轴承制造",
-                  "count": 793
+                  "count": 982
                 },
                 "3453": {
                   "name": "齿轮及齿轮减、变速箱制造",
-                  "count": 21
+                  "count": 30
                 }
               }
             },
             "346": {
               "name": "烘炉、风机、包装等设备制造",
-              "count": 469,
+              "count": 648,
               "direct": 0,
               "classes": {
                 "3462": {
@@ -916,19 +968,19 @@
                 },
                 "3463": {
                   "name": "气体、液体分离及纯净设备制造",
-                  "count": 3
+                  "count": 4
                 },
                 "3464": {
                   "name": "制冷、空调设备制造",
-                  "count": 367
+                  "count": 538
                 },
                 "3465": {
                   "name": "风动和电动工具制造",
-                  "count": 87
+                  "count": 93
                 },
                 "3467": {
                   "name": "包装专用设备制造",
-                  "count": 9
+                  "count": 10
                 }
               }
             },
@@ -945,7 +997,7 @@
             },
             "348": {
               "name": "通用零部件制造",
-              "count": 9708,
+              "count": 10593,
               "direct": 0,
               "classes": {
                 "3481": {
@@ -954,15 +1006,15 @@
                 },
                 "3482": {
                   "name": "紧固件制造",
-                  "count": 1017
+                  "count": 1362
                 },
                 "3483": {
                   "name": "弹簧制造",
-                  "count": 727
+                  "count": 744
                 },
                 "3484": {
                   "name": "机械零部件加工",
-                  "count": 7955
+                  "count": 8478
                 }
               }
             },
@@ -981,17 +1033,17 @@
         },
         "35": {
           "name": "专用设备制造业",
-          "count": 3884,
+          "count": 4069,
           "direct": 1,
           "groups": {
             "351": {
               "name": "采矿、冶金、建筑专用设备制造",
-              "count": 21,
+              "count": 28,
               "direct": 0,
               "classes": {
                 "3511": {
                   "name": "矿山机械制造",
-                  "count": 6
+                  "count": 10
                 },
                 "3514": {
                   "name": "建筑工程用机械制造",
@@ -999,13 +1051,13 @@
                 },
                 "3515": {
                   "name": "建筑材料生产专用机械制造",
-                  "count": 7
+                  "count": 10
                 }
               }
             },
             "352": {
               "name": "化工、木材、非金属加工专用设备制造",
-              "count": 3672,
+              "count": 3808,
               "direct": 0,
               "classes": {
                 "3521": {
@@ -1014,22 +1066,22 @@
                 },
                 "3523": {
                   "name": "塑料加工专用设备制造",
-                  "count": 35
+                  "count": 45
                 },
                 "3525": {
                   "name": "模具制造",
-                  "count": 3636
+                  "count": 3762
                 }
               }
             },
             "354": {
               "name": "印刷、制药、日化及日用品生产专用设备制造",
-              "count": 87,
+              "count": 111,
               "direct": 0,
               "classes": {
                 "3546": {
                   "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
-                  "count": 87
+                  "count": 111
                 }
               }
             },
@@ -1057,46 +1109,46 @@
             },
             "357": {
               "name": "农、林、牧、渔专用机械制造",
-              "count": 53,
-              "direct": 7,
+              "count": 62,
+              "direct": 8,
               "classes": {
                 "3576": {
                   "name": "农林牧渔机械配件制造",
-                  "count": 44
+                  "count": 51
                 },
                 "3577": {
                   "name": "棉花加工机械制造",
-                  "count": 2
+                  "count": 3
                 }
               }
             },
             "358": {
               "name": "医疗仪器设备及器械制造",
-              "count": 25,
+              "count": 31,
               "direct": 0,
               "classes": {
                 "3584": {
                   "name": "医疗、外科及兽医用器械制造",
-                  "count": 24
+                  "count": 27
                 },
                 "3587": {
                   "name": "眼镜制造",
-                  "count": 1
+                  "count": 4
                 }
               }
             },
             "359": {
               "name": "环保、邮政、社会公共服务及其他专用设备制造",
-              "count": 23,
+              "count": 26,
               "direct": 0,
               "classes": {
                 "3591": {
                   "name": "环境保护专用设备制造",
-                  "count": 16
+                  "count": 17
                 },
                 "3594": {
                   "name": "商业、饮食、服务专用设备制造",
-                  "count": 6
+                  "count": 8
                 },
                 "3596": {
                   "name": "交通安全、管制及类似专用设备制造",
@@ -1108,7 +1160,7 @@
         },
         "36": {
           "name": "汽车制造业",
-          "count": 69,
+          "count": 93,
           "direct": 0,
           "groups": {
             "361": {
@@ -1144,14 +1196,25 @@
                 }
               }
             },
+            "365": {
+              "name": "电车制造",
+              "count": 1,
+              "direct": 0,
+              "classes": {
+                "3650": {
+                  "name": "电车制造",
+                  "count": 1
+                }
+              }
+            },
             "366": {
               "name": "汽车车身、挂车制造",
-              "count": 55,
+              "count": 78,
               "direct": 0,
               "classes": {
                 "3660": {
                   "name": "汽车车身、挂车制造",
-                  "count": 55
+                  "count": 78
                 }
               }
             }
@@ -1199,43 +1262,43 @@
         },
         "38": {
           "name": "电气机械和器材制造业",
-          "count": 194,
+          "count": 237,
           "direct": 0,
           "groups": {
             "381": {
               "name": "电机制造",
-              "count": 23,
+              "count": 32,
               "direct": 0,
               "classes": {
                 "3812": {
                   "name": "电动机制造",
-                  "count": 23
+                  "count": 32
                 }
               }
             },
             "382": {
               "name": "输配电及控制设备制造",
-              "count": 2,
+              "count": 3,
               "direct": 0,
               "classes": {
                 "3823": {
                   "name": "配电开关控制设备制造",
-                  "count": 2
+                  "count": 3
                 }
               }
             },
             "383": {
               "name": "电线、电缆、光缆及电工器材制造",
-              "count": 45,
+              "count": 50,
               "direct": 0,
               "classes": {
                 "3831": {
                   "name": "电线、电缆制造",
-                  "count": 40
+                  "count": 44
                 },
                 "3832": {
                   "name": "光纤制造",
-                  "count": 4
+                  "count": 5
                 },
                 "3834": {
                   "name": "绝缘制品制造",
@@ -1245,12 +1308,12 @@
             },
             "384": {
               "name": "电池制造",
-              "count": 58,
+              "count": 77,
               "direct": 0,
               "classes": {
                 "3841": {
                   "name": "锂离子电池制造",
-                  "count": 58
+                  "count": 77
                 }
               }
             },
@@ -1267,23 +1330,23 @@
             },
             "386": {
               "name": "非电力家用器具制造",
-              "count": 1,
+              "count": 6,
               "direct": 0,
               "classes": {
                 "3862": {
                   "name": "太阳能器具制造",
-                  "count": 1
+                  "count": 6
                 }
               }
             },
             "387": {
               "name": "照明器具制造",
-              "count": 64,
+              "count": 68,
               "direct": 0,
               "classes": {
                 "3872": {
                   "name": "照明灯具制造",
-                  "count": 64
+                  "count": 68
                 }
               }
             }
@@ -1291,7 +1354,7 @@
         },
         "39": {
           "name": "计算机、通信和其他电子设备制造业",
-          "count": 1468,
+          "count": 1567,
           "direct": 0,
           "groups": {
             "395": {
@@ -1318,16 +1381,16 @@
             },
             "397": {
               "name": "电子器件制造",
-              "count": 26,
+              "count": 32,
               "direct": 0,
               "classes": {
                 "3973": {
                   "name": "集成电路制造",
-                  "count": 11
+                  "count": 12
                 },
                 "3974": {
                   "name": "显示器件制造",
-                  "count": 4
+                  "count": 9
                 },
                 "3975": {
                   "name": "半导体照明器件制造",
@@ -1341,16 +1404,20 @@
             },
             "398": {
               "name": "电子元件及电子专用材料制造",
-              "count": 1440,
+              "count": 1533,
               "direct": 0,
               "classes": {
                 "3982": {
                   "name": "电子电路制造",
-                  "count": 512
+                  "count": 601
+                },
+                "3985": {
+                  "name": "电子专用材料制造",
+                  "count": 1
                 },
                 "3989": {
                   "name": "其他电子元件制造",
-                  "count": 928
+                  "count": 931
                 }
               }
             }
@@ -1451,46 +1518,57 @@
     },
     "F": {
       "name": "批发和零售业",
-      "count": 2891,
+      "count": 3393,
       "divisions": {
         "51": {
           "name": "批发业",
-          "count": 2261,
-          "direct": 35,
+          "count": 2652,
+          "direct": 50,
           "groups": {
+            "512": {
+              "name": "食品、饮料及烟草制品批发",
+              "count": 1,
+              "direct": 0,
+              "classes": {
+                "5121": {
+                  "name": "米、面制品及食用油批发",
+                  "count": 1
+                }
+              }
+            },
             "513": {
               "name": "纺织、服装及家庭用品批发",
-              "count": 6,
+              "count": 13,
               "direct": 0,
               "classes": {
                 "5131": {
                   "name": "纺织品、针织品及原料批发",
-                  "count": 5
+                  "count": 11
                 },
                 "5138": {
                   "name": "日用家电批发",
-                  "count": 1
+                  "count": 2
                 }
               }
             },
             "514": {
               "name": "文化、体育用品及器材批发",
-              "count": 12,
+              "count": 18,
               "direct": 0,
               "classes": {
                 "5146": {
                   "name": "首饰、工艺品及收藏品批发",
-                  "count": 11
+                  "count": 16
                 },
                 "5147": {
                   "name": "乐器批发",
-                  "count": 1
+                  "count": 2
                 }
               }
             },
             "516": {
               "name": "矿产品、建材及化工产品批发",
-              "count": 1179,
+              "count": 1180,
               "direct": 0,
               "classes": {
                 "5164": {
@@ -1499,7 +1577,7 @@
                 },
                 "5165": {
                   "name": "建材批发",
-                  "count": 124
+                  "count": 125
                 },
                 "5169": {
                   "name": "其他化工产品批发",
@@ -1509,42 +1587,46 @@
             },
             "517": {
               "name": "机械设备、五金产品及电子产品批发",
-              "count": 990,
-              "direct": 0,
+              "count": 1334,
+              "direct": 7,
               "classes": {
                 "5171": {
                   "name": "农业机械批发",
-                  "count": 1
+                  "count": 2
                 },
                 "5174": {
                   "name": "五金产品批发",
-                  "count": 530
+                  "count": 645
                 },
                 "5179": {
                   "name": "其他机械设备及电子产品批发",
-                  "count": 459
+                  "count": 680
                 }
               }
             },
             "518": {
               "name": "贸易经纪与代理",
-              "count": 38,
+              "count": 52,
               "direct": 0,
               "classes": {
                 "5183": {
                   "name": "艺术品、收藏品拍卖",
-                  "count": 38
+                  "count": 52
                 }
               }
             },
             "519": {
               "name": "其他批发业",
-              "count": 1,
+              "count": 4,
               "direct": 0,
               "classes": {
+                "5191": {
+                  "name": "再生物资回收与批发",
+                  "count": 1
+                },
                 "5193": {
                   "name": "互联网批发",
-                  "count": 1
+                  "count": 3
                 }
               }
             }
@@ -1552,51 +1634,51 @@
         },
         "52": {
           "name": "零售业",
-          "count": 630,
+          "count": 741,
           "direct": 0,
           "groups": {
             "521": {
               "name": "综合零售",
-              "count": 250,
+              "count": 295,
               "direct": 0,
               "classes": {
                 "5212": {
                   "name": "超级市场零售",
-                  "count": 111
+                  "count": 152
                 },
                 "5213": {
                   "name": "便利店零售",
-                  "count": 139
+                  "count": 143
                 }
               }
             },
             "522": {
               "name": "食品、饮料及烟草制品专门零售",
-              "count": 92,
+              "count": 125,
               "direct": 0,
               "classes": {
                 "5229": {
                   "name": "其他食品零售",
-                  "count": 92
+                  "count": 125
                 }
               }
             },
             "523": {
               "name": "纺织、服装及日用品专门零售",
-              "count": 7,
+              "count": 15,
               "direct": 0,
               "classes": {
                 "5232": {
                   "name": "服装零售",
-                  "count": 5
+                  "count": 7
                 },
                 "5233": {
                   "name": "鞋帽零售",
-                  "count": 1
+                  "count": 5
                 },
                 "5236": {
                   "name": "钟表、眼镜零售",
-                  "count": 1
+                  "count": 3
                 }
               }
             },
@@ -1624,12 +1706,12 @@
             },
             "526": {
               "name": "汽车、摩托车、零配件和燃料及其他动力销售",
-              "count": 19,
+              "count": 21,
               "direct": 14,
               "classes": {
                 "5267": {
                   "name": "机动车充电销售",
-                  "count": 5
+                  "count": 7
                 }
               }
             },
@@ -1646,7 +1728,7 @@
             },
             "528": {
               "name": "五金、家具及室内装饰材料专门零售",
-              "count": 57,
+              "count": 80,
               "direct": 0,
               "classes": {
                 "5281": {
@@ -1655,11 +1737,11 @@
                 },
                 "5283": {
                   "name": "家具零售",
-                  "count": 26
+                  "count": 45
                 },
                 "5287": {
                   "name": "陶瓷、石材装饰材料零售",
-                  "count": 5
+                  "count": 9
                 }
               }
             }
@@ -1669,43 +1751,54 @@
     },
     "H": {
       "name": "住宿和餐饮业",
-      "count": 20147,
+      "count": 37257,
       "divisions": {
         "61": {
           "name": "住宿业",
-          "count": 261,
+          "count": 3622,
           "direct": 0,
           "groups": {
             "611": {
               "name": "旅游饭店",
-              "count": 245,
+              "count": 1718,
               "direct": 0,
               "classes": {
                 "6110": {
                   "name": "旅游饭店",
-                  "count": 245
+                  "count": 1718
                 }
               }
             },
             "612": {
               "name": "一般旅馆",
-              "count": 1,
+              "count": 76,
               "direct": 0,
               "classes": {
                 "6121": {
                   "name": "经济型连锁酒店",
-                  "count": 1
+                  "count": 76
                 }
               }
             },
             "613": {
               "name": "民宿服务",
-              "count": 15,
+              "count": 1827,
               "direct": 0,
               "classes": {
                 "6130": {
                   "name": "民宿服务",
-                  "count": 15
+                  "count": 1827
+                }
+              }
+            },
+            "614": {
+              "name": "露营地服务",
+              "count": 1,
+              "direct": 0,
+              "classes": {
+                "6140": {
+                  "name": "露营地服务",
+                  "count": 1
                 }
               }
             }
@@ -1713,47 +1806,47 @@
         },
         "62": {
           "name": "餐饮业",
-          "count": 19886,
+          "count": 33635,
           "direct": 0,
           "groups": {
             "621": {
               "name": "正餐服务",
-              "count": 2149,
+              "count": 7043,
               "direct": 0,
               "classes": {
                 "6210": {
                   "name": "正餐服务",
-                  "count": 2149
+                  "count": 7043
                 }
               }
             },
             "622": {
               "name": "快餐服务",
-              "count": 1933,
+              "count": 4365,
               "direct": 0,
               "classes": {
                 "6220": {
                   "name": "快餐服务",
-                  "count": 1933
+                  "count": 4365
                 }
               }
             },
             "623": {
               "name": "饮料及冷饮服务",
-              "count": 13294,
+              "count": 17934,
               "direct": 0,
               "classes": {
                 "6231": {
                   "name": "茶馆服务",
-                  "count": 3505
+                  "count": 5488
                 },
                 "6232": {
                   "name": "咖啡馆服务",
-                  "count": 8056
+                  "count": 9554
                 },
                 "6233": {
                   "name": "酒吧服务",
-                  "count": 1733
+                  "count": 2892
                 }
               }
             },
@@ -1770,12 +1863,12 @@
             },
             "629": {
               "name": "其他餐饮业",
-              "count": 2506,
+              "count": 4289,
               "direct": 0,
               "classes": {
                 "6291": {
                   "name": "小吃服务",
-                  "count": 2506
+                  "count": 4289
                 }
               }
             }
@@ -1785,11 +1878,11 @@
     },
     "I": {
       "name": "信息传输、软件和信息技术服务业",
-      "count": 1066,
+      "count": 1071,
       "divisions": {
         "64": {
           "name": "互联网和相关服务",
-          "count": 284,
+          "count": 287,
           "direct": 0,
           "groups": {
             "644": {
@@ -1816,12 +1909,12 @@
             },
             "649": {
               "name": "其他互联网服务",
-              "count": 35,
+              "count": 38,
               "direct": 0,
               "classes": {
                 "6490": {
                   "name": "其他互联网服务",
-                  "count": 35
+                  "count": 38
                 }
               }
             }
@@ -1829,17 +1922,17 @@
         },
         "65": {
           "name": "软件和信息技术服务业",
-          "count": 782,
+          "count": 784,
           "direct": 0,
           "groups": {
             "651": {
               "name": "软件开发",
-              "count": 577,
+              "count": 578,
               "direct": 1,
               "classes": {
                 "6513": {
                   "name": "应用软件开发",
-                  "count": 576
+                  "count": 577
                 }
               }
             },
@@ -1856,12 +1949,12 @@
             },
             "654": {
               "name": "运行维护服务",
-              "count": 59,
+              "count": 60,
               "direct": 0,
               "classes": {
                 "6540": {
                   "name": "运行维护服务",
-                  "count": 59
+                  "count": 60
                 }
               }
             },
@@ -1904,32 +1997,32 @@
     },
     "M": {
       "name": "科学研究和技术服务业",
-      "count": 1067,
+      "count": 1104,
       "divisions": {
         "73": {
           "name": "研究和试验发展",
-          "count": 16,
+          "count": 21,
           "direct": 0,
           "groups": {
             "732": {
               "name": "工程和技术研究和试验发展",
-              "count": 14,
+              "count": 18,
               "direct": 0,
               "classes": {
                 "7320": {
                   "name": "工程和技术研究和试验发展",
-                  "count": 14
+                  "count": 18
                 }
               }
             },
             "733": {
               "name": "农业科学研究和试验发展",
-              "count": 1,
+              "count": 2,
               "direct": 0,
               "classes": {
                 "7330": {
                   "name": "农业科学研究和试验发展",
-                  "count": 1
+                  "count": 2
                 }
               }
             },
@@ -1948,12 +2041,12 @@
         },
         "74": {
           "name": "专业技术服务业",
-          "count": 945,
+          "count": 950,
           "direct": 0,
           "groups": {
             "745": {
               "name": "质检技术服务",
-              "count": 557,
+              "count": 558,
               "direct": 0,
               "classes": {
                 "7452": {
@@ -1970,7 +2063,7 @@
                 },
                 "7455": {
                   "name": "认证认可服务",
-                  "count": 74
+                  "count": 75
                 }
               }
             },
@@ -1989,14 +2082,25 @@
                 }
               }
             },
+            "747": {
+              "name": "地质勘查",
+              "count": 1,
+              "direct": 0,
+              "classes": {
+                "7473": {
+                  "name": "水、二氧化碳等矿产地质勘查",
+                  "count": 1
+                }
+              }
+            },
             "748": {
               "name": "工程技术与设计服务",
-              "count": 5,
+              "count": 7,
               "direct": 0,
               "classes": {
                 "7484": {
                   "name": "工程设计活动",
-                  "count": 3
+                  "count": 5
                 },
                 "7485": {
                   "name": "规划设计管理",
@@ -2006,7 +2110,7 @@
             },
             "749": {
               "name": "工业与专业设计及其他专业技术服务",
-              "count": 220,
+              "count": 221,
               "direct": 6,
               "classes": {
                 "7491": {
@@ -2015,7 +2119,7 @@
                 },
                 "7492": {
                   "name": "专业设计服务",
-                  "count": 1
+                  "count": 2
                 }
               }
             }
@@ -2023,7 +2127,7 @@
         },
         "75": {
           "name": "科技推广和应用服务业",
-          "count": 106,
+          "count": 133,
           "direct": 1,
           "groups": {
             "751": {
@@ -2039,23 +2143,23 @@
             },
             "752": {
               "name": "知识产权服务",
-              "count": 102,
+              "count": 127,
               "direct": 0,
               "classes": {
                 "7520": {
                   "name": "知识产权服务",
-                  "count": 102
+                  "count": 127
                 }
               }
             },
             "753": {
               "name": "科技中介服务",
-              "count": 1,
+              "count": 3,
               "direct": 0,
               "classes": {
                 "7530": {
                   "name": "科技中介服务",
-                  "count": 1
+                  "count": 3
                 }
               }
             }
@@ -2065,62 +2169,62 @@
     },
     "O": {
       "name": "居民服务、修理和其他服务业",
-      "count": 13747,
+      "count": 24140,
       "divisions": {
         "80": {
           "name": "居民服务业",
-          "count": 9094,
+          "count": 16549,
           "direct": 0,
           "groups": {
             "801": {
               "name": "家庭服务",
-              "count": 13,
+              "count": 18,
               "direct": 0,
               "classes": {
                 "8010": {
                   "name": "家庭服务",
-                  "count": 13
+                  "count": 18
                 }
               }
             },
             "803": {
               "name": "洗染服务",
-              "count": 277,
+              "count": 1091,
               "direct": 0,
               "classes": {
                 "8030": {
                   "name": "洗染服务",
-                  "count": 277
+                  "count": 1091
                 }
               }
             },
             "804": {
               "name": "理发及美容服务",
-              "count": 851,
+              "count": 3223,
               "direct": 0,
               "classes": {
                 "8040": {
                   "name": "理发及美容服务",
-                  "count": 851
+                  "count": 3223
                 }
               }
             },
             "805": {
               "name": "洗浴和保健养生服务",
-              "count": 7949,
-              "direct": 27,
+              "count": 12212,
+              "direct": 33,
               "classes": {
                 "8051": {
                   "name": "洗浴服务",
-                  "count": 398
+                  "count": 1282
                 },
                 "8052": {
                   "name": "足浴服务养生保健服务",
-                  "count": 2102
+                  "count": 3710
                 },
                 "8053": {
                   "name": "养生保健服务",
-                  "count": 5422
+                  "count": 7187
                 }
               }
             },
@@ -2137,12 +2241,12 @@
             },
             "807": {
               "name": "婚姻服务",
-              "count": 1,
+              "count": 2,
               "direct": 0,
               "classes": {
                 "8070": {
                   "name": "婚姻服务",
-                  "count": 1
+                  "count": 2
                 }
               }
             },
@@ -2161,47 +2265,47 @@
         },
         "81": {
           "name": "机动车、电子产品和日用产品修理业",
-          "count": 4636,
+          "count": 7555,
           "direct": 0,
           "groups": {
             "811": {
               "name": "汽车、摩托车等修理与维护",
-              "count": 1999,
+              "count": 3291,
               "direct": 0,
               "classes": {
                 "8111": {
                   "name": "汽车修理与维护",
-                  "count": 1999
+                  "count": 3291
                 }
               }
             },
             "812": {
               "name": "计算机和办公设备维修",
-              "count": 2179,
+              "count": 3324,
               "direct": 0,
               "classes": {
                 "8121": {
                   "name": "计算机和辅助设备修理",
-                  "count": 1863
+                  "count": 2687
                 },
                 "8122": {
                   "name": "通讯设备修理",
-                  "count": 312
+                  "count": 632
                 },
                 "8129": {
                   "name": "其他办公设备维修",
-                  "count": 4
+                  "count": 5
                 }
               }
             },
             "813": {
               "name": "家用电器修理",
-              "count": 453,
+              "count": 935,
               "direct": 0,
               "classes": {
                 "8132": {
                   "name": "日用电器修理",
-                  "count": 453
+                  "count": 935
                 }
               }
             },
@@ -2220,39 +2324,43 @@
         },
         "82": {
           "name": "其他服务业",
-          "count": 17,
+          "count": 36,
           "direct": 0,
           "groups": {
             "821": {
               "name": "清洁服务",
-              "count": 1,
+              "count": 2,
               "direct": 0,
               "classes": {
                 "8211": {
                   "name": "建筑物清洁服务",
+                  "count": 1
+                },
+                "8219": {
+                  "name": "其他清洁服务",
                   "count": 1
                 }
               }
             },
             "822": {
               "name": "宠物服务",
-              "count": 3,
+              "count": 4,
               "direct": 0,
               "classes": {
                 "8229": {
                   "name": "其他宠物服务",
-                  "count": 3
+                  "count": 4
                 }
               }
             },
             "829": {
               "name": "其他未列明服务业",
-              "count": 13,
+              "count": 30,
               "direct": 0,
               "classes": {
                 "8290": {
                   "name": "其他未列明服务业",
-                  "count": 13
+                  "count": 30
                 }
               }
             }
@@ -2262,21 +2370,32 @@
     },
     "R": {
       "name": "文化、体育和娱乐业",
-      "count": 5315,
+      "count": 5443,
       "divisions": {
         "87": {
           "name": "广播、电视、电影和录音制作业",
-          "count": 347,
+          "count": 371,
           "direct": 0,
           "groups": {
+            "872": {
+              "name": "电视",
+              "count": 4,
+              "direct": 0,
+              "classes": {
+                "8720": {
+                  "name": "电视",
+                  "count": 4
+                }
+              }
+            },
             "876": {
               "name": "电影放映",
-              "count": 347,
+              "count": 367,
               "direct": 0,
               "classes": {
                 "8760": {
                   "name": "电影放映",
-                  "count": 347
+                  "count": 367
                 }
               }
             }
@@ -2284,7 +2403,7 @@
         },
         "88": {
           "name": "文化艺术业",
-          "count": 9,
+          "count": 10,
           "direct": 0,
           "groups": {
             "885": {
@@ -2308,17 +2427,28 @@
                   "count": 1
                 }
               }
+            },
+            "889": {
+              "name": "其他文化艺术业",
+              "count": 1,
+              "direct": 0,
+              "classes": {
+                "8890": {
+                  "name": "其他文化艺术业",
+                  "count": 1
+                }
+              }
             }
           }
         },
         "89": {
           "name": "体育",
-          "count": 963,
+          "count": 968,
           "direct": 0,
           "groups": {
             "892": {
               "name": "体育场地设施管理",
-              "count": 481,
+              "count": 485,
               "direct": 0,
               "classes": {
                 "8921": {
@@ -2327,18 +2457,18 @@
                 },
                 "8929": {
                   "name": "其他体育场地设施管理",
-                  "count": 478
+                  "count": 482
                 }
               }
             },
             "893": {
               "name": "健身休闲活动",
-              "count": 453,
+              "count": 454,
               "direct": 0,
               "classes": {
                 "8930": {
                   "name": "健身休闲活动",
-                  "count": 453
+                  "count": 454
                 }
               }
             },
@@ -2361,17 +2491,17 @@
         },
         "90": {
           "name": "娱乐业",
-          "count": 3996,
+          "count": 4094,
           "direct": 0,
           "groups": {
             "901": {
               "name": "室内娱乐活动",
-              "count": 1522,
+              "count": 1574,
               "direct": 0,
               "classes": {
                 "9011": {
                   "name": "歌舞厅娱乐活动",
-                  "count": 431
+                  "count": 432
                 },
                 "9013": {
                   "name": "网吧活动",
@@ -2379,7 +2509,7 @@
                 },
                 "9019": {
                   "name": "其他室内娱乐活动",
-                  "count": 386
+                  "count": 437
                 }
               }
             },
@@ -2396,23 +2526,23 @@
             },
             "903": {
               "name": "休闲观光活动",
-              "count": 73,
+              "count": 118,
               "direct": 0,
               "classes": {
                 "9030": {
                   "name": "休闲观光活动",
-                  "count": 73
+                  "count": 118
                 }
               }
             },
             "905": {
               "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
-              "count": 11,
+              "count": 12,
               "direct": 0,
               "classes": {
                 "9051": {
                   "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
-                  "count": 11
+                  "count": 12
                 }
               }
             }

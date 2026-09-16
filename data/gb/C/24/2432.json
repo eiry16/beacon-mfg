@@ -47,5 +47,53 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/24/2432"
+  },
+  {
+    "id": "CN-MFG-0109937",
+    "company": "昆明锐铸金属工程有限公司",
+    "category": "表面处理",
+    "keywords": [
+      "阳极氧化"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "二街镇兴昆化工有限公司化肥分工厂东南",
+    "contact_phone": "135****4605; 159****2828",
+    "lat": 24.698903,
+    "lng": 102.536123,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LA9ZAWRS",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530115",
+      "search_keyword": "阳极氧化"
+    },
+    "industry": {
+      "code": "2432",
+      "name": "金属工艺品制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 金属工艺品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "金属工"
+    },
+    "is_manufacturer": true
   }
 ]

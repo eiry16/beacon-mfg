@@ -127,5 +127,53 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/34/3463"
+  },
+  {
+    "id": "CN-MFG-0121380",
+    "company": "南宁市埌东气体",
+    "category": "表面处理",
+    "keywords": [
+      "阳极氧化"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "所在地区仙葫经济开发区详细管理委员会仙葫大道中16号海茵国际花城住宅小区5-10号商住楼23号",
+    "contact_phone": "138****9753",
+    "lat": 22.800075,
+    "lng": 108.457025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L0ZOG7KQ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "燃气公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "仙葫",
+      "adcode": "450103",
+      "search_keyword": "阳极氧化"
+    },
+    "industry": {
+      "code": "3463",
+      "name": "气体、液体分离及纯净设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 气体、液体分离及纯净设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "气体"
+    },
+    "is_manufacturer": true
   }
 ]

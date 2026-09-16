@@ -46,5 +46,53 @@
       "evidence": "酒精"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0104120",
+    "company": "酒精人·地下酒库",
+    "category": "制造业",
+    "keywords": [
+      "清吧"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "子君路480号奥辰橙郡一期1-1-2",
+    "contact_phone": "151****9319; 183****4720",
+    "lat": 24.958236,
+    "lng": 102.771756,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MAHXNFTO",
+      "type": "购物服务;专卖店;烟酒专卖店",
+      "typecode": "061210",
+      "alias": "",
+      "tag": "",
+      "keytag": "清吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530111",
+      "search_keyword": "清吧"
+    },
+    "industry": {
+      "code": "1511",
+      "name": "酒精制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 酒精制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "酒精"
+    },
+    "is_manufacturer": true
   }
 ]

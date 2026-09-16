@@ -46,5 +46,102 @@
       "evidence": "科技中"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0105205",
+    "company": "云南航检科技中心",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "官渡区出口加工区顺通大道89号",
+    "contact_phone": "待核实",
+    "lat": 24.958016,
+    "lng": 102.799509,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGBY9LT",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530111",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "7530",
+      "name": "科技中介服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 科技推广和应用服务业 > 科技中介服务 > 科技中介服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "科技中"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0112037",
+    "company": "南宁市卓粤电子科技中心",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "电脑维修",
+      "笔记本维修"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "三叠石路北四巷17号",
+    "contact_phone": "0771-4731750; 134****7920",
+    "lat": 22.76512,
+    "lng": 108.326105,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LD4SPIFD",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "电脑销售",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450108",
+      "search_keyword": "电脑维修"
+    },
+    "industry": {
+      "code": "7530",
+      "name": "科技中介服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 科技推广和应用服务业 > 科技中介服务 > 科技中介服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "科技中"
+    },
+    "is_manufacturer": false
   }
 ]

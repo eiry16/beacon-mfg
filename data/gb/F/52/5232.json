@@ -245,5 +245,101 @@
       "evidence": "服饰"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0097449",
+    "company": "罗记裁缝服装店",
+    "category": "批发和零售业",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "昌坝农贸市场6号门面",
+    "contact_phone": "151****1143",
+    "lat": 26.418957,
+    "lng": 106.659947,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KGJR4AVX",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "配饰",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520111",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "5232",
+      "name": "服装零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 服装零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "服装"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0113666",
+    "company": "杨兰服装精修店(香港路铜锣湾分店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "洗衣"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "香港路81号澳港商贸城C栋1层10号",
+    "contact_phone": "0851-28873288; 151****4310",
+    "lat": 27.705903,
+    "lng": 106.937254,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K095W8GG",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "裁缝店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "香港路",
+      "adcode": "520303",
+      "search_keyword": "洗衣"
+    },
+    "industry": {
+      "code": "5232",
+      "name": "服装零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 服装零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "服装"
+    },
+    "is_manufacturer": false
   }
 ]
