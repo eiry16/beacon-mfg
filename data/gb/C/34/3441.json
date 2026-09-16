@@ -43,7 +43,8 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0017439",
@@ -89,7 +90,8 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0017482",
@@ -143,7 +145,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0018688",
@@ -189,7 +192,8 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0018713",
@@ -235,7 +239,8 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0011818",
@@ -281,7 +286,8 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0021778",
@@ -327,7 +333,8 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0021817",
@@ -373,7 +380,8 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0021960",
@@ -419,7 +427,8 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0026754",
@@ -475,7 +484,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/34/3441"
   },
   {
     "id": "CN-MFG-0036797",
@@ -513,6 +523,55 @@
       "business_area": "坪山",
       "adcode": "440310",
       "search_keyword": "运维服务"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/34/3441"
+  },
+  {
+    "id": "CN-MFG-0076071",
+    "company": "灵谷泵业(北厂区)",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "通蠡中路26号",
+    "contact_phone": "0510-87409633",
+    "lat": 31.286153,
+    "lng": 119.839472,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B01FE165GR",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320282",
+      "search_keyword": "塑料模具"
     },
     "industry": {
       "code": "3441",

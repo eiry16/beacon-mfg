@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0030689",
@@ -93,7 +94,8 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0031936",
@@ -142,7 +144,8 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0035088",
@@ -190,7 +193,8 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0035094",
@@ -238,7 +242,8 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0038664",
@@ -286,7 +291,8 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0038831",
@@ -334,7 +340,8 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0039212",
@@ -382,7 +389,8 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0022529",
@@ -428,7 +436,8 @@
       "evidence": "研究院"
     },
     "is_manufacturer": false,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0046795",
@@ -477,7 +486,8 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0050340",
@@ -526,7 +536,8 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
     "id": "CN-MFG-0063293",
@@ -574,44 +585,94 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/73/7320"
   },
   {
-    "id": "CN-MFG-0062965",
-    "company": "植物研究所BOTANIC LAB",
+    "id": "CN-MFG-0075873",
+    "company": "L·研究所SPA经络养生(星方汇店)",
     "category": "科学研究和技术服务业",
     "keywords": [
-      "酒吧"
+      "保健"
     ],
     "region": {
       "province": "上海",
       "city": "上海"
     },
-    "address": "南昌路134号(淮海中路地铁站1号口步行430米)",
-    "contact_phone": "172****2155; 182****5106",
-    "lat": 31.218929,
-    "lng": 121.467888,
+    "address": "长寿路1118弄悦达国际A座13F",
+    "contact_phone": "135****1210",
+    "lat": 31.23063,
+    "lng": 121.427191,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
     "status": "verified",
     "is_template": false,
     "note": "",
     "amap": {
-      "poi_id": "B0GRRZJ1KP",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
+      "poi_id": "B0KB6S5ASX",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
       "alias": "",
       "tag": "",
-      "keytag": "酒吧",
+      "keytag": "SPA",
       "website": "",
       "email": "",
       "postcode": "",
-      "business_area": "淮海路",
-      "adcode": "310101",
-      "search_keyword": "酒吧"
+      "business_area": "长寿路",
+      "adcode": "310107",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "7320",
+      "name": "工程和技术研究和试验发展",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 研究和试验发展 > 工程和技术研究和试验发展 > 工程和技术研究和试验发展",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "研究所"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086716",
+    "company": "85度C(生甜甜圈研究所 常熟大润发店)",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "面包",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "琴湖路168号大润发1层1023",
+    "contact_phone": "0512-52768385",
+    "lat": 31.643288,
+    "lng": 120.765964,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJB6TXA",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "杨枝甘露",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
+      "search_keyword": "面包"
     },
     "industry": {
       "code": "7320",

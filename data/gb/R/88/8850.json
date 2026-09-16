@@ -45,7 +45,8 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "R/88/8850"
   },
   {
     "id": "CN-MFG-0036842",
@@ -93,10 +94,11 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "R/88/8850"
   },
   {
-    "id": "CN-MFG-0057330",
+    "id": "CN-MFG-0065315",
     "company": "佛山公岭南手信博物馆",
     "category": "文化、体育和娱乐业",
     "keywords": [
@@ -141,58 +143,11 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "R/88/8850"
   },
   {
-    "id": "CN-MFG-0057346",
-    "company": "佛山公岭南手信博物馆",
-    "category": "文化、体育和娱乐业",
-    "keywords": [
-      "奶茶"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "佛山"
-    },
-    "address": "岭南天地商业中心祖庙大街4号",
-    "contact_phone": "133****7931",
-    "lat": 23.029182,
-    "lng": 113.115695,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0M6P5LN78",
-      "type": "科教文化服务;博物馆;博物馆",
-      "typecode": "140100",
-      "alias": "",
-      "tag": "",
-      "keytag": "奶茶/茶饮",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "祖庙",
-      "adcode": "440604",
-      "search_keyword": "奶茶"
-    },
-    "industry": {
-      "code": "8850",
-      "name": "博物馆",
-      "level": "class",
-      "path": "R 文化、体育和娱乐业 > 文化艺术业 > 博物馆 > 博物馆",
-      "confidence": "high",
-      "source": "gb_token",
-      "evidence": "博物馆"
-    },
-    "is_manufacturer": false
-  },
-  {
-    "id": "CN-MFG-0061475",
+    "id": "CN-MFG-0067813",
     "company": "龙醇古茶·中国茶博物馆·广州CBD商务会客厅(华穗路店)",
     "category": "文化、体育和娱乐业",
     "keywords": [
@@ -238,45 +193,190 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "R/88/8850"
   },
   {
-    "id": "CN-MFG-0061269",
-    "company": "龙醇古茶·中国茶博物馆·广州CBD商务会客厅(华穗路店)",
+    "id": "CN-MFG-0081418",
+    "company": "VAI意大利葡萄酒博物馆(红山六九七九店)",
     "category": "文化、体育和娱乐业",
     "keywords": [
-      "茶室",
-      "茶馆"
+      "清吧"
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "深圳"
     },
-    "address": "华穗路6号首层自编a01房",
-    "contact_phone": "176****8836; 198****7398",
-    "lat": 23.115539,
-    "lng": 113.318689,
+    "address": "民繁路红山6979商业中心13A-1层102号",
+    "contact_phone": "181****1799",
+    "lat": 22.624016,
+    "lng": 114.025107,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
     "status": "verified",
     "is_template": false,
     "note": "",
     "amap": {
-      "poi_id": "B0H0JZUQ52",
-      "type": "购物服务;专卖店;专营店",
-      "typecode": "061200",
+      "poi_id": "B0IUGALWQE",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
       "alias": "",
       "tag": "",
-      "keytag": "茶座",
+      "keytag": "清吧",
       "website": "",
       "email": "",
       "postcode": "",
-      "business_area": "花城汇",
-      "adcode": "440106",
-      "search_keyword": "茶室"
+      "business_area": "民治村",
+      "adcode": "440309",
+      "search_keyword": "清吧"
+    },
+    "industry": {
+      "code": "8850",
+      "name": "博物馆",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 文化艺术业 > 博物馆 > 博物馆",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "博物馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0081426",
+    "company": "VAI意大利葡萄酒博物馆•Italian Wine Museum(福田石厦店)",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "清吧"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "福保街道石厦社区石厦六街新天石厦铭苑2B43",
+    "contact_phone": "134****9043",
+    "lat": 22.5196,
+    "lng": 114.051061,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRFS6RMZ",
+      "type": "科教文化服务;科教文化场所;科教文化场所",
+      "typecode": "140000",
+      "alias": "",
+      "tag": "",
+      "keytag": "清吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石厦",
+      "adcode": "440304",
+      "search_keyword": "清吧"
+    },
+    "industry": {
+      "code": "8850",
+      "name": "博物馆",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 文化艺术业 > 博物馆 > 博物馆",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "博物馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082809",
+    "company": "BEIGEL TREE贝果树·纽约贝果博物馆(南京东路店)",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "烘焙",
+      "西点"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南京东路第一百货C座一楼800号",
+    "contact_phone": "131****8009",
+    "lat": 31.235188,
+    "lng": 121.47542,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KARHAG6C",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "牛肉,芝士,韭菜,堂食,黄油",
+      "keytag": "西式糕点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北京路",
+      "adcode": "310101",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "8850",
+      "name": "博物馆",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 文化艺术业 > 博物馆 > 博物馆",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "博物馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082895",
+    "company": "BEIGEL TREE 贝果树·纽约贝果博物馆(蟠龙天地店)",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "烘焙"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "徐泾镇蟠鼎路123弄8号上海蟠龙新天地",
+    "contact_phone": "132****3978",
+    "lat": 31.188257,
+    "lng": 121.275553,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LABH43FK",
+      "type": "科教文化服务;科教文化场所;科教文化场所",
+      "typecode": "140000",
+      "alias": "",
+      "tag": "",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "徐泾",
+      "adcode": "310118",
+      "search_keyword": "烘焙"
     },
     "industry": {
       "code": "8850",

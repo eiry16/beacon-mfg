@@ -53,6 +53,55 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/34/3471"
+  },
+  {
+    "id": "CN-MFG-0078511",
+    "company": "宁波北仑玲影机械厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "大碶东岙黄庵125号",
+    "contact_phone": "130****4858",
+    "lat": 29.863126,
+    "lng": 121.811248,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDGHIZFV",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330206",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3471",
+      "name": "电影机械制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 文化、办公用机械制造 > 电影机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "影机械"
+    },
+    "is_manufacturer": true
   }
 ]

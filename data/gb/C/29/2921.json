@@ -43,7 +43,8 @@
       "evidence": "塑料薄膜"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/29/2921"
   },
   {
     "id": "CN-MFG-0016981",
@@ -89,7 +90,8 @@
       "evidence": "塑料薄膜"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/29/2921"
   },
   {
     "id": "CN-MFG-0008238",
@@ -136,10 +138,11 @@
       "source": "name",
       "evidence": "塑料薄膜"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/29/2921"
   },
   {
-    "id": "CN-MFG-0062716",
+    "id": "CN-MFG-0063723",
     "company": "昆山市惠利腾塑料薄膜有限公司",
     "category": "注塑成型",
     "keywords": [
@@ -184,33 +187,34 @@
       "source": "name",
       "evidence": "塑料薄膜"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/29/2921"
   },
   {
-    "id": "CN-MFG-0062510",
-    "company": "昆山市惠利腾塑料薄膜有限公司",
+    "id": "CN-MFG-0075243",
+    "company": "江阴市长泾新达塑料薄膜有限公司",
     "category": "注塑成型",
     "keywords": [
       "塑料模具"
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "无锡"
     },
-    "address": "周市镇优比路367号9幢",
+    "address": "长泾镇长东村",
     "contact_phone": "待核实",
-    "lat": 31.435673,
-    "lng": 120.982888,
+    "lat": 31.764308,
+    "lng": 120.506853,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
     "status": "unverified_poi",
     "is_template": true,
     "note": "",
     "amap": {
-      "poi_id": "B0J2TZV183",
+      "poi_id": "B01FE036AZ",
       "type": "公司企业;公司;公司",
       "typecode": "170200",
       "alias": "",
@@ -219,8 +223,8 @@
       "website": "",
       "email": "",
       "postcode": "",
-      "business_area": "周市",
-      "adcode": "320583",
+      "business_area": "",
+      "adcode": "320281",
       "search_keyword": "塑料模具"
     },
     "industry": {

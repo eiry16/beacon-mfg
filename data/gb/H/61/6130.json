@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "农家院"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038088",
@@ -93,7 +94,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038147",
@@ -141,7 +143,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038151",
@@ -189,7 +192,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038153",
@@ -237,7 +241,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038159",
@@ -285,7 +290,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038300",
@@ -333,7 +339,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038437",
@@ -381,7 +388,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038443",
@@ -429,7 +437,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038450",
@@ -477,7 +486,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0038456",
@@ -525,7 +535,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0047827",
@@ -573,7 +584,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0047834",
@@ -621,7 +633,8 @@
       "source": "name",
       "evidence": "民宿"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
   },
   {
     "id": "CN-MFG-0052155",
@@ -659,6 +672,55 @@
       "business_area": "",
       "adcode": "330122",
       "search_keyword": "咖啡馆"
+    },
+    "industry": {
+      "code": "6130",
+      "name": "民宿服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 民宿服务 > 民宿服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "民宿"
+    },
+    "is_manufacturer": false,
+    "_bucket": "H/61/6130"
+  },
+  {
+    "id": "CN-MFG-0072794",
+    "company": "橘里民宿精酿咖啡馆",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "咖啡店"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "先锋村3队395号",
+    "contact_phone": "156****1193",
+    "lat": 31.489491,
+    "lng": 121.833684,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G3YAVBLJ",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "卡布奇诺,下午茶",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310151",
+      "search_keyword": "咖啡店"
     },
     "industry": {
       "code": "6130",

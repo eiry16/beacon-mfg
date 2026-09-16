@@ -45,54 +45,7 @@
       "source": "gb_token",
       "evidence": "化服务"
     },
-    "is_manufacturer": false
-  },
-  {
-    "id": "CN-MFG-0053788",
-    "company": "广州市妇儿中心(增城院区)母婴保健一体化服务示范中心接种门诊",
-    "category": "科学研究和技术服务业",
-    "keywords": [
-      "保健"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "广州"
-    },
-    "address": "增城大道293号广州市妇女儿童医疗中心(增城院区)",
-    "contact_phone": "待核实",
-    "lat": 23.276975,
-    "lng": 113.792725,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
-    "last_verified_at": null,
-    "status": "unverified_poi",
-    "is_template": true,
-    "note": "",
-    "amap": {
-      "poi_id": "B0M69SAFT2",
-      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
-      "typecode": "090000",
-      "alias": "",
-      "tag": "",
-      "keytag": "预防接种机构",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "440118",
-      "search_keyword": "保健"
-    },
-    "industry": {
-      "code": "7454",
-      "name": "标准化服务",
-      "level": "class",
-      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 质检技术服务 > 标准化服务",
-      "confidence": "high",
-      "source": "gb_token",
-      "evidence": "化服务"
-    },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/74/7454"
   }
 ]

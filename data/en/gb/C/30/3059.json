@@ -1,31 +1,5 @@
 [
   {
-    "id": "CN-MFG-0006299",
-    "company_en": "Shanghai Jinxi Glass Products. Tempered Glass. Automatic Doors. Office Partition",
-    "category": "标准件",
-    "category_en": "Standard Parts",
-    "keywords_en": [
-      "spring"
-    ],
-    "region": {
-      "province": "Shanghai",
-      "city": "Shanghai"
-    },
-    "address_en": "No. 86-88 Wujin Business Building, 2511 Hu Song Highway",
-    "contact_phone": "133****7998",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3059",
-      "name_en": "Other Glass Products",
-      "level": "class",
-      "name": "其他玻璃制品制造",
-      "confidence": "medium"
-    },
-    "_bucket": "C/30/3059"
-  },
-  {
     "id": "CN-MFG-0006336",
     "company_en": "Shanghai Hui Glass Products Co., Ltd.",
     "category": "标准件",
@@ -205,6 +179,34 @@
       "level": "class",
       "name": "其他玻璃制品制造",
       "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0085493",
+    "company_en": "Huasheng Glass Products Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "Next to Jiayu Plastic Products Co., Ltd.",
+    "contact_phone": "186****8250",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/30/3059",
+    "industry": {
+      "code": "3059",
+      "name": "其他玻璃制品制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制品制造 > 其他玻璃制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "玻璃制品"
     }
   }
 ]

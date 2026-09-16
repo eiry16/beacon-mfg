@@ -364,32 +364,6 @@
     "_bucket": "C/32/3252"
   },
   {
-    "id": "CN-MFG-0001849",
-    "company_en": "Hanhua 90 Degree Aluminum Plate Stainless Steel Plate Shearing Bending Wholesale Factory",
-    "category": "钣金冲压",
-    "category_en": "Sheet Metal & Stamping",
-    "keywords_en": [
-      "laser cutting"
-    ],
-    "region": {
-      "province": "Shanghai",
-      "city": "Shanghai"
-    },
-    "address_en": "1 Youtong West Road (340 meters on foot from Youtong West Road Subway Station Exit 1)",
-    "contact_phone": "150****8003",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3252",
-      "name_en": "Aluminium Rolling",
-      "level": "class",
-      "name": "铝压延加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/32/3252"
-  },
-  {
     "id": "CN-MFG-0002631",
     "company_en": "Tonglu Aluminum Foil Processing Factory",
     "category": "注塑成型",
@@ -4888,32 +4862,6 @@
     "_bucket": "C/32/3252"
   },
   {
-    "id": "CN-MFG-0008900",
-    "company_en": "Guanghui Industrial Aluminum Profiles",
-    "category": "精密机械加工",
-    "category_en": "Precision Machining",
-    "keywords_en": [
-      "Acrylic Processing"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Guangzhou"
-    },
-    "address_en": "No. 3, Minyong West Second Cross Road, Xintang Town, Haomao Industrial Park, A-1, 1st Floor",
-    "contact_phone": "180****2366",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3252",
-      "name_en": "Aluminium Rolling",
-      "level": "class",
-      "name": "铝压延加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/32/3252"
-  },
-  {
     "id": "CN-MFG-0009580",
     "company_en": "Guanghui Industrial Aluminum Profiles",
     "category": "压铸",
@@ -9141,58 +9089,6 @@
     },
     "address_en": "Southeast 40 meters at the intersection of Jinqiao Road and Shijing Street",
     "contact_phone": "Pending verification",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3252",
-      "name_en": "Aluminium Rolling",
-      "level": "class",
-      "name": "铝压延加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/32/3252"
-  },
-  {
-    "id": "CN-MFG-0018144",
-    "company_en": "Gao Guoshi Industrial Aluminum Profiles (Huizhou) Co., Ltd.",
-    "category": "精密机械加工",
-    "category_en": "Precision Machining",
-    "keywords_en": [
-      "precision machinery"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Huizhou"
-    },
-    "address_en": "Mingxin Industrial Park, Puzai Industrial Zone, Panli Village, Liling Town",
-    "contact_phone": "158****6655",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3252",
-      "name_en": "Aluminium Rolling",
-      "level": "class",
-      "name": "铝压延加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/32/3252"
-  },
-  {
-    "id": "CN-MFG-0018338",
-    "company_en": "Changxin Stainless Steel Sheet Aluminum Sheet Wholesale Laser Cutting Shearing Bending Grooving Processing",
-    "category": "钣金冲压",
-    "category_en": "Sheet Metal & Stamping",
-    "keywords_en": [
-      "laser cutting"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Huizhou"
-    },
-    "address_en": "No. 40 Huizhou Avenue",
-    "contact_phone": "136****2240",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
@@ -17465,32 +17361,6 @@
     }
   },
   {
-    "id": "CN-MFG-0029165",
-    "company_en": "Xin Sheng Aluminum Profiles Accessories Processing",
-    "category": "压铸",
-    "category_en": "Die Casting",
-    "keywords_en": [
-      "Processing Center"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Zhongshan"
-    },
-    "address_en": "140 meters southwest intersection of West 6th Road, Industrial Center and West Bank South Road",
-    "contact_phone": "Pending verification",
-    "source": "public_directory",
-    "verified_at": "2026-09-13",
-    "note_en": "",
-    "_bucket": "C/32/3252",
-    "industry_en": {
-      "code": "3252",
-      "name_en": "Aluminium Rolling",
-      "level": "class",
-      "name": "铝压延加工",
-      "confidence": "medium"
-    }
-  },
-  {
     "id": "CN-MFG-0029180",
     "company_en": "Xinsheng Aluminum Materials Accessories Processing",
     "category": "压铸",
@@ -17533,7 +17403,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝板"
+    }
   },
   {
     "id": "CN-MFG-0035512",
@@ -17552,7 +17431,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝板"
+    }
   },
   {
     "id": "CN-MFG-0036824",
@@ -17571,7 +17459,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036826",
@@ -17590,7 +17487,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036828",
@@ -17609,7 +17515,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036829",
@@ -17628,7 +17543,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036830",
@@ -17647,7 +17571,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036831",
@@ -17666,7 +17599,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036832",
@@ -17685,7 +17627,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036833",
@@ -17704,7 +17655,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036834",
@@ -17723,7 +17683,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036835",
@@ -17742,7 +17711,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036837",
@@ -17761,7 +17739,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036903",
@@ -17780,7 +17767,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036904",
@@ -17799,7 +17795,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036905",
@@ -17818,7 +17823,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036906",
@@ -17837,7 +17851,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036907",
@@ -17856,7 +17879,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036908",
@@ -17875,7 +17907,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036909",
@@ -17894,7 +17935,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036910",
@@ -17913,7 +17963,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036911",
@@ -17932,7 +17991,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036912",
@@ -17951,7 +18019,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036972",
@@ -17970,7 +18047,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036973",
@@ -17989,7 +18075,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0036974",
@@ -18008,7 +18103,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0037033",
@@ -18027,7 +18131,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0037062",
@@ -18046,7 +18159,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0037063",
@@ -18065,7 +18187,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝业"
+    }
   },
   {
     "id": "CN-MFG-0037064",
@@ -18084,7 +18215,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0037065",
@@ -18103,7 +18243,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   },
   {
     "id": "CN-MFG-0037066",
@@ -18122,6 +18271,15 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    }
   }
 ]

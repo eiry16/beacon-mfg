@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "纺织"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0035211",
@@ -93,7 +94,8 @@
       "source": "name",
       "evidence": "纺织"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0035213",
@@ -141,7 +143,8 @@
       "source": "name",
       "evidence": "纺织"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0007699",
@@ -173,7 +176,8 @@
       "source": "name",
       "evidence": "纺织"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0005464",
@@ -205,7 +209,8 @@
       "source": "name",
       "evidence": "纺织"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0005465",
@@ -237,7 +242,8 @@
       "source": "name",
       "evidence": "纺织"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0003839",
@@ -269,7 +275,8 @@
       "source": "name",
       "evidence": "纺织"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0019432",
@@ -315,7 +322,8 @@
       "evidence": "针织"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0017087",
@@ -369,7 +377,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0019475",
@@ -423,7 +432,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/17/1711"
   },
   {
     "id": "CN-MFG-0023788",
@@ -461,6 +471,200 @@
       "business_area": "钟村",
       "adcode": "440113",
       "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1711",
+      "name": "棉纺纱加工",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 棉纺织及印染精加工 > 棉纺纱加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "纺织"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/17/1711"
+  },
+  {
+    "id": "CN-MFG-0074816",
+    "company": "无锡市双灵纺织塑料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具",
+      "塑料制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "东亭镇新屯横路3号",
+    "contact_phone": "待核实",
+    "lat": 31.596139,
+    "lng": 120.375917,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B01FE1DW5X",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320205",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "1711",
+      "name": "棉纺纱加工",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 棉纺织及印染精加工 > 棉纺纱加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "纺织"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0074833",
+    "company": "无锡市飞鹏塑料织造有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "东港镇港下科技经济园区",
+    "contact_phone": "待核实",
+    "lat": 31.690978,
+    "lng": 120.552904,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B01FE1A9JV",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东港",
+      "adcode": "320205",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "1711",
+      "name": "棉纺纱加工",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 棉纺织及印染精加工 > 棉纺纱加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "织造"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0088691",
+    "company": "江苏圣丰塑胶纺织科技",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "新兴北路78号",
+    "contact_phone": "138****0345",
+    "lat": 31.436931,
+    "lng": 119.398365,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIQIPLP",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320481",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "1711",
+      "name": "棉纺纱加工",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 棉纺织及印染精加工 > 棉纺纱加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "纺织"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0088695",
+    "company": "溧阳市双马塑胶纺织有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "戴埠新北工业集中区",
+    "contact_phone": "待核实",
+    "lat": 31.36051,
+    "lng": 119.507037,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIAIOUK",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320481",
+      "search_keyword": "塑胶制品"
     },
     "industry": {
       "code": "1711",

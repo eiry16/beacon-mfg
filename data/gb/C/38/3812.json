@@ -45,7 +45,8 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0013838",
@@ -91,7 +92,8 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0014025",
@@ -137,54 +139,8 @@
       "evidence": "马达"
     },
     "is_manufacturer": true,
-    "status": "verified"
-  },
-  {
-    "id": "CN-MFG-0017571",
-    "company": "启东电动工具五金-修理电机",
-    "category": "标准件",
-    "keywords": [
-      "螺丝",
-      "螺栓"
-    ],
-    "region": {
-      "province": "浙江",
-      "city": "杭州"
-    },
-    "address": "白杨街道湖印光年府16幢102门面(沿街商铺)",
-    "contact_phone": "189****4988",
-    "lat": 30.305124,
-    "lng": 120.33861,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0G26SMICS",
-      "type": "购物服务;家居建材市场;建材五金市场",
-      "typecode": "060603",
-      "alias": "",
-      "tag": "",
-      "keytag": "五金",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "白杨",
-      "adcode": "330114",
-      "search_keyword": "螺丝"
-    },
-    "industry": {
-      "code": "3812",
-      "name": "电动机制造",
-      "level": "class",
-      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
-      "confidence": "medium",
-      "source": "name",
-      "evidence": "电机"
-    },
-    "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0019988",
@@ -231,7 +187,8 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0020007",
@@ -278,7 +235,8 @@
       "evidence": "电动机"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0003412",
@@ -310,7 +268,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0011447",
@@ -356,7 +315,8 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0012252",
@@ -402,7 +362,8 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0004185",
@@ -434,7 +395,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0002283",
@@ -480,7 +442,8 @@
       "business_area": "",
       "adcode": "320412",
       "search_keyword": "冲压"
-    }
+    },
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0022297",
@@ -527,7 +490,8 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0026929",
@@ -583,7 +547,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0027212",
@@ -639,7 +604,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0028625",
@@ -687,7 +653,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0033000",
@@ -735,7 +702,8 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/38/3812"
   },
   {
     "id": "CN-MFG-0033776",
@@ -783,10 +751,11 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/38/3812"
   },
   {
-    "id": "CN-MFG-0057252",
+    "id": "CN-MFG-0064569",
     "company": "恒兴急修马达(西头大道店)",
     "category": "电子元器件",
     "keywords": [
@@ -833,46 +802,189 @@
       "source": "name",
       "evidence": "马达"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/38/3812"
   },
   {
-    "id": "CN-MFG-0057268",
-    "company": "恒兴急修马达(西头大道店)",
-    "category": "电子元器件",
+    "id": "CN-MFG-0075168",
+    "company": "江阴市杰华电机塑料",
+    "category": "注塑成型",
     "keywords": [
-      "汽车维修",
-      "汽修",
-      "汽车修理"
+      "塑料模具"
     ],
     "region": {
-      "province": "广东",
-      "city": "佛山"
+      "province": "江苏",
+      "city": "无锡"
     },
-    "address": "张槎四路岗头23号",
+    "address": "申港口6号",
     "contact_phone": "待核实",
-    "lat": 23.036318,
-    "lng": 113.096731,
+    "lat": 31.905454,
+    "lng": 120.139558,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
     "status": "unverified_poi",
     "is_template": true,
     "note": "",
     "amap": {
-      "poi_id": "B0J0XU9RMF",
-      "type": "汽车维修;汽车维修;汽车维修",
-      "typecode": "030000",
+      "poi_id": "B0FFHJR6NK",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
       "alias": "",
       "tag": "",
-      "keytag": "汽车维修",
+      "keytag": "公司",
       "website": "",
       "email": "",
       "postcode": "",
-      "business_area": "张槎",
-      "adcode": "440604",
-      "search_keyword": "汽车维修"
+      "business_area": "",
+      "adcode": "320281",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0089408",
+    "company": "维修空调电机马达维修",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "燕罗街道上山门社区沙泥园西三巷1号",
+    "contact_phone": "188****3825",
+    "lat": 22.77593,
+    "lng": 113.856485,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KKK7UVZR",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松岗",
+      "adcode": "440306",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0089448",
+    "company": "诚兴家电机电冷气维修部",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "平湖街道平龙东路259号",
+    "contact_phone": "139****9473",
+    "lat": 22.701147,
+    "lng": 114.130448,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFOPPAS",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "平湖",
+      "adcode": "440307",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0089598",
+    "company": "华文空调马达维修",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "嘉禾长红东路44号",
+    "contact_phone": "137****6308",
+    "lat": 23.262983,
+    "lng": 113.302108,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKR56WWE",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙归",
+      "adcode": "440111",
+      "search_keyword": "家电维修"
     },
     "industry": {
       "code": "3812",
@@ -882,6 +994,102 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "马达"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0089923",
+    "company": "修理家电机电电动工具",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "留泗路与花牌楼交叉口东南60米",
+    "contact_phone": "188****6841",
+    "lat": 30.226183,
+    "lng": 120.05681,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JG0MAJHW",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "维修站点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330106",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0090215",
+    "company": "小李电机冰箱空调修理",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "横溪街道横溪集镇横云东路55号",
+    "contact_phone": "待核实",
+    "lat": 31.712375,
+    "lng": 118.784075,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG9HNZY",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320115",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
     },
     "is_manufacturer": true
   }

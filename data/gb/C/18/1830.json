@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/18/1830"
   },
   {
     "id": "CN-MFG-0035443",
@@ -93,7 +94,8 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/18/1830"
   },
   {
     "id": "CN-MFG-0006428",
@@ -139,7 +141,8 @@
       "business_area": "",
       "adcode": "320281",
       "search_keyword": "弹簧"
-    }
+    },
+    "_bucket": "C/18/1830"
   },
   {
     "id": "CN-MFG-0027208",
@@ -195,7 +198,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/18/1830"
   },
   {
     "id": "CN-MFG-0028674",
@@ -243,7 +247,8 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/18/1830"
   },
   {
     "id": "CN-MFG-0028823",
@@ -299,7 +304,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/18/1830"
   },
   {
     "id": "CN-MFG-0028921",
@@ -347,7 +353,8 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/18/1830"
   },
   {
     "id": "CN-MFG-0040323",
@@ -385,6 +392,103 @@
       "business_area": "乔司",
       "adcode": "330113",
       "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/18/1830"
+  },
+  {
+    "id": "CN-MFG-0070120",
+    "company": "利民服饰塑料包装",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "金泽艺术玻璃(金港大道西)",
+    "contact_phone": "0512-58596688",
+    "lat": 31.825893,
+    "lng": 120.544849,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020006FMX",
+      "type": "公司企业;公司;公司|购物服务;专卖店;专营店",
+      "typecode": "170200|061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0088010",
+    "company": "嘉善裕达塑胶服饰厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "西塘镇大舜工业区华兴路19-21号",
+    "contact_phone": "待核实",
+    "lat": 30.986982,
+    "lng": 120.884018,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H0CCY7I1",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "服装厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330421",
+      "search_keyword": "塑胶制品"
     },
     "industry": {
       "code": "1830",

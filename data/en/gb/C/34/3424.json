@@ -42,6 +42,15 @@
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "C/34/3424"
+    "_bucket": "C/34/3424",
+    "industry": {
+      "code": "3424",
+      "name": "金属切割及焊接设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 金属加工机械制造 > 金属切割及焊接设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "金属切割"
+    }
   }
 ]

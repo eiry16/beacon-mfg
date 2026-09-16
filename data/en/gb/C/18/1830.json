@@ -146,7 +146,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/18/1830"
+    "_bucket": "C/18/1830",
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    }
   },
   {
     "id": "CN-MFG-0035443",
@@ -165,7 +174,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/18/1830"
+    "_bucket": "C/18/1830",
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    }
   },
   {
     "id": "CN-MFG-0040323",
@@ -184,6 +202,71 @@
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "C/18/1830"
+    "_bucket": "C/18/1830",
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    }
+  },
+  {
+    "id": "CN-MFG-0070120",
+    "company_en": "Limin Garment Plastic Packaging",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "Jinze Art Glass (West of Jinkang Avenue)",
+    "contact_phone": "0512-58596688",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/18/1830",
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    }
+  },
+  {
+    "id": "CN-MFG-0088010",
+    "company_en": "Jiashan Yuda Plastic and Garment Factory",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "No. 19-21 Huaxing Road, Dashu Industrial Zone, Xitang Town",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/18/1830",
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    }
   }
 ]

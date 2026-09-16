@@ -676,32 +676,6 @@
     "_bucket": "C/35/3576"
   },
   {
-    "id": "CN-MFG-0019371",
-    "company_en": "Zhuji Rongke Machinery Parts Factory",
-    "category": "精密机械加工",
-    "category_en": "Precision Machining",
-    "keywords_en": [
-      "Machine Processing"
-    ],
-    "region": {
-      "province": "Zhejiang",
-      "city": "Shaoxing"
-    },
-    "address_en": "Guangshan Village, Shanxia Lake Town",
-    "contact_phone": "Pending verification",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3576",
-      "name_en": null,
-      "level": "class",
-      "name": "农林牧渔机械配件制造",
-      "confidence": "high"
-    },
-    "_bucket": "C/35/3576"
-  },
-  {
     "id": "CN-MFG-0019546",
     "company_en": "Zhuji City Rongke Machinery Accessories Factory",
     "category": "注塑成型",
@@ -1144,6 +1118,34 @@
       "level": "class",
       "name": "农林牧渔机械配件制造",
       "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0064513",
+    "company_en": "Xishan Hongyue Machinery Parts Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "Xinbei Town Jingda South Road 4-1",
+    "contact_phone": "183****8055; 183****0607",
+    "source": "public_directory",
+    "verified_at": "2026-09-15",
+    "note_en": "",
+    "_bucket": "C/35/3576",
+    "industry": {
+      "code": "3576",
+      "name": "农林牧渔机械配件制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 农林牧渔机械配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "机械配件"
     }
   }
 ]

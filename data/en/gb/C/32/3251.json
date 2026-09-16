@@ -1482,32 +1482,6 @@
     "_bucket": "C/32/3251"
   },
   {
-    "id": "CN-MFG-0007772",
-    "company_en": "Leqing Fendeli Copper Materials Co., Ltd.",
-    "category": "原材料",
-    "category_en": "Raw Materials",
-    "keywords_en": [
-      "copper materials"
-    ],
-    "region": {
-      "province": "Zhejiang",
-      "city": "Wenzhou"
-    },
-    "address_en": "No. 1, Huoxiao Road, Liushi Town, outside Zhonglou Electrical Appliance City No. 1",
-    "contact_phone": "0577-62650289; 156****3888",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3251",
-      "name_en": "Copper Rolling",
-      "level": "class",
-      "name": "铜压延加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/32/3251"
-  },
-  {
     "id": "CN-MFG-0007773",
     "company_en": "Xinlong Copper Materials Factory",
     "category": "原材料",
@@ -3211,32 +3185,6 @@
     },
     "address_en": "Canghai Road 818 Lanting Lvyuan",
     "contact_phone": "0574-87920054; 130****5558",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3251",
-      "name_en": "Copper Rolling",
-      "level": "class",
-      "name": "铜压延加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/32/3251"
-  },
-  {
-    "id": "CN-MFG-0014604",
-    "company_en": "Zhuan Ying Zhonggong",
-    "category": "原材料",
-    "category_en": "Raw Materials",
-    "keywords_en": [
-      "Tongcai"
-    ],
-    "region": {
-      "province": "Zhejiang",
-      "city": "Ningbo"
-    },
-    "address_en": "Hushan Street Jiaochangshan South Road 255",
-    "contact_phone": "0574-63894361; 138****9156; 180****7567",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
@@ -8654,6 +8602,43 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/32/3251"
+    "_bucket": "C/32/3251",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜材"
+    }
+  },
+  {
+    "id": "CN-MFG-0087762",
+    "company_en": "Jiangzhou Copper Industry Co., Ltd. Hongyang Plastic Factory",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 430 Xizhang Road, Gushan Town",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/32/3251",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜业"
+    }
   }
 ]

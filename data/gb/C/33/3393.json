@@ -51,7 +51,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/33/3393"
   },
   {
     "id": "CN-MFG-0000358",
@@ -97,7 +98,8 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "CNC加工"
-    }
+    },
+    "_bucket": "C/33/3393"
   },
   {
     "id": "CN-MFG-0001076",
@@ -129,7 +131,8 @@
       "source": "name",
       "evidence": "锻造"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/33/3393"
   },
   {
     "id": "CN-MFG-0008598",
@@ -176,7 +179,8 @@
       "source": "name",
       "evidence": "锻造"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/33/3393"
   },
   {
     "id": "CN-MFG-0002585",
@@ -207,6 +211,55 @@
       "confidence": "high",
       "source": "name",
       "evidence": "锻压"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/33/3393"
+  },
+  {
+    "id": "CN-MFG-0080287",
+    "company": "常州市武进兴隆锻造厂有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "礼嘉镇礼洛路50号",
+    "contact_phone": "0519-86235118",
+    "lat": 31.641386,
+    "lng": 120.04586,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6HHBDH8",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320412",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3393",
+      "name": "锻件及粉末冶金制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 锻件及粉末冶金制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "锻造"
     },
     "is_manufacturer": true
   }

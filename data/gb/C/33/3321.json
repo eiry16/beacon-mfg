@@ -44,7 +44,8 @@
       "evidence": "刀模"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/33/3321"
   },
   {
     "id": "CN-MFG-0003273",
@@ -76,7 +77,8 @@
       "source": "name",
       "evidence": "刀具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/33/3321"
   },
   {
     "id": "CN-MFG-0018145",
@@ -123,7 +125,8 @@
       "evidence": "刀具"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/33/3321"
   },
   {
     "id": "CN-MFG-0026108",
@@ -171,7 +174,8 @@
       "source": "name",
       "evidence": "刀具"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/33/3321"
   },
   {
     "id": "CN-MFG-0026196",
@@ -227,7 +231,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/33/3321"
   },
   {
     "id": "CN-MFG-0026207",
@@ -283,7 +288,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/33/3321"
   },
   {
     "id": "CN-MFG-0027996",
@@ -339,7 +345,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/33/3321"
   },
   {
     "id": "CN-MFG-0029865",
@@ -395,7 +402,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/33/3321"
   },
   {
     "id": "CN-MFG-0032613",
@@ -445,6 +453,55 @@
       "confidence": "high",
       "source": "name",
       "evidence": "刀具"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/33/3321"
+  },
+  {
+    "id": "CN-MFG-0071045",
+    "company": "盛旺达刀具模配五金",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "临湖镇和安路632号",
+    "contact_phone": "155****7090",
+    "lat": 31.167971,
+    "lng": 120.505442,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JANMNVEB",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3321",
+      "name": "切削工具制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属工具制造 > 切削工具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "刀具|配件型:模配"
     },
     "is_manufacturer": true
   }
