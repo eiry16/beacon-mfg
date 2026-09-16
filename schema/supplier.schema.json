@@ -99,7 +99,7 @@
         "status": {
           "type": "string",
           "enum": ["unclaimed", "claimed", "verified"],
-          "description": "认主状态：unclaimed=未认主，claimed=微信认证，verified=平台审核通过"
+          "description": "认主状态：unclaimed=未认主，claimed=微信认证，verified=平台审核通过。**同时是手机号脱敏门控**：claimed/verified 时 GitHub 仓库与社会化公开源也展示全号；unclaimed（含字段缺失/待核实）时公开源手机脱敏为 138****0000（座机原样）。App 端数据源（Cloudflare Pages，工作树全号）始终展示全号并可拨号。脱敏由 scripts/mask_phones.py 作为 git clean filter 在入库时执行（方案 A）。"
         },
         "claimed_at": { "type": ["string", "null"], "format": "date" },
         "wechat_openid": { "type": ["string", "null"], "description": "企业微信 OpenID（加密存储）" },

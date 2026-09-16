@@ -1,0 +1,8 @@
+# ── 手机号脱敏（方案 A：只脱敏 git，Pages/App 数据源保留全号，旧 App 无感）──
+# data/gb、data/en、phone-index 入库时由 scripts/mask_phones.py 作为 git clean filter
+# 自动脱敏（手机→138****0000，座机原样，已认领 claim.status=claimed/verified 保留全号）。
+# 工作树（磁盘）文件始终是全号 → Pages 部署读工作树 → App 照常拿全号+拨号。
+# filter 命令仅在本地 config（step_git 首次运行自动写入），本文件只声明 filter 名。
+data/gb/** filter=maskphone
+data/en/** filter=maskphone
+data/phone-index.jsonl filter=maskphone
