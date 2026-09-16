@@ -663,7 +663,13 @@ def step_git(dry_run: bool = False) -> None:
     _MASK_PATHS = ("data/gb", "data/en", "data/phone-index.jsonl")
     _other_paths = [p for p in (*L0_PATHS, *L0_DERIVED) if p not in _MASK_PATHS]
     for p in _MASK_PATHS:
+        # --renormalize 强制重跑 clean filter（把已入库的全号转成脱敏版）。
+        # ⚠️ 但它【不会】暂存「本轮新增的未跟踪分片」——若只靠它，新抓取的供应商
+        # 根本进不了暂存区（既不脱敏也不入库）。所以再补一次普通 git add，
+        # 把新文件也纳入（普通 add 同样会跑 clean filter → 脱敏后入库）。
         subprocess.run(["git", "-C", str(ROOT), "add", "--renormalize", "--", p],
+                       capture_output=True, text=True)
+        subprocess.run(["git", "-C", str(ROOT), "add", "--", p],
                        capture_output=True, text=True)
     for p in _other_paths:
         subprocess.run(["git", "-C", str(ROOT), "add", "--", p],
