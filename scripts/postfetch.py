@@ -501,7 +501,7 @@ L0_PATHS = (
 # 它们由 postfetch 的 readme / stats / industry-index 步骤刷新，却不是 App 运行时 L0 源，
 # 所以旧版只提交 L0_PATHS → 每次数据更新后 README 永远滞后 → CI 恒红。
 # 必须与 L0 数据一起提交，CI 才不会对账失败。（2026-09-16 修复）
-L0_DERIVED = ("README.md", "data/DATA_STATS.md", "data/industry-index.json")
+L0_DERIVED = ("README.md", "README_EN.md", "data/DATA_STATS.md", "data/industry-index.json")
 
 
 # ─── 手机号脱敏：git clean filter 保障（方案 A）───

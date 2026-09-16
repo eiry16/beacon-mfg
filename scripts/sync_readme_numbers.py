@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""把 README.md 里的统计数据同步到真实值（stats.compute_stats()）。
+"""把 README.md / README_EN.md 里的统计数据同步到真实值（stats.compute_stats()）。
 
 为什么要有这个脚本
 ------------------
 每次抓取之后，README 里 30 多个数字会集体过期：徽章、总数、已核实/待核实、
-23 行品类表、已归类/未归类、行业家数 TOP、大类分布。
-以前靠手改 —— 改漏一个 validate.py --strict 就红灯，天天红灯的下场是没人再看。
+品类表、行业 TOP、大类分布。英文 README 同理（记录总数、已核实/待核实、
+国标大类数、已归类、TOP 类、英文镜像数）。以前靠手改 —— 改漏一个
+validate.py --strict 就红灯，天天红灯的下场是没人再看。
 
 做法上保守一点：
   - **只替换数字**，不动周围的文字；表述变了（比如句子改写）就 WARN 出来让你改，
     而不是偷偷重写整段（那会把人工写的说明句吃掉）。
   - 默认只预览，加 --apply 才写盘；没有变化就不重写文件（避免搅乱行尾/mtime）。
+  - 默认同步中英文两份 README；--readme <path> 可只同步单个文件。
 
 用法
 ----
-    python scripts/sync_readme_numbers.py           # 预览将要改哪些数字
-    python scripts/sync_readme_numbers.py --apply   # 写入 README.md
-    python scripts/sync_readme_numbers.py --quiet   # 不打印逐条改动（给流水线用）
+    python scripts/sync_readme_numbers.py            # 预览中英文 README 将改哪些数字
+    python scripts/sync_readme_numbers.py --apply    # 写入 README.md 与 README_EN.md
+    python scripts/sync_readme_numbers.py --quiet    # 不打印逐条改动（给流水线用）
+    python scripts/sync_readme_numbers.py --readme README_EN.md --apply
 """
 from __future__ import annotations
 
@@ -38,9 +41,17 @@ except Exception:
     pass
 
 README = ROOT / "README.md"
+README_EN = ROOT / "README_EN.md"
 INDUSTRY_INDEX = ROOT / "data" / "industry-index.json"
 TOP_N = 12          # 「行业家数 TOP」表行数
 DIST_N = 6          # 「大类分布」句子里提到的品类数
+EN_TOP_N = 8        # 英文 README「Top classes」列出的类数
+
+
+def _meta() -> dict:
+    if not INDUSTRY_INDEX.exists():
+        return {}
+    return json.loads(INDUSTRY_INDEX.read_text(encoding="utf-8")).get("metadata") or {}
 
 
 def _sub_num(text: str, pattern: str, repl: str, note: str, changes: list[str]) -> str:
@@ -86,7 +97,24 @@ def top_industries(n: int) -> list[tuple[str, str, int]]:
     return rows[:n]
 
 
+def top_industries_en(n: int) -> list[tuple[str, str, int]]:
+    """英文版：优先用 name_en，缺失时回退中文 name。"""
+    rows = []
+    for code, name, count in top_industries(n):
+        en = _industry_name_en(code) or name
+        rows.append((code, en, count))
+    return rows
+
+
+def _industry_name_en(code: str):
+    if not INDUSTRY_INDEX.exists():
+        return None
+    idx = json.loads(INDUSTRY_INDEX.read_text(encoding="utf-8")).get("index") or {}
+    return (idx.get(code) or {}).get("name_en")
+
+
 def build(st: dict, quiet: bool) -> tuple[str, int]:
+    """中文 README.md 数字同步。"""
     text = README.read_text(encoding="utf-8")
     changes: list[str] = []
 
@@ -97,7 +125,6 @@ def build(st: dict, quiet: bool) -> tuple[str, int]:
                     "categories 徽章", changes)
 
     # ── 2. 「数据现状」总述句 ─────────────────────────────────────────
-    # 注意只在这一节里模板 *_条记录_，别把徽章里的数字顺手改了。
     m = re.search(r"^##\s*数据现状\s*$.*?(?=^##\s)", text, re.M | re.S)
     if not m:
         changes.append("   WARN  没找到「## 数据现状」章节，只能改徽章")
@@ -111,16 +138,18 @@ def build(st: dict, quiet: bool) -> tuple[str, int]:
                        "已核实数", changes)
     new_sec = _sub_num(new_sec, r"(\d[\d,]*)\s*条待核实", str(st["unverified_total"]),
                        "待核实数", changes)
-    new_sec = _sub_num(new_sec, r"(\d[\d,]*)\s*条英文镜像", str(st["en_total"]),
-                       "英文镜像数", changes)
     new_sec = _sub_num(new_sec, r"(\d[\d,]*)\s*个国标大类", str(st["n_categories"]),
                        "国标大类数", changes)
-    # stats 里 cities 是城市个数（int），不是列表——别对它 len()。
     n_cities = st["cities"] if isinstance(st["cities"], int) else len(st["cities"])
     new_sec = _sub_num(new_sec, r"(\d[\d,]*)\s*个城市", str(n_cities),
                        "覆盖城市数", changes)
     if new_sec != sec:
         text = text.replace(sec, new_sec)
+
+    # ── 2b. 英文镜像数（在「## 英文数据集」节，必须对整个文件做，不能只限数据现状节）──
+    #    旧实现只在数据现状节内替换，导致「条英文镜像」永远不更新 → CI 偶发红。
+    text = _sub_num(text, r"(\d[\d,]*)\s*条英文镜像", str(st["en_total"]),
+                    "英文镜像数", changes)
 
     # ── 3. 各品类表格行：| 品类 | 总数 | 已核实 | 待核实 | ──────────────
     for r in st["categories"]:
@@ -138,9 +167,7 @@ def build(st: dict, quiet: bool) -> tuple[str, int]:
         text = pat.sub(lambda _m: row, text, count=1)
 
     # ── 4. 已归类 / 未归类 / 国标小类数 ────────────────────────────────
-    meta = {}
-    if INDUSTRY_INDEX.exists():
-        meta = json.loads(INDUSTRY_INDEX.read_text(encoding="utf-8")).get("metadata") or {}
+    meta = _meta()
     if meta:
         text = _sub_full(text, r"\d[\d,]*\s*/\s*\d[\d,]*\s*条已归类",
                          "%d / %d 条已归类" % (meta.get("classified", 0),
@@ -169,7 +196,6 @@ def build(st: dict, quiet: bool) -> tuple[str, int]:
 
     # ── 6. 「大类分布」句子 ────────────────────────────────────────────
     top_cats = sorted(st["categories"], key=lambda r: -r["total"])[:DIST_N]
-    # 「29 橡胶和塑料制品业」→「橡胶和塑料制品业」，句子里只写行业名
     tail = lambda s: s.split(" ", 1)[1] if " " in s else s  # noqa: E731
     line = "大类分布：" + "、".join(
         "%s %d" % (tail(c["name"]), c["total"]) for c in top_cats) + "。"
@@ -185,32 +211,110 @@ def build(st: dict, quiet: bool) -> tuple[str, int]:
     return text, len(changes)
 
 
-def sync(apply: bool = False, quiet: bool = False) -> int:
-    """读 README → 算出最新数字 → 需要时写盘。返回改动条数（含 WARN）。"""
+def build_en(st: dict, quiet: bool) -> tuple[str, int]:
+    """英文 README_EN.md 数字同步。
+
+    英文版是散文式表述（数字内嵌在句子里），不能用中文表格正则，
+    改用英文 label 正则匹配。只替换数字，句式变了就 WARN（不猜、不破坏散文）。
+    「Top classes」整块用 industry-index 的 name_en 重建。
+    """
+    text = README_EN.read_text(encoding="utf-8")
+    changes: list[str] = []
+    meta = _meta()
+
+    # ── 1. 中文数据集总述：24,085 records total ──────────────────────
+    text = _sub_num(text, r"(\d[\d,]*)\s*records total", str(st["cn_total"]),
+                    "EN records total", changes)
+    # ── 2. phone-verified / pending ─────────────────────────────────
+    text = _sub_num(text, r"(\d[\d,]*)\s*phone-verified", str(st["verified_total"]),
+                    "EN phone-verified", changes)
+    text = _sub_num(text, r"(\d[\d,]*)\s*pending", str(st["unverified_total"]),
+                    "EN pending", changes)
+    # ── 3. national divisions（对应中文 n_categories）─────────────────
+    text = _sub_num(text, r"(\d[\d,]*)\s*national divisions", str(st["n_categories"]),
+                    "EN national divisions", changes)
+    # ── 4. classified / total / classes / unclassified ────────────────
+    if meta:
+        text = _sub_full(text, r"\d[\d,]*\s*/\s*\d[\d,]*\s*records classified",
+                         "%d / %d records classified" % (
+                             meta.get("classified", 0), meta.get("total_suppliers", 0)),
+                         "EN records classified", changes)
+        text = _sub_num(text, r"(\d[\d,]*)\s*national industry classes",
+                        str(meta.get("total_codes", 0)),
+                        "EN national industry classes", changes)
+        text = _sub_num(text, r"(\d[\d,]*)\s*unclassified",
+                        str(meta.get("unclassified", 0)),
+                        "EN unclassified", changes)
+    # ── 5. English-mirror records ─────────────────────────────────────
+    text = _sub_num(text, r"(\d[\d,]*)\s*English-mirror records", str(st["en_total"]),
+                    "EN English-mirror records", changes)
+    # ── 6. Top classes 整块重建（用 industry-index 的 name_en）──────────
+    top = top_industries_en(EN_TOP_N)
+    if top:
+        body = " · ".join("%s %s %s" % (c, n, "{:,}".format(k)) for c, n, k in top) + "."
+        pat = re.compile(r"Top classes \(full list in [^\n]*\):\s*.*?(?=\n\n|\n>|\Z)",
+                         re.S)
+        m = pat.search(text)
+        if m:
+            repl = "Top classes (full list in `data/industry-index.json`): " + body
+            if m.group(0) != repl:
+                changes.append("   EN Top classes：%d 类已刷新（name_en）" % len(top))
+            text = text[:m.start()] + repl + text[m.end():]
+        else:
+            changes.append("   WARN  没找到英文「Top classes」段落，跳过")
+
+    if not quiet:
+        print("README_EN 数字同步（来源：stats.compute_stats / industry-index.json）")
+        if changes:
+            for c in changes:
+                print(c)
+        else:
+            print("   全部数字已是最新，无需改动")
+    return text, len(changes)
+
+
+def sync(apply: bool = False, quiet: bool = False, path=None) -> int:
+    """读 README → 算出最新数字 → 需要时写盘。返回改动条数（含 WARN）。
+
+    path 为空：同步 README.md + README_EN.md；
+    path 指定：只同步该文件（按文件名判断用中文/英文逻辑）。
+    """
     import stats  # 这里才 import：compute_stats 会全量扫库，别拖慢 --help
     st = stats.compute_stats()
-    text, n = build(st, quiet)
-    if not apply:
-        return n
-    if text != README.read_text(encoding="utf-8"):
-        README.write_text(text, encoding="utf-8")
-    return n
+    targets = []
+    if path:
+        p = Path(path)
+        fn = build_en if p.name.lower().endswith("_en.md") else build
+        targets = [(p, fn)]
+    else:
+        if README.exists():
+            targets.append((README, build))
+        if README_EN.exists():
+            targets.append((README_EN, build_en))
+    total = 0
+    for p, fn in targets:
+        text, n = fn(st, quiet)
+        total += n
+        if apply and p.exists() and text != p.read_text(encoding="utf-8"):
+            p.write_text(text, encoding="utf-8")
+    return total
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="同步 README.md 的统计数字")
-    ap.add_argument("--apply", action="store_true", help="写入 README.md（默认只预览）")
+    ap = argparse.ArgumentParser(description="同步 README.md / README_EN.md 的统计数字")
+    ap.add_argument("--apply", action="store_true", help="写入 README（默认只预览）")
     ap.add_argument("--quiet", action="store_true", help="不打印逐条改动")
+    ap.add_argument("--readme", help="只同步指定 README 文件（默认同步中英文两份）")
     a = ap.parse_args()
 
-    n = sync(apply=a.apply, quiet=a.quiet)
+    n = sync(apply=a.apply, quiet=a.quiet, path=a.readme)
 
     if not a.apply:
         if not a.quiet:
             print("\n（预览模式，未写入。加 --apply 执行）")
         return 0
     if n and not a.quiet:
-        print("\n已写入 %s（%d 处改动）" % (README.name, n))
+        print("\n已写入 README（%d 处改动）" % n)
     return 0
 
 
