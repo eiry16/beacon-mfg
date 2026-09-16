@@ -18,34 +18,42 @@
 这不是理论风险——region-index 就曾这样静默失效过。
 所以在抓取脚本里硬挂钩，人手不必记得补跑。
 
-执行顺序（有依赖，不能乱）
---------------------------
-    classify   补写缺失国标行业标签（可选）
-      ↓  指纹要拿 industry.code 推工艺，必须先补
-    gbindex    重建 gb-index.json（id→文件主索引 + 各级计数）
-      ↓  别的脚本（validate / 客户检索）拿它做总数与文件定位。漏跑的后果不是报错，
-         是「名录已经 23796 家、索引还停在 23698 家」这种静默落后。
-    index      行业索引 + 地域索引 + data/index.json 品类计数
+执行顺序（有依赖，不能乱；权威定义见下面的 ALL_STEPS）
+------------------------------------------------------
+    classify → gbindex → recat → enrefile → index → fingerprint
       ↓
-    fingerprint  重建 L0 指纹国标分片
+    english（可选）      en_backfill + en_sync_industry      ┐ 两个慢活
+    autoprofile（可选）  batch_auto_profile 给本轮城市补卡    ┘ 默认都跳过
+      ↓  排在 shards 之前，是因为它们产出的卡 / 英文记录必须被下面的步骤收进去
+    shards → manifest   能力卡分片 + 清单（App 增量就靠这份清单对 sha1）
       ↓
-    shards     重建 L1 能力卡国标分片（full + slim）
+    readme → validate   README 数字先对齐，再做 --strict 体检
       ↓
-    manifest   重算分片清单（含 sha1 / 行数，App 增量靠它）
+    assets              同步 APK 内置资产（现在只在校验通过之后抄）
       ↓
-    assets     同步 App 内置资产（指纹 / 能力卡 / 号码索引 → APK assets）
-      ↓  手机上的离线副本。不同步的话 App 永远是上次手动跑的那版。
-    readme     把 README.md 里的统计数字刷到最新
-      ↓  必须在 validate 之前：抓完新数据，README 与 DATA_STATS.md 必然打架。
-    validate   --strict 全量校验 + 重生成 DATA_STATS
+    r2 → pages          上传 R2（云端真源）+ 发布 Pages（App 主源）
       ↓
-    r2         增量上传能力卡到 R2（云端真源；Git 只是发布快照）
-      ↓
-    pages      发布到 Cloudflare Pages（L1 分片 + L2 厂商自述）
+    git                 最后才推 GitHub（jsDelivr / raw 备源）
 
-最后两步为什么是上传/发布：新供应商建档后如果没人手动跑，App 里点开就是 404
-（2026-09-10 耐特斯就是这个真因）。**validate 没过不会上传也不会发布**
-（见 run() 里的闸）。
+这么排的三条理由（2026-09-16 重排）
+----------------------------------
+1. **git 原先排在 validate 之前** —— 那是「先推 GitHub、后体检」，未校验的 L0
+   会先流到备源。现在它是最后一步，run() 里另有一道「validate 未过就跳过 git」的闸。
+2. **assets 原先也在 validate 之前** —— 同理，改成先体检再往 APK 里抄。
+   （readme 必须留在 validate 之前：--strict 拿 README 与 DATA_STATS.md 对账。）
+3. **english / autoprofile 原先挂在发布之后单独跑** —— 于是英文永远比中文晚一天
+   上云，能力卡要等下一轮 shards 才进得去。现在两者都挪到 shards 之前，当轮生效。
+
+慢活要隔离（cron / GUI 请照做）
+------------------------------
+english（每轮几百到上千条，700~1300 条/小时）与 autoprofile（每城全量扫名录 +
+LLM 推断）动辄几十分钟。它们是排在发布**之前**的，一旦被外部超时杀掉，当天的
+发布就一起没了 —— 这正是 2026-09-15 晚上「本地都重建好了、手机还是旧数据」的成因。
+
+所以调用方应当分两段跑：
+    第一段（核心，必须成）：postfetch.py                  # 不含慢活，落地发布 + git
+    第二段（增强，允许败）：postfetch.py --only english,autoprofile,shards,manifest,readme,validate,r2,pages,git
+慢活超时失败再多次，损失也只是「这一轮的能力卡没补上」，不会把发布一起赔进去。
 
 失败策略
 --------
@@ -67,11 +75,13 @@
 from __future__ import annotations
 
 import argparse
+import atexit
 import contextlib
 import io
 import os
 import subprocess
 import sys
+import tempfile
 import time
 import traceback
 from pathlib import Path
@@ -87,9 +97,19 @@ except Exception:
     pass
 
 # 顺序即依赖，见文件头。别乱排。
+#
+# 2026-09-16 重排，三处纠正（旧的排法都不报错，只会静静地漏）：
+#   1) git 从 validate **之前**挪到最后 —— 旧排法是「先推 GitHub、后体检」，未校验的
+#      L0 会先流到 jsDelivr 备源。现在它排在 r2/pages 之后，run() 里还另加了一道
+#      「validate 必须跑过并通过」的闸。
+#   2) assets 挪到 validate 之后 —— 只把通过校验的数据抄进 APK 内置资产。
+#      （readme 必须留在 validate 之前：--strict 会拿 README 与 DATA_STATS.md 对账。）
+#   3) english 从流水线外挪进来，位置必须在 shards / manifest 之前 —— manifest 要把
+#      en 分片的 sha1 算进清单；以前 GUI / cron 都把它挂在**发布之后**单独跑，
+#      于是英文永远比中文晚一天上云。
 ALL_STEPS = ("classify", "gbindex", "recat", "enrefile", "index", "fingerprint",
-             "autoprofile", "shards", "manifest", "git", "assets", "readme", "validate",
-             "r2", "pages")
+             "english", "autoprofile", "shards", "manifest", "readme", "validate",
+             "assets", "r2", "pages", "git")
 
 # gen_manifest 的列式层（pq）依赖 pyarrow，缺省就静默少一层 —— 清单看着变绿，
 # 实则少了 pq。这里的兜底顺序：当前解释器 → 环境变量 BMFG_PY_PQ → 本机已知 venv。
@@ -112,7 +132,8 @@ _STEP_DESC = {
     "recat": "category 重算为 industry.code 的派生值（清错标残留）",
     "index": "重建行业/地域索引 + 品类计数",
     "fingerprint": "重建 L0 指纹国标分片",
-    "autoprofile": "给本轮新抓城市补未认证能力卡（调 batch_auto_profile）",
+    "english": "英文镜像增量补齐（en_backfill + en_sync_industry，慢/需 ZHIPU key）",
+    "autoprofile": "给本轮新抓城市补未认证能力卡（调 batch_auto_profile，慢/烧 LLM）",
     "shards": "重建 L1 能力卡国标分片",
     "manifest": "重算分片清单（sha1/行数）",
     "git": "提交并推送 L0 数据到 GitHub（让 jsDelivr/Pages 拿到新鲜分片）",
@@ -245,6 +266,37 @@ def step_fingerprint(dry_run: bool = False) -> None:
     rc = _call("gen_fingerprint", *([] if dry_run else ["--apply"]))
     if rc:
         raise RuntimeError(f"gen_fingerprint 返回 {rc}")
+
+
+_DO_ENGLISH = False  # run(english=True) / 命令行 --english 打开
+
+
+def step_english(dry_run: bool = False) -> None:
+    """英文镜像增量补齐（en_backfill → en_sync_industry）。
+
+    慢（GLM-4-Flash 限速，实测 700~1300 条/小时）且吃 ZHIPU_API_KEY，故默认关。
+
+    **必须排在 shards / manifest 之前**：manifest 会统计 en 分片的数量与 sha1，
+    先把清单算出来再补英文 = 清单里那批英文分片是空的。
+    2026-09-16 之前 GUI / cron 都把它当独立尾巴挂在**发布之后**跑，于是英文
+    永远比中文晚一天上云 —— 现在挪进来，当轮就能随 r2/pages 一起发布。
+    """
+    if not _DO_ENGLISH:
+        print("   （跳过：未开启英文镜像）")
+        return
+    if dry_run:
+        print("   （--dry-run：不翻译）")
+        return
+    if not os.environ.get("ZHIPU_API_KEY"):
+        # en_backfill 自身会回退读 .env，这里只是提前给个明白话，避免跑半天才发现没 key。
+        print("   （提示：环境里没有 ZHIPU_API_KEY，将依赖 en_backfill 回退读 .env）")
+
+    rc = _call("en_backfill")
+    if rc:
+        raise RuntimeError(f"en_backfill 返回 {rc}")
+    rc = _call("en_sync_industry")
+    if rc:
+        raise RuntimeError(f"en_sync_industry 返回 {rc}")
 
 
 _AUTOPROFILE_CITIES = None  # run() 经 autoprofile_cities= 注入；step_autoprofile 读取
@@ -431,8 +483,28 @@ def step_pages(dry_run: bool = False) -> None:
         raise RuntimeError(f"deploy_pages.py 返回 {done.returncode}")
 
 
+# L0 白名单：只有这些路径会被自动提交推送。
+#
+# **绝不要用 git add -A** —— 主人常并行开发 APK/**/*.kt、scripts/*.py、
+# skills/schema/vendor-skill.schema.json，-A 会把没写完的东西一起推上去。
+# GUI（git 步）与每日 cron 都从这里取同一份定义，避免两套口径各自漂移。
+L0_PATHS = (
+    "data/gb", "data/en", "data/manifest.json", "data/index.json",
+    "data/gb-index.json", "data/phone-index.jsonl", "data/region-index.json",
+    "data/fetch_cursor.json", "skills/registry/fingerprint",
+    "skills/registry/index.json", "skills/registry/gb-proc-map.json",
+)
+
+# 派生/文档文件：validate.py --strict 会拿 README.md / DATA_STATS.md / industry-index.json
+# 与数据集对账（审计议题 #1 第 4 条「把 count/溯源校验加进 CI」落地后的必然检查）。
+# 它们由 postfetch 的 readme / stats / industry-index 步骤刷新，却不是 App 运行时 L0 源，
+# 所以旧版只提交 L0_PATHS → 每次数据更新后 README 永远滞后 → CI 恒红。
+# 必须与 L0 数据一起提交，CI 才不会对账失败。（2026-09-16 修复）
+L0_DERIVED = ("README.md", "data/DATA_STATS.md", "data/industry-index.json")
+
+
 def step_git(dry_run: bool = False) -> None:
-    """把本轮重建出来的 L0 数据提交并推送到 GitHub。
+    """把本轮重建出来的 L0 数据提交并推送到 GitHub.
 
     为什么必须有这一步（2026-09-14 复盘）：抓后流水线一直只做「派生层重建 → 上传 R2
     → 发布 Pages」，从没有一步把 L0 数据回写 git。于是 jsDelivr（乃至 Pages 的 L0 镜像）
@@ -445,12 +517,7 @@ def step_git(dry_run: bool = False) -> None:
     推送走仓库已配好的 core.sshCommand（中文路径 id_ed25519 + 跳过 known_hosts），
     不需要额外的凭据。没有改动就静默跳过（不是失败）。
     """
-    L0_PATHS = (
-        "data/gb", "data/en", "data/manifest.json", "data/index.json",
-        "data/gb-index.json", "data/phone-index.jsonl", "data/region-index.json",
-        "data/fetch_cursor.json", "skills/registry/fingerprint",
-        "skills/registry/index.json", "skills/registry/gb-proc-map.json",
-    )
+    # L0_PATHS 见模块顶部（GUI / cron 共用同一份）
 
     def _g(args: list[str]) -> tuple[int, str]:
         p = subprocess.run(["git", "-C", str(ROOT)] + args,
@@ -458,7 +525,9 @@ def step_git(dry_run: bool = False) -> None:
         return p.returncode, (p.stdout + p.stderr).strip()
 
     # 先看这些路径里有没有改动，没有就别硬提交
-    rc, out = _g(["status", "--porcelain", "--", *L0_PATHS])
+    # 注意：L0_PATHS（运行时数据源）和 L0_DERIVED（被 validate 对账的派生/文档）都要纳入，
+    # 否则 README/DATA_STATS/industry-index 滞后会让 CI 的 --strict 对账失败。
+    rc, out = _g(["status", "--porcelain", "--", *L0_PATHS, *L0_DERIVED])
     if rc:
         raise RuntimeError(f"git status 返回 {rc}: {out}")
     changed = [ln for ln in out.splitlines() if ln.strip()]
@@ -473,8 +542,8 @@ def step_git(dry_run: bool = False) -> None:
             print(f"     … 还有 {len(changed) - 20} 条")
         return
 
-    # 仅 add 指定的 L0 路径（绝不用 git add -A，避免把源码/APK 一起卷进去）
-    for p in L0_PATHS:
+    # 仅 add 指定的 L0 路径 + 派生文档（绝不用 git add -A，避免把源码/APK 一起卷进去）
+    for p in (*L0_PATHS, *L0_DERIVED):
         subprocess.run(["git", "-C", str(ROOT), "add", "--", p],
                        capture_output=True, text=True)
     rc, out = _g(["commit", "-m",
@@ -497,6 +566,7 @@ _STEP_FN = {
     "recat": step_recat,
     "index": step_index,
     "fingerprint": step_fingerprint,
+    "english": step_english,
     "autoprofile": step_autoprofile,
     "shards": step_shards,
     "manifest": step_manifest,
@@ -540,18 +610,86 @@ def sync_index_counts() -> None:
 
 # ─────────────────────────────────────────────────────────────── 主入口
 
+# ─────────────────────────────────────────────────────────────── 发布互斥锁
+# 2026-09-16 补：cron（每日）/ GUI（手动）/「回填后自动发布」定时任务都会调本模块，三者都跑
+# postfetch.py 写同一批派生层文件（shards / manifest / Pages / git）。两个 postfetch 并发时，
+# 中间态可能互相覆盖 → 发表单或清单损坏。这里用一把咨询锁把「整次发布」互斥掉，
+# 与 en_backfill 的 beacon_mfg_en.lock 各管一段（翻译 vs 发布），互不干扰。
+# 语义对齐 en_backfill：拿不到锁就**跳过本轮**（非阻塞、不死锁）；进程被强杀 OS 自动放锁。
+_PUBLISH_LOCK_FD = None
+_PUBLISH_LOCK_PATH = Path(tempfile.gettempdir()) / "beacon_mfg_publish.lock"
+
+
+def acquire_publish_lock(timeout: int = 900) -> bool:
+    """拿到发布互斥锁返回 True；timeout 秒内仍被别的进程持有则返回 False（本轮跳过）。
+
+    - BMFG_PUBLOCK_PARENT=1：父进程（如定时发布脚本）已持锁并会传给子进程，
+      子进程 postfetch 直接放行，避免重复加锁把自己挡在门外。
+    - BMFG_PUBLISH_LOCK=0：逃生阀，手动要并发时关闭本锁。
+    """
+    global _PUBLISH_LOCK_FD
+    if os.environ.get("BMFG_PUBLOCK_PARENT") == "1":
+        return True
+    if _PUBLISH_LOCK_FD is not None:
+        return True
+    if os.environ.get("BMFG_PUBLISH_LOCK") == "0":
+        return True
+    try:
+        fd = os.open(str(_PUBLISH_LOCK_PATH), os.O_CREAT | os.O_RDWR, 0o644)
+    except OSError:
+        return True  # 连锁文件都建不了就放行，别把正事挡在外面
+    try:
+        import msvcrt
+    except ImportError:
+        msvcrt = None
+    if msvcrt is not None:
+        deadline = time.time() + timeout
+        while True:
+            try:
+                msvcrt.locking(fd, msvcrt.LK_NBLCK, 1)
+            except OSError:
+                if time.time() >= deadline:
+                    os.close(fd)
+                    return False
+                time.sleep(5)
+                continue
+            _PUBLISH_LOCK_FD = fd
+            atexit.register(release_publish_lock)
+            return True
+    return True
+
+
+def release_publish_lock() -> None:
+    global _PUBLISH_LOCK_FD
+    if _PUBLISH_LOCK_FD is None:
+        return
+    try:
+        import msvcrt
+        msvcrt.locking(_PUBLISH_LOCK_FD, msvcrt.LK_UNLCK, 1)
+    except Exception:
+        pass
+    try:
+        os.close(_PUBLISH_LOCK_FD)
+    except Exception:
+        pass
+    _PUBLISH_LOCK_FD = None
+
+
 def run(skip: set[str] | frozenset[str] | list[str] | None = None,
         only: set[str] | frozenset[str] | list[str] | None = None,
         dry_run: bool = False,
         quiet: bool = False,
-        autoprofile_cities: str | None = None) -> int:
+        autoprofile_cities: str | None = None,
+        english: bool = False) -> int:
     """跑完（或部分跑完）抓后流水线。返回失败步数（0 = 全通过）。
 
     autoprofile_cities: 逗号分隔的城市名；非空时 autoprofile 步会调 batch_auto_profile
     给这些城市补「未认证」能力卡。为空则 autoprofile 步跳过（默认行为，避免每轮烧 LLM）。
+    english: 打开英文镜像（en_backfill + en_sync_industry）。默认关。
     """
-    global _AUTOPROFILE_CITIES
+    global _AUTOPROFILE_CITIES, _DO_ENGLISH
     _AUTOPROFILE_CITIES = autoprofile_cities
+    _DO_ENGLISH = bool(english)
     skip = set(skip or ())
     if only:
         steps = [s for s in ALL_STEPS if s in set(only)]
@@ -561,6 +699,13 @@ def run(skip: set[str] | frozenset[str] | list[str] | None = None,
     if not steps:
         if not quiet:
             print("抓后流水线：没有要执行的步骤")
+        return 0
+
+    # 发布互斥：与 cron / GUI / 定时任务串行，避免并发写派生层（shards/manifest/Pages/git）
+    if not acquire_publish_lock():
+        if not quiet:
+            print("⊘ 另一个发布流程（cron / GUI / 定时任务）正在运行，本实例跳过，"
+                  "稍后由对方或下个周期完成发布。")
         return 0
 
     if not quiet:
@@ -580,6 +725,13 @@ def run(skip: set[str] | frozenset[str] | list[str] | None = None,
             skipped.append(name)
             print("   ⊘ 跳过：本轮 validate 未通过或未执行，不把未校验的产物推上线"
                   "（要单独跑请直跑 scripts/publish_r2.py / deploy_pages.py）")
+            continue
+        # git 这道闸（2026-09-16 加）：以前 git 排在 validate **之前**，等于「先上榜、
+        # 后体检」，未经校验的 L0 直接进了 GitHub → jsDelivr 备源拿到脏数据。
+        # 现在 git 是最后一步，且再次确认 validate 确实跑过并通过。
+        if name == "git" and ("validate" in failed or "validate" not in steps):
+            skipped.append(name)
+            print("   ⊘ 跳过：本轮 validate 未通过或未执行，不把未校验数据推 GitHub")
             continue
         if not quiet:
             print("\n[%d/%d] %s —— %s" % (i, len(steps), name, _STEP_DESC[name]))
@@ -642,6 +794,10 @@ def _main() -> int:
                     help="只跑某些步骤，逗号分隔")
     ap.add_argument("--dry-run", action="store_true",
                     help="不写盘（依赖子脚本自身的预览模式）")
+    ap.add_argument("--english", action="store_true",
+                    help="跑英文镜像：调用 en_backfill + en_sync_industry（默认关："
+                         "慢且依赖 ZHIPU_API_KEY）。开启后它排在 shards/manifest 之前，"
+                         "当轮就能随 r2/pages 一起发布")
     ap.add_argument("--autoprofile-cities", default="",
                     help="逗号分隔的城市名；非空时 autoprofile 步给这些城市补未认证能力卡"
                          "（对应 GUI「自动补能力卡」勾选框 / fetch_batch --autoprofile）")
@@ -655,7 +811,8 @@ def _main() -> int:
         return 2
 
     return 1 if run(skip=skip, only=only, dry_run=args.dry_run,
-                   autoprofile_cities=args.autoprofile_cities or None) else 0
+                    autoprofile_cities=args.autoprofile_cities or None,
+                    english=args.english) else 0
 
 
 if __name__ == "__main__":
