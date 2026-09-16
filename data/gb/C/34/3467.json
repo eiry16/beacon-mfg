@@ -43,7 +43,8 @@
       "evidence": "包装机械"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3467"
   },
   {
     "id": "CN-MFG-0011402",
@@ -89,7 +90,8 @@
       "evidence": "包装机械"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3467"
   },
   {
     "id": "CN-MFG-0011434",
@@ -135,7 +137,8 @@
       "evidence": "包装机械"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/34/3467"
   },
   {
     "id": "CN-MFG-0024056",
@@ -183,7 +186,8 @@
       "source": "name",
       "evidence": "包装机械"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/34/3467"
   },
   {
     "id": "CN-MFG-0026609",
@@ -239,7 +243,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/34/3467"
   },
   {
     "id": "CN-MFG-0026625",
@@ -295,7 +300,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/34/3467"
   },
   {
     "id": "CN-MFG-0026846",
@@ -351,7 +357,8 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/34/3467"
   },
   {
     "id": "CN-MFG-0027648",
@@ -407,6 +414,55 @@
         "catalog"
       ],
       "verified": false
-    }
+    },
+    "_bucket": "C/34/3467"
+  },
+  {
+    "id": "CN-MFG-0081546",
+    "company": "佛山市利华包装机械有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "兴业西路8号塘头高新科技城B栋5楼501",
+    "contact_phone": "15363667617",
+    "lat": 23.098025,
+    "lng": 113.005625,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KRLD7BKU",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3467",
+      "name": "包装专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 包装专用设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "包装机械"
+    },
+    "is_manufacturer": true
   }
 ]

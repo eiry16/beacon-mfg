@@ -43,7 +43,8 @@
       "evidence": "粮食"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/13/1399"
   },
   {
     "id": "CN-MFG-0012515",
@@ -89,7 +90,8 @@
       "evidence": "农产品"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/13/1399"
   },
   {
     "id": "CN-MFG-0012637",
@@ -135,7 +137,8 @@
       "evidence": "粮食"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/13/1399"
   },
   {
     "id": "CN-MFG-0012639",
@@ -181,7 +184,8 @@
       "evidence": "农产品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/13/1399"
   },
   {
     "id": "CN-MFG-0012644",
@@ -227,7 +231,8 @@
       "evidence": "粮食"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/13/1399"
   },
   {
     "id": "CN-MFG-0012652",
@@ -273,7 +278,8 @@
       "evidence": "农产品"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/13/1399"
   },
   {
     "id": "CN-MFG-0012653",
@@ -319,7 +325,8 @@
       "evidence": "粮食"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/13/1399"
   },
   {
     "id": "CN-MFG-0028284",
@@ -367,55 +374,8 @@
       "source": "name",
       "evidence": "农产品"
     },
-    "is_manufacturer": true
-  },
-  {
-    "id": "CN-MFG-0028289",
-    "company": "永红农产品加工服务点",
-    "category": "精密机械加工",
-    "keywords": [
-      "加工中心"
-    ],
-    "region": {
-      "province": "上海",
-      "city": "上海"
-    },
-    "address": "永红中心路与东永路交叉口东40米",
-    "contact_phone": "待核实",
-    "lat": 31.230451,
-    "lng": 121.709059,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-13",
-    "imported_at": "2026-09-13",
-    "last_verified_at": null,
-    "status": "unverified_poi",
-    "is_template": true,
-    "note": "",
-    "amap": {
-      "poi_id": "B0L3A1XMHR",
-      "type": "生活服务;生活服务场所;生活服务场所",
-      "typecode": "070000",
-      "alias": "",
-      "tag": "",
-      "keytag": "生活服务,生活服务场所,生活服务场所",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "合庆",
-      "adcode": "310115",
-      "search_keyword": "加工中心"
-    },
-    "industry": {
-      "code": "1399",
-      "name": "其他未列明农副食品加工",
-      "level": "class",
-      "path": "C 制造业 > 农副食品加工业 > 其他农副食品加工 > 其他未列明农副食品加工",
-      "confidence": "high",
-      "source": "name",
-      "evidence": "农产品"
-    },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/13/1399"
   },
   {
     "id": "CN-MFG-0028977",
@@ -463,7 +423,8 @@
       "source": "name",
       "evidence": "粮食"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/13/1399"
   },
   {
     "id": "CN-MFG-0029072",
@@ -511,6 +472,7 @@
       "source": "name",
       "evidence": "农产品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/13/1399"
   }
 ]

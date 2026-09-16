@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "渔港"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/13/1369"
   },
   {
     "id": "CN-MFG-0029086",
@@ -93,7 +94,8 @@
       "source": "name",
       "evidence": "水产"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/13/1369"
   },
   {
     "id": "CN-MFG-0045281",
@@ -140,6 +142,55 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "渔港"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/13/1369"
+  },
+  {
+    "id": "CN-MFG-0075375",
+    "company": "蜜雪冰城(水产西路)",
+    "category": "制造业",
+    "keywords": [
+      "咖啡店"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "水产西路1019号1层",
+    "contact_phone": "18511547740",
+    "lat": 31.354251,
+    "lng": 121.410588,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G26SL65Y",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "冰美式,柠檬水",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "顾村",
+      "adcode": "310113",
+      "search_keyword": "咖啡店"
+    },
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "水产"
     },
     "is_manufacturer": true
   }

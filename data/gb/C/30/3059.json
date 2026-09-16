@@ -44,7 +44,8 @@
       "business_area": "泗泾",
       "adcode": "310117",
       "search_keyword": "弹簧"
-    }
+    },
+    "_bucket": "C/30/3059"
   },
   {
     "id": "CN-MFG-0016856",
@@ -90,53 +91,8 @@
       "evidence": "钢化玻璃"
     },
     "is_manufacturer": true,
-    "status": "verified"
-  },
-  {
-    "id": "CN-MFG-0006299",
-    "company": "上海金曦玻璃制品.钢化玻璃.自动门.办公隔断",
-    "category": "标准件",
-    "keywords": [
-      "弹簧"
-    ],
-    "region": {
-      "province": "上海",
-      "city": "上海"
-    },
-    "address": "沪松公路2511弄之86-88号五金城商务楼",
-    "contact_phone": "13391627998",
-    "lat": 31.114218,
-    "lng": 121.283846,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
     "status": "verified",
-    "industry": {
-      "code": "3059",
-      "name": "其他玻璃制品制造",
-      "level": "class",
-      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制品制造 > 其他玻璃制品制造",
-      "confidence": "medium",
-      "source": "name",
-      "evidence": "钢化玻璃"
-    },
-    "is_manufacturer": true,
-    "amap": {
-      "poi_id": "B0LUJDA18A",
-      "type": "公司企业;公司;公司",
-      "typecode": "170200",
-      "alias": "",
-      "tag": "",
-      "keytag": "玻璃",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "泗泾",
-      "adcode": "310117",
-      "search_keyword": "弹簧"
-    }
+    "_bucket": "C/30/3059"
   },
   {
     "id": "CN-MFG-0006336",
@@ -168,7 +124,8 @@
       "source": "name",
       "evidence": "玻璃制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/30/3059"
   },
   {
     "id": "CN-MFG-0006340",
@@ -200,7 +157,8 @@
       "source": "name",
       "evidence": "玻璃制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/30/3059"
   },
   {
     "id": "CN-MFG-0008517",
@@ -246,7 +204,8 @@
       "source": "name",
       "evidence": "玻璃加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/30/3059"
   },
   {
     "id": "CN-MFG-0008576",
@@ -292,7 +251,8 @@
       "source": "name",
       "evidence": "玻璃加工"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/30/3059"
   },
   {
     "id": "CN-MFG-0028861",
@@ -339,6 +299,55 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "钢化玻璃"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/30/3059"
+  },
+  {
+    "id": "CN-MFG-0085493",
+    "company": "华晟玻璃制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "佳育塑胶制品有限公司的隔壁位置",
+    "contact_phone": "18681128250",
+    "lat": 23.103952,
+    "lng": 113.972349,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3RGVWPJ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "3059",
+      "name": "其他玻璃制品制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制品制造 > 其他玻璃制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "玻璃制品"
     },
     "is_manufacturer": true
   }

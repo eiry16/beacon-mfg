@@ -45,7 +45,8 @@
       "source": "gb_token",
       "evidence": "保健服务"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/805"
   },
   {
     "id": "CN-MFG-0053207",
@@ -93,7 +94,8 @@
       "source": "gb_token",
       "evidence": "保健服务"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/805"
   },
   {
     "id": "CN-MFG-0053459",
@@ -141,7 +143,8 @@
       "source": "gb_token",
       "evidence": "保健服务"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/805"
   },
   {
     "id": "CN-MFG-0053908",
@@ -189,7 +192,8 @@
       "source": "gb_token",
       "evidence": "养生保健服务"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/805"
   },
   {
     "id": "CN-MFG-0053928",
@@ -237,43 +241,380 @@
       "source": "gb_token",
       "evidence": "养生保健服务"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/805"
   },
   {
-    "id": "CN-MFG-0053916",
-    "company": "元贞馆(杭州)养生保健服务有限公司",
+    "id": "CN-MFG-0073182",
+    "company": "钟艾一盛保健服务部",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
       "保健"
     ],
     "region": {
-      "province": "浙江",
-      "city": "杭州"
+      "province": "上海",
+      "city": "上海"
     },
-    "address": "中河中路222号平海国际9楼903室",
-    "contact_phone": "0571-56502606",
-    "lat": 30.254534,
-    "lng": 120.172284,
+    "address": "三林镇长清路507号恒大创意园北门口",
+    "contact_phone": "13761772688",
+    "lat": 31.162913,
+    "lng": 121.491148,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
     "status": "verified",
     "is_template": false,
     "note": "",
     "amap": {
-      "poi_id": "B0L1L5F2AH",
+      "poi_id": "B0IBZC0TX1",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "艾灸",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "上南",
+      "adcode": "310115",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0073222",
+    "company": "长寿坊保健服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "听悦路1177号3楼",
+    "contact_phone": "13661426450; 18105395365",
+    "lat": 31.063709,
+    "lng": 121.738352,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3R7OQL9",
       "type": "医疗保健服务;医药保健销售店;医疗保健用品",
       "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "中医推拿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "惠南",
+      "adcode": "310115",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0073239",
+    "company": "钟华保健服务馆(大华锦绣优嘉店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "北蔡镇华鹏路142弄94号1层",
+    "contact_phone": "15601981735",
+    "lat": 31.175896,
+    "lng": 121.523507,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JDCASD58",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "药店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "六里",
+      "adcode": "310115",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0073253",
+    "company": "蕲艾养生保健服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "通济路与惠南西门路交叉口南140米",
+    "contact_phone": "待核实",
+    "lat": 31.045425,
+    "lng": 121.745475,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LBLCOJEY",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "惠南",
+      "adcode": "310115",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "养生保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0073493",
+    "company": "上海市金山区万正堂养生保健服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "枫泾镇朱枫公路8678弄5009号",
+    "contact_phone": "待核实",
+    "lat": 30.910347,
+    "lng": 121.0113,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L2BCL3V7",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "理疗养生馆",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "枫泾",
+      "adcode": "310116",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "养生保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0073496",
+    "company": "艾覃保健服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "金卫镇龙皓路2245号102室艾覃保健服务部",
+    "contact_phone": "13524709333",
+    "lat": 30.745677,
+    "lng": 121.314043,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I05S1KD3",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
       "alias": "",
       "tag": "",
       "keytag": "医疗保健",
       "website": "",
       "email": "",
       "postcode": "",
-      "business_area": "西湖",
-      "adcode": "330102",
+      "business_area": "",
+      "adcode": "310116",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0073999",
+    "company": "真泓保健服务馆",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "长阳路与大连路交叉口西60米(大连路地铁站3号口旁)",
+    "contact_phone": "待核实",
+    "lat": 31.257875,
+    "lng": 121.512425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDTDZ4W8",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所|生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "090000|071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所|生活服务,洗浴推拿场所,洗浴推拿场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "提篮桥",
+      "adcode": "310109",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0074742",
+    "company": "溪源养生保健服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "金海街道嘉园路169弄1号308室",
+    "contact_phone": "15921952368; 18321653559",
+    "lat": 30.956172,
+    "lng": 121.494837,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LB7UZP1L",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "理疗养生馆",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310120",
       "search_keyword": "保健"
     },
     "industry": {
@@ -288,40 +629,424 @@
     "is_manufacturer": false
   },
   {
-    "id": "CN-MFG-0053936",
-    "company": "蜗居养生保健服务部",
+    "id": "CN-MFG-0075522",
+    "company": "古丽沐保健服务部",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
       "保健"
     ],
     "region": {
-      "province": "浙江",
-      "city": "杭州"
+      "province": "上海",
+      "city": "上海"
     },
-    "address": "新风路296-22号",
-    "contact_phone": "13699162858",
-    "lat": 30.293116,
-    "lng": 120.208267,
+    "address": "美丹路与罗芬路交叉口西80米",
+    "contact_phone": "待核实",
+    "lat": 31.402225,
+    "lng": 121.351425,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBF56YTP",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所|医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "071400|090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,洗浴推拿场所,洗浴推拿场所|医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "罗店",
+      "adcode": "310113",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0075529",
+    "company": "上海市宝山区翔伟保健服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "虎林路与共江路交叉口南120米",
+    "contact_phone": "待核实",
+    "lat": 31.330326,
+    "lng": 121.460103,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBMY6HXK",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "泗塘小区",
+      "adcode": "310113",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0075530",
+    "company": "十一谧境保健服务社",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "罗芬路与美丹路交叉口西80米",
+    "contact_phone": "待核实",
+    "lat": 31.402325,
+    "lng": 121.351375,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MA91COXQ",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所|生活服务;生活服务场所;生活服务场所",
+      "typecode": "090000|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所|生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "罗店",
+      "adcode": "310113",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0075999",
+    "company": "上海汇扬足部保健服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南京东路街道浙江中路158号中福城1期10号楼",
+    "contact_phone": "待核实",
+    "lat": 31.233119,
+    "lng": 121.479521,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKQJH44",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "扬州一刀(宁海东路)",
+      "tag": "",
+      "keytag": "足疗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北京路",
+      "adcode": "310101",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0076939",
+    "company": "上海市嘉定区马陆镇玉轩保健服务馆",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "嘉定区宝安公路3705弄28号103室、104室",
+    "contact_phone": "19337415509",
+    "lat": 31.324581,
+    "lng": 121.271305,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
     "status": "verified",
     "is_template": false,
     "note": "",
     "amap": {
-      "poi_id": "B0JGCLR96A",
+      "poi_id": "B0L39HS5R1",
       "type": "生活服务;生活服务场所;生活服务场所",
       "typecode": "070000",
       "alias": "",
       "tag": "",
-      "keytag": "采耳店",
+      "keytag": "理疗养生馆",
       "website": "",
       "email": "",
       "postcode": "",
-      "business_area": "天城路沿线",
-      "adcode": "330102",
+      "business_area": "马陆",
+      "adcode": "310114",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0076967",
+    "company": "和优阁保健服务中心",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "嘉宏公寓东北1门西北60米",
+    "contact_phone": "待核实",
+    "lat": 31.38102,
+    "lng": 121.252086,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M625W9O2",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "嘉定镇",
+      "adcode": "310114",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0076968",
+    "company": "好全保健服务馆",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "樱花街与宝安公路3421弄交叉口东南60米",
+    "contact_phone": "待核实",
+    "lat": 31.326725,
+    "lng": 121.281625,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MAB7T154",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所|生活服务;生活服务场所;生活服务场所",
+      "typecode": "090000|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所|生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "马陆",
+      "adcode": "310114",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0077343",
+    "company": "上海梦之涧保健服务有限公司",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "罗秀路1825号梅陇秀品荟",
+    "contact_phone": "待核实",
+    "lat": 31.126482,
+    "lng": 121.406873,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MD2X7Y5T",
+      "type": "体育休闲服务;休闲场所;休闲场所",
+      "typecode": "080500",
+      "alias": "",
+      "tag": "",
+      "keytag": "体育休闲服务,休闲场所,休闲场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "梅陇",
+      "adcode": "310112",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0078011",
+    "company": "养生保健服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "银河北路9号中宏新农中心小商品市场F1层",
+    "contact_phone": "待核实",
+    "lat": 31.636652,
+    "lng": 120.831474,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KRLYX7P9",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
       "search_keyword": "保健"
     },
     "industry": {
@@ -332,6 +1057,246 @@
       "confidence": "medium",
       "source": "gb_token",
       "evidence": "养生保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0078044",
+    "company": "老刘保健服务",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "振兴路与泗湖路交叉口东南60米",
+    "contact_phone": "待核实",
+    "lat": 31.721625,
+    "lng": 120.990075,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKDOPPY8",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所|生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "090000|071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所|生活服务,洗浴推拿场所,洗浴推拿场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0078054",
+    "company": "顺势保健服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "虞山镇元和路188号4楼行灶桥菜场",
+    "contact_phone": "待核实",
+    "lat": 31.629675,
+    "lng": 120.730825,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUS5C0GY",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所|生活服务;生活服务场所;生活服务场所",
+      "typecode": "090000|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所|生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0078055",
+    "company": "虞山街道茗源保健服务馆",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "湘江东路与嵩山路交叉口东40米",
+    "contact_phone": "待核实",
+    "lat": 31.661225,
+    "lng": 120.751425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDG6N7TK",
+      "type": "体育休闲服务;休闲场所;休闲场所",
+      "typecode": "080500",
+      "alias": "",
+      "tag": "",
+      "keytag": "体育休闲服务,休闲场所,休闲场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0078410",
+    "company": "昆山市玉山镇禾昇保健服务馆",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "柏庐中路406号",
+    "contact_phone": "15051636362",
+    "lat": 31.383508,
+    "lng": 120.964741,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2K7YP5J",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "玉山",
+      "adcode": "320583",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0078446",
+    "company": "苏附眼科视光保健服务",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "新吴街与南新街交叉口西40米",
+    "contact_phone": "待核实",
+    "lat": 31.28465,
+    "lng": 120.946499,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L0P400DS",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "张浦",
+      "adcode": "320583",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "805",
+      "name": "洗浴和保健养生服务",
+      "level": "group",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "保健服务"
     },
     "is_manufacturer": false
   }

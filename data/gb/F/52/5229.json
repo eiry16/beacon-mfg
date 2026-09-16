@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "水果"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "F/52/5229"
   },
   {
     "id": "CN-MFG-0038609",
@@ -94,7 +95,8 @@
       "source": "name",
       "evidence": "食品"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "F/52/5229"
   },
   {
     "id": "CN-MFG-0039623",
@@ -142,7 +144,8 @@
       "source": "name",
       "evidence": "食品"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "F/52/5229"
   },
   {
     "id": "CN-MFG-0028371",
@@ -190,7 +193,8 @@
       "source": "name",
       "evidence": "食品"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "F/52/5229"
   },
   {
     "id": "CN-MFG-0040982",
@@ -238,7 +242,8 @@
       "source": "name",
       "evidence": "食品"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "F/52/5229"
   },
   {
     "id": "CN-MFG-0043536",
@@ -286,7 +291,8 @@
       "source": "name",
       "evidence": "零食"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "F/52/5229"
   },
   {
     "id": "CN-MFG-0060652",
@@ -294,7 +300,8 @@
     "category": "批发和零售业",
     "keywords": [
       "汽修",
-      "汽车修理"
+      "汽车修理",
+      "修车"
     ],
     "region": {
       "province": "浙江",
@@ -335,45 +342,4174 @@
       "source": "name",
       "evidence": "食品"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "F/52/5229"
   },
   {
-    "id": "CN-MFG-0060655",
-    "company": "小拇指汽车快修工场店(德胜食品市场店)",
+    "id": "CN-MFG-0070203",
+    "company": "Nicoo Coffee(水果湖店)",
     "category": "批发和零售业",
     "keywords": [
-      "汽修",
-      "汽车修理"
+      "咖啡馆"
     ],
     "region": {
-      "province": "浙江",
-      "city": "杭州"
+      "province": "湖北",
+      "city": "武汉"
     },
-    "address": "德胜食品市场东南门旁",
-    "contact_phone": "18555080737",
-    "lat": 30.300947,
-    "lng": 120.173996,
+    "address": "水果湖街道东湖路86号长城嘉苑1层14室",
+    "contact_phone": "17720556830",
+    "lat": 30.549807,
+    "lng": 114.348137,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
     "status": "verified",
     "is_template": false,
     "note": "",
     "amap": {
-      "poi_id": "B0L2B7LIHY",
-      "type": "汽车维修;汽车综合维修;汽车综合维修|汽车服务;汽车养护/装饰;汽车养护|汽车服务;洗车场;洗车场",
-      "typecode": "030100|010400|010500",
+      "poi_id": "B0J0PU7JM1",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
       "alias": "",
-      "tag": "",
-      "keytag": "汽车维修",
+      "tag": "coffee",
+      "keytag": "咖啡",
       "website": "",
       "email": "",
       "postcode": "",
-      "business_area": "上塘",
+      "business_area": "水果湖",
+      "adcode": "420106",
+      "search_keyword": "咖啡馆"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "水果"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0074204",
+    "company": "华健保健食品商店",
+    "category": "批发和零售业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "石门一路52号1(南京西路地铁站8号口步行290米)",
+    "contact_phone": "待核实",
+    "lat": 31.225025,
+    "lng": 121.463325,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LD4KGLZE",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "淮海路",
+      "adcode": "310106",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0074484",
+    "company": "启廷保健食品(茅台路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "茅台路776号",
+    "contact_phone": "021-62909293",
+    "lat": 31.210818,
+    "lng": 121.385423,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGU84TF",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "古北",
+      "adcode": "310105",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0074769",
+    "company": "宸豪保健品食品店",
+    "category": "批发和零售业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南桥南星路与育秀路交叉口东南20米",
+    "contact_phone": "待核实",
+    "lat": 30.906285,
+    "lng": 121.457218,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HKXUPNXH",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南桥",
+      "adcode": "310120",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0077234",
+    "company": "溢童保健食品经营部",
+    "category": "批发和零售业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "万源路399号(顾戴路地铁站3号口步行400米)",
+    "contact_phone": "待核实",
+    "lat": 31.138539,
+    "lng": 121.395489,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G2UN1R3A",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "梅陇",
+      "adcode": "310112",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0077688",
+    "company": "菲星澳保健食品商行",
+    "category": "批发和零售业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "莫邪路482号菲星澳保健食品商行",
+    "contact_phone": "0512-65700330; 15150186968",
+    "lat": 31.298901,
+    "lng": 120.645362,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFMHGIZT",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320508",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0078435",
+    "company": "康福来保健食品经营部",
+    "category": "批发和零售业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "玉山镇前浜路43号",
+    "contact_phone": "待核实",
+    "lat": 31.380999,
+    "lng": 120.955326,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL4RFN7",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "人民路",
+      "adcode": "320583",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0080760",
+    "company": "Jolly Bar水果鸡尾酒(中山北路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "中山北路141号",
+    "contact_phone": "17398010170",
+    "lat": 30.261607,
+    "lng": 120.169048,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LD0DFNUQ",
+      "type": "体育休闲服务;体育休闲服务场所;体育休闲服务场所",
+      "typecode": "080000",
+      "alias": "",
+      "tag": "",
+      "keytag": "体育休闲服务,体育休闲服务场所,体育休闲服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西湖",
       "adcode": "330105",
-      "search_keyword": "汽修"
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "水果"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082771",
+    "company": "元祖食品(梦世界店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "嘉松中路6200号1幢1层-A-005",
+    "contact_phone": "15167659482; 17396700153",
+    "lat": 31.148725,
+    "lng": 121.226744,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GR0LYQSL",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,6号团团圆圆鲜奶蛋糕,奶油,芝士,下午茶",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310118",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082845",
+    "company": "GANSO元祖食品(妙境路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "川沙新镇妙境路688号",
+    "contact_phone": "021-38755369; 13817687940",
+    "lat": 31.187367,
+    "lng": 121.691756,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFM1S9E3",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "生日蛋糕,冰淇淋蛋糕",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "川沙",
+      "adcode": "310115",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082859",
+    "company": "元祖食品(国和路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "国和路709号1层1107部位",
+    "contact_phone": "021-65378932; 18221923512",
+    "lat": 31.315357,
+    "lng": 121.520944,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HDA7Y56R",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,西点卷,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,下午茶,奶油,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中原",
+      "adcode": "310110",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082865",
+    "company": "上海元祖食品有限公司淀山湖大道店",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "盈浦街道淀山湖大道859弄35号1层(大发融悦西南门西北90米)",
+    "contact_phone": "021-33269618; 18717834102",
+    "lat": 31.135167,
+    "lng": 121.084558,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HBG5DLS1",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号团团圆圆鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,西点卷,下午茶,奶油,提拉米苏,芝士",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310118",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082876",
+    "company": "元祖食品(奉贤店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南桥镇人民南路302号,近南奉公路",
+    "contact_phone": "021-67118032; 13331851085",
+    "lat": 30.909888,
+    "lng": 121.461106,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00154D68I",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,芝士,冰淇淋蛋糕,奶油,下午茶",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "环城东路",
+      "adcode": "310120",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082899",
+    "company": "元祖食品(崇明店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "西点"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "八一路308号,近人民路",
+    "contact_phone": "021-39611509",
+    "lat": 31.622935,
+    "lng": 121.39646,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00154D68H",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "雪月饼,粽子,蛋糕,下午茶,芝士,奶油",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "城桥",
+      "adcode": "310151",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082917",
+    "company": "元祖食品(新松江路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "新松江路925弄开元地中海商业广场一层1007号",
+    "contact_phone": "021-57878210",
+    "lat": 31.038532,
+    "lng": 121.218952,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL4EJ1K",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,【圣诞爆品,苹安果,奶油,下午茶,芝士,提拉米苏",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新松江路",
+      "adcode": "310117",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0082928",
+    "company": "白玉兰食品(日月光中心店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "徐家汇路618号日月光中心B2",
+    "contact_phone": "13262212327",
+    "lat": 31.206962,
+    "lng": 121.468017,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJ7Z4TC",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "大麻球,小龙虾,点心,青团,面皮",
+      "keytag": "中式糕点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "五里桥",
+      "adcode": "310101",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083090",
+    "company": "GANSO元祖食品(吴江万宝店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "长板路829号",
+    "contact_phone": "0512-63664157",
+    "lat": 31.12972,
+    "lng": 120.645085,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I36CA4GJ",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号阳光朵朵鲜奶蛋糕,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,生日蛋糕,冰淇淋蛋糕",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320509",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083096",
+    "company": "元祖食品(湖东店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "钟慧路108号102室",
+    "contact_phone": "0512-69333886",
+    "lat": 31.315541,
+    "lng": 120.73397,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020017QQD",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "巧克力慕斯,水果,抹茶慕斯,大福红豆味,绿豆糕,慕斯蛋糕,蜂蜜蛋糕,巨无霸泡芙,肉松卷,大福,虎皮卷,抹茶红豆卷,优酪蛋糕,元祖菌菇龙粽,脱兔戏月月饼,奶油,下午茶,冰淇淋蛋糕,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "湖东",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083102",
+    "company": "元祖食品(长安路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "长安路130-136号",
+    "contact_phone": "0512-58109150",
+    "lat": 31.870813,
+    "lng": 120.545254,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02000K49G",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "方块慕斯,泡芙,元祖菌菇龙粽,元祖台湾龙粽,三角慕斯蛋糕,卤水鸭饭,咖啡卷,小方慕思,小方慕斯蛋糕,巧米卷,抹茶卷,柳橙慕思蛋糕,水果之恋,玫瑰油鸡饭,瑶柱白切鸡饭,下午茶,奶油,芝士",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083107",
+    "company": "元祖食品(苏州苏悦广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "苏州大道西118号",
+    "contact_phone": "0512-61238817",
+    "lat": 31.315484,
+    "lng": 120.668713,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I1XAO98D",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,奶油,芝士,下午茶",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区金鸡湖中央商务区",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083113",
+    "company": "江苏元祖食品有限公司苏州木渎店",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "木渎镇中山西路15号(木渎人民医院西侧100米)",
+    "contact_phone": "0512-69333163",
+    "lat": 31.255132,
+    "lng": 120.514052,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02001BR3M",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,西点卷,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,芝士,下午茶,奶油",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "木渎",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083120",
+    "company": "元祖食品(苏州大运城店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "木渎镇中山东路88号大运商业广场3幢1-011,1-012,1-015,1-037室",
+    "contact_phone": "0512-66176551; 18052625892",
+    "lat": 31.257859,
+    "lng": 120.534834,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GUSPKHKE",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,【圣诞爆品,苹安果,西点卷,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,冰淇淋蛋糕,奶油,提拉米苏,下午茶,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "木渎",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083126",
+    "company": "GANSO元祖食品(平江新城店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "苏锦街道莲升路777号平江天地中心8幢101室1层1-24A-2号",
+    "contact_phone": "0512-65107702; 17768001507",
+    "lat": 31.34232,
+    "lng": 120.609009,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H1ZZ5Z62",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "定胜糕,冰淇淋蛋糕",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "平江悦",
+      "adcode": "320508",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083132",
+    "company": "江苏元祖食品有限公司苏州吴中店",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "月浜街45号",
+    "contact_phone": "0512-66353597",
+    "lat": 31.267891,
+    "lng": 120.635542,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02000ITXH",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "雪月饼,肉松小西点卷,冰皮,绿豆糕,元祖菌菇龙粽,三角慕斯蛋糕,甜心蛋糕,瑶柱白切鸡饭,蜜汁鸡翅饭,冰淇淋蛋糕,香槟葡萄卷,蜜汁叉烧饭,柳橙慕思蛋糕,咖啡卷,鲜奶蛋糕,下午茶,提拉米苏,芝士,奶油",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "东吴北路",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083138",
+    "company": "元祖食品(港区店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "金港镇紫金国际2幢M01",
+    "contact_phone": "0512-58970177",
+    "lat": 31.947412,
+    "lng": 120.424438,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I03AVI3W",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,【圣诞爆品,苹安果,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,奶油,提拉米苏,芝士,下午茶",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083144",
+    "company": "元祖食品(金河国际店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "狮山路35号1幢107室",
+    "contact_phone": "0512-65853108; 15050138806; 17751115773",
+    "lat": 31.293114,
+    "lng": 120.569282,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGWJ8B8",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,西点卷,芝士,下午茶,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "玉山路",
+      "adcode": "320505",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083156",
+    "company": "元祖食品(吴江店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "中山北路5号(三角井对面)",
+    "contact_phone": "0512-63318776",
+    "lat": 31.160398,
+    "lng": 120.643511,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02000ITK7",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,西点卷,【圣诞爆品,苹安果,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,下午茶,奶油,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "松陵",
+      "adcode": "320509",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083162",
+    "company": "元祖食品(太仓店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "人民南路3号(华联商场对面)",
+    "contact_phone": "0512-53514317",
+    "lat": 31.445786,
+    "lng": 121.108612,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02001AZM3",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "慕斯蛋糕,雪月饼,绿豆糕,元祖菌菇龙粽,慕斯,冰激凌蛋糕,元祖雪月饼,下午茶,芝士,提拉米苏,奶油",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083164",
+    "company": "元祖食品(黄埭店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "黄埭镇方桥路8号观湖湾家园21幢109、110",
+    "contact_phone": "0512-69577417",
+    "lat": 31.417595,
+    "lng": 120.561517,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJ8UQGS",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,奶油,芝士,下午茶",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083165",
+    "company": "元祖食品(中楠都汇店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "长江北路与萧林路交汇处中楠都汇广场一楼",
+    "contact_phone": "0512-36830357; 15995905921",
+    "lat": 31.402851,
+    "lng": 120.979974,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI55XRV",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "元祖脆雪月,下午茶,提拉米苏,芝士,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083166",
+    "company": "元祖食品(苏州圆融时代店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "旺墩路圆融时代广场24栋B区苏州平安财富中心大堂内",
+    "contact_phone": "0512-66097967",
+    "lat": 31.321784,
+    "lng": 120.711425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I10A0LOI",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,下午茶,奶油,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "湖东",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083167",
+    "company": "元祖食品(苏州浒关店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "浒墅关兴贤路199号汇金广场3号楼1层100-2号",
+    "contact_phone": "0512-65574697",
+    "lat": 31.366373,
+    "lng": 120.503025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GR0HV2C1",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号团团圆圆鲜奶蛋糕,【圣诞爆品,苹安果,6号女神驾到鲜奶蛋糕,西点卷,下午茶,提拉米苏,芝士,冰淇淋蛋糕,奶油",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320505",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083168",
+    "company": "元祖食品(唯亭店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "金陵西路388号01幢113室元祖食品",
+    "contact_phone": "0512-67236736",
+    "lat": 31.359626,
+    "lng": 120.790377,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJXVFHX",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "西点卷,【圣诞爆品,苹安果,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,点心,下午茶,芝士,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083169",
+    "company": "元祖食品(花桥店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "花桥镇商务大道99号中信广场5号楼1室",
+    "contact_phone": "0512-50157760",
+    "lat": 31.289042,
+    "lng": 121.124089,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIQFZD9",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,下午茶,奶油,提拉米苏,点心,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083170",
+    "company": "元祖食品(凤凰店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "凤凰街45号(近十全街)",
+    "contact_phone": "0512-65222744; 17714275030; 18952259587",
+    "lat": 31.299932,
+    "lng": 120.632301,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020006ELG",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "雪月饼,虎皮蛋糕卷,抹茶慕斯,巨无霸泡芙,优酪球,大福红豆味,绿豆糕,巧克力慕斯,抹茶红豆卷,水果,蜂蜜蛋糕,肉松卷,优酪蛋糕,蛋黄酥,元祖菌菇龙粽,下午茶,奶油,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "南门",
+      "adcode": "320508",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083171",
+    "company": "GANSO元祖食品(嘉元路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "嘉元路609号",
+    "contact_phone": "18118159198",
+    "lat": 31.371105,
+    "lng": 120.631993,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG8ENJ7",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "慕斯蛋糕,冰淇淋蛋糕,绿豆糕",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083194",
+    "company": "GANSO元祖食品(星悦里店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "天佑路9号2幢星悦里商场131号铺,商厂外围1楼",
+    "contact_phone": "0512-68380222; 18100685159",
+    "lat": 31.345086,
+    "lng": 120.437318,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JD4CTEU0",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "蛋糕面包",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320505",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083212",
+    "company": "元祖食品(昆山衡山路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "衡山路923号",
+    "contact_phone": "0512-55387087",
+    "lat": 31.361695,
+    "lng": 120.955407,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IURHL05I",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,【圣诞爆品,苹安果,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,下午茶,提拉米苏,奶油,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "玉山",
+      "adcode": "320583",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083225",
+    "company": "元祖食品(石湖金陵广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "南溪江路88号石湖金陵广场D1幢1F层112室",
+    "contact_phone": "17715545773; 18662476124",
+    "lat": 31.215813,
+    "lng": 120.603387,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3C45TQW",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "6号女神驾到鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,【圣诞爆品,苹安果,西点卷,提拉米苏,芝士,下午茶,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083240",
+    "company": "元祖食品(友联店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "长吴路101号",
+    "contact_phone": "0512-68219717",
+    "lat": 31.271317,
+    "lng": 120.609108,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJEZE7H",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,西点卷,【圣诞爆品,苹安果,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,下午茶,奶油,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙西",
+      "adcode": "320508",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083246",
+    "company": "江苏元祖食品有限公司(阳光天地店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "环尹山湖路1688号(阳光天地商业广场2幢101室)",
+    "contact_phone": "18962509489",
+    "lat": 31.246034,
+    "lng": 120.697821,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L6X7SCAN",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083260",
+    "company": "元祖食品(首开幸福广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "苏州吴中经济开发区城南街道国风花苑32幢156室",
+    "contact_phone": "0512-67777087; 17772246118",
+    "lat": 31.222739,
+    "lng": 120.623903,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H0DCA7OI",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,提拉米苏,下午茶,奶油,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "城南",
+      "adcode": "320506",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0083271",
+    "company": "元祖食品(太仓万达店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "上海东路180号星耀之光1幢S1-1室一楼元祖食品",
+    "contact_phone": "0512-53427667",
+    "lat": 31.458685,
+    "lng": 121.137007,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I6GUDWYL",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,西点卷,【圣诞爆品,苹安果,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,芝士,提拉米苏,下午茶,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0084060",
+    "company": "元祖食品(海珠保利花园店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "工业大道中404号榕苑",
+    "contact_phone": "19966205330",
+    "lat": 23.072061,
+    "lng": 113.27552,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L6MOTMSS",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号团团圆圆鲜奶蛋糕,6号女神驾到鲜奶蛋糕,西点卷,【圣诞爆品,苹安果,提拉米苏,芝士,下午茶,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "工业大道沿线",
+      "adcode": "440105",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0084591",
+    "company": "元祖食品(杭州西溪龙湖店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "双龙街180-182号(天街公寓3号楼一楼商铺)",
+    "contact_phone": "0571-88978516; 19157857823",
+    "lat": 30.29212,
+    "lng": 120.069232,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HB4U8AAF",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,6号团团圆圆鲜奶蛋糕,西点卷,下午茶,冰淇淋蛋糕,奶油,生日蛋糕,芝士,提拉米苏",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西溪",
+      "adcode": "330106",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0084638",
+    "company": "知味观食品(文一路分店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "文一路403号",
+    "contact_phone": "0571-89055667",
+    "lat": 30.28751,
+    "lng": 120.12333,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGJHPDK",
+      "type": "购物服务;便民商店/便利店;便民商店/便利店",
+      "typecode": "060200",
+      "alias": "",
+      "tag": "",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "古翠文一片区",
+      "adcode": "330106",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0084692",
+    "company": "元祖食品(桐庐店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "迎春南路498号",
+    "contact_phone": "0571-64668710; 19032284958",
+    "lat": 29.796207,
+    "lng": 119.687421,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B14TOU",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,芝士,下午茶,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330122",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0084698",
+    "company": "元祖食品(萧山白马公寓店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "北干街道工人路925号一层",
+    "contact_phone": "0571-86618551",
+    "lat": 30.179933,
+    "lng": 120.260315,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HAZZ4OWR",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,下午茶,奶油,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "市心中路",
+      "adcode": "330109",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0084700",
+    "company": "元祖食品(萧山店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "西河路78号",
+    "contact_phone": "0571-82636652",
+    "lat": 30.162261,
+    "lng": 120.265032,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B14VQA",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,西点卷,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,奶油,下午茶,芝士,提拉米苏",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "萧绍路",
+      "adcode": "330109",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0084703",
+    "company": "元祖食品(杭州闲林店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "闲林街道悦汀蓝商铺闲富中路253号元祖食品(杭州闲林店)",
+    "contact_phone": "0571-85780672; 15356173760",
+    "lat": 30.225917,
+    "lng": 119.983829,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HRXDT66U",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,【圣诞爆品,苹安果,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,下午茶,芝士,提拉米苏,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "闲林",
+      "adcode": "330110",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0084705",
+    "company": "元祖食品(杭州义蓬店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "义蓬街道义蓬中路512-514号一层",
+    "contact_phone": "0571-85390889",
+    "lat": 30.269549,
+    "lng": 120.491093,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IDMHVWI4",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,【圣诞爆品,苹安果,芝士,下午茶,冰淇淋蛋糕,奶油,提拉米苏",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "义蓬",
+      "adcode": "330114",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085046",
+    "company": "元祖食品(余姚四明店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "四明西路141号(四明西路和大黄桥南路交界处)",
+    "contact_phone": "0574-62623016",
+    "lat": 30.028769,
+    "lng": 121.153715,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E0YNLO",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "绿豆糕,甜心蛋糕,元祖旺来凤梨酥,元祖牛轧,元祖小西点卷,元祖台湾龙粽,元祖菌菇龙粽,坚果酥,瑶柱白切鸡饭,香槟葡萄卷,蜜汁鸡翅饭,蜜汁叉烧饭,柳橙慕思蛋糕,咖啡卷,虎皮卷,下午茶,提拉米苏,芝士,奶油",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "兰江",
+      "adcode": "330281",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085052",
+    "company": "元祖食品(周巷店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "周巷镇兴业南路16-18号,肯德基斜对面",
+    "contact_phone": "0574-63330676",
+    "lat": 30.168306,
+    "lng": 121.132327,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E0YLOM",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "绿豆糕,元祖菌菇龙粽,元祖台湾龙粽,冰淇淋蛋糕,铜锣烧,雪月饼,三角慕斯蛋糕,奶油,芝士,下午茶",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "周巷",
+      "adcode": "330282",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085057",
+    "company": "元祖食品(余姚店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "阳明东路70号,天主教堂对面",
+    "contact_phone": "0574-62623527",
+    "lat": 30.049732,
+    "lng": 121.160242,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E05LWV",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "绿豆糕,脆皮烧肉饭,卤水鸭饭,三角慕斯蛋糕,盐水鸭饭,甜心蛋糕,瑶柱白切鸡饭,抹茶栗子,香槟葡萄卷,蜜汁鸡翅饭,蜜汁叉烧饭,柳橙慕思蛋糕,巧克力蛋糕卷,咖啡卷,奶油,芝士,下午茶,提拉米苏",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085063",
+    "company": "元祖食品(慈溪店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "三北西大街11-13号",
+    "contact_phone": "0574-63028716",
+    "lat": 30.173966,
+    "lng": 121.249754,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J3HAPIDA",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号团团圆圆鲜奶蛋糕,【圣诞爆品,苹安果,西点卷,6号女神驾到鲜奶蛋糕,巧克力,下午茶,奶油,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "浒山",
+      "adcode": "330282",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085069",
+    "company": "元祖食品(观城店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "观海卫路209-212号",
+    "contact_phone": "0574-63615117",
+    "lat": 30.167915,
+    "lng": 121.407672,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E0YA5D",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "三角慕斯蛋糕,绿豆糕,雪月饼,冰淇淋蛋糕,元祖菌菇龙粽,铜锣烧,奶油,下午茶,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "观海卫",
+      "adcode": "330282",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085075",
+    "company": "元祖食品(港隆广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "沧海路66号(港隆广场对面)",
+    "contact_phone": "0574-87561860",
+    "lat": 29.884085,
+    "lng": 121.602673,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHFD7XB",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,西点卷,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,下午茶,提拉米苏,奶油,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "高新区",
+      "adcode": "330212",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085081",
+    "company": "元祖食品(翠柏店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "翠柏路210号(龙成翠柏小区西南门旁)",
+    "contact_phone": "0574-87157708",
+    "lat": 29.882713,
+    "lng": 121.53471,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E0XLKZ",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "芝士蛋糕,生日蛋糕,水果蛋糕,铜锣烧,威化饼脆雪月,煎饼雪月,抹茶慕斯,元祖菌菇龙粽,抹茶泡芙,乳酪条,花生糯米糍,提拉米苏,芝士,下午茶,奶油,牛肉",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "翠柏路沿线",
+      "adcode": "330203",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085087",
+    "company": "元祖食品(宁波天一店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "药行街116号1-1号(天主堂南1门旁)",
+    "contact_phone": "0574-87165910",
+    "lat": 29.867861,
+    "lng": 121.554045,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H6BZF3NY",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,6号团团圆圆鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,芝士,麻薯,下午茶,奶油,提拉米苏",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江厦",
+      "adcode": "330203",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085093",
+    "company": "元祖食品(奉化店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "区南山路125号(天艺文化产业园A座东南门旁)",
+    "contact_phone": "0574-88503553",
+    "lat": 29.666315,
+    "lng": 121.41195,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E0YH8I",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "绿豆糕,冰淇淋蛋糕,虎皮卷,元祖旺来凤梨酥,香槟葡萄卷,元祖菌菇龙粽,肉松小西点卷,芝士不凡8号慕思蛋糕,玫瑰油鸡饭,金牌烧鸭饭,花苑然然6号鲜奶蛋糕,巧米卷,元祖小西点卷,金沙排骨饭,水果之恋,提拉米苏,芝士,下午茶,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "奉化银泰城",
+      "adcode": "330213",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085099",
+    "company": "元祖食品(宁海店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "学勉南路126-128号",
+    "contact_phone": "0574-65598816",
+    "lat": 29.302335,
+    "lng": 121.443249,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GKPGVE1Z",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "6号女神驾到鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,西点卷,奶油,芋泥",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "桃源",
+      "adcode": "330226",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085105",
+    "company": "元祖食品(宁波钱湖北路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "钱湖北路908号36幢53号(华泰剑桥·康河流水东3门旁)",
+    "contact_phone": "0574-88088982",
+    "lat": 29.823065,
+    "lng": 121.56753,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IDMAXVTU",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,【圣诞爆品,苹安果,6号女神驾到鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,提拉米苏,下午茶,奶油,芝士",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "鄞州高教园区",
+      "adcode": "330212",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085111",
+    "company": "元祖食品(宁波江北店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "天沁路30-32号(东方公馆北1门西120米)",
+    "contact_phone": "0574-87027517",
+    "lat": 29.918328,
+    "lng": 121.540389,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J6DDC5E3",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,【圣诞爆品,苹安果,6号团团圆圆鲜奶蛋糕,6号女神驾到鲜奶蛋糕,下午茶,芝士,奶油,提拉米苏",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330205",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085201",
+    "company": "元祖食品(宁波镇海店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "车站路45号1-2室47(广洋海尚国际北门旁)",
+    "contact_phone": "0574-86660577; 18957410131",
+    "lat": 29.950724,
+    "lng": 121.709769,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H3UD7172",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号女神驾到鲜奶蛋糕,西点卷,6号团团圆圆鲜奶蛋糕,奶油,芝士,下午茶,提拉米苏",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "城关",
+      "adcode": "330211",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085697",
+    "company": "大姆指食品(苏坑烘培店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东城街道常平镇苏坑湖南队(A132号)",
+    "contact_phone": "0769-81899443",
+    "lat": 22.966305,
+    "lng": 113.957892,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF5675L",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "锦上添花月饼自提券,莞邑味道月饼自提券,月满莞邑月饼自提券,手提盒蛋卷,大姆指锦上添花月饼提货劵,大姆指锦上添花包邮劵,大姆指莞邑味道包邮劵,大姆指月满莞邑月饼自提劵,大姆指月满莞邑月饼提货劵,大姆指月满莞邑月饼包邮劵,大姆指喜悦团圆月饼自提劵,大姆指喜悦团圆月饼提货劵,大姆指喜悦团圆月饼包邮劵,喜悦团圆月饼自提券,大姆指锦上添花自提劵,菠萝包,甜甜圈",
+      "keytag": "西式糕点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086596",
+    "company": "元祖食品(卫清店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "卫清西路280号",
+    "contact_phone": "021-59717591",
+    "lat": 30.72991,
+    "lng": 121.34631,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00155LDJ4",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,西点卷,6号女神驾到鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,下午茶,提拉米苏,芝士,奶油",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "卫清路",
+      "adcode": "310116",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086603",
+    "company": "元祖食品(延长路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "延长路102号1层",
+    "contact_phone": "021-66696727",
+    "lat": 31.27346,
+    "lng": 121.461164,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJNOW3A",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,下午茶,芝士,奶油,生日蛋糕",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "和田",
+      "adcode": "310106",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086604",
+    "company": "白玉兰食品(上海白玉兰广场购物中心店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "北外滩街道东长治路588号白玉兰广场LG2-M59-60",
+    "contact_phone": "13817684254",
+    "lat": 31.249157,
+    "lng": 121.497753,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFK40CWW",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "扬州炒饭,生煎,面点,面皮,香肠",
+      "keytag": "面包",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北外滩",
+      "adcode": "310109",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086642",
+    "company": "元祖食品(金高路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "金高路503号1层",
+    "contact_phone": "021-58692218",
+    "lat": 31.290201,
+    "lng": 121.61074,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00157I3J9",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "西点卷,【圣诞爆品,苹安果,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,提拉米苏,生日蛋糕,芝士,下午茶,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "高行",
+      "adcode": "310115",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086650",
+    "company": "元祖食品(经地路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "经地路99弄经纬汇3号橙色楼1层3118-2室",
+    "contact_phone": "13761212358",
+    "lat": 31.323918,
+    "lng": 121.399224,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KRRCWHDO",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,西点卷,6号团团圆圆鲜奶蛋糕,6号女神驾到鲜奶蛋糕,奶油,芝士,下午茶,提拉米苏",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "上海大学",
+      "adcode": "310113",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086652",
+    "company": "元祖食品(南奉公路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南奉公路8505号星雨城时代广场第一层1F-A-02号商铺",
+    "contact_phone": "15026668324",
+    "lat": 30.91666,
+    "lng": 121.484979,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJ69K40",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号团团圆圆鲜奶蛋糕,【圣诞爆品,苹安果,6号女神驾到鲜奶蛋糕,西点卷,提拉米苏,芝士,下午茶,奶油",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南桥",
+      "adcode": "310120",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086724",
+    "company": "元祖食品(张家港店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "杨舍西街1号(河西路交叉口)",
+    "contact_phone": "0512-58126297",
+    "lat": 31.862834,
+    "lng": 120.546487,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020007NJ5",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "泡芙,绿豆糕,元祖菌菇龙粽,脆皮烧肉饭,卤水鸭饭,三角慕斯蛋糕,盐水鸭饭,瑶柱白切鸡饭,香槟葡萄卷,蜜汁鸡翅饭,蜜汁叉烧饭,柳橙慕思蛋糕,咖啡卷,虎皮卷,肉松小西点卷,芝士,下午茶,奶油,提拉米苏,柠檬",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "步行街",
+      "adcode": "320582",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086754",
+    "company": "元祖食品(苏州太湖中心店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "太湖旅游度假区香山路16号540幢太湖中心MallL1-4B号",
+    "contact_phone": "0512-65255990; 17751114312",
+    "lat": 31.222225,
+    "lng": 120.416875,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L2F71OCF",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "多肉森林鲜奶蛋糕,6号女神驾到鲜奶蛋糕,西点卷,马上有福鲜奶蛋糕,女生驾到鲜奶蛋糕,马上发鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,提拉米苏,芝士,下午茶,奶油",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086761",
+    "company": "元祖食品(盛泽店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "盛泽镇舜湖中路568号",
+    "contact_phone": "0512-63530701",
+    "lat": 30.903133,
+    "lng": 120.65561,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020019YAP",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "6号阳光朵朵鲜奶蛋糕,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,提拉米苏,芝士,下午茶,奶油,巧克力",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "盛泽",
+      "adcode": "320509",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0086981",
+    "company": "元祖食品(水榭天地店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "民治街道大岭社区水榭春天花园三期11栋",
+    "contact_phone": "17381569432",
+    "lat": 22.628838,
+    "lng": 114.025783,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M655IT6H",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,6号团团圆圆鲜奶蛋糕,6号女神驾到鲜奶蛋糕,芝士,奶油,下午茶,提拉米苏",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙华",
+      "adcode": "440309",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0087298",
+    "company": "元祖食品(清泰店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "清泰街503号,与佑圣观路交叉口广发银行旁",
+    "contact_phone": "0571-87083654",
+    "lat": 30.24716,
+    "lng": 120.175945,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B16BGB",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,【圣诞爆品,苹安果,芝士,奶油,下午茶",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "西湖",
+      "adcode": "330102",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0087356",
+    "company": "元祖食品(杭州丁桥店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "明珠街412号(置鼎时代中心北区南门东50米)",
+    "contact_phone": "0571-85361055",
+    "lat": 30.351731,
+    "lng": 120.229801,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJ69TU8",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,西点卷,奶油,提拉米苏,下午茶,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丁桥",
+      "adcode": "330102",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0087375",
+    "company": "元祖食品(云水听涛店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "钱塘新区白杨街道听涛路130号",
+    "contact_phone": "0571-87116881",
+    "lat": 30.297005,
+    "lng": 120.384013,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H3SHKHKZ",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,奶油,巧克力,下午茶,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "白杨",
+      "adcode": "330114",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0087501",
+    "company": "元祖食品(宁波北仑店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "新碶街道新大路598号1层",
+    "contact_phone": "待核实",
+    "lat": 29.902959,
+    "lng": 121.827161,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFCRGJI",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "下午茶,奶油,提拉米苏,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新碶",
+      "adcode": "330206",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0087683",
+    "company": "大姆指食品(康湖店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "面包"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "黄江镇社贝村社贝路A18号",
+    "contact_phone": "0769-83636443",
+    "lat": 22.915197,
+    "lng": 114.032089,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF49XPZ",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "风味田园,美满时刻,香芒如密,天使心,甜心,美味经典,圣罗兰,阳光恋曲,浓情蜜意,栗香森林蛋糕,面包蛋糕,菠萝包,点心",
+      "keytag": "西式糕点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "面包"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0088262",
+    "company": "GANSO元祖食品(世茂店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "蛋糕"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "闽江东路10-5",
+    "contact_phone": "0512-52318862; 18013278862",
+    "lat": 31.667305,
+    "lng": 120.775589,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I09SLPK6",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "巧克力,小蛋糕,冰淇淋蛋糕",
+      "keytag": "早餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
+      "search_keyword": "蛋糕"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0088719",
+    "company": "元祖食品(杭州文三店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "古墩路107号-8(浙商财富中心2号楼正门北150米)",
+    "contact_phone": "0571-86935883",
+    "lat": 30.273492,
+    "lng": 120.101091,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H2NUER1R",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,西点卷,6号团团圆圆鲜奶蛋糕,6号女神驾到鲜奶蛋糕,下午茶,芝士,奶油,提拉米苏",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西湖",
+      "adcode": "330106",
+      "search_keyword": "蛋糕"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0088726",
+    "company": "元祖食品(高桥店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "拱秀路136号",
+    "contact_phone": "0571-82653119; 13606717890; 18967180982",
+    "lat": 30.155635,
+    "lng": 120.27284,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B06WDR",
+      "type": "餐饮服务;糕饼店;糕饼店|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050800|060000",
+      "alias": "",
+      "tag": "西点卷,6号女神驾到鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,冰淇淋蛋糕,奶油,提拉米苏,芝士,下午茶",
+      "keytag": "蛋糕店",
+      "website": "www.ganso.com.cn",
+      "email": "",
+      "postcode": "",
+      "business_area": "道源路",
+      "adcode": "330109",
+      "search_keyword": "蛋糕"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0088728",
+    "company": "元祖食品(杭州北景园店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "东新路1006号",
+    "contact_phone": "0571-87792098",
+    "lat": 30.338439,
+    "lng": 120.183968,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IU7SFUXN",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "【圣诞爆品,苹安果,西点卷,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,下午茶,奶油,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "杭州新天地",
+      "adcode": "330105",
+      "search_keyword": "蛋糕"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0088730",
+    "company": "元祖食品(滨江春晓路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "春晓路466-1号(江南体育中心对面)",
+    "contact_phone": "0571-87880115",
+    "lat": 30.203618,
+    "lng": 120.214037,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF4P81Q",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "西点卷,吟紫鸢鲜奶蛋糕（6寸）,8号多肉森林鲜奶蛋糕,6号最佳笋友鲜奶蛋糕,6号郁见幸福鲜奶蛋糕,6号奥利奥鲜奶蛋糕,8号驰骋人生鲜奶蛋糕,6号团团圆圆鲜奶蛋糕,6号阳光朵朵鲜奶蛋糕,6号女神驾到鲜奶蛋糕,【圣诞爆品,苹安果,奶油,巧克力,下午茶,芝士",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西兴",
+      "adcode": "330108",
+      "search_keyword": "蛋糕"
     },
     "industry": {
       "code": "5229",

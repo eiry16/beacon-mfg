@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "糖果"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/14/1421"
   },
   {
     "id": "CN-MFG-0044514",
@@ -83,6 +84,155 @@
       "business_area": "长顺街",
       "adcode": "510105",
       "search_keyword": "游乐园"
+    },
+    "industry": {
+      "code": "1421",
+      "name": "糖果、巧克力制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 糖果、巧克力及蜜饯制造 > 糖果、巧克力制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "巧克力"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/14/1421"
+  },
+  {
+    "id": "CN-MFG-0075353",
+    "company": "福予FORU巧克力&咖啡",
+    "category": "制造业",
+    "keywords": [
+      "咖啡店"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "呼青路158弄交运智慧湾26号楼-3单元",
+    "contact_phone": "18221800348",
+    "lat": 31.345268,
+    "lng": 121.441777,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L60UJPWC",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "单人餐,巧克力",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "通河",
+      "adcode": "310113",
+      "search_keyword": "咖啡店"
+    },
+    "industry": {
+      "code": "1421",
+      "name": "糖果、巧克力制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 糖果、巧克力及蜜饯制造 > 糖果、巧克力制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "巧克力"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0082770",
+    "company": "yeetchoco2重巧克力蛋糕",
+    "category": "制造业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "陕西南路71号(陕西南路地铁站2号口步行190米)",
+    "contact_phone": "19921450899",
+    "lat": 31.218031,
+    "lng": 121.458534,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKXHMMK7",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "淮海路",
+      "adcode": "310101",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "1421",
+      "name": "糖果、巧克力制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 糖果、巧克力及蜜饯制造 > 糖果、巧克力制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "巧克力"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0082776",
+    "company": "yeetchoco巧克力蛋糕",
+    "category": "制造业",
+    "keywords": [
+      "烘焙",
+      "蛋糕",
+      "西点"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "愚园路1280弄23号1楼",
+    "contact_phone": "19921492366",
+    "lat": 31.21946,
+    "lng": 121.425048,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAF9170T",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "巧克力蛋糕",
+      "keytag": "西式糕点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中山公园",
+      "adcode": "310105",
+      "search_keyword": "烘焙"
     },
     "industry": {
       "code": "1421",

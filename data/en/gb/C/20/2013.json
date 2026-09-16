@@ -130,32 +130,6 @@
     "_bucket": "C/20/2013"
   },
   {
-    "id": "CN-MFG-0012949",
-    "company_en": "Nanjing Xinshengfa Stainless Steel Aluminum Sheet",
-    "category": "钣金冲压",
-    "category_en": "Sheet Metal & Stamping",
-    "keywords_en": [
-      "laser cutting"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Nanjing"
-    },
-    "address_en": "Jinbei Stainless Steel Processing Base, Taishan Street",
-    "contact_phone": "18051081258",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "2013",
-      "name_en": null,
-      "level": "class",
-      "name": "单板加工",
-      "confidence": "high"
-    },
-    "_bucket": "C/20/2013"
-  },
-  {
     "id": "CN-MFG-0014508",
     "company_en": "Nanjing Xinshengfa Stainless Steel Aluminum Composite Panel",
     "category": "原材料",
@@ -382,6 +356,15 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/20/2013"
+    "_bucket": "C/20/2013",
+    "industry": {
+      "code": "2013",
+      "name": "单板加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 单板加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "单板"
+    }
   }
 ]

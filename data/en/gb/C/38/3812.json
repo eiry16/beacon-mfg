@@ -182,33 +182,6 @@
     "_bucket": "C/38/3812"
   },
   {
-    "id": "CN-MFG-0017571",
-    "company_en": "Qidong Electric Tools Hardware-Repair Motors",
-    "category": "标准件",
-    "category_en": "Standard Parts",
-    "keywords_en": [
-      "screw",
-      "bolt"
-    ],
-    "region": {
-      "province": "Zhejiang",
-      "city": "Hangzhou"
-    },
-    "address_en": "No. 102, Building 16, Luyin Guangnianfu, Baiyang Street",
-    "contact_phone": "18989864988",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3812",
-      "name_en": "Electric Motors",
-      "level": "class",
-      "name": "电动机制造",
-      "confidence": "medium"
-    },
-    "_bucket": "C/38/3812"
-  },
-  {
     "id": "CN-MFG-0017758",
     "company_en": "Qidong Electric Tools Hardware - Motor Repair",
     "category": "原材料",
@@ -410,7 +383,16 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/38/3812"
+    "_bucket": "C/38/3812",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    }
   },
   {
     "id": "CN-MFG-0033776",
@@ -429,6 +411,213 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/38/3812"
+    "_bucket": "C/38/3812",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    }
+  },
+  {
+    "id": "CN-MFG-0064569",
+    "company_en": "Hengxing Urgent Repair of Motors (Xitou Avenue Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Automotive Repair",
+      "Auto Repair",
+      "Automotive Repairing"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Foshan"
+    },
+    "address_en": "No. 23 Gangtou, Zhangcha 4th Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-15",
+    "note_en": "",
+    "_bucket": "C/38/3812",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "马达"
+    }
+  },
+  {
+    "id": "CN-MFG-0075168",
+    "company_en": "Jiangyin Jiehua Electromotor Plastic",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 6 Shenkou Port",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/38/3812",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    }
+  },
+  {
+    "id": "CN-MFG-0089408",
+    "company_en": "Weixiu Air Conditioner Motor Repair",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Home Appliance Repair"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 1, Xisan Xiang, Shangshangmen Community, Shaniyu Garden, Yanluo Street",
+    "contact_phone": "18824393825",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/38/3812",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    }
+  },
+  {
+    "id": "CN-MFG-0089448",
+    "company_en": "Chengxing Home Appliance Electrical and Air Conditioning Repair Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Home Appliance Repair"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 259, Pinglong East Road, Pinghu Street",
+    "contact_phone": "13926589473",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/38/3812",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    }
+  },
+  {
+    "id": "CN-MFG-0089598",
+    "company_en": "Huawen Air Conditioner Motor Repair",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Home Appliance Repair"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 44, Changhong East Road, Jiahe",
+    "contact_phone": "13710526308",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/38/3812",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "马达"
+    }
+  },
+  {
+    "id": "CN-MFG-0089923",
+    "company_en": "Repair Home Appliance Electrical and Electric Tools",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Home Appliance Repair"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "60 meters southeast of the intersection of Liuxi Road and Huapailou Road",
+    "contact_phone": "18858116841",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/38/3812",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    }
+  },
+  {
+    "id": "CN-MFG-0090215",
+    "company_en": "Xiaoli Motor Refrigerator Air Conditioner Repair",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Home Appliance Repair"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 55, Hongyun East Road, Hongxi Market, Hongxi Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/38/3812",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    }
   }
 ]

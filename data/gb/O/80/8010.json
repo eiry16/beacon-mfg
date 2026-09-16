@@ -47,7 +47,8 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
     "id": "CN-MFG-0034064",
@@ -95,7 +96,8 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
     "id": "CN-MFG-0036314",
@@ -143,7 +145,8 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
     "id": "CN-MFG-0036439",
@@ -191,7 +194,8 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
     "id": "CN-MFG-0036442",
@@ -239,7 +243,8 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
     "id": "CN-MFG-0036447",
@@ -287,7 +292,8 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
     "id": "CN-MFG-0036449",
@@ -335,7 +341,8 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
     "id": "CN-MFG-0036451",
@@ -383,7 +390,8 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
     "id": "CN-MFG-0036567",
@@ -431,7 +439,8 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
     "id": "CN-MFG-0036738",
@@ -479,10 +488,11 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
-    "id": "CN-MFG-0057140",
+    "id": "CN-MFG-0067978",
     "company": "汽车保姆(绿景店)",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
@@ -529,46 +539,47 @@
       "source": "name",
       "evidence": "保姆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "O/80/8010"
   },
   {
-    "id": "CN-MFG-0057156",
-    "company": "汽车保姆(绿景店)",
+    "id": "CN-MFG-0083464",
+    "company": "e修网(秦仁电脑保姆)",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "汽车维修",
-      "汽修",
-      "汽车修理"
+      "电脑维修",
+      "笔记本维修",
+      "电脑上门维修"
     ],
     "region": {
-      "province": "广东",
-      "city": "佛山"
+      "province": "上海",
+      "city": "上海"
     },
-    "address": "绿景一路5号首层456号铺",
-    "contact_phone": "待核实",
-    "lat": 23.002024,
-    "lng": 113.105337,
+    "address": "新曹杨集团公司高新技术工业园区A区6栋一楼A0室",
+    "contact_phone": "13482882066; 13918379062",
+    "lat": 31.23338,
+    "lng": 121.387863,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
-    "status": "unverified_poi",
-    "is_template": true,
+    "status": "verified",
+    "is_template": false,
     "note": "",
     "amap": {
-      "poi_id": "B0FFFWY6GE",
-      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车服务;洗车场;洗车场|汽车维修;汽车维修;汽车维修",
-      "typecode": "010400|010500|030000",
-      "alias": "",
+      "poi_id": "B0FFGT2AG9",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "上海秦仁电脑科技有限公司",
       "tag": "",
-      "keytag": "汽车配件",
+      "keytag": "电脑维修",
       "website": "",
       "email": "",
       "postcode": "",
-      "business_area": "石湾",
-      "adcode": "440604",
-      "search_keyword": "汽车维修"
+      "business_area": "金沙江路",
+      "adcode": "310107",
+      "search_keyword": "电脑维修"
     },
     "industry": {
       "code": "8010",
@@ -578,6 +589,54 @@
       "confidence": "high",
       "source": "name",
       "evidence": "保姆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0089890",
+    "company": "杭州杭修家庭服务有限公司",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "仓前街道高桥村村委西侧祥高线8号E-122室",
+    "contact_phone": "19285710909",
+    "lat": 30.313825,
+    "lng": 120.017725,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MAYS0L67",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330110",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "家庭服务"
     },
     "is_manufacturer": false
   }

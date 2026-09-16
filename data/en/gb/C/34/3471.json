@@ -24,5 +24,33 @@
       "name": "电影机械制造",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0078511",
+    "company_en": "Ningbo Beilun Lingying Machinery Factory",
+    "category": "精密机械加工",
+    "category_en": "Precision Machining",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 125 Huang'an, Dongao Dakei",
+    "contact_phone": "13082994858",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "C/34/3471",
+    "industry": {
+      "code": "3471",
+      "name": "电影机械制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 文化、办公用机械制造 > 电影机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "影机械"
+    }
   }
 ]

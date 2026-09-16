@@ -45,43 +45,92 @@
       "source": "gb_token",
       "evidence": "健康服务"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "R/89/8992"
   },
   {
-    "id": "CN-MFG-0053469",
-    "company": "大鹏新区妇幼保健院王母社区健康服务中心",
+    "id": "CN-MFG-0077999",
+    "company": "韩氏健康服务",
     "category": "文化、体育和娱乐业",
     "keywords": [
       "保健"
     ],
     "region": {
-      "province": "广东",
-      "city": "深圳"
+      "province": "江苏",
+      "city": "苏州"
     },
-    "address": "大鹏街道王母社区大鹏人民路30号",
-    "contact_phone": "0755-84308020",
-    "lat": 22.599067,
-    "lng": 114.472614,
+    "address": "嫩江路56号",
+    "contact_phone": "待核实",
+    "lat": 31.678975,
+    "lng": 120.740898,
     "source": "public_directory",
     "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
     "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
+    "status": "unverified_poi",
+    "is_template": true,
     "note": "",
     "amap": {
-      "poi_id": "B02F38IPFH",
-      "type": "政府机构及社会团体;政府及社会团体相关;政府及社会团体相关",
-      "typecode": "130000",
+      "poi_id": "B0J0AH8GSU",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
       "alias": "",
       "tag": "",
-      "keytag": "妇幼医院",
+      "keytag": "医疗保健",
       "website": "",
       "email": "",
-      "postcode": "518120",
-      "business_area": "",
-      "adcode": "440307",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "8992",
+      "name": "体育健康服务",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 体育 > 其他体育 > 体育健康服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "健康服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0078101",
+    "company": "常熟昶悦养生理疗健康服务中心",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "凯文路8号体育中心体育场69-71号商铺",
+    "contact_phone": "待核实",
+    "lat": 31.655146,
+    "lng": 120.780783,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KG65R9KJ",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "理疗养生馆",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
       "search_keyword": "保健"
     },
     "industry": {

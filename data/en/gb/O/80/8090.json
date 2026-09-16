@@ -25,5 +25,33 @@
       "name": "其他居民服务业",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0089833",
+    "company_en": "Yefei便民服务",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Appliance Repair"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "No. 54 Xixing Street, Room 18494",
+    "contact_phone": "15136555355",
+    "source": "public_directory",
+    "verified_at": "2026-09-16",
+    "note_en": "",
+    "_bucket": "O/80/8090",
+    "industry": {
+      "code": "8090",
+      "name": "其他居民服务业",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 其他居民服务业 > 其他居民服务业",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "民服务"
+    }
   }
 ]

@@ -45,7 +45,8 @@
       "source": "gb_token",
       "evidence": "野生动物"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/74/7463"
   },
   {
     "id": "CN-MFG-0046658",
@@ -93,7 +94,8 @@
       "source": "gb_token",
       "evidence": "野生动物"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/74/7463"
   },
   {
     "id": "CN-MFG-0047529",
@@ -141,7 +143,8 @@
       "source": "gb_token",
       "evidence": "野生动物"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/74/7463"
   },
   {
     "id": "CN-MFG-0048373",
@@ -189,54 +192,7 @@
       "source": "gb_token",
       "evidence": "野生动物"
     },
-    "is_manufacturer": false
-  },
-  {
-    "id": "CN-MFG-0048375",
-    "company": "长隆野生动物世界",
-    "category": "科学研究和技术服务业",
-    "keywords": [
-      "水上乐园"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "广州"
-    },
-    "address": "大石街道",
-    "contact_phone": "020-84783333",
-    "lat": 23.00266,
-    "lng": 113.315593,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-15",
-    "imported_at": "2026-09-15",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B00141TJLD",
-      "type": "风景名胜;公园广场;动物园",
-      "typecode": "110102",
-      "alias": "香江野生动物世界",
-      "tag": "",
-      "keytag": "5A景区",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "大石街道",
-      "adcode": "440113",
-      "search_keyword": "水上乐园"
-    },
-    "industry": {
-      "code": "7463",
-      "name": "野生动物疫源疫病防控监测",
-      "level": "class",
-      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 环境与生态监测检测服务 > 野生动物疫源疫病防控监测",
-      "confidence": "high",
-      "source": "gb_token",
-      "evidence": "野生动物"
-    },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "M/74/7463"
   }
 ]

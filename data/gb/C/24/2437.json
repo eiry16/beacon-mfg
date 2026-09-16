@@ -43,7 +43,8 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/24/2437"
   },
   {
     "id": "CN-MFG-0010510",
@@ -89,7 +90,8 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/24/2437"
   },
   {
     "id": "CN-MFG-0010513",
@@ -135,7 +137,8 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/24/2437"
   },
   {
     "id": "CN-MFG-0010710",
@@ -181,7 +184,8 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/24/2437"
   },
   {
     "id": "CN-MFG-0019642",
@@ -227,7 +231,8 @@
       "evidence": "地毯"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/24/2437"
   },
   {
     "id": "CN-MFG-0019647",
@@ -274,7 +279,8 @@
       "evidence": "地毯"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/24/2437"
   },
   {
     "id": "CN-MFG-0023527",
@@ -320,6 +326,343 @@
       "evidence": "地毯"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/24/2437"
+  },
+  {
+    "id": "CN-MFG-0083943",
+    "company": "永祥塑料地毯(厂家直营店)",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料制品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "下沙银沙商贸城A区172-173号(北3号门)",
+    "contact_phone": "13858044465",
+    "lat": 30.313761,
+    "lng": 120.304003,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GR39L2HX",
+      "type": "购物服务;家居建材市场;布艺市场|公司企业;公司;公司",
+      "typecode": "060605|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "布艺家纺",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330114",
+      "search_keyword": "塑料制品"
+    },
+    "industry": {
+      "code": "2437",
+      "name": "地毯、挂毯制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 地毯、挂毯制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "地毯"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0088000",
+    "company": "行拓建材·PVC塑胶地板地毯",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "嘉善国际农商城10号楼",
+    "contact_phone": "18858578181",
+    "lat": 30.814927,
+    "lng": 120.929437,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGJMO3KQ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "地毯",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "嘉善大道",
+      "adcode": "330421",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2437",
+      "name": "地毯、挂毯制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 地毯、挂毯制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "地毯"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0088369",
+    "company": "上海宏村地毯塑胶地板销售安装公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "金沙江路2438弄39号102室",
+    "contact_phone": "13917362824",
+    "lat": 31.241462,
+    "lng": 121.364041,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K1V7RH1R",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "地板",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "金沙江路",
+      "adcode": "310107",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2437",
+      "name": "地毯、挂毯制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 地毯、挂毯制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "地毯"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0088542",
+    "company": "塑胶地板地毯(厂家直营店)",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "盈丰街道新中北家园鸿宁路765号",
+    "contact_phone": "13738080806",
+    "lat": 30.236278,
+    "lng": 120.276392,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L2LUP16G",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "地毯",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330109",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2437",
+      "name": "地毯、挂毯制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 地毯、挂毯制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "地毯"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0088572",
+    "company": "浩升地毯塑胶地板",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "浙江五金城北一区59号",
+    "contact_phone": "13588079760; 18157134689",
+    "lat": 30.342641,
+    "lng": 120.192762,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G39NLWG1",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "地板",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330105",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2437",
+      "name": "地毯、挂毯制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 地毯、挂毯制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "地毯"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0089772",
+    "company": "塑胶地板·地毯(东南路店)",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "东南路88号",
+    "contact_phone": "13705854946",
+    "lat": 29.581423,
+    "lng": 120.819693,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I1NH9N8Q",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "地毯",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330683",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2437",
+      "name": "地毯、挂毯制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 地毯、挂毯制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "地毯"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0089798",
+    "company": "上虞海欣地毯塑胶地板",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "石狮商贸城3层B3440号",
+    "contact_phone": "18905852286",
+    "lat": 30.043656,
+    "lng": 120.897661,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG11Z6S",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "布艺家纺",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330604",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2437",
+      "name": "地毯、挂毯制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 地毯、挂毯制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "地毯"
+    },
+    "is_manufacturer": true
   }
 ]

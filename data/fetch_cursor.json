@@ -1,7 +1,448 @@
 {
  "shards": {
+  "2929|塑料制品|上海": {
+   "exhausted": true,
+   "last_new": 79,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.395
+  },
+  "2929|塑料制品|东莞": {
+   "exhausted": true,
+   "last_new": 130,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.65
+  },
+  "2929|塑料制品|中山": {
+   "exhausted": true,
+   "last_new": 90,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.45
+  },
+  "2929|塑料制品|佛山": {
+   "exhausted": true,
+   "last_new": 128,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.64
+  },
+  "2929|塑料制品|嘉兴": {
+   "exhausted": true,
+   "last_new": 31,
+   "last_run": "2026-09-16",
+   "last_seen": 142,
+   "requests": 6,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.2183
+  },
+  "2929|塑料制品|宁波": {
+   "exhausted": true,
+   "last_new": 126,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.63
+  },
+  "2929|塑料制品|常州": {
+   "exhausted": true,
+   "last_new": 113,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.565
+  },
+  "2929|塑料制品|广州": {
+   "exhausted": true,
+   "last_new": 100,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5
+  },
+  "2929|塑料制品|惠州": {
+   "exhausted": true,
+   "last_new": 121,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.605
+  },
+  "2929|塑料制品|无锡": {
+   "exhausted": true,
+   "last_new": 48,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.24
+  },
+  "2929|塑料制品|昆山": {
+   "exhausted": true,
+   "last_new": 52,
+   "last_run": "2026-09-16",
+   "last_seen": 140,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3714
+  },
+  "2929|塑料制品|杭州": {
+   "exhausted": true,
+   "last_new": 58,
+   "last_run": "2026-09-16",
+   "last_seen": 147,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3946
+  },
+  "2929|塑料制品|深圳": {
+   "exhausted": true,
+   "last_new": 118,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.59
+  },
+  "2929|塑料制品|珠海": {
+   "exhausted": true,
+   "last_new": 2,
+   "last_run": "2026-09-16",
+   "last_seen": 66,
+   "requests": 3,
+   "runs": 1,
+   "state": "cold",
+   "yield": 0.0303
+  },
+  "2929|塑料制品|绍兴": {
+   "exhausted": true,
+   "last_new": 14,
+   "last_run": "2026-09-16",
+   "last_seen": 93,
+   "requests": 4,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.1505
+  },
+  "2929|塑料制品|苏州": {
+   "exhausted": true,
+   "last_new": 49,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.245
+  },
+  "2929|塑料模具|320205": {
+   "exhausted": true,
+   "last_new": 43,
+   "last_run": "2026-09-16",
+   "last_seen": 85,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5059
+  },
+  "2929|塑料模具|320206": {
+   "exhausted": true,
+   "last_new": 41,
+   "last_run": "2026-09-16",
+   "last_seen": 74,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5541
+  },
+  "2929|塑料模具|320211": {
+   "exhausted": true,
+   "last_new": 11,
+   "last_run": "2026-09-16",
+   "last_seen": 19,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.5789
+  },
+  "2929|塑料模具|320213": {
+   "exhausted": true,
+   "last_new": 3,
+   "last_run": "2026-09-16",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
+  "2929|塑料模具|320214": {
+   "exhausted": true,
+   "last_new": 43,
+   "last_run": "2026-09-16",
+   "last_seen": 71,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6056
+  },
+  "2929|塑料模具|320281": {
+   "exhausted": true,
+   "last_new": 114,
+   "last_run": "2026-09-16",
+   "last_seen": 190,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6
+  },
+  "2929|塑料模具|320282": {
+   "exhausted": true,
+   "last_new": 72,
+   "last_run": "2026-09-16",
+   "last_seen": 119,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.605
+  },
+  "2929|塑料模具|320505": {
+   "exhausted": true,
+   "last_new": 32,
+   "last_run": "2026-09-16",
+   "last_seen": 43,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7442
+  },
+  "2929|塑料模具|320506": {
+   "exhausted": true,
+   "last_new": 153,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.765
+  },
+  "2929|塑料模具|320507": {
+   "exhausted": true,
+   "last_new": 118,
+   "last_run": "2026-09-16",
+   "last_seen": 140,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8429
+  },
+  "2929|塑料模具|320508": {
+   "exhausted": true,
+   "last_new": 4,
+   "last_run": "2026-09-16",
+   "last_seen": 4,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
+  "2929|塑料模具|320509": {
+   "exhausted": true,
+   "last_new": 105,
+   "last_run": "2026-09-16",
+   "last_seen": 135,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7778
+  },
+  "2929|塑料模具|320581": {
+   "exhausted": true,
+   "last_new": 130,
+   "last_run": "2026-09-16",
+   "last_seen": 154,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8442
+  },
+  "2929|塑料模具|320582": {
+   "exhausted": true,
+   "last_new": 116,
+   "last_run": "2026-09-16",
+   "last_seen": 147,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7891
+  },
+  "2929|塑料模具|320583": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 11,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "2929|塑料模具|320585": {
+   "exhausted": true,
+   "last_new": 111,
+   "last_run": "2026-09-16",
+   "last_seen": 135,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8222
+  },
+  "2929|塑料模具|330206": {
+   "exhausted": true,
+   "last_new": 170,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.85
+  },
+  "2929|塑料模具|330402": {
+   "exhausted": true,
+   "last_new": 26,
+   "last_run": "2026-09-16",
+   "last_seen": 66,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3939
+  },
+  "2929|塑料模具|330411": {
+   "exhausted": true,
+   "last_new": 9,
+   "last_run": "2026-09-16",
+   "last_seen": 28,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3214
+  },
+  "2929|塑料模具|330421": {
+   "exhausted": true,
+   "last_new": 7,
+   "last_run": "2026-09-16",
+   "last_seen": 46,
+   "requests": 2,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.1522
+  },
+  "2929|塑料模具|330424": {
+   "exhausted": true,
+   "last_new": 6,
+   "last_run": "2026-09-16",
+   "last_seen": 29,
+   "requests": 2,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.2069
+  },
+  "2929|塑料模具|330481": {
+   "exhausted": true,
+   "last_new": 9,
+   "last_run": "2026-09-16",
+   "last_seen": 47,
+   "requests": 2,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.1915
+  },
+  "2929|塑料模具|330482": {
+   "exhausted": true,
+   "last_new": 11,
+   "last_run": "2026-09-16",
+   "last_seen": 34,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3235
+  },
+  "2929|塑料模具|330483": {
+   "exhausted": true,
+   "last_new": 11,
+   "last_run": "2026-09-16",
+   "last_seen": 38,
+   "requests": 2,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.2895
+  },
+  "2929|塑料模具|上海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "2929|塑料模具|东莞": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "2929|塑料模具|中山": {
+   "exhausted": true,
+   "last_new": 131,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.655
+  },
+  "2929|塑料模具|佛山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
   "2929|塑料模具|嘉兴": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -12,6 +453,7 @@
   },
   "2929|塑料模具|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 138,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -20,8 +462,39 @@
    "state": "hot",
    "yield": 0.69
   },
+  "2929|塑料模具|常州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "2929|塑料模具|广州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "2929|塑料模具|惠州": {
+   "exhausted": true,
+   "last_new": 118,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.59
+  },
   "2929|塑料模具|无锡": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 134,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -32,6 +505,7 @@
   },
   "2929|塑料模具|昆山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 92,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -40,8 +514,49 @@
    "state": "hot",
    "yield": 0.46
   },
+  "2929|塑料模具|杭州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "2929|塑料模具|深圳": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "2929|塑料模具|珠海": {
+   "exhausted": true,
+   "last_new": 40,
+   "last_run": "2026-09-16",
+   "last_seen": 131,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3053
+  },
+  "2929|塑料模具|绍兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
   "2929|塑料模具|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 111,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -49,6 +564,156 @@
    "runs": 1,
    "state": "hot",
    "yield": 0.555
+  },
+  "2929|塑胶制品|上海": {
+   "exhausted": true,
+   "last_new": 38,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.19
+  },
+  "2929|塑胶制品|东莞": {
+   "exhausted": true,
+   "last_new": 72,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.36
+  },
+  "2929|塑胶制品|中山": {
+   "exhausted": true,
+   "last_new": 31,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.155
+  },
+  "2929|塑胶制品|佛山": {
+   "exhausted": true,
+   "last_new": 35,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.175
+  },
+  "2929|塑胶制品|嘉兴": {
+   "exhausted": true,
+   "last_new": 53,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.265
+  },
+  "2929|塑胶制品|宁波": {
+   "exhausted": true,
+   "last_new": 59,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.295
+  },
+  "2929|塑胶制品|常州": {
+   "exhausted": true,
+   "last_new": 49,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.245
+  },
+  "2929|塑胶制品|广州": {
+   "exhausted": true,
+   "last_new": 43,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.215
+  },
+  "2929|塑胶制品|惠州": {
+   "exhausted": true,
+   "last_new": 56,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.28
+  },
+  "2929|塑胶制品|无锡": {
+   "exhausted": true,
+   "last_new": 61,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.305
+  },
+  "2929|塑胶制品|昆山": {
+   "exhausted": true,
+   "last_new": 67,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.335
+  },
+  "2929|塑胶制品|杭州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "2929|塑胶制品|深圳": {
+   "exhausted": true,
+   "last_new": 66,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.33
+  },
+  "2929|塑胶制品|绍兴": {
+   "exhausted": true,
+   "last_new": 59,
+   "last_run": "2026-09-16",
+   "last_seen": 178,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3315
+  },
+  "2929|塑胶制品|苏州": {
+   "exhausted": true,
+   "last_new": 60,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3
   },
   "2929|注塑加工|上海": {
    "exhausted": true,
@@ -4786,6 +5451,7 @@
   },
   "6231|奶茶|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 190,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4796,6 +5462,7 @@
   },
   "6231|奶茶|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4806,6 +5473,7 @@
   },
   "6231|奶茶|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4816,6 +5484,7 @@
   },
   "6231|奶茶|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4826,6 +5495,7 @@
   },
   "6231|奶茶|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4836,6 +5506,7 @@
   },
   "6231|奶茶|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 192,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4846,6 +5517,7 @@
   },
   "6231|奶茶|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4856,6 +5528,7 @@
   },
   "6231|奶茶|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 192,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4866,6 +5539,7 @@
   },
   "6231|茶室|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 192,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4876,6 +5550,7 @@
   },
   "6231|茶室|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4886,6 +5561,7 @@
   },
   "6231|茶室|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4896,6 +5572,7 @@
   },
   "6231|茶室|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4906,6 +5583,7 @@
   },
   "6231|茶室|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 196,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4916,6 +5594,7 @@
   },
   "6231|茶室|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 193,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4926,6 +5605,7 @@
   },
   "6231|茶室|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4936,6 +5616,7 @@
   },
   "6231|茶室|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4946,6 +5627,7 @@
   },
   "6231|茶饮|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 174,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4956,6 +5638,7 @@
   },
   "6231|茶饮|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 175,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4966,6 +5649,7 @@
   },
   "6231|茶饮|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 171,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4976,6 +5660,7 @@
   },
   "6231|茶饮|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 170,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4986,6 +5671,7 @@
   },
   "6231|茶饮|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 184,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -4996,6 +5682,7 @@
   },
   "6231|茶饮|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 183,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5006,6 +5693,7 @@
   },
   "6231|茶饮|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 190,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5016,6 +5704,7 @@
   },
   "6231|茶饮|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 184,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5026,6 +5715,7 @@
   },
   "6231|茶馆|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 32,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5036,6 +5726,7 @@
   },
   "6231|茶馆|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 10,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5046,6 +5737,7 @@
   },
   "6231|茶馆|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 17,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5056,6 +5748,7 @@
   },
   "6231|茶馆|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 6,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5066,6 +5759,7 @@
   },
   "6231|茶馆|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 22,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5076,6 +5770,7 @@
   },
   "6231|茶馆|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 7,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5086,6 +5781,7 @@
   },
   "6231|茶馆|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 34,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5096,6 +5792,7 @@
   },
   "6231|茶馆|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 5,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5192,8 +5889,209 @@
    "state": "hot",
    "yield": 0.98
   },
+  "6232|咖啡店|310101": {
+   "exhausted": true,
+   "last_new": 74,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.37
+  },
+  "6232|咖啡店|310104": {
+   "exhausted": true,
+   "last_new": 147,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.735
+  },
+  "6232|咖啡店|310105": {
+   "exhausted": true,
+   "last_new": 171,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.855
+  },
+  "6232|咖啡店|310106": {
+   "exhausted": true,
+   "last_new": 130,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.65
+  },
+  "6232|咖啡店|310107": {
+   "exhausted": true,
+   "last_new": 188,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.94
+  },
+  "6232|咖啡店|310109": {
+   "exhausted": true,
+   "last_new": 178,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.89
+  },
+  "6232|咖啡店|310110": {
+   "exhausted": true,
+   "last_new": 179,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.895
+  },
+  "6232|咖啡店|310112": {
+   "exhausted": true,
+   "last_new": 173,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.865
+  },
+  "6232|咖啡店|310113": {
+   "exhausted": true,
+   "last_new": 184,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.92
+  },
+  "6232|咖啡店|310114": {
+   "exhausted": true,
+   "last_new": 185,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.925
+  },
+  "6232|咖啡店|310115": {
+   "exhausted": true,
+   "last_new": 145,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.725
+  },
+  "6232|咖啡店|310116": {
+   "exhausted": true,
+   "last_new": 197,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.985
+  },
+  "6232|咖啡店|310117": {
+   "exhausted": true,
+   "last_new": 193,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.965
+  },
+  "6232|咖啡店|310118": {
+   "exhausted": true,
+   "last_new": 189,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.945
+  },
+  "6232|咖啡店|310120": {
+   "exhausted": true,
+   "last_new": 195,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.975
+  },
+  "6232|咖啡店|310151": {
+   "exhausted": true,
+   "last_new": 136,
+   "last_run": "2026-09-16",
+   "last_seen": 139,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9784
+  },
+  "6232|咖啡店|320505": {
+   "exhausted": true,
+   "last_new": 128,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.64
+  },
+  "6232|咖啡店|320508": {
+   "exhausted": true,
+   "last_new": 77,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.385
+  },
+  "6232|咖啡店|320581": {
+   "exhausted": true,
+   "last_new": 182,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.91
+  },
+  "6232|咖啡店|320583": {
+   "exhausted": true,
+   "last_new": 171,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.855
+  },
   "6232|咖啡店|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5204,6 +6102,7 @@
   },
   "6232|咖啡店|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 7,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5214,6 +6113,7 @@
   },
   "6232|咖啡店|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 34,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5224,6 +6124,7 @@
   },
   "6232|咖啡店|成都": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 17,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5234,6 +6135,7 @@
   },
   "6232|咖啡店|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 26,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5244,6 +6146,7 @@
   },
   "6232|咖啡店|武汉": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 6,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5254,6 +6157,7 @@
   },
   "6232|咖啡店|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 26,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5264,6 +6168,7 @@
   },
   "6232|咖啡店|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 12,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5271,6 +6176,136 @@
    "runs": 1,
    "state": "warm",
    "yield": 0.06
+  },
+  "6232|咖啡馆|420102": {
+   "exhausted": true,
+   "last_new": 73,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.365
+  },
+  "6232|咖啡馆|420103": {
+   "exhausted": true,
+   "last_new": 180,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9
+  },
+  "6232|咖啡馆|420104": {
+   "exhausted": true,
+   "last_new": 136,
+   "last_run": "2026-09-16",
+   "last_seen": 140,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9714
+  },
+  "6232|咖啡馆|420105": {
+   "exhausted": true,
+   "last_new": 197,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.985
+  },
+  "6232|咖啡馆|420106": {
+   "exhausted": true,
+   "last_new": 196,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.98
+  },
+  "6232|咖啡馆|420107": {
+   "exhausted": true,
+   "last_new": 68,
+   "last_run": "2026-09-16",
+   "last_seen": 68,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 1.0
+  },
+  "6232|咖啡馆|420111": {
+   "exhausted": true,
+   "last_new": 200,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 1.0
+  },
+  "6232|咖啡馆|420112": {
+   "exhausted": true,
+   "last_new": 162,
+   "last_run": "2026-09-16",
+   "last_seen": 164,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9878
+  },
+  "6232|咖啡馆|420113": {
+   "exhausted": true,
+   "last_new": 14,
+   "last_run": "2026-09-16",
+   "last_seen": 14,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
+  "6232|咖啡馆|420114": {
+   "exhausted": true,
+   "last_new": 155,
+   "last_run": "2026-09-16",
+   "last_seen": 158,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.981
+  },
+  "6232|咖啡馆|420115": {
+   "exhausted": true,
+   "last_new": 198,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.99
+  },
+  "6232|咖啡馆|420116": {
+   "exhausted": true,
+   "last_new": 103,
+   "last_run": "2026-09-16",
+   "last_seen": 105,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.981
+  },
+  "6232|咖啡馆|420117": {
+   "exhausted": true,
+   "last_new": 41,
+   "last_run": "2026-09-16",
+   "last_seen": 41,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 1.0
   },
   "6232|咖啡馆|上海": {
    "exhausted": true,
@@ -5329,6 +6364,7 @@
   },
   "6232|咖啡馆|武汉": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5359,8 +6395,59 @@
    "state": "hot",
    "yield": 0.87
   },
+  "6233|清吧|上海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "6233|清吧|广州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "6233|清吧|成都": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "6233|清吧|杭州": {
+   "exhausted": true,
+   "last_new": 138,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.69
+  },
+  "6233|清吧|深圳": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
   "6233|酒吧|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -5368,6 +6455,376 @@
    "runs": 1,
    "state": "hot",
    "yield": 0.975
+  },
+  "6233|酒吧|广州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "6233|酒吧|成都": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "6233|酒吧|杭州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "6233|酒吧|深圳": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "6233|餐吧|上海": {
+   "exhausted": true,
+   "last_new": 16,
+   "last_run": "2026-09-16",
+   "last_seen": 19,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8421
+  },
+  "6233|餐吧|广州": {
+   "exhausted": true,
+   "last_new": 50,
+   "last_run": "2026-09-16",
+   "last_seen": 51,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9804
+  },
+  "6233|餐吧|成都": {
+   "exhausted": true,
+   "last_new": 23,
+   "last_run": "2026-09-16",
+   "last_seen": 25,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.92
+  },
+  "6233|餐吧|杭州": {
+   "exhausted": true,
+   "last_new": 15,
+   "last_run": "2026-09-16",
+   "last_seen": 18,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8333
+  },
+  "6233|餐吧|深圳": {
+   "exhausted": true,
+   "last_new": 40,
+   "last_run": "2026-09-16",
+   "last_seen": 41,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9756
+  },
+  "6291|烘焙|上海": {
+   "exhausted": true,
+   "last_new": 194,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.97
+  },
+  "6291|烘焙|东莞": {
+   "exhausted": true,
+   "last_new": 199,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.995
+  },
+  "6291|烘焙|佛山": {
+   "exhausted": true,
+   "last_new": 198,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.99
+  },
+  "6291|烘焙|宁波": {
+   "exhausted": true,
+   "last_new": 198,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.99
+  },
+  "6291|烘焙|广州": {
+   "exhausted": true,
+   "last_new": 198,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.99
+  },
+  "6291|烘焙|杭州": {
+   "exhausted": true,
+   "last_new": 198,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.99
+  },
+  "6291|烘焙|深圳": {
+   "exhausted": true,
+   "last_new": 196,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.98
+  },
+  "6291|烘焙|苏州": {
+   "exhausted": true,
+   "last_new": 199,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.995
+  },
+  "6291|蛋糕|上海": {
+   "exhausted": true,
+   "last_new": 66,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.33
+  },
+  "6291|蛋糕|东莞": {
+   "exhausted": true,
+   "last_new": 32,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.16
+  },
+  "6291|蛋糕|佛山": {
+   "exhausted": true,
+   "last_new": 12,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.06
+  },
+  "6291|蛋糕|宁波": {
+   "exhausted": true,
+   "last_new": 27,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.135
+  },
+  "6291|蛋糕|广州": {
+   "exhausted": true,
+   "last_new": 44,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.22
+  },
+  "6291|蛋糕|杭州": {
+   "exhausted": true,
+   "last_new": 22,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.11
+  },
+  "6291|蛋糕|深圳": {
+   "exhausted": true,
+   "last_new": 41,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.205
+  },
+  "6291|蛋糕|苏州": {
+   "exhausted": true,
+   "last_new": 28,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.14
+  },
+  "6291|西点|上海": {
+   "exhausted": true,
+   "last_new": 7,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "cold",
+   "yield": 0.035
+  },
+  "6291|西点|广州": {
+   "exhausted": true,
+   "last_new": 14,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.07
+  },
+  "6291|西点|深圳": {
+   "exhausted": true,
+   "last_new": 7,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "cold",
+   "yield": 0.035
+  },
+  "6291|西点|苏州": {
+   "exhausted": true,
+   "last_new": 4,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "cold",
+   "yield": 0.02
+  },
+  "6291|面包|上海": {
+   "exhausted": true,
+   "last_new": 86,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.43
+  },
+  "6291|面包|东莞": {
+   "exhausted": true,
+   "last_new": 83,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.415
+  },
+  "6291|面包|佛山": {
+   "exhausted": true,
+   "last_new": 89,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.445
+  },
+  "6291|面包|宁波": {
+   "exhausted": true,
+   "last_new": 102,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.51
+  },
+  "6291|面包|广州": {
+   "exhausted": true,
+   "last_new": 133,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.665
+  },
+  "6291|面包|杭州": {
+   "exhausted": true,
+   "last_new": 103,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.515
+  },
+  "6291|面包|深圳": {
+   "exhausted": true,
+   "last_new": 104,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.52
+  },
+  "6291|面包|苏州": {
+   "exhausted": true,
+   "last_new": 100,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5
   },
   "6440|信息安全|上海": {
    "exhausted": true,
@@ -8032,6 +9489,136 @@
    "state": "warm",
    "yield": 0.12
   },
+  "8053|SPA|420102": {
+   "exhausted": true,
+   "last_new": 120,
+   "last_run": "2026-09-16",
+   "last_seen": 162,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7407
+  },
+  "8053|SPA|420103": {
+   "exhausted": true,
+   "last_new": 95,
+   "last_run": "2026-09-16",
+   "last_seen": 129,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7364
+  },
+  "8053|SPA|420104": {
+   "exhausted": true,
+   "last_new": 70,
+   "last_run": "2026-09-16",
+   "last_seen": 75,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9333
+  },
+  "8053|SPA|420105": {
+   "exhausted": true,
+   "last_new": 109,
+   "last_run": "2026-09-16",
+   "last_seen": 121,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9008
+  },
+  "8053|SPA|420106": {
+   "exhausted": true,
+   "last_new": 158,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.79
+  },
+  "8053|SPA|420107": {
+   "exhausted": true,
+   "last_new": 14,
+   "last_run": "2026-09-16",
+   "last_seen": 17,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8235
+  },
+  "8053|SPA|420111": {
+   "exhausted": true,
+   "last_new": 172,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.86
+  },
+  "8053|SPA|420112": {
+   "exhausted": true,
+   "last_new": 54,
+   "last_run": "2026-09-16",
+   "last_seen": 56,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9643
+  },
+  "8053|SPA|420113": {
+   "exhausted": true,
+   "last_new": 5,
+   "last_run": "2026-09-16",
+   "last_seen": 5,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
+  "8053|SPA|420114": {
+   "exhausted": true,
+   "last_new": 44,
+   "last_run": "2026-09-16",
+   "last_seen": 49,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.898
+  },
+  "8053|SPA|420115": {
+   "exhausted": true,
+   "last_new": 86,
+   "last_run": "2026-09-16",
+   "last_seen": 97,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8866
+  },
+  "8053|SPA|420116": {
+   "exhausted": true,
+   "last_new": 39,
+   "last_run": "2026-09-16",
+   "last_seen": 41,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9512
+  },
+  "8053|SPA|420117": {
+   "exhausted": true,
+   "last_new": 10,
+   "last_run": "2026-09-16",
+   "last_seen": 10,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
   "8053|SPA|上海": {
    "exhausted": true,
    "expanded": true,
@@ -8078,6 +9665,7 @@
   },
   "8053|SPA|武汉": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8108,8 +9696,209 @@
    "state": "hot",
    "yield": 0.335
   },
+  "8053|保健|310101": {
+   "exhausted": true,
+   "last_new": 25,
+   "last_run": "2026-09-16",
+   "last_seen": 45,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5556
+  },
+  "8053|保健|310104": {
+   "exhausted": true,
+   "last_new": 72,
+   "last_run": "2026-09-16",
+   "last_seen": 80,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9
+  },
+  "8053|保健|310105": {
+   "exhausted": true,
+   "last_new": 58,
+   "last_run": "2026-09-16",
+   "last_seen": 63,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9206
+  },
+  "8053|保健|310106": {
+   "exhausted": true,
+   "last_new": 87,
+   "last_run": "2026-09-16",
+   "last_seen": 104,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8365
+  },
+  "8053|保健|310107": {
+   "exhausted": true,
+   "last_new": 92,
+   "last_run": "2026-09-16",
+   "last_seen": 98,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9388
+  },
+  "8053|保健|310109": {
+   "exhausted": true,
+   "last_new": 40,
+   "last_run": "2026-09-16",
+   "last_seen": 45,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8889
+  },
+  "8053|保健|310110": {
+   "exhausted": true,
+   "last_new": 100,
+   "last_run": "2026-09-16",
+   "last_seen": 105,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9524
+  },
+  "8053|保健|310112": {
+   "exhausted": true,
+   "last_new": 196,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.98
+  },
+  "8053|保健|310113": {
+   "exhausted": true,
+   "last_new": 150,
+   "last_run": "2026-09-16",
+   "last_seen": 153,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9804
+  },
+  "8053|保健|310114": {
+   "exhausted": true,
+   "last_new": 121,
+   "last_run": "2026-09-16",
+   "last_seen": 125,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.968
+  },
+  "8053|保健|310115": {
+   "exhausted": true,
+   "last_new": 182,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.91
+  },
+  "8053|保健|310116": {
+   "exhausted": true,
+   "last_new": 69,
+   "last_run": "2026-09-16",
+   "last_seen": 69,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 1.0
+  },
+  "8053|保健|310117": {
+   "exhausted": true,
+   "last_new": 173,
+   "last_run": "2026-09-16",
+   "last_seen": 180,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9611
+  },
+  "8053|保健|310118": {
+   "exhausted": true,
+   "last_new": 94,
+   "last_run": "2026-09-16",
+   "last_seen": 101,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9307
+  },
+  "8053|保健|310120": {
+   "exhausted": true,
+   "last_new": 103,
+   "last_run": "2026-09-16",
+   "last_seen": 105,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.981
+  },
+  "8053|保健|310151": {
+   "exhausted": true,
+   "last_new": 32,
+   "last_run": "2026-09-16",
+   "last_seen": 33,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9697
+  },
+  "8053|保健|320505": {
+   "exhausted": true,
+   "last_new": 68,
+   "last_run": "2026-09-16",
+   "last_seen": 91,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7473
+  },
+  "8053|保健|320508": {
+   "exhausted": true,
+   "last_new": 81,
+   "last_run": "2026-09-16",
+   "last_seen": 124,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6532
+  },
+  "8053|保健|320581": {
+   "exhausted": true,
+   "last_new": 157,
+   "last_run": "2026-09-16",
+   "last_seen": 164,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9573
+  },
+  "8053|保健|320583": {
+   "exhausted": true,
+   "last_new": 184,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.92
+  },
   "8053|保健|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 9,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8120,6 +9909,7 @@
   },
   "8053|保健|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 143,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8130,6 +9920,7 @@
   },
   "8053|保健|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 164,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8140,6 +9931,7 @@
   },
   "8053|保健|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 172,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8150,6 +9942,7 @@
   },
   "8053|保健|武汉": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 150,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8160,6 +9953,7 @@
   },
   "8053|保健|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 150,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8170,6 +9964,7 @@
   },
   "8053|保健|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 166,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8332,8 +10127,129 @@
    "state": "hot",
    "yield": 0.6
   },
+  "8111|修车|上海": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "8111|修车|东莞": {
+   "exhausted": true,
+   "last_new": 3,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "cold",
+   "yield": 0.015
+  },
+  "8111|修车|佛山": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 0,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "8111|修车|南京": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "8111|修车|嘉兴": {
+   "exhausted": true,
+   "last_new": 1,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "cold",
+   "yield": 0.005
+  },
+  "8111|修车|宁波": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "8111|修车|常州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "8111|修车|广州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "8111|修车|无锡": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "8111|修车|杭州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "8111|修车|深圳": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "8111|修车|苏州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
   "8111|汽修|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8344,6 +10260,7 @@
   },
   "8111|汽修|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8354,6 +10271,7 @@
   },
   "8111|汽修|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8364,6 +10282,7 @@
   },
   "8111|汽修|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8374,6 +10293,7 @@
   },
   "8111|汽修|嘉兴": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8384,6 +10304,7 @@
   },
   "8111|汽修|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8394,6 +10315,7 @@
   },
   "8111|汽修|常州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8404,6 +10326,7 @@
   },
   "8111|汽修|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8414,6 +10337,7 @@
   },
   "8111|汽修|无锡": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8424,6 +10348,7 @@
   },
   "8111|汽修|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8434,6 +10359,7 @@
   },
   "8111|汽修|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8444,6 +10370,7 @@
   },
   "8111|汽修|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8454,6 +10381,7 @@
   },
   "8111|汽车修理|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8464,6 +10392,7 @@
   },
   "8111|汽车修理|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 2,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8474,6 +10403,7 @@
   },
   "8111|汽车修理|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8484,6 +10414,7 @@
   },
   "8111|汽车修理|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 4,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8492,8 +10423,19 @@
    "state": "cold",
    "yield": 0.02
   },
+  "8111|汽车修理|嘉兴": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
   "8111|汽车修理|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8501,9 +10443,20 @@
    "runs": 1,
    "state": "cold",
    "yield": 0.005
+  },
+  "8111|汽车修理|常州": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
   },
   "8111|汽车修理|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8512,8 +10465,19 @@
    "state": "cold",
    "yield": 0.005
   },
+  "8111|汽车修理|无锡": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
   "8111|汽车修理|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8524,6 +10488,7 @@
   },
   "8111|汽车修理|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8534,6 +10499,7 @@
   },
   "8111|汽车修理|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8544,6 +10510,7 @@
   },
   "8111|汽车维修|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8554,6 +10521,7 @@
   },
   "8111|汽车维修|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8564,6 +10532,7 @@
   },
   "8111|汽车维修|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8574,6 +10543,7 @@
   },
   "8111|汽车维修|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8584,6 +10554,7 @@
   },
   "8111|汽车维修|嘉兴": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8594,6 +10565,7 @@
   },
   "8111|汽车维修|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8604,6 +10576,7 @@
   },
   "8111|汽车维修|常州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8614,6 +10587,7 @@
   },
   "8111|汽车维修|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 196,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8624,6 +10598,7 @@
   },
   "8111|汽车维修|无锡": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 196,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8634,6 +10609,7 @@
   },
   "8111|汽车维修|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8644,6 +10620,7 @@
   },
   "8111|汽车维修|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8654,6 +10631,7 @@
   },
   "8111|汽车维修|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-15",
    "last_seen": 200,
@@ -8661,6 +10639,266 @@
    "runs": 1,
    "state": "hot",
    "yield": 1.0
+  },
+  "8121|电脑上门维修|上海": {
+   "exhausted": true,
+   "last_new": 95,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.475
+  },
+  "8121|电脑上门维修|南京": {
+   "exhausted": true,
+   "last_new": 78,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.39
+  },
+  "8121|电脑上门维修|广州": {
+   "exhausted": true,
+   "last_new": 81,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.405
+  },
+  "8121|电脑上门维修|成都": {
+   "exhausted": true,
+   "last_new": 91,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.455
+  },
+  "8121|电脑上门维修|杭州": {
+   "exhausted": true,
+   "last_new": 92,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.46
+  },
+  "8121|电脑上门维修|武汉": {
+   "exhausted": true,
+   "last_new": 65,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.325
+  },
+  "8121|电脑上门维修|深圳": {
+   "exhausted": true,
+   "last_new": 86,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.43
+  },
+  "8121|电脑维修|上海": {
+   "exhausted": true,
+   "last_new": 197,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.985
+  },
+  "8121|电脑维修|南京": {
+   "exhausted": true,
+   "last_new": 199,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.995
+  },
+  "8121|电脑维修|广州": {
+   "exhausted": true,
+   "last_new": 200,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 1.0
+  },
+  "8121|电脑维修|成都": {
+   "exhausted": true,
+   "last_new": 199,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.995
+  },
+  "8121|电脑维修|杭州": {
+   "exhausted": true,
+   "last_new": 197,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.985
+  },
+  "8121|电脑维修|武汉": {
+   "exhausted": true,
+   "last_new": 200,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 1.0
+  },
+  "8121|电脑维修|深圳": {
+   "exhausted": true,
+   "last_new": 195,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.975
+  },
+  "8121|笔记本维修|上海": {
+   "exhausted": true,
+   "last_new": 15,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.075
+  },
+  "8121|笔记本维修|南京": {
+   "exhausted": true,
+   "last_new": 12,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.06
+  },
+  "8121|笔记本维修|广州": {
+   "exhausted": true,
+   "last_new": 17,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.085
+  },
+  "8121|笔记本维修|成都": {
+   "exhausted": true,
+   "last_new": 23,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.115
+  },
+  "8121|笔记本维修|杭州": {
+   "exhausted": true,
+   "last_new": 16,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.08
+  },
+  "8121|笔记本维修|武汉": {
+   "exhausted": true,
+   "last_new": 13,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.065
+  },
+  "8121|笔记本维修|深圳": {
+   "exhausted": true,
+   "last_new": 18,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.09
+  },
+  "8122|家电维修|上海": {
+   "exhausted": true,
+   "last_new": 199,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.995
+  },
+  "8122|家电维修|南京": {
+   "exhausted": true,
+   "last_new": 186,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.93
+  },
+  "8122|家电维修|广州": {
+   "exhausted": true,
+   "last_new": 195,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.975
+  },
+  "8122|家电维修|杭州": {
+   "exhausted": true,
+   "last_new": 186,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.93
+  },
+  "8122|家电维修|深圳": {
+   "exhausted": true,
+   "last_new": 187,
+   "last_run": "2026-09-16",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.935
   },
   "8760|影城|上海": {
    "exhausted": false,

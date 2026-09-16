@@ -45,6 +45,151 @@
       "source": "gb_token",
       "evidence": "显示器"
     },
+    "is_manufacturer": true,
+    "_bucket": "C/39/3974"
+  },
+  {
+    "id": "CN-MFG-0089846",
+    "company": "运达平板液晶电视维修中心",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "笕桥街道机场路289号滨江曙光之城底商",
+    "contact_phone": "13326132191; 13346185191",
+    "lat": 30.304515,
+    "lng": 120.20926,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG75PUV",
+      "type": "购物服务;家居建材市场;建材五金市场|生活服务;维修站点;维修站点|公司企业;公司企业;公司企业",
+      "typecode": "060603|071200|170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "天城路沿线",
+      "adcode": "330102",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3974",
+      "name": "显示器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 显示器件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "液晶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0089886",
+    "company": "杭州索普星液晶电视专业维修",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "转塘街道梅家园5号",
+    "contact_phone": "15988180304",
+    "lat": 30.174346,
+    "lng": 120.066528,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGSU8NCP",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "维修站点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330106",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3974",
+      "name": "显示器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 显示器件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "液晶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0090087",
+    "company": "专业精修液晶电视显示屏",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "9号金盛电子电器场金盛百货4层c007",
+    "contact_phone": "18913978842",
+    "lat": 32.045229,
+    "lng": 118.791,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LROUWCDK",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新街口",
+      "adcode": "320102",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3974",
+      "name": "显示器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 显示器件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "显示屏"
+    },
     "is_manufacturer": true
   }
 ]

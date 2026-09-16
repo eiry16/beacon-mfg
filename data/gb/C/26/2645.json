@@ -43,7 +43,8 @@
       "source": "gb_token",
       "evidence": "染料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/26/2645"
   },
   {
     "id": "CN-MFG-0019651",
@@ -90,6 +91,103 @@
       "evidence": "染料"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi"
+    "status": "unverified_poi",
+    "_bucket": "C/26/2645"
+  },
+  {
+    "id": "CN-MFG-0088697",
+    "company": "常州富恒塑胶染料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "通江中路600号长江塑化城1-12号",
+    "contact_phone": "0519-85766298",
+    "lat": 31.845549,
+    "lng": 119.980456,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI2UAWG",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320411",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2645",
+      "name": "染料制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 染料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "染料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0089792",
+    "company": "亮彩塑胶染料厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "舜江东路317号附近",
+    "contact_phone": "待核实",
+    "lat": 30.024494,
+    "lng": 120.874245,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGC1FJP",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "百官",
+      "adcode": "330604",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2645",
+      "name": "染料制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 染料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "染料"
+    },
+    "is_manufacturer": true
   }
 ]

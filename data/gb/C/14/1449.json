@@ -45,6 +45,55 @@
       "source": "name",
       "evidence": "牛奶"
     },
+    "is_manufacturer": true,
+    "_bucket": "C/14/1449"
+  },
+  {
+    "id": "CN-MFG-0083644",
+    "company": "红心闪闪(面包·牛奶·吐司)",
+    "category": "制造业",
+    "keywords": [
+      "烘焙"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "马田街道禾湾社区公明汽车站第3栋108-109",
+    "contact_phone": "19068063929",
+    "lat": 22.77515,
+    "lng": 113.89215,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGNRVCWO",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "黄油",
+      "keytag": "西式糕点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "公明",
+      "adcode": "440311",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "1449",
+      "name": "其他乳制品制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 乳制品制造 > 其他乳制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "牛奶"
+    },
     "is_manufacturer": true
   }
 ]

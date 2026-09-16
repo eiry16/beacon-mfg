@@ -45,7 +45,8 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "F/52/5232"
   },
   {
     "id": "CN-MFG-0038132",
@@ -95,7 +96,8 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "_bucket": "F/52/5232"
   },
   {
     "id": "CN-MFG-0049820",
@@ -142,6 +144,105 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "服装"
+    },
+    "is_manufacturer": false,
+    "_bucket": "F/52/5232"
+  },
+  {
+    "id": "CN-MFG-0077816",
+    "company": "蜜雪冰城(天虹服装店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "咖啡店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "招商北路8号天虹服装城101一层1-9066外号",
+    "contact_phone": "15993223876",
+    "lat": 31.62858,
+    "lng": 120.741749,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG49NKB",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "冰美式",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
+      "search_keyword": "咖啡店"
+    },
+    "industry": {
+      "code": "5232",
+      "name": "服装零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 服装零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "服装"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0085039",
+    "company": "佳美西饼(新都汇时尚服饰街店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "烘焙",
+      "面包",
+      "蛋糕"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "天九街121-123号",
+    "contact_phone": "0574-63890288",
+    "lat": 30.171248,
+    "lng": 121.245818,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E05Q2U",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "鲜肉月饼,丹麦条,虎皮卷,芝士球,香蕉蛋糕,丹麦烧饼,乳酪蛋糕,拿破仑,艾草豆沙包,肉松面包,红豆月饼,奶酥包,牛角面包,手撕面包,泡芙,奶油,奶酪,西饼",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "慈溪",
+      "adcode": "330282",
+      "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "5232",
+      "name": "服装零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 服装零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "服饰"
     },
     "is_manufacturer": false
   }

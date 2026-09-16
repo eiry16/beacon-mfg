@@ -43,7 +43,8 @@
       "evidence": "饮食"
     },
     "is_manufacturer": true,
-    "status": "verified"
+    "status": "verified",
+    "_bucket": "C/35/3594"
   },
   {
     "id": "CN-MFG-0032726",
@@ -91,7 +92,8 @@
       "source": "gb_token",
       "evidence": "饮食"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/35/3594"
   },
   {
     "id": "CN-MFG-0039646",
@@ -141,7 +143,8 @@
       "source": "gb_token",
       "evidence": "饮食"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/35/3594"
   },
   {
     "id": "CN-MFG-0028917",
@@ -189,7 +192,8 @@
       "source": "gb_token",
       "evidence": "饮食"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "_bucket": "C/35/3594"
   },
   {
     "id": "CN-MFG-0045755",
@@ -227,6 +231,55 @@
       "business_area": "景泰",
       "adcode": "440111",
       "search_keyword": "小吃店"
+    },
+    "industry": {
+      "code": "3594",
+      "name": "商业、饮食、服务专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 商业、饮食、服务专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "饮食"
+    },
+    "is_manufacturer": true,
+    "_bucket": "C/35/3594"
+  },
+  {
+    "id": "CN-MFG-0078685",
+    "company": "清庭时尚饮食会所(沙洲中路店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "咖啡店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "沙洲中路333号",
+    "contact_phone": "0512-58883288; 13285137916",
+    "lat": 31.863362,
+    "lng": 120.536087,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-16",
+    "imported_at": "2026-09-16",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02000J4HR",
+      "type": "餐饮服务;休闲餐饮场所;休闲餐饮场所",
+      "typecode": "050400",
+      "alias": "",
+      "tag": "黑椒牛柳煲仔饭,黑椒牛柳乌冬面,酸菜鱼,黄焖鸡煲套餐,一品海鲜煲,苔香小米糕,鲜榨果汁,韩式全家福,乌梅冻饮,港式菠萝包,海盐冰咖啡,麻辣水煮牛肉煲套餐,虾仁炒饭,美颜酱猪手,美蛙鱼头煲套餐,点心",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙洲中路",
+      "adcode": "320582",
+      "search_keyword": "咖啡店"
     },
     "industry": {
       "code": "3594",
