@@ -193,15 +193,16 @@ npx skills add eiry16/beacon-mfg
 | 工商数据服务商（企查查等） | ⚠️ 黄区 | 仅人工参考，不批量抓取 |
 | B2B 平台（1688 等） | ❌ 红区 | 不爬取 |
 
-**红线：** 只发布企业公开经营信息，不发布个人隐私；每条数据标注 `source`（来源渠道）+ `imported_at` / `verified_at`（导入 / 核验时间）；`source_url`（逐条出处链接）当前覆盖率为 **0%**，正在回填（见下方「审计跟进」）。
+**红线：** 只发布企业公开经营信息，不发布个人隐私；每条数据标注 `source`（来源渠道）+ `imported_at` / `verified_at`（导入 / 核验时间）；`source_url`（逐条出处链接）已回填 **92.8%**（73,825/79,555 条带高德 POI 出处链接，其余多为待核实 POI 诚实留空；见下方「审计跟进」）。
 企业可提交 PR 或 Issue 更新/删除自己的信息。被 fork/抄袭的应对策略见 [docs/ANTI_COPYING.md](docs/ANTI_COPYING.md)。
 
 ## 联系方式数据策略
 
-> ⚠️ **隐私说明（审计议题 [#1](https://github.com/eiry16/beacon-mfg/issues/1) 跟进）：** 当前完整展示公开经营电话（含手机号）是刻意为之——来源为公开 POI 名录中的企业经营联系方式。我们已注意到公开仓库暴露完整手机号的风险，正在评估脱敏 / 分层方案（如将明细联系方式移至「认主后可见」的鉴权层）。如有建议欢迎在议题中讨论。
+> ⚠️ **隐私说明（审计议题 [#1](https://github.com/eiry16/beacon-mfg/issues/1) 跟进）：** 当前完整展示公开经营电话（含手机号）是刻意为之——来源为公开 POI 名录中的企业经营联系方式。我们已注意到公开仓库暴露完整手机号的风险并**已实施脱敏（方案 A）**：GitHub 仓库中 `data/gb` / `data/en` / `phone-index.jsonl` 在提交时由 `scripts/mask_phones.py` 作为 git clean filter 自动脱敏（手机 → `138****0000`，座机原样，已认领 `claim.status=claimed/verified` 保留全号）；而 App 运行时数据源（Cloudflare Pages）始终保留全号并可拨号，已安装的旧版 App 完全无感。如有建议欢迎在议题中讨论。
 
-- **座机 / 400 / 800 / 手机号**：完整展示，无任何脱敏（来源为公开 POI 名录，企业自行公开的经营联系方式）
-- 数据不做星号 / 掩码处理；如企业要求更正/删除联系方式，可通过 GitHub Issue 提出
+- **App / Cloudflare Pages（运行态数据源）**：座机 / 400 / 800 / 手机号完整展示、可拨号，无任何脱敏（来源为公开 POI 名录，企业自行公开的经营联系方式）。
+- **GitHub 公开仓库（静态快照）**：入库即脱敏——手机 → `138****0000`，座机原样；已认领（`claim.status=claimed/verified`）记录保留全号。由 `scripts/mask_phones.py` 作为 git clean filter 自动执行，工作树与 Pages 部署源仍保留全号。
+- 如企业要求更正/删除联系方式，可通过 GitHub Issue 提出。
 
 ## 仓库结构
 
@@ -238,6 +239,6 @@ beacon-mfg/
 
 - ✅ **计数从入库数据生成并随数据提交**：`scripts/validate.py --strict` 含 `check_readme_consistency`，CI（`.github/workflows/validate.yml`）在每次 push 后校验 README 数字与数据集是否一致；发布流程现已把 `README.md` / `data/DATA_STATS.md` / `data/industry-index.json` 一并提交，避免 README 与数据漂移（这正是此前 CI 反复失败的根因）。
 - ✅ **真实 / 待核实分离**：每条记录用 `status` 字段区分 `verified`（已核验）与 `unverified_poi`（真实企业、电话待核实）；旧 `is_template` 字段 deprecated，仅作兼容保留。README 的「数据现状」表已分别列出「电话已核实 / 待核实」。
-- 🚧 **逐条 `source_url` 溯源**：当前全量 79,555 条记录的 `source_url` 覆盖率仍为 **0%**，每条仅有 `source` + `imported_at` / `verified_at`，尚未达到「逐条可溯源」。回填计划进行中；在此之前 README 不再声称「每条都可溯源」。
-- 🚧 **手机号脱敏 / 分层**：审计指出公开仓库暴露完整手机号的风险，方案评估中（见上方「联系方式数据策略」）。
+- ✅ **逐条 `source_url` 溯源**：已回填 **92.8%**（73,825/79,555 条带高德 POI 出处链接 `https://www.amap.com/place/{poi_id}`，由 `scripts/_backfill_source_url.py` 自动生成；其余多为待核实 POI，诚实留空，不编造链接）。
+- ✅ **手机号脱敏（仓库侧）**：方案 A 已落地——GitHub 仓库入库即脱敏（见上方「联系方式数据策略」），App 数据源（Cloudflare Pages）保留全号；已安装的旧版 App 完全无感。
 - ✅ **去重不变量**：CI 校验 `duplicate_ids == 0`，已维持。
