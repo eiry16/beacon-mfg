@@ -35,6 +35,8 @@
   然后必须重建 data/industry-index.json，否则新数据在企业检索里搜不到
 """
 import argparse
+import atexit
+import os
 import sys
 import time
 from pathlib import Path
@@ -247,6 +249,25 @@ for _code, (_tier, _kws, _cities) in JOBS.items():
         if _c not in _cities:
             _cities.append(_c)
 
+# ---------------------------------------------------------------- 西南四城（2026-09-16 新增）
+# 贵阳 / 南宁 / 昆明 / 遵义：JOBS 里此前一次都没出现过（零任务）。
+#
+# 铺哪几层是有账要算的：日配额 1000 ≈ 每天 125 个任务，矩阵原本已经 1654 个
+# （约 13 天才能轮一遍），每多铺一层就线性拉长轮转周期。所以这里只铺
+#   core    —— 项目主业「让客户 Agent 找到制造业供应商」，西南的装备/配套必须有人
+#   service —— 到店服务（餐饮/住宿/汽修），昆明贵阳南宁遵义都是真实需求地
+# retail / tech / leisure 先不动：它们现有城市集中在沪广深杭，加西南的边际收益
+# 低于上面两层，等这轮跑顺了再谈加码。
+SOUTHWEST_CITIES = ["贵阳", "南宁", "昆明", "遵义"]
+SW_TIERS = ("core", "service")
+
+for _code, (_tier, _kws, _cities) in JOBS.items():
+    if _tier not in SW_TIERS:
+        continue
+    for _c in SOUTHWEST_CITIES:
+        if _c not in _cities:
+            _cities.append(_c)
+
 
 def resolve_industries(selector):
     """把 --industry 参数解析成代码列表。
@@ -289,6 +310,87 @@ def plan(tier="core", industries=None, category=None, keyword=None, city=None):
                     continue
                 tasks.append((code, cat, kw, c))
     return tasks
+
+
+# ---------------------------------------------------------------------------
+# Single-instance guard: a repo-local .fetch_batch.lock holds the current PID.
+# On startup, if a live instance already holds it, the new process exits.
+# This complements fetcher.acquire_fetch_lock() (which only guards max_id
+# allocation); here we guard the entire process including the ledger scheduler,
+# so two cron triggers can never advance the ledger concurrently (which would
+# double the fetch volume and collide ids).
+_INSTANCE_LOCK_FD = None
+_INSTANCE_LOCK_PATH = ROOT / ".fetch_batch.lock"
+
+
+def _pid_alive(pid: int) -> bool:
+    """Check whether a process is alive; Windows uses OpenProcess, with an
+    mtime-staleness fallback if the platform call is unavailable."""
+    try:
+        import ctypes
+        kernel32 = ctypes.windll.kernel32
+        PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
+        h = kernel32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
+        if h:
+            kernel32.CloseHandle(h)
+            return True
+        return False
+    except Exception:
+        try:
+            return (time.time() - _INSTANCE_LOCK_PATH.stat().st_mtime) < 12 * 3600
+        except Exception:
+            return False
+
+
+def _acquire_instance_lock() -> bool:
+    """Acquire the instance lock. Returns True on success, False if another
+    live instance already holds it."""
+    global _INSTANCE_LOCK_FD
+    try:
+        fd = os.open(str(_INSTANCE_LOCK_PATH), os.O_CREAT | os.O_RDWR, 0o644)
+    except OSError:
+        return False
+    try:
+        raw = os.read(fd, 64).decode("utf-8", "replace").strip()
+    except Exception:
+        raw = ""
+    if raw:
+        pid = None
+        try:
+            pid = int(raw.split()[0])
+        except Exception:
+            pid = None
+        if pid and _pid_alive(pid):
+            os.close(fd)
+            return False
+    try:
+        os.lseek(fd, 0, os.SEEK_SET)
+        os.ftruncate(fd, 0)
+        os.write(fd, ("%d\n%s" % (os.getpid(),
+                 time.strftime("%Y-%m-%dT%H:%M:%S"))).encode("utf-8"))
+        os.fsync(fd)
+    except OSError:
+        os.close(fd)
+        return False
+    _INSTANCE_LOCK_FD = fd
+    atexit.register(_release_instance_lock)
+    return True
+
+
+def _release_instance_lock() -> None:
+    global _INSTANCE_LOCK_FD
+    if _INSTANCE_LOCK_FD is None:
+        return
+    try:
+        os.close(_INSTANCE_LOCK_FD)
+    except Exception:
+        pass
+    _INSTANCE_LOCK_FD = None
+    try:
+        if _INSTANCE_LOCK_PATH.exists():
+            _INSTANCE_LOCK_PATH.unlink()
+    except Exception:
+        pass
 
 
 def main():
@@ -335,6 +437,15 @@ def main():
     parser.add_argument("--no-lock", action="store_true",
                         help="跳过单实例抓取锁（不推荐：并发会撞 id）")
     args = parser.parse_args()
+
+    # Single-instance guard (repo-local PID lock). The existing fetcher lock only
+    # protects max_id allocation; this blocks the whole process so two cron
+    # triggers cannot advance the ledger concurrently.
+    if not getattr(args, "no_lock", False) and not args.dry_run:
+        if not _acquire_instance_lock():
+            print("Another fetch_batch instance is already running "
+                  "(see .fetch_batch.lock PID); exiting to avoid concurrent fetch.")
+            raise SystemExit(3)
 
     # 2026-09-14：默认从 core 改为 all。设计面含 7 个已登记门类，默认只跑 core
     # 会让 H/I/M/O/R 永远排不上号（账本里 1914 个「从未跑过」绝大多数是它们）。
