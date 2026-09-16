@@ -184,5 +184,101 @@
       "verified": false
     },
     "_bucket": "C/34/3435"
+  },
+  {
+    "id": "CN-MFG-0094396",
+    "company": "旭晟电梯配件(富力新天地店)",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料配件"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "富力新天地16栋1-13号门面",
+    "contact_phone": "136****9584",
+    "lat": 26.638562,
+    "lng": 106.618819,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IARR8QIQ",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520115",
+      "search_keyword": "塑料配件"
+    },
+    "industry": {
+      "code": "3435",
+      "name": "电梯、自动扶梯及升降机制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 电梯、自动扶梯及升降机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "电梯"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0118193",
+    "company": "南宁坤力特起重升降机械有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "三津大道68号南隆机械加工市场东栋8-12号",
+    "contact_phone": "0771-3831568; 138****3026",
+    "lat": 22.804039,
+    "lng": 108.218998,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H67S2XNM",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450105",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "3435",
+      "name": "电梯、自动扶梯及升降机制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 电梯、自动扶梯及升降机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "升降机"
+    },
+    "is_manufacturer": true
   }
 ]

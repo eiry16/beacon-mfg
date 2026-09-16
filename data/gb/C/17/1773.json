@@ -299,5 +299,101 @@
     "is_manufacturer": true,
     "status": "verified",
     "_bucket": "C/17/1773"
+  },
+  {
+    "id": "CN-MFG-0123056",
+    "company": "聚丰窗帘加工定型服务中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "环城路与内沙路交叉口东北240米",
+    "contact_phone": "待核实",
+    "lat": 27.690293,
+    "lng": 106.942523,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JUJSLJ8E",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "窗帘",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520302",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1773",
+      "name": "窗帘、布艺类产品制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 家用纺织制成品制造 > 窗帘、布艺类产品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "窗帘"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0123063",
+    "company": "聚丰窗帘加工定型服务中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "326国道与东联线交叉口东北180米",
+    "contact_phone": "待核实",
+    "lat": 27.695275,
+    "lng": 106.955725,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3H79ZZZ",
+      "type": "购物服务;家居建材市场;家居建材市场",
+      "typecode": "060600",
+      "alias": "",
+      "tag": "",
+      "keytag": "窗帘",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520302",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1773",
+      "name": "窗帘、布艺类产品制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 家用纺织制成品制造 > 窗帘、布艺类产品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "窗帘"
+    },
+    "is_manufacturer": true
   }
 ]

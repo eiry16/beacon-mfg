@@ -47,5 +47,53 @@
     },
     "is_manufacturer": false,
     "_bucket": "F/51/5147"
+  },
+  {
+    "id": "CN-MFG-0104435",
+    "company": "昆明测绘仪器批发超市(维修校正鉴定)对讲机",
+    "category": "批发和零售业",
+    "keywords": [
+      "精密机械"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "金马街道办事处牛街社区居委会昆铁盛和家苑D栋1104",
+    "contact_phone": "177****6868",
+    "lat": 25.002163,
+    "lng": 102.772239,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L1R9D2ZE",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "朱家村立交桥",
+      "adcode": "530111",
+      "search_keyword": "精密机械"
+    },
+    "industry": {
+      "code": "5147",
+      "name": "乐器批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 文化、体育用品及器材批发 > 乐器批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "器批发"
+    },
+    "is_manufacturer": false
   }
 ]

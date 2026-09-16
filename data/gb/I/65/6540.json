@@ -2903,5 +2903,56 @@
     },
     "is_manufacturer": false,
     "_bucket": "I/65/6540"
+  },
+  {
+    "id": "CN-MFG-0110992",
+    "company": "翔宇汽车养护服务中心",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "汽车维修",
+      "汽修",
+      "汽车修理",
+      "修车"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "金洲路51号琅西小学对面",
+    "contact_phone": "182****3688",
+    "lat": 22.804151,
+    "lng": 108.360127,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0303074FF",
+      "type": "汽车服务;汽车养护/装饰;汽车养护|汽车维修;汽车维修;汽车维修",
+      "typecode": "010400|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车保养",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "埌西",
+      "adcode": "450103",
+      "search_keyword": "汽车维修"
+    },
+    "industry": {
+      "code": "6540",
+      "name": "运行维护服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 运行维护服务 > 运行维护服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "护服务"
+    },
+    "is_manufacturer": false
   }
 ]

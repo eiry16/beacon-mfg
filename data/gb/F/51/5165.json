@@ -6052,5 +6052,53 @@
     },
     "is_manufacturer": false,
     "_bucket": "F/51/5165"
+  },
+  {
+    "id": "CN-MFG-0107418",
+    "company": "台亚塑胶建材批发部(俊发新螺蛳湾国际商贸城店)",
+    "category": "原材料",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "商博街螺蛳湾商贸城三期(塔密地铁站C口步行450米)",
+    "contact_phone": "0871-67185637; 138****0567",
+    "lat": 24.934324,
+    "lng": 102.784765,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFK87UNS",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新螺蛳湾",
+      "adcode": "530111",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "5165",
+      "name": "建材批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 建材批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建材批发"
+    },
+    "is_manufacturer": false
   }
 ]

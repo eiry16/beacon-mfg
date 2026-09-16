@@ -40717,5 +40717,151 @@
       "evidence": "电子制品"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0097587",
+    "company": "贵阳金润钢筋连接技术有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "连接器"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "望城路214号",
+    "contact_phone": "待核实",
+    "lat": 26.54425,
+    "lng": 106.715983,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI55PBX",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520102",
+      "search_keyword": "连接器"
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0112519",
+    "company": "鑫金辉五金 电子配件",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "玖誉城嘉城s8-129号商铺",
+    "contact_phone": "134****4221",
+    "lat": 22.773925,
+    "lng": 108.309325,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LA4L75T8",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "星光大道",
+      "adcode": "450105",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电子配件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0120022",
+    "company": "远志电子配件家电维修",
+    "category": "电子元器件",
+    "keywords": [
+      "家电维修",
+      "洗衣机维修",
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "新西路与北环西路交叉口东60米",
+    "contact_phone": "159****4816",
+    "lat": 27.954034,
+    "lng": 107.187564,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH6BDPG",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "解放中路",
+      "adcode": "520323",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电子配件"
+    },
+    "is_manufacturer": true
   }
 ]

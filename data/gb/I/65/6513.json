@@ -28251,5 +28251,53 @@
       "evidence": "软件"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0104925",
+    "company": "七彩软件开发有限公司晓东村店",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "电脑上门维修"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "晓东村286号七彩软件电脑维修",
+    "contact_phone": "0871-67194182; 137****0880",
+    "lat": 24.987339,
+    "lng": 102.759613,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL0BTSO",
+      "type": "公司企业;公司;网络科技|购物服务;家电电子卖场;数码电子",
+      "typecode": "170206|060306",
+      "alias": "",
+      "tag": "",
+      "keytag": "电脑维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "高原明珠美食城",
+      "adcode": "530111",
+      "search_keyword": "电脑上门维修"
+    },
+    "industry": {
+      "code": "6513",
+      "name": "应用软件开发",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 软件开发 > 应用软件开发",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "软件开发"
+    },
+    "is_manufacturer": false
   }
 ]

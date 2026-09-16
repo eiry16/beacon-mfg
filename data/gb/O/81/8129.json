@@ -191,5 +191,55 @@
       "evidence": "设备维修"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0105003",
+    "company": "官渡鸿安设备维修点",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修",
+      "洗衣机维修",
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "金马街道南屏苑10栋104号商铺",
+    "contact_phone": "183****8170",
+    "lat": 25.028281,
+    "lng": 102.745031,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3X71Y8X",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "维修站点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "金马",
+      "adcode": "530111",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "8129",
+      "name": "其他办公设备维修",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 计算机和办公设备维修 > 其他办公设备维修",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "设备维修"
+    },
+    "is_manufacturer": false
   }
 ]

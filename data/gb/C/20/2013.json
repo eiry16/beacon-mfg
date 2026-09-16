@@ -656,5 +656,101 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/20/2013"
+  },
+  {
+    "id": "CN-MFG-0101734",
+    "company": "贵州云通铝单板生产基地",
+    "category": "原材料",
+    "keywords": [
+      "铝型材"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "贵阳大商汇商务酒店西北侧170米",
+    "contact_phone": "待核实",
+    "lat": 26.474725,
+    "lng": 106.628625,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JDRLR2W0",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "购物服务,购物相关场所,购物相关场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石板",
+      "adcode": "520111",
+      "search_keyword": "铝型材"
+    },
+    "industry": {
+      "code": "2013",
+      "name": "单板加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 单板加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "单板"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0114936",
+    "company": "上海吉祥铝塑板厂家铝塑金属复合板美丽板铝单板厂家",
+    "category": "原材料",
+    "keywords": [
+      "铝板"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "东三环高金汽车有限公司2号库",
+    "contact_phone": "137****7193",
+    "lat": 25.022398,
+    "lng": 102.774349,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H1FDDU6N",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "金马",
+      "adcode": "530111",
+      "search_keyword": "铝板"
+    },
+    "industry": {
+      "code": "2013",
+      "name": "单板加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 单板加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "单板"
+    },
+    "is_manufacturer": true
   }
 ]

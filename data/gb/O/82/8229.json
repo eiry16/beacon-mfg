@@ -144,5 +144,53 @@
       "evidence": "宠物"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0111159",
+    "company": "霸王茶姬(南宁民歌湖宠物友好主题店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "奶茶"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "金浦路23号(民歌湖现代艺术酒吧街)地下演绎厅-S1号铺面",
+    "contact_phone": "4008788359",
+    "lat": 22.810795,
+    "lng": 108.374545,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LA1UADC8",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "",
+      "keytag": "奶茶/茶饮",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "竹溪大道",
+      "adcode": "450103",
+      "search_keyword": "奶茶"
+    },
+    "industry": {
+      "code": "8229",
+      "name": "其他宠物服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 其他服务业 > 宠物服务 > 其他宠物服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宠物"
+    },
+    "is_manufacturer": false
   }
 ]

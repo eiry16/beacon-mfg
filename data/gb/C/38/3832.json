@@ -210,5 +210,53 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/38/3832"
+  },
+  {
+    "id": "CN-MFG-0096579",
+    "company": "电脑监控网络光纤打印耗材(脑百信数码世界店)",
+    "category": "电子元器件",
+    "keywords": [
+      "笔记本维修"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "脑百信数码世界一期二楼A25号",
+    "contact_phone": "158****3267",
+    "lat": 26.574204,
+    "lng": 106.709374,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IUHUNS0Z",
+      "type": "购物服务;家电电子卖场;数码电子",
+      "typecode": "060306",
+      "alias": "",
+      "tag": "",
+      "keytag": "安防监控",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "市府路",
+      "adcode": "520102",
+      "search_keyword": "笔记本维修"
+    },
+    "industry": {
+      "code": "3832",
+      "name": "光纤制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 光纤制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "光纤"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -291,5 +291,103 @@
       "evidence": "饮食"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0095402",
+    "company": "TripSmith Joying Room饮食间(青云市集店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "兴关路街道青云路83号青云市集A-1-98号",
+    "contact_phone": "187****5312",
+    "lat": 26.563975,
+    "lng": 106.715775,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LK9ZA0CV",
+      "type": "体育休闲服务;娱乐场所;酒吧",
+      "typecode": "080304",
+      "alias": "",
+      "tag": "",
+      "keytag": "啤酒屋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新华路",
+      "adcode": "520102",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "3594",
+      "name": "商业、饮食、服务专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 商业、饮食、服务专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "饮食"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0110035",
+    "company": "方四(志)眼饮食店(济南路店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "便当",
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "济南路绿之都商厦小区旁",
+    "contact_phone": "158****6001",
+    "lat": 22.82287,
+    "lng": 108.319872,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFE6M74",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "酸笋,米粉",
+      "keytag": "小吃快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "朝阳",
+      "adcode": "450102",
+      "search_keyword": "便当"
+    },
+    "industry": {
+      "code": "3594",
+      "name": "商业、饮食、服务专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 商业、饮食、服务专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "饮食"
+    },
+    "is_manufacturer": true
   }
 ]
