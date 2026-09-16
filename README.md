@@ -193,10 +193,12 @@ npx skills add eiry16/beacon-mfg
 | 工商数据服务商（企查查等） | ⚠️ 黄区 | 仅人工参考，不批量抓取 |
 | B2B 平台（1688 等） | ❌ 红区 | 不爬取 |
 
-**红线：** 只发布企业公开经营信息，不发布个人隐私；每条数据标注 `source + source_url + verified_at`；
+**红线：** 只发布企业公开经营信息，不发布个人隐私；每条数据标注 `source`（来源渠道）+ `imported_at` / `verified_at`（导入 / 核验时间）；`source_url`（逐条出处链接）当前覆盖率为 **0%**，正在回填（见下方「审计跟进」）。
 企业可提交 PR 或 Issue 更新/删除自己的信息。被 fork/抄袭的应对策略见 [docs/ANTI_COPYING.md](docs/ANTI_COPYING.md)。
 
 ## 联系方式数据策略
+
+> ⚠️ **隐私说明（审计议题 [#1](https://github.com/eiry16/beacon-mfg/issues/1) 跟进）：** 当前完整展示公开经营电话（含手机号）是刻意为之——来源为公开 POI 名录中的企业经营联系方式。我们已注意到公开仓库暴露完整手机号的风险，正在评估脱敏 / 分层方案（如将明细联系方式移至「认主后可见」的鉴权层）。如有建议欢迎在议题中讨论。
 
 - **座机 / 400 / 800 / 手机号**：完整展示，无任何脱敏（来源为公开 POI 名录，企业自行公开的经营联系方式）
 - 数据不做星号 / 掩码处理；如企业要求更正/删除联系方式，可通过 GitHub Issue 提出
@@ -229,3 +231,13 @@ beacon-mfg/
 
 本项目的定位是"Agent 时代的制造业黄页"。数据来自公开渠道，仅供参考，
 不构成对供应商的推荐与评级，不参与任何交易环节。
+
+## 审计跟进（议题 #1）
+
+针对社区审计 [issue #1](https://github.com/eiry16/beacon-mfg/issues/1) 的意见，当前状态：
+
+- ✅ **计数从入库数据生成并随数据提交**：`scripts/validate.py --strict` 含 `check_readme_consistency`，CI（`.github/workflows/validate.yml`）在每次 push 后校验 README 数字与数据集是否一致；发布流程现已把 `README.md` / `data/DATA_STATS.md` / `data/industry-index.json` 一并提交，避免 README 与数据漂移（这正是此前 CI 反复失败的根因）。
+- ✅ **真实 / 待核实分离**：每条记录用 `status` 字段区分 `verified`（已核验）与 `unverified_poi`（真实企业、电话待核实）；旧 `is_template` 字段 deprecated，仅作兼容保留。README 的「数据现状」表已分别列出「电话已核实 / 待核实」。
+- 🚧 **逐条 `source_url` 溯源**：当前全量 79,555 条记录的 `source_url` 覆盖率仍为 **0%**，每条仅有 `source` + `imported_at` / `verified_at`，尚未达到「逐条可溯源」。回填计划进行中；在此之前 README 不再声称「每条都可溯源」。
+- 🚧 **手机号脱敏 / 分层**：审计指出公开仓库暴露完整手机号的风险，方案评估中（见上方「联系方式数据策略」）。
+- ✅ **去重不变量**：CI 校验 `duplicate_ids == 0`，已维持。
