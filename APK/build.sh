@@ -6,7 +6,13 @@ set -uo pipefail
 APK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 export JAVA_HOME="C:/Program Files/Android/Android Studio/jbr"
-export ANDROID_HOME="${ANDROID_HOME:-$HOME/AppData/Local/Android/Sdk}"
+# ANDROID_HOME 必须是 **Windows 风格路径**（C:/Users/...）。Gradle 跑在 JVM 上，
+# 认不了 Git Bash 的 MSYS 路径；而 $HOME 在 Git Bash 下恰好是 `/c/Users/xxx`，
+# 直接拼就报 "SDK location not found ... set sdk.dir in local.properties" ——
+# 报错只提 local.properties，看不出其实是路径风格问题，极易往错方向排查。
+# 所以优先取 USERPROFILE（原生 Windows 路径）并把反斜杠换成正斜杠。
+_WIN_HOME="$(cygpath -w "${USERPROFILE:-$HOME}" 2>/dev/null || echo "${USERPROFILE:-$HOME}")"
+export ANDROID_HOME="${ANDROID_HOME:-${_WIN_HOME//\\//}/AppData/Local/Android/Sdk}"
 export ANDROID_SDK_ROOT="$ANDROID_HOME"
 GRADLE_BIN="${GRADLE_BIN:-$HOME/.workbuddy/binaries/gradle/gradle-dist/gradle-9.7.1/bin/gradle}"
 
