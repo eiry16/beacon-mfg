@@ -115,6 +115,69 @@ def merge_preserving(old: dict, new: dict) -> dict:
     return merged
 
 
+def _claim_block(app: dict) -> dict:
+    """从认证档案推导出能力卡里的 `claim` 块（等级只能算，不指定）。
+
+    与 server/routers/certification.claim_block 同口径，但**不依赖 server 模块**
+    （scripts 不该反向 import FastAPI 那一层）：灯牌 L1..L3 ↔ claimed/verified/audited，
+    联系人已核验但未达 L2 即 claimed。verified_by 收窄到枚举（桩通道记 sms）。
+    """
+    ident = app.get("identity") or {}
+    badge = app.get("badge")
+    if badge in ("L1", "L2", "L3"):
+        status = {"L1": "claimed", "L2": "verified", "L3": "audited"}[badge]
+    elif ident.get("contact_verified"):
+        status = "claimed"
+    else:
+        status = "unclaimed"
+    by = ident.get("verified_by")
+    if by and by not in ("wechat", "sms", "email", "manual", "third_party"):
+        by = "sms" if str(by).startswith("sms") else "manual"
+    return {
+        "status": status,
+        "verified_by": by,
+        "verified_at": (ident.get("verified_at") or "")[:10] or None,
+        "badge": badge,
+        "app_id": app.get("app_id"),
+    }
+
+
+def write_claim_status(supplier_id: str, claim_status: str,
+                       verified_by: str | None = None,
+                       verified_at: str | None = None,
+                       badge: str | None = None,
+                       app_id: str | None = None) -> bool:
+    """把 claim.status 写回数据仓（data/gb）。
+
+    **只动 `claim` 块、保留其余字段**——复用 merge_preserving 的纪律，绝不整条替换
+    （整条替换会丢 lat/lng/POI/agent 等公开采集字段，见本文件顶部红线）。
+    对话式认领（/claim/confirm）与认证回流（main Phase A）共用这一条，避免两套口径。
+    返回是否真的写盘（名录里查不到这家则返回 False，不新建记录）。
+    """
+    old = load_existing(supplier_id)
+    if old is None:
+        return False
+    claim = dict(old.get("claim") or {})
+    claim["status"] = claim_status
+    if verified_by is not None:
+        claim["verified_by"] = verified_by
+    if verified_at is not None:
+        claim["verified_at"] = verified_at
+    if badge is not None:
+        claim["badge"] = badge
+    if app_id is not None:
+        claim["app_id"] = app_id
+    new = {**old, "claim": claim}
+    merged = merge_preserving(old, new)
+    extra = set(merged.keys()) - set(old.keys())
+    if extra and extra != {"claim"}:
+        # 合并后多出非 claim 的字段 = 合并逻辑有洞，宁可不写（静默丢数据比报错更糟）
+        print("[write_claim_status] 合并会引入非预期字段，已中止：%s" % supplier_id)
+        return False
+    gb_store.upsert([merged])
+    return True
+
+
 def build_record(app: dict) -> dict:
     ident = app.get("identity") or {}
     cap = app.get("capability") or {}
@@ -176,6 +239,10 @@ def build_record(app: dict) -> dict:
             "profile": cap.get("profile"),
             "completeness": comp.get("score"),
         },
+        # 灯牌等级实算成 claim.status，脱敏门控（is_claimed）只读这个字段。
+        # 以前 build_record 不写 claim 块，导致 verified/audited 供应商的 claim.status
+        # 停在 unclaimed，git 端手机号仍被脱敏——这正是认领/认证「用不上」的根因之一。
+        "claim": _claim_block(app),
     }
 
 
@@ -230,6 +297,36 @@ def main():
         for line in lost_report:
             print("  - " + line)
         return 1
+
+    # ── Phase B：对话式认领（L1 claimed）回流 ──
+    # 只补「联系人已核验 / 但未走完审核（stage != approved）」的认领：这些在
+    # verify-code + confirm 时已把 claim.status=claimed 落进数据仓（见 routers/claim.py），
+    # 但认证档案里仍留着 contact_verified 标记。这里作为兜底，把档案侧的 claimed
+    # 也回流一遍（幂等）——保证本脚本单独跑（如 cron）时也能覆盖到对话认领。
+    claim_rows: list[tuple] = []
+    for f in sorted(CERT_DIR.glob("*.json")):
+        try:
+            ap = json.load(open(f, encoding="utf-8"))
+        except Exception:
+            continue
+        if ap.get("stage") == "approved":  # 已 approved 的由 Phase A 处理（含 claim 块）
+            continue
+        if not (ap.get("identity") or {}).get("contact_verified"):
+            continue
+        cb = _claim_block(ap)
+        if cb["status"] != "claimed":
+            continue
+        claim_rows.append((ap["supplier_id"], cb, ap.get("company", "")[:24],
+                           cb["app_id"]))
+
+    if claim_rows:
+        print("\n对话式认领待回流（claimed）：%d 家" % len(claim_rows))
+        for sid, cb, name, aid in claim_rows:
+            print("  %s  %s" % (sid, name))
+            if a.apply:
+                write_claim_status(sid, cb["status"], verified_by=cb["verified_by"],
+                                   verified_at=cb["verified_at"], badge=cb["badge"],
+                                   app_id=aid)
 
     if not a.apply:
         print("\n（预览模式，加 --apply 落盘）")
