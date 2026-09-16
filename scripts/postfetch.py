@@ -526,15 +526,68 @@ def _ensure_mask_filter() -> None:
     ⚠️ 路径必须用正斜杠（POSIX）：git 通过 MSYS shell 执行 clean/smudge 命令，
     反斜杠会被当成转义符（"C:\\Users\\..." → "C:Users..." → command not found），
     导致 filter 静默失败、全号直接入库。故此处用 Path(...).as_posix() 归一化。
+
+    ⚠️ 路径必须加引号（2026-09-17 实测）：sys.executable 为
+    "C:/Program Files/Python/python.exe" 这类**带空格**的路径时，sh 会按空格切成
+    `C:/Program` + `Files/Python/...` → `line 1: C:/Program: No such file or directory`
+    → filter 退出 127。而 `filter.maskphone.required` 缺省为 false，git **忽略失败、
+    把未脱敏原文直接存进索引**，于是未认领全号进了暂存区（靠安全闸门才没推上去）。
+    故：① 两段路径都用双引号包裹；② 显式置 required=true，让失败变成**响亮报错**
+    而不是静默降级。
     """
+
+    def _q(p: str) -> str:
+        return '"' + str(p).replace('"', '\\"') + '"'
+
     py = str(Path(sys.executable).as_posix())
     script = str((SCRIPTS / "mask_phones.py").as_posix())
-    cmd = f"{py} {script} --filter"
+    cmd = f"{_q(py)} {_q(script)} --filter"
     rc, out = _git_run(["config", "--local", "--get", "filter.maskphone.clean"])
     if rc == 0 and out.strip() == cmd:
-        return
+        # 已正确配置时也要保证 required 是 true（老配置/手工改过的情况）
+        rc2, out2 = _git_run(["config", "--local", "--get", "filter.maskphone.required"])
+        if rc2 == 0 and out2.strip().lower() == "true":
+            return
     _git_run(["config", "--local", "filter.maskphone.clean", cmd])
     _git_run(["config", "--local", "filter.maskphone.smudge", "cat"])
+    _git_run(["config", "--local", "filter.maskphone.required", "true"])
+
+
+# 自检样本：一条带 11 位手机的极简记录（--path 让它命中 .gitattributes 的 maskphone）
+_MASK_SELFTEST_SAMPLE = '{"id": "__mask_selftest__", "contact_phone": "13800138000"}'
+
+
+def _selftest_mask_filter() -> None:
+    """活体自检：确认 clean filter **真的会改写内容**，而不是「配了但没生效」。
+
+    2026-09-17 事故复盘：filter 命令因 `C:/Program Files/` 带空格被 sh 切碎（退出 127），
+    而当时 `filter.maskphone.required` 未设置 → git **忽略 filter 失败、把未脱敏原文
+    直接写进索引**，444 个分片的未认领全号进了暂存区。最后是靠 step_git 末尾的安全闸门
+    才没推上 GitHub——但那时整轮抓取（1h16m）已经跑完了。
+
+    教训：**配置存在 ≠ filter 生效**。所以这里在 git add 之前用一条真实样本走完整链路，
+    一旦 filter 没改写内容就立刻中止，把失败点提前到流水线第 1 分钟。
+
+    实现：对同一样本分别算「不过 filter」和「过 filter」的 blob hash —— 相等即说明
+    filter 是 no-op（失败/未配置），直接抛错。不需要写对象库，无副作用。
+    """
+    def _hash_obj(extra: list[str]) -> tuple[int, str]:
+        p = subprocess.run(["git", "-C", str(ROOT), "hash-object", "--stdin", *extra],
+                           input=_MASK_SELFTEST_SAMPLE, capture_output=True, text=True)
+        return p.returncode, (p.stdout + p.stderr).strip()
+
+    rc_raw, raw = _hash_obj([])
+    rc_flt, filtered = _hash_obj(["--path", "data/gb/__mask_selftest__.json"])
+    if rc_raw or rc_flt:
+        raise RuntimeError(
+            "maskphone filter 自检失败（hash-object 报错）：raw=%s filtered=%s" % (raw, filtered))
+    if raw == filtered:
+        raise RuntimeError(
+            "maskphone clean filter 未生效：自检样本经 filter 后内容未变（仍含全号）。\n"
+            "  filter 命令 = %s\n"
+            "  常见原因：路径含空格未加引号、路径用了反斜杠、python 解释器不存在。\n"
+            "  修复后重跑；在此之前**不要**绕过安全闸门提交。"
+            % (_git_run(["config", "--local", "--get", "filter.maskphone.clean"])[1],))
 
 
 # 独立的 11 位手机（前后非数字）；座机/400 含 - 不命中；已脱敏幂等。
@@ -632,6 +685,7 @@ def step_git(dry_run: bool = False) -> None:
     # 手机号脱敏保障：确保 maskphone clean filter 已在本地配置（首次运行自动写入），
     # 否则 git add 会把全号直接入库。
     _ensure_mask_filter()
+    _selftest_mask_filter()  # filter 活体自检：在 add 之前就拦下「配了但没生效」
 
     def _g(args: list[str]) -> tuple[int, str]:
         p = subprocess.run(["git", "-C", str(ROOT)] + args,

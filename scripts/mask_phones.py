@@ -136,7 +136,10 @@ def looks_like_csv(text: str) -> bool:
         return False
     if any(ln.lstrip().startswith("{") or ln.lstrip().startswith("[") for ln in lines[:50]):
         return False
-    return all(re.match(r"^[^,]+,\S+$", ln) for ln in lines[:50])
+    # ⚠️ 手机号部分允许含空格：多号以「; 」分隔（如 `133****2292; 151****1191`）。
+    # 旧正则用了 `\S+$`，一个带空格的多号行就会让 all() 为 False → 整个文件被误判成
+    # JSONL → process_jsonl 在第 1 行就 JSONDecodeError 崩溃（2026-09-17 实测）。
+    return all(re.match(r"^[^,]+,.*$", ln) for ln in lines[:50])
 
 
 def process(text: str) -> str:
