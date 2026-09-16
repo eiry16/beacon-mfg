@@ -47,5 +47,53 @@
     },
     "is_manufacturer": false,
     "_bucket": "F/51/5138"
+  },
+  {
+    "id": "CN-MFG-0123688",
+    "company": "金盛厨具地毯小家电批发部",
+    "category": "批发和零售业",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "九龙街道办事处河滨路",
+    "contact_phone": "183****7898",
+    "lat": 28.31803,
+    "lng": 106.211849,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDGU3LWI",
+      "type": "购物服务;家居建材市场;厨卫市场",
+      "typecode": "060604",
+      "alias": "",
+      "tag": "",
+      "keytag": "厨卫洁具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520330",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "5138",
+      "name": "日用家电批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 纺织、服装及家庭用品批发 > 日用家电批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "家电批发"
+    },
+    "is_manufacturer": false
   }
 ]

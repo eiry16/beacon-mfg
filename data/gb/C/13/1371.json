@@ -45,5 +45,101 @@
     "is_manufacturer": true,
     "status": "unverified_poi",
     "_bucket": "C/13/1371"
+  },
+  {
+    "id": "CN-MFG-0105175",
+    "company": "农鑫蔬菜加工中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "广福路辅路与星体路交叉口东南400米",
+    "contact_phone": "待核实",
+    "lat": 24.940675,
+    "lng": 102.764975,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3OOS19I",
+      "type": "公司企业;公司企业;公司企业|生活服务;生活服务场所;生活服务场所",
+      "typecode": "170000|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530111",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1371",
+      "name": "蔬菜加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 蔬菜、菌类、水果和坚果加工 > 蔬菜加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "蔬菜"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0123046",
+    "company": "凤锦农汇农业有限公司净菜加工配送中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "三坝村有机食品城",
+    "contact_phone": "0851-28798806",
+    "lat": 27.946195,
+    "lng": 107.720935,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFMDEYHO",
+      "type": "公司企业;公司;公司|生活服务;生活服务场所;生活服务场所",
+      "typecode": "170200|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520327",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1371",
+      "name": "蔬菜加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 蔬菜、菌类、水果和坚果加工 > 蔬菜加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "净菜"
+    },
+    "is_manufacturer": true
   }
 ]

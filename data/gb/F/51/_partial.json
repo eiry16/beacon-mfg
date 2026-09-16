@@ -1696,5 +1696,728 @@
     "is_manufacturer": false,
     "status": "verified",
     "_bucket": "F/51/_partial"
+  },
+  {
+    "id": "CN-MFG-0103434",
+    "company": "阿尔波特暖通材料批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "塑料原料"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "融鹰塑业科技有限公司院内3号楼",
+    "contact_phone": "0851-84603731",
+    "lat": 26.692159,
+    "lng": 106.680989,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HRGZ76TC",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520113",
+      "search_keyword": "塑料原料"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0116737",
+    "company": "塑料批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "改性塑料"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "马家营小区西北门旁",
+    "contact_phone": "待核实",
+    "lat": 25.008347,
+    "lng": 102.705892,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6CSUCCX",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "购物服务,购物相关场所,购物相关场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "前卫",
+      "adcode": "530112",
+      "search_keyword": "改性塑料"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0116739",
+    "company": "塑料批发市场",
+    "category": "批发和零售业",
+    "keywords": [
+      "改性塑料"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "鼓楼路与灵光街交叉口西100米",
+    "contact_phone": "待核实",
+    "lat": 25.052475,
+    "lng": 102.717275,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KUUALY8P",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530103",
+      "search_keyword": "改性塑料"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0120473",
+    "company": "新华宽塑料批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "塑料配件",
+      "塑料原料"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "华西路3-14号",
+    "contact_phone": "0771-2436763; 138****9096; 180****6763",
+    "lat": 22.82108,
+    "lng": 108.310936,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFDAV27",
+      "type": "购物服务;家居建材市场;建材五金市场|购物服务;家居建材市场;灯具瓷器市场",
+      "typecode": "060603|060606",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "华强",
+      "adcode": "450107",
+      "search_keyword": "塑料配件"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0120479",
+    "company": "飞哥塑料用品批发部",
+    "category": "批发和零售业",
+    "keywords": [
+      "塑料配件"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "华西路3-7号",
+    "contact_phone": "182****2622; 189****5535",
+    "lat": 22.821292,
+    "lng": 108.31201,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGCS8GG",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "购物服务,专卖店,专营店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "华强",
+      "adcode": "450107",
+      "search_keyword": "塑料配件"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "用品批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0120488",
+    "company": "南宁市密源酒店用品塑料批发部",
+    "category": "批发和零售业",
+    "keywords": [
+      "塑料配件"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "华强路31号",
+    "contact_phone": "137****7102",
+    "lat": 22.819178,
+    "lng": 108.314103,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KA9LOXAS",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "朝阳",
+      "adcode": "450107",
+      "search_keyword": "塑料配件"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0120490",
+    "company": "南宁佳翰塑料批发部",
+    "category": "批发和零售业",
+    "keywords": [
+      "塑料配件"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "秀安路与安园东路交叉口南100米",
+    "contact_phone": "0771-3118937; 139****2154",
+    "lat": 22.876096,
+    "lng": 108.30456,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HBXCQ3S3",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "木材板材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "安吉",
+      "adcode": "450107",
+      "search_keyword": "塑料配件"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0121509",
+    "company": "邦德乐涂装工具辅料批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "金城路121号",
+    "contact_phone": "182****7673",
+    "lat": 23.221113,
+    "lng": 108.823304,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GUUKXUH7",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450126",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0122373",
+    "company": "广西南宁钢 材批发市场",
+    "category": "批发和零售业",
+    "keywords": [
+      "钢材",
+      "钢板"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "五象大道690号天誉南宁东盟创客城二组团5号楼九层938号办公室",
+    "contact_phone": "159****4139",
+    "lat": 22.756508,
+    "lng": 108.435151,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRHD7N95",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450109",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "材批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0122924",
+    "company": "刘建中凉拌菜原料调料批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "塑料原料"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "上津路仁义农批市场A栋15-16号",
+    "contact_phone": "0771-2425188; 138****8838; 139****6669",
+    "lat": 22.818675,
+    "lng": 108.247221,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GKKKV62V",
+      "type": "购物服务;综合市场;农副产品市场",
+      "typecode": "060703",
+      "alias": "",
+      "tag": "",
+      "keytag": "农副产品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450105",
+      "search_keyword": "塑料原料"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0123099",
+    "company": "遵义焊机焊材批发出租",
+    "category": "批发和零售业",
+    "keywords": [
+      "激光切割"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "湘源五金机电城15栋1-12号",
+    "contact_phone": "135****2683; 138****3095",
+    "lat": 27.589839,
+    "lng": 106.867523,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G02Z38JF",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备租赁",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520304",
+      "search_keyword": "激光切割"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "材批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0123582",
+    "company": "宇雄酒店用品批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "市政府后门十字路口",
+    "contact_phone": "155****9991",
+    "lat": 27.794254,
+    "lng": 106.401632,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JAUKKNVA",
+      "type": "购物服务;家居建材市场;厨卫市场",
+      "typecode": "060604",
+      "alias": "",
+      "tag": "",
+      "keytag": "厨卫洁具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "盐津",
+      "adcode": "520382",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "用品批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0123587",
+    "company": "遵义市板材批发部",
+    "category": "批发和零售业",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "石佛路10号(永城楼东南门旁)",
+    "contact_phone": "139****7690",
+    "lat": 27.691434,
+    "lng": 106.945217,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH1C7OX",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520302",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "材批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0123984",
+    "company": "永康塑料批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "工程塑料",
+      "改性塑料"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "沙河小区28栋楼51号",
+    "contact_phone": "135****1055; 136****5305",
+    "lat": 27.698323,
+    "lng": 106.947494,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B035400I27",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "永康一次性塑料经营部",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520302",
+      "search_keyword": "工程塑料"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0123997",
+    "company": "凯吉塑料劳保用品批发部",
+    "category": "批发和零售业",
+    "keywords": [
+      "工程塑料"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "龙坑镇湘源国际五交化机电城12栋负一楼35号",
+    "contact_phone": "138****3801; 189****6620",
+    "lat": 27.591095,
+    "lng": 106.867457,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFMEKTTA",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "劳保用品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520304",
+      "search_keyword": "工程塑料"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "用品批发"
+    },
+    "is_manufacturer": false
   }
 ]

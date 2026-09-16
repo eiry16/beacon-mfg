@@ -47,5 +47,151 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/35/3587"
+  },
+  {
+    "id": "CN-MFG-0099423",
+    "company": "美镜诚眼镜",
+    "category": "标准件",
+    "keywords": [
+      "螺栓"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "西南商贸城四号楼三楼35-36",
+    "contact_phone": "177****3319",
+    "lat": 26.605625,
+    "lng": 106.579775,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDR52765",
+      "type": "购物服务;专卖店;眼镜店",
+      "typecode": "061204",
+      "alias": "",
+      "tag": "",
+      "keytag": "眼镜店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520115",
+      "search_keyword": "螺栓"
+    },
+    "industry": {
+      "code": "3587",
+      "name": "眼镜制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 眼镜制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "眼镜"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0101482",
+    "company": "眼镜粑粑",
+    "category": "精密机械加工",
+    "keywords": [
+      "便当",
+      "简餐",
+      "小吃店"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "官渡古镇仿古新南大街15幢3号好人家健康药房旁",
+    "contact_phone": "135****3434",
+    "lat": 24.956568,
+    "lng": 102.757652,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGNVT4U",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "白糖糊麻,玫瑰豆沙,白糖花生,麦面光饼,特色小吃,豆沙,粑粑",
+      "keytag": "小吃快餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "官渡古镇",
+      "adcode": "530111",
+      "search_keyword": "便当"
+    },
+    "industry": {
+      "code": "3587",
+      "name": "眼镜制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 眼镜制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "眼镜"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0123333",
+    "company": "务川眼镜汽车电路修理部",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "-都濡街道珍珠公交总站旁边",
+    "contact_phone": "待核实",
+    "lat": 28.585813,
+    "lng": 107.903568,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJRBK2H",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520326",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3587",
+      "name": "眼镜制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 眼镜制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "眼镜"
+    },
+    "is_manufacturer": true
   }
 ]

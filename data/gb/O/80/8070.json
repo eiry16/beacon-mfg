@@ -46,5 +46,53 @@
       "evidence": "婚介"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0099783",
+    "company": "江南春婚礼宫",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家常菜"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "兴苑路1199号(西部汽车站地铁站A口步行430米)",
+    "contact_phone": "0871-68109721",
+    "lat": 25.033504,
+    "lng": 102.643109,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0367104MD",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "烤鸭,口水鸡",
+      "keytag": "家常菜",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "马街",
+      "adcode": "530112",
+      "search_keyword": "家常菜"
+    },
+    "industry": {
+      "code": "8070",
+      "name": "婚姻服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 婚姻服务 > 婚姻服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "婚礼"
+    },
+    "is_manufacturer": false
   }
 ]

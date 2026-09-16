@@ -386,5 +386,53 @@
       "evidence": "用塑胶"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0094200",
+    "company": "贵州中科运动场地新材料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑胶制品"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "金华园街道德仁路1号贵阳国际金融中心二期商务区C4栋18层8号",
+    "contact_phone": "156****1432",
+    "lat": 26.652245,
+    "lng": 106.653056,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGN5RL6T",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520115",
+      "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "2916",
+      "name": "运动场地用塑胶制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 运动场地用塑胶制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "运动场地"
+    },
+    "is_manufacturer": true
   }
 ]

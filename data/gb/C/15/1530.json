@@ -395,5 +395,102 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/15/1530"
+  },
+  {
+    "id": "CN-MFG-0111821",
+    "company": "杨柳岸茶行",
+    "category": "制造业",
+    "keywords": [
+      "茶室",
+      "茶馆"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "区江滨路36号",
+    "contact_phone": "137****1796",
+    "lat": 23.153227,
+    "lng": 108.281806,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B03030TDGW",
+      "type": "餐饮服务;茶艺馆;茶艺馆",
+      "typecode": "050600",
+      "alias": "",
+      "tag": "",
+      "keytag": "茶座",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "风雨桥",
+      "adcode": "450110",
+      "search_keyword": "茶室"
+    },
+    "industry": {
+      "code": "1530",
+      "name": "精制茶加工",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 精制茶加工 > 精制茶加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "茶行"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0123135",
+    "company": "湄潭县龙凤永财茶叶加工厂",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑加工"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "洪建江茶叶加工厂南侧260米",
+    "contact_phone": "158****9971",
+    "lat": 27.737625,
+    "lng": 107.546576,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JDZZ81O4",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520328",
+      "search_keyword": "注塑加工"
+    },
+    "industry": {
+      "code": "1530",
+      "name": "精制茶加工",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 精制茶加工 > 精制茶加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "茶叶"
+    },
+    "is_manufacturer": true
   }
 ]

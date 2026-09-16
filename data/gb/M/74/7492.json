@@ -48,5 +48,53 @@
     },
     "is_manufacturer": false,
     "_bucket": "M/74/7492"
+  },
+  {
+    "id": "CN-MFG-0115168",
+    "company": "发之界专业设计",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "理发"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "新蒲幸福家园7区32栋",
+    "contact_phone": "131****6643",
+    "lat": 27.730437,
+    "lng": 107.037624,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IDJZR8E4",
+      "type": "生活服务;美容美发店;美容美发店",
+      "typecode": "071100",
+      "alias": "",
+      "tag": "",
+      "keytag": "美发",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520302",
+      "search_keyword": "理发"
+    },
+    "industry": {
+      "code": "7492",
+      "name": "专业设计服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工业与专业设计及其他专业技术服务 > 专业设计服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "专业设计"
+    },
+    "is_manufacturer": false
   }
 ]

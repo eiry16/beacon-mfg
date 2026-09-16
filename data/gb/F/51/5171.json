@@ -46,5 +46,53 @@
     "is_manufacturer": false,
     "status": "verified",
     "_bucket": "F/51/5171"
+  },
+  {
+    "id": "CN-MFG-0118180",
+    "company": "广西云广农业机械设备有限公司",
+    "category": "批发和零售业",
+    "keywords": [
+      "机械加工"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "石埠路邕创加工物流城7栋24D",
+    "contact_phone": "待核实",
+    "lat": 22.837147,
+    "lng": 108.15593,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KUC5YOOQ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450107",
+      "search_keyword": "机械加工"
+    },
+    "industry": {
+      "code": "5171",
+      "name": "农业机械批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 农业机械批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "农业机械"
+    },
+    "is_manufacturer": false
   }
 ]

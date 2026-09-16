@@ -143,5 +143,53 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/13/1392"
+  },
+  {
+    "id": "CN-MFG-0093347",
+    "company": "贵阳豆中豆豆制品加工厂",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑加工"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "竹林村竹林老寨402号",
+    "contact_phone": "待核实",
+    "lat": 26.475277,
+    "lng": 106.663383,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IAL737UT",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520111",
+      "search_keyword": "注塑加工"
+    },
+    "industry": {
+      "code": "1392",
+      "name": "豆制品制造",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 其他农副食品加工 > 豆制品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "豆制品"
+    },
+    "is_manufacturer": true
   }
 ]

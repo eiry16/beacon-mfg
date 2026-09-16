@@ -21165,5 +21165,53 @@
       "evidence": "KTV"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0112195",
+    "company": "金曲电音KTV",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "酒吧"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "五一西路157号",
+    "contact_phone": "待核实",
+    "lat": 22.809531,
+    "lng": 108.267015,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GK7U0EHZ",
+      "type": "体育休闲服务;娱乐场所;KTV",
+      "typecode": "080302",
+      "alias": "",
+      "tag": "",
+      "keytag": "量贩式KTV",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "五一路",
+      "adcode": "450105",
+      "search_keyword": "酒吧"
+    },
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "KTV"
+    },
+    "is_manufacturer": false
   }
 ]

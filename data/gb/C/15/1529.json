@@ -47,5 +47,53 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/15/1529"
+  },
+  {
+    "id": "CN-MFG-0108014",
+    "company": "鑫辉废品回收 高价回收铜铁铝(不收纸板 饮料瓶)",
+    "category": "注塑成型",
+    "keywords": [
+      "模具"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "杨家社区田家地339号",
+    "contact_phone": "199****1950",
+    "lat": 25.006165,
+    "lng": 102.681757,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KK0LGRAP",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "废品回收",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "十里长街",
+      "adcode": "530112",
+      "search_keyword": "模具"
+    },
+    "industry": {
+      "code": "1529",
+      "name": "茶饮料及其他饮料制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 饮料制造 > 茶饮料及其他饮料制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "饮料"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -511,5 +511,53 @@
       "evidence": "芯片"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0122125",
+    "company": "南宁初芯集成电路设计有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "凯旋路18号广西合景国际金融广场40层",
+    "contact_phone": "0771-2567790",
+    "lat": 22.764948,
+    "lng": 108.377194,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J225085P",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450108",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3973",
+      "name": "集成电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 集成电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "集成电路"
+    },
+    "is_manufacturer": true
   }
 ]

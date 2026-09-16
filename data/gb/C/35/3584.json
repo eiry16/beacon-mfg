@@ -1137,5 +1137,149 @@
       "evidence": "医用器材"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0095559",
+    "company": "贵州益恒通医疗器械有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "枫林路60号",
+    "contact_phone": "待核实",
+    "lat": 26.658913,
+    "lng": 106.639146,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2PHHRX5",
+      "type": "医疗保健服务;医药保健销售店;医疗保健用品",
+      "typecode": "090602",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗器械",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520115",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "医疗器械"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0110820",
+    "company": "中国-东盟医疗保健合作中心(广西)",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "双拥路6号广西医科大学第一附属医院",
+    "contact_phone": "待核实",
+    "lat": 22.795025,
+    "lng": 108.343375,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3ASSGW7",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "东盟楼",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "双拥路",
+      "adcode": "450103",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0110823",
+    "company": "广西老干部医疗保健中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "保健"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "河堤路73号",
+    "contact_phone": "待核实",
+    "lat": 22.79518,
+    "lng": 108.343787,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0303055PO",
+      "type": "医疗保健服务;医疗保健服务场所;医疗保健服务场所",
+      "typecode": "090000",
+      "alias": "",
+      "tag": "",
+      "keytag": "医疗保健服务,医疗保健服务场所,医疗保健服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "双拥路",
+      "adcode": "450103",
+      "search_keyword": "保健"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
   }
 ]

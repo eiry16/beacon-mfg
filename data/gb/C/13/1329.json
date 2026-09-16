@@ -45,5 +45,53 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/13/1329"
+  },
+  {
+    "id": "CN-MFG-0122965",
+    "company": "武鸣县远大饲料原料批发中心",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料原料"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "香山大道与江滨南路交叉口西200米",
+    "contact_phone": "待核实",
+    "lat": 23.149879,
+    "lng": 108.28705,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B030305WQ4",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "饲料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450110",
+      "search_keyword": "塑料原料"
+    },
+    "industry": {
+      "code": "1329",
+      "name": "其他饲料加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 饲料加工 > 其他饲料加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "饲料"
+    },
+    "is_manufacturer": true
   }
 ]

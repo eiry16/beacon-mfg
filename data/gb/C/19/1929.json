@@ -145,5 +145,55 @@
       "evidence": "皮革"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0105955",
+    "company": "玄尤洗衣.李师傅奢侈品皮具护理",
+    "category": "制造业",
+    "keywords": [
+      "干洗",
+      "洗衣",
+      "洗衣店"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "新竹路南一里1-2",
+    "contact_phone": "130****1399; 185****5483",
+    "lat": 22.815273,
+    "lng": 108.337986,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B03030TSNB",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "奢侈品护理",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新竹",
+      "adcode": "450103",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "1929",
+      "name": "其他皮革制品制造",
+      "level": "class",
+      "path": "C 制造业 > 皮革、毛皮、羽毛及其制品和制鞋业 > 皮革制品制造 > 其他皮革制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "皮具"
+    },
+    "is_manufacturer": true
   }
 ]

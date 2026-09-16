@@ -504,5 +504,53 @@
       "evidence": "刀具|配件型:模配"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0094768",
+    "company": "壹佰刀具KWS·快无双刀具锯片",
+    "category": "注塑成型",
+    "keywords": [
+      "模具"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "亿隆装饰建材城B5栋11-14号",
+    "contact_phone": "180****1816",
+    "lat": 26.482117,
+    "lng": 106.631797,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GR47H2QY",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520111",
+      "search_keyword": "模具"
+    },
+    "industry": {
+      "code": "3321",
+      "name": "切削工具制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属工具制造 > 切削工具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "刀具"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -92,5 +92,53 @@
     "is_manufacturer": true,
     "status": "verified",
     "_bucket": "C/38/3823"
+  },
+  {
+    "id": "CN-MFG-0115996",
+    "company": "批发电线电缆(配电箱定做)",
+    "category": "原材料",
+    "keywords": [
+      "铜排"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "东聚五金机电建材城西区13栋6号",
+    "contact_phone": "138****7670",
+    "lat": 24.989014,
+    "lng": 102.751975,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KGRZ6D9J",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "高原明珠美食城",
+      "adcode": "530111",
+      "search_keyword": "铜排"
+    },
+    "industry": {
+      "code": "3823",
+      "name": "配电开关控制设备制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 输配电及控制设备制造 > 配电开关控制设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "配电箱"
+    },
+    "is_manufacturer": true
   }
 ]

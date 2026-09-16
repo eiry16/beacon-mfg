@@ -4,7 +4,8 @@
     "company": "筛网批发",
     "category": "批发和零售业",
     "keywords": [
-      "不锈钢材料批发"
+      "不锈钢材料批发",
+      "钢板"
     ],
     "region": {
       "province": "广东",
@@ -47,5 +48,102 @@
     },
     "is_manufacturer": false,
     "_bucket": "F/51/5193"
+  },
+  {
+    "id": "CN-MFG-0122436",
+    "company": "南宁永益筛网批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "秀安路26号",
+    "contact_phone": "133****6989",
+    "lat": 22.863675,
+    "lng": 108.308249,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIXQQXV",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "安吉",
+      "adcode": "450107",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "5193",
+      "name": "互联网批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 其他批发业 > 互联网批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "网批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0122554",
+    "company": "王浩纱网批发零售·纱门纱窗订做",
+    "category": "批发和零售业",
+    "keywords": [
+      "不锈钢材料",
+      "铝合金"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "二桥装饰材料市场10栋A1-2号",
+    "contact_phone": "134****2253; 138****0215",
+    "lat": 22.81581,
+    "lng": 108.286501,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFK855FH",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新阳路",
+      "adcode": "450107",
+      "search_keyword": "不锈钢材料"
+    },
+    "industry": {
+      "code": "5193",
+      "name": "互联网批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 其他批发业 > 互联网批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "网批发"
+    },
+    "is_manufacturer": false
   }
 ]

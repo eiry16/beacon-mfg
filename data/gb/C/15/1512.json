@@ -46,5 +46,101 @@
       "evidence": "酒厂"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0120410",
+    "company": "黑胶酒厂",
+    "category": "制造业",
+    "keywords": [
+      "清吧"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "茅草铺后场",
+    "contact_phone": "199****8833",
+    "lat": 27.719642,
+    "lng": 106.937027,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3LH2HK6",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "清吧",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520303",
+      "search_keyword": "清吧"
+    },
+    "industry": {
+      "code": "1512",
+      "name": "白酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 白酒制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "酒厂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0121836",
+    "company": "太白酒家",
+    "category": "制造业",
+    "keywords": [
+      "客栈"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "河滨南路太白桥小康城小区56栋",
+    "contact_phone": "150****6532",
+    "lat": 28.129224,
+    "lng": 106.83072,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-17",
+    "imported_at": "2026-09-17",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IK5UTQUV",
+      "type": "餐饮服务;中餐厅;综合酒楼",
+      "typecode": "050101",
+      "alias": "",
+      "tag": "",
+      "keytag": "客栈",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520322",
+      "search_keyword": "客栈"
+    },
+    "industry": {
+      "code": "1512",
+      "name": "白酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 白酒制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "白酒"
+    },
+    "is_manufacturer": true
   }
 ]
