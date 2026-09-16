@@ -58,8 +58,7 @@ No dependencies, no keys, no network required.
 
 **Chinese** (`data/gb/`, four-level GB/T 4754 archive): **79555 records total**
 (58349 phone-verified, 21206 pending), spanning **45 national divisions** (incl. unclassified).
-Top divisions: Metal Products (33) 6,515 · General Equipment (34) 6,438 · Rubber & Plastics (29) 2,392 ·
-Wholesale (51, non-manufacturer) 1,764 · Special Equipment (35) 1,829 · Computer & Electronics (39) 1,450.
+Top divisions: Catering (62, non-manufacturer) 19,886 · General Equipment (34) 11,109 · Residential Services (80, non-manufacturer) 9,094 · Metal Products (33) 8,082 · Rubber & Plastics (29) 5,742 · Motor Vehicle & Electronics Repair (81, non-manufacturer) 4,636 · Entertainment (90, non-manufacturer) 3,996 · Special Equipment (35) 3,884.
 
 ### Industry classification (GB/T 4754-2017)
 
