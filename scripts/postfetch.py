@@ -78,6 +78,7 @@ import argparse
 import atexit
 import contextlib
 import io
+import json
 import os
 import subprocess
 import sys
@@ -503,6 +504,115 @@ L0_PATHS = (
 L0_DERIVED = ("README.md", "data/DATA_STATS.md", "data/industry-index.json")
 
 
+# ─── 手机号脱敏：git clean filter 保障（方案 A）───
+# 见仓库根 .gitattributes 与 scripts/mask_phones.py。
+# 目标：GitHub 仓库里的 data/gb / data/en / phone-index 入库即脱敏（手机→138****0000，
+# 座机原样，已认领 claim.status=claimed/verified 保留全号），但**工作树（Pages 部署源）
+# 始终是全号** → App 端照常看全号+拨号；已装旧版 App 读的是 Pages（全号），完全无感。
+import re as _re
+
+
+def _git_run(args: list[str]) -> tuple[int, str]:
+    p = subprocess.run(["git", "-C", str(ROOT)] + args, capture_output=True, text=True)
+    return p.returncode, (p.stdout + p.stderr).strip()
+
+
+def _ensure_mask_filter() -> None:
+    """确保 git clean filter `maskphone` 已在本地配置（幂等）。
+
+    .gitattributes 已声明 filter=maskphone，但 filter 命令只在本地 config（不随仓库走）。
+    首次运行自动写入，避免「filter 未定义」导致 git add 报错，或（更糟）把全号入库。
+
+    ⚠️ 路径必须用正斜杠（POSIX）：git 通过 MSYS shell 执行 clean/smudge 命令，
+    反斜杠会被当成转义符（"C:\\Users\\..." → "C:Users..." → command not found），
+    导致 filter 静默失败、全号直接入库。故此处用 Path(...).as_posix() 归一化。
+    """
+    py = str(Path(sys.executable).as_posix())
+    script = str((SCRIPTS / "mask_phones.py").as_posix())
+    cmd = f"{py} {script} --filter"
+    rc, out = _git_run(["config", "--local", "--get", "filter.maskphone.clean"])
+    if rc == 0 and out.strip() == cmd:
+        return
+    _git_run(["config", "--local", "filter.maskphone.clean", cmd])
+    _git_run(["config", "--local", "filter.maskphone.smudge", "cat"])
+
+
+# 独立的 11 位手机（前后非数字）；座机/400 含 - 不命中；已脱敏幂等。
+_STANDALONE_MOBILE_RE = _re.compile(r"(?<!\d)1[3-9]\d{9}(?!\d)")
+_PHONE_FIELDS = ("contact_phone", "address", "address_en")
+
+
+def _parse_records(content: str) -> list:
+    """把暂存区文件内容（JSON 数组 / 单对象 / JSONL）解析成记录列表。
+
+    用于安全闸门逐条核对手机号脱敏状态；解析失败的部分直接跳过（不误报）。
+    """
+    content = (content or "").strip()
+    if not content:
+        return []
+    try:
+        data = json.loads(content)
+        if isinstance(data, list):
+            return data
+        if isinstance(data, dict):
+            return [data]
+    except Exception:
+        pass
+    # 退化为逐行 JSONL（如 phone-index.jsonl）
+    recs: list = []
+    for line in content.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except Exception:
+            continue
+        if isinstance(obj, dict):
+            recs.append(obj)
+    return recs
+
+
+def _is_claimed(rec: dict) -> bool:
+    """与 scripts/mask_phones.py 的 is_claimed 保持一致：claimed/verified 视为已认领。"""
+    claim = rec.get("claim") if isinstance(rec, dict) else None
+    if isinstance(claim, dict):
+        return claim.get("status") in ("claimed", "verified")
+    return False
+
+
+def _staged_phone_masked_ok() -> bool:
+    """安全闸门：抽查已暂存的 data/gb|en|phone-index，确认「未认领」手机号已脱敏。
+
+    git clean filter 万一没生效（命令路径错/未配置），未认领记录会带着全号入库 → 必须拦下，
+    绝不把全号推上 GitHub。返回 False 表示发现「未认领却仍是全号」的手机号。
+
+    关键：claim.status=claimed/verified 的记录**允许保留全号**（用户决策 #1：认领后展示全号），
+    这类全号不算违规；只有「未认领 / 无 claim」仍含 11 位全号才算脱敏失败。
+    因此本闸门逐条解析记录，而不是简单正则全文匹配（后者会误杀已认领全号）。
+    """
+    rc, out = _git_run(["diff", "--cached", "--name-only", "--",
+                        "data/gb", "data/en", "data/phone-index.jsonl"])
+    if rc or not out.strip():
+        return True  # 这些路径本轮无改动，无需校验
+    for path in out.splitlines():
+        rc2, content = _git_run(["show", f":{path}"])
+        if rc2 or not content.strip():
+            continue
+        for rec in _parse_records(content):
+            if not isinstance(rec, dict):
+                continue
+            if _is_claimed(rec):
+                continue  # 已认领：按设计保留全号，不拦
+            # 未认领记录：逐一核对手机号字段，凡仍含独立 11 位全号即判脱敏失败
+            # （覆盖单号、多号、'座机; 手机'组合，以及 address/address_en 内嵌号码）
+            for f in _PHONE_FIELDS:
+                v = rec.get(f)
+                if isinstance(v, str) and _STANDALONE_MOBILE_RE.search(v):
+                    return False  # 未认领却仍是全号 → 脱敏失败
+    return True
+
+
 def step_git(dry_run: bool = False) -> None:
     """把本轮重建出来的 L0 数据提交并推送到 GitHub.
 
@@ -518,6 +628,10 @@ def step_git(dry_run: bool = False) -> None:
     不需要额外的凭据。没有改动就静默跳过（不是失败）。
     """
     # L0_PATHS 见模块顶部（GUI / cron 共用同一份）
+
+    # 手机号脱敏保障：确保 maskphone clean filter 已在本地配置（首次运行自动写入），
+    # 否则 git add 会把全号直接入库。
+    _ensure_mask_filter()
 
     def _g(args: list[str]) -> tuple[int, str]:
         p = subprocess.run(["git", "-C", str(ROOT)] + args,
@@ -543,9 +657,25 @@ def step_git(dry_run: bool = False) -> None:
         return
 
     # 仅 add 指定的 L0 路径 + 派生文档（绝不用 git add -A，避免把源码/APK 一起卷进去）
-    for p in (*L0_PATHS, *L0_DERIVED):
+    # 含手机号的路径（data/gb / data/en / phone-index）用 --renormalize 强制重跑 clean
+    # filter，保证「已入库的全号」在首次提交时被转成脱敏版（普通 add 对未改内容的文件是 no-op，
+    # 不会重新脱敏）。其余路径（不含手机号，如 manifest/index）普通 add 即可。
+    _MASK_PATHS = ("data/gb", "data/en", "data/phone-index.jsonl")
+    _other_paths = [p for p in (*L0_PATHS, *L0_DERIVED) if p not in _MASK_PATHS]
+    for p in _MASK_PATHS:
+        subprocess.run(["git", "-C", str(ROOT), "add", "--renormalize", "--", p],
+                       capture_output=True, text=True)
+    for p in _other_paths:
         subprocess.run(["git", "-C", str(ROOT), "add", "--", p],
                        capture_output=True, text=True)
+
+    # ── 安全闸门：确认入库的手机号已脱敏，否则绝不提交/推送全号 ──
+    if not _staged_phone_masked_ok():
+        raise RuntimeError(
+            "安全闸门：暂存区 data/gb|en|phone-index 仍含未脱敏的 11 位手机号，"
+            "疑似 maskphone clean filter 未生效。已中止提交，未推送任何全号。"
+            "请检查 `git config --local filter.maskphone.clean` 是否指向 scripts/mask_phones.py。")
+
     rc, out = _g(["commit", "-m",
                   "chore(data): 自动同步 L0 分片（%d 个文件）" % len(changed)])
     if rc:

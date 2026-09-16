@@ -7,7 +7,10 @@
   `git add` 时自动把入库内容里的手机号脱敏，但**工作树（磁盘）文件保持全号**
   → Pages 部署读的是工作树（全号），App 照常拿到全号+拨号；GitHub 仓库入库的是脱敏版。
 - 规则（主人拍板 2026-09-16）：
-    * 11 位中国大陆手机（^1[3-9]\\d{9}$）→ 前 3 + **** + 后 4，例如 13812340000 → 138****0000
+    * 11 位中国大陆手机（独立出现的 1[3-9]\\d{9}）→ 前 3 + **** + 后 4，例如 13812340000 → 138****0000
+    * 支持「一个字段内多个号码」与「座机; 手机」组合：
+        '13826925826; 18924331149' -> '138****5826; 189****1149'
+        '0512-36691404; 18662658332' -> '0512-36691404; 186****8332'
     * 座机（含 -）、400/800、'待核实' 等 → 原样不脱敏
     * 已脱敏（含 *）→ 幂等保留
 - 处理三种文件格式：
@@ -28,17 +31,32 @@ import json
 import re
 import sys
 
-MOBILE_RE = re.compile(r"^1[3-9]\d{9}$")
+# 匹配「独立的 11 位手机」——前后都不是数字，避免误伤更长的数字串；
+# 座机/400 含 '-' 不会命中，已脱敏的 138****0000 也不会二次命中（幂等）。
+MOBILE_RE = re.compile(r"(?<!\d)1[3-9]\d{9}(?!\d)")
+
+
+def _mask_one(m: "re.Match") -> str:
+    s = m.group(0)
+    return s[:3] + "****" + s[-4:]
+
+
+def mask_mobile_in_text(value):
+    """把字符串里每一个独立的 11 位手机脱敏；座机/400（含 -）原样；已脱敏幂等。
+
+    支持一个字段里多个号码或「座机; 手机」的组合，例如
+    '13826925826; 18924331149' -> '138****5826; 189****1149'，
+    '0512-36691404; 18662658332' -> '0512-36691404; 186****8332'。
+    """
+    if not isinstance(value, str):
+        return value
+    return MOBILE_RE.sub(_mask_one, value)
 
 
 def mask_phone(value) -> str:
-    """对单个手机号值脱敏；非 11 位手机原样返回（座机/待核实/已脱敏都保持）。"""
-    if not isinstance(value, str):
-        return value
-    s = value.strip()
-    if MOBILE_RE.match(s):
-        return s[:3] + "****" + s[-4:]
-    return value
+    """对单个手机号值脱敏；非 11 位手机原样返回（座机/待核实/已脱敏都保持）。
+    内部委托 mask_mobile_in_text，自动支持多号码/组合串。"""
+    return mask_mobile_in_text(value)
 
 
 def is_claimed(rec) -> bool:
@@ -53,15 +71,21 @@ def is_claimed(rec) -> bool:
     return False
 
 
+PHONE_FIELDS = ("contact_phone", "address", "address_en")
+
+
 def mask_record(rec) -> None:
-    """就地脱敏 dict 里的 contact_phone 字段（若不存在则跳过）。
+    """就地脱敏 dict 里的手机号字段（contact_phone / address / address_en）。
 
     认领记录（claim.status=claimed/verified）保留全号；其余手机脱敏、座机原样。
+    一个字段内可含多个号码或「座机; 手机」组合，全部独立脱敏。
     """
-    if isinstance(rec, dict) and "contact_phone" in rec:
+    if isinstance(rec, dict):
         if is_claimed(rec):
             return  # 已认领：仓库也展示全号
-        rec["contact_phone"] = mask_phone(rec.get("contact_phone"))
+        for f in PHONE_FIELDS:
+            if f in rec:
+                rec[f] = mask_mobile_in_text(rec.get(f))
 
 
 def _keep_trailing_nl(text: str) -> bool:

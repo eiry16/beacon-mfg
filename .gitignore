@@ -121,6 +121,11 @@ scripts/collect/fixtures/
 # _backfill_source_url.py 是审计议题 #1 的 source_url 回填工具，纯标准库、只读公开 POI，
 # 需可复现（覆盖率结论不能只有我说了算）。
 !scripts/_backfill_source_url.py
+# 本仓库运行环境（Git Bash / MSYS）对「单次 git add 处理大量分片」会 SIGTERM，
+# 故脱敏入库改用逐文件 renormalize + 离线闸门核对（_renormalize_masked.py / _verify_staged_mask.py）。
+# 二者纯标准库、无密钥，需进仓以保证脱敏流程可复现。
+!scripts/_renormalize_masked.py
+!scripts/_verify_staged_mask.py
 # CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
 .github/*
 !.github/workflows/
