@@ -38,6 +38,12 @@ scripts/*
 !scripts/query.py
 !scripts/search_capabilities.py
 !scripts/client_search.py
+# 每日定时脚本 + 重点城市配置：调度口径本身要可追溯（改了哪座城、配额多少），
+# 且计划任务指向的是仓库内固定路径 —— 一旦这些文件丢失，定时任务会**静默失效**。
+# 2026-09-17 就这么踩过：一个自动化指向会话临时目录里的脚本，目录被清掉后它每
+# 2 小时失败一次还报不清原因。这里放行是防复发。两者均无密钥与商业逻辑。
+!scripts/cron_beacon_daily.py
+!scripts/cron_priority_cities.json
 # deploy_pages.py 是 L1/L2 上 CDN 的唯一入口（封装 wrangler）。
 # 不放行：别人 clone 后只能自己摸索 CF 的上传格式，而那个 API 是会静默成功的
 # （2026-09-09 实测：三种写法全部返回 success，站点却全线 404）。
