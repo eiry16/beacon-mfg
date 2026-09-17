@@ -46,6 +46,14 @@
       "evidence": "科学研究"
     },
     "is_manufacturer": false,
-    "_bucket": "M/73/7350"
+    "_bucket": "M/73/7350",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0031188/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

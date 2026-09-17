@@ -339,7 +339,15 @@
       "evidence": "安全"
     },
     "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "_bucket": "C/33/3353",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0034654/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0034668",
@@ -388,7 +396,15 @@
       "evidence": "安全"
     },
     "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "_bucket": "C/33/3353",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0034668/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0034886",

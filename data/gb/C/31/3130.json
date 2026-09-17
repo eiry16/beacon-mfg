@@ -3373,7 +3373,15 @@
       "evidence": "不锈钢管"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007400/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007412",
@@ -3406,7 +3414,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007412/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007417",
@@ -3439,7 +3455,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007417/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007424",
@@ -3505,7 +3529,15 @@
       "evidence": "不锈钢管"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007427/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007430",
@@ -5853,7 +5885,15 @@
       "adcode": "440103",
       "search_keyword": "不锈钢材料"
     },
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007629/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007631",
@@ -11729,7 +11769,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015248/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015250",
@@ -11779,7 +11827,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015250/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015265",
@@ -12067,7 +12123,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015275/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015285",
@@ -12211,7 +12275,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015293/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015295",
@@ -15940,7 +16012,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016746/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0016748",
@@ -21409,7 +21489,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019188/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0020022",
@@ -22771,7 +22859,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0020099/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0020105",
@@ -23058,7 +23154,15 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0020118/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0020119",
@@ -25831,7 +25935,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012791/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0012792",
@@ -25879,7 +25991,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012792/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0012798",
@@ -26456,7 +26576,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012919/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0012927",
@@ -27122,7 +27250,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013000/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013001",
@@ -27216,7 +27352,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013008/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013011",
@@ -27264,7 +27408,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013011/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013012",
@@ -27311,7 +27463,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013012/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013015",
@@ -27511,7 +27671,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013060/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013063",
@@ -27656,7 +27824,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013068/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013076",
@@ -31412,7 +31588,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022617/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022618",
@@ -31791,7 +31975,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022631/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022632",
@@ -32076,7 +32268,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022637/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022638",
@@ -32124,7 +32324,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022638/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022640",
@@ -32457,7 +32665,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022648/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022649",
@@ -33594,7 +33810,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022675/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022677",
@@ -35111,7 +35335,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022721/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022722",
@@ -35206,7 +35438,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022723/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022725",
@@ -36013,7 +36253,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022745/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022748",
@@ -36533,7 +36781,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022767/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022768",
@@ -37290,7 +37546,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022787/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022789",
@@ -37384,7 +37648,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022790/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022791",
@@ -40934,7 +41206,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022892/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022893",
@@ -41501,7 +41781,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022904/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022905",
@@ -42065,7 +42353,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022922/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0022923",
@@ -45268,7 +45564,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0023005/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0023006",
@@ -45363,7 +45667,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0023007/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0023008",
@@ -45929,7 +46241,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0023313/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0023323",
@@ -46365,7 +46685,15 @@
       "evidence": "原材料"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0023990/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0023991",
@@ -50796,7 +51124,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035380/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035381",
@@ -50845,7 +51181,15 @@
       "evidence": "钢管"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035381/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035382",
@@ -50894,7 +51238,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035382/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035384",
@@ -50943,7 +51295,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035384/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035386",
@@ -50992,7 +51352,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035386/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035387",
@@ -51041,7 +51409,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035387/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035388",
@@ -51090,7 +51466,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035388/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035389",
@@ -51188,7 +51572,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035390/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035391",
@@ -51237,7 +51629,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035391/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035393",
@@ -51286,7 +51686,15 @@
       "evidence": "钢铁"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035393/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035394",
@@ -51335,7 +51743,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035394/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035395",
@@ -51384,7 +51800,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035395/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035396",
@@ -51433,7 +51857,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035396/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035398",
@@ -51482,7 +51914,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035398/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035399",
@@ -51531,7 +51971,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035399/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035402",
@@ -51580,7 +52028,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035402/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035403",
@@ -51629,7 +52085,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035403/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035404",
@@ -51678,7 +52142,15 @@
       "evidence": "钢板"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035404/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035498",
@@ -51923,7 +52395,15 @@
       "evidence": "钢板"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0035505/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035506",
@@ -53002,7 +53482,15 @@
       "evidence": "不锈钢板"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0036136/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0036145",
@@ -53051,7 +53539,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0036145/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0036147",
@@ -53100,7 +53596,15 @@
       "evidence": "钢铁"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0036147/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0036262",
@@ -53296,7 +53800,15 @@
       "evidence": "钢材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0036501/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0036502",
@@ -54324,7 +54836,15 @@
       "source": "name",
       "evidence": "不锈钢板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0092553/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0092555",
@@ -54425,7 +54945,15 @@
       "source": "name",
       "evidence": "钢材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0092560/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0092562",
@@ -56225,7 +56753,15 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0100627/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0100629",
@@ -56418,7 +56954,15 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0100634/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0100635",
@@ -59640,7 +60184,15 @@
       "source": "name",
       "evidence": "不锈钢板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0101082/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0101083",
@@ -61049,7 +61601,15 @@
       "source": "name",
       "evidence": "钢材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0105399/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0105400",
@@ -61098,7 +61658,15 @@
       "source": "name",
       "evidence": "钢板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0105400/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0105407",
@@ -61196,7 +61764,15 @@
       "source": "name",
       "evidence": "钢板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0105421/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0106013",
@@ -61588,7 +62164,15 @@
       "source": "name",
       "evidence": "钢材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111141/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0112639",
@@ -72900,7 +73484,15 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122422/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122423",
@@ -73431,7 +74023,15 @@
       "source": "name",
       "evidence": "钢材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122439/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122442",
@@ -73959,7 +74559,15 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122457/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122458",
@@ -74103,7 +74711,15 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122462/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122463",
@@ -74778,7 +75394,15 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122491/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122492",
@@ -75116,7 +75740,15 @@
       "source": "name",
       "evidence": "不锈钢板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122501/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122502",
@@ -77143,7 +77775,15 @@
       "source": "name",
       "evidence": "不锈钢板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122571/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122572",
@@ -77872,7 +78512,15 @@
       "source": "name",
       "evidence": "钢材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122594/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122595",
@@ -78017,7 +78665,15 @@
       "source": "name",
       "evidence": "钢板"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122597/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122598",
@@ -78929,7 +79585,15 @@
       "source": "name",
       "evidence": "钢材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122616/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122617",
@@ -79603,7 +80267,15 @@
       "source": "name",
       "evidence": "钢材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123138/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0123486",
@@ -79895,7 +80567,15 @@
       "source": "name",
       "evidence": "钢材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123556/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0123557",
@@ -85003,7 +85683,15 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123724/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0123725",
@@ -85147,7 +85835,15 @@
       "source": "name",
       "evidence": "钢管"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123731/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0123733",
@@ -85581,5 +86277,278 @@
       "evidence": "钢板"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0007211",
+    "company": "昆山磐泰钢材批发激光切割厂",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "盛晞路77号",
+    "contact_phone": "152****3968",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007211/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0007440",
+    "company": "浙江德威不锈钢管业股份有限公司",
+    "category": "原材料",
+    "keywords": [
+      "原材料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴"
+    },
+    "address": "大桥镇嘉兴市总部商务花园62号2楼",
+    "contact_phone": "0573-82222029",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "不锈钢管"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007440/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019462",
+    "company": "延森钢铁激光切割",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "东湖街道中亚工贸园C05 B09 B10幢",
+    "contact_phone": "182****3898",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢铁"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019462/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019466",
+    "company": "顺泰不锈钢板材激光切割剪板折弯(文化新村小区北区店)",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "舜江东路102号",
+    "contact_phone": "137****1400; 188****5389",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "不锈钢板"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019466/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019473",
+    "company": "嵊州佳和钢材激光切割加工厂",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "浦口街道前杨东路5号",
+    "contact_phone": "135****5300; 139****8138",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019473/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019873",
+    "company": "绍兴钢材批发联何钢材交易中心",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "于越东路555号",
+    "contact_phone": "188****1323",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019873/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0020125",
+    "company": "锦闽钢铁(电子商务园店)",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "浦阳新村32-8-11电子商务园区北门",
+    "contact_phone": "153****2855; 177****6055",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢铁"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0020125/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

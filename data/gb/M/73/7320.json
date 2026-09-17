@@ -876,5 +876,53 @@
       "evidence": "研究所"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126072",
+    "company": "上海市塑料研究所有限公司(诸陆西路)",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "诸陆西路与徐盈路交叉口西南320米",
+    "contact_phone": "待核实",
+    "lat": 31.172861,
+    "lng": 121.254973,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG8GEJU",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "徐泾",
+      "adcode": "310118",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "7320",
+      "name": "工程和技术研究和试验发展",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 研究和试验发展 > 工程和技术研究和试验发展 > 工程和技术研究和试验发展",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "研究所"
+    },
+    "is_manufacturer": false
   }
 ]

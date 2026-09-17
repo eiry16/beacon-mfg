@@ -21784,7 +21784,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "贵州",
@@ -21825,7 +21826,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0096389/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0096398",
@@ -21879,7 +21888,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0096398/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0096485",
@@ -22092,7 +22109,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "贵州",
@@ -22143,7 +22161,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "贵州",
@@ -22950,7 +22969,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "贵州",
@@ -26934,7 +26954,8 @@
     "category": "居民服务、修理和其他服务业",
     "keywords": [
       "家电维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "贵州",
@@ -28205,7 +28226,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104330/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0104389",
@@ -28257,7 +28286,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104389/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0104404",
@@ -28356,7 +28393,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104406/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0104916",
@@ -28367,7 +28412,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "云南",
@@ -28408,7 +28454,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104916/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0104917",
@@ -28419,7 +28473,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "云南",
@@ -28460,7 +28515,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104917/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0104918",
@@ -28512,7 +28575,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104918/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0104934",
@@ -28664,7 +28735,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104986/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0104988",
@@ -28826,7 +28905,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "云南",
@@ -29131,7 +29211,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "云南",
@@ -30939,7 +31020,8 @@
     "keywords": [
       "家电维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "云南",
@@ -31089,7 +31171,8 @@
     "keywords": [
       "家电维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "云南",
@@ -34443,7 +34526,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111929/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0111938",
@@ -34456,7 +34547,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "广西",
@@ -34497,7 +34589,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111938/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0111996",
@@ -34551,7 +34651,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111996/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0112050",
@@ -34655,7 +34763,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0112056/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0112277",
@@ -34708,7 +34824,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0112277/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0112460",
@@ -34820,7 +34944,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "广西",
@@ -34973,7 +35098,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "广西",
@@ -35530,7 +35656,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "广西",
@@ -35832,7 +35959,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "广西",
@@ -36678,7 +36806,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0112546/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0112548",
@@ -36879,7 +37015,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0112554/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0112556",
@@ -39306,7 +39450,8 @@
     "company": "启航家电维修服务店",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "空调维修"
+      "空调维修",
+      "干洗"
     ],
     "region": {
       "province": "广西",
@@ -39998,7 +40143,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "贵州",
@@ -40300,7 +40446,15 @@
       "source": "name",
       "evidence": "家电维修"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0119370/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0119420",

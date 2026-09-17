@@ -36,8 +36,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0025634",
@@ -156,8 +155,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0025638",
@@ -196,8 +194,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0025639",
@@ -325,8 +322,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0025642",
@@ -405,8 +401,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0025645",
@@ -574,8 +569,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0025649",
@@ -662,7 +656,7 @@
     "company": "浙江高格智能装备股份有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械"
+      "精密机械加工"
     ],
     "region": {
       "province": "浙江",
@@ -670,30 +664,12 @@
     },
     "address": "曙光路473号",
     "contact_phone": "138****8982",
-    "lat": 30.79771,
-    "lng": 120.791694,
-    "source": "public_directory",
-    "source_url": "https://www.amap.com/place/B0FFM4MW05",
-    "verified_at": "2026-09-13",
-    "imported_at": "2026-09-13",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFM4MW05",
-      "type": "公司企业;工厂;工厂",
-      "typecode": "170300",
-      "alias": "",
-      "tag": "",
-      "keytag": "工厂",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "330411",
-      "search_keyword": "精密机械"
-    },
+    "status": "verified",
     "industry": {
       "code": "3484",
       "name": "机械零部件加工",
@@ -704,7 +680,15 @@
       "evidence": "精密机械"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3484"
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0025651/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0025652",
@@ -823,8 +807,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0025655",
@@ -5152,8 +5135,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0025766",
@@ -10895,8 +10877,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0025915",
@@ -14455,8 +14436,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026005",
@@ -14495,8 +14475,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026006",
@@ -17553,46 +17532,6 @@
     "cl": "L0",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0026086/SKILL.md",
-      "protocol": "skill",
-      "capabilities": [
-        "catalog"
-      ],
-      "verified": false
-    },
-    "_bucket": "C/34/3484"
-  },
-  {
-    "id": "CN-MFG-0026087",
-    "company": "得意精密电子工业有限公司(留东分公司)",
-    "category": "电子元器件",
-    "keywords": [
-      "电子元器件"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "广州"
-    },
-    "address": "黄阁镇留新路1号",
-    "contact_phone": "020-84682476",
-    "source": "certification",
-    "source_url": null,
-    "verified_at": null,
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3484",
-      "name": "机械零部件加工",
-      "level": "class",
-      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
-      "confidence": "low",
-      "source": "keyword",
-      "evidence": "精密机械"
-    },
-    "is_manufacturer": true,
-    "cl": "L0",
-    "agent": {
-      "skill_url": "skills/vendors/CN-MFG-0026087/SKILL.md",
       "protocol": "skill",
       "capabilities": [
         "catalog"
@@ -22183,8 +22122,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026213",
@@ -22298,46 +22236,6 @@
     "cl": "L0",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0026215/SKILL.md",
-      "protocol": "skill",
-      "capabilities": [
-        "catalog"
-      ],
-      "verified": false
-    },
-    "_bucket": "C/34/3484"
-  },
-  {
-    "id": "CN-MFG-0026216",
-    "company": "广东佳仕浩精密电子科技有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "电子元器件"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "佛山"
-    },
-    "address": "大良街道五沙工业园区新辉路29号",
-    "contact_phone": "待核实",
-    "source": "certification",
-    "source_url": null,
-    "verified_at": null,
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3484",
-      "name": "机械零部件加工",
-      "level": "class",
-      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
-      "confidence": "low",
-      "source": "keyword",
-      "evidence": "精密机械"
-    },
-    "is_manufacturer": true,
-    "cl": "L0",
-    "agent": {
-      "skill_url": "skills/vendors/CN-MFG-0026216/SKILL.md",
       "protocol": "skill",
       "capabilities": [
         "catalog"
@@ -23721,8 +23619,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026251",
@@ -23881,8 +23778,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026255",
@@ -23961,8 +23857,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026257",
@@ -24330,8 +24225,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026266",
@@ -24410,8 +24304,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026268",
@@ -24490,8 +24383,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026270",
@@ -24650,8 +24542,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026274",
@@ -24850,8 +24741,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026279",
@@ -25210,8 +25100,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026289",
@@ -26883,8 +26772,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026331",
@@ -27578,8 +27466,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026349",
@@ -27707,8 +27594,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026352",
@@ -27747,8 +27633,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026353",
@@ -27787,8 +27672,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026354",
@@ -28107,8 +27991,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026362",
@@ -28227,8 +28110,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026365",
@@ -28307,8 +28189,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026367",
@@ -28387,8 +28268,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026369",
@@ -28467,8 +28347,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026371",
@@ -28507,8 +28386,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026372",
@@ -28716,8 +28594,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026377",
@@ -29436,8 +29313,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026396",
@@ -29556,8 +29432,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026399",
@@ -30045,8 +29920,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026411",
@@ -30125,8 +29999,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026413",
@@ -30494,8 +30367,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026423",
@@ -30614,8 +30486,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026427",
@@ -30934,8 +30805,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026436",
@@ -31094,8 +30964,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026440",
@@ -31543,8 +31412,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026452",
@@ -31792,8 +31660,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026458",
@@ -32361,8 +32228,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026473",
@@ -32481,8 +32347,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026476",
@@ -32770,8 +32635,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026483",
@@ -32970,8 +32834,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026488",
@@ -33050,8 +32913,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026490",
@@ -33130,8 +32992,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026492",
@@ -33210,8 +33071,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026494",
@@ -33850,8 +33710,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026515",
@@ -42179,8 +42038,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -42191,8 +42050,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026768",
@@ -42219,8 +42077,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -42231,8 +42089,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026769",
@@ -42299,8 +42156,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -42311,8 +42168,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026771",
@@ -42339,8 +42195,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -42351,8 +42207,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026773",
@@ -42459,8 +42314,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -42471,8 +42326,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026776",
@@ -42499,8 +42353,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -42511,8 +42365,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026777",
@@ -42794,8 +42647,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -42806,8 +42659,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026784",
@@ -42954,8 +42806,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -42966,8 +42818,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026788",
@@ -43354,8 +43205,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -43366,8 +43217,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026799",
@@ -43674,8 +43524,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -43686,8 +43536,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026808",
@@ -43714,8 +43563,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -43726,8 +43575,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026809",
@@ -43766,8 +43614,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026810",
@@ -43874,8 +43721,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -43886,8 +43733,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026813",
@@ -43914,8 +43760,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -43926,8 +43772,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026814",
@@ -47810,46 +47655,6 @@
     "_bucket": "C/34/3484"
   },
   {
-    "id": "CN-MFG-0026919",
-    "company": "剪折锯床零切加工",
-    "category": "原材料",
-    "keywords": [
-      "原材料"
-    ],
-    "region": {
-      "province": "江苏",
-      "city": "常州"
-    },
-    "address": "凤凰南路68号",
-    "contact_phone": "189****8766",
-    "source": "certification",
-    "source_url": null,
-    "verified_at": null,
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3484",
-      "name": "机械零部件加工",
-      "level": "class",
-      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
-      "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
-    },
-    "is_manufacturer": true,
-    "cl": "L0",
-    "agent": {
-      "skill_url": "skills/vendors/CN-MFG-0026919/SKILL.md",
-      "protocol": "skill",
-      "capabilities": [
-        "catalog"
-      ],
-      "verified": false
-    },
-    "_bucket": "C/34/3484"
-  },
-  {
     "id": "CN-MFG-0026920",
     "company": "常州三朗机械制造有限公司",
     "category": "精密机械加工",
@@ -48006,8 +47811,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026924",
@@ -48046,8 +47850,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026925",
@@ -48295,8 +48098,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026933",
@@ -48483,8 +48285,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -48495,8 +48297,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026938",
@@ -48723,8 +48524,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -48735,8 +48536,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026944",
@@ -49003,8 +48803,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -49015,8 +48815,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026951",
@@ -49215,8 +49014,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026957",
@@ -49923,8 +49721,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -49935,8 +49733,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026977",
@@ -50083,8 +49880,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -50095,8 +49892,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026983",
@@ -50123,8 +49919,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -50135,8 +49931,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026984",
@@ -50163,8 +49958,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -50175,8 +49970,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026985",
@@ -50215,8 +50009,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026986",
@@ -50323,8 +50116,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -50335,8 +50128,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026989",
@@ -50523,8 +50315,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -50535,8 +50327,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0026994",
@@ -50763,8 +50554,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -50775,8 +50566,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027000",
@@ -50923,8 +50713,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -50935,8 +50725,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027004",
@@ -50963,8 +50752,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -50975,8 +50764,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027006",
@@ -51003,8 +50791,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51015,8 +50803,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027007",
@@ -51043,8 +50830,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51055,8 +50842,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027008",
@@ -51123,8 +50909,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51135,8 +50921,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027010",
@@ -51203,8 +50988,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51215,8 +51000,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027012",
@@ -51283,8 +51067,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51295,8 +51079,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027015",
@@ -51403,8 +51186,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51415,8 +51198,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027018",
@@ -51443,8 +51225,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51455,8 +51237,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027019",
@@ -51603,8 +51384,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51615,8 +51396,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027023",
@@ -51643,8 +51423,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51655,8 +51435,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027024",
@@ -51683,8 +51462,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -51695,8 +51474,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027025",
@@ -56799,8 +56577,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -56811,8 +56589,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027175",
@@ -57079,8 +56856,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -57091,8 +56868,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027185",
@@ -57199,8 +56975,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -57211,8 +56987,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027190",
@@ -57279,8 +57054,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -57291,8 +57066,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027192",
@@ -57415,46 +57189,6 @@
     "_bucket": "C/34/3484"
   },
   {
-    "id": "CN-MFG-0027195",
-    "company": "浙江格莱智控电子有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "电子元器件"
-    ],
-    "region": {
-      "province": "浙江",
-      "city": "嘉兴"
-    },
-    "address": "武原镇正华路1号",
-    "contact_phone": "0573-86129906",
-    "source": "certification",
-    "source_url": null,
-    "verified_at": null,
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3484",
-      "name": "机械零部件加工",
-      "level": "class",
-      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
-      "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
-    },
-    "is_manufacturer": true,
-    "cl": "L0",
-    "agent": {
-      "skill_url": "skills/vendors/CN-MFG-0027195/SKILL.md",
-      "protocol": "skill",
-      "capabilities": [
-        "catalog"
-      ],
-      "verified": false
-    },
-    "_bucket": "C/34/3484"
-  },
-  {
     "id": "CN-MFG-0027196",
     "company": "平湖市沛锐机械制造有限公司",
     "category": "精密机械加工",
@@ -57479,8 +57213,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -57491,8 +57225,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027197",
@@ -57679,8 +57412,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -57691,8 +57424,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027205",
@@ -57799,8 +57531,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -57811,8 +57543,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027209",
@@ -57999,8 +57730,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58011,8 +57742,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027217",
@@ -58039,8 +57769,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58051,8 +57781,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027219",
@@ -58119,8 +57848,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58131,8 +57860,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027221",
@@ -58291,8 +58019,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027226",
@@ -58319,8 +58046,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58331,8 +58058,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027227",
@@ -58399,8 +58125,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58411,8 +58137,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027229",
@@ -58439,8 +58164,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58451,8 +58176,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027230",
@@ -58519,8 +58243,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58531,8 +58255,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027232",
@@ -58599,8 +58322,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58611,8 +58334,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027235",
@@ -58639,8 +58361,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58651,8 +58373,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027236",
@@ -58679,8 +58400,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58691,8 +58412,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027237",
@@ -58719,8 +58439,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58731,8 +58451,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027238",
@@ -58888,8 +58607,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58900,8 +58619,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027243",
@@ -58968,8 +58686,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -58980,8 +58698,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027246",
@@ -59008,8 +58725,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -59020,8 +58737,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027247",
@@ -61629,8 +61345,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027344",
@@ -63776,8 +63491,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027416",
@@ -64674,8 +64388,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027441",
@@ -67581,8 +67294,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027533",
@@ -68901,8 +68613,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027582",
@@ -71368,8 +71079,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -71380,8 +71091,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027657",
@@ -74705,8 +74415,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027767",
@@ -79170,8 +78879,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -79182,8 +78891,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027912",
@@ -79290,8 +78998,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -79302,8 +79010,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027915",
@@ -79591,8 +79298,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027923",
@@ -79708,8 +79414,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -79720,8 +79426,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027927",
@@ -79800,8 +79505,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027930",
@@ -80157,8 +79861,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -80169,8 +79873,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027944",
@@ -80286,8 +79989,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -80298,8 +80001,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027947",
@@ -80366,8 +80068,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -80378,8 +80080,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027949",
@@ -80486,8 +80187,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -80498,8 +80199,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027953",
@@ -80606,8 +80306,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -80618,8 +80318,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027956",
@@ -81086,8 +80785,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -81098,8 +80797,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027970",
@@ -81166,8 +80864,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -81178,8 +80876,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027972",
@@ -81366,8 +81063,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -81378,8 +81075,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027981",
@@ -81406,8 +81102,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -81418,8 +81114,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027982",
@@ -81606,8 +81301,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -81618,8 +81313,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027987",
@@ -81686,8 +81380,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -81698,8 +81392,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027989",
@@ -81726,8 +81419,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -81738,8 +81431,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027991",
@@ -81846,8 +81538,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -81858,8 +81550,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0027994",
@@ -82086,8 +81777,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -82098,8 +81789,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028002",
@@ -82206,8 +81896,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -82218,8 +81908,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028005",
@@ -82326,8 +82015,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -82338,8 +82027,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028008",
@@ -82446,8 +82134,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -82458,8 +82146,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028013",
@@ -82526,8 +82213,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -82538,8 +82225,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028016",
@@ -82987,8 +82673,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028031",
@@ -83067,8 +82752,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028033",
@@ -83227,8 +82911,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028040",
@@ -83735,8 +83418,8 @@
       "level": "class",
       "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
       "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "精密机械加工"
+      "source": "keyword",
+      "evidence": "精密机械"
     },
     "is_manufacturer": true,
     "cl": "L0",
@@ -83747,8 +83430,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028061",
@@ -85565,8 +85247,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028120",
@@ -86405,8 +86086,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028148",
@@ -89131,8 +88811,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028244",
@@ -89171,8 +88850,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028245",
@@ -89491,8 +89169,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028254",
@@ -89660,8 +89337,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028259",
@@ -92478,8 +92154,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028352",
@@ -94415,8 +94090,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028416",
@@ -94615,8 +94289,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028421",
@@ -94655,8 +94328,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028422",
@@ -95362,8 +95034,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028441",
@@ -103536,8 +103207,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028760",
@@ -104101,8 +103771,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028774",
@@ -104590,8 +104259,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028797",
@@ -104910,8 +104578,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028808",
@@ -104950,8 +104617,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028809",
@@ -105697,8 +105363,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028830",
@@ -107360,8 +107025,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028884",
@@ -110142,8 +109806,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028981",
@@ -110222,8 +109885,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028983",
@@ -110462,8 +110124,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028991",
@@ -110542,8 +110203,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0028994",
@@ -110902,8 +110562,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0029005",
@@ -110942,8 +110601,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0029006",
@@ -111809,8 +111467,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0029034",
@@ -112538,8 +112195,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0029058",
@@ -112778,8 +112434,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0029064",
@@ -113325,8 +112980,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0029088",
@@ -115728,8 +115382,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0029505",
@@ -116168,8 +115821,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3484"
+    }
   },
   {
     "id": "CN-MFG-0033417",
@@ -117205,7 +116857,7 @@
     "company": "上海森耐精密机械制造有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械"
+      "精密机械加工"
     ],
     "region": {
       "province": "上海",
@@ -117213,30 +116865,12 @@
     },
     "address": "枫泾镇环东二路1353号",
     "contact_phone": "021-57803335",
-    "lat": 30.891228,
-    "lng": 121.056151,
-    "source": "public_directory",
-    "source_url": "https://www.amap.com/place/B0H3OS0XPZ",
-    "verified_at": "2026-09-14",
-    "imported_at": "2026-09-14",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0H3OS0XPZ",
-      "type": "公司企业;公司;机械电子",
-      "typecode": "170204",
-      "alias": "",
-      "tag": "",
-      "keytag": "公司",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "枫泾",
-      "adcode": "310116",
-      "search_keyword": "精密机械"
-    },
+    "status": "verified",
     "industry": {
       "code": "3484",
       "name": "机械零部件加工",
@@ -117247,14 +116881,22 @@
       "evidence": "精密机械"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3484"
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039372/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039373",
     "company": "上海汇冲精密机械制造有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械"
+      "精密机械加工"
     ],
     "region": {
       "province": "上海",
@@ -117262,30 +116904,12 @@
     },
     "address": "兴塔镇建安路29号3幢",
     "contact_phone": "021-58166501",
-    "lat": 30.860767,
-    "lng": 121.100253,
-    "source": "public_directory",
-    "source_url": "https://www.amap.com/place/B0FFIDKS46",
-    "verified_at": "2026-09-14",
-    "imported_at": "2026-09-14",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFIDKS46",
-      "type": "公司企业;公司;公司",
-      "typecode": "170200",
-      "alias": "",
-      "tag": "",
-      "keytag": "公司",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "310116",
-      "search_keyword": "精密机械"
-    },
+    "status": "verified",
     "industry": {
       "code": "3484",
       "name": "机械零部件加工",
@@ -117296,7 +116920,15 @@
       "evidence": "精密机械"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3484"
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039373/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039374",
@@ -117548,7 +117180,7 @@
     "company": "上海冠磊精密机械制造有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械"
+      "精密机械加工"
     ],
     "region": {
       "province": "上海",
@@ -117556,30 +117188,12 @@
     },
     "address": "亭林镇松隐地区丰盛路28号",
     "contact_phone": "021-57383111",
-    "lat": 30.889772,
-    "lng": 121.252347,
-    "source": "public_directory",
-    "source_url": "https://www.amap.com/place/B00156GPYU",
-    "verified_at": "2026-09-14",
-    "imported_at": "2026-09-14",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B00156GPYU",
-      "type": "公司企业;公司;机械电子",
-      "typecode": "170204",
-      "alias": "",
-      "tag": "",
-      "keytag": "公司",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "310116",
-      "search_keyword": "精密机械"
-    },
+    "status": "verified",
     "industry": {
       "code": "3484",
       "name": "机械零部件加工",
@@ -117590,7 +117204,15 @@
       "evidence": "精密机械"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3484"
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039379/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039380",
@@ -118283,7 +117905,7 @@
     "company": "上海恒企精密机械厂",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械"
+      "精密机械加工"
     ],
     "region": {
       "province": "上海",
@@ -118291,30 +117913,12 @@
     },
     "address": "沪杭公路736号",
     "contact_phone": "021-57436846",
-    "lat": 30.971606,
-    "lng": 121.439226,
-    "source": "public_directory",
-    "source_url": "https://www.amap.com/place/B00155QPAE",
-    "verified_at": "2026-09-14",
-    "imported_at": "2026-09-14",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B00155QPAE",
-      "type": "公司企业;工厂;工厂",
-      "typecode": "170300",
-      "alias": "",
-      "tag": "",
-      "keytag": "工厂",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "310120",
-      "search_keyword": "精密机械"
-    },
+    "status": "verified",
     "industry": {
       "code": "3484",
       "name": "机械零部件加工",
@@ -118325,7 +117929,15 @@
       "evidence": "精密机械"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3484"
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039605/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039606",
@@ -119263,7 +118875,7 @@
     "company": "上海三神条东精密机械制造有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械"
+      "精密机械加工"
     ],
     "region": {
       "province": "上海",
@@ -119271,30 +118883,12 @@
     },
     "address": "宝山区月罗公路2120号",
     "contact_phone": "021-39972859",
-    "lat": 31.412637,
-    "lng": 121.357386,
-    "source": "public_directory",
-    "source_url": "https://www.amap.com/place/B0G2Z9GX0X",
-    "verified_at": "2026-09-14",
-    "imported_at": "2026-09-14",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0G2Z9GX0X",
-      "type": "公司企业;公司;公司",
-      "typecode": "170200",
-      "alias": "",
-      "tag": "",
-      "keytag": "公司",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "罗店",
-      "adcode": "310113",
-      "search_keyword": "精密机械"
-    },
+    "status": "verified",
     "industry": {
       "code": "3484",
       "name": "机械零部件加工",
@@ -119305,7 +118899,15 @@
       "evidence": "精密机械"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3484"
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039688/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039689",
@@ -140679,7 +140281,7 @@
       "city": "南宁"
     },
     "address": "永宁村林坡10队金猫岭工业园",
-    "contact_phone": "待核实",
+    "contact_phone": "0771-3858156; 0771-3861158",
     "lat": 22.905254,
     "lng": 108.292752,
     "source": "public_directory",
@@ -140687,8 +140289,8 @@
     "verified_at": "2026-09-17",
     "imported_at": "2026-09-17",
     "last_verified_at": null,
-    "status": "unverified_poi",
-    "is_template": true,
+    "status": "verified",
+    "is_template": false,
     "note": "",
     "amap": {
       "poi_id": "B0FFG1OAO8",
@@ -147107,5 +146709,755 @@
       "evidence": "精密机械加工"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126696",
+    "company": "数控刀具",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "九新公路与盛富路交叉口南120米",
+    "contact_phone": "待核实",
+    "lat": 31.106131,
+    "lng": 121.318593,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL4OAMK",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "九亭",
+      "adcode": "310117",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "数控"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0006775",
+    "company": "赫华机械科技(昆山)有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "陆家镇星圃路66号",
+    "contact_phone": "138****6254",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "精密机械"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006775/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0008252",
+    "company": "杭州华林塑胶机械制造有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "良渚街道九曲港路9-2号",
+    "contact_phone": "0571-88746831; 0571-88747710",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "精密机械"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008252/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0012440",
+    "company": "悦联钢材批发加工中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "萧绍东路111号",
+    "contact_phone": "136****9878",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "加工中心"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012440/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0012442",
+    "company": "杭州大谢钢卷分条开平加工中心",
+    "category": "原材料",
+    "keywords": [
+      "原材料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "振工路97号",
+    "contact_phone": "159****6688; 180****7888",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "加工中心"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012442/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0012444",
+    "company": "富阳永艺不锈钢剪折刨加工中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "钢圈厂路128号(杭州市富阳区妇幼保健院南1门西130米)",
+    "contact_phone": "182****3665",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "加工中心"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012444/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0012801",
+    "company": "苏州钢材市场大型激光切割打孔加工中心",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "望亭镇聚福路518号",
+    "contact_phone": "186****9747",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "加工中心"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012801/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0012836",
+    "company": "钰桥不锈钢数控剪折开槽激光切割焊接加工",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "邹区镇工业大道3号",
+    "contact_phone": "137****2106",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "数控"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012836/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0013042",
+    "company": "益好不锈钢剪折刨激光切割加工中心",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "南头镇南头大道西35号",
+    "contact_phone": "153****1285; 153****9588",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "加工中心"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013042/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0013078",
+    "company": "权兴不锈钢剪板折弯加工中心",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "朱村大道中232之一号",
+    "contact_phone": "135****6139; 135****6139",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "加工中心"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013078/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0017031",
+    "company": "世林机械线切割手板模型",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "崇贤镇大安村吴家浜20号",
+    "contact_phone": "136****1144",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "精密机械"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017031/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0017037",
+    "company": "杭微机械加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "笕丁路165号机械加工五金加工",
+    "contact_phone": "138****4633",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "机械加工"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017037/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0017076",
+    "company": "熊滨不锈钢有限公司(全数控剪板折弯开槽加工)",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "聚园路21号2栋118号",
+    "contact_phone": "187****1440",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "数控"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017076/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0017118",
+    "company": "杭州精艺不锈钢加工中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "塘康路二十七号一号楼",
+    "contact_phone": "180****2759",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "加工中心"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017118/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0018128",
+    "company": "博罗县园洲镇揽智机械加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "园洲镇廖尾村工业区",
+    "contact_phone": "177****5585; 186****4266",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "机械加工"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018128/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0018307",
+    "company": "永瑞达大型激光切割加工中心",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "湖山商住新村b3号",
+    "contact_phone": "134****2115; 139****9524",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "加工中心"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018307/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0018358",
+    "company": "博罗县园洲镇揽智机械加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "园洲镇廖尾村工业区",
+    "contact_phone": "177****5585; 186****4266",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "机械加工"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018358/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0018390",
+    "company": "博罗县园洲镇揽智机械加工厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "园洲镇廖尾村工业区",
+    "contact_phone": "177****5585; 186****4266",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "机械加工"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018390/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019273",
+    "company": "绍兴东伸机械科技有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "兴滨路436号",
+    "contact_phone": "186****3319",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "low",
+      "source": "keyword",
+      "evidence": "精密机械"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019273/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

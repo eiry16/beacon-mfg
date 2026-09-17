@@ -816,7 +816,15 @@
       "evidence": "足浴"
     },
     "is_manufacturer": false,
-    "_bucket": "O/80/8052"
+    "_bucket": "O/80/8052",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0038969/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0038973",
@@ -972,7 +980,15 @@
       "evidence": "足浴"
     },
     "is_manufacturer": false,
-    "_bucket": "O/80/8052"
+    "_bucket": "O/80/8052",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0038984/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039052",
@@ -1723,7 +1739,15 @@
       "evidence": "居民服务、修理和其他服务业"
     },
     "is_manufacturer": false,
-    "_bucket": "O/80/8052"
+    "_bucket": "O/80/8052",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039715/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039716",
@@ -1822,7 +1846,15 @@
       "evidence": "居民服务、修理和其他服务业"
     },
     "is_manufacturer": false,
-    "_bucket": "O/80/8052"
+    "_bucket": "O/80/8052",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039717/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039724",

@@ -17714,7 +17714,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015010/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015012",
@@ -17863,7 +17871,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015015/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015021",
@@ -17957,7 +17973,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015022/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015027",
@@ -18098,7 +18122,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015031/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0015042",
@@ -21307,7 +21339,15 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017258/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017259",
@@ -23890,7 +23930,15 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019706/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0019707",
@@ -25601,7 +25649,15 @@
     },
     "is_manufacturer": true,
     "status": "unverified_poi",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019763/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0019764",
@@ -25737,7 +25793,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013147/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0012533",
@@ -25784,7 +25848,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012533/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0021060",
@@ -25831,7 +25903,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0021060/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0021061",
@@ -27759,7 +27839,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0021180/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0021182",
@@ -29266,7 +29354,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0021226/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0021228",
@@ -29694,7 +29790,15 @@
       "source": "name",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0095647/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0095959",
@@ -30711,7 +30815,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0096031/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109135",
@@ -30759,7 +30871,15 @@
       "source": "name",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0109135/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109302",
@@ -30858,7 +30978,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0109303/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109307",
@@ -31247,7 +31375,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0109335/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109339",
@@ -31536,7 +31672,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0109351/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109355",
@@ -32019,7 +32163,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0120996/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0120997",
@@ -32069,7 +32221,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0120997/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0120998",
@@ -32214,7 +32374,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0121007/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0121008",
@@ -32454,7 +32622,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0121023/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0121034",
@@ -32698,7 +32874,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123226/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0123228",
@@ -32746,7 +32930,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123228/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0123230",
@@ -32845,7 +33037,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123233/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0123234",

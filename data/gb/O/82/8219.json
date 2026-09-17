@@ -47,6 +47,62 @@
       "source": "name",
       "evidence": "清洁服务"
     },
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0113288/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0127824",
+    "company": "昆明净之家清洁服务有限公司",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "太平路42号",
+    "contact_phone": "183****5626",
+    "lat": 25.033522,
+    "lng": 102.760702,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KAFUHZAX",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "金马",
+      "adcode": "530111",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "8219",
+      "name": "其他清洁服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 其他服务业 > 清洁服务 > 其他清洁服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "清洁服务"
+    },
     "is_manufacturer": false
   }
 ]
