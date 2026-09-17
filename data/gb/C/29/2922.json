@@ -44,7 +44,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/29/2922"
+    "_bucket": "C/29/2922",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015020/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0017292",
@@ -2608,7 +2616,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/29/2922"
+    "_bucket": "C/29/2922",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012843/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0021070",
@@ -3957,7 +3973,15 @@
       "source": "name",
       "evidence": "塑钢"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0109301/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109344",
@@ -4151,7 +4175,15 @@
       "source": "gb_token",
       "evidence": "型材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0114059/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0114628",
@@ -4439,7 +4471,15 @@
       "source": "gb_token",
       "evidence": "型材"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0119000/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0120480",
@@ -4774,6 +4814,102 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "塑料管"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125239",
+    "company": "上海樱联电力塑料管有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "兴工路37号",
+    "contact_phone": "待核实",
+    "lat": 31.523414,
+    "lng": 121.757202,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B00150021F",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310151",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126664",
+    "company": "上海彩覆塑料型材有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "明业路362弄2号",
+    "contact_phone": "021-57796971",
+    "lat": 31.119238,
+    "lng": 121.193774,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B001556OY9",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "佘山",
+      "adcode": "310117",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料型材"
     },
     "is_manufacturer": true
   }

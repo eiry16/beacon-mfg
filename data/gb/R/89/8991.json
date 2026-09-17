@@ -46,7 +46,15 @@
       "evidence": "体育中"
     },
     "is_manufacturer": false,
-    "_bucket": "R/89/8991"
+    "_bucket": "R/89/8991",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0032696/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0032966",
@@ -194,7 +202,15 @@
       "evidence": "体育中"
     },
     "is_manufacturer": false,
-    "_bucket": "R/89/8991"
+    "_bucket": "R/89/8991",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0033299/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0033866",

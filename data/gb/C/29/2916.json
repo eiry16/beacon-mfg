@@ -93,7 +93,15 @@
       "evidence": "运动场"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2916"
+    "_bucket": "C/29/2916",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0033173/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0034199",

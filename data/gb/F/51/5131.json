@@ -44,7 +44,15 @@
     },
     "is_manufacturer": false,
     "status": "verified",
-    "_bucket": "F/51/5131"
+    "_bucket": "F/51/5131",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015451/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0007308",
@@ -415,7 +423,15 @@
       "source": "gb_token",
       "evidence": "原料批发"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0122957/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0122958",

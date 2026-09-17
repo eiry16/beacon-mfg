@@ -106027,5 +106027,53 @@
       "evidence": "SPA"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0125797",
+    "company": "依依养生馆(荣宝华商城店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "金凯街道江南路223号荣宝华商城",
+    "contact_phone": "待核实",
+    "lat": 22.771525,
+    "lng": 108.313375,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B03030T1A2",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "星光大道",
+      "adcode": "450105",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "8053",
+      "name": "养生保健服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务 > 养生保健服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "养生馆"
+    },
+    "is_manufacturer": false
   }
 ]

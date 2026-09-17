@@ -47,7 +47,15 @@
       "evidence": "茶馆"
     },
     "is_manufacturer": false,
-    "_bucket": "H/62/6231"
+    "_bucket": "H/62/6231",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0036154/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039184",
@@ -190394,7 +190402,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "茶室",
-      "茶馆"
+      "茶馆",
+      "餐厅"
     ],
     "region": {
       "province": "贵州",
@@ -215916,7 +215925,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "茶室",
-      "茶馆"
+      "茶馆",
+      "餐厅"
     ],
     "region": {
       "province": "云南",
@@ -236195,7 +236205,15 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111601/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0111602",
@@ -238308,7 +238326,15 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111645/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0111646",
@@ -239664,7 +239690,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "茶室",
-      "茶馆"
+      "茶馆",
+      "餐厅"
     ],
     "region": {
       "province": "广西",
@@ -242064,7 +242091,8 @@
     "category": "住宿和餐饮业",
     "keywords": [
       "茶室",
-      "茶馆"
+      "茶馆",
+      "餐厅"
     ],
     "region": {
       "province": "广西",
@@ -244362,7 +244390,8 @@
     "company": "旺福吃茶屋(明月湖公园店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "茶室"
+      "茶室",
+      "餐厅"
     ],
     "region": {
       "province": "广西",

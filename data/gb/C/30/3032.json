@@ -220,7 +220,15 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/30/3032"
+    "_bucket": "C/30/3032",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008678/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0012314",
@@ -690,7 +698,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/30/3032"
+    "_bucket": "C/30/3032",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022628/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0028522",

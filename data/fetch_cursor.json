@@ -162,6 +162,7 @@
   },
   "2929|塑料制品|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 79,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -172,6 +173,7 @@
   },
   "2929|塑料制品|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 130,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -182,6 +184,7 @@
   },
   "2929|塑料制品|中山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 90,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -192,6 +195,7 @@
   },
   "2929|塑料制品|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 128,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -222,6 +226,7 @@
   },
   "2929|塑料制品|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 126,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -232,6 +237,7 @@
   },
   "2929|塑料制品|常州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 113,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -242,6 +248,7 @@
   },
   "2929|塑料制品|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 100,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -252,6 +259,7 @@
   },
   "2929|塑料制品|惠州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 121,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -262,6 +270,7 @@
   },
   "2929|塑料制品|无锡": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 48,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -302,6 +311,7 @@
   },
   "2929|塑料制品|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 118,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -332,6 +342,7 @@
   },
   "2929|塑料制品|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 49,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -359,6 +370,166 @@
    "runs": 1,
    "state": "low_yield",
    "yield": 0.4091
+  },
+  "2929|塑料模具|310101": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 0,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "2929|塑料模具|310104": {
+   "exhausted": true,
+   "last_new": 2,
+   "last_run": "2026-09-18",
+   "last_seen": 4,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.5
+  },
+  "2929|塑料模具|310105": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 1,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "2929|塑料模具|310106": {
+   "exhausted": true,
+   "last_new": 1,
+   "last_run": "2026-09-18",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.3333
+  },
+  "2929|塑料模具|310107": {
+   "exhausted": true,
+   "last_new": 1,
+   "last_run": "2026-09-18",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.3333
+  },
+  "2929|塑料模具|310109": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 0,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "2929|塑料模具|310110": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 0,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "2929|塑料模具|310112": {
+   "exhausted": true,
+   "last_new": 17,
+   "last_run": "2026-09-18",
+   "last_seen": 28,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6071
+  },
+  "2929|塑料模具|310113": {
+   "exhausted": true,
+   "last_new": 10,
+   "last_run": "2026-09-18",
+   "last_seen": 19,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.5263
+  },
+  "2929|塑料模具|310114": {
+   "exhausted": true,
+   "last_new": 70,
+   "last_run": "2026-09-18",
+   "last_seen": 109,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6422
+  },
+  "2929|塑料模具|310115": {
+   "exhausted": true,
+   "last_new": 35,
+   "last_run": "2026-09-18",
+   "last_seen": 58,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6034
+  },
+  "2929|塑料模具|310116": {
+   "exhausted": true,
+   "last_new": 49,
+   "last_run": "2026-09-18",
+   "last_seen": 94,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5213
+  },
+  "2929|塑料模具|310117": {
+   "exhausted": true,
+   "last_new": 55,
+   "last_run": "2026-09-18",
+   "last_seen": 104,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5288
+  },
+  "2929|塑料模具|310118": {
+   "exhausted": true,
+   "last_new": 25,
+   "last_run": "2026-09-18",
+   "last_seen": 64,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.3906
+  },
+  "2929|塑料模具|310120": {
+   "exhausted": true,
+   "last_new": 46,
+   "last_run": "2026-09-18",
+   "last_seen": 101,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.4554
+  },
+  "2929|塑料模具|310151": {
+   "exhausted": true,
+   "last_new": 9,
+   "last_run": "2026-09-18",
+   "last_seen": 11,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8182
   },
   "2929|塑料模具|320205": {
    "exhausted": true,
@@ -429,6 +600,16 @@
    "runs": 1,
    "state": "hot",
    "yield": 0.605
+  },
+  "2929|塑料模具|320413": {
+   "exhausted": true,
+   "last_new": 15,
+   "last_run": "2026-09-18",
+   "last_seen": 29,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5172
   },
   "2929|塑料模具|320505": {
    "exhausted": true,
@@ -520,6 +701,136 @@
    "state": "hot",
    "yield": 0.8222
   },
+  "2929|塑料模具|330102": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 4,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "2929|塑料模具|330105": {
+   "exhausted": true,
+   "last_new": 2,
+   "last_run": "2026-09-18",
+   "last_seen": 7,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.2857
+  },
+  "2929|塑料模具|330106": {
+   "exhausted": true,
+   "last_new": 1,
+   "last_run": "2026-09-18",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.3333
+  },
+  "2929|塑料模具|330108": {
+   "exhausted": true,
+   "last_new": 1,
+   "last_run": "2026-09-18",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.3333
+  },
+  "2929|塑料模具|330109": {
+   "exhausted": true,
+   "last_new": 35,
+   "last_run": "2026-09-18",
+   "last_seen": 123,
+   "requests": 5,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.2846
+  },
+  "2929|塑料模具|330110": {
+   "exhausted": true,
+   "last_new": 5,
+   "last_run": "2026-09-18",
+   "last_seen": 28,
+   "requests": 2,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.1786
+  },
+  "2929|塑料模具|330111": {
+   "exhausted": true,
+   "last_new": 8,
+   "last_run": "2026-09-18",
+   "last_seen": 27,
+   "requests": 2,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.2963
+  },
+  "2929|塑料模具|330112": {
+   "exhausted": true,
+   "last_new": 2,
+   "last_run": "2026-09-18",
+   "last_seen": 23,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.087
+  },
+  "2929|塑料模具|330113": {
+   "exhausted": true,
+   "last_new": 7,
+   "last_run": "2026-09-18",
+   "last_seen": 24,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.2917
+  },
+  "2929|塑料模具|330114": {
+   "exhausted": true,
+   "last_new": 2,
+   "last_run": "2026-09-18",
+   "last_seen": 10,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.2
+  },
+  "2929|塑料模具|330122": {
+   "exhausted": true,
+   "last_new": 6,
+   "last_run": "2026-09-18",
+   "last_seen": 40,
+   "requests": 2,
+   "runs": 1,
+   "state": "warm",
+   "yield": 0.15
+  },
+  "2929|塑料模具|330127": {
+   "exhausted": true,
+   "last_new": 1,
+   "last_run": "2026-09-18",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.3333
+  },
+  "2929|塑料模具|330182": {
+   "exhausted": true,
+   "last_new": 3,
+   "last_run": "2026-09-18",
+   "last_seen": 15,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.2
+  },
   "2929|塑料模具|330206": {
    "exhausted": true,
    "last_new": 170,
@@ -602,6 +913,7 @@
   },
   "2929|塑料模具|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -612,6 +924,7 @@
   },
   "2929|塑料模具|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -622,6 +935,7 @@
   },
   "2929|塑料模具|中山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 131,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -632,6 +946,7 @@
   },
   "2929|塑料模具|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -674,6 +989,7 @@
   },
   "2929|塑料模具|常州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -684,6 +1000,7 @@
   },
   "2929|塑料模具|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -694,6 +1011,7 @@
   },
   "2929|塑料模具|惠州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 118,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -736,6 +1054,7 @@
   },
   "2929|塑料模具|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -746,6 +1065,7 @@
   },
   "2929|塑料模具|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -766,6 +1086,7 @@
   },
   "2929|塑料模具|绍兴": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -847,6 +1168,7 @@
   },
   "2929|塑胶制品|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 38,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -857,6 +1179,7 @@
   },
   "2929|塑胶制品|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 72,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -867,6 +1190,7 @@
   },
   "2929|塑胶制品|中山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 31,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -877,6 +1201,7 @@
   },
   "2929|塑胶制品|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 35,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -887,6 +1212,7 @@
   },
   "2929|塑胶制品|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 63,
    "last_run": "2026-09-17",
    "last_seen": 151,
@@ -897,6 +1223,7 @@
   },
   "2929|塑胶制品|嘉兴": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 53,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -907,6 +1234,7 @@
   },
   "2929|塑胶制品|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 59,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -917,6 +1245,7 @@
   },
   "2929|塑胶制品|常州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 49,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -927,6 +1256,7 @@
   },
   "2929|塑胶制品|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 43,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -937,6 +1267,7 @@
   },
   "2929|塑胶制品|惠州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 56,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -947,6 +1278,7 @@
   },
   "2929|塑胶制品|无锡": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 61,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -957,6 +1289,7 @@
   },
   "2929|塑胶制品|昆山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 67,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -967,6 +1300,7 @@
   },
   "2929|塑胶制品|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 92,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -977,6 +1311,7 @@
   },
   "2929|塑胶制品|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -987,6 +1322,7 @@
   },
   "2929|塑胶制品|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 66,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -997,6 +1333,7 @@
   },
   "2929|塑胶制品|绍兴": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 59,
    "last_run": "2026-09-16",
    "last_seen": 178,
@@ -1007,6 +1344,7 @@
   },
   "2929|塑胶制品|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 60,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -1477,6 +1815,7 @@
   },
   "3130|钢材|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 188,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1487,6 +1826,7 @@
   },
   "3130|钢材|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 185,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1497,6 +1837,7 @@
   },
   "3130|钢材|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 181,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1507,6 +1848,7 @@
   },
   "3130|钢材|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 187,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1677,6 +2019,7 @@
   },
   "3252|铝合金|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 96,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1687,6 +2030,7 @@
   },
   "3252|铝合金|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 92,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1697,6 +2041,7 @@
   },
   "3252|铝合金|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 109,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1707,6 +2052,7 @@
   },
   "3252|铝合金|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 104,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1717,6 +2063,7 @@
   },
   "3252|铝型材|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 185,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1727,6 +2074,7 @@
   },
   "3252|铝型材|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 183,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -1737,6 +2085,7 @@
   },
   "3252|铝型材|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 156,
    "last_run": "2026-09-17",
    "last_seen": 172,
@@ -1747,6 +2096,7 @@
   },
   "3252|铝型材|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 133,
    "last_run": "2026-09-17",
    "last_seen": 154,
@@ -3056,6 +3406,7 @@
   },
   "3482|螺丝|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 149,
    "last_run": "2026-09-17",
    "last_seen": 164,
@@ -3096,6 +3447,7 @@
   },
   "3482|螺栓|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 12,
    "last_run": "2026-09-17",
    "last_seen": 172,
@@ -3953,6 +4305,126 @@
    "state": "low_yield",
    "yield": 0.0
   },
+  "3484|机械加工|450102": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 17,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|机械加工|450103": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 1,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|机械加工|450105": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 53,
+   "requests": 3,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|机械加工|450107": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 46,
+   "requests": 2,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "3484|机械加工|450108": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 11,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|机械加工|450109": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 4,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|机械加工|450110": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 14,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|机械加工|450123": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 1,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|机械加工|450124": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 1,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|机械加工|450125": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 1,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|机械加工|450126": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 3,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
+  "3484|机械加工|450181": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 5,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.0
+  },
   "3484|机械加工|上海": {
    "exhausted": true,
    "expanded": true,
@@ -3999,6 +4471,7 @@
   },
   "3484|机械加工|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 154,
    "last_run": "2026-09-17",
    "last_seen": 160,
@@ -4932,6 +5405,7 @@
   },
   "3982|电路板|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 194,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -4942,6 +5416,7 @@
   },
   "3982|电路板|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 193,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -4952,6 +5427,7 @@
   },
   "3982|电路板|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 186,
    "last_run": "2026-09-17",
    "last_seen": 188,
@@ -4962,6 +5438,7 @@
   },
   "3982|电路板|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 184,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6272,6 +6749,7 @@
   },
   "6110|宾馆|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6282,6 +6760,7 @@
   },
   "6110|宾馆|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6292,6 +6771,7 @@
   },
   "6110|宾馆|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 6,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6302,6 +6782,7 @@
   },
   "6110|宾馆|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6322,6 +6803,7 @@
   },
   "6110|度假酒店|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 178,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6352,6 +6834,7 @@
   },
   "6110|酒店|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6362,6 +6845,7 @@
   },
   "6110|酒店|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 194,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6372,6 +6856,7 @@
   },
   "6110|酒店|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6382,6 +6867,7 @@
   },
   "6110|酒店|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6392,6 +6878,7 @@
   },
   "6110|饭店|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 175,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6402,6 +6889,7 @@
   },
   "6110|饭店|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 177,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6412,6 +6900,7 @@
   },
   "6110|饭店|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 173,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6422,6 +6911,7 @@
   },
   "6110|饭店|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 125,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6442,6 +6932,7 @@
   },
   "6130|客栈|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 176,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6452,6 +6943,7 @@
   },
   "6130|客栈|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 196,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6462,6 +6954,7 @@
   },
   "6130|客栈|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 171,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6472,6 +6965,7 @@
   },
   "6130|民宿|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 189,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6482,6 +6976,7 @@
   },
   "6130|民宿|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6492,6 +6987,7 @@
   },
   "6130|民宿|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 193,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6502,6 +6998,7 @@
   },
   "6130|民宿|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 178,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6512,6 +7009,7 @@
   },
   "6130|精品民宿|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 146,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6522,6 +7020,7 @@
   },
   "6130|精品民宿|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 172,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6532,6 +7031,7 @@
   },
   "6130|精品民宿|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 168,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6542,6 +7042,7 @@
   },
   "6130|精品民宿|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 106,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6592,6 +7093,7 @@
   },
   "6210|中餐馆|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 149,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6652,6 +7154,7 @@
   },
   "6210|中餐馆|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 186,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6692,6 +7195,7 @@
   },
   "6210|中餐馆|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 169,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6702,6 +7206,7 @@
   },
   "6210|中餐馆|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 177,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6752,6 +7257,7 @@
   },
   "6210|家常菜|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 185,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6812,6 +7318,7 @@
   },
   "6210|家常菜|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 177,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6852,6 +7359,7 @@
   },
   "6210|家常菜|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 194,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6862,6 +7370,7 @@
   },
   "6210|家常菜|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 193,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6912,6 +7421,7 @@
   },
   "6210|火锅|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 169,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -6972,6 +7482,7 @@
   },
   "6210|火锅|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 165,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7012,6 +7523,7 @@
   },
   "6210|火锅|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 122,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7022,6 +7534,7 @@
   },
   "6210|火锅|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 143,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7072,6 +7585,7 @@
   },
   "6210|私房菜|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 180,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7132,6 +7646,7 @@
   },
   "6210|私房菜|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 157,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7172,6 +7687,7 @@
   },
   "6210|私房菜|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 182,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7182,6 +7698,7 @@
   },
   "6210|私房菜|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 175,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7232,6 +7749,7 @@
   },
   "6210|酒楼|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 174,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7292,6 +7810,7 @@
   },
   "6210|酒楼|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 164,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7332,6 +7851,7 @@
   },
   "6210|酒楼|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 182,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7342,6 +7862,7 @@
   },
   "6210|酒楼|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 184,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7349,6 +7870,426 @@
    "runs": 1,
    "state": "hot",
    "yield": 0.92
+  },
+  "6210|餐厅|450102": {
+   "exhausted": true,
+   "last_new": 70,
+   "last_run": "2026-09-18",
+   "last_seen": 96,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7292
+  },
+  "6210|餐厅|450103": {
+   "exhausted": true,
+   "last_new": 85,
+   "last_run": "2026-09-18",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.425
+  },
+  "6210|餐厅|450105": {
+   "exhausted": true,
+   "last_new": 70,
+   "last_run": "2026-09-18",
+   "last_seen": 95,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7368
+  },
+  "6210|餐厅|450107": {
+   "exhausted": true,
+   "last_new": 132,
+   "last_run": "2026-09-18",
+   "last_seen": 185,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7135
+  },
+  "6210|餐厅|450108": {
+   "exhausted": true,
+   "last_new": 69,
+   "last_run": "2026-09-18",
+   "last_seen": 91,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7582
+  },
+  "6210|餐厅|450109": {
+   "exhausted": true,
+   "last_new": 22,
+   "last_run": "2026-09-18",
+   "last_seen": 25,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.88
+  },
+  "6210|餐厅|450110": {
+   "exhausted": true,
+   "last_new": 56,
+   "last_run": "2026-09-18",
+   "last_seen": 70,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8
+  },
+  "6210|餐厅|450123": {
+   "exhausted": true,
+   "last_new": 11,
+   "last_run": "2026-09-18",
+   "last_seen": 13,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8462
+  },
+  "6210|餐厅|450124": {
+   "exhausted": true,
+   "last_new": 10,
+   "last_run": "2026-09-18",
+   "last_seen": 10,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
+  "6210|餐厅|450125": {
+   "exhausted": true,
+   "last_new": 13,
+   "last_run": "2026-09-18",
+   "last_seen": 15,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8667
+  },
+  "6210|餐厅|450126": {
+   "exhausted": true,
+   "last_new": 49,
+   "last_run": "2026-09-18",
+   "last_seen": 55,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8909
+  },
+  "6210|餐厅|450181": {
+   "exhausted": true,
+   "last_new": 29,
+   "last_run": "2026-09-18",
+   "last_seen": 31,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9355
+  },
+  "6210|餐厅|520102": {
+   "exhausted": true,
+   "last_new": 0,
+   "last_run": "2026-09-18",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "exhausted",
+   "yield": 0.0
+  },
+  "6210|餐厅|520103": {
+   "exhausted": true,
+   "last_new": 119,
+   "last_run": "2026-09-18",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.595
+  },
+  "6210|餐厅|520111": {
+   "exhausted": true,
+   "last_new": 157,
+   "last_run": "2026-09-18",
+   "last_seen": 192,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8177
+  },
+  "6210|餐厅|520112": {
+   "exhausted": true,
+   "last_new": 56,
+   "last_run": "2026-09-18",
+   "last_seen": 66,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8485
+  },
+  "6210|餐厅|520113": {
+   "exhausted": true,
+   "last_new": 76,
+   "last_run": "2026-09-18",
+   "last_seen": 93,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8172
+  },
+  "6210|餐厅|520115": {
+   "exhausted": true,
+   "last_new": 120,
+   "last_run": "2026-09-18",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6
+  },
+  "6210|餐厅|520121": {
+   "exhausted": true,
+   "last_new": 62,
+   "last_run": "2026-09-18",
+   "last_seen": 72,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8611
+  },
+  "6210|餐厅|520122": {
+   "exhausted": true,
+   "last_new": 36,
+   "last_run": "2026-09-18",
+   "last_seen": 42,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8571
+  },
+  "6210|餐厅|520123": {
+   "exhausted": true,
+   "last_new": 48,
+   "last_run": "2026-09-18",
+   "last_seen": 65,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7385
+  },
+  "6210|餐厅|520181": {
+   "exhausted": true,
+   "last_new": 94,
+   "last_run": "2026-09-18",
+   "last_seen": 112,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8393
+  },
+  "6210|餐厅|520303": {
+   "exhausted": true,
+   "last_new": 53,
+   "last_run": "2026-09-18",
+   "last_seen": 93,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5699
+  },
+  "6210|餐厅|520326": {
+   "exhausted": true,
+   "last_new": 24,
+   "last_run": "2026-09-18",
+   "last_seen": 33,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7273
+  },
+  "6210|餐厅|520328": {
+   "exhausted": true,
+   "last_new": 54,
+   "last_run": "2026-09-18",
+   "last_seen": 81,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6667
+  },
+  "6210|餐厅|520329": {
+   "exhausted": true,
+   "last_new": 29,
+   "last_run": "2026-09-18",
+   "last_seen": 34,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8529
+  },
+  "6210|餐厅|520381": {
+   "exhausted": true,
+   "last_new": 34,
+   "last_run": "2026-09-18",
+   "last_seen": 45,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7556
+  },
+  "6210|餐厅|520382": {
+   "exhausted": true,
+   "last_new": 70,
+   "last_run": "2026-09-18",
+   "last_seen": 90,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7778
+  },
+  "6210|餐厅|530102": {
+   "exhausted": true,
+   "last_new": 124,
+   "last_run": "2026-09-18",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.62
+  },
+  "6210|餐厅|530103": {
+   "exhausted": true,
+   "last_new": 162,
+   "last_run": "2026-09-18",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.81
+  },
+  "6210|餐厅|530111": {
+   "exhausted": true,
+   "last_new": 151,
+   "last_run": "2026-09-18",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.755
+  },
+  "6210|餐厅|530112": {
+   "exhausted": true,
+   "last_new": 164,
+   "last_run": "2026-09-18",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.82
+  },
+  "6210|餐厅|530113": {
+   "exhausted": true,
+   "last_new": 34,
+   "last_run": "2026-09-18",
+   "last_seen": 35,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9714
+  },
+  "6210|餐厅|530114": {
+   "exhausted": true,
+   "last_new": 121,
+   "last_run": "2026-09-18",
+   "last_seen": 160,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7562
+  },
+  "6210|餐厅|530115": {
+   "exhausted": true,
+   "last_new": 50,
+   "last_run": "2026-09-18",
+   "last_seen": 53,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9434
+  },
+  "6210|餐厅|530124": {
+   "exhausted": true,
+   "last_new": 18,
+   "last_run": "2026-09-18",
+   "last_seen": 18,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
+  "6210|餐厅|530125": {
+   "exhausted": true,
+   "last_new": 36,
+   "last_run": "2026-09-18",
+   "last_seen": 39,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9231
+  },
+  "6210|餐厅|530126": {
+   "exhausted": true,
+   "last_new": 60,
+   "last_run": "2026-09-18",
+   "last_seen": 62,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9677
+  },
+  "6210|餐厅|530127": {
+   "exhausted": true,
+   "last_new": 53,
+   "last_run": "2026-09-18",
+   "last_seen": 54,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9815
+  },
+  "6210|餐厅|530128": {
+   "exhausted": true,
+   "last_new": 32,
+   "last_run": "2026-09-18",
+   "last_seen": 34,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9412
+  },
+  "6210|餐厅|530129": {
+   "exhausted": true,
+   "last_new": 51,
+   "last_run": "2026-09-18",
+   "last_seen": 51,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 1.0
+  },
+  "6210|餐厅|530181": {
+   "exhausted": true,
+   "last_new": 73,
+   "last_run": "2026-09-18",
+   "last_seen": 77,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9481
   },
   "6210|餐厅|上海": {
    "exhausted": false,
@@ -7392,6 +8333,7 @@
   },
   "6210|餐厅|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7452,6 +8394,7 @@
   },
   "6210|餐厅|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7492,6 +8435,7 @@
   },
   "6210|餐厅|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7502,6 +8446,7 @@
   },
   "6210|餐厅|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7552,6 +8497,7 @@
   },
   "6220|便当|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 105,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7592,6 +8538,7 @@
   },
   "6220|便当|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 140,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7632,6 +8579,7 @@
   },
   "6220|便当|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 140,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7642,6 +8590,7 @@
   },
   "6220|便当|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 86,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7696,6 +8645,7 @@
   },
   "6220|小吃店|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7739,6 +8689,7 @@
   },
   "6220|小吃店|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 76,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7782,6 +8733,7 @@
   },
   "6220|小吃店|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7792,6 +8744,7 @@
   },
   "6220|小吃店|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7842,6 +8795,7 @@
   },
   "6220|快餐|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 158,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7882,6 +8836,7 @@
   },
   "6220|快餐|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 179,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7922,6 +8877,7 @@
   },
   "6220|快餐|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 176,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7932,6 +8888,7 @@
   },
   "6220|快餐|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 164,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -7982,6 +8939,7 @@
   },
   "6220|汉堡|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 161,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8022,6 +8980,7 @@
   },
   "6220|汉堡|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 156,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8062,6 +9021,7 @@
   },
   "6220|汉堡|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 168,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8072,6 +9032,7 @@
   },
   "6220|汉堡|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 97,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8122,6 +9083,7 @@
   },
   "6220|炸鸡|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 196,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8162,6 +9124,7 @@
   },
   "6220|炸鸡|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 193,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8202,6 +9165,7 @@
   },
   "6220|炸鸡|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 196,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8212,6 +9176,7 @@
   },
   "6220|炸鸡|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 189,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8265,6 +9230,7 @@
   },
   "6220|简餐|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8308,6 +9274,7 @@
   },
   "6220|简餐|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8351,6 +9318,7 @@
   },
   "6220|简餐|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 2,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8361,6 +9329,7 @@
   },
   "6220|简餐|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8404,6 +9373,7 @@
   },
   "6231|奶茶|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 190,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8436,6 +9406,7 @@
   },
   "6231|奶茶|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 186,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8479,6 +9450,7 @@
   },
   "6231|奶茶|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 187,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8489,6 +9461,7 @@
   },
   "6231|奶茶|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 157,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8532,6 +9505,7 @@
   },
   "6231|茶室|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8564,6 +9538,7 @@
   },
   "6231|茶室|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8607,6 +9582,7 @@
   },
   "6231|茶室|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8617,6 +9593,7 @@
   },
   "6231|茶室|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 194,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8660,6 +9637,7 @@
   },
   "6231|茶饮|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 144,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8692,6 +9670,7 @@
   },
   "6231|茶饮|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 177,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8735,6 +9714,7 @@
   },
   "6231|茶饮|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 123,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8745,6 +9725,7 @@
   },
   "6231|茶饮|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 70,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8788,6 +9769,7 @@
   },
   "6231|茶馆|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 11,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8820,6 +9802,7 @@
   },
   "6231|茶馆|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 12,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8863,6 +9846,7 @@
   },
   "6231|茶馆|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 17,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8873,6 +9857,7 @@
   },
   "6231|茶馆|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 9,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8905,6 +9890,7 @@
   },
   "6232|咖啡|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8937,6 +9923,7 @@
   },
   "6232|咖啡|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -8991,6 +9978,7 @@
   },
   "6232|咖啡|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 194,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9001,6 +9989,7 @@
   },
   "6232|咖啡|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9233,6 +10222,7 @@
   },
   "6232|咖啡店|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 14,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9265,6 +10255,7 @@
   },
   "6232|咖啡店|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 13,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9319,6 +10310,7 @@
   },
   "6232|咖啡店|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 31,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9329,6 +10321,7 @@
   },
   "6232|咖啡店|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 80,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9491,6 +10484,7 @@
   },
   "6232|咖啡馆|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 147,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9523,6 +10517,7 @@
   },
   "6232|咖啡馆|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 183,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9577,6 +10572,7 @@
   },
   "6232|咖啡馆|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 168,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9587,6 +10583,7 @@
   },
   "6232|咖啡馆|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 81,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9597,6 +10594,7 @@
   },
   "6233|清吧|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9617,6 +10615,7 @@
   },
   "6233|清吧|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9627,6 +10626,7 @@
   },
   "6233|清吧|成都": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9637,6 +10637,7 @@
   },
   "6233|清吧|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 149,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9647,6 +10648,7 @@
   },
   "6233|清吧|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 138,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9657,6 +10659,7 @@
   },
   "6233|清吧|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9667,6 +10670,7 @@
   },
   "6233|清吧|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 110,
    "last_run": "2026-09-17",
    "last_seen": 156,
@@ -9698,6 +10702,7 @@
   },
   "6233|酒吧|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9708,6 +10713,7 @@
   },
   "6233|酒吧|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9718,6 +10724,7 @@
   },
   "6233|酒吧|成都": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9728,6 +10735,7 @@
   },
   "6233|酒吧|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 196,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9738,6 +10746,7 @@
   },
   "6233|酒吧|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9748,6 +10757,7 @@
   },
   "6233|酒吧|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9758,6 +10768,7 @@
   },
   "6233|酒吧|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9768,6 +10779,7 @@
   },
   "6233|酒吧|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9868,6 +10880,7 @@
   },
   "6291|烘焙|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 194,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9878,6 +10891,7 @@
   },
   "6291|烘焙|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9888,6 +10902,7 @@
   },
   "6291|烘焙|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9898,6 +10913,7 @@
   },
   "6291|烘焙|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 193,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9908,6 +10924,7 @@
   },
   "6291|烘焙|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9918,6 +10935,7 @@
   },
   "6291|烘焙|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9928,6 +10946,7 @@
   },
   "6291|烘焙|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 194,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9938,6 +10957,7 @@
   },
   "6291|烘焙|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9948,6 +10968,7 @@
   },
   "6291|烘焙|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 196,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9958,6 +10979,7 @@
   },
   "6291|烘焙|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -9968,6 +10990,7 @@
   },
   "6291|烘焙|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9978,6 +11001,7 @@
   },
   "6291|烘焙|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9988,6 +11012,7 @@
   },
   "6291|甜品|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 157,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -9998,6 +11023,7 @@
   },
   "6291|甜品|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 155,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10008,6 +11034,7 @@
   },
   "6291|甜品|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 121,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10018,6 +11045,7 @@
   },
   "6291|甜品|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 154,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10028,6 +11056,7 @@
   },
   "6291|蛋糕|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 66,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10038,6 +11067,7 @@
   },
   "6291|蛋糕|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 32,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10048,6 +11078,7 @@
   },
   "6291|蛋糕|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 12,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10058,6 +11089,7 @@
   },
   "6291|蛋糕|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 13,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10068,6 +11100,7 @@
   },
   "6291|蛋糕|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 27,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10078,6 +11111,7 @@
   },
   "6291|蛋糕|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 44,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10088,6 +11122,7 @@
   },
   "6291|蛋糕|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 20,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10098,6 +11133,7 @@
   },
   "6291|蛋糕|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 22,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10108,6 +11144,7 @@
   },
   "6291|蛋糕|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 41,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10118,6 +11155,7 @@
   },
   "6291|蛋糕|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 28,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10128,6 +11166,7 @@
   },
   "6291|蛋糕|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 15,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10138,6 +11177,7 @@
   },
   "6291|蛋糕|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 13,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10148,6 +11188,7 @@
   },
   "6291|西点|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 7,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10158,6 +11199,7 @@
   },
   "6291|西点|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 2,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10168,6 +11210,7 @@
   },
   "6291|西点|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 14,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10178,6 +11221,7 @@
   },
   "6291|西点|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 2,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10188,6 +11232,7 @@
   },
   "6291|西点|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 7,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10198,6 +11243,7 @@
   },
   "6291|西点|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 4,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10208,6 +11254,7 @@
   },
   "6291|西点|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10218,6 +11265,7 @@
   },
   "6291|西点|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10228,6 +11276,7 @@
   },
   "6291|面包|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 86,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10238,6 +11287,7 @@
   },
   "6291|面包|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 83,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10248,6 +11298,7 @@
   },
   "6291|面包|佛山": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 89,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10258,6 +11309,7 @@
   },
   "6291|面包|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 78,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10268,6 +11320,7 @@
   },
   "6291|面包|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 102,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10278,6 +11331,7 @@
   },
   "6291|面包|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 133,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10288,6 +11342,7 @@
   },
   "6291|面包|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 71,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10298,6 +11353,7 @@
   },
   "6291|面包|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 103,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10308,6 +11364,7 @@
   },
   "6291|面包|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 104,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10318,6 +11375,7 @@
   },
   "6291|面包|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 100,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -10328,6 +11386,7 @@
   },
   "6291|面包|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 78,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -10338,6 +11397,7 @@
   },
   "6291|面包|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 91,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -11736,6 +12796,416 @@
    "state": "low_yield",
    "yield": 1.0
   },
+  "8030|干洗|450102": {
+   "exhausted": true,
+   "last_new": 27,
+   "last_run": "2026-09-18",
+   "last_seen": 45,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6
+  },
+  "8030|干洗|450103": {
+   "exhausted": true,
+   "last_new": 66,
+   "last_run": "2026-09-18",
+   "last_seen": 141,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.4681
+  },
+  "8030|干洗|450105": {
+   "exhausted": true,
+   "last_new": 42,
+   "last_run": "2026-09-18",
+   "last_seen": 69,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6087
+  },
+  "8030|干洗|450107": {
+   "exhausted": true,
+   "last_new": 63,
+   "last_run": "2026-09-18",
+   "last_seen": 122,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5164
+  },
+  "8030|干洗|450108": {
+   "exhausted": true,
+   "last_new": 37,
+   "last_run": "2026-09-18",
+   "last_seen": 63,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.5873
+  },
+  "8030|干洗|450109": {
+   "exhausted": true,
+   "last_new": 10,
+   "last_run": "2026-09-18",
+   "last_seen": 13,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.7692
+  },
+  "8030|干洗|450110": {
+   "exhausted": true,
+   "last_new": 26,
+   "last_run": "2026-09-18",
+   "last_seen": 36,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7222
+  },
+  "8030|干洗|450123": {
+   "exhausted": true,
+   "last_new": 11,
+   "last_run": "2026-09-18",
+   "last_seen": 11,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
+  "8030|干洗|450124": {
+   "exhausted": true,
+   "last_new": 9,
+   "last_run": "2026-09-18",
+   "last_seen": 9,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
+  "8030|干洗|450125": {
+   "exhausted": true,
+   "last_new": 9,
+   "last_run": "2026-09-18",
+   "last_seen": 13,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.6923
+  },
+  "8030|干洗|450126": {
+   "exhausted": true,
+   "last_new": 34,
+   "last_run": "2026-09-18",
+   "last_seen": 37,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.9189
+  },
+  "8030|干洗|450181": {
+   "exhausted": true,
+   "last_new": 17,
+   "last_run": "2026-09-18",
+   "last_seen": 24,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.7083
+  },
+  "8030|干洗|520102": {
+   "exhausted": true,
+   "last_new": 63,
+   "last_run": "2026-09-18",
+   "last_seen": 104,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6058
+  },
+  "8030|干洗|520103": {
+   "exhausted": true,
+   "last_new": 100,
+   "last_run": "2026-09-18",
+   "last_seen": 146,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6849
+  },
+  "8030|干洗|520111": {
+   "exhausted": true,
+   "last_new": 50,
+   "last_run": "2026-09-18",
+   "last_seen": 76,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6579
+  },
+  "8030|干洗|520112": {
+   "exhausted": true,
+   "last_new": 19,
+   "last_run": "2026-09-18",
+   "last_seen": 31,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6129
+  },
+  "8030|干洗|520113": {
+   "exhausted": true,
+   "last_new": 35,
+   "last_run": "2026-09-18",
+   "last_seen": 53,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6604
+  },
+  "8030|干洗|520115": {
+   "exhausted": true,
+   "last_new": 84,
+   "last_run": "2026-09-18",
+   "last_seen": 153,
+   "requests": 7,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.549
+  },
+  "8030|干洗|520121": {
+   "exhausted": true,
+   "last_new": 13,
+   "last_run": "2026-09-18",
+   "last_seen": 16,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8125
+  },
+  "8030|干洗|520122": {
+   "exhausted": true,
+   "last_new": 10,
+   "last_run": "2026-09-18",
+   "last_seen": 10,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 1.0
+  },
+  "8030|干洗|520123": {
+   "exhausted": true,
+   "last_new": 15,
+   "last_run": "2026-09-18",
+   "last_seen": 18,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8333
+  },
+  "8030|干洗|520181": {
+   "exhausted": true,
+   "last_new": 27,
+   "last_run": "2026-09-18",
+   "last_seen": 42,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6429
+  },
+  "8030|干洗|520303": {
+   "exhausted": true,
+   "last_new": 32,
+   "last_run": "2026-09-18",
+   "last_seen": 67,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.4776
+  },
+  "8030|干洗|520328": {
+   "exhausted": true,
+   "last_new": 19,
+   "last_run": "2026-09-18",
+   "last_seen": 29,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6552
+  },
+  "8030|干洗|520329": {
+   "exhausted": true,
+   "last_new": 18,
+   "last_run": "2026-09-18",
+   "last_seen": 23,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.7826
+  },
+  "8030|干洗|520381": {
+   "exhausted": true,
+   "last_new": 10,
+   "last_run": "2026-09-18",
+   "last_seen": 18,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.5556
+  },
+  "8030|干洗|520382": {
+   "exhausted": true,
+   "last_new": 54,
+   "last_run": "2026-09-18",
+   "last_seen": 75,
+   "requests": 4,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.72
+  },
+  "8030|干洗|530102": {
+   "exhausted": true,
+   "last_new": 102,
+   "last_run": "2026-09-18",
+   "last_seen": 144,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.7083
+  },
+  "8030|干洗|530103": {
+   "exhausted": true,
+   "last_new": 83,
+   "last_run": "2026-09-18",
+   "last_seen": 124,
+   "requests": 5,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6694
+  },
+  "8030|干洗|530111": {
+   "exhausted": true,
+   "last_new": 136,
+   "last_run": "2026-09-18",
+   "last_seen": 200,
+   "requests": 8,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.68
+  },
+  "8030|干洗|530112": {
+   "exhausted": true,
+   "last_new": 87,
+   "last_run": "2026-09-18",
+   "last_seen": 132,
+   "requests": 6,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6591
+  },
+  "8030|干洗|530113": {
+   "exhausted": true,
+   "last_new": 5,
+   "last_run": "2026-09-18",
+   "last_seen": 6,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8333
+  },
+  "8030|干洗|530114": {
+   "exhausted": true,
+   "last_new": 44,
+   "last_run": "2026-09-18",
+   "last_seen": 68,
+   "requests": 3,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.6471
+  },
+  "8030|干洗|530115": {
+   "exhausted": true,
+   "last_new": 9,
+   "last_run": "2026-09-18",
+   "last_seen": 11,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8182
+  },
+  "8030|干洗|530124": {
+   "exhausted": true,
+   "last_new": 4,
+   "last_run": "2026-09-18",
+   "last_seen": 5,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8
+  },
+  "8030|干洗|530125": {
+   "exhausted": true,
+   "last_new": 6,
+   "last_run": "2026-09-18",
+   "last_seen": 9,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.6667
+  },
+  "8030|干洗|530126": {
+   "exhausted": true,
+   "last_new": 13,
+   "last_run": "2026-09-18",
+   "last_seen": 15,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8667
+  },
+  "8030|干洗|530127": {
+   "exhausted": true,
+   "last_new": 14,
+   "last_run": "2026-09-18",
+   "last_seen": 17,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8235
+  },
+  "8030|干洗|530128": {
+   "exhausted": true,
+   "last_new": 10,
+   "last_run": "2026-09-18",
+   "last_seen": 12,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.8333
+  },
+  "8030|干洗|530129": {
+   "exhausted": true,
+   "last_new": 11,
+   "last_run": "2026-09-18",
+   "last_seen": 12,
+   "requests": 1,
+   "runs": 1,
+   "state": "low_yield",
+   "yield": 0.9167
+  },
+  "8030|干洗|530181": {
+   "exhausted": true,
+   "last_new": 32,
+   "last_run": "2026-09-18",
+   "last_seen": 37,
+   "requests": 2,
+   "runs": 1,
+   "state": "hot",
+   "yield": 0.8649
+  },
   "8030|干洗|上海": {
    "exhausted": false,
    "last_new": 25,
@@ -11758,6 +13228,7 @@
   },
   "8030|干洗|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -11798,6 +13269,7 @@
   },
   "8030|干洗|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -11838,6 +13310,7 @@
   },
   "8030|干洗|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -11848,6 +13321,7 @@
   },
   "8030|干洗|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -11998,6 +13472,7 @@
   },
   "8030|洗衣|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12038,6 +13513,7 @@
   },
   "8030|洗衣|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 8,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12078,6 +13554,7 @@
   },
   "8030|洗衣|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 10,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12088,6 +13565,7 @@
   },
   "8030|洗衣|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 11,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12118,6 +13596,7 @@
   },
   "8030|洗衣店|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12158,6 +13637,7 @@
   },
   "8030|洗衣店|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12198,6 +13678,7 @@
   },
   "8030|洗衣店|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12208,6 +13689,7 @@
   },
   "8030|洗衣店|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 2,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12258,6 +13740,7 @@
   },
   "8040|理发|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 159,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12288,6 +13771,7 @@
   },
   "8040|理发|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 162,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12328,6 +13812,7 @@
   },
   "8040|理发|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 160,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12338,6 +13823,7 @@
   },
   "8040|理发|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 159,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12388,6 +13874,7 @@
   },
   "8040|理发店|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 20,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12418,6 +13905,7 @@
   },
   "8040|理发店|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 23,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12458,6 +13946,7 @@
   },
   "8040|理发店|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12468,6 +13957,7 @@
   },
   "8040|理发店|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12518,6 +14008,7 @@
   },
   "8040|美发|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12548,6 +14039,7 @@
   },
   "8040|美发|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12588,6 +14080,7 @@
   },
   "8040|美发|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 196,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12598,6 +14091,7 @@
   },
   "8040|美发|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12648,6 +14142,7 @@
   },
   "8040|美发店|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 26,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12678,6 +14173,7 @@
   },
   "8040|美发店|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 32,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12718,6 +14214,7 @@
   },
   "8040|美发店|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 15,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12728,6 +14225,7 @@
   },
   "8040|美发店|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 18,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12778,6 +14276,7 @@
   },
   "8040|美容|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12808,6 +14307,7 @@
   },
   "8040|美容|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12848,6 +14348,7 @@
   },
   "8040|美容|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12858,6 +14359,7 @@
   },
   "8040|美容|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12888,6 +14390,7 @@
   },
   "8051|水疗|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 191,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12908,6 +14411,7 @@
   },
   "8051|水疗|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 184,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12958,6 +14462,7 @@
   },
   "8051|水疗|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 184,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -12968,6 +14473,7 @@
   },
   "8051|水疗|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 185,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13018,6 +14524,7 @@
   },
   "8051|洗浴|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13068,6 +14575,7 @@
   },
   "8051|洗浴|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13078,6 +14586,7 @@
   },
   "8051|洗浴|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 160,
    "last_run": "2026-09-17",
    "last_seen": 161,
@@ -13128,6 +14637,7 @@
   },
   "8051|温泉|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 136,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13238,6 +14748,7 @@
   },
   "8051|澡堂|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13288,6 +14799,7 @@
   },
   "8051|澡堂|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 6,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13298,6 +14810,7 @@
   },
   "8051|澡堂|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 8,
    "last_run": "2026-09-17",
    "last_seen": 164,
@@ -13330,6 +14843,7 @@
   },
   "8052|修脚|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 112,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13351,6 +14865,7 @@
   },
   "8052|修脚|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 146,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13405,6 +14920,7 @@
   },
   "8052|修脚|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 141,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13415,6 +14931,7 @@
   },
   "8052|修脚|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 157,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13446,6 +14963,7 @@
   },
   "8052|泡脚|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 119,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13467,6 +14985,7 @@
   },
   "8052|泡脚|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 149,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13521,6 +15040,7 @@
   },
   "8052|泡脚|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 139,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13531,6 +15051,7 @@
   },
   "8052|泡脚|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 133,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13561,6 +15082,7 @@
   },
   "8052|足浴|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 86,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13581,6 +15103,7 @@
   },
   "8052|足浴|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 39,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13631,6 +15154,7 @@
   },
   "8052|足浴|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 94,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13641,6 +15165,7 @@
   },
   "8052|足浴|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 156,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13803,6 +15328,7 @@
   },
   "8053|SPA|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 61,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13824,6 +15350,7 @@
   },
   "8053|SPA|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 92,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -13878,6 +15405,7 @@
   },
   "8053|SPA|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 65,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14120,6 +15648,7 @@
   },
   "8053|保健|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 112,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14141,6 +15670,7 @@
   },
   "8053|保健|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 134,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14195,6 +15725,7 @@
   },
   "8053|保健|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 108,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14205,6 +15736,7 @@
   },
   "8053|保健|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 95,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14237,6 +15769,7 @@
   },
   "8053|养生|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 103,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14258,6 +15791,7 @@
   },
   "8053|养生|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 80,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14312,6 +15846,7 @@
   },
   "8053|养生|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 43,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14322,6 +15857,7 @@
   },
   "8053|养生|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 68,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14354,6 +15890,7 @@
   },
   "8053|按摩|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 105,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14375,6 +15912,7 @@
   },
   "8053|按摩|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 91,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14429,6 +15967,7 @@
   },
   "8053|按摩|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 110,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14439,6 +15978,7 @@
   },
   "8053|按摩|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 78,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14449,6 +15989,7 @@
   },
   "8111|修车|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14459,6 +16000,7 @@
   },
   "8111|修车|东莞": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14479,6 +16021,7 @@
   },
   "8111|修车|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14489,6 +16032,7 @@
   },
   "8111|修车|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14499,6 +16043,7 @@
   },
   "8111|修车|嘉兴": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14509,6 +16054,7 @@
   },
   "8111|修车|宁波": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14519,6 +16065,7 @@
   },
   "8111|修车|常州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14529,6 +16076,7 @@
   },
   "8111|修车|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14539,6 +16087,7 @@
   },
   "8111|修车|无锡": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14549,6 +16098,7 @@
   },
   "8111|修车|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14559,6 +16109,7 @@
   },
   "8111|修车|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14569,6 +16120,7 @@
   },
   "8111|修车|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14579,6 +16131,7 @@
   },
   "8111|修车|苏州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14589,6 +16142,7 @@
   },
   "8111|修车|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14599,6 +16153,7 @@
   },
   "8111|修车|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14653,6 +16208,7 @@
   },
   "8111|汽修|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14718,6 +16274,7 @@
   },
   "8111|汽修|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14761,6 +16318,7 @@
   },
   "8111|汽修|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14771,6 +16329,7 @@
   },
   "8111|汽修|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14825,6 +16384,7 @@
   },
   "8111|汽车修理|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 2,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14835,6 +16395,7 @@
   },
   "8111|汽车修理|嘉兴": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14856,6 +16417,7 @@
   },
   "8111|汽车修理|常州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14877,6 +16439,7 @@
   },
   "8111|汽车修理|无锡": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -14887,6 +16450,7 @@
   },
   "8111|汽车修理|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 1,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14930,6 +16494,7 @@
   },
   "8111|汽车修理|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14940,6 +16505,7 @@
   },
   "8111|汽车修理|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -14994,6 +16560,7 @@
   },
   "8111|汽车维修|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15059,6 +16626,7 @@
   },
   "8111|汽车维修|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15102,6 +16670,7 @@
   },
   "8111|汽车维修|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15112,6 +16681,7 @@
   },
   "8111|汽车维修|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15122,6 +16692,7 @@
   },
   "8121|电脑上门维修|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 95,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15132,6 +16703,7 @@
   },
   "8121|电脑上门维修|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 78,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15152,6 +16724,7 @@
   },
   "8121|电脑上门维修|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 81,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15162,6 +16735,7 @@
   },
   "8121|电脑上门维修|成都": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 91,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15172,6 +16746,7 @@
   },
   "8121|电脑上门维修|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 50,
    "last_run": "2026-09-17",
    "last_seen": 152,
@@ -15182,6 +16757,7 @@
   },
   "8121|电脑上门维修|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 92,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15192,6 +16768,7 @@
   },
   "8121|电脑上门维修|武汉": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 65,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15202,6 +16779,7 @@
   },
   "8121|电脑上门维修|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 86,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15232,6 +16810,7 @@
   },
   "8121|电脑维修|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15242,6 +16821,7 @@
   },
   "8121|电脑维修|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15252,6 +16832,7 @@
   },
   "8121|电脑维修|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 194,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15262,6 +16843,7 @@
   },
   "8121|电脑维修|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15272,6 +16854,7 @@
   },
   "8121|电脑维修|成都": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15282,6 +16865,7 @@
   },
   "8121|电脑维修|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 198,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15292,6 +16876,7 @@
   },
   "8121|电脑维修|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 197,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15302,6 +16887,7 @@
   },
   "8121|电脑维修|武汉": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 200,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15312,6 +16898,7 @@
   },
   "8121|电脑维修|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15322,6 +16909,7 @@
   },
   "8121|电脑维修|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15342,6 +16930,7 @@
   },
   "8121|笔记本维修|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 15,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15352,6 +16941,7 @@
   },
   "8121|笔记本维修|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 12,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15362,6 +16952,7 @@
   },
   "8121|笔记本维修|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 27,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15372,6 +16963,7 @@
   },
   "8121|笔记本维修|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 17,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15382,6 +16974,7 @@
   },
   "8121|笔记本维修|成都": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 23,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15392,6 +16985,7 @@
   },
   "8121|笔记本维修|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 74,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15402,6 +16996,7 @@
   },
   "8121|笔记本维修|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 16,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15412,6 +17007,7 @@
   },
   "8121|笔记本维修|武汉": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 13,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15422,6 +17018,7 @@
   },
   "8121|笔记本维修|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 18,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15432,6 +17029,7 @@
   },
   "8121|笔记本维修|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 35,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15442,6 +17040,7 @@
   },
   "8121|笔记本维修|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 39,
    "last_run": "2026-09-17",
    "last_seen": 161,
@@ -15452,6 +17051,7 @@
   },
   "8122|冰箱维修|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 5,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15462,6 +17062,7 @@
   },
   "8122|冰箱维修|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15472,6 +17073,7 @@
   },
   "8122|冰箱维修|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 3,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15482,6 +17084,7 @@
   },
   "8122|冰箱维修|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 0,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15492,6 +17095,7 @@
   },
   "8122|家电维修|上海": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 199,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15502,6 +17106,7 @@
   },
   "8122|家电维修|南京": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 186,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15512,6 +17117,7 @@
   },
   "8122|家电维修|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 175,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15522,6 +17128,7 @@
   },
   "8122|家电维修|广州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 195,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15532,6 +17139,7 @@
   },
   "8122|家电维修|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 170,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15542,6 +17150,7 @@
   },
   "8122|家电维修|杭州": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 186,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15552,6 +17161,7 @@
   },
   "8122|家电维修|深圳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 187,
    "last_run": "2026-09-16",
    "last_seen": 200,
@@ -15562,6 +17172,7 @@
   },
   "8122|家电维修|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 182,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15572,6 +17183,7 @@
   },
   "8122|家电维修|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 165,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15582,6 +17194,7 @@
   },
   "8122|洗衣机维修|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 30,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15592,6 +17205,7 @@
   },
   "8122|洗衣机维修|昆明": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 14,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15602,6 +17216,7 @@
   },
   "8122|洗衣机维修|贵阳": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 45,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15612,6 +17227,7 @@
   },
   "8122|洗衣机维修|遵义": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 42,
    "last_run": "2026-09-17",
    "last_seen": 200,
@@ -15622,6 +17238,7 @@
   },
   "8122|空调维修|南宁": {
    "exhausted": true,
+   "expanded": true,
    "last_new": 80,
    "last_run": "2026-09-17",
    "last_seen": 174,

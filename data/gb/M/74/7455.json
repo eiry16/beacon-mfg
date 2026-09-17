@@ -46,7 +46,15 @@
       "evidence": "认证服务"
     },
     "is_manufacturer": false,
-    "_bucket": "M/74/7455"
+    "_bucket": "M/74/7455",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0032451/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0033716",
@@ -1811,7 +1819,15 @@
       "evidence": "认证服务"
     },
     "is_manufacturer": false,
-    "_bucket": "M/74/7455"
+    "_bucket": "M/74/7455",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0033934/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0033935",
@@ -2694,7 +2710,15 @@
       "evidence": "科学研究和技术服务业"
     },
     "is_manufacturer": false,
-    "_bucket": "M/74/7455"
+    "_bucket": "M/74/7455",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0034053/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0034055",
@@ -2890,7 +2914,15 @@
       "evidence": "科学研究和技术服务业"
     },
     "is_manufacturer": false,
-    "_bucket": "M/74/7455"
+    "_bucket": "M/74/7455",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0034059/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0034060",
@@ -2939,7 +2971,15 @@
       "evidence": "科学研究和技术服务业"
     },
     "is_manufacturer": false,
-    "_bucket": "M/74/7455"
+    "_bucket": "M/74/7455",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0034060/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0034061",
@@ -3673,6 +3713,14 @@
       "source": "name",
       "evidence": "认证服务"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104682/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

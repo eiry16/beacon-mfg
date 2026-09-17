@@ -362,7 +362,15 @@
       "evidence": "集成电路"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3973"
+    "_bucket": "C/39/3973",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0033463/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0033464",
@@ -411,7 +419,15 @@
       "evidence": "集成电路"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3973"
+    "_bucket": "C/39/3973",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0033464/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0084221",
