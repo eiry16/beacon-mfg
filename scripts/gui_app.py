@@ -488,6 +488,9 @@ class App:
         if enhance:
             steps = ["shards", "manifest", "readme", "validate"]
             if want_profile:
+                # capability 必须紧跟 autoprofile：vendors/ 下的新卡要先进
+                # registry/capability/，gen_capability_shards 才切得到（2026-09-17 补）
+                steps.insert(0, "capability")
                 steps.insert(0, "autoprofile")
             if "--english" in enhance:
                 steps.insert(0, "english")

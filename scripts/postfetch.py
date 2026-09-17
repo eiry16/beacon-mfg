@@ -108,9 +108,14 @@ except Exception:
 #   3) english 从流水线外挪进来，位置必须在 shards / manifest 之前 —— manifest 要把
 #      en 分片的 sha1 算进清单；以前 GUI / cron 都把它挂在**发布之后**单独跑，
 #      于是英文永远比中文晚一天上云。
+#   capability 必须排在 autoprofile **之后、shards 之前**：batch_auto_profile 把卡写在
+#   skills/vendors/{id}/，而 gen_capability_shards 只读 skills/registry/capability/，
+#   中间这一步把两边接起来，并回写名录的 agent 字段（App 靠它拿 skill_url）。
+#   2026-09-17 之前流水线缺这一步 —— 于是新城市就算补了卡也只是躺在 vendors/ 里，
+#   分片、云端、App 全都看不到。
 ALL_STEPS = ("classify", "gbindex", "recat", "enrefile", "index", "fingerprint",
-             "english", "autoprofile", "shards", "manifest", "readme", "validate",
-             "assets", "r2", "pages", "git")
+             "english", "autoprofile", "capability", "shards", "manifest", "readme",
+             "validate", "assets", "r2", "pages", "git")
 
 # gen_manifest 的列式层（pq）依赖 pyarrow，缺省就静默少一层 —— 清单看着变绿，
 # 实则少了 pq。这里的兜底顺序：当前解释器 → 环境变量 BMFG_PY_PQ → 本机已知 venv。
@@ -134,7 +139,8 @@ _STEP_DESC = {
     "index": "重建行业/地域索引 + 品类计数",
     "fingerprint": "重建 L0 指纹国标分片",
     "english": "英文镜像增量补齐（en_backfill + en_sync_industry，慢/需 ZHIPU key）",
-    "autoprofile": "给本轮新抓城市补未认证能力卡（调 batch_auto_profile，慢/烧 LLM）",
+    "autoprofile": "给本轮新抓城市补未认证能力卡（调 batch_auto_profile，纯本地推断）",
+    "capability": "把 vendors/ 下的能力卡同步进 registry/capability + 回写名录 agent 字段",
     "shards": "重建 L1 能力卡国标分片",
     "manifest": "重算分片清单（sha1/行数）",
     "git": "提交并推送 L0 数据到 GitHub（让 jsDelivr/Pages 拿到新鲜分片）",
@@ -301,6 +307,7 @@ def step_english(dry_run: bool = False) -> None:
 
 
 _AUTOPROFILE_CITIES = None  # run() 经 autoprofile_cities= 注入；step_autoprofile 读取
+_AUTOPROFILE_LIMIT = None   # run() 经 autoprofile_limit= 注入；None = 用 batch_auto_profile 默认(300)
 
 
 def step_autoprofile(dry_run: bool = False) -> None:
@@ -325,9 +332,75 @@ def step_autoprofile(dry_run: bool = False) -> None:
     if dry_run:
         print("   （--dry-run：不补卡）")
         return
-    done = subprocess.run([sys.executable, str(tool), "--cities", cities], cwd=str(ROOT))
+    cmd = [sys.executable, str(tool), "--cities", cities]
+    if _AUTOPROFILE_LIMIT:
+        cmd += ["--limit", str(_AUTOPROFILE_LIMIT)]
+    done = subprocess.run(cmd, cwd=str(ROOT))
     if done.returncode:
         raise RuntimeError(f"batch_auto_profile 返回 {done.returncode}")
+
+
+def step_capability(dry_run: bool = False) -> None:
+    """能力卡回流：skills/vendors/{id}/ → skills/registry/capability/{id}.json。
+
+    这一步是「补了卡却搜不到」的解药。三件事，全部幂等：
+      1. vendors/{id}/capability.json → registry/capability/{id}.json
+         （gen_capability_shards **只读后者**，少这一步分片永远是旧的）
+      2. 回写名录 data/gb/ 的 agent 字段（skill_url / capabilities / verified）
+         （App 详情页靠它决定要不要去拉能力卡）
+      3. 重算 L0 指纹行（按 id 覆盖，不产生幽灵数据）
+
+    幂等且纯本地。**按 diff 增量做**：只同步「registry 里没有」或「源卡比目标新」的 id，
+    所以日常一轮只处理本轮新补的几百张（秒级）。若哪天需要全量重建，删掉
+    skills/registry/capability/ 即可，下一步会自动把 14000+ 家全搬一遍（约 100 分钟）。
+
+    ⚠ **不要中途 kill 这一步**（2026-09-17 血的教训）：写回名录走
+    supplier_loader.persist_supplier，跨桶迁移是「旧桶剔除 → 新桶追加」**两次独立写盘**，
+    在两步之间被杀就会留下两份同 id 记录（一个留在原小类、一个进了 _unclassified），
+    validate --strict 随即报「重复 id」，而当晚的数据就发不出去了。
+    真被中断了：`git checkout -- data/gb/` 即可恢复（data/gb 是入库的）。
+    """
+    tool = ROOT / "scripts" / "sync_vendor_skills.py"
+    if not tool.exists():
+        print("   （跳过：仓库里没有 scripts/sync_vendor_skills.py）")
+        return
+
+    vendor = ROOT / "skills" / "vendors"
+    reg = ROOT / "skills" / "registry" / "capability"
+    if not vendor.exists():
+        print("   （跳过：没有 skills/vendors/）")
+        return
+
+    pending = []
+    for d in vendor.iterdir():
+        src = d / "capability.json"
+        if not src.exists():
+            continue
+        dst = reg / f"{d.name}.json"
+        if not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
+            pending.append(d.name)
+
+    if not pending:
+        print("   （能力卡已是最新，无需同步）")
+        return
+
+    pending.sort()
+    print(f"   待同步 {len(pending)} 家")
+    if dry_run:
+        print(f"   （--dry-run：不同步。示例 id：{'、'.join(pending[:5])}）")
+        return
+
+    # 分批传给 --ids：命令行长度有上限，单批失败也不会拖垮整轮
+    failed = 0
+    for i in range(0, len(pending), 500):
+        batch = pending[i:i + 500]
+        done = subprocess.run(
+            [sys.executable, str(tool), "--ids", ",".join(batch)], cwd=str(ROOT))
+        if done.returncode:
+            failed += len(batch)
+            print(f"   [警告] 第 {i // 500 + 1} 批同步失败（退出码 {done.returncode}）")
+    if failed:
+        raise RuntimeError(f"capability 同步失败 {failed} 家")
 
 
 def step_shards(dry_run: bool = False) -> None:
@@ -758,6 +831,7 @@ _STEP_FN = {
     "fingerprint": step_fingerprint,
     "english": step_english,
     "autoprofile": step_autoprofile,
+    "capability": step_capability,
     "shards": step_shards,
     "manifest": step_manifest,
     "git": step_git,
@@ -870,15 +944,18 @@ def run(skip: set[str] | frozenset[str] | list[str] | None = None,
         dry_run: bool = False,
         quiet: bool = False,
         autoprofile_cities: str | None = None,
+        autoprofile_limit: int | None = None,
         english: bool = False) -> int:
     """跑完（或部分跑完）抓后流水线。返回失败步数（0 = 全通过）。
 
     autoprofile_cities: 逗号分隔的城市名；非空时 autoprofile 步会调 batch_auto_profile
-    给这些城市补「未认证」能力卡。为空则 autoprofile 步跳过（默认行为，避免每轮烧 LLM）。
+    给这些城市补「未认证」能力卡。为空则 autoprofile 步跳过（默认行为，避免每轮写大量新文件）。
+    autoprofile_limit: 每城最多补多少家；None = 用 batch_auto_profile 自己的默认（300）。
     english: 打开英文镜像（en_backfill + en_sync_industry）。默认关。
     """
-    global _AUTOPROFILE_CITIES, _DO_ENGLISH
+    global _AUTOPROFILE_CITIES, _AUTOPROFILE_LIMIT, _DO_ENGLISH
     _AUTOPROFILE_CITIES = autoprofile_cities
+    _AUTOPROFILE_LIMIT = autoprofile_limit
     _DO_ENGLISH = bool(english)
     skip = set(skip or ())
     if only:
@@ -991,6 +1068,8 @@ def _main() -> int:
     ap.add_argument("--autoprofile-cities", default="",
                     help="逗号分隔的城市名；非空时 autoprofile 步给这些城市补未认证能力卡"
                          "（对应 GUI「自动补能力卡」勾选框 / fetch_batch --autoprofile）")
+    ap.add_argument("--autoprofile-limit", type=int, default=None,
+                    help="每城最多补多少家（默认 300，由 batch_auto_profile 决定）")
     args = ap.parse_args()
 
     skip = {s.strip() for s in args.skip.split(",") if s.strip()}
@@ -1002,6 +1081,7 @@ def _main() -> int:
 
     return 1 if run(skip=skip, only=only, dry_run=args.dry_run,
                     autoprofile_cities=args.autoprofile_cities or None,
+                    autoprofile_limit=args.autoprofile_limit,
                     english=args.english) else 0
 
 

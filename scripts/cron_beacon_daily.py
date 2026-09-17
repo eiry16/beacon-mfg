@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 """BeaconMFG 每日定时采集（取代已失效的旧 cron）。
 
-等价 GUI「自动抓取」的默认口径：
-    抓取（账本调度 + 区县分片 + 翻到底 200）
-    → postfetch.py --skip english,autoprofile   # 慢活不在这里跑，避免拖垮发布
+等价 GUI「自动抓取」的默认口径，分两段跑（与 GUI 的 1.5 / 1.6 对齐）：
+    1) 核心段 postfetch.py --skip english,autoprofile
+    2) 增强段 postfetch.py --only autoprofile,shards,manifest,readme,validate[,r2,pages][,git]
+
+**第 2 段就是能力卡** —— 2026-09-17 之前这里被无脑 skip 掉，结果是新抓的城市
+（如西南四城）一条能力卡都没有，App 里搜出来全是空白卡片。补卡是**纯本地规则
+推断**（scripts/collect/auto_profile.py），不调 LLM、不烧钱，只是会写盘，所以
+默认打开、单独成段：就算它失败，当天已经重建好的数据也照常发出去。
 
 额外增加 GUI 没有的能力：**优先抓取城市**。把当日配额切给指定城市，用来集中
 补齐某个区域（比如西南四城）。优先城市跑完（「从未跑过 / 已到期」归零）后会自动
@@ -14,6 +19,8 @@
     python scripts/cron_beacon_daily.py --priority-cities 昆明,遵义
     python scripts/cron_beacon_daily.py --priority-share 0.6     # 60% 给优先城市，余下全局
     python scripts/cron_beacon_daily.py --daily-quota 2000
+    python scripts/cron_beacon_daily.py --autoprofile-cities 贵阳,昆明
+    python scripts/cron_beacon_daily.py --no-autoprofile         # 临时关掉补卡
     python scripts/cron_beacon_daily.py --dry-run                # 只打印计划，不烧配额
 
 配置优先级：**命令行 > scripts/cron_priority_cities.json > 代码内默认值**。
@@ -49,6 +56,10 @@ DEFAULTS = {
     "tier": "all",
     "publish": True,
     "git": True,
+    # 能力卡（未认证）：纯本地规则推断，不调 LLM；默认开，单独成段跑
+    "autoprofile": True,
+    "autoprofile_limit": 300,      # 每城最多补多少家
+    "autoprofile_cities": [],      # 为空则回退 priority_cities
 }
 
 
@@ -169,6 +180,13 @@ def main() -> int:
     parser.add_argument("--no-git", action="store_true", help="不推 GitHub")
     parser.add_argument("--english", action="store_true",
                         help="跑完核心段再补英文镜像（慢，会调用 LLM；默认不跑）")
+    parser.add_argument("--autoprofile-cities",
+                        help="要给哪些城市补能力卡，逗号分隔（默认取优先城市；"
+                             "都为空则本轮不补卡）")
+    parser.add_argument("--autoprofile-limit", type=int, default=None,
+                        help="每城最多补多少张能力卡（默认 300）")
+    parser.add_argument("--no-autoprofile", action="store_true",
+                        help="本轮不补能力卡（覆盖配置文件里的 autoprofile:true）")
     parser.add_argument("--config", help=f"配置文件路径（默认 {CONFIG.name}）")
     parser.add_argument("--log-dir", help=f"日志目录（默认 {DEFAULT_LOG_DIR}）")
     parser.add_argument("--dry-run", action="store_true", help="只打印计划，不实际抓取")
@@ -192,6 +210,15 @@ def main() -> int:
     quota = args.daily_quota if args.daily_quota is not None else int(
         cfg.get("daily_quota", DEFAULTS["daily_quota"]))
     args.tier = args.tier or cfg.get("tier", DEFAULTS["tier"])
+
+    # 能力卡：--no-autoprofile 关掉；否则看配置；城市默认回退优先城市
+    do_autoprofile = (not args.no_autoprofile) and bool(
+        cfg.get("autoprofile", DEFAULTS["autoprofile"]))
+    ap_limit = args.autoprofile_limit if args.autoprofile_limit is not None else int(
+        cfg.get("autoprofile_limit", DEFAULTS["autoprofile_limit"]))
+    args.autoprofile_cities = (
+        [c.strip() for c in args.autoprofile_cities.split(",") if c.strip()]
+        if args.autoprofile_cities else None)
     do_publish = (not args.no_publish) and bool(cfg.get("publish", DEFAULTS["publish"]))
     do_git = (not args.no_git) and bool(cfg.get("git", DEFAULTS["git"]))
 
@@ -208,6 +235,11 @@ def main() -> int:
     print(f"    日配额     : {quota} 请求 ≈ {quota // PER_TASK_REQUESTS} 个任务")
     print(f"    层级       : {args.tier}")
     print(f"    发布 / git : {do_publish} / {do_git}")
+    _ap_cities = (args.autoprofile_cities
+                  or list(cfg.get("autoprofile_cities") or [])
+                  or list(cities_cfg))
+    print(f"    能力卡     : {'开' if do_autoprofile else '关'}"
+          f"（{'、'.join(_ap_cities) if _ap_cities else '无城市'}，每城 ≤{ap_limit} 家）")
 
     log_fp = None
     if not args.dry_run:
@@ -231,16 +263,37 @@ def main() -> int:
                   "本次没有产生新数据，跳过后处理")
             return 3
 
-        # 核心流水线：慢活一个都不跑（慢活排在 r2/pages 之前，拖垮会连发布一起赔进去）
+        # 核心流水线：不跑能力卡 / 英文（它们排在 r2/pages 之前，拖垮会连发布一起赔进去）
         skip = [] if args.english else ["english"]
         skip.append("autoprofile")
         if not do_publish:
             skip += ["r2", "pages"]
         if not do_git:
             skip.append("git")
-        run_step("后处理流水线",
+        run_step("后处理流水线（核心段）",
                  [sys.executable, str(SCRIPTS / "postfetch.py"), "--skip", ",".join(skip)],
                  args.dry_run, log_fp)
+
+        # 增强段：补能力卡 + 重新切分片/发布。
+        # 单独跑的意义：补卡失败也只损失「这轮没增强」，核心段已发布的当天数据不受影响。
+        ap_cities = (args.autoprofile_cities
+                     or list(cfg.get("autoprofile_cities") or [])
+                     or list(cities_cfg))
+        if do_autoprofile and ap_cities:
+            steps = ["autoprofile", "capability", "shards", "manifest", "readme", "validate"]
+            if do_publish:
+                steps += ["r2", "pages"]
+            if do_git:
+                steps.append("git")
+            run_step(f"后处理流水线（增强段·能力卡 {'、'.join(ap_cities)}）",
+                     [sys.executable, str(SCRIPTS / "postfetch.py"),
+                      "--only", ",".join(steps),
+                      "--autoprofile-cities", ",".join(ap_cities),
+                      "--autoprofile-limit", str(ap_limit)],
+                     args.dry_run, log_fp)
+        elif do_autoprofile:
+            print("\n[提示] 开了补卡但没有城市（配置 autoprofile_cities 与 priority_cities 都为空），"
+                  "本轮跳过能力卡")
 
         if any(c != 0 for c in codes):
             print("\n[提示] 有抓取阶段非 0 退出（3=被别的抓取挡住；其它见其输出）")
