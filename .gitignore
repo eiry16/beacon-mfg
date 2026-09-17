@@ -71,6 +71,10 @@ scripts/*
 !scripts/fetch_gaode_poi.py
 !scripts/fetch_batch.py
 !scripts/gui_app.py
+# gen_excel_template.py：企业信息收集 Excel 模板的唯一生成器（2026-09-18 放行）。
+# 表头是动态读 skills/profiles/*.json 生成的，schema 变了重跑即可同步；
+# 它产出的 企业信息收集模板.xlsx 是生成物、不入库（见文件末尾规则）。
+!scripts/gen_excel_template.py
 # publish_vendor.py 是「认证档案 → 买家可见」六步发布链路的唯一一键入口
 # （skill §15）。不放行：换台机器就退化成人手逐个脚本敲。
 # sync_readme_numbers.py 同步 README 数字（预览 / --apply 两档），
@@ -241,3 +245,11 @@ APK/app/src/main/assets/
 # 构建产物：19MB 的 apk 不进仓库（要装机的包走本地构建，见 APK/build.sh）
 APK/*.apk
 APK/app/src/androidTest/assets/e2e_expect.json
+
+# ---------------------------------------------------------------------------
+# Excel 收集模板（生成物，不入库）
+# 企业信息收集模板.xlsx 由 scripts/gen_excel_template.py 动态读取
+# skills/profiles/*.json 生成，schema 变了重跑即可；入库会和 schema 产生
+# 两份真相，且容易被 git add -A 卷进去。生成器脚本本身入库。
+# ---------------------------------------------------------------------------
+企业信息收集模板.xlsx
