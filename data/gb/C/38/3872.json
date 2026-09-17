@@ -2149,7 +2149,15 @@
       "evidence": "光源"
     },
     "is_manufacturer": true,
-    "_bucket": "C/38/3872"
+    "_bucket": "C/38/3872",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0032456/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0032903",
@@ -3170,6 +3178,54 @@
       "business_area": "相思湖",
       "adcode": "450107",
       "search_keyword": "螺丝"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125986",
+    "company": "上海亮舟灯具制造有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "奉国路与奉旺路交叉口西南220米",
+    "contact_phone": "021-57510506",
+    "lat": 30.905046,
+    "lng": 121.627002,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG4A0YZ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "灯具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "奉城村",
+      "adcode": "310120",
+      "search_keyword": "塑料模具"
     },
     "industry": {
       "code": "3872",

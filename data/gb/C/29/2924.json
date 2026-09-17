@@ -326,5 +326,53 @@
       "evidence": "泡沫塑料"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128004",
+    "company": "永丰泡沫塑料机械厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "新登镇七板村57号",
+    "contact_phone": "待核实",
+    "lat": 29.98735,
+    "lng": 119.69685,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGHA3JI",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330111",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2924",
+      "name": "泡沫塑料制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 泡沫塑料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "泡沫塑料"
+    },
+    "is_manufacturer": true
   }
 ]

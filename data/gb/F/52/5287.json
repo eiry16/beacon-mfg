@@ -44,7 +44,15 @@
     },
     "is_manufacturer": false,
     "status": "verified",
-    "_bucket": "F/52/5287"
+    "_bucket": "F/52/5287",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014314/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0029017",
@@ -191,7 +199,15 @@
       "evidence": "陶瓷"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5287"
+    "_bucket": "F/52/5287",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0030510/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0031683",
@@ -240,7 +256,15 @@
       "evidence": "陶瓷"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5287"
+    "_bucket": "F/52/5287",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0031683/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0119459",

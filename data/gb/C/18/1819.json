@@ -95,7 +95,15 @@
       "evidence": "服装"
     },
     "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "_bucket": "C/18/1819",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0032392/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002617",

@@ -46,7 +46,15 @@
       "evidence": "电批发"
     },
     "is_manufacturer": false,
-    "_bucket": "F/51/5138"
+    "_bucket": "F/51/5138",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0033567/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0123688",
@@ -94,6 +102,14 @@
       "source": "gb_token",
       "evidence": "家电批发"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123688/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

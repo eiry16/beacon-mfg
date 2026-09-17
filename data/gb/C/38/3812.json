@@ -46,7 +46,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/38/3812"
+    "_bucket": "C/38/3812",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017758/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013838",
@@ -703,7 +711,15 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "_bucket": "C/38/3812"
+    "_bucket": "C/38/3812",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0033000/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0033776",
@@ -1193,7 +1209,15 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0103761/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0105104",

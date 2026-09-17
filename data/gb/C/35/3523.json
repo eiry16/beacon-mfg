@@ -893,7 +893,15 @@
       "evidence": "塑料加"
     },
     "is_manufacturer": true,
-    "_bucket": "C/35/3523"
+    "_bucket": "C/35/3523",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008316/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008335",
@@ -1516,7 +1524,15 @@
       "evidence": "塑料加"
     },
     "is_manufacturer": true,
-    "_bucket": "C/35/3523"
+    "_bucket": "C/35/3523",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008446/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008447",

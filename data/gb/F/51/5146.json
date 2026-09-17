@@ -44,7 +44,15 @@
     },
     "is_manufacturer": false,
     "status": "verified",
-    "_bucket": "F/51/5146"
+    "_bucket": "F/51/5146",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012241/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0012398",
@@ -138,7 +146,15 @@
     },
     "is_manufacturer": false,
     "status": "verified",
-    "_bucket": "F/51/5146"
+    "_bucket": "F/51/5146",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012434/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0012454",
@@ -232,7 +248,15 @@
     },
     "is_manufacturer": false,
     "status": "unverified_poi",
-    "_bucket": "F/51/5146"
+    "_bucket": "F/51/5146",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014815/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0027384",
@@ -526,7 +550,15 @@
       "evidence": "首饰"
     },
     "is_manufacturer": false,
-    "_bucket": "F/51/5146"
+    "_bucket": "F/51/5146",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0032448/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0093318",
@@ -622,7 +654,15 @@
       "source": "gb_token",
       "evidence": "首饰"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0105184/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0106035",
@@ -670,7 +710,15 @@
       "source": "gb_token",
       "evidence": "首饰"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0106035/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0106045",
@@ -718,7 +766,15 @@
       "source": "gb_token",
       "evidence": "首饰"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0106045/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0118574",

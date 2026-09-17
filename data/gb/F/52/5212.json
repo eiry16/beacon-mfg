@@ -47,7 +47,15 @@
       "evidence": "超市"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5212"
+    "_bucket": "F/52/5212",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0032510/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0032643",
@@ -244,7 +252,15 @@
       "evidence": "百货"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5212"
+    "_bucket": "F/52/5212",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0036523/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0037149",
@@ -391,7 +407,15 @@
       "evidence": "百货"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5212"
+    "_bucket": "F/52/5212",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0037221/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0037238",
@@ -540,7 +564,15 @@
       "evidence": "超市"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5212"
+    "_bucket": "F/52/5212",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0037795/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0038684",
@@ -984,7 +1016,15 @@
     },
     "is_manufacturer": false,
     "status": "verified",
-    "_bucket": "F/52/5212"
+    "_bucket": "F/52/5212",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016668/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0011284",
@@ -1078,7 +1118,15 @@
     },
     "is_manufacturer": false,
     "status": "verified",
-    "_bucket": "F/52/5212"
+    "_bucket": "F/52/5212",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017378/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039989",
@@ -5486,7 +5534,15 @@
       "source": "name",
       "evidence": "超市"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0092377/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0092997",
@@ -5536,7 +5592,15 @@
       "source": "name",
       "evidence": "百货"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0092997/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0093948",
@@ -5586,7 +5650,15 @@
       "source": "name",
       "evidence": "百货"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0093948/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0094452",
@@ -5973,7 +6045,15 @@
       "source": "name",
       "evidence": "超市"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0103537/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0104694",
@@ -6021,7 +6101,15 @@
       "source": "name",
       "evidence": "百货"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104694/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0105302",
@@ -6262,7 +6350,15 @@
       "source": "name",
       "evidence": "百货"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0108059/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109148",
@@ -6310,7 +6406,15 @@
       "source": "name",
       "evidence": "百货"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0109148/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109150",
@@ -6358,7 +6462,15 @@
       "source": "name",
       "evidence": "百货"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0109150/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109661",
@@ -6509,7 +6621,15 @@
       "source": "name",
       "evidence": "百货"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0110408/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0111534",
@@ -6558,7 +6678,15 @@
       "source": "name",
       "evidence": "百货"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111534/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0111535",
@@ -6606,7 +6734,15 @@
       "source": "name",
       "evidence": "百货"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111535/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0112855",
@@ -6803,7 +6939,15 @@
       "source": "name",
       "evidence": "超市"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0114364/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0114860",
@@ -7192,7 +7336,15 @@
       "source": "name",
       "evidence": "超市"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0119311/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0119712",
@@ -7435,6 +7587,102 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0124398",
+    "company": "小欣奢侈品洗护中心(宾隆精品超市店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "新添大道99号",
+    "contact_phone": "待核实",
+    "lat": 26.629316,
+    "lng": 106.762906,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL9NS59",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新添寨",
+      "adcode": "520112",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "超市"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0125708",
+    "company": "太哼冰室(杉杉奥特莱斯购物广场)",
+    "category": "批发和零售业",
+    "keywords": [
+      "餐厅"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "衫奥特莱斯三楼B320铺",
+    "contact_phone": "0771-3821769",
+    "lat": 22.820745,
+    "lng": 108.249892,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I29AKNNW",
+      "type": "餐饮服务;冷饮店;冷饮店",
+      "typecode": "050700",
+      "alias": "",
+      "tag": "炒饭,菠萝包",
+      "keytag": "茶餐厅",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "450105",
+      "search_keyword": "餐厅"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "购物广场"
     },
     "is_manufacturer": false
   }

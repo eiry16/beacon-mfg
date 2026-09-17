@@ -46,7 +46,15 @@
       "evidence": "知识产权"
     },
     "is_manufacturer": false,
-    "_bucket": "M/75/7520"
+    "_bucket": "M/75/7520",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0031632/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0035663",

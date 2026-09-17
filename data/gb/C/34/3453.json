@@ -146,7 +146,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/34/3453"
+    "_bucket": "C/34/3453",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0011250/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0011518",
@@ -193,7 +201,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/34/3453"
+    "_bucket": "C/34/3453",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0011518/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0011561",
@@ -240,7 +256,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/34/3453"
+    "_bucket": "C/34/3453",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0011561/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0019264",
@@ -439,7 +463,15 @@
       "evidence": "齿轮"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3453"
+    "_bucket": "C/34/3453",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0023905/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0024024",
@@ -488,7 +520,15 @@
       "evidence": "齿轮"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3453"
+    "_bucket": "C/34/3453",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0024024/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0025773",
@@ -1241,7 +1281,15 @@
       "source": "name",
       "evidence": "齿轮"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0104842/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0109857",

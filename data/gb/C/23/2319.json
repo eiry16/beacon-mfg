@@ -527,7 +527,15 @@
       "evidence": "彩印"
     },
     "is_manufacturer": true,
-    "_bucket": "C/23/2319"
+    "_bucket": "C/23/2319",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008815/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008825",

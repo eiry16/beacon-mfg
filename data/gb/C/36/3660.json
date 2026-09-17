@@ -1484,7 +1484,15 @@
       "evidence": "汽车零部件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/36/3660"
+    "_bucket": "C/36/3660",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0034351/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0056390",
@@ -3308,7 +3316,15 @@
       "source": "name",
       "evidence": "汽配"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111429/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0111453",
@@ -3460,7 +3476,8 @@
     "company": "福来餐馆(东盟国际汽配城店)",
     "category": "精密机械加工",
     "keywords": [
-      "饭店"
+      "饭店",
+      "餐厅"
     ],
     "region": {
       "province": "广西",
@@ -3692,6 +3709,158 @@
       "business_area": "",
       "adcode": "520381",
       "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3660",
+      "name": "汽车车身、挂车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车车身、挂车制造 > 汽车车身、挂车制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽配"
+    },
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123392/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0126845",
+    "company": "上海汽车配件工业联合有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "谢春路1300弄-9号",
+    "contact_phone": "021-63581508",
+    "lat": 31.295184,
+    "lng": 121.225724,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B001570DQW",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3660",
+      "name": "汽车车身、挂车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车车身、挂车制造 > 汽车车身、挂车制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车配件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126883",
+    "company": "上海煜顺汽车零部件厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "外冈镇才长泾村600号",
+    "contact_phone": "待核实",
+    "lat": 31.345178,
+    "lng": 121.165098,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B001556SJT",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3660",
+      "name": "汽车车身、挂车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车车身、挂车制造 > 汽车车身、挂车制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车零部件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0127670",
+    "company": "御膳客黄焖鸡米饭(骏信汽配城餐厅)",
+    "category": "精密机械加工",
+    "keywords": [
+      "餐厅"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "昆明经济技术开发区浦新路骏信汽配城1期A3一6号",
+    "contact_phone": "136****4580; 182****0677",
+    "lat": 24.970387,
+    "lng": 102.798938,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGWZ95L",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "骏信汽配城餐厅",
+      "tag": "鸡肉,黄焖鸡米饭",
+      "keytag": "黄焖鸡米饭",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530111",
+      "search_keyword": "餐厅"
     },
     "industry": {
       "code": "3660",

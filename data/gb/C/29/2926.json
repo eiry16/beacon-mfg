@@ -2860,7 +2860,15 @@
       "evidence": "塑料包装"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2926"
+    "_bucket": "C/29/2926",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008319/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008437",
@@ -10944,7 +10952,8 @@
     "company": "上海萌欣塑料包装制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑料模具"
     ],
     "region": {
       "province": "上海",
@@ -10992,7 +11001,8 @@
     "company": "杭州华丰塑料包装有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "塑料模具"
     ],
     "region": {
       "province": "浙江",
@@ -13150,6 +13160,1982 @@
       "business_area": "",
       "adcode": "520322",
       "search_keyword": "塑料原料"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0124006/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0125240",
+    "company": "上海崇明有联塑料包装厂",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "陈家镇裕西村720号",
+    "contact_phone": "021-59402001; 133****3293",
+    "lat": 31.542828,
+    "lng": 121.828219,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HKBC012Y",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310151",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125417",
+    "company": "上海昊洲塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "亭卫公路2185号",
+    "contact_phone": "021-57247061",
+    "lat": 30.778933,
+    "lng": 121.357085,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B001558HAS",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310116",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125419",
+    "company": "上海金浦塑料包装材料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "卫二路140号",
+    "contact_phone": "待核实",
+    "lat": 30.701681,
+    "lng": 121.336728,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B00154ZPL0",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310116",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125422",
+    "company": "上海金健龙塑料包装材料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "龙宇路与卫昌路交叉口东280米",
+    "contact_phone": "130****0839",
+    "lat": 30.749075,
+    "lng": 121.370525,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JBOZMLH3",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310116",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125958",
+    "company": "泰鼐屹(上海)塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南渡镇西闸公路1963号",
+    "contact_phone": "021-57153720",
+    "lat": 30.985818,
+    "lng": 121.427243,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00155N7RX",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310120",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125967",
+    "company": "上海龚浩塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "民村路151号",
+    "contact_phone": "021-57182768",
+    "lat": 30.919158,
+    "lng": 121.447332,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00155Q8I3",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南桥",
+      "adcode": "310120",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125971",
+    "company": "上海龙蓓塑料包装制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南桥镇杨牌路538号",
+    "contact_phone": "021-57480288",
+    "lat": 30.894887,
+    "lng": 121.48914,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B001570TAD",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南桥",
+      "adcode": "310120",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125975",
+    "company": "上海振瓯塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "光振路与光宾路交叉口东80米",
+    "contact_phone": "待核实",
+    "lat": 30.903383,
+    "lng": 121.503982,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBMY671X",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310120",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125996",
+    "company": "泰鼐屹(上海)塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "南渡镇西闸公路1963号",
+    "contact_phone": "021-57153720",
+    "lat": 30.985818,
+    "lng": 121.427243,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00155N7RX",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310120",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126055",
+    "company": "上海柏菱塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "外青松公路6658号",
+    "contact_phone": "待核实",
+    "lat": 31.247194,
+    "lng": 121.142167,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFOMA1N",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "白鹤",
+      "adcode": "310118",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126069",
+    "company": "上海中可塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "赵巷镇赵重公路229号",
+    "contact_phone": "021-69750335; 138****8488",
+    "lat": 31.165528,
+    "lng": 121.187995,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00156CO62",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310118",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126074",
+    "company": "上海林昌塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "诸光路495号",
+    "contact_phone": "待核实",
+    "lat": 31.166272,
+    "lng": 121.312175,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0015712YC",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "上海虹桥商务区",
+      "adcode": "310118",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126177",
+    "company": "上海正欣塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "月罗公路2565弄6号",
+    "contact_phone": "189****6305",
+    "lat": 31.40605,
+    "lng": 121.344056,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGSHQ72",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "罗店",
+      "adcode": "310113",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126660",
+    "company": "上海琴霞塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "开发区新工路499号",
+    "contact_phone": "138****6476",
+    "lat": 30.943498,
+    "lng": 121.0797,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H2H1JA9P",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新浜镇",
+      "adcode": "310117",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126711",
+    "company": "上海云彩塑料包装制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "富汇路17号",
+    "contact_phone": "待核实",
+    "lat": 30.952094,
+    "lng": 121.317238,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B00151B504",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "叶榭",
+      "adcode": "310117",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126825",
+    "company": "上海祥五塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "外冈镇恒永路328弄23号",
+    "contact_phone": "待核实",
+    "lat": 31.344669,
+    "lng": 121.185716,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGKRP70",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126828",
+    "company": "上海时达塑料包装制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "娄塘镇赵厅村战斗16号",
+    "contact_phone": "021-39968063",
+    "lat": 31.421797,
+    "lng": 121.234086,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B001557SXK",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126831",
+    "company": "上海爱兴璐塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "菊城路8号",
+    "contact_phone": "021-69160978",
+    "lat": 31.349176,
+    "lng": 121.223099,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00156ZC22",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126835",
+    "company": "上海佩美塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "徐行镇石皮村208号",
+    "contact_phone": "待核实",
+    "lat": 31.421325,
+    "lng": 121.256225,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFE894H",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126839",
+    "company": "上海殷美塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "徐行镇棒棒路18号",
+    "contact_phone": "021-59909278",
+    "lat": 31.42869,
+    "lng": 121.27156,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0015713IP",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126854",
+    "company": "上海圣月塑料包装制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "浏翔公路3851弄80号-1",
+    "contact_phone": "待核实",
+    "lat": 31.399715,
+    "lng": 121.291547,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFE434A",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126856",
+    "company": "上海六合塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "立新路6号",
+    "contact_phone": "138****2339",
+    "lat": 31.379389,
+    "lng": 121.287831,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00156G80D",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126878",
+    "company": "上海时达塑料包装制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "娄塘镇赵厅村战斗16号",
+    "contact_phone": "021-39968063",
+    "lat": 31.421797,
+    "lng": 121.234086,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B001557SXK",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0126886",
+    "company": "上海龙泰塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "嘉戬支路335号",
+    "contact_phone": "待核实",
+    "lat": 31.372714,
+    "lng": 121.298857,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B001552NR2",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0127149",
+    "company": "上海翰桦塑料包装制品有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "北松路518号",
+    "contact_phone": "021-64906536",
+    "lat": 31.040693,
+    "lng": 121.401563,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00154ZKSD",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "颛桥",
+      "adcode": "310112",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0127180",
+    "company": "淳安千岛湖明盛塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "南山二路39号",
+    "contact_phone": "0571-64882338; 139****9928",
+    "lat": 29.590786,
+    "lng": 119.05043,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B05UJ0",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330127",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0127426",
+    "company": "杭州福群塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "大安村渡船头14组79号",
+    "contact_phone": "159****1601",
+    "lat": 30.406883,
+    "lng": 120.167198,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGIMHZ1",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "崇贤",
+      "adcode": "330113",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0127427",
+    "company": "杭州超宏塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "小白线与龙超路交叉口北480米",
+    "contact_phone": "0571-86311876",
+    "lat": 30.45041,
+    "lng": 120.219735,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B142LJ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330113",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128119",
+    "company": "杭州洁能塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "瓶窑镇凤都工业园凤都路18-3号",
+    "contact_phone": "0571-88538870",
+    "lat": 30.368156,
+    "lng": 119.988103,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B14L9X",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "瓶窑",
+      "adcode": "330110",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128450",
+    "company": "杭州普信塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "河上镇紫霞村",
+    "contact_phone": "0571-82857288",
+    "lat": 29.974777,
+    "lng": 120.202553,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFE3HPB",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330109",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128457",
+    "company": "杭州萧山环宇塑料容器有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "姑娘桥东瑞一路28号",
+    "contact_phone": "待核实",
+    "lat": 30.17452,
+    "lng": 120.325407,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGAT2LW",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "萧绍路",
+      "adcode": "330109",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料容器"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128458",
+    "company": "杭州恒强塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "新街镇江南村16组66号",
+    "contact_phone": "0571-82611586",
+    "lat": 30.20957,
+    "lng": 120.343257,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGAT27A",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新街街道",
+      "adcode": "330109",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128462",
+    "company": "杭州勤诚塑料包装材料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "东风向阳路勤诚塑料包装材料有限公司",
+    "contact_phone": "0571-82138737; 158****6866",
+    "lat": 30.259432,
+    "lng": 120.428981,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFE51I1",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330109",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128465",
+    "company": "杭州萧山万达塑料瓶有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "萧绍东路178-3号",
+    "contact_phone": "0571-82619666",
+    "lat": 30.171238,
+    "lng": 120.324596,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B1H8PM",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "萧绍路",
+      "adcode": "330109",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料瓶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128467",
+    "company": "杭州恒春塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "源兴塑料包装材料厂(104国道北)附近",
+    "contact_phone": "待核实",
+    "lat": 30.174758,
+    "lng": 120.381412,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B19X2A",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330109",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128468",
+    "company": "杭州双波塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "新塘街道傅楼村",
+    "contact_phone": "0571-82794101",
+    "lat": 30.148711,
+    "lng": 120.339547,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B19WY0",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330109",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128476",
+    "company": "杭州之江塑料包装材料有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "蜀山街道知章村",
+    "contact_phone": "0571-82835776; 133****7672",
+    "lat": 30.103242,
+    "lng": 120.219258,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B144FU",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330109",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128478",
+    "company": "杭州永明塑料包装有限公司(吟新路)",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "新塘头村773号",
+    "contact_phone": "0571-82857733",
+    "lat": 30.176372,
+    "lng": 120.375374,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023B143T5",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330109",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128609",
+    "company": "金坛市茅麓第二塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "薛埠镇茅麓街",
+    "contact_phone": "待核实",
+    "lat": 31.788976,
+    "lng": 119.394939,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B020702XDJ",
+      "type": "公司企业;公司;公司|公司企业;工厂;工厂",
+      "typecode": "170200|170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320413",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128615",
+    "company": "江苏普雷特塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "金城镇工业集中区丹凤路55号",
+    "contact_phone": "待核实",
+    "lat": 31.757973,
+    "lng": 119.571983,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF02D9W",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320413",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0128616",
+    "company": "常州中塑塑料包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "金宜路3号",
+    "contact_phone": "150****7588",
+    "lat": 31.736962,
+    "lng": 119.591521,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L21ST3R1",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "开发区",
+      "adcode": "320413",
+      "search_keyword": "塑料模具"
     },
     "industry": {
       "code": "2926",

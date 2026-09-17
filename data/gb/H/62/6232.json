@@ -47,7 +47,15 @@
       "evidence": "咖啡"
     },
     "is_manufacturer": false,
-    "_bucket": "H/62/6232"
+    "_bucket": "H/62/6232",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0031028/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0037267",

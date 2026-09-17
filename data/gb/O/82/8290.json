@@ -673,7 +673,15 @@
       "source": "name",
       "evidence": "开锁"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0096912/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0096918",
@@ -1308,7 +1316,15 @@
       "source": "name",
       "evidence": "开锁"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0112483/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0112499",
@@ -1318,7 +1334,8 @@
       "家电维修",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "干洗"
     ],
     "region": {
       "province": "广西",
@@ -1359,7 +1376,15 @@
       "source": "name",
       "evidence": "开锁"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0112499/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0119935",
@@ -1409,7 +1434,15 @@
       "source": "name",
       "evidence": "开锁"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0119935/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0119951",

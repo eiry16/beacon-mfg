@@ -45,7 +45,15 @@
       "adcode": "330110",
       "search_keyword": "铝板"
     },
-    "_bucket": "C/20/2013"
+    "_bucket": "C/20/2013",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007006/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0014508",
@@ -462,7 +470,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/20/2013"
+    "_bucket": "C/20/2013",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012934/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0023161",

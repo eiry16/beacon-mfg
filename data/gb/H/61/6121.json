@@ -3713,5 +3713,53 @@
       "evidence": "商务酒店"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0125178",
+    "company": "菲碧洗烫连锁酒店(暂停营业)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "贵乌社区服务中心贵乌北路3号",
+    "contact_phone": "130****2502; 131****9744",
+    "lat": 26.601627,
+    "lng": 106.717445,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L2SS5B1M",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "大营坡(商圈)",
+      "adcode": "520103",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "6121",
+      "name": "经济型连锁酒店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 一般旅馆 > 经济型连锁酒店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连锁酒店"
+    },
+    "is_manufacturer": false
   }
 ]

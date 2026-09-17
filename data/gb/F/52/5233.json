@@ -95,7 +95,15 @@
       "source": "name",
       "evidence": "鞋"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0097803/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0097804",
@@ -231,6 +239,1494 @@
       "postcode": "",
       "business_area": "",
       "adcode": "520303",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0124251",
+    "company": "TLXT铛铛洗鞋(贵阳店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "中铁阅山湖c组团一期商业一层62号",
+    "contact_phone": "183****4959",
+    "lat": 26.631665,
+    "lng": 106.594839,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K23UPCSJ",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520115",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0124254",
+    "company": "衣鞋净",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "世纪城街道办事处金阳南路景怡东苑1一1号楼1层5号",
+    "contact_phone": "180****7102; 180****7103",
+    "lat": 26.619998,
+    "lng": 106.625039,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL5SFK8",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "皮具护理",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "贵阳喀斯特公园",
+      "adcode": "520115",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0124708",
+    "company": "净鞋特工鞋类洗护馆(吾悦广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "王官路融汇湖城一品S5-1-4号",
+    "contact_phone": "180****5272",
+    "lat": 26.575874,
+    "lng": 106.481207,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MAA79R9S",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗鞋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520181",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0124910",
+    "company": "猴给力洗鞋(花果园T2区店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "花果园T2区1栋1单元门口旁边就是乐童新视界幼儿园",
+    "contact_phone": "181****1373",
+    "lat": 26.560861,
+    "lng": 106.670833,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDTHC3PQ",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0125092",
+    "company": "奈斯纯手工洗鞋(凯发家园店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "北京路2号白志祥骨科医院旁杏花巷内50米",
+    "contact_phone": "186****3335",
+    "lat": 26.595325,
+    "lng": 106.717425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H2CCSN1T",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "普陀路",
+      "adcode": "520103",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0125179",
+    "company": "闪电洗鞋工作室(三桥店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "三桥北路99号一楼",
+    "contact_phone": "136****0031",
+    "lat": 26.58189,
+    "lng": 106.671501,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LR47Q6X3",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "社区服务",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520103",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0125562",
+    "company": "鑫碧美鞋(隆源国际店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "鲁班路87号(广西大学西门的对面)隆源国际花园1层",
+    "contact_phone": "137****5262",
+    "lat": 22.842137,
+    "lng": 108.283478,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B03030VLFA",
+      "type": "购物服务;服装鞋帽皮具店;服装鞋帽皮具店|生活服务;生活服务场所;生活服务场所",
+      "typecode": "061100|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "修鞋擦鞋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450107",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126155",
+    "company": "净洗·专业球鞋奢包洗护",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "大乌路29号中海国际社区悦公馆S08号商业一层130号商铺",
+    "contact_phone": "191****9826",
+    "lat": 22.867844,
+    "lng": 108.373623,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L13R6M5I",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "奢侈品护理",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "三塘",
+      "adcode": "450102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126268",
+    "company": "南宁青秀区-鞋管佳洗鞋(长湖路维也纳森林店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "长湖路69号维也纳森林小区11栋65号商铺",
+    "contact_phone": "175****8872",
+    "lat": 22.82133,
+    "lng": 108.392181,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K1VRP75F",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "凤岭",
+      "adcode": "450103",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126305",
+    "company": "绅士品格衣鞋包洗护及私人定制(秀山花园家景园店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "青山路秀山花园家锦园临街6号铺",
+    "contact_phone": "181****8541",
+    "lat": 22.794277,
+    "lng": 108.365137,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKQ8TKD",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "津头",
+      "adcode": "450103",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126498",
+    "company": "壹家洗鞋馆(茭菱路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "茭菱路261号",
+    "contact_phone": "136****7057",
+    "lat": 25.049762,
+    "lng": 102.686869,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K1AAKIO7",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙翔",
+      "adcode": "530102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126500",
+    "company": "沐鞋者洗鞋-缝纫改衣店(西城时代店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "建发曦城·商业广场B座134号商铺1楼",
+    "contact_phone": "138****1251",
+    "lat": 25.06568,
+    "lng": 102.653422,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KRTHQ32R",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "黑林铺",
+      "adcode": "530102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126513",
+    "company": "金碧美鞋春之城店",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "春之城82号",
+    "contact_phone": "133****0417",
+    "lat": 25.094409,
+    "lng": 102.733023,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFF8DCQ",
+      "type": "生活服务;洗衣店;洗衣店|购物服务;服装鞋帽皮具店;服装鞋帽皮具店",
+      "typecode": "071500|061100",
+      "alias": "",
+      "tag": "",
+      "keytag": "修鞋擦鞋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "月牙塘",
+      "adcode": "530102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126533",
+    "company": "蚂蚁哈哈洗鞋店",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "上悦天地云舒苑4栋一层S107号",
+    "contact_phone": "133****7685",
+    "lat": 25.094117,
+    "lng": 102.659772,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MAVU6HQ4",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126543",
+    "company": "景师傅洗鞋小工厂(昆明店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "海源寺农贸市场西南门(3号门)左手边50米",
+    "contact_phone": "133****5958; 147****0076",
+    "lat": 25.077121,
+    "lng": 102.641087,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K6OANBZA",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126578",
+    "company": "猴给力洗鞋·经管校店",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "龙院村三组17号",
+    "contact_phone": "153****9967",
+    "lat": 25.086042,
+    "lng": 102.651115,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2D7G0GQ",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126579",
+    "company": "大班洗鞋店",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "建设路323号(苏家塘地铁站A口步行160米)",
+    "contact_phone": "待核实",
+    "lat": 25.062186,
+    "lng": 102.692323,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L6LXGV3P",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏家塘",
+      "adcode": "530102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0126586",
+    "company": "爱克球鞋洗护馆(明日城市店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "普吉路明日城市小区苏豪6栋11号商铺",
+    "contact_phone": "待核实",
+    "lat": 25.069925,
+    "lng": 102.676275,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I03AWNBV",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530102",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127058",
+    "company": "猴给力洗鞋(润城店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "润城三辰府8-s104",
+    "contact_phone": "182****1003",
+    "lat": 24.99938,
+    "lng": 102.699319,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDK5O8VV",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "十里长街",
+      "adcode": "530112",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127066",
+    "company": "猴给力洗鞋(融创店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "融创文旅城(A23地块)12幢1层S115号",
+    "contact_phone": "158****3715",
+    "lat": 25.019186,
+    "lng": 102.650414,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDOO8KOC",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530112",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127344",
+    "company": "猴给力洗鞋(金实路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "金实路11号(金星地铁站C2口步行360米)",
+    "contact_phone": "157****3648",
+    "lat": 25.074541,
+    "lng": 102.730804,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LBRLK3D1",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙泉",
+      "adcode": "530103",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127345",
+    "company": "小鱼洗鞋",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "金辰街道青龙路俊发·盛唐城C区5栋502号商铺",
+    "contact_phone": "180****6352",
+    "lat": 25.078475,
+    "lng": 102.745925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDMADXU2",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙泉",
+      "adcode": "530103",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127421",
+    "company": "三叔洗鞋工作室(暂停营业)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "俊发·盛唐城长安郡B区西门旁",
+    "contact_phone": "139****5690",
+    "lat": 25.07877,
+    "lng": 102.748048,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JAUUTL7L",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙泉",
+      "adcode": "530103",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127706",
+    "company": "码上洗鞋",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "长水航城水槐苑8-11号商铺",
+    "contact_phone": "180****2368; 180****2768",
+    "lat": 25.075774,
+    "lng": 102.941285,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MA3AYL2E",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530111",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127751",
+    "company": "猴给力洗鞋(海伦国际店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "金源大道与广福路交叉口海伦国际春城时光花园2号地4座103",
+    "contact_phone": "待核实",
+    "lat": 24.964972,
+    "lng": 102.744376,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KR0ZD7LO",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530111",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127785",
+    "company": "亮嘟嘟衣物鞋品护理店",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "云漫岭小区9幢106商铺",
+    "contact_phone": "151****1728",
+    "lat": 24.925383,
+    "lng": 102.771299,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MU5RU01S",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530111",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127961",
+    "company": "洁净五元洗鞋(吾悦广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "洛龙街道办事处吾悦名郡花园5栋S518号",
+    "contact_phone": "159****7767",
+    "lat": 24.890155,
+    "lng": 102.832397,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDOL1UBK",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530114",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127970",
+    "company": "爱鞋衣洗护店",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "月虹路与都林街交叉口西100米",
+    "contact_phone": "135****0054",
+    "lat": 24.858616,
+    "lng": 102.798252,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKG6SYD",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "修鞋擦鞋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530114",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127975",
+    "company": "云白洗鞋店",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "七甸街道土瓜塘村14号",
+    "contact_phone": "137****5154",
+    "lat": 24.937797,
+    "lng": 102.894024,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2MXV772",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530114",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127985",
+    "company": "爱鞋衣洗护店",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "昊园小区泰安路445号",
+    "contact_phone": "187****7749",
+    "lat": 24.890005,
+    "lng": 102.850231,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JUYZMNUP",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530114",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0127986",
+    "company": "御净鞋服馆",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "宜和路538钻石15号商铺",
+    "contact_phone": "待核实",
+    "lat": 24.89089,
+    "lng": 102.844231,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K14YV4ER",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "530114",
       "search_keyword": "干洗"
     },
     "industry": {

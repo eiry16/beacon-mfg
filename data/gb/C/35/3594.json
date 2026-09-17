@@ -389,5 +389,53 @@
       "evidence": "饮食"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0124260",
+    "company": "TaTa饮食",
+    "category": "精密机械加工",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "梦想城二号地块店菜鸟驿站",
+    "contact_phone": "155****9356",
+    "lat": 26.625666,
+    "lng": 106.664316,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JG3AUTRH",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520115",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "3594",
+      "name": "商业、饮食、服务专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 商业、饮食、服务专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "饮食"
+    },
+    "is_manufacturer": true
   }
 ]

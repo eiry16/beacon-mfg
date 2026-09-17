@@ -144,7 +144,15 @@
       "evidence": "家居"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5283"
+    "_bucket": "F/52/5283",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0030006/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0030009",
@@ -442,7 +450,15 @@
       "evidence": "家具"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5283"
+    "_bucket": "F/52/5283",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0030619/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0030620",
@@ -492,7 +508,15 @@
       "evidence": "家居"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5283"
+    "_bucket": "F/52/5283",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0030620/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0030626",
@@ -789,7 +813,15 @@
       "evidence": "家居"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5283"
+    "_bucket": "F/52/5283",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0030754/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0031107",
@@ -838,7 +870,15 @@
       "evidence": "家居"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5283"
+    "_bucket": "F/52/5283",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0031107/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0034489",
@@ -1761,7 +1801,15 @@
       "source": "name",
       "evidence": "家居"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0113316/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0113833",
@@ -1857,7 +1905,15 @@
       "source": "name",
       "evidence": "家居"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115301/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115354",
@@ -2195,5 +2251,44 @@
       "evidence": "家居"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0017771",
+    "company": "芒种家居(福人直营店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "白洋港路419号-2",
+    "contact_phone": "0571-85058879; 189****1577",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5283",
+      "name": "家具零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 家具零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家居"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017771/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

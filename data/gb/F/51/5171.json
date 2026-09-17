@@ -45,7 +45,15 @@
     },
     "is_manufacturer": false,
     "status": "verified",
-    "_bucket": "F/51/5171"
+    "_bucket": "F/51/5171",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0022173/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0118180",

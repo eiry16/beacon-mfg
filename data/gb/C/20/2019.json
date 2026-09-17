@@ -393,7 +393,15 @@
       "evidence": "木材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/20/2019"
+    "_bucket": "C/20/2019",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0030880/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0030883",
@@ -4568,7 +4576,15 @@
       "source": "name",
       "evidence": "木业"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0111140/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0118573",

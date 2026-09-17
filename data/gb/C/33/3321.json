@@ -552,5 +552,53 @@
       "evidence": "刀具"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0125418",
+    "company": "上海裕溪机械刀模有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料模具"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "卫清西路421号",
+    "contact_phone": "147****7826",
+    "lat": 30.728934,
+    "lng": 121.345224,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-18",
+    "imported_at": "2026-09-18",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGN2YJ2",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "卫清路",
+      "adcode": "310116",
+      "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3321",
+      "name": "切削工具制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属工具制造 > 切削工具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "刀模"
+    },
+    "is_manufacturer": true
   }
 ]

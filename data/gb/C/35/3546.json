@@ -2397,7 +2397,15 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/35/3546"
+    "_bucket": "C/35/3546",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0012821/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013065",
@@ -4187,7 +4195,15 @@
       "source": "gb_token",
       "evidence": "玻璃"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0095982/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0096531",

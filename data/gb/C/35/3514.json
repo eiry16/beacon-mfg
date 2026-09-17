@@ -220,7 +220,15 @@
       "evidence": "建筑工程"
     },
     "is_manufacturer": true,
-    "_bucket": "C/35/3514"
+    "_bucket": "C/35/3514",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0030295/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0030423",
