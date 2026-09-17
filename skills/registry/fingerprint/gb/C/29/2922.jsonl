@@ -81,17 +81,14 @@
 {"id":"CN-MFG-0107380","co":"昆明三江塑胶管业","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0107438","co":"云领塑胶管业公司","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0107448","co":"成友塑胶管业","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0109301","co":"铝合金塑钢(环城西路店)","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0109344","co":"四海铝合金塑钢门窗(总店)","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0109357","co":"诚信铝合金塑钢组装部","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0109363","co":"红运塑钢铝合金门窗","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0114059","co":"王师不锈钢剪板折弯型材板材经营部(中南城店)","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0114628","co":"家和伟业风口型材经营部","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0114650","co":"兴发全铝户外型材","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0114682","co":"金盾塑钢门窗(关景路店)","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0115371","co":"诚信塑钢门窗(日新路店)","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0116740","co":"如意塑料管材","city":"昆明","gb":"2922","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0119000","co":"智全激光切割型材拉弯","city":"南宁","gb":"2922","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0120480","co":"雄塑管道塑料管批发","city":"南宁","gb":"2922","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0120497","co":"强力塑料管批发部","city":"南宁","gb":"2922","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0122524","co":"闽乐型材厂家直销","city":"南宁","gb":"2922","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -99,3 +96,6 @@
 {"id":"CN-MFG-0122811","co":"奋安铝材·海螺塑钢","city":"南宁","gb":"2922","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0122949","co":"南宁市桂中塑料管厂","city":"南宁","gb":"2922","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0123165","co":"习水县金瑞塑料管业有限公司","city":"遵义","gb":"2922","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
+{"id":"CN-MFG-0109301","co":"铝合金塑钢(环城西路店)","city":"昆明","gb":"2922","mf":1,"proc":["die_casting"],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["die_casting","铝合金"],"seat":null,"pp":null,"tol":null,"size":null,"moq":null,"lt":[null,null],"rt":null}
+{"id":"CN-MFG-0114059","co":"王师不锈钢剪板折弯型材板材经营部(中南城店)","city":"昆明","gb":"2922","mf":1,"proc":["bending","cutting_service"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["bending","cutting_service","不锈钢","碳钢/不锈钢"],"seat":null,"pp":null,"tol":null,"size":null,"moq":null,"lt":[null,null],"rt":null}
+{"id":"CN-MFG-0119000","co":"智全激光切割型材拉弯","city":"南宁","gb":"2922","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting"],"seat":null,"pp":null,"tol":null,"size":null,"moq":null,"lt":[null,null],"rt":null}

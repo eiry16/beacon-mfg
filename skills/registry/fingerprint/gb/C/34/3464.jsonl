@@ -389,8 +389,6 @@
 {"id":"CN-MFG-0105215","co":"空调水箱","city":"昆明","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0105216","co":"老湖南电瓶电器空调批发零售及修理","city":"昆明","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0105217","co":"小蒋电瓶电器空调维修中心","city":"昆明","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
-{"id":"CN-MFG-0111423","co":"水箱空调特种焊接","city":"昆明","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0111445","co":"小尹电瓶电器电路电喷空调","city":"昆明","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0111464","co":"湘宁专业电喷电路空调","city":"昆明","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0111473","co":"湖南电工电瓶电路空调解码","city":"昆明","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0111478","co":"湖南电工电瓶空调","city":"昆明","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -527,12 +525,14 @@
 {"id":"CN-MFG-0121977","co":"梁勇汽车电瓶空调电喷电路刹车王店","city":"南宁","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0121978","co":"强仔汽车电瓶电路电喷空调","city":"南宁","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0122023","co":"诚信汽车空调电瓶电路电喷","city":"南宁","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0122047","co":"电瓶空调电喷油嘴","city":"南宁","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0122088","co":"汽车空调电器电瓶(四哥汽修店)","city":"南宁","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0122097","co":"小彭电瓶电路电喷油嘴后处理空调","city":"南宁","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0122126","co":"博白小李电瓶空调","city":"南宁","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0122148","co":"小周汽车音响空调","city":"南宁","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0122149","co":"湘君电瓶空调电喷","city":"南宁","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0123276","co":"小陈汽车电路空调","city":"遵义","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0123293","co":"杨师电瓶电喷空调","city":"遵义","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0123376","co":"水箱电路空调","city":"遵义","gb":"3464","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
+{"id":"CN-MFG-0111423","co":"水箱空调特种焊接","city":"昆明","gb":"3464","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["welding"],"seat":null,"pp":null,"tol":null,"size":null,"moq":null,"lt":[null,null],"rt":null}
+{"id":"CN-MFG-0111445","co":"小尹电瓶电器电路电喷空调","city":"昆明","gb":"3464","mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["electronic_component"],"seat":null,"pp":null,"tol":null,"size":null,"moq":null,"lt":[null,null],"rt":null}
+{"id":"CN-MFG-0122047","co":"电瓶空调电喷油嘴","city":"南宁","gb":"3464","mf":1,"proc":["spray_painting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["spray_painting"],"seat":null,"pp":null,"tol":null,"size":null,"moq":null,"lt":[null,null],"rt":null}
+{"id":"CN-MFG-0122088","co":"汽车空调电器电瓶(四哥汽修店)","city":"南宁","gb":"3464","mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["electronic_component"],"seat":null,"pp":null,"tol":null,"size":null,"moq":null,"lt":[null,null],"rt":null}
+{"id":"CN-MFG-0122097","co":"小彭电瓶电路电喷油嘴后处理空调","city":"南宁","gb":"3464","mf":1,"proc":["spray_painting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["spray_painting"],"seat":null,"pp":null,"tol":null,"size":null,"moq":null,"lt":[null,null],"rt":null}
