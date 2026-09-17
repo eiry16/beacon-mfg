@@ -44,6 +44,11 @@ scripts/*
 # 2 小时失败一次还报不清原因。这里放行是防复发。两者均无密钥与商业逻辑。
 !scripts/cron_beacon_daily.py
 !scripts/cron_priority_cities.json
+# restore_full_phones.py 是「工作树被 git checkout 脱敏覆盖」的唯一自救工具。
+# 不放行的后果：事故发生时只能临时手写脚本，而掩码是全号的有损变换——
+# 没有这个工具就等于看着全号被静默丢掉（2026-09-17 实测：42578 个号一次抹掉）。
+# 纯标准库，只读 dist 快照与 data/ 下的文件，不含密钥。
+!scripts/restore_full_phones.py
 # deploy_pages.py 是 L1/L2 上 CDN 的唯一入口（封装 wrangler）。
 # 不放行：别人 clone 后只能自己摸索 CF 的上传格式，而那个 API 是会静默成功的
 # （2026-09-09 实测：三种写法全部返回 success，站点却全线 404）。

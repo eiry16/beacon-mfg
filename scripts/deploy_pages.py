@@ -60,6 +60,8 @@ App 侧的 HEAD 探活只是止血。要根治，部署必须能被低成本重�
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import os
 import shutil
 import subprocess
@@ -178,6 +180,71 @@ def _write_lf(src: Path, dst: Path) -> bool:
     return False
 
 
+# manifest 里合法条目的类型码（见 gen_manifest.TYPE_*）。白名单同时挡住
+# 清单里那行「列名说明」（它也有 p/h 字段，但 t 是整句中文说明）。
+_MANIFEST_TYPES = {"fp", "zh", "en", "pq", "phone"}
+
+
+def _check_manifest_consistency(dist: Path) -> int:
+    """发布前闸门：manifest 登记的 sha1 必须等于**即将上传**文件的 sha1。
+
+    对不上 = 清单与内容差了一代。App 端 writeShard / writePhoneIndex 会逐字节校验 sha1，
+    不匹配就**静默丢弃**（不报错、不退版本号、下次启动再试一遍照样失败），
+    表现为「后台数据明明更新了，手机端却一直用旧版」。
+
+    2026-09-17 线上实证：manifest 的 phone 条目 k=56988/u=9-16，而实际提供的
+    data/phone-index.jsonl 已是 83840 条 → 手机端号码索引永远更新不上，新抓城市
+    （贵阳等）的企业卡片一律显示「☎ 有电话，但源数据为『待核实』」。
+    根因是流水线顺序（manifest 排在 assets 之前，记的是上一代索引的哈希），已修；
+    这道闸门保证谁再改坏顺序都发不出去。
+    """
+    man = dist / "data" / "manifest.json"
+    if not man.exists():
+        return 0
+    try:
+        spec = json.loads(man.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print(f"✗ manifest 解析失败：{exc}", file=sys.stderr)
+        sys.exit(1)
+
+    entries: list[dict] = []
+
+    def walk(o) -> None:
+        if isinstance(o, dict):
+            if o.get("t") in _MANIFEST_TYPES and "p" in o and "h" in o:
+                entries.append(o)
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+
+    walk(spec)
+
+    bad: list[tuple[str, str]] = []
+    for e in entries:
+        rel = str(e.get("p") or "").lstrip("/")
+        f = dist / rel
+        if not f.exists():
+            bad.append((rel, "dist 里没有这个文件"))
+            continue
+        h = hashlib.sha1(f.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+        if h != str(e.get("h")):
+            bad.append((rel, f"manifest={str(e.get('h'))[:10]} 实际={h[:10]}"
+                             f"（manifest 登记 k={e.get('k')}）"))
+    if bad:
+        print("✗ 发布前一致性闸门不通过：manifest 与内容对不上，"
+              "App 会逐片校验失败并静默丢弃：", file=sys.stderr)
+        for rel, why in bad[:10]:
+            print(f"    {rel}: {why}", file=sys.stderr)
+        print("  → 先跑 python scripts/postfetch.py --only assets,manifest,validate "
+              "让清单重新对齐（步骤顺序必须 assets 在 manifest 之前）", file=sys.stderr)
+        sys.exit(1)
+    if entries:
+        print(f"  ✓ manifest 一致性：{len(entries)} 条全部与待上传内容吻合")
+    return len(entries)
+
+
 def build(verbose: bool = True, with_worker: bool = False) -> dict:
     """组装 dist/site。返回统计。"""
     t0 = time.time()
@@ -279,6 +346,10 @@ def build(verbose: bool = True, with_worker: bool = False) -> dict:
             n_l0 += 1
     if verbose:
         print(f"  L0 {n_l0} 文件（其中 {n_l0_lf} 个做了 CRLF→LF 归一化）")
+
+    # 3.6) 发布前一致性闸门：manifest 的每条 sha1 必须等于刚拷进 dist 的内容。
+    #      放在这里（data/** 刚拷完、能力卡分片之前）——最早能看到「清单/内容两代」的位置。
+    _check_manifest_consistency(DIST)
 
     # 4) L1 能力卡分片（full/ slim/ manifest.json）—— 交给专业脚本，不自己拼
     shard = REPO_ROOT / "scripts" / "gen_capability_shards.py"

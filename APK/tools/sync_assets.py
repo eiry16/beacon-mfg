@@ -170,14 +170,30 @@ def pick_phone(raw: str) -> str:
       - 多号码：'13630046699; 18566403616'、'0510-86230800; 0510-86230825' → 取第一个
       - 占位/垃圾：'待核实' → 判为无效，宁可留空（卡片显示「号码待核实」）
     判定口径：去掉非数字后长度 7–15 位。这样 400 热线、带区号固话、手机号都能过。
+
+    ⚠ 含 `*` 的掩码号（138****0000）必须判为无效 —— 它去非数字后长度恰好 7 位，
+    旧口径会放行，于是 App 卡片显示一个假号、点下去还把 1380000 送进拨号盘。
+    掩码只应出现在「工作树被 checkout 污染」的异常态（见 scripts/restore_full_phones.py），
+    这里守住底线：宁可不显示号码，也不显示不能拨的号。
     """
     raw = (raw or "").strip()
     if not raw:
+        return ""
+    if "*" in raw:
+        # 「座机; 138****0000」这种混合串里仍可能有可用座机，逐个候选挑
+        for part in re.split(r"[;；,，、/|]+", raw):
+            p = part.strip()
+            if "*" in p:
+                continue
+            if 7 <= len(re.sub(r"\D", "", p)) <= 15:
+                return p
         return ""
     if 7 <= len(re.sub(r"\D", "", raw)) <= 15:
         return raw
     for part in re.split(r"[;；,，、/|]+", raw):
         p = part.strip()
+        if "*" in p:
+            continue
         if 7 <= len(re.sub(r"\D", "", p)) <= 15:
             return p
     return ""
@@ -243,7 +259,19 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="同步仓库数据到 App assets")
     ap.add_argument("--apply", action="store_true", help="真正写入（默认只预览）")
     ap.add_argument("--clean", action="store_true", help="写入前清空内置指纹目录")
+    ap.add_argument("--only", choices=["phone"],
+                    help="只重建号码索引 data/phone-index.jsonl（postfetch 的 manifest 步用它："
+                         "清单要哈希**最新**索引，否则 App 端 sha1 校验不过会静默丢弃）")
     a = ap.parse_args()
+
+    if a.only == "phone":
+        phones = sync_phone_index(a.apply)
+        print("号码索引：%d/%d 条有号码 / %.2f MB / sha1 %s"
+              % (phones["entries"], phones["total"], phones["bytes"] / 1048576,
+                 phones["sha1"][:12]))
+        if not a.apply:
+            print("（预览模式，加 --apply 写入）")
+        return
 
     files = sync_index(a.apply)
     fp = sync_fingerprint(a.apply, a.clean)

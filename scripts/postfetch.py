@@ -117,6 +117,22 @@ ALL_STEPS = ("classify", "gbindex", "recat", "enrefile", "index", "fingerprint",
              "english", "autoprofile", "capability", "shards", "manifest", "readme",
              "validate", "assets", "r2", "pages", "git")
 
+# ⚠ 顺序陷阱（2026-09-17 实测踩中，代价：手机端新城市的电话全丢）：
+#   gen_manifest 会把 data/phone-index.jsonl 的 sha1 写进清单，而这张索引是
+#   sync_assets 从 data/gb 现算出来的**派生层**。原先 assets 排在 manifest **之后**，
+#   于是清单记的是上一代索引的哈希、Pages 随后发出去的是新索引
+#   → App 端 writePhoneIndex 逐字节校验 sha1 → 不匹配 → **静默丢弃**
+#   （不报错、不退版本号，下次启动重试照样失败），手机永远停在旧索引：
+#   新抓城市（贵阳等）的企业卡片一律显示「☎ 有电话，但源数据为『待核实』」。
+#   线上实证：manifest 的 phone 条目 k=56988/u=9-16，而 data/phone-index.jsonl 已是 83840 条。
+#   修法不是把 assets 提前（assets 要留在 validate 之后，只把**已校验**的数据抄进 APK），
+#   而是让 manifest 步**自己先把索引重算一遍**（sync_assets --only phone --apply）。
+#   另有一道发布前闸门（deploy_pages._check_manifest_consistency）兜底，改坏顺序发不出去。
+
+# 工作树掩码体检阈值：data/gb + phone-index 里允许存在的掩码号上限。
+# 正常水位个位数（源里查不到全号的残差）；一次 checkout 事故会把它顶到 4 万+。
+_WORKTREE_MASK_TOLERANCE = 300
+
 # gen_manifest 的列式层（pq）依赖 pyarrow，缺省就静默少一层 —— 清单看着变绿，
 # 实则少了 pq。这里的兜底顺序：当前解释器 → 环境变量 BMFG_PY_PQ → 本机已知 venv。
 _DEFAULT_PQ_PY = os.environ.get("BMFG_PY_PQ") or os.path.expanduser(
@@ -358,7 +374,15 @@ def step_capability(dry_run: bool = False) -> None:
     supplier_loader.persist_supplier，跨桶迁移是「旧桶剔除 → 新桶追加」**两次独立写盘**，
     在两步之间被杀就会留下两份同 id 记录（一个留在原小类、一个进了 _unclassified），
     validate --strict 随即报「重复 id」，而当晚的数据就发不出去了。
-    真被中断了：`git checkout -- data/gb/` 即可恢复（data/gb 是入库的）。
+
+    ⚠⚠ 中断后的恢复：**只回滚被污染的那几个文件**，然后
+    `git checkout -- data/gb/<那几个文件>` 之后**必须**再跑
+    `python scripts/restore_full_phones.py --apply`。
+    原因是 `git checkout`/`git restore` 会把 index 里的**脱敏**内容写回工作树，
+    而工作树本该是全号（.gitattributes 的约定）——更阴的是 git status 依然显示干净
+    （clean(全号)==clean(脱敏)），事故无声。2026-09-17 实测：一次
+    `git checkout -- data/gb/` 让全树 42578 个手机号变成掩码，随后
+    sync_assets 依此重建号码索引，连 App 内置资产也一起脱敏了。
     """
     tool = ROOT / "scripts" / "sync_vendor_skills.py"
     if not tool.exists():
@@ -425,13 +449,24 @@ def _pq_interpreters() -> list[str]:
 def step_manifest(dry_run: bool = False) -> None:
     """重算分片清单。
 
-    坑：pq（列式）层依赖 pyarrow。没装的话 gen_manifest 只在 stderr 打印一句警告
+    ① 先把号码索引重算一遍（sync_assets --only phone --apply）。清单要哈希的是
+       **最新**的 data/phone-index.jsonl，见 ALL_STEPS 上方的顺序陷阱说明：
+       索引是 data/gb 的派生层，若留给后面的 assets 步重建，清单就慢一代，
+       App 端 sha1 校验不过会静默丢弃整份索引 —— 手机端新城市的电话永远出不来。
+
+    ② 坑：pq（列式）层依赖 pyarrow。没装的话 gen_manifest 只在 stderr 打印一句警告
     然后正常退出 0 —— 清单看着是新的，实际少了一层。这里主动检测，装了 pyarrow
     的解释器存在就换它跑，都不可用才算失败（宁可红，不要假绿）。
     """
     if dry_run:
         print("   （--dry-run：不重算清单）")
         return
+    tool = ROOT / "APK" / "tools" / "sync_assets.py"
+    if tool.exists():
+        rc = subprocess.run([sys.executable, str(tool), "--only", "phone", "--apply"],
+                            cwd=str(ROOT)).returncode
+        if rc:
+            raise RuntimeError(f"sync_assets --only phone 返回 {rc}")
     if _has_pyarrow():
         rc = _call("gen_manifest")
         if rc:
@@ -939,6 +974,38 @@ def release_publish_lock() -> None:
     _PUBLISH_LOCK_FD = None
 
 
+def _warn_if_worktree_masked() -> int:
+    """工作树全号体检：data/gb + phone-index 里掩码号突然变多就大声报警。
+
+    为什么需要它：`git checkout/restore` 作用在 maskphone 过滤的路径上时，git 会把
+    **入库的脱敏版**写回工作树，而 `git status` 依旧显示干净
+    （因为 clean(全号) == clean(脱敏)，这正是脱敏设计的副作用）——事故完全无声。
+    2026-09-17 实测：一次 `git checkout -- data/gb/` → 42578 个号码变掩码，
+    紧接着 sync_assets 依此重建 → App 内置索引与 Pages 产物一起被脱敏。
+    正常水位是个位数（源里查不到全号的残差），阈值取 300 留足余量。
+    """
+    total = 0
+    pat = _re.compile(r"\d{3}\*{4}\d{4}")   # 掩码手机：138****0000
+    for p in (ROOT / "data" / "gb").rglob("*.json"):
+        try:
+            total += len(pat.findall(p.read_text(encoding="utf-8")))
+        except OSError:
+            continue
+    idx = ROOT / "data" / "phone-index.jsonl"
+    if idx.exists():
+        total += len(pat.findall(idx.read_text(encoding="utf-8", errors="replace")))
+    if total > _WORKTREE_MASK_TOLERANCE:
+        print("⚠" * 30)
+        print(f"⚠ 工作树全号体检不通过：data/gb + phone-index 里有 {total} 个掩码手机号")
+        print(f"  （正常水位 <{_WORKTREE_MASK_TOLERANCE}）")
+        print("  多半是有人对 data/gb / data/phone-index.jsonl 跑过 git checkout / git restore：")
+        print("  那会把入库的脱敏版写回工作树，而 git status 照样显示干净。")
+        print("  继续跑会把脱敏号码重建进索引并发到 App（卡片显示 138****0000、无法拨号）。")
+        print("  恢复：python scripts/restore_full_phones.py --apply")
+        print("⚠" * 30)
+    return total
+
+
 def run(skip: set[str] | frozenset[str] | list[str] | None = None,
         only: set[str] | frozenset[str] | list[str] | None = None,
         dry_run: bool = False,
@@ -981,6 +1048,11 @@ def run(skip: set[str] | frozenset[str] | list[str] | None = None,
         print("═" * 62)
 
     _LAST_FAILED.clear()
+
+    # 工作树全号体检：data/gb|data/en|phone-index 本该是全号（见 .gitattributes），
+    # 一旦大面积出现掩码，说明有人对它们跑过 git checkout/restore（git status 仍是干净的，
+    # 靠 status 发现不了）。此刻重建索引 = 把脱敏结果发到 App，必须当场喊出来。
+    _warn_if_worktree_masked()
 
     failed: list[str] = []
     skipped: list[str] = []

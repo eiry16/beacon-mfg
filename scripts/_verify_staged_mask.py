@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""高效地核对暂存区 mask 路径里「未认领」记录是否仍含独立 11 位全号（安全闸门离线版）。
+r"""高效地核对暂存区 mask 路径里「未认领」记录是否仍含独立 11 位全号（安全闸门离线版）。
 
 实现：用 `git ls-files -s` 取全部暂存 blob 的 sha+路径，再用单次 `git cat-file --batch`
 把所有 blob 内容一次性读出，避免每文件一次 git 子进程（511 文件 × N 次会被环境 SIGTERM）。
@@ -73,7 +73,10 @@ def main():
     # 2) 单次 cat-file --batch 读出全部内容
     p = subprocess.run(
         ["git", "-C", str(ROOT), "cat-file", "--batch"],
-        input="\n".join(s for s, _ in entries) + "\n",
+        # ⚠ 这里 stdout 是二进制 blob 流（下面按字节切分），所以不能加 text=True；
+        #   但 input= 就必须自己 encode —— 给 str 会 TypeError: a bytes-like object
+        #   is required（2026-09-17 实测：脚本一跑就崩，等于自检形同不存在）。
+        input=("\n".join(s for s, _ in entries) + "\n").encode(),
         capture_output=True,
     )
     raw = p.stdout
