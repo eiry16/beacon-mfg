@@ -587,8 +587,9 @@ def backfill(force=False, verbose=True):
         # 跨桶迁移由它自动清理，不会在旧小类留下幽灵数据。
         res = gb_store.upsert(changed_recs)
         if verbose:
-            print("   补写 %d 条（新增 %d / 更新 %d / 跨桶迁移 %d）"
-                  % (written, res["added"], res["updated"], res["moved"]))
+            print("   补写 %d 条（新增 %d / 更新 %d / 跨桶迁移 %d / 顺带去重 %d）"
+                  % (written, res["added"], res["updated"], res["moved"],
+                     res.get("deduped", 0)))
     return written
 
 

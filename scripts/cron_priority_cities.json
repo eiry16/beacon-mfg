@@ -6,10 +6,12 @@
   "tier": "all",
   "publish": true,
   "git": true,
+  "english": true,
   "autoprofile": true,
   "autoprofile_limit": 300,
   "autoprofile_cities": ["贵阳", "南宁", "昆明", "遵义"],
   "_priority_share说明": "当日配额分配给 priority_cities 的比例。1.0=全给优先城市（优先城市跑完后会自动回归全局轮转）；0.6=六成给优先城市、四成全局。",
   "_daily_quota说明": "每任务最多 8 次请求（翻到底 200 条），所以 1000 配额≈125 个任务/轮。",
-  "_autoprofile说明": "补「未认证」能力卡。纯本地规则推断，不调 LLM、不烧钱，只写盘，故默认开。autoprofile_cities 为空时回退 priority_cities。生成的卡都是 L0（未认领），L1/L2 必须供应商走认领/认证才有。"
+  "_autoprofile说明": "补「未认证」能力卡。纯本地规则推断，不调 LLM、不烧钱，只写盘，故默认开。autoprofile_cities 为空时回退 priority_cities。生成的卡都是 L0（未认领），L1/L2 必须供应商走认领/认证才有。",
+  "_english说明": "英文镜像翻译（en_backfill + en_sync_industry）。调 LLM，慢（700~1300 条/小时）且需要 ZHIPU_API_KEY。默认开：它跑在增强段最前（shards/manifest 之前），当轮就能随 r2/pages 一起发布，不会滞后一天。想临时关掉用命令行 --no-english。"
 }

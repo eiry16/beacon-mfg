@@ -2,8 +2,9 @@
 """BeaconMFG 每日定时采集（取代已失效的旧 cron）。
 
 等价 GUI「自动抓取」的默认口径，分两段跑（与 GUI 的 1.5 / 1.6 对齐）：
-    1) 核心段 postfetch.py --skip english,autoprofile
-    2) 增强段 postfetch.py --only autoprofile,shards,manifest,readme,validate[,r2,pages][,git]
+    1) 核心段 postfetch.py --skip english,autoprofile      （尽快上线当天中文数据）
+    2) 增强段 postfetch.py --only english,autoprofile,capability,shards,manifest,readme,
+                                    validate[,r2,pages][,git]   （英文 + 补卡 + 二次发布）
 
 **第 2 段就是能力卡** —— 2026-09-17 之前这里被无脑 skip 掉，结果是新抓的城市
 （如西南四城）一条能力卡都没有，App 里搜出来全是空白卡片。补卡是**纯本地规则
@@ -56,6 +57,10 @@ DEFAULTS = {
     "tier": "all",
     "publish": True,
     "git": True,
+    # 英文镜像：调 LLM 翻译，慢（实测 700~1300 条/小时）且吃 ZHIPU_API_KEY。
+    # 默认**开** —— 以前默认关，结果英文永远比中文晚一天上云（2026-09-18 起修正）。
+    # 它跑在增强段最前，随当轮 r2/pages 一起发布，不再是滞后一天的尾巴。
+    "english": True,
     # 能力卡（未认证）：纯本地规则推断，不调 LLM；默认开，单独成段跑
     "autoprofile": True,
     "autoprofile_limit": 300,      # 每城最多补多少家
@@ -179,7 +184,9 @@ def main() -> int:
                         help="不发布 R2 / Pages（数据仍本地落盘）")
     parser.add_argument("--no-git", action="store_true", help="不推 GitHub")
     parser.add_argument("--english", action="store_true",
-                        help="跑完核心段再补英文镜像（慢，会调用 LLM；默认不跑）")
+                        help="强制跑英文镜像（默认已按配置开启，此参数用于覆盖配置为关的情况）")
+    parser.add_argument("--no-english", action="store_true",
+                        help="本轮不跑英文镜像（覆盖配置文件里的 english:true）")
     parser.add_argument("--autoprofile-cities",
                         help="要给哪些城市补能力卡，逗号分隔（默认取优先城市；"
                              "都为空则本轮不补卡）")
@@ -221,6 +228,8 @@ def main() -> int:
         if args.autoprofile_cities else None)
     do_publish = (not args.no_publish) and bool(cfg.get("publish", DEFAULTS["publish"]))
     do_git = (not args.no_git) and bool(cfg.get("git", DEFAULTS["git"]))
+    do_english = ((not args.no_english)
+                  and (args.english or bool(cfg.get("english", DEFAULTS["english"]))))
 
     env = load_env()
     if not env.get("AMAP_KEY") and not os.environ.get("AMAP_KEY"):
@@ -235,6 +244,7 @@ def main() -> int:
     print(f"    日配额     : {quota} 请求 ≈ {quota // PER_TASK_REQUESTS} 个任务")
     print(f"    层级       : {args.tier}")
     print(f"    发布 / git : {do_publish} / {do_git}")
+    print(f"    英文镜像   : {'开（增强段最前，随当轮发布）' if do_english else '关'}")
     _ap_cities = (args.autoprofile_cities
                   or list(cfg.get("autoprofile_cities") or [])
                   or list(cities_cfg))
@@ -263,8 +273,10 @@ def main() -> int:
                   "本次没有产生新数据，跳过后处理")
             return 3
 
-        # 核心流水线：不跑能力卡 / 英文（它们排在 r2/pages 之前，拖垮会连发布一起赔进去）
-        skip = [] if args.english else ["english"]
+        # 核心流水线：英文与能力卡都挪到增强段，这里只跑「抓取 → 中文派生层 → 发布」。
+        # 理由：英文调 LLM 很慢（700~1300 条/小时），挂在核心段会把当天的发布一起拖住。
+        # 挪走之后核心段尽快上线当天中文数据，英文/能力卡由增强段补跑并二次发布。
+        skip = ["english"]
         skip.append("autoprofile")
         if not do_publish:
             skip += ["r2", "pages"]
@@ -279,18 +291,35 @@ def main() -> int:
         ap_cities = (args.autoprofile_cities
                      or list(cfg.get("autoprofile_cities") or [])
                      or list(cities_cfg))
+        # 英文必须排在本段最前：step_english 要求它在 shards / manifest 之前，
+        # 先把清单算出来再补英文 = 清单里那批英文分片是空的。
+        # --only 按 ALL_STEPS 原序执行，而 english 本来就排在 autoprofile 之前，故直接拼接即可。
+        steps: list[str] = []
+        if do_english:
+            steps.append("english")
         if do_autoprofile and ap_cities:
-            steps = ["autoprofile", "capability", "shards", "manifest", "readme", "validate"]
-            if do_publish:
-                steps += ["r2", "pages"]
-            if do_git:
-                steps.append("git")
-            run_step(f"后处理流水线（增强段·能力卡 {'、'.join(ap_cities)}）",
-                     [sys.executable, str(SCRIPTS / "postfetch.py"),
-                      "--only", ",".join(steps),
-                      "--autoprofile-cities", ",".join(ap_cities),
-                      "--autoprofile-limit", str(ap_limit)],
-                     args.dry_run, log_fp)
+            steps += ["autoprofile", "capability"]
+        steps += ["shards", "manifest", "readme", "validate"]
+        if do_publish:
+            steps += ["r2", "pages"]
+        if do_git:
+            steps.append("git")
+
+        if steps:
+            cmd = [sys.executable, str(SCRIPTS / "postfetch.py"),
+                   "--only", ",".join(steps)]
+            if do_english:
+                cmd.append("--english")
+            if do_autoprofile and ap_cities:
+                cmd += ["--autoprofile-cities", ",".join(ap_cities),
+                        "--autoprofile-limit", str(ap_limit)]
+            bits = []
+            if do_english:
+                bits.append("英文镜像")
+            if do_autoprofile and ap_cities:
+                bits.append("能力卡 " + "、".join(ap_cities))
+            run_step("后处理流水线（增强段·%s）" % (" + ".join(bits) or "仅重建分片/发布"),
+                     cmd, args.dry_run, log_fp)
         elif do_autoprofile:
             print("\n[提示] 开了补卡但没有城市（配置 autoprofile_cities 与 priority_cities 都为空），"
                   "本轮跳过能力卡")

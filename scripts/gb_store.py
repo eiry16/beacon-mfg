@@ -268,15 +268,20 @@ def upsert(records: Iterable[dict[str, Any]],
            on_move: Callable[[str, str, str], None] | None = None) -> dict[str, int]:
     """把记录按当前国标码写回归档。已存在同 id 的就地更新，跨桶移动的自动从旧桶删除。
 
-    返回 {"added": n, "updated": n, "moved": n}。
+    同一个 id 若残留在多个桶（历史跨桶迁移被中断留下的重复），本函数会**顺带去重**：
+    只保留 new_bucket 这一份，其余旧副本全部清除。这样重复能自愈，不会永久卡住 validate。
+
+    返回 {"added": n, "updated": n, "moved": n, "deduped": n}。
     on_move(id, old_bucket, new_bucket) 可选回调，用于记录迁移日志。
     """
     incoming = list(records)
     if not incoming:
-        return {"added": 0, "updated": 0, "moved": 0}
+        return {"added": 0, "updated": 0, "moved": 0, "deduped": 0}
 
     # 1. 扫全库定位每条 id 当前在哪（一次遍历，避免逐条 grep 文件）
-    old_loc: dict[str, tuple[str, int]] = {}
+    #    注意：一个 id 可能出现在多个桶（重复），所以这里是 list 而不是单个位置。
+    #    早期版本用 old_loc[sid] = (bucket, i)，后者覆盖前者 —— 重复因此永远清不干净。
+    old_loc: dict[str, list[tuple[str, int]]] = {}
     buckets: dict[str, list[dict[str, Any]]] = {}
     for bucket, _ in iter_buckets():
         rows = load_bucket(bucket)
@@ -284,10 +289,10 @@ def upsert(records: Iterable[dict[str, Any]],
         for i, r in enumerate(rows):
             sid = r.get("id")
             if sid:
-                old_loc[sid] = (bucket, i)
+                old_loc.setdefault(sid, []).append((bucket, i))
 
     # 2. 计算新归属
-    added = updated = moved = 0
+    added = updated = moved = deduped = 0
     touched: set[str] = set()
     for rec in incoming:
         sid = rec.get("id")
@@ -298,30 +303,40 @@ def upsert(records: Iterable[dict[str, Any]],
             added += 1
             continue
 
-        prev = old_loc.get(sid)
-        if prev is None:
+        prevs = old_loc.get(sid)
+        if not prevs:
             buckets.setdefault(new_bucket, []).append(rec)
             added += 1
             continue
 
-        old_bucket, idx = prev
-        if old_bucket == new_bucket:
-            buckets[old_bucket][idx] = rec          # 原地更新
+        # 分成「就在新桶里」（原地更新）和「残留在别的桶」（要清掉）两组
+        in_place = [(b, i) for (b, i) in prevs if b == new_bucket]
+        stale = [(b, i) for (b, i) in prevs if b != new_bucket]
+
+        if in_place:
+            b, i = in_place[0]
+            buckets[b][i] = rec                      # 原地更新，不追加副本
             updated += 1
+            for (b2, i2) in in_place[1:]:            # 同桶内的多余副本一并清掉
+                buckets[b2][i2] = None
+                deduped += 1
         else:
-            buckets[old_bucket][idx] = None         # 标记删除，稍后清理
             buckets.setdefault(new_bucket, []).append(rec)
             moved += 1
-            touched.add(old_bucket)
+
+        for (b2, i2) in stale:                       # 旧桶副本：标记删除，稍后清理
+            buckets[b2][i2] = None
+            deduped += 1
+            touched.add(b2)
             if on_move:
-                on_move(sid, old_bucket, new_bucket)
+                on_move(sid, b2, new_bucket)
 
     # 3. 清理被移走的空位并落盘
     for bucket in touched:
         rows = [r for r in buckets.get(bucket, []) if r is not None]
         _write_bucket(bucket, rows)
 
-    return {"added": added, "updated": updated, "moved": moved}
+    return {"added": added, "updated": updated, "moved": moved, "deduped": deduped}
 
 
 def rebuild_index() -> dict[str, Any]:
