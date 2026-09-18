@@ -8,11 +8,12 @@
 
     skills/registry/index/
         meta.json            桶数 / 记录数 / 国标码数 / 来源 HEAD（供 MCP 判新鲜度）
-        city.json            {城市: {国标码: 命中条数}}
-        terms/bXXXX.json     {词:   {国标码: 命中条数}}   按 sha1(词) % BUCKETS 分桶
+        city.json            {城市: {分片路径: 命中条数}}
+        terms/bXXXX.json     {词:   {分片路径: 命中条数}}   按 sha1(词) % BUCKETS 分桶
 
-查询时 MCP 只拉：meta + 城市表 + 命中的 1~N 个词桶 → 求交得到候选国标码 →
-只拉这些国标码对应的分片做精确过滤。复杂度从 O(总量) 降为 O(命中量)。
+查询时 MCP 只拉：meta + 城市表 + 命中的 1~N 个词桶 → 求交得到候选分片 →
+只拉这些分片做精确过滤。复杂度从 O(总量) 降为 O(命中量)。
+倒排 key 用分片路径而不是国标码：gb 为 null 的未归类记录也能被自己所在分片覆盖。
 
 词表口径（必须与 mcp/server.py 的 _tokenize 完全一致，否则会误判为空结果）：
     - CJK：滑窗 1-gram 与 2-gram（2-gram 支撑「精密加工」这类多字词，1-gram 支撑单字查询）
@@ -88,7 +89,9 @@ def head_sha() -> str:
 
 
 def iter_fp_records():
+    """产出 (分片相对路径, 记录)。路径即倒排索引的 key。"""
     for p in sorted(FP_DIR.rglob("*.jsonl")):
+        rel = p.relative_to(ROOT).as_posix()
         try:
             with open(p, "r", encoding="utf-8") as f:
                 for line in f:
@@ -96,7 +99,7 @@ def iter_fp_records():
                     if not line:
                         continue
                     try:
-                        yield json.loads(line)
+                        yield rel, json.loads(line)
                     except Exception:
                         continue
         except Exception:
@@ -115,16 +118,17 @@ def main() -> int:
     city_postings = defaultdict(lambda: defaultdict(int))
 
     n = 0
-    for rec in iter_fp_records():
+    shard_paths = set()
+    for rel, rec in iter_fp_records():
         n += 1
-        gb = str(rec.get("gb", "") or "")
-        if not gb:
-            continue
+        shard_paths.add(rel)
         city = str(rec.get("city", "") or "")
         if city:
-            city_postings[city][gb] += 1
+            city_postings[city][rel] += 1
+        # 倒排的 key 用「分片路径」而非国标码：部分记录 gb 为 null（未归类），
+        # 用国标码做 key 会把它们整个丢掉，导致走索引比全量扫描少召回。
         for term in tokenize(hay(rec)):
-            postings[term][gb] += 1
+            postings[term][rel] += 1
 
     if not n:
         print("没有读到任何 fp 分片记录，索引未生成（检查 skills/registry/fingerprint/）")
@@ -150,10 +154,10 @@ def main() -> int:
         city_path.write_text(city_data, encoding="utf-8")
         total_bytes += len(city_data.encode("utf-8"))
         meta = {
-            "version": 2,
+            "version": 3,   # v3：倒排 key 为分片路径（v2 用国标码，会漏掉 gb=null 的记录）
             "buckets": args.buckets,
             "records": n,
-            "gb_count": len({g for m in postings.values() for g in m}),
+            "shards": len(shard_paths),
             "terms": len(postings),
             "cities": len(city_postings),
             "source_head": head_sha(),
