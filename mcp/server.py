@@ -338,21 +338,34 @@ INDEX_DIR = "skills/registry/index"
 INDEX_VERSION = 3          # 倒排 key 为分片路径；v2 用国标码会漏掉 gb=null 的记录
 _index_meta_cache: Optional[Dict[str, Any]] = None
 _bucket_cache: Dict[str, Dict[str, Any]] = {}
+_shard_rec_cache: Dict[str, List[Dict[str, Any]]] = {}
 
 _RE_CJK = re.compile("[\u4e00-\u9fff\u3400-\u4dbf]+")
 _RE_WORD = re.compile(r"[a-z0-9]+")
 
 
 def _tokenize(text: str) -> List[str]:
-    """切成可索引的词。必须与 scripts/gen_search_index.py 的 tokenize 完全一致，
-    否则查询侧与索引侧口径不一致会把召回直接判成 0。
+    """切成可索引的词。必须与 scripts/gen_search_index.py 的 tokenize 保持一致。
+
     CJK 取 1-gram + 2-gram；拉丁/数字取整词 + 长度 >= 2 的前缀。
+    """
+    return _grams(text, query_mode=False)
+
+
+def _grams(text: str, query_mode: bool = False) -> List[str]:
+    """query_mode=True 时，长度 >= 2 的 CJK 串只用 2-gram。
+
+    原因：查询侧若同时用 1-gram 求交，含「酒」和「店」但不含「酒店」的分片
+    也会被算成候选，白白多拉分片（上海+酒店实测 20 片）。2-gram 已足以保证
+    召回（含「酒店」的记录必然含 bigram「酒店」），单字查询仍走 1-gram。
     """
     t = (text or "").lower()
     out = set()
     for run in _RE_CJK.findall(t):
+        long_run = len(run) >= 2
         for i, ch in enumerate(run):
-            out.add(ch)
+            if not (query_mode and long_run):
+                out.add(ch)
             if i + 2 <= len(run):
                 out.add(run[i:i + 2])
     for w in _RE_WORD.findall(t):
@@ -489,7 +502,7 @@ def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
 
     gram_groups: List[List[str]] = []
     for tok in tokens:
-        gs = _tokenize(tok)
+        gs = _grams(tok, query_mode=True)
         if not gs:
             return None
         gram_groups.append(gs)
@@ -546,19 +559,26 @@ def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
 
 
 def _records_from_paths(paths: List[str]) -> List[Dict[str, Any]]:
-    """批量读取若干 fp 分片的记录。"""
+    """批量读取若干 fp 分片的记录，并在进程内按路径缓存（重复查询近乎零成本）。"""
     out: List[Dict[str, Any]] = []
     if not paths:
         return out
-    for _path, txt in _read_many_text(list(paths)).items():
+    todo = [p for p in paths if p not in _shard_rec_cache]
+    for p in todo:
+        _shard_rec_cache[p] = []
+    for _path, txt in _read_many_text(todo).items():
+        recs: List[Dict[str, Any]] = []
         for line in txt.splitlines():
             line = line.strip()
             if not line:
                 continue
             try:
-                out.append(json.loads(line))
+                recs.append(json.loads(line))
             except Exception:
                 continue
+        _shard_rec_cache[_path] = recs
+    for p in paths:
+        out.extend(_shard_rec_cache.get(p, []))
     return out
 
 
@@ -791,7 +811,7 @@ def main() -> None:
                 "result": {
                     "protocolVersion": "2024-11-05",
                     "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "beacon-mfg-readonly", "version": "1.1.1"},
+                    "serverInfo": {"name": "beacon-mfg-readonly", "version": "1.2.0"},
                 },
             })
         elif method == "notifications/initialized":
