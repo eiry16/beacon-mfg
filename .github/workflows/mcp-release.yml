@@ -1,0 +1,47 @@
+name: MCP Release
+
+# 仅在推送 mcp-v* 标签时触发（与整仓发布 release.yml 的 v* 互不干扰）
+on:
+  push:
+    tags:
+      - "mcp-v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 打包 MCP（仅 mcp/ 目录，保持干净分发）
+        run: |
+          tag="${GITHUB_REF_NAME}"
+          tar -czf "beacon-mfg-mcp-${tag}.tar.gz" \
+            -C mcp server.py bin README.md RELEASE.md package.json
+          ls -lh "beacon-mfg-mcp-${tag}.tar.gz"
+
+      - name: 创建 GitHub Release 并上传
+        uses: softprops/action-gh-release@v1
+        with:
+          files: beacon-mfg-mcp-*.tar.gz
+          body_path: mcp/RELEASE.md
+          generate_release_notes: false
+
+  npm-publish:
+    needs: release
+    runs-on: ubuntu-latest
+    # 仅当仓库配置了 NPM_TOKEN secret 时才发布；否则此 job 自动跳过
+    if: ${{ secrets.NPM_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+      - name: 发布到 npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: mcp
+        run: npm publish --access public
