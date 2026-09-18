@@ -1,0 +1,35 @@
+{
+  "name": "beacon-mfg-mcp",
+  "version": "0.1.0",
+  "description": "Read-only MCP server exposing the BeaconMFG灯塔工厂 supplier directory (search vendors, get vendor detail, get capability card) to any MCP-compatible agent. No API key, no repo clone required.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "beacon-mfg",
+    "suppliers",
+    "manufacturing",
+    "china"
+  ],
+  "homepage": "https://github.com/eiry16/beacon-mfg#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eiry16/beacon-mfg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eiry16/beacon-mfg/issues"
+  },
+  "license": "MIT",
+  "bin": {
+    "beacon-mfg-mcp": "./bin/beacon-mfg-mcp.js"
+  },
+  "files": [
+    "server.py",
+    "bin/",
+    "README.md",
+    "RELEASE.md"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {}
+}
