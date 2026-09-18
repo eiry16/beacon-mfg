@@ -29,6 +29,7 @@ Continue / WorkBuddy 等主流 MCP 客户端。
 """
 
 import os
+import re
 import sys
 import json
 import hashlib
@@ -333,6 +334,140 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+INDEX_DIR = "skills/registry/index"
+_index_meta_cache: Optional[Dict[str, Any]] = None
+_city_index_cache: Optional[Dict[str, Any]] = None
+_bucket_cache: Dict[str, Dict[str, Any]] = {}
+
+_RE_CJK = re.compile("[\u4e00-\u9fff\u3400-\u4dbf]+")
+_RE_WORD = re.compile(r"[a-z0-9]+")
+
+
+def _tokenize(text: str) -> List[str]:
+    """切成可索引的词。必须与 scripts/gen_search_index.py 的 tokenize 完全一致，
+    否则查询侧与索引侧口径不一致会直接把召回判成 0。
+    CJK 取 1-gram + 2-gram；拉丁/数字取整词 + 长度 >= 2 的前缀。
+    """
+    t = (text or "").lower()
+    out = set()
+    for run in _RE_CJK.findall(t):
+        for i, ch in enumerate(run):
+            out.add(ch)
+            if i + 2 <= len(run):
+                out.add(run[i:i + 2])
+    for w in _RE_WORD.findall(t):
+        if len(w) >= 2:
+            out.add(w)
+            for n in range(2, min(len(w), 12)):
+                out.add(w[:n])
+        elif w:
+            out.add(w)
+    return sorted(out)
+
+
+def _index_meta() -> Optional[Dict[str, Any]]:
+    global _index_meta_cache
+    if _index_meta_cache is not None:
+        return _index_meta_cache
+    txt = fetch_text(INDEX_DIR + "/meta.json")
+    if not txt:
+        return None
+    try:
+        _index_meta_cache = json.loads(txt)
+    except Exception:
+        return None
+    return _index_meta_cache
+
+
+def _index_fresh() -> bool:
+    """索引必须来自当前已发布快照，否则宁可回退全量扫描也不能用陈旧索引。
+
+    git 模式比对 source_head 与当前 HEAD；HTTP 模式比对索引记录数与 manifest 的
+    fp 记录总数。任一不一致 → 判定陈旧 → 回退。
+    """
+    meta = _index_meta()
+    if not meta:
+        return False
+    try:
+        if REPO:
+            return meta.get("source_head") == (_head_sha() or "")
+        tot = sum(s.get("k", 0) for s in _shards_of_type("fp"))
+        return int(meta.get("records", -1)) == int(tot)
+    except Exception:
+        return False
+
+
+def _city_gbs(city: str) -> Optional[set]:
+    global _city_index_cache
+    if _city_index_cache is None:
+        txt = fetch_text(INDEX_DIR + "/city.json")
+        if not txt:
+            return None
+        try:
+            _city_index_cache = json.loads(txt)
+        except Exception:
+            return None
+    m = _city_index_cache.get(city)
+    return None if m is None else set(m.keys())
+
+
+def _term_gbs(term: str) -> Optional[set]:
+    """返回含该词的国标码集合。索引里没有该词 → 返回空集（确无命中），
+    读不到桶 → 返回 None（视为不可用，触发回退）。
+    """
+    meta = _index_meta()
+    if not meta:
+        return None
+    try:
+        buckets = int(meta["buckets"])
+    except Exception:
+        return None
+    b = int(hashlib.sha1(term.encode("utf-8")).hexdigest(), 16) % buckets
+    key = str(b)
+    if key not in _bucket_cache:
+        txt = fetch_text("%s/terms/b%04d.json" % (INDEX_DIR, b))
+        if not txt:
+            return None
+        try:
+            _bucket_cache[key] = json.loads(txt)
+        except Exception:
+            return None
+    m = _bucket_cache[key].get(term)
+    return set(m.keys()) if m else set()
+
+
+def _candidate_gbs(tokens: List[str], city: str) -> Optional[set]:
+    """用预构建索引求候选国标码；索引不可用/陈旧时返回 None 交由调用方回退。"""
+    if not _index_fresh():
+        return None
+    cands: Optional[set] = None
+    if city:
+        s = _city_gbs(city)
+        if s is None:
+            return None
+        cands = s
+        if not cands:
+            return set()
+    for tok in tokens:
+        grams = _tokenize(tok)
+        if not grams:
+            return None
+        tset: Optional[set] = None
+        for g in grams:
+            s = _term_gbs(g)
+            if s is None:
+                return None
+            tset = s if tset is None else (tset & s)
+            if not tset:
+                break
+        if tset is None:
+            return None
+        cands = tset if cands is None else (cands & tset)
+        if not cands:
+            return set()
+    return cands
+
+
 def search_vendors(query: str = "", city: str = "", gb: str = "",
                    limit: int = 20, offset: int = 0) -> Dict[str, Any]:
     limit = max(1, min(int(limit), 200))
@@ -362,21 +497,54 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             "results": matches[offset:offset + limit],
         }
 
-    # 未给国标码：走进程内全量索引（首次构建后常驻内存，秒级响应；
-    # git 模式下按 HEAD sha 缓存到磁盘，跨进程/重启也快）
-    recs = _build_fp_index()
-    scanned = len(_shards_of_type("fp"))
-    matches = []
-    for rec in recs:
-        if city and rec.get("city", "") != city:
-            continue
-        if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
-            continue
-        matches.append(_rec_summary(rec))
+    # 未给国标码：优先走「预构建倒排索引 → 只拉命中分片」（O(命中量)）。
+    # 索引缺失或陈旧时回退进程内全量索引（O(总量)，慢但结果等价）。
+    cands = _candidate_gbs(tokens, city) if (tokens or city) else None
+    via_index = cands is not None
+
+    if via_index and not cands:
+        # 索引明确判定无候选国标码 —— 无需拉任何分片
+        return {
+            "total_matched": 0,
+            "returned": 0,
+            "shards_scanned": 0,
+            "via_index": True,
+            "results": [],
+        }
+
+    if via_index:
+        fp_shards = [s for s in _shards_of_type("fp") if s.get("c") in cands]
+    else:
+        fp_shards = _shards_of_type("fp")
+
+    matches: List[Dict[str, Any]] = []
+    scanned = 0
+    if via_index:
+        # 并发拉取候选分片（通常 1~N 个）
+        with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
+            for part in ex.map(_read_fp_shard, fp_shards):
+                scanned += 1
+                for rec in part:
+                    if city and rec.get("city", "") != city:
+                        continue
+                    if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
+                        continue
+                    matches.append(_rec_summary(rec))
+    else:
+        recs = _build_fp_index()
+        scanned = len(fp_shards)
+        for rec in recs:
+            if city and rec.get("city", "") != city:
+                continue
+            if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
+                continue
+            matches.append(_rec_summary(rec))
+
     return {
         "total_matched": len(matches),
         "returned": len(matches[offset:offset + limit]),
         "shards_scanned": scanned,
+        "via_index": via_index,
         "results": matches[offset:offset + limit],
     }
 
