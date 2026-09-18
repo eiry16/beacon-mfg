@@ -91,7 +91,8 @@ MCP 服务已具备两种发布渠道（详见 `mcp/RELEASE.md`）：
 - **GitHub Release（已配 CI）**：推送 `mcp-v*` 标签即由 `.github/workflows/mcp-release.yml`
   自动打包 `mcp/` 目录为 `beacon-mfg-mcp-mcp-vX.Y.Z.tar.gz` 并创建 Release。
 - **npm 包（已备好）**：`mcp/package.json` + `mcp/bin/beacon-mfg-mcp.js`（Node 启动器，自动探测 Python）。
-  仓库配置 `NPM_TOKEN` secret 后，上述工作流会一并 `npm publish`；或本地 `npm login && npm publish`（在 `mcp/` 目录）。
+  npm 发布走独立**手动**工作流 `.github/workflows/npm-publish.yml`（GitHub Actions 页面手动触发，
+  需先在仓库 Secrets 配置 `NPM_TOKEN`）；或本地 `npm login && npm publish`（在 `mcp/` 目录）。
   装好后客户端直接用 `"command": "beacon-mfg-mcp"` 即可。
 
 ### 客户端接入速查
