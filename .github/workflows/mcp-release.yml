@@ -9,6 +9,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -20,8 +22,11 @@ jobs:
           ls -lh "beacon-mfg-mcp-${tag}.tar.gz"
 
       - name: 创建 GitHub Release 并上传
-        uses: softprops/action-gh-release@v1
-        with:
-          files: beacon-mfg-mcp-*.tar.gz
-          body_path: mcp/RELEASE.md
-          generate_release_notes: false
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="${GITHUB_REF_NAME}"
+          gh release create "$tag" \
+            --title "Beacon-MFG 只读 MCP 服务 ${tag}" \
+            --notes-file mcp/RELEASE.md \
+            "beacon-mfg-mcp-${tag}.tar.gz"
