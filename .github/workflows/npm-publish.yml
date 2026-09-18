@@ -1,0 +1,26 @@
+name: MCP npm publish
+
+# 手动触发（GitHub Actions 页面 → Run workflow）。需先在仓库 Settings → Secrets
+# 配置 NPM_TOKEN（npm 登录后 `npm token create` 生成的 publish token）。
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "要发布的 npm 版本（应与 mcp/package.json 的 version 一致）"
+        required: false
+        default: ""
+
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+      - name: 发布到 npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: mcp
+        run: npm publish --access public

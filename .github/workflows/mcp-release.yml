@@ -6,9 +6,6 @@ on:
     tags:
       - "mcp-v*"
 
-permissions:
-  contents: write
-
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -28,20 +25,3 @@ jobs:
           files: beacon-mfg-mcp-*.tar.gz
           body_path: mcp/RELEASE.md
           generate_release_notes: false
-
-  npm-publish:
-    needs: release
-    runs-on: ubuntu-latest
-    # 仅当仓库配置了 NPM_TOKEN secret 时才发布；否则此 job 自动跳过
-    if: ${{ secrets.NPM_TOKEN != '' }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          registry-url: "https://registry.npmjs.org"
-      - name: 发布到 npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        working-directory: mcp
-        run: npm publish --access public
