@@ -75,6 +75,7 @@ scripts/*
 # 表头是动态读 skills/profiles/*.json 生成的，schema 变了重跑即可同步；
 # 它产出的 企业信息收集模板.xlsx 是生成物、不入库（见文件末尾规则）。
 !scripts/gen_excel_template.py
+!scripts/gen_search_index.py
 # publish_vendor.py 是「认证档案 → 买家可见」六步发布链路的唯一一键入口
 # （skill §15）。不放行：换台机器就退化成人手逐个脚本敲。
 # sync_readme_numbers.py 同步 README 数字（预览 / --apply 两档），
