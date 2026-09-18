@@ -114,6 +114,7 @@ except Exception:
 #   2026-09-17 之前流水线缺这一步 —— 于是新城市就算补了卡也只是躺在 vendors/ 里，
 #   分片、云端、App 全都看不到。
 ALL_STEPS = ("classify", "gbindex", "recat", "enrefile", "index", "fingerprint",
+             "searchindex",
              "english", "autoprofile", "capability", "shards", "manifest", "readme",
              "validate", "assets", "r2", "pages", "git")
 
@@ -154,6 +155,7 @@ _STEP_DESC = {
     "recat": "category 重算为 industry.code 的派生值（清错标残留）",
     "index": "重建行业/地域索引 + 品类计数",
     "fingerprint": "重建 L0 指纹国标分片",
+    "searchindex": "重建 MCP 检索倒排索引（让 Agent 按需拉分片，避免全量冷启动）",
     "english": "英文镜像增量补齐（en_backfill + en_sync_industry，慢/需 ZHIPU key）",
     "autoprofile": "给本轮新抓城市补未认证能力卡（调 batch_auto_profile，纯本地推断）",
     "capability": "把 vendors/ 下的能力卡同步进 registry/capability + 回写名录 agent 字段",
@@ -289,6 +291,17 @@ def step_fingerprint(dry_run: bool = False) -> None:
     rc = _call("gen_fingerprint", *([] if dry_run else ["--apply"]))
     if rc:
         raise RuntimeError(f"gen_fingerprint 返回 {rc}")
+
+
+def step_searchindex(dry_run: bool = False) -> None:
+    """重建 MCP 检索倒排索引（skills/registry/index/）。
+
+    必须排在 fingerprint 之后（读它的产物）。缺了这一步不会报错，只会静默导致
+    MCP 检索回退成「全量拉分片 + 客户端建索引」——数据量一大就慢到不可用。
+    """
+    rc = _call("gen_search_index", *(["--dry-run"] if dry_run else []))
+    if rc:
+        raise RuntimeError(f"gen_search_index 返回 {rc}")
 
 
 _DO_ENGLISH = False  # run(english=True) / 命令行 --english 打开
@@ -864,6 +877,7 @@ _STEP_FN = {
     "recat": step_recat,
     "index": step_index,
     "fingerprint": step_fingerprint,
+    "searchindex": step_searchindex,
     "english": step_english,
     "autoprofile": step_autoprofile,
     "capability": step_capability,
