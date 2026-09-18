@@ -34,7 +34,9 @@ import json
 import hashlib
 import concurrent.futures
 import subprocess
+import tarfile
 import tempfile
+import io
 import urllib.request
 import urllib.error
 from typing import Any, Dict, List, Optional, Tuple
@@ -214,6 +216,44 @@ def _read_fp_shard(s: Dict[str, Any]) -> List[Dict[str, Any]]:
     return out
 
 
+def _build_fp_index_via_archive() -> Optional[List[Dict[str, Any]]]:
+    """git 模式：用 `git archive HEAD -- <dir>` 一次性批量取出所有 fp 分片。
+
+    只读已提交 object（本就是 maskphone 掩码态），不碰工作树、不触发 smudge、
+    不碰 index 锁 —— 安全边界与逐分片 `git show` 一致，但把 267 次 subprocess
+    降到 1 次，冷启动从 ~48s 降至数秒。任一环节失败都返回 None，由调用方退回
+    逐分片 fallback。
+    """
+    try:
+        d = os.path.join("skills", "registry", "fingerprint")
+        r = subprocess.run(
+            ["git", "-C", REPO, "archive", "HEAD", "--", d],
+            capture_output=True,
+        )
+        if r.returncode != 0 or not r.stdout:
+            return None
+        recs: List[Dict[str, Any]] = []
+        with tarfile.open(fileobj=io.BytesIO(r.stdout), mode="r:*") as tf:
+            for m in tf.getmembers():
+                if not m.isfile():
+                    continue
+                try:
+                    data = tf.extractfile(m).read().decode("utf-8", "replace")
+                except Exception:
+                    continue
+                for line in data.splitlines():
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        recs.append(json.loads(line))
+                    except Exception:
+                        continue
+        return recs if recs else None
+    except Exception:
+        return None
+
+
 def _build_fp_index() -> List[Dict[str, Any]]:
     global _fp_index, _fp_index_key
     cp = _index_cache_path()
@@ -229,7 +269,27 @@ def _build_fp_index() -> List[Dict[str, Any]]:
         except Exception:
             pass
     fp_shards = _shards_of_type("fp")
-    recs: List[Dict[str, Any]] = []
+    # git 模式优先用 `git archive` 一次性批量读（1 次 subprocess，远快于逐分片 git show）
+    if REPO:
+        recs = _build_fp_index_via_archive()
+        if recs is not None:
+            _fp_index = recs
+            _fp_index_key = key
+            if cp:
+                try:
+                    with open(cp, "w", encoding="utf-8") as f:
+                        json.dump(recs, f, ensure_ascii=False)
+                    for old in os.listdir(CACHE_DIR):
+                        if old.startswith("fpindex-") and old != os.path.basename(cp):
+                            try:
+                                os.remove(os.path.join(CACHE_DIR, old))
+                            except Exception:
+                                pass
+                except Exception:
+                    pass
+            return recs
+    # fallback：逐分片读取（HTTP 模式，或 git archive 异常时）
+    recs = []
     # git show / HTTP GET 均为 I/O 密集，线程池并发拉取可大幅缩短首次构建耗时
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
         for part in ex.map(_read_fp_shard, fp_shards):
@@ -477,7 +537,7 @@ def main() -> None:
                 "result": {
                     "protocolVersion": "2024-11-05",
                     "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "beacon-mfg-readonly", "version": "1.1.0"},
+                    "serverInfo": {"name": "beacon-mfg-readonly", "version": "1.1.1"},
                 },
             })
         elif method == "notifications/initialized":
