@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "beacon-mfg": {
+      "command": "python",
+      "args": ["/绝对路径/到/beacon-mfg/mcp/server.py"],
+      "env": {
+        "BEACON_REPO": "/绝对路径/到/beacon-mfg"
+      }
+    }
+  }
+}
