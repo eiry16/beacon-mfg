@@ -32,6 +32,7 @@ import os
 import sys
 import json
 import hashlib
+import concurrent.futures
 import subprocess
 import tempfile
 import urllib.request
@@ -168,52 +169,150 @@ def _zh_paths_for_gb(gb: str) -> List[str]:
 # --------------------------------------------------------------------------- #
 # tool 实现
 # --------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------- #
+# 全文索引：首次构建后常驻进程内存，并按 HEAD sha 缓存到磁盘，
+# 避免每次搜索都全扫 267 个 fp 分片（此前逐分片 git show 约 100s）。
+# --------------------------------------------------------------------------- #
+_fp_index: Optional[List[Dict[str, Any]]] = None
+_fp_index_key: Optional[str] = None
+
+
+def _head_sha() -> Optional[str]:
+    if not REPO:
+        return None
+    try:
+        r = subprocess.run(["git", "-C", REPO, "rev-parse", "HEAD"],
+                           capture_output=True, text=True)
+        if r.returncode == 0 and r.stdout.strip():
+            return r.stdout.strip()
+    except Exception:
+        pass
+    return None
+
+
+def _index_cache_path() -> Optional[str]:
+    if not REPO:  # HTTP 模式不落盘缓存，避免读到陈旧的已发布快照
+        return None
+    key = (BEACON_REPO or BEACON_SOURCE) + "|" + (_head_sha() or "nosha")
+    h = hashlib.sha1(key.encode("utf-8")).hexdigest()
+    return os.path.join(CACHE_DIR, "fpindex-" + h + ".json")
+
+
+def _read_fp_shard(s: Dict[str, Any]) -> List[Dict[str, Any]]:
+    txt = fetch_text(s["p"])
+    out: List[Dict[str, Any]] = []
+    if not txt:
+        return out
+    for line in txt.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            out.append(json.loads(line))
+        except Exception:
+            continue
+    return out
+
+
+def _build_fp_index() -> List[Dict[str, Any]]:
+    global _fp_index, _fp_index_key
+    cp = _index_cache_path()
+    key = cp or "mem"
+    if _fp_index is not None and _fp_index_key == key:
+        return _fp_index
+    if cp and os.path.exists(cp):
+        try:
+            with open(cp, "r", encoding="utf-8") as f:
+                _fp_index = json.load(f)
+                _fp_index_key = key
+                return _fp_index
+        except Exception:
+            pass
+    fp_shards = _shards_of_type("fp")
+    recs: List[Dict[str, Any]] = []
+    # git show / HTTP GET 均为 I/O 密集，线程池并发拉取可大幅缩短首次构建耗时
+    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
+        for part in ex.map(_read_fp_shard, fp_shards):
+            recs.extend(part)
+    _fp_index = recs
+    _fp_index_key = key
+    if cp:
+        try:
+            with open(cp, "w", encoding="utf-8") as f:
+                json.dump(recs, f, ensure_ascii=False)
+            for old in os.listdir(CACHE_DIR):
+                if old.startswith("fpindex-") and old != os.path.basename(cp):
+                    try:
+                        os.remove(os.path.join(CACHE_DIR, old))
+                    except Exception:
+                        pass
+        except Exception:
+            pass
+    return recs
+
+
+def _hay(rec: Dict[str, Any]) -> str:
+    return " ".join(str(rec.get(k, "")) for k in ("co", "city", "gb")) + " " + \
+           " ".join(rec.get("proc", []) or []) + " " + \
+           " ".join(rec.get("mat", []) or []) + " " + \
+           " ".join(rec.get("cert", []) or [])
+
+
+def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "id": rec.get("id"),
+        "company": rec.get("co"),
+        "city": rec.get("city"),
+        "gb": rec.get("gb"),
+        "badge": rec.get("cl"),
+        "score": rec.get("sc"),
+        "has_phone": bool(rec.get("tel")),
+        "process": rec.get("proc", []),
+        "material": rec.get("mat", []),
+        "cert": rec.get("cert", []),
+    }
+
+
 def search_vendors(query: str = "", city: str = "", gb: str = "",
                    limit: int = 20, offset: int = 0) -> Dict[str, Any]:
     limit = max(1, min(int(limit), 200))
     offset = max(0, int(offset))
-    fp_shards = _shards_of_type("fp")
-    # 国标码命中则只扫对应分片；否则扫全部（首扫后由 HTTP 缓存加速）
-    if gb:
-        fp_shards = [s for s in fp_shards if s.get("c") == gb]
-
     q = (query or "").strip().lower()
-    matches: List[Dict[str, Any]] = []
-    scanned = 0
-    for s in fp_shards:
-        txt = fetch_text(s["p"])
-        if not txt:
-            continue
-        scanned += 1
-        for line in txt.splitlines():
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                rec = json.loads(line)
-            except Exception:
-                continue
-            if city and rec.get("city", "") != city:
-                continue
-            if q:
-                hay = " ".join(str(rec.get(k, "")) for k in ("co", "city", "gb")) + " " + \
-                      " ".join(rec.get("proc", []) or []) + " " + \
-                      " ".join(rec.get("mat", []) or []) + " " + \
-                      " ".join(rec.get("cert", []) or [])
-                if q not in hay.lower():
+    # 多词按空格分词，要求全部命中(AND)——这样「上海 酒店」也能正确匹配，
+    # 而非必须作为连续子串出现。单关键词时退化为原行为。
+    tokens = [t for t in q.split() if t]
+
+    # 给了国标码：只扫对应分片（最快路径，不构建全量索引）
+    if gb:
+        fp_shards = [s for s in _shards_of_type("fp") if s.get("c") == gb]
+        scanned = 0
+        matches: List[Dict[str, Any]] = []
+        for s in fp_shards:
+            scanned += 1
+            for rec in _read_fp_shard(s):
+                if city and rec.get("city", "") != city:
                     continue
-            matches.append({
-                "id": rec.get("id"),
-                "company": rec.get("co"),
-                "city": rec.get("city"),
-                "gb": rec.get("gb"),
-                "badge": rec.get("cl"),
-                "score": rec.get("sc"),
-                "has_phone": bool(rec.get("tel")),
-                "process": rec.get("proc", []),
-                "material": rec.get("mat", []),
-                "cert": rec.get("cert", []),
-            })
+                if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
+                    continue
+                matches.append(_rec_summary(rec))
+        return {
+            "total_matched": len(matches),
+            "returned": len(matches[offset:offset + limit]),
+            "shards_scanned": scanned,
+            "results": matches[offset:offset + limit],
+        }
+
+    # 未给国标码：走进程内全量索引（首次构建后常驻内存，秒级响应；
+    # git 模式下按 HEAD sha 缓存到磁盘，跨进程/重启也快）
+    recs = _build_fp_index()
+    scanned = len(_shards_of_type("fp"))
+    matches = []
+    for rec in recs:
+        if city and rec.get("city", "") != city:
+            continue
+        if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
+            continue
+        matches.append(_rec_summary(rec))
     return {
         "total_matched": len(matches),
         "returned": len(matches[offset:offset + limit]),
@@ -378,7 +477,7 @@ def main() -> None:
                 "result": {
                     "protocolVersion": "2024-11-05",
                     "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "beacon-mfg-readonly", "version": "1.0.0"},
+                    "serverInfo": {"name": "beacon-mfg-readonly", "version": "1.1.0"},
                 },
             })
         elif method == "notifications/initialized":
