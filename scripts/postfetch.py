@@ -46,7 +46,7 @@
 
 慢活要隔离（cron / GUI 请照做）
 ------------------------------
-english（每轮几百到上千条，700~1300 条/小时）与 autoprofile（每城全量扫名录 +
+english（每轮几百到上千条，约 5,000~6,500 条/小时）与 autoprofile（每城全量扫名录 +
 LLM 推断）动辄几十分钟。它们是排在发布**之前**的，一旦被外部超时杀掉，当天的
 发布就一起没了 —— 这正是 2026-09-15 晚上「本地都重建好了、手机还是旧数据」的成因。
 
@@ -310,7 +310,8 @@ _DO_ENGLISH = False  # run(english=True) / 命令行 --english 打开
 def step_english(dry_run: bool = False) -> None:
     """英文镜像增量补齐（en_backfill → en_sync_industry）。
 
-    慢（GLM-4-Flash 限速，实测 700~1300 条/小时）且吃 ZHIPU_API_KEY，故默认关。
+    慢（2026-09-19 实测令牌桶 EN_RPM=20 下约 5300~5600 条/小时）且吃 ZHIPU_API_KEY，
+    故默认关。
 
     **必须排在 shards / manifest 之前**：manifest 会统计 en 分片的数量与 sha1，
     先把清单算出来再补英文 = 清单里那批英文分片是空的。
@@ -327,12 +328,39 @@ def step_english(dry_run: bool = False) -> None:
         # en_backfill 自身会回退读 .env，这里只是提前给个明白话，避免跑半天才发现没 key。
         print("   （提示：环境里没有 ZHIPU_API_KEY，将依赖 en_backfill 回退读 .env）")
 
-    rc = _call("en_backfill")
-    if rc:
-        raise RuntimeError(f"en_backfill 返回 {rc}")
-    rc = _call("en_sync_industry")
-    if rc:
-        raise RuntimeError(f"en_sync_industry 返回 {rc}")
+    # 2026-09-19：互斥粒度从「en_backfill 自己持锁」提升为「整步 english 持锁」。
+    #   ① 覆盖 en_sync_industry —— 它同样整桶重写 data/en/gb，原先不在锁内，手动
+    #      en_backfill 与流水线撞车时仍可能两个进程同时重写同一个英文桶。
+    #   ② 拿不到锁时**不再让整条增强段中止**：原先 en_backfill 返回退出码 3
+    #      （被别的进程挡下）会被当成失败 raise，后面的能力卡 / shards / manifest /
+    #      readme / validate / r2 / pages / git 全都不跑 —— 一次手动翻译就能让当天
+    #      的发布整段消失。「别人正在翻译」不是错误，跳过本步、继续跑后面才对。
+    # en_backfill 会被 _call 在本进程内 import，拿到的就是下面这个模块对象，
+    # 因此这里加的锁它认得出来（_EN_LOCK_FD 非空即放行），不会自己挡自己。
+    try:
+        import en_backfill as _en
+    except Exception:  # noqa: BLE001 —— 导入失败就退回「由 en_backfill 自己加锁」
+        _en = None
+    if _en is not None and not _en.acquire_en_lock():
+        print("   ⊘ 另一个进程正在回填英文（持有翻译锁），本轮跳过 english 步，"
+              "后续步骤照常执行；英文由对方或下个周期补齐。")
+        return
+    try:
+        # --retranslate（2026-09-19 补）：翻译失败时 build_en_record 会用**中文原值**
+        # 兜底写进 en 文件，下一轮它在 existing 里就被当成「已翻译」永久跳过 ——
+        # 光靠「补缺失 id」永远修不回来，中文会一直留在英文库里（实测 2085 条）。
+        # validate 不检查英文残留中文，所以这件事完全无声。加上 --retranslate 后
+        # 每轮顺手把「仍是中文兜底」的记录拉回来重翻，流水线才真正自愈。
+        # 代价可控：无残留的桶照旧秒跳过，有残留的才多花几条请求。
+        rc = _call("en_backfill", "--retranslate")
+        if rc:
+            raise RuntimeError(f"en_backfill 返回 {rc}")
+        rc = _call("en_sync_industry")
+        if rc:
+            raise RuntimeError(f"en_sync_industry 返回 {rc}")
+    finally:
+        if _en is not None:
+            _en.release_en_lock()
 
 
 _AUTOPROFILE_CITIES = None  # run() 经 autoprofile_cities= 注入；step_autoprofile 读取
@@ -459,6 +487,18 @@ def _pq_interpreters() -> list[str]:
     return [p for p in (env, _DEFAULT_PQ_PY) if p]
 
 
+def _pq_shards_exist() -> bool:
+    """dist/parquet 里到底有没有列式分片。
+
+    pq 层是**可选派生层**：本机 dist/parquet 不存在时（实测就是这样），
+    gen_manifest 的 collect_parquet() 会直接返回空，压根不需要 pyarrow。
+    """
+    d = ROOT / "dist" / "parquet"
+    if not d.exists():
+        return False
+    return next(d.rglob("*.parquet"), None) is not None
+
+
 def step_manifest(dry_run: bool = False) -> None:
     """重算分片清单。
 
@@ -470,6 +510,12 @@ def step_manifest(dry_run: bool = False) -> None:
     ② 坑：pq（列式）层依赖 pyarrow。没装的话 gen_manifest 只在 stderr 打印一句警告
     然后正常退出 0 —— 清单看着是新的，实际少了一层。这里主动检测，装了 pyarrow
     的解释器存在就换它跑，都不可用才算失败（宁可红，不要假绿）。
+
+    ⚠ 2026-09-19 修正：原先的检测**只看解释器有没有 pyarrow**，不看有没有 pq 分片。
+    dist/parquet 不存在时（本机现状）gen_manifest 根本不碰 pyarrow，却照样被判红
+    → 夜间 cron 会卡死在 manifest 步，后面的 r2/pages/git 全部不跑（当天数据无声不上云）。
+    现在改为：**只有 dist/parquet 真存在列式分片时**才要求 pyarrow；
+    没有 pq 层就用当前解释器直接生成，"宁可红"的原意（别静默丢一层）保持不变。
     """
     if dry_run:
         print("   （--dry-run：不重算清单）")
@@ -480,6 +526,13 @@ def step_manifest(dry_run: bool = False) -> None:
                             cwd=str(ROOT)).returncode
         if rc:
             raise RuntimeError(f"sync_assets --only phone 返回 {rc}")
+    if not _pq_shards_exist():
+        # 没有列式层 → 没有可丢的东西，直接用当前解释器
+        print("   （dist/parquet 无列式分片：无需 pyarrow，清单不含 pq 层）")
+        rc = _call("gen_manifest")
+        if rc:
+            raise RuntimeError(f"gen_manifest 返回 {rc}")
+        return
     if _has_pyarrow():
         rc = _call("gen_manifest")
         if rc:
