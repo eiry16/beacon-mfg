@@ -274,3 +274,25 @@ APK/app/src/androidTest/assets/e2e_expect.json
 # 体积大（~170MB）且只在出事故回滚时用得到，不入库。2026-09-19
 # ---------------------------------------------------------------------------
 .backup_dedup_*/
+
+# ---------------------------------------------------------------------------
+# 后端/运维内容：非 MCP 检索所需，不进 Git（2026-09-19 用户明确口径）
+#
+# Git 仓库只放「MCP 工作必需」的内容：发布数据（data/、fingerprint、index）+
+# L2 自述（skills/vendors/*/SKILL.md）清单 + 协议规范 + MCP server（mcp/）。
+# 采集/翻译/维护流水线、本机运维工具、审计日志等后端产物一律不入库。
+# Cloudflare 发布面由 deploy_pages.build() 控制，本就只含 data/ + fingerprint/
+# + index/ + vendors SKILL.md + 能力卡分片，不含任何脚本/运维文件。
+# 与既有口径一致：项目调试说明.md / CRON_*.md / docs 内部材料同规则。
+# （scripts/ 下的运维留档已由上方 `scripts/*` 整体忽略，无需重复列举。）
+# ---------------------------------------------------------------------------
+# 构建产物：Android 安装包（含仓库根目录下误入的包；上方 APK/*.apk 只覆盖子目录）
+*.apk
+# 数据质量检查报告（后端 QA 产物，非发布数据）
+QA_*.md
+# 去重审计日志（scripts/dedup_gb.py 按需再生成，非发布数据）
+data/_dedup_removed_ids.json
+# 本机 cron 管理 UI（运维工具，非 MCP 检索所需；与 项目调试说明.md 同口径）
+cron_manager.py
+cron_manager.html
+start_cron_manager.bat
