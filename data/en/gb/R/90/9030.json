@@ -1995,13 +1995,13 @@
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "health care"
+      "Healthcare"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 11 Qianxi北路, Deji Town",
+    "address_en": "No. 11, Qianxi North Road, Deji Town",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -2015,13 +2015,7 @@
       "source": "name",
       "evidence": "休闲"
     },
-    "industry_en": {
-      "code": "9030",
-      "name_en": "Leisure & Sightseeing Activities",
-      "level": "class",
-      "name": "休闲观光活动",
-      "confidence": "medium"
-    },
+    "industry_en": null,
     "_bucket": "R/90/9030"
   },
   {
@@ -2737,17 +2731,17 @@
   },
   {
     "id": "CN-MFG-0110881",
-    "company_en": "Hengzhicai Leisure and Health Care (Mingyang Business Plaza Store)",
+    "company_en": "Hengzhicai Leisure Healthcare (Mingyang Business Plaza Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "health care"
+      "Healthcare"
     ],
     "region": {
       "province": "Guangxi",
       "city": "Nanning"
     },
-    "address_en": "3rd Floor,贝壳Hotel, Mingyang Industrial Park, Mingyang Avenue",
+    "address_en": "3rd Floor, Shell Hotel, Mingyang Industrial Park, Mingyang Avenue",
     "contact_phone": "0771-3316766",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -2761,13 +2755,7 @@
       "source": "name",
       "evidence": "休闲"
     },
-    "industry_en": {
-      "code": "9030",
-      "name_en": "Leisure & Sightseeing Activities",
-      "level": "class",
-      "name": "休闲观光活动",
-      "confidence": "medium"
-    },
+    "industry_en": null,
     "_bucket": "R/90/9030"
   },
   {
@@ -4218,6 +4206,64 @@
       "name": "休闲观光活动",
       "confidence": "medium"
     },
+    "_bucket": "R/90/9030"
+  },
+  {
+    "id": "CN-MFG-0139575",
+    "company_en": "Dali Xiangyanghua Leisure Homestay (Dali Ancient City Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Homestay"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "大理白族自治州"
+    },
+    "address_en": "No. 6 Beimen Street, Dali Town",
+    "contact_phone": "159****3539",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "9030",
+      "name": "休闲观光活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 休闲观光活动 > 休闲观光活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "休闲"
+    },
+    "industry_en": null,
+    "_bucket": "R/90/9030"
+  },
+  {
+    "id": "CN-MFG-0139882",
+    "company_en": "As You Wish Villa Leisure Homestay (Dali Ancient City Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Deluxe Homestay"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "大理白族自治州"
+    },
+    "address_en": "No. 85, Group 15, Nanmen Street, Dali City, Yunnan Province",
+    "contact_phone": "133****1689",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "9030",
+      "name": "休闲观光活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 休闲观光活动 > 休闲观光活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "休闲"
+    },
+    "industry_en": null,
     "_bucket": "R/90/9030"
   }
 ]

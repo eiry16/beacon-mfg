@@ -4900,13 +4900,7 @@
       "source": "name",
       "evidence": "标准件"
     },
-    "industry_en": {
-      "code": "3482",
-      "name_en": "Fasteners",
-      "level": "class",
-      "name": "紧固件制造",
-      "confidence": "high"
-    },
+    "industry_en": null,
     "_bucket": "C/34/3482"
   },
   {
@@ -15459,13 +15453,7 @@
       "source": "name",
       "evidence": "标准件"
     },
-    "industry_en": {
-      "code": "3482",
-      "name_en": "Fasteners",
-      "level": "class",
-      "name": "紧固件制造",
-      "confidence": "high"
-    },
+    "industry_en": null,
     "_bucket": "C/34/3482"
   },
   {
@@ -16345,13 +16333,7 @@
       "source": "name",
       "evidence": "螺丝"
     },
-    "industry_en": {
-      "code": "3482",
-      "name_en": "Fasteners",
-      "level": "class",
-      "name": "紧固件制造",
-      "confidence": "high"
-    },
+    "industry_en": null,
     "_bucket": "C/34/3482"
   },
   {
@@ -33338,13 +33320,7 @@
       "source": "name",
       "evidence": "螺丝"
     },
-    "industry_en": {
-      "code": "3482",
-      "name_en": "Fasteners",
-      "level": "class",
-      "name": "紧固件制造",
-      "confidence": "high"
-    },
+    "industry_en": null,
     "_bucket": "C/34/3482"
   },
   {
@@ -39070,7 +39046,7 @@
       "province": "Guizhou",
       "city": "遵义"
     },
-    "address_en": "16 Building, 1-8 Door, Xiangyuan International Hardware, Electrical and Mechanical City, Majiawan",
+    "address_en": "16th Building, 1-8 Door, Xiangyuan International Hardware, Electrical and Mechanical City, Majiawan",
     "contact_phone": "138****2716; 182****0698",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -39084,13 +39060,7 @@
       "source": "name",
       "evidence": "螺丝"
     },
-    "industry_en": {
-      "code": "3482",
-      "name_en": "Fasteners",
-      "level": "class",
-      "name": "紧固件制造",
-      "confidence": "high"
-    },
+    "industry_en": null,
     "_bucket": "C/34/3482"
   },
   {
@@ -40098,6 +40068,35 @@
       "name": "紧固件制造",
       "confidence": "high"
     },
+    "_bucket": "C/34/3482"
+  },
+  {
+    "id": "CN-MFG-0138800",
+    "company_en": "Yongwang Screw",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Sealing Parts"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 103 Guquan Road (next to the south gate of Xinshijie Hardware and Building Materials Market)",
+    "contact_phone": "021-50856008; 137****8877",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "3482",
+      "name": "紧固件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 紧固件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "螺丝"
+    },
+    "industry_en": null,
     "_bucket": "C/34/3482"
   }
 ]
