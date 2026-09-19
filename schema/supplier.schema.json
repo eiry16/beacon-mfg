@@ -44,7 +44,8 @@
       "required": ["province", "city"],
       "properties": {
         "province": { "type": "string", "description": "省/直辖市，如 广东" },
-        "city": { "type": "string", "description": "市，如 深圳" }
+        "city": { "type": "string", "description": "地级市，如 深圳。县级市（昆山/海盐…）在高德里归到地级市名下，见 district" },
+        "district": { "type": "string", "description": "区县/县级市（去 市/县/区 后缀），如 昆山、浦东新、宝安。2026-09-19 新增：高德对县级市返回的 city 是地级市名，昆山的数据全落在 city=苏州 下，靠本字段才能按「昆山」检索到" }
       }
     },
     "lat": { "type": ["number", "null"], "description": "纬度（LBS 检索预留）" },
