@@ -142,6 +142,14 @@ scripts/collect/fixtures/
 # 二者纯标准库、无密钥，需进仓以保证脱敏流程可复现。
 !scripts/_renormalize_masked.py
 !scripts/_verify_staged_mask.py
+# 2026-09-19 数据库质量修复：本仓库的存量去重清洗、县级市区县回填、判重回归测试。
+# 三者都是修复动作的可复现脚本，必须进仓。
+!scripts/dedup_gb.py
+!scripts/backfill_district.py
+!scripts/test_dedup.py
+# 英文镜像分片写入改造（修 en 跨分片重复 id）+ 指纹新增 dist 字段，均为本次修复的核心代码。
+!scripts/en_backfill.py
+!scripts/gen_fingerprint.py
 # CI 工作流对外开放（贡献者提 PR 时自动校验数据），其余 .github 内容不外发
 .github/*
 !.github/workflows/
@@ -261,3 +269,8 @@ APK/app/src/androidTest/assets/e2e_expect.json
 # 它曾在 859fad5 误入版本库，已用 `git rm --cached` 取消跟踪（本地文件保留）。
 # ---------------------------------------------------------------------------
 项目调试说明.md
+# ---------------------------------------------------------------------------
+# 去重清洗前的 data/gb 快照（scripts/dedup_gb.py --apply 自动生成）。
+# 体积大（~170MB）且只在出事故回滚时用得到，不入库。2026-09-19
+# ---------------------------------------------------------------------------
+.backup_dedup_*/

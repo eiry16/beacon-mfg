@@ -313,7 +313,7 @@ def _build_fp_index() -> List[Dict[str, Any]]:
 
 
 def _hay(rec: Dict[str, Any]) -> str:
-    return " ".join(str(rec.get(k, "")) for k in ("co", "city", "gb")) + " " + \
+    return " ".join(str(rec.get(k, "")) for k in ("co", "city", "dist", "gb")) + " " + \
            " ".join(rec.get("proc", []) or []) + " " + \
            " ".join(rec.get("mat", []) or []) + " " + \
            " ".join(rec.get("cert", []) or [])
@@ -324,6 +324,7 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
         "id": rec.get("id"),
         "company": rec.get("co"),
         "city": rec.get("city"),
+        "district": rec.get("dist"),
         "gb": rec.get("gb"),
         "badge": rec.get("cl"),
         "score": rec.get("sc"),
@@ -599,7 +600,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         for s in fp_shards:
             scanned += 1
             for rec in _read_fp_shard(s):
-                if city and rec.get("city", "") != city:
+                # city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在高德里归到地级市名下，
+                # 记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
+                if city and city not in (rec.get("city", ""), rec.get("dist", "")):
                     continue
                 if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
                     continue
@@ -631,7 +634,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         # 只拉候选分片（git 模式一次 archive 批量取，通常 1~N 个）
         scanned = len(cands)
         for rec in _records_from_paths(cands):
-            if city and rec.get("city", "") != city:
+# city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在高德里归到地级市名下，
+            # 记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
+            if city and city not in (rec.get("city", ""), rec.get("dist", "")):
                 continue
             if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
                 continue
@@ -640,7 +645,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         recs = _build_fp_index()
         scanned = len(_shards_of_type("fp"))
         for rec in recs:
-            if city and rec.get("city", "") != city:
+# city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在高德里归到地级市名下，
+            # 记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
+            if city and city not in (rec.get("city", ""), rec.get("dist", "")):
                 continue
             if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
                 continue
@@ -729,7 +736,10 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "query": {"type": "string", "description": "关键词：企业名/工艺/材料/认证子串"},
-                "city": {"type": "string", "description": "城市名精确匹配，如 深圳 / 东莞"},
+                "city": {"type": "string",
+                         "description": "城市名精确匹配，如 深圳 / 东莞；"
+                                        "也接受区县或县级市（如 昆山、海盐），"
+                                        "这些地方在高德里归地级市名下，靠 district 字段命中"},
                 "gb": {"type": "string", "description": "国标码，如 3484(机械零部件加工)。给了就只扫对应分片"},
                 "limit": {"type": "integer", "default": 20, "description": "返回条数上限(1-200)"},
                 "offset": {"type": "integer", "default": 0, "description": "分页偏移"},
