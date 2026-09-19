@@ -26,6 +26,48 @@
       "source": "gb_token",
       "evidence": "电批发"
     },
-    "source_url": "https://www.amap.com/place/B0IGS740XJ"
+    "source_url": "https://www.amap.com/place/B0IGS740XJ",
+    "industry_en": {
+      "code": "5138",
+      "name_en": "Household Appliances Wholesale",
+      "level": "class",
+      "name": "日用家电批发",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0123688",
+    "company_en": "Jinsheng Kitchenware Rug Small Appliance Wholesale Department",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Jiulong Street Office Hebin Road",
+    "contact_phone": "183****7898",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5138",
+      "name": "日用家电批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 纺织、服装及家庭用品批发 > 日用家电批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "家电批发"
+    },
+    "industry_en": {
+      "code": "5138",
+      "name_en": "Household Appliances Wholesale",
+      "level": "class",
+      "name": "日用家电批发",
+      "confidence": "high"
+    },
+    "_bucket": "F/51/5138"
   }
 ]

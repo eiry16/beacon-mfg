@@ -1191,7 +1191,7 @@
   },
   {
     "id": "CN-MFG-0033943",
-    "company_en": "Epson Certification Service Center, Shuibei West Road,展望数码广场Store",
+    "company_en": "Aipu Certified Service Center Shibaixi West Road展望数码广场Store",
     "category": "科学研究和技术服务业",
     "category_en": "科学研究和技术服务业",
     "keywords_en": [
@@ -1201,12 +1201,20 @@
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "8 Shuibei West Road, Negative Floor A337-338,展望数码广场",
+    "address_en": "No. 8 Shibaixi West Road, B1 Floor, A337-338,展望数码广场",
     "contact_phone": "020-38889791; 020-89282526",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "M/74/7455",
+    "industry": {
+      "code": "7455",
+      "name": "认证认可服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 质检技术服务 > 认证认可服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "认证服务"
+    },
     "industry_en": {
       "code": "7455",
       "name_en": "Certification & Accreditation Services",
@@ -1214,7 +1222,7 @@
       "name": "认证认可服务",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0FFIRYA5M"
+    "_bucket": "M/74/7455"
   },
   {
     "id": "CN-MFG-0033944",
@@ -1245,22 +1253,30 @@
   },
   {
     "id": "CN-MFG-0033945",
-    "company_en": "Guangzhou Southeast China Certification Service Co., Ltd.",
+    "company_en": "Guangzhou Dongnanhaiya Certification Service Co., Ltd.",
     "category": "科学研究和技术服务业",
     "category_en": "科学研究和技术服务业",
     "keywords_en": [
-      "Certification Service"
+      "Certification service"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "Tianyuan Road,萌芽1968",
+    "address_en": "Tianyuan Road, Yuanming 1968",
     "contact_phone": "4008663192",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "M/74/7455",
+    "industry": {
+      "code": "7455",
+      "name": "认证认可服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 质检技术服务 > 认证认可服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "认证服务"
+    },
     "industry_en": {
       "code": "7455",
       "name_en": "Certification & Accreditation Services",
@@ -1268,7 +1284,7 @@
       "name": "认证认可服务",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0L3DR68Z0"
+    "_bucket": "M/74/7455"
   },
   {
     "id": "CN-MFG-0033946",
@@ -1998,5 +2014,40 @@
       "confidence": "low"
     },
     "source_url": "https://www.amap.com/place/B0I0JS1V8X"
+  },
+  {
+    "id": "CN-MFG-0104682",
+    "company_en": "Aipson Certified Service Center Gulou Road Store",
+    "category": "科学研究和技术服务业",
+    "category_en": "科学研究和技术服务业",
+    "keywords_en": [
+      "Laptop Repair"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 311 Gulou Road, inside Kunming Metallurgical Research Institute, 30 meters after the exit for motor vehicles",
+    "contact_phone": "0871-65812398; 180****8842",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "7455",
+      "name": "认证认可服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 质检技术服务 > 认证认可服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "认证服务"
+    },
+    "industry_en": {
+      "code": "7455",
+      "name_en": "Certification & Accreditation Services",
+      "level": "class",
+      "name": "认证认可服务",
+      "confidence": "high"
+    },
+    "_bucket": "M/74/7455"
   }
 ]

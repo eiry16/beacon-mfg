@@ -658,18 +658,26 @@
     "category": "科学研究和技术服务业",
     "category_en": "科学研究和技术服务业",
     "keywords_en": [
-      "metrological inspection"
+      "metrological testing"
     ],
     "region": {
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 70-72 Renmin South Road (步行420 meters from Jiu Bai Chi Subway Station Exit 3)",
+    "address_en": "No. 70-72 Renmin South Road (步行420 meters from Jui Bai Chi Subway Station Exit 3)",
     "contact_phone": "021-57724426",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "M/74/7453",
+    "industry": {
+      "code": "7453",
+      "name": "计量服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 质检技术服务 > 计量服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "计量"
+    },
     "industry_en": {
       "code": "7453",
       "name_en": "Metrology & Measurement Services",
@@ -677,7 +685,7 @@
       "name": "计量服务",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B00156D2S4"
+    "_bucket": "M/74/7453"
   },
   {
     "id": "CN-MFG-0033161",

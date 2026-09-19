@@ -26,7 +26,14 @@
       "source": "name",
       "evidence": "糖果"
     },
-    "source_url": "https://www.amap.com/place/B0I6UCI21M"
+    "source_url": "https://www.amap.com/place/B0I6UCI21M",
+    "industry_en": {
+      "code": "1421",
+      "name_en": null,
+      "level": "class",
+      "name": "糖果、巧克力制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0044514",
@@ -55,7 +62,14 @@
       "source": "name",
       "evidence": "巧克力"
     },
-    "source_url": "https://www.amap.com/place/B0MG5R4OEA"
+    "source_url": "https://www.amap.com/place/B0MG5R4OEA",
+    "industry_en": {
+      "code": "1421",
+      "name_en": null,
+      "level": "class",
+      "name": "糖果、巧克力制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0075353",
@@ -84,7 +98,14 @@
       "source": "name",
       "evidence": "巧克力"
     },
-    "source_url": "https://www.amap.com/place/B0L60UJPWC"
+    "source_url": "https://www.amap.com/place/B0L60UJPWC",
+    "industry_en": {
+      "code": "1421",
+      "name_en": null,
+      "level": "class",
+      "name": "糖果、巧克力制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0082770",
@@ -114,7 +135,14 @@
       "source": "name",
       "evidence": "巧克力"
     },
-    "source_url": "https://www.amap.com/place/B0LKXHMMK7"
+    "source_url": "https://www.amap.com/place/B0LKXHMMK7",
+    "industry_en": {
+      "code": "1421",
+      "name_en": null,
+      "level": "class",
+      "name": "糖果、巧克力制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0082776",
@@ -144,6 +172,48 @@
       "source": "name",
       "evidence": "巧克力"
     },
-    "source_url": "https://www.amap.com/place/B0LAF9170T"
+    "source_url": "https://www.amap.com/place/B0LAF9170T",
+    "industry_en": {
+      "code": "1421",
+      "name_en": null,
+      "level": "class",
+      "name": "糖果、巧克力制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0137259",
+    "company_en": "Xinhuashu Yizu Chocolateland Vacation Villa",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Vacation Hotel"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 34, 1st Street, 3rd District, Yile Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "1421",
+      "name": "糖果、巧克力制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 糖果、巧克力及蜜饯制造 > 糖果、巧克力制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "巧克力"
+    },
+    "industry_en": {
+      "code": "1421",
+      "name_en": null,
+      "level": "class",
+      "name": "糖果、巧克力制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/14/1421"
   }
 ]

@@ -1728,12 +1728,20 @@
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "No. 306 Sanyuanli Avenue, 3rd Floor,卜蜂莲花, Exit C1, Sanyuanli Subway Station",
+    "address_en": "No. 306 Sanyuanli Avenue, 3rd Floor,卜蜂莲花 (C1 Exit of Sanyuanli Subway Station)",
     "contact_phone": "191****0359",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "KTV"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -1741,7 +1749,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0LDSSVPN9"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0037432",
@@ -2889,7 +2897,7 @@
   },
   {
     "id": "CN-MFG-0037554",
-    "company_en": "Nanjing Mingjuhui",
+    "company_en": "Nanjing Mingju Hui",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -2899,12 +2907,20 @@
       "province": "Jiangsu",
       "city": "Nanjing"
     },
-    "address_en": "No. 160 Zhongshan East Road, 3rd Floor, Jinta隆Hotel",
+    "address_en": "No. 160 Zhongshan East Road, 3rd Floor, Jin Tailong Hotel",
     "contact_phone": "025-66823663",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "文化、体育和娱乐业"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -2912,7 +2928,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0FFIXMQRI"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0037555",
@@ -3175,12 +3191,20 @@
       "province": "Jiangsu",
       "city": "Nanjing"
     },
-    "address_en": "No. 88 Huaihai Road,苏宁Life Plaza Xinstreet Store, 6th Floor",
+    "address_en": "No. 88 Huaihai Road, 6th Floor,苏宁生活广场 Xinstreet Store",
     "contact_phone": "181****9188",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "文化、体育和娱乐业"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -3188,7 +3212,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0M6RR1P73"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0037566",
@@ -3229,12 +3253,20 @@
       "province": "Jiangsu",
       "city": "Nanjing"
     },
-    "address_en": "No. 88 Huaihai Road,苏宁Life Plaza Xinstreet Store, 3rd Floor",
+    "address_en": "No. 88 Huaihai Road, 3rd Floor,苏宁生活广场 Xinstreet Store",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "文化、体育和娱乐业"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -3242,7 +3274,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0JDH98M3N"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0037619",
@@ -3709,7 +3741,7 @@
   },
   {
     "id": "CN-MFG-0037639",
-    "company_en": "Mai KTV·AI Fusheng (Chengdu Xingjie Li Store)",
+    "company_en": "MaiKTV · AI Accompaniment (Chengdu Xinstreet Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -3719,12 +3751,20 @@
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 99, Huijin Road,附317-",
+    "address_en": "No. 99 Fuli Road, Attached 317-",
     "contact_phone": "199****6780",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "KTV"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -3732,7 +3772,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0IDRUN3IF"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0037640",
@@ -4690,7 +4730,7 @@
   },
   {
     "id": "CN-MFG-0037769",
-    "company_en": "Mai KTV·AI Fusheng (Wujiao Changzhihui Store)",
+    "company_en": "MaiKTV·AI Accompaniment (Wujiaochang Chuangzhihui Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -4700,12 +4740,20 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 1038 Anbo Road (near the intersection of Guodingle Road and Xiangyin Road / opposite Heshenghui凯悦酒店)",
+    "address_en": "No. 1038 Anbo Road (near the intersection of Guodingle Road and Xiangyin Road / opposite Heshenghui Kaiyue Hotel)",
     "contact_phone": "021-55828283; 137****9370; 158****9388",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "KTV"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -4713,7 +4761,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0HDFNFXF9"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0037770",
@@ -6127,18 +6175,26 @@
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Wholesale KTV"
+      "All-you-can-eat KTV"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Hangzhou"
     },
-    "address_en": "No. 77 South Zhongshan Road, 1st Floor, Lixing西门",
+    "address_en": "No. 77 Zhongshan South Road, 1st Floor of Lisheng West Gate",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "文化、体育和娱乐业"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -6146,7 +6202,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0FFLDY0PM"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0037973",
@@ -6609,23 +6665,31 @@
   },
   {
     "id": "CN-MFG-0038036",
-    "company_en": "Happy迪 (Linlonghui Branch)",
+    "company_en": "HuanleDi (Linlonghui Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Wholesale KTV",
+      "Vending KTV",
       "Dance Hall"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Nanjing"
     },
-    "address_en": "No. 3, 3rd Floor, Linlonghui, Kaicheng Road, Qilinmen",
+    "address_en": "3rd Floor, Linlonghui, Kaicheng Road, Qilinmen",
     "contact_phone": "025-58819998; 189****2228",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "文化、体育和娱乐业"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -6633,7 +6697,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0L1GUBLN7"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038037",
@@ -7258,22 +7322,30 @@
   },
   {
     "id": "CN-MFG-0038102",
-    "company_en": "Happy迪 KTV (Hongpailou Branch)",
+    "company_en": "HuanleDi KTV (Hongbaيلou Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Wholesale KTV"
+      "Vending KTV"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 2, 1st Section, West Second Ring Road, Hongpailou Wuhou Life Plaza (near Gaoshengqiao)",
+    "address_en": "No. 2, Section 1, Second Ring Road, Hongbaيلou Wuhou Life Plaza (near Gaoshengqiao)",
     "contact_phone": "028-85098887",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "KTV"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -7281,7 +7353,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B001C92EC8"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038103",
@@ -7447,22 +7519,30 @@
   },
   {
     "id": "CN-MFG-0038109",
-    "company_en": "INLOVE KTV (Suning Plaza Branch)",
+    "company_en": "INLOVE KTV (Suning Plaza Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Wholesale KTV"
+      "All-you-can-eat KTV"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 8, North Section of Tianfu Avenue, 6th Floor, Suning Plaza City奥特莱斯",
+    "address_en": "No. 8 North Section of Tianfu Avenue, 6th Floor, Suning Plaza City奥特莱斯",
     "contact_phone": "028-85356688",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "KTV"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -7470,7 +7550,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0I07ZJ0XT"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038110",
@@ -7636,22 +7716,30 @@
   },
   {
     "id": "CN-MFG-0038165",
-    "company_en": "Happy迪 KTV (Wuhan Gutian Branch)",
+    "company_en": "HuanleDi KTV (Wuhan Gutian Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Wholesale KTV"
+      "Vending KTV"
     ],
     "region": {
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 2, Guotian 4th Road Intersection with Jiefang Avenue, 2nd Floor, Hong Kong Image",
+    "address_en": "2nd Floor, Hong Kong Image, Intersection of Jiefang Avenue and Gutian 4th Road",
     "contact_phone": "027-83858999",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "KTV"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -7659,7 +7747,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B001B1FOK7"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038166",
@@ -7744,22 +7832,30 @@
   },
   {
     "id": "CN-MFG-0038169",
-    "company_en": "Happy迪 KTV (Qingshan Branch)",
+    "company_en": "HuanleDi KTV (Qingshan Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Wholesale KTV"
+      "Vending KTV"
     ],
     "region": {
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 1, Special No. 1, Jiaoyou 3rd Road Intersection, Youmi Life Plaza (beside Qingshan Court)",
+    "address_en": "No. 1, Special Road, Jiefang Avenue and Jianshe 3rd Road Intersection (beside Qingshan Court)",
     "contact_phone": "027-86668666",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "KTV"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -7767,7 +7863,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B001B1HA2I"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038170",
@@ -7879,22 +7975,30 @@
   },
   {
     "id": "CN-MFG-0038174",
-    "company_en": "Happy迪 (Hanxi Branch)",
+    "company_en": "HuanleDi (Hanxi Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Wholesale KTV"
+      "Vending KTV"
     ],
     "region": {
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 667 Jiefang Avenue, 2nd Floor, Youmi Life Plaza (beside Xinhaijing Hotel)",
+    "address_en": "2nd Floor, Youmi Life Plaza, No. 667 Jiefang Avenue (beside Xinhaijing Hotel)",
     "contact_phone": "027-83993111",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "文化、体育和娱乐业"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -7902,7 +8006,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0HR0CVNTR"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038175",
@@ -8149,7 +8253,7 @@
   },
   {
     "id": "CN-MFG-0038232",
-    "company_en": "Xibei Jiaoyu Dance",
+    "company_en": "Western Friendship Dance",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -8159,12 +8263,20 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 1855 Zhongshan North Road, 3rd Floor, Huarewa万家",
+    "address_en": "No. 1855 North Zhongshan Road, 3rd Floor, Huarewa万家",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "文化、体育和娱乐业"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -8172,7 +8284,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0JBH1ZJC9"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038233",
@@ -10606,7 +10718,7 @@
   },
   {
     "id": "CN-MFG-0038638",
-    "company_en": "Jue尔顿 Large Dance and Music City",
+    "company_en": "Jue尔顿Large Dance Hall",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -10616,12 +10728,20 @@
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "Near No. 12-附25 Jinxian Bridge Road",
+    "address_en": "Near No. 12-附25 Jinsen Bridge Road",
     "contact_phone": "028-87703621",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "文化、体育和娱乐业"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -10629,7 +10749,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0FFF9VH7F"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038639",
@@ -10643,12 +10763,20 @@
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 236-附3 Yingmen Road (nearby)",
+    "address_en": "Near No. 236-Attached 3 Yingmen Road",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "歌舞厅"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -10656,7 +10784,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B001C7WCES"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038640",
@@ -11183,12 +11311,20 @@
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 425 Luoshilu South Road, Fan Yue·City奥特莱斯F2 Floor",
+    "address_en": "No. 425 Luoshilu South Road, F2 Floor, Fan Yue·City奥特莱斯",
     "contact_phone": "155****3213",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/90/9011",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "文化、体育和娱乐业"
+    },
     "industry_en": {
       "code": "9011",
       "name_en": "Karaoke & Dance Hall Entertainment",
@@ -11196,7 +11332,7 @@
       "name": "歌舞厅娱乐活动",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0LB4ACUZF"
+    "_bucket": "R/90/9011"
   },
   {
     "id": "CN-MFG-0038721",
@@ -11684,6 +11820,48 @@
       "source": "name",
       "evidence": "KTV"
     },
-    "source_url": "https://www.amap.com/place/B0LD04DIGS"
+    "source_url": "https://www.amap.com/place/B0LD04DIGS",
+    "industry_en": {
+      "code": "9011",
+      "name_en": "Karaoke & Dance Hall Entertainment",
+      "level": "class",
+      "name": "歌舞厅娱乐活动",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0112195",
+    "company_en": "Jinqu Diyin KTV",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Bar"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 157 Wuyi West Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "9011",
+      "name": "歌舞厅娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 歌舞厅娱乐活动",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "KTV"
+    },
+    "industry_en": {
+      "code": "9011",
+      "name_en": "Karaoke & Dance Hall Entertainment",
+      "level": "class",
+      "name": "歌舞厅娱乐活动",
+      "confidence": "high"
+    },
+    "_bucket": "R/90/9011"
   }
 ]

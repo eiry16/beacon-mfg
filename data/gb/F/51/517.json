@@ -369,5 +369,54 @@
       "evidence": "配件批发"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0131502",
+    "company": "手机维修配件批发(君盛百货店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "洗衣机维修"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗"
+    },
+    "address": "西二村十四巷12号(龙园地铁站B口步行440米)",
+    "contact_phone": "177****7239",
+    "lat": 22.728852,
+    "lng": 114.268989,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFZ0VUT",
+      "type": "购物服务;家电电子卖场;手机销售|生活服务;维修站点;维修站点",
+      "typecode": "060305|071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "手机维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南联",
+      "adcode": "440307",
+      "search_keyword": "洗衣机维修"
+    },
+    "industry": {
+      "code": "517",
+      "name": "机械设备、五金产品及电子产品批发",
+      "level": "group",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "配件批发"
+    },
+    "is_manufacturer": false
   }
 ]

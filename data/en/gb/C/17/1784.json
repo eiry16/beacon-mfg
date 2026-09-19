@@ -1,31 +1,33 @@
 [
   {
     "id": "CN-MFG-0019065",
-    "company_en": "Haotian Color棚 Sign Canvas",
+    "company_en": "Haotian Color棚 Billboard Canvas",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
-      "Aluminum profile",
-      "Aluminum alloy"
+      "Aluminum Profiles",
+      "Aluminum Alloy"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Huizhou"
     },
-    "address_en": "Xinwei Town Huangzhuang Huangling Road No. 113",
+    "address_en": "No. 113 Huangling Road, Huangzhuang, Xinxu Town",
     "contact_phone": "136****0402",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/17/1784",
-    "industry_en": {
+    "industry": {
       "code": "1784",
-      "name_en": null,
-      "level": "class",
       "name": "篷、帆布制造",
-      "confidence": "high"
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 产业用纺织制成品制造 > 篷、帆布制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "帆布"
     },
-    "source_url": "https://www.amap.com/place/B0LUS761SV"
+    "industry_en": null,
+    "_bucket": "C/17/1784"
   },
   {
     "id": "CN-MFG-0019155",

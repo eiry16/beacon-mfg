@@ -8,7 +8,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "上城"
     },
     "address": "虎玉路9号",
     "contact_phone": "0571-87921117; 0571-87922227",
@@ -57,7 +58,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "海珠"
     },
     "address": "新滘中路新海街9号",
     "contact_phone": "020-84293368; 020-89888333",
@@ -106,7 +108,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "禅城"
     },
     "address": "岭南天地商业中心祖庙大街4号",
     "contact_phone": "133****7931",
@@ -156,7 +159,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "天河"
     },
     "address": "华穗路6号首层自编a01房",
     "contact_phone": "176****8836; 198****7398",
@@ -205,7 +209,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙华"
     },
     "address": "民繁路红山6979商业中心13A-1层102号",
     "contact_phone": "181****1799",
@@ -253,7 +258,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "福田"
     },
     "address": "福保街道石厦社区石厦六街新天石厦铭苑2B43",
     "contact_phone": "134****9043",
@@ -302,7 +308,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "黄浦"
     },
     "address": "南京东路第一百货C座一楼800号",
     "contact_phone": "131****8009",
@@ -350,7 +357,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "青浦"
     },
     "address": "徐泾镇蟠鼎路123弄8号上海蟠龙新天地",
     "contact_phone": "132****3978",
@@ -377,6 +385,55 @@
       "business_area": "徐泾",
       "adcode": "310118",
       "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "8850",
+      "name": "博物馆",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 文化艺术业 > 博物馆 > 博物馆",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "博物馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0129375",
+    "company": "巧克力博物馆(南京东路店)",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "甜品"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "黄浦"
+    },
+    "address": "南京东路100号(南京东路地铁站7号口步行360米)",
+    "contact_phone": "待核实",
+    "lat": 31.238614,
+    "lng": 121.487765,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JUAKPUEL",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "巧克力",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北京路",
+      "adcode": "310101",
+      "search_keyword": "甜品"
     },
     "industry": {
       "code": "8850",

@@ -55,7 +55,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "富阳"
     },
     "address": "春南路与春联大道交叉口东200米",
     "contact_phone": "133****0913",
@@ -102,7 +103,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "党农线94号",
     "contact_phone": "178****7878",
@@ -157,7 +159,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "镇隆镇楼下村镇隆大道947号",
     "contact_phone": "158****9619",
@@ -204,7 +207,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "秋长街道白石洞永光路28号(神头磁电惠州有限公司西北门旁)",
     "contact_phone": "137****2286",
@@ -251,7 +255,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "常州"
+      "city": "常州",
+      "district": "溧阳"
     },
     "address": "清溪路商业街4号08-09号",
     "contact_phone": "139****6848",
@@ -298,7 +303,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "城北西路2755-18号",
     "contact_phone": "155****5188",
@@ -345,7 +351,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "新吴"
     },
     "address": "兴源南路88号",
     "contact_phone": "131****5178",
@@ -392,7 +399,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "浦口"
     },
     "address": "绕城公路西50米",
     "contact_phone": "151****1008",
@@ -439,7 +447,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "苏州工业园区青丘街72号",
     "contact_phone": "0512-62831800",
@@ -496,7 +505,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "坪山"
     },
     "address": "牛角龙新村(锦龙地铁站B口步行430米)",
     "contact_phone": "待核实",
@@ -545,7 +555,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "宜兴"
     },
     "address": "通蠡中路26号",
     "contact_phone": "0510-87409633",
@@ -1135,5 +1146,55 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0138278",
+    "company": "福斯流体控制(苏州)有限公司 泵密封事业部(利胜路)",
+    "category": "标准件",
+    "keywords": [
+      "机械密封",
+      "密封件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中"
+    },
+    "address": "苏州工业园区胜浦街道园区利胜路26号",
+    "contact_phone": "待核实",
+    "lat": 31.332765,
+    "lng": 120.822686,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF4JO1D",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "高端制造与国际贸易区",
+      "adcode": "320506",
+      "search_keyword": "机械密封"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
   }
 ]

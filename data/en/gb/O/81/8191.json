@@ -29,7 +29,14 @@
       "source": "gb_token",
       "evidence": "车修理"
     },
-    "source_url": "https://www.amap.com/place/B0J0SHG41G"
+    "source_url": "https://www.amap.com/place/B0J0SHG41G",
+    "industry_en": {
+      "code": "8191",
+      "name_en": null,
+      "level": "class",
+      "name": "自行车修理",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0068062",
@@ -61,7 +68,14 @@
       "source": "gb_token",
       "evidence": "车修理"
     },
-    "source_url": "https://www.amap.com/place/B0JGRA1U9Q"
+    "source_url": "https://www.amap.com/place/B0JGRA1U9Q",
+    "industry_en": {
+      "code": "8191",
+      "name_en": null,
+      "level": "class",
+      "name": "自行车修理",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0068476",
@@ -93,7 +107,14 @@
       "source": "gb_token",
       "evidence": "车修理"
     },
-    "source_url": "https://www.amap.com/place/B0LKUZYIAP"
+    "source_url": "https://www.amap.com/place/B0LKUZYIAP",
+    "industry_en": {
+      "code": "8191",
+      "name_en": null,
+      "level": "class",
+      "name": "自行车修理",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0068477",
@@ -125,7 +146,14 @@
       "source": "gb_token",
       "evidence": "车修理"
     },
-    "source_url": "https://www.amap.com/place/B0LKS5IDKE"
+    "source_url": "https://www.amap.com/place/B0LKS5IDKE",
+    "industry_en": {
+      "code": "8191",
+      "name_en": null,
+      "level": "class",
+      "name": "自行车修理",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0068614",
@@ -157,6 +185,48 @@
       "source": "gb_token",
       "evidence": "车修理"
     },
-    "source_url": "https://www.amap.com/place/B0MB45Z1DH"
+    "source_url": "https://www.amap.com/place/B0MB45Z1DH",
+    "industry_en": {
+      "code": "8191",
+      "name_en": null,
+      "level": "class",
+      "name": "自行车修理",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0134539",
+    "company_en": "Caiji Diandongcheshi Xiu Li Dian (Jinghua Yuan Dian)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "No. 1, Building 39, Jinghua Yuan, Yanjialong (300 meters walk from Xintang Subway Station C Exit)",
+    "contact_phone": "138****9775",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8191",
+      "name": "自行车修理",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 其他日用产品修理业 > 自行车修理",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "车修理"
+    },
+    "industry_en": {
+      "code": "8191",
+      "name_en": null,
+      "level": "class",
+      "name": "自行车修理",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8191"
   }
 ]

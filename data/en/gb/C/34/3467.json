@@ -242,6 +242,48 @@
       "source": "name",
       "evidence": "包装机械"
     },
-    "source_url": "https://www.amap.com/place/B0KRLD7BKU"
+    "source_url": "https://www.amap.com/place/B0KRLD7BKU",
+    "industry_en": {
+      "code": "3467",
+      "name_en": "Packaging Machinery",
+      "level": "class",
+      "name": "包装专用设备制造",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0093710",
+    "company_en": "Guizhou Yunxiang Packaging Machinery Co., Ltd.",
+    "category": "电子元器件",
+    "category_en": "Electronic Components",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "260 meters southwest of Haohang Logistics and Transportation Co., Ltd.",
+    "contact_phone": "155****7692",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3467",
+      "name": "包装专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 包装专用设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "包装机械"
+    },
+    "industry_en": {
+      "code": "3467",
+      "name_en": "Packaging Machinery",
+      "level": "class",
+      "name": "包装专用设备制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/34/3467"
   }
 ]

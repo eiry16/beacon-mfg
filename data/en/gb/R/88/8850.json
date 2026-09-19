@@ -80,7 +80,14 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "source_url": "https://www.amap.com/place/B0M6P5LN78"
+    "source_url": "https://www.amap.com/place/B0M6P5LN78",
+    "industry_en": {
+      "code": "8850",
+      "name_en": "Museums",
+      "level": "class",
+      "name": "博物馆",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0067813",
@@ -110,7 +117,14 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "source_url": "https://www.amap.com/place/B0H0JZUQ52"
+    "source_url": "https://www.amap.com/place/B0H0JZUQ52",
+    "industry_en": {
+      "code": "8850",
+      "name_en": "Museums",
+      "level": "class",
+      "name": "博物馆",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0081418",
@@ -139,7 +153,14 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "source_url": "https://www.amap.com/place/B0IUGALWQE"
+    "source_url": "https://www.amap.com/place/B0IUGALWQE",
+    "industry_en": {
+      "code": "8850",
+      "name_en": "Museums",
+      "level": "class",
+      "name": "博物馆",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0081426",
@@ -168,7 +189,14 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "source_url": "https://www.amap.com/place/B0LRFS6RMZ"
+    "source_url": "https://www.amap.com/place/B0LRFS6RMZ",
+    "industry_en": {
+      "code": "8850",
+      "name_en": "Museums",
+      "level": "class",
+      "name": "博物馆",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0082809",
@@ -198,7 +226,14 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "source_url": "https://www.amap.com/place/B0KARHAG6C"
+    "source_url": "https://www.amap.com/place/B0KARHAG6C",
+    "industry_en": {
+      "code": "8850",
+      "name_en": "Museums",
+      "level": "class",
+      "name": "博物馆",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0082895",
@@ -227,6 +262,48 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "source_url": "https://www.amap.com/place/B0LABH43FK"
+    "source_url": "https://www.amap.com/place/B0LABH43FK",
+    "industry_en": {
+      "code": "8850",
+      "name_en": "Museums",
+      "level": "class",
+      "name": "博物馆",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0129375",
+    "company_en": "Kecao Museum (Nanjing East Road Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Desserts"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 100 Nanjing East Road (步行360 meters from Nanjing East Road Subway Station Exit 7)",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8850",
+      "name": "博物馆",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 文化艺术业 > 博物馆 > 博物馆",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "博物馆"
+    },
+    "industry_en": {
+      "code": "8850",
+      "name_en": "Museums",
+      "level": "class",
+      "name": "博物馆",
+      "confidence": "high"
+    },
+    "_bucket": "R/88/8850"
   }
 ]

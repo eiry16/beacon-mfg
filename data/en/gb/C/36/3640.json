@@ -28,7 +28,14 @@
       "source": "gb_token",
       "evidence": "速汽车"
     },
-    "source_url": "https://www.amap.com/place/B0JR6LRRXY"
+    "source_url": "https://www.amap.com/place/B0JR6LRRXY",
+    "industry_en": {
+      "code": "3640",
+      "name_en": null,
+      "level": "class",
+      "name": "低速汽车制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0058250",
@@ -60,6 +67,13 @@
       "source": "gb_token",
       "evidence": "速汽车"
     },
-    "source_url": "https://www.amap.com/place/B0GRFSD5EH"
+    "source_url": "https://www.amap.com/place/B0GRFSD5EH",
+    "industry_en": {
+      "code": "3640",
+      "name_en": null,
+      "level": "class",
+      "name": "低速汽车制造",
+      "confidence": "high"
+    }
   }
 ]

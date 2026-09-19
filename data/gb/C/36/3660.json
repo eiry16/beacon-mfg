@@ -74,7 +74,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "小越工业区紫金路二号",
     "contact_phone": "187****7599",
@@ -121,7 +122,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "宁波富宇塑料工业有限公司西南侧240米",
     "contact_phone": "待核实",
@@ -168,7 +170,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "北仑"
     },
     "address": "银鸥塑料制品厂西侧230米",
     "contact_phone": "152****2806",
@@ -215,7 +218,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "武乡路365号",
     "contact_phone": "待核实",
@@ -262,7 +266,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "衙前路584号富春塑胶总公司内",
     "contact_phone": "189****6980",
@@ -309,7 +314,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "常州"
+      "city": "常州",
+      "district": "新北"
     },
     "address": "电子产业园新竹二路16号",
     "contact_phone": "待核实",
@@ -352,11 +358,13 @@
     "company": "广州海天汽车配件有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料配件"
+      "塑料配件",
+      "冲压"
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "花都"
     },
     "address": "赤坭大道中71号中自编之二",
     "contact_phone": "020-37723069",
@@ -403,7 +411,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "增城"
     },
     "address": "中新镇中福北路3号",
     "contact_phone": "020-82866382",
@@ -450,7 +459,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "南海"
     },
     "address": "邓岗西门路与北沙路交叉口西南300米",
     "contact_phone": "0757-85663688",
@@ -497,7 +507,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "顺德"
     },
     "address": "杏坛镇百安路光华工业区西区一路2号3a厂房",
     "contact_phone": "待核实",
@@ -544,7 +555,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "顺德"
     },
     "address": "大良塑料二厂有限公司西南门东南60米",
     "contact_phone": "待核实",
@@ -639,7 +651,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "新圩镇东风村宏邦塑胶工业园B栋2楼",
     "contact_phone": "0752-3339669",
@@ -851,7 +864,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "青浦"
     },
     "address": "外青松公路3688号",
     "contact_phone": "189****6916",
@@ -923,39 +937,6 @@
     "_bucket": "C/36/3660"
   },
   {
-    "id": "CN-MFG-0002586",
-    "company": "广州海天汽车配件有限公司",
-    "category": "钣金冲压",
-    "keywords": [
-      "冲压"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "广州"
-    },
-    "address": "赤坭大道中71号中自编之二",
-    "contact_phone": "020-37723069",
-    "lat": 23.390427,
-    "lng": 113.072417,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3660",
-      "name": "汽车车身、挂车制造",
-      "level": "class",
-      "path": "C 制造业 > 汽车制造业 > 汽车车身、挂车制造 > 汽车车身、挂车制造",
-      "confidence": "high",
-      "source": "name",
-      "evidence": "汽车配件"
-    },
-    "is_manufacturer": true,
-    "_bucket": "C/36/3660"
-  },
-  {
     "id": "CN-MFG-0021795",
     "company": "汽修汽配电路",
     "category": "电子元器件",
@@ -964,7 +945,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "宜兴"
     },
     "address": "大宅路与亦乐路交叉口东北380米",
     "contact_phone": "138****8114",
@@ -1011,7 +993,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "宜兴"
     },
     "address": "查林村蠡西路与104国道交叉口东北50米",
     "contact_phone": "159****5023",
@@ -1058,7 +1041,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "惠山"
     },
     "address": "佳运通物流东北门",
     "contact_phone": "139****9785",
@@ -1105,7 +1089,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "嘉善"
     },
     "address": "南展路111号",
     "contact_phone": "185****0721",
@@ -1152,7 +1137,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "桐乡"
     },
     "address": "现代大道屠新线",
     "contact_phone": "182****1990",
@@ -1199,7 +1185,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "罗湖"
     },
     "address": "金稻田路1089-3号",
     "contact_phone": "137****5087",
@@ -1246,7 +1233,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "白云"
     },
     "address": "鸦岗村石门街孔桥街2-1号",
     "contact_phone": "156****5877",
@@ -1293,7 +1281,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "兴文路700号6栋",
     "contact_phone": "待核实",
@@ -1340,7 +1329,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "下沙浙江三花汽车零部件有限公司",
     "contact_phone": "待核实",
@@ -1389,7 +1379,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "菊城路311号3幢",
     "contact_phone": "021-59900063; 137****1155",
@@ -1446,7 +1437,8 @@
     ],
     "region": {
       "province": "四川",
-      "city": "成都"
+      "city": "成都",
+      "district": "龙泉驿"
     },
     "address": "合菱西路66号",
     "contact_phone": "待核实",
@@ -1506,7 +1498,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "鄞州"
     },
     "address": "福庆南路与北斗路交叉口东380米",
     "contact_phone": "159****4933; 187****7454",
@@ -1558,7 +1551,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "秦淮"
     },
     "address": "解放路35-2号",
     "contact_phone": "139****7187",
@@ -1610,7 +1604,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "滨湖"
     },
     "address": "华庄镇苏锡西路88-9号停车场",
     "contact_phone": "138****6795",
@@ -1661,7 +1656,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "南海"
     },
     "address": "桂城天佑五路20号",
     "contact_phone": "185****6553",
@@ -1712,7 +1708,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "禅城"
     },
     "address": "郊边二路卢江新村南侧约40米",
     "contact_phone": "0757-82809687; 0757-82822168; 138****8728",
@@ -1764,7 +1761,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "常州"
+      "city": "常州",
+      "district": "新北"
     },
     "address": "太湖西路18号",
     "contact_phone": "135****1699",
@@ -1815,7 +1813,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "静安"
     },
     "address": "胶州路252弄1号",
     "contact_phone": "136****6816",
@@ -1866,7 +1865,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "黄浦"
     },
     "address": "国货路360号",
     "contact_phone": "166****6537; 189****2705",
@@ -1917,7 +1917,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "姑苏"
     },
     "address": "胥江路138号(新市桥地铁站3西北口步行240米)",
     "contact_phone": "0512-68202363",
@@ -1968,7 +1969,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "姑苏"
     },
     "address": "解放东路226号(姑苏行政中心对面)",
     "contact_phone": "0512-68156119",
@@ -2019,7 +2021,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "木渎镇长江路3号6幢297号(江南汽配城)",
     "contact_phone": "0512-67425760",
@@ -2070,7 +2073,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "姑苏"
     },
     "address": "城北西路1588号新东方汽配城1幢101-107室(南门旁)",
     "contact_phone": "0512-68382620",
@@ -2121,7 +2125,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "福田"
     },
     "address": "金田路2004-14号(福民地铁站F口旁)",
     "contact_phone": "0755-83800493; 134****3036; 139****7659",
@@ -2172,7 +2177,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "福田"
     },
     "address": "滨河路福田村大门坊14号103",
     "contact_phone": "189****1243",
@@ -2223,7 +2229,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "福田"
     },
     "address": "八卦岭宿舍区43栋汽车改装.保养.大灯升级",
     "contact_phone": "134****4330; 166****4742",
@@ -2274,7 +2281,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "越秀"
     },
     "address": "恒福路155号",
     "contact_phone": "020-83491888",
@@ -2325,7 +2333,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "拱墅"
     },
     "address": "潮鸣街道环城东路莫衙营166号",
     "contact_phone": "0571-85186787; 134****8182",
@@ -2376,7 +2385,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "上城"
     },
     "address": "石桥路198号德胜汽配城1幢520号(浙江德胜汽配市场东北门旁)",
     "contact_phone": "189****5634",
@@ -2475,7 +2485,8 @@
     ],
     "region": {
       "province": "湖北",
-      "city": "武汉"
+      "city": "武汉",
+      "district": "蔡甸"
     },
     "address": "市场路11号幸福小城3期市场路",
     "contact_phone": "186****0691",
@@ -2523,7 +2534,8 @@
     ],
     "region": {
       "province": "湖北",
-      "city": "武汉"
+      "city": "武汉",
+      "district": "蔡甸"
     },
     "address": "市场路10号",
     "contact_phone": "186****0691",
@@ -3738,7 +3750,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "谢春路1300弄-9号",
     "contact_phone": "021-63581508",
@@ -3786,7 +3799,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "外冈镇才长泾村600号",
     "contact_phone": "待核实",
@@ -3861,6 +3875,55 @@
       "business_area": "",
       "adcode": "530111",
       "search_keyword": "餐厅"
+    },
+    "industry": {
+      "code": "3660",
+      "name": "汽车车身、挂车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车车身、挂车制造 > 汽车车身、挂车制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽配"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0136514",
+    "company": "鑫隆祥宾馆(武汉体育中心海天汽配城店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "宾馆"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "蔡甸"
+    },
+    "address": "东风大道海天汽配大世界西区33栋18号1层",
+    "contact_phone": "133****8350",
+    "lat": 30.467819,
+    "lng": 114.133935,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKLD84TS",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "经济型",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沌口",
+      "adcode": "420114",
+      "search_keyword": "宾馆"
     },
     "industry": {
       "code": "3660",

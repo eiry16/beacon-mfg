@@ -8,7 +8,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "北八路3号锦驰工业区A栋一楼4号",
     "contact_phone": "189****7217",
@@ -57,7 +58,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "秦淮"
     },
     "address": "王府大街8号测绘大厦F16层",
     "contact_phone": "待核实",
@@ -107,7 +109,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "虎丘"
     },
     "address": "东渚街道富春江路188号江苏医疗器械科技产业园加速器2号楼1楼",
     "contact_phone": "0512-65884925",
@@ -156,7 +159,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "五常街道清石餐厅东南约40米",
     "contact_phone": "待核实",
@@ -205,7 +209,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "西湖"
     },
     "address": "翠苑街道教工路149号",
     "contact_phone": "0571-88067184",
@@ -254,7 +259,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "越秀"
     },
     "address": "人民北路452号",
     "contact_phone": "191****1087",
@@ -303,7 +309,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "鼓楼"
     },
     "address": "建宁路178-6号",
     "contact_phone": "130****3620",
@@ -352,7 +359,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "越秀"
     },
     "address": "广园西路121号美博城A座附楼",
     "contact_phone": "020-29886999; 171****0423; 185****5439",
@@ -401,7 +409,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "奉贤"
     },
     "address": "浦星公路5200号",
     "contact_phone": "021-57485588",
@@ -449,7 +458,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "福田"
     },
     "address": "福田街道福华一路348号卓悦中心西区4层401-402号",
     "contact_phone": "180****2544",
@@ -499,7 +509,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "上城"
     },
     "address": "四季青街道民心路88号东方君悦2幢1楼",
     "contact_phone": "待核实",
@@ -548,7 +559,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "黄浦"
     },
     "address": "南昌路134号(淮海中路地铁站1号口步行430米)",
     "contact_phone": "172****2155; 182****5106",
@@ -597,7 +609,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "普陀"
     },
     "address": "长寿路1118弄悦达国际A座13F",
     "contact_phone": "135****1210",
@@ -646,7 +659,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "常熟"
     },
     "address": "琴湖路168号大润发1层1023",
     "contact_phone": "0512-52768385",
@@ -886,7 +900,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "青浦"
     },
     "address": "诸陆西路与徐盈路交叉口西南320米",
     "contact_phone": "待核实",
@@ -913,6 +928,55 @@
       "business_area": "徐泾",
       "adcode": "310118",
       "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "7320",
+      "name": "工程和技术研究和试验发展",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 研究和试验发展 > 工程和技术研究和试验发展 > 工程和技术研究和试验发展",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "研究所"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0139065",
+    "company": "石湾陶瓷工业研究所有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "工业陶瓷"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "禅城"
+    },
+    "address": "大江路267号",
+    "contact_phone": "0757-82265424",
+    "lat": 23.012449,
+    "lng": 113.078684,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F510C4B",
+      "type": "科教文化服务;科研机构;科研机构",
+      "typecode": "141300",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石湾",
+      "adcode": "440604",
+      "search_keyword": "工业陶瓷"
     },
     "industry": {
       "code": "7320",

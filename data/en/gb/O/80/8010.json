@@ -300,7 +300,14 @@
       "source": "name",
       "evidence": "保姆"
     },
-    "source_url": "https://www.amap.com/place/B0FFFWY6GE"
+    "source_url": "https://www.amap.com/place/B0FFFWY6GE",
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0083464",
@@ -331,7 +338,14 @@
       "source": "name",
       "evidence": "保姆"
     },
-    "source_url": "https://www.amap.com/place/B0FFGT2AG9"
+    "source_url": "https://www.amap.com/place/B0FFGT2AG9",
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0089890",
@@ -360,6 +374,794 @@
       "source": "gb_token",
       "evidence": "家庭服务"
     },
-    "source_url": "https://www.amap.com/place/B0MAYS0L67"
+    "source_url": "https://www.amap.com/place/B0MAYS0L67",
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0097008",
+    "company_en": "Nong Fengjie Home Service Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Appliance Repair",
+      "Washing Machine Repair",
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Dashandong Baozishan Nong Fengjie Home Service",
+    "contact_phone": "150****5418",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0097797",
+    "company_en": "Yunmo Laundry & Home Service",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning",
+      "Laundry"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Junfa Times Junyuan Ziyunxin Yuan",
+    "contact_phone": "175****9802",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0112481",
+    "company_en": "Guangxi Nanning Tenghui Family Service Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Appliance Repair",
+      "Air Conditioner Repair",
+      "Washing Machine Repair",
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "140 meters west of the intersection of Cuixin Road and Yuxin Street",
+    "contact_phone": "133****5296",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "家庭服务"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0113665",
+    "company_en": "Sandefang Family Service",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Laundry"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Unit 203, Building 29, Block B, Zhongjian Happy City",
+    "contact_phone": "173****2256",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "家庭服务"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0120031",
+    "company_en": "Suoyang County Zhengchang Town Yu Hang Home Services Center",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Appliance Repair"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "200 meters east of the intersection of County Road 308 and Wolong Avenue",
+    "contact_phone": "173****7721",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0124879",
+    "company_en": "LH+ Laundry",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 1-17 Yunjing World",
+    "contact_phone": "181****9316",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0124916",
+    "company_en": "Guizhou Zhijiji Home Service Chain Store (Panshan Liyuan Store)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 3 Building, Panshan Liyuan, Upstream Line of Shachong Road",
+    "contact_phone": "0851-85562398",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0124961",
+    "company_en": "Can rainbow to home · home service · dry cleaning (Poly Phoenix Bay Store) (Closed for Business)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 107, 1st Floor, Commercial Garage, Business Market, Phase II F Area, No. 95 Taoyuan Road, Shachong Road, Sandouchong Road",
+    "contact_phone": "152****4205",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0125155",
+    "company_en": "Xinjie Home Cleaning Laundry and Shoe Cleaning Professional Tailoring",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "North 460 meters from the intersection of Zhunyi Middle Road and Zhongshan Middle Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0125915",
+    "company_en": "Liangjie Dry Cleaning and Home Cleaning",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "60 meters northwest of the north gate of Xinjin Modern City",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0125917",
+    "company_en": "Dry Cleaning & Home Cleaning",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "20 meters southeast of the intersection of Zhiyuan Second Street and Zhiyuan Third Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0126331",
+    "company_en": "Home Cleaning",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 15, east side of Indonesia Garden, No. 3 Hezuo Road",
+    "contact_phone": "182****7938; 186****0651; 187****8316",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0126549",
+    "company_en": "Baimi Quick Wash Home Cleaning Laundry and Shoe Cleaning (Baiyun Spring City Impression Community Store)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "S102, south gate of Chuncheng Shangyuan",
+    "contact_phone": "133****3125",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0127422",
+    "company_en": "Seven Colors to Home (Home Service)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "23rd floor, Junfa Center, No. 987 Beijing Road",
+    "contact_phone": "150****7158",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0127541",
+    "company_en": "UCC International Laundry UCC Home Cleaning",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "11-5-6, B District, Yangguang Shangju",
+    "contact_phone": "135****1917",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0128600",
+    "company_en": "Baimi Quick Wash Home Cleaning Laundry and Shoe Cleaning (Platinum City Store)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "South 120 meters from the intersection of Ganchun Road and Jiudou Avenue",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0129078",
+    "company_en": "Yi Hao Guan Jia Jia Zheng Jia Ting Wei Xiu",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dian Jia Wei Xiu",
+      "Xi Yi Xi Wei Xiu",
+      "Bing Xiang Wei Xiu"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "He Xing Xi Lu No. 54",
+    "contact_phone": "130****7882",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0129117",
+    "company_en": "Tie Xin Jia Zheng Jia Di Jia Wei Xiu",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Dian Jia Wei Xiu",
+      "Kong Tiao Wei Xiu",
+      "Xi Yi Xi Wei Xiu",
+      "Bing Xiang Wei Xiu"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "Lang Shi Wei Lan Guang Chang F129-FB02",
+    "contact_phone": "177****8767",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0130264",
+    "company_en": "Ke Rong Jia Zheng · Dian Qi",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Kong Tiao Wei Xiu"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "Tai Shan Jie Dao Pu Dong Lu Cai Chang Nei No. 9",
+    "contact_phone": "158****2752; 180****4981",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0131996",
+    "company_en": "Hong Yue Jia Zheng Guan Dao Tong Su Shui Dian Shui Guan Wei Xiu (Xi Hu Dian)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Xi Yi Xi Wei Xiu"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "Shui Yun Jin Sha Gong Yu 7 Zhuang 1001 Shi",
+    "contact_phone": "133****5958",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0132000",
+    "company_en": "Ji E Dao Jia Jia Guan Dao Tong Su Shui Dian Shui Guan Wei Xiu",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Xi Yi Xi Wei Xiu"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "Zhuan Tang Jie Dao Su Si Lu Jin Jie Mei Di 4 Lao 101 Shi",
+    "contact_phone": "133****5958",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
+  },
+  {
+    "id": "CN-MFG-0134541",
+    "company_en": "Xin Yi Jia Zheng",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Bing Xiang Wei Xiu"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "Da Qi Shan Lu No. 232",
+    "contact_phone": "137****3687",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "industry_en": {
+      "code": "8010",
+      "name_en": "Household Services",
+      "level": "class",
+      "name": "家庭服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8010"
   }
 ]

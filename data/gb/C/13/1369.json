@@ -8,7 +8,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "象山"
     },
     "address": "丹西街道丹河路商业街9幢165、167号",
     "contact_phone": "198****7436",
@@ -57,7 +58,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "南海"
     },
     "address": "南国二路与平安大道交叉口东南180米",
     "contact_phone": "待核实",
@@ -106,7 +108,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "崇明"
     },
     "address": "长兴岛渔家乐路199弄渔港老码头",
     "contact_phone": "150****1777",
@@ -155,7 +158,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "宝山"
     },
     "address": "水产西路1019号1层",
     "contact_phone": "185****7740",
@@ -191,6 +195,55 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "水产"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0139463",
+    "company": "大理双廊老渔港客栈",
+    "category": "制造业",
+    "keywords": [
+      "民宿",
+      "客栈"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "大理白族自治州"
+    },
+    "address": "大建旁村249号",
+    "contact_phone": "135****4232",
+    "lat": 25.902357,
+    "lng": 100.19644,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B036815R0Q",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "客栈",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "532901",
+      "search_keyword": "民宿"
+    },
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "渔港"
     },
     "is_manufacturer": true
   }

@@ -27,7 +27,14 @@
       "source": "gb_token",
       "evidence": "设备维修"
     },
-    "source_url": "https://www.amap.com/place/B0LGASL1CJ"
+    "source_url": "https://www.amap.com/place/B0LGASL1CJ",
+    "industry_en": {
+      "code": "8129",
+      "name_en": null,
+      "level": "class",
+      "name": "其他办公设备维修",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0088347",
@@ -56,7 +63,14 @@
       "source": "gb_token",
       "evidence": "办公设备维修"
     },
-    "source_url": "https://www.amap.com/place/B0LKTAV6XX"
+    "source_url": "https://www.amap.com/place/B0LKTAV6XX",
+    "industry_en": {
+      "code": "8129",
+      "name_en": null,
+      "level": "class",
+      "name": "其他办公设备维修",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0089456",
@@ -85,7 +99,14 @@
       "source": "gb_token",
       "evidence": "设备维修"
     },
-    "source_url": "https://www.amap.com/place/B0H6PSOI1A"
+    "source_url": "https://www.amap.com/place/B0H6PSOI1A",
+    "industry_en": {
+      "code": "8129",
+      "name_en": null,
+      "level": "class",
+      "name": "其他办公设备维修",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0089685",
@@ -114,6 +135,85 @@
       "source": "gb_token",
       "evidence": "设备维修"
     },
-    "source_url": "https://www.amap.com/place/B0FFMDNY9A"
+    "source_url": "https://www.amap.com/place/B0FFMDNY9A",
+    "industry_en": {
+      "code": "8129",
+      "name_en": null,
+      "level": "class",
+      "name": "其他办公设备维修",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0105003",
+    "company_en": "Guan Du Hong An Equipment Maintenance Point",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Appliance Repair",
+      "Washing Machine Repair",
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 104, Building 10, Naping Garden, Jinma Street",
+    "contact_phone": "183****8170",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8129",
+      "name": "其他办公设备维修",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 计算机和办公设备维修 > 其他办公设备维修",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "设备维修"
+    },
+    "industry_en": {
+      "code": "8129",
+      "name_en": null,
+      "level": "class",
+      "name": "其他办公设备维修",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8129"
+  },
+  {
+    "id": "CN-MFG-0130716",
+    "company_en": "Hong Ling Appliance Equipment Maintenance Center",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Air Conditioner Repair"
+    ],
+    "region": {
+      "province": "Sichuan",
+      "city": "Chengdu"
+    },
+    "address_en": "No. 191, Second Section, Fumin Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8129",
+      "name": "其他办公设备维修",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 计算机和办公设备维修 > 其他办公设备维修",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "设备维修"
+    },
+    "industry_en": {
+      "code": "8129",
+      "name_en": null,
+      "level": "class",
+      "name": "其他办公设备维修",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8129"
   }
 ]

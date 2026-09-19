@@ -2229,32 +2229,6 @@
     "_bucket": "C/34/3483"
   },
   {
-    "id": "CN-MFG-0006221",
-    "company_en": "Ningbo Hongrui Spring Co., Ltd.",
-    "category": "标准件",
-    "category_en": "Standard Parts",
-    "keywords_en": [
-      "spring"
-    ],
-    "region": {
-      "province": "Zhejiang",
-      "city": "Ningbo"
-    },
-    "address_en": "No. 81, Jixing Road, Jishigang Industrial Area",
-    "contact_phone": "Pending verification",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3483",
-      "name_en": "Springs",
-      "level": "class",
-      "name": "弹簧制造",
-      "confidence": "high"
-    },
-    "_bucket": "C/34/3483"
-  },
-  {
     "id": "CN-MFG-0006222",
     "company_en": "Yuyao Xinzhong Spring Co., Ltd.",
     "category": "标准件",
@@ -11288,7 +11262,7 @@
   },
   {
     "id": "CN-MFG-0006575",
-    "company_en": "Zhuji Henglid Spring Manufacturing Co., Ltd.",
+    "company_en": "Zhujia City Helida Spring Manufacturing Co., Ltd.",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
@@ -11298,12 +11272,20 @@
       "province": "Zhejiang",
       "city": "Shaoxing"
     },
-    "address_en": "No. 719 Qiu Village, Jiyang Street (Dongjia,城南新村)",
+    "address_en": "No. 719 Qiu Village, Jiayang Street (Dongjia New Village, South City)",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/34/3483",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
     "industry_en": {
       "code": "3483",
       "name_en": "Springs",
@@ -11311,7 +11293,7 @@
       "name": "弹簧制造",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0FFGN0ILE"
+    "_bucket": "C/34/3483"
   },
   {
     "id": "CN-MFG-0006576",
@@ -12570,32 +12552,6 @@
       "level": "class",
       "name": "弹簧制造",
       "confidence": "high"
-    },
-    "_bucket": "C/34/3483"
-  },
-  {
-    "id": "CN-MFG-0006627",
-    "company_en": "Dongguan Ruizeng Industrial Co., Ltd.",
-    "category": "标准件",
-    "category_en": "Standard Parts",
-    "keywords_en": [
-      "spring"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Dongguan"
-    },
-    "address_en": "No. 88, Weisi Road, Baihuali Village, Changping Town",
-    "contact_phone": "135****8492",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3483",
-      "name_en": "Springs",
-      "level": "class",
-      "name": "弹簧制造",
-      "confidence": "medium"
     },
     "_bucket": "C/34/3483"
   },
@@ -14272,32 +14228,6 @@
     "_bucket": "C/34/3483"
   },
   {
-    "id": "CN-MFG-0008006",
-    "company_en": "Wuxi Shangxia Stainless Steel Co., Ltd.",
-    "category": "标准件",
-    "category_en": "Standard Parts",
-    "keywords_en": [
-      "spring"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Wuxi"
-    },
-    "address_en": "No. 118, Beihuan Road Phase II, C3-K-01",
-    "contact_phone": "172****1242",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3483",
-      "name_en": "Springs",
-      "level": "class",
-      "name": "弹簧制造",
-      "confidence": "medium"
-    },
-    "_bucket": "C/34/3483"
-  },
-  {
     "id": "CN-MFG-0008007",
     "company_en": "Dongguan Aopin Electronic Technology Co., Ltd.",
     "category": "标准件",
@@ -14509,32 +14439,6 @@
     "_bucket": "C/34/3483"
   },
   {
-    "id": "CN-MFG-0008103",
-    "company_en": "Changzhou Shengrui Chi Electronic Co., Ltd.",
-    "category": "标准件",
-    "category_en": "Standard Parts",
-    "keywords_en": [
-      "spring"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Changzhou"
-    },
-    "address_en": "No. 134, 4th Floor, Dailu Road",
-    "contact_phone": "152****6040",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3483",
-      "name_en": "Springs",
-      "level": "class",
-      "name": "弹簧制造",
-      "confidence": "medium"
-    },
-    "_bucket": "C/34/3483"
-  },
-  {
     "id": "CN-MFG-0008104",
     "company_en": "Zhejiang Fuchen Spring Co., Ltd. Factory",
     "category": "标准件",
@@ -14670,7 +14574,7 @@
   },
   {
     "id": "CN-MFG-0014036",
-    "company_en": "Jiaoping Spring (Xingzhou Sunny City Meili苑 Store)",
+    "company_en": "Jiaping Spring (Xingzhou Sun City Meili苑 Store)",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
@@ -14685,7 +14589,15 @@
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/34/3483",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
     "industry_en": {
       "code": "3483",
       "name_en": "Springs",
@@ -14693,7 +14605,7 @@
       "name": "弹簧制造",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0FFGBOWGQ"
+    "_bucket": "C/34/3483"
   },
   {
     "id": "CN-MFG-0014037",
@@ -19394,7 +19306,14 @@
       "source": "name",
       "evidence": "弹簧"
     },
-    "source_url": "https://www.amap.com/place/B0GDL7KM9M"
+    "source_url": "https://www.amap.com/place/B0GDL7KM9M",
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0081230",
@@ -19423,6 +19342,612 @@
       "source": "name",
       "evidence": "弹簧"
     },
-    "source_url": "https://www.amap.com/place/B0L3OCY1G3"
+    "source_url": "https://www.amap.com/place/B0L3OCY1G3",
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0091180",
+    "company_en": "Lian chai chi she lian gou er bei tan lun huan chi guang zhu jixie jia gong",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "jixie jia gong",
+      "zhuang shi",
+      "bing tan"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 998 Xinzhong Road (enter the No. 1 gate of Jinshi Wujin Jidian Jicheng and walk straight for 20 meters, then turn left to the 6th store on the left)",
+    "contact_phone": "138****1493",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0100189",
+    "company_en": "GMT Zidong Men Di tan",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bing tan"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 11-12, Building A4, Yilong Building Materials Market",
+    "contact_phone": "133****6034; 138****3746",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0100191",
+    "company_en": "Changlu Glass Glue Crown Spring",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Shiban Town Yanglong Village Yilong Decorative Material City Building C, 58-68",
+    "contact_phone": "182****9901",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0100192",
+    "company_en": "Siya Menkong Keji Youxian Gongsi",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bing tan"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Jin Guan Gangtie Shichang A Qu 59-66",
+    "contact_phone": "151****0138",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0113487",
+    "company_en": "Kunming Gangban Bingtan Chang",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bing tan",
+      "gangban"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 200 Puji Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0113489",
+    "company_en": "Bai Bai Bai Bingtan Lian cha Chan Sheng Chi Ji Gong Chu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bing tan"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. C3-11, Zhongtian Road Huayang Wujin Jidian Jicheng",
+    "contact_phone": "0871-68401686; 138****0530",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0113491",
+    "company_en": "Xiongya Menkong GMT Di tan Zidong Ganying Men",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bing tan"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 198 Shijia Wan Cun (walk 420 meters from Changhong West Road Subway Station A Exit)",
+    "contact_phone": "158****8147",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0113492",
+    "company_en": "Kunming Shi Bao Bingtan Chang",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bing tan"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Xinwen Road Yanchang Xian",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0113493",
+    "company_en": "Kunming Jiaqiang Spring Manufacturing Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Beside Ronggui Gas Station, Guishixi Road",
+    "contact_phone": "138****6233",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0113494",
+    "company_en": "Hubei Shenfeng Auto Spring Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "A1 Building, No. 6, Dongju Large Vehicle Auto Parts City",
+    "contact_phone": "159****1573",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0113496",
+    "company_en": "Chain Sprocket Spring",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "260 meters north of the intersection of Zhongtian Road and Yongzhong Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0122356",
+    "company_en": "Guangxi Shuihong Trading Co., Ltd. Xin Ning Mattress",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Near Datan Village, Dongpo Team, Datan Industrial Park, Anding Avenue",
+    "contact_phone": "134****8368; 176****8515",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0122358",
+    "company_en": "Henglang Automatic Door, Spring, Staircase Handrail, Door Control Hardware Accessories",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "E1 Building, No. 88, Kuaohuan Building Materials Market",
+    "contact_phone": "0771-3959962; 138****8232",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "弹簧|配件型:配件"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0123524",
+    "company_en": "Imported Bearings, Luoyang Bearing, Great Wall Lubricating Oil, Chain Spring",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing",
+      "spring"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Between East Gate 2 and East Gate of Zunyi International Trade City, District 2",
+    "contact_phone": "139****8556",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0123533",
+    "company_en": "Bozou District Jingyue Spring Bed Mesh Processing Factory",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "194 Plant Area, Qingshan Community, Bonan Street",
+    "contact_phone": "189****4466",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0123550",
+    "company_en": "Bazhou Jingyue Spring Bed Mesh Processing Factory",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Bona South Street Qingshan Community, Factory Area 194",
+    "contact_phone": "130****5150",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
+  },
+  {
+    "id": "CN-MFG-0123551",
+    "company_en": "Hongkai Spring Bed Mesh and Auxiliary Material Wholesale",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 66 Dam Group, Qingjiang Village, Shenxi Town",
+    "contact_phone": "136****0182",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "industry_en": {
+      "code": "3483",
+      "name_en": "Springs",
+      "level": "class",
+      "name": "弹簧制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3483"
   }
 ]

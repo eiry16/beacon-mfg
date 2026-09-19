@@ -911,32 +911,6 @@
     "source_url": "https://www.amap.com/place/B00190D3US"
   },
   {
-    "id": "CN-MFG-0003896",
-    "company_en": "Dongguan Ludada Plastic Electronic Co., Ltd.",
-    "category": "表面处理",
-    "category_en": "Surface Treatment",
-    "keywords_en": [
-      "Anodic Oxidation"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Dongguan"
-    },
-    "address_en": "No. 2, 12th Ring Road, Chiling Industrial Zone",
-    "contact_phone": "195****0437",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
-      "name": "金属表面处理及热处理加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/33/3360"
-  },
-  {
     "id": "CN-MFG-0003906",
     "company_en": "Fukun Anodizing Co., Ltd.",
     "category": "表面处理",
@@ -7490,32 +7464,6 @@
     "_bucket": "C/33/3360"
   },
   {
-    "id": "CN-MFG-0004171",
-    "company_en": "Wujin Luoyang No.2 Electroplating Factory",
-    "category": "表面处理",
-    "category_en": "Surface Treatment",
-    "keywords_en": [
-      "Electroplating"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Changzhou"
-    },
-    "address_en": "10 Tangmen Bridge Road, Luoyang Town",
-    "contact_phone": "Pending verification",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
-      "name": "金属表面处理及热处理加工",
-      "confidence": "high"
-    },
-    "_bucket": "C/33/3360"
-  },
-  {
     "id": "CN-MFG-0004172",
     "company_en": "Changzhou Hongli Electroplating Co., Ltd.",
     "category": "表面处理",
@@ -9510,32 +9458,6 @@
     "_bucket": "C/33/3360"
   },
   {
-    "id": "CN-MFG-0004254",
-    "company_en": "Dongguan JinHongHao Plastic Co., Ltd.",
-    "category": "表面处理",
-    "category_en": "Surface Treatment",
-    "keywords_en": [
-      "Electroplating"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Dongguan"
-    },
-    "address_en": "No. 117, TianKengZai North Road, Dalingshan Town",
-    "contact_phone": "158****1718",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
-      "name": "金属表面处理及热处理加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/33/3360"
-  },
-  {
     "id": "CN-MFG-0004255",
     "company_en": "Bao Hong Machinery Hardware Electroplating Factory",
     "category": "表面处理",
@@ -10806,14 +10728,17 @@
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
-    "industry_en": {
+    "industry": {
       "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
       "name": "金属表面处理及热处理加工",
-      "confidence": "high"
-    }
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "industry_en": null,
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0004304",
@@ -21535,32 +21460,6 @@
     "_bucket": "C/33/3360"
   },
   {
-    "id": "CN-MFG-0004736",
-    "company_en": "Jiangsu Shunjie Technology Co., Ltd.",
-    "category": "表面处理",
-    "category_en": "Surface Treatment",
-    "keywords_en": [
-      "coating"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Changzhou"
-    },
-    "address_en": "No. 282 Xuanjia Village",
-    "contact_phone": "180****3562",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
-      "name": "金属表面处理及热处理加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/33/3360"
-  },
-  {
     "id": "CN-MFG-0004738",
     "company_en": "Wujin Coating Equipment Manufacturing Factory",
     "category": "表面处理",
@@ -22657,19 +22556,22 @@
       "province": "Guangdong",
       "city": "Dongguan"
     },
-    "address_en": "9th Building, A Seat, 12th Floor, Huan宇 Huìjīn Center",
+    "address_en": "12th Floor, Building A, 9th Building, Huanyu Huajin Center",
     "contact_phone": "0769-22022838",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
-    "industry_en": {
+    "industry": {
       "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
       "name": "金属表面处理及热处理加工",
-      "confidence": "medium"
-    }
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": null,
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0004788",
@@ -23301,32 +23203,6 @@
     },
     "address_en": "No. 8, Dongxing East Road, Rongchuang High-tech Manufacturing Park, Building 1, Dongmei Village, Dongkeng Town",
     "contact_phone": "Pending verification",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
-      "name": "金属表面处理及热处理加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/33/3360"
-  },
-  {
-    "id": "CN-MFG-0004816",
-    "company_en": "Dongguan Hongshi Intelligent Equipment Co., Ltd.",
-    "category": "表面处理",
-    "category_en": "Surface Treatment",
-    "keywords_en": [
-      "Spraying"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Dongguan"
-    },
-    "address_en": "Room 102, No. 1 Niuling Road, Changping Town",
-    "contact_phone": "137****1662",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
@@ -24270,7 +24146,7 @@
   },
   {
     "id": "CN-MFG-0004856",
-    "company_en": "Shenzhen Tianxiang Sheet Metal龙门 Milling Spraying Processing Factory",
+    "company_en": "Shenzhen Tianxiang Sheet Metal龙门CNC Milling Spraying Processing Factory",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
@@ -24281,20 +24157,22 @@
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "93B, 1st Floor, PinAo Industrial Park, Xikeng New Village",
+    "address_en": "No. 93B, 1st Floor, PinAo Industrial Park, Xikeng New Village Industrial Area",
     "contact_phone": "189****3719",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
-    "industry_en": {
+    "industry": {
       "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
       "name": "金属表面处理及热处理加工",
-      "confidence": "high"
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
     },
-    "source_url": "https://www.amap.com/place/B0FFLH5RAZ"
+    "industry_en": null,
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0004857",
@@ -25981,19 +25859,22 @@
       "province": "Guangdong",
       "city": "Foshan"
     },
-    "address_en": "100 meters southwest of the intersection of Xingfa Road and Chuanxiang Industrial Park Chao东路",
+    "address_en": "100 meters southwest of the intersection of Xingfa Road and Chuanxiang Industrial Area Chao东路",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
-    "industry_en": {
+    "industry": {
       "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
       "name": "金属表面处理及热处理加工",
-      "confidence": "high"
-    }
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": null,
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0004929",
@@ -27063,32 +26944,6 @@
     "_bucket": "C/33/3360"
   },
   {
-    "id": "CN-MFG-0004972",
-    "company_en": "Huizhou Lianxing Technology Co., Ltd.",
-    "category": "表面处理",
-    "category_en": "Surface Treatment",
-    "keywords_en": [
-      "Spraying"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Huizhou"
-    },
-    "address_en": "Meichang Road 3",
-    "contact_phone": "135****2108",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
-      "name": "金属表面处理及热处理加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/33/3360"
-  },
-  {
     "id": "CN-MFG-0004974",
     "company_en": "Huizhou Naisi Coating Engineering Co., Ltd.",
     "category": "表面处理",
@@ -27530,14 +27385,17 @@
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
-    "industry_en": {
+    "industry": {
       "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
       "name": "金属表面处理及热处理加工",
-      "confidence": "high"
-    }
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "industry_en": null,
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0007942",
@@ -27934,32 +27792,6 @@
     },
     "_bucket": "C/33/3360",
     "source_url": "https://www.amap.com/place/B001914IZI"
-  },
-  {
-    "id": "CN-MFG-0008042",
-    "company_en": "Jiangsu Huawada Technology Co., Ltd.",
-    "category": "表面处理",
-    "category_en": "Surface Treatment",
-    "keywords_en": [
-      "Spraying"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Wuxi"
-    },
-    "address_en": "No. 92 Huazhang Road",
-    "contact_phone": "Pending verification",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
-      "name": "金属表面处理及热处理加工",
-      "confidence": "medium"
-    },
-    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0008048",
@@ -31882,20 +31714,22 @@
       "province": "Guangdong",
       "city": "Huizhou"
     },
-    "address_en": "300 meters west of the intersection of Jinshi 5th Road and Jindong Avenue辅路",
+    "address_en": "300 meters west of the intersection of Jinshi 5th Road and Jinlong Avenue辅路",
     "contact_phone": "0752-8765498",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
-    "industry_en": {
+    "industry": {
       "code": "3360",
-      "name_en": "Metal Surface Treatment & Heat Treatment",
-      "level": "class",
       "name": "金属表面处理及热处理加工",
-      "confidence": "medium"
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
     },
-    "source_url": "https://www.amap.com/place/B0JR3Z96RF"
+    "industry_en": null,
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0014086",
@@ -32250,14 +32084,15 @@
   },
   {
     "id": "CN-MFG-0014534",
-    "company_en": "Lecong Iron and Steel World Galvanized Pipe Square Pipe I-Beam Wholesale · Yiqi旺",
+    "company_en": "Lecong Iron and Steel World Galvanized Pipe Square Pipe I-Beam Wholesale · Yi Qiwang",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "Stainless Steel",
+      "Stainless steel",
       "Steel",
-      "Stainless Steel Material",
-      "Steel Plate"
+      "Stainless steel material",
+      "Steel plate",
+      "Stainless steel material wholesale"
     ],
     "region": {
       "province": "Guangdong",
@@ -32268,7 +32103,15 @@
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
     "industry_en": {
       "code": "3360",
       "name_en": "Metal Surface Treatment & Heat Treatment",
@@ -32276,7 +32119,7 @@
       "name": "金属表面处理及热处理加工",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0LKB5TTE7"
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0014541",
@@ -39689,22 +39532,30 @@
   },
   {
     "id": "CN-MFG-0018615",
-    "company_en": "Jiabao Li Painting Experience Hall",
+    "company_en": "JiabaoLi Coating Experience Hall",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "painting"
+      "Spraying"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Huizhou"
     },
-    "address_en": "No. 1 Yandao Second Road, Henan岸, Rising Sun Chang Sunlight Garden D Building, 1st Floor, Shop No. 08",
+    "address_en": "No. 1, Yuxing 2nd Road, Henean, D Seat 1st Floor, Shop No. 08, Rishengchang Yangyu Garden",
     "contact_phone": "187****9902; 188****6360",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
     "industry_en": {
       "code": "3360",
       "name_en": "Metal Surface Treatment & Heat Treatment",
@@ -39712,26 +39563,34 @@
       "name": "金属表面处理及热处理加工",
       "confidence": "medium"
     },
-    "source_url": "https://www.amap.com/place/B0J22HWXUZ"
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0018616",
-    "company_en": "Huizhou Yiheng Painting Engineering Co., Ltd.",
+    "company_en": "Huizhou Yiheng Coating Engineering Co., Ltd.",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "painting"
+      "coating"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Huizhou"
     },
-    "address_en": "No. 108 Sunlight Garden D, 1st Floor, No. 1 Yandao Second Road, Henan岸",
+    "address_en": "No. 1 Yandao Second Road, Huinan, Sunshine Yuyuan, D108",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
     "industry_en": {
       "code": "3360",
       "name_en": "Metal Surface Treatment & Heat Treatment",
@@ -39739,7 +39598,7 @@
       "name": "金属表面处理及热处理加工",
       "confidence": "medium"
     },
-    "source_url": "https://www.amap.com/place/B0L045XVLO"
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0018618",
@@ -42153,22 +42012,30 @@
   },
   {
     "id": "CN-MFG-0019839",
-    "company_en": "Rongxin Painting",
+    "company_en": "Rongxin Coating",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "painting"
+      "coating"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Shaoxing"
     },
-    "address_en": "Shunda橡塑Factory Area, Xietang Industrial Park, Xietang Town",
+    "address_en": "Shetao Industrial Park, Shetao Town",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
     "industry_en": {
       "code": "3360",
       "name_en": "Metal Surface Treatment & Heat Treatment",
@@ -42176,7 +42043,7 @@
       "name": "金属表面处理及热处理加工",
       "confidence": "medium"
     },
-    "source_url": "https://www.amap.com/place/B0FFGIYV66"
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0019840",
@@ -50966,12 +50833,20 @@
       "province": "Guangdong",
       "city": "Foshan"
     },
-    "address_en": "160 meters southwest of the intersection of Xinxi古道 and Xin San Road",
+    "address_en": "160 meters southwest of the intersection of Xinxi Ancient Road and Xinsan Road",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/33/3360",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
     "industry_en": {
       "code": "3360",
       "name_en": "Metal Surface Treatment & Heat Treatment",
@@ -50979,7 +50854,7 @@
       "name": "金属表面处理及热处理加工",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0FFMCIL96"
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0021528",
@@ -53392,7 +53267,14 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "source_url": "https://www.amap.com/place/B0K1R5UYTQ"
+    "source_url": "https://www.amap.com/place/B0K1R5UYTQ",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0032956",
@@ -53421,7 +53303,14 @@
       "source": "name",
       "evidence": "烤漆"
     },
-    "source_url": "https://www.amap.com/place/B0K0TUOZNF"
+    "source_url": "https://www.amap.com/place/B0K0TUOZNF",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0035392",
@@ -53450,7 +53339,14 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "source_url": "https://www.amap.com/place/B0ID77M6P4"
+    "source_url": "https://www.amap.com/place/B0ID77M6P4",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0035401",
@@ -53479,7 +53375,14 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "source_url": "https://www.amap.com/place/B0IAHH57CI"
+    "source_url": "https://www.amap.com/place/B0IAHH57CI",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0036016",
@@ -53508,7 +53411,14 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "source_url": "https://www.amap.com/place/B0LU9UCTE7"
+    "source_url": "https://www.amap.com/place/B0LU9UCTE7",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0036505",
@@ -53537,7 +53447,14 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "source_url": "https://www.amap.com/place/B0L1FCYMEJ"
+    "source_url": "https://www.amap.com/place/B0L1FCYMEJ",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0036507",
@@ -53566,7 +53483,14 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "source_url": "https://www.amap.com/place/B0JR35FHBM"
+    "source_url": "https://www.amap.com/place/B0JR35FHBM",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0036601",
@@ -53595,7 +53519,14 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "source_url": "https://www.amap.com/place/B0LBXHHM7O"
+    "source_url": "https://www.amap.com/place/B0LBXHHM7O",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0054765",
@@ -53627,7 +53558,14 @@
       "source": "name",
       "evidence": "喷漆"
     },
-    "source_url": "https://www.amap.com/place/B0FFKJLV3B"
+    "source_url": "https://www.amap.com/place/B0FFKJLV3B",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0054801",
@@ -53659,29 +53597,35 @@
       "source": "name",
       "evidence": "喷漆"
     },
-    "source_url": "https://www.amap.com/place/B0IKUCAS30"
+    "source_url": "https://www.amap.com/place/B0IKUCAS30",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0054882",
-    "company_en": "Shuixin Suoyuan Auto Dent Repair (Headquarters) without Painting",
+    "company_en": "Shaoxin Suoyuan Car Dents No Paint Repair (Headquarters)",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "Auto Repair",
-      "Auto Maintenance",
-      "Auto Repairing",
-      "Car Repair"
+      "Car Repair",
+      "Automotive Repair",
+      "Car Repairing",
+      "Vehicle Repair"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 9 Huayuan East Road, Mudu Town, within the Sh斧 Sculpture Industrial Park, 3-9",
+    "address_en": "No. 9, Huayuan East Road, Mudu Town, inside the Shunfu Sculpture Industrial Park, 3-9",
     "contact_phone": "177****7996; 188****7996",
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "C/33/3360",
     "industry": {
       "code": "3360",
       "name": "金属表面处理及热处理加工",
@@ -53691,29 +53635,35 @@
       "source": "name",
       "evidence": "喷漆"
     },
-    "source_url": "https://www.amap.com/place/B0JD9C1RH9"
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0055099",
-    "company_en": "Henghui Famous Car Maintenance Center · Repair,美容, Modification, Film Lamination, Painting (Dongyi Store)",
+    "company_en": "Henghui Famous Car Maintenance Center · Repair and Beauty Modification Film Coating (Dongyi Store)",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "Auto Repair",
-      "Auto Maintenance",
-      "Auto Repairing",
-      "Car Repair"
+      "auto repair",
+      "auto maintenance",
+      "auto repair",
+      "car repair"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "Parking lot of Dongyi Building (walk 470 meters from Gangxia Subway Station E Exit)",
+    "address_en": "Parking lot of Dongyi Building (470 meters walk from Gangxia Subway Station E Exit)",
     "contact_phone": "0755-82527036; 134****6442",
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "C/33/3360",
     "industry": {
       "code": "3360",
       "name": "金属表面处理及热处理加工",
@@ -53723,7 +53673,14 @@
       "source": "name",
       "evidence": "喷漆"
     },
-    "source_url": "https://www.amap.com/place/B0FFHCRZG5"
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0055651",
@@ -53755,7 +53712,14 @@
       "source": "name",
       "evidence": "喷漆"
     },
-    "source_url": "https://www.amap.com/place/B0I64DX6AV"
+    "source_url": "https://www.amap.com/place/B0I64DX6AV",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0055843",
@@ -53784,7 +53748,14 @@
       "source": "name",
       "evidence": "喷涂"
     },
-    "source_url": "https://www.amap.com/place/B0L25SCVL5"
+    "source_url": "https://www.amap.com/place/B0L25SCVL5",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0055997",
@@ -53816,29 +53787,35 @@
       "source": "name",
       "evidence": "喷漆"
     },
-    "source_url": "https://www.amap.com/place/B0FFKZ9VU7"
+    "source_url": "https://www.amap.com/place/B0FFKZ9VU7",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0056392",
-    "company_en": "Ahong Auto Sheet Metal Painting",
+    "company_en": "Ahong Auto Body and Paint",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "Auto Repair",
-      "Auto Maintenance",
-      "Auto Repairing",
-      "Car Repairing"
+      "auto repair",
+      "auto maintenance",
+      "auto repair",
+      "car repair"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Ningbo"
     },
-    "address_en": "No. 1-4 Fuqiang Road (步行350 meters from Sika Subway Station A Exit)",
+    "address_en": "No. 1-4 Fuqiang Road (350 meters walk from Siguang Subway Station A Exit)",
     "contact_phone": "0574-28852570; 159****2866",
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "C/33/3360",
     "industry": {
       "code": "3360",
       "name": "金属表面处理及热处理加工",
@@ -53848,7 +53825,14 @@
       "source": "name",
       "evidence": "喷漆"
     },
-    "source_url": "https://www.amap.com/place/B023E11AEM"
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
   },
   {
     "id": "CN-MFG-0057209",
@@ -53879,7 +53863,14 @@
       "source": "name",
       "evidence": "喷漆"
     },
-    "source_url": "https://www.amap.com/place/B0KKN7W90E"
+    "source_url": "https://www.amap.com/place/B0KKN7W90E",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0063081",
@@ -53908,7 +53899,14 @@
       "source": "name",
       "evidence": "氮化"
     },
-    "source_url": "https://www.amap.com/place/B0MGTU8D82"
+    "source_url": "https://www.amap.com/place/B0MGTU8D82",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0078538",
@@ -53937,7 +53935,14 @@
       "source": "name",
       "evidence": "电镀"
     },
-    "source_url": "https://www.amap.com/place/B0IUPZDWZK"
+    "source_url": "https://www.amap.com/place/B0IUPZDWZK",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0078568",
@@ -53966,7 +53971,14 @@
       "source": "name",
       "evidence": "抛光加工"
     },
-    "source_url": "https://www.amap.com/place/B0GK95QL1X"
+    "source_url": "https://www.amap.com/place/B0GK95QL1X",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0081539",
@@ -53995,7 +54007,14 @@
       "source": "name",
       "evidence": "氮化"
     },
-    "source_url": "https://www.amap.com/place/B0KU3G9CFE"
+    "source_url": "https://www.amap.com/place/B0KU3G9CFE",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0082019",
@@ -54025,7 +54044,14 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "source_url": "https://www.amap.com/place/B0MAC7W27P"
+    "source_url": "https://www.amap.com/place/B0MAC7W27P",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0087592",
@@ -54054,6 +54080,4720 @@
       "source": "name",
       "evidence": "电镀"
     },
-    "source_url": "https://www.amap.com/place/B0I2CREPLF"
+    "source_url": "https://www.amap.com/place/B0I2CREPLF",
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0092216",
+    "company_en": "Yatu Pailin Paint Coating",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Sheet metal processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Beside JinTian Holiday Hotel, Sifanghe Road",
+    "contact_phone": "183****7888",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷漆"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0095796",
+    "company_en": "Guanshanhu Xinbo Sheng Auto Maintenance Center (Tyre Battery Jump Start Maintenance and Repair, Tire Repair, Car Wash, Paint Coating)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Auto repair",
+      "Automotive repair",
+      "Car repair",
+      "Mechanic"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "JinDie Yuan, Bihai Garden, South of Guanshan West Road, 100 meters from Xinbo Sheng Auto Maintenance Center",
+    "contact_phone": "131****2277; 138****8124",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷漆"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0095935",
+    "company_en": "Guiyang Jisu Engine Auto Maintenance Center",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Auto repair",
+      "Automotive repair",
+      "Car repair",
+      "Mechanic"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Jisu Engine Auto Maintenance Center, South of Yuntan South Road, Bihai Honghu",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "阳极"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096307",
+    "company_en": "Guiyang Jinxin Electroplating Products Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Electroplating"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "70 meters west of Guiyang Chuangwei Paper Products Co., Ltd.",
+    "contact_phone": "130****6949",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096308",
+    "company_en": "Guizhou Ju Hang Surface Treatment Technology Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Electroplating"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Building 4, Phase II, Surface Treatment Industrial Park",
+    "contact_phone": "153****7370",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "表面处理"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096309",
+    "company_en": "Joint Venture Zhonggang Guiyang Huake Electroplating Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Electroplating"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 323 Qingshuijiang Road (200 meters walk from Qingshuijiang Road Subway Station Exit D)",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096520",
+    "company_en": "Jiabao Li Wan Yi Paint Coating Store",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 24 Hebin Road, Phase 1, Building 16, 108",
+    "contact_phone": "135****5059",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096521",
+    "company_en": "Guizhou Jinxin Spraying and Bake Finishing",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "150 meters north of Maosa Community",
+    "contact_phone": "166****0642",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096522",
+    "company_en": "JiabaoLi Coating Experience Hall (Wencheng Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Longchang Town Wencheng Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096523",
+    "company_en": "Lihang Coating Center (Southwest Trade City Zhenying Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 138, 139, 140, Area 1B, Block 6, Southwest Trade City",
+    "contact_phone": "177****6570",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096524",
+    "company_en": "BoSi Tools (Southwest Trade City Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "East Gate 10, Building 4, Guiyang Southwest Trade City (BoSi Tools)",
+    "contact_phone": "152****9668; 189****1476",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096525",
+    "company_en": "Guizhou Nuosida Coating Equipment Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Gui'an Avenue S001",
+    "contact_phone": "185****9664",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096526",
+    "company_en": "Guiyang Colorful Spraying Processing Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Group 2, Longchangpo, Shibanzhen",
+    "contact_phone": "155****9158",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096527",
+    "company_en": "Guizhou Yongyue Electromechanical Spraying Machine Exclusive Store (Tianli City B Area Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Tianli City B4-47",
+    "contact_phone": "136****3083",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096528",
+    "company_en": "Yifei Spraying Equipment",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 20 Jixiang Building",
+    "contact_phone": "151****9888",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096529",
+    "company_en": "Mingcheng Xin Building Materials Sales Center, Yunyan District, Guiyang City",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying",
+      "Steel",
+      "Aluminum Plate"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "E Zone 60-61, Jinkuan Steel Market",
+    "contact_phone": "139****7227",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096532",
+    "company_en": "Jingcai Spray Wood Grain Transfer Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 30 South Huashizhi Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096533",
+    "company_en": "JiabaoLi Coating Health Check Center (Xifeng Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 21 South Daxi Street, Hucheng Avenue",
+    "contact_phone": "135****0226; 151****3988",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096534",
+    "company_en": "Guizhou Nuosida Coating Equipment",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 8 Wujiashan Group, Ludian Village",
+    "contact_phone": "185****9664",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096535",
+    "company_en": "Jinsheng Spray Gun Specialist Store",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "120 meters west at the intersection of Jiefang Road auxiliary and Beaxi Avenue North Section",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096536",
+    "company_en": "Dongcheng Tools Spray Gun Specialist Store",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Huaguo Garden Taisheng Hardware and Electrical Appliances",
+    "contact_phone": "189****3451",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096537",
+    "company_en": "Guizhou Zhuanghe Technical Research Purification Coating Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "60 meters east at the intersection of Yan'an Middle Road and Jiaoyi Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096538",
+    "company_en": "JiabaoLi Coating Experience Center (Zhejiang Shopping Mall Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "140 meters southeast at the intersection of Zunyi Road and Zunyi Alley",
+    "contact_phone": "155****2856",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096539",
+    "company_en": "JiabaoLi Coating Experience Center (Zhongxin Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 61-69 South City Road, B-1-7 door of Zhongxin Decoration Building Materials Market",
+    "contact_phone": "130****8022",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096540",
+    "company_en": "Guizhou Huahang Technology Co., Ltd. Coating Division",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 270 Kaifa Avenue, Building 1, 2nd Floor, Dingfengshengmao Machinery Industrial Park",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096541",
+    "company_en": "Baoliheng Spray Paint Car Cover",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 16-18, Building B, Guiyang Huaxi International Auto Parts City",
+    "contact_phone": "134****9168",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096542",
+    "company_en": "Guizhou Kaiteng Auto Coating Service Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 19, Gate, Building B, Mengguan Auto Parts City",
+    "contact_phone": "0851-83960967; 177****8867",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096543",
+    "company_en": "Guizhou Xi'ao Coating Technology Engineering Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "8th Floor, Building 6, Tianhe Center",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096544",
+    "company_en": "Guizhou Youbitu Coating Equipment Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 126 Gaonan Road, High-tech Community Service Center, Southern Huatong Industrial Park, No. 10 Factory Building",
+    "contact_phone": "133****8831; 139****1531",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0096545",
+    "company_en": "Tongda Spraying Equipment",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 15 Airport Road, A3, 1st Floor, Room 226",
+    "contact_phone": "150****5570; 182****3910",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0100600",
+    "company_en": "Guiyang Chengda Steel Hot-Dip Galvanized Steel Plate, Steel Bar, Angle Steel, Square Pipe Wholesaler",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Steel",
+      "Steel Plate"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "B2-27-29 Hepeng Steel Market",
+    "contact_phone": "151****4084",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0100705",
+    "company_en": "Guizhou Yanxu Steel Forming, Angle Steel, Channel Steel, Galvanized Pipe Steel Processing",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Steel",
+      "Steel Plate"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "50 meters in front of Niulangguan Interchange Elevated Bridge on Mengguan Avenue",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0103812",
+    "company_en": "Chengong Xin Yu Panjin Penqi Dalang Huoxiang Chang",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Automotive Maintenance",
+      "Auto Repair",
+      "Car Repair",
+      "Car Repairing"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Chengyun Avenue No. Y015",
+    "contact_phone": "139****7813",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷漆"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0105393",
+    "company_en": "Yonghong Stainless Steel Processing - Laser Cutting Screen Fence Galvanized Pipe Aluminum Alloy",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Laser Cutting",
+      "Steel",
+      "Aluminum Alloy"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Yunxiu Road, New Yuan Xiaobiaoqiao Material Trading Center Building 6, Unit 9-10 (next to Sheepu Steel Market Gate 6)",
+    "contact_phone": "0871-63925882; 135****6755",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110155",
+    "company_en": "Kunming Haodengduo",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Electroplating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Red Star Macallan Fengyuan Road Shopping Mall 5F",
+    "contact_phone": "137****6399; 181****9999",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "电镀"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110156",
+    "company_en": "Dongcheng Professional Electroplating Tools",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Electroplating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Yulong Road No. 40-41",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110157",
+    "company_en": "Kunming Shengming New Photo Electroplating Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Electroplating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Songhuang Line",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110262",
+    "company_en": "JiabaoLi Coating Experience Hall (Lanmo Line Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Southeast of China Petroleum Xinrui Gasoline Station, 190 meters away",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110263",
+    "company_en": "Nippon Paint Coating Service Center (Zhenghe Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Northeast of the intersection of Heying Road and Dongfeng Road, 380 meters away",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110264",
+    "company_en": "Kunming Xingpu Coating Spraying Machine",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Mingbo Road, Southwest Building Materials Market 5th District, No. 4",
+    "contact_phone": "135****3007",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110266",
+    "company_en": "Yunnan Enze Coating Engineering Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 799 Hehong Road, Guangfu City Yafuyuan",
+    "contact_phone": "159****9133",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110267",
+    "company_en": "JiabaoLi Coating Experience Hall (Dashiyan Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building B, No. 1 Dashiyan",
+    "contact_phone": "172****5687",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110268",
+    "company_en": "Baoxiang Coating",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "140 meters southeast of the intersection of Shanghui Road and Huihui Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110269",
+    "company_en": "Nippon Paint Coating Service Center (Dashi Hui Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building 29, Block B, Dashi Hui",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110271",
+    "company_en": "Jiangcai Car Coating",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "160 meters south of the intersection of Yiya Road and Huachen Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110276",
+    "company_en": "Nippon Paint Coating Service Center (Bicai Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building F, No. 10, 9-10, Changhong West Road, Xiaobanqiao, Zhonglin Building Materials City",
+    "contact_phone": "177****8179",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110277",
+    "company_en": "Yongqiang Coating Equipment Wholesaler Yunnan General Agent",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building G, No. 9, 23-24, Zhonglin Building Materials City",
+    "contact_phone": "0871-67359528; 131****9590; 138****2718",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110278",
+    "company_en": "JiabaoLi Coating Experience Hall (Zhonglin Building Materials City Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building 9, No. 18, Zhonglin Building Materials Market, Changhong West Road",
+    "contact_phone": "136****7040",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110279",
+    "company_en": "Yunnan Zhongheng Painting",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "460 meters southwest of the intersection of Changhong West Road and Yunnan Bofo New Trade Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110280",
+    "company_en": "Gougeco Spraying Equipment (Yunnan General Agent)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Between Building 3 and Building 4 in the office area of the Yulong Road Baomei Building Materials City",
+    "contact_phone": "137****4434",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110281",
+    "company_en": "Spraying Equipment",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Right side of No. 3 gate on the street of Yulong Road Baomei Building Materials City",
+    "contact_phone": "137****4434; 137****5263; 138****9177",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110282",
+    "company_en": "Tusun Spraying Equipment Service Center",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building 5, No. 3, Phase II of Yulong Road Baomei Building Materials Market",
+    "contact_phone": "183****9557",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110283",
+    "company_en": "Qicai Yunnan Professional Spraying Equipment",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "22nd building, 10th floor, Tuqiao Hardware and Electrical Machinery Market",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110284",
+    "company_en": "Spraying Machine Generator",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "300 meters northeast of the intersection of Zhongtian Road and Yong中路",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": null,
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110285",
+    "company_en": "Spray Gun Grouting Machine",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Intersection of Changhong Road and Caiyun North Road (within No. 37 of Dimiao Electrical and Mechanical Market)",
+    "contact_phone": "158****1652; 183****5073",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110286",
+    "company_en": "Yunnan Hot Spraying Brush Plating Center",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "11-12, Xiaobiaoqiao Xinyuan Material Market",
+    "contact_phone": "136****2326",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110287",
+    "company_en": "Huiyou Di Ping Tu Zhuang",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 32, Group 1, Xiaobiaoqiao New Village",
+    "contact_phone": "135****5528",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110288",
+    "company_en": "Yunnan Thermal Spray Brush Plating Center",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "80 meters northeast of Wolong Mountain Villa",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110289",
+    "company_en": "Kunming Huali Thermal Spraying Technology Development Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 113, Jingshi Jingji Jindong Road",
+    "contact_phone": "0871-67268191",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110291",
+    "company_en": "Yunnan Mureka Coating Technology Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Shiyuan Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110292",
+    "company_en": "Yunnan Xiangguan Electrostatic Coating Technology Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Jin Town Juntengda Industrial Park, Building C12",
+    "contact_phone": "152****0362",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110293",
+    "company_en": "Nippon Paint Coating Service Center (Yunnan Tu Xiaoshi Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 1 Building, 15-20, Gate 3, Hongpeng Building Materials Market",
+    "contact_phone": "182****7385",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110294",
+    "company_en": "Supreme Music Kunming Flagship Store (A Feng Car Audio)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 8, Changcun Resident Group, Putao Community, Alajiao Street, Guikun Road",
+    "contact_phone": "0871-68587116",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110296",
+    "company_en": "Carpoly Coating Experience Hall (Baiyi Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Baima Road",
+    "contact_phone": "136****3850",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110405",
+    "company_en": "Yunnan Tianda Heat Treatment Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "heat treatment"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Hekou Town Wenhua Village",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110406",
+    "company_en": "Kunming Tieyi Technology Co., Ltd. (Heat Treatment of Mechanical Parts)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "heat treatment"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 877 Longquan Road, Ciba Street, 300 meters uphill from the west production area of the heavy machinery factory",
+    "contact_phone": "0871-63332120",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0110407",
+    "company_en": "Kunming Jingque Heat Treatment Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "heat treatment"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "150 meters west of Guoding Steel Structure Co., Ltd.",
+    "contact_phone": "0871-63332120; 138****7929",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0112412",
+    "company_en": "Songming Gucheng Standard Parts Manufacturing Co., Ltd. Heat Dip Galvanizing Plant",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "fasteners",
+      "standard parts"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "50 meters east of Songhuang Road",
+    "contact_phone": "138****9203; 150****1262",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0113707",
+    "company_en": "Direct Manufacturer of Galvanized Steel Pipe",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "steel",
+      "steel plate",
+      "aluminum plate"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Baoxiang Logistics Center B Area Indoor Warehouse",
+    "contact_phone": "135****9464",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0113726",
+    "company_en": "Yunnan Runxin Galvanized Steel Total",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Loyang Street, Railway Repair Factory Section, Panya Logistics Center E Area Building 1",
+    "contact_phone": "0871-63391509; 138****1636; 159****1738",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0113758",
+    "company_en": "Zhongle Galvanized Steel",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Baoxiang Logistics Park D3 Building",
+    "contact_phone": "158****3327",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0113791",
+    "company_en": "Di Hong Steel Trading - Galvanized Pipe and Square Pipe Wholesaler",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building C3, 20, Baoxiang Logistics Center",
+    "contact_phone": "187****8091",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0117402",
+    "company_en": "Nanning Wanjia Metal Spray Coating Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "CNC machining",
+      "spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 168 Jiangnan Avenue, Sanjin Village",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0118219",
+    "company_en": "Yulong Electrostatic Spray Coating Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "machining",
+      "spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "12 Building, 5th Floor, Hongda Machinery Market, Shaoting Avenue",
+    "contact_phone": "181****7706",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0118722",
+    "company_en": "Aok. Wipe Paintless Dent Repair",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Automotive Repair",
+      "Auto Repair",
+      "Car Repair",
+      "Car Maintenance"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 7, 1st Floor, Building A, Shaba Village, Hetangzi, Honghuagang District",
+    "contact_phone": "190****6800",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷漆"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0118752",
+    "company_en": "Xiaozhi Auto Repair and Maintenance Professional Sheet Metal Spray Painting Car Wash Beauty",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "automotive repair",
+      "auto repair",
+      "car repair",
+      "repair"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 81-83, former Xingtai Company, Maocao Pu Passenger Station, Shenzhen Road",
+    "contact_phone": "135****3745; 177****2251; 181****1122",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷漆"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0119473",
+    "company_en": "Nanning Dinglian Shun Spray Coating Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "injection molding processing",
+      "spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 7, Zhuangjin Avenue (50 meters east of Nanning Bicycle Factory)",
+    "contact_phone": "186****1431; 186****3668",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121379",
+    "company_en": "Nanning Yashu Bo Dental Clinic Qingxiu Branch",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "anodizing"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "1st Floor, 101, Building 1, Guangyuan International Community, Zhuxi Avenue",
+    "contact_phone": "177****6857",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "阳极氧化"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121466",
+    "company_en": "Huashi Coating (Di Cheng Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 172 Di Cheng Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121467",
+    "company_en": "Shenhou Longquan Full House Painting (Gudingxiang·Dashi Square Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Langwan Avenue Gudingxiang·Dashi Square",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121468",
+    "company_en": "Min Gui Painting",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Min Gui Painting No. 176",
+    "contact_phone": "150****9050; 177****2645",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121469",
+    "company_en": "Jiabao Li Painting Experience Hall (Dongming Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Chengxiang Town Dongming Road No. 368",
+    "contact_phone": "132****9513",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121470",
+    "company_en": "Guangxi Rui Lang Metal Products Co., Ltd. Spraying Technology Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Nanxiang Road No. 11 Pair",
+    "contact_phone": "156****5750",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121477",
+    "company_en": "Jinhui Auto Spraying",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Wuqi West Road No. 175A3",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121478",
+    "company_en": "Xiao Lou Ge Auto Spraying",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Wuqi West Road No. 175A4",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121479",
+    "company_en": "Xinbangda Spraying and Painting Technology Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Southeast 500 meters at the intersection of Wuqi West Road and Jinfu Road",
+    "contact_phone": "133****1663; 177****7643",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121480",
+    "company_en": "Nanhui Aluminum Materials (Spraying and Painting Factory Façade Large Diameter Pipe Sunroom)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying",
+      "Aluminum Profiles",
+      "Aluminum Alloy"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Fengda Road Second Branch Road (beside Huangshi Dairy Industry) No. 2 Factory Second Room",
+    "contact_phone": "188****4993",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121482",
+    "company_en": "Guangxi Yirun Painting Engineering Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "painting"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Anji Lin Cun 10 Team, turn right and downhill after the expressway bridge",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121483",
+    "company_en": "Guangxi Hui Shun Painting Equipment Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "painting"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Yongning Village Linpo 10 Team, Jinchiling Factory Building",
+    "contact_phone": "187****8787",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121484",
+    "company_en": "Guangxi Anjin Houqiang Painting Engineering Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "painting"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "East side of Anji Avenue",
+    "contact_phone": "189****4468; 199****7856",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121485",
+    "company_en": "Haobo Spraying Equipment Sales Center",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "160 meters west of the intersection of Xiuling Road and Xiuxiang Avenue辅路",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": null,
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121486",
+    "company_en": "Nanning City Tuoyue Painting Equipment Wholesale Department",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "painting"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 89 Xiuling Road, Nanan Electrical Machinery City, Building B, Room 3 and 4",
+    "contact_phone": "134****5825",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121487",
+    "company_en": "Painting Machine Factory Store",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "painting"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 18 Anyuandong Road, Guangxi Industrial Equipment City, Building A1, Room 101",
+    "contact_phone": "185****5107",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121488",
+    "company_en": "JiabaoLi Painting Experience Hall (Longteng Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "painting"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "1st Floor, Building 8, Taiwan Street, Room 1037, Taoyuanju",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121489",
+    "company_en": "American Graco Painting Equipment Spray Gun",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "painting"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 20-3, Building A13, East of Xiuling Road, Dongbo International Hardware and Electrical Mechanical City",
+    "contact_phone": "173****7796",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121490",
+    "company_en": "Nanning Guke Spray Equipment (Dongbo Electrical Machinery City Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 81 Xiuling Road, Dongbo Electrical Machinery City, Building A9, 16-18th Floor",
+    "contact_phone": "0771-2639129; 139****0562",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121491",
+    "company_en": "Nanning Zhenfeng Spray Painting Machine, Real Stone Paint Machine, Putty Machine, Beida Store",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 1 Daxue East Road, Second Street, Beida Material and Electrical Machinery Market",
+    "contact_phone": "159****1098",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121492",
+    "company_en": "Guangxi Nanning Huatuwei Automotive Spray Service Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Bololing",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121494",
+    "company_en": "Guangda Automotive Paint Booth Coating Equipment Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 65, Second Team, Lianchou Village",
+    "contact_phone": "181****4903",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "烤漆"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121495",
+    "company_en": "Nanning Jiahe Xinxin Spray Coating Processing Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 9 Team, Napuspo, Juren Village",
+    "contact_phone": "130****0161",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121496",
+    "company_en": "JiabaoLi Coating (Shengmao Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "coating"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 42, Building B, within Xiufeng Shengmao Building Materials Market, No. 50-5 Xiuxiang Avenue",
+    "contact_phone": "138****9007",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121497",
+    "company_en": "JiabaoLi Coating Experience Center (Kuaihuan Building Materials Market Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 51, Building F9, Kuaihuan Building Materials Market",
+    "contact_phone": "134****2742; 158****8688",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121498",
+    "company_en": "Dragon Boat Coating Auxiliary Materials",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "380 meters northeast of the intersection of Xiuxiang Avenue and the entrance of Xiuxiang Avenue",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121499",
+    "company_en": "JiabaoLi Coating Experience Hall (Kuaihuan Building Materials Market Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 35, Building A12, Kauihuan Building Materials Market, Chaoyang Street",
+    "contact_phone": "0771-3959773",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121500",
+    "company_en": "Forest Prince Coating (Aohua First Street Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "50 meters east of the south gate of Hongtu Garden",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121502",
+    "company_en": "Guangxi Tonglan Coating Engineering Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "120 meters northwest of the intersection of Yongbin Flyover and Kunlun Avenue",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121503",
+    "company_en": "Pinji Coating Auxiliary Materials",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Shop No. 26-27, Building 8, Dajiahui Building Materials and Home Furnishing City",
+    "contact_phone": "136****4568",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121504",
+    "company_en": "Guangxi Shurong Coating Engineering Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "80 meters southwest of the intersection of Donghong Road and Yaling Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121505",
+    "company_en": "JiabaoLi Coating Experience Hall (Fengling Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "80 meters east of the intersection of Fengling Road and Government Road",
+    "contact_phone": "189****1877",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121506",
+    "company_en": "Huabao Shi High-end External Wall Fake Marble Spraying (Shanglin Exhibition Hall)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 317-1, Zailiu City Garden, Fengling Road",
+    "contact_phone": "138****3693",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121507",
+    "company_en": "JiabaoLi Coating Experience Hall (Xiulin Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "80 meters north of the intersection of Xiulin Road and Ring City Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121508",
+    "company_en": "Huashi Painting (Wutang Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 367 Yongwu Road, Wutang Town",
+    "contact_phone": "130****4091",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121510",
+    "company_en": "Jiaboli Painting Experience Hall (Jincheng Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "110m Northwest of the Northeast Gate of Phoenix Science and Technology Culture Square",
+    "contact_phone": "152****7995",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121511",
+    "company_en": "Hengzhou Zijinhua Full Color Painting Hall",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 366-1 Huancheng Road",
+    "contact_phone": "0771-7113339; 134****0739; 188****5209",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121512",
+    "company_en": "Jiaboli Painting Experience Hall (Mingsheng Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 172 Chang'an Road, Hengzhou Town",
+    "contact_phone": "177****7305",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121513",
+    "company_en": "Weifu Painting Baolai Artificial Stone Paint",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Next to Nayan New Street Police Station, Nayan Town",
+    "contact_phone": "188****5671",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121693",
+    "company_en": "Guangxi Shoumiba Data Processing Service Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Heat Treatment"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 118 Dongge Road, Wanda Jinzuo",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "表面处理"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "low"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121694",
+    "company_en": "Nanning Xingning District People's Court Traffic Integrated Processing Center",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Heat Treatment"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 282 Nanwu Road (470m walk from D Exit of Xiaojicun Metro Station)",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "表面处理"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "low"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0121994",
+    "company_en": "Xingang Cold Work Spray Painting",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Circuit Board"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 84 Rongma Great Road, Xianhu Economic Development Zone, Yanggang Bridge Bottom Yayuan Pavilion, No. 1 Gate",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷漆"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0122120",
+    "company_en": "Baiju Auto Repair • Tire Battery • Four-Wheel Alignment • Painting",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "60 meters west of the intersection of Yin Feng Avenue and Xin Cun North Third Lane",
+    "contact_phone": "180****8727",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷漆"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123252",
+    "company_en": "Jimei Electroplating Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "electroplating"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "90 meters southwest of the Market Supervision Administration",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123253",
+    "company_en": "Zunyi Zhitong Metal Surface Treatment Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "electroplating"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Zunyi Surface Treatment Environmental Protection Industrial Park",
+    "contact_phone": "155****0380",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "金属表面"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123257",
+    "company_en": "Yifei Spray Painting Equipment Chain",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "spray painting"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Northwest of the west gate of Xiangyuan International South Area 130 meters",
+    "contact_phone": "189****8619",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123258",
+    "company_en": "Lubang Painting Coating Distribution Center (Zunyi Avenue Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "spray painting"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Nan Gong Mountain Logistics Park",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123259",
+    "company_en": "Zhenxiang Coating Auxiliary Materials (Lubang)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "spray painting"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Zunyi Trade City Tile and Board Wholesale Market Building G",
+    "contact_phone": "137****5036; 183****9281",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123260",
+    "company_en": "Chaoyue Coating Spray Painting Machine (Zunyi Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "spray painting"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "6th Building, 8th Unit, Cui Di Li Yuan, Wanfu Bridge, Chaoyue Coating Spray Painting Machine",
+    "contact_phone": "181****3352",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123261",
+    "company_en": "Xinghuo Spray Painting Equipment and Machinery",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "spray painting"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 103 Yan'an Road",
+    "contact_phone": "137****3440; 189****0363",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123262",
+    "company_en": "JiabaoLi Coating Experience Hall (General Agent)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 1-2, Sha Ba Building Materials Market, Waihuan Road",
+    "contact_phone": "180****0599",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123266",
+    "company_en": "JiabaoLi Whole House Coating",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "150 meters northwest of Zhejiang University Cultural Pedestrian Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123267",
+    "company_en": "Guizhou Xiong Rui Coating Environmental Protection Equipment Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "C-15 Building, Zhangjiao Industrial Park, Huaping Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123268",
+    "company_en": "Zunyi Tianzhong Heat Treatment Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Heat Treatment"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "280 meters southwest of the intersection of Emei Mountain Road and Zunlong Avenue",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0123730",
+    "company_en": "Wanrong Steel Structure, Stainless Steel, Galvanized Pipe Color Steel Sheet Wholesaler",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Steel"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "3-1-3 to 3-1-12, Longwan Phase II, Heshan Bay",
+    "contact_phone": "155****0031",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0132581",
+    "company_en": "Suzhou Yongtai Mold Manufacturing Co., Ltd. (Heat Treatment)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 1703 Xinzhuang Avenue, Xinzhuang Town",
+    "contact_phone": "186****3736",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
+  },
+  {
+    "id": "CN-MFG-0134924",
+    "company_en": "Jusheng Mold Vacuum Heat Treatment",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Foshan"
+    },
+    "address_en": "Longtan Industrial Area No. 2, Xingtang Town",
+    "contact_phone": "185****3255",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "industry_en": {
+      "code": "3360",
+      "name_en": "Metal Surface Treatment & Heat Treatment",
+      "level": "class",
+      "name": "金属表面处理及热处理加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3360"
   }
 ]

@@ -1533,6 +1533,41 @@
     "source_url": "https://www.amap.com/place/B0LDZSPYEQ"
   },
   {
+    "id": "CN-MFG-0007772",
+    "company_en": "Leqing Fenli Copper Materials Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Raw Materials"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Wenzhou"
+    },
+    "address_en": "No. 1, Zhonglou Electrical Appliance City, Huxiao Road, Liushi Town",
+    "contact_phone": "0577-62650289; 156****3888",
+    "source": "certification",
+    "verified_at": null,
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜材"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
     "id": "CN-MFG-0007773",
     "company_en": "Xinlong Copper Materials Factory",
     "category": "原材料",
@@ -5933,20 +5968,22 @@
       "province": "Guangdong",
       "city": "Huizhou"
     },
-    "address_en": "No. 80 West of Southeast Gate of Guangcai Xingzhi绒 Co., Ltd.",
+    "address_en": "No. 80 West of Southeast Gate, Guangcai Xingzhi绒 Co., Ltd.",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/32/3251",
-    "industry_en": {
+    "industry": {
       "code": "3251",
-      "name_en": "Copper Rolling",
-      "level": "class",
       "name": "铜压延加工",
-      "confidence": "medium"
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜材"
     },
-    "source_url": "https://www.amap.com/place/B0L3CUJMC6"
+    "industry_en": null,
+    "_bucket": "C/32/3251"
   },
   {
     "id": "CN-MFG-0019192",
@@ -8122,12 +8159,20 @@
       "province": "Zhejiang",
       "city": "Ningbo"
     },
-    "address_en": "No. 19 Wenkai Road, Haishun Lan庭",
+    "address_en": "No. 19 Hainan Blue Court, Wenkai Road",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/32/3251",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜管"
+    },
     "industry_en": {
       "code": "3251",
       "name_en": "Copper Rolling",
@@ -8135,7 +8180,7 @@
       "name": "铜压延加工",
       "confidence": "medium"
     },
-    "source_url": "https://www.amap.com/place/B0MAU4RXB9"
+    "_bucket": "C/32/3251"
   },
   {
     "id": "CN-MFG-0023426",
@@ -8921,7 +8966,14 @@
       "source": "name",
       "evidence": "铜材"
     },
-    "source_url": "https://www.amap.com/place/B0GUKUF2SM"
+    "source_url": "https://www.amap.com/place/B0GUKUF2SM",
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0087762",
@@ -8950,6 +9002,363 @@
       "source": "name",
       "evidence": "铜业"
     },
-    "source_url": "https://www.amap.com/place/B0K0BLGLJD"
+    "source_url": "https://www.amap.com/place/B0K0BLGLJD",
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0102470",
+    "company_en": "Guiyang Jiangtong Metal Materials Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Materials"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "60 meters east of the intersection of Qingyi Road and Baihua Avenue",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "low"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
+    "id": "CN-MFG-0102734",
+    "company_en": "Guizhou Youyang Copper Tube Sales Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Tubes"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 3A-20 Warehouse, Qinfeng Logistics Park",
+    "contact_phone": "189****8447",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜管"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
+    "id": "CN-MFG-0115482",
+    "company_en": "Yunnan Tongdu New Materials Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Materials"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 74, Group 1, Mushulang Village Committee, Tongdu Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "low"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
+    "id": "CN-MFG-0115630",
+    "company_en": "Yunnan Yongxiang Copper Pipe Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Tubes"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building 3, Floor 1, No. 6, Zone G, Zhonglin Building Materials City",
+    "contact_phone": "138****5389",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜管"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
+    "id": "CN-MFG-0115991",
+    "company_en": "Kunming Xinyaxin Electric Power Equipment Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Bars"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 1, Building 4, East Area, Dongju Hardware and Electrical Machinery City",
+    "contact_phone": "0871-63320087; 182****6161; 183****0780",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "low"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
+    "id": "CN-MFG-0115992",
+    "company_en": "Copper Bars Aluminum Bars",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Bars"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Beside Gate 3, Dongju Hardware and Electrical Machinery Building Materials City",
+    "contact_phone": "138****3755; 139****5115",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜排"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
+    "id": "CN-MFG-0115993",
+    "company_en": "Na Xi·A Cha Lijiang Copper Pot Braised Pork Ribs",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Bars"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Floor F6, Haoyue Tiandi, No. 618, South Ring Road",
+    "contact_phone": "153****1749",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "low"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
+    "id": "CN-MFG-0115994",
+    "company_en": "Delixi Electrical (High and Low Voltage Electrical Sets) Beside Yuncha City",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Bars"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 15, Lingyuan Road",
+    "contact_phone": "181****4077",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "low"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
+    "id": "CN-MFG-0115995",
+    "company_en": "Tongpiao Huangmen Beef Steak (Shengshi Jinyuan Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Tongpai"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 121, 106 Road, Shengshi Jinyuan Pedestrian Street",
+    "contact_phone": "138****9386",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "low"
+    },
+    "_bucket": "C/32/3251"
+  },
+  {
+    "id": "CN-MFG-0122920",
+    "company_en": "Jiangxi Copper Materials",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Materials"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "140 meters northeast of the intersection of Anyuan East Road and Jiyuan Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜材"
+    },
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/32/3251"
   }
 ]

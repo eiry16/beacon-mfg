@@ -8,7 +8,8 @@
     ],
     "region": {
       "province": "四川",
-      "city": "成都"
+      "city": "成都",
+      "district": "锦江"
     },
     "address": "锦尚大桥与国华街交叉口西120米",
     "contact_phone": "待核实",
@@ -57,7 +58,8 @@
     ],
     "region": {
       "province": "四川",
-      "city": "成都"
+      "city": "成都",
+      "district": "青羊"
     },
     "address": "宽窄巷子景区(宽窄巷子地铁站B口步行70米)",
     "contact_phone": "待核实",
@@ -106,7 +108,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "宝山"
     },
     "address": "呼青路158弄交运智慧湾26号楼-3单元",
     "contact_phone": "182****0348",
@@ -152,11 +155,13 @@
     "keywords": [
       "烘焙",
       "蛋糕",
-      "西点"
+      "西点",
+      "甜品"
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "黄浦"
     },
     "address": "陕西南路71号(陕西南路地铁站2号口步行190米)",
     "contact_phone": "199****0899",
@@ -202,11 +207,13 @@
     "keywords": [
       "烘焙",
       "蛋糕",
-      "西点"
+      "西点",
+      "甜品"
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "长宁"
     },
     "address": "愚园路1280弄23号1楼",
     "contact_phone": "199****2366",
@@ -233,6 +240,55 @@
       "business_area": "中山公园",
       "adcode": "310105",
       "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "1421",
+      "name": "糖果、巧克力制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 糖果、巧克力及蜜饯制造 > 糖果、巧克力制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "巧克力"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0137259",
+    "company": "心花墅一族巧克力王国度假别墅",
+    "category": "制造业",
+    "keywords": [
+      "度假酒店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "从化"
+    },
+    "address": "怡乐路三区一街34号",
+    "contact_phone": "待核实",
+    "lat": 23.703381,
+    "lng": 113.73114,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHRJDL8",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "别墅酒店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440117",
+      "search_keyword": "度假酒店"
     },
     "industry": {
       "code": "1421",

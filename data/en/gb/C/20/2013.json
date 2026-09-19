@@ -378,6 +378,83 @@
       "source": "gb_token",
       "evidence": "单板"
     },
-    "source_url": "https://www.amap.com/place/B02001BTJH"
+    "source_url": "https://www.amap.com/place/B02001BTJH",
+    "industry_en": {
+      "code": "2013",
+      "name_en": null,
+      "level": "class",
+      "name": "单板加工",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0101734",
+    "company_en": "Guizhou Yun Tong Aluminum Composite Panel Production Base",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Aluminum Profiles"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "170 meters northwest of Dashi Hui Business Hotel, Guiyang",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2013",
+      "name": "单板加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 单板加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "单板"
+    },
+    "industry_en": {
+      "code": "2013",
+      "name_en": null,
+      "level": "class",
+      "name": "单板加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/20/2013"
+  },
+  {
+    "id": "CN-MFG-0114936",
+    "company_en": "Shanghai Jixiang Aluminum Plastic Sheet Manufacturer Aluminum Plastic Metal Composite Panel Meiliban Aluminum Composite Panel Manufacturer",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Aluminum Plate"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 2 Warehouse, Dong San Huan Gaojin Automobile Co., Ltd.",
+    "contact_phone": "137****7193",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2013",
+      "name": "单板加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 单板加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "单板"
+    },
+    "industry_en": {
+      "code": "2013",
+      "name_en": null,
+      "level": "class",
+      "name": "单板加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/20/2013"
   }
 ]

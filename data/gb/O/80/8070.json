@@ -4,11 +4,13 @@
     "company": "鑫帆隆婚介公司钟表家电维修",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "家电维修"
+      "家电维修",
+      "冰箱维修"
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "瓜沥镇官一村二组31号",
     "contact_phone": "158****5988",
@@ -83,6 +85,105 @@
       "business_area": "马街",
       "adcode": "530112",
       "search_keyword": "家常菜"
+    },
+    "industry": {
+      "code": "8070",
+      "name": "婚姻服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 婚姻服务 > 婚姻服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "婚礼"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0131641",
+    "company": "格莱美婚礼宴会中心(东太湖店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "酒店",
+      "宾馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江"
+    },
+    "address": "开平路苏州湾美食新天地冰晶石4号楼",
+    "contact_phone": "4000988520",
+    "lat": 31.135642,
+    "lng": 120.586592,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG2R7X9",
+      "type": "住宿服务;宾馆酒店;五星级宾馆",
+      "typecode": "100102",
+      "alias": "",
+      "tag": "",
+      "keytag": "婚宴酒店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "砂之船奥特莱斯",
+      "adcode": "320509",
+      "search_keyword": "酒店"
+    },
+    "industry": {
+      "code": "8070",
+      "name": "婚姻服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 婚姻服务 > 婚姻服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "婚礼"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0137038",
+    "company": "蓝宫泳池婚礼别墅",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "度假酒店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗"
+    },
+    "address": "大鹏新区鹏飞路大鹏山庄西区46号",
+    "contact_phone": "138****6408; 158****8117",
+    "lat": 22.603821,
+    "lng": 114.47294,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKTZ3UP",
+      "type": "商务住宅;商务住宅相关;商务住宅相关",
+      "typecode": "120000",
+      "alias": "",
+      "tag": "",
+      "keytag": "别墅酒店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440307",
+      "search_keyword": "度假酒店"
     },
     "industry": {
       "code": "8070",

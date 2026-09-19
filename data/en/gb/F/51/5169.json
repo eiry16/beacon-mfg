@@ -1908,7 +1908,15 @@
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "F/51/5169",
+    "industry": {
+      "code": "5169",
+      "name": "其他化工产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 其他化工产品批发",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "原材料"
+    },
     "industry_en": {
       "code": "5169",
       "name_en": "Other Chemical Products Wholesale",
@@ -1916,7 +1924,7 @@
       "name": "其他化工产品批发",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0FFHW4HAH"
+    "_bucket": "F/51/5169"
   },
   {
     "id": "CN-MFG-0009186",

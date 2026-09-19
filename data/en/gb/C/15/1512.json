@@ -26,6 +26,83 @@
       "source": "name",
       "evidence": "酒厂"
     },
-    "source_url": "https://www.amap.com/place/B0K3XOYHM5"
+    "source_url": "https://www.amap.com/place/B0K3XOYHM5",
+    "industry_en": {
+      "code": "1512",
+      "name_en": null,
+      "level": "class",
+      "name": "白酒制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0120410",
+    "company_en": "Heijiao Jiuchang",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Bar"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "MaoCaopu Houchang",
+    "contact_phone": "199****8833",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "1512",
+      "name": "白酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 白酒制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "酒厂"
+    },
+    "industry_en": {
+      "code": "1512",
+      "name_en": null,
+      "level": "class",
+      "name": "白酒制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/15/1512"
+  },
+  {
+    "id": "CN-MFG-0121836",
+    "company_en": "Taibai Jiujia",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Inn"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Hebin South Road Taibai Bridge Xiaokangcheng Community Building 56",
+    "contact_phone": "150****6532",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "1512",
+      "name": "白酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 白酒制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "白酒"
+    },
+    "industry_en": {
+      "code": "1512",
+      "name_en": null,
+      "level": "class",
+      "name": "白酒制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/15/1512"
   }
 ]

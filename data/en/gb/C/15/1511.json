@@ -26,6 +26,48 @@
       "source": "gb_token",
       "evidence": "酒精"
     },
-    "source_url": "https://www.amap.com/place/B0I1L4B51A"
+    "source_url": "https://www.amap.com/place/B0I1L4B51A",
+    "industry_en": {
+      "code": "1511",
+      "name_en": null,
+      "level": "class",
+      "name": "酒精制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0104120",
+    "company_en": "Jiujinren Di Xia Jiu Ku",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Bar"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 480 Zijun Road, Ouchen Orange Town Phase I, 1-1-2",
+    "contact_phone": "151****9319; 183****4720",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "1511",
+      "name": "酒精制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 酒精制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "酒精"
+    },
+    "industry_en": {
+      "code": "1511",
+      "name_en": null,
+      "level": "class",
+      "name": "酒精制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/15/1511"
   }
 ]

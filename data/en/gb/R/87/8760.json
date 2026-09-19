@@ -480,7 +480,7 @@
   },
   {
     "id": "CN-MFG-0035742",
-    "company_en": "CooperStar Cinema (Shanghai LuOne凯德晶萃店)",
+    "company_en": "CooperStar Yingcheng (Shanghai LuOne Kaide Jingcui Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -491,12 +491,20 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 268 Xuhui Road, 6th Floor, LuOne凯德晶萃 Plaza",
+    "address_en": "No. 268 Xuhui Road, 6F Luone Kaide Jingcui Plaza",
     "contact_phone": "021-63868001",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影城"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -504,7 +512,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0K0US2MZ7"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0035743",
@@ -605,12 +613,20 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 408 Zhapu Road (步行340 meters from Sichuan North Road Subway Station Exit 2)",
+    "address_en": "No. 408 Zhalupu Road (步行340 meters from Sichuanbei Road Subway Station Exit 2)",
     "contact_phone": "021-56320255",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电影院"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -618,7 +634,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0JAXZZ2R4"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0035747",
@@ -1928,7 +1944,7 @@
   },
   {
     "id": "CN-MFG-0036000",
-    "company_en": "Baichuan International Cinema (Zhongshan West Road Store)",
+    "company_en": "Baichuan International Cinema (Zhongshan Beilu Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -1939,12 +1955,20 @@
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "No. 12 Zhongshan West Road, 4th Floor, Huarewa万家",
+    "address_en": "No. 12 Zhongshan Beilu, 4th Floor, Huarewa万家",
     "contact_phone": "020-81331590",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影城"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -1952,7 +1976,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0FFK8UCLD"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0036001",
@@ -3293,22 +3317,31 @@
   },
   {
     "id": "CN-MFG-0036256",
-    "company_en": "Wandao Cinema (CITIC TaiFu万达 Plaza Store)",
+    "company_en": "Langdong Magic Cube Bermuda Deep Sea Dynamic Cinema",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "cinema"
+      "cinema",
+      "movie theater"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Nanjing"
     },
-    "address_en": "No. 447 Shengxin Road, 5th Floor, CITIC TaiFu万达 Plaza",
+    "address_en": "Subterranean Plaza of Jinling Style Romantic Center (Exit at Gangzicun No. 3, towards the Love Garden direction)",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -3316,7 +3349,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0MU6MUHIQ"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0036257",
@@ -4950,7 +4983,7 @@
   },
   {
     "id": "CN-MFG-0036586",
-    "company_en": "Hubei Cinema (Gonghe and Xin Road Store)",
+    "company_en": "Wanda Cinema (CITIC Pacific Wanda Plaza Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -4960,12 +4993,20 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 500 Luochuan East Road, 1-3rd Floor (步行470 meters from Changyan Road Subway Station Exit 2)",
+    "address_en": "No. 447 Shengxin Road, 5th Floor, CITIC Pacific Wanda Plaza",
     "contact_phone": "021-61231996",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影城"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -4973,7 +5014,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0FFJKH21V"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0036587",
@@ -5004,22 +5045,30 @@
   },
   {
     "id": "CN-MFG-0036588",
-    "company_en": "沪北电影院(共和新路店)",
+    "company_en": "Hubei Cinema (Gonghe Xinlu Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "影城"
+      "movie city"
     ],
     "region": {
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "洛川东路500号1-3层(延长路地铁站2号口步行470米)",
+    "address_en": "No. 500 Luochuan East Road, 1-3rd Floor (步行470 meters from Changyan Road Subway Station Exit 2)",
     "contact_phone": "021-56627784",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电影院"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -5027,7 +5076,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B00151E06E"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0036589",
@@ -5301,22 +5350,30 @@
   },
   {
     "id": "CN-MFG-0036599",
-    "company_en": "SFC Shangying Cinema (Ganghuan Yonghua IMAX Laser Store)",
+    "company_en": "SFC Shangying Cinema (Ganghui Yonghua IMAX Laser Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Cinema"
+      "movie city"
     ],
     "region": {
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 1 Hongqiao Road, 6th Floor, Ganghuan恒隆Plaza",
+    "address_en": "No. 1 Hongqiao Road, 6th Floor, Honghui恒隆广场",
     "contact_phone": "021-64076622",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影城"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -5324,7 +5381,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B00155LAQL"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0036676",
@@ -6760,22 +6817,30 @@
   },
   {
     "id": "CN-MFG-0036897",
-    "company_en": "Wanda Cinema (Nanjing Wanda茂 Store)",
+    "company_en": "Wanda Cinema (Nanjing Wanda Mawu Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Cinema"
+      "cinema"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Nanjing"
     },
-    "address_en": "Northwest Corner of the Intersection of Xianlin Avenue and Xianlin Lake Road, 4th Floor, Nanjing Wanda茂",
+    "address_en": "Northeast corner of the intersection of Xianling Avenue and Xianling Lake Road, 4th Floor, Nanjing Wanda Mawu",
     "contact_phone": "025-69573570",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影城"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -6783,7 +6848,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0FFJDS6U1"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0036898",
@@ -7544,22 +7609,30 @@
   },
   {
     "id": "CN-MFG-0037020",
-    "company_en": "China Film Guanggu Li Cinema",
+    "company_en": "Zhongying Guanggu Li Cinema",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Cinema"
+      "cinema"
     ],
     "region": {
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 9, 2nd Road, East Lake New and High-tech Development Zone, 4th Floor, North辰Guanggu Li Building 8",
+    "address_en": "No. 9, 8th Floor, Building 4, Gaoxinnan Road, East Lake New and High-tech Development Zone",
     "contact_phone": "189****0895",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影城"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -7567,7 +7640,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0H05SEZR6"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0037021",
@@ -7952,23 +8025,31 @@
   },
   {
     "id": "CN-MFG-0038537",
-    "company_en": "Yuegong 3D Cinema Foot Massage (Beiwai滩 Store)",
+    "company_en": "Yuegong 3D Cinema Foot Massage (Beiwai Tan Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Foot Bath",
-      "Foot Massage"
+      "foot spa",
+      "foot bath"
     ],
     "region": {
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 9, Zhoujiabu Road, Jiaxing Road Street, 4th Floor, 412 Room, Shangbin Life Plaza",
+    "address_en": "No. 917 Zhoujiashui Road, Jiaxing Road District, 4th Floor, Room 412, Shangbin Life Plaza",
     "contact_phone": "021-35350058",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -7976,7 +8057,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0L1TZ2PYE"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0038883",
@@ -8975,7 +9056,7 @@
   },
   {
     "id": "CN-MFG-0045184",
-    "company_en": "LAN·Qinjie Cinema-style Foot Massage",
+    "company_en": "LAN·Qinjie Foot Spa Cinema Style",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -8985,12 +9066,20 @@
       "province": "Zhejiang",
       "city": "Hangzhou"
     },
-    "address_en": "No. 766 Moganshan Road (90 meters walk from Garden岗Subway Station Exit E)",
+    "address_en": "No. 766 Moganshan Road, Compound (步行90 meters from Huayuan Gang Subway Station Exit E)",
     "contact_phone": "130****8515",
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "R/87/8760",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
     "industry_en": {
       "code": "8760",
       "name_en": "Movie Theaters (Film Projection)",
@@ -8998,7 +9087,7 @@
       "name": "电影放映",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0LUAZMBXV"
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0045208",
@@ -9219,22 +9308,21 @@
   },
   {
     "id": "CN-MFG-0056510",
-    "company_en": "LuCKHaHa Yuanyang (Shangjiu万达 Cinema Store)",
+    "company_en": "LuckHaHa Good Luck Coconut (Sankaku Wanda Cinema Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Bubble Tea"
+      "milk tea"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Ningbo"
     },
-    "address_en": "No. 189, 6th Floor, 607 Shop, Haian North Road",
+    "address_en": "No. 189 Haian North Road, 6th Floor, Shop 607",
     "contact_phone": "180****1605",
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "R/87/8760",
     "industry": {
       "code": "8760",
       "name": "电影放映",
@@ -9244,7 +9332,14 @@
       "source": "name",
       "evidence": "影城"
     },
-    "source_url": "https://www.amap.com/place/B0L0PD05KZ"
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0072627",
@@ -9273,7 +9368,14 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0L0YN57F0"
+    "source_url": "https://www.amap.com/place/B0L0YN57F0",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0072778",
@@ -9302,7 +9404,14 @@
       "source": "name",
       "evidence": "电影院"
     },
-    "source_url": "https://www.amap.com/place/B0FFG19YRU"
+    "source_url": "https://www.amap.com/place/B0FFG19YRU",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0072910",
@@ -9331,26 +9440,32 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0FFF44ZCW"
+    "source_url": "https://www.amap.com/place/B0FFF44ZCW",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0073168",
-    "company_en": "Junshang安康 Cinema Foot Massage (Gaohang Store)",
+    "company_en": "Junshang Ankang Cinema Foot Massage (Gaohang Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Healthcare"
+      "health care"
     ],
     "region": {
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "1881 Dongjing Road, B1 of Wanjia Commercial Plaza (enter through South 7 Gate, walk straight for 30 meters, take the escalator down to B1)",
+    "address_en": "No. 1881 Dongjing Road, B1, Wanjia Commercial Plaza (enter through South 7 Gate, walk straight for 30 meters, take the escalator down to B1)",
     "contact_phone": "021-50128880",
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "R/87/8760",
     "industry": {
       "code": "8760",
       "name": "电影放映",
@@ -9360,11 +9475,18 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0HR37CMID"
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0073577",
-    "company_en": "Starbucks (Wujiaochang万达 Cinema Store)",
+    "company_en": "Xingba Ke (Wujiaochang Wanda Cinema Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -9374,12 +9496,11 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "3rd Floor, Wujiaochang万达 Commercial Plaza, Wanda Cinema, Guobin Road",
+    "address_en": "No. 58, 3rd Floor, Wujiaochang Wanda Plaza, Wanda Cinema, Guobin Road",
     "contact_phone": "021-53930715",
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "R/87/8760",
     "industry": {
       "code": "8760",
       "name": "电影放映",
@@ -9389,7 +9510,14 @@
       "source": "name",
       "evidence": "影城"
     },
-    "source_url": "https://www.amap.com/place/B0FFGTGSEI"
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0075060",
@@ -9418,26 +9546,32 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0HUAA1BMI"
+    "source_url": "https://www.amap.com/place/B0HUAA1BMI",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0075825",
-    "company_en": "Changsheng Club Cinema Foot Massage (Xinhu明珠 City Phase I Store)",
+    "company_en": "Changsheng Club Cinema Foot Massage (Xinhuhua Mingzhu Phase I Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Healthcare"
+      "health care"
     ],
     "region": {
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 102 Dongxin Road (walk 460 meters from Caoyang Road Subway Station Exit 8)",
+    "address_en": "No. 102 Dongxin Road (460 meters walk from Caoyang Road Subway Station Exit 8)",
     "contact_phone": "189****5283",
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "R/87/8760",
     "industry": {
       "code": "8760",
       "name": "电影放映",
@@ -9447,7 +9581,14 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0JKZHQT3F"
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
   },
   {
     "id": "CN-MFG-0076518",
@@ -9476,7 +9617,14 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0FFLEWSZR"
+    "source_url": "https://www.amap.com/place/B0FFLEWSZR",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0076914",
@@ -9505,7 +9653,14 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0H04SC7XV"
+    "source_url": "https://www.amap.com/place/B0H04SC7XV",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0077968",
@@ -9534,7 +9689,14 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0HKRAOM11"
+    "source_url": "https://www.amap.com/place/B0HKRAOM11",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0077995",
@@ -9563,7 +9725,14 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0IA3R15X0"
+    "source_url": "https://www.amap.com/place/B0IA3R15X0",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0078304",
@@ -9592,7 +9761,14 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0I2FURBCD"
+    "source_url": "https://www.amap.com/place/B0I2FURBCD",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0078332",
@@ -9621,7 +9797,14 @@
       "source": "name",
       "evidence": "影院"
     },
-    "source_url": "https://www.amap.com/place/B0IKCSJ8CN"
+    "source_url": "https://www.amap.com/place/B0IKCSJ8CN",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0082937",
@@ -9652,6 +9835,833 @@
       "source": "name",
       "evidence": "电影院"
     },
-    "source_url": "https://www.amap.com/place/B0LUS55DBI"
+    "source_url": "https://www.amap.com/place/B0LUS55DBI",
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0094156",
+    "company_en": "Canglang Zhi Shui·Cinema Foot Bath",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Foot Bath"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Yuan'an Anjing District Weilifangzhou F2 Group",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0094376",
+    "company_en": "Jiale Kang Foot Bath·5D Cinema (China Railway Yidu Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Foot Bath"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Jinyang Street Shilin East Road No. 300 China Railway Yidu International C Group Shop 2nd Floor 17-20",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0097588",
+    "company_en": "Yunjing Smart Cinema",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Inn",
+      "Deluxe Inn"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Xiaochihe Street Xiaochihe Road Huaguo Yuan Fortune Plaza Building 3, 40th Floor, Room 25",
+    "contact_phone": "176****5251",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0098201",
+    "company_en": "Shiguang·Smart Viewing Cinema 9th Store (Guiyang North Railway Station. Peking University Resources Dream City Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Deluxe Inn"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Peking University Resources Dream City Project Plot 8, Building A02, Unit 1, 14th Floor, Room 9",
+    "contact_phone": "135****0807; +861056320612; 37012747",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0098211",
+    "company_en": "Mandu·Luxury Cinema Inn (Huaguo Yuan Shuang Ta Fangyuan Haidun Square Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Deluxe Inn"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "60 meters north of the intersection of Zhongshan South Road and Zhongshan Middle Road",
+    "contact_phone": "176****8898",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0101286",
+    "company_en": "Zubu Qingyun 3D Foot Bath Cinema (Sunshine Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Hydrotherapy",
+      "Foot Bath"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "3rd Floor Sunshine Club",
+    "contact_phone": "0871-64636777",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0101756",
+    "company_en": "Zubu Qingyun 3D Cinema Foot Bath (Guodi Shangcheng Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Foot Bath"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Guodi Shangcheng Business Center B Building, 16th Floor",
+    "contact_phone": "0871-61357778; 0871-63157778",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0101764",
+    "company_en": "BeiBei Foot Bath·Cinema Style Health and Wellness Club",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Foot Bath",
+      "Foot Bathing",
+      "Health Preservation",
+      "Healthcare"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Yuhua Street Office Yuhua Road Jindunjunyuan A2 Plot 2 Building Commercial 2-3 Floor Shop 2",
+    "contact_phone": "0871-67498433",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0101780",
+    "company_en": "Xunman Yuzhu (Cinema Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "foot bath",
+      "foot soak"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 167, Group 5, Xiaobiaoqiao Street",
+    "contact_phone": "0871-65185808",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0101971",
+    "company_en": "Muyun Taigu 3D Cinema Foot Massage",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "foot soak"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "7th Building, A Seat, Minghuiyuan Center, Xili Street, Yiliu District",
+    "contact_phone": "181****0268",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0102012",
+    "company_en": "Zhi Zhi Gen Cinema Health Club",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "foot soak",
+      "health care"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 1, Attached to 699, Dayangfu Village, Xiaobiaoqiao Street Office",
+    "contact_phone": "0871-67350098",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0103369",
+    "company_en": "Jinsheng Zuyue Cinema-style Health Club (Guofu Modern City Hehuayuan Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Healthcare"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building 5, 2nd Floor, Hehuayuan, Guofu Modern City",
+    "contact_phone": "0871-63382158",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0109646",
+    "company_en": "Guanglin She. New Style Cinema Foot Massage (Provence Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "foot bath"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "101st Floor, A Seat, Tianjian Linghang Building, No. 30, Jinkai Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0109890",
+    "company_en": "Foot Massage Cinema (Zhongtian Century Garden Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "foot soak"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 18, Changhu Road, Zhongtian Century Garden",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0112082",
+    "company_en": "Minyaoji Barbecue Restaurant National Cinema Store",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "bar"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 150, Minzu Avenue",
+    "contact_phone": "130****5319",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影城"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0114945",
+    "company_en": "Qinyuanjiatutu Cinema Beauty Hostel (Nanning Railway Station Subway Chaoyang Square Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "guesthouse",
+      "deluxe guesthouse"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "26th Floor, C Seat, Tiancheng Yipin Building, No. 65, Chaoyang Road",
+    "contact_phone": "184****4679; 187****1686",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0115544",
+    "company_en": "Youguang·Cinema Luxury Apartment (Nanning Vanke Xingduhui Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Deluxe Guesthouse"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 1318, 13th Floor, Building 33, Phase 4, Vanke Xingduhui, Jinhai Road",
+    "contact_phone": "183****8906",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0116528",
+    "company_en": "Bosi Cinema Foot Massage (Xishui Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Hydrotherapy",
+      "Foot Bath",
+      "Healthcare"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "3rd Floor, Guiyang Bank, No. 1, Shanwang Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0116974",
+    "company_en": "Hetang Yuexue Cinema-style Foot Bath",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Foot Bath",
+      "Foot Soak",
+      "Massage"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "New Pu New Area, Xinzhong Street, Xinpu Tiandu Building 2, 3rd Floor",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0117272",
+    "company_en": "Chenshangge Cinema Foot Massage",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Foot Soak",
+      "Massage"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Building 2-3, 3rd Floor, Wengwu Village, Xintu Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0132634",
+    "company_en": "Manyi Ju Cinema Apartment (Xiaoxing Subway Station Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Hotel",
+      "Guesthouse"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 204, Xiaoxing Comprehensive Building, 3rd Floor",
+    "contact_phone": "189****7812; +861056320612; 53184310",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0132688",
+    "company_en": "Mo Ren Sen Style Cinema Apartment",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Hotel",
+      "Guesthouse"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "Room 126, Building 1, 1st Floor, Phase 2, Hongyang Times Center",
+    "contact_phone": "138****6877",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
+  },
+  {
+    "id": "CN-MFG-0133390",
+    "company_en": "Huanjianli Art Cinema Apartment (Wuhan Wangjiawan More City Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Hotel"
+    ],
+    "region": {
+      "province": "Hubei",
+      "city": "Wuhan"
+    },
+    "address_en": "Unit 1-602, Renxin Hui Phase 4, Tianyu",
+    "contact_phone": "177****9197; +861056320612; 77857",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8760",
+      "name": "电影放映",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电影放映 > 电影放映",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "影院"
+    },
+    "industry_en": {
+      "code": "8760",
+      "name_en": "Movie Theaters (Film Projection)",
+      "level": "class",
+      "name": "电影放映",
+      "confidence": "high"
+    },
+    "_bucket": "R/87/8760"
   }
 ]

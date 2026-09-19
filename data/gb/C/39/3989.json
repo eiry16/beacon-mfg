@@ -9,7 +9,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "新桥街道象山社区新发东路12号众恒信达工业区C栋402",
     "contact_phone": "136****6864",
@@ -59,7 +60,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "黄杨大道2018号",
     "contact_phone": "136****8999",
@@ -115,7 +117,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "广梅公路锦湖加油站旁32号",
     "contact_phone": "151****6519",
@@ -170,7 +173,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "坪山"
     },
     "address": "坑梓街道秀新社区龙林路3号A栋",
     "contact_phone": "189****5484",
@@ -218,7 +222,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "航城街道鹤洲社区鹤洲安乐工业园厂房1号5层",
     "contact_phone": "199****8199",
@@ -265,7 +270,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "沙井街道沙三社区沙三路38号东二楼",
     "contact_phone": "136****1153",
@@ -346,7 +352,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "塘头大道208号恒超工业园A栋2楼西侧",
     "contact_phone": "181****1942",
@@ -394,7 +401,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "福永街道凤凰社区兴业一路6号兴围第三工业区15栋3层",
     "contact_phone": "159****6015",
@@ -442,7 +450,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "塘头南岗工业区16栋6楼",
     "contact_phone": "0755-86564561",
@@ -769,7 +778,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "坪山"
     },
     "address": "龙田街道龙田社区莹展科技园B5B栋五楼501",
     "contact_phone": "待核实",
@@ -922,39 +932,6 @@
     "_bucket": "C/39/3989"
   },
   {
-    "id": "CN-MFG-0003274",
-    "company": "东莞市锐增实业有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "PCB"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "东莞"
-    },
-    "address": "常平镇白花沥村纬四路88号C栋1-3楼",
-    "contact_phone": "135****8492",
-    "lat": 23.025525,
-    "lng": 114.032875,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0003276",
     "company": "东莞市协赢胶辊有限公司",
     "category": "电子元器件",
@@ -969,39 +946,6 @@
     "contact_phone": "150****0252; 186****5802",
     "lat": 22.905759,
     "lng": 114.018345,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0003277",
-    "company": "吉利星激光科技有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "PCB"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "东莞"
-    },
-    "address": "大岭山镇焦迳街17号",
-    "contact_phone": "177****3276",
-    "lat": 22.91331,
-    "lng": 113.812446,
     "source": "public_directory",
     "source_url": "",
     "verified_at": "2026-08-13",
@@ -1125,39 +1069,6 @@
       ],
       "verified": false
     },
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0003283",
-    "company": "鼎峰激光",
-    "category": "电子元器件",
-    "keywords": [
-      "PCB"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "惠州"
-    },
-    "address": "腾达路6号鸿瑞达产业园三楼",
-    "contact_phone": "待核实",
-    "lat": 23.038182,
-    "lng": 114.345439,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": true,
-    "note": "",
-    "status": "unverified_poi",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
     "_bucket": "C/39/3989"
   },
   {
@@ -1377,7 +1288,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "珠峰大道北7188号",
     "contact_phone": "待核实",
@@ -1425,7 +1337,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "黄埔"
     },
     "address": "连云路8号好莱客产业园13栋108",
     "contact_phone": "135****0101",
@@ -1539,7 +1452,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "益和路258号6楼",
     "contact_phone": "待核实",
@@ -1619,7 +1533,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "新吴"
     },
     "address": "旺庄工业配套园(荆同园)39号楼",
     "contact_phone": "138****1047",
@@ -1674,7 +1589,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "滨湖"
     },
     "address": "华谊路30号D栋三楼",
     "contact_phone": "0510-85168502",
@@ -1729,7 +1645,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "松江"
     },
     "address": "车墩镇北松公路5355弄27号2层",
     "contact_phone": "139****8676",
@@ -1818,7 +1735,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "滨江"
     },
     "address": "长河街道聚才路239号6幢17层",
     "contact_phone": "136****4419",
@@ -2005,7 +1923,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "横岗下大街24号",
     "contact_phone": "135****1620",
@@ -2052,7 +1971,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "航空路丰泽楼C栋6楼",
     "contact_phone": "181****9805",
@@ -2099,7 +2019,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "光侨路与田辉二路交叉口东南220米",
     "contact_phone": "131****1513",
@@ -2216,49 +2137,18 @@
     "company": "深圳兴北海电子",
     "category": "电子元器件",
     "keywords": [
-      "PCBA"
+      "PCBA",
+      "传感器"
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "松岗街道江边社区工业五路5号B栋201",
-    "contact_phone": "待核实",
+    "contact_phone": "133****2170",
     "lat": 22.771965,
     "lng": 113.802506,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": true,
-    "note": "",
-    "status": "unverified_poi",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0003318",
-    "company": "深圳市伟锦科技有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "PCBA"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "深圳"
-    },
-    "address": "福海街道新和社区工业北区28号东座5楼",
-    "contact_phone": "134****1150",
-    "lat": 22.667548,
-    "lng": 113.803181,
     "source": "public_directory",
     "source_url": "",
     "verified_at": "2026-08-13",
@@ -2275,7 +2165,21 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "amap": {
+      "poi_id": "B0FFGBN3HL",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松岗",
+      "adcode": "440306",
+      "search_keyword": "传感器"
+    }
   },
   {
     "id": "CN-MFG-0003319",
@@ -2790,7 +2694,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "水口街道信利康乐创城二期11栋",
     "contact_phone": "135****9008",
@@ -2912,7 +2817,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "石楼镇嵩山路64号合裕工业园F栋",
     "contact_phone": "188****3995",
@@ -2992,7 +2898,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "春耀路33号",
     "contact_phone": "待核实",
@@ -3047,7 +2954,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "长江北路233号",
     "contact_phone": "0512-57646816",
@@ -3094,7 +3002,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "黄桥街道西木巷街169号",
     "contact_phone": "180****1104",
@@ -3149,7 +3058,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "春耀路6号西门",
     "contact_phone": "待核实",
@@ -3204,7 +3114,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "常熟"
     },
     "address": "中天路19号",
     "contact_phone": "0512-52477866",
@@ -3259,7 +3170,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "虎丘"
     },
     "address": "新区火炬路35号",
     "contact_phone": "0512-68081816",
@@ -3314,7 +3226,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "拓斯达路与淞苇路交叉口北240米",
     "contact_phone": "待核实",
@@ -3361,7 +3274,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "迎宾西路2001号C3栋",
     "contact_phone": "185****1296",
@@ -3408,7 +3322,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "晨丰路164号",
     "contact_phone": "186****6211",
@@ -3455,7 +3370,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "越溪街道南官渡路16号B4栋",
     "contact_phone": "0512-66016719",
@@ -3502,7 +3418,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "优比路北部原创型企业基地12号2层",
     "contact_phone": "182****6096",
@@ -3557,7 +3474,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "玉山镇玉阳路456号G栋南半栋",
     "contact_phone": "待核实",
@@ -3612,7 +3530,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "漕湖街道春兴路46号(三期)B2栋3层",
     "contact_phone": "待核实",
@@ -3659,7 +3578,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "常熟"
     },
     "address": "辛庄镇新阳大道160号绿洲芯城7幢4楼",
     "contact_phone": "待核实",
@@ -3702,11 +3622,13 @@
     "company": "江苏九囿电气有限公司",
     "category": "电子元器件",
     "keywords": [
-      "连接器"
+      "连接器",
+      "传感器"
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "叶新路398号2号楼4楼",
     "contact_phone": "待核实",
@@ -3753,7 +3675,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "宝益路3号",
     "contact_phone": "待核实",
@@ -3800,7 +3723,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "中杰路366号9栋一楼",
     "contact_phone": "189****5203",
@@ -3847,7 +3771,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "海藏西路2008号3栋2F",
     "contact_phone": "133****6218",
@@ -3894,7 +3819,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "苏州工业园区园区唯亭街道浦田路202号",
     "contact_phone": "151****3652; 186****1716",
@@ -3941,7 +3867,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "江苏省昆山市巴城镇东胜路162号",
     "contact_phone": "135****0408",
@@ -3988,7 +3915,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "巴城镇石牌立基路111号中沃智能制造产业园4号楼一楼",
     "contact_phone": "待核实",
@@ -4043,7 +3971,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "黄浦江南路与西纬路交叉口东180米",
     "contact_phone": "待核实",
@@ -4090,7 +4019,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "胥口镇时进路215号1号楼4楼",
     "contact_phone": "待核实",
@@ -4137,7 +4067,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "黄沙路23号",
     "contact_phone": "180****7664",
@@ -4184,7 +4115,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "张家港"
     },
     "address": "晨中路178号",
     "contact_phone": "待核实",
@@ -4231,7 +4163,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "常熟"
     },
     "address": "常熟经济技术开发区长青路23号",
     "contact_phone": "待核实",
@@ -4311,7 +4244,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "姑苏"
     },
     "address": "平泷路251号苏州城市生活广场A座1606-1608室",
     "contact_phone": "待核实",
@@ -4366,7 +4300,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "虎丘"
     },
     "address": "长阳南街与独墅湖大道交叉口西北280米",
     "contact_phone": "待核实",
@@ -4413,7 +4348,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "淞葭路998号",
     "contact_phone": "0512-89188688",
@@ -4460,7 +4396,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "莘塔大街258号",
     "contact_phone": "待核实",
@@ -4507,7 +4444,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "柳胥路300号",
     "contact_phone": "0512-63455468",
@@ -4786,7 +4724,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "周市镇金茂路699号A栋",
     "contact_phone": "177****8967",
@@ -4998,7 +4937,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "锡港路张泾东段388号",
     "contact_phone": "待核实",
@@ -5045,7 +4985,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "滨湖"
     },
     "address": "银杏路10号2号标房",
     "contact_phone": "待核实",
@@ -5092,7 +5033,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "新吴"
     },
     "address": "东庄电子科技园金乾座701",
     "contact_phone": "152****3520",
@@ -5139,7 +5081,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "江阴"
     },
     "address": "华士镇龙河工业区三抢河路10号",
     "contact_phone": "186****4731",
@@ -5186,7 +5129,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "江阴"
     },
     "address": "长山大道32号27栋A口5楼",
     "contact_phone": "待核实",
@@ -5224,47 +5168,6 @@
     },
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0003404/SKILL.md",
-      "protocol": "skill",
-      "capabilities": [
-        "catalog"
-      ],
-      "verified": false
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0003406",
-    "company": "无锡利同电子商务有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "连接器"
-    ],
-    "region": {
-      "province": "江苏",
-      "city": "无锡"
-    },
-    "address": "友谊中路288号中恒钢市1001A",
-    "contact_phone": "136****7899",
-    "lat": 31.615648,
-    "lng": 120.376743,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
-    "agent": {
-      "skill_url": "skills/vendors/CN-MFG-0003406/SKILL.md",
       "protocol": "skill",
       "capabilities": [
         "catalog"
@@ -5349,7 +5252,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "新吴"
     },
     "address": "硕放街道南开路80号蠡东工业园5号厂房",
     "contact_phone": "189****9328",
@@ -5767,7 +5671,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "浦东新"
     },
     "address": "外高桥保税区英伦路889号莫士电子厂",
     "contact_phone": "021-50480889",
@@ -5822,7 +5727,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "浦东新"
     },
     "address": "富特南路55号",
     "contact_phone": "021-50481976",
@@ -5877,7 +5783,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "翔方公路3033号",
     "contact_phone": "待核实",
@@ -5932,7 +5839,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "圆高路77号",
     "contact_phone": "待核实",
@@ -5979,7 +5887,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "松江"
     },
     "address": "曹农路488号5幢1-2层",
     "contact_phone": "021-57793162",
@@ -6034,7 +5943,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "青浦"
     },
     "address": "青浦工业园区外青松公路5398号",
     "contact_phone": "021-69210088",
@@ -6089,7 +5999,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "招贤路888号",
     "contact_phone": "021-69524751",
@@ -6144,7 +6055,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "恒裕路与银龙路交叉口东北140米",
     "contact_phone": "待核实",
@@ -6191,7 +6103,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "青浦"
     },
     "address": "朱家角工业园区康园路129号",
     "contact_phone": "021-62960350",
@@ -6238,7 +6151,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "闵行"
     },
     "address": "申长路1688弄中骏广场",
     "contact_phone": "待核实",
@@ -6285,7 +6199,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "浦东新"
     },
     "address": "日樱北路与爱都路交叉口东北100米",
     "contact_phone": "待核实",
@@ -6332,7 +6247,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "松江"
     },
     "address": "曹农路488号上海奥波电子有限公司",
     "contact_phone": "待核实",
@@ -6387,7 +6303,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "嘉定区工业区兴庆路1201号第3幢1、2层",
     "contact_phone": "021-39538658",
@@ -6434,7 +6351,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "松江"
     },
     "address": "文翔东路58号3幢4层",
     "contact_phone": "待核实",
@@ -6489,7 +6407,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "闵行"
     },
     "address": "新虹街道申长路990弄虹桥汇T6号楼603室",
     "contact_phone": "待核实",
@@ -6536,7 +6455,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "松江"
     },
     "address": "港德路288号37栋2楼",
     "contact_phone": "待核实",
@@ -6583,7 +6503,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "静安"
     },
     "address": "彭江路602号大宁德必易园E座331室",
     "contact_phone": "待核实",
@@ -6638,7 +6559,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "静安"
     },
     "address": "金航大厦A座(静安寺地铁站1号口步行260米)",
     "contact_phone": "待核实",
@@ -6780,7 +6702,8 @@
     "company": "上海龙之峰门控科技有限公司",
     "category": "电子元器件",
     "keywords": [
-      "连接器"
+      "连接器",
+      "铝合金"
     ],
     "region": {
       "province": "上海",
@@ -6806,7 +6729,8 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "amap": {}
   },
   {
     "id": "CN-MFG-0003455",
@@ -7081,7 +7005,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "坎山镇东社村工业园区",
     "contact_phone": "0571-82512835",
@@ -7136,7 +7061,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "滨江"
     },
     "address": "江南大道3588号恒生大厦1幢12层1270室",
     "contact_phone": "180****2851",
@@ -7183,7 +7109,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "进化镇祝家",
     "contact_phone": "待核实",
@@ -7238,7 +7165,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "永溪线与访云街交叉口南340米",
     "contact_phone": "待核实",
@@ -7352,7 +7280,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "上城"
     },
     "address": "明珠街2号(美都雅苑东南路口)",
     "contact_phone": "180****2280",
@@ -7730,7 +7659,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "上城"
     },
     "address": "机场路一巷三里新城柳苑2幢底商6号",
     "contact_phone": "190****2022; 4008005922",
@@ -7777,7 +7707,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "海盐"
     },
     "address": "中港路666号2幢",
     "contact_phone": "待核实",
@@ -7832,7 +7763,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "海盐"
     },
     "address": "西塘桥街道中港路168号",
     "contact_phone": "待核实",
@@ -7879,7 +7811,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "秀洲"
     },
     "address": "华云路111号",
     "contact_phone": "待核实",
@@ -7926,7 +7859,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "海盐"
     },
     "address": "外塘路666号",
     "contact_phone": "待核实",
@@ -7973,7 +7907,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "海盐"
     },
     "address": "场前路与银滩路交叉口东南340米",
     "contact_phone": "待核实",
@@ -8020,7 +7955,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "嘉善"
     },
     "address": "大云镇卡帕路168号3幢",
     "contact_phone": "0573-84661997",
@@ -8067,7 +8003,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "海盐"
     },
     "address": "海湾大道2088号",
     "contact_phone": "待核实",
@@ -8114,7 +8051,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "南湖"
     },
     "address": "七大公路18号",
     "contact_phone": "待核实",
@@ -8161,7 +8099,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "平湖"
     },
     "address": "新埭镇创智路988号",
     "contact_phone": "184****5623",
@@ -8208,7 +8147,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "南湖"
     },
     "address": "广益路3333号院",
     "contact_phone": "待核实",
@@ -9671,7 +9611,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇北工业区联振路518号",
     "contact_phone": "0574-63519131; 134****6503",
@@ -9726,7 +9667,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林大道北工业区宋丁路185号",
     "contact_phone": "0574-63975382",
@@ -9781,7 +9723,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇逍林大道209号",
     "contact_phone": "0574-63516378; 159****4792",
@@ -9836,7 +9779,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "周巷镇天元大道1000号",
     "contact_phone": "133****1534; 133****4462",
@@ -9891,7 +9835,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "奉化"
     },
     "address": "岳林街道宝峰路50号",
     "contact_phone": "0574-88915689",
@@ -9946,7 +9891,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇宏跃村宋丁路18弄24号",
     "contact_phone": "待核实",
@@ -10001,7 +9947,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "阳明街道新桥村新桥路3号",
     "contact_phone": "待核实",
@@ -10056,7 +10003,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "镇海"
     },
     "address": "汶骆路288号瑞丰商博城19号楼",
     "contact_phone": "0574-87813170; 0574-87813797; 139****3185",
@@ -10103,7 +10051,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "新浦镇金沅创新园1号楼1-3号",
     "contact_phone": "139****0165",
@@ -10150,7 +10099,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "龙山镇徐福村园区二路175号",
     "contact_phone": "待核实",
@@ -10197,7 +10147,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇樟新南路581号",
     "contact_phone": "待核实",
@@ -10244,7 +10195,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇北工业园区北环路892号",
     "contact_phone": "待核实",
@@ -10299,7 +10251,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇新世纪电子城A座1038号",
     "contact_phone": "0574-63516528",
@@ -10354,7 +10307,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "鄞州"
     },
     "address": "宁裘线与甲汪公路交叉口东南460米",
     "contact_phone": "待核实",
@@ -10401,7 +10355,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "慈溪市逍林镇林西路792号",
     "contact_phone": "0574-63518360",
@@ -10456,7 +10411,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "奉化"
     },
     "address": "西南段与姜南路交叉口西340米",
     "contact_phone": "0574-88546338; 130****2636",
@@ -10503,7 +10459,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "鄞州"
     },
     "address": "宁波伟荣汽车配件制造有限公司西南门旁",
     "contact_phone": "133****9607",
@@ -10550,7 +10507,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "渔溪村陆家",
     "contact_phone": "158****4231",
@@ -10597,7 +10555,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇北工业区众益路88号",
     "contact_phone": "待核实",
@@ -10644,7 +10603,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "奉化"
     },
     "address": "尚桥路与南桥路交叉口西北180米",
     "contact_phone": "待核实",
@@ -10691,7 +10651,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "三塘头村三塘路9幢1,2,3号",
     "contact_phone": "待核实",
@@ -10738,7 +10699,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇林西村浦沿路6号",
     "contact_phone": "待核实",
@@ -10793,7 +10755,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "丈亭镇凤东村官墩47-2号(液压螺母)",
     "contact_phone": "待核实",
@@ -10840,7 +10803,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇北工业区逍新路215号",
     "contact_phone": "待核实",
@@ -10895,7 +10859,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "奉化"
     },
     "address": "东郊开发区瑞峰路79号",
     "contact_phone": "待核实",
@@ -10942,7 +10907,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林大道与周塘西街交叉口北140米",
     "contact_phone": "待核实",
@@ -10997,7 +10963,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "丈亭镇文卫路102号",
     "contact_phone": "待核实",
@@ -11044,7 +11011,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "丈亭镇渔溪村凤陆",
     "contact_phone": "待核实",
@@ -11091,7 +11059,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "江影新苑西北侧150米",
     "contact_phone": "待核实",
@@ -11138,7 +11107,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "鄞州"
     },
     "address": "翔天路与凌云路交叉口北160米",
     "contact_phone": "待核实",
@@ -11185,7 +11155,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "鄞州"
     },
     "address": "姜山镇蔡郎桥丽水小学对面",
     "contact_phone": "待核实",
@@ -11232,7 +11203,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "梅溪路1-3",
     "contact_phone": "待核实",
@@ -11279,7 +11251,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "江影新苑西北侧160米",
     "contact_phone": "待核实",
@@ -11326,7 +11299,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "镇海"
     },
     "address": "昊天机械有限公司东北门旁",
     "contact_phone": "待核实",
@@ -11373,7 +11347,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "鄞州"
     },
     "address": "塘溪镇张池村",
     "contact_phone": "137****9255",
@@ -11420,7 +11395,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "中意宁波生态园兴业路98号",
     "contact_phone": "0574-62178168",
@@ -11467,7 +11443,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "鄞州"
     },
     "address": "惠风西路115号城南商务大厦A座",
     "contact_phone": "待核实",
@@ -11514,7 +11491,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "逍林镇北工业园区众益路58号",
     "contact_phone": "137****7758; 137****0300",
@@ -11557,11 +11535,13 @@
     "company": "余姚市海航密封连接件厂",
     "category": "电子元器件",
     "keywords": [
-      "连接器"
+      "连接器",
+      "密封件"
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "应家南路与丈江段交叉口西南200米",
     "contact_phone": "待核实",
@@ -11583,7 +11563,21 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "amap": {
+      "poi_id": "B0GKDHSLFK",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "密封件"
+    }
   },
   {
     "id": "CN-MFG-0003591",
@@ -11718,39 +11712,6 @@
     "_bucket": "C/39/3989"
   },
   {
-    "id": "CN-MFG-0003597",
-    "company": "慈溪市联发电子有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "连接器"
-    ],
-    "region": {
-      "province": "浙江",
-      "city": "宁波"
-    },
-    "address": "掌起镇巴里村丰盛路2号",
-    "contact_phone": "137****7568",
-    "lat": 30.137821,
-    "lng": 121.43723,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0003598",
     "company": "宁波元亿(赛洲通信)科技有限公司",
     "category": "电子元器件",
@@ -11765,39 +11726,6 @@
     "contact_phone": "193****1290",
     "lat": 30.095351,
     "lng": 121.512857,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0003599",
-    "company": "顺达配件",
-    "category": "电子元器件",
-    "keywords": [
-      "连接器"
-    ],
-    "region": {
-      "province": "浙江",
-      "city": "宁波"
-    },
-    "address": "塘溪镇施村工业区",
-    "contact_phone": "136****0521",
-    "lat": 29.657232,
-    "lng": 121.709073,
     "source": "public_directory",
     "source_url": "",
     "verified_at": "2026-08-13",
@@ -12023,7 +11951,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "江宁"
     },
     "address": "苏源大道19号九龙湖国际企业总部园C5座三层",
     "contact_phone": "待核实",
@@ -12103,7 +12032,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "江宁"
     },
     "address": "骁营路203县",
     "contact_phone": "待核实",
@@ -12150,7 +12080,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "六合"
     },
     "address": "江北新区科创大道9号智能制造产业园智合园10栋",
     "contact_phone": "133****9000",
@@ -12197,7 +12128,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "雨花台"
     },
     "address": "唐山路a2区附近(刘村地铁站2号口步行380米)",
     "contact_phone": "待核实",
@@ -13069,7 +13001,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "公明镇长圳村大岗工业区C栋",
     "contact_phone": "0755-81738000",
@@ -13124,7 +13057,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "平湖街道辅城坳嘉湖路1-38号",
     "contact_phone": "188****2798",
@@ -13179,7 +13113,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "松岗镇红星社区泰兴工业城33栋",
     "contact_phone": "0755-27130019",
@@ -13234,7 +13169,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "大田洋工业区田洋四路B2栋",
     "contact_phone": "0755-27056306",
@@ -13289,7 +13225,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "步联永发园区东南1门旁",
     "contact_phone": "待核实",
@@ -13336,7 +13273,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "福海街道展城社区展景路83号会展湾中港广场6B座8楼",
     "contact_phone": "0755-29959119; 0755-29959129; 0755-29959135",
@@ -13391,7 +13329,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "南岗第三工业园15栋2楼",
     "contact_phone": "待核实",
@@ -13438,7 +13377,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "新安街道39区海乐路华丰青年孵化基地二期B座505室",
     "contact_phone": "134****6525",
@@ -13485,7 +13425,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "凤业七路2号",
     "contact_phone": "0755-27323361",
@@ -13540,7 +13481,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "凤业七路与凤业中路交叉口北20米",
     "contact_phone": "0755-27323361",
@@ -13595,7 +13537,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "坪山"
     },
     "address": "汤坑二路43号",
     "contact_phone": "0755-28666304",
@@ -13650,7 +13593,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "燕罗街道罗田社区象山大道414号二楼",
     "contact_phone": "待核实",
@@ -13705,7 +13649,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "同心路同路工业园内",
     "contact_phone": "0755-84293383",
@@ -13760,7 +13705,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙华"
     },
     "address": "观湖街道松元厦社区环观中路111号厂房三401室",
     "contact_phone": "135****1469",
@@ -13807,7 +13753,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "沙井镇万丰村丰平路8号(98工业区对面)2栋2楼",
     "contact_phone": "138****2363",
@@ -13854,7 +13801,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "溪头工业一路4号10栋二三楼",
     "contact_phone": "136****5566",
@@ -13901,7 +13849,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "燕罗街道塘下涌社区广田路226号B栋",
     "contact_phone": "待核实",
@@ -13957,7 +13906,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "汇智研发中心B座1303",
     "contact_phone": "待核实",
@@ -14004,7 +13954,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "坪山"
     },
     "address": "坑梓街道金沙社区荣田路4号深港生物医药产业园3号厂房101",
     "contact_phone": "待核实",
@@ -14051,7 +14002,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "公明镇合水口第二工业区7栋",
     "contact_phone": "待核实",
@@ -14098,7 +14050,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "西乡街道固戍一路115号A栋3楼(世维科技园)",
     "contact_phone": "137****7186",
@@ -14153,7 +14106,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "金安路8号",
     "contact_phone": "待核实",
@@ -14200,7 +14154,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "公明田园路与科杰一路交叉口东南80米",
     "contact_phone": "待核实",
@@ -14247,7 +14202,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "石岩塘头工业园前行10米(原精实机电工业5楼)",
     "contact_phone": "136****6980",
@@ -14302,7 +14258,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙华"
     },
     "address": "观光路1301-68号冠为丰和实业工业园",
     "contact_phone": "待核实",
@@ -14349,7 +14306,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "新湖街道荔湖社区楼村振兴路4号鑫博盛科技园A栋",
     "contact_phone": "待核实",
@@ -14396,7 +14354,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "新安街道文汇社区福城时代广场1406",
     "contact_phone": "待核实",
@@ -14443,7 +14402,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "马田街道新庄社区将工二路22号可亚迪工业园A栋1层",
     "contact_phone": "133****8853",
@@ -14498,7 +14458,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "东进路与周家大道交叉口北140米",
     "contact_phone": "待核实",
@@ -14545,7 +14506,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "燕罗街道塘下涌美盈松白智慧创新园B2栋215",
     "contact_phone": "134****0356",
@@ -14625,7 +14587,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "沙井街道和一社区南环路三洋新工业区二期E5栋三层",
     "contact_phone": "待核实",
@@ -14680,7 +14643,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "象山大道162号A栋1单元9楼",
     "contact_phone": "158****6831",
@@ -14735,7 +14699,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "吉华路357号达成工业区研发楼6层",
     "contact_phone": "0755-28482266",
@@ -14782,7 +14747,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "光明新区公明街道办马山头第六工业区A2栋",
     "contact_phone": "待核实",
@@ -14829,7 +14795,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "田洋六路与田洋南一路交叉口东南20米",
     "contact_phone": "待核实",
@@ -14992,7 +14959,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "松岗街道广深路122号华松智谷B栋101号",
     "contact_phone": "待核实",
@@ -15271,7 +15239,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "西乡街道铁岗村西路3号4楼",
     "contact_phone": "0755-84571197; 135****9431",
@@ -18086,7 +18055,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "大亚湾西区谭公东路162号",
     "contact_phone": "159****8956",
@@ -18133,7 +18103,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "金恺大道26号",
     "contact_phone": "待核实",
@@ -18180,7 +18151,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "兴科西路与东新大道交叉口西南80米东江高新区东兴片区泓淋工业园",
     "contact_phone": "0752-5758157",
@@ -18227,7 +18199,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "沥林镇英光村中集智诚产业园39栋10楼",
     "contact_phone": "180****7553",
@@ -18274,7 +18247,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "石湾镇江滨路54号",
     "contact_phone": "138****2711",
@@ -18329,7 +18303,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "湖庆育才路与银山二路交叉口北500米",
     "contact_phone": "待核实",
@@ -18376,7 +18351,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "名流海记酒坊南侧230米",
     "contact_phone": "待核实",
@@ -18423,7 +18399,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "三栋镇数码工1业园恒康一路D区厂房",
     "contact_phone": "待核实",
@@ -18665,39 +18642,6 @@
       ],
       "verified": false
     },
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0003786",
-    "company": "惠州市森浩科技有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "连接器"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "惠州"
-    },
-    "address": "仲恺高新区陈江街道办胜利村吉山祥耀公司(厂房B)2楼",
-    "contact_phone": "待核实",
-    "lat": 23.002325,
-    "lng": 114.307025,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": true,
-    "note": "",
-    "status": "unverified_poi",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
     "_bucket": "C/39/3989"
   },
   {
@@ -19006,7 +18950,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "590县道与文辉路交叉口西南140米",
     "contact_phone": "0756-7683088",
@@ -19061,7 +19006,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "唐家湾镇科技七路1号中电高科技产业园2栋401室",
     "contact_phone": "0756-3669360",
@@ -19108,7 +19054,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "创业路与敬业路交叉口西260米",
     "contact_phone": "待核实",
@@ -19155,7 +19102,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "三灶镇定湾十三路109号",
     "contact_phone": "0756-6299000",
@@ -19301,7 +19249,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "增城"
     },
     "address": "增江街道荔三大道40号",
     "contact_phone": "待核实",
@@ -19348,7 +19297,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "黄埔"
     },
     "address": "永和街桑田一路38号B区2号电梯二楼",
     "contact_phone": "待核实",
@@ -19395,7 +19345,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "南沙"
     },
     "address": "中铁四局集团有限公司广澳高速横沥连接线HLTJ1项目钢筋配送中心东南侧80米",
     "contact_phone": "188****1485",
@@ -19442,7 +19393,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "南沙"
     },
     "address": "环城东路181号之5号",
     "contact_phone": "137****3540; 189****0015",
@@ -19491,7 +19443,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "黄埔"
     },
     "address": "黄埔东路3888号东兴汇五金B区二楼C2042-2053-2056",
     "contact_phone": "020-82161610; 020-85577777",
@@ -19538,7 +19491,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "越秀"
     },
     "address": "粤能大厦",
     "contact_phone": "待核实",
@@ -19585,7 +19539,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "白云"
     },
     "address": "机场路1438号正阳大厦",
     "contact_phone": "待核实",
@@ -19632,7 +19587,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "黄埔"
     },
     "address": "坑田大街与茅岗环村大街交叉口南220米",
     "contact_phone": "待核实",
@@ -19976,7 +19932,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "昆山"
     },
     "address": "正果大道与环南昆山罗浮山引领区增城最美旅游公路连接线交叉口东北340米",
     "contact_phone": "待核实",
@@ -20075,7 +20032,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "昆山"
     },
     "address": "番丰旧屋路与环南昆山罗浮山引领区增城最美旅游公路连接线交叉口西80米",
     "contact_phone": "待核实",
@@ -20141,7 +20099,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "昆山"
     },
     "address": "正果大道与环南昆山罗浮山引领区增城最美旅游公路连接线交叉口西60米",
     "contact_phone": "待核实",
@@ -20174,7 +20133,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "昆山"
     },
     "address": "正果大道与环南昆山罗浮山引领区增城最美旅游公路连接线交叉口东北160米",
     "contact_phone": "待核实",
@@ -20207,7 +20167,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "昆山"
     },
     "address": "正果大道与环南昆山罗浮山引领区增城最美旅游公路连接线交叉口东北60米",
     "contact_phone": "待核实",
@@ -20273,7 +20234,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "昆山"
     },
     "address": "番丰旧屋路与环南昆山罗浮山引领区增城最美旅游公路连接线交叉口南120米",
     "contact_phone": "待核实",
@@ -20603,7 +20565,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "泗门镇光明北路58号",
     "contact_phone": "183****5858",
@@ -20807,39 +20770,6 @@
     "_bucket": "C/39/3989"
   },
   {
-    "id": "CN-MFG-0008032",
-    "company": "苏州昆山实钧芯微电子有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "PCB"
-    ],
-    "region": {
-      "province": "江苏",
-      "city": "苏州"
-    },
-    "address": "巴城镇石牌镇逸品路92号",
-    "contact_phone": "181****9233",
-    "lat": 31.498153,
-    "lng": 120.940534,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0008033",
     "company": "唯思源科技有限公司",
     "category": "电子元器件",
@@ -20873,39 +20803,6 @@
     "_bucket": "C/39/3989"
   },
   {
-    "id": "CN-MFG-0008034",
-    "company": "无锡市特种压力表有限公司(生产基地)",
-    "category": "电子元器件",
-    "keywords": [
-      "连接器"
-    ],
-    "region": {
-      "province": "江苏",
-      "city": "无锡"
-    },
-    "address": "雪浪街道南湖中路28-50号东南门2楼",
-    "contact_phone": "0510-82730027; 180****9129",
-    "lat": 31.447279,
-    "lng": 120.288527,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0013619",
     "company": "恒鑫pcb机械设备有限公司",
     "category": "电子元器件",
@@ -20914,7 +20811,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "鸿兴路与麻陂大道交叉口东南100米",
     "contact_phone": "135****3141",
@@ -20969,7 +20867,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "昆山安费诺正日电子有限公司西门旁",
     "contact_phone": "待核实",
@@ -21016,7 +20915,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "曹安公路3985号4号楼甫轩破碎锤",
     "contact_phone": "135****5172",
@@ -21063,7 +20963,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "胜辛路与叶城路交叉口东南120米",
     "contact_phone": "待核实",
@@ -21110,7 +21011,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "公明马田街道马田北路1073号",
     "contact_phone": "待核实",
@@ -21157,7 +21059,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "沙井镇岗仔路天冠楼13-10号",
     "contact_phone": "158****7595; 159****0162",
@@ -21251,7 +21154,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "南沙"
     },
     "address": "横沥镇大元村广东科朗变压器有限公司对面",
     "contact_phone": "130****5953",
@@ -21298,7 +21202,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "增城"
     },
     "address": "永宁街和兴路27号1楼",
     "contact_phone": "189****3770; 189****0356; 4008230020",
@@ -21351,11 +21256,13 @@
     "keywords": [
       "线路板",
       "铝板",
-      "铝合金"
+      "铝合金",
+      "批发和零售业"
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "白蕉镇造船厂附近",
     "contact_phone": "159****5723",
@@ -21398,11 +21305,13 @@
     "company": "忠资再生资源有限公司",
     "category": "电子元器件",
     "keywords": [
-      "线路板"
+      "线路板",
+      "批发和零售业"
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "草蓢兵房山商铺",
     "contact_phone": "138****0947",
@@ -21449,7 +21358,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "人民西路856号华达工业区第7栋华达顺工业楼六楼之十七",
     "contact_phone": "136****3038",
@@ -21504,7 +21414,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "三虎大道与兴产一路交叉口南320米",
     "contact_phone": "待核实",
@@ -21551,7 +21462,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "大成巷森宇富通商务大厦后面1楼",
     "contact_phone": "153****9978",
@@ -21598,7 +21510,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "创业路182号",
     "contact_phone": "0756-2332888",
@@ -21645,7 +21558,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "湾仔南湾南路7032号2幢1层",
     "contact_phone": "135****9000; 136****9000; 137****4444",
@@ -21692,7 +21606,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "港二路265号(东海工业村东北门西北90米)",
     "contact_phone": "待核实",
@@ -21739,7 +21654,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "作物路28号作物工业园内",
     "contact_phone": "0756-8822489; 159****6699",
@@ -21786,7 +21702,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "昌平路263号之1-4",
     "contact_phone": "0756-8882319",
@@ -21833,7 +21750,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "昌平路522-1号附近",
     "contact_phone": "135****6714",
@@ -21880,7 +21798,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "莲兴街123号华隆大厦F1层",
     "contact_phone": "0756-3379858; 0756-3379859; 138****8988",
@@ -21927,7 +21846,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "文贤路108号富和新城",
     "contact_phone": "137****5105; 139****3573",
@@ -21982,7 +21902,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "南角街33-17号",
     "contact_phone": "188****0911",
@@ -22029,7 +21950,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "唐家湾镇金发路356-358号商铺",
     "contact_phone": "188****7175",
@@ -22076,7 +21998,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "广发巷1号101房(华阳大厦西南门旁)",
     "contact_phone": "139****9373",
@@ -22123,7 +22046,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "梅华西路2372号(晨鹏大厦南1门西60米)",
     "contact_phone": "0756-8538802; 138****6883",
@@ -22170,7 +22094,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "三灶镇星汉路9号",
     "contact_phone": "130****8100",
@@ -22217,7 +22142,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "梅华东路302号(馨园东1门旁)",
     "contact_phone": "159****3123",
@@ -22264,7 +22190,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "敬业路与翠北路交叉口北100米香龙工业楼",
     "contact_phone": "0756-8633315",
@@ -22311,7 +22238,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "工业大道532号",
     "contact_phone": "151****2582",
@@ -22358,7 +22286,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "人民西路986号",
     "contact_phone": "135****2119",
@@ -22405,7 +22334,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "界涌山星一路28号130号",
     "contact_phone": "136****6876",
@@ -22452,7 +22382,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "红旗镇虹晖二路5号",
     "contact_phone": "0756-7258800; 137****5993",
@@ -22499,7 +22430,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "白藤二路107号",
     "contact_phone": "130****2295; 135****5664",
@@ -22554,7 +22486,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "港一路160号21-23栋63号商铺",
     "contact_phone": "131****1084",
@@ -22601,7 +22534,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "金鼎上栅牌坊北巷42号",
     "contact_phone": "133****5176",
@@ -22648,7 +22582,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "吉大吉莲路23号1层D厂房",
     "contact_phone": "0756-3363315; 0756-3363450",
@@ -22695,7 +22630,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "海滨南路9号",
     "contact_phone": "0756-3366652; 133****5399",
@@ -22742,7 +22678,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "拱北夏湾港一路160号海荣新村53号(龙邦物流旁)",
     "contact_phone": "139****9118",
@@ -22789,7 +22726,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "石花西路60号泰坦科技园1层",
     "contact_phone": "0756-3331202; 0756-3331211",
@@ -22836,7 +22774,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "拱北前河东路420号",
     "contact_phone": "133****1138",
@@ -22883,7 +22822,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "石花三巷17号",
     "contact_phone": "0756-3343996; 0756-3353996",
@@ -22930,7 +22870,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "翠珠三街3号首层(幸福里西1门北80米)",
     "contact_phone": "134****9838; 186****9282",
@@ -22977,7 +22918,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "红旗镇南顺路东",
     "contact_phone": "134****6545",
@@ -23024,7 +22966,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "香洲工业区兴华路117号",
     "contact_phone": "133****6373",
@@ -23071,7 +23014,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "南屏枫溪路13号",
     "contact_phone": "158****5070",
@@ -23118,7 +23062,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "上冲华香苑梅华西路1149号",
     "contact_phone": "0756-2550030; 189****8383",
@@ -23165,7 +23110,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "南港中路130号科鑫汽车服务",
     "contact_phone": "137****6123; 159****4299",
@@ -23212,7 +23158,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "旗景中央园158号",
     "contact_phone": "150****9238",
@@ -23259,7 +23206,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "鞍莲路91号西南方向138米",
     "contact_phone": "待核实",
@@ -23306,7 +23254,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "拱北桂花北路177号",
     "contact_phone": "0756-8152020",
@@ -23353,7 +23302,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "锦柠路482号",
     "contact_phone": "135****9880; 180****5588",
@@ -23400,7 +23350,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "美平一街52号之2附近",
     "contact_phone": "0756-7757768; 189****8311",
@@ -23447,7 +23398,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "梅华西路757号",
     "contact_phone": "0756-8975424; 133****0400",
@@ -23494,7 +23446,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "北沙村加油站旁",
     "contact_phone": "137****5255",
@@ -23541,7 +23494,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "洲山路翠香街道21号协昌大厦",
     "contact_phone": "0756-2514311",
@@ -23588,7 +23542,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "金鼎镇边山大街63号(骑龙酒家斜对面)",
     "contact_phone": "0756-3383386",
@@ -23635,7 +23590,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "井岸镇工业大道159号一楼",
     "contact_phone": "0756-5316533",
@@ -23964,7 +23920,8 @@
       "线路板",
       "不锈钢材料",
       "钢板",
-      "铝板"
+      "铝板",
+      "原材料"
     ],
     "region": {
       "province": "广东",
@@ -28027,7 +27984,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "桐庐"
     },
     "address": "桐君街道富春路199号",
     "contact_phone": "157****5750",
@@ -28074,7 +28032,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "义蓬街道义盛北路398号",
     "contact_phone": "131****0071; 132****1302",
@@ -28121,7 +28080,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "恒大建材家居博览中心D-1106",
     "contact_phone": "130****2600; 177****3969",
@@ -28168,7 +28128,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "崇孝路与春永线交叉口东20米",
     "contact_phone": "189****9920",
@@ -28215,7 +28176,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "莫干山路与祥闻线交叉口南20米",
     "contact_phone": "134****7458",
@@ -28260,11 +28222,13 @@
     "keywords": [
       "线路板",
       "钢材",
-      "铝合金"
+      "铝合金",
+      "批发和零售业"
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "白洋港路419号-2",
     "contact_phone": "0571-85058879; 189****1577",
@@ -28311,7 +28275,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "党湾镇庆丰村村民委员会东北侧",
     "contact_phone": "136****1800",
@@ -28358,7 +28323,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "蒲阳镇桃源村闸上1组19号",
     "contact_phone": "184****8333",
@@ -28409,7 +28375,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "江月路257号",
     "contact_phone": "139****3471",
@@ -28456,7 +28423,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "桐庐"
     },
     "address": "江南镇君豪御园府北路561号",
     "contact_phone": "159****1506",
@@ -28511,7 +28479,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "拱墅"
     },
     "address": "石桥街道石祥东路1726号3号楼110室",
     "contact_phone": "135****3967; 136****3346",
@@ -28558,7 +28527,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "五常街道后山路22号",
     "contact_phone": "134****7228",
@@ -28605,7 +28575,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "义桥镇罗幕村杭州万驰汽车修理有限公司",
     "contact_phone": "158****2760",
@@ -28652,7 +28623,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临平"
     },
     "address": "昌达路128号",
     "contact_phone": "152****3634",
@@ -28699,7 +28671,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "3号大街418号4幢",
     "contact_phone": "0571-86017260; 158****5927",
@@ -28746,7 +28719,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "富阳"
     },
     "address": "东桥路45号",
     "contact_phone": "131****1217",
@@ -28793,7 +28767,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "建德"
     },
     "address": "新衢路263号",
     "contact_phone": "181****8833",
@@ -28840,7 +28815,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "拱墅"
     },
     "address": "华中南路658号(华中南路地铁站G口步行50米)",
     "contact_phone": "0571-86402780; 135****3058; 136****0409",
@@ -28887,7 +28863,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "靖江街道文化路150号宝沃授权中心",
     "contact_phone": "136****1818",
@@ -28934,7 +28911,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "南阳街道向阳路488-496号",
     "contact_phone": "182****5187",
@@ -28981,7 +28959,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "富阳"
     },
     "address": "春南路与春联大道交叉口东200米",
     "contact_phone": "183****1910",
@@ -29028,7 +29007,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "富阳"
     },
     "address": "工农路与横汤段交叉口东北80米",
     "contact_phone": "153****8536",
@@ -29075,7 +29055,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临平"
     },
     "address": "五星村石大路167号",
     "contact_phone": "待核实",
@@ -29122,7 +29103,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "西湖"
     },
     "address": "大龙驹坞1-3号",
     "contact_phone": "0571-87991940; 0571-87991949",
@@ -29169,7 +29151,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "衙前路628号",
     "contact_phone": "189****5015",
@@ -29216,7 +29199,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "蜀山街道崇化路680号(安桥社区卫生服务站西北门旁)",
     "contact_phone": "0571-82806928",
@@ -29263,7 +29247,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "向阳路686号",
     "contact_phone": "138****8668",
@@ -29310,7 +29295,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "鸿宁路401号",
     "contact_phone": "158****6644; 189****3559",
@@ -29357,7 +29343,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "上城"
     },
     "address": "九堡镇三卫村过渡房一号楼",
     "contact_phone": "153****2949",
@@ -29404,7 +29391,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "杭州市新八路八大村附近",
     "contact_phone": "188****3576",
@@ -29451,7 +29439,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "拱墅"
     },
     "address": "月桂苑商17号",
     "contact_phone": "155****4948",
@@ -29498,7 +29487,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "钱塘江石材市场二期D196号",
     "contact_phone": "133****0325; 199****2676",
@@ -29545,7 +29535,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临平"
     },
     "address": "崇贤街道龙腾街205号",
     "contact_phone": "159****1553",
@@ -29592,7 +29583,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "拱墅"
     },
     "address": "汇丰东路9号",
     "contact_phone": "137****9697",
@@ -29639,7 +29631,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "博学路276号(萧山第一职业中学斜对面)",
     "contact_phone": "180****9366",
@@ -29686,7 +29679,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "党湾镇梅林大道1677号",
     "contact_phone": "190****0008",
@@ -29733,7 +29727,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临平"
     },
     "address": "塘栖镇李家桥",
     "contact_phone": "158****6655",
@@ -29780,7 +29775,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "富阳"
     },
     "address": "公望街与公园西路交叉口东南100米",
     "contact_phone": "待核实",
@@ -29827,7 +29823,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "联发村江家桥197号",
     "contact_phone": "0571-82206117",
@@ -29874,7 +29871,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "中和路与弘元路交叉口正西方向70米左右",
     "contact_phone": "188****2099",
@@ -29921,7 +29919,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "祥瑛路365号",
     "contact_phone": "待核实",
@@ -29968,7 +29967,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "拱墅"
     },
     "address": "登云路617号(庆云居西门旁)",
     "contact_phone": "133****8800",
@@ -30015,7 +30015,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "萧杭路508号",
     "contact_phone": "0571-82621118",
@@ -30062,7 +30063,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "103省道附近",
     "contact_phone": "150****9051; 187****7592",
@@ -30109,7 +30111,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "紫新路与坎红路交叉口西南120米",
     "contact_phone": "0571-83152191; 138****9529",
@@ -30156,7 +30159,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "益农镇东联村23组33号",
     "contact_phone": "138****5108",
@@ -30203,7 +30207,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "瓜沥镇永联村",
     "contact_phone": "138****9572",
@@ -30250,7 +30255,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "瓜柯段1号",
     "contact_phone": "0571-82522313; 0571-82533921; 138****1179",
@@ -30297,7 +30303,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "拱墅"
     },
     "address": "康政路22号中电开关内",
     "contact_phone": "0571-87912560",
@@ -30344,7 +30351,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "九曲港路10号",
     "contact_phone": "0571-88051396",
@@ -30391,7 +30399,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "西湖"
     },
     "address": "村口家园西北门忆音路32号",
     "contact_phone": "135****3799",
@@ -30438,7 +30447,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "青东一路399号",
     "contact_phone": "0571-86722421; 0571-86830633",
@@ -30485,7 +30495,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临平"
     },
     "address": "宏昌路265号",
     "contact_phone": "137****6015",
@@ -30532,7 +30543,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "圣地路12号俐特尔包装公司内部",
     "contact_phone": "158****1303",
@@ -30579,7 +30591,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "萧绍东路218号",
     "contact_phone": "138****3722",
@@ -30626,7 +30639,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临平"
     },
     "address": "运河路31-1号(杭州宏生纺织有限公司南门旁)",
     "contact_phone": "0571-86276958; 138****4858",
@@ -30673,7 +30687,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "禹航路与通北路交叉路口往南约150米(万佳居领寓西南侧约50米)",
     "contact_phone": "137****0969",
@@ -30720,7 +30735,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临平"
     },
     "address": "崇贤街道诸家浜53号",
     "contact_phone": "137****4389",
@@ -30767,7 +30783,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临平"
     },
     "address": "浙江省临平区",
     "contact_phone": "待核实",
@@ -30814,7 +30831,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "富阳"
     },
     "address": "高尔夫路8号",
     "contact_phone": "130****5996",
@@ -30869,7 +30887,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "红友桥路326号",
     "contact_phone": "0571-82551847",
@@ -30924,7 +30943,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "仲恺高新区陈江街道中京路1号",
     "contact_phone": "0752-5703333",
@@ -30980,7 +31000,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "仲恺高新区惠环街道东升组新村116号",
     "contact_phone": "138****8835",
@@ -31030,7 +31051,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "万顺二路71号",
     "contact_phone": "152****9032; 159****1261",
@@ -31077,7 +31099,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "新圩镇约场村银峰二路146号",
     "contact_phone": "137****8386; 188****1586",
@@ -31124,7 +31147,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "惠环镇何屋村口",
     "contact_phone": "134****5480",
@@ -31171,7 +31195,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "G205(金龙大道)",
     "contact_phone": "137****8370; 158****3123",
@@ -31218,7 +31243,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "桥东永平路22号",
     "contact_phone": "136****3976",
@@ -31266,7 +31292,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "仲恺高新区平南工业园48号小区",
     "contact_phone": "0752-2090772",
@@ -31313,7 +31340,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "长安大道292号",
     "contact_phone": "136****7928; 180****6236",
@@ -31360,7 +31388,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠东"
     },
     "address": "白花镇白花工业区第10栋",
     "contact_phone": "0752-8362008",
@@ -31407,7 +31436,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "沥林镇泮沥村西边龙村小组沥镇路258号1层",
     "contact_phone": "138****8835",
@@ -31454,7 +31484,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "秋长镇新塘村黄埔实验学校路口",
     "contact_phone": "134****7408",
@@ -31501,7 +31532,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "便利店出售自家蜂蜜东北侧",
     "contact_phone": "158****2369",
@@ -31548,7 +31580,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "潼湖黄屋村黄屋小组",
     "contact_phone": "159****9283",
@@ -31595,7 +31628,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "罗阳镇博罗大道西512-514号",
     "contact_phone": "135****9323",
@@ -31642,7 +31676,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "陈江街道廖岗村41号仲恺六路603号",
     "contact_phone": "176****3135",
@@ -31689,7 +31724,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "塘角七街2号",
     "contact_phone": "134****8183",
@@ -31736,7 +31772,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "博罗大道西广汕公路旁",
     "contact_phone": "135****0221; 189****2076",
@@ -31783,7 +31820,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "江南大道531号",
     "contact_phone": "136****4768",
@@ -31830,7 +31868,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "淡水土湖南湖路10号",
     "contact_phone": "136****1600",
@@ -31877,7 +31916,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠东"
     },
     "address": "白花镇857乡道黄塘路口直入50米",
     "contact_phone": "158****0965; 159****9191",
@@ -31924,7 +31964,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "口岸路15号",
     "contact_phone": "0752-2211993; 135****3481",
@@ -31971,7 +32012,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "龙门"
     },
     "address": "龙华镇224县道",
     "contact_phone": "136****5265",
@@ -32018,7 +32060,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠东"
     },
     "address": "新平大道3073号",
     "contact_phone": "136****1882; 150****9228",
@@ -32065,7 +32108,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "上南村上市路55号",
     "contact_phone": "153****1338",
@@ -32112,7 +32156,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "三栋镇三泰路远东小区1号",
     "contact_phone": "158****7844",
@@ -32159,7 +32204,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "阵村村教育三路1号(水岸香洲1期西门北160米)",
     "contact_phone": "150****6191",
@@ -32206,7 +32252,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "白石路与秋宝南路交叉口南140米",
     "contact_phone": "136****1390",
@@ -32253,7 +32300,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "桥东街道旭日二路36号",
     "contact_phone": "135****6504",
@@ -32300,7 +32348,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "大亚湾妈庙龙园一路5号",
     "contact_phone": "136****7881",
@@ -32347,7 +32396,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "北三街与白云一街交叉口东南100米",
     "contact_phone": "待核实",
@@ -32394,7 +32444,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "新联西路48号",
     "contact_phone": "待核实",
@@ -32441,7 +32492,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "园洲镇水电路130号",
     "contact_phone": "138****9748",
@@ -32488,7 +32540,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "河南岸金碧花苑15栋B-14号",
     "contact_phone": "0752-2393378; 130****7888",
@@ -32535,7 +32588,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "望新路215号",
     "contact_phone": "180****2188",
@@ -32582,7 +32636,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "河南岸汽车大市场内慕凡旁边",
     "contact_phone": "150****0306",
@@ -32629,7 +32684,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "龙门"
     },
     "address": "永汉镇永麻路高速出口旁",
     "contact_phone": "158****5454",
@@ -32676,7 +32732,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "虾村七组350号11",
     "contact_phone": "134****4907",
@@ -32723,7 +32780,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "东平北路与东平街交叉路口往东约100米(长岗岭新区)",
     "contact_phone": "0752-2254838; 156****8750",
@@ -32770,7 +32828,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "镇隆长龙村",
     "contact_phone": "151****4449; 151****9158",
@@ -32817,7 +32876,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "石湾镇建设东路104号(新海关旁)",
     "contact_phone": "189****7098",
@@ -32864,7 +32924,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "花边北路3号宏茂汽修厂",
     "contact_phone": "137****0321; 151****1816",
@@ -32911,7 +32972,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "小金口镇金兴街106号",
     "contact_phone": "150****7970",
@@ -32966,7 +33028,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "龙溪街道蓬深路深惠科技园",
     "contact_phone": "待核实",
@@ -33013,7 +33076,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "公庄镇双辉红木家具店",
     "contact_phone": "待核实",
@@ -33060,7 +33124,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "上虞"
     },
     "address": "进港公路777-1号",
     "contact_phone": "159****6303",
@@ -33115,7 +33180,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "暨阳街道东旺路39号",
     "contact_phone": "178****7569",
@@ -33162,7 +33228,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "斗门镇袍江中兴大道西侧(丹桂公寓对面)",
     "contact_phone": "0575-89105766; 139****1053",
@@ -33209,7 +33276,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "嵊州"
     },
     "address": "经环西路20号",
     "contact_phone": "133****5686",
@@ -33264,7 +33332,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "陶朱街道凤鸣路1号",
     "contact_phone": "187****5188",
@@ -33319,7 +33388,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "103县道与Z102交叉口东100米",
     "contact_phone": "153****9889",
@@ -33366,7 +33436,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "暨南街道暨南路16号逸乐城文化广场4幢",
     "contact_phone": "159****2304",
@@ -33421,7 +33492,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "皋埠街道樊江村(原樊江印染有限公司)东幢一层103室",
     "contact_phone": "159****0523; 177****5200",
@@ -33476,7 +33548,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "华舍工业园区钱陶公路与小佐路交叉口向北200米",
     "contact_phone": "159****0634",
@@ -33531,7 +33604,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "东田化学科技有限公司西南门西北60米",
     "contact_phone": "177****6233",
@@ -33578,7 +33652,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "兴滨路与迎海路交叉口西200米",
     "contact_phone": "183****3868",
@@ -33625,7 +33700,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "鉴湖街道骆家葑玉山片3号",
     "contact_phone": "0575-85166157",
@@ -33672,7 +33748,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "安华镇双佳路2-15号(诸暨市雪韵针织有限公司东南门旁)",
     "contact_phone": "139****5101; 182****5118",
@@ -33719,7 +33796,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "千禧路10号",
     "contact_phone": "0575-80700999",
@@ -33766,7 +33844,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "齐贤镇后诸村",
     "contact_phone": "135****8720",
@@ -33813,7 +33892,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "北海街道朝皇路718号1幢102室-1",
     "contact_phone": "待核实",
@@ -33860,7 +33940,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "二环西路378号",
     "contact_phone": "0575-85156357",
@@ -33907,7 +33988,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "钱清镇东江陈村",
     "contact_phone": "待核实",
@@ -33954,7 +34036,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "下三房路与凯翔大道交叉口西南20米",
     "contact_phone": "0575-87079218",
@@ -34001,7 +34084,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "上虞"
     },
     "address": "谢塘镇戴家村上虞东鑫汽修",
     "contact_phone": "待核实",
@@ -34048,7 +34132,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "丰木村花铺南侧110米",
     "contact_phone": "135****5767",
@@ -34095,7 +34180,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "柯北大道1578号1幢1层",
     "contact_phone": "186****0037",
@@ -34142,7 +34228,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "华舍街道柯华路公交站内",
     "contact_phone": "150****4778",
@@ -34189,7 +34276,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "延安东路4号",
     "contact_phone": "133****9116",
@@ -34236,7 +34324,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "马鞍镇新围村87号排水有限公司柯海分公司",
     "contact_phone": "0575-85624949",
@@ -34283,7 +34372,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "新昌"
     },
     "address": "新昌大道西路999号",
     "contact_phone": "0575-86233528",
@@ -34330,7 +34420,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "枫桥镇步森大道2一5号",
     "contact_phone": "130****0500; 180****0500",
@@ -34377,7 +34468,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "上虞"
     },
     "address": "上虞互通与虞舜大道北段辅路交叉口东240米",
     "contact_phone": "137****5760",
@@ -34424,7 +34516,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "康宁路与汤工路北20米164号",
     "contact_phone": "159****7838",
@@ -34471,7 +34564,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "上虞"
     },
     "address": "东关镇炼塘村",
     "contact_phone": "待核实",
@@ -34518,7 +34612,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "杨汛桥镇竹园童村村委会向前800米好又多超市旁边",
     "contact_phone": "152****5059",
@@ -34565,7 +34660,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "越西路96一102号",
     "contact_phone": "待核实",
@@ -34612,7 +34708,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "新昌"
     },
     "address": "七星街道玫瑰大道一号三幢",
     "contact_phone": "134****3501",
@@ -34659,7 +34756,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "东方都市174-178",
     "contact_phone": "133****7027",
@@ -34706,7 +34804,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "崇德路55号(迎宾公寓东南门旁)",
     "contact_phone": "0575-87232788",
@@ -34753,7 +34852,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "钱陶西路2777号",
     "contact_phone": "130****4938; 130****8768",
@@ -34800,7 +34900,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "上虞"
     },
     "address": "园南路8号",
     "contact_phone": "138****7849",
@@ -34847,7 +34948,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "凤仪村58号钱陶公路与湖安路交叉口",
     "contact_phone": "131****7911",
@@ -34894,7 +34996,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "暨阳街道城东路207号",
     "contact_phone": "0575-87989389",
@@ -34941,7 +35044,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "枫桥镇步森大道2-6-7号",
     "contact_phone": "137****4618; 184****8313",
@@ -34988,7 +35092,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "东昌公寓东门旁",
     "contact_phone": "182****6669",
@@ -35035,7 +35140,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "齐贤镇柯海公路春和企业内",
     "contact_phone": "188****0235",
@@ -35082,7 +35188,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "杭金北路与迪奥路交叉口南80米",
     "contact_phone": "待核实",
@@ -35129,7 +35236,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "城南大道252号融创对面",
     "contact_phone": "0575-88373334; 151****6787",
@@ -35176,7 +35284,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "嵊州"
     },
     "address": "三江街道迪贝路101号",
     "contact_phone": "139****5088",
@@ -35223,7 +35332,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "城南街道秦望花园高丽苑103",
     "contact_phone": "151****7151",
@@ -35270,7 +35380,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "新昌"
     },
     "address": "南明街道望师岭1弄3号四楼客运南站边",
     "contact_phone": "155****0576",
@@ -35317,7 +35428,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "104国道独树路口西南侧",
     "contact_phone": "待核实",
@@ -35364,7 +35476,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "马山镇越中新天地232-233号",
     "contact_phone": "152****2445",
@@ -35411,7 +35524,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "福全镇兴联村卫生服务站旁",
     "contact_phone": "159****5215",
@@ -35458,7 +35572,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "瓜渚东路888号",
     "contact_phone": "0575-85687168; 130****8271",
@@ -35505,7 +35620,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "望云西路51号",
     "contact_phone": "0575-87382068; 137****1806; 189****2112",
@@ -35552,7 +35668,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "上虞"
     },
     "address": "春晖工业大道385号",
     "contact_phone": "137****2955",
@@ -35599,7 +35716,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "上虞"
     },
     "address": "曹娥街道蒿东村东山下村对面315号",
     "contact_phone": "138****7111",
@@ -35654,7 +35772,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "新昌"
     },
     "address": "新昌大道西路396号(百合纺织品有限公司内)",
     "contact_phone": "0575-86312299",
@@ -35701,7 +35820,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "上虞"
     },
     "address": "104国道章镇高速路口向南200米",
     "contact_phone": "0575-82094962",
@@ -35748,7 +35868,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "吼山南路279-281号绍广汽车修理",
     "contact_phone": "136****2491; 177****9624",
@@ -35795,7 +35916,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "嵊州"
     },
     "address": "路田岭221号",
     "contact_phone": "138****9481",
@@ -35842,7 +35964,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "新昌"
     },
     "address": "环城东路45-46号",
     "contact_phone": "0575-86513008; 135****2959",
@@ -35889,7 +36012,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "上虞"
     },
     "address": "路东工业区外严村",
     "contact_phone": "0575-82509995",
@@ -35944,7 +36068,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "柯桥"
     },
     "address": "东方驾校报名处西南侧70米",
     "contact_phone": "待核实",
@@ -35999,7 +36124,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "暨阳街道兴农路9号智能视觉产业园3栋3D",
     "contact_phone": "待核实",
@@ -36046,7 +36172,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "盾运路16号",
     "contact_phone": "150****5151; 186****0102",
@@ -36093,7 +36220,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "眉一村801",
     "contact_phone": "188****9638",
@@ -36140,7 +36268,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "越秀路888号永鼎工业园",
     "contact_phone": "待核实",
@@ -36187,7 +36316,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "太仓"
     },
     "address": "台州路68号",
     "contact_phone": "待核实",
@@ -36234,7 +36364,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "同里镇富士路89号",
     "contact_phone": "0512-63347690",
@@ -36289,7 +36420,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "千灯镇龚巷路101号3号楼2层",
     "contact_phone": "待核实",
@@ -36336,7 +36468,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "旺盛路12号(东佳电路板3楼)",
     "contact_phone": "待核实",
@@ -36383,7 +36516,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "苏州工业园区马塘湾路16号西楼三楼西",
     "contact_phone": "待核实",
@@ -36430,7 +36564,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "木东路317号",
     "contact_phone": "0512-89186699",
@@ -36485,7 +36620,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "康阳路300号",
     "contact_phone": "待核实",
@@ -36532,7 +36668,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "俱巷路与晏公埭巷交叉口西南160米",
     "contact_phone": "待核实",
@@ -36579,7 +36716,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "太平街道聚金路28号苏州大峻科技创业园8号楼6楼",
     "contact_phone": "待核实",
@@ -36626,7 +36764,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "经济技术开发区龙桥路688号和稷工业东侧第一处厂房4楼",
     "contact_phone": "180****5436",
@@ -36681,7 +36820,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "中环北线出口与中环北线交叉口东160米",
     "contact_phone": "待核实",
@@ -36728,7 +36868,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "新吴"
     },
     "address": "江苏省无锡市新吴区群兴路30号",
     "contact_phone": "183****6688",
@@ -36775,7 +36916,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "港羊路与里青路交叉口东南180米",
     "contact_phone": "待核实",
@@ -36830,7 +36972,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "新吴"
     },
     "address": "无锡高新技术产业开发区LS产业园乐星路7号",
     "contact_phone": "待核实",
@@ -36877,7 +37020,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "锡港路与府前东路交叉口东南120米",
     "contact_phone": "待核实",
@@ -36924,7 +37068,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "惠山"
     },
     "address": "堰桥路与堰裕路交叉口西南80米",
     "contact_phone": "待核实",
@@ -36971,7 +37116,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "安泰一路与东盛路交叉口东200米",
     "contact_phone": "188****7262",
@@ -37026,7 +37172,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "通羊路与锡沪路交叉口西北140米",
     "contact_phone": "待核实",
@@ -37073,7 +37220,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "宜兴"
     },
     "address": "范兴路与远东大道交叉口北120米",
     "contact_phone": "待核实",
@@ -37120,7 +37268,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "东盛路与锡沪路交叉口北220米",
     "contact_phone": "待核实",
@@ -37167,7 +37316,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "外青松公路1118号",
     "contact_phone": "待核实",
@@ -37214,7 +37364,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "宝山"
     },
     "address": "宝山城市工业园区山连路377弄27号29号",
     "contact_phone": "021-36160606",
@@ -37261,7 +37412,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "园海路558号",
     "contact_phone": "189****9074",
@@ -37308,7 +37460,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "嘉定"
     },
     "address": "华博路388号",
     "contact_phone": "待核实",
@@ -37355,7 +37508,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "松江"
     },
     "address": "唐明公路与延寿路交叉口西北140米",
     "contact_phone": "待核实",
@@ -37402,7 +37556,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "泗门镇环城北路东段18号易津产业园8号楼",
     "contact_phone": "0574-62178668",
@@ -37457,7 +37612,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "江北"
     },
     "address": "振甬路与农贸路交叉口西北220米",
     "contact_phone": "待核实",
@@ -37504,7 +37660,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "公明新围第三工业区互利集团1层",
     "contact_phone": "189****3058",
@@ -37551,7 +37708,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙华"
     },
     "address": "河背工业区21栋A栋7楼",
     "contact_phone": "待核实",
@@ -37598,7 +37756,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "新湖街道楼村社区楼一工三路21号2栋201",
     "contact_phone": "待核实",
@@ -37645,7 +37804,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "兴业二路10号3栋4楼",
     "contact_phone": "134****4949",
@@ -37692,7 +37852,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "公明街道上村社区水荫路泛懋工业区厂房7栋3楼",
     "contact_phone": "137****0568; 151****7245",
@@ -37739,7 +37900,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "北亭路28号",
     "contact_phone": "待核实",
@@ -37786,7 +37948,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "松白路辅路与下石家路交叉口东240米",
     "contact_phone": "待核实",
@@ -37833,7 +37996,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "大塘街与茂盛路交叉口西南80米",
     "contact_phone": "待核实",
@@ -38632,7 +38796,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "金枫南路金桥工业园62号6幢",
     "contact_phone": "0512-67228980",
@@ -38679,7 +38844,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "黄埭镇潘阳工业园春旺路28号",
     "contact_phone": "0512-65378728",
@@ -38734,7 +38900,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "太仓"
     },
     "address": "太仓高新区青岛东路11号D栋",
     "contact_phone": "0512-53563000",
@@ -38781,7 +38948,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "无锡百柔光电科技有限公司附近",
     "contact_phone": "待核实",
@@ -38828,7 +38996,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "江阴"
     },
     "address": "松文头路7号",
     "contact_phone": "待核实",
@@ -38875,7 +39044,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "浦东新"
     },
     "address": "外高桥保税区富特南路55号",
     "contact_phone": "021-50482225",
@@ -38922,7 +39092,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "闵行"
     },
     "address": "新龙路399弄16号诚泰七宝T2写字楼6层628室",
     "contact_phone": "021-58806666",
@@ -38969,7 +39140,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "祥顺路与新村路交叉路口往西南约50米",
     "contact_phone": "137****7937",
@@ -39024,7 +39196,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "共济路与四塘江路交叉口西北160米",
     "contact_phone": "188****1250",
@@ -39071,7 +39244,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "泗门镇功能工业区维四东路2号",
     "contact_phone": "0574-62161158; 137****6188",
@@ -39118,7 +39292,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "坪山"
     },
     "address": "S301南坪快速与S301南坪快速入口交叉口西280米",
     "contact_phone": "待核实",
@@ -39165,7 +39340,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "通州工业园C栋",
     "contact_phone": "189****0558",
@@ -39212,7 +39388,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "福海街道桥头社区桥塘路26号综合楼三楼",
     "contact_phone": "137****6535",
@@ -39259,7 +39436,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "光明大道16号",
     "contact_phone": "待核实",
@@ -39306,7 +39484,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "留仙二路一巷17号万源商务大厦2栋7层777室",
     "contact_phone": "0755-26609729; 138****9795; 183****3895",
@@ -39353,7 +39532,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "步涌同富裕工业区兴业路12号",
     "contact_phone": "0755-29546469",
@@ -39400,7 +39580,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "新桥街道新二社区南岭路3号宿舍楼一106",
     "contact_phone": "131****9376; 189****4474",
@@ -40160,7 +40341,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "惠山"
     },
     "address": "赛格电子市场2A037",
     "contact_phone": "138****4643; 139****7264",
@@ -40207,7 +40389,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "紫金新城嘉荫园西门北80米",
     "contact_phone": "186****5576",
@@ -40254,7 +40437,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "联谦路与锡沪路交叉口西北220米",
     "contact_phone": "182****0600",
@@ -40301,7 +40485,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "联谦路与锡沪路交叉口西北220米",
     "contact_phone": "待核实",
@@ -40348,7 +40533,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "泗门镇湖北东路20号",
     "contact_phone": "0574-62160951; 189****5228",
@@ -40395,7 +40581,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "浒山街道教场山南路267-269号",
     "contact_phone": "0574-63891808; 0574-63891809; 0574-63891810",
@@ -40442,7 +40629,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "三北中路500-502号",
     "contact_phone": "136****5592",
@@ -40489,7 +40677,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "大通花园1期南门西80米",
     "contact_phone": "0574-63807124; 189****8299",
@@ -40536,7 +40725,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "后马路四海餐饮旁21号",
     "contact_phone": "0574-63890394; 135****4953",
@@ -40583,7 +40773,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "体育场路99-3号",
     "contact_phone": "0574-62633648; 139****3738",
@@ -40726,7 +40917,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "常熟"
     },
     "address": "加腾电子设备厂东南门北90米",
     "contact_phone": "待核实",
@@ -40774,7 +40966,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "洪围路5号",
     "contact_phone": "138****9654",
@@ -41065,45 +41258,6 @@
     "is_manufacturer": true,
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0120022/SKILL.md",
-      "protocol": "skill",
-      "capabilities": [
-        "catalog"
-      ],
-      "verified": false
-    }
-  },
-  {
-    "id": "CN-MFG-0008376",
-    "company": "东莞市寅山实业有限公司",
-    "category": "电子元器件",
-    "keywords": [
-      "电子元器件"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "东莞"
-    },
-    "address": "厦岗社区先兴北路7号2号楼101室",
-    "contact_phone": "137****5788",
-    "source": "certification",
-    "source_url": null,
-    "verified_at": null,
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3989",
-      "name": "其他电子元件制造",
-      "level": "class",
-      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
-      "confidence": "low",
-      "source": "category_fallback",
-      "evidence": "电子元器件"
-    },
-    "is_manufacturer": true,
-    "cl": "L0",
-    "agent": {
-      "skill_url": "skills/vendors/CN-MFG-0008376/SKILL.md",
       "protocol": "skill",
       "capabilities": [
         "catalog"

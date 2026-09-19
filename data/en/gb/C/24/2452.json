@@ -108,7 +108,14 @@
       "source": "gb_token",
       "evidence": "塑胶玩具"
     },
-    "source_url": "https://www.amap.com/place/B0MBAXB1Q0"
+    "source_url": "https://www.amap.com/place/B0MBAXB1Q0",
+    "industry_en": {
+      "code": "2452",
+      "name_en": null,
+      "level": "class",
+      "name": "塑胶玩具制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0088842",
@@ -137,6 +144,48 @@
       "source": "gb_token",
       "evidence": "塑胶玩具"
     },
-    "source_url": "https://www.amap.com/place/B0ID9DNBCE"
+    "source_url": "https://www.amap.com/place/B0ID9DNBCE",
+    "industry_en": {
+      "code": "2452",
+      "name_en": null,
+      "level": "class",
+      "name": "塑胶玩具制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0120374",
+    "company_en": "Shanglin County Linfeng Plastic Toys Processing Factory",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 30 Dalizhuang, Yuntun Village, Dafeng Town",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2452",
+      "name": "塑胶玩具制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 玩具制造 > 塑胶玩具制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "塑胶玩具"
+    },
+    "industry_en": {
+      "code": "2452",
+      "name_en": null,
+      "level": "class",
+      "name": "塑胶玩具制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/24/2452"
   }
 ]

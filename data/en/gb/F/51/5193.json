@@ -1,22 +1,22 @@
 [
   {
     "id": "CN-MFG-0036010",
-    "company_en": "Shaiwang Bai Pi",
+    "company_en": "Screen Wholesale",
     "category": "批发和零售业",
     "category_en": "批发和零售业",
     "keywords_en": [
-      "Stainless Steel Material Wholesale"
+      "stainless steel materials wholesale",
+      "steel plate"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Foshan"
     },
-    "address_en": "Guangri Xin (Shengdong钢管) Building, Shaiwang Bai Pi",
+    "address_en": "Below Guangri Xin (Shengdong Steel Pipe) Screen Wholesale",
     "contact_phone": "0757-86783658; 133****3901; 139****4050",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "F/51/5193",
     "industry": {
       "code": "5193",
       "name": "互联网批发",
@@ -26,6 +26,84 @@
       "source": "gb_token",
       "evidence": "网批发"
     },
-    "source_url": "https://www.amap.com/place/B0H0DCAVDY"
+    "industry_en": {
+      "code": "5193",
+      "name_en": "E-commerce Wholesale",
+      "level": "class",
+      "name": "互联网批发",
+      "confidence": "high"
+    },
+    "_bucket": "F/51/5193"
+  },
+  {
+    "id": "CN-MFG-0122436",
+    "company_en": "Nanning Yongyi Screen Wholesale",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 26 Xiuanan Road",
+    "contact_phone": "133****6989",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5193",
+      "name": "互联网批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 其他批发业 > 互联网批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "网批发"
+    },
+    "industry_en": {
+      "code": "5193",
+      "name_en": "E-commerce Wholesale",
+      "level": "class",
+      "name": "互联网批发",
+      "confidence": "high"
+    },
+    "_bucket": "F/51/5193"
+  },
+  {
+    "id": "CN-MFG-0122554",
+    "company_en": "Wang Hao Screen Wholesale & Retail · Custom Screen Doors and Windows",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "stainless steel materials",
+      "aluminum alloy"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Building 10, A1-2, Erqiao Decorative Material Market",
+    "contact_phone": "134****2253; 138****0215",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5193",
+      "name": "互联网批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 其他批发业 > 互联网批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "网批发"
+    },
+    "industry_en": {
+      "code": "5193",
+      "name_en": "E-commerce Wholesale",
+      "level": "class",
+      "name": "互联网批发",
+      "confidence": "high"
+    },
+    "_bucket": "F/51/5193"
   }
 ]

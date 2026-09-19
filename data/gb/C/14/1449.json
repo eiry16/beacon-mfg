@@ -8,7 +8,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "上城"
     },
     "address": "来福士T1天御3304",
     "contact_phone": "0571-56309267; 187****3675; 198****4112",
@@ -57,7 +58,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "马田街道禾湾社区公明汽车站第3栋108-109",
     "contact_phone": "190****3929",
@@ -84,6 +86,153 @@
       "business_area": "公明",
       "adcode": "440311",
       "search_keyword": "烘焙"
+    },
+    "industry": {
+      "code": "1449",
+      "name": "其他乳制品制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 乳制品制造 > 其他乳制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "牛奶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0129912",
+    "company": "听夏水牛奶糖水铺",
+    "category": "制造业",
+    "keywords": [
+      "甜品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "南山"
+    },
+    "address": "南头街道金宝花园108号",
+    "contact_phone": "132****2512",
+    "lat": 22.528407,
+    "lng": 113.920734,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MAU5S29I",
+      "type": "餐饮服务;甜品店;甜品店",
+      "typecode": "050900",
+      "alias": "",
+      "tag": "黄金椰粒椰子冻,木薯大满贯,芋圆桃胶炖椰奶,杨枝甘露牛乳冰,杨枝甘露",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "桃园",
+      "adcode": "440305",
+      "search_keyword": "甜品"
+    },
+    "industry": {
+      "code": "1449",
+      "name": "其他乳制品制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 乳制品制造 > 其他乳制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "牛奶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0130092",
+    "company": "南信牛奶甜品专家",
+    "category": "制造业",
+    "keywords": [
+      "甜品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "荔湾"
+    },
+    "address": "第十甫路47号",
+    "contact_phone": "020-81389904",
+    "lat": 23.113477,
+    "lng": 113.242835,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00140GYAI",
+      "type": "餐饮服务;甜品店;甜品店",
+      "typecode": "050900",
+      "alias": "粤南信广州糖水",
+      "tag": "招牌双皮奶,鲜虾净云吞,鲜虾布拉肠,姜撞奶,凤凰奶糊,杨枝甘露,红豆双皮奶,牛三星汤,韭黄鲜虾肠,双皮奶,艇仔粥,干炒牛河,南信自磨芝麻糊,牛三星,糖水,南信姜撞奶,南信大虾云吞面,杨枝甘露,凤凰奶糊,南信双皮奶,韭王鲜虾肠粉",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西关",
+      "adcode": "440103",
+      "search_keyword": "甜品"
+    },
+    "industry": {
+      "code": "1449",
+      "name": "其他乳制品制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 乳制品制造 > 其他乳制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "牛奶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0130210",
+    "company": "润心牛奶甜品",
+    "category": "制造业",
+    "keywords": [
+      "甜品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "番禺"
+    },
+    "address": "南村镇兴业大道1115号",
+    "contact_phone": "020-31136906",
+    "lat": 23.004066,
+    "lng": 113.387427,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH0HTWJ",
+      "type": "餐饮服务;甜品店;甜品店",
+      "typecode": "050900",
+      "alias": "",
+      "tag": "双皮奶,煎饺,猪脚姜,炒牛河,药膳鸡,大良双皮奶,沙湾姜撞奶",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440113",
+      "search_keyword": "甜品"
     },
     "industry": {
       "code": "1449",
