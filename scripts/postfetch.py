@@ -614,7 +614,8 @@ L0_PATHS = (
     "data/gb", "data/en", "data/manifest.json", "data/index.json",
     "data/gb-index.json", "data/phone-index.jsonl", "data/region-index.json",
     "data/fetch_cursor.json", "skills/registry/fingerprint",
-    "skills/registry/index.json", "skills/registry/gb-proc-map.json",
+    "skills/registry/index.json", "skills/registry/index",
+    "skills/registry/gb-proc-map.json",
 )
 
 # 派生/文档文件：validate.py --strict 会拿 README.md / DATA_STATS.md / industry-index.json
