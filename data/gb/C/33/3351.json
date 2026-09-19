@@ -107,7 +107,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "滨湖"
     },
     "address": "合欢路28号",
     "contact_phone": "待核实",
@@ -154,7 +155,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "龙门"
     },
     "address": "麻榨镇新水南文化活动中心后面",
     "contact_phone": "188****4208",
@@ -201,7 +203,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "南湖"
     },
     "address": "高铁新城新盛路619号",
     "contact_phone": "156****1888",
@@ -248,7 +251,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "惠州大道马安段55号",
     "contact_phone": "183****6222",
@@ -305,7 +309,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "西湖"
     },
     "address": "西斗门路3号国家软件基地大楼",
     "contact_phone": "待核实",
@@ -354,7 +359,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "青浦"
     },
     "address": "白鹤镇外青松公路2658弄259号",
     "contact_phone": "150****9091",
@@ -403,7 +409,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "浦东新"
     },
     "address": "沪南公路与建豪路交叉口东南220米",
     "contact_phone": "182****2988",
@@ -452,7 +459,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "南海"
     },
     "address": "大转弯装饰市场第五期C1座",
     "contact_phone": "139****0484",
@@ -501,7 +509,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "花都"
     },
     "address": "云羚数字园九栋北塔15楼",
     "contact_phone": "139****0068; 159****2714; 188****5116",
@@ -550,7 +559,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "黄埔"
     },
     "address": "护林路1333号",
     "contact_phone": "020-82366993",
@@ -599,7 +609,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "黄浦"
     },
     "address": "北京东路27号在2号对面拱门再往西走十米左右",
     "contact_phone": "181****7308",
@@ -868,6 +879,55 @@
       "business_area": "",
       "adcode": "450102",
       "search_keyword": "塑料模具"
+    },
+    "industry": {
+      "code": "3351",
+      "name": "建筑、家具用金属配件制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 建筑、家具用金属配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138478",
+    "company": "陶熙(原道康宁)建筑用硅酮密封胶",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城"
+    },
+    "address": "相城大道1160号苏州国际家居建材中心",
+    "contact_phone": "待核实",
+    "lat": 31.37737,
+    "lng": 120.641163,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDS5MNZG",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
+      "typecode": "060603|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "防水",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "开发区",
+      "adcode": "320507",
+      "search_keyword": "密封件"
     },
     "industry": {
       "code": "3351",

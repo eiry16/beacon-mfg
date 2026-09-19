@@ -1,38 +1,5 @@
 [
   {
-    "id": "CN-MFG-0002645",
-    "company": "杭州临安章军废旧塑料加工厂",
-    "category": "注塑成型",
-    "keywords": [
-      "注塑加工"
-    ],
-    "region": {
-      "province": "浙江",
-      "city": "杭州"
-    },
-    "address": "玲珑街道桥里村168号(K824大塘口站牌小路往里走上坡处即可见到)",
-    "contact_phone": "159****7951",
-    "lat": 30.177396,
-    "lng": 119.605692,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-08-13",
-    "is_template": false,
-    "note": "",
-    "status": "verified",
-    "industry": {
-      "code": "3523",
-      "name": "塑料加工专用设备制造",
-      "level": "class",
-      "path": "C 制造业 > 专用设备制造业 > 化工、木材、非金属加工专用设备制造 > 塑料加工专用设备制造",
-      "confidence": "high",
-      "source": "gb_token",
-      "evidence": "塑料加"
-    },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3523"
-  },
-  {
     "id": "CN-MFG-0008114",
     "company": "水果塑料加工厂",
     "category": "精密机械加工",
@@ -42,7 +9,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "宝山"
     },
     "address": "泰和路1886号-1",
     "contact_phone": "待核实",
@@ -90,7 +58,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "泾新路1-2号",
     "contact_phone": "待核实",
@@ -138,7 +107,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "常州"
+      "city": "常州",
+      "district": "武进"
     },
     "address": "东湖路69-1",
     "contact_phone": "待核实",
@@ -182,11 +152,13 @@
     "category": "精密机械加工",
     "keywords": [
       "塑料加工",
-      "塑胶加工"
+      "塑胶加工",
+      "注塑加工"
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临安"
     },
     "address": "玲珑街道桥里村168号(K824大塘口站牌小路往里走上坡处即可见到)",
     "contact_phone": "159****7951",
@@ -234,7 +206,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "富阳"
     },
     "address": "建华村",
     "contact_phone": "待核实",
@@ -281,7 +254,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "义蓬建材市场六幢三号",
     "contact_phone": "138****6369; 158****5819",
@@ -329,7 +303,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "郭相桥中路与四明西路交叉口北480米",
     "contact_phone": "待核实",
@@ -377,7 +352,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "周巷镇镇东新村周塘113号",
     "contact_phone": "183****3955",
@@ -425,7 +401,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "庵东镇江南村七塘公路工农路到底(43号-9)",
     "contact_phone": "待核实",
@@ -473,7 +450,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "兰江街道万弓池路61号",
     "contact_phone": "137****6156",
@@ -521,7 +499,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "李岙路与山苑东路交叉口西北400米",
     "contact_phone": "待核实",
@@ -569,7 +548,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "新浦镇南环路30号",
     "contact_phone": "待核实",
@@ -617,7 +597,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "慈溪"
     },
     "address": "观海卫镇桃园西路12号",
     "contact_phone": "待核实",
@@ -665,7 +646,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "海曙"
     },
     "address": "望横段与横街东路交叉口东北220米",
     "contact_phone": "待核实",
@@ -713,7 +695,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "宁海"
     },
     "address": "黄坛镇峰山路口进来200米",
     "contact_phone": "151****6365",
@@ -761,7 +744,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "宁海"
     },
     "address": "梅林街道方前工业区353号",
     "contact_phone": "待核实",
@@ -809,7 +793,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "宁海"
     },
     "address": "檀香路与金山南路交叉口东南60米",
     "contact_phone": "待核实",
@@ -913,7 +898,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "广深公路辅路与宝光二路交叉口东北140米",
     "contact_phone": "待核实",
@@ -961,7 +947,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "公明镇将石村将石路155号",
     "contact_phone": "0755-27128391",
@@ -1440,7 +1427,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "南村镇新基村海滨东街2号101房",
     "contact_phone": "020-34966283; 133****4663",
@@ -1488,7 +1476,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "龙歧村岐山大巷街1号之一",
     "contact_phone": "020-34878282",
@@ -1544,7 +1533,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "南沙"
     },
     "address": "蔡新路与民生路交叉口西南240米",
     "contact_phone": "待核实",
@@ -1592,7 +1582,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "南村镇坑头村市新路北段58号103",
     "contact_phone": "195****4808",
@@ -1640,7 +1631,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "番禺桥南陈蚬涌康乐3街11号",
     "contact_phone": "136****6187",

@@ -26,6 +26,48 @@
       "source": "gb_token",
       "evidence": "农业科"
     },
-    "source_url": "https://www.amap.com/place/B0FFI0UZXH"
+    "source_url": "https://www.amap.com/place/B0FFI0UZXH",
+    "industry_en": {
+      "code": "7330",
+      "name_en": "Agricultural Science R&D",
+      "level": "class",
+      "name": "农业科学研究和试验发展",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0108533",
+    "company_en": "Yunnan Shangsheng Agricultural Science and Technology Development Co., Ltd.",
+    "category": "科学研究和技术服务业",
+    "category_en": "科学研究和技术服务业",
+    "keywords_en": [
+      "Stamping Molds"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "290 meters south of Chuangfu Mold Processing Factory",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "7330",
+      "name": "农业科学研究和试验发展",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 研究和试验发展 > 农业科学研究和试验发展 > 农业科学研究和试验发展",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "农业科"
+    },
+    "industry_en": {
+      "code": "7330",
+      "name_en": "Agricultural Science R&D",
+      "level": "class",
+      "name": "农业科学研究和试验发展",
+      "confidence": "high"
+    },
+    "_bucket": "M/73/7330"
   }
 ]

@@ -9,7 +9,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "黄埔"
     },
     "address": "大沙街道石化路1958号江悦商贸园",
     "contact_phone": "137****8046",
@@ -56,7 +57,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "淡水镇白云三路15号(绿苑学校东南门旁)",
     "contact_phone": "135****3551",
@@ -103,7 +105,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "江阴"
     },
     "address": "祝塘镇文林环南路11号",
     "contact_phone": "0510-86340731",
@@ -150,7 +153,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "蚌岗村107国道旁78-11号",
     "contact_phone": "0755-27094225; 130****4983",
@@ -197,7 +201,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "吉华街道吉华路311-5号",
     "contact_phone": "133****0366",
@@ -244,7 +249,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "惠山"
     },
     "address": "阳山镇恒通路20号",
     "contact_phone": "187****5897",
@@ -365,7 +371,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "店口镇华东汽配水暖城21幢0523-0525号",
     "contact_phone": "159****4647",
@@ -445,7 +452,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "新生路91号G栋108",
     "contact_phone": "136****1219; 137****6553",
@@ -492,7 +500,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "金山"
     },
     "address": "茸卫公路与龙海路交叉口东南60米",
     "contact_phone": "150****6958",
@@ -549,7 +558,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "惠山"
     },
     "address": "堰玉西路43号",
     "contact_phone": "135****8587",
@@ -606,7 +616,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "富阳"
     },
     "address": "洞桥镇洞桥村综合大楼3号商铺",
     "contact_phone": "159****8256",
@@ -655,7 +666,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "建德"
     },
     "address": "新安江街道园区路和320国道交叉路口附近",
     "contact_phone": "131****0286",
@@ -712,7 +724,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "天河"
     },
     "address": "广州大道北路613号五楼507室",
     "contact_phone": "180****7818",
@@ -761,7 +774,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "禅城"
     },
     "address": "工业路26号",
     "contact_phone": "0757-82803755",
@@ -810,7 +824,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "禅城"
     },
     "address": "广东省禅城区",
     "contact_phone": "150****1099",
@@ -1082,6 +1097,302 @@
       "business_area": "",
       "adcode": "450126",
       "search_keyword": "钣金加工"
+    },
+    "industry": {
+      "code": "3444",
+      "name": "液压动力机械及元件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 液压动力机械及元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "液压"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0133184",
+    "company": "昆山市艾默森液压维修服务中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "洗衣机维修",
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "塔娄路11号2厂房",
+    "contact_phone": "176****8152",
+    "lat": 31.32125,
+    "lng": 121.093234,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JBPUAKHO",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "维修站点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "洗衣机维修"
+    },
+    "industry": {
+      "code": "3444",
+      "name": "液压动力机械及元件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 液压动力机械及元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "液压"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138316",
+    "company": "苏州德帅液压机电有限公司",
+    "category": "标准件",
+    "keywords": [
+      "机械密封",
+      "密封件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "姑苏"
+    },
+    "address": "城北西路1599号苏州机电五金城(西区)C4-116",
+    "contact_phone": "188****1968",
+    "lat": 31.347683,
+    "lng": 120.55915,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH47JPL",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "白洋湾",
+      "adcode": "320508",
+      "search_keyword": "机械密封"
+    },
+    "industry": {
+      "code": "3444",
+      "name": "液压动力机械及元件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 液压动力机械及元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "液压"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138733",
+    "company": "液压配件",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "嘉定"
+    },
+    "address": "方德路100弄135号",
+    "contact_phone": "139****4857",
+    "lat": 31.315294,
+    "lng": 121.227935,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G1AZXYU9",
+      "type": "汽车服务;汽车配件销售;汽车配件销售",
+      "typecode": "010800",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "3444",
+      "name": "液压动力机械及元件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 液压动力机械及元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "液压"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138803",
+    "company": "上海深蒂液压设备有限公司",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "闵行"
+    },
+    "address": "虹梅南路5201弄18号9号楼一楼",
+    "contact_phone": "150****0009",
+    "lat": 31.049157,
+    "lng": 121.448357,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LUUHQ7YF",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310112",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "3444",
+      "name": "液压动力机械及元件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 液压动力机械及元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "液压"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138807",
+    "company": "具泰液压(上海五金城店)",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "嘉定"
+    },
+    "address": "安亭镇方泰五金城方德路135号",
+    "contact_phone": "021-59504300; 139****2125",
+    "lat": 31.315939,
+    "lng": 121.22945,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI0D3J1",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "3444",
+      "name": "液压动力机械及元件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 液压动力机械及元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "液压"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138927",
+    "company": "祥威液压气动密封(海虹苑店)",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "南山"
+    },
+    "address": "蛇口老街150号",
+    "contact_phone": "0755-26866071; 138****7159",
+    "lat": 22.486494,
+    "lng": 113.925557,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F38SKFA",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "蛇口",
+      "adcode": "440305",
+      "search_keyword": "密封件"
     },
     "industry": {
       "code": "3444",

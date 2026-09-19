@@ -10041,22 +10041,30 @@
   },
   {
     "id": "CN-MFG-0027835",
-    "company_en": "Hongxing Tianxingjian Hardware, Electrical and Mechanical Supermarket (Xia Sha Rui纺 Store)",
-    "category": "压铸",
-    "category_en": "Die Casting",
+    "company_en": "Hongxing Tianxingjian Hardware and Electrical Appliance Mega Store (Xia sha Ruifang Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
     "keywords_en": [
-      "machine processing"
+      "Machine Processing"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Hangzhou"
     },
-    "address_en": "No. 1A138, North Gate of Rui纺 Joint Market, 1808 Jinsha Avenue, Xia Sha Street",
+    "address_en": "No. 1808 Jinsa Avenue, North Gate 1A138, Ruifang Joint Market, Xiasha Street",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-13",
     "note_en": "",
-    "_bucket": "F/51/5174",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
     "industry_en": {
       "code": "5174",
       "name_en": "Hardware & Tools Wholesale",
@@ -10064,7 +10072,7 @@
       "name": "五金产品批发",
       "confidence": "medium"
     },
-    "source_url": "https://www.amap.com/place/B0GRY5W6MN"
+    "_bucket": "F/51/5174"
   },
   {
     "id": "CN-MFG-0027864",
@@ -10314,7 +10322,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0LR7RIR3P"
+    "source_url": "https://www.amap.com/place/B0LR7RIR3P",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0031975",
@@ -10343,7 +10358,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0KGDSR0RM"
+    "source_url": "https://www.amap.com/place/B0KGDSR0RM",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032283",
@@ -10372,7 +10394,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFJ2DYSQ"
+    "source_url": "https://www.amap.com/place/B0FFJ2DYSQ",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032286",
@@ -10404,7 +10433,14 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B00155D2Q9"
+    "source_url": "https://www.amap.com/place/B00155D2Q9",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    }
   },
   {
     "id": "CN-MFG-0032287",
@@ -10436,7 +10472,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B00156Z52J"
+    "source_url": "https://www.amap.com/place/B00156Z52J",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032384",
@@ -10468,7 +10511,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B020006G46"
+    "source_url": "https://www.amap.com/place/B020006G46",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032386",
@@ -10500,7 +10550,14 @@
       "source": "name",
       "evidence": "灯饰|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0L67A12R7"
+    "source_url": "https://www.amap.com/place/B0L67A12R7",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032390",
@@ -10532,7 +10589,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B02000JFRG"
+    "source_url": "https://www.amap.com/place/B02000JFRG",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032398",
@@ -10561,7 +10625,14 @@
       "source": "name",
       "evidence": "汽配|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFGCB0AP"
+    "source_url": "https://www.amap.com/place/B0FFGCB0AP",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032496",
@@ -10593,18 +10664,25 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B0FFHQ2W0Z"
+    "source_url": "https://www.amap.com/place/B0FFHQ2W0Z",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    }
   },
   {
     "id": "CN-MFG-0032498",
-    "company_en": "Ningbo Wanguo Shangcheng",
+    "company_en": "Ningbo Wanguo Shopping Plaza",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
-      "Wujin Baixiao",
-      "Wujin Dian",
-      "Wujin Jidian",
-      "Wujin Gongju"
+      "hardware wholesale",
+      "hardware store",
+      "hardware and electrical",
+      "hardware tools"
     ],
     "region": {
       "province": "Zhejiang",
@@ -10615,7 +10693,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "F/51/5174",
     "industry": {
       "code": "5174",
       "name": "五金产品批发",
@@ -10625,7 +10702,14 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B023E04G03"
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    },
+    "_bucket": "F/51/5174"
   },
   {
     "id": "CN-MFG-0032499",
@@ -10657,7 +10741,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFIPR3A9"
+    "source_url": "https://www.amap.com/place/B0FFIPR3A9",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032502",
@@ -10689,7 +10780,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0H6UUUBYF"
+    "source_url": "https://www.amap.com/place/B0H6UUUBYF",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032508",
@@ -10719,7 +10817,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFKR6ZFD"
+    "source_url": "https://www.amap.com/place/B0FFKR6ZFD",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032509",
@@ -10748,7 +10853,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0FFKRLSY9"
+    "source_url": "https://www.amap.com/place/B0FFKRLSY9",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032511",
@@ -10777,7 +10889,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0MDLHJDEV"
+    "source_url": "https://www.amap.com/place/B0MDLHJDEV",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032512",
@@ -10806,7 +10925,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0L3AO0GCI"
+    "source_url": "https://www.amap.com/place/B0L3AO0GCI",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032608",
@@ -10838,7 +10964,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B030101V6N"
+    "source_url": "https://www.amap.com/place/B030101V6N",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032621",
@@ -10867,7 +11000,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B03017U7UF"
+    "source_url": "https://www.amap.com/place/B03017U7UF",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032705",
@@ -10899,7 +11039,14 @@
       "source": "name",
       "evidence": "液压|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFGM1THF"
+    "source_url": "https://www.amap.com/place/B0FFGM1THF",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032706",
@@ -10931,7 +11078,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFFWBUZR"
+    "source_url": "https://www.amap.com/place/B0FFFWBUZR",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032805",
@@ -10963,7 +11117,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B02F38Q0O9"
+    "source_url": "https://www.amap.com/place/B02F38Q0O9",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032812",
@@ -10992,7 +11153,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0FFIAC8X8"
+    "source_url": "https://www.amap.com/place/B0FFIAC8X8",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032813",
@@ -11021,7 +11189,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0KR5DYJ0P"
+    "source_url": "https://www.amap.com/place/B0KR5DYJ0P",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032817",
@@ -11051,26 +11226,32 @@
       "source": "name",
       "evidence": "钻头|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFFA28N8"
+    "source_url": "https://www.amap.com/place/B0FFFA28N8",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032820",
-    "company_en": "Hengchuang Hardware Wholesale Store",
+    "company_en": "Hengchuang Hardware Wholesale",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
-      "Hardware Wholesale"
+      "hardware wholesale"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "No. 50, Gejie West Village, Huangge坑 Community, Longcheng Street",
+    "address_en": "No. 50, 101, Ge Xixi Village, Huanggekeng Community, Longcheng Street",
     "contact_phone": "158****8761",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "F/51/5174",
     "industry": {
       "code": "5174",
       "name": "五金产品批发",
@@ -11080,7 +11261,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0LGJKHBRR"
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
   },
   {
     "id": "CN-MFG-0032905",
@@ -11112,7 +11300,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFFDBFEP"
+    "source_url": "https://www.amap.com/place/B0FFFDBFEP",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032906",
@@ -11141,7 +11336,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFFDBG1H"
+    "source_url": "https://www.amap.com/place/B0FFFDBG1H",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032907",
@@ -11173,7 +11375,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFFOW1DL"
+    "source_url": "https://www.amap.com/place/B0FFFOW1DL",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032993",
@@ -11202,7 +11411,14 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B0FFFA9WGV"
+    "source_url": "https://www.amap.com/place/B0FFFA9WGV",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    }
   },
   {
     "id": "CN-MFG-0032994",
@@ -11231,7 +11447,14 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B02410W025"
+    "source_url": "https://www.amap.com/place/B02410W025",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    }
   },
   {
     "id": "CN-MFG-0032995",
@@ -11260,7 +11483,14 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B024104TQ4"
+    "source_url": "https://www.amap.com/place/B024104TQ4",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    }
   },
   {
     "id": "CN-MFG-0032996",
@@ -11290,7 +11520,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0L1BRZ4RF"
+    "source_url": "https://www.amap.com/place/B0L1BRZ4RF",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0032998",
@@ -11319,7 +11556,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFHP1VPO"
+    "source_url": "https://www.amap.com/place/B0FFHP1VPO",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033001",
@@ -11348,7 +11592,14 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B0FFGTRQGV"
+    "source_url": "https://www.amap.com/place/B0FFGTRQGV",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    }
   },
   {
     "id": "CN-MFG-0033002",
@@ -11378,7 +11629,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0MA6RKY1C"
+    "source_url": "https://www.amap.com/place/B0MA6RKY1C",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033009",
@@ -11408,7 +11666,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0FFG0XM6J"
+    "source_url": "https://www.amap.com/place/B0FFG0XM6J",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033094",
@@ -11437,7 +11702,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFL4E3Q3"
+    "source_url": "https://www.amap.com/place/B0FFL4E3Q3",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033098",
@@ -11466,7 +11738,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0H3KRY1KI"
+    "source_url": "https://www.amap.com/place/B0H3KRY1KI",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033307",
@@ -11495,7 +11774,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFJRUKTC"
+    "source_url": "https://www.amap.com/place/B0FFJRUKTC",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033309",
@@ -11524,7 +11810,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFKDBMXS"
+    "source_url": "https://www.amap.com/place/B0FFKDBMXS",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033319",
@@ -11553,7 +11846,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0FFMFXYHS"
+    "source_url": "https://www.amap.com/place/B0FFMFXYHS",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033320",
@@ -11582,7 +11882,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0I077RWA2"
+    "source_url": "https://www.amap.com/place/B0I077RWA2",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033425",
@@ -11611,7 +11918,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0I3XM8LDP"
+    "source_url": "https://www.amap.com/place/B0I3XM8LDP",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033431",
@@ -11641,7 +11955,14 @@
       "source": "name",
       "evidence": "灯饰|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFGEFPWT"
+    "source_url": "https://www.amap.com/place/B0FFGEFPWT",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033433",
@@ -11670,7 +11991,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0JD95S17C"
+    "source_url": "https://www.amap.com/place/B0JD95S17C",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033434",
@@ -11699,7 +12027,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B03018MFF9"
+    "source_url": "https://www.amap.com/place/B03018MFF9",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033435",
@@ -11728,7 +12063,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFGIPINM"
+    "source_url": "https://www.amap.com/place/B0FFGIPINM",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033556",
@@ -11757,7 +12099,14 @@
       "source": "name",
       "evidence": "电动工具|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFGVY54A"
+    "source_url": "https://www.amap.com/place/B0FFGVY54A",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033557",
@@ -11786,7 +12135,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFFW8N31"
+    "source_url": "https://www.amap.com/place/B0FFFW8N31",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033558",
@@ -11815,7 +12171,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0LB3CCQLE"
+    "source_url": "https://www.amap.com/place/B0LB3CCQLE",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033560",
@@ -11844,7 +12207,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFFX4709"
+    "source_url": "https://www.amap.com/place/B0FFFX4709",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033562",
@@ -11873,7 +12243,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0J19RZFRY"
+    "source_url": "https://www.amap.com/place/B0J19RZFRY",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033563",
@@ -11902,7 +12279,14 @@
       "source": "name",
       "evidence": "电动工具|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0FFG8KX9G"
+    "source_url": "https://www.amap.com/place/B0FFG8KX9G",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033565",
@@ -11931,7 +12315,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0MBTZAHX4"
+    "source_url": "https://www.amap.com/place/B0MBTZAHX4",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033573",
@@ -11960,7 +12351,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFL9CF9M"
+    "source_url": "https://www.amap.com/place/B0FFL9CF9M",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033575",
@@ -11989,7 +12387,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFL5AH0H"
+    "source_url": "https://www.amap.com/place/B0FFL5AH0H",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033677",
@@ -12021,7 +12426,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B02F38IPWF"
+    "source_url": "https://www.amap.com/place/B02F38IPWF",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033678",
@@ -12053,7 +12465,14 @@
       "source": "name",
       "evidence": "电动工具|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFJ97YVI"
+    "source_url": "https://www.amap.com/place/B0FFJ97YVI",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033679",
@@ -12082,7 +12501,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0M6LZ50TN"
+    "source_url": "https://www.amap.com/place/B0M6LZ50TN",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033681",
@@ -12111,7 +12537,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFGJ3I2Z"
+    "source_url": "https://www.amap.com/place/B0FFGJ3I2Z",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033682",
@@ -12140,7 +12573,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0IKJ59H93"
+    "source_url": "https://www.amap.com/place/B0IKJ59H93",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033683",
@@ -12169,7 +12609,14 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B0FFI0R9FQ"
+    "source_url": "https://www.amap.com/place/B0FFI0R9FQ",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    }
   },
   {
     "id": "CN-MFG-0033686",
@@ -12198,7 +12645,14 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B0FFH0GKEF"
+    "source_url": "https://www.amap.com/place/B0FFH0GKEF",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    }
   },
   {
     "id": "CN-MFG-0033687",
@@ -12227,7 +12681,14 @@
       "source": "name",
       "evidence": "制冷|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFIY4OIK"
+    "source_url": "https://www.amap.com/place/B0FFIY4OIK",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033688",
@@ -12256,7 +12717,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0HUB9GUYR"
+    "source_url": "https://www.amap.com/place/B0HUB9GUYR",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033690",
@@ -12285,7 +12753,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B02F37WCXP"
+    "source_url": "https://www.amap.com/place/B02F37WCXP",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033777",
@@ -12314,7 +12789,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0H1YUX3DD"
+    "source_url": "https://www.amap.com/place/B0H1YUX3DD",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033778",
@@ -12343,7 +12825,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0JGU7A98I"
+    "source_url": "https://www.amap.com/place/B0JGU7A98I",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033779",
@@ -12372,7 +12861,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0KG34JI64"
+    "source_url": "https://www.amap.com/place/B0KG34JI64",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033783",
@@ -12401,7 +12897,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFG9J3SA"
+    "source_url": "https://www.amap.com/place/B0FFG9J3SA",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033788",
@@ -12430,7 +12933,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFHFU0R9"
+    "source_url": "https://www.amap.com/place/B0FFHFU0R9",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033791",
@@ -12459,7 +12969,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0GUUR0F07"
+    "source_url": "https://www.amap.com/place/B0GUUR0F07",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033792",
@@ -12488,7 +13005,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0H6POUJ6G"
+    "source_url": "https://www.amap.com/place/B0H6POUJ6G",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033889",
@@ -12517,7 +13041,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0IGC7GLJJ"
+    "source_url": "https://www.amap.com/place/B0IGC7GLJJ",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033890",
@@ -12546,7 +13077,14 @@
       "source": "name",
       "evidence": "电动工具|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0J25HT5K2"
+    "source_url": "https://www.amap.com/place/B0J25HT5K2",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033893",
@@ -12575,7 +13113,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0HG3UE4LK"
+    "source_url": "https://www.amap.com/place/B0HG3UE4LK",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033907",
@@ -12604,7 +13149,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0GU5LTZCC"
+    "source_url": "https://www.amap.com/place/B0GU5LTZCC",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033908",
@@ -12633,7 +13185,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFFT05DB"
+    "source_url": "https://www.amap.com/place/B0FFFT05DB",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0033909",
@@ -12662,7 +13221,14 @@
       "source": "name",
       "evidence": "工具批发"
     },
-    "source_url": "https://www.amap.com/place/B0K1RC4QGQ"
+    "source_url": "https://www.amap.com/place/B0K1RC4QGQ",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034004",
@@ -12691,26 +13257,32 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "source_url": "https://www.amap.com/place/B0L0G53K4R"
+    "source_url": "https://www.amap.com/place/B0L0G53K4R",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    }
   },
   {
     "id": "CN-MFG-0034006",
-    "company_en": "Luneng照明 Haiga Wujin Lighting Building Materials Wholesales (Operation Department)",
+    "company_en": "Lvneng Lighting Haijia Hardware Lighting and Building Materials Wholesale (Operating Department)",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
-      "Water Heating Wholesales"
+      "Water and Heating Wholesale"
     ],
     "region": {
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 1713 Qishan Road, Room 2",
+    "address_en": "No. 1713 Qishan Road, 2 rooms",
     "contact_phone": "021-50383349; 136****7258; 180****9513",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "F/51/5174",
     "industry": {
       "code": "5174",
       "name": "五金产品批发",
@@ -12720,7 +13292,14 @@
       "source": "name",
       "evidence": "灯具|门店型:经营部"
     },
-    "source_url": "https://www.amap.com/place/B0FFGIYUAT"
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
   },
   {
     "id": "CN-MFG-0034117",
@@ -12749,7 +13328,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFKU1MHL"
+    "source_url": "https://www.amap.com/place/B0FFKU1MHL",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034121",
@@ -12778,26 +13364,32 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFF0F183"
+    "source_url": "https://www.amap.com/place/B0FFF0F183",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034123",
-    "company_en": "Yonggao Shuinan Wholesales (Jinxiuhua苑 West District Store)",
+    "company_en": "永高水暖批发(锦绣花苑西区店)",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
-      "Water Heating Wholesales"
+      "水暖批发"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 80 Chang'an North Road, Yangshe Town, Jinxiuhua苑 West District",
+    "address_en": "杨舍镇长安北路80号锦绣花苑西区",
     "contact_phone": "0512-58688453; 138****5339",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "F/51/5174",
     "industry": {
       "code": "5174",
       "name": "五金产品批发",
@@ -12807,7 +13399,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B02001C26O"
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
   },
   {
     "id": "CN-MFG-0034124",
@@ -12836,7 +13435,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B02000HRQF"
+    "source_url": "https://www.amap.com/place/B02000HRQF",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034126",
@@ -12865,7 +13471,14 @@
       "source": "name",
       "evidence": "阀门|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFL3EK6I"
+    "source_url": "https://www.amap.com/place/B0FFL3EK6I",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034128",
@@ -12894,7 +13507,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFFVUK8H"
+    "source_url": "https://www.amap.com/place/B0FFFVUK8H",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034131",
@@ -12923,7 +13543,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFH497JO"
+    "source_url": "https://www.amap.com/place/B0FFH497JO",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034132",
@@ -12952,7 +13579,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFHB824O"
+    "source_url": "https://www.amap.com/place/B0FFHB824O",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034135",
@@ -12981,7 +13615,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFHM2YNC"
+    "source_url": "https://www.amap.com/place/B0FFHM2YNC",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034216",
@@ -13010,7 +13651,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0ID0Z5CC5"
+    "source_url": "https://www.amap.com/place/B0ID0Z5CC5",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034299",
@@ -13039,7 +13687,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFLHKOVM"
+    "source_url": "https://www.amap.com/place/B0FFLHKOVM",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034305",
@@ -13068,7 +13723,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0G3JU66OD"
+    "source_url": "https://www.amap.com/place/B0G3JU66OD",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034307",
@@ -13097,7 +13759,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B03017U6QW"
+    "source_url": "https://www.amap.com/place/B03017U6QW",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034309",
@@ -13126,7 +13795,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFGBDYO2"
+    "source_url": "https://www.amap.com/place/B0FFGBDYO2",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034311",
@@ -13155,7 +13831,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFFX1CCC"
+    "source_url": "https://www.amap.com/place/B0FFFX1CCC",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034410",
@@ -13184,7 +13867,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0I03HXS9O"
+    "source_url": "https://www.amap.com/place/B0I03HXS9O",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034412",
@@ -13213,7 +13903,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0J64H8QK5"
+    "source_url": "https://www.amap.com/place/B0J64H8QK5",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034414",
@@ -13242,7 +13939,14 @@
       "source": "name",
       "evidence": "阀门|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B02F5040LM"
+    "source_url": "https://www.amap.com/place/B02F5040LM",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034424",
@@ -13271,7 +13975,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B02F50YAZ1"
+    "source_url": "https://www.amap.com/place/B02F50YAZ1",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034425",
@@ -13300,7 +14011,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFI9BB00"
+    "source_url": "https://www.amap.com/place/B0FFI9BB00",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034511",
@@ -13329,7 +14047,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0KRM724MB"
+    "source_url": "https://www.amap.com/place/B0KRM724MB",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034520",
@@ -13358,7 +14083,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0K2VC9KNG"
+    "source_url": "https://www.amap.com/place/B0K2VC9KNG",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034522",
@@ -13387,7 +14119,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFG16QK3"
+    "source_url": "https://www.amap.com/place/B0FFG16QK3",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034526",
@@ -13416,7 +14155,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFKI3HJ2"
+    "source_url": "https://www.amap.com/place/B0FFKI3HJ2",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034531",
@@ -13445,7 +14191,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFJ17IR9"
+    "source_url": "https://www.amap.com/place/B0FFJ17IR9",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034611",
@@ -13474,7 +14227,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0J0R5IIB0"
+    "source_url": "https://www.amap.com/place/B0J0R5IIB0",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034615",
@@ -13503,7 +14263,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0G1ACZJUK"
+    "source_url": "https://www.amap.com/place/B0G1ACZJUK",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034616",
@@ -13532,7 +14299,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFG6J2FK"
+    "source_url": "https://www.amap.com/place/B0FFG6J2FK",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034622",
@@ -13561,7 +14335,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0HK3COOAP"
+    "source_url": "https://www.amap.com/place/B0HK3COOAP",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034624",
@@ -13590,7 +14371,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFGTF0SP"
+    "source_url": "https://www.amap.com/place/B0FFGTF0SP",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034626",
@@ -13619,7 +14407,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFIAV5YI"
+    "source_url": "https://www.amap.com/place/B0FFIAV5YI",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034632",
@@ -13648,7 +14443,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFG6Q27Z"
+    "source_url": "https://www.amap.com/place/B0FFG6Q27Z",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034748",
@@ -13677,7 +14479,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0FFG2Y5VD"
+    "source_url": "https://www.amap.com/place/B0FFG2Y5VD",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034749",
@@ -13706,7 +14515,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFL4DPGD"
+    "source_url": "https://www.amap.com/place/B0FFL4DPGD",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0034752",
@@ -13735,7 +14551,14 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "source_url": "https://www.amap.com/place/B0FFHLJT2W"
+    "source_url": "https://www.amap.com/place/B0FFHLJT2W",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0036011",
@@ -13764,7 +14587,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0GURSOO8S"
+    "source_url": "https://www.amap.com/place/B0GURSOO8S",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0037120",
@@ -13795,7 +14625,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFJPVCZ1"
+    "source_url": "https://www.amap.com/place/B0FFJPVCZ1",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0037210",
@@ -13826,7 +14663,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0L65MJQJ8"
+    "source_url": "https://www.amap.com/place/B0L65MJQJ8",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0037213",
@@ -13857,7 +14701,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0GU3XLU2O"
+    "source_url": "https://www.amap.com/place/B0GU3XLU2O",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0037331",
@@ -13888,7 +14739,14 @@
       "source": "name",
       "evidence": "泵|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFHWIF37"
+    "source_url": "https://www.amap.com/place/B0FFHWIF37",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0037388",
@@ -13919,7 +14777,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFGZMFG5"
+    "source_url": "https://www.amap.com/place/B0FFGZMFG5",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0037713",
@@ -13948,7 +14813,14 @@
       "source": "name",
       "evidence": "液压|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFGA81N2"
+    "source_url": "https://www.amap.com/place/B0FFGA81N2",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0037782",
@@ -13977,7 +14849,14 @@
       "source": "name",
       "evidence": "电动工具|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0FFLM89EL"
+    "source_url": "https://www.amap.com/place/B0FFLM89EL",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0038181",
@@ -14006,7 +14885,14 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0KAO7Z1FJ"
+    "source_url": "https://www.amap.com/place/B0KAO7Z1FJ",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0062978",
@@ -14035,7 +14921,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0HRVR0SH0"
+    "source_url": "https://www.amap.com/place/B0HRVR0SH0",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0063043",
@@ -14064,7 +14957,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0FFHCTB0U"
+    "source_url": "https://www.amap.com/place/B0FFHCTB0U",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0069507",
@@ -14093,7 +14993,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B02000K5LG"
+    "source_url": "https://www.amap.com/place/B02000K5LG",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0070096",
@@ -14122,7 +15029,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0FFFWHRQ6"
+    "source_url": "https://www.amap.com/place/B0FFFWHRQ6",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0071089",
@@ -14151,7 +15065,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0FFM1FDH6"
+    "source_url": "https://www.amap.com/place/B0FFM1FDH6",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0071112",
@@ -14180,7 +15101,14 @@
       "source": "name",
       "evidence": "模具|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0FFHZA946"
+    "source_url": "https://www.amap.com/place/B0FFHZA946",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0071365",
@@ -14209,7 +15137,14 @@
       "source": "name",
       "evidence": "模具|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0I30RNOM6"
+    "source_url": "https://www.amap.com/place/B0I30RNOM6",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0071377",
@@ -14238,7 +15173,14 @@
       "source": "name",
       "evidence": "模具|门店型:经营部"
     },
-    "source_url": "https://www.amap.com/place/B0L0NDRM0U"
+    "source_url": "https://www.amap.com/place/B0L0NDRM0U",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0074264",
@@ -14267,7 +15209,14 @@
       "source": "name",
       "evidence": "模具|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0FFGPHTUY"
+    "source_url": "https://www.amap.com/place/B0FFGPHTUY",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0074842",
@@ -14296,11 +15245,18 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0FFFRU6WO"
+    "source_url": "https://www.amap.com/place/B0FFFRU6WO",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0075201",
-    "company_en": "Hongyun Molding Accessories (Changjiang五金Trading City Store)",
+    "company_en": "Hongyun Mold Parts (Yangtze River Delta Hardware Trade City Store)",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
@@ -14310,12 +15266,11 @@
       "province": "Jiangsu",
       "city": "Wuxi"
     },
-    "address_en": "No. 1585 Xicheng Road, Changyang Town, Changjiang五金Trading City",
+    "address_en": "No. 1585 Xicheng Road, Yangtze River Delta Hardware Trade City, Qingyang Town",
     "contact_phone": "0510-81611785; 184****9058",
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "F/51/5174",
     "industry": {
       "code": "5174",
       "name": "五金产品批发",
@@ -14325,7 +15280,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0FFFV8YM6"
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
   },
   {
     "id": "CN-MFG-0075621",
@@ -14354,7 +15316,14 @@
       "source": "name",
       "evidence": "模具|门店型:经营部"
     },
-    "source_url": "https://www.amap.com/place/B0FFG88PEU"
+    "source_url": "https://www.amap.com/place/B0FFG88PEU",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0076689",
@@ -14383,7 +15352,14 @@
       "source": "name",
       "evidence": "模具|门店型:五金机电"
     },
-    "source_url": "https://www.amap.com/place/B0FFGQATJQ"
+    "source_url": "https://www.amap.com/place/B0FFGQATJQ",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0078632",
@@ -14412,11 +15388,18 @@
       "source": "name",
       "evidence": "五金|门店型:经营部"
     },
-    "source_url": "https://www.amap.com/place/B0FFGNFF4N"
+    "source_url": "https://www.amap.com/place/B0FFGNFF4N",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0079098",
-    "company_en": "Sh浦 Molding Accessories Hardware Operation Department",
+    "company_en": "Shipu Molding Hardware Operating Department",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
@@ -14431,7 +15414,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "F/51/5174",
     "industry": {
       "code": "5174",
       "name": "五金产品批发",
@@ -14441,7 +15423,14 @@
       "source": "name",
       "evidence": "五金|门店型:经营部"
     },
-    "source_url": "https://www.amap.com/place/B0FFFCOZBV"
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
   },
   {
     "id": "CN-MFG-0079393",
@@ -14470,7 +15459,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0FFL447C2"
+    "source_url": "https://www.amap.com/place/B0FFL447C2",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0079398",
@@ -14499,7 +15495,14 @@
       "source": "name",
       "evidence": "五金|门店型:经营部"
     },
-    "source_url": "https://www.amap.com/place/B0G0YDK3WX"
+    "source_url": "https://www.amap.com/place/B0G0YDK3WX",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0080258",
@@ -14528,7 +15531,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0H10CWEEX"
+    "source_url": "https://www.amap.com/place/B0H10CWEEX",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0080343",
@@ -14557,7 +15567,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0FFJP3VRD"
+    "source_url": "https://www.amap.com/place/B0FFJP3VRD",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0081768",
@@ -14586,7 +15603,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0H36CXAX8"
+    "source_url": "https://www.amap.com/place/B0H36CXAX8",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0081798",
@@ -14615,7 +15639,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0FFJPUR3C"
+    "source_url": "https://www.amap.com/place/B0FFJPUR3C",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0081821",
@@ -14644,7 +15675,14 @@
       "source": "name",
       "evidence": "模具|门店型:经营部"
     },
-    "source_url": "https://www.amap.com/place/B0FFH651KA"
+    "source_url": "https://www.amap.com/place/B0FFH651KA",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0082074",
@@ -14673,7 +15711,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0J1HY53XF"
+    "source_url": "https://www.amap.com/place/B0J1HY53XF",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0082415",
@@ -14702,7 +15747,14 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B0KU4UP9Y7"
+    "source_url": "https://www.amap.com/place/B0KU4UP9Y7",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0082432",
@@ -14731,7 +15783,14 @@
       "source": "name",
       "evidence": "模具|门店型:模具配件"
     },
-    "source_url": "https://www.amap.com/place/B0FFFV34UQ"
+    "source_url": "https://www.amap.com/place/B0FFFV34UQ",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0082442",
@@ -14760,7 +15819,14 @@
       "source": "name",
       "evidence": "模具|门店型:商行"
     },
-    "source_url": "https://www.amap.com/place/B02F401DD3"
+    "source_url": "https://www.amap.com/place/B02F401DD3",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0089573",
@@ -14789,7 +15855,14 @@
       "source": "name",
       "evidence": "制冷|门店型:经营部"
     },
-    "source_url": "https://www.amap.com/place/B0FFJ0XZCQ"
+    "source_url": "https://www.amap.com/place/B0FFJ0XZCQ",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0090114",
@@ -14818,6 +15891,4489 @@
       "source": "name",
       "evidence": "五金|门店型:经营部"
     },
-    "source_url": "https://www.amap.com/place/B0FFGCAWSS"
+    "source_url": "https://www.amap.com/place/B0FFGCAWSS",
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0091223",
+    "company_en": "Yang Cheng Hardware & Electrical Equipment",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Machine Processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 82 Guiyang Road, under the roundabout at Xian Nan Street",
+    "contact_phone": "188****6070",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0093691",
+    "company_en": "Hao Cheng Hardware & Electrical Equipment (Poly Lake Phase 1 Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Plastic Molding",
+      "Mold"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Building 5, Floor -2-5, Poly Lake",
+    "contact_phone": "187****1465",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0094765",
+    "company_en": "Zhong'an Cable Distributor (Xiangqi Southwest Hardware & Electrical Equipment Professional Wholesale Market Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Mold"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 28, Building 6, Hunan Chamber of Commerce (190 meters on foot from Chayuan Subway Station Exit A)",
+    "contact_phone": "180****5777",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电缆|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0096956",
+    "company_en": "Qianjin Hardware & Electrical Equipment Maintenance Department (Pearl Mingyuan Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Appliance Repair",
+      "Washing Machine Repair",
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 690 Xiangyang South Road, Zazuo Town",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098554",
+    "company_en": "Zhi Da Hardware Standard Parts Supply Station",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Fasteners",
+      "Screws",
+      "Bolts",
+      "Standard Parts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 14-16 Qianjin Road",
+    "contact_phone": "189****2618; 189****6130",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "标准件|门店型:供应站"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098565",
+    "company_en": "Yu Hang Hardware Standard Parts Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Fasteners",
+      "Standard Parts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "A7-8, Tianli Yu Hang Standard Parts Wholesale City",
+    "contact_phone": "182****3133; 187****5155",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "标准件|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098573",
+    "company_en": "Da Chang Hardware & Electrical Equipment Supermarket (Hucheng International Lishu Mingdu Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Fasteners",
+      "Screws",
+      "Bolts",
+      "Standard Parts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "90 meters east of the south gate of Hucheng International Lishu Mingdu",
+    "contact_phone": "136****2236",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098584",
+    "company_en": "Shao Yue Standard Parts Distributor (Xiangqi Southwest Hardware & Electrical Equipment Professional Wholesale Market Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Fasteners",
+      "Standard Parts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 1, Jinyang South Road, Xiangqi Southwest Hardware & Electrical Equipment Professional Wholesale Market",
+    "contact_phone": "153****8828",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "标准件|门店型:经销处"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098952",
+    "company_en": "Jun Da Stainless Steel Screw (Jinshi Hardware & Electrical Machinery City D3-7)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 799 Xiangfu Road",
+    "contact_phone": "151****3812",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098961",
+    "company_en": "Xianggui Hardware & Electrical Machinery (Gui'an Shan Yu Cheng Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 91 Shan Yu Cheng",
+    "contact_phone": "187****2902",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098963",
+    "company_en": "Xinjin Tai Screw & Hardware Electrical Machinery All-in-One",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 7-1 A Piling for Huaguo Yuan Hardware & Electrical Machinery Market",
+    "contact_phone": "181****6502; 193****5510",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098969",
+    "company_en": "Xiao Cheng Hardware & Electrical Machinery (Hongxing City Square Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 66 Beijing West Road, Building D (Red Star Home King D Area Apartment)",
+    "contact_phone": "155****2350",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098975",
+    "company_en": "Pengyu Shunfa Hardware Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Huaguo Yuan Community Service Center Tai Sheng Hardware & Electrical Machinery Market",
+    "contact_phone": "177****4926; 199****7926",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0098994",
+    "company_en": "Persia Tool Screw Wholesale (Jinshi Hardware & Electrical Machinery City A Area Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "He Peng Jinshi Hardware & Electrical Machinery Market Building C8, 30-1",
+    "contact_phone": "135****3998",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0099007",
+    "company_en": "Jinlong Screw Wholesale Department (Xiangqi Southwest Hardware & Electrical Machinery Professional Wholesale Market Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Southwest Hardware & Electrical Machinery Wholesale Market Building 2 (Tea Garden Subway Station Exit A, 290 meters on foot)",
+    "contact_phone": "181****5849",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0099014",
+    "company_en": "Yusen Screw Wholesale Department (Xiangqi Southwest Hardware & Electrical Machinery Professional Wholesale Market Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Puta Community Service Center Southwest Hardware Wholesale Market Building 3",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0099969",
+    "company_en": "Tianma Bearing (Huaguo Yuan Taisheng Hardware & Electrical Appliance General Store New District Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "80 meters southwest of the intersection of Shefeng Road and Jiefang Road Auxiliary Road",
+    "contact_phone": "139****4072; 180****7290",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0099982",
+    "company_en": "Minhui Hardware & Steel Materials Business Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "80 meters southeast of the intersection of Hucheng Avenue and Saling Road",
+    "contact_phone": "132****7681",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0100582",
+    "company_en": "Jinshi Hardware & Electrical Appliance City Direct Store",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "380 meters northwest of the intersection of Jinzhu Interchange and S01 Guiyang South Ring Expressway",
+    "contact_phone": "0851-84844888",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0100653",
+    "company_en": "Minhang Hardware & Electrical Appliance Building Materials Business Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 6 Huanchéng South Road",
+    "contact_phone": "177****2584; 177****2584",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0101662",
+    "company_en": "Weichang Aluminum Profiles & Doors (Jinshi Hardware & Electrical Mechanical City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Aluminum Profiles"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "80 meters south of the Hardware & Electrical Mechanical City, Hepeng Village, Shibanzhen",
+    "contact_phone": "139****2124",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "门窗|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0102839",
+    "company_en": "Copper Strip & Aluminum Strip (Jinshi Hardware & Electrical Mechanical City C Area Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Copper Strip"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "170 meters south of Jikang Clinic",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜排|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0104727",
+    "company_en": "Taikang Hardware & Electrical Mechanical Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Machine Processing"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 815 Renmin West Road, 2nd Floor, Building 2, Tianyue Advertising Market",
+    "contact_phone": "182****9592",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0104738",
+    "company_en": "Woodworking Machinery, Electric Tools, Hardware & Electrical Mechanical",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Machine Processing"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 1-71 Tongxing Guoji Sofa Material Market",
+    "contact_phone": "136****9131; 153****7039",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电动工具|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0104800",
+    "company_en": "Ju Zhi Ying Wujin Jidian (Renmin Road Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Machine Processing"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 35 Renmin Road",
+    "contact_phone": "138****5239",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0105626",
+    "company_en": "Gate Valve Flange Bending Head Wholesale Department (Huayang Hardware & Electrical Machinery City C District Building 4 Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Stamping"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 14, Building 4, Huayang Hardware & Electrical Machinery City C District, Guanyu Road",
+    "contact_phone": "0871-66307345; 0871-67122347; 139****1314",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "冲压|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0107368",
+    "company_en": "Duo Lian Jia Su (Gao Yuan Mingzhu Guojia Wujin Jidian Cheng Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "140 meters southeast of Business Center M1 Building, Gao Yuan Mingzhu Group",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0108009",
+    "company_en": "Lao Yang Taiyang Neng Wujin Jiancai Jingying Bu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Mold"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Wudongde Town Jinrui Second Community",
+    "contact_phone": "138****8642",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0108050",
+    "company_en": "Weilai Wanjia Wujin Jidian (Xinglin Yuan Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Mold"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 1344 Penglai Avenue",
+    "contact_phone": "0871-67511198",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0109603",
+    "company_en": "Bo Zu Wan Club (Kede Guojia Wujin Jidian Cheng Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Foot Bath"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Xinwei Street Xiu Xiang Avenue 8, Kede Guojia Wujin Jidian Cheng Harro Hotel 3rd Floor",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0110274",
+    "company_en": "Kunming Kunying Wujin Tuozhuang Gongju Jingying Bu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Northeast of Xinhua Feng Food City C Area 70 meters",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112404",
+    "company_en": "Weilai Wanjia Wujin Jidian (Shilin Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Fasteners",
+      "Standard Parts"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Dongshan Road - Shilin Weilai Wanjia Wujin Jidian",
+    "contact_phone": "0871-67790510; 0871-67794810; 189****2426",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112405",
+    "company_en": "Daoming Hardware and Building Materials Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "screws",
+      "bolts",
+      "standard parts",
+      "bearings"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Dabanqiao Changpo Village",
+    "contact_phone": "138****2892",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112411",
+    "company_en": "Tengfa Hardware and Electrical Appliances Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "standard parts",
+      "bearings"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 8 Yangqiao Street, Songyang Town",
+    "contact_phone": "136****9278",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112414",
+    "company_en": "Yongxing Hardware and Electrical Appliances Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "standard parts",
+      "bearings"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "140 meters east of the intersection of National Highway 320 and County Road 032",
+    "contact_phone": "137****9993; 187****2425",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112495",
+    "company_en": "Xinchangrui Hardware Operation Department (Laiyinhu Banpu Community Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "home appliance repair"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 170 Minzu Avenue, Laiyinhu Banpu Community, Shop A-69",
+    "contact_phone": "138****1086",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112636",
+    "company_en": "Liangjing Water and Heating Wholesale City Area A",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "standard parts"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Liangjing Water and Heating Wholesale City on Caoyun North Road (East of Mingzhu Fuyuan)",
+    "contact_phone": "0871-67380060; 138****8859; 138****8637",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "水暖批发"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112646",
+    "company_en": "Kanglong Hardware and Building Materials Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Screws",
+      "Bolts"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "60 meters north of the intersection of Dianyun Road and Fupu Road",
+    "contact_phone": "182****3858",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112660",
+    "company_en": "Lihua Hardware and Building Materials Merchants",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 9, Building D26, Wuhuan Fengshang, Xinyasi Sports City",
+    "contact_phone": "139****5634; 187****9318",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112666",
+    "company_en": "Jixiang Hardware and Building Materials Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 302, Milan Garden South, Chunrong Street, Luolong District",
+    "contact_phone": "159****7358",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112671",
+    "company_en": "Wo Xin Wujin Jingying Bu (Wolter Shangye Cheng Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screw",
+      "bolt"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 10, Building 1, District 1, Wolter Business City, Qianwei Road",
+    "contact_phone": "135****1528; 151****4242",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0112715",
+    "company_en": "Kang Xing Sui Chi Quan Da (Gao Yuan Ming Zhu Guo Ji Wujin Jixie Shangcheng Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screw",
+      "bolt"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "B5-8, Gao Yuan Ming Zhu International Hardware and Machinery Market",
+    "contact_phone": "0871-67156556; 136****5238",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113064",
+    "company_en": "Xin Fei Wang Wujin Jidian (Guan Du Qu Er Cong Xin Cun Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bolt"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 173, Caoqiao Street Village",
+    "contact_phone": "131****4488; 136****3525",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113065",
+    "company_en": "Zhan Hong Wujin Jingying Bu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bolt"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 2, Building 2, Tianyun Hardware and Machinery Market",
+    "contact_phone": "0871-67191451; 0871-67266578; 136****4363",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113066",
+    "company_en": "Xi Ying Wujin Jiancai Jingying Bu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bolt"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 169, Jinnan Road (opposite Haocheng Wangying)",
+    "contact_phone": "156****1928",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113227",
+    "company_en": "Heng Fa Wujin Jidian Jingying Bu (Li Qi Highway Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "North side of Yunxiu Kindergarten, about 90 meters north of Hului Line, Dabaoqiao Street",
+    "contact_phone": "0871-68180706; 131****7780; 136****6368",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113233",
+    "company_en": "Shi Lin Xian Xing Fa Wujin Dianqi Jingying Bu (Zheng Tai Dianqi)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "West side of the intersection of Changhu Road and Tianhe Road, 260 meters",
+    "contact_phone": "131****8892",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113247",
+    "company_en": "Shilin Xian Xingfa Wujin Dianqi Jingying Bu (Zhengtai Dianqi)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "West 260 meters from the intersection of Changhu Road and Tianhe Road",
+    "contact_phone": "138****9331; 138****8461",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113260",
+    "company_en": "Zhuanshou Youshou (Dongju Wujin Jidian Jiancai Cheng Dongqu 7 Dong Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Zhuanshou"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Dongju Wujin Jidian Jiancai Cheng Dongqu 7 Dong",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113267",
+    "company_en": "Tianma Zhuanshou (Huayang Wujin Jidian Cheng B Qu Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Zhuanshou"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Southeast 260 meters at the intersection of Zhongtian Road and Xingdong Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113488",
+    "company_en": "Yundan Tanghuang Daquan (Dongju Wujin Jidian Jingpin Shichang Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Tanghuang"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 1 Gate, Building C, 2nd Floor, No. 1-Attached, 2-Attached, 2-2-Attached, at Dongju Wujin Jidian Jingpin Shichang on Zhongtian Road",
+    "contact_phone": "135****3387; 138****1171",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "弹簧|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113809",
+    "company_en": "Zhi Fu Wujin Jiancai Jingying Bu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Gangtie"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Opposite Heping Yuan in the First Phase Industrial Park of Shangsun Town",
+    "contact_phone": "182****9879; 186****4304",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0113812",
+    "company_en": "Tongyue Wujin Jiancai Shangmao Jingying Bu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Gangtie"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Inside the land of Yunnan Chengfei Gongmao Co., Ltd. at 36 kilometers of Kunwan West Road, Lianran Street Office, with 1-1 No. 1-Attached, 2-2 No. 2-Attached",
+    "contact_phone": "136****5514; 150****0690",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0114083",
+    "company_en": "Dianre Guan Buwugang Cailiao (Dongju Wujin Jidian Jiancai Cheng Dongqu 7 Dong Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Buwugang Cailiao"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Changhong West Road, Guandu District, Kunming City, Yunnan Province (Dongju Wujin Jidian Jiancai Cheng)",
+    "contact_phone": "131****1236",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0118256",
+    "company_en": "Bi Zhi Wujin Jidian Dinghe Jixie Gongcheng",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Jixie Jiaogong"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "North 120 meters at the intersection of Renai South Road and Xianghe Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0119888",
+    "company_en": "Nanning Shi Xiangtang Qu Yuan Guangda Wujin Jiancai Jingying Bu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Sujiao Mudi",
+      "Mudi"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "B2 Building, 9-10 No. at Nandu Logistics Park on Anyuan East Road",
+    "contact_phone": "182****5559",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0120493",
+    "company_en": "Nanning Jianxing Plastic Wire Hardware Business Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "plastic fittings"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 16, C Street, Dongbo International Hardware and Electrical Machinery City",
+    "contact_phone": "0771-3924192; 150****6122",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电线|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0120524",
+    "company_en": "Nanning Junna Screw Hardware Business Department (Kede International Hardware and Electrical Machinery City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "mold",
+      "fasteners",
+      "screws",
+      "bolts",
+      "standard parts"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 20, F Street, Kede Hardware and Electrical Machinery City",
+    "contact_phone": "182****5112",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0120529",
+    "company_en": "Shanghai General Electric Welding Machine (Ta Hua Hardware and Electrical Machinery City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 89, Building E, 11th Room, Xiuling Road",
+    "contact_phone": "158****9036",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0121472",
+    "company_en": "Three Brother Spray Gun (Kede International Hardware and Electrical Machinery City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 36, C Street, 21st Building, Kede International Hardware and Electrical Machinery City",
+    "contact_phone": "150****1975",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "喷涂|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0121473",
+    "company_en": "Nanning Jianguang Genuine Stone Paint Putty Spray Gun (Kede International Hardware and Electrical Machinery City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 93-95, F Street, Kede Electrical Machinery Market",
+    "contact_phone": "0771-5538575; 159****7978",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "喷涂|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0121474",
+    "company_en": "Airless Spray Gun Air Compressor Sales, Maintenance, and Rental (Kede International Hardware and Electrical Machinery City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 102, F Street, Kede Electrical Machinery Market",
+    "contact_phone": "134****2180",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "喷涂|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0121475",
+    "company_en": "Jianguang Airless Spray Equipment (Kede International Hardware and Electrical Machinery City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 93-95, 29th Building, F Street, Kede Electrical Machinery Market",
+    "contact_phone": "134****2180; 159****7978",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "喷涂|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0121476",
+    "company_en": "Nanning Meitubao Spray Equipment Business (Kede International Hardware and Electrical Machinery City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spraying"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 102, 28th Building, F Street",
+    "contact_phone": "134****2180",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "喷涂|门店型:商行"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0121501",
+    "company_en": "Chuanghong Hardware & Electrical Appliances (repair gas guns, lithium batteries, spray guns)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spray"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 05 Shop, A05, Chuanglianghuiyong Building, Dongfeng Road",
+    "contact_phone": "136****3254; 183****8985",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "喷涂|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122189",
+    "company_en": "Nanning Shuangxin Standard Hardware Wholesalers (Kode International Hardware & Electrical Appliances City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "standard hardware"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 83, F Street, Kode Electrical Appliances City, Dalian East Road",
+    "contact_phone": "134****3697",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "标准件|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122192",
+    "company_en": "Nanning Titanium Standard Hardware Operation Department (Kode International Hardware & Electrical Appliances City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "standard hardware"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 96, A Street, Kode Hardware & Electrical Appliances City, Dalian East Road",
+    "contact_phone": "0771-5791391; 139****5415",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "标准件|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122209",
+    "company_en": "Vanhu Hardware & Electrical Appliances Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "screws",
+      "bolts",
+      "standard hardware",
+      "bearings"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 109, Jiangnan Temporary Agricultural and Commodities Market, Lingli Town",
+    "contact_phone": "134****9766; 181****9460",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122216",
+    "company_en": "Xishangtang Xukai Hardware Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "screws",
+      "bolts",
+      "standard hardware"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 309-311, B Area, Chenxiong Electrical Appliances City",
+    "contact_phone": "198****5918",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122217",
+    "company_en": "Jinsheng Hardware & Electrical Appliances Wholesalers",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "standard hardware"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 1/2 Shop, Welfare Wire Factory, Wuyi West Road",
+    "contact_phone": "0771-4983942; 133****2752; 156****6498",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122221",
+    "company_en": "Nanning Kaiguo Hardware & Standard Hardware Operation Department (Kode International Hardware & Electrical Appliances City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "standard hardware"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. D61-63, D Street, Kode Hardware & Electrical Appliances City",
+    "contact_phone": "183****5514",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "标准件|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122222",
+    "company_en": "Hengli Standard Hardware Wholesalers (Kode International Hardware & Electrical Appliances Market)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "fasteners",
+      "standard hardware"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 90, G Street, Kode International Hardware & Electrical Appliances Market",
+    "contact_phone": "0771-3862607; 137****5621",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "标准件|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122223",
+    "company_en": "Kede International Hardware & Electrical Machinery City",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 8 Xiuxiang Avenue, Xiangtang Town Street",
+    "contact_phone": "0771-2539108; 0771-3278882",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122243",
+    "company_en": "Yuxiang Hardware & Electrical Machinery Shop",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 335 Xincheng Street, Luancheng Town",
+    "contact_phone": "139****3041",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122248",
+    "company_en": "Yongxin Hardware Operation Department (Jinghua Community Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 174-3 Dongyi Alley, Youai Road",
+    "contact_phone": "136****5952; 159****5827",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122277",
+    "company_en": "Nanning Qingning Hardware Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Beside the public bus station, Liangchou Village, Beibei Road",
+    "contact_phone": "137****5138; 181****5937",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122278",
+    "company_en": "Hongxing Hardware Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 120 Fengjiang Road, Binzhou Town",
+    "contact_phone": "178****8514",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122281",
+    "company_en": "Bearings Lubricating Oil Hardware & Electrical Machinery",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Opposite the rural credit cooperative at the intersection of Chengxi Gas Station",
+    "contact_phone": "152****6200",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122282",
+    "company_en": "Hualu Bearings Complete Set (Kede International Hardware & Electrical Machinery City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Building 18, Unit D46, Kede Electrical Machinery City",
+    "contact_phone": "0771-3862517; 135****8286; 139****5799",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122287",
+    "company_en": "Bearings Chains Sprockets (Kede International Hardware & Electrical Machinery City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Building 8, B Street, No. 9, Kede Hardware & Electrical Machinery City",
+    "contact_phone": "0771-3848424; 135****1265; 159****2345",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122290",
+    "company_en": "Mingxing Bearing Hardware & Electrical Equipment",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 466 Linpu Road",
+    "contact_phone": "188****5538",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122301",
+    "company_en": "Huasheng Bearing Lubricating Oil Hardware & Electrical Equipment",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 145 Jinlong Avenue (opposite Liangtang New Bus Station)",
+    "contact_phone": "187****1114",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122313",
+    "company_en": "Luoyang Xinsuda Bearing (Kede International Hardware & Electrical Equipment City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "F60 Kede Hardware & Electrical Equipment City",
+    "contact_phone": "135****5046",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122316",
+    "company_en": "Aoxiang Bearing Wholesale (Kede International Hardware & Electrical Equipment City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 68 F Street, Kede Hardware & Electrical Equipment City",
+    "contact_phone": "187****3158; 188****9777",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122318",
+    "company_en": "Hui'an Hardware & Electrical Equipment Operation Department Bearing Grease Engine Oil",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 246 Youyi Road, Wuwei Town",
+    "contact_phone": "156****8852",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122322",
+    "company_en": "Luoyang Bearing (Kede International Hardware & Electrical Equipment City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearing"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 170 Daxue East Road, Kede Hardware & Electrical Equipment City G Street 14-16",
+    "contact_phone": "189****1513",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122355",
+    "company_en": "Xunhe Spring (Kede International Hardware & Electrical Equipment City)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "G70K33 Kede Hardware & Electrical Equipment City",
+    "contact_phone": "181****1883; 187****6684",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "弹簧|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122359",
+    "company_en": "Changsheng Spring (Kede International Hardware & Electrical Equipment City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 80 F Street, Kede Hardware & Electrical Equipment City",
+    "contact_phone": "155****6622; 188****2229",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "弹簧|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122360",
+    "company_en": "Jiu Liang Hardware Weighing Equipment Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "spring"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 189 Chengsi Road",
+    "contact_phone": "132****6606",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122412",
+    "company_en": "Lifang Steel Plate Aluminum Plastic Sheet Hardware Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "steel",
+      "steel plate"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 253 Wuxiang Avenue. 255",
+    "contact_phone": "137****1903",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122419",
+    "company_en": "Weixing Pipe · Jinniu Pipe - Fanglai Hardware Building Materials Scaffold Rental and Sales Operation Department (Longguang · Jiulonghu Phase II Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 11 Fenghuang Road, Building 26, 103-105, Longguang Jiulonghu",
+    "contact_phone": "183****4792",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122488",
+    "company_en": "Shanglin Xian Tengda Wujin Gangtie Jingying Bu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Nan Huan Road",
+    "contact_phone": "134****4387",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122541",
+    "company_en": "Nanning City Gangxiong Water and Heating Equipment Hardware Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Near No. 1-2 Anyuan East Road",
+    "contact_phone": "135****8091; 138****6881",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122562",
+    "company_en": "Hardware, Electrical and Mechanical Materials Stainless Steel Seamless Pipe",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "stainless steel material"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 9 Anyuan East Road, Anji Street, Block B4, 7-8-9 Shop",
+    "contact_phone": "0771-3818656; 133****7698",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122588",
+    "company_en": "Stainless Steel Material (Kede International Hardware Electrical and Mechanical City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "stainless steel material"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "300 meters northwest of the intersection of Shangyuan Road and Shangxue Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122737",
+    "company_en": "Yinzhong Non-Ferrous Metal Company (Baoli Hardware Electrical and Mechanical City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "aluminum profile",
+      "copper material"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 33 Hengyang West Road, Baoli Electrical and Mechanical City 6th Street, 25-27",
+    "contact_phone": "0771-3820640; 0771-3835847; 139****4848",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0122985",
+    "company_en": "Yuanlin Wujin Jidian (Hetang Xiaoyue Nanqu Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Mechanical Processing",
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 185-187 Honghe Road",
+    "contact_phone": "151****6377",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123033",
+    "company_en": "Hongyun Gongcheng Jianshe Jixie Wujin Jidian",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Mechanical Processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Northeast 180 meters at the intersection of Provincial Highway 207 and Wangcao Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123038",
+    "company_en": "Tengda Wujin Jidian (Yingxin Dadao Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Mechanical Processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Northeast 120 meters at the intersection of Yingxin Dadao and Renmin Gongqing Road",
+    "contact_phone": "185****3423",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123214",
+    "company_en": "Changcheng Wujin Jidian Pifa Bu (Xishui Wuzhou Guojia Shangmaocheng Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Mold",
+      "Mold Processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Building B11, 15-18, facing the main road, 2 doors ahead from No. 2 gate",
+    "contact_phone": "180****2617; 180****2627",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123215",
+    "company_en": "Weilai Wanjia Wujin Jidian XiShui Store",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "mold",
+      "mold processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Building 7, Unit 27-1, JiaRui City, opposite Chengdong Passenger Station",
+    "contact_phone": "0851-22277966; 188****1888",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123220",
+    "company_en": "Zhangjia Wujin Weishui Yingying Bu 1 Dian",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Mold",
+      "Mold Processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 425 Wanli Road",
+    "contact_phone": "152****7774",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123465",
+    "company_en": "Changjiang Wujin Jidian Yingying Bu (Daozhen Hongfu Xiaojqu Dian)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Screw",
+      "Bolt"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 738 Zunyi Road",
+    "contact_phone": "153****8429",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123480",
+    "company_en": "Tiantian Wujin Jidian Screw Pifa Bu",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Screw",
+      "Bolt",
+      "Bearing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Northeast 50 meters at the intersection of Nongmao Street and Yangliu Xiangxiang",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123485",
+    "company_en": "Hongfa Screw Hardware Electrical and Building Materials",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts",
+      "bearings"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Yaxi Town Siheng Shuian",
+    "contact_phone": "131****1068",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123488",
+    "company_en": "Guizhou Steel Rope. King of Screws (Hardware Electrical Professional Street Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Intersection of Hardware Electrical Professional Street and Xiangjiang Avenue, westward about 220 meters",
+    "contact_phone": "183****6077",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123523",
+    "company_en": "Rifeng Pipe Tengda Hardware Electrical Home Improvement Building Materials Supermarket",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "20 meters beside the marketing center of Aotiyu Road, Xinfu Street, opposite the art museum (opposite the art museum), Tengda Hardware Electrical",
+    "contact_phone": "183****9168",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123526",
+    "company_en": "Xintai Complete Set of Bearings Hardware Electrical Materials",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Donghuang Town Kunlun North Road, beside the weighing house of the starry dream kindergarten",
+    "contact_phone": "139****9322; 182****6310",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123538",
+    "company_en": "Luoyang Bearings Hardware Electrical (Haozheng Springtime Garden Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "160 meters west of the north gate of Haozheng Springtime Garden",
+    "contact_phone": "159****8717; 187****7619",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "轴承|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123539",
+    "company_en": "Yunfeng Hardware Electrical",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 72 Chahai Road",
+    "contact_phone": "185****3666; 187****3901",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123546",
+    "company_en": "Changle Hardware Electrical Supply Station",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 222 Fuyang Road",
+    "contact_phone": "139****1633",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:供应站"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123549",
+    "company_en": "Minfeng Hardware and Electrical Sales Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "bearings"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Opposite the new station exit of Bayi Village, Shangba Town",
+    "contact_phone": "188****1885",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123669",
+    "company_en": "Minze Hardware and Steel Materials Trading",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "110 meters northwest of Huangjiazu Public Housing Community",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123706",
+    "company_en": "Damin Building Materials (Steel, Lianshu Fire Protection Hardware, Electrical and Mechanical Equipment) Supply Chain",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 211 Xihuan South Road",
+    "contact_phone": "185****5558",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0123713",
+    "company_en": "Wanji Hardware and Electrical Equipment (Outer Ring Road Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "steel"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Outer Ring Road, Maotai Town",
+    "contact_phone": "176****5065",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0125604",
+    "company_en": "Wuxing Laundry (Baoli Hardware and Electrical Equipment City Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "dry cleaning"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 33-1 Hengyang West Road, Baoli Hardware and Electrical Equipment City",
+    "contact_phone": "158****0162",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0125977",
+    "company_en": "Jingyong Mold Accessories (Yifeng Hardware and Electrical Equipment Plaza Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "plastic molds"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 145, Yiguang Road, Yifeng Hardware and Electrical Equipment Plaza",
+    "contact_phone": "021-37573688; 139****8699",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0125988",
+    "company_en": "Shanghai Shengshi Hardware and Electrical Equipment Screws, Nuts, Mold Accessories Wholesale and Retail",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "plastic molds"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 6328 Xinfeng Highway, 1939 Xiangfeng Building Materials Market",
+    "contact_phone": "132****8856; 156****1108",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0126692",
+    "company_en": "Shanghai Jiutai (Lantian) Hardware, Mold Accessories",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "plastic molds"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 1454 Hushong Highway (230 meters walk from Jiu ting Subway Station Exit 4)",
+    "contact_phone": "021-57637708; 021-57638279",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0133646",
+    "company_en": "Shanghai Ji Biao Hardware Trading Department (Hualong Apartment Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 823 Jiefang East Road",
+    "contact_phone": "021-67186224; 189****7821",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0133654",
+    "company_en": "Shentong Hardware and Electrical Appliances (Binjiang Building Materials City Store) (Closed for Business)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 3355 Longwu Road, Binjiang Building Materials and Furniture City, Gate 6, District D, No. 117",
+    "contact_phone": "134****2538; 150****5957",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0135177",
+    "company_en": "Qihang Hardware and Electrical Appliances",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "Building 6, No. 27",
+    "contact_phone": "132****4933; 156****1280",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0135191",
+    "company_en": "Mingfa Hardware and Building Materials Trading (Kangqiao Road Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "No. 9 Wujia Danyuan, Kangqiao Road",
+    "contact_phone": "182****3678",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0135467",
+    "company_en": "Xinghao Hardware Trading (Jinghai Jiayuan Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Shaoxing"
+    },
+    "address_en": "No. 755 Chunhua Road, Binhai Park Area",
+    "contact_phone": "134****2455; 186****1083",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0136196",
+    "company_en": "Guangli Hardware and Electrical Appliances Trading",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Zhuhai"
+    },
+    "address_en": "No. 42 Quest Road",
+    "contact_phone": "136****7260; 158****0489",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0136483",
+    "company_en": "Weili Gao Plastic Injection Molding Machine Hardware Mold Accessories",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "plastic injection mold"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 6236-6 Pingshan Avenue, Xiuxin Community, Kengzi Street",
+    "contact_phone": "135****6728",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
   }
 ]

@@ -246,7 +246,14 @@
       "source": "name",
       "evidence": "刀具"
     },
-    "source_url": "https://www.amap.com/place/B0FFIC9X51"
+    "source_url": "https://www.amap.com/place/B0FFIC9X51",
+    "industry_en": {
+      "code": "3321",
+      "name_en": "Cutting Tools",
+      "level": "class",
+      "name": "切削工具制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0071045",
@@ -275,6 +282,83 @@
       "source": "name",
       "evidence": "刀具|配件型:模配"
     },
-    "source_url": "https://www.amap.com/place/B0JANMNVEB"
+    "source_url": "https://www.amap.com/place/B0JANMNVEB",
+    "industry_en": {
+      "code": "3321",
+      "name_en": "Cutting Tools",
+      "level": "class",
+      "name": "切削工具制造",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0094768",
+    "company_en": "Yi Bai Knife KWS·Quick Double Knife Blade",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 421 Weiqing West Road",
+    "contact_phone": "180****1816",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3321",
+      "name": "切削工具制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属工具制造 > 切削工具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "刀具"
+    },
+    "industry_en": {
+      "code": "3321",
+      "name_en": "Cutting Tools",
+      "level": "class",
+      "name": "切削工具制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3321"
+  },
+  {
+    "id": "CN-MFG-0125418",
+    "company_en": "Shanghai Yu Xi Machinery Mold Co., Ltd.",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "plastic mold"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 421 Weiqing West Road",
+    "contact_phone": "147****7826",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "3321",
+      "name": "切削工具制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属工具制造 > 切削工具制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "刀模"
+    },
+    "industry_en": {
+      "code": "3321",
+      "name_en": "Cutting Tools",
+      "level": "class",
+      "name": "切削工具制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3321"
   }
 ]

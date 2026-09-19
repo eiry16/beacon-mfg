@@ -1,22 +1,30 @@
 [
   {
     "id": "CN-MFG-0048553",
-    "company_en": "Tangping Coffee & Bar Pet-Friendly",
+    "company_en": "Liangping Coffee & Bar Pet-Friendly",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "coffee"
+      "Coffee"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 223 Xueshi Street (步行420 meters from Yuyaoxiang Subway Station Exit 3)",
+    "address_en": "No. 223 Xueshi Street (Yuyao Alley Subway Station Exit 3, 420 meters walk)",
     "contact_phone": "178****3724",
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "O/82/8229",
+    "industry": {
+      "code": "8229",
+      "name": "其他宠物服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 其他服务业 > 宠物服务 > 其他宠物服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宠物"
+    },
     "industry_en": {
       "code": "8229",
       "name_en": null,
@@ -24,7 +32,7 @@
       "name": "其他宠物服务",
       "confidence": "medium"
     },
-    "source_url": "https://www.amap.com/place/B0LRSZ4EWF"
+    "_bucket": "O/82/8229"
   },
   {
     "id": "CN-MFG-0048778",
@@ -80,6 +88,48 @@
       "source": "name",
       "evidence": "宠物"
     },
-    "source_url": "https://www.amap.com/place/B0H2FSL96P"
+    "source_url": "https://www.amap.com/place/B0H2FSL96P",
+    "industry_en": {
+      "code": "8229",
+      "name_en": null,
+      "level": "class",
+      "name": "其他宠物服务",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0111159",
+    "company_en": "Baoma Cha Ji (Nanning Mingehu Pet-Friendly Theme Store)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Milk Tea"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 23 Jinpu Road (Mingehu Modern Art Bar Street) Underground Performance Hall - S1 Shop",
+    "contact_phone": "4008788359",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8229",
+      "name": "其他宠物服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 其他服务业 > 宠物服务 > 其他宠物服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宠物"
+    },
+    "industry_en": {
+      "code": "8229",
+      "name_en": null,
+      "level": "class",
+      "name": "其他宠物服务",
+      "confidence": "medium"
+    },
+    "_bucket": "O/82/8229"
   }
 ]

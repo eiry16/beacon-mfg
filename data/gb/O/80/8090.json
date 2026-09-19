@@ -9,7 +9,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "大山校前大街一巷2号",
     "contact_phone": "待核实",
@@ -54,11 +55,15 @@
     "company": "业飞便民服务",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "家电维修"
+      "家电维修",
+      "空调维修",
+      "洗衣机维修",
+      "冰箱维修"
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "滨江"
     },
     "address": "西兴街54号18494室",
     "contact_phone": "151****5355",
@@ -84,6 +89,58 @@
       "postcode": "",
       "business_area": "",
       "adcode": "330108",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "8090",
+      "name": "其他居民服务业",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 其他居民服务业 > 其他居民服务业",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "民服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0129112",
+    "company": "苏诚便民服务",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修",
+      "空调维修",
+      "洗衣机维修",
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "姑苏"
+    },
+    "address": "旺思泾浜34-1号",
+    "contact_phone": "133****6785",
+    "lat": 31.325525,
+    "lng": 120.599075,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K0ACTTJ4",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320508",
       "search_keyword": "家电维修"
     },
     "industry": {

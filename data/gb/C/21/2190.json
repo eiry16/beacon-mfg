@@ -8,7 +8,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "浦东新"
     },
     "address": "杨高北路5499号鑫桥建材市场A馆",
     "contact_phone": "021-38613708; 021-50326299",
@@ -57,7 +58,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "南山"
     },
     "address": "白石洲深南大道9039号",
     "contact_phone": "0755-86108333",
@@ -106,7 +108,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "翠岗东路2-258号",
     "contact_phone": "0755-27397988; 137****8105",
@@ -155,7 +158,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "五常大道148号五常西溪软件园·巨蟹座F5层",
     "contact_phone": "待核实",
@@ -206,7 +210,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "闵行"
     },
     "address": "召楼路8号",
     "contact_phone": "183****6916",
@@ -255,7 +260,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "太仓"
     },
     "address": "城厢镇弇山西路126号4楼(204国道边)亿立工厂店总汇",
     "contact_phone": "0512-53119999",
@@ -304,7 +310,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "龙园路109-111号",
     "contact_phone": "0755-89640653; 135****7603",
@@ -351,7 +358,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "江宁"
     },
     "address": "天印大道金宝跳蚤市场2区",
     "contact_phone": "139****2767",
@@ -399,7 +407,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "建邺"
     },
     "address": "建邺区福园街凤栖苑125-4号回收空调电脑桌椅上下床仓库积压物资",
     "contact_phone": "132****8388; 138****9285; 138****5235",
@@ -819,6 +828,303 @@
       "business_area": "",
       "adcode": "520323",
       "search_keyword": "铝合金"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0129010",
+    "company": "家电维修收售二手家电家具",
+    "category": "制造业",
+    "keywords": [
+      "家电维修",
+      "空调维修",
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "武侯"
+    },
+    "address": "聚萃街377号附53号",
+    "contact_phone": "180****0536; 180****2854",
+    "lat": 30.625564,
+    "lng": 103.998292,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6H7C1JC",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "510107",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0129045",
+    "company": "二手电器家电维修回收空调厨具家具",
+    "category": "制造业",
+    "keywords": [
+      "家电维修",
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "成华"
+    },
+    "address": "八里桥路178号附14号",
+    "contact_phone": "183****9330",
+    "lat": 30.70269,
+    "lng": 104.078743,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J3JHWYI7",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具电器回收",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "五块石",
+      "adcode": "510108",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0129244",
+    "company": "空调维修.家电家具回收",
+    "category": "制造业",
+    "keywords": [
+      "空调维修"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "嘉定"
+    },
+    "address": "祁连山南路1533-1535号",
+    "contact_phone": "待核实",
+    "lat": 31.246594,
+    "lng": 121.370302,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGI0MZ4",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丰庄",
+      "adcode": "310114",
+      "search_keyword": "空调维修"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0129533",
+    "company": "回收空调餐具家具办公具",
+    "category": "制造业",
+    "keywords": [
+      "空调维修"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗"
+    },
+    "address": "板田雪象花园新村道北二巷17号47栋102",
+    "contact_phone": "152****6866",
+    "lat": 22.649982,
+    "lng": 114.075218,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLG9RSI",
+      "type": "购物服务;购物相关场所;购物相关场所|生活服务;生活服务场所;生活服务场所",
+      "typecode": "060000|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "坂田",
+      "adcode": "440307",
+      "search_keyword": "空调维修"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0130252",
+    "company": "空调维修回收家具电器",
+    "category": "制造业",
+    "keywords": [
+      "空调维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京",
+      "district": "玄武"
+    },
+    "address": "后宰门东村101室",
+    "contact_phone": "138****2272",
+    "lat": 32.046456,
+    "lng": 118.821882,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MGTC86TW",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "月牙湖",
+      "adcode": "320102",
+      "search_keyword": "空调维修"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0135155",
+    "company": "二手空调家具回收",
+    "category": "制造业",
+    "keywords": [
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "汉阳"
+    },
+    "address": "建桥街道远洋国际中心A4座13层11室",
+    "contact_phone": "189****5771",
+    "lat": 30.543375,
+    "lng": 114.262275,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KK275Z6L",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具电器回收",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "鹦鹉村",
+      "adcode": "420105",
+      "search_keyword": "冰箱维修"
     },
     "industry": {
       "code": "2190",

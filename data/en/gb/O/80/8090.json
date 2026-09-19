@@ -33,7 +33,10 @@
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Appliance Repair"
+      "Appliance Repair",
+      "Air Conditioner Repair",
+      "Washing Machine Repair",
+      "Refrigerator Repair"
     ],
     "region": {
       "province": "Zhejiang",
@@ -44,7 +47,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "O/80/8090",
     "industry": {
       "code": "8090",
       "name": "其他居民服务业",
@@ -54,6 +56,51 @@
       "source": "gb_token",
       "evidence": "民服务"
     },
-    "source_url": "https://www.amap.com/place/B0LD5U30MC"
+    "industry_en": {
+      "code": "8090",
+      "name_en": "Other Resident Services",
+      "level": "class",
+      "name": "其他居民服务业",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8090"
+  },
+  {
+    "id": "CN-MFG-0129112",
+    "company_en": "Su Cheng便民服务",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Appliance Repair",
+      "Air Conditioner Repair",
+      "Washing Machine Repair",
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 34-1 Wangsi Jingbin Road",
+    "contact_phone": "133****6785",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8090",
+      "name": "其他居民服务业",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 其他居民服务业 > 其他居民服务业",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "民服务"
+    },
+    "industry_en": {
+      "code": "8090",
+      "name_en": "Other Resident Services",
+      "level": "class",
+      "name": "其他居民服务业",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8090"
   }
 ]

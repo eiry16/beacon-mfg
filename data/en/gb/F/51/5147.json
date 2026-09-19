@@ -26,6 +26,48 @@
       "source": "gb_token",
       "evidence": "器批发"
     },
-    "source_url": "https://www.amap.com/place/B0KURHZNQA"
+    "source_url": "https://www.amap.com/place/B0KURHZNQA",
+    "industry_en": {
+      "code": "5147",
+      "name_en": "Musical Instruments Wholesale",
+      "level": "class",
+      "name": "乐器批发",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0104435",
+    "company_en": "Kunming Surveying and Measuring Instrument Wholesale Supermarket (Repair Calibration Appraisal Walkie-Talkie)",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "Precision Machinery"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Jinma Street Office Niujie Community Residents' Committee, Building D, 1104, Kun Tie Sheng He Jia Yuan",
+    "contact_phone": "177****6868",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5147",
+      "name": "乐器批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 文化、体育用品及器材批发 > 乐器批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "器批发"
+    },
+    "industry_en": {
+      "code": "5147",
+      "name_en": "Musical Instruments Wholesale",
+      "level": "class",
+      "name": "乐器批发",
+      "confidence": "high"
+    },
+    "_bucket": "F/51/5147"
   }
 ]

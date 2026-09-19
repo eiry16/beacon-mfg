@@ -158,7 +158,14 @@
       "source": "gb_token",
       "evidence": "建筑材"
     },
-    "source_url": "https://www.amap.com/place/B0FFL3Q1NF"
+    "source_url": "https://www.amap.com/place/B0FFL3Q1NF",
+    "industry_en": {
+      "code": "3515",
+      "name_en": null,
+      "level": "class",
+      "name": "建筑材料生产专用机械制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0035099",
@@ -187,6 +194,119 @@
       "source": "gb_token",
       "evidence": "建筑材"
     },
-    "source_url": "https://www.amap.com/place/B0FFKOYRRB"
+    "source_url": "https://www.amap.com/place/B0FFKOYRRB",
+    "industry_en": {
+      "code": "3515",
+      "name_en": null,
+      "level": "class",
+      "name": "建筑材料生产专用机械制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0098951",
+    "company_en": "Guiyang Hongyin Zexin Building Materials Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "screws",
+      "bolts"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Jinshi Hardware & Mechanical & Electrical City, A1-76-77",
+    "contact_phone": "135****7388",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3515",
+      "name": "建筑材料生产专用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑材"
+    },
+    "industry_en": {
+      "code": "3515",
+      "name_en": null,
+      "level": "class",
+      "name": "建筑材料生产专用机械制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/35/3515"
+  },
+  {
+    "id": "CN-MFG-0115480",
+    "company_en": "Dongchuan District Hongbao Building Materials Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "copper materials"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Tongdu Street, Xiaoxin Street Community Committee, Group 4, No. 1",
+    "contact_phone": "139****1362",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3515",
+      "name": "建筑材料生产专用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑材"
+    },
+    "industry_en": {
+      "code": "3515",
+      "name_en": null,
+      "level": "class",
+      "name": "建筑材料生产专用机械制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/35/3515"
+  },
+  {
+    "id": "CN-MFG-0123027",
+    "company_en": "Guizhou Zunyi Luhong Building Materials Factory",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "machine processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Ban Shui Reservoir Shuanghe Group, No. 4-5",
+    "contact_phone": "183****2381",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3515",
+      "name": "建筑材料生产专用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑材"
+    },
+    "industry_en": {
+      "code": "3515",
+      "name_en": null,
+      "level": "class",
+      "name": "建筑材料生产专用机械制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/35/3515"
   }
 ]

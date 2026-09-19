@@ -26,7 +26,14 @@
       "source": "gb_token",
       "evidence": "电销售"
     },
-    "source_url": "https://www.amap.com/place/B0G2A76XDH"
+    "source_url": "https://www.amap.com/place/B0G2A76XDH",
+    "industry_en": {
+      "code": "5267",
+      "name_en": null,
+      "level": "class",
+      "name": "机动车充电销售",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0089989",
@@ -55,7 +62,14 @@
       "source": "gb_token",
       "evidence": "电销售"
     },
-    "source_url": "https://www.amap.com/place/B0FFGPG0MA"
+    "source_url": "https://www.amap.com/place/B0FFGPG0MA",
+    "industry_en": {
+      "code": "5267",
+      "name_en": null,
+      "level": "class",
+      "name": "机动车充电销售",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0090113",
@@ -84,7 +98,14 @@
       "source": "gb_token",
       "evidence": "电销售"
     },
-    "source_url": "https://www.amap.com/place/B0FFFDYVP7"
+    "source_url": "https://www.amap.com/place/B0FFFDYVP7",
+    "industry_en": {
+      "code": "5267",
+      "name_en": null,
+      "level": "class",
+      "name": "机动车充电销售",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0090235",
@@ -113,7 +134,14 @@
       "source": "gb_token",
       "evidence": "电销售"
     },
-    "source_url": "https://www.amap.com/place/B0FFM6QZ1Z"
+    "source_url": "https://www.amap.com/place/B0FFM6QZ1Z",
+    "industry_en": {
+      "code": "5267",
+      "name_en": null,
+      "level": "class",
+      "name": "机动车充电销售",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0090249",
@@ -142,6 +170,122 @@
       "source": "gb_token",
       "evidence": "电销售"
     },
-    "source_url": "https://www.amap.com/place/B0H2LZ4HRR"
+    "source_url": "https://www.amap.com/place/B0H2LZ4HRR",
+    "industry_en": {
+      "code": "5267",
+      "name_en": null,
+      "level": "class",
+      "name": "机动车充电销售",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0120057",
+    "company_en": "Shuangying Appliance Sales, Repair, and Installation",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "Appliance Repair",
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 22, D Section, Chengbei New Area, Ruihao Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5267",
+      "name": "机动车充电销售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 汽车、摩托车、零配件和燃料及其他动力销售 > 机动车充电销售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "电销售"
+    },
+    "industry_en": {
+      "code": "5267",
+      "name_en": null,
+      "level": "class",
+      "name": "机动车充电销售",
+      "confidence": "high"
+    },
+    "_bucket": "F/52/5267"
+  },
+  {
+    "id": "CN-MFG-0120091",
+    "company_en": "Chen Fan Appliance Sales, Repair, and Cleaning Service Department",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "Appliance Repair",
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "60 meters southeast of the gas station, Xiping Town",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5267",
+      "name": "机动车充电销售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 汽车、摩托车、零配件和燃料及其他动力销售 > 机动车充电销售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "电销售"
+    },
+    "industry_en": {
+      "code": "5267",
+      "name_en": null,
+      "level": "class",
+      "name": "机动车充电销售",
+      "confidence": "high"
+    },
+    "_bucket": "F/52/5267"
+  },
+  {
+    "id": "CN-MFG-0129204",
+    "company_en": "Wenlong Appliance Sales and Repair (Zhangpu Experience Store)",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "Appliance Repair",
+      "Air Conditioner Repair",
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 1-049 Modern Agricultural",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5267",
+      "name": "机动车充电销售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 汽车、摩托车、零配件和燃料及其他动力销售 > 机动车充电销售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "电销售"
+    },
+    "industry_en": {
+      "code": "5267",
+      "name_en": null,
+      "level": "class",
+      "name": "机动车充电销售",
+      "confidence": "high"
+    },
+    "_bucket": "F/52/5267"
   }
 ]

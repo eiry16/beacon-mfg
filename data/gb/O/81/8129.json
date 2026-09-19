@@ -5,11 +5,15 @@
     "category": "居民服务、修理和其他服务业",
     "keywords": [
       "电脑上门维修",
-      "家电维修"
+      "家电维修",
+      "空调维修",
+      "洗衣机维修",
+      "冰箱维修"
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "坂田街道马安堂社区新河三巷17号",
     "contact_phone": "132****4946",
@@ -57,7 +61,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "南村镇坑头村市场西14号103",
     "contact_phone": "150****8081",
@@ -101,11 +106,14 @@
     "company": "顶佳电子设备维修中心(宏德辉工业园店)",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "家电维修"
+      "家电维修",
+      "空调维修",
+      "冰箱维修"
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "南湾街道康桥路128号宏德辉工业园A5栋104",
     "contact_phone": "待核实",
@@ -149,11 +157,13 @@
     "company": "长兴冷热设备维修部",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "家电维修"
+      "家电维修",
+      "冰箱维修"
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "黄埔"
     },
     "address": "天鹿南路122号联世广场长兴五金机电",
     "contact_phone": "137****9316",
@@ -230,6 +240,55 @@
       "business_area": "金马",
       "adcode": "530111",
       "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "8129",
+      "name": "其他办公设备维修",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 计算机和办公设备维修 > 其他办公设备维修",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "设备维修"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0130716",
+    "company": "宏灵家电设备维修中心店",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "空调维修"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "双流"
+    },
+    "address": "富民路二段191号",
+    "contact_phone": "待核实",
+    "lat": 30.50885,
+    "lng": 104.063139,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHGM7IF",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "四川天府新区成都直管区",
+      "adcode": "510116",
+      "search_keyword": "空调维修"
     },
     "industry": {
       "code": "8129",

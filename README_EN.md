@@ -56,9 +56,9 @@ No dependencies, no keys, no network required.
 
 ## Data Status
 
-**Chinese** (`data/gb/`, four-level GB/T 4754 archive): **117941 records total**
-(88054 phone-verified, 29887 pending), spanning **46 national divisions** (incl. unclassified).
-Top divisions: Catering (62, non-manufacturer) 36,242 · Residential Services (80, non-manufacturer) 17,952 · General Equipment (34) 12,416 · Metal Products (33) 9,350 · Motor Vehicle & Electronics Repair (81, non-manufacturer) 7,555 · Rubber & Plastics (29) 6,769 · Special Equipment (35) 4,195 · Entertainment (90, non-manufacturer) 4,094.
+**Chinese** (`data/gb/`, four-level GB/T 4754 archive): **128689 records total**
+(96732 phone-verified, 31957 pending), spanning **46 national divisions** (incl. unclassified).
+Top divisions: Catering (62, non-manufacturer) 38,326 · Residential Services (80, non-manufacturer) 17,876 · General Equipment (34) 13,621 · Metal Products (33) 9,392 · Motor Vehicle & Electronics Repair (81, non-manufacturer) 8,614 · Accommodation (61, non-manufacturer) 8,157 · Rubber & Plastics (29) 6,798 · Special Equipment (35) 5,333.
 
 ### Industry classification (GB/T 4754-2017)
 
@@ -69,7 +69,7 @@ Every supplier carries a national industry class code:
 "is_manufacturer": true
 ```
 
-- **115900 / 117941 records classified** into **266 national industry classes** (2041 unclassified)
+- **126493 / 128689 records classified** into **270 national industry classes** (2196 unclassified)
 - `confidence`: `high` = company name matched directly; `medium` / `low` = inferred from keywords or category
 - `is_manufacturer=false` → the company falls under **F51 Wholesale** (trader, not a factory)
 - Rule of thumb: **trust the company name**; search keywords may only fill gaps;
@@ -81,10 +81,10 @@ Every supplier carries a national industry class code:
   This stops a *shop selling mold parts* from being listed as a *mold manufacturer*
   (fixed 2026-09-08, 635 records affected).
 
-Top classes (full list in `data/industry-index.json`): 6210 Full-service Restaurants 9,631 · 6232 Cafe Service 9,554 · 3484 Machined Parts & Components 8,493 · 8053 Healthcare & Wellness Services 7,188 · 2929 Plastic Parts & Other Plastic Products 6,000 · 6231 Tea House Service 5,488 · 6220 Fast Food Service 4,369 · 6291 Snack Service 4,289.
+Top classes (full list in `data/industry-index.json`): 6210 Full-service Restaurants 10,856 · 6232 Cafe Service 9,513 · 3484 Machined Parts & Components 8,420 · 8053 Healthcare & Wellness Services 7,140 · 2929 Plastic Parts & Other Plastic Products 6,000 · 6231 Tea House Service 5,455 · 6291 Snack Service 5,273 · 3525 Molds & Dies 5,014.
 > **Pending**: 8,617 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
-**English** (`data/en/gb/`, same four-level GB archive): **71309 English-mirror records**
+**English** (`data/en/gb/`, same four-level GB archive): **111967 English-mirror records**
 for overseas agents/buyers — kept at **1:1 by `id`** with the Chinese dataset via
 `scripts/en_backfill.py` (incremental, resumable) + `scripts/en_sync_industry.py` for
 the `industry_en` label (English GB/T 4754 class names).

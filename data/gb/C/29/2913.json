@@ -8,7 +8,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "花都"
     },
     "address": "新华路123号6铺",
     "contact_phone": "180****3822; 188****9700",
@@ -55,7 +56,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "市莲路与江城路交叉口东40米",
     "contact_phone": "135****6945",
@@ -110,7 +112,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "花都"
     },
     "address": "新华路76-1号",
     "contact_phone": "139****5507",
@@ -166,7 +169,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "市莲路傍江西村段5号",
     "contact_phone": "132****1999; 132****1737",
@@ -222,7 +226,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "增城"
     },
     "address": "新塘镇荔新大道12路33号奥园康威广场A4幢1006",
     "contact_phone": "181****9250; 181****2559",
@@ -269,7 +274,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "石基镇市莲路傍江西村37号",
     "contact_phone": "135****6945",
@@ -324,7 +330,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "黄埔"
     },
     "address": "东兴汇五金C区81-83号",
     "contact_phone": "133****1745",
@@ -434,7 +441,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "淡水街道淡水镇白云三路43号",
     "contact_phone": "0752-3736290; 0752-5323835; 136****0390",
@@ -647,11 +655,14 @@
     "company": "大元轴承丝杆光轴钢球导轨油封机电密封件批发(龙岗专营店)",
     "category": "标准件",
     "keywords": [
-      "轴承"
+      "轴承",
+      "机械密封",
+      "密封件"
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "龙岗街道龙平东路287号二单元",
     "contact_phone": "0755-84856016; 0755-84856083",
@@ -673,7 +684,21 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "_bucket": "C/29/2913",
+    "amap": {
+      "poi_id": "B0FFFQ0HBD",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;商业贸易|购物服务;专卖店;专营店",
+      "typecode": "060603|170207|061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "双龙",
+      "adcode": "440307",
+      "search_keyword": "机械密封"
+    }
   },
   {
     "id": "CN-MFG-0013889",
@@ -684,7 +709,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "秀洲"
     },
     "address": "中安市场21幢1068号",
     "contact_phone": "133****0688",
@@ -731,7 +757,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "南湖"
     },
     "address": "广益路国际电气城22幢29号",
     "contact_phone": "159****7360",
@@ -774,11 +801,14 @@
     "company": "宏运密封圈·轴承·油封·O型圈(苏州机电五金城B3幢店)",
     "category": "标准件",
     "keywords": [
-      "轴承"
+      "轴承",
+      "机械密封",
+      "密封件"
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "姑苏"
     },
     "address": "苏州城北西路1599号机电五金城B3-110/2号",
     "contact_phone": "158****0322",
@@ -826,7 +856,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "海盐"
     },
     "address": "轴承大全油封气动液压电磁阀防爆管密封圈挖机配件",
     "contact_phone": "152****6791",
@@ -874,7 +905,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "嘉兴"
+      "city": "嘉兴",
+      "district": "海盐"
     },
     "address": "密封圈气动液压海盐县五金城四排南45号",
     "contact_phone": "152****6791",
@@ -1199,11 +1231,14 @@
     "company": "大兴轴承油封(深圳总店)",
     "category": "标准件",
     "keywords": [
-      "轴承"
+      "轴承",
+      "机械密封",
+      "密封件"
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "上寮五区81号(新沙路桥丰盛大厦1楼)",
     "contact_phone": "188****3214",
@@ -1246,11 +1281,13 @@
     "company": "啤油管富玉景橡胶五金店",
     "category": "标准件",
     "keywords": [
-      "轴承"
+      "轴承",
+      "密封件"
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "福海街道和平村和盛工业园北区55号-5(和盛工业区北门旁)",
     "contact_phone": "150****3006",
@@ -1297,7 +1334,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "横岗街道红棉二路176-178号",
     "contact_phone": "0755-28861933; 138****2270",
@@ -1344,7 +1382,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "浦东新"
     },
     "address": "东陆路1257号",
     "contact_phone": "021-50758501; 137****6201",
@@ -1391,7 +1430,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "井岸镇中兴中路26号",
     "contact_phone": "0756-5107679",
@@ -1446,7 +1486,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "南屏北山市场正街2号",
     "contact_phone": "135****2808",
@@ -1501,7 +1542,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "金湾"
     },
     "address": "南水镇下金龙金洲花园5号",
     "contact_phone": "0756-7710106; 188****1203",
@@ -1556,7 +1598,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "湖心路富红苑1栋5号铺",
     "contact_phone": "185****3305",
@@ -1713,7 +1756,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "陈江曙光路107号绝缘材料橡胶制品油封O圈皮带机械水封轴承保温材料PVC塑胶制品精雕机雕刻加工",
     "contact_phone": "0752-3231158; 187****3730",
@@ -1760,7 +1804,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "惠州大道大湖溪段80号",
     "contact_phone": "0752-2251980; 136****6183",
@@ -1807,7 +1852,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "园洲大道1403号",
     "contact_phone": "135****5864; 138****2090",
@@ -1854,7 +1900,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "园洲镇上南村园洲大道2076号",
     "contact_phone": "189****7906",
@@ -1901,7 +1948,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "大亚湾西区街道大亚湾西区办事处大亚湾大道252号",
     "contact_phone": "0752-5103108; 159****3505",
@@ -1948,7 +1996,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "惠州大道小金口段423号",
     "contact_phone": "0752-2292258",
@@ -1995,7 +2044,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "下角东路悦湖居B栋39-2号",
     "contact_phone": "0752-2227653; 0752-2242718",
@@ -2042,7 +2092,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "秋长镇白石村秋宝路569号",
     "contact_phone": "137****6515",
@@ -2089,7 +2140,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠阳"
     },
     "address": "白云三路49号中豪国际F1层",
     "contact_phone": "0752-3354849",
@@ -2136,7 +2188,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "沥林镇仲恺八路373号",
     "contact_phone": "158****5623",
@@ -2183,7 +2236,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "惠城"
     },
     "address": "龙西街14号2栋",
     "contact_phone": "135****3616",
@@ -2230,7 +2284,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "石楼镇嵩山路20号颢伟工业园自编5号厂房302",
     "contact_phone": "020-84789184",
@@ -2277,7 +2332,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "相城"
     },
     "address": "227省道西100米苏州新苑附近",
     "contact_phone": "待核实",
@@ -2324,7 +2380,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "常熟"
     },
     "address": "辛庄镇嘉菱村西环路17号5号厂房苏州恒威塑胶有限公司",
     "contact_phone": "136****2958",
@@ -2370,11 +2427,13 @@
       "塑料原料",
       "改性塑料",
       "塑料模具",
-      "塑料制品"
+      "塑料制品",
+      "塑胶制品"
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "香洲"
     },
     "address": "旅游路与金凤路交叉口东北260米",
     "contact_phone": "待核实",
@@ -2468,7 +2527,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "商业城机电市场南区12幢3号",
     "contact_phone": "177****8864",
@@ -2524,7 +2584,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "丈江段与应家南路交叉口西北40米",
     "contact_phone": "待核实",
@@ -2571,7 +2632,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "萧山"
     },
     "address": "机电市场北区6幢11号",
     "contact_phone": "130****8808",
@@ -2618,7 +2680,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "青浦"
     },
     "address": "外青松公路5023号",
     "contact_phone": "189****8650",
@@ -2714,7 +2777,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "南沙"
     },
     "address": "万顷沙镇粤海大道九涌段29号102铺",
     "contact_phone": "137****3938",
@@ -2761,7 +2825,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "温州"
+      "city": "温州",
+      "district": "龙湾"
     },
     "address": "中兴路127号",
     "contact_phone": "0577-88335116; 159****1888",
@@ -2865,7 +2930,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "瓦浦河路与星辉路交叉口西南240米",
     "contact_phone": "待核实",
@@ -2922,7 +2988,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "东盛路与大成路交叉口北180米",
     "contact_phone": "0510-66681118",
@@ -2971,7 +3038,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "新吴"
     },
     "address": "无锡市新区鸿山街道后宅中路156号",
     "contact_phone": "0510-88990983; 0510-88996860",
@@ -3020,7 +3088,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "锡山"
     },
     "address": "安泰三路1012号",
     "contact_phone": "0510-66681118",
@@ -3069,7 +3138,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "奉贤"
     },
     "address": "南奉公路502号",
     "contact_phone": "待核实",
@@ -3770,6 +3840,1575 @@
       "business_area": "",
       "adcode": "450125",
       "search_keyword": "弹簧"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0136300",
+    "company": "军源餐馆(西安新华橡胶二分厂家属院店)",
+    "category": "注塑成型",
+    "keywords": [
+      "饭店"
+    ],
+    "region": {
+      "province": "陕西",
+      "city": "西安",
+      "district": "莲湖"
+    },
+    "address": "枣园地铁站D东北口东北150米枣园北路10号新华橡胶二分厂家属院大门南侧",
+    "contact_phone": "138****1792",
+    "lat": 34.280055,
+    "lng": 108.863828,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFK9DFAW",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "一碗面",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "枣园",
+      "adcode": "610104",
+      "search_keyword": "饭店"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138359",
+    "company": "深圳市好才能油封密封实业有限公司",
+    "category": "标准件",
+    "keywords": [
+      "机械密封",
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "南山"
+    },
+    "address": "南海大道2061号新保辉大厦",
+    "contact_phone": "待核实",
+    "lat": 22.508075,
+    "lng": 113.924525,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MGBSSOWQ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "蛇口",
+      "adcode": "440305",
+      "search_keyword": "机械密封"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138390",
+    "company": "油封大全密封件(渭中一村店)",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城"
+    },
+    "address": "苏渭路145号",
+    "contact_phone": "138****1332",
+    "lat": 31.465925,
+    "lng": 120.647625,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJVL9AH",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "渭塘",
+      "adcode": "320507",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138430",
+    "company": "昆山博尔科橡胶制品有限公司",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "玉山镇朝阳西路16-8号",
+    "contact_phone": "0512-50161092; 0512-50161093",
+    "lat": 31.373757,
+    "lng": 120.964852,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFDH1D2",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
+      "typecode": "060603|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "玉山",
+      "adcode": "320583",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138496",
+    "company": "宁海建新密封条有限公司",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "宁海"
+    },
+    "address": "科园北路251号",
+    "contact_phone": "132****7553",
+    "lat": 29.358896,
+    "lng": 121.480977,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E0Z6JS",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330226",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "密封条"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138522",
+    "company": "宁波金菱密封条有限公司",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "北仑"
+    },
+    "address": "大港工业城黄山西路229号",
+    "contact_phone": "0574-86829808",
+    "lat": 29.922533,
+    "lng": 121.797569,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E0323A",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330206",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "密封条"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138551",
+    "company": "宁波市康鑫氟橡胶密封件有限公司",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "慈溪"
+    },
+    "address": "贤江工业区9号",
+    "contact_phone": "待核实",
+    "lat": 30.225442,
+    "lng": 121.168271,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H17A6WGU",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138552",
+    "company": "余姚市金叶橡胶密封件有限公司",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "余姚"
+    },
+    "address": "凤山街道城东新区邵竹小区",
+    "contact_phone": "0574-62606268",
+    "lat": 30.079347,
+    "lng": 121.181887,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023E03ENB",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138587",
+    "company": "浙中橡胶密封件厂",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "慈溪"
+    },
+    "address": "长河镇杨叶路1-1号",
+    "contact_phone": "135****1368",
+    "lat": 30.209748,
+    "lng": 121.168113,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHE871M",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138611",
+    "company": "余姚市硅胶制品密封圈厂",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "余姚"
+    },
+    "address": "镇北路157-1号",
+    "contact_phone": "待核实",
+    "lat": 30.163964,
+    "lng": 121.054734,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KR7LM7AO",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330281",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "硅胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138671",
+    "company": "上海拉斯特橡胶密封技术有限公司",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "松江"
+    },
+    "address": "红牡丹路135号",
+    "contact_phone": "021-57891653",
+    "lat": 30.94932,
+    "lng": 121.085207,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00157GMHL",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新浜镇",
+      "adcode": "310117",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138684",
+    "company": "上海辰兆密封件油封有限公司",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "嘉定"
+    },
+    "address": "嘉定区方德路201弄12-13号",
+    "contact_phone": "021-63231979; 139****8987",
+    "lat": 31.315393,
+    "lng": 121.230424,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL9RAUN",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138707",
+    "company": "专业油封",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新"
+    },
+    "address": "花山锦地苑东北门西140米",
+    "contact_phone": "199****6689",
+    "lat": 31.348496,
+    "lng": 121.5779,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HRLU0PN4",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "高桥",
+      "adcode": "310115",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138711",
+    "company": "上海浦东橡胶密封件有限公司",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新"
+    },
+    "address": "唐镇吕三路38号",
+    "contact_phone": "待核实",
+    "lat": 31.217188,
+    "lng": 121.639573,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHEAFEN",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "张江",
+      "adcode": "310115",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138713",
+    "company": "石棉橡胶保温密封材料",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "奉贤"
+    },
+    "address": "南丰公路6111弄120号",
+    "contact_phone": "待核实",
+    "lat": 30.919077,
+    "lng": 121.514257,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIY38PU",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中国(上海)自由贸易试验区临港新片区",
+      "adcode": "310120",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138743",
+    "company": "上海淮伟贸易密封件工业皮带油封高压油管专卖",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "奉贤"
+    },
+    "address": "南奉公路6111弄亿丰五金机电广场169-170号",
+    "contact_phone": "136****9488",
+    "lat": 30.919482,
+    "lng": 121.513439,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JGFUP4ZJ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中国(上海)自由贸易试验区临港新片区",
+      "adcode": "310120",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138757",
+    "company": "百楚胶业硅胶调色密封胶美缝剂(可调色)发泡剂结构胶",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新"
+    },
+    "address": "沪南公路3688号大缔建材市场2-07号",
+    "contact_phone": "134****8628; 176****1624",
+    "lat": 31.105775,
+    "lng": 121.568742,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KD0AWV2N",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "周浦镇",
+      "adcode": "310115",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "硅胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138764",
+    "company": "上海奕妍橡塑橡胶密封条橡胶板硅胶板氟橡胶非标定制厂家直销",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "嘉定"
+    },
+    "address": "方德路108号",
+    "contact_phone": "136****0455",
+    "lat": 31.31641,
+    "lng": 121.228483,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JRHMJKM4",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138765",
+    "company": "上海百诺密封条总汇",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "嘉定"
+    },
+    "address": "安亭镇泰波路647号院内",
+    "contact_phone": "199****5308",
+    "lat": 31.309882,
+    "lng": 121.238238,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JU3Z2TT7",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "门窗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "密封条"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138767",
+    "company": "宏葡轴承油封滑块(荣汇公寓店)",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "松江"
+    },
+    "address": "松汇中路1001-1003号",
+    "contact_phone": "021-67849176; 180****8313",
+    "lat": 31.003445,
+    "lng": 121.223811,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGJBNS4",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中山",
+      "adcode": "310117",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138787",
+    "company": "恒创·支座·止水带·密封胶·橡胶止水带·止水带·橡胶支座·隔震支座·球形支座新旧门窗盆式支座",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "宝山"
+    },
+    "address": "少年村路与沪太支路交叉口西40米",
+    "contact_phone": "131****7999",
+    "lat": 31.299972,
+    "lng": 121.419763,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MGH1TXNU",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "彭浦镇",
+      "adcode": "310113",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138792",
+    "company": "道康宁(陶熙)硅胶结构胶耐候胶密封胶发泡剂万能胶美缝剂门锁",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "金山"
+    },
+    "address": "枫泾镇泾商路99弄枫泾五金建材城6383-6385号",
+    "contact_phone": "139****1558",
+    "lat": 30.90685,
+    "lng": 121.010436,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GRCZDSVG",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "枫泾",
+      "adcode": "310116",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "硅胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138838",
+    "company": "好才能油封密封件专行(鸿昌花园北)",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "宝安"
+    },
+    "address": "鸿昌花园1栋7号",
+    "contact_phone": "0755-27921860; 136****8482",
+    "lat": 22.57251,
+    "lng": 113.887912,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG4HBY1",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新安",
+      "adcode": "440306",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138843",
+    "company": "晟隆橡胶密封(诚丰大厦店)",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "宝安"
+    },
+    "address": "新和大道35号诚丰大厦F1层",
+    "contact_phone": "183****2089",
+    "lat": 22.750619,
+    "lng": 113.824113,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFE8A46",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138844",
+    "company": "信诚啤喉密封件行(挖机管、铁氟龙管、不锈钢软管、油封、高压油管及接头等)",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "光明"
+    },
+    "address": "民生大道181-183号",
+    "contact_phone": "133****6239; 136****7736",
+    "lat": 22.78427,
+    "lng": 113.8958,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F38K8U4",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "公明",
+      "adcode": "440311",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138846",
+    "company": "祥泰皮带油封密封件",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗"
+    },
+    "address": "龙岗大道3132号",
+    "contact_phone": "0755-84282662; 138****9069",
+    "lat": 22.776378,
+    "lng": 114.312792,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HKOUL1OY",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "坪地",
+      "adcode": "440307",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138847",
+    "company": "轴承油封",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗"
+    },
+    "address": "布吉街道吉华路3号",
+    "contact_phone": "132****4090",
+    "lat": 22.598094,
+    "lng": 114.116983,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFDPPSL",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "布吉",
+      "adcode": "440307",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138873",
+    "company": "创奇橡胶密封件",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗"
+    },
+    "address": "龙兴街42号(双龙地铁站H口步行380米)",
+    "contact_phone": "0755-28833858; 137****1476",
+    "lat": 22.728874,
+    "lng": 114.273547,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F38Q9CZ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440307",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138874",
+    "company": "好才能油封密封件专行",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "宝安"
+    },
+    "address": "燕罗街道松白路中闽花园F座105号",
+    "contact_phone": "0755-27921865; 136****9171",
+    "lat": 22.77335,
+    "lng": 113.858043,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL6DT7J",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松岗",
+      "adcode": "440306",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "油封"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138876",
+    "company": "佳橡橡胶密封件",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "宝安"
+    },
+    "address": "广深公路辅路与太平路交叉口北60米",
+    "contact_phone": "0755-27278893; 150****2685",
+    "lat": 22.721658,
+    "lng": 113.839975,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGXPQO7",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙井",
+      "adcode": "440306",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138887",
+    "company": "大丰橡胶密封(新城市花园店)",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙华"
+    },
+    "address": "新城市花园东南1门旁",
+    "contact_phone": "待核实",
+    "lat": 22.664033,
+    "lng": 114.02242,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFHJTX4",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙华",
+      "adcode": "440309",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "橡胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138893",
+    "company": "晶发橡胶密封件",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "宝安"
+    },
+    "address": "宝石东路与石岩大道交叉口东80米",
+    "contact_phone": "待核实",
+    "lat": 22.680427,
+    "lng": 113.94023,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG3CSYW",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440306",
+      "search_keyword": "密封件"
     },
     "industry": {
       "code": "2913",

@@ -10,7 +10,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "徐汇"
     },
     "address": "罗香路142号",
     "contact_phone": "021-34510155; 180****7162",
@@ -67,7 +68,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "钱塘"
     },
     "address": "临江街道富达街197号",
     "contact_phone": "137****9847",
@@ -124,7 +126,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "张家港"
     },
     "address": "杨舍镇绿景雅苑16幢M-102",
     "contact_phone": "139****1052",
@@ -173,7 +176,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "西乡街道流塘路53-4号中粮锦云3栋903",
     "contact_phone": "189****2473",
@@ -222,7 +226,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "光明"
     },
     "address": "羌下大松园新村东羌下松园居新湖街道云谷社区北圳路羌下松园居2-10",
     "contact_phone": "135****8222",
@@ -271,7 +276,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "南山"
     },
     "address": "南山街道南光路128号桂庙花园1栋3A",
     "contact_phone": "0755-26407655; 180****7456",
@@ -320,7 +326,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "南山"
     },
     "address": "粤海街道创业路社区龙城路4号云海天城后海大道2445号",
     "contact_phone": "186****4556",
@@ -369,7 +376,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "南山"
     },
     "address": "海大道深南花园裙楼B区536",
     "contact_phone": "181****4708",
@@ -418,7 +426,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "白云"
     },
     "address": "黄边北路向荣街90号自编之一(时代玫瑰园二期)",
     "contact_phone": "136****2768",
@@ -467,7 +476,8 @@
     ],
     "region": {
       "province": "湖北",
-      "city": "武汉"
+      "city": "武汉",
+      "district": "洪山"
     },
     "address": "卓刀泉街道虎泉街道双塘小区4栋3单元",
     "contact_phone": "188****5389",
@@ -526,7 +536,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "佛山"
+      "city": "佛山",
+      "district": "禅城"
     },
     "address": "绿景一路5号首层456号铺",
     "contact_phone": "待核实",
@@ -577,7 +588,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "普陀"
     },
     "address": "新曹杨集团公司高新技术工业园区A区6栋一楼A0室",
     "contact_phone": "134****2066; 139****9062",
@@ -621,11 +633,14 @@
     "company": "杭州杭修家庭服务有限公司",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "家电维修"
+      "家电维修",
+      "空调维修",
+      "冰箱维修"
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "仓前街道高桥村村委西侧祥高线8号E-122室",
     "contact_phone": "192****0909",
@@ -1442,6 +1457,305 @@
       "business_area": "",
       "adcode": "520382",
       "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0129078",
+    "company": "一号管家家政家庭维修",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修",
+      "洗衣机维修",
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "合兴西路54号",
+    "contact_phone": "130****7882",
+    "lat": 31.367899,
+    "lng": 120.956474,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MAMU6696",
+      "type": "购物服务;服装鞋帽皮具店;服装鞋帽皮具店",
+      "typecode": "061100",
+      "alias": "",
+      "tag": "",
+      "keytag": "管道疏通",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "玉山",
+      "adcode": "320583",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0129117",
+    "company": "贴心家政家电维修",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修",
+      "空调维修",
+      "洗衣机维修",
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城"
+    },
+    "address": "朗诗蔚蓝广场F129-FB02",
+    "contact_phone": "177****8767",
+    "lat": 31.41273,
+    "lng": 120.653256,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K1NCRW2D",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0130264",
+    "company": "科荣家政·电器",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "空调维修"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京",
+      "district": "浦口"
+    },
+    "address": "泰山街道浦东路菜场内9号",
+    "contact_phone": "158****2752; 180****4981",
+    "lat": 32.106859,
+    "lng": 118.717998,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G10ADHG7",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家政",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "江北新区",
+      "adcode": "320111",
+      "search_keyword": "空调维修"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0131996",
+    "company": "鸿跃家政管道疏通水电水管维修(西湖店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "洗衣机维修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "西湖"
+    },
+    "address": "水韵金沙公寓7幢1001室",
+    "contact_phone": "133****5958",
+    "lat": 30.141731,
+    "lng": 120.115588,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGRZBV5A",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "管道疏通",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330106",
+      "search_keyword": "洗衣机维修"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0132000",
+    "company": "即e到家家政管道疏通水电水管维修",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "洗衣机维修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "西湖"
+    },
+    "address": "转塘街道洙泗路金街美地4号楼101室",
+    "contact_phone": "133****5958",
+    "lat": 30.148263,
+    "lng": 120.079415,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L39AREUH",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "管道疏通",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330106",
+      "search_keyword": "洗衣机维修"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0134541",
+    "company": "新怡家政",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "冰箱维修"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "桐庐"
+    },
+    "address": "大奇山路232号",
+    "contact_phone": "137****3687",
+    "lat": 29.791518,
+    "lng": 119.682388,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I0HZTFZC",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330122",
+      "search_keyword": "冰箱维修"
     },
     "industry": {
       "code": "8010",

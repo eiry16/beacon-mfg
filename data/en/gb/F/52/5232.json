@@ -26,7 +26,14 @@
       "source": "name",
       "evidence": "服装"
     },
-    "source_url": "https://www.amap.com/place/B0FFL7QQ5U"
+    "source_url": "https://www.amap.com/place/B0FFL7QQ5U",
+    "industry_en": {
+      "code": "5232",
+      "name_en": "Apparel Retail",
+      "level": "class",
+      "name": "服装零售",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0038132",
@@ -57,7 +64,14 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "source_url": "https://www.amap.com/place/B023B09LTL"
+    "source_url": "https://www.amap.com/place/B023B09LTL",
+    "industry_en": {
+      "code": "5232",
+      "name_en": "Apparel Retail",
+      "level": "class",
+      "name": "服装零售",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0049820",
@@ -86,7 +100,14 @@
       "source": "name",
       "evidence": "服装"
     },
-    "source_url": "https://www.amap.com/place/B0JBYZS4Y9"
+    "source_url": "https://www.amap.com/place/B0JBYZS4Y9",
+    "industry_en": {
+      "code": "5232",
+      "name_en": "Apparel Retail",
+      "level": "class",
+      "name": "服装零售",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0077816",
@@ -115,7 +136,14 @@
       "source": "name",
       "evidence": "服装"
     },
-    "source_url": "https://www.amap.com/place/B0FFG49NKB"
+    "source_url": "https://www.amap.com/place/B0FFG49NKB",
+    "industry_en": {
+      "code": "5232",
+      "name_en": "Apparel Retail",
+      "level": "class",
+      "name": "服装零售",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0085039",
@@ -146,6 +174,118 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "source_url": "https://www.amap.com/place/B023E05Q2U"
+    "source_url": "https://www.amap.com/place/B023E05Q2U",
+    "industry_en": {
+      "code": "5232",
+      "name_en": "Apparel Retail",
+      "level": "class",
+      "name": "服装零售",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0097449",
+    "company_en": "Luoji Tailoring and Clothing Store",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 6, Chongba Market Agricultural Produce Market",
+    "contact_phone": "151****1143",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5232",
+      "name": "服装零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 服装零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "服装"
+    },
+    "industry_en": {
+      "code": "5232",
+      "name_en": "Apparel Retail",
+      "level": "class",
+      "name": "服装零售",
+      "confidence": "medium"
+    },
+    "_bucket": "F/52/5232"
+  },
+  {
+    "id": "CN-MFG-0113666",
+    "company_en": "Yang Lan Clothing Tailoring and Repair Shop (Hong Kong Road Causeway Bay Branch)",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "laundry"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "No. 81 Hong Kong Road, Aohang Business and Trade City, Building C, 1st Floor, Room 10",
+    "contact_phone": "0851-28873288; 151****4310",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "5232",
+      "name": "服装零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 服装零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "服装"
+    },
+    "industry_en": {
+      "code": "5232",
+      "name_en": "Apparel Retail",
+      "level": "class",
+      "name": "服装零售",
+      "confidence": "medium"
+    },
+    "_bucket": "F/52/5232"
+  },
+  {
+    "id": "CN-MFG-0127351",
+    "company_en": "Saiwei Professional Laundry and Clothing Alteration (Jiangdong Huacheng Store)",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "dry cleaning"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "B-1-103, Jiangdong Huacheng",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "5232",
+      "name": "服装零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 服装零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "服装"
+    },
+    "industry_en": {
+      "code": "5232",
+      "name_en": "Apparel Retail",
+      "level": "class",
+      "name": "服装零售",
+      "confidence": "medium"
+    },
+    "_bucket": "F/52/5232"
   }
 ]

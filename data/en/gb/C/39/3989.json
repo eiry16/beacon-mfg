@@ -502,32 +502,6 @@
     "source_url": "https://www.amap.com/place/B0K2DUFZ6N"
   },
   {
-    "id": "CN-MFG-0003274",
-    "company_en": "Dongguan Ruizeng Industrial Co., Ltd.",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "PCB"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Dongguan"
-    },
-    "address_en": "1-3rd Floor, Building C, 88 Weifu Road, Baihuali Village, Changping Town",
-    "contact_phone": "135****8492",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0003276",
     "company_en": "Dongguan Xieying Roller Co., Ltd.",
     "category": "电子元器件",
@@ -541,32 +515,6 @@
     },
     "address_en": "No. 93, Yongjun 2nd Road, Huangjiang Town",
     "contact_phone": "150****0252; 186****5802",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0003277",
-    "company_en": "Jili Xing Laser Technology Co., Ltd.",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "PCB"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Dongguan"
-    },
-    "address_en": "No. 17, Jiaojing Street, Dalingshan Town",
-    "contact_phone": "177****3276",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
@@ -645,32 +593,6 @@
     },
     "address_en": "Building 1, 105, Yuan 1, Factory 1, Lieming Industrial Area",
     "contact_phone": "0752-3958536; 135****6842",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0003283",
-    "company_en": "Dingfeng Laser",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "PCB"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Huizhou"
-    },
-    "address_en": "No. 6 Tengda Road, 3rd Floor Hongruida Industrial Park",
-    "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
@@ -1396,32 +1318,6 @@
     "_bucket": "C/39/3989"
   },
   {
-    "id": "CN-MFG-0003318",
-    "company_en": "Shenzhen Weijin Technology Co., Ltd.",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "PCBA"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Shenzhen"
-    },
-    "address_en": "Fuhai Street Xinhé Community Industrial North District 28th Building East 5th Floor",
-    "contact_phone": "134****1150",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0003319",
     "company_en": "Shenzhen Dezheng Intelligent Technology Co., Ltd.",
     "category": "电子元器件",
@@ -2107,22 +2003,30 @@
   },
   {
     "id": "CN-MFG-0003345",
-    "company_en": "Suzhou Ruikeda Connector System Co., Ltd. Headquarter",
+    "company_en": "Suzhou Ruida Connect System Co., Ltd. (Headquarters)",
     "category": "注塑成型",
     "category_en": "Injection Molding",
     "keywords_en": [
-      "Connectors"
+      "Connector"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "240 meters north of the intersection of Tuo斯塔da Road and Songwei Road",
+    "address_en": "240 meters north of the intersection of Tuosida Road and Songwei Road",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/39/3989",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
     "industry_en": {
       "code": "3989",
       "name_en": "Other Electronic Components",
@@ -2130,7 +2034,7 @@
       "name": "其他电子元件制造",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0LUX5JSH0"
+    "_bucket": "C/39/3989"
   },
   {
     "id": "CN-MFG-0003346",
@@ -3281,32 +3185,6 @@
     "source_url": "https://www.amap.com/place/B0I2R7X8M6"
   },
   {
-    "id": "CN-MFG-0003406",
-    "company_en": "Wuxi Liting E-commerce Co., Ltd.",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "Connector"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Wuxi"
-    },
-    "address_en": "1001A, Zhongheng Steel Market, No. 288 Youyi Middle Road",
-    "contact_phone": "136****7899",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0003407",
     "company_en": "Wuxi Li East Industrial Corporation",
     "category": "电子元器件",
@@ -3677,18 +3555,26 @@
     "category": "注塑成型",
     "category_en": "Injection Molding",
     "keywords_en": [
-      "Connectors"
+      "connectors"
     ],
     "region": {
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 889 Ying伦 Road, Waigaoqiao Free Trade Zone, Molex Electronic Factory",
+    "address_en": "No. 889 Yilun Road, Molex Electronic Factory, Waigaoqiao Free Trade Zone",
     "contact_phone": "021-50480889",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/39/3989",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连接器"
+    },
     "industry_en": {
       "code": "3989",
       "name_en": "Other Electronic Components",
@@ -3696,7 +3582,7 @@
       "name": "其他电子元件制造",
       "confidence": "medium"
     },
-    "source_url": "https://www.amap.com/place/B0FFFO6YH8"
+    "_bucket": "C/39/3989"
   },
   {
     "id": "CN-MFG-0003431",
@@ -7410,32 +7296,6 @@
     "_bucket": "C/39/3989"
   },
   {
-    "id": "CN-MFG-0003597",
-    "company_en": "Cixi Lianda Electronic Co., Ltd.",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "Connector"
-    ],
-    "region": {
-      "province": "Zhejiang",
-      "city": "Ningbo"
-    },
-    "address_en": "2 Fengsheng Road, Bali Village, Zhangqi Town",
-    "contact_phone": "137****7568",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0003598",
     "company_en": "Ningbo Yuanyi (Sai Zhou Communication) Technology Co., Ltd.",
     "category": "电子元器件",
@@ -7449,32 +7309,6 @@
     },
     "address_en": "178 Dongmen Bridge Road, Longshan Town",
     "contact_phone": "193****1290",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0003599",
-    "company_en": "Shunda Parts",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "Connector"
-    ],
-    "region": {
-      "province": "Zhejiang",
-      "city": "Ningbo"
-    },
-    "address_en": "Shichun Industrial Area, Tangxi Town",
-    "contact_phone": "136****0521",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
@@ -9275,12 +9109,20 @@
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "Shajing JieDao HeYi SheQu NanHuanLu SanYang XinGongYeQu ErQi E5Dong SanCeng",
+    "address_en": "Shajing JieDao HeYi SheQu NanHuanLu SanYang XinGongYeQu ErQi E5 Duan SanCeng",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/39/3989",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连接器"
+    },
     "industry_en": {
       "code": "3989",
       "name_en": "Other Electronic Components",
@@ -9288,7 +9130,7 @@
       "name": "其他电子元件制造",
       "confidence": "medium"
     },
-    "source_url": "https://www.amap.com/place/B0FFL9DBOX"
+    "_bucket": "C/39/3989"
   },
   {
     "id": "CN-MFG-0003682",
@@ -11737,32 +11579,6 @@
     "_bucket": "C/39/3989"
   },
   {
-    "id": "CN-MFG-0003786",
-    "company_en": "Huizhou Senhao Technology Co., Ltd.",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "Connectors"
-    ],
-    "region": {
-      "province": "Guangdong",
-      "city": "Huizhou"
-    },
-    "address_en": "2nd Floor, Jishan Xiangyao Company (Factory B), Shengli Village, Chenjiang Street Office, Zhongkai High-tech Zone",
-    "contact_phone": "Pending verification",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0003787",
     "company_en": "Huizhou Chenyi Purification Engineering Co., Ltd.",
     "category": "电子元器件",
@@ -13284,32 +13100,6 @@
     "_bucket": "C/39/3989"
   },
   {
-    "id": "CN-MFG-0008032",
-    "company_en": "Suzhou Kunshan Shijunxin Microelectronics Co., Ltd.",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "PCB"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Suzhou"
-    },
-    "address_en": "92 Yipin Road, Shipai Town, Batang Town",
-    "contact_phone": "181****9233",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
     "id": "CN-MFG-0008033",
     "company_en": "Weisource Technology Co., Ltd.",
     "category": "电子元器件",
@@ -13323,32 +13113,6 @@
     },
     "address_en": "12th Building, 4th Floor, Nangang Third Industrial Park, Tangtou South, Shiyang, Bao'an, Shenzhen",
     "contact_phone": "181****5276",
-    "source": "public_directory",
-    "verified_at": "2026-08-13",
-    "note_en": "",
-    "industry_en": {
-      "code": "3989",
-      "name_en": "Other Electronic Components",
-      "level": "class",
-      "name": "其他电子元件制造",
-      "confidence": "low"
-    },
-    "_bucket": "C/39/3989"
-  },
-  {
-    "id": "CN-MFG-0008034",
-    "company_en": "Wuxi Special Pressure Gauge Co., Ltd. (Production Base)",
-    "category": "电子元器件",
-    "category_en": "Electronic Components",
-    "keywords_en": [
-      "Connector"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Wuxi"
-    },
-    "address_en": "No. 28-50 South of South Lake Middle Road, Southeast Gate, 2nd Floor, Xuelang Street",
-    "contact_phone": "0510-82730027; 180****9129",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
@@ -24684,6 +24448,111 @@
     "source_url": "https://www.amap.com/place/B0MUSRDLL9"
   },
   {
+    "id": "CN-MFG-0026087",
+    "company_en": "Deyi Precision Electronic Industry Co., Ltd. (Liudong Branch)",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "Electronic Components"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 1 Liuxin Road, Huangge Town",
+    "contact_phone": "020-84682476",
+    "source": "certification",
+    "verified_at": null,
+    "note_en": "",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "low"
+    },
+    "_bucket": "C/39/3989"
+  },
+  {
+    "id": "CN-MFG-0026216",
+    "company_en": "Guangdong Jiasihao Precision Electronic Technology Co., Ltd.",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "Electronic Components"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Foshan"
+    },
+    "address_en": "No. 29 Xinhui Road, Wusha Industrial Park, Dalang Street",
+    "contact_phone": "Pending verification",
+    "source": "certification",
+    "verified_at": null,
+    "note_en": "",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "low"
+    },
+    "_bucket": "C/39/3989"
+  },
+  {
+    "id": "CN-MFG-0027195",
+    "company_en": "Zhejiang Greely Intelligent Control Electronic Co., Ltd.",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "Electronic Components"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "No. 1 Zhenghua Road, Wuyuan Town",
+    "contact_phone": "0573-86129906",
+    "source": "certification",
+    "verified_at": null,
+    "note_en": "",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "low"
+    },
+    "_bucket": "C/39/3989"
+  },
+  {
     "id": "CN-MFG-0069483",
     "company_en": "Suzhou Yilida Plastic Electronic Products Co., Ltd.",
     "category": "注塑成型",
@@ -24710,7 +24579,14 @@
       "source": "name",
       "evidence": "电子制品"
     },
-    "source_url": "https://www.amap.com/place/B0FFF9CTL0"
+    "source_url": "https://www.amap.com/place/B0FFF9CTL0",
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0084946",
@@ -24739,7 +24615,14 @@
       "source": "name",
       "evidence": "电子制品"
     },
-    "source_url": "https://www.amap.com/place/B0KASHIJEG"
+    "source_url": "https://www.amap.com/place/B0KASHIJEG",
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0085424",
@@ -24769,7 +24652,14 @@
       "source": "name",
       "evidence": "电子制品"
     },
-    "source_url": "https://www.amap.com/place/B0LUMACNGW"
+    "source_url": "https://www.amap.com/place/B0LUMACNGW",
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0085522",
@@ -24798,6 +24688,120 @@
       "source": "name",
       "evidence": "电子制品"
     },
-    "source_url": "https://www.amap.com/place/B0JUF1T3XW"
+    "source_url": "https://www.amap.com/place/B0JUF1T3XW",
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0097587",
+    "company_en": "Guiyang Jinrun Steel Connector Technology Co., Ltd.",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "Connector"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 214 Wangcheng Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "电子元器件"
+    },
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "low"
+    },
+    "_bucket": "C/39/3989"
+  },
+  {
+    "id": "CN-MFG-0112519",
+    "company_en": "Xinjinhui Hardware and Electronic Accessories",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "Appliance Repair"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Shop No. 129, Juyu City Jiacheng, S8-129",
+    "contact_phone": "134****4221",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电子配件"
+    },
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/39/3989"
+  },
+  {
+    "id": "CN-MFG-0120022",
+    "company_en": "Yuanzhi Electronic Accessories and Appliance Repair",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "Appliance Repair",
+      "Washing Machine Repair",
+      "Refrigerator Repair"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "60 meters east of the intersection of Xinxi Road and Beihuan West Road",
+    "contact_phone": "159****4816",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电子配件"
+    },
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/39/3989"
   }
 ]

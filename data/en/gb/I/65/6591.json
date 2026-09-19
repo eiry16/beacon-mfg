@@ -16,7 +16,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "I/65/6591",
     "industry": {
       "code": "6591",
       "name": "呼叫中心",
@@ -26,6 +25,13 @@
       "source": "gb_token",
       "evidence": "呼叫中心"
     },
-    "source_url": "https://www.amap.com/place/B0FFFVZELU"
+    "industry_en": {
+      "code": "6591",
+      "name_en": "Call Center Services",
+      "level": "class",
+      "name": "呼叫中心",
+      "confidence": "high"
+    },
+    "_bucket": "I/65/6591"
   }
 ]

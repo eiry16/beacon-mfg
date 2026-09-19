@@ -1337,15 +1337,17 @@
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/29/2922",
-    "industry_en": {
+    "industry": {
       "code": "2922",
-      "name_en": "Plastic Sheet, Pipe & Profile",
-      "level": "class",
       "name": "塑料板、管、型材制造",
-      "confidence": "medium"
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
     },
-    "source_url": "https://www.amap.com/place/B0L6RD2NET"
+    "industry_en": null,
+    "_bucket": "C/29/2922"
   },
   {
     "id": "CN-MFG-0015020",
@@ -1618,7 +1620,14 @@
       "source": "gb_token",
       "evidence": "型材"
     },
-    "source_url": "https://www.amap.com/place/B0MUAL3PML"
+    "source_url": "https://www.amap.com/place/B0MUAL3PML",
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0074258",
@@ -1647,7 +1656,14 @@
       "source": "name",
       "evidence": "塑料型材"
     },
-    "source_url": "https://www.amap.com/place/B0FFG2KLH0"
+    "source_url": "https://www.amap.com/place/B0FFG2KLH0",
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0075604",
@@ -1676,7 +1692,14 @@
       "source": "gb_token",
       "evidence": "型材"
     },
-    "source_url": "https://www.amap.com/place/B01FE025KW"
+    "source_url": "https://www.amap.com/place/B01FE025KW",
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0079677",
@@ -1707,7 +1730,14 @@
       "source": "name",
       "evidence": "塑料管"
     },
-    "source_url": "https://www.amap.com/place/B0FFLDSEJJ"
+    "source_url": "https://www.amap.com/place/B0FFLDSEJJ",
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0082661",
@@ -1737,7 +1767,14 @@
       "source": "name",
       "evidence": "塑料管"
     },
-    "source_url": "https://www.amap.com/place/B0H2O5DS4Q"
+    "source_url": "https://www.amap.com/place/B0H2O5DS4Q",
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0088034",
@@ -1766,7 +1803,14 @@
       "source": "name",
       "evidence": "塑胶管"
     },
-    "source_url": "https://www.amap.com/place/B0FFHD219J"
+    "source_url": "https://www.amap.com/place/B0FFHD219J",
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0088373",
@@ -1795,7 +1839,14 @@
       "source": "name",
       "evidence": "塑胶管"
     },
-    "source_url": "https://www.amap.com/place/B0JU412XCH"
+    "source_url": "https://www.amap.com/place/B0JU412XCH",
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0088398",
@@ -1824,7 +1875,14 @@
       "source": "gb_token",
       "evidence": "型材"
     },
-    "source_url": "https://www.amap.com/place/B0FFGU86Z1"
+    "source_url": "https://www.amap.com/place/B0FFGU86Z1",
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0089549",
@@ -1853,6 +1911,1242 @@
       "source": "name",
       "evidence": "塑胶管"
     },
-    "source_url": "https://www.amap.com/place/B0KKMMJ8BQ"
+    "source_url": "https://www.amap.com/place/B0KKMMJ8BQ",
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0094216",
+    "company_en": "Xindong Plastic Pipe",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Products",
+      "Plastic Accessories",
+      "Plastic Raw Materials"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 181 Luanoying Road",
+    "contact_phone": "135****8876; 139****3872",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑胶管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0094217",
+    "company_en": "Guiyang Plastic Pipe Rope",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "140 meters west of the intersection of Xiansha Road and Yanhe Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑胶管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0094418",
+    "company_en": "Guiyang Global Plastic Profiles Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Accessories"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Qianchu Storage within the old Wanjiang Factory in Zazuo Town",
+    "contact_phone": "0851-82316955",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0100656",
+    "company_en": "Steel Template Plastic Steel Template Rental Sale Steel Wholesale",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Steel"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "Below Hand-in-Hand Tiles on Mengguan Avenue",
+    "contact_phone": "182****7711",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0101635",
+    "company_en": "Yongsheng Profiles Business Department",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Profiles"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 1 Friday Well Parallel Street",
+    "contact_phone": "138****9278; 182****2728",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0101746",
+    "company_en": "Shide Profiles (Guiyang South Ring Expressway Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Profiles"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "D District of Hepeng Aluminum Alloy Market in Shiban Town Jinfeng Hardware and Electrical Appliance City",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0105417",
+    "company_en": "20,000W Large Laser Cutting 3D Profiles Cutting Pipe",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Laser Cutting"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "20 meters west of the intersection of Xiangyang Road and Xiaoyun Road",
+    "contact_phone": "159****5110; 187****9276",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0106483",
+    "company_en": "Kunming Qiangbang Plastic Pipe Fitting Manufacturing Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Molds"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "360 meters on foot from Xiangfeng Street Subway Station D Exit, Shangkelao Village",
+    "contact_phone": "0871-64667025; 135****9350",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0106513",
+    "company_en": "Mingqiangbang Plastic Pipe Fitting Manufacturing Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "100 meters south of the intersection of Songyu Line and Tianchuang Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0106522",
+    "company_en": "Yunnan Baoshu Plastic Pipe Industry Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "150 meters northwest of the northeast gate of Yiliang Ruixin New Building Materials Manufacturing Co., Ltd.",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0107364",
+    "company_en": "Kunli Plastic Pipe Industry",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "480 meters east of the intersection of Changhong West Road and Guangchang Interchange Bridge",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑胶管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0107378",
+    "company_en": "Dianxu Plastic Pipe Industry Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "340 meters west of the intersection of Mingquan Village Interchange and G78 Shangkang Expressway",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑胶管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0107380",
+    "company_en": "Kunming Sanjiang Plastic Pipe Industry",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Tianshi Material Trading Market",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑胶管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0107438",
+    "company_en": "Yunling Plastic Pipe Industry Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "380 meters northeast of the intersection of Changhong West Road and Dongju Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑胶管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0107448",
+    "company_en": "Chengyou Plastic Pipe Industry",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Products"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Building 13, Floor 5-7, F Area, Zhonglin Building Materials City",
+    "contact_phone": "0871-63928299; 0871-63928699; 135****2101",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑胶管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0109301",
+    "company_en": "Aluminum Alloy Plastic Steel (Huanchéng West Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Alloy Die Casting"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 5, Attached No. 204, Huanchéng West Road",
+    "contact_phone": "159****7717",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0109344",
+    "company_en": "Sihai Aluminum Alloy Plastic Steel Window and Door (Headquarters)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum alloy die casting",
+      "Aluminum alloy"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "90 meters west of the northeast gate of Beicang Gardeners' Community",
+    "contact_phone": "138****3033",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0109357",
+    "company_en": "Chengxin Aluminum Alloy Plastic Steel Assembly Department",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum alloy die casting"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 81 Baiyun Road (200 meters walk from Shi Zha subway station B exit)",
+    "contact_phone": "136****5933",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0109363",
+    "company_en": "Hongyun Plastic Steel Aluminum Alloy Window and Door",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum alloy die casting"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 161 West Second Ring Road, Chunyuan Garden",
+    "contact_phone": "136****8899",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0114059",
+    "company_en": "Wangshi Stainless Steel Shearing, Bending, and Profile Sheet Operation Department (Zhongnan City Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Stainless steel material",
+      "Steel plate"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 6-8, Building J2, Zhongnan City, Jinfang Street",
+    "contact_phone": "130****9358",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0114628",
+    "company_en": "Jiahe Weiye Airflow Profile Material Operation Department",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum profile"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "300 meters from the back door of Qicai Yunnan",
+    "contact_phone": "153****1197",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0114650",
+    "company_en": "Xingfa Full Aluminum Outdoor Profile",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum profile"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 12, Building B9, B District, Zhongnan City, Jinfang Street Office",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0114682",
+    "company_en": "Jindun Plastic Steel Window and Door (Guanjing Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum profile"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 1 Guanjing Road",
+    "contact_phone": "0871-67159129; 137****4668",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0115371",
+    "company_en": "Chengxin Plastic Steel Window and Door (Rixin New Road Store)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum alloy"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 1317 Rixin New Road, Guanshang Street",
+    "contact_phone": "135****5875; 136****9683",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0116740",
+    "company_en": "Ruyi Plastic Pipe",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Modified Plastic"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "80 meters south of the intersection of Yaoling West Road and Yaoling South Road",
+    "contact_phone": "138****7489",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0119000",
+    "company_en": "Zhiquan Laser Cutting Profile Bending",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Laser Cutting"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Shop No. 3/56, B Area, Leyang Market, at the intersection of Xinyang and Xiu Road",
+    "contact_phone": "159****6671; 182****1899",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0120480",
+    "company_en": "Xiongshu Plastic Pipe Wholesaler",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Accessories"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 17, Team 2, Gucang Slope",
+    "contact_phone": "199****6631",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0120497",
+    "company_en": "Qiangli Plastic Pipe Wholesaler",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Accessories"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "50 meters south of Yuhuang Dadi",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0122524",
+    "company_en": "Minle Profile Manufacturer Direct Sales",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Steel"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Iron Shop, East Section, Business City Community, Binzhou Town (1st Floor of the Residents' Committee)",
+    "contact_phone": "138****7575; 186****7558",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0122694",
+    "company_en": "Hailuo Profile Nanning Office (Plastic Steel Aluminum Profile)",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Profile"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Building C, 9th Floor, Wanda Huafu",
+    "contact_phone": "138****3272",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0122811",
+    "company_en": "Fen'an Aluminum Profile · Hailuo Plastic Steel",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Profile"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 262, Jinlong Avenue, Litang Town",
+    "contact_phone": "139****5842",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0122949",
+    "company_en": "Nanning City, Guizhong Plastic Pipe Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Raw Materials"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "380 meters north of the intersection of Anji Interchange and G75 Lanhai Expressway",
+    "contact_phone": "137****7329",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0123165",
+    "company_en": "Xishui Jinrui Plastic Pipe Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "Donghuang Town, opposite Shell Engine Oil (No. 112 Kunlun Middle Road)",
+    "contact_phone": "139****8928",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0125239",
+    "company_en": "Shanghai Yinglian Power Plastic Pipe Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 37 Xinggong Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料管"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0126664",
+    "company_en": "Shanghai Cai Fu Plastic Profiles Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Plastic Molding"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 2, Lane 362 Mingye Road",
+    "contact_phone": "021-57796971",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑料型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
   }
 ]

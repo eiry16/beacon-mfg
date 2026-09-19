@@ -1364,19 +1364,27 @@
     "category": "科学研究和技术服务业",
     "category_en": "科学研究和技术服务业",
     "keywords_en": [
-      "Industrial Design",
-      "Product Design"
+      "industrial design",
+      "product design"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "No. 202, 4th Building, Letian Yun谷, 230 Sh南路, Huangge Town",
+    "address_en": "No. 230 Shinan Road, Huangge Town, Le Tian Yun Valley, Building 4, Room 202",
     "contact_phone": "188****2720",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "M/74/7491",
+    "industry": {
+      "code": "7491",
+      "name": "工业设计服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工业与专业设计及其他专业技术服务 > 工业设计服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "科学研究和技术服务业"
+    },
     "industry_en": {
       "code": "7491",
       "name_en": "Industrial Design Services",
@@ -1384,7 +1392,7 @@
       "name": "工业设计服务",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0G3HC6ICF"
+    "_bucket": "M/74/7491"
   },
   {
     "id": "CN-MFG-0035004",
@@ -3266,12 +3274,20 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 203, 1st Building, Honghui盟智园, 338 Xietu Road",
+    "address_en": "No. 338 Xietu Road, Honghui盟智园Building 1, Room 203",
     "contact_phone": "198****5255",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "M/74/7491",
+    "industry": {
+      "code": "7491",
+      "name": "工业设计服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工业与专业设计及其他专业技术服务 > 工业设计服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "科学研究和技术服务业"
+    },
     "industry_en": {
       "code": "7491",
       "name_en": "Industrial Design Services",
@@ -3279,7 +3295,7 @@
       "name": "工业设计服务",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B0L6UAWSOV"
+    "_bucket": "M/74/7491"
   },
   {
     "id": "CN-MFG-0035450",
@@ -4805,12 +4821,20 @@
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 36 Xiecun Road",
+    "address_en": "Xiecun Road No. 36",
     "contact_phone": "0512-66519771",
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "M/74/7491",
+    "industry": {
+      "code": "7491",
+      "name": "工业设计服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工业与专业设计及其他专业技术服务 > 工业设计服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "科学研究和技术服务业"
+    },
     "industry_en": {
       "code": "7491",
       "name_en": "Industrial Design Services",
@@ -4818,7 +4842,7 @@
       "name": "工业设计服务",
       "confidence": "low"
     },
-    "source_url": "https://www.amap.com/place/B02000JH8X"
+    "_bucket": "M/74/7491"
   },
   {
     "id": "CN-MFG-0035936",
@@ -5764,5 +5788,40 @@
       "confidence": "low"
     },
     "source_url": "https://www.amap.com/place/B0K195E7UK"
+  },
+  {
+    "id": "CN-MFG-0136011",
+    "company_en": "Youge Industrial Design",
+    "category": "科学研究和技术服务业",
+    "category_en": "科学研究和技术服务业",
+    "keywords_en": [
+      "mold"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Zhongshan"
+    },
+    "address_en": "No. 18, 1 Chengcheng Street, Xiaolan Town Jidong",
+    "contact_phone": "131****2621",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "7491",
+      "name": "工业设计服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工业与专业设计及其他专业技术服务 > 工业设计服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "工业设计"
+    },
+    "industry_en": {
+      "code": "7491",
+      "name_en": "Industrial Design Services",
+      "level": "class",
+      "name": "工业设计服务",
+      "confidence": "high"
+    },
+    "_bucket": "M/74/7491"
   }
 ]

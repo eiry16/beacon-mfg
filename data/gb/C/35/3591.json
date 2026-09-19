@@ -75,7 +75,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "青浦"
     },
     "address": "赵巷镇崧春路333号",
     "contact_phone": "待核实",
@@ -123,7 +124,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "江苏欧泰环境系统工程有限公司东南2门旁",
     "contact_phone": "待核实",
@@ -170,7 +172,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "园洲镇福园路299号",
     "contact_phone": "137****1675",
@@ -223,7 +226,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "临安"
     },
     "address": "太阳镇后坞口121号",
     "contact_phone": "190****9013",
@@ -270,7 +274,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "余姚"
     },
     "address": "恒兴路与园安路交叉口西北100米",
     "contact_phone": "待核实",
@@ -317,7 +322,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "宜兴"
     },
     "address": "徐舍镇文东路28号",
     "contact_phone": "待核实",
@@ -405,7 +411,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "园洲镇福园路106号",
     "contact_phone": "158****9475",
@@ -499,7 +506,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "无锡"
+      "city": "无锡",
+      "district": "惠山"
     },
     "address": "堰兴路18号六号楼三楼",
     "contact_phone": "待核实",
@@ -593,7 +601,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "屏山石材城7号门东北90米",
     "contact_phone": "136****9668",
@@ -642,7 +651,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "诸暨"
     },
     "address": "陶朱街道宝利路8号越烽大厦9楼",
     "contact_phone": "待核实",
@@ -692,7 +702,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "惠州"
+      "city": "惠州",
+      "district": "博罗"
     },
     "address": "上园路辅路与博园路交叉口南200米",
     "contact_phone": "待核实",
@@ -777,6 +788,55 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "水处理"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138907",
+    "company": "强盛白铁通风环保设备",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗"
+    },
+    "address": "平龙西路120号",
+    "contact_phone": "136****5356",
+    "lat": 22.696356,
+    "lng": 114.110436,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFMENBEP",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "平湖",
+      "adcode": "440307",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "3591",
+      "name": "环境保护专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 环境保护专用设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "环保设备"
     },
     "is_manufacturer": true
   }

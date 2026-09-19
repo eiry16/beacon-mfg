@@ -27,7 +27,14 @@
       "source": "name",
       "evidence": "书店"
     },
-    "source_url": "https://www.amap.com/place/B0KUXATQOV"
+    "source_url": "https://www.amap.com/place/B0KUXATQOV",
+    "industry_en": {
+      "code": "5243",
+      "name_en": null,
+      "level": "class",
+      "name": "图书、报刊零售",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0070616",
@@ -56,6 +63,48 @@
       "source": "name",
       "evidence": "书店"
     },
-    "source_url": "https://www.amap.com/place/B0LVX92397"
+    "source_url": "https://www.amap.com/place/B0LVX92397",
+    "industry_en": {
+      "code": "5243",
+      "name_en": null,
+      "level": "class",
+      "name": "图书、报刊零售",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0130548",
+    "company_en": "Yeren Xiansheng Xianzuo Bingqiling (Ningbo Tianyi Square Yueze Bookstore Store)",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "Dessert"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 38 Rixin Street, 1st Floor, Yueze Bookstore, Shop No. 1001-3, Tianyi Square",
+    "contact_phone": "136****6330",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5243",
+      "name": "图书、报刊零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 文化、体育用品及器材专门零售 > 图书、报刊零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "书店"
+    },
+    "industry_en": {
+      "code": "5243",
+      "name_en": null,
+      "level": "class",
+      "name": "图书、报刊零售",
+      "confidence": "medium"
+    },
+    "_bucket": "F/52/5243"
   }
 ]
