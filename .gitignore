@@ -296,3 +296,5 @@ data/_dedup_removed_ids.json
 cron_manager.py
 cron_manager.html
 start_cron_manager.bat
+# 遗留备份目录（旧 ID 制式能力卡备份；postfetch 的提交步骤本就明确不碰它）
+.backup_legacy/
