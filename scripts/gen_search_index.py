@@ -73,7 +73,7 @@ def tokenize(text: str) -> list:
 
 def hay(rec: dict) -> str:
     """与 mcp/server.py 的 _hay 对齐：检索口径必须一致，否则索引会漏召回。"""
-    return " ".join(str(rec.get(k, "")) for k in ("co", "city", "gb")) + " " + \
+    return " ".join(str(rec.get(k, "")) for k in ("co", "city", "dist", "gb")) + " " + \
            " ".join(rec.get("proc", []) or []) + " " + \
            " ".join(rec.get("mat", []) or []) + " " + \
            " ".join(rec.get("cert", []) or [])
@@ -125,6 +125,12 @@ def main() -> int:
         city = str(rec.get("city", "") or "")
         if city:
             city_postings[city][rel] += 1
+        # 2026-09-19：区县也进城市表，city= 与 dist= 是同一个 postings 表。
+        # 昆山的记录 city 是「苏州」、dist 是「昆山」，只有把区县也写进来，
+        # MCP 传 city="昆山" 才能定位到对应分片（否则永远 0 结果）。
+        dist = str(rec.get("dist", "") or "")
+        if dist:
+            city_postings[dist][rel] += 1
         # 倒排的 key 用「分片路径」而非国标码：部分记录 gb 为 null（未归类），
         # 用国标码做 key 会把它们整个丢掉，导致走索引比全量扫描少召回。
         for term in tokenize(hay(rec)):

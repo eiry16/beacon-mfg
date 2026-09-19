@@ -606,6 +606,46 @@ def save_bucket(bucket: str, records: list[dict[str, Any]]) -> None:
     _write_bucket(bucket, records)
 
 
+# ─── 实体判重用：归一化键 ───────────────────────────────────────────────────
+# 2026-09-19 数据库质量检查（QA_数据库质量检查.md）发现：
+#   旧判重键是「全局精确公司名」，它有三个盲点 ——
+#     ① 不含 poi_id：高德主键明明已入库却没用上，换个分店后缀就漏网
+#     ② 不含城市：宁波的「XX机械」和嘉兴的「XX机械」会被当成一家，第 2 家被静默丢弃
+#     ③ 精确匹配：「张三五金」与「张三五金店」判为两家
+#   所以改成三级优先级，从强到弱逐级回退。
+#
+#   注意：名称归一化后**必须再叠加地址**才够保守。否则星巴克/瑞幸这类连锁
+#   （上海星巴克 611 条门店）会被聚成一条 —— 它们是地址不同的合法不同实体。
+_PUNCT = re.compile(
+    r"[·•\-—_,，。.、/\\|：:；;'\"“”‘’【】\[\]《》<>!！?？*#~+]+")
+_PAREN = re.compile(r"[（(][^）)]*[）)]")
+_SUFFIX = re.compile(r"(分公司|公司|厂|店|中心|部|行|馆|社|城|苑|阁|坊|铺)")
+
+
+def norm_name(s: Any) -> str:
+    """公司名归一化：去括号（分店名）、标点、空格、公司后缀。
+
+    只用于「同一实体」判定，**不可单独作为去重键**（会误并连锁门店）。
+    """
+    if not s:
+        return ""
+    s = _PAREN.sub("", str(s))
+    s = re.sub(r"[\s\u3000]", "", s)
+    s = _PUNCT.sub("", s)
+    s = (s.replace("有限责任公司", "").replace("有限公司", "")
+          .replace("股份", ""))
+    s = _SUFFIX.sub("", s)
+    return s.strip()
+
+
+def norm_addr(s: Any) -> str:
+    """地址归一化：去空格与标点。"""
+    if not s:
+        return ""
+    s = re.sub(r"[\s\u3000]", "", str(s))
+    return _PUNCT.sub("", s).strip()
+
+
 # ─── 增量入库用：全库扫描缓存 ───────────────────────────────────────────────
 # 抓取是「每次几十条、跑几百个任务」，如果每个任务都全量扫一遍 2 万条，
 # 光 IO 就把时间吃光了。这里扫一次缓存住，进程内复用。
@@ -613,32 +653,120 @@ _CACHE: dict[str, Any] = {"names": None, "max_id": 0}
 
 
 def scan_cache(rebuild: bool = False) -> dict[str, Any]:
-    """一次全库扫描，缓存 公司名 → (桶, id) 与当前最大 ID。
+    """一次全库扫描，缓存多张判重索引与当前最大 ID。
 
     跨桶去重必须靠它：国标归档后同一家公司在多个小类文件里各存一份
     是很容易发生的（比如既标"机械加工"又标"模具"），只在本桶内去重拦不住。
+
+    返回三张判重表（值均为 `(桶, id)`）+ 最大序号：
+
+    ==========  ==================================  ======================
+    键          含义                                 说明
+    ==========  ==================================  ======================
+    poi_ids     amap.poi_id                          高德主键，最强证据
+    keys        (城市, 归一化名, 归一化地址)          处理 poi_id 缺失/重复建号
+    names       (城市, 公司原名)                      旧口径，收窄到同城
+    ==========  ==================================  ======================
+
+    兼容性：`names` 旧代码按「原名 → (桶, id)」使用，这里改成 tuple 键后
+    老调用方会全部 miss（等价于不去重）。全仓只有 fetch_gaode_poi.save_suppliers
+    用它，已同步改造，勿再按字符串键取值。
     """
     if _CACHE["names"] is not None and not rebuild:
         return _CACHE
-    names: dict[str, tuple[str, str]] = {}
+    names: dict[tuple[str, str], tuple[str, str]] = {}
+    keys: dict[tuple[str, str, str], tuple[str, str]] = {}
+    poi_ids: dict[str, tuple[str, str]] = {}
     max_id = 0
     for bucket, _ in iter_buckets():
         for r in load_bucket(bucket):
-            n = r.get("company")
             sid = r.get("id") or ""
-            if n and n not in names:
-                names[n] = (bucket, sid)
+            city = (r.get("region") or {}).get("city") or ""
+            hit = (bucket, sid)
+            poi_id = (r.get("amap") or {}).get("poi_id") or ""
+            if poi_id and poi_id not in poi_ids:
+                poi_ids[poi_id] = hit
+            n = norm_name(r.get("company"))
+            a = norm_addr(r.get("address"))
+            if n and a:
+                keys.setdefault((city, n, a), hit)
+            raw = r.get("company")
+            if raw:
+                names.setdefault((city, raw), hit)
             m = re.match(r"CN-MFG-(\d+)", sid)
             if m:
                 max_id = max(max_id, int(m.group(1)))
     _CACHE["names"] = names
+    _CACHE["keys"] = keys
+    _CACHE["poi_ids"] = poi_ids
     _CACHE["max_id"] = max_id
     return _CACHE
+
+
+def find_duplicate(poi_or_record: dict[str, Any], cache: dict[str, Any] | None = None
+                   ) -> tuple[str, str] | None:
+    """判断一个 POI（或已成型记录）是否已在库中，返回 `(桶, id)` 或 None。
+
+    三级回退，命中即止：
+      1. amap.poi_id            —— 高德主键，同一 POI 必然同一实体
+      2. (城市, 归一化名, 地址)  —— 高德对同一场所重复建过 POI 号时兜底
+      3. (城市, 公司原名)        —— 旧口径，收窄到同城避免跨城误吞
+
+    入参可以是高德原始 POI（有 pname/cityname/address/location），
+    也可以是已入库形态的记录（有 region.city/address/amap.poi_id）。
+    """
+    cache = cache or scan_cache()
+    if "region" in poi_or_record:            # 已成型记录
+        city = (poi_or_record.get("region") or {}).get("city") or ""
+        company = poi_or_record.get("company")
+        address = poi_or_record.get("address")
+        poi_id = (poi_or_record.get("amap") or {}).get("poi_id") or ""
+    else:                                     # 高德原始 POI
+        city = str(poi_or_record.get("cityname") or "").replace("市", "")
+        company = poi_or_record.get("name")
+        address = poi_or_record.get("address") or (
+            str(poi_or_record.get("pname") or "") + str(poi_or_record.get("adname") or ""))
+        poi_id = str(poi_or_record.get("id") or "")
+    if poi_id:
+        hit = cache["poi_ids"].get(poi_id)
+        if hit:
+            return hit
+    n, a = norm_name(company), norm_addr(address)
+    if n and a:
+        hit = cache["keys"].get((city, n, a))
+        if hit:
+            return hit
+    if company:
+        hit = cache["names"].get((city, company))
+        if hit:
+            return hit
+    return None
+
+
+def register_target(cache: dict[str, Any], rec: dict[str, Any], bucket: str) -> None:
+    """新记录入库后把它登记进判重索引。
+
+    必须**在分配 id 的同时**调用：历史上这里晚了一整个循环（要等第二遍
+    to_supplier 才写），导致同一批 pois 里的重名全部判为「新企业」各拿一个
+    编号 —— 已确认的 856 条重复记录就是这么来的。
+    """
+    hit = (bucket, rec.get("id") or "")
+    city = (rec.get("region") or {}).get("city") or ""
+    poi_id = (rec.get("amap") or {}).get("poi_id") or ""
+    if poi_id:
+        cache["poi_ids"].setdefault(poi_id, hit)
+    n, a = norm_name(rec.get("company")), norm_addr(rec.get("address"))
+    if n and a:
+        cache["keys"].setdefault((city, n, a), hit)
+    if rec.get("company"):
+        cache["names"].setdefault((city, rec["company"]), hit)
 
 
 def invalidate_cache() -> None:
     """写过数据后调用，下次 scan_cache 重新扫描。"""
     _CACHE["names"] = None
+    _CACHE["keys"] = None
+    _CACHE["poi_ids"] = None
     _CACHE["max_id"] = 0
     _CACHE["ids"] = None
 

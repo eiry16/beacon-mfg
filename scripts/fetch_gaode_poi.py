@@ -187,7 +187,24 @@ def fetch(keyword, city, limit=AMAP_DEEP_CAP, offset=AMAP_OFFSET_MAX, delay=0.5,
     # pages 取实际发过的页数（=requests）。循环正常结束时 page 已经多加了一次，
     # 直接报它会出现「翻了 9 页但只发了 8 次请求」这种自相矛盾的元数据。
     LAST_FETCH = {"pages": requests, "exhausted": exhausted, "requests": requests}
-    return pois_all
+
+    # 2026-09-19：翻页去重。高德在同一组参数翻页时会重复召回已经给过的 POI
+    # （排序抖动/相邻页边界），实测同一批里同一 poi_id 出现两次并不罕见。
+    # 不去重的话它们会一路走到入库，而旧的 save_suppliers 在分配 id 前不更新
+    # 判重索引 → 同一个 POI 拿到两个编号（已确认造成 856 条重复记录）。
+    seen = set()
+    uniq = []
+    for p in pois_all:
+        key = p.get("id") or "name:%s|loc:%s" % (p.get("name") or "", p.get("location") or "")
+        if key in seen:
+            continue
+        seen.add(key)
+        uniq.append(p)
+    dropped = len(pois_all) - len(uniq)
+    if dropped:
+        print(f"  翻页去重：去掉 {dropped} 条重复召回（{len(pois_all)} → {len(uniq)}）")
+    LAST_FETCH["deduped"] = dropped
+    return uniq
 
 
 def normalize_region(province, city):
@@ -295,6 +312,12 @@ def classify_at_ingest(rec, industry_code=None):
 def to_supplier(poi, category, keyword, seq, industry_code=None):
     """POI → 供应商记录（按 SPEC §2.4 写 status，is_template 仅作兼容）"""
     province, city = normalize_region(poi.get("pname", ""), poi.get("cityname", ""))
+    # 2026-09-19：区县/县级市单独存一份。高德对县级市返回的 cityname 是**地级市**（
+    # 昆山的 POI 写的是「苏州」），adname 才是「昆山市」。只记 city 的话，JOBS 里的
+    # 昆山/海盐/莫干山 这些目标城市抓得到数据、却永远搜不到（实测 2094 条昆山记录
+    # 全挂在 city=苏州 下）。district 与 scripts/backfill_district.py 同口径：
+    # 去掉 市/县/区 后缀。
+    _prov, district = normalize_region("", poi.get("adname", ""))
     phone = clean_phone(poi.get("tel"))  # 高德公开名录电话，完整入库
     status = resolve_status(poi.get("name", ""), phone)
     today = date.today().isoformat()
@@ -303,7 +326,8 @@ def to_supplier(poi, category, keyword, seq, industry_code=None):
         "company": poi.get("name", ""),
         "category": category,
         "keywords": [keyword],
-        "region": {"province": province, "city": city},
+        "region": ({"province": province, "city": city, "district": district}
+                   if district else {"province": province, "city": city}),
         "address": poi.get("address") or (poi.get("pname", "") + poi.get("adname", "")),
         "contact_phone": phone,
         "lat": float(poi.get("location", "").split(",")[1]) if poi.get("location") else None,
@@ -326,6 +350,38 @@ def to_supplier(poi, category, keyword, seq, industry_code=None):
     return rec
 
 
+def _merge_into(rec: dict, p: dict, keyword: str) -> dict:
+    """同一个实体的新一次抓取 → 合并进已有记录（原地修改并返回）。
+
+    合并是**只增不减**的：关键词累加，缺失字段补全，电话单向升级。
+    已有内容是更强的证据，绝不能被后抓到的弱证据改写。
+    """
+    kws = rec.get("keywords") or []
+    if keyword and keyword not in kws:
+        kws.append(keyword)
+        rec["keywords"] = kws
+    # 老数据是 extensions=base 抓的，没有 type/typecode，趁这次补上
+    amap = build_amap(p, keyword)
+    if not (rec.get("amap") or {}).get("type") and amap.get("type"):
+        rec["amap"] = amap
+        # 顺带把高德主键补上（老记录 poi_id 为空，无法参与判重）
+        if not (rec.get("amap") or {}).get("poi_id") and amap.get("poi_id"):
+            rec["amap"]["poi_id"] = amap["poi_id"]
+    # 这轮带回电话 → 单向升级「待核实 → verified」。只填空不覆盖。
+    if not has_real_number(rec.get("contact_phone")):
+        new_tel = clean_phone(p.get("tel"))
+        if has_real_number(new_tel):
+            rec["contact_phone"] = new_tel
+            rec["status"] = resolve_status(rec.get("company", ""), new_tel)
+            rec["is_template"] = rec["status"] != "verified"
+    # 存量记录缺 status（2026-09-08 的迁移只覆盖到一部分），趁这次补齐
+    if "status" not in rec:
+        rec["status"] = resolve_status(rec.get("company", ""),
+                                       rec.get("contact_phone"))
+        rec["is_template"] = rec["status"] != "verified"
+    return rec
+
+
 def save_suppliers(pois, category, keyword, industry_code=None):
     """把 POI 列表增量写入国标归档 data/gb/，返回新增条数。
 
@@ -336,12 +392,19 @@ def save_suppliers(pois, category, keyword, industry_code=None):
     被两个关键词命中就会落到两个小类文件里各存一份（原按品类文件去重拦不住，
     实测全库 20265 条里重名就有 725 条）。所以这里用 gb_store 的全库名字索引。
 
+    2026-09-19 重写判重（见 QA_数据库质量检查.md）：
+      · 判重键升级为三级：poi_id → (城市, 归一化名+地址) → (城市, 原名)。
+        旧的「全局原名」键把跨城市同名不同实体误判为重复静默丢弃，也漏掉了
+        带分店后缀的别名；
+      · 最关键的执行顺序修正：**判重索引必须与分配 id 同步写入**。
+        旧代码第一遍只查不写，要等第二遍 to_supplier 才登记，于是同一批 pois
+        里的重复条目全部通过判重、各领一个编号 —— 856 条真重复主要来自这里。
+
     industry_code：本次任务的国标小类目标代码，入库时用来打行业标签。
     """
     import gb_store
 
     cache = gb_store.scan_cache()
-    names = cache["names"]
     dirty: dict[str, list] = {}
 
     def rows_of(bucket):
@@ -349,75 +412,60 @@ def save_suppliers(pois, category, keyword, industry_code=None):
             dirty[bucket] = gb_store.load_bucket(bucket)
         return dirty[bucket]
 
-    new_pois = []
+    def locate_row(hit):
+        """判重命中 → 取回磁盘上的那条记录本体。索引与磁盘不一致时返回 None。"""
+        bucket, sid = hit
+        rows = rows_of(bucket)
+        for idx, r in enumerate(rows):
+            if r.get("id") == sid:
+                return rows, idx, r
+        return rows, None, None
+
+    added_by_bucket: dict[str, int] = {}
+    added_ids: list[int] = []          # 供日志打印 ID 区间
+    seq = cache["max_id"]              # 边走边发号：每新增一条就把 max_id 推高一位
     updated = 0
+
     for p in pois:
         name = p.get("name")
         if not name:
             continue
-        hit = names.get(name)
+        hit = gb_store.find_duplicate(p, cache)
         if hit:
-            bucket, sid = hit
-            rec = next((r for r in rows_of(bucket) if r.get("id") == sid), None)
+            rows, idx, rec = locate_row(hit)
             if rec is None:
-                # 索引与磁盘不一致（多半是别处改过盘），当新记录处理更稳妥
-                new_pois.append(p)
+                pass          # 索引与磁盘不一致（别处改过盘），落到下面的新增分支
+            else:
+                rows[idx] = _merge_into(rec, p, keyword)
+                updated += 1
                 continue
-            kws = rec.get("keywords") or []
-            if keyword not in kws:
-                kws.append(keyword)
-                rec["keywords"] = kws
-                updated += 1
-            # 老数据是 extensions=base 抓的，没有 type/typecode，趁这次补上
-            amap = build_amap(p, keyword)
-            if not (rec.get("amap") or {}).get("type") and amap.get("type"):
-                rec["amap"] = amap
-                updated += 1
-            # 同一家公司（按名字去重命中）这次带回电话 → 单向升级「待核实 → verified」。
-            # 只填空不覆盖：已有号码是更强的证据，不能被后抓到的弱证据改写。
-            if not has_real_number(rec.get("contact_phone")):
-                new_tel = clean_phone(p.get("tel"))
-                if has_real_number(new_tel):
-                    rec["contact_phone"] = new_tel
-                    rec["status"] = resolve_status(rec.get("company", ""), new_tel)
-                    rec["is_template"] = rec["status"] != "verified"
-                    updated += 1
-            # 存量记录缺 status（2026-09-08 的迁移只覆盖到一部分），趁这次补齐
-            if "status" not in rec:
-                rec["status"] = resolve_status(rec.get("company", ""),
-                                               rec.get("contact_phone"))
-                rec["is_template"] = rec["status"] != "verified"
-                updated += 1
-            continue
-        new_pois.append(p)
+        # ---- 新记录：立刻成条、立刻登记、立刻发号（顺序不能颠倒）----
+        seq += 1
+        rec = to_supplier(p, category, keyword, seq, industry_code)
+        bucket = gb_store.bucket_of(rec)
+        rows_of(bucket).append(rec)
+        added_by_bucket[bucket] = added_by_bucket.get(bucket, 0) + 1
+        added_ids.append(seq)
+        # 登记必须与发号同步：同批次里排在后面的重复条目，下一轮 find 就得被拦住。
+        # 旧代码把登记推迟到第二遍循环，于是整批重复项全部漏判。
+        gb_store.register_target(cache, rec, bucket)
+        cache["max_id"] = seq
 
-    if not new_pois:
+    if added_ids or updated:
+        for bucket, rows in dirty.items():
+            gb_store.save_bucket(bucket, rows)
+
+    if not added_ids:
         if updated:
-            for bucket, rows in dirty.items():
-                gb_store.save_bucket(bucket, rows)
             print(f"  无新增企业，但更新了 {updated} 处（累加关键词/补全扩展字段）")
         return 0
 
-    seq_start = cache["max_id"] + 1
-    added_by_bucket: dict[str, int] = {}
-    for i, p in enumerate(new_pois):
-        rec = to_supplier(p, category, keyword, seq_start + i, industry_code)
-        bucket = gb_store.bucket_of(rec)
-        rows_of(bucket).append(rec)
-        names[p["name"]] = (bucket, rec["id"])
-        added_by_bucket[bucket] = added_by_bucket.get(bucket, 0) + 1
-
-    for bucket, rows in dirty.items():
-        gb_store.save_bucket(bucket, rows)
-
-    # 增量维护缓存，避免下一个任务又全量扫一遍 2 万条
-    cache["max_id"] = seq_start + len(new_pois) - 1
-
     where = "、".join("%s+%d" % (b, n) for b, n in
                       sorted(added_by_bucket.items(), key=lambda x: -x[1])[:3])
-    print(f"  新增 {len(new_pois)} 条（ID {seq_start}~{seq_start + len(new_pois) - 1}）"
+    print(f"  新增 {len(added_ids)} 条"
+          f"（ID {min(added_ids):07d}~{max(added_ids):07d}）"
           f"{f'，更新 {updated} 处' if updated else ''} → {where}")
-    return len(new_pois)
+    return len(added_ids)
 
 
 def main():
