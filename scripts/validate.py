@@ -42,6 +42,12 @@ GB_DIR = ROOT / "data" / "gb"                    # 国标四级归档，2026-09-
 GB_INDEX = ROOT / "data" / "gb-index.json"
 EN_DIR = ROOT / "data" / "en"
 EN_GB_DIR = EN_DIR / "gb"                        # 英文镜像的国标镜像（与 data/gb 一一对应）
+
+# 2026-09-19 新增：英文镜像的中文残留检测。
+# 背景：translate_batch 在模型少返回条数时按尾部补 None，加上 prompt 原先只对
+# address 声明「不得留中文」，实测 128,689 条英文记录里有 1,623 条（1.26%）
+# company_en / address_en 仍夹着中文字符 —— 而 CI 一直没查这一项，属无声缺陷。
+CJK_RE = re.compile(r"[\u4e00-\u9fff]")
 README = ROOT / "README.md"
 
 # id 形状：CN-{门类前缀}-{4~7 位序号}。
@@ -373,11 +379,13 @@ def check_strict_record(item, path):
 
 
 def check_en_mirrors(valid_categories):
-    """英文镜像：存在性 + 内部 id 唯一 + company_en 非空 + 归档落位与中文一致。
+    """英文镜像：存在性 + **族级** id 唯一 + company_en 非空 + 归档落位与中文一致
+    + 英文字段的中文残留提示。
 
     英文镜像现在也按国标归档（data/en/gb/），因此除了原有检查，还要确认
     每条英文记录的落位和中文主库一致 —— 否则客户按某个小类检索时，
     中英文会给出不同的结果集。
+    2026-09-19 起重复 id 按族（主文件 + -pN 分片）查，跨分片重复不再漏检。
     """
     ok = True
     total = 0
@@ -388,6 +396,12 @@ def check_en_mirrors(valid_categories):
             "（跑 scripts/migrate_en_to_gb.py --apply）")
         return False
 
+    # 2026-09-19 修正：重复 id 必须按**族**（主文件 + 全部 -pN 分片）查，不能只在
+    # 单个文件内查 seen。原实现是文件级，于是「主文件与 -p2 各持一批相同 id」这种
+    # 最典型的并发写事故完全看不见 —— 事故当天实测的 3,958 条跨分片重复就是这样
+    # 躲过 CI 的（每个分片各自内部都不重复）。
+    fam_seen = {}     # 逻辑桶 -> {id: 首次出现的文件名}
+    cjk_hits = []     # (rel, id) 英文字段仍含中文字符
     for path in sorted(EN_GB_DIR.rglob("*.json")):
         rel = path.relative_to(EN_GB_DIR).as_posix()[:-5]
         # 逻辑桶名去掉分片后缀：C/34/3484-p2 -> C/34/3484
@@ -398,19 +412,27 @@ def check_en_mirrors(valid_categories):
         if items is None:
             ok = False
             continue
-        seen = set()
+        holder = fam_seen.setdefault(rel_bucket, {})
         for it in items:
             iid = it.get("id")
             if not iid:
                 err(f"data/en/gb/{rel}.json: 缺少 id 字段")
                 ok = False
                 continue
-            if iid in seen:
-                err(f"data/en/gb/{rel}.json: 英文镜像内部重复 id: {iid}")
+            fname = f"{rel}.json"
+            prev = holder.get(iid)
+            if prev is not None:
+                where = "同一文件内" if prev == fname else f"同族的 {prev} 中"
+                err(f"data/en/gb/{rel}.json: 英文镜像重复 id: {iid}"
+                    f"（{where}已出现）")
                 ok = False
-            seen.add(iid)
+            else:
+                holder[iid] = fname
             if not it.get("company_en"):
                 warn(f"data/en/gb/{rel}.json ({iid}): company_en 为空")
+            if CJK_RE.search(str(it.get("company_en") or "")) \
+                    or CJK_RE.search(str(it.get("address_en") or "")):
+                cjk_hits.append((rel, iid))
             if it.get("category") not in valid_categories:
                 err(f"data/en/gb/{rel}.json ({iid}): 未知 category '{it.get('category')}'")
                 ok = False
@@ -420,7 +442,14 @@ def check_en_mirrors(valid_categories):
                 ok = False
         total += len(items)
     if ok and total:
-        print(f"英文镜像校验：{total} 条 / {len(list(EN_GB_DIR.rglob('*.json')))} 个归档桶")
+        print(f"英文镜像校验：{total} 条 / {len(fam_seen)} 个逻辑桶"
+              f"（含分片共 {len(list(EN_GB_DIR.rglob('*.json')))} 个文件）")
+    if cjk_hits:
+        # 只汇总一条 warn，不逐条刷屏。计入 warnings 但**不置 ok=False**：
+        # 这是模型输出的质量问题（品牌名夹中文、个别地名用字），不该挡发布闸。
+        pct = 100.0 * len(cjk_hits) / total if total else 0
+        warn(f"英文镜像有 {len(cjk_hits)} 条记录仍含中文字符（{pct:.2f}%），"
+             f"例：{cjk_hits[:3]} —— 跑 scripts/en_backfill.py --retranslate 重翻")
     return ok
 
 

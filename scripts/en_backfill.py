@@ -55,6 +55,13 @@ URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
 MODEL = "glm-4-flash"
 BATCH = 8
 
+# 2026-09-19 二次改造：桶内批次并发度（--bucket-workers / EN_BUCKET_WORKERS）。
+# 只按「桶」并发时，尾巴会退化成「最慢那个桶单线程爬」——实测剩 4 个大桶时
+# 16 个 worker 里 12 个空转，H/62/6210（剩 4000+ 条）要 4 小时才能爬完。
+# 桶内也并发后，真正吃满 EN_RPM 令牌桶（20 请求/分 ≈ 160 条/分）。
+# 上限由 EN_MAX_CONCURRENT（默认 20）与 EN_RPM 两个全局闸门兜着，调大不会打爆 API。
+BUCKET_WORKERS = int(os.environ.get("EN_BUCKET_WORKERS", "8"))
+
 CATEGORY_EN = {
     "精密机械加工": "Precision Machining", "钣金冲压": "Sheet Metal & Stamping",
     "注塑成型": "Injection Molding", "压铸": "Die Casting",
@@ -96,10 +103,16 @@ SYSTEM_PROMPT = (
     "You are a professional translator for a B2B manufacturing supplier directory "
     "(BeaconMFG). Translate Chinese supplier data into concise, professional English. "
     "Rules: company = company name (transliterate Chinese name into pinyin-style "
-    "English if no official English name exists); keywords = product/service terms "
-    "(short list); address = postal address, which MUST be fully in English — "
-    "transliterate every Chinese road / town / district name into pinyin so that no "
-    "Chinese characters remain (e.g. 祥符路799号 -> No. 799 Xiangfu Road). "
+    "English if no official English name exists; if a well-known Latin brand name "
+    "exists, use it, e.g. 霸王茶姬 -> CHAGEE, 海底捞 -> Haidilao, 万达 -> Wanda); "
+    "keywords = product/service terms (short list); address = postal address, "
+    "transliterate every Chinese road / town / district name into pinyin and render "
+    "unit words in English (号 -> No., 层 -> Floor, 栋/幢 -> Building, 室 -> Room, "
+    "附 -> Annex, 步行 -> walk), e.g. 祥符路799号 -> No. 799 Xiangfu Road. "
+    # 2026-09-19 补：原先只对 address 声明「不得留中文」，company 没这条约束，
+    # 于是模型把中文店名照抄进 company_en（实测 company_en 残留 896 条）。
+    "CRITICAL: both company and address MUST contain ZERO Chinese characters. "
+    "Never copy Chinese characters from the input; transliterate them instead. "
     "Return ONLY a JSON array matching "
     "the input order, each item: {\"company\":\"\",\"keywords\":[\"\"],\"address\":\"\"}. "
     "No extra text, no markdown."
@@ -175,6 +188,40 @@ def is_untranslated(rec):
                 or CJK_RE.search(str(rec.get("address_en", "") or "")))
 
 
+# ===== 2026-09-19 残留重试：把「英文里夹中文」当场修掉，而不是留给下一轮 =====
+# 背景：GLM-4-Flash 会把中文店名/地名照抄进英文字段（实测残留 1,623 条 = 1.26%）。
+# 落盘后要等下一轮 --retranslate 才会再碰它，而实测重翻收敛率只有 ~22%
+# （拉回 2,095 条只修好 472 条）—— 等于这些记录会长期烂在库里。
+# 但不能无脑重翻：`CHAGEE霸王茶姬` 这种「英文品牌名 + 一并保留的中文原名」对检索
+# 反而有用，反复重翻只是白烧配额。所以只把「中文占比 >= 阈值」当缺陷去重试。
+RETRY_CJK_RATIO = float(os.environ.get("EN_RETRY_CJK_RATIO", "0.2"))
+RETRY_ROUNDS = int(os.environ.get("EN_RETRY_ROUNDS", "2"))
+
+
+def cjk_len(rec):
+    """一条记录 company_en + address_en 里的中文字符总数（用于「只留更好的」比较）。"""
+    if not isinstance(rec, dict):
+        return 0
+    return (len(CJK_RE.findall(str(rec.get("company_en") or "")))
+            + len(CJK_RE.findall(str(rec.get("address_en") or ""))))
+
+
+def cjk_ratio(s):
+    s = re.sub(r"\s", "", str(s or ""))
+    return len(CJK_RE.findall(s)) / len(s) if s else 0.0
+
+
+def cjk_heavy(rec):
+    """真缺陷判定：company_en 或 address_en 的中文占比达到阈值。
+
+    阈值以下（品牌名里夹一两个字、地名用字）视为可接受，不参与重试。
+    """
+    if not isinstance(rec, dict):
+        return True
+    return max(cjk_ratio(rec.get("company_en")),
+               cjk_ratio(rec.get("address_en"))) >= RETRY_CJK_RATIO
+
+
 def call_glm(api_key, chunk):
     _pace(EN_RPM)
     with _call_sem:
@@ -203,12 +250,22 @@ def translate_batch(api_key, chunk, depth=0):
 
     整批失败（实测多为 JSONDecodeError —— 模型把其中某一条吐坏了）时对半拆开重试：
     失败面从 8 条缩到 4 条，最坏拆到单条，避免一条坏数据拖累整批 8 条都退化成中文兜底。
-    返回条数可能少于入参（部分成功），调用方会补 None，安全。
+    返回的列表**要么与入参等长，要么是 None**（2026-09-19 起不再返回短列表：
+    短列表会被调用方按尾部补 None，等于碰运气对齐，见下面的条数校验）。
     """
     last_err = None
     for attempt in range(4):
         try:
-            return call_glm(api_key, chunk)
+            out = call_glm(api_key, chunk)
+            # 2026-09-19 修复「条数错位」：模型偶尔少返回若干条，旧实现把这个短列表
+            # 直接交回调用方、由调用方在**尾部补 None** —— 等于假定「前 N 条对齐」，
+            # 错位那几条会整条退化成中文兜底（实测整条未翻 123 条的主因）。
+            # 现在条数不符即视为本批失败，走下面的重试 / 拆批逻辑：拆到单条时
+            # 「1 进 1 出」天然对齐，不用再猜哪条是哪个。
+            if not isinstance(out, list) or len(out) != len(chunk):
+                got = len(out) if isinstance(out, list) else type(out).__name__
+                raise ValueError("返回条数不符：期望 %d，实得 %s" % (len(chunk), got))
+            return out
         except Exception as e:
             last_err = e
             # 429 -> 按服务端给的 Retry-After 退避；没给就拉长指数退避。
@@ -331,15 +388,83 @@ def _en_shard_files(en_path: Path) -> list[Path]:
     return out
 
 
-def process_bucket(api_key, zh_path, limit=None, retranslate=False):
+def _family_files(path: Path) -> list[Path]:
+    """一个「族」的全部文件：主文件 + 所有 -pN 分片。
+
+    主库和英库都按 MAX_PER_FILE 分片，所以 6210.json 与 6210-p2.json 是
+    **同一个逻辑桶**的两片，不是两个桶。用 glob 而非顺序探测，容忍序号不连续。
+    """
+    out = [path] if path.exists() else []
+
+    def _ord(p: Path) -> int:
+        try:
+            return int(re.sub(r"\D", "", p.stem.rsplit("-p", 1)[-1]))
+        except Exception:
+            return 0
+
+    out.extend(sorted(path.parent.glob(path.stem + "-p*.json"), key=_ord))
+    return out
+
+
+def _family_root(zh_path: Path) -> str:
+    """把 .../6210-p2.json 归一到族根 bucket 名（如 H/62/6210）。"""
+    rel = zh_path.relative_to(SRC_DIR).with_suffix("").as_posix()
+    return re.sub(r"-p\d+$", "", rel)
+
+
+# 2026-09-19 修复：族锁 —— 同一族的两次处理绝不允许并发。
+# 事故回放：main() 原来用 rglob("*.json") 枚举桶，把 -pN 分片也当成独立桶丢进
+# 16 线程池；于是「族根任务」读整族、按 MAX_PER_FILE 重写整族分片，而「分片任务」
+# 也写同一个分片文件 → 两个线程同文件并发写，各自拿开跑时的 existing 快照做
+# 整文件覆盖，后写盖掉先写。后果：翻译成果丢失 + 跨分片重复 id（实测 H/62/6210
+# 族 2161 条、6232 族 1040、6231 族 455、6291 族 273、C/34/3484 族 29，合计 3958）。
+# 进程级 _EN_LOCK 只挡别的**进程**，挡不住本进程内的**线程**，故在此加族锁兜底。
+_family_locks: dict[str, threading.Lock] = {}
+_family_locks_guard = threading.Lock()
+
+
+def _family_lock(family: str) -> threading.Lock:
+    with _family_locks_guard:
+        lk = _family_locks.get(family)
+        if lk is None:
+            lk = threading.Lock()
+            _family_locks[family] = lk
+        return lk
+
+
+def process_bucket(api_key, zh_path, limit=None, retranslate=False, heavy_only=False):
+    """处理一个国标桶**族**（主文件 + 全部 -pN 分片）。
+
+    返回 (bucket, translated, total_missing)。族内串行，族间可并发。
+    """
+    bucket = _family_root(zh_path)
+    with _family_lock(bucket):
+        return _process_bucket_locked(api_key, zh_path, bucket, limit, retranslate,
+                                      heavy_only)
+
+
+def _process_bucket_locked(api_key, zh_path, bucket, limit=None, retranslate=False,
+                           heavy_only=False):
     """处理一个国标桶：翻译缺失 id 并合并写回；返回 (bucket, translated, total_missing)
 
     retranslate=True 时，除了「en 里没有的 id」，还会把 en 里**仍是中文兜底**的
     记录（上一轮翻译失败留下的）一并重翻 —— 否则它们永远卡在 existing 里不被处理。
+    heavy_only=True（配合 --retranslate-heavy）时只捞 cjk_heavy 的「真缺陷」，
+    放过「英文品牌名 + 一并保留的中文原名」那类可接受的残留，省配额也不误伤。
     """
-    bucket = zh_path.relative_to(SRC_DIR).with_suffix("").as_posix()  # 如 C/34/3484
-    zh_recs = load_json(zh_path)
-    if not isinstance(zh_recs, list) or not zh_recs:
+    # 2026-09-19 修复：中文主库同样按 MAX_PER_FILE 分片，必须把整族中文分片一起读，
+    # 否则 -p2/-p3 里的记录永远轮不到翻译（原实现只读主文件，分片靠被误当独立桶
+    # 的另一个任务来翻，正是并发写冲突的来源）。
+    zh_recs: list = []
+    for zf in _family_files(zh_path):
+        try:
+            _d = load_json(zf)
+        except Exception as e:  # noqa: BLE001
+            log("[%s] 警告：中文分片 %s 解析失败，跳过：%r" % (bucket, zf.name, e))
+            continue
+        if isinstance(_d, list):
+            zh_recs.extend(_d)
+    if not zh_recs:
         log("[%s] 空桶，跳过" % bucket)
         return bucket, 0, 0
     cat = zh_recs[0].get("category") or ""
@@ -369,34 +494,33 @@ def process_bucket(api_key, zh_path, limit=None, retranslate=False):
     missing = [r for r in zh_recs if r["id"] not in existing]
     # --retranslate：把上一轮翻译失败、仍残留中文的记录拽回来再翻一遍
     if retranslate:
-        redo_ids = {rid for rid, rec in existing.items() if is_untranslated(rec)}
+        _pick = cjk_heavy if heavy_only else is_untranslated
+        redo_ids = {rid for rid, rec in existing.items() if _pick(rec)}
         if redo_ids:
             redo = [r for r in zh_recs if r["id"] in redo_ids]
             if redo:
-                log("[%s] 其中 %d 条是中文兜底（上轮翻译失败残留），纳入重翻"
-                    % (bucket, len(redo)))
+                log("[%s] 其中 %d 条是中文兜底（%s），纳入重翻"
+                    % (bucket, len(redo),
+                       "仅中文占比过高的真缺陷" if heavy_only else "上轮翻译失败残留"))
             missing = missing + redo
-    if not missing:
-        log("[%s] 无缺失，已有 %d 条" % (bucket, len(existing)))
-        # 2026-09-16 修正：即便无需翻译，也要清掉陈旧 -pN 分片。
-        # 否则这些分片一直残留、与重写后的主文件累加出跨分片重复 id
-        #（本次回填因此又产生了约 1400 条重复，靠 _dedupe_shards 兜底清理）。
-        # 主文件已持有全量，删分片安全。
-        for _stale in sorted(en_path.parent.glob(en_path.stem + "-p*.json")):
-            try:
-                _stale.unlink()
-            except OSError:
-                pass
-        return bucket, 0, 0
-    if limit:
-        missing = missing[:limit]
-    log("[%s] 需翻译 %d 条（已有 %d 条）" % (bucket, len(missing), len(existing)))
-
     def idnum(r):
         try:
             return int(re.sub(r"\D", "", r["id"]))
         except Exception:
             return 0
+
+    if not missing:
+        log("[%s] 无缺失，已有 %d 条" % (bucket, len(existing)))
+        # 2026-09-19 修正：原实现「无缺失就删掉 -pN 分片、假定主文件已持全量」有隐患 ——
+        # 主文件未必真的持有分片里的记录，直接删会丢数据。改为一律做规整写回：
+        # 把整族按 MAX_PER_FILE 重排，顺带把跨分片重复 id 收敛掉。只有确实存在分片
+        # 的族才写（绝大多数桶单片，直接 return，避免无谓的大文件重写）。
+        if len(_family_files(en_path)) > 1:
+            _write_en_sharded(en_path, sorted(existing.values(), key=idnum))
+        return bucket, 0, 0
+    if limit:
+        missing = missing[:limit]
+    log("[%s] 需翻译 %d 条（已有 %d 条）" % (bucket, len(missing), len(existing)))
 
     def flush(new_recs):
         # 每批写回：被 kill 最多丢 1 批（8 条），重启自动续跑。
@@ -432,21 +556,92 @@ def process_bucket(api_key, zh_path, limit=None, retranslate=False):
         }
         for r in missing
     ]
+    # 2026-09-19 二次改造：桶内批次也并发（只按桶并发会退化成「最慢桶单线程爬」）。
+    # 并发边界：翻译（纯网络）完全并行；**合并写回必须串行** —— _flush_lock 把
+    # 「new_recs 累加 + flush()」整段包住，同一族的英文文件写入仍旧严格排队，
+    # 不会出现两个线程各拿一份快照互相覆盖（那正是 2026-09-19 事故的形态）。
+    _flush_lock = threading.Lock()
+    n_batches = (len(items) + BATCH - 1) // BATCH
     done = 0
-    for i in range(0, len(items), BATCH):
+
+    def run_batch(i):
+        nonlocal done
         chunk = items[i : i + BATCH]
         recs = missing[i : i + BATCH]
-        translated = translate_batch(api_key, chunk)
+        try:
+            translated = translate_batch(api_key, chunk)
+        except Exception as e:  # noqa: BLE001 —— 单批异常不该带崩整个桶
+            log("[%s] 批 %d 异常（本批留中文兜底，下轮 --retranslate 会重翻）：%r"
+                % (bucket, i // BATCH + 1, e))
+            translated = None
         if translated is None:
             translated = [None] * len(recs)
         if len(translated) < len(recs):
             translated = list(translated) + [None] * (len(recs) - len(translated))
-        for j, rec in enumerate(recs):
-            new_recs[rec["id"]] = build_en_record(rec, translated[j], cat, bucket)
-        flush(new_recs)  # 增量写回，断点续跑更安全
-        done += len(recs)
-        log("[%s] 批 %d/%d 完成（%d/%d）"
-            % (bucket, i // BATCH + 1, (len(items) + BATCH - 1) // BATCH, done, len(items)))
+        with _flush_lock:
+            for j, rec in enumerate(recs):
+                new_recs[rec["id"]] = build_en_record(rec, translated[j], cat, bucket)
+            flush(new_recs)  # 增量写回，断点续跑更安全
+            done += len(recs)
+            log("[%s] 批 %d/%d 完成（%d/%d）"
+                % (bucket, i // BATCH + 1, n_batches, done, len(items)))
+
+    if BUCKET_WORKERS > 1 and n_batches > 1:
+        # map() 会一次性提交全部批次；异常在迭代结果时抛出，with 退出前等全部跑完，
+        # 所以某一批炸掉不会連累后面的批次（与「单桶不拖垮整轮」的口径一致）。
+        with ThreadPoolExecutor(max_workers=min(BUCKET_WORKERS, n_batches)) as iex:
+            list(iex.map(run_batch, range(0, len(items), BATCH)))
+    else:
+        for i in range(0, len(items), BATCH):
+            run_batch(i)
+
+    # 2026-09-19 新增：残留重试。主批次跑完后，把「英文字段里中文占比 >=
+    # RETRY_CJK_RATIO」的记录当场重翻 —— 第 1 轮按 BATCH 批量（省配额），
+    # 第 2 轮按单条（1 进 1 出，天然对齐，专治模型照抄输入）。
+    # 覆盖规则：只在中文变少时才替换，保证单调收敛、不会越重试越脏。
+    if new_recs and RETRY_ROUNDS > 0:
+        _zh_of = {r["id"]: r for r in missing}
+
+        def _retry_chunk(ids):
+            ch = [
+                {
+                    "company": _zh_of[i].get("company", ""),
+                    "keywords": _zh_of[i].get("keywords", []),
+                    "address": _zh_of[i].get("address", "") or "",
+                }
+                for i in ids
+            ]
+            try:
+                tr = translate_batch(api_key, ch)
+            except Exception as e:  # noqa: BLE001
+                log("[%s] 残留重试异常：%r" % (bucket, e))
+                tr = None
+            if tr is None:
+                tr = [None] * len(ids)
+            if len(tr) < len(ids):
+                tr = list(tr) + [None] * (len(ids) - len(tr))
+            with _flush_lock:
+                for j, i in enumerate(ids):
+                    cand = build_en_record(_zh_of[i], tr[j], cat, bucket)
+                    if cjk_len(cand) < cjk_len(new_recs[i]):
+                        new_recs[i] = cand
+                flush(new_recs)
+
+        for rnd in range(RETRY_ROUNDS):
+            pend = [i for i, r in new_recs.items()
+                    if i in _zh_of and cjk_heavy(r)]
+            if not pend:
+                break
+            size = BATCH if rnd == 0 else 1
+            log("[%s] 残留重试 %d/%d 轮：%d 条中文占比>=%.0f%%（%d 条/批）"
+                % (bucket, rnd + 1, RETRY_ROUNDS, len(pend),
+                   RETRY_CJK_RATIO * 100, size))
+            for k in range(0, len(pend), size):
+                _retry_chunk(pend[k : k + size])
+        left = [i for i in new_recs if i in _zh_of and cjk_heavy(new_recs[i])]
+        if left:
+            log("[%s] 残留重试后仍有 %d 条中文占比过高（例：%s）"
+                % (bucket, len(left), ", ".join(left[:5])))
 
     log("[%s] 写回 %s：%d 条（新增 %d）"
         % (bucket, en_path.relative_to(ROOT).as_posix(),
@@ -508,11 +703,17 @@ def release_en_lock() -> None:
 
 
 def main():
-    global EN_RPM
+    global EN_RPM, BUCKET_WORKERS
     ap = argparse.ArgumentParser()
     ap.add_argument("--key", default=os.environ.get("ZHIPU_API_KEY", ""))
     ap.add_argument("--workers", type=int, default=16,
                     help="并发 worker 数（限流由令牌桶 EN_RPM 主导，这里只管延迟重叠）")
+    ap.add_argument("--bucket-workers", type=int, default=BUCKET_WORKERS,
+                    help="单个桶**内部**的批次并发度（默认 %d，或环境变量 "
+                         "EN_BUCKET_WORKERS）。只按桶并发时，尾巴会退化成「最慢那个桶"
+                         "单线程爬」——2026-09-19 实测剩 4 个大桶时 16 个 worker 里 "
+                         "12 个空转。总并发仍受 EN_MAX_CONCURRENT / EN_RPM 兜底。"
+                         % BUCKET_WORKERS)
     ap.add_argument("--rpm", type=int, default=EN_RPM,
                     help="请求/分钟上限（令牌桶，规避 GLM 免费档限流；可用 EN_RPM 环境变量覆盖）")
     ap.add_argument("--limit", type=int, default=0, help="每桶最多翻译条数（测试用）")
@@ -520,8 +721,12 @@ def main():
     ap.add_argument("--retranslate", action="store_true",
                     help="把 en 里仍是中文兜底的记录（上轮翻译失败残留）一并重翻；"
                          "默认只补 en 里没有的 id")
+    ap.add_argument("--retranslate-heavy", action="store_true",
+                    help="只重翻「中文占比 >= EN_RETRY_CJK_RATIO」的真缺陷，放过"
+                         "「英文品牌名 + 中文原名」那类可接受的残留（省配额、不误伤）")
     args = ap.parse_args()
     EN_RPM = args.rpm
+    BUCKET_WORKERS = max(1, args.bucket_workers)
     api_key = args.key or load_env().get("ZHIPU_API_KEY", "")
     if not api_key:
         print("缺少 API Key：设环境变量 ZHIPU_API_KEY 或 .env 配置")
@@ -538,8 +743,25 @@ def main():
         sys.exit(1)
     EN_DIR.mkdir(parents=True, exist_ok=True)
     files = sorted(SRC_DIR.rglob("*.json"))
+    # 2026-09-19 修复：把 -pN 分片归并到族根，分片不再作为独立任务提交。
+    # 否则族根任务与分片任务会并发重写同一个英文分片文件（见 _family_lock 注释）。
+    _by_root: dict[str, Path] = {}
+    for f in files:
+        _root = f.with_name(re.sub(r"-p\d+$", "", f.stem) + f.suffix)
+        _by_root.setdefault(_root.as_posix(), _root)
+    files = [_by_root[k] for k in sorted(_by_root)]
+    # 防线：归并后的族根必须真实存在。若不校验，路径写错会一路走到「空桶，跳过」
+    # ——整库静默跳过、退出码 0，看着像成功（2026-09-19 踩过：with_name 忘了拼
+    # 回 .json 后缀，271 个桶全部判空桶）。
+    _bad_roots = [str(p) for p in files if not p.exists()]
+    if _bad_roots:
+        print("[错误] 归并族根后存在不存在的路径（疑似命名逻辑出错，拒绝静默跳过）：")
+        for _p in _bad_roots[:5]:
+            print("   -", _p)
+        sys.exit(1)
     if args.bucket:
         want = args.bucket.strip("/").replace("\\", "/")
+        want = re.sub(r"-p\d+$", "", want)  # 传了分片名也归到族根
         files = [f for f in files
                  if f.relative_to(SRC_DIR).with_suffix("").as_posix() == want]
         if not files:
@@ -551,9 +773,15 @@ def main():
 
     total_new = 0
     failed_buckets = []
+    _heavy_only = args.retranslate_heavy
+    _redo = args.retranslate or _heavy_only
+    if _heavy_only:
+        print("模式：--retranslate-heavy（只重翻中文占比 >= %.0f%% 的真缺陷）"
+              % (RETRY_CJK_RATIO * 100))
     with ThreadPoolExecutor(max_workers=args.workers) as ex:
         futs = {
-            ex.submit(process_bucket, api_key, f, args.limit or None, args.retranslate): f.name
+            ex.submit(process_bucket, api_key, f, args.limit or None,
+                      _redo, _heavy_only): f.name
             for f in files
         }
         for fut in futs:
