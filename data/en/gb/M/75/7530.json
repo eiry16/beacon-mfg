@@ -26,6 +26,84 @@
       "source": "gb_token",
       "evidence": "科技中"
     },
-    "source_url": "https://www.amap.com/place/B0M6FHZDAF"
+    "source_url": "https://www.amap.com/place/B0M6FHZDAF",
+    "industry_en": {
+      "code": "7530",
+      "name_en": null,
+      "level": "class",
+      "name": "科技中介服务",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0105205",
+    "company_en": "Yunnan Hangjian Technology Center",
+    "category": "科学研究和技术服务业",
+    "category_en": "科学研究和技术服务业",
+    "keywords_en": [
+      "Machining Center"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "No. 89 Shuntong Avenue, Guandu Export Processing Zone",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "7530",
+      "name": "科技中介服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 科技推广和应用服务业 > 科技中介服务 > 科技中介服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "科技中"
+    },
+    "industry_en": {
+      "code": "7530",
+      "name_en": null,
+      "level": "class",
+      "name": "科技中介服务",
+      "confidence": "high"
+    },
+    "_bucket": "M/75/7530"
+  },
+  {
+    "id": "CN-MFG-0112037",
+    "company_en": "Nanning Zhuoyue Electronic Technology Center",
+    "category": "科学研究和技术服务业",
+    "category_en": "科学研究和技术服务业",
+    "keywords_en": [
+      "Computer Repair",
+      "Laptop Repair"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 17, North Fourth Lane, Sandaishi Road",
+    "contact_phone": "0771-4731750; 134****7920",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "7530",
+      "name": "科技中介服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 科技推广和应用服务业 > 科技中介服务 > 科技中介服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "科技中"
+    },
+    "industry_en": {
+      "code": "7530",
+      "name_en": null,
+      "level": "class",
+      "name": "科技中介服务",
+      "confidence": "high"
+    },
+    "_bucket": "M/75/7530"
   }
 ]

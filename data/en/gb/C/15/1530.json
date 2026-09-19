@@ -26,7 +26,14 @@
       "source": "name",
       "evidence": "茶行"
     },
-    "source_url": "https://www.amap.com/place/B0L3MULHLE"
+    "source_url": "https://www.amap.com/place/B0L3MULHLE",
+    "industry_en": {
+      "code": "1530",
+      "name_en": null,
+      "level": "class",
+      "name": "精制茶加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0054921",
@@ -56,7 +63,14 @@
       "source": "name",
       "evidence": "茶行"
     },
-    "source_url": "https://www.amap.com/place/B0LKFHU2HP"
+    "source_url": "https://www.amap.com/place/B0LKFHU2HP",
+    "industry_en": {
+      "code": "1530",
+      "name_en": null,
+      "level": "class",
+      "name": "精制茶加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0054951",
@@ -85,36 +99,14 @@
       "source": "name",
       "evidence": "茶叶"
     },
-    "source_url": "https://www.amap.com/place/B0K0FK3PF9"
-  },
-  {
-    "id": "CN-MFG-0061011",
-    "company_en": "Bama Tea Industry",
-    "category": "制造业",
-    "category_en": "制造业",
-    "keywords_en": [
-      "tea room"
-    ],
-    "region": {
-      "province": "Jiangsu",
-      "city": "Suzhou"
-    },
-    "address_en": "No. 1629 South Zhongshan Road",
-    "contact_phone": "152****2999",
-    "source": "public_directory",
-    "verified_at": "2026-09-15",
-    "note_en": "",
-    "_bucket": "C/15/1530",
-    "industry": {
+    "source_url": "https://www.amap.com/place/B0K0FK3PF9",
+    "industry_en": {
       "code": "1530",
-      "name": "精制茶加工",
+      "name_en": null,
       "level": "class",
-      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 精制茶加工 > 精制茶加工",
-      "confidence": "high",
-      "source": "name",
-      "evidence": "茶业"
-    },
-    "source_url": "https://www.amap.com/place/B0I1FZLSUU"
+      "name": "精制茶加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0061080",
@@ -144,7 +136,14 @@
       "source": "name",
       "evidence": "茶业"
     },
-    "source_url": "https://www.amap.com/place/B0JBD5X3UE"
+    "source_url": "https://www.amap.com/place/B0JBD5X3UE",
+    "industry_en": {
+      "code": "1530",
+      "name_en": null,
+      "level": "class",
+      "name": "精制茶加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0061113",
@@ -174,7 +173,14 @@
       "source": "name",
       "evidence": "茶业"
     },
-    "source_url": "https://www.amap.com/place/B0G1JS6JX4"
+    "source_url": "https://www.amap.com/place/B0G1JS6JX4",
+    "industry_en": {
+      "code": "1530",
+      "name_en": null,
+      "level": "class",
+      "name": "精制茶加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0061825",
@@ -204,7 +210,14 @@
       "source": "name",
       "evidence": "茶业"
     },
-    "source_url": "https://www.amap.com/place/B0JDGA005S"
+    "source_url": "https://www.amap.com/place/B0JDGA005S",
+    "industry_en": {
+      "code": "1530",
+      "name_en": null,
+      "level": "class",
+      "name": "精制茶加工",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0061952",
@@ -234,6 +247,84 @@
       "source": "name",
       "evidence": "茶业"
     },
-    "source_url": "https://www.amap.com/place/B0IR6ZS6JT"
+    "source_url": "https://www.amap.com/place/B0IR6ZS6JT",
+    "industry_en": {
+      "code": "1530",
+      "name_en": null,
+      "level": "class",
+      "name": "精制茶加工",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0111821",
+    "company_en": "Yangliu'an Tea House",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Tea House",
+      "Tea Pavilion"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 36 Qujiangbin Road",
+    "contact_phone": "137****1796",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "1530",
+      "name": "精制茶加工",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 精制茶加工 > 精制茶加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "茶行"
+    },
+    "industry_en": {
+      "code": "1530",
+      "name_en": null,
+      "level": "class",
+      "name": "精制茶加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/15/1530"
+  },
+  {
+    "id": "CN-MFG-0123135",
+    "company_en": "Meitan County Longfeng Yongcai Tea Processing Factory",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Injection Molding Processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "260 meters south of Hongjian Jiang Tea Processing Factory",
+    "contact_phone": "158****9971",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "1530",
+      "name": "精制茶加工",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 精制茶加工 > 精制茶加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "茶叶"
+    },
+    "industry_en": {
+      "code": "1530",
+      "name_en": null,
+      "level": "class",
+      "name": "精制茶加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/15/1530"
   }
 ]

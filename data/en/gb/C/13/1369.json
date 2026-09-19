@@ -53,7 +53,14 @@
       "source": "name",
       "evidence": "渔港"
     },
-    "source_url": "https://www.amap.com/place/B0J0YGEVDJ"
+    "source_url": "https://www.amap.com/place/B0J0YGEVDJ",
+    "industry_en": {
+      "code": "1369",
+      "name_en": null,
+      "level": "class",
+      "name": "其他水产品加工",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0045281",
@@ -82,7 +89,14 @@
       "source": "name",
       "evidence": "渔港"
     },
-    "source_url": "https://www.amap.com/place/B0FFK205FZ"
+    "source_url": "https://www.amap.com/place/B0FFK205FZ",
+    "industry_en": {
+      "code": "1369",
+      "name_en": null,
+      "level": "class",
+      "name": "其他水产品加工",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0075375",
@@ -111,6 +125,43 @@
       "source": "name",
       "evidence": "水产"
     },
-    "source_url": "https://www.amap.com/place/B0G26SL65Y"
+    "source_url": "https://www.amap.com/place/B0G26SL65Y",
+    "industry_en": {
+      "code": "1369",
+      "name_en": null,
+      "level": "class",
+      "name": "其他水产品加工",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0139463",
+    "company_en": "Dali Shuanglang Laoyugang Guesthouse",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "guesthouse",
+      "inn"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "大理白族自治州"
+    },
+    "address_en": "No. 249 Dajianpang Village",
+    "contact_phone": "135****4232",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "渔港"
+    },
+    "industry_en": null,
+    "_bucket": "C/13/1369"
   }
 ]

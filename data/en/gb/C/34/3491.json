@@ -133,7 +133,14 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "source_url": "https://www.amap.com/place/B0MU5CU0QI"
+    "source_url": "https://www.amap.com/place/B0MU5CU0QI",
+    "industry_en": {
+      "code": "3491",
+      "name_en": "Industrial Robots",
+      "level": "class",
+      "name": "工业机器人制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0041796",
@@ -162,7 +169,14 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "source_url": "https://www.amap.com/place/B0LD6HF8SK"
+    "source_url": "https://www.amap.com/place/B0LD6HF8SK",
+    "industry_en": {
+      "code": "3491",
+      "name_en": "Industrial Robots",
+      "level": "class",
+      "name": "工业机器人制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0042347",
@@ -191,7 +205,14 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "source_url": "https://www.amap.com/place/B0MBT5CQ3W"
+    "source_url": "https://www.amap.com/place/B0MBT5CQ3W",
+    "industry_en": {
+      "code": "3491",
+      "name_en": "Industrial Robots",
+      "level": "class",
+      "name": "工业机器人制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0048738",
@@ -220,7 +241,14 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "source_url": "https://www.amap.com/place/B0L3D552T1"
+    "source_url": "https://www.amap.com/place/B0L3D552T1",
+    "industry_en": {
+      "code": "3491",
+      "name_en": "Industrial Robots",
+      "level": "class",
+      "name": "工业机器人制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0051562",
@@ -249,11 +277,18 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "source_url": "https://www.amap.com/place/B0K6NL9V3J"
+    "source_url": "https://www.amap.com/place/B0K6NL9V3J",
+    "industry_en": {
+      "code": "3491",
+      "name_en": "Industrial Robots",
+      "level": "class",
+      "name": "工业机器人制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0089100",
-    "company_en": "Kevo扫地机机器人服务中心",
+    "company_en": "Ecovacs Sweep Robot Service Center",
     "category": "精密机械加工",
     "category_en": "Precision Machining",
     "keywords_en": [
@@ -268,7 +303,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "C/34/3491",
     "industry": {
       "code": "3491",
       "name": "工业机器人制造",
@@ -278,6 +312,48 @@
       "source": "name",
       "evidence": "机器人"
     },
-    "source_url": "https://www.amap.com/place/B0M6H7BKGG"
+    "industry_en": {
+      "code": "3491",
+      "name_en": "Industrial Robots",
+      "level": "class",
+      "name": "工业机器人制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3491"
+  },
+  {
+    "id": "CN-MFG-0126754",
+    "company_en": "Jiqiren Chaocai Canting",
+    "category": "精密机械加工",
+    "category_en": "Precision Machining",
+    "keywords_en": [
+      "Restaurant"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Lu Biao Street Office An Fengying Village Committee Jiqiren Chaocai Canting",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "3491",
+      "name": "工业机器人制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 其他通用设备制造业 > 工业机器人制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "机器人"
+    },
+    "industry_en": {
+      "code": "3491",
+      "name_en": "Industrial Robots",
+      "level": "class",
+      "name": "工业机器人制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3491"
   }
 ]

@@ -80,7 +80,14 @@
       "source": "gb_token",
       "evidence": "光纤"
     },
-    "source_url": "https://www.amap.com/place/B0FFLJYH0V"
+    "source_url": "https://www.amap.com/place/B0FFLJYH0V",
+    "industry_en": {
+      "code": "3832",
+      "name_en": null,
+      "level": "class",
+      "name": "光纤制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0040335",
@@ -109,6 +116,48 @@
       "source": "gb_token",
       "evidence": "光纤"
     },
-    "source_url": "https://www.amap.com/place/B0FFHOSZCF"
+    "source_url": "https://www.amap.com/place/B0FFHOSZCF",
+    "industry_en": {
+      "code": "3832",
+      "name_en": null,
+      "level": "class",
+      "name": "光纤制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0096579",
+    "company_en": "Nao Baixin Digital World Store (Computer Monitoring Network Fiber Optic Printing Consumables)",
+    "category": "钣金冲压",
+    "category_en": "Sheet Metal & Stamping",
+    "keywords_en": [
+      "Laptop Repair"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. A25, 2nd Floor, Phase I, Nao Baixin Digital World",
+    "contact_phone": "158****3267",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3832",
+      "name": "光纤制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 光纤制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "光纤"
+    },
+    "industry_en": {
+      "code": "3832",
+      "name_en": null,
+      "level": "class",
+      "name": "光纤制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/38/3832"
   }
 ]

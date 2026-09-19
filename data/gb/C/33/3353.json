@@ -9,7 +9,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "天河"
     },
     "address": "天平装饰城D09档(天平架地铁站B口步行380米)",
     "contact_phone": "180****9419",
@@ -56,7 +57,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "宝安"
     },
     "address": "燕山大道1号办公楼304号",
     "contact_phone": "0755-26666319; 150****4533",
@@ -105,7 +107,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "番禺"
     },
     "address": "官坑工业三路与大榄地路交叉口北40米",
     "contact_phone": "020-84785563",
@@ -154,7 +157,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "虹口"
     },
     "address": "华能公寓东南门旁",
     "contact_phone": "待核实",
@@ -203,7 +207,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "黄浦"
     },
     "address": "西藏南路765号永惠大厦F7层",
     "contact_phone": "待核实",
@@ -252,7 +257,8 @@
     ],
     "region": {
       "province": "上海",
-      "city": "上海"
+      "city": "上海",
+      "district": "静安"
     },
     "address": "江场西路299弄中铁中环时代广场四号楼6楼",
     "contact_phone": "待核实",
@@ -415,7 +421,8 @@
     ],
     "region": {
       "province": "四川",
-      "city": "成都"
+      "city": "成都",
+      "district": "金牛"
     },
     "address": "中环路金府路段与长青横街交叉口北340米",
     "contact_phone": "待核实",
@@ -464,7 +471,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "福田"
     },
     "address": "彩田路3002号小元里",
     "contact_phone": "待核实",
@@ -513,7 +521,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "深圳"
+      "city": "深圳",
+      "district": "龙岗"
     },
     "address": "平吉大道与远超路交叉口东80米",
     "contact_phone": "待核实",
@@ -611,7 +620,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "拱墅"
     },
     "address": "莫干山路132-1号(沈塘桥地铁站B口步行240米)",
     "contact_phone": "待核实",
@@ -660,7 +670,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "余杭"
     },
     "address": "仓前街道仓兴街浙江大学校友总部经济园18幢4楼",
     "contact_phone": "0571-88271908",
@@ -894,54 +905,6 @@
   },
   {
     "id": "CN-MFG-0122877",
-    "company": "龙阳安全门(万泰隆专卖店)",
-    "category": "原材料",
-    "keywords": [
-      "铝合金"
-    ],
-    "region": {
-      "province": "广西",
-      "city": "南宁"
-    },
-    "address": "万泰隆建材市场15栋20号",
-    "contact_phone": "158****1455",
-    "lat": 22.772915,
-    "lng": 108.268416,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0MAJZ2M6A",
-      "type": "生活服务;生活服务场所;生活服务场所",
-      "typecode": "070000",
-      "alias": "",
-      "tag": "",
-      "keytag": "门类",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "白沙大道",
-      "adcode": "450105",
-      "search_keyword": "铝合金"
-    },
-    "industry": {
-      "code": "3353",
-      "name": "安全、消防用金属制品制造",
-      "level": "class",
-      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 安全、消防用金属制品制造",
-      "confidence": "high",
-      "source": "gb_token",
-      "evidence": "安全"
-    },
-    "is_manufacturer": true
-  },
-  {
-    "id": "CN-MFG-0122879",
     "company": "龙阳安全门(万泰隆专卖店)",
     "category": "原材料",
     "keywords": [

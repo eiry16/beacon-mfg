@@ -26,6 +26,48 @@
       "source": "gb_token",
       "evidence": "金属工"
     },
-    "source_url": "https://www.amap.com/place/B0L2LXPNMJ"
+    "source_url": "https://www.amap.com/place/B0L2LXPNMJ",
+    "industry_en": {
+      "code": "2432",
+      "name_en": null,
+      "level": "class",
+      "name": "金属工艺品制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0109937",
+    "company_en": "Kunming Ruiyu Metal Engineering Co., Ltd.",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Anodizing"
+    ],
+    "region": {
+      "province": "Yunnan",
+      "city": "Kunming"
+    },
+    "address_en": "Southeast of Fjie Town, Xingkun Chemical Co., Ltd. Fertilizer Branch Factory",
+    "contact_phone": "135****4605; 159****2828",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "2432",
+      "name": "金属工艺品制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 金属工艺品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "金属工"
+    },
+    "industry_en": {
+      "code": "2432",
+      "name_en": null,
+      "level": "class",
+      "name": "金属工艺品制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/24/2432"
   }
 ]

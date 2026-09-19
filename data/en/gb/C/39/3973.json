@@ -90,12 +90,20 @@
       "province": "Zhejiang",
       "city": "Shaoxing"
     },
-    "address_en": "No. 1 Jianxin Road, Jina Street, Dian荡畈 Industrial Park",
+    "address_en": "No. 1 Jianxin Road, Jianning Street, Dian荡畈 Industrial Park",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/39/3973",
+    "industry": {
+      "code": "3973",
+      "name": "集成电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 集成电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "半导体"
+    },
     "industry_en": {
       "code": "3973",
       "name_en": "Integrated Circuits",
@@ -103,7 +111,7 @@
       "name": "集成电路制造",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0J1YHKPC7"
+    "_bucket": "C/39/3973"
   },
   {
     "id": "CN-MFG-0030884",
@@ -132,7 +140,14 @@
       "source": "name",
       "evidence": "晶圆"
     },
-    "source_url": "https://www.amap.com/place/B0L0XLMDX7"
+    "source_url": "https://www.amap.com/place/B0L0XLMDX7",
+    "industry_en": {
+      "code": "3973",
+      "name_en": "Integrated Circuits",
+      "level": "class",
+      "name": "集成电路制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0031351",
@@ -161,7 +176,14 @@
       "source": "name",
       "evidence": "半导体"
     },
-    "source_url": "https://www.amap.com/place/B0MD97POKY"
+    "source_url": "https://www.amap.com/place/B0MD97POKY",
+    "industry_en": {
+      "code": "3973",
+      "name_en": "Integrated Circuits",
+      "level": "class",
+      "name": "集成电路制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0033382",
@@ -190,7 +212,14 @@
       "source": "name",
       "evidence": "集成电路"
     },
-    "source_url": "https://www.amap.com/place/B0MADSI468"
+    "source_url": "https://www.amap.com/place/B0MADSI468",
+    "industry_en": {
+      "code": "3973",
+      "name_en": "Integrated Circuits",
+      "level": "class",
+      "name": "集成电路制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0033463",
@@ -219,7 +248,14 @@
       "source": "name",
       "evidence": "集成电路"
     },
-    "source_url": "https://www.amap.com/place/B0H0X763HI"
+    "source_url": "https://www.amap.com/place/B0H0X763HI",
+    "industry_en": {
+      "code": "3973",
+      "name_en": "Integrated Circuits",
+      "level": "class",
+      "name": "集成电路制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0033464",
@@ -248,7 +284,14 @@
       "source": "name",
       "evidence": "集成电路"
     },
-    "source_url": "https://www.amap.com/place/B0FFIZOMUR"
+    "source_url": "https://www.amap.com/place/B0FFIZOMUR",
+    "industry_en": {
+      "code": "3973",
+      "name_en": "Integrated Circuits",
+      "level": "class",
+      "name": "集成电路制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0084221",
@@ -278,7 +321,14 @@
       "source": "name",
       "evidence": "芯片"
     },
-    "source_url": "https://www.amap.com/place/B0JU9LCZOQ"
+    "source_url": "https://www.amap.com/place/B0JU9LCZOQ",
+    "industry_en": {
+      "code": "3973",
+      "name_en": "Integrated Circuits",
+      "level": "class",
+      "name": "集成电路制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0086376",
@@ -309,6 +359,48 @@
       "source": "name",
       "evidence": "芯片"
     },
-    "source_url": "https://www.amap.com/place/B0HDJDUP5T"
+    "source_url": "https://www.amap.com/place/B0HDJDUP5T",
+    "industry_en": {
+      "code": "3973",
+      "name_en": "Integrated Circuits",
+      "level": "class",
+      "name": "集成电路制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0122125",
+    "company_en": "Nanning Chuxin Integrated Circuit Design Co., Ltd.",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 18 Kaiyuan Road, 40th Floor, Guangxi Heping International Financial Plaza",
+    "contact_phone": "0771-2567790",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3973",
+      "name": "集成电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 集成电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "集成电路"
+    },
+    "industry_en": {
+      "code": "3973",
+      "name_en": "Integrated Circuits",
+      "level": "class",
+      "name": "集成电路制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/39/3973"
   }
 ]

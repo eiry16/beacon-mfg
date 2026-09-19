@@ -370,7 +370,14 @@
       "source": "name",
       "evidence": "服装"
     },
-    "source_url": "https://www.amap.com/place/B0MBGL3WR0"
+    "source_url": "https://www.amap.com/place/B0MBGL3WR0",
+    "industry_en": {
+      "code": "1819",
+      "name_en": null,
+      "level": "class",
+      "name": "其他机织服装制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0032392",
@@ -399,7 +406,14 @@
       "source": "name",
       "evidence": "服装"
     },
-    "source_url": "https://www.amap.com/place/B0FFIB8ABR"
+    "source_url": "https://www.amap.com/place/B0FFIB8ABR",
+    "industry_en": {
+      "code": "1819",
+      "name_en": null,
+      "level": "class",
+      "name": "其他机织服装制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0062890",
@@ -428,6 +442,118 @@
       "source": "name",
       "evidence": "服装"
     },
-    "source_url": "https://www.amap.com/place/B0FFKVRZCB"
+    "source_url": "https://www.amap.com/place/B0FFKVRZCB",
+    "industry_en": {
+      "code": "1819",
+      "name_en": null,
+      "level": "class",
+      "name": "其他机织服装制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0102038",
+    "company_en": "Zhimi Quanwu Dizhi Yigui Chugui",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Aluminum Alloy"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 01, 20th Floor, Building A7, Fuli Center, Guanshanhu",
+    "contact_phone": "182****3032; 191****3212; 191****6005",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "1819",
+      "name": "其他机织服装制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 机织服装制造 > 其他机织服装制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "制衣"
+    },
+    "industry_en": {
+      "code": "1819",
+      "name_en": null,
+      "level": "class",
+      "name": "其他机织服装制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/18/1819"
+  },
+  {
+    "id": "CN-MFG-0118582",
+    "company_en": "Boyuan Zhiyi Chang",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Machining Center"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Beside Xinhui Qiche Weixiu Shufuwu Zhongxin, Binzhou Town",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "1819",
+      "name": "其他机织服装制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 机织服装制造 > 其他机织服装制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "制衣"
+    },
+    "industry_en": {
+      "code": "1819",
+      "name_en": null,
+      "level": "class",
+      "name": "其他机织服装制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/18/1819"
+  },
+  {
+    "id": "CN-MFG-0123154",
+    "company_en": "Qianliang Fuzhuang Jiaogong Chang",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Injection Molding Processing"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "遵义"
+    },
+    "address_en": "380 meters east of the intersection of National Highway 326 and Xiuhexian Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "1819",
+      "name": "其他机织服装制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 机织服装制造 > 其他机织服装制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服装"
+    },
+    "industry_en": {
+      "code": "1819",
+      "name_en": null,
+      "level": "class",
+      "name": "其他机织服装制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/18/1819"
   }
 ]

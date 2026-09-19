@@ -8,7 +8,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "广州"
+      "city": "广州",
+      "district": "增城"
     },
     "address": "新塘镇牛仔城二路7号1011房",
     "contact_phone": "133****9075",
@@ -57,7 +58,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "宁波"
+      "city": "宁波",
+      "district": "宁海"
     },
     "address": "越溪乡亭港工业区",
     "contact_phone": "159****6851",
@@ -104,7 +106,8 @@
     ],
     "region": {
       "province": "广东",
-      "city": "珠海"
+      "city": "珠海",
+      "district": "斗门"
     },
     "address": "白蕉连桥路233号新口岸花园",
     "contact_phone": "待核实",
@@ -151,7 +154,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴江"
     },
     "address": "盛泽镇东方南路668号(绸乡缘酒家对面)",
     "contact_phone": "待核实",
@@ -264,7 +268,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "吴中"
     },
     "address": "山行路创鸿仓储1号",
     "contact_phone": "186****0011",
@@ -311,7 +316,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "南京"
+      "city": "南京",
+      "district": "高淳"
     },
     "address": "北岭路与学山北路交叉口西北60米",
     "contact_phone": "待核实",
@@ -358,7 +364,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "桐庐"
     },
     "address": "春江东路388号金久·城市花园",
     "contact_phone": "待核实",
@@ -405,7 +412,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "杭州"
+      "city": "杭州",
+      "district": "西湖"
     },
     "address": "古墩路835号1F05-06",
     "contact_phone": "173****7723",
@@ -460,7 +468,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "明辉国际家居一楼33-2",
     "contact_phone": "待核实",
@@ -507,7 +516,8 @@
     ],
     "region": {
       "province": "浙江",
-      "city": "绍兴"
+      "city": "绍兴",
+      "district": "越城"
     },
     "address": "灵芝街道二环北路58号正大装饰商城南门1052号",
     "contact_phone": "159****7786",
@@ -693,6 +703,153 @@
       "business_area": "",
       "adcode": "520302",
       "search_keyword": "注塑加工"
+    },
+    "industry": {
+      "code": "2641",
+      "name": "涂料制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 涂料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "涂料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138796",
+    "company": "立邦涂料(建材批发)",
+    "category": "标准件",
+    "keywords": [
+      "密封件"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "闵行"
+    },
+    "address": "华新镇华富街老北翟路4855号",
+    "contact_phone": "189****3772",
+    "lat": 31.206681,
+    "lng": 121.301228,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKP5FQQ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "上海虹桥商务区",
+      "adcode": "310112",
+      "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "2641",
+      "name": "涂料制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 涂料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "涂料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0138937",
+    "company": "长凯涂料经营部",
+    "category": "原材料",
+    "keywords": [
+      "工业陶瓷"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "宝山"
+    },
+    "address": "江杨南路1518号A区30",
+    "contact_phone": "134****5006",
+    "lat": 31.334522,
+    "lng": 121.465181,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIB93XQ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "泗塘小区",
+      "adcode": "310113",
+      "search_keyword": "工业陶瓷"
+    },
+    "industry": {
+      "code": "2641",
+      "name": "涂料制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 涂料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "涂料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0139212",
+    "company": "三棵树防水涂料",
+    "category": "原材料",
+    "keywords": [
+      "工业陶瓷"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "顺德"
+    },
+    "address": "北滘镇三桂村工业大道9号之二",
+    "contact_phone": "待核实",
+    "lat": 22.945671,
+    "lng": 113.28078,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H2770NJE",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440606",
+      "search_keyword": "工业陶瓷"
     },
     "industry": {
       "code": "2641",

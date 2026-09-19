@@ -32,7 +32,7 @@
     "category": "钣金冲压",
     "category_en": "Sheet Metal & Stamping",
     "keywords_en": [
-      "Machine Processing"
+      "Machining"
     ],
     "region": {
       "province": "Jiangsu",
@@ -43,7 +43,15 @@
     "source": "public_directory",
     "verified_at": "2026-09-13",
     "note_en": "",
-    "_bucket": "C/39/3976",
+    "industry": {
+      "code": "3976",
+      "name": "光电子器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 光电子器件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "光电子"
+    },
     "industry_en": {
       "code": "3976",
       "name_en": null,
@@ -51,6 +59,6 @@
       "name": "光电子器件制造",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0I0XZD6SO"
+    "_bucket": "C/39/3976"
   }
 ]

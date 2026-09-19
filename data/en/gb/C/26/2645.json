@@ -81,7 +81,14 @@
       "source": "gb_token",
       "evidence": "染料"
     },
-    "source_url": "https://www.amap.com/place/B0FFI2UAWG"
+    "source_url": "https://www.amap.com/place/B0FFI2UAWG",
+    "industry_en": {
+      "code": "2645",
+      "name_en": null,
+      "level": "class",
+      "name": "染料制造",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0089792",
@@ -110,6 +117,13 @@
       "source": "gb_token",
       "evidence": "染料"
     },
-    "source_url": "https://www.amap.com/place/B0FFGC1FJP"
+    "source_url": "https://www.amap.com/place/B0FFGC1FJP",
+    "industry_en": {
+      "code": "2645",
+      "name_en": null,
+      "level": "class",
+      "name": "染料制造",
+      "confidence": "high"
+    }
   }
 ]

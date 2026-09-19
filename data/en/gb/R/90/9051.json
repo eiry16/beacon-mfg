@@ -82,7 +82,7 @@
   },
   {
     "id": "CN-MFG-0044740",
-    "company_en": "Guangzhou Liwan Xinyu Cai Ear Culture Experience Hall",
+    "company_en": "Guangzhou Liwan District Xinyu Cai Ear Culture Experience Hall",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -92,12 +92,20 @@
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "No. 282 Huadian Avenue Middle, Phase 1, Shop 0405,碧桂园 Zhao Hua Building",
+    "address_en": "No. 282, Huadian Avenue, First Floor, 0405 Shop, Bao'an Flower Building",
     "contact_phone": "020-81635138; 130****0654; 138****8050",
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "R/90/9051",
+    "industry": {
+      "code": "9051",
+      "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 文化体育娱乐活动与经纪代理服务文化活动服务 > 文化体育娱乐活动与经纪代理服务文化活动服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "文化体"
+    },
     "industry_en": {
       "code": "9051",
       "name_en": "Cultural, Sports & Entertainment Activities and Talent Agency Services",
@@ -105,7 +113,7 @@
       "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
       "confidence": "high"
     },
-    "source_url": "https://www.amap.com/place/B0HGSH55O9"
+    "_bucket": "R/90/9051"
   },
   {
     "id": "CN-MFG-0044766",
@@ -201,12 +209,11 @@
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "Gaode Mansion (步行360 meters from Lieding Subway Station Exit D)",
+    "address_en": "Gode Mansion (within 360 meters on foot from Hede Subway Station Exit D)",
     "contact_phone": "180****8188",
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "R/90/9051",
     "industry": {
       "code": "9051",
       "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
@@ -216,7 +223,14 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "source_url": "https://www.amap.com/place/B0LUARO7FU"
+    "industry_en": {
+      "code": "9051",
+      "name_en": "Cultural, Sports & Entertainment Activities and Talent Agency Services",
+      "level": "class",
+      "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
+      "confidence": "high"
+    },
+    "_bucket": "R/90/9051"
   },
   {
     "id": "CN-MFG-0067894",
@@ -246,7 +260,14 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "source_url": "https://www.amap.com/place/B0HB5AVYJC"
+    "source_url": "https://www.amap.com/place/B0HB5AVYJC",
+    "industry_en": {
+      "code": "9051",
+      "name_en": "Cultural, Sports & Entertainment Activities and Talent Agency Services",
+      "level": "class",
+      "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0067896",
@@ -276,28 +297,34 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "source_url": "https://www.amap.com/place/B0LRMHYBUO"
+    "source_url": "https://www.amap.com/place/B0LRMHYBUO",
+    "industry_en": {
+      "code": "9051",
+      "name_en": "Cultural, Sports & Entertainment Activities and Talent Agency Services",
+      "level": "class",
+      "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
+      "confidence": "high"
+    }
   },
   {
     "id": "CN-MFG-0069278",
-    "company_en": "Guangdong Liewei Labor Service Co., Ltd. Auto Repair Factory",
+    "company_en": "Guangdong Liewei Labor Service Co., Ltd. Automotive Repair Factory",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
       "auto repair",
       "car repair",
-      "vehicle repair"
+      "car maintenance"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "No. 157 Xibayu Road (步行450 meters from Gezhangtan Subway Station Exit A)",
+    "address_en": "No. 157, Xiyuan Road (within 450 meters on foot from Gezhangtan Subway Station Exit A)",
     "contact_phone": "020-86516312; 136****1653",
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "R/90/9051",
     "industry": {
       "code": "9051",
       "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
@@ -307,6 +334,49 @@
       "source": "gb_token",
       "evidence": "动服务"
     },
-    "source_url": "https://www.amap.com/place/B0GKJ7YO1F"
+    "industry_en": {
+      "code": "9051",
+      "name_en": "Cultural, Sports & Entertainment Activities and Talent Agency Services",
+      "level": "class",
+      "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
+      "confidence": "high"
+    },
+    "_bucket": "R/90/9051"
+  },
+  {
+    "id": "CN-MFG-0094620",
+    "company_en": "Miaolin Xiangmiao Tiaoli Culture Experience Hall",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "foot care",
+      "massages"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 81, Building 1-9, Group B4, Zhongtian Exhibition City, Changling North Road, Changling Street",
+    "contact_phone": "131****4391; 177****1080; 182****1413",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "9051",
+      "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 文化体育娱乐活动与经纪代理服务文化活动服务 > 文化体育娱乐活动与经纪代理服务文化活动服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "文化体"
+    },
+    "industry_en": {
+      "code": "9051",
+      "name_en": "Cultural, Sports & Entertainment Activities and Talent Agency Services",
+      "level": "class",
+      "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
+      "confidence": "high"
+    },
+    "_bucket": "R/90/9051"
   }
 ]

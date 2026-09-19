@@ -54,7 +54,14 @@
       "source": "name",
       "evidence": "皮具"
     },
-    "source_url": "https://www.amap.com/place/B0H2UZPEJF"
+    "source_url": "https://www.amap.com/place/B0H2UZPEJF",
+    "industry_en": {
+      "code": "1929",
+      "name_en": null,
+      "level": "class",
+      "name": "其他皮革制品制造",
+      "confidence": "medium"
+    }
   },
   {
     "id": "CN-MFG-0080022",
@@ -83,6 +90,85 @@
       "source": "name",
       "evidence": "皮革"
     },
-    "source_url": "https://www.amap.com/place/B0FFIWQU01"
+    "source_url": "https://www.amap.com/place/B0FFIWQU01",
+    "industry_en": {
+      "code": "1929",
+      "name_en": null,
+      "level": "class",
+      "name": "其他皮革制品制造",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0105955",
+    "company_en": "Xuan You Laundry. Li Shifu Luxury Leather Care",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Dry Cleaning",
+      "Laundry",
+      "Laundry Shop"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 1-2, Nan Yi Li, Xinzhu Road",
+    "contact_phone": "130****1399; 185****5483",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "1929",
+      "name": "其他皮革制品制造",
+      "level": "class",
+      "path": "C 制造业 > 皮革、毛皮、羽毛及其制品和制鞋业 > 皮革制品制造 > 其他皮革制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "皮具"
+    },
+    "industry_en": {
+      "code": "1929",
+      "name_en": null,
+      "level": "class",
+      "name": "其他皮革制品制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/19/1929"
+  },
+  {
+    "id": "CN-MFG-0126328",
+    "company_en": "Er Shao Laundry & Leather Care",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Dry Cleaning"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "No. 82 Qinghuan Road, Zhangtai Hong A District",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-18",
+    "note_en": "",
+    "industry": {
+      "code": "1929",
+      "name": "其他皮革制品制造",
+      "level": "class",
+      "path": "C 制造业 > 皮革、毛皮、羽毛及其制品和制鞋业 > 皮革制品制造 > 其他皮革制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "皮具"
+    },
+    "industry_en": {
+      "code": "1929",
+      "name_en": null,
+      "level": "class",
+      "name": "其他皮革制品制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/19/1929"
   }
 ]

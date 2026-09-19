@@ -79,6 +79,48 @@
       "source": "gb_token",
       "evidence": "气体"
     },
-    "source_url": "https://www.amap.com/place/B0IU5SWN7Z"
+    "source_url": "https://www.amap.com/place/B0IU5SWN7Z",
+    "industry_en": {
+      "code": "3463",
+      "name_en": null,
+      "level": "class",
+      "name": "气体、液体分离及纯净设备制造",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0121380",
+    "company_en": "Nanning Langle Gas",
+    "category": "表面处理",
+    "category_en": "Surface Treatment",
+    "keywords_en": [
+      "Anodizing"
+    ],
+    "region": {
+      "province": "Guangxi",
+      "city": "Nanning"
+    },
+    "address_en": "Xianhu Economic Development Zone Administrative Committee, No. 16 Middle Xianhu Avenue, Haiyin International Flower City Residential Community, Building 5-10, Commercial Residential Building, 23rd Floor",
+    "contact_phone": "138****9753",
+    "source": "public_directory",
+    "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "3463",
+      "name": "气体、液体分离及纯净设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 气体、液体分离及纯净设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "气体"
+    },
+    "industry_en": {
+      "code": "3463",
+      "name_en": null,
+      "level": "class",
+      "name": "气体、液体分离及纯净设备制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/34/3463"
   }
 ]

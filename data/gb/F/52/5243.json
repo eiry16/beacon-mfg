@@ -9,7 +9,8 @@
     ],
     "region": {
       "province": "江苏",
-      "city": "苏州"
+      "city": "苏州",
+      "district": "昆山"
     },
     "address": "周庄古镇中市街115号117号119号",
     "contact_phone": "136****6119",
@@ -58,7 +59,8 @@
     ],
     "region": {
       "province": "湖北",
-      "city": "武汉"
+      "city": "武汉",
+      "district": "江岸"
     },
     "address": "惠济路3号",
     "contact_phone": "027-82961913",
@@ -85,6 +87,55 @@
       "business_area": "建设大道",
       "adcode": "420102",
       "search_keyword": "咖啡馆"
+    },
+    "industry": {
+      "code": "5243",
+      "name": "图书、报刊零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 文化、体育用品及器材专门零售 > 图书、报刊零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "书店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0130548",
+    "company": "野人先生现做冰淇淋(宁波天一广场悦沢书店店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "甜品"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "海曙"
+    },
+    "address": "日新街38号天一广场1层悦沢书店1001-3商铺号野人先生",
+    "contact_phone": "136****6330",
+    "lat": 29.869155,
+    "lng": 121.556517,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LA1ZCFSG",
+      "type": "餐饮服务;休闲餐饮场所;休闲餐饮场所",
+      "typecode": "050400",
+      "alias": "",
+      "tag": "",
+      "keytag": "冰淇淋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南门",
+      "adcode": "330203",
+      "search_keyword": "甜品"
     },
     "industry": {
       "code": "5243",
