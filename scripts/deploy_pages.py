@@ -322,6 +322,11 @@ def build(verbose: bool = True, with_worker: bool = False) -> dict:
     #     覆盖式写入、不删除（与全脚本一致：环境的 safe-delete 会拦截 rmtree）。
     DATA_SRC = REPO_ROOT / "data"
     FP_SRC = REPO_ROOT / "skills" / "registry" / "fingerprint"
+    # 预构建倒排索引：git 模式 MCP 一直用，但 HTTP 模式（外部 agent / 无仓库环境）
+    # 之前拿不到它 → _candidate_shards 回退到逐分片全量扫描（O(总量)，慢）。
+    # 把它也拷进 Pages，HTTP 模式即可经 fetch_text 的 HTTP 分支命中索引、
+    # 走 O(命中量) 快路径，与 git 模式行为一致。
+    IDX_SRC = REPO_ROOT / "skills" / "registry" / "index"
     # ⚠ 文本文件必须按 LF 落盘，不能原样拷贝。
     # 仓库 core.autocrlf=true：工作树 CRLF → git 存 LF。manifest 里每个分片的 sha1（h）
     # 也是按 **LF 归一化后** 算的（见 gen_manifest.sha1_of），jsDelivr 从 git 取、下发 LF，
@@ -332,7 +337,8 @@ def build(verbose: bool = True, with_worker: bool = False) -> dict:
     n_l0 = 0
     n_l0_lf = 0
     for src_root, dst_root in ((DATA_SRC, DIST / "data"),
-                               (FP_SRC, DIST / "skills" / "registry" / "fingerprint")):
+                               (FP_SRC, DIST / "skills" / "registry" / "fingerprint"),
+                               (IDX_SRC, DIST / "skills" / "registry" / "index")):
         if not src_root.exists():
             continue
         for f in src_root.rglob("*"):
