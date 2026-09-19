@@ -10679,16 +10679,16 @@
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
-      "hardware wholesale",
-      "hardware store",
-      "hardware and electrical",
-      "hardware tools"
+      "Hardware Wholesaling",
+      "Hardware Store",
+      "Hardware & Electrical Appliances",
+      "Hardware Tools"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Ningbo"
     },
-    "address_en": "No. 251 Yage Road (步行430 meters from Shiqi Subway Station D Exit)",
+    "address_en": "No. 251 Yage Road, 430 meters on foot from Sheqi Subway Station Exit D",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -10702,13 +10702,7 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "industry_en": {
-      "code": "5174",
-      "name_en": "Hardware & Tools Wholesale",
-      "level": "class",
-      "name": "五金产品批发",
-      "confidence": "low"
-    },
+    "industry_en": null,
     "_bucket": "F/51/5174"
   },
   {
@@ -13375,17 +13369,17 @@
   },
   {
     "id": "CN-MFG-0034123",
-    "company_en": "永高水暖批发(锦绣花苑西区店)",
+    "company_en": "Yonggao Water Heating Wholesale (Jinxiuhua苑 West District Store)",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
-      "水暖批发"
+      "Water Heating Wholesale"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "杨舍镇长安北路80号锦绣花苑西区",
+    "address_en": "No. 80 Chang'an North Road, Yangshe Town, Jinxiuhua苑 West District",
     "contact_phone": "0512-58688453; 138****5339",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -13399,13 +13393,7 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "industry_en": {
-      "code": "5174",
-      "name_en": "Hardware & Tools Wholesale",
-      "level": "class",
-      "name": "五金产品批发",
-      "confidence": "medium"
-    },
+    "industry_en": null,
     "_bucket": "F/51/5174"
   },
   {
@@ -20374,6 +20362,93 @@
       "name": "五金产品批发",
       "confidence": "medium"
     },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0138441",
+    "company_en": "Yongye Rubber & Plastic (Zhangjiagang Hardware & Electrical Appliances Plaza Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Sealing Parts"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 27, Building A3, Zhangjiagang Hardware & Electrical Appliances Plaza",
+    "contact_phone": "135****3883; 153****1367",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": null,
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0138615",
+    "company_en": "Hengji Hydraulic Pneumatic Sealing Hardware & Electrical Appliances Instrument (Xiake Hero Business Building Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Sealing Parts"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 699 Lingqiao Road, Xiake Hero Business Building, 1st Floor",
+    "contact_phone": "0574-87313188",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "密封件|门店型:五金机电"
+    },
+    "industry_en": null,
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0138828",
+    "company_en": "Yongrui Fa Hardware Store",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Sealing Parts"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 24 Xiangjiang Road, Maluan Street, next to Dongguan Junfu North Area Gate",
+    "contact_phone": "134****7727",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "industry_en": null,
     "_bucket": "F/51/5174"
   }
 ]

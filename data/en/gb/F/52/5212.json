@@ -2546,7 +2546,7 @@
   },
   {
     "id": "CN-MFG-0064671",
-    "company_en": "CHAGEE霸王茶姬(Shanghai First Department Store)",
+    "company_en": "CHAGEE霸王茶姬(Shanghai No.1 Department Store)",
     "category": "批发和零售业",
     "category_en": "批发和零售业",
     "keywords_en": [
@@ -2556,7 +2556,7 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 800 Nanjing Road, First Department Store C Building, 1st Floor, G10-03F01-01-0006 Shop (next to Starbucks)",
+    "address_en": "No. 800 Nanjing Road, 1st Floor, C Building, G10-03F01-01-0006 Shop (next to Starbucks)",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -2570,13 +2570,7 @@
       "source": "name",
       "evidence": "百货"
     },
-    "industry_en": {
-      "code": "5212",
-      "name_en": "Supermarket Retail",
-      "level": "class",
-      "name": "超级市场零售",
-      "confidence": "medium"
-    },
+    "industry_en": null,
     "_bucket": "F/52/5212"
   },
   {
@@ -2845,7 +2839,7 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 568 Songhui Middle Road, LuDu International Shopping Plaza F1 Level (near North 1 Gate)",
+    "address_en": "No. 568 Songhui Middle Road, 1st Floor, LuDu International Shopping Plaza (near North 1 Gate)",
     "contact_phone": "172****2322",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -2859,13 +2853,7 @@
       "source": "name",
       "evidence": "购物广场"
     },
-    "industry_en": {
-      "code": "5212",
-      "name_en": "Supermarket Retail",
-      "level": "class",
-      "name": "超级市场零售",
-      "confidence": "medium"
-    },
+    "industry_en": null,
     "_bucket": "F/52/5212"
   },
   {
@@ -2953,7 +2941,7 @@
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 211 Changjiang Road, Suzhou Quanwu B1F Level (enter through South 2 Gate, walk straight for 30 meters, take the escalator down to B1F)",
+    "address_en": "No. 211 Changjiang Road, B1F, Suzhou Quanwu (enter through South 2 Gate, walk straight for 30 meters, take the escalator down to B1F)",
     "contact_phone": "0512-68756420",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -2967,13 +2955,7 @@
       "source": "name",
       "evidence": "百货"
     },
-    "industry_en": {
-      "code": "5212",
-      "name_en": "Supermarket Retail",
-      "level": "class",
-      "name": "超级市场零售",
-      "confidence": "medium"
-    },
+    "industry_en": null,
     "_bucket": "F/52/5212"
   },
   {
@@ -5638,6 +5620,35 @@
       "name": "超级市场零售",
       "confidence": "medium"
     },
+    "_bucket": "F/52/5212"
+  },
+  {
+    "id": "CN-MFG-0139079",
+    "company_en": "Jianli Ceramics Building Materials Supermarket",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "Industrial Ceramics"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Foshan"
+    },
+    "address_en": "No. 1, Building A, Area 2, Shangyuan Industrial Park, Nanzhuang Town",
+    "contact_phone": "137****9366",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "超市"
+    },
+    "industry_en": null,
     "_bucket": "F/52/5212"
   }
 ]

@@ -1678,5 +1678,34 @@
       "confidence": "low"
     },
     "_bucket": "F/51/_partial"
+  },
+  {
+    "id": "CN-MFG-0138381",
+    "company_en": "Tianfa Adhesive Industry Paints and Coatings Wholesaler",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "Sealing Parts"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 22, Building 35, Huaxia Hardware City",
+    "contact_phone": "138****4416; 188****7202",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "料批发"
+    },
+    "industry_en": null,
+    "_bucket": "F/51/_partial"
   }
 ]

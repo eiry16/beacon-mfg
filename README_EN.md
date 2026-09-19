@@ -84,7 +84,7 @@ Every supplier carries a national industry class code:
 Top classes (full list in `data/industry-index.json`): 6210 Full-service Restaurants 10,856 · 6232 Cafe Service 9,513 · 3484 Machined Parts & Components 8,420 · 8053 Healthcare & Wellness Services 7,140 · 2929 Plastic Parts & Other Plastic Products 6,000 · 6231 Tea House Service 5,455 · 6291 Snack Service 5,273 · 3525 Molds & Dies 5,014.
 > **Pending**: 8,617 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
-**English** (`data/en/gb/`, same four-level GB archive): **111967 English-mirror records**
+**English** (`data/en/gb/`, same four-level GB archive): **128689 English-mirror records**
 for overseas agents/buyers — kept at **1:1 by `id`** with the Chinese dataset via
 `scripts/en_backfill.py` (incremental, resumable) + `scripts/en_sync_industry.py` for
 the `industry_en` label (English GB/T 4754 class names).
