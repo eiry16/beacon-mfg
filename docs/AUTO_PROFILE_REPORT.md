@@ -1,6 +1,6 @@
 # 自动整理报告 · 遵义
 
-生成时间：2026-09-18　引擎：`scripts/collect/auto_profile.py`
+生成时间：2026-09-19　引擎：`scripts/collect/auto_profile.py`
 
 ## 筛选漏斗
 
