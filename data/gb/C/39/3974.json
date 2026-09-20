@@ -454,5 +454,103 @@
       "evidence": "液晶"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0140677",
+    "company": "金桥家电TCL液晶电视售后维修(综合小区店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "新洲区"
+    },
+    "address": "综合小区",
+    "contact_phone": "待核实",
+    "lat": 30.655453,
+    "lng": 114.578665,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J6A5X3QB",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "阳逻",
+      "adcode": "420117",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3974",
+      "name": "显示器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 显示器件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "液晶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0141155",
+    "company": "信兴电子科技液晶电视空调维修",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "蔡甸区"
+    },
+    "address": "武汉经济技术开发区薛峰社区43栋",
+    "contact_phone": "136****5646",
+    "lat": 30.459642,
+    "lng": 114.092673,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLFH543",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "420114",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "3974",
+      "name": "显示器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 显示器件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "液晶"
+    },
+    "is_manufacturer": true
   }
 ]

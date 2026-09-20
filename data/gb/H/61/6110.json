@@ -234221,5 +234221,103 @@
       "evidence": "酒店"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0141887",
+    "company": "老香港(如家睿柏云酒店店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "西点"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "富阳区"
+    },
+    "address": "富春街道文居街387号",
+    "contact_phone": "136****3364; 159****7794",
+    "lat": 30.058994,
+    "lng": 119.93996,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HUA7CZ92",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "绿豆糕,糕饼",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "富春",
+      "adcode": "330111",
+      "search_keyword": "西点"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0142179",
+    "company": "杭州远洋凯宾斯基酒店·伯托美食廊",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "西点"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "拱墅区"
+    },
+    "address": "小河街道丽水路66号杭州远洋凯宾斯基酒店1楼",
+    "contact_phone": "137****3413",
+    "lat": 30.306246,
+    "lng": 120.14094,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKX2Q11",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "卡布奇诺,提拉米苏,牛肉,下午茶,杨枝甘露",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "大关",
+      "adcode": "330105",
+      "search_keyword": "西点"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
   }
 ]

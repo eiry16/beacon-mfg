@@ -300,5 +300,54 @@
       "evidence": "巧克力"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0141314",
+    "company": "糖果",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "西点"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "临安区"
+    },
+    "address": "大华路3号",
+    "contact_phone": "138****4036",
+    "lat": 30.221875,
+    "lng": 119.710858,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHJZCRX",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关|购物服务;购物相关场所;购物相关场所",
+      "typecode": "050000|060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "西式糕点",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "锦城",
+      "adcode": "330112",
+      "search_keyword": "西点"
+    },
+    "industry": {
+      "code": "1421",
+      "name": "糖果、巧克力制造",
+      "level": "class",
+      "path": "C 制造业 > 食品制造业 > 糖果、巧克力及蜜饯制造 > 糖果、巧克力制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "糖果"
+    },
+    "is_manufacturer": true
   }
 ]

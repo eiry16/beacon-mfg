@@ -197,5 +197,103 @@
       "evidence": "电视"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0140636",
+    "company": "海信电视服务中心",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "新洲区"
+    },
+    "address": "化乐路17号",
+    "contact_phone": "171****0135",
+    "lat": 30.846198,
+    "lng": 114.796912,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGFT7PL",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "邾城",
+      "adcode": "420117",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "8720",
+      "name": "电视",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电视 > 电视",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "电视"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0140650",
+    "company": "电视用户服务站",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "新洲区"
+    },
+    "address": "高新东路与长丰路交叉口西120米",
+    "contact_phone": "138****3679",
+    "lat": 30.666502,
+    "lng": 114.575804,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I3F7OS8V",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "阳逻",
+      "adcode": "420117",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "8720",
+      "name": "电视",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 广播、电视、电影和录音制作业 > 电视 > 电视",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "电视"
+    },
+    "is_manufacturer": false
   }
 ]

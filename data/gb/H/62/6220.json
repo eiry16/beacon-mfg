@@ -215518,5 +215518,103 @@
       "evidence": "快餐"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0141327",
+    "company": "蛋糕·烘焙·简餐",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "西点"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "临安区"
+    },
+    "address": "衣锦街与安阁弄交叉口西北20米",
+    "contact_phone": "待核实",
+    "lat": 30.234226,
+    "lng": 119.719696,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRNUKYGI",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "锦城",
+      "adcode": "330112",
+      "search_keyword": "西点"
+    },
+    "industry": {
+      "code": "6220",
+      "name": "快餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 快餐服务 > 快餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "简餐"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0141965",
+    "company": "宝藏炸鸡(大源店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "西点"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "富阳区"
+    },
+    "address": "下郎路1号",
+    "contact_phone": "130****5999",
+    "lat": 30.002321,
+    "lng": 120.008429,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H23DQJKS",
+      "type": "餐饮服务;快餐厅;快餐厅",
+      "typecode": "050300",
+      "alias": "",
+      "tag": "炸鸡",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "富阳市大源人民医院",
+      "adcode": "330111",
+      "search_keyword": "西点"
+    },
+    "industry": {
+      "code": "6220",
+      "name": "快餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 快餐服务 > 快餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "炸鸡"
+    },
+    "is_manufacturer": false
   }
 ]

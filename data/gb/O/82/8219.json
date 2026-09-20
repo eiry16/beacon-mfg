@@ -104,5 +104,54 @@
       "evidence": "清洁服务"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0142014",
+    "company": "精诚锁业开锁换锁疏通保洁电动车维修",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "江岸区"
+    },
+    "address": "工农兵路18号长江委上滑坡小区门口",
+    "contact_phone": "136****8895",
+    "lat": 30.618018,
+    "lng": 114.305168,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGA1DYW",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "开锁换锁",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "黄浦路",
+      "adcode": "420102",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "8219",
+      "name": "其他清洁服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 其他服务业 > 清洁服务 > 其他清洁服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "保洁"
+    },
+    "is_manufacturer": false
   }
 ]
