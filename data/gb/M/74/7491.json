@@ -10737,5 +10737,54 @@
       "evidence": "工业设计"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0145589",
+    "company": "东莞市德瑞工业设备技术有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "电镀"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "塘厦镇林村林东路26号发斯特科技园2栋1楼整层",
+    "contact_phone": "0769-82892259",
+    "lat": 22.839775,
+    "lng": 114.109025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KUJBIWFX",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "电镀"
+    },
+    "industry": {
+      "code": "7491",
+      "name": "工业设计服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工业与专业设计及其他专业技术服务 > 工业设计服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "工业设"
+    },
+    "is_manufacturer": false
   }
 ]

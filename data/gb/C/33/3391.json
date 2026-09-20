@@ -182,7 +182,8 @@
     "company": "金坛市压力精密铸造厂",
     "category": "压铸",
     "keywords": [
-      "压铸"
+      "压铸",
+      "铝合金压铸"
     ],
     "region": {
       "province": "江苏",
@@ -256,7 +257,21 @@
       "evidence": "铸造"
     },
     "is_manufacturer": true,
-    "_bucket": "C/33/3391"
+    "_bucket": "C/33/3391",
+    "amap": {
+      "poi_id": "B0FFGH8S2V",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330211",
+      "search_keyword": "压铸"
+    }
   },
   {
     "id": "CN-MFG-0015044",
@@ -884,6 +899,104 @@
       "business_area": "北际南路",
       "adcode": "450107",
       "search_keyword": "锌合金压铸"
+    },
+    "industry": {
+      "code": "3391",
+      "name": "黑色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 黑色金属铸造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "铸造"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145653",
+    "company": "鑫宝铸造",
+    "category": "表面处理",
+    "keywords": [
+      "电镀"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "东城街道长安镇沙头社区水库路9号",
+    "contact_phone": "176****1109",
+    "lat": 22.79741,
+    "lng": 113.772086,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGC2M9U",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "银饰",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "沙头",
+      "adcode": "441900",
+      "search_keyword": "电镀"
+    },
+    "industry": {
+      "code": "3391",
+      "name": "黑色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 黑色金属铸造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "铸造"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146822",
+    "company": "劲国-隆成建耐热钢铸造",
+    "category": "表面处理",
+    "keywords": [
+      "热处理"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "锡山区"
+    },
+    "address": "锡港路与蓉盛路交叉口东北200米",
+    "contact_phone": "133****3207",
+    "lat": 31.643687,
+    "lng": 120.380398,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J2XUVIEF",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320205",
+      "search_keyword": "热处理"
     },
     "industry": {
       "code": "3391",

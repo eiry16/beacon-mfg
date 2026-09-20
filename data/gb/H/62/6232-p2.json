@@ -221915,5 +221915,54 @@
       "evidence": "咖啡"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0143072",
+    "company": "杭州咖啡公寓",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "民宿"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "拱墅区"
+    },
+    "address": "中河北路69号意盛商务大厦F16层",
+    "contact_phone": "133****2124",
+    "lat": 30.266175,
+    "lng": 120.170775,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2LCEGOI",
+      "type": "住宿服务;住宿服务相关;住宿服务相关",
+      "typecode": "100000",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "天水",
+      "adcode": "330105",
+      "search_keyword": "民宿"
+    },
+    "industry": {
+      "code": "6232",
+      "name": "咖啡馆服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 饮料及冷饮服务 > 咖啡馆服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "咖啡"
+    },
+    "is_manufacturer": false
   }
 ]

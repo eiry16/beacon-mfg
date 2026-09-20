@@ -245,5 +245,54 @@
       "evidence": "皮具"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145150",
+    "company": "皮具五金压铸锁厂",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "南海区"
+    },
+    "address": "中心公路与沙边大道交叉口西北140米",
+    "contact_phone": "待核实",
+    "lat": 23.107147,
+    "lng": 112.926553,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F503RQO",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丹灶",
+      "adcode": "440605",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "1929",
+      "name": "其他皮革制品制造",
+      "level": "class",
+      "path": "C 制造业 > 皮革、毛皮、羽毛及其制品和制鞋业 > 皮革制品制造 > 其他皮革制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "皮具"
+    },
+    "is_manufacturer": true
   }
 ]
