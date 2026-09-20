@@ -22110,5 +22110,54 @@
       "evidence": "刨冰"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0142451",
+    "company": "晌午坞Sunwoo-蛋糕.糖水.茶饮",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "西点"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "余杭区"
+    },
+    "address": "亲橙park D5-L105",
+    "contact_phone": "136****7878",
+    "lat": 30.270672,
+    "lng": 120.008079,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L2U7EQUV",
+      "type": "餐饮服务;甜品店;甜品店",
+      "typecode": "050900",
+      "alias": "",
+      "tag": "",
+      "keytag": "甜品店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "五常街道",
+      "adcode": "330110",
+      "search_keyword": "西点"
+    },
+    "industry": {
+      "code": "6231",
+      "name": "茶馆服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 饮料及冷饮服务 > 茶馆服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "茶饮"
+    },
+    "is_manufacturer": false
   }
 ]

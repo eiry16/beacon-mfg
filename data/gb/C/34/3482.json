@@ -47956,7 +47956,8 @@
     "company": "晋亿螺丝(螺丝五金批发)",
     "category": "原材料",
     "keywords": [
-      "铝型材"
+      "铝型材",
+      "模具"
     ],
     "region": {
       "province": "江苏",
@@ -49192,7 +49193,8 @@
     "company": "乐岩螺丝乐鑫五金劳保桥架",
     "category": "注塑成型",
     "keywords": [
-      "塑料模具"
+      "塑料模具",
+      "模具"
     ],
     "region": {
       "province": "江苏",
@@ -66519,6 +66521,55 @@
       "business_area": "三林",
       "adcode": "310115",
       "search_keyword": "密封件"
+    },
+    "industry": {
+      "code": "3482",
+      "name": "紧固件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 紧固件制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "螺丝"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0141423",
+    "company": "乐鑫螺丝五金桥架劳保",
+    "category": "注塑成型",
+    "keywords": [
+      "模具"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "张家港"
+    },
+    "address": "德积镇长江东路198号(张家港市沙洲医院南门东南70米)",
+    "contact_phone": "137****6576",
+    "lat": 31.999927,
+    "lng": 120.495188,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HDNZEQ1P",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "模具"
     },
     "industry": {
       "code": "3482",

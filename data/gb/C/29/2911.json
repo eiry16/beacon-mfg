@@ -12558,5 +12558,54 @@
       "evidence": "轮胎"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0141651",
+    "company": "汽车轮胎电瓶(电动车维修)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "武昌区"
+    },
+    "address": "瑞安街224号松涛苑D区",
+    "contact_phone": "待核实",
+    "lat": 30.512644,
+    "lng": 114.325972,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG28Z5J",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "补胎",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丁字桥",
+      "adcode": "420106",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "2911",
+      "name": "轮胎制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 轮胎制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "轮胎"
+    },
+    "is_manufacturer": true
   }
 ]

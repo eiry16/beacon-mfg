@@ -2030,5 +2030,54 @@
       "evidence": "互联网"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0141049",
+    "company": "莫卡乡村(滨江区互联网小镇店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "西点"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "滨江区"
+    },
+    "address": "阿里巴巴滨江园区5号楼1楼",
+    "contact_phone": "待核实",
+    "lat": 30.189188,
+    "lng": 120.190427,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6379URJ",
+      "type": "餐饮服务;糕饼店;糕饼店",
+      "typecode": "050800",
+      "alias": "",
+      "tag": "",
+      "keytag": "蛋糕店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "长河",
+      "adcode": "330108",
+      "search_keyword": "西点"
+    },
+    "industry": {
+      "code": "6490",
+      "name": "其他互联网服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 互联网和相关服务 > 其他互联网服务 > 其他互联网服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "互联网"
+    },
+    "is_manufacturer": false
   }
 ]

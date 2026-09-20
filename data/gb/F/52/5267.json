@@ -397,5 +397,54 @@
       "evidence": "电销售"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0141383",
+    "company": "景宏家电销售维修",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "家电维修"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "江夏区"
+    },
+    "address": "藏龙岛三和光谷道2期5栋5号1-2层商铺",
+    "contact_phone": "待核实",
+    "lat": 30.433235,
+    "lng": 114.427269,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JG77UE05",
+      "type": "购物服务;家居建材市场;厨卫市场",
+      "typecode": "060604",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "流芳",
+      "adcode": "420115",
+      "search_keyword": "家电维修"
+    },
+    "industry": {
+      "code": "5267",
+      "name": "机动车充电销售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 汽车、摩托车、零配件和燃料及其他动力销售 > 机动车充电销售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "电销售"
+    },
+    "is_manufacturer": false
   }
 ]
