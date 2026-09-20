@@ -269,7 +269,20 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/40/4011",
-    "amap": {}
+    "amap": {
+      "poi_id": "B0K1VAR8JQ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "喷涂"
+    }
   },
   {
     "id": "CN-MFG-0003275",
@@ -880,7 +893,21 @@
       "evidence": "自动化设备"
     },
     "is_manufacturer": true,
-    "_bucket": "C/40/4011"
+    "_bucket": "C/40/4011",
+    "amap": {
+      "poi_id": "B0JGN7YQ4Z",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "张泾",
+      "adcode": "320205",
+      "search_keyword": "喷涂"
+    }
   },
   {
     "id": "CN-MFG-0004581",
@@ -961,7 +988,21 @@
       "evidence": "自动化"
     },
     "is_manufacturer": true,
-    "_bucket": "C/40/4011"
+    "_bucket": "C/40/4011",
+    "amap": {
+      "poi_id": "B0K35H82MQ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南城",
+      "adcode": "441900",
+      "search_keyword": "喷涂"
+    }
   },
   {
     "id": "CN-MFG-0004791",
@@ -994,7 +1035,21 @@
       "evidence": "自动化"
     },
     "is_manufacturer": true,
-    "_bucket": "C/40/4011"
+    "_bucket": "C/40/4011",
+    "amap": {
+      "poi_id": "B0J26UZ66C",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "喷涂"
+    }
   },
   {
     "id": "CN-MFG-0004843",
@@ -1850,7 +1905,8 @@
     "company": "昆山市易普多自动化设备厂",
     "category": "注塑成型",
     "keywords": [
-      "塑料模具"
+      "塑料模具",
+      "模具加工"
     ],
     "region": {
       "province": "江苏",
@@ -2324,6 +2380,349 @@
       "business_area": "沙井",
       "adcode": "440306",
       "search_keyword": "传感器"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146393",
+    "company": "东莞市宇腾自动化涂装设备有限公司",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "清溪镇铁场村银屏路117号",
+    "contact_phone": "135****1657",
+    "lat": 22.854501,
+    "lng": 114.215769,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JDOMGITE",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146422",
+    "company": "宏诚自动化涂装设备有限公司",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "虎门镇沙角管理区工业二路77号",
+    "contact_phone": "159****9292",
+    "lat": 22.752813,
+    "lng": 113.679782,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HU3HY19Q",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146454",
+    "company": "金广盛自动化涂装设备有限公司",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "社民公馆东南侧190米",
+    "contact_phone": "待核实",
+    "lat": 23.012351,
+    "lng": 113.930231,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFM56CVK",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "购物服务,专卖店,专营店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146457",
+    "company": "祥和自动化设备",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "石排镇新曾路东16号",
+    "contact_phone": "134****3692",
+    "lat": 23.081195,
+    "lng": 113.952067,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLJOXZM",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化设备"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146576",
+    "company": "弘瑞自动化静电涂装机械",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "顺德区"
+    },
+    "address": "容桂镇文明路口碧华豪庭地铺16号",
+    "contact_phone": "136****8802",
+    "lat": 22.751214,
+    "lng": 113.280746,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J1LBSYN4",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "容桂",
+      "adcode": "440606",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146637",
+    "company": "喷码机激光机杭州乐创自动化设备",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "上城区"
+    },
+    "address": "鑫运时代金座(九睦路地铁站A口步行370米)",
+    "contact_phone": "0571-28998032",
+    "lat": 30.308125,
+    "lng": 120.271973,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HG6K9UES",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "九堡",
+      "adcode": "330102",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "4011",
+      "name": "工业自动控制系统装置制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 通用仪器仪表制造 > 工业自动控制系统装置制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "自动化设备"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146728",
+    "company": "信鑫自动化涂装设备厂",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "东升镇高沙第二工业区顺畅路18号",
+    "contact_phone": "待核实",
+    "lat": 22.6234,
+    "lng": 113.26662,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGC2HGH",
+      "type": "公司企业;公司;公司|公司企业;工厂;工厂",
+      "typecode": "170200|170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "喷涂"
     },
     "industry": {
       "code": "4011",

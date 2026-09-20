@@ -4,19 +4,19 @@
   "description": "分片清单。客户 Agent 只需拉本文件，即可定位并按需下载命中的国标小类分片，无需 clone 整个仓库。",
   "usage": "1) 拉本文件 2) 按 c（国标码）筛分片 3) 缓存本次响应返回的 ETag，下次带 If-None-Match 拉分片（命中返回 304，零传输） 4) 命中后按 id 调详情 API 取完整档案",
   "field_note": "h = 分片内容 SHA1，用于下载后校验完整性；做增量更新请用服务端响应头里的 ETag，不要用 h。",
-  "generated_at": "2026-09-20",
-  "total_shards": 832,
-  "total_bytes": 339574908,
+  "generated_at": "2026-09-21",
+  "total_shards": 834,
+  "total_bytes": 346894371,
   "by_type": {
    "fp": {
-    "shards": 271,
-    "bytes": 27201700,
-    "records": 128689
+    "shards": 272,
+    "bytes": 28836325,
+    "records": 135072
    },
    "zh": {
-    "shards": 280,
-    "bytes": 185478522,
-    "records": 131082
+    "shards": 281,
+    "bytes": 191082619,
+    "records": 135072
    },
    "en": {
     "shards": 280,
@@ -25,8 +25,8 @@
    },
    "phone": {
     "shards": 1,
-    "bytes": 2751206,
-    "records": 96809
+    "bytes": 2831947,
+    "records": 99640
    }
   },
   "field_spec": {
@@ -48,10 +48,10 @@
    "c": "",
    "n": "",
    "t": "fp",
-   "k": 2196,
-   "z": 401384,
-   "h": "7c947d14c5f94df80d65f228cfca4a584d1692d4",
-   "u": "2026-09-19"
+   "k": 2240,
+   "z": 409894,
+   "h": "55bb82c3bcfbbaaa3fdee25f5e1a3fab8a8617f1",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1313.jsonl",
@@ -62,7 +62,7 @@
    "k": 1,
    "z": 158,
    "h": "7ff2797926d0d388a9e6f4bca445bb5e6bbd7e5c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1314.jsonl",
@@ -73,7 +73,7 @@
    "k": 1,
    "z": 175,
    "h": "82ae5ee55faba9aa721e0a29b952083bfc5138d3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1329.jsonl",
@@ -84,7 +84,7 @@
    "k": 2,
    "z": 341,
    "h": "ae89eadffd65f01e58b3ce6356e112ae70ba2549",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1351.jsonl",
@@ -95,7 +95,7 @@
    "k": 10,
    "z": 1899,
    "h": "309751bc1d63d5f0d97e6d8b9864e321d1a5d1a5",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1369.jsonl",
@@ -106,7 +106,7 @@
    "k": 5,
    "z": 904,
    "h": "00a6a72e4bbcf6bfdd60140d288d1c4cf9ecfcad",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1371.jsonl",
@@ -117,7 +117,7 @@
    "k": 3,
    "z": 559,
    "h": "413d9b6f8610c7a7a749b77a7d3903ca17343827",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1392.jsonl",
@@ -128,7 +128,7 @@
    "k": 4,
    "z": 682,
    "h": "220cd87719bb09e5040f8c0d7d119d08cfe25cf7",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1399.jsonl",
@@ -139,7 +139,7 @@
    "k": 19,
    "z": 3466,
    "h": "70e0ec571129e42f240be1abe53745c228897b67",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/14/1421.jsonl",
@@ -147,10 +147,10 @@
    "c": "1421",
    "n": "糖果、巧克力制造",
    "t": "fp",
-   "k": 6,
-   "z": 1065,
-   "h": "0a13609b826d2f938568b8e566d7454fb12bb2b0",
-   "u": "2026-09-19"
+   "k": 7,
+   "z": 1227,
+   "h": "ba8d4d226e165b361bbc0ccf8a8294ecceb68ac2",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/14/1449.jsonl",
@@ -161,7 +161,7 @@
    "k": 5,
    "z": 919,
    "h": "39921133e31c4716027a1f36a67b67fd053bfdee",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/14/1495.jsonl",
@@ -172,7 +172,7 @@
    "k": 1,
    "z": 206,
    "h": "4527610d4f6cd70e43d96da6cad01c46b17604a1",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/14/1499.jsonl",
@@ -183,7 +183,7 @@
    "k": 67,
    "z": 12445,
    "h": "e7f833f4f2f1079a811cf915adc8d96a9ff2877b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1511.jsonl",
@@ -194,7 +194,7 @@
    "k": 2,
    "z": 340,
    "h": "dea5210ada8687434ca47615021cab2d95d73d42",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1512.jsonl",
@@ -205,7 +205,7 @@
    "k": 3,
    "z": 463,
    "h": "055322503dc89500e4f3665ccc1200d631ed4548",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1513.jsonl",
@@ -216,7 +216,7 @@
    "k": 24,
    "z": 4334,
    "h": "c8b15de7bc14c9189878415979c856e7b895d199",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1515.jsonl",
@@ -227,7 +227,7 @@
    "k": 1,
    "z": 174,
    "h": "ca9d9528501d8909e4a17b6cffadbf2728b3f8b2",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1529.jsonl",
@@ -238,7 +238,7 @@
    "k": 2,
    "z": 388,
    "h": "32d173963f55a1db6a9cec64f3ee2b0ba39a025c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1530.jsonl",
@@ -249,7 +249,7 @@
    "k": 9,
    "z": 1629,
    "h": "d13420b80529a80d6cc0855d7e27bfac024f09a9",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/16/1620.jsonl",
@@ -260,7 +260,7 @@
    "k": 1,
    "z": 182,
    "h": "2f1020c3784b86ec3436de5a42ba552d86a06ab7",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/17/1711.jsonl",
@@ -271,7 +271,18 @@
    "k": 15,
    "z": 2872,
    "h": "aace36bd1db788435d017d58f0cdf98d4ae0a960",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
+  },
+  {
+   "p": "skills/registry/fingerprint/gb/C/17/1713.jsonl",
+   "b": "C/17/1713",
+   "c": "1713",
+   "n": "棉印染精加工",
+   "t": "fp",
+   "k": 1,
+   "z": 183,
+   "h": "fe4e2cdad7e4e978f3f1b964f520e841d7a6425c",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/17/1771.jsonl",
@@ -282,7 +293,7 @@
    "k": 3,
    "z": 537,
    "h": "11775e38b5986dc833cceab5313f31f1b03e0e60",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/17/1773.jsonl",
@@ -293,7 +304,7 @@
    "k": 10,
    "z": 1749,
    "h": "c9fc9be204ad7a47c731e64603ef7c4ab41e4215",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/17/1784.jsonl",
@@ -304,7 +315,7 @@
    "k": 3,
    "z": 531,
    "h": "24e3edfbf6ba04522faefec188925f1519624db8",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/18/1819.jsonl",
@@ -315,7 +326,7 @@
    "k": 19,
    "z": 3319,
    "h": "84d2522432853abce1930773aeca14faf8a24ce7",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/18/1830.jsonl",
@@ -326,7 +337,7 @@
    "k": 10,
    "z": 1878,
    "h": "253fa88e660de2e03dcce619d73bc10ec32b0516",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/19/1929.jsonl",
@@ -334,10 +345,10 @@
    "c": "1929",
    "n": "其他皮革制品制造",
    "t": "fp",
-   "k": 5,
-   "z": 905,
-   "h": "92085a0f73ed9e6e66172eabf45e830d6b1c15fb",
-   "u": "2026-09-19"
+   "k": 6,
+   "z": 1085,
+   "h": "9e351f4114ea7aa07dae3a456e89e8f0ce9da332",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2012.jsonl",
@@ -348,7 +359,7 @@
    "k": 1,
    "z": 170,
    "h": "8c03fb240620249647a417f794096b676eeb9cc0",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2013.jsonl",
@@ -359,7 +370,7 @@
    "k": 16,
    "z": 3102,
    "h": "7bbf720de4b75e40789222da44eb5d3efe4e1728",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2019.jsonl",
@@ -370,7 +381,7 @@
    "k": 122,
    "z": 21926,
    "h": "12006ad5ca15e793f5ed19f16f7af3f241cc20b8",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2029.jsonl",
@@ -381,7 +392,7 @@
    "k": 3,
    "z": 598,
    "h": "4d193b2d66afd9e60c345a67fefa8c80ea3e6291",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2033.jsonl",
@@ -392,7 +403,7 @@
    "k": 1,
    "z": 183,
    "h": "a2bd8b2e069383793583f794f695c480d6b45628",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2034.jsonl",
@@ -403,7 +414,7 @@
    "k": 8,
    "z": 1486,
    "h": "76adefbed3fea736dd990f37b86ed5ff12e0d201",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2041.jsonl",
@@ -414,7 +425,7 @@
    "k": 1,
    "z": 177,
    "h": "7d9e51aea246af84f02e81b676722c2826c0edf3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/21/2140.jsonl",
@@ -425,7 +436,7 @@
    "k": 1,
    "z": 191,
    "h": "12007032b67c1a8b7e341750fecad76323ffff6b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/21/2190.jsonl",
@@ -436,7 +447,7 @@
    "k": 23,
    "z": 4186,
    "h": "8689360253d9cbf12b5cfdf6e19bfd0e60864119",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/22/2239.jsonl",
@@ -447,7 +458,7 @@
    "k": 10,
    "z": 1794,
    "h": "157737cbe36dd0d92185d3576310333ed05f239a",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/23/2319.jsonl",
@@ -455,10 +466,10 @@
    "c": "2319",
    "n": "包装装潢及其他印刷",
    "t": "fp",
-   "k": 34,
-   "z": 6666,
-   "h": "bab44074e16d6e93a04adab7a6722f184d707873",
-   "u": "2026-09-19"
+   "k": 35,
+   "z": 6867,
+   "h": "f8adbf87b16dfe96fba44353be30e2c80a790301",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2411.jsonl",
@@ -469,7 +480,7 @@
    "k": 1,
    "z": 179,
    "h": "73dcc65443cf25e86d4cb6ea88a33049ef8f977a",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2414.jsonl",
@@ -480,7 +491,7 @@
    "k": 1,
    "z": 182,
    "h": "4d9193f0f97b31fea03523636f4f0a6fdfdd207d",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2432.jsonl",
@@ -491,7 +502,7 @@
    "k": 2,
    "z": 380,
    "h": "3c0b2bbc734b7ece813aafeb5be922caa3c7e9b3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2437.jsonl",
@@ -502,7 +513,7 @@
    "k": 19,
    "z": 3758,
    "h": "49aee1b3e92d28c9eeba8a07248a4b108aae092d",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2452.jsonl",
@@ -513,7 +524,7 @@
    "k": 6,
    "z": 1155,
    "h": "4c7a3b8f63de45540e0fc6a92575f46df31037e2",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/25/254.jsonl",
@@ -524,7 +535,7 @@
    "k": 1,
    "z": 203,
    "h": "752b26b1624966486fc0d941a457e4125cecbd15",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/26/2641.jsonl",
@@ -532,10 +543,10 @@
    "c": "2641",
    "n": "涂料制造",
    "t": "fp",
-   "k": 18,
-   "z": 3355,
-   "h": "037c75d4e4b00c1270335473529f1315d34d350c",
-   "u": "2026-09-19"
+   "k": 25,
+   "z": 4835,
+   "h": "72e685672026dff178b11bdf835e9e2975586a90",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/26/2645.jsonl",
@@ -546,7 +557,7 @@
    "k": 4,
    "z": 785,
    "h": "3d8489e9d15412856b2d552ec4648a9e78764b8b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/26/2651.jsonl",
@@ -557,7 +568,7 @@
    "k": 659,
    "z": 136731,
    "h": "8479ca430f7e4e380a28748a41202dcfa8f1fcfe",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/26/2682.jsonl",
@@ -568,7 +579,7 @@
    "k": 1,
    "z": 224,
    "h": "7c8d1d44d785bb44edb01eecb2732c0d23dfc6f4",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/27/2710.jsonl",
@@ -579,7 +590,7 @@
    "k": 2,
    "z": 363,
    "h": "8e8ee85b8955764a43aa3483455fb2c1e7191ec3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/27/2720.jsonl",
@@ -590,7 +601,7 @@
    "k": 3,
    "z": 558,
    "h": "5a8ebb2194fee51a69b96de4de5af1b8be114510",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2911.jsonl",
@@ -598,10 +609,10 @@
    "c": "2911",
    "n": "轮胎制造",
    "t": "fp",
-   "k": 242,
-   "z": 45033,
-   "h": "c0fd6d320d798f195466c23e01fb87244345a102",
-   "u": "2026-09-19"
+   "k": 243,
+   "z": 45237,
+   "h": "2b213b4d4f3eefcf96efab49cbbea3877baf9b85",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2913.jsonl",
@@ -609,10 +620,10 @@
    "c": "2913",
    "n": "橡胶零件制造",
    "t": "fp",
-   "k": 110,
-   "z": 28066,
-   "h": "91962a3ea8548f2523c0b72f19a02c19753ea51d",
-   "u": "2026-09-19"
+   "k": 111,
+   "z": 28368,
+   "h": "7ef5aba374554d2f5dae01d634e89f495eff2fd5",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2916.jsonl",
@@ -623,7 +634,7 @@
    "k": 9,
    "z": 1744,
    "h": "2c468d2481d04c4f51725c2b7eddd7afc0c2e357",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2921.jsonl",
@@ -634,7 +645,7 @@
    "k": 10,
    "z": 2013,
    "h": "1a3b392e6188d9bc8796211c1166cef4cee10c81",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2922.jsonl",
@@ -642,10 +653,10 @@
    "c": "2922",
    "n": "塑料板、管、型材制造",
    "t": "fp",
-   "k": 103,
-   "z": 19400,
-   "h": "314dbbf2895964d8110d59bb1396a3edd60c4a75",
-   "u": "2026-09-19"
+   "k": 107,
+   "z": 20170,
+   "h": "1731c4935727f835b29f607e8bfddd92c59ecd53",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2924.jsonl",
@@ -656,7 +667,7 @@
    "k": 8,
    "z": 1647,
    "h": "cb22fde127dd03127f39a1dc0fd03389dd475f9d",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2925.jsonl",
@@ -667,7 +678,7 @@
    "k": 1,
    "z": 172,
    "h": "959c27ff0cf5760c74a055997efbad865772677f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2926.jsonl",
@@ -678,7 +689,7 @@
    "k": 313,
    "z": 102709,
    "h": "81cae69932bce54219ffe2e68fd532ae561dcb67",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2928.jsonl",
@@ -689,7 +700,7 @@
    "k": 2,
    "z": 460,
    "h": "1abc449381c6d143e07365307587127945afe900",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2929.jsonl",
@@ -697,10 +708,10 @@
    "c": "2929",
    "n": "塑料零件及其他塑料制品制造",
    "t": "fp",
-   "k": 6000,
-   "z": 2068640,
-   "h": "57e9cadabd3cc7e0b18133574dc9a228aafe5e3c",
-   "u": "2026-09-19"
+   "k": 6001,
+   "z": 2069046,
+   "h": "61f20270d052c3209a2ad73c9bfefc27bfcac1a4",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3011.jsonl",
@@ -708,10 +719,10 @@
    "c": "3011",
    "n": "水泥制造",
    "t": "fp",
-   "k": 88,
-   "z": 16801,
-   "h": "6aba0fa817d7b2f269cdf9549e9db2acb7a074dc",
-   "u": "2026-09-19"
+   "k": 89,
+   "z": 17014,
+   "h": "c19a5d95232549a9247c6f2e15a40ca672742718",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3021.jsonl",
@@ -722,7 +733,7 @@
    "k": 7,
    "z": 1249,
    "h": "f42338ffd58deaf8314416ae4262dbedad4a1e6a",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3032.jsonl",
@@ -730,10 +741,10 @@
    "c": "3032",
    "n": "建筑用石加工",
    "t": "fp",
-   "k": 45,
-   "z": 8242,
-   "h": "d5e9a6802889318fc21e53ec741a451403f6f6b2",
-   "u": "2026-09-19"
+   "k": 46,
+   "z": 8438,
+   "h": "d0aba188ee8c3932fc933c66b1b83d8385d399e3",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3033.jsonl",
@@ -744,7 +755,7 @@
    "k": 1,
    "z": 194,
    "h": "7e7016cd88d515d61134abc090edcad11a8c0c61",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3042.jsonl",
@@ -755,7 +766,7 @@
    "k": 1,
    "z": 177,
    "h": "a717cec6cb53b295a6a8982b2c455647e460b296",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3059.jsonl",
@@ -766,7 +777,7 @@
    "k": 11,
    "z": 1959,
    "h": "17fcd1bcbeae26bd296159a14d1320e469e1d56b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3072.jsonl",
@@ -777,7 +788,7 @@
    "k": 34,
    "z": 6156,
    "h": "cbdf26f8230724c3540518f6b3ff3fb7f57e442f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3075.jsonl",
@@ -788,7 +799,7 @@
    "k": 2,
    "z": 369,
    "h": "5fd608845f4a7327160ab60a9a541dc8f52aa3b4",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/31/3130.jsonl",
@@ -796,10 +807,10 @@
    "c": "3130",
    "n": "钢压延加工",
    "t": "fp",
-   "k": 1787,
-   "z": 497260,
-   "h": "c72ce3901ec957ad1636a724cca6c4cafa6a6767",
-   "u": "2026-09-19"
+   "k": 1788,
+   "z": 497601,
+   "h": "a8e960a332aec89c3fcbb0aa54df70be92952c72",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/32/3240.jsonl",
@@ -810,7 +821,7 @@
    "k": 1,
    "z": 173,
    "h": "67a5693900df4ea8ed655c3ac7d7c4ca78dfb169",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/32/3251.jsonl",
@@ -821,7 +832,7 @@
    "k": 343,
    "z": 62954,
    "h": "9ae53a24c477819a3727844c82dc407c3b9c2c83",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/32/3252.jsonl",
@@ -829,10 +840,10 @@
    "c": "3252",
    "n": "铝压延加工",
    "t": "fp",
-   "k": 1210,
-   "z": 258794,
-   "h": "924b37bed3fe20409879835ad3c3e6a80048d312",
-   "u": "2026-09-19"
+   "k": 1212,
+   "z": 259293,
+   "h": "7f2d9026ddae367975aba821a5ed8b7e05143353",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/32/3253.jsonl",
@@ -843,7 +854,7 @@
    "k": 2,
    "z": 348,
    "h": "e83500cff13dfb8c12e930325036801d2b923a65",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3311.jsonl",
@@ -851,10 +862,10 @@
    "c": "3311",
    "n": "金属结构制造",
    "t": "fp",
-   "k": 2579,
-   "z": 627470,
-   "h": "e4c6776cf52fed8e64342abaaeb0160dac40a3bc",
-   "u": "2026-09-19"
+   "k": 2581,
+   "z": 628129,
+   "h": "cbf39f9542b20298dbda646165830fbb636e3c5e",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3312.jsonl",
@@ -862,10 +873,10 @@
    "c": "3312",
    "n": "金属门窗制造",
    "t": "fp",
-   "k": 1323,
-   "z": 274827,
-   "h": "1205e3857f066440ac52b1ea72a53b897087f68e",
-   "u": "2026-09-19"
+   "k": 1401,
+   "z": 293718,
+   "h": "9b0505316961a82cd30e263fd461799389b2cd56",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3321.jsonl",
@@ -876,7 +887,7 @@
    "k": 12,
    "z": 2336,
    "h": "3ebbdc9bf721fdb12e63f43d1f251f063410bb6f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3331.jsonl",
@@ -887,7 +898,7 @@
    "k": 3,
    "z": 517,
    "h": "b840bfee7cd6354061a96e5ac5bf8eacc5af981a",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3332.jsonl",
@@ -898,7 +909,7 @@
    "k": 2,
    "z": 388,
    "h": "a8005a4a743cae4ee0ed90f17633e1659fc07222",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3333.jsonl",
@@ -909,7 +920,7 @@
    "k": 1,
    "z": 195,
    "h": "24cd4bb8f61dcab2680fbbfe6100a959564fc328",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3340.jsonl",
@@ -920,7 +931,7 @@
    "k": 1,
    "z": 174,
    "h": "5d2c15329100d74d7a49a0d92ba9f1e928ae61d3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3351.jsonl",
@@ -928,10 +939,10 @@
    "c": "3351",
    "n": "建筑、家具用金属配件制造",
    "t": "fp",
-   "k": 20,
-   "z": 3847,
-   "h": "6ba392ad8f63a0027e4f20754e33c030e7234019",
-   "u": "2026-09-19"
+   "k": 26,
+   "z": 5044,
+   "h": "9c85a6316557e9c72f4206f375d950be95267e3c",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3353.jsonl",
@@ -942,7 +953,7 @@
    "k": 23,
    "z": 4245,
    "h": "2d1dcc438f2f6f72dd87fd36e648273f9c913cd9",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3360.jsonl",
@@ -950,10 +961,10 @@
    "c": "3360",
    "n": "金属表面处理及热处理加工",
    "t": "fp",
-   "k": 2141,
-   "z": 532356,
-   "h": "7148d5f682afdfb901a66628fee89f4fe6742dae",
-   "u": "2026-09-19"
+   "k": 3481,
+   "z": 993945,
+   "h": "a367a427fde9705ce194922c65304f287e92ff48",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3391.jsonl",
@@ -961,10 +972,10 @@
    "c": "3391",
    "n": "黑色金属铸造",
    "t": "fp",
-   "k": 19,
-   "z": 3567,
-   "h": "7f0f7ac5390981f764dec7cfa92a80fca9f59d25",
-   "u": "2026-09-19"
+   "k": 21,
+   "z": 3919,
+   "h": "8ba561c1e7e118f0ce0809713f4a933489fe8921",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3392.jsonl",
@@ -972,10 +983,10 @@
    "c": "3392",
    "n": "有色金属铸造",
    "t": "fp",
-   "k": 696,
-   "z": 132812,
-   "h": "cc6a1f8be9377604552b41b740d54e49ea74b30d",
-   "u": "2026-09-19"
+   "k": 1094,
+   "z": 217424,
+   "h": "553f99375ce6c692f0cf0f3b7213041c9677dba5",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3393.jsonl",
@@ -986,7 +997,7 @@
    "k": 6,
    "z": 1153,
    "h": "4fe505256ad6d76e3ced92f1c17670c5d3f57cba",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3399.jsonl",
@@ -994,10 +1005,10 @@
    "c": "3399",
    "n": "其他未列明金属制品制造",
    "t": "fp",
-   "k": 2566,
-   "z": 798000,
-   "h": "06de8776f59b8ee8c6b1331a6e6480eeec087894",
-   "u": "2026-09-19"
+   "k": 2612,
+   "z": 817385,
+   "h": "dd15dec98c790605fc5e7fbf7d7d7b01b26796cb",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3412.jsonl",
@@ -1008,7 +1019,7 @@
    "k": 1,
    "z": 167,
    "h": "d5b0e6f7dff99728ffa50577d3d64f387192770e",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3422.jsonl",
@@ -1019,7 +1030,7 @@
    "k": 1,
    "z": 181,
    "h": "c5a875a59c3e7cedc89b6928c8e1079b5fe78c38",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3423.jsonl",
@@ -1030,7 +1041,7 @@
    "k": 1,
    "z": 189,
    "h": "148297e134054a69d704409d1224519a2035f1a1",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3424.jsonl",
@@ -1041,7 +1052,7 @@
    "k": 2,
    "z": 394,
    "h": "4590e1a77f1a9f650d5ecd3d656b2ae519f953b1",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3432.jsonl",
@@ -1052,7 +1063,7 @@
    "k": 2,
    "z": 412,
    "h": "29271c78b8af0c306889d256db1965e12fa9403f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3434.jsonl",
@@ -1061,9 +1072,9 @@
    "n": "连续搬运设备制造",
    "t": "fp",
    "k": 1,
-   "z": 341,
-   "h": "885964d729fb5aa4079f3ec1ed2efef124ff0998",
-   "u": "2026-09-19"
+   "z": 403,
+   "h": "73b250d7a56d66b4ba5c7763161e546900a0d335",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3435.jsonl",
@@ -1074,7 +1085,7 @@
    "k": 6,
    "z": 1218,
    "h": "220107acb536ff0dd2b13fbf9ec2ad559a75a371",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3441.jsonl",
@@ -1082,10 +1093,10 @@
    "c": "3441",
    "n": "泵及真空设备制造",
    "t": "fp",
-   "k": 24,
-   "z": 4504,
-   "h": "b0a201cab9775f99cbd0b4be4a0652c03cde49d5",
-   "u": "2026-09-19"
+   "k": 27,
+   "z": 5171,
+   "h": "8e74e58bfda76fef431b93747dcfdbf9e91bd6b8",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3442.jsonl",
@@ -1096,7 +1107,7 @@
    "k": 1,
    "z": 202,
    "h": "4bd1008c08bccfc4f24e377391622e8565457c9e",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3443.jsonl",
@@ -1107,7 +1118,7 @@
    "k": 70,
    "z": 13709,
    "h": "358aeb50cd9e0384fa31bbb5181b0dc268ed8996",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3444.jsonl",
@@ -1118,7 +1129,7 @@
    "k": 29,
    "z": 5496,
    "h": "3a6288b0a6b72d45276ddfca6305b2249f46b771",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3451.jsonl",
@@ -1129,7 +1140,7 @@
    "k": 985,
    "z": 182033,
    "h": "3190ca0b75533b57adb2e13123e3b7ed52ad80f2",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3453.jsonl",
@@ -1140,7 +1151,7 @@
    "k": 30,
    "z": 5582,
    "h": "f9b76fa50d2f5b729fdce636a64fab056b32f0a3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3462.jsonl",
@@ -1151,7 +1162,7 @@
    "k": 3,
    "z": 586,
    "h": "96b64fc546e47a6f139051357dae103de8c9f48f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3463.jsonl",
@@ -1162,7 +1173,7 @@
    "k": 4,
    "z": 709,
    "h": "5f20c9a9ccab934b19e14574d4c43df42795a194",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3464.jsonl",
@@ -1170,10 +1181,10 @@
    "c": "3464",
    "n": "制冷、空调设备制造",
    "t": "fp",
-   "k": 1307,
-   "z": 272842,
-   "h": "8c0a58de234d837ce31818a89acc068dabacaf99",
-   "u": "2026-09-19"
+   "k": 1399,
+   "z": 293594,
+   "h": "4c99e549b8f7f471f70c7498cec096e0d7153820",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3465.jsonl",
@@ -1181,10 +1192,10 @@
    "c": "3465",
    "n": "风动和电动工具制造",
    "t": "fp",
-   "k": 97,
-   "z": 18538,
-   "h": "754baa59388e8b4e7d17aa0791df5433dfec671f",
-   "u": "2026-09-19"
+   "k": 117,
+   "z": 22614,
+   "h": "c9a512487afb90c5795be1393cc99fbca3c57ac5",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3467.jsonl",
@@ -1192,10 +1203,10 @@
    "c": "3467",
    "n": "包装专用设备制造",
    "t": "fp",
-   "k": 10,
-   "z": 2002,
-   "h": "f490c9ffc5a656cad2be00021044b17fc0e8e513",
-   "u": "2026-09-19"
+   "k": 11,
+   "z": 2216,
+   "h": "5c8f83c7fbc4a02b56d163b640b99517c38ba5f2",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3471.jsonl",
@@ -1206,7 +1217,7 @@
    "k": 2,
    "z": 383,
    "h": "8bc26ba1ae7875f8690e5559a21bae343aae4db4",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3481.jsonl",
@@ -1217,7 +1228,7 @@
    "k": 515,
    "z": 103231,
    "h": "5046df400dff78065d86ce5a3bbd142c79f17f94",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3482.jsonl",
@@ -1225,10 +1236,10 @@
    "c": "3482",
    "n": "紧固件制造",
    "t": "fp",
-   "k": 1359,
-   "z": 267409,
-   "h": "79a49398a0199d7584ac18c5272f3bd2996c8cec",
-   "u": "2026-09-19"
+   "k": 1360,
+   "z": 267641,
+   "h": "8314d65609bda00bed22a259b82ace594720f99d",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3483.jsonl",
@@ -1239,7 +1250,7 @@
    "k": 740,
    "z": 136544,
    "h": "c178a0feb8a37d5b28a6ba09eacce28d30d0986f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3484.jsonl",
@@ -1247,10 +1258,10 @@
    "c": "3484",
    "n": "机械零部件加工",
    "t": "fp",
-   "k": 8420,
-   "z": 2167130,
-   "h": "d450d01d9074439302734b8d379d4737ac740650",
-   "u": "2026-09-19"
+   "k": 8424,
+   "z": 2168545,
+   "h": "f28d046c0116954aa1124b1f61af8643f9dcad87",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3491.jsonl",
@@ -1261,7 +1272,7 @@
    "k": 11,
    "z": 2048,
    "h": "caab929b08f479233fea72871325f09af4aa1c8e",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3511.jsonl",
@@ -1272,7 +1283,7 @@
    "k": 10,
    "z": 1849,
    "h": "5458f9bf3d488441f18b0e371db70469ff64f516",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3514.jsonl",
@@ -1283,7 +1294,7 @@
    "k": 8,
    "z": 1543,
    "h": "86dc4ec0244f3882796733c2fa17de77c257fec6",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3515.jsonl",
@@ -1294,7 +1305,7 @@
    "k": 10,
    "z": 1839,
    "h": "eac596cfb7cf85f40b01bbcad9c8fc88c6d68610",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3521.jsonl",
@@ -1305,7 +1316,7 @@
    "k": 1,
    "z": 176,
    "h": "f0457c520e4a5b172ed4a5b154c83eabb2297963",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3523.jsonl",
@@ -1316,7 +1327,7 @@
    "k": 44,
    "z": 8366,
    "h": "172a1ecad8ee38b9d777167cc6e75aa4818f85e7",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3525.jsonl",
@@ -1324,10 +1335,10 @@
    "c": "3525",
    "n": "模具制造",
    "t": "fp",
-   "k": 5014,
-   "z": 1518909,
-   "h": "2301c6e262cadaf8b715aa4ede4fdd1a035e28d2",
-   "u": "2026-09-19"
+   "k": 6112,
+   "z": 1914497,
+   "h": "ce2a23ca604106538b6fb7558908f78fe023675a",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3546.jsonl",
@@ -1335,10 +1346,10 @@
    "c": "3546",
    "n": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
    "t": "fp",
-   "k": 122,
-   "z": 22453,
-   "h": "5987e5dd6962f94245f1f697de925d1d2595cbdd",
-   "u": "2026-09-19"
+   "k": 124,
+   "z": 22859,
+   "h": "65c18e83f181726d6df9999bace4eb7dd34d16bf",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3554.jsonl",
@@ -1349,7 +1360,7 @@
    "k": 1,
    "z": 206,
    "h": "4b7c87c4a1beaaa6abcf26517900b731d4e89b2d",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3561.jsonl",
@@ -1360,7 +1371,7 @@
    "k": 1,
    "z": 187,
    "h": "79f0e2105a6ca547b4c44f296a300198bea6e11d",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/357.jsonl",
@@ -1371,7 +1382,7 @@
    "k": 8,
    "z": 1549,
    "h": "9186c0b70bf124ff7951a5df2cf0c83b001a1671",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3576.jsonl",
@@ -1382,7 +1393,7 @@
    "k": 51,
    "z": 9834,
    "h": "21b9c40831ed0a18803eb8212a7ffb95951db770",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3577.jsonl",
@@ -1393,7 +1404,7 @@
    "k": 3,
    "z": 508,
    "h": "8164dd5245dc9a1f7699c2f59f188a2df615a1de",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3584.jsonl",
@@ -1404,7 +1415,7 @@
    "k": 27,
    "z": 5105,
    "h": "9a53db4ea2ca102fd7014b2f7190bcc602cbc1bb",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3587.jsonl",
@@ -1415,7 +1426,7 @@
    "k": 4,
    "z": 656,
    "h": "7f231867ed852b4bd8b36d2caa6ebd99f8e72722",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3591.jsonl",
@@ -1423,10 +1434,10 @@
    "c": "3591",
    "n": "环境保护专用设备制造",
    "t": "fp",
-   "k": 18,
-   "z": 3375,
-   "h": "66e2d1998ed5c9a4d2a3fed03d55f43849a4e02a",
-   "u": "2026-09-19"
+   "k": 24,
+   "z": 4503,
+   "h": "5fb195f04d03c7566cf646bfee02967b9e5f6519",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3594.jsonl",
@@ -1437,7 +1448,7 @@
    "k": 9,
    "z": 1627,
    "h": "0bdb47f9d483b1988bbc986da54cac4212842f10",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3596.jsonl",
@@ -1448,7 +1459,7 @@
    "k": 1,
    "z": 192,
    "h": "7e7729772ad9ea567d2a1194ca10c4b8a888b136",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/_partial.jsonl",
@@ -1459,7 +1470,7 @@
    "k": 1,
    "z": 179,
    "h": "462053f4c0fe11c6a3df66f04b33796a79cffe69",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3612.jsonl",
@@ -1470,7 +1481,7 @@
    "k": 11,
    "z": 2112,
    "h": "fd45df626f7cdc26a5ec2ebda36b89f22fadb187",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3630.jsonl",
@@ -1481,7 +1492,7 @@
    "k": 1,
    "z": 183,
    "h": "545cca3c3d159ce788cf90ad753ab8f58c619116",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3640.jsonl",
@@ -1492,7 +1503,7 @@
    "k": 2,
    "z": 364,
    "h": "308f9dbc3b9462f8178be7772454b293451f18e2",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3650.jsonl",
@@ -1503,7 +1514,7 @@
    "k": 1,
    "z": 158,
    "h": "dce128c6c41090c37bd961d4c41d6fb5b450a9e4",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3660.jsonl",
@@ -1511,10 +1522,10 @@
    "c": "3660",
    "n": "汽车车身、挂车制造",
    "t": "fp",
-   "k": 81,
-   "z": 14674,
-   "h": "d088685689cce8cc1299ca55f41c51f6630c8e0b",
-   "u": "2026-09-19"
+   "k": 83,
+   "z": 15052,
+   "h": "967bbe53b996638687daab774601aac21bdd404f",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/37/3714.jsonl",
@@ -1525,7 +1536,7 @@
    "k": 2,
    "z": 382,
    "h": "39221bd3b727a1cc51e2823cd751de6970f858a5",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/37/3715.jsonl",
@@ -1536,7 +1547,7 @@
    "k": 1,
    "z": 180,
    "h": "c5040070d5939446f52e90917d459935ad7ed16c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/37/3741.jsonl",
@@ -1547,7 +1558,7 @@
    "k": 7,
    "z": 1285,
    "h": "8dc2e7db5d2ee5b471df03819ce5c4d3932ac09f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/37/3780.jsonl",
@@ -1558,7 +1569,7 @@
    "k": 1,
    "z": 229,
    "h": "da114b4c696dbc6a945eabd8059ceba38dd17fa9",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3812.jsonl",
@@ -1566,10 +1577,10 @@
    "c": "3812",
    "n": "电动机制造",
    "t": "fp",
-   "k": 43,
-   "z": 8316,
-   "h": "e8da253a20f46295e2bfb018cf57c6bfcf21e83d",
-   "u": "2026-09-19"
+   "k": 44,
+   "z": 8527,
+   "h": "a3c215b4737d566e8a7a05812a7dffc59286b162",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3823.jsonl",
@@ -1580,7 +1591,7 @@
    "k": 3,
    "z": 536,
    "h": "e8a02ce133dd00de73ebca6d8a96b90f93038f8f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3831.jsonl",
@@ -1588,10 +1599,10 @@
    "c": "3831",
    "n": "电线、电缆制造",
    "t": "fp",
-   "k": 45,
-   "z": 8898,
-   "h": "78b511e6853b89d0a88c2da05c071907c3799439",
-   "u": "2026-09-19"
+   "k": 46,
+   "z": 9133,
+   "h": "dcb56957cb0d24540daddf7ea80a3a7373e8fa22",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3832.jsonl",
@@ -1602,7 +1613,7 @@
    "k": 5,
    "z": 929,
    "h": "7ea9e9b6c26333f601fbec968b412585b9422333",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3834.jsonl",
@@ -1613,7 +1624,7 @@
    "k": 1,
    "z": 209,
    "h": "5c72baa6d0d1b8aee5f383df4e01b7d47727d33b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3841.jsonl",
@@ -1624,7 +1635,7 @@
    "k": 78,
    "z": 14396,
    "h": "dd8f207632222aeb26ee27414a3db8af5338476d",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3857.jsonl",
@@ -1635,7 +1646,7 @@
    "k": 1,
    "z": 181,
    "h": "be328397c2b7dbf3b5f60ea2787058155dda6d6c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3862.jsonl",
@@ -1646,7 +1657,7 @@
    "k": 6,
    "z": 1113,
    "h": "c6d2e8f53f4ce96c528ccbe848512899f6b2ac64",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3872.jsonl",
@@ -1654,10 +1665,10 @@
    "c": "3872",
    "n": "照明灯具制造",
    "t": "fp",
-   "k": 71,
-   "z": 13795,
-   "h": "8d02cc84f95a47befe78467ff590f55f47671ac4",
-   "u": "2026-09-19"
+   "k": 81,
+   "z": 15919,
+   "h": "abef5d6724f4aff9242105edc6a2be6bbf3919c3",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3952.jsonl",
@@ -1668,7 +1679,7 @@
    "k": 1,
    "z": 192,
    "h": "c4a8ab63e25853986fba752ad44920e7c6cc3ad7",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3963.jsonl",
@@ -1679,7 +1690,7 @@
    "k": 1,
    "z": 177,
    "h": "5f9e2d51917f4afd2c9696767d2253823f393a2f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3973.jsonl",
@@ -1690,7 +1701,7 @@
    "k": 12,
    "z": 2342,
    "h": "8edba812ebe65fd623a3564deaecbd296a2ffb95",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3974.jsonl",
@@ -1698,10 +1709,10 @@
    "c": "3974",
    "n": "显示器件制造",
    "t": "fp",
-   "k": 9,
-   "z": 1640,
-   "h": "ace18b71e905ea081af9b1b18235870fae85654e",
-   "u": "2026-09-19"
+   "k": 11,
+   "z": 2050,
+   "h": "c2c23c3326c21da2c2f3cb49f956f164ebdc6643",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3975.jsonl",
@@ -1709,10 +1720,10 @@
    "c": "3975",
    "n": "半导体照明器件制造",
    "t": "fp",
-   "k": 9,
-   "z": 1785,
-   "h": "508a0c8c465bd84f9e5f1773bee6d83c3124c130",
-   "u": "2026-09-19"
+   "k": 11,
+   "z": 2139,
+   "h": "95cca399fc6bd623f40ca7a3305b1afdb503e00e",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3976.jsonl",
@@ -1723,7 +1734,7 @@
    "k": 2,
    "z": 421,
    "h": "7f4f5e096b6c66d57fde5570917528ebc2474659",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3982.jsonl",
@@ -1734,7 +1745,7 @@
    "k": 601,
    "z": 115689,
    "h": "12f6b679eb000d3c59e018443fdc9ebf78593a37",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3983.jsonl",
@@ -1745,7 +1756,7 @@
    "k": 101,
    "z": 19126,
    "h": "35e6a9319cf08df25c7eb67195a9f23ee00e7995",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3985.jsonl",
@@ -1756,7 +1767,7 @@
    "k": 1,
    "z": 187,
    "h": "84f8f597ef7c563d7684ac58fe540582550e62df",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3989.jsonl",
@@ -1767,7 +1778,7 @@
    "k": 924,
    "z": 211802,
    "h": "edf3e4d3c33b9f99c2ecfe50aeea97f62cbc060b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/4011.jsonl",
@@ -1775,10 +1786,10 @@
    "c": "4011",
    "n": "工业自动控制系统装置制造",
    "t": "fp",
-   "k": 52,
-   "z": 9820,
-   "h": "db89f6a8d352d77bb335f8cef4fd20f1a26495b0",
-   "u": "2026-09-19"
+   "k": 59,
+   "z": 11155,
+   "h": "43622e60d640bf44c23696951e443e0c11fd9f4a",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/4021.jsonl",
@@ -1789,7 +1800,7 @@
    "k": 5,
    "z": 929,
    "h": "897c9f76aca2e716513c57e3e66dfee2f103e178",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/4023.jsonl",
@@ -1800,7 +1811,7 @@
    "k": 1,
    "z": 199,
    "h": "7d10bf8631c790030832f921a017055dce355d7e",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/4040.jsonl",
@@ -1811,7 +1822,7 @@
    "k": 1,
    "z": 201,
    "h": "b3f5a483b8354000a8b05b685f2216841e36f8b7",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/_partial.jsonl",
@@ -1822,7 +1833,7 @@
    "k": 1,
    "z": 187,
    "h": "35cc99739bad429e1a41fc6142457984a5a467f6",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/42/4210.jsonl",
@@ -1833,7 +1844,7 @@
    "k": 2,
    "z": 390,
    "h": "c9f97b085bdc7d7b3b04d423a34d6ea43ff167b8",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/43/4343.jsonl",
@@ -1844,7 +1855,7 @@
    "k": 1,
    "z": 224,
    "h": "2bffd4da24fe16a1483e66846766b06c0cf29d22",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/43/4360.jsonl",
@@ -1855,7 +1866,7 @@
    "k": 1,
    "z": 189,
    "h": "05be73ca7103edef1cc1f238e0a39d9579b62a2e",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5121.jsonl",
@@ -1866,7 +1877,7 @@
    "k": 1,
    "z": 172,
    "h": "a95c7348e563a87bf0889ccd33fe30ce745135b2",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5131.jsonl",
@@ -1877,7 +1888,7 @@
    "k": 11,
    "z": 2027,
    "h": "c7a2791a0f3efd6b9f1cadf727010a8db9928f03",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5138.jsonl",
@@ -1888,7 +1899,7 @@
    "k": 2,
    "z": 370,
    "h": "07bae06ef3e14671bcc6e60bd63a3a4bca9295a3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5146.jsonl",
@@ -1896,10 +1907,10 @@
    "c": "5146",
    "n": "首饰、工艺品及收藏品批发",
    "t": "fp",
-   "k": 16,
-   "z": 2944,
-   "h": "775306484f1955c9efcec00e6022090e32dd2e0f",
-   "u": "2026-09-19"
+   "k": 17,
+   "z": 3139,
+   "h": "b1a3e67c98b9403657fbac4465b7ec4983edbc48",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5147.jsonl",
@@ -1910,7 +1921,7 @@
    "k": 2,
    "z": 387,
    "h": "3ef24fcae06c167df7cb55279f454f0755db41de",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5164.jsonl",
@@ -1921,7 +1932,7 @@
    "k": 804,
    "z": 208734,
    "h": "ae1e859b76e72b26bf3a2361af236f5e9db0dcbd",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5165.jsonl",
@@ -1929,10 +1940,10 @@
    "c": "5165",
    "n": "建材批发",
    "t": "fp",
-   "k": 126,
-   "z": 22707,
-   "h": "353e972071ca5a7669e5586d28119b8409470368",
-   "u": "2026-09-19"
+   "k": 127,
+   "z": 22887,
+   "h": "d0c6b162ad3e16e62733e26512823b3adbe82e51",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5169.jsonl",
@@ -1943,7 +1954,7 @@
    "k": 238,
    "z": 47443,
    "h": "13ab540b858bdbb5ecb733753bc216588902dd12",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/517.jsonl",
@@ -1954,7 +1965,7 @@
    "k": 8,
    "z": 1368,
    "h": "5bc7c603cabc204024e5d48d4ffb2d564727b4e5",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5171.jsonl",
@@ -1965,7 +1976,7 @@
    "k": 2,
    "z": 356,
    "h": "c6b5a97710099ff4a23c137eb625a0f6df3143f9",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5174.jsonl",
@@ -1973,10 +1984,10 @@
    "c": "5174",
    "n": "五金产品批发",
    "t": "fp",
-   "k": 659,
-   "z": 140701,
-   "h": "a84a78569b9260a26e47d082b4cb813732e8e96e",
-   "u": "2026-09-19"
+   "k": 687,
+   "z": 147669,
+   "h": "ce93ff7a6831b84b2a027dbeae7efec1206babae",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5179.jsonl",
@@ -1984,10 +1995,10 @@
    "c": "5179",
    "n": "其他机械设备及电子产品批发",
    "t": "fp",
-   "k": 731,
-   "z": 142112,
-   "h": "ba65e6c1961a8870812727f3b1d7a6412b07f538",
-   "u": "2026-09-19"
+   "k": 749,
+   "z": 145770,
+   "h": "59eacf5ddee5f27303af3b6ddb79b91c68d6a3fa",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5183.jsonl",
@@ -1995,10 +2006,10 @@
    "c": "5183",
    "n": "艺术品、收藏品拍卖",
    "t": "fp",
-   "k": 57,
-   "z": 10675,
-   "h": "76674d472be87eb30f26a6377ddd51634b6f7524",
-   "u": "2026-09-19"
+   "k": 73,
+   "z": 13892,
+   "h": "8724c82a3abd7c353a5ce4d14ad2dbcca762f1a0",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5191.jsonl",
@@ -2009,7 +2020,7 @@
    "k": 1,
    "z": 173,
    "h": "960c77794d67d66b0d675ea3edd125e493915393",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5193.jsonl",
@@ -2020,7 +2031,7 @@
    "k": 3,
    "z": 498,
    "h": "7e8bc27bf79482e65aa2a0425e506d6074a2d6ce",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/_partial.jsonl",
@@ -2031,7 +2042,7 @@
    "k": 51,
    "z": 9086,
    "h": "4d3563f49e2b1f41500d685cc24ec5a397446b0c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5212.jsonl",
@@ -2042,7 +2053,7 @@
    "k": 158,
    "z": 29380,
    "h": "7d3677b4fc352159f6e8cd4ae6443cd5470240bb",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5213.jsonl",
@@ -2053,7 +2064,7 @@
    "k": 144,
    "z": 26487,
    "h": "16c922e1acaf20a2590a71c428758b84bded61cb",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5229.jsonl",
@@ -2061,10 +2072,10 @@
    "c": "5229",
    "n": "其他食品零售",
    "t": "fp",
-   "k": 126,
-   "z": 22591,
-   "h": "ea165b1db3036200bca45bf4b8c8b9e725f819a2",
-   "u": "2026-09-19"
+   "k": 145,
+   "z": 26129,
+   "h": "63590caa536a4ceba878ee7fecff130591b46560",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5232.jsonl",
@@ -2075,7 +2086,7 @@
    "k": 8,
    "z": 1479,
    "h": "890dcf8704bf01b2faf556a9ccee2b85697b64f5",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5233.jsonl",
@@ -2086,7 +2097,7 @@
    "k": 36,
    "z": 6025,
    "h": "6667fb59eb8babd6642a65abecddbce533a1f9ab",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5236.jsonl",
@@ -2094,10 +2105,10 @@
    "c": "5236",
    "n": "钟表、眼镜零售",
    "t": "fp",
-   "k": 9,
-   "z": 1667,
-   "h": "fc27ff7ef0df7686aabffb561aefeb7f08410717",
-   "u": "2026-09-19"
+   "k": 10,
+   "z": 1835,
+   "h": "ca3bbee2a7d834f78afbaacbeb460cb065bf50fe",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5243.jsonl",
@@ -2108,7 +2119,7 @@
    "k": 3,
    "z": 583,
    "h": "edd67d67861cac0612912729424bf67f0785b931",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5251.jsonl",
@@ -2119,7 +2130,7 @@
    "k": 202,
    "z": 37578,
    "h": "616baba5193adba3b0fe613a402c51974a4026bc",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/526.jsonl",
@@ -2130,7 +2141,7 @@
    "k": 14,
    "z": 2733,
    "h": "cdd90a6d5a20e55a41e1a0b1365a91b9b94fe7cd",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5267.jsonl",
@@ -2138,10 +2149,10 @@
    "c": "5267",
    "n": "机动车充电销售",
    "t": "fp",
-   "k": 8,
-   "z": 1455,
-   "h": "b5c8ea0a5474a9172ee4227153c5cda4d2004e59",
-   "u": "2026-09-19"
+   "k": 9,
+   "z": 1635,
+   "h": "e7839f5a9de14ee11b9a6746ae0d10681b257984",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5274.jsonl",
@@ -2152,7 +2163,7 @@
    "k": 1,
    "z": 186,
    "h": "03590ea32bc65a0aaac0837f58138ffe4c9434c5",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5281.jsonl",
@@ -2163,7 +2174,7 @@
    "k": 26,
    "z": 4601,
    "h": "39e32f69b8aa252b6ae8a3b90cc3b10e42fcc9cb",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5283.jsonl",
@@ -2171,10 +2182,10 @@
    "c": "5283",
    "n": "家具零售",
    "t": "fp",
-   "k": 55,
-   "z": 10044,
-   "h": "39dab13b029faa66fce20f797e2f7e3d9cbc9813",
-   "u": "2026-09-19"
+   "k": 58,
+   "z": 10643,
+   "h": "63255444a1fb863347dfdf07502f068766adf3c6",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5287.jsonl",
@@ -2182,10 +2193,10 @@
    "c": "5287",
    "n": "陶瓷、石材装饰材料零售",
    "t": "fp",
-   "k": 349,
-   "z": 62194,
-   "h": "c4b282ff41fa9be14203fb36f13d8563348c8d16",
-   "u": "2026-09-19"
+   "k": 350,
+   "z": 62368,
+   "h": "2f94148514c1e426a57ffabec4274ae3246126b7",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/61/6110.jsonl",
@@ -2193,10 +2204,10 @@
    "c": "6110",
    "n": "旅游饭店",
    "t": "fp",
-   "k": 4757,
-   "z": 878283,
-   "h": "789fd2d44542391a11a4a2e63f05f4e9f56028e8",
-   "u": "2026-09-19"
+   "k": 4880,
+   "z": 901908,
+   "h": "b530191cd668a5d54e61323b6bc335d08bffc12f",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/61/6121.jsonl",
@@ -2204,10 +2215,10 @@
    "c": "6121",
    "n": "经济型连锁酒店",
    "t": "fp",
-   "k": 208,
-   "z": 39166,
-   "h": "8f5c2eccdb70fcd8941b2edf4c996be6e109fbe2",
-   "u": "2026-09-19"
+   "k": 210,
+   "z": 39560,
+   "h": "7ff935faf337256345b5c1a6ed5690c1e5af3ba9",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/61/6130.jsonl",
@@ -2215,10 +2226,10 @@
    "c": "6130",
    "n": "民宿服务",
    "t": "fp",
-   "k": 3191,
-   "z": 580173,
-   "h": "f20e2e58ab25dda5d89d559c53e99b5d73af364d",
-   "u": "2026-09-19"
+   "k": 4589,
+   "z": 848017,
+   "h": "82834469d9cc6a9532f5db33569ff166c7088b90",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/61/6140.jsonl",
@@ -2229,7 +2240,7 @@
    "k": 1,
    "z": 152,
    "h": "ce76b943362ddca552eb7708f1434113c26b0d98",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6210.jsonl",
@@ -2237,10 +2248,10 @@
    "c": "6210",
    "n": "正餐服务",
    "t": "fp",
-   "k": 10856,
-   "z": 1859827,
-   "h": "47b478985ec6cd5511b0cad029e1b69f93ea07b6",
-   "u": "2026-09-19"
+   "k": 10863,
+   "z": 1861080,
+   "h": "7bd18888bb6d24615a245837d7114b47eccb0d62",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6220.jsonl",
@@ -2248,10 +2259,10 @@
    "c": "6220",
    "n": "快餐服务",
    "t": "fp",
-   "k": 4338,
-   "z": 769204,
-   "h": "7fb2ecfc400edd5a3ed115849d5e05cd64f62ad5",
-   "u": "2026-09-19"
+   "k": 4340,
+   "z": 769561,
+   "h": "516603995d4ea98f09a275e6ddd39763a8b245b4",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6231.jsonl",
@@ -2259,10 +2270,10 @@
    "c": "6231",
    "n": "茶馆服务",
    "t": "fp",
-   "k": 5455,
-   "z": 971987,
-   "h": "2e2ccac76095cd77e09575870dea2d853047cead",
-   "u": "2026-09-19"
+   "k": 5456,
+   "z": 972179,
+   "h": "c02537cb1aa57c4427102ac0041084fc4e3242f6",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6232.jsonl",
@@ -2270,10 +2281,10 @@
    "c": "6232",
    "n": "咖啡馆服务",
    "t": "fp",
-   "k": 9513,
-   "z": 1737628,
-   "h": "79de21d74687055ae77b4e3e5a9128563191aaef",
-   "u": "2026-09-19"
+   "k": 9535,
+   "z": 1741912,
+   "h": "41971df0f490f654324ff9d5f99fe46d28acc6ff",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6233.jsonl",
@@ -2284,7 +2295,7 @@
    "k": 2887,
    "z": 1129231,
    "h": "dfcc2a2534aa3c5b2eba492e6ca45c7221d46d0c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6242.jsonl",
@@ -2295,7 +2306,7 @@
    "k": 4,
    "z": 746,
    "h": "422d58ef1ed0807e00644cc6aa874f5cbc3187a3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6291.jsonl",
@@ -2303,10 +2314,10 @@
    "c": "6291",
    "n": "小吃服务",
    "t": "fp",
-   "k": 5273,
-   "z": 940506,
-   "h": "51d08a048084d49c8ef805fa6e22077e28e89783",
-   "u": "2026-09-19"
+   "k": 6550,
+   "z": 1178169,
+   "h": "f371bcc6c96d47f84d829d15bac0f6c665932a30",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/64/6440.jsonl",
@@ -2317,7 +2328,7 @@
    "k": 83,
    "z": 15497,
    "h": "5912813eb0028ed1000d230aa49a2590b7a9ee21",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/64/6450.jsonl",
@@ -2328,7 +2339,7 @@
    "k": 166,
    "z": 30965,
    "h": "3af3d33ad3ee0da911013372f14817c05d9f5b6a",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/64/6490.jsonl",
@@ -2336,10 +2347,10 @@
    "c": "6490",
    "n": "其他互联网服务",
    "t": "fp",
-   "k": 39,
-   "z": 7346,
-   "h": "729e9d71762368b8fb7a56e5edad6e401defcc6a",
-   "u": "2026-09-19"
+   "k": 40,
+   "z": 7543,
+   "h": "79f55bf504249c30f82cca4fd2b487bfd7760b1e",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/651.jsonl",
@@ -2350,7 +2361,7 @@
    "k": 1,
    "z": 206,
    "h": "b81ce8a9030b9c53a97bb81219972776a824bae5",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6513.jsonl",
@@ -2358,10 +2369,10 @@
    "c": "6513",
    "n": "应用软件开发",
    "t": "fp",
-   "k": 577,
-   "z": 108680,
-   "h": "ce6614814dcb762b70c4cd140ea1de120eaab118",
-   "u": "2026-09-19"
+   "k": 578,
+   "z": 108880,
+   "h": "e353ad2ba0086753316878e916f93165cd083fe4",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6531.jsonl",
@@ -2372,7 +2383,7 @@
    "k": 138,
    "z": 26238,
    "h": "7d1d8b1cff222f24e54c9b2c554eb3564e36e524",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6540.jsonl",
@@ -2383,7 +2394,7 @@
    "k": 60,
    "z": 11143,
    "h": "89253a782a9a4209c0b20d9af893e98c5826f70d",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6550.jsonl",
@@ -2394,7 +2405,7 @@
    "k": 2,
    "z": 359,
    "h": "98fa845839eb5a0cab8e957063877e6b7560d611",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6572.jsonl",
@@ -2405,7 +2416,7 @@
    "k": 5,
    "z": 920,
    "h": "cfc28b4cfc977bb25fd1f3d61f16f3bf4c5e7f2b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6591.jsonl",
@@ -2416,7 +2427,7 @@
    "k": 1,
    "z": 201,
    "h": "ee6938babbf59de26cba113a557bbddb63f6b9c6",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/73/7320.jsonl",
@@ -2427,7 +2438,7 @@
    "k": 20,
    "z": 3869,
    "h": "a8bc395f2ce3f02b01f896e1b1cbf538c8689628",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/73/7330.jsonl",
@@ -2438,7 +2449,7 @@
    "k": 2,
    "z": 361,
    "h": "7919f0b91086da4776d88dc5fd462564793224aa",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/73/7350.jsonl",
@@ -2449,7 +2460,7 @@
    "k": 1,
    "z": 206,
    "h": "4251ef0d2195cc57bc7d00c3ed2d2b87a54387a3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7452.jsonl",
@@ -2460,7 +2471,7 @@
    "k": 398,
    "z": 76159,
    "h": "c74005ec52b4c356066bb250c37ed4eb69bcaaca",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7453.jsonl",
@@ -2471,7 +2482,7 @@
    "k": 84,
    "z": 16108,
    "h": "fab90d12b8790547c7b38366f2777d137fd923ef",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7454.jsonl",
@@ -2482,7 +2493,7 @@
    "k": 1,
    "z": 239,
    "h": "019c45688ac647328679564aaf3f7563e68cdc0c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7455.jsonl",
@@ -2493,7 +2504,7 @@
    "k": 75,
    "z": 14603,
    "h": "13535b832e54ebccd5042e2e7429bf900864503d",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7461.jsonl",
@@ -2504,7 +2515,7 @@
    "k": 159,
    "z": 30568,
    "h": "ac06fceb4520f33e89e18f17cbc77db4172c022d",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7463.jsonl",
@@ -2515,7 +2526,7 @@
    "k": 4,
    "z": 737,
    "h": "a3b038370dea2c4d25b94a189746b6d1fddb6940",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7473.jsonl",
@@ -2526,7 +2537,7 @@
    "k": 1,
    "z": 188,
    "h": "003ab9f80d53827f3bbdc6cced7092519fbb3470",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7484.jsonl",
@@ -2537,7 +2548,7 @@
    "k": 5,
    "z": 977,
    "h": "197b576356439c9496b06c2a770930a9a5b4d69e",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7485.jsonl",
@@ -2548,7 +2559,7 @@
    "k": 2,
    "z": 390,
    "h": "8b45f4343529bc4355eee83ab977e1fdc8e9ce78",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/749.jsonl",
@@ -2559,7 +2570,7 @@
    "k": 6,
    "z": 1047,
    "h": "cf613204d60bd15f3b43c96855c3e7b2d8d666de",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7491.jsonl",
@@ -2567,10 +2578,10 @@
    "c": "7491",
    "n": "工业设计服务",
    "t": "fp",
-   "k": 214,
-   "z": 39247,
-   "h": "584d0af7a0552f6b74d39f10de9d82a4bb62e00e",
-   "u": "2026-09-19"
+   "k": 215,
+   "z": 39445,
+   "h": "52a459d8a56d0e08fbcb01b75d74d7049544ba92",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7492.jsonl",
@@ -2581,7 +2592,7 @@
    "k": 2,
    "z": 341,
    "h": "5e7a70d6f5ae184f28def5c7cc5640944186af24",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/75/7516.jsonl",
@@ -2592,7 +2603,7 @@
    "k": 2,
    "z": 389,
    "h": "2d26839760f90f9c8a50a782319a9b8ee694eb20",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/75/7520.jsonl",
@@ -2603,7 +2614,7 @@
    "k": 140,
    "z": 27552,
    "h": "c80f4782ffb36cac8dd4fa733caf2ea19d99c15b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/75/7530.jsonl",
@@ -2614,7 +2625,7 @@
    "k": 3,
    "z": 511,
    "h": "539114c88c79d0234ae1698bc9dac66718bd3c06",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/75/_partial.jsonl",
@@ -2625,7 +2636,7 @@
    "k": 1,
    "z": 217,
    "h": "3f3f91635bb810833e47749fa972ac0824fa97c3",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8010.jsonl",
@@ -2633,10 +2644,10 @@
    "c": "8010",
    "n": "家庭服务",
    "t": "fp",
-   "k": 35,
-   "z": 6155,
-   "h": "dff1df2c6c9bda8bc98d546b4b28a7e9bb47b9db",
-   "u": "2026-09-19"
+   "k": 37,
+   "z": 6514,
+   "h": "04c34552506cada6071d028d1960bb997695a966",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8030.jsonl",
@@ -2644,10 +2655,10 @@
    "c": "8030",
    "n": "洗染服务",
    "t": "fp",
-   "k": 2460,
-   "z": 416088,
-   "h": "1d5b3e21ee85dacf972fb83e90c819af2e51f637",
-   "u": "2026-09-19"
+   "k": 2463,
+   "z": 416664,
+   "h": "5493df23ffc71fb776f34c3c4d47f358c8654a37",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8040.jsonl",
@@ -2658,7 +2669,7 @@
    "k": 3186,
    "z": 555308,
    "h": "60244213c1a33b2fc51a773ea0c6d62ec4880cae",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/805.jsonl",
@@ -2669,7 +2680,7 @@
    "k": 33,
    "z": 5988,
    "h": "22a725192a9ad6d1156adbff650abd37f4b249ca",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8051.jsonl",
@@ -2677,10 +2688,10 @@
    "c": "8051",
    "n": "洗浴服务",
    "t": "fp",
-   "k": 1327,
-   "z": 223979,
-   "h": "e142a7847092d1e665a0d0822549a2dc040167ad",
-   "u": "2026-09-19"
+   "k": 1328,
+   "z": 224192,
+   "h": "1ab76448ad25bfda608071bcd889a5191cf5eef3",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8052.jsonl",
@@ -2691,7 +2702,7 @@
    "k": 3687,
    "z": 661877,
    "h": "b05940bc61ac578e42425469b726f765c2b36f8c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8053.jsonl",
@@ -2702,7 +2713,7 @@
    "k": 7140,
    "z": 1293517,
    "h": "974c6f1d9e1899d090acbb8e0ee41b2dce825951",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8060.jsonl",
@@ -2713,7 +2724,7 @@
    "k": 1,
    "z": 189,
    "h": "4817d213c01cbc30ae56a6d3f651ae137ea836d6",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8070.jsonl",
@@ -2724,7 +2735,7 @@
    "k": 4,
    "z": 718,
    "h": "94fd6a6493db8eff01591cfb665e532a06f4d830",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8090.jsonl",
@@ -2735,7 +2746,7 @@
    "k": 3,
    "z": 528,
    "h": "ec41297f569c840eda3864b99b695d6597550f0b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8111.jsonl",
@@ -2746,7 +2757,7 @@
    "k": 3280,
    "z": 579320,
    "h": "ba11dd719fc7724671cb1699791da7de44c17ff7",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8121.jsonl",
@@ -2754,10 +2765,10 @@
    "c": "8121",
    "n": "计算机和辅助设备修理",
    "t": "fp",
-   "k": 2732,
-   "z": 516865,
-   "h": "c99ee82eac4d0748f4fe095611f1372bffce93f4",
-   "u": "2026-09-19"
+   "k": 2736,
+   "z": 517660,
+   "h": "fb1c840e42d59d24b2de2564694eebe17b872518",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8122.jsonl",
@@ -2765,10 +2776,10 @@
    "c": "8122",
    "n": "通讯设备修理",
    "t": "fp",
-   "k": 1188,
-   "z": 218886,
-   "h": "efa085a7823549322b9806c8a04196ced8f0e81d",
-   "u": "2026-09-19"
+   "k": 1272,
+   "z": 234388,
+   "h": "6ff36917f644d8c6c626c2ea4b96844ab5321f91",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8129.jsonl",
@@ -2779,7 +2790,7 @@
    "k": 6,
    "z": 1132,
    "h": "0a6e4f75c40859fb44d0d786811ed051099cb833",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8132.jsonl",
@@ -2787,10 +2798,10 @@
    "c": "8132",
    "n": "日用电器修理",
    "t": "fp",
-   "k": 1402,
-   "z": 247844,
-   "h": "3a050bf751f727f8baaccba565f8374defda3d92",
-   "u": "2026-09-19"
+   "k": 1560,
+   "z": 276875,
+   "h": "11aff0822c6c7a7f1c6bd749e58d146c9b08763c",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8191.jsonl",
@@ -2801,7 +2812,7 @@
    "k": 6,
    "z": 1091,
    "h": "ae3e7d174392ff2feb96d0686b5cdd27482c7fcf",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/82/8211.jsonl",
@@ -2812,7 +2823,7 @@
    "k": 1,
    "z": 170,
    "h": "99e46466a59e01aea489e6e19453887c0857713a",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/82/8219.jsonl",
@@ -2820,10 +2831,10 @@
    "c": "8219",
    "n": "其他清洁服务",
    "t": "fp",
-   "k": 2,
-   "z": 346,
-   "h": "46dd9d7658f751fa55b24f170e56aa7979cb0167",
-   "u": "2026-09-19"
+   "k": 3,
+   "z": 553,
+   "h": "e9645ba7404a9a5fbb6d6afffef9679ca10da65c",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/82/8229.jsonl",
@@ -2834,7 +2845,7 @@
    "k": 4,
    "z": 760,
    "h": "80a251d3f775171a15336ec34a9647a244d932ad",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/82/8290.jsonl",
@@ -2845,7 +2856,7 @@
    "k": 79,
    "z": 15117,
    "h": "63cd9cc43cc4a5ada83782f0302ad5d80ba20a8f",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/87/8720.jsonl",
@@ -2853,10 +2864,10 @@
    "c": "8720",
    "n": "电视",
    "t": "fp",
-   "k": 4,
-   "z": 710,
-   "h": "375a5accf05b2043e6b80799005f597b77d7bf2f",
-   "u": "2026-09-19"
+   "k": 6,
+   "z": 1067,
+   "h": "f2e76ff365ad35be2e38b361b425f2dc9a793e6c",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/87/8760.jsonl",
@@ -2864,10 +2875,10 @@
    "c": "8760",
    "n": "电影放映",
    "t": "fp",
-   "k": 371,
-   "z": 69350,
-   "h": "0d78d0e60183a24fbb86f3c30c8f0a5c8cca1b8c",
-   "u": "2026-09-19"
+   "k": 378,
+   "z": 70797,
+   "h": "240f6226e800abba6c0b5e5df61005036c19ad62",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/88/8850.jsonl",
@@ -2878,7 +2889,7 @@
    "k": 9,
    "z": 1833,
    "h": "5a562c6a9807cbea82b7488d7bc7fe72bcb58b80",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/88/8870.jsonl",
@@ -2889,7 +2900,7 @@
    "k": 1,
    "z": 189,
    "h": "5fc6eadd930d9fa103e59b576a7549238be695dc",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/88/8890.jsonl",
@@ -2900,7 +2911,7 @@
    "k": 1,
    "z": 190,
    "h": "9b453083e14a3258592da5cee7a13ea9c834806a",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8921.jsonl",
@@ -2911,7 +2922,7 @@
    "k": 3,
    "z": 523,
    "h": "2afb1ee69ead43db33acb66ac15e5beb5be17a59",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8929.jsonl",
@@ -2919,10 +2930,10 @@
    "c": "8929",
    "n": "其他体育场地设施管理",
    "t": "fp",
-   "k": 481,
-   "z": 87511,
-   "h": "847d2ee528d3be016675d2feb8a149de7ec0a3be",
-   "u": "2026-09-19"
+   "k": 482,
+   "z": 87696,
+   "h": "73635f5d0e8968e766def4b211f4a70f9e10a515",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8930.jsonl",
@@ -2933,7 +2944,7 @@
    "k": 454,
    "z": 84807,
    "h": "a70f0ba37c3379aedb095dc509c7315ae89eabdb",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8991.jsonl",
@@ -2944,7 +2955,7 @@
    "k": 26,
    "z": 4663,
    "h": "6ebfc7b0d06ef50ee6b4cee81bbd7f7383b6df99",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8992.jsonl",
@@ -2955,7 +2966,7 @@
    "k": 3,
    "z": 576,
    "h": "07f238c79fda176ac5da71b5e4a33dfd56810bd1",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9011.jsonl",
@@ -2966,7 +2977,7 @@
    "k": 432,
    "z": 77111,
    "h": "e81d2135f70e12416eb0ff0fe662a8024b8edb11",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9013.jsonl",
@@ -2977,7 +2988,7 @@
    "k": 705,
    "z": 129939,
    "h": "3b47f82889e8bf4bdd8df805173076839cb34216",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9019.jsonl",
@@ -2988,7 +2999,7 @@
    "k": 437,
    "z": 81140,
    "h": "c909716c6f06a3d0a39479644747a2f620c7a0c8",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9020.jsonl",
@@ -2999,7 +3010,7 @@
    "k": 2389,
    "z": 435610,
    "h": "5a20fa715c162f2dd68c3ab63e6083030483fe7c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9030.jsonl",
@@ -3007,10 +3018,10 @@
    "c": "9030",
    "n": "休闲观光活动",
    "t": "fp",
-   "k": 134,
-   "z": 24318,
-   "h": "e2e01da1732a9dfe25bb3cf7c13a510b1248c27c",
-   "u": "2026-09-19"
+   "k": 139,
+   "z": 25268,
+   "h": "268905d02eeb2acff9c4659279e110b916c915c3",
+   "u": "2026-09-21"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9051.jsonl",
@@ -3021,7 +3032,7 @@
    "k": 12,
    "z": 2283,
    "h": "f932da60534d073129bd4353be171df3cb83af46",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/_unclassified.json",
@@ -3029,10 +3040,10 @@
    "c": "",
    "n": "",
    "t": "zh",
-   "k": 2200,
-   "z": 2430559,
-   "h": "fa69130b460d069da91d1bfc0cf6b72da55634a6",
-   "u": "2026-09-19"
+   "k": 2240,
+   "z": 2474910,
+   "h": "7420e9469a1a923f9256dae22ed9c6121369a1fb",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/13/1313.json",
@@ -3129,9 +3140,9 @@
    "n": "糖果、巧克力制造",
    "t": "zh",
    "k": 7,
-   "z": 9899,
-   "h": "c1dd5d5188b0533e50e6fd9c63e878f2978a7871",
-   "u": "2026-09-19"
+   "z": 9890,
+   "h": "eb374f3128652a79add3ff017b0ea649846521ea",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/14/1449.json",
@@ -3255,6 +3266,17 @@
    "u": "2026-09-19"
   },
   {
+   "p": "data/gb/C/17/1713.json",
+   "b": "C/17/1713",
+   "c": "1713",
+   "n": "棉印染精加工",
+   "t": "zh",
+   "k": 1,
+   "z": 1301,
+   "h": "aaa6238d6a4d3a16cad95490aab5b7f3a50bdbac",
+   "u": "2026-09-21"
+  },
+  {
    "p": "data/gb/C/17/1771.json",
    "b": "C/17/1771",
    "c": "1771",
@@ -3315,10 +3337,10 @@
    "c": "1929",
    "n": "其他皮革制品制造",
    "t": "zh",
-   "k": 5,
-   "z": 7058,
-   "h": "8e15c30734b3a0589b9fbd1b405d19c2de691397",
-   "u": "2026-09-19"
+   "k": 6,
+   "z": 8418,
+   "h": "dccb77023df96c2c1a7f1fa40797ce5d6a92ac98",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/20/2012.json",
@@ -3340,7 +3362,7 @@
    "k": 16,
    "z": 22120,
    "h": "3ef65488d5b92bbdef24809332980bac1b0cd011",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/20/2019.json",
@@ -3351,7 +3373,7 @@
    "k": 122,
    "z": 169233,
    "h": "3fa4fe68401f3e2b1c1e79f30d8b163c9ff08466",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/20/2029.json",
@@ -3436,10 +3458,10 @@
    "c": "2319",
    "n": "包装装潢及其他印刷",
    "t": "zh",
-   "k": 34,
-   "z": 46040,
-   "h": "ec530d02b160e5ea8b23c78cbc3ce335ed9b2b1e",
-   "u": "2026-09-19"
+   "k": 35,
+   "z": 47377,
+   "h": "034bf6da517ebb92306a007ccd93d896fdbb9970",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/24/2411.json",
@@ -3513,10 +3535,10 @@
    "c": "2641",
    "n": "涂料制造",
    "t": "zh",
-   "k": 18,
-   "z": 24333,
-   "h": "25108d1e91ec7a1154cb996662765d2e4206882c",
-   "u": "2026-09-19"
+   "k": 25,
+   "z": 34088,
+   "h": "6ffacc99bdf59c1298d8849a7c5baaf4c1b9128f",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/26/2645.json",
@@ -3580,9 +3602,9 @@
    "n": "轮胎制造",
    "t": "zh",
    "k": 243,
-   "z": 359963,
-   "h": "8aaa97ae8940456090e0ad5920a55741b0d6d13e",
-   "u": "2026-09-19"
+   "z": 359936,
+   "h": "578c6e3c907f422f0351b698443c3e4395d18bb8",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/29/2913.json",
@@ -3590,10 +3612,10 @@
    "c": "2913",
    "n": "橡胶零件制造",
    "t": "zh",
-   "k": 110,
-   "z": 151163,
-   "h": "700e5a34faaa1840c76752dfb9f8ff0ea34eecbd",
-   "u": "2026-09-19"
+   "k": 111,
+   "z": 152481,
+   "h": "422b48b1d93ab2e0521a3f0d8e9b9ea25c6420bf",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/29/2916.json",
@@ -3623,10 +3645,10 @@
    "c": "2922",
    "n": "塑料板、管、型材制造",
    "t": "zh",
-   "k": 103,
-   "z": 141361,
-   "h": "9b180da7e36d62f6f488c5bbc64a6e70ae70dcfd",
-   "u": "2026-09-19"
+   "k": 107,
+   "z": 146818,
+   "h": "23731c9588da91df89ca8bdbb99883f263b882b8",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/29/2924.json",
@@ -3678,10 +3700,10 @@
    "c": "2929",
    "n": "塑料零件及其他塑料制品制造",
    "t": "zh",
-   "k": 1000,
-   "z": 1381113,
-   "h": "631db156a2b860858ac1664fc9dfebc2e3aaae8f",
-   "u": "2026-09-19"
+   "k": 1001,
+   "z": 1382494,
+   "h": "1d2f79ce660f24ed1a135f0aea6dc94b8db7670c",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/29/2929.json",
@@ -3690,9 +3712,9 @@
    "n": "塑料零件及其他塑料制品制造",
    "t": "zh",
    "k": 5000,
-   "z": 7080700,
-   "h": "4a3e9d222a36ed9dd4e36c1da41d29c8ac24321c",
-   "u": "2026-09-19"
+   "z": 7081087,
+   "h": "d352bf08e1f83a24cb196db04a619fae8ab296ae",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/30/3011.json",
@@ -3700,10 +3722,10 @@
    "c": "3011",
    "n": "水泥制造",
    "t": "zh",
-   "k": 88,
-   "z": 125031,
-   "h": "4dc0e9e2ce370724a48fd93d9c85857a2970b7bf",
-   "u": "2026-09-19"
+   "k": 89,
+   "z": 126415,
+   "h": "1252141bcf0b47521b6f9b105b24badde3c84f88",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/30/3021.json",
@@ -3722,10 +3744,10 @@
    "c": "3032",
    "n": "建筑用石加工",
    "t": "zh",
-   "k": 45,
-   "z": 61944,
-   "h": "09bb64c57dae75852cb95ebc66e51d3894976522",
-   "u": "2026-09-19"
+   "k": 46,
+   "z": 63302,
+   "h": "73fc618218aaf58c13d5cca5eda590cde5981b60",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/30/3033.json",
@@ -3788,10 +3810,10 @@
    "c": "3130",
    "n": "钢压延加工",
    "t": "zh",
-   "k": 1787,
-   "z": 2414381,
-   "h": "ad4300a229293cad76ff35862229e80e158bb831",
-   "u": "2026-09-19"
+   "k": 1788,
+   "z": 2415700,
+   "h": "4beca6ab0e470735076d3796c9213b3158dbc0ac",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/32/3240.json",
@@ -3821,10 +3843,10 @@
    "c": "3252",
    "n": "铝压延加工",
    "t": "zh",
-   "k": 1210,
-   "z": 1610889,
-   "h": "7df6f3d688d3ce659d020bfa3a553a3b682a270a",
-   "u": "2026-09-19"
+   "k": 1212,
+   "z": 1614732,
+   "h": "415ff34b9896aade4cc9c63a59aa80c83955848a",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/32/3253.json",
@@ -3843,10 +3865,10 @@
    "c": "3311",
    "n": "金属结构制造",
    "t": "zh",
-   "k": 2579,
-   "z": 3743223,
-   "h": "fcf78f616ec186de136d915c7e66d9ecaf290192",
-   "u": "2026-09-19"
+   "k": 2581,
+   "z": 3746476,
+   "h": "653777a191258dba71e33913b3cb3512339ecde8",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/33/3312.json",
@@ -3854,10 +3876,10 @@
    "c": "3312",
    "n": "金属门窗制造",
    "t": "zh",
-   "k": 1323,
-   "z": 1747661,
-   "h": "89cdac9498528311e01f686b8623fe7f582d4133",
-   "u": "2026-09-19"
+   "k": 1401,
+   "z": 1853196,
+   "h": "268df7b198246e74bd7d81303057b8f8a72a10e6",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/33/3321.json",
@@ -3868,7 +3890,7 @@
    "k": 12,
    "z": 16904,
    "h": "925ef9b939b2fba0098e773c46e17032b90ca5ea",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/33/3331.json",
@@ -3920,10 +3942,10 @@
    "c": "3351",
    "n": "建筑、家具用金属配件制造",
    "t": "zh",
-   "k": 20,
-   "z": 27930,
-   "h": "faed1a1c90a612528b9ed0452fad52ff6204a931",
-   "u": "2026-09-19"
+   "k": 26,
+   "z": 36434,
+   "h": "11e354083a5836e802bb6d7b1f447b1d81af4076",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/33/3353.json",
@@ -3942,10 +3964,10 @@
    "c": "3360",
    "n": "金属表面处理及热处理加工",
    "t": "zh",
-   "k": 2141,
-   "z": 2937294,
-   "h": "306800c4f7196d751c223e83aeabae8e38cfa6a8",
-   "u": "2026-09-19"
+   "k": 3481,
+   "z": 4887742,
+   "h": "6bb2bd305bc18252b7078bc983a3f1662f4cf203",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/33/3391.json",
@@ -3953,10 +3975,10 @@
    "c": "3391",
    "n": "黑色金属铸造",
    "t": "zh",
-   "k": 19,
-   "z": 24811,
-   "h": "205c832dcd86a9b38fd99634185d958f05643e3c",
-   "u": "2026-09-19"
+   "k": 21,
+   "z": 27841,
+   "h": "d94953ec2de916d304c57052e289608e85cf25ff",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/33/3392.json",
@@ -3964,10 +3986,10 @@
    "c": "3392",
    "n": "有色金属铸造",
    "t": "zh",
-   "k": 696,
-   "z": 919684,
-   "h": "b8cd35fa796ab2a50ff8c29826923578d38dff55",
-   "u": "2026-09-19"
+   "k": 1094,
+   "z": 1482492,
+   "h": "15686714e2804851c43d94e7357438b11e5a3b12",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/33/3393.json",
@@ -3986,10 +4008,10 @@
    "c": "3399",
    "n": "其他未列明金属制品制造",
    "t": "zh",
-   "k": 2574,
-   "z": 3688395,
-   "h": "884fcbffa45dc8fe90054dad60730edf71ec233b",
-   "u": "2026-09-19"
+   "k": 2612,
+   "z": 3743309,
+   "h": "ae88df4fce52935205f187a1e017cb913e2bea54",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3412.json",
@@ -4055,7 +4077,7 @@
    "k": 1,
    "z": 1603,
    "h": "d23093b6460164051c685d3f06fe50f15b25cd03",
-   "u": "2026-09-16"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3435.json",
@@ -4074,10 +4096,10 @@
    "c": "3441",
    "n": "泵及真空设备制造",
    "t": "zh",
-   "k": 24,
-   "z": 34303,
-   "h": "2f85b1c9edd00383c7e2fb0d9733f2cec57834d9",
-   "u": "2026-09-19"
+   "k": 27,
+   "z": 38512,
+   "h": "5670bb80e186d0a7a6730e37e2451a1863a4fb6d",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3442.json",
@@ -4099,7 +4121,7 @@
    "k": 70,
    "z": 99435,
    "h": "1a5dfab57aa8944fd081f589ca87c5776b826e2b",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3444.json",
@@ -4119,9 +4141,9 @@
    "n": "滚动轴承制造",
    "t": "zh",
    "k": 985,
-   "z": 1280619,
-   "h": "9c854250dceca43bccd634d5257c2c38608593e3",
-   "u": "2026-09-19"
+   "z": 1280636,
+   "h": "10c46b36544e87fd37cf59166ce364165d85c300",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3453.json",
@@ -4162,10 +4184,10 @@
    "c": "3464",
    "n": "制冷、空调设备制造",
    "t": "zh",
-   "k": 1398,
-   "z": 1997968,
-   "h": "b2f76179bfd55d1c18185354c23e75f4b0456e50",
-   "u": "2026-09-19"
+   "k": 1399,
+   "z": 1997446,
+   "h": "a8cf61fe91d74747594f84bf4f9cf4683d2fa91e",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3465.json",
@@ -4173,10 +4195,10 @@
    "c": "3465",
    "n": "风动和电动工具制造",
    "t": "zh",
-   "k": 97,
-   "z": 141103,
-   "h": "327211b0a89bff2ef5d116d4b3d5bad3422f4470",
-   "u": "2026-09-19"
+   "k": 117,
+   "z": 169075,
+   "h": "fe9f4963fe81c1a0a9fc9d6b6a99fc0683de061d",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3467.json",
@@ -4184,10 +4206,10 @@
    "c": "3467",
    "n": "包装专用设备制造",
    "t": "zh",
-   "k": 10,
-   "z": 15095,
-   "h": "ba7fed54cff20f32827a3c4887d9d5b46c4ed3d4",
-   "u": "2026-09-19"
+   "k": 11,
+   "z": 16480,
+   "h": "f58b7d367716eed3db9c2334b37c6c5c86ef9bb6",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3471.json",
@@ -4218,9 +4240,9 @@
    "n": "紧固件制造",
    "t": "zh",
    "k": 1360,
-   "z": 1813153,
-   "h": "6cee74299b65e3055729195e16e20f6da690cc9f",
-   "u": "2026-09-19"
+   "z": 1813222,
+   "h": "60d1f88bd571ef19aa357d3bfeaf5aa901c5c21c",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3483.json",
@@ -4229,9 +4251,9 @@
    "n": "弹簧制造",
    "t": "zh",
    "k": 740,
-   "z": 942177,
-   "h": "55bcff8f6a2e1a6b068b29ba82298b19564a7565",
-   "u": "2026-09-19"
+   "z": 942194,
+   "h": "9ec17035b18dbc654d898406253305619fac640a",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3484-p2.json",
@@ -4239,10 +4261,10 @@
    "c": "3484",
    "n": "机械零部件加工",
    "t": "zh",
-   "k": 3423,
-   "z": 4011037,
-   "h": "d903f6f9c14f4da624f73a67b9fb4200691e1c19",
-   "u": "2026-09-19"
+   "k": 3424,
+   "z": 4013336,
+   "h": "790779d5430f42dc063badb3dcab1d7279614217",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3484.json",
@@ -4251,9 +4273,9 @@
    "n": "机械零部件加工",
    "t": "zh",
    "k": 5000,
-   "z": 7182838,
-   "h": "053fc32074411a018eac10d8cd1909a682f1be2c",
-   "u": "2026-09-19"
+   "z": 7183627,
+   "h": "f79bd5ebf0396ca57b9adbea7e0fae5c76f9ef04",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/34/3491.json",
@@ -4264,7 +4286,7 @@
    "k": 11,
    "z": 14991,
    "h": "f02f8444e0571552d261f363a31b399c2901d970",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/35/3511.json",
@@ -4295,9 +4317,9 @@
    "n": "建筑材料生产专用机械制造",
    "t": "zh",
    "k": 10,
-   "z": 13031,
-   "h": "72238dcb4a12adf813788676c38fed6ff0250016",
-   "u": "2026-09-19"
+   "z": 13378,
+   "h": "13b184366aaf62b9b3b422b6a3b9ed3d8d81f56c",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/35/3521.json",
@@ -4327,10 +4349,10 @@
    "c": "3525",
    "n": "模具制造",
    "t": "zh",
-   "k": 708,
-   "z": 948606,
-   "h": "ae1789f45b45d9d2d03715bfcfe7191fe1140548",
-   "u": "2026-09-19"
+   "k": 1112,
+   "z": 1497628,
+   "h": "b588449465f0a1f58287d9d51aa38c08de6f589e",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/35/3525.json",
@@ -4339,9 +4361,9 @@
    "n": "模具制造",
    "t": "zh",
    "k": 5000,
-   "z": 7038297,
-   "h": "e742d581aba7b5d58a96f922dc70d355180780ce",
-   "u": "2026-09-19"
+   "z": 7068246,
+   "h": "fcb05a252e892e236c2915d50e596de5ca871764",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/35/3546.json",
@@ -4349,10 +4371,10 @@
    "c": "3546",
    "n": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
    "t": "zh",
-   "k": 122,
-   "z": 180351,
-   "h": "6c8165cac6feef2ec7c9489fcb70b2618456bd72",
-   "u": "2026-09-19"
+   "k": 124,
+   "z": 183282,
+   "h": "4a177e4c1aa90da5e26a22b76c73bcaae0a89afb",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/35/3554.json",
@@ -4394,9 +4416,9 @@
    "n": "农林牧渔机械配件制造",
    "t": "zh",
    "k": 51,
-   "z": 78183,
-   "h": "f5b390428f28c1b79f8cb2b09e4de66c28c7f0f5",
-   "u": "2026-09-19"
+   "z": 78206,
+   "h": "2dce42f619a99d3d165a3b554eff61f226a31021",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/35/3577.json",
@@ -4437,10 +4459,10 @@
    "c": "3591",
    "n": "环境保护专用设备制造",
    "t": "zh",
-   "k": 18,
-   "z": 24649,
-   "h": "42fd5154990dcd94a75d2ff67002d9ea5321ead0",
-   "u": "2026-09-19"
+   "k": 24,
+   "z": 33422,
+   "h": "bd9b939f6b33b1bcfcefb0795dae243fe921b9fc",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/35/3594.json",
@@ -4484,7 +4506,7 @@
    "k": 11,
    "z": 13433,
    "h": "325745e92e14ac08d4f160fe749cb0b0d86ce8f4",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/36/3630.json",
@@ -4525,10 +4547,10 @@
    "c": "3660",
    "n": "汽车车身、挂车制造",
    "t": "zh",
-   "k": 82,
-   "z": 113472,
-   "h": "ca4d7f7fdc6e1e3a1ac0331b08ed1766245c5a32",
-   "u": "2026-09-19"
+   "k": 83,
+   "z": 114808,
+   "h": "5e96114b65bd5bd70db7867326b35c58575f1771",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/37/3714.json",
@@ -4581,9 +4603,9 @@
    "n": "电动机制造",
    "t": "zh",
    "k": 44,
-   "z": 60953,
-   "h": "7b7315e07749afafc47846c8da7e737e0b4c3e00",
-   "u": "2026-09-19"
+   "z": 60963,
+   "h": "cffb0723fa6fc635a7867c602e2e642415f84fc6",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/38/3823.json",
@@ -4602,10 +4624,10 @@
    "c": "3831",
    "n": "电线、电缆制造",
    "t": "zh",
-   "k": 45,
-   "z": 62729,
-   "h": "a4deba5ec69f8833ea6838852eaeafee4822c730",
-   "u": "2026-09-19"
+   "k": 46,
+   "z": 64165,
+   "h": "6ffdd3656ff7885df87e549b6e34d2494d0d70d0",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/38/3832.json",
@@ -4638,7 +4660,7 @@
    "k": 78,
    "z": 114875,
    "h": "15c6bc829a4bd1c4fb87efc4bddd5a537b1f7583",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/38/3857.json",
@@ -4668,10 +4690,10 @@
    "c": "3872",
    "n": "照明灯具制造",
    "t": "zh",
-   "k": 72,
-   "z": 96708,
-   "h": "4b51e3aaf952a4b27165509506a2a5cb86441c3f",
-   "u": "2026-09-19"
+   "k": 81,
+   "z": 109190,
+   "h": "d361546ea15ab229351bd8579368ccbaed6a99cb",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/39/3952.json",
@@ -4702,9 +4724,9 @@
    "n": "集成电路制造",
    "t": "zh",
    "k": 12,
-   "z": 16948,
-   "h": "e20f9eb9796a70ab8d9f05d5e0903ca9f448680a",
-   "u": "2026-09-19"
+   "z": 17301,
+   "h": "bba879566ed5e4fcdc23b81ff7a07dc80c39e44a",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/39/3974.json",
@@ -4713,9 +4735,9 @@
    "n": "显示器件制造",
    "t": "zh",
    "k": 11,
-   "z": 16014,
-   "h": "0d7792087259d3081e8930219fa0a68a340de9bf",
-   "u": "2026-09-19"
+   "z": 15966,
+   "h": "15f699aaa74770d49e69976a3e5a1c4b7289f536",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/39/3975.json",
@@ -4723,10 +4745,10 @@
    "c": "3975",
    "n": "半导体照明器件制造",
    "t": "zh",
-   "k": 9,
-   "z": 13440,
-   "h": "ff61695c971043781df486e1b372e8a61e9b0e04",
-   "u": "2026-09-19"
+   "k": 11,
+   "z": 16143,
+   "h": "518bcbcf97d9f1b4e638080ec0774e6429317bfa",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/39/3976.json",
@@ -4757,9 +4779,9 @@
    "n": "敏感元件及传感器制造",
    "t": "zh",
    "k": 101,
-   "z": 143415,
-   "h": "29b2501c5124a2ea587be1a3d9d371e7bffda6d1",
-   "u": "2026-09-19"
+   "z": 143432,
+   "h": "f600ddd12b89d21fb055ba0a8754bcbc2f9af508",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/39/3985.json",
@@ -4779,9 +4801,9 @@
    "n": "其他电子元件制造",
    "t": "zh",
    "k": 924,
-   "z": 1219925,
-   "h": "42bf6d379800c43c0a2bfc6201df35aabc9ce706",
-   "u": "2026-09-19"
+   "z": 1220387,
+   "h": "933787ac9b90402000e553cf0b9beba1d8850bce",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/40/4011.json",
@@ -4789,10 +4811,10 @@
    "c": "4011",
    "n": "工业自动控制系统装置制造",
    "t": "zh",
-   "k": 52,
-   "z": 67352,
-   "h": "905b8f7b4ed1ed0f4370e3b5b1a2aa2e5f9ff6f4",
-   "u": "2026-09-19"
+   "k": 59,
+   "z": 78432,
+   "h": "772a32101142af5c366a87cdd068504b0d97fc8a",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/C/40/4021.json",
@@ -4910,10 +4932,10 @@
    "c": "5146",
    "n": "首饰、工艺品及收藏品批发",
    "t": "zh",
-   "k": 16,
-   "z": 24497,
-   "h": "198f83ad7713d1c884f6838a03a5eef47be4790b",
-   "u": "2026-09-19"
+   "k": 17,
+   "z": 25886,
+   "h": "41361ce9b146008a08f9841d270b5174b7124395",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/51/5147.json",
@@ -4933,9 +4955,9 @@
    "n": "金属及金属矿批发",
    "t": "zh",
    "k": 804,
-   "z": 1028722,
-   "h": "fb75640a83d34842fe7f666a73b3eca8550a1dc7",
-   "u": "2026-09-19"
+   "z": 1029910,
+   "h": "c26eed17861f1db3669c9902b00d773ff45c7bdd",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/51/5165.json",
@@ -4943,10 +4965,10 @@
    "c": "5165",
    "n": "建材批发",
    "t": "zh",
-   "k": 126,
-   "z": 182658,
-   "h": "c2e42c711fab336abd9ec691d62e2b2e24a41a7a",
-   "u": "2026-09-19"
+   "k": 127,
+   "z": 184009,
+   "h": "a0ae8b637205431054be6baa67db6a6d78c6011c",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/51/5169.json",
@@ -4955,9 +4977,9 @@
    "n": "其他化工产品批发",
    "t": "zh",
    "k": 238,
-   "z": 335308,
-   "h": "308a00721a9ff6bd800ec3d361462712c9a8e742",
-   "u": "2026-09-19"
+   "z": 335325,
+   "h": "fc9af3c800b8dec4168e4526aad29feb760a6f9f",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/51/517.json",
@@ -4987,10 +5009,10 @@
    "c": "5174",
    "n": "五金产品批发",
    "t": "zh",
-   "k": 659,
-   "z": 973503,
-   "h": "b40f29b4e79d6250eec9dde6ce6a37afaeee7d5d",
-   "u": "2026-09-19"
+   "k": 687,
+   "z": 1013394,
+   "h": "031fba15f5ade7f910a2ed131916ec16767c76f8",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/51/5179.json",
@@ -4998,10 +5020,10 @@
    "c": "5179",
    "n": "其他机械设备及电子产品批发",
    "t": "zh",
-   "k": 735,
-   "z": 1070731,
-   "h": "89ef6e579c264ca23af4ba824bdffffd4f5c3799",
-   "u": "2026-09-19"
+   "k": 749,
+   "z": 1091612,
+   "h": "4eb0040ea7a0d4c79e6eddf297f16dcbdcc59f84",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/51/5183.json",
@@ -5009,10 +5031,10 @@
    "c": "5183",
    "n": "艺术品、收藏品拍卖",
    "t": "zh",
-   "k": 57,
-   "z": 81253,
-   "h": "b0f4801d9ddae54d8a2040c8a2309054f0b968e1",
-   "u": "2026-09-19"
+   "k": 73,
+   "z": 103285,
+   "h": "ae2da7324e477ae1c6063c81b280afe5df5a52ef",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/51/5191.json",
@@ -5045,7 +5067,7 @@
    "k": 51,
    "z": 73254,
    "h": "5d1aac1e040a9b3f0a8f4b89e06c66fe427e43a1",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/52/5212.json",
@@ -5056,7 +5078,7 @@
    "k": 158,
    "z": 231757,
    "h": "98ba2f0e0cb67928e041869db2f7cbba83f44613",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/52/5213.json",
@@ -5077,8 +5099,8 @@
    "t": "zh",
    "k": 145,
    "z": 231888,
-   "h": "329b75c23e18b7818d58cc149b8ce6fbb52c242b",
-   "u": "2026-09-19"
+   "h": "62597bfd29a8134f723d8cf14e46088ac4a0684b",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/52/5232.json",
@@ -5108,10 +5130,10 @@
    "c": "5236",
    "n": "钟表、眼镜零售",
    "t": "zh",
-   "k": 9,
-   "z": 12783,
-   "h": "160d1519d556bbff0b7c24825a55add343781be8",
-   "u": "2026-09-19"
+   "k": 10,
+   "z": 14161,
+   "h": "e42025aad6581c669ffd662988e507e5cd3e4ecd",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/52/5243.json",
@@ -5153,9 +5175,9 @@
    "n": "机动车充电销售",
    "t": "zh",
    "k": 9,
-   "z": 13167,
-   "h": "2618f20700a778c3b232dc2a14504c32bb2fa178",
-   "u": "2026-09-19"
+   "z": 13146,
+   "h": "20b6b8d14edc5cd6e704209e4221e0b83942189c",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/52/5274.json",
@@ -5185,10 +5207,10 @@
    "c": "5283",
    "n": "家具零售",
    "t": "zh",
-   "k": 55,
-   "z": 79731,
-   "h": "0f1a4fee0e449549542b508293ee4715085a0680",
-   "u": "2026-09-19"
+   "k": 58,
+   "z": 83827,
+   "h": "e9c5c98445d7ce12695144732e27fb79b9942326",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/F/52/5287.json",
@@ -5196,10 +5218,10 @@
    "c": "5287",
    "n": "陶瓷、石材装饰材料零售",
    "t": "zh",
-   "k": 349,
-   "z": 495967,
-   "h": "ebc3c20acfbe83edaf0d58daff50e88b5c548fe3",
-   "u": "2026-09-19"
+   "k": 350,
+   "z": 497375,
+   "h": "ba6a899ee3f69c5c1dac2033ad01178a23ade816",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/H/61/6110.json",
@@ -5207,10 +5229,10 @@
    "c": "6110",
    "n": "旅游饭店",
    "t": "zh",
-   "k": 4759,
-   "z": 6458748,
-   "h": "38d2b2f83b0bc3f0ab6e98988181803f460aaf29",
-   "u": "2026-09-19"
+   "k": 4880,
+   "z": 6622704,
+   "h": "e7f34cbc561eeb4b040a0ec5494320018714f33f",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/H/61/6121.json",
@@ -5218,10 +5240,10 @@
    "c": "6121",
    "n": "经济型连锁酒店",
    "t": "zh",
-   "k": 208,
-   "z": 285980,
-   "h": "8e57585ea487daac83dafcd6286818b5253996cf",
-   "u": "2026-09-19"
+   "k": 210,
+   "z": 288718,
+   "h": "807d333d52a978ec06cc0adcd3fb6bf8bfd96ac5",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/H/61/6130.json",
@@ -5229,10 +5251,10 @@
    "c": "6130",
    "n": "民宿服务",
    "t": "zh",
-   "k": 3191,
-   "z": 4253701,
-   "h": "0c15a17a99b1ff7e107051c583b8fb01f8a93439",
-   "u": "2026-09-19"
+   "k": 4589,
+   "z": 6147985,
+   "h": "62963812124835b8a46ad141b5fd7e6be4ed1c59",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/H/61/6140.json",
@@ -5254,7 +5276,7 @@
    "k": 5000,
    "z": 6559515,
    "h": "73634d12ed6befd5bb354d2c2b9e0692e5fda22c",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/H/62/6210-p3.json",
@@ -5262,10 +5284,10 @@
    "c": "6210",
    "n": "正餐服务",
    "t": "zh",
-   "k": 858,
-   "z": 1142481,
-   "h": "87a9a332958dccf8e40cb467679906b8e94271bc",
-   "u": "2026-09-19"
+   "k": 863,
+   "z": 1149133,
+   "h": "d7e9e266e0a015d6417648221621b73abf8dcf58",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/H/62/6210.json",
@@ -5276,7 +5298,7 @@
    "k": 5000,
    "z": 7317144,
    "h": "b3f9d5787517f0bb30e64d39b9ee76c33675af25",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/H/62/6220.json",
@@ -5317,10 +5339,10 @@
    "c": "6232",
    "n": "咖啡馆服务",
    "t": "zh",
-   "k": 4534,
-   "z": 6476689,
-   "h": "47cd6f00edb442541dca6b93db6dea495fe67295",
-   "u": "2026-09-19"
+   "k": 4535,
+   "z": 6478023,
+   "h": "a69d6cd82d5622d74c985e87cd59374008e28211",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/H/62/6232.json",
@@ -5331,7 +5353,7 @@
    "k": 5000,
    "z": 7395198,
    "h": "a7d8e37f793e324d1686ebd80efbcd468290fb9a",
-   "u": "2026-09-19"
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/H/62/6233.json",
@@ -5406,9 +5428,9 @@
    "n": "其他互联网服务",
    "t": "zh",
    "k": 40,
-   "z": 62266,
-   "h": "d9c8ed03b9bc0c1b8c5832318b3d8f5dc991aa00",
-   "u": "2026-09-19"
+   "z": 62293,
+   "h": "c4063cfd0b9dad9e88725121b11c93a4daa1b5b9",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/I/65/651.json",
@@ -5427,10 +5449,10 @@
    "c": "6513",
    "n": "应用软件开发",
    "t": "zh",
-   "k": 577,
-   "z": 911751,
-   "h": "c2ba8a1ca45809d6697bcb58142bc39997b9a217",
-   "u": "2026-09-19"
+   "k": 578,
+   "z": 913251,
+   "h": "50053d9129d7ab3ade10b6a93aff41d4aa155515",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/I/65/6531.json",
@@ -5636,10 +5658,10 @@
    "c": "7491",
    "n": "工业设计服务",
    "t": "zh",
-   "k": 214,
-   "z": 322093,
-   "h": "558f9f3ed45b67b43837765f65ba1a18072a83fc",
-   "u": "2026-09-19"
+   "k": 215,
+   "z": 323519,
+   "h": "4296815f99a501b56df6610710ca30fdab0916c4",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/M/74/7492.json",
@@ -5746,10 +5768,10 @@
    "c": "8051",
    "n": "洗浴服务",
    "t": "zh",
-   "k": 1327,
-   "z": 1909619,
-   "h": "41d10362061fa43459f0b89b12e0f99c17e7703b",
-   "u": "2026-09-19"
+   "k": 1328,
+   "z": 1911026,
+   "h": "7bc9fe2e4efe660983c62b3af566105bc52457ca",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/O/80/8052.json",
@@ -5934,9 +5956,9 @@
    "n": "电视",
    "t": "zh",
    "k": 6,
-   "z": 8341,
-   "h": "331b1d6a8e5f1a309b9416c59729c1db69f051fd",
-   "u": "2026-09-19"
+   "z": 8317,
+   "h": "c413e334f08aca3a7f8c964e3ab6dfd8fa3e672c",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/R/87/8760.json",
@@ -5944,10 +5966,10 @@
    "c": "8760",
    "n": "电影放映",
    "t": "zh",
-   "k": 371,
-   "z": 560513,
-   "h": "470edb9bb9f42362be8136a7380a1c0c417d9ae5",
-   "u": "2026-09-19"
+   "k": 378,
+   "z": 570561,
+   "h": "3ad43bc0b2368342c442d6ec3044b59d9fa25ab7",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/R/88/8850.json",
@@ -6000,9 +6022,9 @@
    "n": "其他体育场地设施管理",
    "t": "zh",
    "k": 482,
-   "z": 743996,
-   "h": "3aab61a0f72ef86c1bf600548bdc1c704d24d762",
-   "u": "2026-09-19"
+   "z": 744005,
+   "h": "77d9e62fa14ad81575f4b6502e8e35179a6b40d5",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/R/89/8930.json",
@@ -6011,9 +6033,9 @@
    "n": "健身休闲活动",
    "t": "zh",
    "k": 454,
-   "z": 703466,
-   "h": "1962e581a231fde38ffeff8c766063f8fcb1d5ef",
-   "u": "2026-09-19"
+   "z": 703489,
+   "h": "49562fc4f749bfc9d9427779cf2b3927790c696c",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/R/89/8991.json",
@@ -6087,10 +6109,10 @@
    "c": "9030",
    "n": "休闲观光活动",
    "t": "zh",
-   "k": 134,
-   "z": 190772,
-   "h": "e45f23aa037558c554cf066353ce8d7118643a2d",
-   "u": "2026-09-19"
+   "k": 139,
+   "z": 197761,
+   "h": "fb5ec50ca2563a2ed9e364918b0501af9ef647d7",
+   "u": "2026-09-21"
   },
   {
    "p": "data/gb/R/90/9051.json",
@@ -9189,10 +9211,10 @@
    "c": "",
    "n": "号码索引",
    "t": "phone",
-   "k": 96809,
-   "z": 2751206,
-   "h": "70bd11d186115366702a26a44673ffd7b5397ee5",
-   "u": "2026-09-20"
+   "k": 99640,
+   "z": 2831947,
+   "h": "37bb8c5dc2a90630460e2fcda4e96d8dadbd0b32",
+   "u": "2026-09-21"
   }
  ]
 }

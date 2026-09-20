@@ -6351,5 +6351,54 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0146111",
+    "company": "涂装建材批发中心",
+    "category": "原材料",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "梁溪区"
+    },
+    "address": "塘南路与清名东路交叉口北120米",
+    "contact_phone": "待核实",
+    "lat": 31.555724,
+    "lng": 120.324769,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6B9IOLZ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320213",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "5165",
+      "name": "建材批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 建材批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建材批发"
+    },
+    "is_manufacturer": false
   }
 ]

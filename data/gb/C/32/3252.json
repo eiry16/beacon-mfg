@@ -7176,7 +7176,8 @@
     "company": "佛山市全泉铝业有限公司",
     "category": "原材料",
     "keywords": [
-      "铜材"
+      "铜材",
+      "喷涂"
     ],
     "region": {
       "province": "广东",
@@ -7202,7 +7203,21 @@
       "evidence": "铝业"
     },
     "is_manufacturer": true,
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "amap": {
+      "poi_id": "B0HBGAF9D5",
+      "type": "公司企业;公司;冶金化工",
+      "typecode": "170205",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "喷涂"
+    }
   },
   {
     "id": "CN-MFG-0007856",
@@ -14474,7 +14489,8 @@
     "company": "道铝铝业铝单板铝方通厂家(杭州分公司)",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "阳极氧化"
     ],
     "region": {
       "province": "浙江",
@@ -18791,7 +18807,21 @@
       "evidence": "铝板"
     },
     "is_manufacturer": true,
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "amap": {
+      "poi_id": "B0JD7MEDEX",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320412",
+      "search_keyword": "喷涂"
+    }
   },
   {
     "id": "CN-MFG-0004772",
@@ -18831,7 +18861,8 @@
     "company": "幻铝铝业有限公司",
     "category": "表面处理",
     "keywords": [
-      "喷涂"
+      "喷涂",
+      "阳极氧化"
     ],
     "region": {
       "province": "广东",
@@ -18857,7 +18888,21 @@
       "evidence": "铝业"
     },
     "is_manufacturer": true,
-    "_bucket": "C/32/3252"
+    "_bucket": "C/32/3252",
+    "amap": {
+      "poi_id": "B0LU7CZLYF",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "阳极氧化"
+    }
   },
   {
     "id": "CN-MFG-0004975",
@@ -27261,7 +27306,8 @@
     "company": "广东铝腾建材科技有限公司",
     "category": "原材料",
     "keywords": [
-      "铝板"
+      "铝板",
+      "阳极氧化"
     ],
     "region": {
       "province": "广东",
@@ -32776,7 +32822,8 @@
     "company": "汉华铝业",
     "category": "原材料",
     "keywords": [
-      "铝材批发"
+      "铝材批发",
+      "喷涂"
     ],
     "region": {
       "province": "广东",
@@ -57758,6 +57805,104 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "工业陶瓷"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝业"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145316",
+    "company": "常州润利铝业",
+    "category": "压铸",
+    "keywords": [
+      "铝合金压铸"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州",
+      "district": "武进区"
+    },
+    "address": "创业路6号",
+    "contact_phone": "0519-88498866",
+    "lat": 31.69336,
+    "lng": 120.127594,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020705I5H",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "213101",
+      "business_area": "横林",
+      "adcode": "320412",
+      "search_keyword": "铝合金压铸"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝业"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145468",
+    "company": "华途仕铝业",
+    "category": "表面处理",
+    "keywords": [
+      "阳极氧化"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙华区"
+    },
+    "address": "龙华街道富康社区东环二路65号中佳创意园C3栋307",
+    "contact_phone": "173****0696",
+    "lat": 22.646253,
+    "lng": 114.049677,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3SSLXY8",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙华",
+      "adcode": "440309",
+      "search_keyword": "阳极氧化"
     },
     "industry": {
       "code": "3252",

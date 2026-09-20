@@ -1431,7 +1431,21 @@
       "evidence": "照明"
     },
     "is_manufacturer": true,
-    "_bucket": "C/38/3872"
+    "_bucket": "C/38/3872",
+    "amap": {
+      "poi_id": "B0MDLNFOJ5",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320214",
+      "search_keyword": "喷涂"
+    }
   },
   {
     "id": "CN-MFG-0004877",
@@ -3414,6 +3428,447 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "照明"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145165",
+    "company": "普广五金压铸灯饰厂",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "邓公灯饰南门西70米",
+    "contact_phone": "0760-22357994; 189****6177",
+    "lat": 22.546195,
+    "lng": 113.242493,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KBFLU5JU",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145213",
+    "company": "中山市新华压铸灯饰有限公司",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "古镇冈东工业区叶丰街1号",
+    "contact_phone": "137****6032",
+    "lat": 22.601772,
+    "lng": 113.186911,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G07KZ3DS",
+      "type": "购物服务;家居建材市场;灯具瓷器市场|公司企业;公司;公司|公司企业;工厂;工厂",
+      "typecode": "060606|170200|170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "灯具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145235",
+    "company": "新华压铸灯饰",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "西洲围大街与新兴大道西交叉口西北20米",
+    "contact_phone": "0760-22350529; 138****3812",
+    "lat": 22.60896,
+    "lng": 113.184856,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIBEHQ1",
+      "type": "购物服务;家居建材市场;灯具瓷器市场",
+      "typecode": "060606",
+      "alias": "",
+      "tag": "",
+      "keytag": "灯具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145262",
+    "company": "力宇压铸灯具",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "古镇镇环球灯饰城C313",
+    "contact_phone": "133****5839; 189****3043",
+    "lat": 22.624467,
+    "lng": 113.195469,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG6MXQR",
+      "type": "购物服务;家居建材市场;灯具瓷器市场",
+      "typecode": "060606",
+      "alias": "",
+      "tag": "",
+      "keytag": "灯具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145272",
+    "company": "新华压铸(星光联盟全球品牌灯饰中心店)",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "中兴大道68号星光联盟全球品牌灯饰中心",
+    "contact_phone": "待核实",
+    "lat": 22.617066,
+    "lng": 113.191299,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFW8FGS",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145278",
+    "company": "中山市合铝灯饰有限公司",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "华园路11号",
+    "contact_phone": "0760-22287709",
+    "lat": 22.573,
+    "lng": 113.29313,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F80QRX8",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145283",
+    "company": "光亮灯饰压铸厂",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "利华路7号",
+    "contact_phone": "0760-87765902",
+    "lat": 22.591325,
+    "lng": 113.216462,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F800SDU",
+      "type": "公司企业;工厂;工厂|公司企业;公司;公司",
+      "typecode": "170300|170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145978",
+    "company": "恒辉灯饰配件总汇(泰来路店)",
+    "category": "表面处理",
+    "keywords": [
+      "电镀"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "古镇古一长尾涌中心路5号",
+    "contact_phone": "0760-89836353; 189****1001",
+    "lat": 22.626825,
+    "lng": 113.183275,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F80R3M4",
+      "type": "购物服务;家居建材市场;灯具瓷器市场",
+      "typecode": "060606",
+      "alias": "伟鹏电镀",
+      "tag": "",
+      "keytag": "灯具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "电镀"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146450",
+    "company": "鸿鑫五金工具(五金灯饰)",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "南城街道宏成五金城11栋109室",
+    "contact_phone": "135****5001; 137****9789",
+    "lat": 22.979029,
+    "lng": 113.727074,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G1LC5XI2",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南城",
+      "adcode": "441900",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3872",
+      "name": "照明灯具制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 照明器具制造 > 照明灯具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰"
     },
     "is_manufacturer": true
   }

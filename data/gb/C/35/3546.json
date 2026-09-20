@@ -5930,5 +5930,103 @@
       "evidence": "玻璃"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145395",
+    "company": "铝合金玻璃店",
+    "category": "压铸",
+    "keywords": [
+      "铝合金压铸"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海宁"
+    },
+    "address": "翁金线与沿塘路交叉口东北40米",
+    "contact_phone": "待核实",
+    "lat": 30.374225,
+    "lng": 120.757425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDDOPWVI",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "铝合金压铸"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146517",
+    "company": "卓胜宁吸音板隔音板隔音毡岩棉玻璃棉批发(佛山店)",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "南海区"
+    },
+    "address": "佛山共享物流仓",
+    "contact_phone": "178****8915",
+    "lat": 23.08016,
+    "lng": 113.101608,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L0C700WC",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
   }
 ]

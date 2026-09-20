@@ -10288,5 +10288,103 @@
       "evidence": "商务酒店"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0143350",
+    "company": "漳州君豪商务酒店(古城店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "民宿"
+    ],
+    "region": {
+      "province": "福建",
+      "city": "漳州",
+      "district": "芗城区"
+    },
+    "address": "丹霞路金河广场六楼609",
+    "contact_phone": "0596-2999678",
+    "lat": 24.51411,
+    "lng": 117.671958,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02540QH4A",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "丹霞路",
+      "adcode": "350602",
+      "search_keyword": "民宿"
+    },
+    "industry": {
+      "code": "6121",
+      "name": "经济型连锁酒店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 一般旅馆 > 经济型连锁酒店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "商务酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0143352",
+    "company": "锐朋连锁酒店(中原万达保利久街店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "民宿"
+    ],
+    "region": {
+      "province": "河南",
+      "city": "郑州",
+      "district": "中原区"
+    },
+    "address": "中原中路86号保利心语三期心苑5号楼19层1934室",
+    "contact_phone": "185****5370",
+    "lat": 34.748216,
+    "lng": 113.598399,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JKVKMCXU",
+      "type": "住宿服务;宾馆酒店;经济型连锁酒店",
+      "typecode": "100105",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中原万达",
+      "adcode": "410102",
+      "search_keyword": "民宿"
+    },
+    "industry": {
+      "code": "6121",
+      "name": "经济型连锁酒店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 一般旅馆 > 经济型连锁酒店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连锁酒店"
+    },
+    "is_manufacturer": false
   }
 ]

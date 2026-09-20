@@ -454,5 +454,103 @@
       "evidence": "LED"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145237",
+    "company": "景上LED外壳压铸厂",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "古镇镇瑞丰则配城9栋",
+    "contact_phone": "待核实",
+    "lat": 22.62242,
+    "lng": 113.192369,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI8NC27",
+      "type": "购物服务;家居建材市场;灯具瓷器市场",
+      "typecode": "060606",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3975",
+      "name": "半导体照明器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 半导体照明器件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "LED"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145265",
+    "company": "鑫远程LED压铸灯饰",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "横栏镇茂辉工业区乐丰五路1号",
+    "contact_phone": "待核实",
+    "lat": 22.563142,
+    "lng": 113.231308,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG2EAI6",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "灯具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "压铸"
+    },
+    "industry": {
+      "code": "3975",
+      "name": "半导体照明器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 半导体照明器件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "LED"
+    },
+    "is_manufacturer": true
   }
 ]

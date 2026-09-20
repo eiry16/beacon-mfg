@@ -447,5 +447,54 @@
       "evidence": "钟表"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0145727",
+    "company": "匠刻钟表",
+    "category": "批发和零售业",
+    "keywords": [
+      "电镀"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "南海区"
+    },
+    "address": "大沥镇黄岐白沙兴联北路1-5号三骏综合市场B座A区1040号",
+    "contact_phone": "134****4838",
+    "lat": 23.138042,
+    "lng": 113.203272,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LK65KGRG",
+      "type": "购物服务;专卖店;钟表店",
+      "typecode": "061203",
+      "alias": "",
+      "tag": "",
+      "keytag": "钟表行",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "黄岐",
+      "adcode": "440605",
+      "search_keyword": "电镀"
+    },
+    "industry": {
+      "code": "5236",
+      "name": "钟表、眼镜零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 钟表、眼镜零售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "钟表"
+    },
+    "is_manufacturer": false
   }
 ]

@@ -6814,7 +6814,8 @@
     "keywords": [
       "激光切割",
       "铝板",
-      "钣金加工"
+      "钣金加工",
+      "电镀"
     ],
     "region": {
       "province": "广东",
@@ -13304,7 +13305,8 @@
     "keywords": [
       "钣金加工",
       "冲压",
-      "机箱机柜"
+      "机箱机柜",
+      "喷涂"
     ],
     "region": {
       "province": "广东",
@@ -13678,7 +13680,8 @@
     "company": "鼎壹工业",
     "category": "钣金冲压",
     "keywords": [
-      "钣金加工"
+      "钣金加工",
+      "喷涂"
     ],
     "region": {
       "province": "广东",
@@ -13704,7 +13707,21 @@
       "evidence": "钣金加工"
     },
     "is_manufacturer": true,
-    "_bucket": "C/33/3311"
+    "_bucket": "C/33/3311",
+    "amap": {
+      "poi_id": "B0JD79DEBB",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "北滘",
+      "adcode": "440606",
+      "search_keyword": "喷涂"
+    }
   },
   {
     "id": "CN-MFG-0001666",
@@ -53905,7 +53922,8 @@
     "company": "螺杆空压机销售维修保养",
     "category": "钣金冲压",
     "keywords": [
-      "激光切割"
+      "激光切割",
+      "喷涂"
     ],
     "region": {
       "province": "上海",
@@ -58783,7 +58801,9 @@
       "激光切割",
       "冲压",
       "CNC加工",
-      "钣金加工"
+      "钣金加工",
+      "压铸",
+      "电镀"
     ],
     "region": {
       "province": "广东",
@@ -72131,7 +72151,8 @@
     "company": "巨峰冲压件定做及加工",
     "category": "钣金冲压",
     "keywords": [
-      "冲压"
+      "冲压",
+      "模具加工"
     ],
     "region": {
       "province": "浙江",
@@ -73502,7 +73523,8 @@
     "keywords": [
       "冲压模具",
       "冲压",
-      "模具"
+      "模具",
+      "模具加工"
     ],
     "region": {
       "province": "江苏",
@@ -76108,7 +76130,8 @@
     "company": "东莞市熊大粘胶制品有限公司",
     "category": "钣金冲压",
     "keywords": [
-      "冲压"
+      "冲压",
+      "喷涂"
     ],
     "region": {
       "province": "广东",
@@ -102101,7 +102124,8 @@
     "company": "东莞市寮步鑫灿龙门铣加工",
     "category": "钣金冲压",
     "keywords": [
-      "激光切割"
+      "激光切割",
+      "模具加工"
     ],
     "region": {
       "province": "广东",
@@ -133443,7 +133467,8 @@
     "company": "艺峰货架",
     "category": "注塑成型",
     "keywords": [
-      "模具"
+      "模具",
+      "模具加工"
     ],
     "region": {
       "province": "广东",
@@ -133492,7 +133517,8 @@
     "company": "信诚货架阁楼工厂",
     "category": "注塑成型",
     "keywords": [
-      "模具"
+      "模具",
+      "模具加工"
     ],
     "region": {
       "province": "广东",
@@ -133533,6 +133559,104 @@
       "confidence": "high",
       "source": "name",
       "evidence": "货架"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0145396",
+    "company": "货架铝合金玻璃门",
+    "category": "压铸",
+    "keywords": [
+      "铝合金压铸"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海宁"
+    },
+    "address": "硖许公路与新成路交叉口西南100米",
+    "contact_phone": "183****6200",
+    "lat": 30.444903,
+    "lng": 120.360643,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2ZU72W4",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "门窗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "铝合金压铸"
+    },
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "货架"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0146162",
+    "company": "江阴市钢结构涂装有限公司",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "江阴"
+    },
+    "address": "文化东路37号",
+    "contact_phone": "0510-86405600",
+    "lat": 31.925317,
+    "lng": 120.309625,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-21",
+    "imported_at": "2026-09-21",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B01FE15SUT",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "城东开发区",
+      "adcode": "320281",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "钢结构"
     },
     "is_manufacturer": true
   }
