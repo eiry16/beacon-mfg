@@ -696,7 +696,13 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "7320",
+      "name_en": "Engineering & Technology R&D",
+      "level": "class",
+      "name": "工程和技术研究和试验发展",
+      "confidence": "medium"
+    },
     "_bucket": "M/73/7320"
   }
 ]

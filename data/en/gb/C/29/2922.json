@@ -1321,7 +1321,7 @@
   },
   {
     "id": "CN-MFG-0014492",
-    "company_en": "Jiaxing Jia塑 Steel Wholesale · Pipe Material Wholesale",
+    "company_en": "Jiaxing Jia塑钢材Wholesale · Pipe Material Wholesale",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
@@ -1332,7 +1332,7 @@
       "province": "Zhejiang",
       "city": "Jiaxing"
     },
-    "address_en": "No. 1837 Yubei Avenue, Yuxin Town",
+    "address_en": "No. 1837 Yubei Avenue, Yuxin Town, 01 Room",
     "contact_phone": "152****5411; 186****9996",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -1346,7 +1346,13 @@
       "source": "name",
       "evidence": "塑钢"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
     "_bucket": "C/29/2922"
   },
   {
@@ -3139,6 +3145,146 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "塑料型材"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0145338",
+    "company_en": "Luchang Aluminum Alloy and Steel Profile",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Alloy Die Casting"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 221 Jiang'an Road",
+    "contact_phone": "189****6472",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0145350",
+    "company_en": "Huxiang Aluminum Alloy and Steel Profile",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Alloy Die Casting"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 735 Chengliu Highway",
+    "contact_phone": "136****6961",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0145352",
+    "company_en": "Wanxiang Aluminum Alloy and Steel Profile Decoration Department",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Alloy Die Casting"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 1995 San San Highway, Wanxiang Town",
+    "contact_phone": "131****7589; 131****8388",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "industry_en": {
+      "code": "2922",
+      "name_en": "Plastic Sheet, Pipe & Profile",
+      "level": "class",
+      "name": "塑料板、管、型材制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/29/2922"
+  },
+  {
+    "id": "CN-MFG-0145431",
+    "company_en": "Hualing Aluminum Alloy and Steel Profile Door and Window Factory",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Alloy Die Casting"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "Da Road Industrial Function Area, Qiantan Town",
+    "contact_phone": "133****0788",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
     },
     "industry_en": {
       "code": "2922",

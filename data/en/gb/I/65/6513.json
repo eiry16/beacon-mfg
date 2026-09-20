@@ -4099,7 +4099,7 @@
       "province": "Jiangsu",
       "city": "Nanjing"
     },
-    "address_en": "No. 15 Fengji Avenue, North柚 Building B16, 2nd Floor, Room 201-203, China (Nanjing) Software Valley Innovation and Entrepreneurship City",
+    "address_en": "No. 15 Fengji Avenue, North柚 Building B16, 2nd Floor, 201-203, China (Nanjing) Software Valley Innovation and Entrepreneurship City",
     "contact_phone": "180****4844; 4006768838",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -4113,7 +4113,13 @@
       "source": "search_keyword",
       "evidence": "信息传输、软件和信息技术服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6513",
+      "name_en": "Application Software Development",
+      "level": "class",
+      "name": "应用软件开发",
+      "confidence": "low"
+    },
     "_bucket": "I/65/6513"
   },
   {
@@ -18347,7 +18353,7 @@
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 38 Minzu Avenue, Guanshan Street, Long'an Ganghui City, Unit A, Room 520",
+    "address_en": "No. 38 Minzu Avenue, Guanshan Street, Long'an Ganghui City A Unit 520 Room",
     "contact_phone": "151****1607",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -18361,7 +18367,13 @@
       "source": "search_keyword",
       "evidence": "信息传输、软件和信息技术服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6513",
+      "name_en": "Application Software Development",
+      "level": "class",
+      "name": "应用软件开发",
+      "confidence": "low"
+    },
     "_bucket": "I/65/6513"
   },
   {
@@ -18844,7 +18856,7 @@
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 87 Huangxiao River Road,附3 (480 meters walk from Zhuyeshan Subway Station C1 Exit)",
+    "address_en": "No. 87 Fuxiao River Road, Annex 3 (480 meters walk from Zhuye Mountain Subway Station C1 Exit)",
     "contact_phone": "186****7769",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -18858,7 +18870,13 @@
       "source": "search_keyword",
       "evidence": "信息传输、软件和信息技术服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6513",
+      "name_en": "Application Software Development",
+      "level": "class",
+      "name": "应用软件开发",
+      "confidence": "low"
+    },
     "_bucket": "I/65/6513"
   },
   {
@@ -20515,6 +20533,41 @@
       "confidence": "high",
       "source": "name",
       "evidence": "软件开发"
+    },
+    "industry_en": {
+      "code": "6513",
+      "name_en": "Application Software Development",
+      "level": "class",
+      "name": "应用软件开发",
+      "confidence": "high"
+    },
+    "_bucket": "I/65/6513"
+  },
+  {
+    "id": "CN-MFG-0143090",
+    "company_en": "Modu Apartment (Hangzhou Dongzhe Yun Di Software Park Store)",
+    "category": "信息传输、软件和信息技术服务业",
+    "category_en": "信息传输、软件和信息技术服务业",
+    "keywords_en": [
+      "Boutique Hotel"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "50 meters east of the intersection of Beiyuan Road and Xiangyuan Road, Dongzhe Yun Di Store 2-26",
+    "contact_phone": "134****8450; 177****6151; +862126137886; 5367790",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "6513",
+      "name": "应用软件开发",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 软件开发 > 应用软件开发",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "软件"
     },
     "industry_en": {
       "code": "6513",

@@ -1718,7 +1718,7 @@
   },
   {
     "id": "CN-MFG-0037431",
-    "company_en": "IN·SHOW Yingxiu KTV (Sanyuanli Store)",
+    "company_en": "INSHOW Yingxiu KTV (Sanyuanli Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -1742,7 +1742,13 @@
       "source": "name",
       "evidence": "KTV"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "9011",
+      "name_en": "Karaoke & Dance Hall Entertainment",
+      "level": "class",
+      "name": "歌舞厅娱乐活动",
+      "confidence": "high"
+    },
     "_bucket": "R/90/9011"
   },
   {
@@ -3199,7 +3205,13 @@
       "source": "search_keyword",
       "evidence": "文化、体育和娱乐业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "9011",
+      "name_en": "Karaoke & Dance Hall Entertainment",
+      "level": "class",
+      "name": "歌舞厅娱乐活动",
+      "confidence": "low"
+    },
     "_bucket": "R/90/9011"
   },
   {
@@ -3255,7 +3267,13 @@
       "source": "search_keyword",
       "evidence": "文化、体育和娱乐业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "9011",
+      "name_en": "Karaoke & Dance Hall Entertainment",
+      "level": "class",
+      "name": "歌舞厅娱乐活动",
+      "confidence": "low"
+    },
     "_bucket": "R/90/9011"
   },
   {
@@ -7525,7 +7543,13 @@
       "source": "name",
       "evidence": "KTV"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "9011",
+      "name_en": "Karaoke & Dance Hall Entertainment",
+      "level": "class",
+      "name": "歌舞厅娱乐活动",
+      "confidence": "high"
+    },
     "_bucket": "R/90/9011"
   },
   {
@@ -8229,7 +8253,7 @@
   },
   {
     "id": "CN-MFG-0038232",
-    "company_en": "Xibei Jiaoyu Dance",
+    "company_en": "Western Friendship Dance",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -8253,7 +8277,13 @@
       "source": "search_keyword",
       "evidence": "文化、体育和娱乐业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "9011",
+      "name_en": "Karaoke & Dance Hall Entertainment",
+      "level": "class",
+      "name": "歌舞厅娱乐活动",
+      "confidence": "low"
+    },
     "_bucket": "R/90/9011"
   },
   {
@@ -10698,7 +10728,7 @@
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "Near No. 12-附25 Jinxianqiao Road",
+    "address_en": "Near No. 12-Annex 25 Jinxianqiao Road",
     "contact_phone": "028-87703621",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -10712,7 +10742,13 @@
       "source": "search_keyword",
       "evidence": "文化、体育和娱乐业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "9011",
+      "name_en": "Karaoke & Dance Hall Entertainment",
+      "level": "class",
+      "name": "歌舞厅娱乐活动",
+      "confidence": "low"
+    },
     "_bucket": "R/90/9011"
   },
   {
@@ -11275,7 +11311,7 @@
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 425 Luoshilu South Road, F2 of Fan Yue·City奥特莱斯",
+    "address_en": "No. 425 Luoshilu South Road, F2 Floor of Fan Yue·City奥特莱斯",
     "contact_phone": "155****3213",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -11289,7 +11325,13 @@
       "source": "search_keyword",
       "evidence": "文化、体育和娱乐业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "9011",
+      "name_en": "Karaoke & Dance Hall Entertainment",
+      "level": "class",
+      "name": "歌舞厅娱乐活动",
+      "confidence": "low"
+    },
     "_bucket": "R/90/9011"
   },
   {

@@ -5137,7 +5137,7 @@
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 308 Lumou Road, Zhongjian Baogu Business Center, 1st Floor",
+    "address_en": "No. 308 Lumo Road, Zhongjian Baogu Business Center, Floor 1",
     "contact_phone": "4009550752",
     "source": "public_directory",
     "verified_at": "2026-09-19",
@@ -5151,7 +5151,13 @@
       "source": "name",
       "evidence": "便利店"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5213",
+      "name_en": "Convenience Store Retail",
+      "level": "class",
+      "name": "便利店零售",
+      "confidence": "high"
+    },
     "_bucket": "F/52/5213"
   }
 ]

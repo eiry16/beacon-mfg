@@ -166,7 +166,13 @@
       "source": "gb_token",
       "evidence": "钟表"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5236",
+      "name_en": null,
+      "level": "class",
+      "name": "钟表、眼镜零售",
+      "confidence": "high"
+    },
     "_bucket": "F/52/5236"
   },
   {
@@ -290,6 +296,41 @@
     "contact_phone": "028-87522509; 136****8659; 189****3429",
     "source": "public_directory",
     "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "5236",
+      "name": "钟表、眼镜零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 钟表、眼镜零售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "钟表"
+    },
+    "industry_en": {
+      "code": "5236",
+      "name_en": null,
+      "level": "class",
+      "name": "钟表、眼镜零售",
+      "confidence": "high"
+    },
+    "_bucket": "F/52/5236"
+  },
+  {
+    "id": "CN-MFG-0145727",
+    "company_en": "Jiangke Clocks",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "Electroplating"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Foshan"
+    },
+    "address_en": "No. 1-5 Xinglian North Road, Bai Sha Huangji Town, Dalin, Building B, Area A, 1040, Sanjun Comprehensive Market",
+    "contact_phone": "134****4838",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
     "note_en": "",
     "industry": {
       "code": "5236",

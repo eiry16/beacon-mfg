@@ -1934,7 +1934,7 @@
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "CNC machining",
+      "CNC processing",
       "precision machinery",
       "machine processing"
     ],
@@ -1942,7 +1942,7 @@
       "province": "Jiangsu",
       "city": "Changzhou"
     },
-    "address_en": "No. 2390 Longcheng Avenue, Right Side of Jiangyi Expressway Exit",
+    "address_en": "No. 2390 Longcheng Avenue, right side of Jiangyi Highway exit",
     "contact_phone": "153****1589",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -1956,7 +1956,13 @@
       "source": "name",
       "evidence": "机械加工"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -3569,11 +3575,11 @@
   },
   {
     "id": "CN-MFG-0000371",
-    "company_en": "Xinhesheng CNC龙门Machine Processing Factory",
+    "company_en": "Xinheting CNC龙门Machine Processing Factory",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "CNC machining"
+      "CNC processing"
     ],
     "region": {
       "province": "Guangdong",
@@ -3593,7 +3599,13 @@
       "source": "name",
       "evidence": "CNC"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -7278,7 +7290,7 @@
   },
   {
     "id": "CN-MFG-0000564",
-    "company_en": "Jin Cheng Large CNC龙门Milling Machine Processing Factory",
+    "company_en": "Jin Cheng CNC龙门Large CNC龙门Milling Processing Factory",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
@@ -7288,7 +7300,7 @@
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "First Floor, No. 5, Ka Tong Logistics, Wanfeng Western Industrial Park, Heyi Village",
+    "address_en": "1st Floor, No. 5, Kaotong Logistics, Wanfeng Western Entrepreneurship Park, Heyi Village",
     "contact_phone": "139****9585; 139****3008",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -7302,7 +7314,13 @@
       "source": "name",
       "evidence": "数控"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -9108,7 +9126,7 @@
   },
   {
     "id": "CN-MFG-0000652",
-    "company_en": "Xinyuan Numerical Control Processing",
+    "company_en": "Xinyuan CNC Processing",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
@@ -9118,7 +9136,7 @@
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "Beside Bai米Bu Bus Station, Xiushui Village, Renhe Town",
+    "address_en": "beside Bai米Bu Bus Station, Xiushui Village, Renhe Town",
     "contact_phone": "137****5787",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -9132,7 +9150,13 @@
       "source": "name",
       "evidence": "数控"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -20819,13 +20843,13 @@
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "precision machinery"
+      "Precision Machinery"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Hangzhou"
     },
-    "address_en": "No. 398 Weicai Street, Xia sha Economic and Technological Development Zone, Zhejiang浪潮Precision Machinery Co., Ltd.",
+    "address_en": "No. 398 Weikai Street, Xisha Economic and Technological Development Zone, Zhejiang 浪潮Precision Machinery Co., Ltd.",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -20839,7 +20863,13 @@
       "source": "name",
       "evidence": "精密机械"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -31931,7 +31961,13 @@
       "source": "category_fallback",
       "evidence": "精密机械加工"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "low"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -33948,17 +33984,17 @@
   },
   {
     "id": "CN-MFG-0008518",
-    "company_en": "Mishun Large龙门Machine Processing",
+    "company_en": "Misu Large龙门Machining",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "nylon processing"
+      "Nylon Machining"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 2, Center River Road, Kunsan Economic Development Zone",
+    "address_en": "No. 2 Zhongxin River Road, Kunshan Economic Development Zone",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -33972,7 +34008,13 @@
       "source": "category_fallback",
       "evidence": "精密机械加工"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "low"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -38274,13 +38316,13 @@
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "acrylic processing"
+      "Acrylic Machining"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "2F, Building 205, Ba Tai Gold and Jewelry Tower, Guangke First Road",
+    "address_en": "2/F, Building 205, Baotai Gold and Jewelry Tower, Guangke 1st Road",
     "contact_phone": "186****1390",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -38294,7 +38336,13 @@
       "source": "category_fallback",
       "evidence": "精密机械加工"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "low"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -40329,17 +40377,17 @@
   },
   {
     "id": "CN-MFG-0010883",
-    "company_en": "Large龙门CNC Processing",
+    "company_en": "Large龙门CNC Machining",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "CNC machining"
+      "CNC Machining"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "No. 105, B3 Building, Songfa Industrial Park, Fuhai Street, Xiuxiu West Road",
+    "address_en": "No. 105, B3 Building, Songfa Industrial Park, 26 Xiuxiu West Road, Fuhai Street",
     "contact_phone": "137****9320; 178****5045",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -40353,7 +40401,13 @@
       "source": "name",
       "evidence": "CNC"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -56050,17 +56104,17 @@
   },
   {
     "id": "CN-MFG-0011565",
-    "company_en": "Nantong奥斯Mechanical Manufacturing Co., Ltd.",
+    "company_en": "Nantong奥斯Machinery Manufacturing Co., Ltd.",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "Machine Processing"
+      "Machining"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Nantong"
     },
-    "address_en": "No. 80 South of the Intersection of Wangwei Road and Yuxian West Road",
+    "address_en": "80 meters south of the intersection of Wangwei Road and Yuxian West Road",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -56074,7 +56128,13 @@
       "source": "category_fallback",
       "evidence": "精密机械加工"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "low"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -67861,7 +67921,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -67917,7 +67983,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -67946,7 +68018,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -67975,7 +68053,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -68031,7 +68115,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -68141,7 +68231,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -68170,7 +68266,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -68226,7 +68328,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -68822,7 +68930,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -78020,7 +78134,13 @@
       "source": "name",
       "evidence": "加工中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484-p2"
   },
   {
@@ -89646,18 +89766,18 @@
   },
   {
     "id": "CN-MFG-0020321",
-    "company_en": "Guangzheng CNC龙门铣卧加电脑锣CNC External Processing",
+    "company_en": "Guangzheng CNC龙门MillingBedsawCNCOutsourcing Machining",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "CNC Processing",
-      "Numerical Control Processing"
+      "CNC Machining",
+      "Numerical Control Machining"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Foshan"
     },
-    "address_en": "No. 140 West of the intersection of Gezhou Line and Danheng Road",
+    "address_en": "140 meters west of the intersection of Gezhou Line and Danheng Road",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -89671,7 +89791,13 @@
       "source": "name",
       "evidence": "数控"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -94819,17 +94945,17 @@
   },
   {
     "id": "CN-MFG-0023753",
-    "company_en": "Dongxuan Large CNC龙门铣External Processing",
+    "company_en": "Dongxuan Large CNC龙门MillingOutsourcing Machining",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "Numerical Control Processing"
+      "Numerical Control Machining"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Dongguan"
     },
-    "address_en": "No. 106, 63 Hefeng 1st Road, Changping Town, Daogao",
+    "address_en": "Room 106, 63 Hefeng 1st Road, Dagao Town, Changping",
     "contact_phone": "189****2084",
     "source": "public_directory",
     "verified_at": "2026-09-10",
@@ -94843,7 +94969,13 @@
       "source": "name",
       "evidence": "数控"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -108824,11 +108956,11 @@
   },
   {
     "id": "CN-MFG-0024640",
-    "company_en": "Hai Zhi Yang Large CNC龙门Processing Factory",
+    "company_en": "Hai Zhi Yang Large CNC龙门Machining Factory",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "CNC Processing"
+      "Numerical Control Machining"
     ],
     "region": {
       "province": "Guangdong",
@@ -108848,7 +108980,13 @@
       "source": "name",
       "evidence": "数控"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -109529,17 +109667,17 @@
   },
   {
     "id": "CN-MFG-0024667",
-    "company_en": "Large CNC龙门铣External Processing",
+    "company_en": "Daxing CNC龙门铣Outsource Machining",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "Numerical Control Processing"
+      "CNC Machining"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Foshan"
     },
-    "address_en": "No. 100 West of the intersection of Taian Road and Lengjiao Xingye Road",
+    "address_en": "100 meters west of the intersection of Tai'an Road and Lengjiao Xingye Road",
     "contact_phone": "139****0315",
     "source": "public_directory",
     "verified_at": "2026-09-13",
@@ -109553,7 +109691,13 @@
       "source": "name",
       "evidence": "数控"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
@@ -111568,17 +111712,17 @@
   },
   {
     "id": "CN-MFG-0024752",
-    "company_en": "Numerical Control龙门External Processing",
+    "company_en": "Shu She Longmen Waigong",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "Numerical Control Processing"
+      "Numerical Control Machining"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Foshan"
     },
-    "address_en": "Beside the southwest gate of Guangdong Anbaimei Environmental Technology",
+    "address_en": "Guangdong Anbaimei Environmental Technology, beside the southwest gate",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-13",
@@ -111592,22 +111736,28 @@
       "source": "name",
       "evidence": "数控"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {
     "id": "CN-MFG-0024753",
-    "company_en": "Zhaohui CNC龙门铣External Processing",
+    "company_en": "Zhao Hui CNC龙门铣对外加工",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "Numerical Control Processing"
+      "CNC加工"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Foshan"
     },
-    "address_en": "No. 60 West of the intersection of Xiabai Industrial Avenue and Lehua Road, Second Industrial Area",
+    "address_en": "Xiaobai Industrial Avenue and Lehua Road intersection west 60 meters",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-13",
@@ -111621,7 +111771,13 @@
       "source": "name",
       "evidence": "数控"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3484",
+      "name_en": "Machined Parts & Components",
+      "level": "class",
+      "name": "机械零部件加工",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3484"
   },
   {

@@ -14668,7 +14668,13 @@
       "source": "name",
       "evidence": "铝板"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "medium"
+    },
     "_bucket": "C/32/3252"
   },
   {
@@ -14980,7 +14986,7 @@
       "province": "Zhejiang",
       "city": "Ningbo"
     },
-    "address_en": "No. 288 Xihuan North Road, west side of Huade别克, north side of East",
+    "address_en": "288 Xihuan North Road, west side of Huade别克, north side",
     "contact_phone": "186****1905",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -14994,7 +15000,13 @@
       "source": "name",
       "evidence": "铝板"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "medium"
+    },
     "_bucket": "C/32/3252"
   },
   {
@@ -18730,7 +18742,13 @@
       "source": "name",
       "evidence": "铝材"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "medium"
+    },
     "_bucket": "C/32/3252"
   },
   {
@@ -23700,7 +23718,7 @@
   },
   {
     "id": "CN-MFG-0114526",
-    "company_en": "Yi Jing Soundproof Window (Yunnan Company)",
+    "company_en": "Yi Jing隔音窗 (Yunnan Company)",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
@@ -23725,7 +23743,13 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "low"
+    },
     "_bucket": "C/32/3252"
   },
   {
@@ -24974,7 +24998,13 @@
       "source": "name",
       "evidence": "铝材"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "medium"
+    },
     "_bucket": "C/32/3252"
   },
   {
@@ -25353,7 +25383,13 @@
       "source": "name",
       "evidence": "铝材"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "medium"
+    },
     "_bucket": "C/32/3252"
   },
   {
@@ -27320,7 +27356,7 @@
   },
   {
     "id": "CN-MFG-0115286",
-    "company_en": "Scrap Station · Used Metal Copper Iron Aluminum",
+    "company_en": "Waste Station · Scrap Metal Copper Iron Aluminum",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
@@ -27330,7 +27366,7 @@
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "No. 396 Fu Bao Road,附2号",
+    "address_en": "No. 396 Fu Bao Road, Annex 2",
     "contact_phone": "198****9556",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -27344,7 +27380,13 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "low"
+    },
     "_bucket": "C/32/3252"
   },
   {
@@ -37242,7 +37284,83 @@
       "source": "name",
       "evidence": "铝业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/32/3252"
+  },
+  {
+    "id": "CN-MFG-0145316",
+    "company_en": "Changzhou Runli Aluminum Industry",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Alloy Die Casting"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Changzhou"
+    },
+    "address_en": "No. 6 Chuangye Road",
+    "contact_phone": "0519-88498866",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝业"
+    },
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "medium"
+    },
+    "_bucket": "C/32/3252"
+  },
+  {
+    "id": "CN-MFG-0145468",
+    "company_en": "Huatu Shi Aluminum Industry",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Anodizing"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 65 Donghuan Second Road, Fuke Community, Longhua Street",
+    "contact_phone": "173****0696",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝业"
+    },
+    "industry_en": {
+      "code": "3252",
+      "name_en": "Aluminium Rolling",
+      "level": "class",
+      "name": "铝压延加工",
+      "confidence": "medium"
+    },
     "_bucket": "C/32/3252"
   }
 ]

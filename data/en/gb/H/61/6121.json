@@ -5371,7 +5371,13 @@
       "source": "name",
       "evidence": "连锁酒店"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6121",
+      "name_en": "Budget Chain Hotels",
+      "level": "class",
+      "name": "经济型连锁酒店",
+      "confidence": "medium"
+    },
     "_bucket": "H/61/6121"
   },
   {
@@ -6046,7 +6052,13 @@
       "source": "name",
       "evidence": "连锁酒店"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6121",
+      "name_en": "Budget Chain Hotels",
+      "level": "class",
+      "name": "经济型连锁酒店",
+      "confidence": "medium"
+    },
     "_bucket": "H/61/6121"
   },
   {
@@ -6254,7 +6266,13 @@
       "source": "name",
       "evidence": "快捷酒店"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6121",
+      "name_en": "Budget Chain Hotels",
+      "level": "class",
+      "name": "经济型连锁酒店",
+      "confidence": "medium"
+    },
     "_bucket": "H/61/6121"
   },
   {
@@ -7425,6 +7443,76 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "商务酒店"
+    },
+    "industry_en": {
+      "code": "6121",
+      "name_en": "Budget Chain Hotels",
+      "level": "class",
+      "name": "经济型连锁酒店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6121"
+  },
+  {
+    "id": "CN-MFG-0143350",
+    "company_en": "Zhangzhou Junhao Business Hotel (Ancient City Store)",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Boutique Hotel"
+    ],
+    "region": {
+      "province": "Fujian",
+      "city": "漳州"
+    },
+    "address_en": "No. 609, 6th Floor, Jinheshang Plaza, Danxia Road",
+    "contact_phone": "0596-2999678",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "6121",
+      "name": "经济型连锁酒店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 一般旅馆 > 经济型连锁酒店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "商务酒店"
+    },
+    "industry_en": {
+      "code": "6121",
+      "name_en": "Budget Chain Hotels",
+      "level": "class",
+      "name": "经济型连锁酒店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6121"
+  },
+  {
+    "id": "CN-MFG-0143352",
+    "company_en": "Rui Peng Chain Hotel (Zhongyuan Wanda Poly Jiujie Store)",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Boutique Hotel"
+    ],
+    "region": {
+      "province": "Henan",
+      "city": "Zhengzhou"
+    },
+    "address_en": "No. 86, 19th Floor, 1934 Room, Building 5, Phase 3, Poly Xinyu, Zhongyuan Middle Road",
+    "contact_phone": "185****5370",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "6121",
+      "name": "经济型连锁酒店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 一般旅馆 > 经济型连锁酒店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连锁酒店"
     },
     "industry_en": {
       "code": "6121",

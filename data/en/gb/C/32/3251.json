@@ -5968,7 +5968,7 @@
       "province": "Guangdong",
       "city": "Huizhou"
     },
-    "address_en": "No. 80 West of Southeast Gate, Guangcai Xingzhi绒 Co., Ltd.",
+    "address_en": "No. 80 meters west of the southeast gate of Guangcai Xingzhi绒 Co., Ltd.",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -5982,7 +5982,13 @@
       "source": "name",
       "evidence": "铜材"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3251",
+      "name_en": "Copper Rolling",
+      "level": "class",
+      "name": "铜压延加工",
+      "confidence": "medium"
+    },
     "_bucket": "C/32/3251"
   },
   {

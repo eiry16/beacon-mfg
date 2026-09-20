@@ -1399,7 +1399,48 @@
       "source": "name",
       "evidence": "大理石"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3032",
+      "name_en": null,
+      "level": "class",
+      "name": "建筑用石加工",
+      "confidence": "high"
+    },
+    "_bucket": "C/30/3032"
+  },
+  {
+    "id": "CN-MFG-0146618",
+    "company_en": "Ouda Decoration Faux Marble Paint",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Huizhou"
+    },
+    "address_en": "No. 142 Aimin Middle Road, Qianjiang Garden",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "3032",
+      "name": "建筑用石加工",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 砖瓦、石材等建筑材料制造 > 建筑用石加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "大理石"
+    },
+    "industry_en": {
+      "code": "3032",
+      "name_en": null,
+      "level": "class",
+      "name": "建筑用石加工",
+      "confidence": "high"
+    },
     "_bucket": "C/30/3032"
   }
 ]

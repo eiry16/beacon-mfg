@@ -5204,7 +5204,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -6091,18 +6097,18 @@
   },
   {
     "id": "CN-MFG-0031193",
-    "company_en": "Xiangwang Laundry Shop (Yangchenghu West Road Store)",
+    "company_en": "Xiangwang Laundry Store (Yangchenghu West Road Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "laundry",
-      "laundry shop"
+      "Laundry",
+      "Laundry Store"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 1299, West Gate, Huarewa万家, Yangchenghu West Road",
+    "address_en": "No. 1299 Yangchenghu West Road,华润万家1st Floor, West Gate",
     "contact_phone": "151****5146",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -6116,7 +6122,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -6666,17 +6678,17 @@
   },
   {
     "id": "CN-MFG-0031939",
-    "company_en": "Wanyi Taijie Dry Cleaning (Professional Clothing Alteration)",
+    "company_en": "Yiwei Taijie Dry Cleaning (Professional Clothing Alteration)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "laundry shop"
+      "Laundry Store"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 1462,城南HuaNanYuan",
+    "address_en": "No. 1462,城南花苑",
     "contact_phone": "151****2909; 178****2203",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -6690,7 +6702,13 @@
       "source": "name",
       "evidence": "干洗"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -15302,17 +15320,17 @@
   },
   {
     "id": "CN-MFG-0090959",
-    "company_en": "Stone Washing Machine (Tmall Electrical Guanshanhu万达Plaza Official Flagship Store)",
+    "company_en": "Stone Washing Machine (Tmall Electrical Guanshanhu Wanda Plaza Official Flagship Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "washing"
+      "Laundry"
     ],
     "region": {
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "No. 2, Yuntan South Road, Guanshanhu万达Plaza, Tmall Quality Products, 1B Floor",
+    "address_en": "No. 2, Yuntan South Road, Guanshanhu Wanda Plaza, 1B Floor, Tmall Premium",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -15326,7 +15344,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -15366,17 +15390,17 @@
   },
   {
     "id": "CN-MFG-0090961",
-    "company_en": "Panasonic Washing Machine (Tmall Electrical Guanshanhu万达Plaza Official Flagship Store)",
+    "company_en": "Panasonic Washing Machine (Tmall Electrical Guanshanhu Wanda Plaza Official Flagship Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "washing"
+      "Laundry"
     ],
     "region": {
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "No. B1, Guanshanhu万达Plaza, Guiyang, Guanshanhu District",
+    "address_en": "No. 2, Yuntan South Road, Wanda Plaza, Guiyang Guanshanhu Store, B1 Floor",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -15390,22 +15414,28 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
     "id": "CN-MFG-0090962",
-    "company_en": "Little Swan Washing Machine (Tmall Electrical Guanshanhu万达Plaza Official Flagship Store)",
+    "company_en": "Little Swan Washing Machine (Tmall Electrical Guanshanhu Wanda Plaza Official Flagship Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "washing"
+      "Laundry"
     ],
     "region": {
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "No. B1, Guanshanhu万达Plaza, Guiyang, Guanshanhu District",
+    "address_en": "No. 2, Yuntan South Road, Wanda Plaza, Guiyang Guanshanhu Store, B1 Floor",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -15419,7 +15449,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -17402,7 +17438,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -22550,18 +22592,18 @@
   },
   {
     "id": "CN-MFG-0097968",
-    "company_en": "Catherine International Laundry (Kunming 5707 Store)",
+    "company_en": "Kaitelin International Laundry (Kunming City 5707 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
       "dry cleaning",
-      "laundry shop"
+      "laundry"
     ],
     "region": {
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "No. 9, Shop, Hetang Yue塞, Hongjin Road",
+    "address_en": "No. 9, Hetang Yue塞色, Hongjin Road",
     "contact_phone": "150****0163",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -22575,7 +22617,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -23106,7 +23154,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -23542,7 +23596,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -27136,19 +27196,19 @@
   },
   {
     "id": "CN-MFG-0105913",
-    "company_en": "A立德时康干洗连锁店(金城路店)",
+    "company_en": "A立德时康 Dry Cleaning Chain Store (Jincheng Road Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Laundry",
-      "Dry Cleaning",
-      "Laundry Shop"
+      "dry cleaning",
+      "laundry",
+      "laundry"
     ],
     "region": {
       "province": "Guangxi",
       "city": "Nanning"
     },
-    "address_en": "No. 4 Jincheng Road",
+    "address_en": "No. 4, Jincheng Road",
     "contact_phone": "188****5926",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -27162,7 +27222,13 @@
       "source": "name",
       "evidence": "干洗"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -28462,19 +28528,19 @@
   },
   {
     "id": "CN-MFG-0105949",
-    "company_en": "Jietailai Laundry (Ronghe Park悦府Store)",
+    "company_en": "Jietailai Laundry (Ronghe Park悦府 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Laundry",
-      "Dry Cleaning",
-      "Laundry Shop"
+      "dry cleaning",
+      "laundry",
+      "laundry"
     ],
     "region": {
       "province": "Guangxi",
       "city": "Nanning"
     },
-    "address_en": "No. 1 Cuizhu Road and Building 7 Park悦府",
+    "address_en": "No. 1, Cuizhu Road and Building 7, Park悦府",
     "contact_phone": "0771-4016665",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -28488,7 +28554,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -32319,7 +32391,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -38963,7 +39041,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -47123,17 +47207,17 @@
   },
   {
     "id": "CN-MFG-0124941",
-    "company_en": "Lian优选Cleaning Service Co., Ltd.",
+    "company_en": "Lian优选 Cleaning Service Co., Ltd.",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Dry Cleaning"
+      "dry cleaning"
     ],
     "region": {
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "No. 146, 2nd Floor, Building 2, Fuyuan North Road, Ergao Street",
+    "address_en": "No. 2, 1st Floor, Building 146, Fuyuan North Road, Ergao Street",
     "contact_phone": "155****4983",
     "source": "public_directory",
     "verified_at": "2026-09-18",
@@ -47147,7 +47231,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -50232,17 +50322,17 @@
   },
   {
     "id": "CN-MFG-0125156",
-    "company_en": "Laundry Shop",
+    "company_en": "Laundry",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Dry Cleaning"
+      "dry cleaning"
     ],
     "region": {
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "16 Liusi West Alley (步行410 meters from Qianling Mountain Park Subway Station A Exit)",
+    "address_en": "No. 16, Liyu West Alley (步行 410 meters from Qianling Mountain Park Subway Station A Exit)",
     "contact_phone": "136****9817",
     "source": "public_directory",
     "verified_at": "2026-09-18",
@@ -50256,7 +50346,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -57145,7 +57241,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -57364,13 +57466,13 @@
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Dry Cleaning"
+      "dry cleaning"
     ],
     "region": {
       "province": "Guangxi",
       "city": "Nanning"
     },
-    "address_en": "No. 115, Run沁园, Huarewa Jiangnan Central, Fujian Yuan Street",
+    "address_en": "No. 115, Run沁园, Huarewa Jiangnan Central, Fujian Garden Street",
     "contact_phone": "134****6228",
     "source": "public_directory",
     "verified_at": "2026-09-18",
@@ -57384,7 +57486,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -60364,17 +60472,17 @@
   },
   {
     "id": "CN-MFG-0126151",
-    "company_en": "Nuoyan Dry Cleaning (Nanning Chuangxiu奥特莱斯Store)",
+    "company_en": "Nuoyan Dry Cleaning (Nanning Chuanxiang奥特莱斯 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Dry Cleaning"
+      "dry cleaning"
     ],
     "region": {
       "province": "Guangxi",
       "city": "Nanning"
     },
-    "address_en": "F1D38 Nuoyan Dry Cleaning,奥特莱斯",
+    "address_en": "F1D38, Nuoyan Dry Cleaning,奥特莱斯",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-18",
@@ -60388,7 +60496,13 @@
       "source": "name",
       "evidence": "干洗"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -60747,7 +60861,7 @@
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Dry Cleaning"
+      "dry cleaning"
     ],
     "region": {
       "province": "Guangxi",
@@ -60767,12 +60881,18 @@
       "source": "name",
       "evidence": "干洗"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
     "id": "CN-MFG-0126165",
-    "company_en": "UCC International Laundry (中海国际社区Store)",
+    "company_en": "U CC International Laundry (Zhonghai International Community Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -60782,7 +60902,7 @@
       "province": "Guangxi",
       "city": "Nanning"
     },
-    "address_en": "No. 28 Dawu Road, Second Floor, Commercial 249,中海国际社区, Santang Town",
+    "address_en": "No. 28 Dawa Road, Santang Town, Second Floor, Commercial Unit 249, Zhonghai International Community",
     "contact_phone": "139****2760",
     "source": "public_directory",
     "verified_at": "2026-09-18",
@@ -60796,7 +60916,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -66621,7 +66747,7 @@
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "50 meters southwest of the Gu滇 Historical and Cultural Tourism Administration",
+    "address_en": "50 meters southwest of the Gu滇 Historical and Cultural Tourism Area Management Committee",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-18",
@@ -66635,7 +66761,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -66920,7 +67052,7 @@
   },
   {
     "id": "CN-MFG-0126794",
-    "company_en": "Ant Classmate Laundry (Hanwen Jiwanli Store)",
+    "company_en": "Ant Student Laundry (Hanwen Jiwanli Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -66930,7 +67062,7 @@
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "18th Building, 1st Floor, Wenbo雅苑, Shijie Street Office, Shijiang Village",
+    "address_en": "18th Building, 1st Floor, Wenboya苑, Shijiang Village Committee, Jiance Street Office",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-18",
@@ -66944,7 +67076,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -68268,7 +68406,13 @@
       "source": "name",
       "evidence": "干洗"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -68542,7 +68686,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -69187,7 +69337,7 @@
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "South of Fanghua苑, Nanhua Community, Qianwei West Road",
+    "address_en": "1st Building, No. 1, Fanghua苑, Nanhua Community, West of Qianwei West Road",
     "contact_phone": "138****0642",
     "source": "public_directory",
     "verified_at": "2026-09-18",
@@ -69201,7 +69351,13 @@
       "source": "name",
       "evidence": "干洗"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -70536,7 +70692,7 @@
   },
   {
     "id": "CN-MFG-0127134",
-    "company_en": "Lighten Laundry Laundry Shoes (Fengqi Lan庭)",
+    "company_en": "Lighten Laundry and Shoe Cleaning (Fengqi Lan庭)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -70560,7 +70716,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -75185,7 +75347,7 @@
   },
   {
     "id": "CN-MFG-0127733",
-    "company_en": "Brownie Laundry (Hailunbao·Hailun International·Hailuo Hui Store)",
+    "company_en": "Brownie Laundry (Hailunbao · Hailun International · Hailuo荟 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -75209,7 +75371,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -76029,7 +76197,7 @@
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "Shop Floor 7-9, Building 7, Phase II, Xiangzhang Junyuan",
+    "address_en": "1st Floor, Shops 7-9, 7th Building, Phase II, Xiangzhang Junyuan",
     "contact_phone": "136****6703",
     "source": "public_directory",
     "verified_at": "2026-09-18",
@@ -76043,7 +76211,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -79082,7 +79256,13 @@
       "source": "name",
       "evidence": "洗衣"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -82961,7 +83141,13 @@
       "source": "name",
       "evidence": "干洗"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8030"
   },
   {
@@ -85641,6 +85827,111 @@
     },
     "address_en": "Caishu Si Jie",
     "contact_phone": "134****4221",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8030",
+      "name": "洗染服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗染服务 > 洗染服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "洗衣"
+    },
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8030"
+  },
+  {
+    "id": "CN-MFG-0140678",
+    "company_en": "Zhuanye Xiu Li Bing Xi Xiyi",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Home Appliance Repair"
+    ],
+    "region": {
+      "province": "Hubei",
+      "city": "Wuhan"
+    },
+    "address_en": "40 meters north of the intersection of Yanhe Avenue and Shangchang Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8030",
+      "name": "洗染服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗染服务 > 洗染服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "洗衣"
+    },
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8030"
+  },
+  {
+    "id": "CN-MFG-0141409",
+    "company_en": "Midea Rongsheng Hisense Refrigerator and Washing Machine After-Sales",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Home Appliance Repair"
+    ],
+    "region": {
+      "province": "Hubei",
+      "city": "Wuhan"
+    },
+    "address_en": "No. 813 Wu Shu Xin Cun, Miaoshan Industrial Park",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8030",
+      "name": "洗染服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗染服务 > 洗染服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "洗衣"
+    },
+    "industry_en": {
+      "code": "8030",
+      "name_en": "Laundry & Dyeing Services",
+      "level": "class",
+      "name": "洗染服务",
+      "confidence": "high"
+    },
+    "_bucket": "O/80/8030"
+  },
+  {
+    "id": "CN-MFG-0142015",
+    "company_en": "Haier Washing Machine and Refrigerator Maintenance and Repair Center",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Home Appliance Repair"
+    ],
+    "region": {
+      "province": "Hubei",
+      "city": "Wuhan"
+    },
+    "address_en": "No. 107, Kaixin Building, Jinqiao Avenue",
+    "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-19",
     "note_en": "",

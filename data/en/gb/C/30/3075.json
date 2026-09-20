@@ -25,7 +25,13 @@
       "source": "gb_token",
       "evidence": "术陶瓷"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3075",
+      "name_en": null,
+      "level": "class",
+      "name": "陈设艺术陶瓷制造",
+      "confidence": "high"
+    },
     "_bucket": "C/30/3075"
   },
   {
@@ -54,7 +60,13 @@
       "source": "gb_token",
       "evidence": "艺术陶瓷"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3075",
+      "name_en": null,
+      "level": "class",
+      "name": "陈设艺术陶瓷制造",
+      "confidence": "high"
+    },
     "_bucket": "C/30/3075"
   }
 ]

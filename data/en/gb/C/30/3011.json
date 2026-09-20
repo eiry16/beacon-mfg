@@ -2198,7 +2198,7 @@
   },
   {
     "id": "CN-MFG-0032076",
-    "company_en": "Xinshenghui Cement Sand Stone Brick Perlite Building Materials Wholesale",
+    "company_en": "Xinshenghui Shuini Shashi Zhu Taojili Jiancai Puhuai",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
@@ -2208,7 +2208,7 @@
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "No. 4999 Baotian Avenue, Building 2, Shop 1027, Yating苑, Hangcheng Street",
+    "address_en": "Hangcheng Jiedao Bao'an Avenue 4999 No. Yatingyuan 2 Building Shop 1027",
     "contact_phone": "137****6150",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -2222,7 +2222,13 @@
       "source": "name",
       "evidence": "水泥"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3011",
+      "name_en": null,
+      "level": "class",
+      "name": "水泥制造",
+      "confidence": "high"
+    },
     "_bucket": "C/30/3011"
   },
   {
@@ -2936,7 +2942,13 @@
       "source": "gb_token",
       "evidence": "水泥"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3011",
+      "name_en": null,
+      "level": "class",
+      "name": "水泥制造",
+      "confidence": "high"
+    },
     "_bucket": "C/30/3011"
   },
   {
@@ -2965,7 +2977,13 @@
       "source": "name",
       "evidence": "水泥"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3011",
+      "name_en": null,
+      "level": "class",
+      "name": "水泥制造",
+      "confidence": "high"
+    },
     "_bucket": "C/30/3011"
   },
   {
@@ -2994,7 +3012,48 @@
       "source": "gb_token",
       "evidence": "水泥"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3011",
+      "name_en": null,
+      "level": "class",
+      "name": "水泥制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/30/3011"
+  },
+  {
+    "id": "CN-MFG-0146635",
+    "company_en": "Jiashouhuodongjiagaojiayaqijipengfujiadianqi gongju shuini huangsha",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "Jinjiangjiayuan Qiyuan 4/56 Dong 5-1 No.",
+    "contact_phone": "136****4260; 185****9727",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "3011",
+      "name": "水泥制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 水泥、石灰和石膏制造 > 水泥制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "水泥"
+    },
+    "industry_en": {
+      "code": "3011",
+      "name_en": null,
+      "level": "class",
+      "name": "水泥制造",
+      "confidence": "high"
+    },
     "_bucket": "C/30/3011"
   }
 ]

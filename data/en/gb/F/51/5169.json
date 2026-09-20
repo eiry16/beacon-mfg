@@ -1903,7 +1903,7 @@
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 5 Factory Building,院内2#, Yu Hua Road, Shanghu Town",
+    "address_en": "No. 5 Factory, within the compound of No. 2 Yuhua Road, Shanghu Town",
     "contact_phone": "181****6902; 189****6188",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -1917,7 +1917,13 @@
       "source": "category_fallback",
       "evidence": "原材料"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5169",
+      "name_en": "Other Chemical Products Wholesale",
+      "level": "class",
+      "name": "其他化工产品批发",
+      "confidence": "low"
+    },
     "_bucket": "F/51/5169"
   },
   {

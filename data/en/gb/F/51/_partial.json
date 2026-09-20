@@ -1705,7 +1705,13 @@
       "source": "gb_token",
       "evidence": "料批发"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "51",
+      "name_en": null,
+      "level": "division",
+      "name": "批发业",
+      "confidence": "low"
+    },
     "_bucket": "F/51/_partial"
   }
 ]

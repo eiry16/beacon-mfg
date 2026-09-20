@@ -1424,5 +1424,40 @@
       "confidence": "high"
     },
     "_bucket": "C/38/3812"
+  },
+  {
+    "id": "CN-MFG-0141138",
+    "company_en": "Xingyu Electric Tools (Motor, Pump Repair)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Appliance Repair"
+    ],
+    "region": {
+      "province": "Hubei",
+      "city": "Wuhan"
+    },
+    "address_en": "No. 243 Dunkou Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "industry_en": {
+      "code": "3812",
+      "name_en": "Electric Motors",
+      "level": "class",
+      "name": "电动机制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/38/3812"
   }
 ]

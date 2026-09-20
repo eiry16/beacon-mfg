@@ -3166,7 +3166,7 @@
   },
   {
     "id": "CN-MFG-0036741",
-    "company_en": "Zhongke Huankong Huanjing Jiance (Wuhan) Co., Ltd.",
+    "company_en": "Zhongke Huanhong Environmental Monitoring (Wuhan) Co., Ltd.",
     "category": "科学研究和技术服务业",
     "category_en": "科学研究和技术服务业",
     "keywords_en": [
@@ -3177,7 +3177,7 @@
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 5005, Building 5, China One冶 High-tech Industrial Park, Ganyudao Road, Changqian Street",
+    "address_en": "No. 5005, 5th Building, China One冶 High-tech Industrial Park, 5th Avenue, Changqian Street",
     "contact_phone": "027-86666433",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -3191,7 +3191,13 @@
       "source": "name",
       "evidence": "环境监测"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "7461",
+      "name_en": "Environmental Monitoring",
+      "level": "class",
+      "name": "环境保护监测",
+      "confidence": "high"
+    },
     "_bucket": "M/74/7461"
   },
   {
@@ -3385,7 +3391,7 @@
   },
   {
     "id": "CN-MFG-0036878",
-    "company_en": "Suzhou Youxin Huanbao Technology Co., Ltd.",
+    "company_en": "Suzhou Youxin Environmental Protection Technology Co., Ltd.",
     "category": "科学研究和技术服务业",
     "category_en": "科学研究和技术服务业",
     "keywords_en": [
@@ -3395,7 +3401,7 @@
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 1566 Baodai West Road, New锐 Science and Technology Innovation Center, Building 3",
+    "address_en": "No. 1566, Xinrui Science and Technology Innovation Center, 3rd Building, Baodai West Road",
     "contact_phone": "0512-66650309; 158****6636",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -3409,7 +3415,13 @@
       "source": "search_keyword",
       "evidence": "科学研究和技术服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "7461",
+      "name_en": "Environmental Monitoring",
+      "level": "class",
+      "name": "环境保护监测",
+      "confidence": "low"
+    },
     "_bucket": "M/74/7461"
   },
   {

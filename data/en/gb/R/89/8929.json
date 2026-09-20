@@ -1067,17 +1067,17 @@
   },
   {
     "id": "CN-MFG-0032798",
-    "company_en": "YONEX Lingta Badminton Sports Center",
+    "company_en": "YONEX Ling Ta Badminton Sports Center",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "badminton court"
+      "Badminton Court"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "No. 20-120 Min tang Road (步行380 meters from Minle Subway Station Exit A)",
+    "address_en": "No. 20-120 Min Tang Road (Minle Subway Station Exit A, walk 380 meters)",
     "contact_phone": "189****2647",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -1091,7 +1091,13 @@
       "source": "name",
       "evidence": "羽毛球"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8929",
+      "name_en": "Other Sports Facilities Management",
+      "level": "class",
+      "name": "其他体育场地设施管理",
+      "confidence": "high"
+    },
     "_bucket": "R/89/8929"
   },
   {
@@ -1582,18 +1588,18 @@
   },
   {
     "id": "CN-MFG-0032889",
-    "company_en": "Aoguan Sports恒温 Swimming and Badminton (Peizheng Middle School Store)",
+    "company_en": "Aoguan Sports恒温 Swimming Badminton (Peizheng Middle School Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "badminton court",
-      "swimming pool"
+      "Badminton Court",
+      "Swimming Pool"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "No. 8 Bao'anqian Street (North Gate of Peizheng Middle School)",
+    "address_en": "No. 8 Baowenqian Street (North Gate of Peizheng Middle School)",
     "contact_phone": "189****0331",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -1607,7 +1613,13 @@
       "source": "name",
       "evidence": "羽毛球"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8929",
+      "name_en": "Other Sports Facilities Management",
+      "level": "class",
+      "name": "其他体育场地设施管理",
+      "confidence": "high"
+    },
     "_bucket": "R/89/8929"
   },
   {
@@ -3267,13 +3279,13 @@
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "badminton court"
+      "Badminton Court"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 198 Shijicheng Road,附1850",
+    "address_en": "No. 198 Fuxing Road, Annex 1850",
     "contact_phone": "153****0272",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -3287,7 +3299,13 @@
       "source": "name",
       "evidence": "球馆"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8929",
+      "name_en": "Other Sports Facilities Management",
+      "level": "class",
+      "name": "其他体育场地设施管理",
+      "confidence": "high"
+    },
     "_bucket": "R/89/8929"
   },
   {
@@ -3319,11 +3337,11 @@
   },
   {
     "id": "CN-MFG-0033178",
-    "company_en": "Manhexing Badminton Court (South Railway Station Store)",
+    "company_en": "Man He Xing Yu Badminton Court (South Railway Station Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "badminton court"
+      "Badminton Court"
     ],
     "region": {
       "province": "Sichuan",
@@ -3343,7 +3361,13 @@
       "source": "name",
       "evidence": "球馆"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8929",
+      "name_en": "Other Sports Facilities Management",
+      "level": "class",
+      "name": "其他体育场地设施管理",
+      "confidence": "high"
+    },
     "_bucket": "R/89/8929"
   },
   {
@@ -4637,11 +4661,11 @@
   },
   {
     "id": "CN-MFG-0033399",
-    "company_en": "Mo Yuan Swimming (Jing'an凯宾斯基Store)",
+    "company_en": "Mo Yuan Swimming (Jing'an凯宾斯基 Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "swimming pool"
+      "Swimming Pool"
     ],
     "region": {
       "province": "Shanghai",
@@ -4661,7 +4685,13 @@
       "source": "search_keyword",
       "evidence": "文化、体育和娱乐业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8929",
+      "name_en": "Other Sports Facilities Management",
+      "level": "class",
+      "name": "其他体育场地设施管理",
+      "confidence": "low"
+    },
     "_bucket": "R/89/8929"
   },
   {
@@ -13095,6 +13125,41 @@
     "contact_phone": "187****5285",
     "source": "public_directory",
     "verified_at": "2026-09-17",
+    "note_en": "",
+    "industry": {
+      "code": "8929",
+      "name": "其他体育场地设施管理",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 体育 > 体育场地设施管理 > 其他体育场地设施管理",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "体育馆"
+    },
+    "industry_en": {
+      "code": "8929",
+      "name_en": "Other Sports Facilities Management",
+      "level": "class",
+      "name": "其他体育场地设施管理",
+      "confidence": "high"
+    },
+    "_bucket": "R/89/8929"
+  },
+  {
+    "id": "CN-MFG-0141946",
+    "company_en": "Bei Tian Sheng Huo (Tiyuguan Road Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Pastries"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "No. 289 Tiyuguan Road",
+    "contact_phone": "0571-58836678",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
     "note_en": "",
     "industry": {
       "code": "8929",

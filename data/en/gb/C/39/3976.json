@@ -28,7 +28,7 @@
   },
   {
     "id": "CN-MFG-0027252",
-    "company_en": "Kunshan Xiguang Electronic & Mechanical Manufacturing Co., Ltd.",
+    "company_en": "Kunshan Xiguang Electronic Machinery Manufacturing Co., Ltd.",
     "category": "钣金冲压",
     "category_en": "Sheet Metal & Stamping",
     "keywords_en": [
@@ -38,7 +38,7 @@
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 14 Zh浦 Road, Qianliang Town",
+    "address_en": "No. 14 Zh浦 Road, Qianlan Town",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-13",
@@ -52,7 +52,13 @@
       "source": "gb_token",
       "evidence": "光电子"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3976",
+      "name_en": null,
+      "level": "class",
+      "name": "光电子器件制造",
+      "confidence": "high"
+    },
     "_bucket": "C/39/3976"
   }
 ]

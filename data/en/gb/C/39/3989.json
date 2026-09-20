@@ -9099,7 +9099,7 @@
   },
   {
     "id": "CN-MFG-0003681",
-    "company_en": "Xingda盟JieLianQi YouXianGongSi",
+    "company_en": "Xingda盟Connector Co., Ltd.",
     "category": "注塑成型",
     "category_en": "Injection Molding",
     "keywords_en": [
@@ -9109,7 +9109,7 @@
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "Shajing JieDao HeYi SheQu NanHuanLu SanYang XinGongYeQu ErQi E5 Duan SanCeng",
+    "address_en": "No. 3, South Loop Road, Phase II, Xiangyang New Industrial Zone, Heping Street, Shejing District",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -9123,7 +9123,13 @@
       "source": "name",
       "evidence": "连接器"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3989",
+      "name_en": "Other Electronic Components",
+      "level": "class",
+      "name": "其他电子元件制造",
+      "confidence": "medium"
+    },
     "_bucket": "C/39/3989"
   },
   {

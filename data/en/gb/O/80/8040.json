@@ -5979,7 +5979,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -12239,7 +12245,13 @@
       "source": "name",
       "evidence": "造型"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -12269,7 +12281,13 @@
       "source": "name",
       "evidence": "理发"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -25401,7 +25419,13 @@
       "source": "name",
       "evidence": "美容"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -31408,7 +31432,13 @@
       "source": "name",
       "evidence": "美容"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -38688,7 +38718,7 @@
   },
   {
     "id": "CN-MFG-0092007",
-    "company_en": "Zhaliman Men's Hairdressing (Guanshanhu Store)",
+    "company_en": "Zharman Men's Hairdressing (Guanshanhu Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -38700,7 +38730,7 @@
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "No. 799 Fumao轩 Wealth Street",
+    "address_en": "No. 799 Caifo Street",
     "contact_phone": "180****3403; 186****9968",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -38714,7 +38744,13 @@
       "source": "name",
       "evidence": "理发"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -44833,13 +44869,13 @@
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Haircut"
+      "haircutting"
     ],
     "region": {
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "Guizhou Province, Guanshanhu District",
+    "address_en": "Guanshanhu District, Guizhou Province",
     "contact_phone": "135****4861",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -44853,7 +44889,13 @@
       "source": "name",
       "evidence": "造型"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -49792,7 +49834,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -72181,7 +72229,13 @@
       "source": "name",
       "evidence": "美容"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -77239,7 +77293,13 @@
       "source": "name",
       "evidence": "美容"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -78615,11 +78675,11 @@
   },
   {
     "id": "CN-MFG-0106934",
-    "company_en": "Keyint祛斑祛痘(Nanning Greenland Store)",
+    "company_en": "Koyint祛斑祛痘(Nanning Greenland Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Beauty"
+      "Beauty Treatment"
     ],
     "region": {
       "province": "Guangxi",
@@ -78639,7 +78699,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -80183,7 +80249,13 @@
       "source": "name",
       "evidence": "理发"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -80288,7 +80360,13 @@
       "source": "name",
       "evidence": "造型"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -80469,7 +80547,13 @@
       "source": "name",
       "evidence": "造型"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -80500,7 +80584,13 @@
       "source": "name",
       "evidence": "造型"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -81423,7 +81513,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -86786,7 +86882,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -94005,7 +94107,13 @@
       "source": "name",
       "evidence": "美容美发"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -94255,7 +94363,7 @@
   },
   {
     "id": "CN-MFG-0114347",
-    "company_en": "Yuji Beauty Space (Jinkeshu Tian Du Store)",
+    "company_en": "Yuji Skin Aesthetics Space (Jinkeshu Tian Du Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -94265,7 +94373,7 @@
       "province": "Guizhou",
       "city": "遵义"
     },
-    "address_en": "60 meters west at the intersection of Baoshou Avenue and Xintu Avenue辅路",
+    "address_en": "60 meters west at the intersection of Baoshou Avenue and Xintu Avenue辅 Road",
     "contact_phone": "173****7766",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -94279,7 +94387,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -94658,7 +94772,13 @@
       "source": "name",
       "evidence": "美容"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -96417,17 +96537,17 @@
   },
   {
     "id": "CN-MFG-0114411",
-    "company_en": "Yin普拉提工作室",
+    "company_en": "Yin普拉提 Studio",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Beauty"
+      "beauty"
     ],
     "region": {
       "province": "Guizhou",
       "city": "遵义"
     },
-    "address_en": "Jinke Central Park City",
+    "address_en": "Jinkeshu Central Park City",
     "contact_phone": "155****0430; 166****8592",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -96441,7 +96561,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -100223,7 +100349,7 @@
   },
   {
     "id": "CN-MFG-0114746",
-    "company_en": "Chun藤·Tangran Design (Wuyue Square Store)",
+    "company_en": "Chun藤·Tangran Design (Wuyue Plaza Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -100235,7 +100361,7 @@
       "province": "Guizhou",
       "city": "遵义"
     },
-    "address_en": "Northeast 220 meters at the intersection of Yinhe North Road辅路 and Songshan Road, Wuyue Square F4 Floor",
+    "address_en": "F4, Wuyue Plaza, Northeast intersection of Yinhe North Road辅 Road and Songshan Road",
     "contact_phone": "0851-28859787; 133****4556",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -100249,7 +100375,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -103292,7 +103424,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -108509,7 +108647,13 @@
       "source": "name",
       "evidence": "造型"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -108713,7 +108857,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "low"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -114210,7 +114360,13 @@
       "source": "name",
       "evidence": "美容"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   },
   {
@@ -114239,7 +114395,13 @@
       "source": "name",
       "evidence": "美容"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8040",
+      "name_en": "Barber & Beauty Services",
+      "level": "class",
+      "name": "理发及美容服务",
+      "confidence": "high"
+    },
     "_bucket": "O/80/8040"
   }
 ]
