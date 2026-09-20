@@ -5820,7 +5820,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -6550,7 +6556,7 @@
   },
   {
     "id": "CN-MFG-0063391",
-    "company_en": "Yangzi Small Wine Bar Yangs Bar(Chengshang Road Store)",
+    "company_en": "Yangs Bar(Chengshang Road Store)",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
@@ -6560,7 +6566,7 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 1281 Chengshang Road (步行280 meters from Hua Peng Road Subway Station Exit 3)",
+    "address_en": "No. 1281 Chengshang Road (280 meters walk from Hua Peng Road Subway Station Exit 3)",
     "contact_phone": "147****9648",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -6574,7 +6580,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -6625,7 +6637,7 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 49 Ruijin Second Road (步行210 meters from Huaihai Middle Road Subway Station Exit 2)",
+    "address_en": "No. 49 Ruijin Second Road (210 meters walk from Huaihai Middle Road Subway Station Exit 2)",
     "contact_phone": "158****2905",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -6639,7 +6651,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -8427,7 +8445,7 @@
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "L4-06a Kaledo Shopping Mall (next to本能Craft Beer, take Elevator 6 directly)",
+    "address_en": "L4-06a Kaledo Shopping Mall (directly to Elevator No. 6 on the right side of本能Brewery)",
     "contact_phone": "180****4490",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -8441,7 +8459,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -10841,7 +10865,7 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar"
+      "bar"
     ],
     "region": {
       "province": "Guangdong",
@@ -10861,7 +10885,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -18709,13 +18739,13 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar"
+      "bar"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "Shop 1029, 1st Floor, Poly Fish珠 Time Shopping Mall, East Huangpu Avenue",
+    "address_en": "No. 1029, Floor L1, Poly Yu Zhu Guang Chang Shopping Mall, East Huangpu Avenue",
     "contact_phone": "195****9081",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -18729,7 +18759,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -19683,8 +19719,8 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "bar",
-      "cafe"
+      "Bar",
+      "Cocktail Bar"
     ],
     "region": {
       "province": "Guangdong",
@@ -19704,7 +19740,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -22021,23 +22063,29 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
     "id": "CN-MFG-0080434",
-    "company_en": "MEDISN·Yaochang",
+    "company_en": "MEDISN·Pharmaceutical Factory",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar",
-      "Cocktail Bar"
+      "bar",
+      "cafe bar"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 165 Yulin West Road,附24",
+    "address_en": "No. 24, Annex No. 165, Yulin West Road",
     "contact_phone": "180****4553",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -22051,7 +22099,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -22128,17 +22182,17 @@
   },
   {
     "id": "CN-MFG-0080437",
-    "company_en": "ENCORE CDC Wuli'anke",
+    "company_en": "Encore CDC Wuli'anke",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar"
+      "bar"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 25 Wangjia Alley,附107 (480 meters on foot from Fuyin Subway Station D Exit)",
+    "address_en": "No. 107, Annex, 25 Wangjia Alley (480 meters walk from Fuyin Subway Station D Exit)",
     "contact_phone": "028-83338380",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -22152,7 +22206,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -25848,13 +25908,13 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar"
+      "bar"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 96 Feiyun Third Alley (next to苏宁SUNING Mini Store at the entrance of Greenland GIC Phase 2)",
+    "address_en": "No. 96 Feiyun Alley (beside苏宁small store at the entrance of Greenland GIC Phase 2)",
     "contact_phone": "199****7662",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -25868,7 +25928,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -29819,17 +29885,17 @@
   },
   {
     "id": "CN-MFG-0080800",
-    "company_en": "GOOD CHA JAZZ CLUB (WAY2 Collaborative Store)",
+    "company_en": "Good Cha Jazz Club (WAY2 Collaborative Store)",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar"
+      "bar"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Hangzhou"
     },
-    "address_en": "No. 415 Chengye Road, Jiangnan岸Art Park Building A, Floor F1",
+    "address_en": "415 Chengye Road, Floor F1, Building A, Jiangnan岸Art Park",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -29843,7 +29909,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -39171,11 +39243,11 @@
   },
   {
     "id": "CN-MFG-0081214",
-    "company_en": "NOVACORE Weiliu",
+    "company_en": "NOVACORE Weili",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Cocktail Bar"
+      "cafe bar"
     ],
     "region": {
       "province": "Shanghai",
@@ -39195,7 +39267,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -40567,17 +40645,17 @@
   },
   {
     "id": "CN-MFG-0081372",
-    "company_en": "Zhanggui's Little Broken Wine Shop",
+    "company_en": "The Little Bar of the Shopkeeper",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Cocktail Bar"
+      "cafe bar"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "No. 3076-50 Yu'an First Road (50 meters northeast of Jingying Qu庭Southeast Gate)",
+    "address_en": "No. 3076-50 Yu'an Road 1st, northeast 50 meters from the southeast gate of Jingying Qu庭",
     "contact_phone": "159****1252",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -40591,7 +40669,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -44303,13 +44387,13 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Cocktail Bar"
+      "cafe bar"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "Unit 01, Floor 1, Building 2, Tiande Street, Tiande Plaza (opposite S霸王Tea House)",
+    "address_en": "Unit 01, Floor 1, Building 2, Tiande Street, Tiande Plaza (opposite CHAGEE)",
     "contact_phone": "159****9117; 181****9353",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -44323,7 +44407,13 @@
       "source": "name",
       "evidence": "酒吧"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "medium"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -49209,17 +49299,17 @@
   },
   {
     "id": "CN-MFG-0081889",
-    "company_en": "Midou Wine Shop",
+    "company_en": "Mido Bar",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Cocktail Bar"
+      "cafe bar"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 2,附15 Xiao Tong Alley",
+    "address_en": "No. 2, Annex 15, Xiaotong Alley",
     "contact_phone": "183****9992; 188****6173",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -49233,7 +49323,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -67090,18 +67186,18 @@
   },
   {
     "id": "CN-MFG-0095477",
-    "company_en": "Banxing Jingniang Naochang (Huaxi Daxuecheng Dian)",
+    "company_en": "Half Awake Craft Brewery (Huaxi University Town Store)",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar",
-      "Cocktail Bar"
+      "bar",
+      "cafe bar"
     ],
     "region": {
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "Gui'an New Area No. 3 Apartment Building of Normal University and Commercial配套设施",
+    "address_en": "No. 3 apartment and commercial supporting facilities, Gu'an New District, Normal University",
     "contact_phone": "135****7270",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -67115,7 +67211,13 @@
       "source": "name",
       "evidence": "精酿"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "medium"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -68905,7 +69007,13 @@
       "source": "name",
       "evidence": "酒吧"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "medium"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -74968,7 +75076,13 @@
       "source": "name",
       "evidence": "餐吧"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "medium"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -77293,7 +77407,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -78453,7 +78573,13 @@
       "source": "name",
       "evidence": "酒吧"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "medium"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -86491,17 +86617,17 @@
   },
   {
     "id": "CN-MFG-0112112",
-    "company_en": "侯朋现场HOPELIVE (Zhongshan Road Wanyahui Dian)",
+    "company_en": "Houpeng Xianchang HOPELIVE (Zhongshan Road Wanyahui Store)",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar"
+      "bar"
     ],
     "region": {
       "province": "Guangxi",
       "city": "Nanning"
     },
-    "address_en": "229 Zhongshan Road Wanyahui L2 - 37",
+    "address_en": "No. 229 Zhongshan Road Wanyahui L2 Floor - 37",
     "contact_phone": "199****2184",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -86515,7 +86641,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -86649,7 +86781,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -88102,11 +88240,11 @@
   },
   {
     "id": "CN-MFG-0112164",
-    "company_en": "Mofang Party · Super Scene (Hengzhou Dian)",
+    "company_en": "Mofang Party · Super Stage (Hezhou Store)",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar"
+      "bar"
     ],
     "region": {
       "province": "Guangxi",
@@ -88126,7 +88264,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -95729,17 +95873,17 @@
   },
   {
     "id": "CN-MFG-0120156",
-    "company_en": "Shanghai滩Bar (Zunyi Dian)",
+    "company_en": "Shanghai滩 Bar (Zunyi Store)",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar"
+      "bar"
     ],
     "region": {
       "province": "Guizhou",
       "city": "遵义"
     },
-    "address_en": "Hui Chuan Art Center A Building (Shanghai滩Bar) on Nanjing Road",
+    "address_en": "A Hall of Hui Chuan Art Center, Nanjing Road (Shanghai滩 Bar)",
     "contact_phone": "190****1696",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -95753,7 +95897,13 @@
       "source": "name",
       "evidence": "酒吧"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "medium"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -98119,14 +98269,14 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar",
-      "Cocktail Bar"
+      "bar",
+      "cafe bar"
     ],
     "region": {
       "province": "Guizhou",
       "city": "遵义"
     },
-    "address_en": "Building A1 of Xiangshan Impression Riverside near希尔曼Hotel",
+    "address_en": "Building A1, Xiangshan Impression Riverside, next to希尔曼 Hotel",
     "contact_phone": "180****1563",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -98140,7 +98290,13 @@
       "source": "name",
       "evidence": "酒吧"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "medium"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -98204,7 +98360,13 @@
       "source": "name",
       "evidence": "酒吧"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "medium"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -99006,7 +99168,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {
@@ -99050,13 +99218,13 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Bar"
+      "bar"
     ],
     "region": {
       "province": "Guizhou",
       "city": "遵义"
     },
-    "address_en": "8th Building, 2-13th Door,葫芦城8号楼, Lou Mountain Road, Xihu Road",
+    "address_en": "8th Building, 2-13th Door,葫芦城 Road, Lou Mountain Pass Street",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -99070,7 +99238,13 @@
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6233",
+      "name_en": "Bar Service",
+      "level": "class",
+      "name": "酒吧服务",
+      "confidence": "low"
+    },
     "_bucket": "H/62/6233"
   },
   {

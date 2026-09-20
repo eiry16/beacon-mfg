@@ -2546,7 +2546,7 @@
   },
   {
     "id": "CN-MFG-0064671",
-    "company_en": "CHAGEE霸王茶姬(Shanghai No.1 Department Store)",
+    "company_en": "CHAGEE BAWANG CHAJI (Shanghai No. 1 Department Store)",
     "category": "批发和零售业",
     "category_en": "批发和零售业",
     "keywords_en": [
@@ -2570,7 +2570,13 @@
       "source": "name",
       "evidence": "百货"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5212",
+      "name_en": "Supermarket Retail",
+      "level": "class",
+      "name": "超级市场零售",
+      "confidence": "medium"
+    },
     "_bucket": "F/52/5212"
   },
   {
@@ -2829,7 +2835,7 @@
   },
   {
     "id": "CN-MFG-0076436",
-    "company_en": "CoCo都可(LuDu International Shopping Plaza)",
+    "company_en": "CoCo Franchise (Ludu International Shopping Plaza)",
     "category": "批发和零售业",
     "category_en": "批发和零售业",
     "keywords_en": [
@@ -2839,7 +2845,7 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 568 Songhui Middle Road, 1st Floor, LuDu International Shopping Plaza (near North 1 Gate)",
+    "address_en": "No. 568 Songhui Middle Road, 1st Floor, Ludu International Shopping Plaza (near North Gate 1)",
     "contact_phone": "172****2322",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -2853,7 +2859,13 @@
       "source": "name",
       "evidence": "购物广场"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5212",
+      "name_en": "Supermarket Retail",
+      "level": "class",
+      "name": "超级市场零售",
+      "confidence": "medium"
+    },
     "_bucket": "F/52/5212"
   },
   {
@@ -2930,7 +2942,7 @@
   },
   {
     "id": "CN-MFG-0077412",
-    "company_en": "CoCo都可(Quanwu Department Store)",
+    "company_en": "CoCo Franchise (Suzhou Quanwu Department Store)",
     "category": "批发和零售业",
     "category_en": "批发和零售业",
     "keywords_en": [
@@ -2941,7 +2953,7 @@
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 211 Changjiang Road, B1F, Suzhou Quanwu (enter through South 2 Gate, walk straight for 30 meters, take the escalator down to B1F)",
+    "address_en": "No. 211 Changjiang Road, B1 Floor, Suzhou Quanwu (enter through South Gate 2, walk straight for 30 meters, take the escalator down to B1 Floor)",
     "contact_phone": "0512-68756420",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -2955,7 +2967,13 @@
       "source": "name",
       "evidence": "百货"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5212",
+      "name_en": "Supermarket Retail",
+      "level": "class",
+      "name": "超级市场零售",
+      "confidence": "medium"
+    },
     "_bucket": "F/52/5212"
   },
   {
@@ -5648,7 +5666,13 @@
       "source": "name",
       "evidence": "超市"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5212",
+      "name_en": "Supermarket Retail",
+      "level": "class",
+      "name": "超级市场零售",
+      "confidence": "medium"
+    },
     "_bucket": "F/52/5212"
   }
 ]

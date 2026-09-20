@@ -1899,17 +1899,17 @@
   },
   {
     "id": "CN-MFG-0128991",
-    "company_en": "Li钥匙xiupei kaishou qianfeng chuwai dianqi dian",
+    "company_en": "Li钥匙修配开锁前锋厨卫电器店",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "home appliance repair"
+      "Appliance repair"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 3 Huaguan Road Xiulin Shangyuan East District",
+    "address_en": "No. 3 Huaguan Road, Xiulin Shangyuan East District",
     "contact_phone": "158****1379; 191****9845",
     "source": "public_directory",
     "verified_at": "2026-09-19",
@@ -1923,22 +1923,28 @@
       "source": "name",
       "evidence": "开锁"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8290",
+      "name_en": "Other Unspecified Services",
+      "level": "class",
+      "name": "其他未列明服务业",
+      "confidence": "medium"
+    },
     "_bucket": "O/82/8290"
   },
   {
     "id": "CN-MFG-0129015",
-    "company_en": "Li钥匙kaishou",
+    "company_en": "Li钥匙开锁",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "home appliance repair"
+      "Appliance repair"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 2 Yulin Jiuxiang Lane附一 Dongmen pang",
+    "address_en": "No. 2 Yulin Jiuxiang, Annex 1 (beside the East Gate)",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-19",
@@ -1952,7 +1958,13 @@
       "source": "name",
       "evidence": "开锁"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8290",
+      "name_en": "Other Unspecified Services",
+      "level": "class",
+      "name": "其他未列明服务业",
+      "confidence": "medium"
+    },
     "_bucket": "O/82/8290"
   },
   {

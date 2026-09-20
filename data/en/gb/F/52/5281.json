@@ -306,7 +306,7 @@
       "province": "Zhejiang",
       "city": "Ningbo"
     },
-    "address_en": "No. 188 Dazha Road (步行310 meters from Baytou Subway Station D Exit)",
+    "address_en": "No. 188 Dazha Road (walk 310 meters from Baytou Subway Station D Exit)",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -320,7 +320,13 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5281",
+      "name_en": "Hardware Retail",
+      "level": "class",
+      "name": "五金零售",
+      "confidence": "low"
+    },
     "_bucket": "F/52/5281"
   },
   {

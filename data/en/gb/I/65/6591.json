@@ -1,7 +1,7 @@
 [
   {
     "id": "CN-MFG-0032421",
-    "company_en": "Zhongguo Dianxin外包呼叫中心Guangzhou Wuyangyuan Qu",
+    "company_en": "Zhongguo Dianxin外包呼叫中心Guangzhou Wuyang Industrial Park",
     "category": "信息传输、软件和信息技术服务业",
     "category_en": "信息传输、软件和信息技术服务业",
     "keywords_en": [
@@ -11,7 +11,7 @@
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "Wuyangcun Subway Station B Exit, walk 70 meters",
+    "address_en": "No. 70 walk from Wuyangcun Subway Station B Exit",
     "contact_phone": "4009500253",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -25,7 +25,13 @@
       "source": "gb_token",
       "evidence": "呼叫中心"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6591",
+      "name_en": "Call Center Services",
+      "level": "class",
+      "name": "呼叫中心",
+      "confidence": "high"
+    },
     "_bucket": "I/65/6591"
   }
 ]

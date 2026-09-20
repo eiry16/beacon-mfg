@@ -748,7 +748,13 @@
       "source": "name",
       "evidence": "网络科技"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6490",
+      "name_en": "Other Internet Services",
+      "level": "class",
+      "name": "其他互联网服务",
+      "confidence": "medium"
+    },
     "_bucket": "I/64/6490"
   },
   {
@@ -1388,7 +1394,48 @@
       "source": "name",
       "evidence": "互联网"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "6490",
+      "name_en": "Other Internet Services",
+      "level": "class",
+      "name": "其他互联网服务",
+      "confidence": "medium"
+    },
+    "_bucket": "I/64/6490"
+  },
+  {
+    "id": "CN-MFG-0141049",
+    "company_en": "Moka Country (Binjiang Internet Town Store)",
+    "category": "信息传输、软件和信息技术服务业",
+    "category_en": "信息传输、软件和信息技术服务业",
+    "keywords_en": [
+      "Pastries"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "No. 5 Building, 1st Floor, Alibaba Binjiang Park",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "6490",
+      "name": "其他互联网服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 互联网和相关服务 > 其他互联网服务 > 其他互联网服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "互联网"
+    },
+    "industry_en": {
+      "code": "6490",
+      "name_en": "Other Internet Services",
+      "level": "class",
+      "name": "其他互联网服务",
+      "confidence": "medium"
+    },
     "_bucket": "I/64/6490"
   }
 ]

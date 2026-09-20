@@ -22509,13 +22509,13 @@
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
-      "Bearings"
+      "bearing"
     ],
     "region": {
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "No. 9-10, 10th Building, C District, Tianli Machinery City, Gui'an Avenue",
+    "address_en": "No. 9-10, 10th Building, C District, Tianli Machinery and Electrical City, Gui'an Avenue",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -22529,7 +22529,13 @@
       "source": "keyword",
       "evidence": "轴承"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3451",
+      "name_en": "Rolling Bearings",
+      "level": "class",
+      "name": "滚动轴承制造",
+      "confidence": "medium"
+    },
     "_bucket": "C/34/3451"
   },
   {
@@ -27635,7 +27641,13 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3451",
+      "name_en": "Rolling Bearings",
+      "level": "class",
+      "name": "滚动轴承制造",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3451"
   },
   {
@@ -27665,7 +27677,13 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3451",
+      "name_en": "Rolling Bearings",
+      "level": "class",
+      "name": "滚动轴承制造",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3451"
   },
   {
@@ -27695,7 +27713,13 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3451",
+      "name_en": "Rolling Bearings",
+      "level": "class",
+      "name": "滚动轴承制造",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3451"
   },
   {
@@ -27724,7 +27748,13 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3451",
+      "name_en": "Rolling Bearings",
+      "level": "class",
+      "name": "滚动轴承制造",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3451"
   },
   {
@@ -27753,7 +27783,13 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3451",
+      "name_en": "Rolling Bearings",
+      "level": "class",
+      "name": "滚动轴承制造",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3451"
   },
   {
@@ -27782,7 +27818,13 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3451",
+      "name_en": "Rolling Bearings",
+      "level": "class",
+      "name": "滚动轴承制造",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3451"
   },
   {
@@ -27811,7 +27853,13 @@
       "source": "name",
       "evidence": "轴承"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3451",
+      "name_en": "Rolling Bearings",
+      "level": "class",
+      "name": "滚动轴承制造",
+      "confidence": "high"
+    },
     "_bucket": "C/34/3451"
   }
 ]

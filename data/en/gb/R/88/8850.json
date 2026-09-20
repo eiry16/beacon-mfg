@@ -273,7 +273,7 @@
   },
   {
     "id": "CN-MFG-0129375",
-    "company_en": "Kecao Museum (Nanjing East Road Store)",
+    "company_en": "Chocolate Museum (Nanjing East Road Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -283,7 +283,7 @@
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "No. 100 Nanjing East Road (步行360 meters from Nanjing East Road Subway Station Exit 7)",
+    "address_en": "No. 100 Nanjing East Road (360 meters walk from Nanjing East Road Subway Station Exit 7)",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-19",
@@ -297,7 +297,13 @@
       "source": "gb_token",
       "evidence": "博物馆"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8850",
+      "name_en": "Museums",
+      "level": "class",
+      "name": "博物馆",
+      "confidence": "high"
+    },
     "_bucket": "R/88/8850"
   }
 ]

@@ -24276,7 +24276,7 @@
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
-      "sheet metal processing"
+      "Sheet Metal Processing"
     ],
     "region": {
       "province": "Jiangsu",
@@ -24296,7 +24296,13 @@
       "source": "name",
       "evidence": "钣金"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3311",
+      "name_en": "Metal Structure",
+      "level": "class",
+      "name": "金属结构制造",
+      "confidence": "high"
+    },
     "_bucket": "C/33/3311"
   },
   {
@@ -29637,19 +29643,19 @@
   },
   {
     "id": "CN-MFG-0012924",
-    "company_en": "Xiangzhong Zhongyi Stainless Steel Laser Cutting",
+    "company_en": "Xiangzhong Shangyi Stainless Steel Laser Cutting",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
       "laser cutting",
       "stainless steel materials",
-      "wholesale stainless steel materials"
+      "stainless steel materials wholesale"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Ningbo"
     },
-    "address_en": "60 meters south of the intersection of Xigu Road and Dan南路",
+    "address_en": "60 meters south of the intersection of Xigou Road and Dan南路",
     "contact_phone": "189****4785",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -29663,7 +29669,13 @@
       "source": "keyword",
       "evidence": "激光切割"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3311",
+      "name_en": "Metal Structure",
+      "level": "class",
+      "name": "金属结构制造",
+      "confidence": "low"
+    },
     "_bucket": "C/33/3311"
   },
   {
@@ -37367,7 +37379,7 @@
   },
   {
     "id": "CN-MFG-0018323",
-    "company_en": "Sk络 Air Compressor",
+    "company_en": "Skolo Air Compressor",
     "category": "压铸",
     "category_en": "Die Casting",
     "keywords_en": [
@@ -37377,7 +37389,7 @@
       "province": "Guangdong",
       "city": "Huizhou"
     },
-    "address_en": "No. 163 Mingyue 2nd Road, Shituan Town",
+    "address_en": "No. 163 Mingyue 2nd Road, Shitan Town",
     "contact_phone": "138****2685; 139****2341",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -37391,7 +37403,13 @@
       "source": "keyword",
       "evidence": "激光切割"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3311",
+      "name_en": "Metal Structure",
+      "level": "class",
+      "name": "金属结构制造",
+      "confidence": "low"
+    },
     "_bucket": "C/33/3311"
   },
   {
@@ -52578,7 +52596,13 @@
       "source": "keyword",
       "evidence": "激光切割"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3311",
+      "name_en": "Metal Structure",
+      "level": "class",
+      "name": "金属结构制造",
+      "confidence": "low"
+    },
     "_bucket": "C/33/3311"
   },
   {
@@ -61374,7 +61398,7 @@
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "20 meters west of the intersection of米尔龙Lu and Da Yuan North Road",
+    "address_en": "20 meters west of the intersection of米尔龙和虎路 and Dayuan North Road",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -61388,7 +61412,13 @@
       "source": "keyword",
       "evidence": "激光切割"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3311",
+      "name_en": "Metal Structure",
+      "level": "class",
+      "name": "金属结构制造",
+      "confidence": "low"
+    },
     "_bucket": "C/33/3311"
   },
   {
@@ -71387,7 +71417,13 @@
       "source": "name",
       "evidence": "钢结构"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3311",
+      "name_en": "Metal Structure",
+      "level": "class",
+      "name": "金属结构制造",
+      "confidence": "high"
+    },
     "_bucket": "C/33/3311"
   },
   {
@@ -72861,6 +72897,76 @@
       "confidence": "high",
       "source": "name",
       "evidence": "货架"
+    },
+    "industry_en": {
+      "code": "3311",
+      "name_en": "Metal Structure",
+      "level": "class",
+      "name": "金属结构制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3311"
+  },
+  {
+    "id": "CN-MFG-0145396",
+    "company_en": "Shelf Aluminum Alloy Glass Door",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Aluminum Alloy Die Casting"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "100 meters southwest of the intersection of Xie Xu Highway and Xincheng Road",
+    "contact_phone": "183****6200",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "货架"
+    },
+    "industry_en": {
+      "code": "3311",
+      "name_en": "Metal Structure",
+      "level": "class",
+      "name": "金属结构制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/33/3311"
+  },
+  {
+    "id": "CN-MFG-0146162",
+    "company_en": "Jiangyin Steel Structure Coating Co., Ltd.",
+    "category": "压铸",
+    "category_en": "Die Casting",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 37 Wenhua East Road",
+    "contact_phone": "0510-86405600",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "钢结构"
     },
     "industry_en": {
       "code": "3311",

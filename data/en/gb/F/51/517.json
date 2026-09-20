@@ -273,7 +273,13 @@
       "source": "gb_token",
       "evidence": "配件批发"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "517",
+      "name_en": null,
+      "level": "group",
+      "name": "机械设备、五金产品及电子产品批发",
+      "confidence": "medium"
+    },
     "_bucket": "F/51/517"
   }
 ]

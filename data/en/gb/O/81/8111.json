@@ -1271,7 +1271,13 @@
       "source": "name",
       "evidence": "汽车服务"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -1536,7 +1542,13 @@
       "source": "name",
       "evidence": "汽车服务"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -17370,7 +17382,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -20647,7 +20665,13 @@
       "source": "name",
       "evidence": "汽车维修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -22808,7 +22832,7 @@
       "province": "Jiangsu",
       "city": "Nanjing"
     },
-    "address_en": "Room 106,丁香花园裙楼, No. 1 Zhangwang Temple",
+    "address_en": "No. 1 Dingxi Garden, Building 106, Zhangwangmiao",
     "contact_phone": "025-86302266; 182****9016",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -22822,7 +22846,13 @@
       "source": "name",
       "evidence": "汽车维修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -24580,7 +24610,7 @@
   },
   {
     "id": "CN-MFG-0057896",
-    "company_en": "Tmall Auto Maintenance (Xuexi苑 Store)",
+    "company_en": "Tmall Auto Care (Xuexi苑 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -24607,7 +24637,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -25146,7 +25182,13 @@
       "source": "name",
       "evidence": "汽车维修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -26628,20 +26670,20 @@
   },
   {
     "id": "CN-MFG-0057960",
-    "company_en": "Mingju Guanjia Auto Service",
+    "company_en": "Mingju Butler Auto Service",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
       "auto repair",
-      "car repair",
-      "automotive repair",
-      "mechanic"
+      "auto maintenance",
+      "auto repair service",
+      "car repair"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Wuxi"
     },
-    "address_en": "No. 2-4,孔雀雅园一期商铺, Yangming Street",
+    "address_en": "Shop 2-4, Phase 1,孔雀雅园, Yangming Street",
     "contact_phone": "189****7313",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -26655,7 +26697,13 @@
       "source": "name",
       "evidence": "汽车服务"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -34952,20 +35000,20 @@
   },
   {
     "id": "CN-MFG-0058627",
-    "company_en": "Xiaozhi Auto Quick Repair Workshop Store (Zizhu Road Store)",
+    "company_en": "Xiaozhi Zhiqi Quick Car Repair Shop (Zizhu Road Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
+      "car repair",
       "auto repair",
-      "auto maintenance",
-      "auto repair service",
-      "car repair"
+      "vehicle repair",
+      "mechanic"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Jiaxing"
     },
-    "address_en": "No. 34-36-38 Zizhu Road,城南 Street",
+    "address_en": "No. 34-36-38 Zizhu Road,城南街道",
     "contact_phone": "131****8767",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -34979,7 +35027,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -36881,7 +36935,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -44272,7 +44332,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -54601,9 +54667,9 @@
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "auto maintenance",
-      "auto repair service",
-      "car repair"
+      "auto repair",
+      "vehicle repair",
+      "mechanic"
     ],
     "region": {
       "province": "Guangdong",
@@ -54623,7 +54689,13 @@
       "source": "name",
       "evidence": "汽车服务"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -55658,15 +55730,15 @@
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "auto maintenance",
-      "auto repair service",
-      "car repair"
+      "auto repair",
+      "vehicle repair",
+      "mechanic"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "No. 9, Caiwei涌 Edge Street, Dongfeng West Road",
+    "address_en": "No. 9 of Caiguiyong Street, Dongfeng West Road",
     "contact_phone": "191****0342",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -55680,7 +55752,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -56128,7 +56206,13 @@
       "source": "name",
       "evidence": "汽车维修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -56197,7 +56281,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -61215,19 +61305,19 @@
   },
   {
     "id": "CN-MFG-0060514",
-    "company_en": "Hangzhou Xiaozhuan Jia Auto Maintenance Store",
+    "company_en": "Hangzhou Xiaozhuanjia Auto Maintenance Shop",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "auto maintenance",
-      "auto repair service",
-      "car repair"
+      "auto repair",
+      "vehicle repair",
+      "mechanic"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Hangzhou"
     },
-    "address_en": "1st Floor,格林Gongguan, No. 31 Laozhe Da Road",
+    "address_en": "1st Floor, Green Mansion, No. 31 Laozhedaxueheng Road",
     "contact_phone": "182****9089",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -61241,7 +61331,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -72301,7 +72397,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -72722,7 +72824,13 @@
       "source": "name",
       "evidence": "汽修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -73154,7 +73262,7 @@
   },
   {
     "id": "CN-MFG-0065900",
-    "company_en": "Jiaxing Jia沃 Auto Volvo Special Repair",
+    "company_en": "Jiaxing Jiawo Auto Volvo Special Repair",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -73167,7 +73275,7 @@
       "province": "Zhejiang",
       "city": "Jiaxing"
     },
-    "address_en": "Beside the northwest gate of Lüxi Rose Garden Phase III",
+    "address_en": "Beside the northwestern gate of Phase 3, Lüxi Rose Garden",
     "contact_phone": "150****3087",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -73181,7 +73289,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -81596,7 +81710,13 @@
       "source": "name",
       "evidence": "汽车维修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -83004,7 +83124,13 @@
       "source": "name",
       "evidence": "汽车修理"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -91921,20 +92047,20 @@
   },
   {
     "id": "CN-MFG-0103753",
-    "company_en": "Dechuang Auto Maintenance Ma石油Certification Store",
+    "company_en": "Dechuang Auto Repair Ma石油Certified Shop",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "auto repair",
-      "auto maintenance",
-      "auto repair service",
-      "car repair"
+      "Automotive Repair",
+      "Auto Repair",
+      "Automotive Repairing",
+      "Car Repair"
     ],
     "region": {
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "Building K32, Room 106,奥斯迪Ousidi",
+    "address_en": "No. 106, Building K32,奥斯迪Ousdi",
     "contact_phone": "183****7952",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -91948,7 +92074,13 @@
       "source": "name",
       "evidence": "汽修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -100942,17 +101074,17 @@
   },
   {
     "id": "CN-MFG-0111338",
-    "company_en": "Tianhe Auto Maintenance",
+    "company_en": "Tianhe Auto Repair",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "circuit board"
+      "Circuit Board"
     ],
     "region": {
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "No. 5,蒲caotang Village, Gongshan Town",
+    "address_en": "No. 5,蒲草塘村Putao Tang Village, Gongshan Town",
     "contact_phone": "159****4993",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -100966,7 +101098,13 @@
       "source": "name",
       "evidence": "汽修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -102301,17 +102439,17 @@
   },
   {
     "id": "CN-MFG-0111381",
-    "company_en": "Wanji Daoda Xiongtai Auto Maintenance",
+    "company_en": "Wanji Avenue Xiongtai Auto Repair",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "circuit board"
+      "Circuit Board"
     ],
     "region": {
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "No. 131附2, Xiaomaixi Village, Longquan Road, Ciba Town",
+    "address_en": "No. 131附2,小麦溪村Xiaomaixi Village, Longquan Road, Ciba",
     "contact_phone": "136****3591",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -102325,7 +102463,13 @@
       "source": "name",
       "evidence": "汽修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -103684,7 +103828,13 @@
       "source": "name",
       "evidence": "汽车维修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -107283,7 +107433,13 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "low"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -115041,7 +115197,13 @@
       "source": "name",
       "evidence": "汽车修理"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -117415,7 +117577,13 @@
       "source": "name",
       "evidence": "汽车维修"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   },
   {
@@ -123359,7 +123527,13 @@
       "source": "name",
       "evidence": "汽车服务"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
     "_bucket": "O/81/8111"
   }
 ]

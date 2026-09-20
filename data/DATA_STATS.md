@@ -16,7 +16,7 @@
 | 已核实（verified） | **101030** |
 | 待核实（unverified_poi） | **34042** |
 | 模板（template，示例占位） | **0** |
-| 英文镜像 | **128689** |
+| 英文镜像 | **135072** |
 | 覆盖城市 | **75** |
 | 数据来源（当前） | 公开地图/工商 POI 名录（98% public_directory）、企业自主认证（平台核验后回流）（2% certification） |
 
@@ -98,7 +98,7 @@
 | status | 100%（101030/101030） | 待迁移（schema 已支持；当前按 is_template 兼容推导） |
 | imported_at / last_verified_at | 0%（0/101030） | Phase 0 拆分启用（schema 已支持） |
 | claim | 0%（0/101030） | Phase 1 认主系统预留 |
-| agent | 11.1%（11242/101030） | Phase 1 供应商官方 Agent 预留 |
+| agent | 11.1%（11257/101030） | Phase 1 供应商官方 Agent 预留 |
 
 ---
 

@@ -1372,7 +1372,48 @@
       "source": "name",
       "evidence": "电线"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "3831",
+      "name_en": "Wire & Cable",
+      "level": "class",
+      "name": "电线、电缆制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/38/3831"
+  },
+  {
+    "id": "CN-MFG-0146470",
+    "company_en": "Minxing Cable, Electromechanical Hoisting Equipment, Construction Machinery Hardware Electric Tools City",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "Fucheng Street Danhu Community Dan Garden 12-1",
+    "contact_phone": "138****2096; 139****1803; 157****7860",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "3831",
+      "name": "电线、电缆制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 电线、电缆制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电缆"
+    },
+    "industry_en": {
+      "code": "3831",
+      "name_en": "Wire & Cable",
+      "level": "class",
+      "name": "电线、电缆制造",
+      "confidence": "high"
+    },
     "_bucket": "C/38/3831"
   }
 ]

@@ -10702,7 +10702,13 @@
       "source": "search_keyword",
       "evidence": "原材料"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "low"
+    },
     "_bucket": "F/51/5174"
   },
   {
@@ -13369,17 +13375,17 @@
   },
   {
     "id": "CN-MFG-0034123",
-    "company_en": "Yonggao Water Heating Wholesale (Jinxiuhua苑 West District Store)",
+    "company_en": "Yonggao Plumbing Wholesale (Jinxiuhua苑 West District Store)",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
-      "Water Heating Wholesale"
+      "Plumbing Wholesale"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 80 Chang'an North Road, Yangshe Town, Jinxiuhua苑 West District",
+    "address_en": "No. 80, Chang'an North Road, Yangshe Town, Jinxiuhua苑 West District",
     "contact_phone": "0512-58688453; 138****5339",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -13393,7 +13399,13 @@
       "source": "name",
       "evidence": "水暖批发"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
     "_bucket": "F/51/5174"
   },
   {
@@ -20390,7 +20402,13 @@
       "source": "name",
       "evidence": "五金|门店型:五金机电"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
     "_bucket": "F/51/5174"
   },
   {
@@ -20419,7 +20437,13 @@
       "source": "name",
       "evidence": "密封件|门店型:五金机电"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
     "_bucket": "F/51/5174"
   },
   {
@@ -20448,7 +20472,993 @@
       "source": "name",
       "evidence": "五金|门店型:商行"
     },
-    "industry_en": null,
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0143908",
+    "company_en": "Yu Jingchang Hardware Molds and Accessories",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Mold Processing"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 1002, Building 2, Zhengtai Long International Industrial and Trade City",
+    "contact_phone": "152****2743",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0144908",
+    "company_en": "Xingye Hardware Molds and Accessories General Store",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Die Casting"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 200 Renmin South Road, turn left",
+    "contact_phone": "0574-88355322; 159****9889",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "模具|门店型:模具配件"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0145944",
+    "company_en": "Chaojie Hardware Electroplating Sales Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Electroplating"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Zhongshan"
+    },
+    "address_en": "60 meters northwest of the intersection of Qingfu Road and Lihua Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电镀|门店型:门市部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146040",
+    "company_en": "Di Qiao Hardware Machinery and Electrical",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "60 meters northwest of the intersection of Zhabei Road and Zhenghe South Road",
+    "contact_phone": "189****8149",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146041",
+    "company_en": "Xiao Xu Electric Tools General Store (Liangfeng Hardware Machinery and Electrical Lighting Market Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 9 Warehouse inside Gate 2 of Liangfeng Hardware Machinery and Electrical City on 100 Country Road",
+    "contact_phone": "159****9889",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "灯饰|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146051",
+    "company_en": "Juli Hardware Machinery and Electrical",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 12 Pan Gang North Road, Port Area",
+    "contact_phone": "152****7353",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146054",
+    "company_en": "Hardware Machinery and Electrical Electric Tools",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "26th Building, 48-49th Floor, Meicheng City, Huachao Town",
+    "contact_phone": "176****6729",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电动工具|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146108",
+    "company_en": "Haohu Hardware Machinery and Electrical (Wuxi Seg Market Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "1A150 Seg Electronic Market (50 meters west of Huishan Avenue) Screw Machine Welding Machine Air Compressor Spraying Machine",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146114",
+    "company_en": "Jiesheng Hardware & Electrical Equipment Operation Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. D7-17, Wanglei Decoration City",
+    "contact_phone": "137****6169",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146243",
+    "company_en": "Shanben Garden Hardware & Electrical Equipment (Tankweike Agent) Rent Air Compressor Generator Spraying Machine",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 239-241, Intersection of Beierhuan East Road and华盛 Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "喷涂|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146276",
+    "company_en": "Jieshang Electric Tools Hardware & Electrical Equipment (Repair and Sales of Electric Tools)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 33-35, Jinhui East Street, Jinhui East Street Residential Area",
+    "contact_phone": "182****7800; 182****7811",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电动工具|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146296",
+    "company_en": "Zhongyang Hardware & Electrical Equipment",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 54, Qiancaogong Road",
+    "contact_phone": "136****4823; 137****0125",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146431",
+    "company_en": "Shisheng Hardware & Electrical Equipment Tools Welding Materials (Jinsha Garden Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 133, Jinsha Garden Shop",
+    "contact_phone": "130****4132; 186****2532",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146436",
+    "company_en": "Jiasi Welding Machine. Lida Hardware & Electrical Equipment Wholesale",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 112, Tangxia Avenue, Tangxia Town",
+    "contact_phone": "0769-87915379; 136****1598",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146465",
+    "company_en": "Jinwanxing Cable Hardware & Electrical Equipment Wholesale Department",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 41-46, Shutong Road 11th Street, Changping Town",
+    "contact_phone": "189****2349",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电缆|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146478",
+    "company_en": "Huixing Hardware & Electrical Equipment Packaging Machinery Building Machinery",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 62, Longxing Street, Longgang Street",
+    "contact_phone": "136****2464; 137****5595",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "包装机械|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146480",
+    "company_en": "Hexingchang Hardware, Electrical, Pump, Air Compressor, Spray Machine, Generator, Construction Machinery",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "Longxing Street, Longgang District, No. 2-3, 250 meters walk from Shuanglong Subway Station Exit H",
+    "contact_phone": "135****8913",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "喷涂|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146481",
+    "company_en": "Hechangsheng Hardware, Electrical",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "Longxing Street, Longgang District, No. 2-3, fourth shop, 260 meters walk from Shuanglong Subway Station Exit H",
+    "contact_phone": "135****8913",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146482",
+    "company_en": "Shunlian Hardware, Electrical, Trading (Dongcheng Exclusive Flagship Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "Pingdi Street, Pingxi Community, Pingnan South Road, No. A-2",
+    "contact_phone": "130****0666",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146487",
+    "company_en": "Dayi Hardware, Electrical, Trading",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "Jinsha Community, Kengzi District, Pingshan Avenue, No. 6280-1",
+    "contact_phone": "131****8729",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146492",
+    "company_en": "Hui Bailian Hardware, Electrical Wholesale City",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Foshan"
+    },
+    "address_en": "Guanghua Village, Xingtang Town, Dongba Middle Road, No. 8-3",
+    "contact_phone": "136****3559",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146605",
+    "company_en": "Lingfeng Hardware, Electrical Tools Business",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Foshan"
+    },
+    "address_en": "No. 17 and 18, No. 2, Gongnong Road",
+    "contact_phone": "135****5894",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电动工具|门店型:经营部"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146614",
+    "company_en": "Lubang Jinxing Chemicals Hardware Trading (Lubang Paint Gold Brand Exclusive Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Huizhou"
+    },
+    "address_en": "Dongxing Road, Xiayong Street, No. 16",
+    "contact_phone": "183****8368",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146621",
+    "company_en": "Lubang Jinxing Chemicals Hardware Trading (Lubang Paint Gold Brand Exclusive Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Huizhou"
+    },
+    "address_en": "Dongxing Road, Xiayong Street, No. 16",
+    "contact_phone": "134****5680",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146636",
+    "company_en": "Li Ming Hardware & Electrical Equipment",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "No. 16, Building 8, Xinshiji Hardware & Electrical Equipment Market",
+    "contact_phone": "176****8821",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146675",
+    "company_en": "Yifeng Hardware & Electrical Equipment Mechanical Maintenance",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Zhongshan"
+    },
+    "address_en": "No. 80, Shengyu Second Street, Henglan Town",
+    "contact_phone": "133****3310; 157****9512",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146699",
+    "company_en": "Zhongshan Hardware & Electrical Equipment Building Materials · Lianpu Pipeline · Zhujiang Cable · 168 Fire Valve Building Machinery",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Zhongshan"
+    },
+    "address_en": "No. 111-123, Shenghua Garden, Cuiling Road, Torch District",
+    "contact_phone": "0760-89968006; 189****2015",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电缆|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
+    "_bucket": "F/51/5174"
+  },
+  {
+    "id": "CN-MFG-0146738",
+    "company_en": "Shenghua Hardware & Electrical Equipment (Gaoping Avenue Store)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Spraying"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Zhongshan"
+    },
+    "address_en": "No. 0042, Gaoping Avenue, Sanjia Town",
+    "contact_phone": "133****0988",
+    "source": "public_directory",
+    "verified_at": "2026-09-21",
+    "note_en": "",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "industry_en": {
+      "code": "5174",
+      "name_en": "Hardware & Tools Wholesale",
+      "level": "class",
+      "name": "五金产品批发",
+      "confidence": "medium"
+    },
     "_bucket": "F/51/5174"
   }
 ]
