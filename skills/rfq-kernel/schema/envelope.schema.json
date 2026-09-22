@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://beaconmfg.dev/schema/envelope/0.1.0",
+  "title": "Envelope",
+  "description": "所有工厂 skill 响应的统一信封。跨行业、跨客户类型完全一致。",
+  "type": "object",
+  "required": ["status", "reason_code", "confidence"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["ok", "partial", "needs_confirm", "rejected", "escalated", "error"]
+    },
+    "reason_code": {
+      "type": "string",
+      "description": "统一编号空间。客户端可据此分支，无需解析自然语言。",
+      "examples": [
+        "OK.EXACT",
+        "OK.ESTIMATE",
+        "CONFIRM.CAPACITY_STALE",
+        "CAP.OVERSIZE",
+        "CAP.MATERIAL",
+        "CAP.TOLERANCE",
+        "CAP.MOQ",
+        "CAP.CAPACITY_FULL",
+        "CAP.CERT_MISSING",
+        "CAP.CERT_UNVERIFIED",
+        "REQ.UNSPECIFIED",
+        "SYS.TIMEOUT_ESCALATED"
+      ]
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "as_of": {
+      "type": "string",
+      "format": "date-time",
+      "description": "动态字段的采样时刻。缺失即视为静态声明值。"
+    },
+    "ttl_days": {
+      "type": "integer",
+      "description": "超过该天数后，动态字段自动回落为 needs_confirm"
+    },
+    "payload": { "type": ["object", "null"] },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": { "type": "string" },
+          "source": {
+            "type": "string",
+            "enum": ["equipment_ledger", "certificate", "measured", "self_declared"]
+          },
+          "ref": { "type": "string", "description": "证书编号 / 设备编号 / 报告链接" }
+        }
+      }
+    },
+    "human_fallback": {
+      "type": ["object", "null"],
+      "description": "超时或不确定的降级路径。Agent 不该无限等待。",
+      "properties": {
+        "ticket_id": { "type": "string" },
+        "promise_before": { "type": "string", "format": "date-time" },
+        "channel": { "type": "string" }
+      }
+    },
+    "message": { "type": "string", "description": "给人看的补充，客户端不应依赖" }
+  }
+}

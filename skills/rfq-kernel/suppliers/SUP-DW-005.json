@@ -1,0 +1,32 @@
+{
+  "supplier_id": "SUP-DW-005",
+  "legal_name": "中山玻璃工艺制品有限公司",
+  "industry": ["drinkware"],
+  "region": "广东 中山",
+  "core": {
+    "processes": ["吹制", "钢化", "丝印"],
+    "moq": 2000,
+    "lead_time_days": 45,
+    "certifications": [
+      {"code": "FDA", "cert_no": "FDA-FCN-1902", "issuer": "US FDA", "valid_until": "2026-12-15", "verified": true}
+    ],
+    "capacity": { "load_level": "light", "as_of": "2026-09-01", "ttl_days": 30 },
+    "payment_terms": "30% 定金，发货前付清",
+    "spot_stock": false,
+    "sample_policy": "样品费 300 元，下单可抵",
+    "response_hours": 36,
+    "fob_port": "中山"
+  },
+  "industry_ext": {
+    "liner_material": ["高硼硅玻璃", "陶瓷"],
+    "capacity_ml": { "min": 300, "max": 600 },
+    "insulation_hours": 0,
+    "lid_type": ["旋盖", "直饮"],
+    "surface_finish": ["原色", "磨砂"],
+    "logo_process": ["丝印", "热转印"]
+  },
+  "negative_capability": ["不做真空不锈钢内胆", "不做保温结构"],
+  "evidence": [
+    { "field": "core.certifications", "source": "certificate", "ref": "FDA-FCN-1902" }
+  ]
+}

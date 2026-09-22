@@ -41,6 +41,65 @@ import io
 import urllib.request
 import urllib.error
 from typing import Any, Dict, List, Optional, Tuple
+import sys as _sys
+import uuid as _uuid
+
+# --------------------------------------------------------------------------- #
+# rfq-kernel 桥接（G1/G2/G3：让 MCP 客户 agent 能跑多轮对话匹配）
+# 路径相对本文件解析，与 cwd / BEACON_REPO 无关。桥接不可用时降级，不影响其余 tool。
+# --------------------------------------------------------------------------- #
+_RFK_SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "..", "skills", "rfq-kernel", "src")
+if os.path.isdir(_RFK_SRC) and _RFK_SRC not in _sys.path:
+    _sys.path.insert(0, _RFK_SRC)
+try:
+    import mcp_bridge as _bridge
+except Exception:  # 桥接缺失/异常 → 降级，MCP 其余 3 个只读 tool 照常
+    _bridge = None
+
+_SESSIONS: Dict[str, Any] = {}
+
+
+def _new_session_id() -> str:
+    return _uuid.uuid4().hex
+
+
+def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None) -> List[Dict[str, Any]]:
+    """为匹配做宽召回：按需求词对『产品信号』（工艺/材料/认证/国标码）命中数打分，取 top_k。
+
+    性能：优先走预构建倒排索引 `_candidate_shards`（O(命中量)，与检索架构一致）；
+    索引不可用或明确无命中时回退全量扫描。零额外依赖、只读。
+    噪声控制：相关性只看 proc/mat/cert/gb，不把公司名/城市计入，避免跨行业污染。
+    行业收敛：传入 pack_id 时，国标码命中本行业的记录大幅加权（hit+1000），
+    让真正属于该行业的供应商优先进入 top_k，再交给 build_session 按 GB 剔除跨行业。
+    返回带 `_recall_relevance` 的分片记录，交给桥接层构造标准卡。
+    """
+    toks = set(_grams(text, query_mode=True))
+    if not toks:
+        return []
+
+    cands = _candidate_shards(list(toks), "")  # 索引可用且返回非空候选才走索引
+    if isinstance(cands, list) and cands:
+        recs = _records_from_paths(cands)
+    else:
+        recs = _build_fp_index()  # 回退：全量（首次会建索引并落盘缓存，后续进程内复用）
+
+    scored: List[tuple] = []
+    for r in recs:
+        hay = " ".join(r.get("proc") or []).lower() + " " + \
+              " ".join(r.get("mat") or []).lower() + " " + \
+              " ".join(r.get("cert") or []).lower() + " " + (r.get("gb") or "")
+        hit = sum(1 for t in toks if t and t in hay)
+        if hit > 0:
+            # 国标码命中检测行业 -> 加权，确保本行业供应商排到 top_k 前列
+            if pack_id and _bridge is not None and _bridge.pack_of_gb(r.get("gb")) == pack_id:
+                hit += 1000
+            r2 = dict(r)
+            r2["_recall_relevance"] = hit
+            scored.append((hit, r2))
+    scored.sort(key=lambda x: -x[0])
+    return [r2 for _, r2 in scored[:top_k]]
+
 
 # --------------------------------------------------------------------------- #
 # 配置
@@ -725,6 +784,65 @@ def get_capability_card(vid: str) -> Dict[str, Any]:
 
 
 # --------------------------------------------------------------------------- #
+# rfq-kernel 桥接 tool：多轮对话式供应商匹配（G1/G2/G3）
+# 入口只有一个：客户 agent 检测到采购/代工/找厂意图时自动调 start_sourcing。
+# --------------------------------------------------------------------------- #
+def start_sourcing(demand_text: str, audience_id: str = "domestic_downstream") -> Dict[str, Any]:
+    """【客户 agent 自动触发】当对话中出现找厂/代工/采购意图时调用。
+
+    内部：品类检测 → 指纹宽召回 → 解析需求 → 生成 1~2 轮澄清问题，把需求归一到
+    beacon-mfg 供应商数据结构做初级筛选。返回 session_id 供后续轮次续接。
+    """
+    if _bridge is None:
+        return {"error": "rfq-kernel 桥接未就绪（skills/rfq-kernel 缺失）"}
+    demand_text = (demand_text or "").strip()
+    if not demand_text:
+        return {"error": "缺少必填参数 demand_text"}
+    pack_id = _bridge.detect_industry(demand_text)
+    # 召回 query 并入检测行业的 vocab 词，使检索只拉相关行业供应商（收敛跨行业噪声）
+    recall_query = demand_text
+    if pack_id:
+        vocab = _bridge.pack_vocab_surfaces(pack_id)
+        if vocab:
+            recall_query = demand_text + " " + " ".join(vocab)
+    recs = _recall_for_sourcing(recall_query, top_k=200, pack_id=pack_id)
+    if not recs:
+        return {"stage": "clarifying", "session_id": None, "candidates_found": 0,
+                "clarifying_questions": [],
+                "note": "未从名录中召回相关工厂，请换更具体的产品/工艺描述。"}
+    state, resp = _bridge.build_session(demand_text, recs, pack_id, audience_id)
+    sid = _new_session_id()
+    _SESSIONS[sid] = state
+    resp["session_id"] = sid
+    return resp
+
+
+def answer_sourcing(session_id: str, answers: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    """续接澄清轮次：把客户回答写回，返回下一轮澄清问题或直接给出初选推荐。"""
+    if _bridge is None:
+        return {"error": "rfq-kernel 桥接未就绪"}
+    state = _SESSIONS.get(session_id or "")
+    if state is None:
+        return {"error": f"session {session_id} 不存在或已过期（请重新 start_sourcing）"}
+    state, resp = _bridge.answer_session(state, answers or {})
+    _SESSIONS[session_id] = state
+    resp["session_id"] = session_id
+    return resp
+
+
+def refine_sourcing(session_id: str, action: str = "", value: Optional[str] = None) -> Dict[str, Any]:
+    """推荐轮次的交互：details(带 supplier_id 看详情/RFQ 入口) / more(带 N) / best。"""
+    if _bridge is None:
+        return {"error": "rfq-kernel 桥接未就绪"}
+    state = _SESSIONS.get(session_id or "")
+    if state is None:
+        return {"error": f"session {session_id} 不存在或已过期（请重新 start_sourcing）"}
+    resp = _bridge.refine_session(state, action or "", value)
+    resp["session_id"] = session_id
+    return resp
+
+
+# --------------------------------------------------------------------------- #
 # MCP 协议层（JSON-RPC 2.0 over stdio）
 # --------------------------------------------------------------------------- #
 TOOLS = [
@@ -770,6 +888,50 @@ TOOLS = [
             "required": ["id"],
         },
     },
+    {
+        "name": "start_sourcing",
+        "description": "【客户 agent 自动触发】当对话中出现找厂/代工/采购/询价意图时调用，"
+                       "例如『帮我找个能做不锈钢保温杯的厂』『哪家能做铝合金压铸』。"
+                       "内部做品类识别→指纹宽召回→解析需求→生成 1~2 轮澄清问题，"
+                       "把需求归一到 beacon-mfg 供应商数据结构做初级筛选，返回 session_id。"
+                       "后续用 answer_sourcing 续接澄清、refine_sourcing 看推荐详情。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "demand_text": {"type": "string",
+                                "description": "客户的原始需求描述（必填），如『想找东莞做ISO9001的钣金厂』"},
+                "audience_id": {"type": "string", "description": "客户视图：domestic_downstream(国内下游)/intl_buyer(国际采购商)，默认国内下游"},
+            },
+            "required": ["demand_text"],
+        },
+    },
+    {
+        "name": "answer_sourcing",
+        "description": "续接 start_sourcing 的澄清轮次：把客户对澄清问题的回答写回，"
+                       "返回下一轮澄清问题，或（1~2 轮后）直接给出按需求匹配度初选的供应商列表。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "session_id": {"type": "string", "description": "start_sourcing 返回的会话 id（必填）"},
+                "answers": {"type": "object",
+                            "description": "澄清答案，键为问题里的 field（如 certifications_required/material/process/region），值为选项"},
+            },
+            "required": ["session_id"],
+        },
+    },
+    {
+        "name": "refine_sourcing",
+        "description": "推荐轮次的交互：details(带 supplier_id 看详情与 RFQ 在线入口) / more(带数字 N 看更多) / best(看最匹配一家)。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "session_id": {"type": "string", "description": "会话 id（必填）"},
+                "action": {"type": "string", "description": "details / more / best"},
+                "value": {"type": "string", "description": "details 时为 supplier_id；more 时为数量 N"},
+            },
+            "required": ["session_id"],
+        },
+    },
 ]
 
 
@@ -788,6 +950,12 @@ def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
             return get_vendor(args.get("id", ""), args.get("gb", ""))
         if name == "get_capability_card":
             return get_capability_card(args.get("id", ""))
+        if name == "start_sourcing":
+            return start_sourcing(args.get("demand_text", ""), args.get("audience_id", "domestic_downstream"))
+        if name == "answer_sourcing":
+            return answer_sourcing(args.get("session_id", ""), args.get("answers"))
+        if name == "refine_sourcing":
+            return refine_sourcing(args.get("session_id", ""), args.get("action", ""), args.get("value"))
     except Exception as e:  # 任何异常都包成文本，避免协议崩
         return {"error": f"{name} 执行异常: {e}"}
     return {"error": f"未知 tool: {name}"}
@@ -821,7 +989,7 @@ def main() -> None:
                 "result": {
                     "protocolVersion": "2024-11-05",
                     "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "beacon-mfg-readonly", "version": "1.2.0"},
+                    "serverInfo": {"name": "beacon-mfg-readonly", "version": "1.3.0"},
                 },
             })
         elif method == "notifications/initialized":

@@ -10,7 +10,7 @@ description: 面向 Agent 的中国企业与商户检索名录，按 GB/T 4754-2
 本 Skill 帮助 Agent 在 BeaconMFG 结构化名录中检索中国企业/商户。
 核心价值：把用户的"需求"翻译成"**国标行业 → 归档文件**"，返回**结构化、可溯源**的记录。
 
-**边界：** 只提供公开联系方式与基本信息，**不参与**询价、下单、交易；**不**对任何企业做推荐评级。
+**边界：** 本检索入口只提供公开联系方式与基本信息，**不参与**下单、交易、不评级；**询价的需求侧匹配**由 `skills/rfq-kernel` 子技能负责，**结构化 RFQ 的投递**由后端 `POST /v1/rfq` 中转路由负责（详见下方『RFQ 与自动接客』）。
 
 ### 覆盖范围：7 个国标门类
 
@@ -366,6 +366,46 @@ python scripts/search_capabilities.py --industry 3525 --city 宁波
    呈现给用户时必须原样标注，L1 及以下要说明"未经平台核验"
 4. `sc` 是**资料完整度**（不是评级），仅用于排序
 5. 没有提交 Skill 的供应商在指纹库里查不到——回退到前面的名录检索即可，不影响使用
+
+## RFQ 与自动接客（rfq-kernel + rfq/v1 中转）
+
+本仓库把"找厂"与"询价"拆成两层，**互不替代**：
+
+| 层 | 位置 | 职责 |
+|---|---|---|
+| 需求侧匹配引擎 | `skills/rfq-kernel/`（子技能） | 解析模糊需求 → 宽召回 → 分布驱动澄清 → 精筛 → 产出结构化 RFQ 信封 + 候选供应商 |
+| 供给侧投递中转 | `server/routers/rfq.py`（`POST /v1/rfq`） | 读候选供应商能力卡上的 `rfq` 块拿入口 → 投递 → 收讫确认 → 审计存证 |
+
+**rfq-kernel 不重写能力卡，只消费它**（见 `skills/rfq-kernel/src/beacon_adapter.py` 单向适配器）。
+能力卡（`skills/registry/capability/{id}.json`）是供给数据，rfq-kernel 是需求侧引擎，二者是上下游关系。
+
+### 供应商怎么"按新方案建立 skill"
+
+- **框架已经就位**：每一张能力卡本身就是这家企业的"skill"脚手架。自动采集的卡
+  `claim.status=unclaimed`、limits 全 null，正是 14000+ 家爬来企业的现状——
+  **再为它们写"空 skill"没有意义**，那只是重复现状。
+- 真正让一家企业"上线接客"的动作是**认领后自填**：走 `server/routers/claim.py`
+  的微信验证码认领流（App 端入口，对接 `docs/vendor-onboarding-design.html`），
+  `claim.status` 由 `unclaimed→claimed→verified`，随后在卡上补全 `limits` /
+  `materials` / `quality.certifications` / `rfq` 块即可。
+- **RFQ 可达性 = 能力卡上的 `rfq` 块**：`{ "schema": "rfq/v1", "protocol": "email|webhook|form", "endpoint": "..." }`。
+  有这个块且 endpoint 非空，客户 Agent 才能把结构化 RFQ 投递过去。当前全库已有 7 家声明了
+  `rfq` 块（含两家非采集的真实企业：苏州赤兔 `CN-I-0000001`、耐特斯 `CN-MFG-0020317`）。
+- `schema/supplier.schema.json` 里的 `agent.capabilities`（含 `rfq`）是 L0 记录上的
+  Phase-1 预留字段，当前数据未启用；**生效的 RFQ 能力位是能力卡上的 `rfq` 块**。
+
+### 认证必须三方可验证
+
+`rfq-kernel` 的 `cert_satisfied()` 规定：一条认证"作数"当且仅当 `verified=True` 且证书号非空。
+能力卡 `quality.certifications[]` 已是 `{name, number, evidence}` 结构，适配器据此判定
+`verified = evidence ∈ {platform_verified, field_audited} 且 number 非空`——自报或无证书号等同没有。
+这正是「ISO9001 需上传证书号、且平台/现场核验过才作数」的落地。
+
+### 客户 Agent 流程
+
+1. 收到模糊需求 → `rfq-kernel` 解析、宽召回、按真实供给分布生成澄清问题（选项全部来自真实供给，无空选项）
+2. 客户回答后精筛 → 产出候选供应商 + 结构化 RFQ 信封（含拒单原因码与可行动建议）
+3. 对带 `rfq` 块的候选调用 `POST /v1/rfq` 投递（平台中转：强制 Bearer 凭证、审计存证、非本机地址默认不真实投递）
 
 ## 手机端 App（给人用，不是给 Agent 用）
 

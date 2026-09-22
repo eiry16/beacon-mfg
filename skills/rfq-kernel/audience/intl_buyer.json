@@ -1,0 +1,49 @@
+{
+  "profile_id": "intl_buyer",
+  "display_name": "国际采购商",
+  "version": "0.1.0",
+  "language": "en",
+  "currency": "USD",
+  "default_incoterm": "FOB",
+  "price_basis": "FOB",
+
+  "must_surface": [
+    "certifications_required",
+    "moq",
+    "lead_time_days",
+    "fob_port",
+    "sample_policy",
+    "payment_terms"
+  ],
+
+  "field_weights": {
+    "certifications_required": 1.0,
+    "audit_reports": 0.9,
+    "moq": 0.8,
+    "lead_time_days": 0.8,
+    "fob_port": 0.5,
+    "payment_terms": 0.4,
+    "spot_stock": 0.1
+  },
+
+  "qualification_terms": [
+    "BSCI audited",
+    "SEDEX",
+    "OEM/ODM",
+    "third party inspection",
+    "custom packaging"
+  ],
+  "qualification_note": "资格词归客户视图，不归行业包。它描述交易条件而非产品本身，不参与工厂硬过滤。",
+
+  "term_map": {
+    "moq": "MOQ",
+    "lead_time_days": "lead time",
+    "certifications_required": "certificates",
+    "payment_terms": "payment terms",
+    "spot_stock": "spot stock"
+  },
+
+  "suppress_fields": ["spot_stock"],
+  "lead_time_style": "lead time + 船期",
+  "escalation_note": "动态字段过期时一律转人工确认，不返回陈旧承诺值"
+}

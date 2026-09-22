@@ -1,0 +1,91 @@
+{
+  "pack_id": "drinkware",
+  "display_name": "杯具",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "真空保温杯 / 随行杯 / 玻璃杯 / 塑料杯。内核之上的行业差异层。",
+
+  "attributes": {
+    "liner_material": {
+      "label": "内胆材质",
+      "type": "enum",
+      "values": ["304不锈钢", "316不锈钢", "钛", "高硼硅玻璃", "Tritan", "陶瓷"],
+      "tier": "required",
+      "note": "决定成本与安全合规路径的根节点属性，分布最分散，优先澄清"
+    },
+    "capacity_ml": {
+      "label": "容量",
+      "type": "number",
+      "unit": "ml",
+      "min": 100,
+      "max": 2000,
+      "tier": "required"
+    },
+    "insulation_hours": {
+      "label": "保温时长",
+      "type": "number",
+      "unit": "h",
+      "tier": "late",
+      "test_condition": "初始水温 95°C，环境温度 20°C，6 小时后 >= 指定温度",
+      "note": "复合量，必须带测试条件，否则数字无意义"
+    },
+    "lid_type": {
+      "label": "杯盖形式",
+      "type": "enum",
+      "values": ["弹盖", "旋盖", "直饮", "吸管"],
+      "tier": "late"
+    },
+    "surface_finish": {
+      "label": "表面处理",
+      "type": "enum",
+      "values": ["喷涂", "烤漆", "磨砂", "电泳", "原色"],
+      "tier": "late"
+    },
+    "logo_process": {
+      "label": "Logo 工艺",
+      "type": "enum",
+      "values": ["激光雕刻", "丝印", "热转印", "贴标"],
+      "tier": "late"
+    }
+  },
+
+  "certifications": ["FDA", "LFGB", "GB4806"],
+  "cert_note": "食品接触材料合规，国际采购商与国内客户的关注点完全不同，由 audience profile 决定暴露顺序",
+
+  "vocab": {
+    "保温杯": { "canonical": "drinkware.insulated_tumbler", "confidence": 0.95 },
+    "保温壶": { "canonical": "drinkware.insulated_flask", "confidence": 0.9 },
+    "随行杯": { "canonical": "drinkware.travel_mug", "confidence": 0.85 },
+    "咖啡杯": { "canonical": "drinkware.travel_mug", "confidence": 0.6 },
+    "tumbler": { "canonical": "drinkware.insulated_tumbler", "confidence": 0.9 },
+    "travel mug": { "canonical": "drinkware.travel_mug", "confidence": 0.9 },
+    "vacuum flask": { "canonical": "drinkware.insulated_flask", "confidence": 0.9 },
+    "不锈钢杯": { "canonical": "drinkware.insulated_tumbler", "confidence": 0.7 }
+  },
+
+  "dfm_rules": [
+    {
+      "id": "DW-R01",
+      "when": { "field": "capacity_mml", "op": "gt", "value": 1000 },
+      "requires": { "liner_material": ["304不锈钢", "316不锈钢"] },
+      "result": "needs_human",
+      "reason_code": "CAP.OVERSIZE",
+      "message": "容量 >1000ml 的真空杯需确认模具与抽真空工序能力，玻璃与陶瓷内胆通常无法承接"
+    },
+    {
+      "id": "DW-R02",
+      "when": { "field": "insulation_hours", "op": "gt", "value": 12 },
+      "requires": { "liner_material": ["316不锈钢", "钛"] },
+      "result": "needs_human",
+      "reason_code": "CAP.TOLERANCE",
+      "message": "保温 >12 小时通常需双层真空 + 镀铜工艺，304 单层结构难以达到"
+    }
+  ],
+
+  "negative_capability_hints": [
+    "不做玻璃内胆",
+    "不做陶瓷内胆",
+    "不做儿童吸管杯",
+    "不做带电子元件产品"
+  ]
+}
