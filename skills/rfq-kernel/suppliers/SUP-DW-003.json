@@ -1,0 +1,35 @@
+{
+  "supplier_id": "SUP-DW-003",
+  "legal_name": "精工钛品科技（上海）有限公司",
+  "industry": ["drinkware"],
+  "region": "上海 松江",
+  "core": {
+    "processes": ["真空拉伸", "抽真空", "镀铜", "激光雕刻"],
+    "moq": 100,
+    "lead_time_days": 40,
+    "certifications": [
+      {"code": "FDA", "cert_no": "FDA-FCN-7781", "issuer": "US FDA", "valid_until": "2027-06-15", "verified": true},
+      {"code": "LFGB", "cert_no": "LFGB-2025-2240", "issuer": "TUV", "valid_until": "2027-01-31", "verified": true},
+      {"code": "GB4806", "cert_no": "GB4806-2024-7712", "issuer": "CQC", "valid_until": "2026-12-31", "verified": true}
+    ],
+    "capacity": { "load_level": "heavy", "as_of": "2026-09-18", "ttl_days": 30 },
+    "payment_terms": "全款预付",
+    "spot_stock": false,
+    "sample_policy": "样品费 480 元，下单可抵",
+    "response_hours": 8,
+    "fob_port": "上海"
+  },
+  "industry_ext": {
+    "liner_material": ["钛", "316不锈钢"],
+    "capacity_ml": { "min": 400, "max": 750 },
+    "insulation_hours": 18,
+    "lid_type": ["旋盖"],
+    "surface_finish": ["原色", "磨砂"],
+    "logo_process": ["激光雕刻"]
+  },
+  "negative_capability": ["不做玻璃内胆", "不做 304 内胆"],
+  "evidence": [
+    { "field": "core.certifications", "source": "certificate", "ref": "GB4806-2024-7712" },
+    { "field": "industry_ext.insulation_hours", "source": "measured", "ref": "SGS-2026-TI-044" }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "pack_id": "mattress",
+  "display_name": "床垫",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "第二个行业包。用途是验证「新增行业只加 pack，不碰 schema/ 内核」。",
+
+  "attributes": {
+    "size": {
+      "label": "规格尺寸",
+      "type": "enum",
+      "values": ["90x190", "120x200", "150x200", "180x200", "200x220", "定制"],
+      "tier": "required"
+    },
+    "thickness_cm": {
+      "label": "厚度",
+      "type": "number",
+      "unit": "cm",
+      "min": 5,
+      "max": 40,
+      "tier": "required"
+    },
+    "firmness": {
+      "label": "硬度",
+      "type": "enum",
+      "values": ["软", "适中", "偏硬", "硬"],
+      "tier": "required",
+      "note": "行业无统一单位，只能枚举 + 参照样块编号，禁止用数字"
+    },
+    "spring_type": {
+      "label": "弹簧类型",
+      "type": "enum",
+      "values": ["独立袋装", "整网", "邦尼尔", "无弹簧"],
+      "tier": "required"
+    },
+    "foam_density_kgm3": {
+      "label": "海绵密度",
+      "type": "number",
+      "unit": "kg/m3",
+      "min": 15,
+      "max": 60,
+      "tier": "late"
+    },
+    "fire_retardant": {
+      "label": "阻燃处理",
+      "type": "enum",
+      "values": ["有阻燃处理", "无阻燃处理", "未指定"],
+      "tier": "late",
+      "note": "产品的物理阻燃特性（材料本身是否经过阻燃处理），属『产品规格』维度。与 certifications 里的 BS5852/CA TB117/GB8624 是两套真相：有没有合规证书看 certifications，这里只看材料本身。两者不得混用，避免双源。"
+    }
+  },
+
+  "certifications": ["BS5852", "CA TB117", "GB8624", "CertiPUR", "OEKO-TEX"],
+
+  "vocab": {
+    "床垫": { "canonical": "mattress.standard", "confidence": 0.95 },
+    "席梦思": { "canonical": "mattress.spring", "confidence": 0.85 },
+    "乳胶垫": { "canonical": "mattress.latex", "confidence": 0.9 },
+    "记忆棉": { "canonical": "mattress.memory_foam", "confidence": 0.9 },
+    "独立弹簧": { "canonical": "mattress.pocket_spring", "confidence": 0.9 },
+    "mattress": { "canonical": "mattress.standard", "confidence": 0.95 },
+    "pocket spring": { "canonical": "mattress.pocket_spring", "confidence": 0.9 }
+  },
+
+  "dfm_rules": [
+    {
+      "id": "MT-R01",
+      "when": { "field": "thickness_cm", "op": "gt", "value": 30 },
+      "requires": {},
+      "result": "needs_human",
+      "reason_code": "CAP.OVERSIZE",
+      "message": "厚度 >30cm 需确认压缩卷包设备与物流体积限制"
+    },
+    {
+      "id": "MT-R02",
+      "when": { "field": "foam_density_kgm3", "op": "lt", "value": 20 },
+      "requires": {},
+      "result": "needs_human",
+      "reason_code": "CAP.TOLERANCE",
+      "message": "密度 <20kg/m3 长期使用塌陷风险高，需与客户确认使用场景"
+    }
+  ],
+
+  "negative_capability_hints": [
+    "不做乳胶",
+    "不做记忆棉",
+    "不做婴幼儿床垫",
+    "不做出口英国 BS5852"
+  ]
+}

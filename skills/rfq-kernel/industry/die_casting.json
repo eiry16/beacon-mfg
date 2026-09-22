@@ -1,0 +1,39 @@
+{
+  "pack_id": "die_casting",
+  "display_name": "压铸",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "铝合金 / 锌合金 / 镁合金压铸。beacon-mfg 一级品类『压铸』。",
+
+  "attributes": {
+    "material": {
+      "label": "合金材料",
+      "type": "enum",
+      "values": ["铝合金", "锌合金", "镁合金"],
+      "tier": "required"
+    },
+    "max_part_weight_g": {
+      "label": "最大压铸件重量",
+      "type": "number",
+      "unit": "g",
+      "min": 1,
+      "max": 20000,
+      "tier": "required"
+    }
+  },
+
+  "certifications": ["ISO9001", "IATF16949"],
+
+  "vocab": {
+    "压铸": { "canonical": "die_casting.aluminum", "confidence": 0.9 },
+    "铝合金压铸": { "canonical": "die_casting.aluminum", "confidence": 0.95 },
+    "锌合金压铸": { "canonical": "die_casting.zinc", "confidence": 0.95 },
+    "镁合金压铸": { "canonical": "die_casting.magnesium", "confidence": 0.9 },
+    "die casting": { "canonical": "die_casting.aluminum", "confidence": 0.9 }
+  },
+
+  "negative_capability_hints": [
+    "不做重力铸造",
+    "不做后处理喷涂（外协）"
+  ]
+}
