@@ -29,7 +29,10 @@ agent_created: true
 ## 三层可插拔（N+M，不是 N×M）
 
 - **行业 pack**（`industry/<pack>.json`）：只定义差异——属性、认证取值域、vocab、DFM 规则。
-  新增行业只加 pack，不碰 schema / 内核。已含 `drinkware` / `mattress` / `sheet_metal`。
+  新增行业只加 pack，不碰 schema / 内核。已含 11 个 pack：
+  `drinkware` / `mattress` / `sheet_metal` / `machining` / `injection` / `die_casting` /
+  `electronics` / `surface_treatment` / `fasteners` / `raw_material` /
+  `material_handling`（输送/物流搬运，2026-09-22 新增）。
 - **客户视图**（`audience/<profile>.json`）：字段权重、术语映射、默认值、必填项调整。
   同一份工厂数据投影出多套视图，数据不复制。已含 `intl_buyer` / `domestic_downstream`。
 - **认证强校验**：`certifications` 必须是对象 `{code, cert_no, issuer, valid_until, verified}`。
