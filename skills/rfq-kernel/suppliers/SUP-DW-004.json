@@ -1,0 +1,34 @@
+{
+  "supplier_id": "SUP-DW-004",
+  "legal_name": "宁波日用塑胶制品厂",
+  "industry": ["drinkware"],
+  "region": "浙江 宁波",
+  "core": {
+    "processes": ["注塑", "吹塑", "喷涂", "贴标"],
+    "moq": 500,
+    "lead_time_days": 20,
+    "certifications": [
+      {"code": "FDA", "cert_no": "FDA-FCN-6630", "issuer": "US FDA", "valid_until": "2027-02-28", "verified": true},
+      {"code": "LFGB", "cert_no": "LFGB-2024-1190", "issuer": "TUV", "valid_until": "2026-10-31", "verified": true}
+    ],
+    "capacity": { "load_level": "light", "as_of": "2026-09-10", "ttl_days": 30 },
+    "payment_terms": "月结 30 天",
+    "spot_stock": true,
+    "sample_policy": "免费样品，运费到付",
+    "response_hours": 6,
+    "fob_port": "宁波"
+  },
+  "industry_ext": {
+    "liner_material": ["304不锈钢", "Tritan"],
+    "capacity_ml": { "min": 500, "max": 1200 },
+    "insulation_hours": 6,
+    "lid_type": ["吸管", "直饮", "旋盖"],
+    "surface_finish": ["喷涂", "原色"],
+    "logo_process": ["贴标", "丝印"]
+  },
+  "negative_capability": ["不做真空钛内胆", "不做玻璃内胆"],
+  "evidence": [
+    { "field": "core.certifications", "source": "certificate", "ref": "LFGB-2024-1190" },
+    { "field": "core.spot_stock", "source": "self_declared", "ref": null }
+  ]
+}

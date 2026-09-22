@@ -1,0 +1,34 @@
+{
+  "supplier_id": "SUP-MT-001",
+  "legal_name": "顺德睡眠科技有限公司",
+  "industry": ["mattress"],
+  "region": "广东 顺德",
+  "core": {
+    "processes": ["弹簧成型", "绗缝", "复合", "压缩卷包"],
+    "moq": 50,
+    "lead_time_days": 30,
+    "certifications": [
+      {"code": "BS5852", "cert_no": "BS5852-2025-3391", "issuer": "SATRA", "valid_until": "2027-05-30", "verified": true},
+      {"code": "CertiPUR", "cert_no": "CP-2025-1188", "issuer": "CertiPUR", "valid_until": "2027-03-31", "verified": true},
+      {"code": "OEKO-TEX", "cert_no": "OETX-2025-5520", "issuer": "OEKO-TEX", "valid_until": "2027-01-31", "verified": true}
+    ],
+    "capacity": { "load_level": "moderate", "as_of": "2026-09-12", "ttl_days": 30 },
+    "payment_terms": "月结 60 天",
+    "spot_stock": true,
+    "sample_policy": "样品按成本价，下单可抵",
+    "response_hours": 10,
+    "fob_port": "广州"
+  },
+  "industry_ext": {
+    "size": ["150x200", "180x200", "200x220", "定制"],
+    "thickness_cm": { "min": 15, "max": 35 },
+    "firmness": ["适中", "偏硬"],
+    "spring_type": ["独立袋装", "整网"],
+    "foam_density_kgm3": { "min": 25, "max": 45 },
+    "fire_retardant": ["有阻燃处理"]
+  },
+  "negative_capability": ["不做乳胶", "不做记忆棉", "不做婴幼儿床垫"],
+  "evidence": [
+    { "field": "core.certifications", "source": "certificate", "ref": "BS5852-2025-3391" }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "pack_id": "sheet_metal",
+  "display_name": "钣金冲压",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "beacon-mfg 原生品类（一级品类『钣金冲压』）。验证 rfq-kernel 可直接消费 beacon-mfg 真实能力卡：适配器把 L1 capability.json 转成标准供应商卡后，本 pack 即可驱动匹配，内核与 schema 零改动。",
+
+  "attributes": {
+    "material": {
+      "label": "材料",
+      "type": "enum",
+      "values": ["冷轧钢", "不锈钢", "铝", "镀锌板", "铜"],
+      "tier": "required",
+      "note": "钣金件材料决定设备与工艺路线"
+    },
+    "max_thickness_mm": {
+      "label": "最大板厚",
+      "type": "number",
+      "unit": "mm",
+      "min": 0.5,
+      "max": 20,
+      "tier": "required"
+    },
+    "max_part_size_mm": {
+      "label": "最大零件尺寸",
+      "type": "number",
+      "unit": "mm",
+      "min": 100,
+      "max": 3000,
+      "tier": "late"
+    }
+  },
+
+  "certifications": ["ISO9001", "IATF16949", "ISO14001"],
+
+  "vocab": {
+    "激光切割": { "canonical": "sheet_metal.laser_cutting", "confidence": 0.95 },
+    "钣金": { "canonical": "sheet_metal.fabrication", "confidence": 0.9 },
+    "冲压": { "canonical": "sheet_metal.stamping", "confidence": 0.9 },
+    "折弯": { "canonical": "sheet_metal.bending", "confidence": 0.9 },
+    "sheet metal": { "canonical": "sheet_metal.fabrication", "confidence": 0.9 }
+  },
+
+  "negative_capability_hints": [
+    "不做焊接总成",
+    "不做表面喷涂（外协）"
+  ]
+}

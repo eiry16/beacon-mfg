@@ -1,0 +1,49 @@
+{
+  "pack_id": "injection",
+  "display_name": "注塑成型",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "塑料注塑 / 双色注塑 / 嵌件注塑。beacon-mfg 一级品类『注塑成型』。",
+
+  "attributes": {
+    "material": {
+      "label": "塑料原料",
+      "type": "enum",
+      "values": ["PP", "ABS", "PC", "PA", "POM", "PE", "TPE"],
+      "tier": "required",
+      "note": "原料决定模具与工艺窗口"
+    },
+    "max_part_weight_g": {
+      "label": "最大单件重量",
+      "type": "number",
+      "unit": "g",
+      "min": 0.1,
+      "max": 5000,
+      "tier": "required"
+    },
+    "shot_size_g": {
+      "label": "注射量",
+      "type": "number",
+      "unit": "g",
+      "min": 1,
+      "max": 8000,
+      "tier": "late"
+    }
+  },
+
+  "certifications": ["ISO9001", "IATF16949", "ISO13485", "RoHS"],
+
+  "vocab": {
+    "注塑": { "canonical": "injection.molding", "confidence": 0.95 },
+    "注塑成型": { "canonical": "injection.molding", "confidence": 0.95 },
+    "塑料件": { "canonical": "injection.plastic_part", "confidence": 0.85 },
+    "塑胶": { "canonical": "injection.molding", "confidence": 0.8 },
+    "塑胶外壳": { "canonical": "injection.housing", "confidence": 0.8 },
+    "injection molding": { "canonical": "injection.molding", "confidence": 0.9 }
+  },
+
+  "negative_capability_hints": [
+    "不做硅胶液态注塑",
+    "不做模具设计与制造（外协）"
+  ]
+}

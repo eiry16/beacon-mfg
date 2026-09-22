@@ -1,0 +1,44 @@
+{
+  "pack_id": "fasteners",
+  "display_name": "标准件",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "螺丝 / 螺母 / 垫圈 / 螺栓 / 销。beacon-mfg 一级品类『标准件』。",
+
+  "attributes": {
+    "product_type": {
+      "label": "产品类型",
+      "type": "enum",
+      "values": ["螺丝", "螺母", "垫圈", "螺栓", "销"],
+      "tier": "required"
+    },
+    "material": {
+      "label": "材料",
+      "type": "enum",
+      "values": ["碳钢", "不锈钢", "铜"],
+      "tier": "required"
+    },
+    "standard": {
+      "label": "执行标准",
+      "type": "enum",
+      "values": ["GB", "DIN", "ISO", "ANSI"],
+      "tier": "late"
+    }
+  },
+
+  "certifications": ["ISO9001"],
+
+  "vocab": {
+    "标准件": { "canonical": "fasteners.screw", "confidence": 0.85 },
+    "紧固件": { "canonical": "fasteners.screw", "confidence": 0.85 },
+    "螺丝": { "canonical": "fasteners.screw", "confidence": 0.95 },
+    "螺栓": { "canonical": "fasteners.bolt", "confidence": 0.95 },
+    "螺母": { "canonical": "fasteners.nut", "confidence": 0.95 },
+    "fastener": { "canonical": "fasteners.screw", "confidence": 0.9 }
+  },
+
+  "negative_capability_hints": [
+    "不做非标异形件",
+    "不做热处理调质"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "pack_id": "machining",
+  "display_name": "精密机械加工",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "CNC 机加工 / 车铣磨 / 五轴。beacon-mfg 一级品类『精密机械加工』。",
+
+  "attributes": {
+    "material": {
+      "label": "材料",
+      "type": "enum",
+      "values": ["钢", "不锈钢", "铝", "铜", "铸铁", "钛"],
+      "tier": "required",
+      "note": "材料决定刀具与工艺路线"
+    },
+    "max_tolerance_um": {
+      "label": "可达成公差",
+      "type": "number",
+      "unit": "μm",
+      "min": 1,
+      "max": 50,
+      "tier": "required",
+      "note": "精度是机加工核心区分维度"
+    },
+    "max_part_size_mm": {
+      "label": "最大零件尺寸",
+      "type": "number",
+      "unit": "mm",
+      "min": 10,
+      "max": 2000,
+      "tier": "late"
+    }
+  },
+
+  "certifications": ["ISO9001", "IATF16949", "ISO13485", "AS9100", "RoHS"],
+
+  "vocab": {
+    "机加工": { "canonical": "machining.cnc", "confidence": 0.95 },
+    "精密加工": { "canonical": "machining.precision", "confidence": 0.9 },
+    "CNC": { "canonical": "machining.cnc", "confidence": 0.9 },
+    "数控加工": { "canonical": "machining.cnc", "confidence": 0.9 },
+    "车床": { "canonical": "machining.turning", "confidence": 0.85 },
+    "铣床": { "canonical": "machining.milling", "confidence": 0.85 },
+    "五轴": { "canonical": "machining.5axis", "confidence": 0.8 },
+    "machining": { "canonical": "machining.cnc", "confidence": 0.9 },
+    "机械加工": { "canonical": "machining.general", "confidence": 0.9 },
+    "机械零部件加工": { "canonical": "machining.general", "confidence": 0.9 },
+    "零部件加工": { "canonical": "machining.general", "confidence": 0.85 },
+    "精密机械": { "canonical": "machining.precision", "confidence": 0.85 },
+    "机加": { "canonical": "machining.cnc", "confidence": 0.8 },
+    "五金加工": { "canonical": "machining.general", "confidence": 0.8 }
+  },
+
+  "negative_capability_hints": [
+    "不做铸造毛坯",
+    "不做表面热处理（外协）"
+  ]
+}

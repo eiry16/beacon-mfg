@@ -1,0 +1,37 @@
+{
+  "pack_id": "raw_material",
+  "display_name": "原材料",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "钢材 / 铝材 / 工程塑料 等型材。beacon-mfg 一级品类『原材料』。",
+
+  "attributes": {
+    "material_type": {
+      "label": "材料种类",
+      "type": "enum",
+      "values": ["冷轧钢", "热轧钢", "铝板", "不锈钢", "铜", "工程塑料"],
+      "tier": "required"
+    },
+    "form": {
+      "label": "形态",
+      "type": "enum",
+      "values": ["板", "卷", "棒", "管", "箔"],
+      "tier": "required"
+    }
+  },
+
+  "certifications": ["ISO9001", "ISO14001", "RoHS"],
+
+  "vocab": {
+    "原材料": { "canonical": "raw_material.steel", "confidence": 0.7 },
+    "钢材": { "canonical": "raw_material.steel", "confidence": 0.9 },
+    "铝材": { "canonical": "raw_material.aluminum", "confidence": 0.9 },
+    "板材": { "canonical": "raw_material.sheet", "confidence": 0.85 },
+    "型材": { "canonical": "raw_material.profile", "confidence": 0.8 }
+  },
+
+  "negative_capability_hints": [
+    "不做来料加工",
+    "不做成品件制造"
+  ]
+}
