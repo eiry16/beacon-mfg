@@ -6,11 +6,11 @@
   "field_note": "h = 分片内容 SHA1，用于下载后校验完整性；做增量更新请用服务端响应头里的 ETag，不要用 h。",
   "generated_at": "2026-09-22",
   "total_shards": 839,
-  "total_bytes": 365723110,
+  "total_bytes": 365723391,
   "by_type": {
    "fp": {
     "shards": 273,
-    "bytes": 29796575,
+    "bytes": 29796856,
     "records": 139318
    },
    "zh": {
@@ -1083,8 +1083,8 @@
    "n": "连续搬运设备制造",
    "t": "fp",
    "k": 1,
-   "z": 341,
-   "h": "885964d729fb5aa4079f3ec1ed2efef124ff0998",
+   "z": 622,
+   "h": "92ca14c85f230cf5e2a76e9357bdaa3a4bbceb26",
    "u": "2026-09-22"
   },
   {
