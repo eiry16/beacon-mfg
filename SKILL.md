@@ -1,449 +1,206 @@
 ---
 name: beacon-mfg
-description: 面向 Agent 的中国企业与商户检索名录，按 GB/T 4754-2017 国标门类归档，覆盖 7 大门类 —— C 制造业、F 批发和零售业、H 住宿和餐饮业、I 信息技术服务业、M 科研技术服务业、O 居民服务与修理业、R 文化体育娱乐业。用于找供应商、工厂、厂家、代工厂、OEM/ODM（CNC加工、钣金、注塑、压铸、模具、标准件、电子元器件），找批发商、经销商、贸易商，找餐饮住宿门店（餐厅、火锅、快餐、咖啡、奶茶、烘焙、酒吧、酒店、民宿），找本地生活服务商（美容美发、洗衣干洗、汽车维修、家电维修、健身、KTV、网吧、影院、游乐园、宠物服务），找技术服务商（软件开发、系统集成、网络安全、大数据、第三方检测、计量校准、认证、工业设计、环境监测），或按国标行业代码、产品关键词、城市地区筛选。英文场景 sourcing / find supplier / manufacturer / factory / OEM / restaurant / local service 同样适用。仅提供公开 POI 名录与联系方式，不参与交易。
+description: 面向 Agent 的中国企业与商户检索名录，按 GB/T 4754-2017 国标门类归档，覆盖 7 大门类 —— C 制造业、F 批发和零售业、H 住宿和餐饮业、I 信息技术服务业、M 科研技术服务业、O 居民服务与修理业、R 文化体育娱乐业。用于找供应商、工厂、厂家、代工厂、OEM/ODM（CNC加工、钣金、注塑、压铸、模具、标准件、电子元器件），找批发商、经销商、贸易商，找餐饮住宿门店（餐厅、火锅、快餐、咖啡、奶茶、烘焙、酒吧、酒店、民宿），找本地生活服务商（美容美发、洗衣干洗、汽车维修、家电维修、健身、KTV、网吧、影院、游乐园、宠物服务），找技术服务商（软件开发、系统集成、网络安全、大数据、第三方检测、计量校准、认证、工业设计、环境监测），或按国标行业代码、产品关键词、城市地区筛选。英文场景 sourcing / find supplier / manufacturer / factory / OEM / restaurant / local service 同样适用。**检索入口是 MCP 服务（beacon-mfg-mcp）或薄框架客户端，不是本地脚本。** 仅提供公开 POI 名录与联系方式，不参与交易。
 ---
 
 # BeaconMFG · 供应商灯塔检索 Skill
 
-## 能力概述
+> ## ⚠️ 2026-09-22 起：本仓库只承载 MCP 与只读数据面
+>
+> 抓取 / 翻译 / 派生重建 / 发布（Cloudflare Pages、R2、push 云端）属于**本地工厂**，
+> 不在本仓库里。**所以本文档不再描述「整库检出后跑本地脚本」那条路径** ——
+> 那条路径上的 `scripts/*.py` 已随工厂移出，照敲只会得到「文件不存在」。
+>
+> 对外检索入口只有两条，见下节。
 
-本 Skill 帮助 Agent 在 BeaconMFG 结构化名录中检索中国企业/商户。
-核心价值：把用户的"需求"翻译成"**国标行业 → 归档文件**"，返回**结构化、可溯源**的记录。
+---
 
-**边界：** 本检索入口只提供公开联系方式与基本信息，**不参与**下单、交易、不评级；**询价的需求侧匹配**由 `skills/rfq-kernel` 子技能负责，**结构化 RFQ 的投递**由后端 `POST /v1/rfq` 中转路由负责（详见下方『RFQ 与自动接客』）。
+## 1. 两条检索入口
 
-### 覆盖范围：7 个国标门类
+### 入口 A：MCP（推荐；托管、免维护、无密钥）
 
-设计面**包含**以下全部门类。检索前先看「现有数据」列 —— **门类在册 ≠ 已有数据**：
-采集分批推进，尚缺数据的门类明确标为「待采集」，不要用设计面去猜数据量。
+```bash
+npx -y beacon-mfg-mcp          # 或按 mcp/README.md 的配置片段接进任意 MCP 客户端
+```
 
-| 门类 | 名称 | 现有数据 | 典型需求 |
-|---|---|---|---|
-| C | 制造业 | 28213 条 | CNC加工、钣金、注塑、压铸、模具、标准件、电子元器件 |
-| F | 批发和零售业 | 2603 条 | 批发商、经销商、贸易商、五金/建材批发、便利店、药店 |
-| H | 住宿和餐饮业 | 2578 条 | 餐厅、火锅、快餐、咖啡、奶茶、烘焙、酒吧、酒店、民宿 |
-| R | 文化体育娱乐业 | 1905 条 | 健身、KTV、网吧、影院、游乐园、球馆 |
-| O | 居民服务与修理业 | 1372 条 | 美容美发、洗衣干洗、汽车维修、家电维修、宠物服务 |
-| I | 信息技术服务业 | 1039 条 | 软件开发、系统集成、网络安全、大数据、运维 |
-| M | 科研技术服务业 | 954 条 | 第三方检测、计量校准、认证、工业设计、环境监测 |
+不需要 API Key、不需要 clone 本仓库。提供 6 个工具：
 
-> 另有 **1033 条**尚未判定国标行业（`industry` 为 null，不硬贴标签），与上表合计 **39697 条**。
-> 数字每日变化，以 `data/DATA_STATS.md` 为准。
+| 工具 | 用途 | 主要参数 |
+|---|---|---|
+| `search_vendors` | 名录检索（关键词 / 城市 / 国标码） | `query`（企业名·工艺·材料·认证子串）、`city`（地级市与区县/县级市都认）、`gb`（国标码；给了就只扫对应分片）、`limit`（1–200）、`offset` |
+| `get_vendor` | 按 id 取完整中文档案 | `id`、`gb`（不填会自动从指纹分片反查，稍慢） |
+| `get_capability_card` | 按 id 取 L1 能力卡（工艺位/设备/产能/认证/起订量） | `id`；无卡时返回 `has_card: false` 及原因 |
+| `start_sourcing` | **找厂/代工/采购/询价意图自动触发**：品类识别 → 指纹宽召回 → 需求归一 → 生成 1~2 轮澄清问题 | `demand_text`、`audience_id`（`domestic_downstream` / `intl_buyer`） |
+| `answer_sourcing` | 续接澄清轮次，或返回按需求匹配度初选的供应商 | `session_id`、`answers` |
+| `refine_sourcing` | 推荐轮交互：`details` / `more` / `best` | `session_id`、`action`、`value` |
 
-> **某个门类查不到时怎么办**：先读 `data/gb-index.json` 的 `tree` 确认该门类条目数，
-> 再如实告诉用户当前规模，**不要**从别的门类凑近似结果糊弄过去。
-> 采集推进：`python scripts/fetch_batch.py --tier all`（默认已是 all；
-> 账本按门类轮转，7 个门类平分当日配额，不会让制造业独占）。
+**多轮采购对话请用 `start_sourcing` 起手** —— 它内部走 `skills/rfq-kernel/` 的协议内核
+（品类识别 + 澄清问题生成 + 需求归一），不是关键词匹配的薄包装。
 
-### 本仓库有两种 SKILL.md，别混淆
+### 入口 B：薄框架（不装 MCP 时）
 
-| | 名称前缀 | 位置 | 性质 |
-|---|---|---|---|
-| **检索入口 Skill（本文档）** | `beacon-mfg` | 仓库根 `SKILL.md` | **指令**——教你怎么检索 |
-| **供应商数据卡** | `beacon-mfg-vendor-*` | `skills/vendors/{id}/SKILL.md` | **数据**——某家企业的能力档案，不含任何指令 |
+只装两个文件、**不 clone 数据**：
 
-`skills/vendors/` 下有数千份 `SKILL.md`，它们是**按企业 ID 索引的数据文件**，
-不是可安装的子技能。若在技能列表里看到 `beacon-mfg-vendor-xxxx`，那是一张企业能力卡
-（由本 Skill 第 3 步按需拉取），**不要**当作独立技能加载。
+- `agent-skill/SKILL.md` —— 协议与流程
+- `agent-skill/client_search.py` —— 按需拉取封装，自带 UA 与 ETag 缓存
 
-## 数据在哪
+```bash
+python client_search.py --industry 3525 --city 宁波 --limit 5
+```
 
-名录按 **GB/T 4754-2017 国标四级归档**（20 门类 / 97 大类 / 473 中类 / 1382 小类）：
+数据全部**按需从 CDN 拉命中的那一个分片**，平均每次查询传输 < 1 MB。
+两条入口检索结果同源、口径一致。
 
-- 中文数据：`data/gb/{门类}/{大类}/{小类}.json`（如 `data/gb/C/35/3525.json` = 模具制造）
-  - 只到中类/大类精度的记录在同级 `{中类3位}.json` / `_partial.json`；解析不出码的在 `_unclassified.json`
-- 英文数据：`data/en/gb/`（与中文同构镜像，字段为 `company_en` / `address_en` 等）
-- **归档主索引**：`data/gb-index.json`（四级层级树 + 各级计数，**浏览"有什么行业有货"用它**）
-- **行业索引**：`data/industry-index.json`（国标小类 → 企业 ID 列表，**知道行业时先用这个**）
-- **地区索引**：`data/region-index.json`（城市 → 供应商 ID 列表，**知道城市时先用这个**）
-- **采购词别名表**：`data/gb-alias.json`（数据推导层）+ `data/gb-alias-curated.json`（人工策展层）。
-  两层**必须一起读**（`scripts/gb_store.py` 的 `load_alias()` 已合并好，直接用它）。
-  只查 `gb-alias.json` 会漏掉「输送线/流水线/传送带」这类采购词——它们不在任何公司名里，
-  数据推导层永远推不出来。**别写死只认其中一个文件。**
-- **分片清单（推荐入口）**：`data/manifest.json`（列出全部分片的路径/条数/字节/SHA1）
-- **L0 能力指纹**：`skills/registry/fingerprint/gb/{门类}/{大类}/{小类}.jsonl`（235 B/条，100% 覆盖）
-- 字段结构：`schema/supplier.schema.json`
+### 关于 GitHub 上的 `data/`
 
-数据就是普通文件，**无需任何脚本、无需网络、无需 API Key**——Agent 直接读取文件即可检索。
+本仓库里的 `data/**` 是**已脱敏的公开快照**（手机号形如 `138****0000`），
+供「只读已提交内容」的离线检索模式（MCP 的 `BEACON_REPO` 模式）使用；
+完整联系方式由云端按需提供。两条入口都不需要你 clone 它。
 
-### 只想查一两个小类？用 manifest 按需拉取，别 clone 全库
+---
 
-| 方式 | 传输量 |
+## 2. 数据源
+
+| 项 | 值 |
 |---|---|
-| `git clone` 全库 | 约 300 MB（数据每日刷新会过期，且含未压缩工作树） |
-| 拉 manifest + 命中的 fp 分片 | **约 0.3 MB / 次**（缓存后近乎为零） |
+| 主源（CDN） | `https://beacon-mfg.pages.dev` |
+| 分片清单 | `data/manifest.json` |
+| 数据基准日 | 见 `data/DATA_STATS.md` |
 
-⚠ **必须带 User-Agent**：Cloudflare 对无 UA 请求返回 `403 error 1010`，现象即「源不通」。
-下面示例已内置 UA；别用裸 `urllib.request.urlopen` 直拉（会 403）。
+取数流程（两条入口内部都这么做）：
 
-```python
-import json, urllib.request
-base = "https://beacon-mfg.pages.dev"          # 主源；jsDelivr/raw 为镜像兜底
-req = urllib.request.Request(f"{base}/data/manifest.json")
-req.add_header("User-Agent", "BeaconMFG-Agent/1.0")
-man = json.loads(urllib.request.urlopen(req).read())
-hit = [s for s in man["shards"] if s["t"] == "fp" and s["c"] == "3525"]
-r2 = urllib.request.Request(f"{base}/{hit[0]['p']}")
-r2.add_header("User-Agent", "BeaconMFG-Agent/1.0")
-rows = [json.loads(l) for l in
-        urllib.request.urlopen(r2).read().decode().splitlines() if l.strip()]
-# 带 If-None-Match: 分片 ETag 可走 304 缓存，二次查询近乎零流量
-```
+1. 拉 `data/manifest.json`（约 143 KB，可缓存）；
+2. 按国标码筛出要的**那几片**；
+3. 缓存响应头里的 `ETag`，下次带 `If-None-Match` —— 命中返回 304，零传输；
+4. 命中后按 `id` 取详情（或 L1/L2）。
 
-**对外薄框架技能（推荐给只装技能、不装数据的外部 Agent）**：见 `agent-skill/`
-（自带 `SKILL.md` + `client_search.py`，查询时才按需拉对应分片，已处理 UA/大桶/地域三坑）。
-参考实现 `scripts/client_search.py` 与本技能同源。
+⚠️ **必须带 User-Agent**：Cloudflare 对无 UA 请求返回 403（error 1010），
+现象是「源不通」，很容易被误判成服务挂了。
 
-## 使用流程
+---
 
-### 第 0 步（优先）：把需求翻译成国标代码
+## 3. 覆盖范围：7 个国标门类
 
-**如果用户说的是一个行业/工艺（模具、压铸、电镀、橡胶件、齿轮…），先按行业定位，别用关键词猜。**
-关键词会漏（"注塑"在高德上几乎搜不到厂，厂都叫"塑料制品"），国标代码不会。
-
-三条路拿到国标码（按顺序尝试）：
-
-1. **别名表**：采购口语先查别名表（默认 307 条 = 数据推导 62 + 人工策展 245，
-   用 `scripts/gb_store.py` 的 `load_alias()` 读合并结果），
-   例如 "CNC加工"→3484、"PCB"→3989、"输送线"→3434。
-
-   - **数据推导层**（`gb-alias.json`）：统计关键词实际出现在哪些小类下、≥3 次才收录，
-     带真实命中次数。覆盖「公司名里会写」的词。
-   - **人工策展层**（`gb-alias-curated.json`）：覆盖「客户会搜、但公司名里没有」的词
-     （输送线/流水线/传送带/密封圈/吸塑/齿轮…）。**这些条目没有命中次数**——
-     命中数只能由真实数据统计得出，手写就是编数字。
-
-   ⚠️ **结果分三档，强度不同，别一视同仁**：
-   别名扩展是"整类扩展"而非"同义词扩展"——命中某个国标码 = 把这个码下所有企业都算进来。
-   搜「齿轮」会把 3484 机械零部件加工的 3415 家一起带回来（放大 3421 倍）。
-   所以结果按证据强度排序并标注：
-
-   | 档位 | 含义 | 怎么用 |
-   |---|---|---|
-   | `字面关键词` | 企业自己的关键词里就有这个词 | 最强，直接用 |
-   | `别名首位码` | 语义最贴近采购词的小类 | 强，可直接用 |
-   | `行业推断` | 只是被归在这个行业，企业没说过自己能做 | **弱，需二次确认，别直接写进结论** |
-
-   `query.py` 输出里弱档会打 `[行业推断·未确认]` 标记，并在开头给出三档的条数构成。
-
-   **补位码有供给上限**（默认 `max_supply=500`）：目标小类家数超过 500 的补位码
-   会被剔除，避免「齿轮」(3453，6 家) 被 3484 机械零部件加工 (3415 家) 淹没。
-   实测削减 70% 结果量。**首位码永不淘汰**——否则「钣金→3311」这类正确但宽的结果
-   会被砍成 0。个别词可在 `gb-alias-curated.json` 里用 `max_supply` 逐条覆盖。
-
-   收敛后若结果为 0，`query.py` 会提示放宽可得多少家（如「齿轮·上海」→
-   "放宽可得到 216 家，但全部是行业推断"），**不会静默放宽**。
-   确实要看放宽结果就加 `--alias-broad`。
-2. **行业速查表**（下方）。
-3. **归档树浏览**：读 `data/gb-index.json` 的 `tree`，逐级看门类 → 大类 → 中类 → 小类及各家数。
-
-常见行业代码速查（完整清单读索引的 `index` 键）：
-
-| 代码 | 行业小类 | 代码 | 行业小类 |
-|---|---|---|---|
-| 3484 | 机械零部件加工（CNC/数控） | 3391 | 黑色金属铸造 |
-| 3525 | 模具制造 | 3392 | 有色金属铸造（压铸） |
-| 3311 | 金属结构制造（钣金/冲压） | 3393 | 锻件及粉末冶金制品 |
-| 3360 | 金属表面处理及热处理加工 | 2913 | 橡胶零件制造 |
-| 2929 | 塑料零件及其他塑料制品制造 | 3451 | 滚动轴承制造 |
-| 2921 | 塑料薄膜制造 | 3453 | 齿轮及齿轮减、变速箱 |
-| 2926 | 塑料包装箱及容器制造 | 3482 | 紧固件制造 |
-| 2651 | 初级形态塑料及合成树脂（原料） | 3483 | 弹簧制造 |
-| 3982 | 电子电路制造（PCB） | 3660 | 汽车零部件及配件制造 |
-| 3989 | 其他电子元件制造 | 5164 | 金属及金属矿批发（**非制造**） |
-
-非制造业常用代码（H/I/M/O/R/F 门类，见上方「覆盖范围」确认是否已采集）：
-
-| 代码 | 行业小类 | 代码 | 行业小类 |
-|---|---|---|---|
-| 6210 | 正餐服务（餐厅/火锅/酒楼） | 8040 | 理发及美容服务 |
-| 6220 | 快餐服务 | 8030 | 洗染服务（干洗/洗衣） |
-| 6232 | 咖啡馆服务 | 8111 | 汽车修理与维护 |
-| 6231 | 茶馆服务（奶茶/茶饮） | 8121 | 计算机和辅助设备修理 |
-| 6291 | 小吃服务（烘焙/面包/蛋糕） | 8132 | 日用电器修理（家电维修） |
-| 6110 | 旅游饭店（酒店/宾馆） | 8930 | 健身休闲活动 |
-| 6130 | 民宿服务 | 9011 | 歌舞厅娱乐活动（KTV） |
-| 6513 | 应用软件开发 | 9013 | 网吧活动 |
-| 6531 | 信息系统集成服务 | 8760 | 电影放映（影院） |
-| 6440 | 互联网安全服务 | 9020 | 游乐园 |
-| 7452 | 检测服务（第三方检测） | 5213 | 便利店零售 |
-| 7453 | 计量服务 | 5212 | 超级市场零售 |
-| 7491 | 工业设计服务 | 5251 | 西药零售（药店） |
-
-### 第 1 步：行业索引锁定 ID 列表
-
-```python
-import json
-idx = json.load(open("data/industry-index.json", encoding="utf-8"))
-m = idx["metadata"]          # 覆盖家数、小类数、生成日期
-code = "3525"                # 模具制造
-item = idx["index"][code]
-print(item["name"], item["count"], item["confidence"])   # 模具制造 1091 {'high':..,'medium':..,'low':..}
-target_ids = set(item["ids"])                            # 该行业全部企业 ID
-```
-
-> **注意**：`industry-index.json` 是快照，抓取新数据后必须重建（维护脚本
-> `scripts/gen_industry_index.py`，属内部维护脚本、不随仓库分发），
-> 否则新企业按行业永远搜不到——这是一个不会报错的静默缺陷。
-> 若你检索时发现某小类条数明显偏少，优先怀疑索引没重建，而不是数据缺失。
-
-代码前缀可当层级用：`29`=橡胶和塑料制品业（大类）、`339`=铸造及其他金属制品制造（中类）、`C`=制造业（门类）。
-
-### 第 2 步：地区索引取交集（如有地区需求）
-
-```python
-city_ids = set(json.load(open("data/region-index.json", encoding="utf-8"))["index"]["浙江-宁波"]["ids"])
-hit_ids = target_ids & city_ids
-```
-
-> 地区索引覆盖 29 个城市（苏州、宁波、上海、无锡、杭州、嘉兴、东莞、深圳、佛山、广州…）；同时含县级市/区维度（昆山、海盐、大理、丽江等），检索时城市与区县均可命中。
-> 目标城市不在索引中时，退化为只按行业取 ID，再逐记录核对 `region`。
-
-### 第 3 步：按 ID 从归档文件读详情
-
-ID 编号与归档文件没有映射关系，两种取法：
-
-1. **全量读再过滤**（12 万条约 130MB，仅环境允许时适用）：
-
-```python
-import glob, json
-ids = hit_ids
-hits = []
-for f in glob.glob("data/gb/*/*/*.json"):
-    hits += [r for r in json.load(open(f, encoding="utf-8")) if r["id"] in ids]
-```
-
-2. **按 `gb-index.json` 只读目标小类的桶文件**：树里每个小类的键就是文件路径
-   （`data/gb/{门类}/{大类}/{小类}.json`），命中 ID 落在哪个小类，去哪个文件取。
-
-记录字段说明：
-- `company`：公司名
-- `keywords`：主营关键词数组（子串匹配）；`工艺:`/`材料:` 前缀的是结构化元信息
-- `region`：`{ "province": "...", "city": "..." }`
-- `contact_phone`：座机/400/手机，**完整展示**；缺失时为 `"待核实"`
-- `certifications`：资质标签数组
-- `source` / `source_url` / `verified_at`：来源与核实日期（`source="certification"` 为平台认证回流，带 `cl` 灯牌）
-- `website`：官网（若有）
-- `industry`：国标行业，`{code, name, path, confidence, source}`；`null` = 未归类（拿不到行业信号，**不要替它猜**）
-- `is_manufacturer`：`false` = 批发/贸易商，不是生产企业
-- `cl` / `certification`：凭证等级（L0-L3）与认证档案（仅认证回流记录有）
-- `amap`：地图 POI 扩展字段（typecode / website / email 等），仅供交叉核对
-
-### 关于旧 8 品类标签与 625 家冲突
-
-名录的 `category` 和能力卡的 `category` 都是**同一套旧 8 品类标签**
-（精密机械加工 / 钣金冲压 / 注塑成型 / 表面处理 / 标准件 / 电子元器件 /
-原材料 / 压铸），不是国标码。曾有 625 家两张卡给出的 8 品类不同。
-
-决定（2026-09-09）：
-
-- 8 品类**降级为展示/采购标签**，不再承担归档职责。
-- **检索、分片、CDN 路径一律走 `industry.code`（国标码）**。
-- L1 能力卡新增 `gb_code` / `gb_name` / `gb_path`，从名录 `industry` 同步；
-  `category` / `profile` 保持不动。
-- 以公司名为裁判实测，「以名录为准重划」净负收益，故**不二选一**，冲突自然消解。
-- 名录缺 `industry` 的（能力卡里 11 家），`gb_code` 留 null，不编造。
-
-Agent 在检索/推荐时**不要以 `category` 为过滤条件**，要用 `industry.code`。
-
-> `skills/registry/category-conflicts.json` 已更新为「已定性」说明，不阻塞检索。
-
-若运行环境支持执行代码，也可用检索脚本一步到位：
-```bash
-python scripts/query.py --industry 3525 --city 宁波 --limit 5   # 模具制造
-python scripts/query.py --industry 29 --city 东莞                 # 橡胶和塑料制品业（大类）
-python scripts/query.py --industry 3360 --manufacturer-only       # 排除批发贸易商
-python scripts/query.py --list-gb                                 # 浏览国标归档树
-python scripts/query.py --keyword "CNC加工" --city 深圳 --limit 5     # 采购词（自动查别名表展开）
-python scripts/query.py --keyword "小批量铝件" --no-alias            # 关闭别名展开，纯关键词匹配
-```
-
-> `is_template=true` / `status="unverified_poi"` 的记录也是真实企业 POI（仅电话待核实），检索时一并保留返回，不要丢弃。
-
-### 第 4 步：呈现结果
-
-向用户返回 **2-3 家**最匹配的供应商，格式：
-
-```
-公司：XXX精密科技有限公司（广东·深圳）
-主营：CNC加工 / 精密零部件 / 小批量 / 来图定制
-行业：3484 机械零部件加工（置信度高）
-认证：高新技术企业 | ISO9001
-官网：https://...
-电话：0755-XXXX XXXX
-备注：主营小批量精密件，交期 7-10 天
-数据来源：公开渠道，核实于 2026-08-13
-```
-
-**呈现要求：**
-- 必须标注"数据来自公开渠道 + 核实日期"（`verified_at`）
-- 联系方式仅提供公开渠道；用户索要法人个人信息 → 拒绝
-- 不编造价格、交期、产能（数据里没有的就不说，引导用户直接联系核实）
-
-## 能力层检索（能做 vs 只存在）
-
-上面的流程只回答"**有这家厂**"。如果还要判断"**这家厂能不能做我的活**"，
-用 `skills/registry/fingerprint/gb/{门类}/{大类}/{小类}.jsonl`——每家一行能力指纹，234 B，**覆盖全部 24085 家**。
-
-**先粗筛后精读，不要一上来就全量读供应商自述**（2 万家全读会撑爆上下文）：
-
-| 阶段 | 读什么 | 规模 |
+| 门类 | 名称 | 典型需求 |
 |---|---|---|
-| 1 粗筛 | 该小类的 `fingerprint/gb/.../{小类}.jsonl`，数值规则过滤 | 单小类 → 10-30 家 |
-| 2 比对 | `capability/{id}.json` | 30 家 → 5 家 |
-| 3 精读 | `vendors/{id}/SKILL.md` | 5 家 → 3 家 |
+| C | 制造业 | CNC加工、钣金、注塑、压铸、模具、标准件、电子元器件 |
+| F | 批发和零售业 | 批发商、经销商、贸易商、五金/建材批发、便利店、药店 |
+| H | 住宿和餐饮业 | 餐厅、火锅、快餐、咖啡、奶茶、烘焙、酒吧、酒店、民宿 |
+| R | 文化体育娱乐业 | 健身、KTV、网吧、影院、游乐园、球馆 |
+| O | 居民服务与修理业 | 美容美发、洗衣干洗、汽车维修、家电维修、宠物服务 |
+| I | 信息技术服务业 | 软件开发、系统集成、网络安全、大数据、运维 |
+| M | 科研技术服务业 | 第三方检测、计量校准、认证、工业设计、环境监测 |
 
-**L1 能力卡也能按小类批量取**（不用一家家拉）：
+> **逐门类家数每日变化，一律以 `data/DATA_STATS.md` 为准**，不要引用本文档里的旧数字。
+>
+> **某个门类查不到时怎么办**：先看 `data/DATA_STATS.md` 的小类明细确认该门类条目数，
+> 再如实告诉用户当前规模，**不要**从别的门类凑近似结果糊弄过去。
+> 另有少量记录 `industry` 为 null（尚未判定国标行业）——**不硬贴标签**，
+> 它们仍在名录里，靠关键词检索可以命中。
 
-```bash
-python scripts/gen_capability_shards.py --apply   # 产出 dist/capability/
-# full/gb/{门类}/{大类}/{小类}.json  完整卡，4136 张 / 4.61 MB
-# slim/gb/...                        精简版（只留工艺位），1.19 MB，可整包内置
-```
+---
 
-**已部署到 CDN（2026-09-09）**，`https://beacon-mfg.pages.dev/` 下可直接取：
+## 4. 分片契约（`data/manifest.json`）
 
-```
-GET https://beacon-mfg.pages.dev/manifest.json              # 分片清单 + SHA1
-GET https://beacon-mfg.pages.dev/full/gb/C/35/3525.json     # 3525 模具制造的全部能力卡
-GET https://beacon-mfg.pages.dev/slim/gb/C/33/3399.json     # 精简版
-GET https://beacon-mfg.pages.dev/skills/vendors/{id}/SKILL.md   # 厂商自述（L2）
-```
+`metadata.total_shards = 839`，`by_type`：
 
-一次请求拿到该小类全部能力卡。L0 指纹仍在 GitHub（走 jsDelivr），
-两者是不同地址：**L0/L1 分片不混在一个根下**，别拿一个的 base 去拼另一个。
+| 类型 `t` | 片数 | 记录数 | 内容 | 路径形如 |
+|---|---|---|---|---|
+| `fp` | 273 | 139,318 | L0 指纹（检索召回面，最轻） | `skills/registry/fingerprint/gb/{门类}/{大类}/{小类}.jsonl` |
+| `zh` | 284 | 139,318 | 中文完整档案 | `data/gb/{门类}/{大类}/{小类}.json` |
+| `en` | 281 | 135,072 | 英文镜像 | `data/en/gb/{门类}/{大类}/{小类}.json` |
+| `phone` | 1 | 103,137 | 号码索引 | `data/phone-index.jsonl` |
 
-⚠ **填充率的真相**（别按理想值设计判断逻辑）：
+分片条目字段：`p` 路径 · `b` 归档桶键 · `c` 国标码 · `n` 国标名称 · `t` 类型 ·
+`k` 记录条数 · `z` 字节数 · `h` 内容 SHA1（用于**下载后校验完整性**）· `u` 最后更新。
 
-| 字段 | 有值比例 | 说明 |
+⚠️ **做增量更新请用响应头里的 `ETag`，不要用 `h`** —— `h` 是内容摘要，不是版本号。
+
+⚠️ **一个国标码可能拆成多个续片**（如 `3484.json` + `3484-p2.json`），
+按国标码取数时必须**扫全部续片**，只取第一片会漏。
+
+数字为 2026-09-22 快照，实时值见 `data/manifest.json` 的 `metadata.by_type`。
+
+---
+
+## 5. 分层：L0 / L1 / L2
+
+| 层 | 内容 | 在哪 |
 |---|---|---|
-| `processes` 工艺 | 100%（4136/4136） | **由企业名称推断，企业未确认** |
-| `materials` 材料 | 15.3%（631） | |
-| `limits` 硬指标 | **0.1%（6 张）** | 其余 4130 张是全 null 空壳 |
+| **L0 指纹** | 企业名 / 城市 / 国标码 / 工艺 / 材料 / 认证 / 是否含电话（精简） | `skills/registry/fingerprint/**`，进仓库 |
+| **L1 能力卡** | 工艺位、设备、产能、认证、起订量等硬指标 | `skills/registry/capability/{id}.json`，**只在云端**（`get_capability_card`） |
+| **L2 自述** | 厂商自述（一厂一 Skill） | `skills/vendors/{id}/SKILL.md`，**只在云端** |
 
-硬指标缺失 = 企业未填报，**不是 0**。谁把它当 0 用，等于告诉客户这家厂公差能做到 0。
+**L0 刻意不存电话号码**，号码由 `phone` 分片提供。
+`is_template=true` 的记录**不是占位模板**，而是电话待核实的真实企业 POI，检索时应保留。
 
-**只查某个小类时只读那一个分片**（如 3525 模具制造 = 0.23 MB），不要全量扫描 4.5 MB 的指纹库。
+---
 
-指纹行字段（刻意用短键，省钱）：
+## 6. 字段
 
-```
-id / co(公司) / city / gb(国标码) / mf(是否制造商) / proc(工艺码) / mat(材料)
-cert / cl(凭证等级) / pv(来源: auto 能力卡 / derived 国标推导) / sc(画像分) / tel(有电话)
-tol / size / moq / lt / rt —— 仅能力卡厂商才有，无值不占位
-```
+**权威定义是 `schema/supplier.schema.json`**，下面是摘要。⚠️ 注意三套口径不同：
 
-`pv=derived` 的厂商是按国标码推导的工艺（无能力卡），**sc=0 不是评分低，是尚未画像**。
-
-按需求做确定性过滤：
-
-```python
-import json
-need = {"city": "深圳", "proc": "cnc_milling", "tol": 0.05, "moq": 10}
-hits = []
-for line in open("skills/registry/fingerprint/精密机械加工.jsonl", encoding="utf-8"):
-    r = json.loads(line)
-    if need["city"] != r["city"]: continue
-    if need["proc"] not in r["proc"]: continue
-    if r["tol"] is None or r["tol"] > need["tol"]: continue   # 公差达不到
-    if r["moq"] is None or r["moq"] > need["moq"]: continue   # 起订量太高
-    hits.append(r)
-```
-
-也可直接用现成脚本：
-
-```bash
-python scripts/search_capabilities.py --city 深圳 --proc cnc_milling \
-    --mat 铝合金6061 --tol 0.05 --moq 10 --size 300,200,100
-# 按国标行业先圈定范围（--industry 支持小类码/中类/大类/门类/中文名）
-python scripts/search_capabilities.py --industry 3525 --city 宁波
-```
-
-**规则：**
-1. 工艺码取值域见 `skills/schema/process-codes.json`
-2. `tol` / `moq` / `size` 为 `null` 表示未填——**无法确定性筛选，不要当作合格**
-3. `cl`（凭证等级）：L0 未核验 / L1 企业自述 / L2 平台已认证 / L3 第三方核验。
-   呈现给用户时必须原样标注，L1 及以下要说明"未经平台核验"
-4. `sc` 是**资料完整度**（不是评级），仅用于排序
-5. 没有提交 Skill 的供应商在指纹库里查不到——回退到前面的名录检索即可，不影响使用
-
-## RFQ 与自动接客（rfq-kernel + rfq/v1 中转）
-
-本仓库把"找厂"与"询价"拆成两层，**互不替代**：
-
-| 层 | 位置 | 职责 |
+| 层 | 字段形如 | 用途 |
 |---|---|---|
-| 需求侧匹配引擎 | `skills/rfq-kernel/`（子技能） | 解析模糊需求 → 宽召回 → 分布驱动澄清 → 精筛 → 产出结构化 RFQ 信封 + 候选供应商 |
-| 供给侧投递中转 | `server/routers/rfq.py`（`POST /v1/rfq`） | 读候选供应商能力卡上的 `rfq` 块拿入口 → 投递 → 收讫确认 → 审计存证 |
+| 中文档案 `zh` | `id` · `company` · `category` · `keywords` · `region{province,city}` · `address` · `lat/lng` · `industry{code,name,level,path,confidence}` · `is_manufacturer` · `contact_phone` · `source`/`source_url` · `status` · `is_template` · `amap{poi_id,adcode,…}` · `note` | 完整档案 |
+| L0 指纹 `fp` | `id` · `co` · `city` · `dist` · `gb` · `mf` · `proc` · `mat` · `cert` · `cl` · `pv` · `sc` · `tel` | 召回面（短键省体积） |
+| `search_vendors` 返回 | `id` · `company` · `city` · `district` · `gb` · `badge` · `score` · `has_phone` · `process` · `material` · `cert` | 摘要（指纹行归一后的可读名） |
 
-**rfq-kernel 不重写能力卡，只消费它**（见 `skills/rfq-kernel/src/beacon_adapter.py` 单向适配器）。
-能力卡（`skills/registry/capability/{id}.json`）是供给数据，rfq-kernel 是需求侧引擎，二者是上下游关系。
+几条容易踩的：
 
-### 供应商怎么"按新方案建立 skill"
+- **`name` / `gb` / `proc` 不在中文档案里** —— 中文档案用 `company` 与 `industry.code`；
+  短键只在指纹行。别按直觉写字段名。
+- **区县不在中文档案的 `region` 里**（只有省 + 市）。县级市归在地级市名下
+  （昆山 → 苏州），按县级市检索要靠指纹行的 `dist`。
+- `category`（品类，如「注塑成型」）与 `industry`（国标）是**两套口径**，不要互相替代。
+- `industry` 为 null = 尚未判定国标行业，**不硬贴标签**，这类记录仍在名录里、靠关键词可命中。
+- `is_template=true` **不是占位模板**，而是电话待核实的真实企业 POI，检索时应保留。
+- 英文镜像字段是 `company_en` / `address_en` / `keywords_en` / `industry_en`，且**必带 `industry`**、
+  同一 `id` 不在多个分片里重复出现。
 
-- **框架已经就位**：每一张能力卡本身就是这家企业的"skill"脚手架。自动采集的卡
-  `claim.status=unclaimed`、limits 全 null，正是 14000+ 家爬来企业的现状——
-  **再为它们写"空 skill"没有意义**，那只是重复现状。
-- 真正让一家企业"上线接客"的动作是**认领后自填**：走 `server/routers/claim.py`
-  的微信验证码认领流（App 端入口，对接 `docs/vendor-onboarding-design.html`），
-  `claim.status` 由 `unclaimed→claimed→verified`，随后在卡上补全 `limits` /
-  `materials` / `quality.certifications` / `rfq` 块即可。
-- **RFQ 可达性 = 能力卡上的 `rfq` 块**：`{ "schema": "rfq/v1", "protocol": "email|webhook|form", "endpoint": "..." }`。
-  有这个块且 endpoint 非空，客户 Agent 才能把结构化 RFQ 投递过去。当前全库已有 7 家声明了
-  `rfq` 块（含两家非采集的真实企业：苏州赤兔 `CN-I-0000001`、耐特斯 `CN-MFG-0020317`）。
-- `schema/supplier.schema.json` 里的 `agent.capabilities`（含 `rfq`）是 L0 记录上的
-  Phase-1 预留字段，当前数据未启用；**生效的 RFQ 能力位是能力卡上的 `rfq` 块**。
+---
 
-### 认证必须三方可验证
+## 7. 边界与红线（强制）
 
-`rfq-kernel` 的 `cert_satisfied()` 规定：一条认证"作数"当且仅当 `verified=True` 且证书号非空。
-能力卡 `quality.certifications[]` 已是 `{name, number, evidence}` 结构，适配器据此判定
-`verified = evidence ∈ {platform_verified, field_audited} 且 number 非空`——自报或无证书号等同没有。
-这正是「ISO9001 需上传证书号、且平台/现场核验过才作数」的落地。
+- **只提供公开联系方式与基本信息**，不参与询价 / 下单 / 交易。
+- **不做推荐评级**。用户要「最好的一家」→ 说明「按契合度排序，请自行核实」。
+- **不编造**价格、交期、产能 —— 数据里没有的就直说没有。
+- 弱证据不覆盖强证据：工艺 / 材料只信公司名与能力卡，搜索关键词只能补位。
+- 「没填 ≠ 不做」：未填字段降权保留，不要据此淘汰企业。
+- 误打标签要修正：不能因为标签问题让真实企业搜不到。
+- 优先用`search_vendors`/`start_sourcing`，**别自己猜国标码**；不确定就先检索。
 
-### 客户 Agent 流程
+---
 
-1. 收到模糊需求 → `rfq-kernel` 解析、宽召回、按真实供给分布生成澄清问题（选项全部来自真实供给，无空选项）
-2. 客户回答后精筛 → 产出候选供应商 + 结构化 RFQ 信封（含拒单原因码与可行动建议）
-3. 对带 `rfq` 块的候选调用 `POST /v1/rfq` 投递（平台中转：强制 Bearer 凭证、审计存证、非本机地址默认不真实投递）
+## 8. 许可与申诉
 
-## 手机端 App（给人用，不是给 Agent 用）
+- **代码** MIT；**数据** CC BY 4.0（见 `DATA_LICENSE.md`）。
+- 企业可通过 GitHub Issue 申诉更正或删除自己的信息。
 
-`APK/` 是一个安卓客户端，内置全量 L0 指纹（4.76 MB），**离线可检索**；
-接入用户自己的 LLM Key（BYOK，存 Keystore）后可用自然语言找供应商。
+---
 
-对 **Agent** 来说这条路不适用——你直接读文件更快也更省。这里提一句只是说明：
-本仓库同时服务两类使用者，**你的用法不受影响，也不需要 Key**。
+## 9. 本仓库结构
 
-- 检索内核是 `scripts/query.py` 的 Kotlin 移植（`APK/app/src/main/java/cn/beaconmfg/app/search/`）
-- 三档证据（字面 / 别名首位码 / 行业推断）、`max_supply` 收敛规则与 Python 端一致，
-  靠 `APK/tools/e2e_parity.py` 对拍保证不漂移
-- 云部署方案见 `APK/docs/CLOUD_DEPLOY.md`
+```
+mcp/                        只读 MCP 服务（npm 包 beacon-mfg-mcp）
+agent-skill/                薄框架：SKILL.md + client_search.py
+data/
+  manifest.json             分片清单（取数入口）
+  gb/**  en/**              中文 / 英文名录分片
+  phone-index.jsonl         号码索引
+  gb-index.json  industry-index.json  region-index.json
+  gb-alias.json  gb-alias-curated.json  gb4754-full.json
+  endpoint.json             App 数据源发现指针
+  DATA_STATS.md             数据统计（数字以它为准）
+skills/
+  registry/fingerprint/**   L0 指纹分片
+  registry/index/**         倒排索引（meta / city / terms）
+  rfq-kernel/**             多轮采购对话的协议内核（sourcing 工具用它）
+README.md  README_EN.md     数据现状与覆盖
+SPEC.md                     数据格式规范
+```
 
-## 使用规则（强制）
+---
 
-1. 直接读取 JSON，每次查询重新读取，不缓存数据用于二次分发
-2. 不编造价格、交期、产能
-3. 用户要求"推荐一家最好的" → 说明"本名录不做评级，以下按关键词匹配度排序，请自行核实"
-4. 查不到结果 → 先查 `gb-alias.json` 换采购词（如"CNC加工"→"数控加工"），再试同级国标代码，最后缩小/扩大地区范围
-5. 用户想提交/更新供应商信息 → 引导到仓库贡献流程（`docs/CONTRIBUTING.md`），不承诺人工处理时效
-5.5 **行业口径**：`industry.confidence=low` 表示公司名里没有行业信号、由关键词或品类兜底推断，呈现时说明"行业为推断值，采购前需复核"；`industry=null` 就是没归类，不要替它猜一个；`is_manufacturer=false` 要提示"批发/贸易商，非生产企业"
-6. **联系方式完整展示**：座机/400/手机号均完整呈现；如号码缺失显示"待核实"，提示用户可通过企业官网或其他公开渠道核实，不得编造
-
-## 数据说明
-
-- 当前中文记录 **128,689** 条，其中电话已核实 **96,732** 条、待核实 **31,957** 条；另有英文镜像（`data/en/gb/`，持续补全中，见 `SKILL_EN.md`）。精确数字以 `data/DATA_STATS.md` 为准。
-- 已核实记录（`status="verified"`）联系电话可用；待核实记录（`status="unverified_poi"`）是真实企业 POI，电话待人工确认
-- **待核实记录也是真实企业**：检索时**保留并一并返回**，不要丢弃（只有 `status="template"` 才是示例占位，当前 0 条）
-- **国标归档覆盖**：128,689 条按 GB/T 4754 四级归档，覆盖 **46 个**国标大类（另有 2,196 条未归类）；门类/小类明细见 `data/DATA_STATS.md`
-- 覆盖地区：**29 个城市**（长三角：苏州、宁波、上海、无锡、杭州、嘉兴等；珠三角：东莞、深圳、佛山、广州等），并含县级市/区维度；明细见 `data/region-index.json`
-  - 2026-09-08 补采：杭州 480→1489、绍兴 181→1251、惠州 174→1386、中山 155→1725、珠海 21→799
-  - **按城市检索**：先用 `data/region-index.json` 快速定位目标城市的所有供应商 ID，再按 ID 读详情，无需全量扫描
-  - **按行业检索**：先用 `data/industry-index.json` 取目标行业的 ID 列表，再与城市 ID 取交集
-- **数据策略**：座机/400/手机号一律完整展示（公开名录数据，企业自行公开的经营联系方式），不做星号脱敏；禁止编造号码
-- 如企业要求更正/删除联系方式，引导其通过 GitHub Issue 提交
-
-## 贡献
-
-- 新增/更正供应商：编辑 `data/gb/` 对应小类文件 + 提 PR，见 `docs/CONTRIBUTING.md`
-- 企业申诉更新/删除自己的信息：GitHub Issue
+*抓取 / 翻译 / 派生重建 / 发布流水线属本地工厂资产，不在本仓库。
+本仓库只承载「让客户的 Agent 找到制造业供应商」的公开产物。*

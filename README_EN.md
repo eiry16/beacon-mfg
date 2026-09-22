@@ -85,9 +85,9 @@ Top classes (full list in `data/industry-index.json`): 6210 Full-service Restaur
 > **Pending**: 8,617 records — real businesses from public POI directories, phone numbers pending manual verification. These are **not** placeholder data; they are real companies. Retain in search results.
 
 **English** (`data/en/gb/`, same four-level GB archive): **135072 English-mirror records**
-for overseas agents/buyers — kept at **1:1 by `id`** with the Chinese dataset via
-`scripts/en_backfill.py` (incremental, resumable) + `scripts/en_sync_industry.py` for
-the `industry_en` label (English GB/T 4754 class names).
+for overseas agents/buyers — kept at **1:1 by `id`** with the Chinese dataset.
+The `industry_en` label (English GB/T 4754 class names) is maintained by the local
+factory pipeline, which is not part of this repo.
 
 > **Fast region search:** use `data/region-index.json` to locate companies by city without scanning full category files.
 
@@ -97,8 +97,7 @@ the `industry_en` label (English GB/T 4754 class names).
 
 - Public business info only. No personal data. Each record carries `source + verified_at`.
 - Companies may request correction/removal of their info via GitHub Issue.
-- Anti-forking / anti-scraping strategy: [docs/ANTI_COPYING.md](docs/ANTI_COPYING.md).
-
+- 
 ## License
 
 - Code: MIT
