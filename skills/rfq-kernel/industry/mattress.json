@@ -1,7 +1,7 @@
 {
   "pack_id": "mattress",
   "display_name": "床垫",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "extends": "_base",
   "description": "第二个行业包。用途是验证「新增行业只加 pack，不碰 schema/ 内核」。",
 
@@ -54,11 +54,25 @@
 
   "vocab": {
     "床垫": { "canonical": "mattress.standard", "confidence": 0.95 },
-    "席梦思": { "canonical": "mattress.spring", "confidence": 0.85 },
+    "弹簧床垫": { "canonical": "mattress.spring", "confidence": 0.92 },
+    "乳胶床垫": { "canonical": "mattress.latex", "confidence": 0.92 },
     "乳胶垫": { "canonical": "mattress.latex", "confidence": 0.9 },
     "记忆棉": { "canonical": "mattress.memory_foam", "confidence": 0.9 },
+    "记忆棉床垫": { "canonical": "mattress.memory_foam", "confidence": 0.92 },
+    "椰棕床垫": { "canonical": "mattress.coir", "confidence": 0.9 },
+    "棕垫": { "canonical": "mattress.coir", "confidence": 0.88 },
+    "酒店床垫": { "canonical": "mattress.hotel", "confidence": 0.85 },
+    "折叠床垫": { "canonical": "mattress.folding", "confidence": 0.85 },
+    "榻榻米床垫": { "canonical": "mattress.tatami", "confidence": 0.85 },
+    "睡垫": { "canonical": "mattress.pad", "confidence": 0.8 },
+    "床褥": { "canonical": "mattress.pad", "confidence": 0.8 },
+    "席梦思": { "canonical": "mattress.spring", "confidence": 0.85 },
     "独立弹簧": { "canonical": "mattress.pocket_spring", "confidence": 0.9 },
     "mattress": { "canonical": "mattress.standard", "confidence": 0.95 },
+    "spring mattress": { "canonical": "mattress.spring", "confidence": 0.92 },
+    "latex mattress": { "canonical": "mattress.latex", "confidence": 0.92 },
+    "memory foam": { "canonical": "mattress.memory_foam", "confidence": 0.9 },
+    "foam mattress": { "canonical": "mattress.memory_foam", "confidence": 0.85 },
     "pocket spring": { "canonical": "mattress.pocket_spring", "confidence": 0.9 }
   },
 

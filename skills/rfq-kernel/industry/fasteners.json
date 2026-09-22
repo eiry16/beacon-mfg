@@ -1,9 +1,9 @@
 {
   "pack_id": "fasteners",
   "display_name": "标准件",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "extends": "_base",
-  "description": "螺丝 / 螺母 / 垫圈 / 螺栓 / 销。beacon-mfg 一级品类『标准件』。",
+  "description": "螺丝 / 螺母 / 垫圈 / 螺栓 / 销。beacon-mfg 一级品类『标准件』（GB 3482 紧固件制造）。",
 
   "attributes": {
     "product_type": {
@@ -32,9 +32,28 @@
     "标准件": { "canonical": "fasteners.screw", "confidence": 0.85 },
     "紧固件": { "canonical": "fasteners.screw", "confidence": 0.85 },
     "螺丝": { "canonical": "fasteners.screw", "confidence": 0.95 },
+    "螺钉": { "canonical": "fasteners.screw", "confidence": 0.92 },
     "螺栓": { "canonical": "fasteners.bolt", "confidence": 0.95 },
+    "螺柱": { "canonical": "fasteners.bolt", "confidence": 0.9 },
     "螺母": { "canonical": "fasteners.nut", "confidence": 0.95 },
-    "fastener": { "canonical": "fasteners.screw", "confidence": 0.9 }
+    "垫圈": { "canonical": "fasteners.washer", "confidence": 0.92 },
+    "销": { "canonical": "fasteners.pin", "confidence": 0.85 },
+    "销钉": { "canonical": "fasteners.pin", "confidence": 0.9 },
+    "铆钉": { "canonical": "fasteners.rivet", "confidence": 0.9 },
+    "膨胀螺栓": { "canonical": "fasteners.bolt", "confidence": 0.88 },
+    "自攻螺丝": { "canonical": "fasteners.screw", "confidence": 0.88 },
+    "内六角": { "canonical": "fasteners.screw", "confidence": 0.85 },
+    "外六角": { "canonical": "fasteners.bolt", "confidence": 0.85 },
+    "牙条": { "canonical": "fasteners.rod", "confidence": 0.85 },
+    "地脚螺栓": { "canonical": "fasteners.bolt", "confidence": 0.85 },
+    "不锈钢紧固件": { "canonical": "fasteners.screw", "confidence": 0.85 },
+    "非标紧固件": { "canonical": "fasteners.screw", "confidence": 0.82 },
+    "fastener": { "canonical": "fasteners.screw", "confidence": 0.9 },
+    "screw": { "canonical": "fasteners.screw", "confidence": 0.95 },
+    "bolt": { "canonical": "fasteners.bolt", "confidence": 0.95 },
+    "nut": { "canonical": "fasteners.nut", "confidence": 0.95 },
+    "washer": { "canonical": "fasteners.washer", "confidence": 0.92 },
+    "rivet": { "canonical": "fasteners.rivet", "confidence": 0.9 }
   },
 
   "negative_capability_hints": [

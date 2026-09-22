@@ -1,7 +1,7 @@
 {
   "pack_id": "electronics",
   "display_name": "电子元器件",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "extends": "_base",
   "description": "PCB / PCBA / 连接器 / 线束 / SMT。beacon-mfg 一级品类『电子元器件』。",
 
@@ -27,17 +27,37 @@
 
   "vocab": {
     "电子": { "canonical": "electronics.pcba", "confidence": 0.7 },
+    "电子元件": { "canonical": "electronics.component", "confidence": 0.85 },
+    "电子部件": { "canonical": "electronics.component", "confidence": 0.85 },
+    "电子组件": { "canonical": "electronics.component", "confidence": 0.85 },
     "电路板": { "canonical": "electronics.pcb", "confidence": 0.9 },
+    "线路板": { "canonical": "electronics.pcb", "confidence": 0.85 },
+    "控制板": { "canonical": "electronics.pcb", "confidence": 0.8 },
+    "主板": { "canonical": "electronics.pcb", "confidence": 0.78 },
     "PCBA": { "canonical": "electronics.pcba", "confidence": 0.95 },
+    "电子制造": { "canonical": "electronics.pcba", "confidence": 0.82 },
+    "电子组装": { "canonical": "electronics.pcba", "confidence": 0.82 },
+    "EMS": { "canonical": "electronics.ems", "confidence": 0.85 },
     "元器件": { "canonical": "electronics.component", "confidence": 0.85 },
     "SMT": { "canonical": "electronics.smt", "confidence": 0.9 },
     "贴片": { "canonical": "electronics.smt", "confidence": 0.85 },
+    "贴片加工": { "canonical": "electronics.smt", "confidence": 0.85 },
+    "回流焊": { "canonical": "electronics.smt", "confidence": 0.8 },
+    "波峰焊": { "canonical": "electronics.smt", "confidence": 0.8 },
     "集成电路": { "canonical": "electronics.ic", "confidence": 0.9 },
     "芯片": { "canonical": "electronics.ic", "confidence": 0.9 },
     "IC": { "canonical": "electronics.ic", "confidence": 0.85 },
     "封装测试": { "canonical": "electronics.test", "confidence": 0.85 },
-    "线路板": { "canonical": "electronics.pcb", "confidence": 0.85 },
-    "pcb": { "canonical": "electronics.pcb", "confidence": 0.9 }
+    "连接器": { "canonical": "electronics.connector", "confidence": 0.85 },
+    "接插件": { "canonical": "electronics.connector", "confidence": 0.85 },
+    "线束": { "canonical": "electronics.harness", "confidence": 0.85 },
+    "排线": { "canonical": "electronics.harness", "confidence": 0.8 },
+    "模组": { "canonical": "electronics.module", "confidence": 0.78 },
+    "pcb": { "canonical": "electronics.pcb", "confidence": 0.9 },
+    "pcba": { "canonical": "electronics.pcba", "confidence": 0.95 },
+    "connector": { "canonical": "electronics.connector", "confidence": 0.85 },
+    "harness": { "canonical": "electronics.harness", "confidence": 0.85 },
+    "module": { "canonical": "electronics.module", "confidence": 0.78 }
   },
 
   "negative_capability_hints": [

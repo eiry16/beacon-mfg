@@ -1,0 +1,99 @@
+{
+  "pack_id": "material_handling",
+  "display_name": "输送/物流搬运设备",
+  "version": "0.2.0",
+  "extends": "_base",
+  "description": "输送线 / 输送机 / 传送带 / 提升机 / 分拣线等连续搬运与物料搬运设备。GB 3434 连续搬运设备制造（输送机械/装卸机械/给料机械）是语义最贴切的国标码。本 pack 补的是「产品词→行业」语义映射缺口：许多输送厂把品类写在厂名里、国标码却落在 3360/3399/3451/3484，故召回靠厂名，行业收敛靠名称感知防误删（见 mcp_bridge._PACK_NAME_HINTS）。",
+
+  "attributes": {
+    "product_type": {
+      "label": "设备类型",
+      "type": "enum",
+      "values": ["输送线", "输送机", "皮带线", "滚筒线", "链板线", "倍速链", "提升机", "分拣线", "装配线"],
+      "tier": "required"
+    },
+    "material": {
+      "label": "机架材料",
+      "type": "enum",
+      "values": ["碳钢", "不锈钢", "铝型材", "工程塑料"],
+      "tier": "late"
+    },
+    "max_load_kg": {
+      "label": "最大线载荷",
+      "type": "number",
+      "unit": "kg/m",
+      "min": 5,
+      "max": 2000,
+      "tier": "late"
+    },
+    "speed_m_min": {
+      "label": "线速度",
+      "type": "number",
+      "unit": "m/min",
+      "min": 1,
+      "max": 60,
+      "tier": "late"
+    },
+    "length_m": {
+      "label": "最大线长",
+      "type": "number",
+      "unit": "m",
+      "min": 1,
+      "max": 200,
+      "tier": "late"
+    }
+  },
+
+  "certifications": ["ISO9001", "ISO14001"],
+
+  "recall_terms": [
+    "输送线", "输送机", "输送带", "传送带", "传输线", "传输",
+    "流水线", "链板线", "倍速链", "分拣线", "提升机", "滚筒线", "皮带线", "连续搬运"
+  ],
+
+  "vocab": {
+    "输送线": { "canonical": "material_handling.line", "confidence": 0.95 },
+    "输送机": { "canonical": "material_handling.conveyor", "confidence": 0.95 },
+    "输送设备": { "canonical": "material_handling.conveyor", "confidence": 0.95 },
+    "输送机械": { "canonical": "material_handling.conveyor", "confidence": 0.92 },
+    "输送": { "canonical": "material_handling.conveyor", "confidence": 0.9 },
+    "输送带": { "canonical": "material_handling.belt", "confidence": 0.9 },
+    "传送带": { "canonical": "material_handling.belt", "confidence": 0.95 },
+    "传输设备": { "canonical": "material_handling.transfer", "confidence": 0.92 },
+    "传输线": { "canonical": "material_handling.transfer", "confidence": 0.9 },
+    "流水线": { "canonical": "material_handling.line", "confidence": 0.9 },
+    "装配线": { "canonical": "material_handling.assembly", "confidence": 0.88 },
+    "滚筒线": { "canonical": "material_handling.roller", "confidence": 0.92 },
+    "皮带线": { "canonical": "material_handling.beltline", "confidence": 0.9 },
+    "链板线": { "canonical": "material_handling.chainplate", "confidence": 0.92 },
+    "倍速链": { "canonical": "material_handling.speedchain", "confidence": 0.92 },
+    "分拣线": { "canonical": "material_handling.sorting", "confidence": 0.92 },
+    "提升机": { "canonical": "material_handling.elevator", "confidence": 0.9 },
+    "连续搬运设备": { "canonical": "material_handling.conveyor", "confidence": 0.9 },
+    "物流输送": { "canonical": "material_handling.line", "confidence": 0.85 },
+    "自动化输送": { "canonical": "material_handling.line", "confidence": 0.9 },
+    "输送系统": { "canonical": "material_handling.system", "confidence": 0.85 },
+    "风送线": { "canonical": "material_handling.air_conveyor", "confidence": 0.92 },
+    "PET风送线": { "canonical": "material_handling.air_conveyor", "confidence": 0.92 },
+    "易拉罐风送线": { "canonical": "material_handling.air_conveyor", "confidence": 0.92 },
+    "易拉罐风送": { "canonical": "material_handling.air_conveyor", "confidence": 0.9 },
+    "瓶盖风送": { "canonical": "material_handling.air_conveyor", "confidence": 0.9 },
+    "瓶胚风送": { "canonical": "material_handling.air_conveyor", "confidence": 0.9 },
+    "气浮线": { "canonical": "material_handling.air_float", "confidence": 0.92 },
+    "真空桥": { "canonical": "material_handling.vacuum_bridge", "confidence": 0.9 },
+    "无水洗罐机": { "canonical": "material_handling.can_washer", "confidence": 0.9 },
+    "平面输送链": { "canonical": "material_handling.flat_chain", "confidence": 0.9 },
+    "机器人工作站": { "canonical": "material_handling.robot_cell", "confidence": 0.88 },
+    "贴标工作站": { "canonical": "material_handling.labeling_cell", "confidence": 0.88 },
+    "点胶工作站": { "canonical": "material_handling.dispensing_cell", "confidence": 0.88 },
+    "conveyor": { "canonical": "material_handling.conveyor", "confidence": 0.95 },
+    "belt conveyor": { "canonical": "material_handling.belt", "confidence": 0.95 },
+    "material handling": { "canonical": "material_handling.conveyor", "confidence": 0.9 },
+    "transfer line": { "canonical": "material_handling.transfer", "confidence": 0.9 }
+  },
+
+  "negative_capability_hints": [
+    "不做整机电气控制外包（外协）",
+    "不做非标大型立体仓库（另询）"
+  ]
+}
