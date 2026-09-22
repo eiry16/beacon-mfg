@@ -195,5 +195,54 @@
       "evidence": "宠物"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0147278",
+    "company": "杭州橙萤宠物友好公寓",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "民宿"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "余杭区"
+    },
+    "address": "仓前街道文一西路1329号富力中心2幢1021室",
+    "contact_phone": "137****6958; 191****6003",
+    "lat": 30.273529,
+    "lng": 119.994152,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L69SVFTG",
+      "type": "住宿服务;旅馆招待所;旅馆招待所",
+      "typecode": "100200",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "仓前",
+      "adcode": "330110",
+      "search_keyword": "民宿"
+    },
+    "industry": {
+      "code": "8229",
+      "name": "其他宠物服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 其他服务业 > 宠物服务 > 其他宠物服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宠物"
+    },
+    "is_manufacturer": false
   }
 ]

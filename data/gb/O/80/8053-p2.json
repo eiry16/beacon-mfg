@@ -104192,5 +104192,54 @@
       "evidence": "养生馆"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0149863",
+    "company": "IDSPACE歌林公寓",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "精品民宿"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "天鹅荡路1-1号iDPARK歌林公园歌林公寓",
+    "contact_phone": "132****6228; 176****3516",
+    "lat": 31.190725,
+    "lng": 120.611425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L02DNIPS",
+      "type": "商务住宅;商务住宅相关;商务住宅相关",
+      "typecode": "120000",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "天鹅荡路",
+      "adcode": "320506",
+      "search_keyword": "精品民宿"
+    },
+    "industry": {
+      "code": "8053",
+      "name": "养生保健服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 洗浴和保健养生服务 > 养生保健服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "SPA"
+    },
+    "is_manufacturer": false
   }
 ]

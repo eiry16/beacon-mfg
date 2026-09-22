@@ -30776,7 +30776,9 @@
     "company": "四哥饭店",
     "category": "住宿和餐饮业",
     "keywords": [
-      "饭店"
+      "饭店",
+      "民宿",
+      "精品民宿"
     ],
     "region": {
       "province": "四川",
@@ -42283,6 +42285,351 @@
       "confidence": "high",
       "source": "name",
       "evidence": "餐馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0147374",
+    "company": "建德骆瑶成饭店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "民宿",
+      "精品民宿"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "建德"
+    },
+    "address": "下涯镇之江村前溪头38号",
+    "contact_phone": "138****6641",
+    "lat": 29.494936,
+    "lng": 119.375117,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IDAP3G1Q",
+      "type": "住宿服务;住宿服务相关;住宿服务相关",
+      "typecode": "100000",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330182",
+      "search_keyword": "民宿"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "饭店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0147945",
+    "company": "归墅火锅•半山咖啡",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "民宿",
+      "精品民宿"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "金堂县"
+    },
+    "address": "栖贤社区白坡",
+    "contact_phone": "193****9396",
+    "lat": 30.847873,
+    "lng": 104.478724,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IA9GL40Y",
+      "type": "体育休闲服务;休闲场所;休闲场所",
+      "typecode": "080500",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "510121",
+      "search_keyword": "民宿"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "火锅"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0148741",
+    "company": "苏州周湾里农家乐饭店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "客栈"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "东山镇莫厘村周湾里33号",
+    "contact_phone": "138****7672; +861056320612; 3309426",
+    "lat": 31.095538,
+    "lng": 120.383175,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G37U9NBF",
+      "type": "住宿服务;旅馆招待所;旅馆招待所",
+      "typecode": "100200",
+      "alias": "",
+      "tag": "",
+      "keytag": "客栈",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "客栈"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "饭店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0149457",
+    "company": "黄龙溪湖庭阁酒楼",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "客栈"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "双流区"
+    },
+    "address": "黄龙溪古镇下河街2号",
+    "contact_phone": "136****2565; 137****0179",
+    "lat": 30.31221,
+    "lng": 103.97024,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I13ZOCV6",
+      "type": "住宿服务;住宿服务相关;住宿服务相关",
+      "typecode": "100000",
+      "alias": "",
+      "tag": "",
+      "keytag": "住宿服务,住宿服务相关,住宿服务相关",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "四川天府新区成都直管区",
+      "adcode": "510116",
+      "search_keyword": "客栈"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "酒楼"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0149666",
+    "company": "虞爱山居·特色农家菜(山前坊店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "精品民宿"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "虞山南路11号",
+    "contact_phone": "180****0968",
+    "lat": 31.647005,
+    "lng": 120.728679,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HBDHSGV8",
+      "type": "住宿服务;住宿服务相关;住宿服务相关",
+      "typecode": "100000",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "虞山公园",
+      "adcode": "320581",
+      "search_keyword": "精品民宿"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "农家菜"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0150533",
+    "company": "不吃火锅重庆人公寓(蜀都大道通惠门路1号分店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "精品民宿"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "青羊区"
+    },
+    "address": "蜀都大道通惠门路锦都1期2幢2单元",
+    "contact_phone": "028-56320606; +861056320612; 5757053",
+    "lat": 30.66326,
+    "lng": 104.049785,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLGUN3R",
+      "type": "住宿服务;住宿服务相关;住宿服务相关",
+      "typecode": "100000",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "长顺街",
+      "adcode": "510105",
+      "search_keyword": "精品民宿"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "火锅"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0150620",
+    "company": "崇州金水苑饭店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "精品民宿"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "崇州"
+    },
+    "address": "街子古镇清明街195号",
+    "contact_phone": "028-82297888; 135****9588; +861056320612; 1016086",
+    "lat": 30.81668,
+    "lng": 103.557939,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFH2NWM3",
+      "type": "住宿服务;住宿服务相关;住宿服务相关|体育休闲服务;休闲场所;休闲场所",
+      "typecode": "100000|080500",
+      "alias": "花园饭店",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "街子",
+      "adcode": "510184",
+      "search_keyword": "精品民宿"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "饭店"
     },
     "is_manufacturer": false
   }

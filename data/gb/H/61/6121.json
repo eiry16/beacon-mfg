@@ -10386,5 +10386,55 @@
       "evidence": "连锁酒店"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0146998",
+    "company": "98连锁酒店(大井小学店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "民宿",
+      "精品民宿"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "临平区"
+    },
+    "address": "乔司街道和睦桥村12组八字桥161号",
+    "contact_phone": "0571-86290898",
+    "lat": 30.348351,
+    "lng": 120.251499,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG2U3VH",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "乔司",
+      "adcode": "330113",
+      "search_keyword": "民宿"
+    },
+    "industry": {
+      "code": "6121",
+      "name": "经济型连锁酒店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 一般旅馆 > 经济型连锁酒店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "连锁酒店"
+    },
+    "is_manufacturer": false
   }
 ]
