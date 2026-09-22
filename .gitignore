@@ -51,6 +51,23 @@ scripts/
 APK/
 pages/
 server/
+# ── 零读者残留（2026-09-22 清出）───────────────────────────────────────────────
+# 判据：在 mcp/ · skills/rfq-kernel/src/ · agent-skill/ · APK 的 Kotlin 源码里
+# grep 不到任何读者（含字符串路径与 import 两种形态）。
+# 注：skills/schema/envelope.json 与 rfq-kernel 自己的 schema/envelope.schema.json
+# 同名但无关 —— 被读的是后者（kernel.py 的 envelope() 函数与其自带 schema/）。
+skills/profiles/
+skills/schema/
+skills/TEMPLATE.md
+skills/README.md
+skills/registry/index.json
+skills/registry/gb-proc-map.json
+skills/registry/category-conflicts.json
+data/fetch_cursor.json
+data/district_cache.json
+# ⚠ skills/vendors/{id}/capability.json **不能**忽略：它是 rfq-kernel
+# beacon_adapter._card_path() 在 registry/capability 缺失时的兜底读路径（属 MCP 运行链）。
+# ⚠ skills/rfq-kernel/suppliers/** 同理：kernel.load_suppliers() 会 glob 读取。
 # ⚠ 脱敏 filter 的 clean 端（scripts/mask_phones.py）随工厂一起不入库，这是**有意**的：
 #   · 入库内容本身已是掩码态（138****0000），clone 拿到的就是掩码版；
 #   · filter.maskphone.smudge = cat（内建命令），新 clone 的 checkout 不需要任何脚本；
@@ -105,7 +122,7 @@ _build_precheck.log
 # 用来证明 MCP 运行边界成立。随工厂留在本地，可重复跑；别入库（它 import mcp/server.py
 # 需要仓库在工作树里，属本地检查）。
 _mcp_smoke.py
-_patch_gitignore.py
+_patch_*.py
 _gitignore_newblock.txt
 
 # OS
