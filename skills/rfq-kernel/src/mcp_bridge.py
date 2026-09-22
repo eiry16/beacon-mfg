@@ -94,18 +94,22 @@ def _values_per(cards: list, getter) -> list:
     return [getter(c) for c in cards]
 
 
+_MAX_CLARIFY_OPTIONS = 12   # 单个澄清维度最多给几个候选值（降低客户 agent/人的选择负荷）
+
+
 def _freq_options(values_per_card: list) -> list:
-    """把每卡的候选值聚合成按出现频次降序的去重列表（最高频在前）。
+    """把每卡的候选值聚合成按出现频次降序的去重列表（最高频在前，最多 _MAX_CLARIFY_OPTIONS 个）。
 
     澄清问题据此排序：高频（真正代表本行业的主流值）先问，
     避免 a 字母开头的跨行业噪声（anodizing/POM）浮到顶部误导客户 agent 选错过滤条件。
+    长尾厂的能力字段很长，不加上限会一次抛几十个选项、反而增加使用负荷。
     """
     cnt = Counter()
     for vs in values_per_card:
         for v in (vs or []):
             if v:
                 cnt[v] += 1
-    return [k for k, _ in cnt.most_common()]
+    return [k for k, _ in cnt.most_common(_MAX_CLARIFY_OPTIONS)]
 
 
 # ----------------------------------------------------- 澄清问题生成
@@ -131,6 +135,7 @@ def _build_clarifications(cards: list, pack: dict, rfq: dict, exclude: list,
         cert_opts.sort(key=lambda k: -cert_cnt[k])
     else:
         cert_opts = [k for k, _ in cert_cnt.most_common()]
+    cert_opts = cert_opts[:_MAX_CLARIFY_OPTIONS]
     if cert_opts:
         dims["certifications_required"] = (
             "合规认证", cert_opts,
@@ -499,9 +504,13 @@ def refine_session(state: dict, action: str, value: str | None = None) -> dict:
             "legal_name": r["legal_name"],
             "region": r["region"],
             "blended_score": r.get("blended_score"),
+            "tier": r.get("tier"),
+            "cert_flag": _cert_flag(r.get("cert_eval")),
             "why": "召回相关度 + 结构化匹配度综合最高，且认证/材料/工艺与需求一致。",
             "cert_summary": r.get("cert_summary"),
             "rfq_reachable": r.get("rfq_reachable"),
+            "has_card": r.get("has_card"),
+            "claim_status": r.get("claim_status"),
         }
 
     return {"stage": "recommending", "action": action or "unknown",
