@@ -16,13 +16,14 @@ from collections import Counter
 
 from kernel import capacity_state
 from intake import parse_free_text, narrow
-from beacon_adapter import fingerprint_to_card, load_real_card, pack_of_gb
+from beacon_adapter import fingerprint_to_card, load_real_card, pack_of_gb, GB_TO_PACK
 
-# 行业 pack 候选 id（含 G5 补齐的 7 类 + 原有 3 类）
+# 行业 pack 候选 id（含 G5 补齐的 7 类 + 原有 3 类 + material_handling）
 _PACK_IDS = [
     "drinkware", "mattress", "sheet_metal",
     "machining", "injection", "die_casting", "electronics",
     "surface_treatment", "fasteners", "raw_material",
+    "material_handling",
 ]
 _PACKS: dict = {}
 
@@ -37,6 +38,30 @@ def _all_packs() -> dict:
             except Exception:
                 pass
     return _PACKS
+
+
+# 名称感知防误删：当候选供应商的厂名含本 pack 的具体产品词组时，
+# 即使其国标码(gb)被 pack_of_gb 归到「另一个 pack」，也视为本行业、绝不误删。
+# 这是 beacon-mfg 红线「真实企业必须被看见」的兜底：许多长尾厂把品类写在厂名里，
+# 国标码却落在别的类（如输送厂 gb 常是 3360/3399/3451/3484 而非 3434）。
+# 关键词只收「具体产品词组」，避免歧义单字（如 滚筒 会撞 滚筒洗衣机、物流/设备 过宽）。
+_PACK_NAME_HINTS = {
+    "sheet_metal": ["钣金", "冲压件", "冲压加工", "金属结构件", "机箱", "机柜", "金属外壳"],
+    "machining": ["机加工", "机械加工", "数控", "精密机械", "机械零部件", "非标零件", "非标加工"],
+    "injection": ["注塑", "塑料件", "塑胶", "注塑件"],
+    "die_casting": ["压铸", "铸造"],
+    "electronics": ["电路板", "PCBA", "线路板", "电子元件", "芯片", "SMT", "连接器", "线束"],
+    "surface_treatment": ["表面处理", "阳极氧化", "电镀", "喷涂", "电泳", "热处理"],
+    "fasteners": ["螺丝", "螺栓", "螺母", "紧固件", "标准件", "铆钉", "垫圈"],
+    "raw_material": ["钢材", "铝材", "不锈钢", "铝型材", "铜材", "原材料"],
+    "drinkware": ["保温杯", "随行杯", "真空杯", "玻璃杯", "水壶", "保温壶"],
+    "mattress": ["床垫", "席梦思", "弹簧床垫", "乳胶垫", "记忆棉"],
+    "material_handling": [
+        "输送线", "输送机", "输送设备", "输送机械", "输送带", "传送带",
+        "传输设备", "传输线", "流水线", "滚筒线", "皮带线", "链板线",
+        "倍速链", "分拣线", "提升机", "连续搬运",
+    ],
+}
 
 
 def _load_audience(aid: str) -> dict:
@@ -69,6 +94,47 @@ def pack_vocab_surfaces(pack_id: str | None) -> list:
         return []
     pack = _all_packs().get(pack_id)
     return list((pack or {}).get("vocab", {}).keys())
+
+
+def pack_recall_terms(pack_id: str | None) -> list:
+    """召回扩词：并入检索 query 的「精准」产品词组。
+
+    与 vocab 解耦 —— vocab 承 full 词面（含 2 字泛词如「输送」「设备」），用于
+    detect_industry / resolve_term；而召回侧若把全量 vocab 拼进 query，宽泛 2 字词
+    （尤其「设备」「机械」作子串）会把 OR 召回池冲到 top_k 上限，反而把仅靠厂名弱匹配的
+    长尾真实企业（如「青岛环球输送带洛阳轴承」只命中「输送带」）挤出候选。
+    故召回扩词只取 pack 显式声明的 `recall_terms`（精准词组，不含宽泛子串）；
+    未声明时回退到全量 vocab（旧行为，其他 pack 维持不变）。
+    """
+    if not pack_id:
+        return []
+    pack = _all_packs().get(pack_id)
+    if not pack:
+        return []
+    rt = pack.get("recall_terms")
+    if isinstance(rt, list) and rt:
+        return list(rt)
+    return list(pack.get("vocab", {}).keys())
+
+
+def gbs_of_pack(pack_id: str | None) -> set:
+    """某 pack 对应的全部国标码（4 位小类 + 2 位门类）。供召回侧做「GB 种子」补召。
+
+    语义：检测到某行业时，其国标码分类下的企业（如 conveyor 的 gb=3434 连续搬运设备制造）
+    即便厂名不含召回词，也应在语义上归该行业、被召回。这是「产品词→国标码语义映射」的落地。
+    加法召回，绝不误删真实企业；+1000 国标命中加成自然把它们顶到前列。
+    """
+    out: set = set()
+    if not pack_id:
+        return out
+    for code, pid in GB_TO_PACK.items():
+        if pid == pack_id:
+            out.add(code)
+    if pack_id == "raw_material":      # 31 黑色 / 32 有色 冶炼压延
+        out.update({"31", "32"})
+    elif pack_id == "electronics":     # 39 计算机通信电子设备
+        out.add("39")
+    return out
 
 
 # ------------------------------------------------- 区分度（复用内核思路）
@@ -200,9 +266,16 @@ def build_session(demand_text: str, recs: list, pack_id: str | None,
     # gb 为空或未知的一律保留，绝不误删真实企业（beacon-mfg 红线）。
     # 若剔除后池将变空（极端情况），则放弃剔除，保留原池。
     if pack_id:
+        hints = _PACK_NAME_HINTS.get(pack_id, [])
         def _cross(card):
             pg = pack_of_gb(card.get("gb"))
-            return pg is not None and pg != pack_id
+            if pg is not None and pg != pack_id:
+                # 名称感知兜底：厂名含本 pack 具体产品词组 → 视为本行业，保住真实企业
+                nm = card.get("legal_name") or ""
+                if hints and any(h in nm for h in hints):
+                    return False
+                return True
+            return False
         dropped = [c for c in cards if _cross(c)]
         if dropped and len(cards) > len(dropped):
             cards = [c for c in cards if not _cross(c)]

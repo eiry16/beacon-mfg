@@ -13,7 +13,10 @@ skills/rfq-kernel/
     rfq.schema.json               # 标准询价单 RFQ
     envelope.schema.json          # 工厂响应统一信封
     supplier_card.schema.json     # 标准化供应商卡（含认证对象强校验）
-  industry/                       # 行业 pack：drinkware / mattress / sheet_metal
+  industry/                       # 行业 pack（11 个）：drinkware / mattress / sheet_metal /
+                                  #   machining / injection / die_casting / electronics /
+                                  #   surface_treatment / fasteners / raw_material /
+                                  #   material_handling（输送/物流搬运，2026-09-22 新增）
   audience/                       # 客户视图：intl_buyer / domestic_downstream
   suppliers/                      # 示例供应商卡（认证已改为对象格式）
   src/
