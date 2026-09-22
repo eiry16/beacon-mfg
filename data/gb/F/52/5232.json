@@ -403,5 +403,54 @@
       "evidence": "服装"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0149678",
+    "company": "美约·智能美宿(常熟天虹服装城店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "精品民宿"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "莲花路138号",
+    "contact_phone": "173****9920",
+    "lat": 31.632075,
+    "lng": 120.743375,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LULC745D",
+      "type": "住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "民宿",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
+      "search_keyword": "精品民宿"
+    },
+    "industry": {
+      "code": "5232",
+      "name": "服装零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 服装零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "服装"
+    },
+    "is_manufacturer": false
   }
 ]

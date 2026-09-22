@@ -5955,5 +5955,54 @@
       "evidence": "木业"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0150335",
+    "company": "屿材木材厂",
+    "category": "注塑成型",
+    "keywords": [
+      "模具加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "三水区"
+    },
+    "address": "勇合杰压铸模具西南侧150米",
+    "contact_phone": "待核实",
+    "lat": 23.115775,
+    "lng": 112.894175,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MA6AK25G",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440607",
+      "search_keyword": "模具加工"
+    },
+    "industry": {
+      "code": "2019",
+      "name": "其他木材加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 其他木材加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "木材"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -4033,5 +4033,54 @@
       "evidence": "汽配"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151119",
+    "company": "路彩汽车用品",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "禅城区"
+    },
+    "address": "快捷汽配城C区7座717号",
+    "contact_phone": "0757-82801877; 0757-89911717; 137****4526",
+    "lat": 23.052168,
+    "lng": 113.099381,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F506D5F",
+      "type": "汽车服务;汽车养护/装饰;汽车养护",
+      "typecode": "010400",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440604",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3660",
+      "name": "汽车车身、挂车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 汽车车身、挂车制造 > 汽车车身、挂车制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "车用"
+    },
+    "is_manufacturer": true
   }
 ]

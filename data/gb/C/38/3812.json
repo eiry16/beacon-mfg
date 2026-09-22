@@ -2190,5 +2190,54 @@
       "evidence": "电机"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0147834",
+    "company": "宁波市元宏电机模具制造有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "模具加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "象山县"
+    },
+    "address": "贤庠镇工业区",
+    "contact_phone": "待核实",
+    "lat": 29.576122,
+    "lng": 121.852155,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JDLCUG6G",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330225",
+      "search_keyword": "模具加工"
+    },
+    "industry": {
+      "code": "3812",
+      "name": "电动机制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电机制造 > 电动机制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电机"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -810,7 +810,8 @@
       "不锈钢",
       "钢材",
       "不锈钢材料",
-      "钢板"
+      "钢板",
+      "线路板"
     ],
     "region": {
       "province": "上海",
@@ -86800,6 +86801,202 @@
       "business_area": "",
       "adcode": "320281",
       "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0150038",
+    "company": "启拓钢材水磨加工厂",
+    "category": "注塑成型",
+    "keywords": [
+      "模具加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "光明区"
+    },
+    "address": "玉塘街道田寮社区第二工业区56栋一单元102",
+    "contact_phone": "138****9798",
+    "lat": 22.73463,
+    "lng": 113.902698,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6PUMQ5V",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "公明",
+      "adcode": "440311",
+      "search_keyword": "模具加工"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151183",
+    "company": "江苏钢材批发配送",
+    "category": "电子元器件",
+    "keywords": [
+      "线路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "滨湖区"
+    },
+    "address": "胡埭镇振胡北路60号3层",
+    "contact_phone": "139****9388",
+    "lat": 31.558279,
+    "lng": 120.127362,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6YSQCFN",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320211",
+      "search_keyword": "线路板"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151184",
+    "company": "钢材批发",
+    "category": "电子元器件",
+    "keywords": [
+      "线路板"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "奉贤区"
+    },
+    "address": "沪杭公路1491号",
+    "contact_phone": "186****5628",
+    "lat": 30.951761,
+    "lng": 121.448328,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRCZEWUJ",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310120",
+      "search_keyword": "线路板"
+    },
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151187",
+    "company": "龙牌石膏板(上海江杨钢材现货市场店)",
+    "category": "电子元器件",
+    "keywords": [
+      "线路板"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "宝山区"
+    },
+    "address": "江杨南路1518号木材区b1",
+    "contact_phone": "189****2970",
+    "lat": 31.334174,
+    "lng": 121.464685,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-22",
+    "imported_at": "2026-09-22",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKRAR3W",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "石膏板",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "泗塘小区",
+      "adcode": "310113",
+      "search_keyword": "线路板"
     },
     "industry": {
       "code": "3130",
