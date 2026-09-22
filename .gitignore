@@ -53,6 +53,18 @@ scripts/*
 # 不放行：别人 clone 后只能自己摸索 CF 的上传格式，而那个 API 是会静默成功的
 # （2026-09-09 实测：三种写法全部返回 success，站点却全线 404）。
 !scripts/deploy_pages.py
+# publish_r2.py 是 **R2 的唯一上传入口**（2026-09-22 起 L2 整层只由 R2 供给）。
+# 不放行：clone 后跑 postfetch → deploy_pages --with-worker --skip-vendors 会把
+# skills/vendors/** 从静态站摘掉（_worker.js 的路由指向 R2），而 R2 侧没有任何
+# 上传工具 → **整个 L2 层在站点上消失**，且 deploy_pages 仍 exit 0、首页仍 200，
+# 属于「看不出坏了的坏掉」。与 deploy_pages 放行的理由同构。
+# 纯标准库（urllib），密钥读 .env 环境变量，不含密钥与商业逻辑。
+!scripts/publish_r2.py
+# verify_r2.py 是「桶里的内容 == 工作树」的唯一核验器（R2 etag ↔ 本地 MD5 逐字节对拍）。
+# 不放行：L2 搬到 R2 之后，「桶里那份是不是最新的」没有任何别的手段能回答；
+# 那 6577 个陈旧对象的发现过程也无法被复现（结论不能只有我说了算）。
+# 纯标准库、只读、不写任何东西。
+!scripts/verify_r2.py
 # gen_capability_shards.py 是 L1 能力卡国标分片的唯一生成器。
 # 不放行的后果：客户照 SKILL.md 想按小类批量取能力卡 → 脚本不存在，
 # 又退化成 4136 次单文件请求。纯标准库，只依赖 gb_store（已放行）。
@@ -240,6 +252,8 @@ cjk_fix_*
 dist/
 # 部署打包的中间产物（deploy_pages.py 生成，200KB 压缩包，不进 Git）
 pages/dist.zip
+# wrangler 的本地状态目录（部署记录、binding 同步缓存），机器相关，不进 Git
+.wrangler/
 
 # ---------------------------------------------------------------------------
 # 安卓客户端（APK/）
