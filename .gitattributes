@@ -1,8 +1,17 @@
 # ── 手机号脱敏（方案 A：只脱敏 git，Pages/App 数据源保留全号，旧 App 无感）──
-# data/gb、data/en、phone-index 入库时由 scripts/mask_phones.py 作为 git clean filter
-# 自动脱敏（手机→138****0000，座机原样，已认领 claim.status=claimed/verified 保留全号）。
-# 工作树（磁盘）文件始终是全号 → Pages 部署读工作树 → App 照常拿全号+拨号。
-# filter 命令仅在本地 config（step_git 首次运行自动写入），本文件只声明 filter 名。
+# 下列路径在 `git add` 时由 scripts/mask_phones.py 作为 git clean filter 自动脱敏：
+#   手机 → 138****0000（等长替换，不改文件格式）
+#   座机 / 400 / 800 / 待核实 → 原样
+#   落在长十六进制串（MD5/SHA1/SHA256）里的 11 位片段 → 跳过（否则会改坏校验和）
+#   已认领（claim.status = claimed / verified）→ 保留全号
+# 工作树（磁盘）文件始终是全号 → Pages / R2 部署读工作树 → App 照常拿全号+拨号。
+#
+# 2026-09-22 扩面：此前只覆盖 data/**，导致 skills/registry/**（指纹、倒排索引等派生文件）
+# 与 docs/** 裸奔 —— 号码藏在 company 字段或派生文件里会明文推上 GitHub。
+# filter 命令仅在本地 config（step_git 首次运行自动写入），本文件只声明 filter 名；
+# 第三方 clone 未配置该 filter 时 git 仅告警并按 blob 原文检出（不影响只读消费）。
 data/gb/** filter=maskphone
 data/en/** filter=maskphone
 data/phone-index.jsonl filter=maskphone
+skills/registry/** filter=maskphone
+docs/** filter=maskphone
