@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://beaconmfg.dev/schema/rfq/0.1.0",
+  "title": "RFQ",
+  "description": "标准询价单。行业 pack 和客户视图都围绕它对齐，是整套内核的锚点。",
+  "type": "object",
+  "required": ["rfq_id", "schema_version", "status", "industry", "core", "provenance"],
+  "properties": {
+    "rfq_id": { "type": "string", "pattern": "^RFQ-[0-9]{8}-[0-9]{4}$" },
+    "schema_version": { "type": "string", "const": "0.1.0" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "clarified", "dispatched", "quoted", "closed"]
+    },
+    "industry": { "type": "string", "description": "指向 industry/<name>.json 的 pack id" },
+    "audience": { "type": "string", "description": "指向 audience/<name>.json 的 profile id" },
+
+    "core": {
+      "type": "object",
+      "description": "跨行业通用的询价字段。新增行业不得修改本节点。",
+      "required": ["product"],
+      "properties": {
+        "product": {
+          "type": "object",
+          "required": ["raw"],
+          "properties": {
+            "raw": { "type": "string", "description": "客户原话，永不覆盖" },
+            "normalized": { "type": "string", "description": "经 resolve_term 归一化后的标准词" },
+            "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "quantity": {
+          "type": "object",
+          "properties": {
+            "value": { "type": ["integer", "null"] },
+            "unit": { "type": "string", "enum": ["pcs", "sets", "kg", "m2"] }
+          }
+        },
+        "budget": {
+          "type": "object",
+          "properties": {
+            "currency": { "type": "string", "enum": ["CNY", "USD", "EUR"] },
+            "min": { "type": ["number", "null"] },
+            "max": { "type": ["number", "null"] }
+          }
+        },
+        "need_by": {
+          "type": "object",
+          "properties": {
+            "date": { "type": ["string", "null"], "format": "date" },
+            "flexible_days": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "incoterm": {
+          "type": "string",
+          "enum": ["EXW", "FOB", "CIF", "DDP", "UNSPECIFIED"]
+        },
+        "certifications_required": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "标准认证码（如 ISO9001 / FDA / LFGB）。取值域由 industry pack 的 certifications 定义。参与工厂硬过滤，且只接受『三方可验证』的认证（见 supplier_card.schema.json）。"
+        },
+        "qualification_terms": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "客户视图资格词（BSCI / OEM-ODM / 现货 等）。描述交易条件，不参与工厂硬过滤。"
+        },
+        "destination": { "type": ["string", "null"] }
+      }
+    },
+
+    "industry_ext": {
+      "type": "object",
+      "description": "行业特有属性。字段名与取值域由 industry/<pack>.json 的 attributes 定义。"
+    },
+
+    "provenance": {
+      "type": "object",
+      "description": "字段溯源。实现「宁可留空也不编造」与「推断必须显式回显」。",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["source"],
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": ["stated", "inferred", "default", "unknown"],
+            "description": "stated=客户明说 inferred=推断 default=跳过走默认 unknown=无值"
+          },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "note": { "type": ["string", "null"] },
+          "confirmed": {
+            "type": "boolean",
+            "description": "推断值是否已向客户回显并获确认。false 时不得进入正式询价。"
+          }
+        }
+      }
+    },
+
+    "open_questions": {
+      "type": "array",
+      "description": "尚未闭合的澄清项。分发前 required 层级必须清空。",
+      "items": {
+        "type": "object",
+        "required": ["field", "tier"],
+        "properties": {
+          "field": { "type": "string" },
+          "prompt": { "type": "string" },
+          "tier": {
+            "type": "string",
+            "enum": ["required", "inferrable", "late"],
+            "description": "required=必须问 inferrable=推断后回显 late=搜完再问"
+          },
+          "options": { "type": "array", "items": {} },
+          "default": {},
+          "discriminative_power": { "type": "number", "description": "该问题能把候选集切得多开，用于排序" }
+        }
+      }
+    },
+
+    "dispatched_to": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "收到同一份结构化 RFQ 的工厂 id 列表"
+    }
+  }
+}

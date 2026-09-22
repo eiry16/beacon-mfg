@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://beaconmfg.dev/schema/rfq-supplier/0.1.0",
+  "title": "RFQ Supplier Card",
+  "description": "rfq-kernel 标准化的供应商卡（能力卡的『匹配视图』）。可由 beacon-mfg 真实能力卡经 adapters/beacon_adapter.py 单向转换得到，也可由工厂直接填写。认证必须是三方可验证的对象。",
+  "type": "object",
+  "required": ["supplier_id", "legal_name", "industry", "core"],
+  "properties": {
+    "supplier_id": { "type": "string", "description": "与 beacon-mfg 的 CN-MFG-XXXXXXX 对齐" },
+    "legal_name": { "type": "string" },
+    "industry": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "指向 industry/<pack_id>.json，一张卡可挂多个行业 pack"
+    },
+    "region": { "type": "string", "description": "省/市，用于 LBS 与区域筛选" },
+    "core": {
+      "type": "object",
+      "required": ["processes", "certifications", "capacity"],
+      "description": "跨行业通用能力。新增行业不得修改本节点。",
+      "properties": {
+        "processes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "工艺代码（与 industry pack 的 vocab / processes 对齐）"
+        },
+        "moq": { "type": ["integer", "null"], "description": "最小起订量；null = 未知，匹配时降级为需向工厂确认" },
+        "lead_time_days": { "type": ["integer", "null"], "description": "打样/首批量交期；null = 未知" },
+        "payment_terms": { "type": ["string", "null"] },
+        "spot_stock": { "type": "boolean", "description": "是否有现货" },
+        "certifications": {
+          "type": "array",
+          "description": "认证对象列表。一条认证『作数』当且仅当 verified=true 且 cert_no 非空（三方可验证）。裸声称无证书号的一律视为未核验，不满足 certifications_required。",
+          "items": {
+            "type": "object",
+            "required": ["code", "verified"],
+            "properties": {
+              "code": { "type": "string", "description": "标准认证码，与 industry pack 的 certifications 取值域对齐" },
+              "cert_no": { "type": ["string", "null"], "description": "三方可验证的证书编号；空即不可作数" },
+              "issuer": { "type": ["string", "null"], "description": "发证/核验机构" },
+              "valid_until": { "type": ["string", "null"], "format": "date" },
+              "verified": { "type": "boolean", "description": "平台三方核验通过（如已上传证书号并核验）" }
+            }
+          }
+        },
+        "capacity": {
+          "type": "object",
+          "required": ["load_level"],
+          "description": "产能负荷：粗粒度三档 + 采样时间。静态优先，动态降级。",
+          "properties": {
+            "load_level": { "type": "string", "enum": ["light", "moderate", "heavy"] },
+            "as_of": { "type": ["string", "null"], "format": "date", "description": "采样时刻；缺失即视为静态声明值，fresh=false" },
+            "ttl_days": { "type": "integer", "default": 30 }
+          }
+        }
+      }
+    },
+    "industry_ext": {
+      "type": "object",
+      "description": "行业特有属性（如保温杯的 liner_material / capacity_ml）。字段名与取值域由 industry pack 定义；真实卡该字段缺失时原样留空，匹配时宽匹配。"
+    },
+    "negative_capability": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "主动声明『不做』的边界，让客户 Agent 秒淘汰，提高成交率"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": { "type": "string" },
+          "source": { "type": "string", "enum": ["equipment_ledger", "certificate", "measured", "self_declared"] },
+          "ref": { "type": "string" }
+        }
+      }
+    }
+  }
+}

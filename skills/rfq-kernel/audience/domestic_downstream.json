@@ -1,0 +1,48 @@
+{
+  "profile_id": "domestic_downstream",
+  "display_name": "国内下游客户",
+  "version": "0.1.0",
+  "language": "zh-CN",
+  "currency": "CNY",
+  "default_incoterm": "EXW",
+  "price_basis": "含税出厂",
+
+  "must_surface": [
+    "moq",
+    "spot_stock",
+    "payment_terms",
+    "sample_policy",
+    "response_hours",
+    "lead_time_days"
+  ],
+
+  "field_weights": {
+    "spot_stock": 1.0,
+    "payment_terms": 0.95,
+    "response_hours": 0.9,
+    "moq": 0.85,
+    "lead_time_days": 0.8,
+    "certifications_required": 0.3,
+    "audit_reports": 0.05
+  },
+
+  "qualification_terms": [
+    "现货",
+    "当天发货",
+    "支持账期",
+    "小批量可做",
+    "可开发票"
+  ],
+
+  "term_map": {
+    "moq": "起订量",
+    "lead_time_days": "出货天数",
+    "payment_terms": "账期",
+    "spot_stock": "现货",
+    "response_hours": "响应时长"
+  },
+
+  "suppress_fields": ["audit_reports", "fob_port"],
+  "lead_time_style": "几天出货",
+  "escalation_note": "优先给可立即兑现的现货信息，排产交期走人工确认"
+}

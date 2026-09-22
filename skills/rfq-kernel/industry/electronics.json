@@ -1,0 +1,47 @@
+{
+  "pack_id": "electronics",
+  "display_name": "电子元器件",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "PCB / PCBA / 连接器 / 线束 / SMT。beacon-mfg 一级品类『电子元器件』。",
+
+  "attributes": {
+    "component_type": {
+      "label": "器件类型",
+      "type": "enum",
+      "values": ["PCB", "PCBA", "连接器", "电感", "电容", "线束"],
+      "tier": "required"
+    },
+    "pitch_mm": {
+      "label": "最小间距",
+      "type": "number",
+      "unit": "mm",
+      "min": 0.2,
+      "max": 5,
+      "tier": "late",
+      "note": "间距越小对贴片精度要求越高"
+    }
+  },
+
+  "certifications": ["ISO9001", "IATF16949", "UL", "RoHS"],
+
+  "vocab": {
+    "电子": { "canonical": "electronics.pcba", "confidence": 0.7 },
+    "电路板": { "canonical": "electronics.pcb", "confidence": 0.9 },
+    "PCBA": { "canonical": "electronics.pcba", "confidence": 0.95 },
+    "元器件": { "canonical": "electronics.component", "confidence": 0.85 },
+    "SMT": { "canonical": "electronics.smt", "confidence": 0.9 },
+    "贴片": { "canonical": "electronics.smt", "confidence": 0.85 },
+    "集成电路": { "canonical": "electronics.ic", "confidence": 0.9 },
+    "芯片": { "canonical": "electronics.ic", "confidence": 0.9 },
+    "IC": { "canonical": "electronics.ic", "confidence": 0.85 },
+    "封装测试": { "canonical": "electronics.test", "confidence": 0.85 },
+    "线路板": { "canonical": "electronics.pcb", "confidence": 0.85 },
+    "pcb": { "canonical": "electronics.pcb", "confidence": 0.9 }
+  },
+
+  "negative_capability_hints": [
+    "不做芯片晶圆制造",
+    "不做整机组装"
+  ]
+}

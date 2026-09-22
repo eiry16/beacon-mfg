@@ -1,0 +1,32 @@
+{
+  "supplier_id": "SUP-DW-002",
+  "legal_name": "粤丰杯业有限公司",
+  "industry": ["drinkware"],
+  "region": "广东 佛山",
+  "core": {
+    "processes": ["真空拉伸", "抽真空", "烤漆", "热转印"],
+    "moq": 1000,
+    "lead_time_days": 35,
+    "certifications": [
+      {"code": "FDA", "cert_no": "FDA-FCN-2145", "issuer": "US FDA", "valid_until": "2026-11-30", "verified": true}
+    ],
+    "capacity": { "load_level": "moderate", "as_of": "2026-09-05", "ttl_days": 30 },
+    "payment_terms": "50% 定金，发货前付清",
+    "spot_stock": false,
+    "sample_policy": "样品费 150 元，不退",
+    "response_hours": 24,
+    "fob_port": "深圳"
+  },
+  "industry_ext": {
+    "liner_material": ["304不锈钢"],
+    "capacity_ml": { "min": 200, "max": 600 },
+    "insulation_hours": 8,
+    "lid_type": ["旋盖", "直饮"],
+    "surface_finish": ["烤漆", "原色"],
+    "logo_process": ["热转印", "丝印"]
+  },
+  "negative_capability": ["不做 316 与钛内胆", "不做玻璃内胆"],
+  "evidence": [
+    { "field": "core.certifications", "source": "certificate", "ref": "FDA-FCN-2145" }
+  ]
+}

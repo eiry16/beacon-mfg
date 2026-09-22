@@ -1,0 +1,38 @@
+{
+  "pack_id": "surface_treatment",
+  "display_name": "表面处理",
+  "version": "0.1.0",
+  "extends": "_base",
+  "description": "阳极氧化 / 电镀 / 电泳 / 喷粉 / 喷涂。beacon-mfg 一级品类『表面处理』。",
+
+  "attributes": {
+    "process_type": {
+      "label": "处理工艺",
+      "type": "enum",
+      "values": ["阳极氧化", "电镀", "电泳", "喷粉", "喷涂", "磷化"],
+      "tier": "required"
+    },
+    "material_basis": {
+      "label": "基材",
+      "type": "enum",
+      "values": ["铝", "钢", "锌合金", "塑料"],
+      "tier": "late"
+    }
+  },
+
+  "certifications": ["ISO9001", "ISO14001"],
+
+  "vocab": {
+    "表面处理": { "canonical": "surface_treatment.anodizing", "confidence": 0.85 },
+    "阳极氧化": { "canonical": "surface_treatment.anodizing", "confidence": 0.95 },
+    "电镀": { "canonical": "surface_treatment.plating", "confidence": 0.95 },
+    "喷粉": { "canonical": "surface_treatment.powder", "confidence": 0.9 },
+    "喷涂": { "canonical": "surface_treatment.painting", "confidence": 0.9 },
+    "电泳": { "canonical": "surface_treatment.electrophoresis", "confidence": 0.9 }
+  },
+
+  "negative_capability_hints": [
+    "不做真空镀膜",
+    "不做化学镀"
+  ]
+}
