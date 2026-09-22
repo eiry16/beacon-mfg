@@ -39,6 +39,8 @@ import subprocess
 import tarfile
 import tempfile
 import io
+import time
+import hmac
 import urllib.request
 import urllib.error
 from typing import Any, Dict, List, Optional, Tuple
@@ -194,6 +196,115 @@ _manifest_cache: Optional[Dict[str, Any]] = None
 
 
 # --------------------------------------------------------------------------- #
+# 使用量埋点（设计见 docs/MCP_USAGE_AUDIT.md §3.4 / §4 / §14）
+# --------------------------------------------------------------------------- #
+# 三条原则，改这里前先读文档：
+#   1. **默认不出网**。本地台账永远只写本地文件；随请求带出去的只有下面四个
+#      请求头，且里面没有 IP、没有 UA 原文、没有完整 query。
+#   2. **可关闭**。`BEACON_TELEMETRY=0` 时不发任何头；`BEACON_USAGE_LOG=0` 时不写台账。
+#   3. **失败静默**。埋点出任何问题都不许影响检索结果 —— 这是只读服务，
+#      记账不能变成新的故障源。
+#
+# 为什么要有本地台账：本地 git 模式（BEACON_REPO）**完全不触网**，服务端看不见，
+# 只有本地这一份能记。对服务端而言它统计到的永远是下限，这是架构决定的。
+
+BEACON_TELEMETRY = os.environ.get("BEACON_TELEMETRY", "1") != "0"
+BEACON_USAGE_LOG = os.environ.get("BEACON_USAGE_LOG", "1") != "0"
+USAGE_LOG_PATH = os.path.join(os.path.expanduser("~"), ".beacon-mfg", "usage.jsonl")
+
+# 当前调用的上下文（tool / tokens / hits），由 _dispatch 设置、_http_get 读取。
+# 用 ContextVar 而不是全局变量：MCP server 理论上可能并发处理请求。
+_CUR: Any = None
+try:
+    from contextvars import ContextVar
+    _CUR = ContextVar("beacon_current_call", default=None)
+except Exception:  # 极老的运行环境
+    _CUR = None
+
+
+def _cur_set(val: Any) -> Any:
+    """返回 token 以便 finally 里 reset；无 ContextVar 时退化成全局变量。"""
+    if _CUR is not None:
+        return _CUR.set(val)
+    global _CUR_FALLBACK
+    _CUR_FALLBACK = val
+    return None
+
+
+def _cur_get() -> Any:
+    if _CUR is not None:
+        return _CUR.get()
+    return globals().get("_CUR_FALLBACK")
+
+
+_CUR_FALLBACK = None
+
+
+def _client_id() -> str:
+    """稳定的本机 id（首次调用时生成），**只用于派生不可逆的 cid**。
+
+    文件里存的是随机 uuid；发到服务端的是 HMAC 结果，收不到原始 uuid。
+    """
+    p = os.path.join(os.path.expanduser("~"), ".beacon-mfg", "client_id")
+    try:
+        if os.path.exists(p):
+            return open(p, "r", encoding="utf-8").read().strip()
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        v = str(_uuid.uuid4())
+        with open(p, "w", encoding="utf-8") as f:
+            f.write(v)
+        return v
+    except Exception:
+        return "unknown"
+
+
+_CID_SALT = b"beacon-mfg-v1"   # 公开盐：目的是让 cid 不可逆，不是防攻击者
+
+
+def _cid() -> str:
+    return hmac.new(_CID_SALT, _client_id().encode("utf-8"), hashlib.sha256) \
+               .hexdigest()[:16]
+
+
+def _beacon_headers() -> Dict[str, str]:
+    """随请求带出的四个头。**不含 IP / UA 原文 / 完整 query**。"""
+    if not BEACON_TELEMETRY:
+        return {}
+    cur = _cur_get() or {}
+    h = {"X-Beacon-Tool": cur.get("tool") or "", "X-Beacon-Cid": _cid()}
+    # tokens = 分词后的**产品词**，不是整句（§14.2：记整句等于把用户输入落成明文台账）
+    if cur.get("tokens"):
+        h["X-Beacon-Tokens"] = ",".join(cur["tokens"])[:120]
+    if cur.get("hits") is not None:
+        h["X-Beacon-Hits"] = str(cur["hits"])
+    return {k: v for k, v in h.items() if v not in ("", None)}
+
+
+def _emit_usage(tool: str, ms: int, ok: bool, extra: Any = None) -> None:
+    """写本地台账（jsonl）。默认开启，BEACON_USAGE_LOG=0 可关。"""
+    if not BEACON_USAGE_LOG:
+        return
+    try:
+        rec = {
+            "ts": int(time.time() * 1000),
+            "tool": tool,
+            "ms": ms,
+            "ok": ok,
+            # REPO 可能指向一个不存在的路径（此时实际走的是 HTTP，只是 git show 静默失败），
+            # 所以这里**必须判目录存在**再算 git，否则会把离线调用记成 http 或反之。
+            "src": ("git" if (REPO and os.path.isdir(REPO)) else "http"),
+            "cid": _cid(),
+        }
+        if extra:
+            rec.update(extra)
+        os.makedirs(os.path.dirname(USAGE_LOG_PATH), exist_ok=True)
+        with open(USAGE_LOG_PATH, "a", encoding="utf-8") as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    except Exception:
+        pass   # 记账失败绝不能影响检索
+
+
+# --------------------------------------------------------------------------- #
 # 数据源抽象：只做只读取
 # --------------------------------------------------------------------------- #
 def _detect_repo() -> Optional[str]:
@@ -249,7 +360,14 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
             etag = blob.get("etag")
         except Exception:
             etag = None
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
+    headers = {"User-Agent": UA, "Accept": "*/*"}
+    # 埋点头：服务端据此填 tool / tokens / hits 列。收不到也没关系 ——
+    # worker 那边**照样计数**，只是这三列为空（文档 §3.4）。
+    try:
+        headers.update(_beacon_headers())
+    except Exception:
+        pass
+    req = urllib.request.Request(url, headers=headers)
     if etag:
         req.add_header("If-None-Match", etag)
     try:
@@ -1157,8 +1275,111 @@ TOOLS = [
 ]
 
 
+def _chain_grams(grams: List[str], max_len: int = 8) -> List[str]:
+    """把重叠的 2-gram 链回原词：`流水` + `水线` → `流水线`。
+
+    为什么需要这一步：`_tokenize` 出于召回考虑会同时产出 1-gram 和 2-gram，
+    直接取前 N 个得到的是「厂 / 家 / 水 / 流」这种碎片 —— 拿来当需求信号毫无意义
+    （2026-09-23 实测：「上海的流水线厂家」抽出来是 `['厂','家','水','水线','流','流水']`）。
+    链回原词之后才是「流水线」这种能直接翻译成抓取矩阵的词。
+    """
+    gs = sorted(set(g for g in grams if len(g) == 2))
+    if not gs:
+        return []
+    succ: Dict[str, List[str]] = {}
+    for g in gs:
+        succ.setdefault(g[0], []).append(g)
+    has_pred = {g[1] for g in gs}
+    out: List[str] = []
+    for h in [g for g in gs if g[0] not in has_pred]:
+        best = h
+        stack = [(h, h)]
+        while stack:
+            cur, acc = stack.pop()
+            if len(acc) > len(best):
+                best = acc
+            if len(acc) >= max_len:
+                continue
+            for nxt in succ.get(cur[-1], []):
+                stack.append((nxt, acc + nxt[1:]))
+        out.append(best)
+    return out
+
+
+def _product_tokens(name: str, args: Dict[str, Any]) -> List[str]:
+    """从入参里抽出**产品词**（供 X-Beacon-Tokens）。
+
+    刻意不记录整句 query（§14.2）：用户什么都可能输入，原样记等于落成明文台账。
+    流程：分词 → 只留 `_usable_gram` 认可的（滤掉城市、企业通名、单字功能词）
+    → **只取长度 ≥ 2**（这一条同时干掉了单字碎片）→ 2-gram 链回原词。
+    """
+    text = ""
+    if name == "search_vendors":
+        text = args.get("query") or ""
+    elif name == "start_sourcing":
+        text = args.get("demand_text") or ""
+    if not text:
+        return []
+    try:
+        toks = [t for t in _tokenize(str(text)) if _usable_gram(t)]
+    except Exception:
+        toks = [t for t in str(text).split() if t]
+
+    city = (args.get("city") or "").strip()
+    cjk: List[str] = []
+    latin: List[str] = []
+    for t in toks:
+        if not t or len(t) < 2 or t == city:
+            continue
+        (cjk if _is_cjk(t) else latin).append(t)
+
+    # 英文/数字取整词（不链）；中文走 2-gram 链还原
+    out: List[str] = []
+    for t in sorted(set(latin), key=len, reverse=True):
+        if t not in out:
+            out.append(t)
+    for t in _chain_grams(cjk):
+        if t not in out:
+            out.append(t)
+    return out[:6]
+
+
 def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
+    """tool 调用的唯一入口 —— 埋点就挂在这里（文档 §4）。
+
+    顺序有讲究：**先**把 tokens 放进上下文，再调用。因为 HTTP 请求发生在
+    被调用函数内部，tokens 必须在请求发出前就位；而 hits 只能等结果出来后
+    回填，供**后续**请求带上（一次检索的头几个请求因此没有 hits 列，属正常）。
+    """
     args = args or {}
+    tok = _cur_set({"tool": name, "tokens": _product_tokens(name, args)})
+    t0 = time.time()
+    err: Optional[BaseException] = None
+    r: Any = None
+    try:
+        r = _dispatch_inner(name, args)
+        if isinstance(r, dict) and "total_matched" in r:
+            cur = _cur_get() or {}
+            cur["hits"] = r.get("total_matched")
+            _cur_set(cur)
+        return r
+    except BaseException as e:      # noqa: BLE001 —— 埋点不能吞掉协议层行为
+        err = e
+        raise
+    finally:
+        cur = _cur_get() or {}
+        # _dispatch_inner 把业务异常包成了 {"error": ...}，那也算失败
+        ok = err is None and not (isinstance(r, dict) and "error" in r)
+        _emit_usage(name, int((time.time() - t0) * 1000), ok,
+                    {"tokens": cur.get("tokens"), "hits": cur.get("hits")})
+        try:
+            if tok is not None and _CUR is not None:
+                _CUR.reset(tok)
+        except Exception:
+            pass
+
+
+def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
     try:
         if name == "search_vendors":
             return search_vendors(
