@@ -34,6 +34,8 @@ CATEGORY_TO_PACK = {
     "表面处理": "surface_treatment",
     "标准件": "fasteners",
     "原材料": "raw_material",
+    "输送设备": "material_handling",
+    "物流设备": "material_handling",
 }
 
 # 国标码(GB/T 4754) -> rfq-kernel 行业 pack id。
@@ -52,12 +54,13 @@ GB_TO_PACK = {
     # 钣金冲压（金属结构/门窗制造）
     "3311": "sheet_metal", "3312": "sheet_metal",
     # 精密机械加工（机床/金属加工机械、轴承齿轮传动、其他通用零部件、切削工具）
+    # 3424 金属切割及焊接设备制造：归 machining（焊接设备属机加工装备，与钣金焊接服务区分）
     "3421": "machining", "3422": "machining", "3423": "machining", "3424": "machining",
     "3425": "machining", "3429": "machining",
-    "3451": "machining", "3452": "machining", "3453": "machining",
+    "3451": "machining", "3452": "machining", "3453": "machining", "3459": "machining",
     "3481": "machining", "3484": "machining", "3489": "machining",
     "3321": "machining", "3499": "machining",
-    # 注塑成型（塑料制品业）
+    # 注塑成型（塑料制品业 292 全类）
     "2921": "injection", "2922": "injection", "2923": "injection", "2924": "injection",
     "2925": "injection", "2926": "injection", "2927": "injection", "2928": "injection",
     "2929": "injection",
@@ -67,6 +70,10 @@ GB_TO_PACK = {
     "3360": "surface_treatment",
     # 标准件（紧固件制造）
     "3482": "fasteners",
+    # 物料搬运设备制造（343 全类：起重/叉车/连续搬运/输送）
+    # 3434 连续搬运设备制造（输送机械/装卸机械/给料机械）= 输送线语义最贴切的国标码
+    "3431": "material_handling", "3432": "material_handling", "3433": "material_handling",
+    "3434": "material_handling", "3439": "material_handling",
 }
 
 

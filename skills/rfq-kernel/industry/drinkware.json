@@ -1,7 +1,7 @@
 {
   "pack_id": "drinkware",
   "display_name": "杯具",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "extends": "_base",
   "description": "真空保温杯 / 随行杯 / 玻璃杯 / 塑料杯。内核之上的行业差异层。",
 
@@ -54,12 +54,31 @@
 
   "vocab": {
     "保温杯": { "canonical": "drinkware.insulated_tumbler", "confidence": 0.95 },
+    "不锈钢保温杯": { "canonical": "drinkware.insulated_tumbler", "confidence": 0.92 },
+    "真空杯": { "canonical": "drinkware.insulated_tumbler", "confidence": 0.9 },
     "保温壶": { "canonical": "drinkware.insulated_flask", "confidence": 0.9 },
+    "保温瓶": { "canonical": "drinkware.insulated_flask", "confidence": 0.88 },
+    "焖烧杯": { "canonical": "drinkware.insulated_flask", "confidence": 0.85 },
     "随行杯": { "canonical": "drinkware.travel_mug", "confidence": 0.85 },
+    "运动水壶": { "canonical": "drinkware.sports_bottle", "confidence": 0.85 },
+    "水壶": { "canonical": "drinkware.bottle", "confidence": 0.78 },
     "咖啡杯": { "canonical": "drinkware.travel_mug", "confidence": 0.6 },
+    "玻璃杯": { "canonical": "drinkware.glass", "confidence": 0.85 },
+    "塑料杯": { "canonical": "drinkware.plastic", "confidence": 0.85 },
+    "吸管杯": { "canonical": "drinkware.kids", "confidence": 0.8 },
+    "车载杯": { "canonical": "drinkware.travel_mug", "confidence": 0.8 },
+    "广告杯": { "canonical": "drinkware.promo", "confidence": 0.78 },
+    "礼品杯": { "canonical": "drinkware.promo", "confidence": 0.78 },
+    "直饮杯": { "canonical": "drinkware.tumbler", "confidence": 0.78 },
+    "摇摇杯": { "canonical": "drinkware.shaker", "confidence": 0.82 },
+    "钛杯": { "canonical": "drinkware.titanium", "confidence": 0.85 },
     "tumbler": { "canonical": "drinkware.insulated_tumbler", "confidence": 0.9 },
     "travel mug": { "canonical": "drinkware.travel_mug", "confidence": 0.9 },
     "vacuum flask": { "canonical": "drinkware.insulated_flask", "confidence": 0.9 },
+    "water bottle": { "canonical": "drinkware.bottle", "confidence": 0.85 },
+    "sports bottle": { "canonical": "drinkware.sports_bottle", "confidence": 0.85 },
+    "glass cup": { "canonical": "drinkware.glass", "confidence": 0.85 },
+    "plastic cup": { "canonical": "drinkware.plastic", "confidence": 0.85 },
     "不锈钢杯": { "canonical": "drinkware.insulated_tumbler", "confidence": 0.7 }
   },
 

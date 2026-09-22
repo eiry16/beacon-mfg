@@ -1,9 +1,9 @@
 {
   "pack_id": "raw_material",
   "display_name": "原材料",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "extends": "_base",
-  "description": "钢材 / 铝材 / 工程塑料 等型材。beacon-mfg 一级品类『原材料』。",
+  "description": "钢材 / 铝材 / 工程塑料 等型材。beacon-mfg 一级品类『原材料』（GB 31/32 黑色及有色金属压延加工）。",
 
   "attributes": {
     "material_type": {
@@ -24,10 +24,31 @@
 
   "vocab": {
     "原材料": { "canonical": "raw_material.steel", "confidence": 0.7 },
+    "金属材料": { "canonical": "raw_material.steel", "confidence": 0.82 },
+    "金属原材料": { "canonical": "raw_material.steel", "confidence": 0.85 },
     "钢材": { "canonical": "raw_material.steel", "confidence": 0.9 },
+    "钢板": { "canonical": "raw_material.steel", "confidence": 0.88 },
+    "钢管": { "canonical": "raw_material.steel", "confidence": 0.85 },
+    "钢卷": { "canonical": "raw_material.steel", "confidence": 0.85 },
+    "不锈钢材": { "canonical": "raw_material.steel", "confidence": 0.88 },
+    "不锈钢板": { "canonical": "raw_material.steel", "confidence": 0.88 },
     "铝材": { "canonical": "raw_material.aluminum", "confidence": 0.9 },
+    "铝板": { "canonical": "raw_material.aluminum", "confidence": 0.88 },
+    "铝棒": { "canonical": "raw_material.aluminum", "confidence": 0.85 },
+    "铝型材": { "canonical": "raw_material.profile", "confidence": 0.88 },
+    "铜材": { "canonical": "raw_material.copper", "confidence": 0.88 },
+    "铜板": { "canonical": "raw_material.copper", "confidence": 0.85 },
     "板材": { "canonical": "raw_material.sheet", "confidence": 0.85 },
-    "型材": { "canonical": "raw_material.profile", "confidence": 0.8 }
+    "型材": { "canonical": "raw_material.profile", "confidence": 0.8 },
+    "工字钢": { "canonical": "raw_material.steel", "confidence": 0.85 },
+    "槽钢": { "canonical": "raw_material.steel", "confidence": 0.85 },
+    "角钢": { "canonical": "raw_material.steel", "confidence": 0.85 },
+    "圆钢": { "canonical": "raw_material.steel", "confidence": 0.85 },
+    "线材": { "canonical": "raw_material.steel", "confidence": 0.82 },
+    "工程塑料": { "canonical": "raw_material.plastic", "confidence": 0.85 },
+    "steel": { "canonical": "raw_material.steel", "confidence": 0.9 },
+    "aluminum": { "canonical": "raw_material.aluminum", "confidence": 0.9 },
+    "copper": { "canonical": "raw_material.copper", "confidence": 0.88 }
   },
 
   "negative_capability_hints": [

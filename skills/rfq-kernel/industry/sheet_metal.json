@@ -1,7 +1,7 @@
 {
   "pack_id": "sheet_metal",
   "display_name": "钣金冲压",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "extends": "_base",
   "description": "beacon-mfg 原生品类（一级品类『钣金冲压』）。验证 rfq-kernel 可直接消费 beacon-mfg 真实能力卡：适配器把 L1 capability.json 转成标准供应商卡后，本 pack 即可驱动匹配，内核与 schema 零改动。",
 
@@ -36,9 +36,30 @@
   "vocab": {
     "激光切割": { "canonical": "sheet_metal.laser_cutting", "confidence": 0.95 },
     "钣金": { "canonical": "sheet_metal.fabrication", "confidence": 0.9 },
+    "钣金件": { "canonical": "sheet_metal.fabrication", "confidence": 0.9 },
+    "钣金加工": { "canonical": "sheet_metal.fabrication", "confidence": 0.9 },
+    "钣金结构件": { "canonical": "sheet_metal.fabrication", "confidence": 0.88 },
     "冲压": { "canonical": "sheet_metal.stamping", "confidence": 0.9 },
+    "冲压件": { "canonical": "sheet_metal.stamping", "confidence": 0.9 },
+    "金属冲压": { "canonical": "sheet_metal.stamping", "confidence": 0.9 },
+    "精密冲压": { "canonical": "sheet_metal.stamping", "confidence": 0.88 },
+    "数控冲压": { "canonical": "sheet_metal.stamping", "confidence": 0.88 },
+    "数冲": { "canonical": "sheet_metal.stamping", "confidence": 0.8 },
     "折弯": { "canonical": "sheet_metal.bending", "confidence": 0.9 },
-    "sheet metal": { "canonical": "sheet_metal.fabrication", "confidence": 0.9 }
+    "折弯件": { "canonical": "sheet_metal.bending", "confidence": 0.85 },
+    "剪板": { "canonical": "sheet_metal.shearing", "confidence": 0.8 },
+    "钣金外壳": { "canonical": "sheet_metal.enclosure", "confidence": 0.85 },
+    "机箱": { "canonical": "sheet_metal.enclosure", "confidence": 0.8 },
+    "机柜": { "canonical": "sheet_metal.enclosure", "confidence": 0.8 },
+    "金属外壳": { "canonical": "sheet_metal.enclosure", "confidence": 0.82 },
+    "金属结构件": { "canonical": "sheet_metal.structure", "confidence": 0.82 },
+    "sheet metal": { "canonical": "sheet_metal.fabrication", "confidence": 0.9 },
+    "sheetmetal": { "canonical": "sheet_metal.fabrication", "confidence": 0.85 },
+    "metal fabrication": { "canonical": "sheet_metal.fabrication", "confidence": 0.88 },
+    "stamping": { "canonical": "sheet_metal.stamping", "confidence": 0.9 },
+    "bending": { "canonical": "sheet_metal.bending", "confidence": 0.9 },
+    "laser cutting": { "canonical": "sheet_metal.laser_cutting", "confidence": 0.9 },
+    "CNC bending": { "canonical": "sheet_metal.bending", "confidence": 0.85 }
   },
 
   "negative_capability_hints": [

@@ -65,6 +65,37 @@ def _new_session_id() -> str:
     return _uuid.uuid4().hex
 
 
+_gb_seed_cache: Dict[str, List[Dict[str, Any]]] = {}
+
+
+def _gb_seed_records(pack_id: str) -> List[Dict[str, Any]]:
+    """GB 种子：检测到某行业 pack 时，把该 pack 国标码（GB/T 4754）映射的企业补进召回。
+
+    按 gb 分片精准取（O(命中分片)，绝非全量扫描），进程内缓存复用。
+    语义依据：beacon-mfg 以国标码为唯一行业判别信号，检测到行业即应召回其国标分类下的企业，
+    即便其厂名不含召回词（如 conveyor 的 gb=3434 连续搬运设备厂「耐特斯传输设备」用『传输』
+    而非『输送』，而『传输』df=1 未入倒排索引，常规召回捞不到）。加法召回，绝不误删真实企业。
+    """
+    cached = _gb_seed_cache.get(pack_id)
+    if cached is not None:
+        return cached
+    out: List[Dict[str, Any]] = []
+    try:
+        gbs = _bridge.gbs_of_pack(pack_id)
+    except Exception:
+        gbs = set()
+    if gbs:
+        for s in _shards_of_type("fp"):
+            c = str(s.get("c") or "")
+            if c in gbs or c[:2] in gbs:
+                try:
+                    out.extend(_read_fp_shard(s))
+                except Exception:
+                    continue
+    _gb_seed_cache[pack_id] = out
+    return out
+
+
 def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None) -> List[Dict[str, Any]]:
     """为匹配做宽召回：对『产品信号』（工艺/材料/认证/国标码）与『企业名』命中打分，取 top_k。
 
@@ -94,6 +125,22 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
     if recs is None:
         recs = _build_fp_index()  # 兜底：全量扫描（首次构建并落盘缓存，后续进程内复用）
 
+    # GB 种子：检测到的行业 pack，其国标码映射的企业（如 conveyor 的 gb=3434 连续搬运设备）
+    # 即便厂名不含召回词（如「耐特斯传输设备」用『传输』而非『输送』，而『传输』df=1 未入索引），
+    # 也作为语义对应补进召回（加法，绝不误删真实企业）。下方 +1000 国标命中加成自然覆盖。
+    if pack_id and _bridge is not None:
+        seed = _gb_seed_records(pack_id)
+        if seed:
+            seen_ids = {r.get("id") for r in recs if r.get("id")}
+            for s in seed:
+                sid = s.get("id")
+                if sid and sid not in seen_ids:
+                    recs.append(s)
+                    seen_ids.add(sid)
+
+    # 本 pack 的产品词面（小写）：用于给「厂名含产品词但 gb 未映射本行业」的长尾真实企业加成
+    name_surfaces = [s.lower() for s in _bridge.pack_vocab_surfaces(pack_id)] if pack_id else []
+
     scored: List[tuple] = []
     for r in recs:
         prod_hay = (" ".join(r.get("proc") or []) + " " +
@@ -110,11 +157,22 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
                 w += 3.0 * iw
             elif t in name_hay:
                 w += 1.0 * iw
-        if w <= 0:
+        # 国标码命中检测行业 / 厂名含本 pack 产品词：本行业强信号，即便需求词全为
+        # 稀有词（df<2，如「风送线」）导致 token 打分全为 0，也要保留——这些是
+        # 真实供应商（GB 种子加法补召的 3434 搬运设备厂、或厂名含产品词的长尾厂），
+        # 不能因为「没有高频区分词」就被 w<=0 一概滤除（beacon-mfg 红线：真实企业必须被看见）。
+        gb_hit = pack_id and _bridge is not None and _bridge.pack_of_gb(r.get("gb")) == pack_id
+        name_hit = pack_id and name_surfaces and any(s in name_hay for s in name_surfaces)
+        if w <= 0 and not (gb_hit or name_hit):
             continue
         # 国标码命中检测行业 -> 加权，确保本行业供应商排到 top_k 前列
-        if pack_id and _bridge is not None and _bridge.pack_of_gb(r.get("gb")) == pack_id:
+        if gb_hit:
             w += 1000.0
+        # 厂名含本 pack 产品词、但 gb 未映射本行业的长尾真实企业（如输送厂 gb=3360/3451
+        # 而非 3434）：同样视为本行业强信号给次高加成，避免被 GB 种子挤到池底
+        # （beacon-mfg 红线：真实企业必须被看见）。
+        elif name_hit:
+            w += 500.0
         r2 = dict(r)
         r2["_recall_relevance"] = round(w, 4)
         scored.append((w, r2))
@@ -396,7 +454,8 @@ def _hay(rec: Dict[str, Any]) -> str:
     return " ".join(str(rec.get(k, "")) for k in ("co", "city", "dist", "gb")) + " " + \
            " ".join(rec.get("proc", []) or []) + " " + \
            " ".join(rec.get("mat", []) or []) + " " + \
-           " ".join(rec.get("cert", []) or [])
+           " ".join(rec.get("cert", []) or []) + " " + \
+           " ".join(rec.get("products", []) or [])
 
 
 def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
@@ -960,10 +1019,12 @@ def start_sourcing(demand_text: str, audience_id: str = "domestic_downstream") -
     if not demand_text:
         return {"error": "缺少必填参数 demand_text"}
     pack_id = _bridge.detect_industry(demand_text)
-    # 召回 query 并入检测行业的 vocab 词，使检索只拉相关行业供应商（收敛跨行业噪声）
+    # 召回 query 并入检测行业的「精准」召回扩词（recall_terms），使检索只拉相关行业供应商
+    # （收敛跨行业噪声），同时避免宽泛 2 字词把 OR 召回池冲爆而挤出长尾真实企业。
+    # 未声明 recall_terms 的 pack 回退到全量 vocab（旧行为）。
     recall_query = demand_text
     if pack_id:
-        vocab = _bridge.pack_vocab_surfaces(pack_id)
+        vocab = _bridge.pack_recall_terms(pack_id)
         if vocab:
             recall_query = demand_text + " " + " ".join(vocab)
     recs = _recall_for_sourcing(recall_query, top_k=200, pack_id=pack_id)

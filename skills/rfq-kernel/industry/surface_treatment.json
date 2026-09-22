@@ -1,15 +1,15 @@
 {
   "pack_id": "surface_treatment",
   "display_name": "表面处理",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "extends": "_base",
-  "description": "阳极氧化 / 电镀 / 电泳 / 喷粉 / 喷涂。beacon-mfg 一级品类『表面处理』。",
+  "description": "阳极氧化 / 电镀 / 电泳 / 喷粉 / 喷涂 / 热处理。beacon-mfg 一级品类『表面处理』（GB 3360 金属表面处理及热处理加工）。",
 
   "attributes": {
     "process_type": {
       "label": "处理工艺",
       "type": "enum",
-      "values": ["阳极氧化", "电镀", "电泳", "喷粉", "喷涂", "磷化"],
+      "values": ["阳极氧化", "电镀", "电泳", "喷粉", "喷涂", "磷化", "热处理"],
       "tier": "required"
     },
     "material_basis": {
@@ -24,11 +24,37 @@
 
   "vocab": {
     "表面处理": { "canonical": "surface_treatment.anodizing", "confidence": 0.85 },
+    "表面处理加工": { "canonical": "surface_treatment.anodizing", "confidence": 0.88 },
     "阳极氧化": { "canonical": "surface_treatment.anodizing", "confidence": 0.95 },
+    "氧化": { "canonical": "surface_treatment.anodizing", "confidence": 0.82 },
+    "铝氧化": { "canonical": "surface_treatment.anodizing", "confidence": 0.85 },
     "电镀": { "canonical": "surface_treatment.plating", "confidence": 0.95 },
+    "电镀加工": { "canonical": "surface_treatment.plating", "confidence": 0.92 },
+    "镀锌": { "canonical": "surface_treatment.plating", "confidence": 0.88 },
+    "镀镍": { "canonical": "surface_treatment.plating", "confidence": 0.88 },
+    "镀铬": { "canonical": "surface_treatment.plating", "confidence": 0.88 },
+    "达克罗": { "canonical": "surface_treatment.plating", "confidence": 0.85 },
+    "电泳": { "canonical": "surface_treatment.electrophoresis", "confidence": 0.9 },
     "喷粉": { "canonical": "surface_treatment.powder", "confidence": 0.9 },
+    "粉末喷涂": { "canonical": "surface_treatment.powder", "confidence": 0.9 },
+    "喷塑": { "canonical": "surface_treatment.powder", "confidence": 0.85 },
     "喷涂": { "canonical": "surface_treatment.painting", "confidence": 0.9 },
-    "电泳": { "canonical": "surface_treatment.electrophoresis", "confidence": 0.9 }
+    "喷漆": { "canonical": "surface_treatment.painting", "confidence": 0.9 },
+    "磷化": { "canonical": "surface_treatment.phosphating", "confidence": 0.85 },
+    "钝化": { "canonical": "surface_treatment.passivation", "confidence": 0.82 },
+    "喷砂": { "canonical": "surface_treatment.blasting", "confidence": 0.88 },
+    "抛丸": { "canonical": "surface_treatment.blasting", "confidence": 0.85 },
+    "拉丝": { "canonical": "surface_treatment.brushing", "confidence": 0.82 },
+    "抛光": { "canonical": "surface_treatment.polishing", "confidence": 0.8 },
+    "热处理": { "canonical": "surface_treatment.heattreat", "confidence": 0.85 },
+    "淬火": { "canonical": "surface_treatment.heattreat", "confidence": 0.8 },
+    "回火": { "canonical": "surface_treatment.heattreat", "confidence": 0.8 },
+    "渗碳": { "canonical": "surface_treatment.heattreat", "confidence": 0.8 },
+    "anodizing": { "canonical": "surface_treatment.anodizing", "confidence": 0.95 },
+    "plating": { "canonical": "surface_treatment.plating", "confidence": 0.95 },
+    "powder coating": { "canonical": "surface_treatment.powder", "confidence": 0.9 },
+    "electrophoresis": { "canonical": "surface_treatment.electrophoresis", "confidence": 0.9 },
+    "heat treatment": { "canonical": "surface_treatment.heattreat", "confidence": 0.85 }
   },
 
   "negative_capability_hints": [

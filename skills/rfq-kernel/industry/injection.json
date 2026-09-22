@@ -1,7 +1,7 @@
 {
   "pack_id": "injection",
   "display_name": "注塑成型",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "extends": "_base",
   "description": "塑料注塑 / 双色注塑 / 嵌件注塑。beacon-mfg 一级品类『注塑成型』。",
 
@@ -36,10 +36,25 @@
   "vocab": {
     "注塑": { "canonical": "injection.molding", "confidence": 0.95 },
     "注塑成型": { "canonical": "injection.molding", "confidence": 0.95 },
+    "注塑加工": { "canonical": "injection.molding", "confidence": 0.92 },
+    "注塑件": { "canonical": "injection.part", "confidence": 0.92 },
     "塑料件": { "canonical": "injection.plastic_part", "confidence": 0.85 },
+    "塑料加工": { "canonical": "injection.molding", "confidence": 0.85 },
+    "塑料制品": { "canonical": "injection.plastic_part", "confidence": 0.82 },
+    "塑料外壳": { "canonical": "injection.housing", "confidence": 0.85 },
+    "注塑外壳": { "canonical": "injection.housing", "confidence": 0.88 },
     "塑胶": { "canonical": "injection.molding", "confidence": 0.8 },
-    "塑胶外壳": { "canonical": "injection.housing", "confidence": 0.8 },
-    "injection molding": { "canonical": "injection.molding", "confidence": 0.9 }
+    "塑胶件": { "canonical": "injection.plastic_part", "confidence": 0.85 },
+    "塑胶外壳": { "canonical": "injection.housing", "confidence": 0.85 },
+    "双色注塑": { "canonical": "injection.2k", "confidence": 0.9 },
+    "嵌件注塑": { "canonical": "injection.insert", "confidence": 0.88 },
+    "包胶": { "canonical": "injection.overmold", "confidence": 0.85 },
+    "注塑产品": { "canonical": "injection.part", "confidence": 0.85 },
+    "injection molding": { "canonical": "injection.molding", "confidence": 0.9 },
+    "injection": { "canonical": "injection.molding", "confidence": 0.88 },
+    "plastic molding": { "canonical": "injection.molding", "confidence": 0.85 },
+    "plastic parts": { "canonical": "injection.plastic_part", "confidence": 0.85 },
+    "molding": { "canonical": "injection.molding", "confidence": 0.8 }
   },
 
   "negative_capability_hints": [
