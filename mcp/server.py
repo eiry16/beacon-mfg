@@ -31,6 +31,7 @@ Continue / WorkBuddy 等主流 MCP 客户端。
 import os
 import re
 import sys
+import math
 import json
 import hashlib
 import concurrent.futures
@@ -65,38 +66,58 @@ def _new_session_id() -> str:
 
 
 def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None) -> List[Dict[str, Any]]:
-    """为匹配做宽召回：按需求词对『产品信号』（工艺/材料/认证/国标码）命中数打分，取 top_k。
+    """为匹配做宽召回：对『产品信号』（工艺/材料/认证/国标码）与『企业名』命中打分，取 top_k。
 
-    性能：优先走预构建倒排索引 `_candidate_shards`（O(命中量)，与检索架构一致）；
-    索引不可用或明确无命中时回退全量扫描。零额外依赖、只读。
-    噪声控制：相关性只看 proc/mat/cert/gb，不把公司名/城市计入，避免跨行业污染。
-    行业收敛：传入 pack_id 时，国标码命中本行业的记录大幅加权（hit+1000），
-    让真正属于该行业的供应商优先进入 top_k，再交给 build_session 按 GB 剔除跨行业。
-    返回带 `_recall_relevance` 的分片记录，交给桥接层构造标准卡。
+    **并集召回**：需求词被切成 bigram 后，任意一个命中即算候选（OR），不做交集。
+    （旧的 `_candidate_shards` 对同一需求词内部的 bigram 求交，会把「钣金冲压」这类
+    连写词缩到只剩字面全含的极少数分片——实测 316/372 条缩到 1 个分片，属隐性漏召回。）
+
+    证据权重：
+      - 产品信号命中（proc/mat/cert/gb）权重 3x；企业名 `co` 命中权重 1x。
+        企业名是**合法证据**——大量长尾厂只把品类写在厂名里（如「中山市世通输送机械设备
+        有限公司」的 proc 只有 cnc_milling），只信 proc/mat 会让这些真实企业永远搜不到。
+      - 每个命中词按 IDF 加权：稀有词（「输送」df=6）权重大，泛词（城市名「上海」df≈1.3万、
+        通名「厂家」）权重小 —— 需求句里的地区/通名不会带偏排序。
+      - 传入 pack_id 时，国标码命中本行业的记录 +1000，确保本行业供应商排到 top_k 前列。
+
+    性能：优先走倒排索引的『区分词并集』快速路径 `_recall_candidates`（O(命中量)）；
+    索引不可用/无区分词/并集过大时回退全量扫描（进程内与盘上均缓存，可复用）。只读。
     """
-    toks = set(_grams(text, query_mode=True))
+    toks = _collapse_prefixes({t for t in _grams(text, query_mode=True) if _usable_gram(t)})
     if not toks:
         return []
 
-    cands = _candidate_shards(list(toks), "")  # 索引可用且返回非空候选才走索引
-    if isinstance(cands, list) and cands:
-        recs = _records_from_paths(cands)
-    else:
-        recs = _build_fp_index()  # 回退：全量（首次会建索引并落盘缓存，后续进程内复用）
+    idf = _gram_idf(toks)
+    if not idf:                       # 索引不可用 -> 退化为均匀权重
+        idf = {t: 1.0 for t in toks}
+    recs = _recall_candidates(toks)
+    if recs is None:
+        recs = _build_fp_index()  # 兜底：全量扫描（首次构建并落盘缓存，后续进程内复用）
 
     scored: List[tuple] = []
     for r in recs:
-        hay = " ".join(r.get("proc") or []).lower() + " " + \
-              " ".join(r.get("mat") or []).lower() + " " + \
-              " ".join(r.get("cert") or []).lower() + " " + (r.get("gb") or "")
-        hit = sum(1 for t in toks if t and t in hay)
-        if hit > 0:
-            # 国标码命中检测行业 -> 加权，确保本行业供应商排到 top_k 前列
-            if pack_id and _bridge is not None and _bridge.pack_of_gb(r.get("gb")) == pack_id:
-                hit += 1000
-            r2 = dict(r)
-            r2["_recall_relevance"] = hit
-            scored.append((hit, r2))
+        prod_hay = (" ".join(r.get("proc") or []) + " " +
+                    " ".join(r.get("mat") or []) + " " +
+                    " ".join(r.get("cert") or []) + " " +
+                    (r.get("gb") or "")).lower()
+        name_hay = (r.get("co") or "").lower()
+        w = 0.0
+        for t in toks:
+            if not t or t not in idf:      # 碎片/泛词不参与打分
+                continue
+            iw = idf[t]
+            if t in prod_hay:
+                w += 3.0 * iw
+            elif t in name_hay:
+                w += 1.0 * iw
+        if w <= 0:
+            continue
+        # 国标码命中检测行业 -> 加权，确保本行业供应商排到 top_k 前列
+        if pack_id and _bridge is not None and _bridge.pack_of_gb(r.get("gb")) == pack_id:
+            w += 1000.0
+        r2 = dict(r)
+        r2["_recall_relevance"] = round(w, 4)
+        scored.append((w, r2))
     scored.sort(key=lambda x: -x[0])
     return [r2 for _, r2 in scored[:top_k]]
 
@@ -545,6 +566,146 @@ def _index_fresh() -> bool:
 def _bucket_rel(term: str, buckets: int) -> str:
     b = int(hashlib.sha1(term.encode("utf-8")).hexdigest(), 16) % buckets
     return "%s/terms/b%04d.json" % (INDEX_DIR, b)
+
+
+# --- 自由文本需求 -> 可靠产品词：过滤 + 加权 -------------------------------- #
+# df < MIN 的 bigram 几乎必是分词碎片（「送线」df=0），不作证据。
+# 泛词（城市名/企业通名）已由 `_usable_gram` 拦掉，故不另设 df 上限。
+_RECALL_DF_MIN = 2
+# 以功能字开头/结尾、或以企业通名结尾的 bigram 不是产品词（「的输」「线厂」「厂家」）。
+_FUNC_CHARS = set("的了要找做想帮我你在和与或及是有能可会请给把被用让需个些这那们吧呢吗来去上下就到从对为")
+_ORG_SUFFIX = set("厂家司部行店商社")
+_city_names_cache: Optional[set] = None
+
+
+def _city_names() -> set:
+    """倒排索引里出现过的城市名集合：地区词不作为相关性证据（只作筛选偏好）。"""
+    global _city_names_cache
+    if _city_names_cache is not None:
+        return _city_names_cache
+    names: set = set()
+    txt = _index_text(INDEX_DIR + "/city.json")
+    if txt:
+        try:
+            names = set(json.loads(txt).keys())
+        except Exception:
+            names = set()
+    _city_names_cache = names
+    return names
+
+
+def _is_cjk(s: str) -> bool:
+    return bool(s) and all("\u4e00" <= ch <= "\u9fff" or "\u3400" <= ch <= "\u4dbf" for ch in s)
+
+
+def _usable_gram(t: str) -> bool:
+    """该查询 gram 是否为可采信的产品词：滤掉单字功能词、分词碎片、地区词与企业通名。"""
+    if not t:
+        return False
+    if len(t) == 1:
+        return t not in _FUNC_CHARS                 # 单字功能词（的/要/找…）不作证据
+    if _is_cjk(t):
+        if t[0] in _FUNC_CHARS or t[-1] in _FUNC_CHARS or t[-1] in _ORG_SUFFIX:
+            return False
+        if t in _city_names():
+            return False
+    return True
+
+
+def _collapse_prefixes(toks: set) -> set:
+    """英文前缀 token 折叠：`_grams('iso9001')` 会派生 is/iso/iso9/…/iso9001。
+
+    若全留着，一个「ISO9001」会被算成 6 次重复命中（分数被放大），还会误命中
+    『BLU ISOLA cafe』这类把 is/iso 当子串的名字。这里只保留最长的那个前缀。
+    """
+    latin = sorted([t for t in toks if t.isascii() and t.isalnum()], key=len, reverse=True)
+    keep: List[str] = []
+    for t in latin:
+        if not any(k.startswith(t) for k in keep):
+            keep.append(t)
+    keep_set = set(keep)
+    return {t for t in toks if not (t.isascii() and t.isalnum()) or t in keep_set}
+
+
+def _bucket_postings(gram: str, buckets: int) -> Dict[str, Any]:
+    """取倒排索引里某词的 postings {分片路径: 命中条数}；缺失/异常返回空 dict。"""
+    rel = _bucket_rel(gram, buckets)
+    b = _bucket_cache.get(rel)
+    if b is None:
+        txt = _index_text(rel)
+        try:
+            b = json.loads(txt) if txt else {}
+        except Exception:
+            b = {}
+        _bucket_cache[rel] = b
+    post = b.get(gram) if isinstance(b, dict) else None
+    return post if isinstance(post, dict) else {}
+
+
+def _bucket_df(gram: str, buckets: int) -> int:
+    """某词的文档频次 df = postings 各分片命中数之和。索引缺失返回 0。"""
+    post = _bucket_postings(gram, buckets)
+    if not post:
+        return 0
+    try:
+        return sum(int(v) for v in post.values())
+    except Exception:
+        return len(post)
+
+
+def _gram_idf(grams) -> Dict[str, float]:
+    """按倒排索引的 df 给产品词估 IDF 权重 = 1/(1+ln(df))。
+
+    稀有的真产品词（「输送」df=6 -> 0.36）权重高；泛词权重低、自然让位，
+    碎片（df<MIN，如「送线」）直接剔除。索引不可用时返回空 dict，
+    调用方退化为均匀权重 1.0。
+    """
+    meta = _index_meta()
+    if not meta:
+        return {}
+    try:
+        buckets = int(meta["buckets"])
+    except Exception:
+        return {}
+    out: Dict[str, float] = {}
+    for g in grams:
+        if not g:
+            continue
+        d = _bucket_df(g, buckets)
+        if d < _RECALL_DF_MIN:
+            continue
+        out[g] = 1.0 / (1.0 + math.log(d))
+    return out
+
+
+def _recall_candidates(toks) -> Optional[List[Dict[str, Any]]]:
+    """倒排索引『区分词并集』快速召回：取并集（OR）而非交集。
+
+    锚定所有采信的产品词（df >= _RECALL_DF_MIN）。碎片/地区词/通名已在 `_usable_gram`
+    与 `_gram_idf` 阶段剔除，故这里只做并集。索引不可用、无采信词、或并集覆盖过大
+    （≥60% 分片）时返回 None，交调用方全量扫描兜底（结果一致）。
+    """
+    if not _index_fresh():
+        return None
+    meta = _index_meta() or {}
+    try:
+        buckets = int(meta["buckets"])
+    except Exception:
+        return None
+
+    known = {s.get("p") for s in _shards_of_type("fp")}
+    picked: set = set()
+    for g in toks:
+        if not g:
+            continue
+        if _bucket_df(g, buckets) < _RECALL_DF_MIN:   # 碎片 -> 不作锚
+            continue
+        picked.update(p for p in _bucket_postings(g, buckets) if p in known)
+    if not picked:
+        return None
+    if len(picked) >= max(1, int(len(known) * 0.6)):   # 并集过大，全量扫描更划算
+        return None
+    return _records_from_paths(sorted(picked))
 
 
 def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
