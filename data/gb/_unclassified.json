@@ -21541,9 +21541,10 @@
   {
     "id": "CN-I-0000001",
     "company": "赤兔智能工业（苏州）有限公司",
-    "category": "信息传输、软件和信息技术服务业",
+    "category": "信息技术服务",
     "keywords": [
-      "信息传输、软件和信息技术服务业"
+      "信息传输、软件和信息技术服务业",
+      "认证企业"
     ],
     "region": {
       "province": "江苏",
@@ -21553,13 +21554,13 @@
     "contact_phone": null,
     "source": "certification",
     "source_url": null,
-    "verified_at": "2026-09-11",
+    "verified_at": "2026-09-23",
     "is_template": false,
-    "note": "",
+    "note": "已完成平台认证，灯牌由规则引擎算出",
     "status": "verified",
     "industry": null,
     "is_manufacturer": true,
-    "cl": "L1",
+    "cl": "L2",
     "agent": {
       "skill_url": "skills/vendors/CN-I-0000001/SKILL.md",
       "protocol": "skill",
@@ -21569,7 +21570,25 @@
       ],
       "verified": true
     },
-    "_bucket": "_unclassified"
+    "_bucket": "_unclassified",
+    "website": null,
+    "certifications": [],
+    "certification": {
+      "app_id": "CERT-20260911-0001",
+      "badge": "L2",
+      "issued_at": "2026-09-23",
+      "expires_at": "2027-09-23",
+      "reviewer": "eiry16",
+      "profile": "it-service",
+      "completeness": 83.3
+    },
+    "claim": {
+      "status": "verified",
+      "verified_by": "manual",
+      "verified_at": "2026-09-23",
+      "badge": "L2",
+      "app_id": "CERT-20260911-0001"
+    }
   },
   {
     "id": "CN-MFG-0025781",

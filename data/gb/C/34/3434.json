@@ -5,13 +5,15 @@
     "category": "精密机械加工",
     "keywords": [
       "工艺:welding",
-      "材料:stainless_steel"
+      "材料:stainless_steel",
+      "工艺:焊接/钣金（未细化到工序）/机加工（未细化到工序）/成套设备装配/电控系统集成",
+      "材料:不锈钢"
     ],
     "region": {
       "province": "上海",
       "city": "上海"
     },
-    "address": "上海市奉贤区宏杨路158号",
+    "address": "上海市闵行区庙泾路66号I175室",
     "contact_phone": "189****9019",
     "website": null,
     "certifications": [
@@ -22,7 +24,7 @@
     ],
     "source": "certification",
     "source_url": null,
-    "verified_at": "2026-09-08",
+    "verified_at": "2026-09-23",
     "status": "verified",
     "note": "已完成平台认证，灯牌由规则引擎算出",
     "industry": {
@@ -36,11 +38,11 @@
     "is_manufacturer": true,
     "cl": "L2",
     "certification": {
-      "app_id": "CERT-20260908-0317",
+      "app_id": "CERT-20260923-MFG-0020317",
       "badge": "L2",
-      "issued_at": "2026-09-08",
-      "expires_at": "2027-09-08",
-      "reviewer": "reviewer-01",
+      "issued_at": "2026-09-23",
+      "expires_at": "2027-09-23",
+      "reviewer": "eiry16",
       "profile": "equipment_assembly",
       "completeness": 94.1
     },
@@ -55,6 +57,13 @@
       ],
       "verified": true
     },
-    "_bucket": "C/34/3434"
+    "_bucket": "C/34/3434",
+    "claim": {
+      "status": "verified",
+      "verified_by": "manual",
+      "verified_at": "2026-09-23",
+      "badge": "L2",
+      "app_id": "CERT-20260923-MFG-0020317"
+    }
   }
 ]
