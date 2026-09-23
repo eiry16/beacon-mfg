@@ -568,12 +568,51 @@ def _build_fp_index() -> List[Dict[str, Any]]:
     return recs
 
 
+_CAP_TERMS_CACHE: Dict[str, Any] = {}
+
+
+def _cap_term_of(code: str) -> str:
+    """能力键 → 中文词面（`tech_ai` → `人工智能与算法 人工智能 AI 算法 …`）。
+
+    词面表来自 `skills/registry/index/cap.json`（发布产物，与 city.json 同构）——
+    刻意**不**把词面写进指纹：那一层按字节计费（约 139k 条），而词面表只有几十 KB，
+    且改词面（加别名）不需要重建指纹。
+
+    取不到时退回键本身：`caps_index` 允许出现码表之外的裸值（材料「不锈钢」、
+    品类「正餐」），它们本身就是可检索词，丢掉等于让这类查询瞎掉。
+    """
+    if "v" not in _CAP_TERMS_CACHE:
+        terms: Dict[str, Any] = {}
+        try:
+            txt = _index_text("skills/registry/index/cap.json")
+            if txt:
+                terms = (json.loads(txt).get("terms") or {})
+        except Exception:
+            terms = {}
+        _CAP_TERMS_CACHE["v"] = terms
+    return str(_CAP_TERMS_CACHE["v"].get(code) or code or "")
+
+
 def _hay(rec: Dict[str, Any]) -> str:
-    return " ".join(str(rec.get(k, "")) for k in ("co", "city", "dist", "gb")) + " " + \
-           " ".join(rec.get("proc", []) or []) + " " + \
-           " ".join(rec.get("mat", []) or []) + " " + \
-           " ".join(rec.get("cert", []) or []) + " " + \
-           " ".join(rec.get("products", []) or [])
+    """检索面：query 的每个词都必须出现在这里（AND 全命中）。
+
+    2026-09-23 加入 `cap`（跨门类能力键）—— 在此之前的六个字段
+    （co/city/dist/gb/proc/mat/cert/products）全都表达不了「能力」：
+    赤兔智能的键是 `tech_ai`，而它的厂名/工艺/材料里一个「人工智能」都没有，
+    客户问「苏州做人工智能的企业」就永远 0 条。键必须摊成中文词面才能被中文命中。
+    """
+    parts = [
+        # `or ""` 不是多余：gb 为 None（未归类）时 str() 会产出字面量 "None"，
+        # 2271 条 gb=null 的记录于是每条都带一个 "None" 词面 —— 查 "none" 能命中
+        # 整个未归类批（假阳性），而且白占检索面字节。空值就是空值。
+        " ".join(str(rec.get(k) or "") for k in ("co", "city", "dist", "gb")),
+        " ".join(rec.get("proc", []) or []),
+        " ".join(rec.get("mat", []) or []),
+        " ".join(rec.get("cert", []) or []),
+        " ".join(rec.get("products", []) or []),
+        " ".join(_cap_term_of(c) for c in (rec.get("cap") or [])),
+    ]
+    return " ".join(p for p in parts if p)
 
 
 def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
