@@ -30,7 +30,7 @@
 {"id":"CN-MFG-0022081","co":"上海宏联汽车零部件有限公司","city":"上海","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"嘉定"}
 {"id":"CN-MFG-0027887","co":"浙江三花汽车零部件有限公司-金加工工艺科","city":"杭州","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"钱塘"}
 {"id":"CN-MFG-0029476","co":"三维激光切割上海骄荣汽车配件有限公司","city":"上海","gb":"3660","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"嘉定"}
-{"id":"CN-MFG-0034351","co":"四川成飞集成吉文汽车零部件有限公司","city":"成都","gb":"3660","mf":1,"proc":["mold_making"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"龙泉驿"}
+{"id":"CN-MFG-0034351","co":"四川成飞集成吉文汽车零部件有限公司","city":"成都","gb":"3660","mf":1,"proc":["mold_making"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"cap":["mold_making"],"dist":"龙泉驿"}
 {"id":"CN-MFG-0056390","co":"汽配汽修","city":"宁波","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"鄞州"}
 {"id":"CN-MFG-0057180","co":"奥德克汽配快修中心","city":"佛山","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"南海"}
 {"id":"CN-MFG-0057253","co":"车世界·汽配城汽修区","city":"佛山","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"禅城"}
@@ -66,7 +66,7 @@
 {"id":"CN-MFG-0111113","co":"驰加汽车服务中心(万里汽配城店)","city":"南宁","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0111124","co":"桂车缘汽车用品导航音响维修","city":"南宁","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0111406","co":"车美佳汽配汽修","city":"昆明","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
-{"id":"CN-MFG-0111429","co":"小王汽修汽配","city":"昆明","gb":"3660","mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
+{"id":"CN-MFG-0111429","co":"小王汽修汽配","city":"昆明","gb":"3660","mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["electronic_component"]}
 {"id":"CN-MFG-0111453","co":"成香汽配汽修","city":"昆明","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0111472","co":"乔云汽车修理汽配","city":"昆明","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0112638","co":"佳拓汽配","city":"昆明","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -74,7 +74,7 @@
 {"id":"CN-MFG-0118746","co":"学强汽配汽修","city":"遵义","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0118753","co":"宇宪汽配","city":"遵义","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0118780","co":"欣达利汽配","city":"遵义","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0123392","co":"黔诚汽修·汽配","city":"遵义","gb":"3660","mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
+{"id":"CN-MFG-0123392","co":"黔诚汽修·汽配","city":"遵义","gb":"3660","mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["electronic_component"]}
 {"id":"CN-MFG-0126845","co":"上海汽车配件工业联合有限公司","city":"上海","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"嘉定"}
 {"id":"CN-MFG-0126883","co":"上海煜顺汽车零部件厂","city":"上海","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"嘉定"}
 {"id":"CN-MFG-0127670","co":"御膳客黄焖鸡米饭(骏信汽配城餐厅)","city":"昆明","gb":"3660","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}

@@ -4,7 +4,7 @@
 {"id":"CN-MFG-0037750","co":"金园休闲会馆","city":"广州","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"天河"}
 {"id":"CN-MFG-0037752","co":"吉泰休闲","city":"广州","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"天河"}
 {"id":"CN-MFG-0037757","co":"缤缤休闲中心","city":"广州","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"白云"}
-{"id":"CN-MFG-0037949","co":"浅深休闲会所(金泽店)","city":"武汉","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"dist":"武昌"}
+{"id":"CN-MFG-0037949","co":"浅深休闲会所(金泽店)","city":"武汉","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["ent_bathhouse","其他娱乐"],"dist":"武昌"}
 {"id":"CN-MFG-0038138","co":"深圳华侨城旅游度假区","city":"深圳","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"南山"}
 {"id":"CN-MFG-0038434","co":"武汉梁子湖东篱老屋生态旅游度假区","city":"武汉","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"江夏"}
 {"id":"CN-MFG-0038530","co":"浅深休闲会所(世纪公园店)","city":"上海","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"浦东新"}
@@ -76,7 +76,7 @@
 {"id":"CN-MFG-0093273","co":"蓝天休闲浴场","city":"贵阳","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0093969","co":"香堤雅休闲境(箭道街店)","city":"贵阳","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0098675","co":"谷律顺林园农家乐花椒鸡","city":"昆明","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0102677","co":"云泉浴足养生休闲会所(二分店)","city":"昆明","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1}
+{"id":"CN-MFG-0102677","co":"云泉浴足养生休闲会所(二分店)","city":"昆明","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["ent_massage","其他娱乐"]}
 {"id":"CN-MFG-0103055","co":"烨鹿撒冷主题休闲馆","city":"昆明","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0103427","co":"云里花海休闲会所","city":"昆明","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0104189","co":"玲玲休闲吧","city":"昆明","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -84,9 +84,9 @@
 {"id":"CN-MFG-0106230","co":"一宿一景一生缘·Golf度假别墅(阳宗海旅游度假区店)","city":"昆明","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0108499","co":"金隆休闲会所","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0108532","co":"闽都休闲养生会所(星艺荟广场店)(暂停营业)","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
-{"id":"CN-MFG-0109028","co":"水沐澜庭休闲会所","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1}
-{"id":"CN-MFG-0109607","co":"香水湾休闲会所","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1}
-{"id":"CN-MFG-0110315","co":"鲲池休闲会所","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1}
+{"id":"CN-MFG-0109028","co":"水沐澜庭休闲会所","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["ent_massage","其他娱乐"]}
+{"id":"CN-MFG-0109607","co":"香水湾休闲会所","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["ent_massage","其他娱乐"]}
+{"id":"CN-MFG-0110315","co":"鲲池休闲会所","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["ent_massage","其他娱乐"]}
 {"id":"CN-MFG-0110326","co":"鲲池休闲会所(军创大厦店)","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0110881","co":"恒之彩休闲保健(明阳商业广场店)","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0112321","co":"老城民谣休闲吧","city":"南宁","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
@@ -96,7 +96,7 @@
 {"id":"CN-MFG-0116196","co":"水车坝旅游度假区","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0116519","co":"虹桥休闲会所","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0116834","co":"闲雅居休闲山庄","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0116997","co":"盛豪休闲会所(杉王壹号店)","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1}
+{"id":"CN-MFG-0116997","co":"盛豪休闲会所(杉王壹号店)","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["ent_massage","其他娱乐"]}
 {"id":"CN-MFG-0117053","co":"假日皇宫休闲会所","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0117964","co":"天岛湖国际养生度假区(A3组团)","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0117976","co":"桐梓县燎原镇志蓉鑫休闲养生山庄","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -107,7 +107,7 @@
 {"id":"CN-MFG-0119790","co":"感觉休闲吧(文笔花园店)","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0119827","co":"玉满阁休闲会所","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0120233","co":"英伯伦休闲吧","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0120319","co":"CC休闲吧","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1}
+{"id":"CN-MFG-0120319","co":"CC休闲吧","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["ent_bar","其他娱乐"]}
 {"id":"CN-MFG-0120953","co":"相思雨休闲冰果吧(习水县希望城时代广场店)","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0121396","co":"娄山云海度假区","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0121423","co":"渡江缘休闲度假山庄","city":"遵义","gb":"9030","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
