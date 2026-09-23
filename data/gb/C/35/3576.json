@@ -2725,5 +2725,54 @@
       "evidence": "机械配件"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0154173",
+    "company": "徐工机械配件库",
+    "category": "精密机械加工",
+    "keywords": [
+      "齿轮"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "青浦区"
+    },
+    "address": "华志路998号1号楼102",
+    "contact_phone": "021-39807077; 137****8277; 150****5281",
+    "lat": 31.231397,
+    "lng": 121.219468,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G0H7IKQB",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "华新",
+      "adcode": "310118",
+      "search_keyword": "齿轮"
+    },
+    "industry": {
+      "code": "3576",
+      "name": "农林牧渔机械配件制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 农林牧渔机械配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "机械配件"
+    },
+    "is_manufacturer": true
   }
 ]

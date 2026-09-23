@@ -46,5 +46,103 @@
       "evidence": "文具"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0153532",
+    "company": "广州家保文具劳保批发部",
+    "category": "注塑成型",
+    "keywords": [
+      "缠绕膜"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "花都区"
+    },
+    "address": "三东大道东79号",
+    "contact_phone": "136****0746",
+    "lat": 23.407525,
+    "lng": 113.243825,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I2FZFAO0",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "花山",
+      "adcode": "440114",
+      "search_keyword": "缠绕膜"
+    },
+    "industry": {
+      "code": "2411",
+      "name": "文具制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 文教办公用品制造 > 文具制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "文具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0153888",
+    "company": "万福劳保文具塑胶包装行",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料包装"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "宝安区"
+    },
+    "address": "白石厦美华路4-1",
+    "contact_phone": "0755-27322071; 136****4449",
+    "lat": 22.674512,
+    "lng": 113.834566,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HBM7ML93",
+      "type": "购物服务;文化用品店;文化用品店",
+      "typecode": "060800",
+      "alias": "",
+      "tag": "",
+      "keytag": "劳保用品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "福永",
+      "adcode": "440306",
+      "search_keyword": "塑料包装"
+    },
+    "industry": {
+      "code": "2411",
+      "name": "文具制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 文教办公用品制造 > 文具制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "文具"
+    },
+    "is_manufacturer": true
   }
 ]

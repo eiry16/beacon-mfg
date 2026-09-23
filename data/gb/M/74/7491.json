@@ -10786,5 +10786,54 @@
       "evidence": "工业设"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0155701",
+    "company": "无锡新创力工业设备有限公司(总部)",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "工业机器人"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "滨湖区"
+    },
+    "address": "太湖湾信息技术产业园B3栋",
+    "contact_phone": "0510-88085875",
+    "lat": 31.474254,
+    "lng": 120.295813,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K30CV1KA",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320211",
+      "search_keyword": "工业机器人"
+    },
+    "industry": {
+      "code": "7491",
+      "name": "工业设计服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工业与专业设计及其他专业技术服务 > 工业设计服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "工业设"
+    },
+    "is_manufacturer": false
   }
 ]

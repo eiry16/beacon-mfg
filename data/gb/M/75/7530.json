@@ -144,5 +144,54 @@
       "evidence": "科技中"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0155546",
+    "company": "上海安港海洋科技中心·上海安港海创园",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "工业机器人"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新区"
+    },
+    "address": "南汇新城镇海基六路218弄2号楼·安港海创园(ASIPark)",
+    "contact_phone": "021-31038333; 135****6440",
+    "lat": 30.86594,
+    "lng": 121.90942,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IKD9DQOM",
+      "type": "商务住宅;产业园区;产业园区",
+      "typecode": "120100",
+      "alias": "",
+      "tag": "",
+      "keytag": "联合办公",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中国(上海)自由贸易试验区临港新片区",
+      "adcode": "310115",
+      "search_keyword": "工业机器人"
+    },
+    "industry": {
+      "code": "7530",
+      "name": "科技中介服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 科技推广和应用服务业 > 科技中介服务 > 科技中介服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "科技中"
+    },
+    "is_manufacturer": false
   }
 ]

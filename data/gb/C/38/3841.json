@@ -3973,5 +3973,103 @@
       "evidence": "锂电池"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151293",
+    "company": "畅安冷气电池电路(汽车维修电路)",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "常田路与碧湖西路交叉口南120米",
+    "contact_phone": "130****3518",
+    "lat": 22.993404,
+    "lng": 114.001349,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIQE6W1",
+      "type": "购物服务;专卖店;专营店|汽车维修;汽车维修;汽车维修",
+      "typecode": "061200|030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3841",
+      "name": "锂离子电池制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电池制造 > 锂离子电池制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电池"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151298",
+    "company": "永力汽车电池电路搭电空调(冷气)维修",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "南沙区"
+    },
+    "address": "广珠路114号-3",
+    "contact_phone": "待核实",
+    "lat": 22.857721,
+    "lng": 113.385561,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL4OB1W",
+      "type": "汽车服务;汽车配件销售;汽车配件销售",
+      "typecode": "010800",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车救援",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440115",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3841",
+      "name": "锂离子电池制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电池制造 > 锂离子电池制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "电池"
+    },
+    "is_manufacturer": true
   }
 ]

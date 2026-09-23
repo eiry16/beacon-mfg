@@ -2608,13 +2608,13 @@
       "district": "嘉善"
     },
     "address": "魏塘街道谈公北路679号",
-    "contact_phone": "待核实",
+    "contact_phone": "151****3617",
     "lat": 30.856683,
     "lng": 120.932262,
     "source": "public_directory",
     "source_url": "https://www.amap.com/place/B0FFHFP94F",
     "verified_at": "2026-08-13",
-    "is_template": true,
+    "is_template": false,
     "note": "",
     "amap": {
       "poi_id": "B0FFHFP94F",
@@ -2640,7 +2640,7 @@
       "evidence": "玻璃"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
+    "status": "verified",
     "_bucket": "C/35/3546"
   },
   {
@@ -6017,6 +6017,496 @@
       "business_area": "",
       "adcode": "440605",
       "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151472",
+    "company": "锦泽玻璃工程",
+    "category": "标准件",
+    "keywords": [
+      "弹簧"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "钱塘区"
+    },
+    "address": "临江街道梅林湾石材交易中心锦泽玻璃工程",
+    "contact_phone": "158****4666",
+    "lat": 30.273197,
+    "lng": 120.565423,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MGJYAWDV",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330114",
+      "search_keyword": "弹簧"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151481",
+    "company": "台玻长江玻璃钢化厂",
+    "category": "原材料",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "张浦镇台玻路1号",
+    "contact_phone": "159****7905",
+    "lat": 31.325372,
+    "lng": 120.952099,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L66Y92Q1",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151484",
+    "company": "苏州久美玻璃钢有限公司",
+    "category": "原材料",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "黄埭镇康阳路366号",
+    "contact_phone": "0512-65088298",
+    "lat": 31.45038,
+    "lng": 120.552221,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02000JHII",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151500",
+    "company": "永新玻璃钢制品有限公司",
+    "category": "原材料",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "桐乡"
+    },
+    "address": "石门工贸园区",
+    "contact_phone": "0573-88611422",
+    "lat": 30.630012,
+    "lng": 120.436491,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023D0QRPV",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330483",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151564",
+    "company": "日新升玻璃店不锈钢",
+    "category": "原材料",
+    "keywords": [
+      "不锈钢材料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "顺德区"
+    },
+    "address": "环市东路府又花园二座12号",
+    "contact_phone": "156****0091",
+    "lat": 22.830493,
+    "lng": 113.264331,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGTXSLQZ",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "大良",
+      "adcode": "440606",
+      "search_keyword": "不锈钢材料"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151569",
+    "company": "兴胜玻璃工程",
+    "category": "原材料",
+    "keywords": [
+      "不锈钢材料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "白云区"
+    },
+    "address": "黄石街江夏白社西2号102商铺",
+    "contact_phone": "130****2917",
+    "lat": 23.204679,
+    "lng": 113.276924,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L04UXJY1",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440111",
+      "search_keyword": "不锈钢材料"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151676",
+    "company": "东复玻璃幕墙",
+    "category": "原材料",
+    "keywords": [
+      "铝板"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "松江区"
+    },
+    "address": "嘉定工业区叶城路925号B区4幢JT23087室",
+    "contact_phone": "136****6995",
+    "lat": 31.12461,
+    "lng": 121.309766,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGFAR0OL",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "九亭",
+      "adcode": "310117",
+      "search_keyword": "铝板"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151720",
+    "company": "同兴玻璃",
+    "category": "原材料",
+    "keywords": [
+      "铝合金"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "华风装饰城同兴玻璃B4-16",
+    "contact_phone": "185****5099",
+    "lat": 31.407751,
+    "lng": 120.627897,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I1XHMU2T",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "铝合金"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151734",
+    "company": "俊发玻璃不锈钢工程",
+    "category": "原材料",
+    "keywords": [
+      "铝合金"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "天河区"
+    },
+    "address": "灵山东路20号(吉大创意园B区西北门旁)",
+    "contact_phone": "137****1927",
+    "lat": 23.127588,
+    "lng": 113.426817,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MGFU5SOH",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东圃",
+      "adcode": "440106",
+      "search_keyword": "铝合金"
+    },
+    "industry": {
+      "code": "3546",
+      "name": "玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 印刷、制药、日化及日用品生产专用设备制造 > 玻璃、陶瓷和搪瓷制品生产专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151735",
+    "company": "航升玻璃工程部",
+    "category": "原材料",
+    "keywords": [
+      "铝合金"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "花都区"
+    },
+    "address": "清潭东路与西分片村后街交叉口东南80米",
+    "contact_phone": "135****9997; 181****6403",
+    "lat": 23.382314,
+    "lng": 113.255327,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0ID45OBF1",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "门窗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440114",
+      "search_keyword": "铝合金"
     },
     "industry": {
       "code": "3546",

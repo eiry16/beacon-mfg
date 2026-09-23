@@ -1304,5 +1304,54 @@
       "evidence": "医疗"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0152953",
+    "company": "东莞市嘉杰医疗科技有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "密封圈"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "大岭山镇大塘鸿发街3号1栋3楼",
+    "contact_phone": "181****0161",
+    "lat": 22.864823,
+    "lng": 113.837474,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J25DRGVB",
+      "type": "公司企业;公司;医药公司",
+      "typecode": "170203",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "密封圈"
+    },
+    "industry": {
+      "code": "3584",
+      "name": "医疗、外科及兽医用器械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 医疗仪器设备及器械制造 > 医疗、外科及兽医用器械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "医疗"
+    },
+    "is_manufacturer": true
   }
 ]

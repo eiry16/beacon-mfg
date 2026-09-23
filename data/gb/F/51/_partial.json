@@ -275,7 +275,8 @@
     "company": "金航不锈钢·板材批发·激光切割",
     "category": "批发和零售业",
     "keywords": [
-      "激光切割"
+      "激光切割",
+      "不锈钢材料"
     ],
     "region": {
       "province": "江苏",
@@ -2632,7 +2633,9 @@
     "company": "天发胶业油漆涂料批发",
     "category": "批发和零售业",
     "keywords": [
-      "密封件"
+      "密封件",
+      "硅胶制品",
+      "缠绕膜"
     ],
     "region": {
       "province": "江苏",
@@ -2673,6 +2676,55 @@
       "confidence": "low",
       "source": "gb_token",
       "evidence": "料批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0153219",
+    "company": "宁波兴铭井盖管材批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "塑料管"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "鄞州区"
+    },
+    "address": "现代商城旁映樾府售楼处后停车场里面",
+    "contact_phone": "133****0216",
+    "lat": 29.84755,
+    "lng": 121.580248,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KAX5EDYO",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "管材管件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330212",
+      "search_keyword": "塑料管"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "材批发"
     },
     "is_manufacturer": false
   }

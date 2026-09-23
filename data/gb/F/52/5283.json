@@ -2912,5 +2912,103 @@
       "evidence": "家居"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0151454",
+    "company": "顾家家居(桐乡大道店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "弹簧"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "南湖区"
+    },
+    "address": "桐乡大道1235号海德饰博汇顾家家居",
+    "contact_phone": "152****7881",
+    "lat": 30.738953,
+    "lng": 120.699398,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI1S9YD",
+      "type": "购物服务;家居建材市场;家居建材市场",
+      "typecode": "060600",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "文昌路",
+      "adcode": "330402",
+      "search_keyword": "弹簧"
+    },
+    "industry": {
+      "code": "5283",
+      "name": "家具零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 家具零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家居"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0151577",
+    "company": "百得厨卫(小榄家居店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "不锈钢材料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山",
+      "district": "中山"
+    },
+    "address": "小榄家居中心一期二楼223铺",
+    "contact_phone": "0760-22550001",
+    "lat": 22.655775,
+    "lng": 113.234825,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K0SU7AZF",
+      "type": "购物服务;家居建材市场;厨卫市场",
+      "typecode": "060604",
+      "alias": "",
+      "tag": "",
+      "keytag": "厨卫洁具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "442000",
+      "search_keyword": "不锈钢材料"
+    },
+    "industry": {
+      "code": "5283",
+      "name": "家具零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 家具零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家居"
+    },
+    "is_manufacturer": false
   }
 ]

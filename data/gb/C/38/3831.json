@@ -489,7 +489,8 @@
     "company": "锦宇五金.金环宇电缆(西大路店)",
     "category": "标准件",
     "keywords": [
-      "轴承"
+      "轴承",
+      "油封"
     ],
     "region": {
       "province": "广东",
@@ -2196,6 +2197,251 @@
       "confidence": "high",
       "source": "name",
       "evidence": "电缆"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151425",
+    "company": "中国人民电器电线电缆",
+    "category": "标准件",
+    "keywords": [
+      "轴承"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "嘉定区"
+    },
+    "address": "宝安公路2738号",
+    "contact_phone": "186****1519",
+    "lat": 31.342255,
+    "lng": 121.310723,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG8ZSD5",
+      "type": "购物服务;家电电子卖场;家电电子卖场",
+      "typecode": "060300",
+      "alias": "",
+      "tag": "",
+      "keytag": "电工电料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "马陆",
+      "adcode": "310114",
+      "search_keyword": "轴承"
+    },
+    "industry": {
+      "code": "3831",
+      "name": "电线、电缆制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 电线、电缆制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电线"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151462",
+    "company": "KBGJDG电缆桥架批发",
+    "category": "标准件",
+    "keywords": [
+      "弹簧"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "建材市场新区6幢17号",
+    "contact_phone": "151****6367; 158****6863",
+    "lat": 31.641779,
+    "lng": 120.795846,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MG5C3WCL",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "管材管件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
+      "search_keyword": "弹簧"
+    },
+    "industry": {
+      "code": "3831",
+      "name": "电线、电缆制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 电线、电缆制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电缆"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0152117",
+    "company": "平南电线实业有限公司",
+    "category": "压铸",
+    "keywords": [
+      "精密铸造"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "南海区"
+    },
+    "address": "桂城街道平南梅园庆丰围工业区12号",
+    "contact_phone": "待核实",
+    "lat": 23.006266,
+    "lng": 113.203189,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKQWH2Y",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "平洲",
+      "adcode": "440605",
+      "search_keyword": "精密铸造"
+    },
+    "industry": {
+      "code": "3831",
+      "name": "电线、电缆制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 电线、电缆制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电线"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0153243",
+    "company": "庆丰电缆",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料管"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "天河区"
+    },
+    "address": "天平架装饰城B区50档",
+    "contact_phone": "133****0129; 137****3108",
+    "lat": 23.160463,
+    "lng": 113.318589,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGDRZW0",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "天平架",
+      "adcode": "440106",
+      "search_keyword": "塑料管"
+    },
+    "industry": {
+      "code": "3831",
+      "name": "电线、电缆制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 电线、电缆制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电缆"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0153485",
+    "company": "苏萍包装材料气泡膜缠绕膜保护膜电线膜封箱带(元江店)",
+    "category": "注塑成型",
+    "keywords": [
+      "缠绕膜"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "闵行区"
+    },
+    "address": "元江路11号元江建材市场C003号",
+    "contact_phone": "135****8005; 150****1258",
+    "lat": 31.064143,
+    "lng": 121.460748,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KRYCXOQ3",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "吴泾",
+      "adcode": "310112",
+      "search_keyword": "缠绕膜"
+    },
+    "industry": {
+      "code": "3831",
+      "name": "电线、电缆制造",
+      "level": "class",
+      "path": "C 制造业 > 电气机械和器材制造业 > 电线、电缆、光缆及电工器材制造 > 电线、电缆制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电线"
     },
     "is_manufacturer": true
   }

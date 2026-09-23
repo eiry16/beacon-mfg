@@ -78107,5 +78107,54 @@
       "evidence": "家电维修"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0154300",
+    "company": "新区旺庄春雷电器修理部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "减速机"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "新吴区"
+    },
+    "address": "城南路32-7号",
+    "contact_phone": "136****8750; 159****2216",
+    "lat": 31.510871,
+    "lng": 120.370234,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KG9RZ29K",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电清洗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320214",
+      "search_keyword": "减速机"
+    },
+    "industry": {
+      "code": "8132",
+      "name": "日用电器修理",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 家用电器修理 > 日用电器修理",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "电器修理"
+    },
+    "is_manufacturer": false
   }
 ]

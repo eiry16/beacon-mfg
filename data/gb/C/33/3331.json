@@ -142,5 +142,54 @@
       "evidence": "集装箱"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0151614",
+    "company": "广州添伟活动板房集装箱围挡",
+    "category": "原材料",
+    "keywords": [
+      "钢板"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "增城区"
+    },
+    "address": "新塘大道西新钢材市场522号",
+    "contact_phone": "135****8298",
+    "lat": 23.118833,
+    "lng": 113.59319,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKMM4OOR",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新塘",
+      "adcode": "440118",
+      "search_keyword": "钢板"
+    },
+    "industry": {
+      "code": "3331",
+      "name": "集装箱制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 集装箱及金属包装容器制造 > 集装箱制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "集装箱"
+    },
+    "is_manufacturer": true
   }
 ]
