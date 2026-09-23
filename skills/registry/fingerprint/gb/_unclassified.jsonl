@@ -1,4 +1,4 @@
-{"id":"CN-I-0000001","co":"赤兔智能工业（苏州）有限公司","city":"苏州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L2","pv":"agent_collected","sc":40,"tel":0,"rt":24}
+{"id":"CN-I-0000001","co":"赤兔智能工业（苏州）有限公司","city":"苏州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L2","pv":"agent_collected","sc":40,"tel":0,"rt":24,"cap":["tech_ai","tsm_project","tst_java","tst_python","tst_cpp","trl_architect","其他信息服务"]}
 {"id":"CN-MFG-0000266","co":"常州市兰生职业培训学校","city":"常州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0000292","co":"飞天职业培训学校","city":"宁波","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0000335","co":"锐新兄弟广告有限公司","city":"深圳","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"龙岗"}
@@ -21,7 +21,7 @@
 {"id":"CN-MFG-0002909","co":"江苏文灿压铸有限公司宿舍","city":"无锡","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0002919","co":"新大压铸员工宿舍楼","city":"无锡","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0003114","co":"建升压铸科技有限公司宿舍","city":"东莞","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
-{"id":"CN-MFG-0003260","co":"大立建设PCB工程项目部","city":"杭州","gb":null,"mf":1,"proc":["pcb_fab"],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":0}
+{"id":"CN-MFG-0003260","co":"大立建设PCB工程项目部","city":"杭州","gb":null,"mf":1,"proc":["pcb_fab"],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":0,"cap":["pcb_fab","工程塑料"]}
 {"id":"CN-MFG-0003285","co":"方正科技PCB产业园宿舍","city":"珠海","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0003349","co":"苏州东站连接线一期三标苏州二建项目部","city":"苏州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"虎丘"}
 {"id":"CN-MFG-0003350","co":"中冶天工集团苏州东站连接线工程一期三标段项目部","city":"苏州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"虎丘"}
@@ -106,7 +106,7 @@
 {"id":"CN-MFG-0006826","co":"江阴鑫裕装潢材料有限公司","city":"无锡","gb":null,"mf":1,"proc":["metal_material"],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"江阴"}
 {"id":"CN-MFG-0006906","co":"宁波市兰江装饰材料有限公司(东润铭座店)","city":"宁波","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0006916","co":"建位铝合金装潢","city":"宁波","gb":null,"mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0006948","co":"宝乐门窗装饰厂","city":"温州","gb":null,"mf":1,"proc":["metal_material"],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1}
+{"id":"CN-MFG-0006948","co":"宝乐门窗装饰厂","city":"温州","gb":null,"mf":1,"proc":["metal_material"],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_material","铝合金"]}
 {"id":"CN-MFG-0006958","co":"温州市泰力铝合金装饰有限公司","city":"温州","gb":null,"mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0007003","co":"南京列卡广告科技有限公司","city":"南京","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"浦口"}
 {"id":"CN-MFG-0007023","co":"南京嘉磊装饰材料有限责任公司","city":"南京","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
@@ -129,8 +129,8 @@
 {"id":"CN-MFG-0007268","co":"无锡天铁钢材仓储配供有限公司","city":"无锡","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0007270","co":"江苏利卓盈钢材加工仓储有限公司","city":"无锡","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0007272","co":"无锡金瑞发钢材仓储批发","city":"无锡","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"惠山"}
-{"id":"CN-MFG-0007278","co":"无锡东信不锈钢仓储加工中心","city":"无锡","gb":null,"mf":1,"proc":["cnc_milling"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"锡山"}
-{"id":"CN-MFG-0007383","co":"温州亿鸿不锈钢装饰材料有限公司","city":"温州","gb":null,"mf":1,"proc":["metal_material"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"瓯海"}
+{"id":"CN-MFG-0007278","co":"无锡东信不锈钢仓储加工中心","city":"无锡","gb":null,"mf":1,"proc":["cnc_milling"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["cnc_milling","不锈钢"],"dist":"锡山"}
+{"id":"CN-MFG-0007383","co":"温州亿鸿不锈钢装饰材料有限公司","city":"温州","gb":null,"mf":1,"proc":["metal_material"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_material","不锈钢","碳钢/不锈钢"],"dist":"瓯海"}
 {"id":"CN-MFG-0007510","co":"南京锦红再生资源有限公司(上门/金属/家电/.仓库积圧/工地废料/","city":"南京","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0007542","co":"南京楠泰不锈钢工程装饰有限公司","city":"南京","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0007555","co":"诚和成不锈钢仓储","city":"佛山","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"南海"}
@@ -234,7 +234,7 @@
 {"id":"CN-MFG-0008774","co":"新泉文化-广告设计(总店)","city":"宁波","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"鄞州"}
 {"id":"CN-MFG-0008775","co":"蓝道夫广告•门头发光字•门头灯箱•招牌门头","city":"宁波","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"鄞州"}
 {"id":"CN-MFG-0008777","co":"帝一广告高精UV打印亚克力雕刻","city":"宁波","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"鄞州"}
-{"id":"CN-MFG-0008779","co":"南通大海广告图文有限公司","city":"南通","gb":null,"mf":1,"proc":["cnc_milling","cnc_turning"],"mat":["亚克力"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1}
+{"id":"CN-MFG-0008779","co":"南通大海广告图文有限公司","city":"南通","gb":null,"mf":1,"proc":["cnc_milling","cnc_turning"],"mat":["亚克力"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["cnc_milling","cnc_turning","亚克力"]}
 {"id":"CN-MFG-0008781","co":"启程广告门头招牌亚克力背景墙水晶字灯箱雕刻广告装修","city":"深圳","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝安"}
 {"id":"CN-MFG-0008783","co":"泰能广告","city":"深圳","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝安"}
 {"id":"CN-MFG-0008784","co":"宏盛隆广告招牌发光字-店铺装修","city":"深圳","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝安"}
@@ -404,8 +404,8 @@
 {"id":"CN-MFG-0012483","co":"利达广告加工中心","city":"宁波","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宁海"}
 {"id":"CN-MFG-0012496","co":"大港广告加工中心","city":"宁波","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"北仑"}
 {"id":"CN-MFG-0012508","co":"中铁十六局沈海高速下穿立交1标项目部钢筋加工中心","city":"宁波","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"奉化"}
-{"id":"CN-MFG-0012524","co":"大型广告加工中心","city":"南通","gb":null,"mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
-{"id":"CN-MFG-0012536","co":"宏升广告UV加工中心","city":"南通","gb":null,"mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
+{"id":"CN-MFG-0012524","co":"大型广告加工中心","city":"南通","gb":null,"mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["cnc_milling"]}
+{"id":"CN-MFG-0012536","co":"宏升广告UV加工中心","city":"南通","gb":null,"mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["cnc_milling"]}
 {"id":"CN-MFG-0012595","co":"中铁五局环莞快速二标钢结构智能加工中心","city":"东莞","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0012603","co":"中铁十一局常虎改扩建四标钢筋加工配送中心","city":"东莞","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0012620","co":"深农全球农产品供应链加工中心项目部","city":"广州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"南沙"}
@@ -490,7 +490,7 @@
 {"id":"CN-MFG-0019004","co":"荣华五金装饰","city":"惠州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"惠城"}
 {"id":"CN-MFG-0019007","co":"建泓不锈钢板材门业装饰总汇","city":"惠州","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"惠城"}
 {"id":"CN-MFG-0019063","co":"粤诚装饰材料批发","city":"惠州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"博罗"}
-{"id":"CN-MFG-0019069","co":"鼎盛天花装饰材料彩钢板铝材","city":"惠州","gb":null,"mf":1,"proc":["metal_stamping"],"mat":["铝合金","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"博罗"}
+{"id":"CN-MFG-0019069","co":"鼎盛天花装饰材料彩钢板铝材","city":"惠州","gb":null,"mf":1,"proc":["metal_stamping"],"mat":["铝合金","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","铝合金","碳钢/不锈钢"],"dist":"博罗"}
 {"id":"CN-MFG-0019096","co":"鸿运不锈钢玻璃铝门窗装饰工程","city":"惠州","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"惠城"}
 {"id":"CN-MFG-0019168","co":"粤友装饰建材脚手架批发","city":"惠州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"惠城"}
 {"id":"CN-MFG-0019330","co":"浙江中建精密机械有限公司","city":"绍兴","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"嵊州"}
@@ -505,7 +505,7 @@
 {"id":"CN-MFG-0019757","co":"正大不锈钢铝合金装饰","city":"绍兴","gb":null,"mf":1,"proc":[],"mat":["不锈钢","铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"柯桥"}
 {"id":"CN-MFG-0019941","co":"中交二航局杭绍甬越东路连接线项目部","city":"绍兴","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"上虞"}
 {"id":"CN-MFG-0019993","co":"金彪五金电器建筑装潢(笛扬路店)","city":"绍兴","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"柯桥"}
-{"id":"CN-MFG-0020080","co":"李亮板材装饰商行剪板折弯(城南大道店)","city":"绍兴","gb":null,"mf":1,"proc":["bending","cutting_service"],"mat":["碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"越城"}
+{"id":"CN-MFG-0020080","co":"李亮板材装饰商行剪板折弯(城南大道店)","city":"绍兴","gb":null,"mf":1,"proc":["bending","cutting_service"],"mat":["碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["bending","cutting_service","碳钢/不锈钢"],"dist":"越城"}
 {"id":"CN-MFG-0020089","co":"嵊州墨元不锈钢板材装饰材料商行","city":"绍兴","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"嵊州"}
 {"id":"CN-MFG-0020163","co":"小邹不锈钢装饰","city":"绍兴","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"越城"}
 {"id":"CN-MFG-0020178","co":"中易铝材现货仓储中心","city":"绍兴","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"诸暨"}
@@ -551,7 +551,7 @@
 {"id":"CN-MFG-0022639","co":"苏州海艳玻璃装饰","city":"苏州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"虎丘"}
 {"id":"CN-MFG-0022702","co":"温州鸿豪建筑装饰材料有限公司","city":"温州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"瓯海"}
 {"id":"CN-MFG-0022708","co":"温州东晟不锈钢装饰材料有限公司","city":"温州","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"瑞安"}
-{"id":"CN-MFG-0022716","co":"浙江泓辉装饰不锈钢金属制品有限公司","city":"温州","gb":null,"mf":1,"proc":["metal_stamping"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"瑞安"}
+{"id":"CN-MFG-0022716","co":"浙江泓辉装饰不锈钢金属制品有限公司","city":"温州","gb":null,"mf":1,"proc":["metal_stamping"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","不锈钢"],"dist":"瑞安"}
 {"id":"CN-MFG-0022717","co":"温州慕铭装饰材料有限公司","city":"温州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"乐清"}
 {"id":"CN-MFG-0022741","co":"石氏不锈钢装饰板材加工销售","city":"嘉兴","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"桐乡"}
 {"id":"CN-MFG-0022763","co":"鑫瑞不锈钢板材装饰(桐乡店)","city":"嘉兴","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"桐乡"}
@@ -565,7 +565,7 @@
 {"id":"CN-MFG-0023239","co":"万鸿不锈钢装饰板","city":"宁波","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"鄞州"}
 {"id":"CN-MFG-0023271","co":"三中装饰铝单板工厂","city":"佛山","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"南海"}
 {"id":"CN-MFG-0023276","co":"奥杏天花吊顶装饰","city":"佛山","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"顺德"}
-{"id":"CN-MFG-0023298","co":"阿华不锈钢装饰商行剪板折弯","city":"广州","gb":null,"mf":1,"proc":["bending","cutting_service"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"天河"}
+{"id":"CN-MFG-0023298","co":"阿华不锈钢装饰商行剪板折弯","city":"广州","gb":null,"mf":1,"proc":["bending","cutting_service"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["bending","cutting_service","不锈钢"],"dist":"天河"}
 {"id":"CN-MFG-0023311","co":"永鸿装饰工程部","city":"广州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"荔湾"}
 {"id":"CN-MFG-0023315","co":"粤景装饰天花吊顶","city":"广州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"增城"}
 {"id":"CN-MFG-0023320","co":"粤友天花装饰·隔墙吊顶·无尘车间","city":"东莞","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -819,7 +819,7 @@
 {"id":"CN-MFG-0032816","co":"宝力五金装饰城","city":"深圳","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"龙华"}
 {"id":"CN-MFG-0032913","co":"粤雅消防器五金装饰材料城","city":"广州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"天河"}
 {"id":"CN-MFG-0032932","co":"啫乜都德·啫啫煲专门店(北京路店)","city":"广州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"越秀"}
-{"id":"CN-MFG-0032991","co":"温州广纳五金装饰市场","city":"温州","gb":null,"mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"龙湾"}
+{"id":"CN-MFG-0032991","co":"温州广纳五金装饰市场","city":"温州","gb":null,"mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"龙湾"}
 {"id":"CN-MFG-0032992","co":"温州广纳五金装饰市场-南区","city":"温州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"龙湾"}
 {"id":"CN-MFG-0033047","co":"深圳市中建元系统集成有限公司","city":"深圳","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"龙岗"}
 {"id":"CN-MFG-0033246","co":"杭州综保区开发建设有限公司物流机器人生产及智能系统集成项目","city":"杭州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"钱塘"}
@@ -886,7 +886,7 @@
 {"id":"CN-MFG-0034719","co":"大源中央公园篮球场","city":"成都","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"武侯"}
 {"id":"CN-MFG-0034721","co":"中和湿地公园绿道-篮球场","city":"成都","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"双流"}
 {"id":"CN-MFG-0034727","co":"桂溪生态公园东区-运动球场","city":"成都","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"武侯"}
-{"id":"CN-MFG-0034747","co":"梧田庆林五金装潢批发零售部(佳景花园店)","city":"温州","gb":null,"mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"瓯海"}
+{"id":"CN-MFG-0034747","co":"梧田庆林五金装潢批发零售部(佳景花园店)","city":"温州","gb":null,"mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"瓯海"}
 {"id":"CN-MFG-0034799","co":"上海域正装饰设计有限公司","city":"上海","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"普陀"}
 {"id":"CN-MFG-0034823","co":"广州金善国际化妆美甲美容美发培训学校","city":"广州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"白云"}
 {"id":"CN-MFG-0034834","co":"自由时刻篮球公园(菱角湖店)","city":"武汉","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"江汉"}
@@ -944,7 +944,7 @@
 {"id":"CN-MFG-0037044","co":"了凡私厨花园餐厅(33小镇店)","city":"东莞","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0037074","co":"启公馆私厨","city":"佛山","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"禅城"}
 {"id":"CN-MFG-0037080","co":"龙夫花园私房菜馆","city":"佛山","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"顺德"}
-{"id":"CN-MFG-0037114","co":"金陵公馆菜·南京菜","city":"南京","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"dist":"建邺"}
+{"id":"CN-MFG-0037114","co":"金陵公馆菜·南京菜","city":"南京","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["cuisine_northern","cuisine_private_kitchen","cuisine_jiangzhe","其他餐饮"],"dist":"建邺"}
 {"id":"CN-MFG-0037115","co":"富泓花园餐厅(玄武湖店)","city":"南京","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"玄武"}
 {"id":"CN-MFG-0037116","co":"宇纳智联弱电网络·智慧工地智能化设计·世图兹","city":"北京","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0037154","co":"中铁十一局杭州地铁6号线运维项目部分部","city":"杭州","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"萧山"}
@@ -1510,7 +1510,7 @@
 {"id":"CN-MFG-0095984","co":"铝合金装潢部","city":"贵阳","gb":null,"mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0095985","co":"生旺铝合金装潢部","city":"贵阳","gb":null,"mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0095993","co":"谢兴友铝合金装潢","city":"贵阳","gb":null,"mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0096004","co":"蓝华铝合金装饰部","city":"贵阳","gb":null,"mf":1,"proc":["metal_stamping"],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1}
+{"id":"CN-MFG-0096004","co":"蓝华铝合金装饰部","city":"贵阳","gb":null,"mf":1,"proc":["metal_stamping"],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","铝合金"]}
 {"id":"CN-MFG-0096006","co":"贵阳花溪老帅铝合金装潢部","city":"贵阳","gb":null,"mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0096015","co":"泰莱花园泰式海鲜火锅音乐餐吧(吾悦广场店)","city":"贵阳","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0096162","co":"西山公园面包厂(汇金店)","city":"贵阳","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -1844,8 +1844,8 @@
 {"id":"CN-MFG-0123085","co":"鼎鑫图文广告","city":"遵义","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0123088","co":"遵义腾泰广告制作中心","city":"遵义","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0123089","co":"晟诚睿图文广告(暂停营业)","city":"遵义","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
-{"id":"CN-MFG-0123265","co":"冠艺装饰外墙涂装","city":"遵义","gb":null,"mf":1,"proc":["spray_painting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
-{"id":"CN-MFG-0123290","co":"李师傅汽车装饰电子电路","city":"遵义","gb":null,"mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
+{"id":"CN-MFG-0123265","co":"冠艺装饰外墙涂装","city":"遵义","gb":null,"mf":1,"proc":["spray_painting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["spray_painting"]}
+{"id":"CN-MFG-0123290","co":"李师傅汽车装饰电子电路","city":"遵义","gb":null,"mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["electronic_component"]}
 {"id":"CN-MFG-0123459","co":"中建五金(保元浙商城店)","city":"遵义","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0123560","co":"上海宝冶遵义长岭特优钢项目部","city":"遵义","gb":null,"mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0123599","co":"荣盛不锈钢装潢部","city":"遵义","gb":null,"mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
