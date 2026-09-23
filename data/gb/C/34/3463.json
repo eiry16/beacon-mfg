@@ -177,5 +177,54 @@
       "evidence": "气体"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0152089",
+    "company": "常州多棱多气体有限公司",
+    "category": "压铸",
+    "keywords": [
+      "精密铸造"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州",
+      "district": "新北区"
+    },
+    "address": "黄河西路232号",
+    "contact_phone": "0519-85958887",
+    "lat": 31.850858,
+    "lng": 119.936858,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020705MZN",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320411",
+      "search_keyword": "精密铸造"
+    },
+    "industry": {
+      "code": "3463",
+      "name": "气体、液体分离及纯净设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 气体、液体分离及纯净设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "气体"
+    },
+    "is_manufacturer": true
   }
 ]

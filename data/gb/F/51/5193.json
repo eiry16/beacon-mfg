@@ -170,5 +170,54 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0153472",
+    "company": "安全网批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "缠绕膜"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "嘉定区"
+    },
+    "address": "方泰五金城金浩路45号",
+    "contact_phone": "138****3798",
+    "lat": 31.312141,
+    "lng": 121.232137,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L12ATUDB",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310114",
+      "search_keyword": "缠绕膜"
+    },
+    "industry": {
+      "code": "5193",
+      "name": "互联网批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 其他批发业 > 互联网批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "网批发"
+    },
+    "is_manufacturer": false
   }
 ]

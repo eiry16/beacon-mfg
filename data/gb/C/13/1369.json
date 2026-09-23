@@ -246,5 +246,54 @@
       "evidence": "渔港"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0152430",
+    "company": "常州渔港锻造有限公司",
+    "category": "压铸",
+    "keywords": [
+      "锻件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州",
+      "district": "武进区"
+    },
+    "address": "雪堰镇新湖路8号",
+    "contact_phone": "待核实",
+    "lat": 31.505922,
+    "lng": 120.117633,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B02070U4GE",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320412",
+      "search_keyword": "锻件"
+    },
+    "industry": {
+      "code": "1369",
+      "name": "其他水产品加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 水产品加工 > 其他水产品加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "渔港"
+    },
+    "is_manufacturer": true
   }
 ]

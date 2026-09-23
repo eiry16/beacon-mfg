@@ -87,7 +87,8 @@
     "company": "苏州古得堡数码印刷工厂",
     "category": "原材料",
     "keywords": [
-      "亚克力板"
+      "亚克力板",
+      "塑料包装"
     ],
     "region": {
       "province": "江苏",
@@ -551,7 +552,8 @@
     "company": "朝宸广告·UV喷绘印刷·招牌灯箱文化墙·发光字亚克力·加工厂",
     "category": "精密机械加工",
     "keywords": [
-      "亚克力加工"
+      "亚克力加工",
+      "亚克力板"
     ],
     "region": {
       "province": "广东",
@@ -1710,6 +1712,153 @@
       "confidence": "high",
       "source": "name",
       "evidence": "彩印"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0153706",
+    "company": "恺鸿吸塑品印刷",
+    "category": "注塑成型",
+    "keywords": [
+      "吸塑"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "厚街镇兴元路智和兴军铺工业园A栋1-3层",
+    "contact_phone": "待核实",
+    "lat": 22.935778,
+    "lng": 113.643111,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDBSCC49",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "吸塑"
+    },
+    "industry": {
+      "code": "2319",
+      "name": "包装装潢及其他印刷",
+      "level": "class",
+      "path": "C 制造业 > 印刷和记录媒介复制业 > 印刷 > 包装装潢及其他印刷",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "印刷"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0153825",
+    "company": "苏州市博丽塑料彩印包装有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料包装"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "生态路与聚峰路交叉口南160米",
+    "contact_phone": "186****8608",
+    "lat": 31.518771,
+    "lng": 120.622783,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL2J7Y9",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "印刷厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "塑料包装"
+    },
+    "industry": {
+      "code": "2319",
+      "name": "包装装潢及其他印刷",
+      "level": "class",
+      "path": "C 制造业 > 印刷和记录媒介复制业 > 印刷 > 包装装潢及其他印刷",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "彩印"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0153895",
+    "company": "深圳友邦塑料印刷包装有限公司-北区",
+    "category": "注塑成型",
+    "keywords": [
+      "塑料包装"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "光明区"
+    },
+    "address": "光明区田寮社区第四工业区14-18栋",
+    "contact_phone": "0755-27193388",
+    "lat": 22.734476,
+    "lng": 113.900625,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F38J40S",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "公明",
+      "adcode": "440311",
+      "search_keyword": "塑料包装"
+    },
+    "industry": {
+      "code": "2319",
+      "name": "包装装潢及其他印刷",
+      "level": "class",
+      "path": "C 制造业 > 印刷和记录媒介复制业 > 印刷 > 包装装潢及其他印刷",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "印刷"
     },
     "is_manufacturer": true
   }
