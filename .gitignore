@@ -65,6 +65,18 @@ skills/registry/gb-proc-map.json
 skills/registry/category-conflicts.json
 data/fetch_cursor.json
 data/district_cache.json
+# 名称索引（2026-09-23）：**只供 Pages/CDN 按需拉取**，不入库。两条理由叠加：
+#   ① 边界判据：上面那条铁律是「MCP 运行时读什么 = 入库」。mcp/server.py 只按
+#      `_shards_of_type("fp"|"zh")` 取分片，**从不**取 `t="name"` → 没有 MCP 读者；
+#      且内容是从 skills/registry/fingerprint/** 现算的投影（co/city/gb/cl 全在那 273 片里），
+#      入库等于把 15MB 重复数据再存一份，纯撑大公开仓。
+#   ② 安全：上游名录存在「号码写在企业名里」的脏数据（此处本该写企业名举例，
+#      但 co 字段会把号码原样带进来，而本文件**不在 maskphone filter 覆盖路径里**
+#      —— 注释里一旦抄下真号，就等于明文写进公开仓库。所以只写形态，不写号码）。
+#      而 .gitattributes 的 maskphone 只盖 data/gb|en、phone-index、skills/registry、docs
+#      ——**本路径不在 filter 覆盖内**。一旦误 `git add`，脱敏防线整条绕过。
+#      它由 postfetch 的 manifest 步（scripts/gen_name_index.py）每轮重建，随时可再生成。
+data/name-index.jsonl
 # ⚠ skills/vendors/{id}/capability.json **不能**忽略：它是 rfq-kernel
 # beacon_adapter._card_path() 在 registry/capability 缺失时的兜底读路径（属 MCP 运行链）。
 # ⚠ skills/rfq-kernel/suppliers/** 同理：kernel.load_suppliers() 会 glob 读取。
@@ -183,6 +195,13 @@ skills/registry/capability/
 skills/_vendors_backup_*/
 skills/_keep_sample/
 
+# 改动前的自动备份（cert_card_sync.py 写：`{文件}.bak-YYYYMMDD`）。
+# registry/capability 整个目录已被忽略、覆盖不到 skills/vendors 那两个文件，
+# 所以这里单列一条 —— 否则每次同步都会在 git 里留下未跟踪文件。
+skills/vendors/*/*.bak-*
+# 同上，指纹侧也有单文件改动前的备份（如 mark_fixture_card.py 改 cl 时写的）
+skills/registry/fingerprint/**/*.bak-*
+
 # 例外：保留 1 家已认主样板进 Git，作为「标准长什么样」的参考
 !skills/vendors/CN-MFG-0000005/SKILL.md
 !skills/vendors/CN-MFG-0000005/capability.json
@@ -257,5 +276,9 @@ data/_dedup_removed_ids.json
 cron_manager.py
 cron_manager.html
 start_cron_manager.bat
+# 总后端控制台入口（2026-09-23）：能跑抓取、能改 .env，属本地运维面，绝不进公开仓。
+# 服务本体 scripts/console_server.py 已被上方 `scripts/*` 忽略，这里只补根目录的双击入口。
+# 口径参照上一条 cron_manager：`用户第 11 轮明确「控制台不进 git」`。
+启动控制台.bat
 # 遗留备份目录（旧 ID 制式能力卡备份；postfetch 的提交步骤本就明确不碰它）
 .backup_legacy/
