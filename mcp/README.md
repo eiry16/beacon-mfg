@@ -80,6 +80,41 @@ npm i -g beacon-mfg-mcp      # 或不安装直接用 npx beacon-mfg-mcp
 HTTP 模式带正确 `User-Agent` 与 `ETag` 304 缓存（与 App 同款策略），并落盘 `~/.cache/beacon-mcp-cache`，
 重复查询零传输。CF 部署版手机号可能是全号——隐私敏感场景请用方式 A。
 
+## 远程 HTTP 端点（Streamable HTTP）
+
+`server.py` 本体是 **stdio**；`http_server.py` 是它的 **HTTP 传输适配层**（复用同一份 `_dispatch`/`TOOLS`，
+业务逻辑一行没动，所以 stdio 与 HTTP 两条链路不会分叉）。
+
+```bash
+MCP_PORT=8787 python http_server.py      # 默认 0.0.0.0:8787，端点 /mcp，健康检查 /health
+```
+
+客户端配置（`type: http` 即 Streamable HTTP）：
+
+```jsonc
+{ "mcpServers": { "beacon-mfg": { "type": "http", "url": "https://<你的地址>/mcp" } } }
+```
+
+**先用隧道验证**（零成本、今天即可验证协议，但 PC 关机即失效）：
+
+```bash
+cloudflared tunnel --url http://localhost:8787     # 拿到 https://xxx.trycloudflare.com
+# 客户端填 https://xxx.trycloudflare.com/mcp
+```
+
+> ⚠️ **现状说明**：`*.trycloudflare.com` 是本机隧道，**不是 7×24**。
+> 若要做成真正常驻的远程端点，需要一台常驻 Python 宿主（云主机 / 容器 PaaS）。
+> 注意 `server.py` 用了 `ThreadPoolExecutor` 并行拉分片，因此**不适合** Cloudflare Python Workers（beta，线程受限）。
+
+### 已实测（本地 HTTP 全流程）
+
+`GET /health` 200 → `POST /mcp initialize` 200 并下发 `Mcp-Session-Id` →
+`notifications/initialized` **202 空体** → `tools/list` 6 个 tool →
+`tools/call search_vendors{city:苏州, query:"精密 加工"}` 返回 **3742 条命中**（`via_index: true`）。
+
+实现要点：`initialize` 响应 `protocolVersion: 2024-11-05`；本服务**不提供** server→client 的 SSE
+主动推送（只读检索不需要），故 `GET /mcp` 返回 405 —— 这是 MCP 规范允许的（MAY NOT）。
+
 ## 影响评估（对现有系统为零影响）
 
 ### 1) 对 Android App（Beacon-MFG）— 无影响
