@@ -80,17 +80,17 @@
   },
   {
     "id": "CN-MFG-0019355",
-    "company_en": "Zhao Sheng Semiconductor (Zhejiang) Co., Ltd.",
+    "company_en": "Zhaosheng Semiconductor (Zhejiang) Co., Ltd.",
     "category": "注塑成型",
     "category_en": "Injection Molding",
     "keywords_en": [
-      "Machine Processing"
+      "Machining"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Shaoxing"
     },
-    "address_en": "No. 1 Jianxin Road, Jining Street, Dian荡畈 Industrial Park",
+    "address_en": "No. 1 Jianxin Road, Jina Street Industrial Park, Jidangfan Industrial Park",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -393,6 +393,41 @@
       "confidence": "high",
       "source": "name",
       "evidence": "集成电路"
+    },
+    "industry_en": {
+      "code": "3973",
+      "name_en": "Integrated Circuits",
+      "level": "class",
+      "name": "集成电路制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/39/3973"
+  },
+  {
+    "id": "CN-MFG-0156197",
+    "company_en": "Sefudeen Semiconductor Equipment Technology (Suzhou) Co., Ltd.",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "Environmental Protection Equipment"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 369 Lushan Road, Suzhou High-Tech Industrial Development Zone, 21 Building, 103 Room, Suzhou National Environmental Protection Industrial Park",
+    "contact_phone": "159****0388; 181****1121",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "3973",
+      "name": "集成电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 集成电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "半导体"
     },
     "industry_en": {
       "code": "3973",
