@@ -1,14 +1,27 @@
 {
   "metadata": {
     "description": "已认证企业索引。cl = 凭证等级（L0 未核验 / L1 企业自述 / L2 平台已认证 / L3 第三方核验），灯牌由规则引擎算出，不可指定。",
-    "generated_at": "2026-09-10",
+    "generated_at": "2026-09-24",
     "counts": {
-      "L2": 1
+      "L2": 2
     },
-    "total": 1
+    "total": 2
   },
   "index": {
     "L2": [
+      {
+        "id": "CN-I-0000001",
+        "company": "赤兔智能工业（苏州）有限公司",
+        "category": "信息传输、软件和信息技术服务业",
+        "region": {
+          "province": "江苏",
+          "city": "苏州"
+        },
+        "cl": "L2",
+        "issued_at": "2026-09-24",
+        "expires_at": "2027-09-24",
+        "completeness": 83.3
+      },
       {
         "id": "CN-MFG-0020317",
         "company": "耐特斯传输设备（上海）有限公司",
@@ -18,8 +31,8 @@
           "city": "上海"
         },
         "cl": "L2",
-        "issued_at": "2026-09-08",
-        "expires_at": "2027-09-08",
+        "issued_at": "2026-09-24",
+        "expires_at": "2027-09-24",
         "completeness": 94.1
       }
     ]

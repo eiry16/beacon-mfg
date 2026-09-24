@@ -193,6 +193,10 @@ CACHE_DIR = os.path.join(tempfile.gettempdir(), "beacon-mcp-cache")
 UA = "BeaconMFG-MCP/1.0 (+https://beacon-mfg.pages.dev/)"
 
 _manifest_cache: Optional[Dict[str, Any]] = None
+# 国标别名表（{word: entries}），懒加载一次；None 表示还没读过
+_alias_cache: Optional[Dict[str, Any]] = None
+# 国标码 → 中文名，懒加载一次
+_gb_name_cache: Optional[Dict[str, str]] = None
 
 
 # --------------------------------------------------------------------------- #
@@ -423,6 +427,130 @@ def _shards_of_type(t: str) -> List[Dict[str, Any]]:
 def _zh_paths_for_gb(gb: str) -> List[str]:
     # 一个国标码可能拆成多个 zh 分片（如 3484.json + 3484-p2.json 续片），必须全扫
     return [s.get("p") for s in _shards_of_type("zh") if s.get("c") == gb]
+
+
+# --------------------------------------------------------------------------- #
+# 国标行业别名表（与 App 的 AliasIndex 同源）
+#
+# 2026-09-24 之前 MCP **完全没接别名表**：「输送线」这种口语词在厂名/工艺/材料里
+# 一个字都不出现，_hay 命中不了，于是返回 0 条 —— 而 App 同一句能出 3434。
+# 别名表把「口语词 → 国标码」补上，检索时按码直接定向对应分片。
+# --------------------------------------------------------------------------- #
+def _load_alias_file(rel: str) -> Dict[str, Any]:
+    """两种历史形态都兼容：[["metadata",..],["alias",{..}]] 和直接 {word: ...}。"""
+    txt = fetch_text(rel)
+    if not txt:
+        return {}
+    try:
+        raw = json.loads(txt)
+    except Exception:
+        return {}
+    if isinstance(raw, list):
+        for pair in raw:
+            if isinstance(pair, list) and len(pair) == 2 and pair[0] == "alias":
+                return pair[1] or {}
+        return {}
+    if isinstance(raw, dict):
+        return raw.get("alias", raw) or {}
+    return {}
+
+
+def load_gb_alias() -> Dict[str, Any]:
+    """词 → 条目。两层表合并：gb-alias.json（数据推导）+ gb-alias-curated.json（人工策展）。"""
+    global _alias_cache
+    if _alias_cache is None:
+        merged: Dict[str, Any] = {}
+        for rel in ("data/gb-alias.json", "data/gb-alias-curated.json"):
+            for k, v in _load_alias_file(rel).items():
+                merged.setdefault(str(k).lower(), v)
+        _alias_cache = merged
+    return _alias_cache
+
+
+def _alias_entries(v: Any) -> List[Dict[str, Any]]:
+    """条目的两种写法归一成 [{code,name,hits}]：
+    gb-alias.json      → [{"code","name","hits"}, ...]
+    gb-alias-curated   → {"codes":[...], "note":...}
+    """
+    out: List[Dict[str, Any]] = []
+    if isinstance(v, dict):
+        for c in (v.get("codes") or []):
+            out.append({"code": str(c), "name": v.get("name", ""), "hits": int(v.get("hits") or 0)})
+        if v.get("code"):
+            out.append({"code": str(v["code"]), "name": v.get("name", ""), "hits": int(v.get("hits") or 0)})
+    elif isinstance(v, list):
+        for e in v:
+            if isinstance(e, dict) and e.get("code"):
+                out.append({"code": str(e["code"]), "name": e.get("name", ""),
+                            "hits": int(e.get("hits") or 0)})
+            elif isinstance(e, str):
+                out.append({"code": e, "name": "", "hits": 0})
+    return out
+
+
+def _gb_names() -> Dict[str, str]:
+    """国标码 → 中文名。取不到（离线/文件缺失）就返回空表，不影响主链路。"""
+    global _gb_name_cache
+    if _gb_name_cache is None:
+        names: Dict[str, str] = {}
+        txt = fetch_text("data/gb4754-full.json")
+        if txt:
+            try:
+                raw = json.loads(txt)
+            except Exception:
+                raw = None
+            # 两种形态都见过：{"classes":{...},"groups":{...}} 和 [["classes",{...}],...]；
+            # 值本身也可能是 {"name":..,"desc":..}，只取 name 段。
+            sections = raw.items() if isinstance(raw, dict) else (raw or [])
+            for key, body in sections:
+                if key in ("classes", "groups", "divisions") and isinstance(body, dict):
+                    for k, v in body.items():
+                        names[str(k)] = str(v.get("name", v)) if isinstance(v, dict) else str(v)
+        _gb_name_cache = names
+    return _gb_name_cache
+
+
+def alias_codes(q: str, max_codes: int = 6) -> List[Dict[str, Any]]:
+    """采购口语词 → 国标码。返回 [{code,name,word,exact,hits}]，按 精确>hits 排序。"""
+    alias = load_gb_alias()
+    q = (q or "").strip().lower()
+    if not alias or not q:
+        return []
+    probes = [q] + [t for t in q.split() if len(t) >= 2]
+    best: Dict[str, Dict[str, Any]] = {}
+    for probe in dict.fromkeys(probes):
+        if len(probe) < 2:
+            continue
+        for word, v in alias.items():
+            wl = word.lower()
+            if wl == probe:
+                exact = True
+            elif probe in wl or wl in probe:
+                exact = False
+            else:
+                continue
+            for e in _alias_entries(v):
+                code = e["code"]
+                if not code:
+                    continue
+                prev = best.get(code)
+                rank = (1 if exact else 0, e["hits"])
+                if prev is None or rank > prev["_rank"]:
+                    best[code] = {"code": code, "name": e["name"], "word": word,
+                                  "exact": exact, "hits": e["hits"], "_rank": rank}
+    out = [v for v in best.values()]
+    for v in out:
+        v.pop("_rank", None)
+        # curated 表只写 codes 不写 name，回填报一下 —— 返回体里带中文行业名，
+        # 调用方（agent / 人）不用再自己查一遍码表。
+        if not v["name"]:
+            v["name"] = _gb_names().get(v["code"], "")
+    out.sort(key=lambda x: (-int(x["exact"]), -x["hits"]))
+    return out[:max_codes]
+
+
+def _fp_paths_for_gbs(codes: List[str]) -> List[str]:
+    return [s.get("p") for s in _shards_of_type("fp") if s.get("c") in set(codes)]
 
 
 # --------------------------------------------------------------------------- #
@@ -1019,6 +1147,15 @@ def _records_from_paths(paths: List[str]) -> List[Dict[str, Any]]:
     return out
 
 
+def _city_ok(rec: Dict[str, Any], city: str) -> bool:
+    """city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在高德里归到地级市名下，
+    记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
+    """
+    if not city:
+        return True
+    return city in (rec.get("city", ""), rec.get("dist", ""))
+
+
 def search_vendors(query: str = "", city: str = "", gb: str = "",
                    limit: int = 20, offset: int = 0) -> Dict[str, Any]:
     limit = max(1, min(int(limit), 200))
@@ -1028,6 +1165,14 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     # 而非必须作为连续子串出现。单关键词时退化为原行为。
     tokens = [t for t in q.split() if t]
 
+    # 口语词 → 国标码（2026-09-24 接入别名表）。
+    # 「输送线/流水线/PCB」这类词在任何记录的厂名/工艺/材料里都不出现，纯子串匹配
+    # 必然 0 条。别名命中的记录按码定向召回，**豁免 AND token 校验** —— 不豁免的话
+    # 刚拉进来就又被 _hay 判定「不含输送线」而滤掉，等于白接。
+    alias_hits = alias_codes(q) if q else []
+    alias_by_code = {a["code"]: a for a in alias_hits}
+    alias_paths = _fp_paths_for_gbs(list(alias_by_code)) if alias_by_code else []
+
     # 给了国标码：只扫对应分片（最快路径，不构建全量索引）
     if gb:
         fp_shards = [s for s in _shards_of_type("fp") if s.get("c") == gb]
@@ -1036,9 +1181,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         for s in fp_shards:
             scanned += 1
             for rec in _read_fp_shard(s):
-                # city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在高德里归到地级市名下，
-                # 记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
-                if city and city not in (rec.get("city", ""), rec.get("dist", "")):
+                if not _city_ok(rec, city):
                     continue
                 if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
                     continue
@@ -1055,8 +1198,8 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     cands = _candidate_shards(tokens, city) if (tokens or city) else None
     via_index = cands is not None
 
-    if via_index and not cands:
-        # 索引明确判定无命中 —— 无需拉任何分片
+    if via_index and not cands and not alias_paths:
+        # 索引明确判定无命中、别名也没给方向 —— 无需拉任何分片
         return {
             "total_matched": 0,
             "returned": 0,
@@ -1066,43 +1209,104 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         }
 
     matches: List[Dict[str, Any]] = []
+    seen: set = set()
+
+    def _collect(recs, relax_tokens: bool = False) -> None:
+        for rec in recs:
+            if not _city_ok(rec, city):
+                continue
+            if not relax_tokens and tokens and not all(tok in _hay(rec).lower() for tok in tokens):
+                continue
+            rid = rec.get("id")
+            if rid in seen:      # 别名召回与文本召回的并集要去重
+                continue
+            seen.add(rid)
+            s = _rec_summary(rec)
+            if relax_tokens:
+                a = alias_by_code.get(rec.get("gb") or "")
+                if a:
+                    s["alias_match"] = {"word": a["word"], "gb": a["code"], "name": a["name"]}
+            matches.append(s)
+
     if via_index:
         # 只拉候选分片（git 模式一次 archive 批量取，通常 1~N 个）
-        scanned = len(cands)
-        for rec in _records_from_paths(cands):
-# city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在高德里归到地级市名下，
-            # 记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
-            if city and city not in (rec.get("city", ""), rec.get("dist", "")):
-                continue
-            if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
-                continue
-            matches.append(_rec_summary(rec))
+        scanned = len(cands or [])
+        _collect(_records_from_paths(cands or []))
     else:
-        recs = _build_fp_index()
         scanned = len(_shards_of_type("fp"))
-        for rec in recs:
-# city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在高德里归到地级市名下，
-            # 记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
-            if city and city not in (rec.get("city", ""), rec.get("dist", "")):
-                continue
-            if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
-                continue
-            matches.append(_rec_summary(rec))
+        _collect(_build_fp_index())
 
-    return {
+    # 别名定向召回（后追加，纯度次之）
+    alias_scanned = 0
+    for p in alias_paths:
+        for rec in _records_from_paths([p]):
+            alias_scanned += 1
+            if not _city_ok(rec, city):
+                continue
+            rid = rec.get("id")
+            if rid in seen:
+                continue
+            seen.add(rid)
+            s = _rec_summary(rec)
+            a = alias_by_code.get(rec.get("gb") or "")
+            if a:
+                s["alias_match"] = {"word": a["word"], "gb": a["code"], "name": a["name"]}
+            matches.append(s)
+
+    out = {
         "total_matched": len(matches),
         "returned": len(matches[offset:offset + limit]),
         "shards_scanned": scanned,
         "via_index": via_index,
         "results": matches[offset:offset + limit],
     }
+    if alias_hits:
+        out["alias_expanded"] = [{"word": a["word"], "gb": a["code"], "name": a["name"]}
+                                 for a in alias_hits]
+        out["alias_shards_scanned"] = len(alias_paths)
+        out["alias_records_seen"] = alias_scanned
+    return out
+
+
+def _pick(*vals: Any) -> Any:
+    """取第一个「非空」值。None/""/[]/{} 都算空 —— setdefault 会把 None 当已填，
+    旧结构的 `city: null` 于是永远盖住新结构里的 region.city。
+    """
+    for v in vals:
+        if v not in (None, "", [], {}):
+            return v
+    return None
+
+
+def normalize_vendor(rec: Dict[str, Any]) -> Dict[str, Any]:
+    """zh 分片存在两套历史结构，下游 agent 只认一种，在这里展平（只增不删）。
+
+    已归类：co / city / dist / gb ...            （扁平）
+    未归类：company / region.{province,city} / category / keywords ...
+    manufacturer_id / industry / tel 两种写法都有，一并归一。
+    """
+    out = dict(rec)
+    region = rec.get("region") or {}
+    out["co"] = _pick(rec.get("co"), rec.get("company"))
+    out["company"] = _pick(rec.get("company"), rec.get("co"))
+    out["city"] = _pick(rec.get("city"), region.get("city"))
+    out["dist"] = _pick(rec.get("dist"), region.get("district"), region.get("dist"))
+    out["province"] = _pick(rec.get("province"), region.get("province"))
+    out["gb"] = rec.get("gb") if rec.get("gb") not in (None, "") else None
+    out["keywords"] = _pick(rec.get("keywords"), rec.get("products"))
+    if not out.get("gb"):
+        out["gb_unclassified"] = True
+    return out
 
 
 def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
     vid = (vid or "").strip()
     if not vid:
         return {"error": "缺少必填参数 id"}
+    gb = (gb or "").strip()
     # 没给国标码就先建 id->gb 索引（扫 fp 分片，HTTP 缓存加速）
+    # 找到了就立刻停：gb 为 null（未归类）继续扫剩下的分片是纯浪费（275 次 IO）。
+    fp_hit = False
     if not gb:
         for s in _shards_of_type("fp"):
             txt = fetch_text(s["p"])
@@ -1118,26 +1322,46 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
                     continue
                 if rec.get("id") == vid:
                     gb = rec.get("gb") or ""
+                    fp_hit = True
                     break
-            if gb:
+            if fp_hit:
                 break
-    if not gb:
-        return {"error": f"找不到 id={vid} 对应的国标码，可能该记录尚未发布"}
-    zh_paths = _zh_paths_for_gb(gb)
-    if not zh_paths:
-        return {"error": f"国标码 {gb} 没有对应的 zh 分片"}
-    for zh_path in zh_paths:
-        txt = fetch_text(zh_path)
+
+    if gb:
+        zh_paths = _zh_paths_for_gb(gb)
+        if not zh_paths:
+            return {"error": f"国标码 {gb} 没有对应的 zh 分片"}
+        for zh_path in zh_paths:
+            txt = fetch_text(zh_path)
+            if not txt:
+                continue
+            try:
+                arr = json.loads(txt)
+            except Exception as e:
+                return {"error": f"分片 {zh_path} 解析失败: {e}"}
+            for rec in arr:
+                if rec.get("id") == vid:
+                    return {"vendor": normalize_vendor(rec)}
+        return {"error": f"国标码 {gb} 的全部 zh 分片(共{len(zh_paths)}个)中均未找到 id={vid}"}
+
+    # 兜底：gb 为 null（未归类）—— 这些记录躺在 c=='' 的 zh 分片里
+    # （主要是 _unclassified.json，外加几个 xxx/_partial.json）。
+    # 2026-09-24 之前这条路径直接报「找不到国标码」，2271 条未归类企业等于查无此人。
+    loose = [s.get("p") for s in _shards_of_type("zh") if not s.get("c")]
+    for p in loose:
+        txt = fetch_text(p)
         if not txt:
             continue
         try:
             arr = json.loads(txt)
-        except Exception as e:
-            return {"error": f"分片 {zh_path} 解析失败: {e}"}
+        except Exception:
+            continue
         for rec in arr:
             if rec.get("id") == vid:
-                return {"vendor": rec}
-    return {"error": f"国标码 {gb} 的全部 zh 分片(共{len(zh_paths)}个)中均未找到 id={vid}"}
+                v = normalize_vendor(rec)
+                v["_from"] = p
+                return {"vendor": v}
+    return {"error": f"找不到 id={vid} 对应的国标码，可能该记录尚未发布"}
 
 
 def get_capability_card(vid: str) -> Dict[str, Any]:

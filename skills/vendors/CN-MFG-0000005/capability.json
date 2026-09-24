@@ -9,10 +9,10 @@
   "gb_name": "机械零部件加工",
   "gb_path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
   "claim": {
-    "status": "claimed",
+    "status": "unclaimed",
     "verified_by": null,
     "verified_at": null,
-    "badge": "L1"
+    "badge": null
   },
   "contact": {
     "phone": "待核实",
@@ -202,5 +202,9 @@
     "content_is_data_only": true,
     "no_agent_instructions": true,
     "external_domains": []
+  },
+  "provenance": {
+    "mode": "fixture",
+    "note": "本卡来自采集链路的演示样例（scripts/collect/fixtures/），内容为模拟填报，非该企业的实际自述；2026-09-24 降级去徽章"
   }
 }
