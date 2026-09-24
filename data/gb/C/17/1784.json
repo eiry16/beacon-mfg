@@ -143,5 +143,54 @@
     "is_manufacturer": true,
     "status": "verified",
     "_bucket": "C/17/1784"
+  },
+  {
+    "id": "CN-MFG-0158551",
+    "company": "顺发帆布彩蓬店",
+    "category": "原材料",
+    "keywords": [
+      "玻璃加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "虎门镇东风集美六巷20号",
+    "contact_phone": "136****2012",
+    "lat": 22.790774,
+    "lng": 113.679012,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFILEEAN",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南栅",
+      "adcode": "441900",
+      "search_keyword": "玻璃加工"
+    },
+    "industry": {
+      "code": "1784",
+      "name": "篷、帆布制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 产业用纺织制成品制造 > 篷、帆布制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "帆布"
+    },
+    "is_manufacturer": true
   }
 ]

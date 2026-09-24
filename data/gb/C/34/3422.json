@@ -31,5 +31,54 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/34/3422"
+  },
+  {
+    "id": "CN-MFG-0159811",
+    "company": "创迈精密金属成型(苏州)有限公司",
+    "category": "钣金冲压",
+    "keywords": [
+      "金属制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "嵩山路133号",
+    "contact_phone": "0512-66626188",
+    "lat": 31.337144,
+    "lng": 120.516465,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLI9O0K",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320505",
+      "search_keyword": "金属制品"
+    },
+    "industry": {
+      "code": "3422",
+      "name": "金属成形机床制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 金属加工机械制造 > 金属成形机床制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "金属成"
+    },
+    "is_manufacturer": true
   }
 ]

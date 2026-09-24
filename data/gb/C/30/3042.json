@@ -46,5 +46,103 @@
     "is_manufacturer": true,
     "status": "verified",
     "_bucket": "C/30/3042"
+  },
+  {
+    "id": "CN-MFG-0158301",
+    "company": "昊志特种玻璃科技(太仓)有限公司",
+    "category": "原材料",
+    "keywords": [
+      "钢化玻璃"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "浏河镇珠江路66号",
+    "contact_phone": "136****1117",
+    "lat": 31.493851,
+    "lng": 121.263898,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J6USLXE6",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "钢化玻璃"
+    },
+    "industry": {
+      "code": "3042",
+      "name": "特种玻璃制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制造 > 特种玻璃制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "特种玻璃"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0158320",
+    "company": "聚宝盆(苏州)特种玻璃股份有限公司",
+    "category": "原材料",
+    "keywords": [
+      "钢化玻璃"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "双凤镇富豪工业区建业路25号",
+    "contact_phone": "0512-82787809",
+    "lat": 31.470237,
+    "lng": 121.057661,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H6BZEW7I",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "钢化玻璃"
+    },
+    "industry": {
+      "code": "3042",
+      "name": "特种玻璃制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 玻璃制造 > 特种玻璃制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "特种玻璃"
+    },
+    "is_manufacturer": true
   }
 ]

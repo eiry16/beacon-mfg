@@ -1142,5 +1142,103 @@
       "evidence": "安全"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0158313",
+    "company": "碧海安全玻璃科技股份有限公司",
+    "category": "原材料",
+    "keywords": [
+      "钢化玻璃"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "堰头路38号",
+    "contact_phone": "138****1499",
+    "lat": 31.414004,
+    "lng": 120.457142,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02001BKLW",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "望亭",
+      "adcode": "320507",
+      "search_keyword": "钢化玻璃"
+    },
+    "industry": {
+      "code": "3353",
+      "name": "安全、消防用金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 安全、消防用金属制品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "安全"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0158323",
+    "company": "苏州晶凤安全玻璃有限公司",
+    "category": "原材料",
+    "keywords": [
+      "钢化玻璃"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "吴江区经济技术开发区吉市东路333号",
+    "contact_phone": "待核实",
+    "lat": 31.174363,
+    "lng": 120.693882,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIGRGRU",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "玻璃厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320509",
+      "search_keyword": "钢化玻璃"
+    },
+    "industry": {
+      "code": "3353",
+      "name": "安全、消防用金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 安全、消防用金属制品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "安全"
+    },
+    "is_manufacturer": true
   }
 ]

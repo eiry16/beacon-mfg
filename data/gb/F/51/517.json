@@ -418,5 +418,54 @@
       "evidence": "配件批发"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0159084",
+    "company": "兄弟手机配件批发(亿佰生活广场店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "芯片"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "西塘河路1690号亿佰生活广场1楼114号",
+    "contact_phone": "待核实",
+    "lat": 31.161235,
+    "lng": 120.641966,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGVZ3WZ",
+      "type": "购物服务;家电电子卖场;手机销售|生活服务;维修站点;维修站点",
+      "typecode": "060305|071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "手机维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松陵",
+      "adcode": "320509",
+      "search_keyword": "芯片"
+    },
+    "industry": {
+      "code": "517",
+      "name": "机械设备、五金产品及电子产品批发",
+      "level": "group",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "配件批发"
+    },
+    "is_manufacturer": false
   }
 ]

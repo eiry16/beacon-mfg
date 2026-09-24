@@ -1241,5 +1241,54 @@
       "evidence": "建筑"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0157746",
+    "company": "申达建筑机械经营部",
+    "category": "电子元器件",
+    "keywords": [
+      "马达"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "木东路与赵家渠巷交叉口西80米",
+    "contact_phone": "139****4273",
+    "lat": 31.16629,
+    "lng": 120.529614,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFQZHDQ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横泾",
+      "adcode": "320506",
+      "search_keyword": "马达"
+    },
+    "industry": {
+      "code": "3351",
+      "name": "建筑、家具用金属配件制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 建筑、家具用金属配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑"
+    },
+    "is_manufacturer": true
   }
 ]

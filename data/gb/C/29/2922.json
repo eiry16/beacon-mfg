@@ -9338,5 +9338,54 @@
       "evidence": "注塑成型"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0158479",
+    "company": "永兴塑钢玻璃不锈钢加工部",
+    "category": "原材料",
+    "keywords": [
+      "玻璃加工"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "黄浦区"
+    },
+    "address": "永嘉路13号",
+    "contact_phone": "130****4418",
+    "lat": 31.211288,
+    "lng": 121.464994,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00155C4CU",
+      "type": "购物服务;家居建材市场;建材五金市场|生活服务;生活服务场所;生活服务场所",
+      "typecode": "060603|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "淮海路",
+      "adcode": "310101",
+      "search_keyword": "玻璃加工"
+    },
+    "industry": {
+      "code": "2922",
+      "name": "塑料板、管、型材制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料板、管、型材制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "塑钢"
+    },
+    "is_manufacturer": true
   }
 ]

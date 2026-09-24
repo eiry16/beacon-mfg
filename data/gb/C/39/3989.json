@@ -15149,7 +15149,8 @@
     "category": "电子元器件",
     "keywords": [
       "连接器",
-      "端子"
+      "端子",
+      "电机制造"
     ],
     "region": {
       "province": "广东",
@@ -15395,7 +15396,8 @@
     "company": "深圳市斯普仑科技有限公司",
     "category": "电子元器件",
     "keywords": [
-      "连接器"
+      "连接器",
+      "芯片"
     ],
     "region": {
       "province": "广东",
@@ -15421,7 +15423,21 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "amap": {
+      "poi_id": "B0JA2CAFB1",
+      "type": "公司企业;公司;网络科技",
+      "typecode": "170206",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "上步",
+      "adcode": "440304",
+      "search_keyword": "芯片"
+    }
   },
   {
     "id": "CN-MFG-0003698",
@@ -23985,7 +24001,8 @@
     "company": "中山市鑫中鑫光电有限公司",
     "category": "电子元器件",
     "keywords": [
-      "PCBA"
+      "PCBA",
+      "LED照明"
     ],
     "region": {
       "province": "广东",
@@ -37666,7 +37683,8 @@
     "company": "上海佳运线束有限公司",
     "category": "电子元器件",
     "keywords": [
-      "线束"
+      "线束",
+      "线束加工"
     ],
     "region": {
       "province": "上海",
@@ -37714,7 +37732,8 @@
     "company": "上海金亭汽车线束有限公司",
     "category": "电子元器件",
     "keywords": [
-      "线束"
+      "线束",
+      "线束加工"
     ],
     "region": {
       "province": "上海",
@@ -37762,7 +37781,8 @@
     "company": "上海钛阳线束有限公司",
     "category": "电子元器件",
     "keywords": [
-      "线束"
+      "线束",
+      "线束加工"
     ],
     "region": {
       "province": "上海",
@@ -37810,7 +37830,8 @@
     "company": "上海英岱普汽车线束控制系统有限公司",
     "category": "电子元器件",
     "keywords": [
-      "线束"
+      "线束",
+      "线束加工"
     ],
     "region": {
       "province": "上海",
@@ -37858,7 +37879,8 @@
     "company": "发之源汽车线束",
     "category": "电子元器件",
     "keywords": [
-      "线束"
+      "线束",
+      "线束加工"
     ],
     "region": {
       "province": "上海",
@@ -38958,7 +38980,8 @@
     "company": "一棵松线束加工厂",
     "category": "电子元器件",
     "keywords": [
-      "线束"
+      "线束",
+      "线束加工"
     ],
     "region": {
       "province": "广东",
@@ -39930,7 +39953,8 @@
     "company": "深圳市煌诚电子科技有限公司",
     "category": "电子元器件",
     "keywords": [
-      "端子"
+      "端子",
+      "线束加工"
     ],
     "region": {
       "province": "广东",
@@ -42399,5 +42423,152 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0157029",
+    "company": "兴渝线束加工",
+    "category": "电子元器件",
+    "keywords": [
+      "线束加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "慈溪"
+    },
+    "address": "坎墩街道五灶北路266号",
+    "contact_phone": "待核实",
+    "lat": 30.22864,
+    "lng": 121.266057,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGKZOVDD",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "线束加工"
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "线束"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0157030",
+    "company": "线束加工",
+    "category": "电子元器件",
+    "keywords": [
+      "线束加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "慈溪"
+    },
+    "address": "逍林大道与东横新塘路交叉口南80米",
+    "contact_phone": "待核实",
+    "lat": 30.168485,
+    "lng": 121.316218,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LR66FIG7",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "线束加工"
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "线束"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0157031",
+    "company": "金容电器线束加工",
+    "category": "电子元器件",
+    "keywords": [
+      "线束加工"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "慈溪"
+    },
+    "address": "观海卫镇前塘路22号",
+    "contact_phone": "待核实",
+    "lat": 30.168955,
+    "lng": 121.395889,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LK0S8EB9",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330282",
+      "search_keyword": "线束加工"
+    },
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "线束"
+    },
+    "is_manufacturer": true
   }
 ]

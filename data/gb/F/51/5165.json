@@ -1642,7 +1642,8 @@
     "keywords": [
       "建材批发",
       "五金店",
-      "五金工具"
+      "五金工具",
+      "电线电缆"
     ],
     "region": {
       "province": "江苏",
@@ -4965,7 +4966,8 @@
     "company": "建恒不锈钢剪板折弯",
     "category": "原材料",
     "keywords": [
-      "板材批发"
+      "板材批发",
+      "玻璃加工"
     ],
     "region": {
       "province": "广东",
@@ -6607,5 +6609,54 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0159916",
+    "company": "小郑建材批发(四达里店)",
+    "category": "原材料",
+    "keywords": [
+      "五金加工"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "虹口区"
+    },
+    "address": "山阴路57弄1-139号四达里",
+    "contact_phone": "137****0642",
+    "lat": 31.264946,
+    "lng": 121.484819,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H2PCSYU5",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "宝山路",
+      "adcode": "310109",
+      "search_keyword": "五金加工"
+    },
+    "industry": {
+      "code": "5165",
+      "name": "建材批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 建材批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建材批发"
+    },
+    "is_manufacturer": false
   }
 ]

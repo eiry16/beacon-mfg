@@ -3629,7 +3629,8 @@
     "company": "苏州中材非金属矿工业设计研究院有限公司",
     "category": "科学研究和技术服务业",
     "keywords": [
-      "工业设计"
+      "工业设计",
+      "金属制品"
     ],
     "region": {
       "province": "江苏",
@@ -10922,6 +10923,104 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "流水线"
+    },
+    "industry": {
+      "code": "7491",
+      "name": "工业设计服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工业与专业设计及其他专业技术服务 > 工业设计服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "工业设"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0156855",
+    "company": "佛山市顺德区依强工业设备工程有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "除尘设备"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "顺德区"
+    },
+    "address": "天河路与桂洲大道东交叉口西60米",
+    "contact_phone": "136****3718",
+    "lat": 22.74938,
+    "lng": 113.306028,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KUJ9QDPV",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "容桂",
+      "adcode": "440606",
+      "search_keyword": "除尘设备"
+    },
+    "industry": {
+      "code": "7491",
+      "name": "工业设计服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工业与专业设计及其他专业技术服务 > 工业设计服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "工业设"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0159412",
+    "company": "巴开吉(苏州)工业设备包装有限公司上海分公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "包装设备"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "松江区"
+    },
+    "address": "东兴路8号3号厂房",
+    "contact_phone": "021-67741815",
+    "lat": 31.022596,
+    "lng": 121.275503,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2FHDKNI",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "package",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310117",
+      "search_keyword": "包装设备"
     },
     "industry": {
       "code": "7491",
