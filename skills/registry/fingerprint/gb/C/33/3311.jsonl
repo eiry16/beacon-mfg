@@ -25,12 +25,14 @@
 {"id":"CN-MFG-0000114","co":"万申铜板","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0000117","co":"瑞云激光切割","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0000118","co":"恒索激光","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0000119","co":"显盛钣金激光切割","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting"]}
+{"id":"CN-MFG-0000119","co":"显盛钣金激光切割","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting"]}
 {"id":"CN-MFG-0000268","co":"上海双北机械钣金激光折弯切割焊接CNC加工有限公司","city":"上海","gb":"3311","mf":1,"proc":["bending","welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"嘉定"}
 {"id":"CN-MFG-0000399","co":"浙江数控折弯激光切割钣金加工厂","city":"嘉兴","gb":"3311","mf":1,"proc":["laser_cutting","bending"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"cap":["laser_cutting","bending"],"dist":"海宁"}
+{"id":"CN-MFG-0000440","co":"无锡市轩瑞达大型激光切割","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting"]}
 {"id":"CN-MFG-0000569","co":"新利大型激光切割钣金加工机箱生产","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting"],"dist":"龙华"}
 {"id":"CN-MFG-0000645","co":"广州全丰数控钣金加工","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"白云"}
-{"id":"CN-MFG-0000668","co":"广州世和激光刨坑折弯钣金切割加工","city":"广州","gb":"3311","mf":1,"proc":["bending"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["bending"],"dist":"白云"}
+{"id":"CN-MFG-0000663","co":"丰裕全不锈钢激光切割折弯加工","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","bending"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["laser_cutting","bending","不锈钢"]}
+{"id":"CN-MFG-0000668","co":"广州世和激光刨坑折弯钣金切割加工","city":"广州","gb":"3311","mf":1,"proc":["bending"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["bending"],"dist":"白云"}
 {"id":"CN-MFG-0000795","co":"无锡佳垚厨房设备通风管道有限公司","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宜兴"}
 {"id":"CN-MFG-0001433","co":"苏州博力源金属材料有限公司","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"虎丘"}
 {"id":"CN-MFG-0001436","co":"苏州宇奥金属科技有限公司","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"吴江"}
@@ -69,6 +71,7 @@
 {"id":"CN-MFG-0001487","co":"文惠钣金加工厂","city":"常州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"武进"}
 {"id":"CN-MFG-0001488","co":"敏锋钣金加工厂","city":"常州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"武进"}
 {"id":"CN-MFG-0001489","co":"上海斯超激光切割钣金加工厂","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting"],"dist":"嘉定"}
+{"id":"CN-MFG-0001492","co":"上海双北机械钣金激光折弯切割焊接CNC加工有限公司","city":"上海","gb":"3311","mf":1,"proc":["bending","welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"g":"C"}
 {"id":"CN-MFG-0001494","co":"上海艺川钣金加工厂","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"松江"}
 {"id":"CN-MFG-0001495","co":"上海随程激光切割钣金加工厂","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting"],"dist":"宝山"}
 {"id":"CN-MFG-0001498","co":"上海邦烁激光切割.钣金折弯.机架焊接","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝山"}
@@ -83,14 +86,15 @@
 {"id":"CN-MFG-0001521","co":"上海威特力焊接设备制造股份有限公司","city":"上海","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"昆山"}
 {"id":"CN-MFG-0001522","co":"上海康深激光钣金金属有限公司","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0001524","co":"上海博硕工贸有限公司","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
+{"id":"CN-MFG-0001525","co":"浙江数控折弯激光切割钣金加工厂","city":"嘉兴","gb":"3311","mf":1,"proc":["laser_cutting","bending"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"g":"C"}
 {"id":"CN-MFG-0001527","co":"启诚机械有限公司","city":"嘉兴","gb":"3311","mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"海宁"}
 {"id":"CN-MFG-0001528","co":"平湖市斯迈克机械制造有限公司","city":"嘉兴","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"平湖"}
 {"id":"CN-MFG-0001530","co":"鸿发公司","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"余姚"}
-{"id":"CN-MFG-0001531","co":"余姚泽栋机械钣金厂","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting","bending","stamping","cnc_milling"],"dist":"余姚"}
+{"id":"CN-MFG-0001531","co":"余姚泽栋机械钣金厂","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting","bending","stamping","cnc_milling"],"dist":"余姚"}
 {"id":"CN-MFG-0001533","co":"余姚市思旭手板模型厂","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"余姚"}
 {"id":"CN-MFG-0001534","co":"宁波微诚智能科技有限公司","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"余姚"}
 {"id":"CN-MFG-0001535","co":"宁波市精鸿电器科技有限公司","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"慈溪"}
-{"id":"CN-MFG-0001538","co":"立健精密钣金(宁波)有限公司","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting","bending","stamping"],"dist":"慈溪"}
+{"id":"CN-MFG-0001538","co":"立健精密钣金(宁波)有限公司","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting","bending","stamping"],"dist":"慈溪"}
 {"id":"CN-MFG-0001539","co":"宁波腾煌机械制造有限公司","city":"宁波","gb":"3311","mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"海曙"}
 {"id":"CN-MFG-0001541","co":"宁波江北友联金属制品有限公司钣金焊接加工","city":"宁波","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
 {"id":"CN-MFG-0001542","co":"宁波瑞景金属科技激光切割钣金加工","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"江北"}
@@ -98,9 +102,11 @@
 {"id":"CN-MFG-0001545","co":"宁波市鄞州大业冲件厂","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"鄞州"}
 {"id":"CN-MFG-0001546","co":"龙太焊机·焊机维修","city":"宁波","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
 {"id":"CN-MFG-0001547","co":"南京硕新精工科技有限公司","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"江宁"}
-{"id":"CN-MFG-0001548","co":"南京巨峰机械设备有限公司(钣金焊接折弯加工)","city":"南京","gb":"3311","mf":1,"proc":["bending","welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["bending","welding"]}
+{"id":"CN-MFG-0001548","co":"南京巨峰机械设备有限公司(钣金焊接折弯加工)","city":"南京","gb":"3311","mf":1,"proc":["bending","welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["bending","welding"]}
+{"id":"CN-MFG-0001551","co":"联泰不锈钢钣金制品厂","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C"}
 {"id":"CN-MFG-0001553","co":"深圳市激光切割水切割钣金加工厂","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"龙华"}
 {"id":"CN-MFG-0001554","co":"深圳市和创兴智造科技有限公司","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"龙华"}
+{"id":"CN-MFG-0001557","co":"新利大型激光切割钣金加工机箱生产","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting"]}
 {"id":"CN-MFG-0001558","co":"深圳崎辉钣金有限公司·激光加工","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"龙华"}
 {"id":"CN-MFG-0001560","co":"深圳市志鹏不锈钢有限公司","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"龙华"}
 {"id":"CN-MFG-0001562","co":"鑫盛宏大型激光切割剪板折弯加工","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting","bending","cutting_service"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"龙华"}
@@ -138,7 +144,7 @@
 {"id":"CN-MFG-0001615","co":"东莞市妍妍钣金加工中心","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0001616","co":"东莞市柏翰威光电制品有限公司","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0001617","co":"东莞市顺熠智能科技有限公司","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0001618","co":"东莞源松钣金加工厂","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting","bending","stamping"]}
+{"id":"CN-MFG-0001618","co":"东莞源松钣金加工厂","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting","bending","stamping"]}
 {"id":"CN-MFG-0001619","co":"运成钣金","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0001625","co":"东和钣金制品加工厂","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0001626","co":"东莞市兴旭通环保科技有限公司","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -183,9 +189,9 @@
 {"id":"CN-MFG-0001714","co":"广州市嵩鹏卓越钣金加工有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"从化"}
 {"id":"CN-MFG-0001715","co":"申隆金属制品(激光切割板切管剪折刨钣金加工)","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0001716","co":"广州华粤不锈钢工程有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"增城"}
-{"id":"CN-MFG-0001718","co":"华美鑫不锈钢激光折弯锯片加工烧焊","city":"广州","gb":"3311","mf":1,"proc":["bending"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["bending","不锈钢"]}
+{"id":"CN-MFG-0001718","co":"华美鑫不锈钢激光折弯锯片加工烧焊","city":"广州","gb":"3311","mf":1,"proc":["bending"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["bending","不锈钢"]}
 {"id":"CN-MFG-0001719","co":"和兴激光切割刨坑剪折","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"海珠"}
-{"id":"CN-MFG-0001722","co":"不锈钢剪压激光切割金白纱金属板材有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","不锈钢","碳钢/不锈钢"],"dist":"南沙"}
+{"id":"CN-MFG-0001722","co":"不锈钢剪压激光切割金白纱金属板材有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["laser_cutting","不锈钢","碳钢/不锈钢"],"dist":"南沙"}
 {"id":"CN-MFG-0001724","co":"苏州迪亚特金属材料有限公司","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"吴中"}
 {"id":"CN-MFG-0001726","co":"上海咔咻智能科技有限公司-苏州生产基地","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"太仓"}
 {"id":"CN-MFG-0001727","co":"昆山锦程佳金属材料有限公司","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"昆山"}
@@ -360,12 +366,12 @@
 {"id":"CN-MFG-0001951","co":"刨槽激光切割","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"慈溪"}
 {"id":"CN-MFG-0001952","co":"易轩激光切割","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"余姚"}
 {"id":"CN-MFG-0001953","co":"骏逸激光切割厂","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
-{"id":"CN-MFG-0001955","co":"南京博深不锈钢剪板折弯激光切割中心","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","bending","cutting_service"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","bending","cutting_service","不锈钢","碳钢/不锈钢"],"dist":"建邺"}
-{"id":"CN-MFG-0001956","co":"金欣发不锈钢六米折弯激光","city":"南京","gb":"3311","mf":1,"proc":["bending","cutting_service"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["bending","cutting_service","不锈钢"],"dist":"雨花台"}
+{"id":"CN-MFG-0001955","co":"南京博深不锈钢剪板折弯激光切割中心","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","bending","cutting_service"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["laser_cutting","bending","cutting_service","不锈钢","碳钢/不锈钢"],"dist":"建邺"}
+{"id":"CN-MFG-0001956","co":"金欣发不锈钢六米折弯激光","city":"南京","gb":"3311","mf":1,"proc":["bending","cutting_service"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["bending","cutting_service","不锈钢"],"dist":"雨花台"}
 {"id":"CN-MFG-0001958","co":"南京哮山激光切割有限公司","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"江宁"}
 {"id":"CN-MFG-0001959","co":"广帆金属有限公司","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"雨花台"}
 {"id":"CN-MFG-0001960","co":"南京大韶激光切割","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"江宁"}
-{"id":"CN-MFG-0001961","co":"佰速通激光切割折弯","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","bending"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting","bending"],"dist":"栖霞"}
+{"id":"CN-MFG-0001961","co":"佰速通激光切割折弯","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","bending"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting","bending"],"dist":"栖霞"}
 {"id":"CN-MFG-0001962","co":"喜洋阳(南京)科技发展有限公司","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"雨花台"}
 {"id":"CN-MFG-0001963","co":"龙智飞激光切割彩钢瓦","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0001964","co":"韵腾激光","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝安"}
@@ -476,11 +482,11 @@
 {"id":"CN-MFG-0002127","co":"华瑞激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0002128","co":"兴邦激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0002129","co":"万鸿双喜盘扣脚手架(广州分公司)","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"增城"}
-{"id":"CN-MFG-0002130","co":"金达金属激光切割不锈钢科技有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","不锈钢","碳钢/不锈钢"],"dist":"增城"}
-{"id":"CN-MFG-0002132","co":"丰裕全不锈钢激光切割折弯加工","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","bending"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","bending","不锈钢","碳钢/不锈钢"],"dist":"花都"}
+{"id":"CN-MFG-0002130","co":"金达金属激光切割不锈钢科技有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["laser_cutting","不锈钢","碳钢/不锈钢"],"dist":"增城"}
+{"id":"CN-MFG-0002132","co":"丰裕全不锈钢激光切割折弯加工","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","bending"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["laser_cutting","bending","不锈钢","碳钢/不锈钢"],"dist":"花都"}
 {"id":"CN-MFG-0002133","co":"广州沪松机电","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"白云"}
 {"id":"CN-MFG-0002134","co":"广州鑫厨厨房工程","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"番禺"}
-{"id":"CN-MFG-0002135","co":"浚兴不锈钢剪折板激光切割","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","不锈钢","碳钢/不锈钢"],"dist":"南沙"}
+{"id":"CN-MFG-0002135","co":"浚兴不锈钢剪折板激光切割","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["laser_cutting","不锈钢","碳钢/不锈钢"],"dist":"南沙"}
 {"id":"CN-MFG-0002137","co":"广东奥霆电力科技有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"南沙"}
 {"id":"CN-MFG-0002141","co":"广州市宏隆金属设备有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"南沙"}
 {"id":"CN-MFG-0002142","co":"广州汇金激光切割科技有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"南沙"}
@@ -488,7 +494,7 @@
 {"id":"CN-MFG-0002147","co":"坚胜金属材料制品","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"花都"}
 {"id":"CN-MFG-0002148","co":"鹏大激光切割","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"白云"}
 {"id":"CN-MFG-0002150","co":"广州市立准科技有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"花都"}
-{"id":"CN-MFG-0002152","co":"巧宇不锈钢剪折刨激光切割","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","不锈钢"],"dist":"番禺"}
+{"id":"CN-MFG-0002152","co":"巧宇不锈钢剪折刨激光切割","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["laser_cutting","不锈钢"],"dist":"番禺"}
 {"id":"CN-MFG-0002153","co":"新佰仕激光切割设备维修","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"白云"}
 {"id":"CN-MFG-0002155","co":"金匾智汇","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"增城"}
 {"id":"CN-MFG-0002157","co":"佳禾皮具工艺有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"白云"}
@@ -760,6 +766,7 @@
 {"id":"CN-MFG-0002504","co":"钢样板冲压厂","city":"佛山","gb":"3311","mf":1,"proc":["stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["stamping"],"dist":"顺德"}
 {"id":"CN-MFG-0002506","co":"佛山骁冠液态金属板厂家","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"顺德"}
 {"id":"CN-MFG-0002507","co":"佛山市源甜水箱冲压厂","city":"佛山","gb":"3311","mf":1,"proc":["stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"顺德"}
+{"id":"CN-MFG-0002509","co":"冲压加工厂","city":"佛山","gb":"3311","mf":1,"proc":["stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"g":"C"}
 {"id":"CN-MFG-0002511","co":"弘洋冲压","city":"佛山","gb":"3311","mf":1,"proc":["stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"南海"}
 {"id":"CN-MFG-0002513","co":"超盛金属分条","city":"佛山","gb":"3311","mf":1,"proc":["cutting_service"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"南海"}
 {"id":"CN-MFG-0002514","co":"胜广五金碰焊冲压加工厂","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"南海"}
@@ -796,7 +803,7 @@
 {"id":"CN-MFG-0002572","co":"广州优尼热冲压有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"花都"}
 {"id":"CN-MFG-0002573","co":"东莞市豪斯特热冲压技术有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"番禺"}
 {"id":"CN-MFG-0002575","co":"广州炜煜新材料科技有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"增城"}
-{"id":"CN-MFG-0002577","co":"韦力冲压制品厂","city":"广州","gb":"3311","mf":1,"proc":["stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["stamping"],"dist":"番禺"}
+{"id":"CN-MFG-0002577","co":"韦力冲压制品厂","city":"广州","gb":"3311","mf":1,"proc":["stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["stamping"],"dist":"番禺"}
 {"id":"CN-MFG-0002578","co":"广州市鑫荣冲压有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"从化"}
 {"id":"CN-MFG-0002579","co":"花都狮岭鹏翔五金冲压厂","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"花都"}
 {"id":"CN-MFG-0002580","co":"宝龙冲压","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"花都"}
@@ -817,9 +824,10 @@
 {"id":"CN-MFG-0003468","co":"隆锟环境通风管道设备加工","city":"杭州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0003474","co":"杭州胜凯通风管道有限公司","city":"杭州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0003608","co":"绍兴上虞华桥冲件有限公司","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
-{"id":"CN-MFG-0003626","co":"南京美泰风管加工厂","city":"南京","gb":"3311","mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["electronic_component"]}
+{"id":"CN-MFG-0003626","co":"南京美泰风管加工厂","city":"南京","gb":"3311","mf":1,"proc":["electronic_component"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["electronic_component"]}
 {"id":"CN-MFG-0003840","co":"广州顺锦通风管制造有限公司","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0003843","co":"广州市花都区尚达风管配件厂","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
+{"id":"CN-MFG-0004303","co":"新利大型激光切割钣金加工机箱生产","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0004591","co":"宁波万匠精密钣金有限公司","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"余姚"}
 {"id":"CN-MFG-0004881","co":"弘信金属护栏(广东)有限公司","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"三水"}
 {"id":"CN-MFG-0006724","co":"赣乾风管加工厂","city":"上海","gb":"3311","mf":1,"proc":["metal_material"],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"嘉定"}
@@ -871,6 +879,7 @@
 {"id":"CN-MFG-0010960","co":"鑫华数控剪板折弯加工钣金加工","city":"无锡","gb":"3311","mf":1,"proc":["bending","cutting_service"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["bending","cutting_service"],"dist":"江阴"}
 {"id":"CN-MFG-0010961","co":"华超数控剪板折弯加工钣金","city":"无锡","gb":"3311","mf":1,"proc":["bending","cutting_service"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["bending","cutting_service"],"dist":"江阴"}
 {"id":"CN-MFG-0011011","co":"万瓦大型激光切割切管焊接数控卷圆折弯自动化机械设备钣金加工","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"奉贤"}
+{"id":"CN-MFG-0011322","co":"无锡鑫鸿伟大型激光切割加工有限公司","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting"]}
 {"id":"CN-MFG-0011392","co":"激光切割钣金加工","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting"],"dist":"青浦"}
 {"id":"CN-MFG-0011395","co":"上海茂海金属激光切割切管加工机械钣金加工机箱机柜加工","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"嘉定"}
 {"id":"CN-MFG-0011527","co":"宁波益杰机械有限公司·钣金加工·金属制品","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"江北"}
@@ -879,12 +888,14 @@
 {"id":"CN-MFG-0011734","co":"安天城五金建材电焊加工钢结构工程安装","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"吴中"}
 {"id":"CN-MFG-0012255","co":"天裕机电五金有限公司钣金加工中心","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"太仓"}
 {"id":"CN-MFG-0012268","co":"苏湘激光钣金焊接加工中心","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"吴江"}
+{"id":"CN-MFG-0012269","co":"鸣创(华展)大型激光切割割管钣金加工中心","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting"]}
 {"id":"CN-MFG-0012370","co":"隆韵钣金加工中心","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"青浦"}
 {"id":"CN-MFG-0012378","co":"上海诚易暖通风管加工厂","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"奉贤"}
 {"id":"CN-MFG-0012382","co":"上海程羿超级风管加工厂","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"奉贤"}
 {"id":"CN-MFG-0012383","co":"上海众昊风管加工厂","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"奉贤"}
 {"id":"CN-MFG-0012430","co":"南京雅康风管加工厂","city":"南京","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"雨花台"}
 {"id":"CN-MFG-0012473","co":"杭州大德风管加工厂","city":"杭州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"上城"}
+{"id":"CN-MFG-0012484","co":"宁波竞力激光切割钣金加工中心","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting"]}
 {"id":"CN-MFG-0012518","co":"南通沛能风管加工厂","city":"南通","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0012599","co":"众兴程2万瓦大型激光切割钣金加工中心","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting"]}
 {"id":"CN-MFG-0012623","co":"东林激光钣金加工中心","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"白云"}
@@ -987,6 +998,7 @@
 {"id":"CN-MFG-0012769","co":"航发钣金加工","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"禅城"}
 {"id":"CN-MFG-0012770","co":"佛山市金顺得不锈钢有限公司","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"顺德"}
 {"id":"CN-MFG-0012771","co":"钰煌盛激光切割加工","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"顺德"}
+{"id":"CN-MFG-0012772","co":"博客激光切割钣金加工","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting"]}
 {"id":"CN-MFG-0012773","co":"大源激光切割激光焊接钣金加工折弯","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","bending","welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting","bending","welding"]}
 {"id":"CN-MFG-0012774","co":"中山市力之源钣金加工有限公司","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0012777","co":"罗帝金属激光切割","city":"广州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"花都"}
@@ -1245,6 +1257,7 @@
 {"id":"CN-MFG-0014836","co":"益峰大型激光板管切割(金地花园店)","city":"珠海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"香洲"}
 {"id":"CN-MFG-0014838","co":"腾卓荣激光切割","city":"珠海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"斗门"}
 {"id":"CN-MFG-0014839","co":"恒捷节能空压机","city":"珠海","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"斗门"}
+{"id":"CN-MFG-0015172","co":"信达钢材批发钢结构加工","city":"珠海","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":["碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["metal_stamping","碳钢/不锈钢"]}
 {"id":"CN-MFG-0015239","co":"珠海富茂钢结构有限公司","city":"珠海","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"香洲"}
 {"id":"CN-MFG-0015240","co":"珠海市粤鑫钢结构工程有限公司","city":"珠海","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"金湾"}
 {"id":"CN-MFG-0015241","co":"珠海雅致钢结构工程有限公司","city":"珠海","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"cap":["metal_stamping"],"dist":"金湾"}
@@ -1253,6 +1266,7 @@
 {"id":"CN-MFG-0015276","co":"珠海客族钢结构安装有限公司","city":"珠海","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"金湾"}
 {"id":"CN-MFG-0015279","co":"珠海市鼎达钢结构有限公司","city":"珠海","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"金湾"}
 {"id":"CN-MFG-0015298","co":"裕桦风管","city":"珠海","gb":"3311","mf":1,"proc":["metal_material"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_material","不锈钢"],"dist":"斗门"}
+{"id":"CN-MFG-0015313","co":"创宇激光切割对外加工","city":"珠海","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0015639","co":"博客激光切割钣金加工","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting"]}
 {"id":"CN-MFG-0015709","co":"脉科钣金加工中心","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0015725","co":"磊升五金冲压加工厂","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
@@ -1271,6 +1285,7 @@
 {"id":"CN-MFG-0015739","co":"恒美五金冲压加工","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0015740","co":"激光冲压制图","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0015754","co":"广东乐博斯科技有限公司","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
+{"id":"CN-MFG-0016637","co":"华兴不锈钢剪折 激光切割工程部","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C"}
 {"id":"CN-MFG-0016641","co":"卓一钢结构","city":"中山","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
 {"id":"CN-MFG-0016644","co":"中山市江扬钢结构工程有限公司","city":"中山","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
 {"id":"CN-MFG-0016649","co":"盈大钢结构有限公司","city":"中山","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
@@ -1343,6 +1358,7 @@
 {"id":"CN-MFG-0017790","co":"上海程羿超级风管加工厂(杭州五厂)","city":"杭州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"临平"}
 {"id":"CN-MFG-0017793","co":"浙江金鑫钢结构集团有限公司","city":"杭州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"富阳"}
 {"id":"CN-MFG-0017794","co":"杭州大众钢结构有限公司","city":"杭州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"富阳"}
+{"id":"CN-MFG-0017814","co":"鼎顺不锈钢激光切割","city":"杭州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C"}
 {"id":"CN-MFG-0017868","co":"钢丝网护栏网网格布筛网","city":"杭州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"拱墅"}
 {"id":"CN-MFG-0017877","co":"杭州钢丝网护栏网钢筋网片铁丝网不锈钢网雨鑫筛网","city":"杭州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"拱墅"}
 {"id":"CN-MFG-0017993","co":"杭州众鑫通风设备有限公司风管加工","city":"杭州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"萧山"}
@@ -1407,10 +1423,13 @@
 {"id":"CN-MFG-0018912","co":"惠州市宏昇钢结构有限公司","city":"惠州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"惠城"}
 {"id":"CN-MFG-0018913","co":"惠州市东一钢结构有限公司","city":"惠州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"惠城"}
 {"id":"CN-MFG-0018918","co":"惠州市汇景钢结构有限公司","city":"惠州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"博罗"}
+{"id":"CN-MFG-0018933","co":"佳士瑞凌焊机(石湾佳士总代理)","city":"惠州","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0018956","co":"惠州市兴达钢结构材料有限公司(岩棉板 岩棉瓦 彩钢瓦)","city":"惠州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":["碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","碳钢/不锈钢"],"dist":"惠东"}
 {"id":"CN-MFG-0018959","co":"惠州市惠发钢结构有限公司","city":"惠州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"惠阳"}
 {"id":"CN-MFG-0018961","co":"惠州双盈钢结构工程有限公司","city":"惠州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"],"dist":"惠阳"}
+{"id":"CN-MFG-0018963","co":"惠州市一鑫钢构有限公司 钢结构","city":"惠州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["metal_stamping"]}
 {"id":"CN-MFG-0018968","co":"广东恒泰钢结构有限公司","city":"惠州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"惠阳"}
+{"id":"CN-MFG-0019009","co":"星丰源钣金加工有限公司","city":"惠州","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["laser_cutting","bending","stamping"]}
 {"id":"CN-MFG-0019038","co":"宏星彩钢板钢结构材料","city":"惠州","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":["碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","碳钢/不锈钢"],"dist":"惠阳"}
 {"id":"CN-MFG-0019362","co":"贵泉冷冲件加工","city":"绍兴","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"诸暨"}
 {"id":"CN-MFG-0019455","co":"博业激光切割钣金加工","city":"绍兴","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["laser_cutting"],"dist":"诸暨"}
@@ -1538,13 +1557,27 @@
 {"id":"CN-MFG-0024047","co":"翔臻金属激光切割","city":"绍兴","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"柯桥"}
 {"id":"CN-MFG-0026281","co":"杭州瑞晖精密钣金制造有限公司","city":"杭州","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"富阳"}
 {"id":"CN-MFG-0026543","co":"上海舟励机电科技有限公司风管加工厂","city":"上海","gb":"3311","mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["cnc_milling"],"dist":"奉贤"}
+{"id":"CN-MFG-0026670","co":"太仓力工机械设备焊接龙门加工","city":"苏州","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"g":"C"}
+{"id":"CN-MFG-0026944","co":"常州炜钰大型激光切割加工","city":"常州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0027052","co":"2万瓦激光切割加工","city":"宁波","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0027255","co":"辰翔通风设备(厨房排烟)风管加工","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"昆山"}
+{"id":"CN-MFG-0027453","co":"石排尚新激光镭雕镭射打标加工店","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0027587","co":"焊机焊材广州市海珠区宏森机电商行","city":"广州","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0027594","co":"广腾焊接加工","city":"广州","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0027612","co":"鑫艺达焊机焊材","city":"广州","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0027660","co":"晨徽激光切割","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0028114","co":"瑞力焊机焊材(龙溪专卖店)","city":"惠州","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0028173","co":"艺兴激光焊接加工","city":"中山","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0028255","co":"上海瑞豪通风管道加工厂","city":"上海","gb":"3311","mf":1,"proc":["cnc_milling","cnc_turning"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"松江"}
 {"id":"CN-MFG-0028347","co":"苏州季华风管加工厂","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"吴中"}
 {"id":"CN-MFG-0028424","co":"鑫创风管风口加工厂","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"新吴"}
 {"id":"CN-MFG-0028449","co":"润达风管加工厂","city":"无锡","gb":"3311","mf":1,"proc":["cnc_milling","cnc_turning"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"滨湖"}
 {"id":"CN-MFG-0028557","co":"慈溪风管加工厂(迪胜通风管道)","city":"宁波","gb":"3311","mf":1,"proc":["cnc_milling","cnc_turning"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"慈溪"}
+{"id":"CN-MFG-0028566","co":"建航焊接激光焊氩弧焊接加工","city":"宁波","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0028794","co":"通达焊接加工厂","city":"东莞","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0029092","co":"腾飞焊接加工","city":"佛山","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0029102","co":"杭州驰缘风管加工厂","city":"杭州","gb":"3311","mf":1,"proc":["cnc_milling","cnc_turning"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"临平"}
+{"id":"CN-MFG-0029172","co":"宇鑫焊接加工","city":"中山","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"g":"C"}
 {"id":"CN-MFG-0029195","co":"由艺不锈钢激光切割钣金加工焊接安装","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting","welding"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","welding","不锈钢"],"dist":"奉贤"}
 {"id":"CN-MFG-0029196","co":"上海田闳激光切割钣金不锈钢制品对外加工","city":"上海","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","不锈钢"],"dist":"奉贤"}
 {"id":"CN-MFG-0029197","co":"亮光不锈钢","city":"深圳","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"龙岗"}
@@ -1614,6 +1647,7 @@
 {"id":"CN-MFG-0029268","co":"大型高功率激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"太仓"}
 {"id":"CN-MFG-0029269","co":"铭沣不锈钢剪折加工","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"张家港"}
 {"id":"CN-MFG-0029270","co":"万瓦激光切割苏州轩友金属","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"吴中"}
+{"id":"CN-MFG-0029271","co":"万瓦激光切割苏州轩友金属","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0029272","co":"恒发激光切割剪折卷","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"张家港"}
 {"id":"CN-MFG-0029273","co":"达方激光切割剪折加工","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"吴中"}
 {"id":"CN-MFG-0029275","co":"兴盈激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"吴中"}
@@ -1625,6 +1659,7 @@
 {"id":"CN-MFG-0029284","co":"万瓦激光切割(联谊路店)","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"吴中"}
 {"id":"CN-MFG-0029285","co":"尧星不锈钢激光切割剪板折弯加工","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","bending","cutting_service"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","bending","cutting_service","不锈钢","碳钢/不锈钢"],"dist":"吴江"}
 {"id":"CN-MFG-0029286","co":"中伟不锈钢批发剪板折弯刨槽激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","bending","cutting_service"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","bending","cutting_service","不锈钢","碳钢/不锈钢"],"dist":"张家港"}
+{"id":"CN-MFG-0029287","co":"中伟不锈钢批发剪板折弯刨槽激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","bending","cutting_service"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["laser_cutting","bending","cutting_service","不锈钢","碳钢/不锈钢"]}
 {"id":"CN-MFG-0029288","co":"苏州辰辰激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"常熟"}
 {"id":"CN-MFG-0029289","co":"新国泰12000瓦激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"吴中"}
 {"id":"CN-MFG-0029290","co":"三万瓦激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"昆山"}
@@ -1639,6 +1674,7 @@
 {"id":"CN-MFG-0029300","co":"张家港军辉钣金激光","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"张家港"}
 {"id":"CN-MFG-0029301","co":"广发激光切割不锈钢刨槽剪折","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"张家港"}
 {"id":"CN-MFG-0029302","co":"立本激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"太仓"}
+{"id":"CN-MFG-0029303","co":"立本激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"g":"C"}
 {"id":"CN-MFG-0029304","co":"鸿振铭激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"相城"}
 {"id":"CN-MFG-0029305","co":"熊程激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"昆山"}
 {"id":"CN-MFG-0029306","co":"锐科激光切割","city":"苏州","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"常熟"}
@@ -1686,6 +1722,8 @@
 {"id":"CN-MFG-0029353","co":"森虎通风激光切割剪折卷圆加工","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"锡山"}
 {"id":"CN-MFG-0029355","co":"中科大型激光切割","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"滨湖"}
 {"id":"CN-MFG-0029356","co":"徐氏大型激光切割","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"惠山"}
+{"id":"CN-MFG-0029357","co":"中科大型激光切割","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
+{"id":"CN-MFG-0029358","co":"徐氏大型激光切割","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"g":"C"}
 {"id":"CN-MFG-0029359","co":"激光切割车床钣金加工","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"宜兴"}
 {"id":"CN-MFG-0029360","co":"易建激光切割","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"惠山"}
 {"id":"CN-MFG-0029361","co":"无锡力扬激光板材切割中心","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"锡山"}
@@ -1699,6 +1737,7 @@
 {"id":"CN-MFG-0029369","co":"莲鑫激光切割","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"锡山"}
 {"id":"CN-MFG-0029370","co":"和谊激光切割","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"新吴"}
 {"id":"CN-MFG-0029371","co":"萌天激光切割加工","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"锡山"}
+{"id":"CN-MFG-0029372","co":"萌天激光切割加工","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0029373","co":"韵之浩激光切割","city":"无锡","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"锡山"}
 {"id":"CN-MFG-0029374","co":"切割焊接","city":"无锡","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"锡山"}
 {"id":"CN-MFG-0029375","co":"上海品牌焊机激光焊机","city":"无锡","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"新吴"}
@@ -1984,6 +2023,7 @@
 {"id":"CN-MFG-0029731","co":"久兴激光切割","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0}
 {"id":"CN-MFG-0029733","co":"创立维百超大型激光切割加工","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0}
 {"id":"CN-MFG-0029735","co":"能丰不锈钢剪板折弯","city":"东莞","gb":"3311","mf":1,"proc":["bending","cutting_service"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["bending","cutting_service","不锈钢","碳钢/不锈钢"]}
+{"id":"CN-MFG-0029737","co":"能丰不锈钢剪板折弯","city":"东莞","gb":"3311","mf":1,"proc":["bending","cutting_service"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["bending","cutting_service","不锈钢","碳钢/不锈钢"]}
 {"id":"CN-MFG-0029739","co":"华雄牌不锈钢地区总经销(至业楼店)","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0029741","co":"东莞市寮步鑫灿龙门铣加工","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0029742","co":"竞优线切割磨床激光焊氧焊加工","city":"东莞","gb":"3311","mf":1,"proc":["wire_cutting","grinding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
@@ -1997,6 +2037,7 @@
 {"id":"CN-MFG-0029752","co":"龙达激光切割(信盛路店)","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
 {"id":"CN-MFG-0029753","co":"两万瓦激光切割","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0}
 {"id":"CN-MFG-0029754","co":"兴河激光切割","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
+{"id":"CN-MFG-0029755","co":"兴河激光切割","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0029756","co":"文兴激光切割","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0}
 {"id":"CN-MFG-0029757","co":"鑫晟大型激光切割(齐庆大厦店)","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
 {"id":"CN-MFG-0029758","co":"顺利航大型激光切割","city":"东莞","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
@@ -2066,6 +2107,7 @@
 {"id":"CN-MFG-0029831","co":"品钢激光切割","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"顺德"}
 {"id":"CN-MFG-0029832","co":"佳珂激光钣金","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting","bending","stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"南海"}
 {"id":"CN-MFG-0029833","co":"纵腾激光切割","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"顺德"}
+{"id":"CN-MFG-0029834","co":"纵腾激光切割","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0029835","co":"金盈汇2万瓦激光切割","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"顺德"}
 {"id":"CN-MFG-0029837","co":"佛山市银粤金属激光切割","city":"佛山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"南海"}
 {"id":"CN-MFG-0029838","co":"丰特机械制造厂","city":"佛山","gb":"3311","mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"高明"}
@@ -2149,6 +2191,7 @@
 {"id":"CN-MFG-0029932","co":"宏恒大型激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
 {"id":"CN-MFG-0029933","co":"嘉锋大型激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
 {"id":"CN-MFG-0029934","co":"伟昊激光切割车管牙","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
+{"id":"CN-MFG-0029935","co":"伟昊激光切割车管牙","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0029936","co":"三个六不锈钢激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","不锈钢","碳钢/不锈钢"]}
 {"id":"CN-MFG-0029937","co":"浩克三维激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
 {"id":"CN-MFG-0029938","co":"耒豪大型激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
@@ -2182,6 +2225,7 @@
 {"id":"CN-MFG-0029968","co":"荣翔激光切割厂","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
 {"id":"CN-MFG-0029970","co":"红绿灯激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
 {"id":"CN-MFG-0029971","co":"迅易激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1}
+{"id":"CN-MFG-0029972","co":"迅易激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C"}
 {"id":"CN-MFG-0029973","co":"速顺大型激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0}
 {"id":"CN-MFG-0029974","co":"竣鸿激光切割","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0}
 {"id":"CN-MFG-0029975","co":"金点激光","city":"中山","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","welding","cutting_service","metal_stamping","cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -2424,7 +2468,7 @@
 {"id":"CN-MFG-0100717","co":"贵州中民钢结构有限公司","city":"贵阳","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
 {"id":"CN-MFG-0100724","co":"贵州渠广泰鸿钢结构有限公司","city":"贵阳","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":["碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","碳钢/不锈钢"]}
 {"id":"CN-MFG-0100732","co":"贵州奇特钢结构制造有限公司","city":"贵阳","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
-{"id":"CN-MFG-0100733","co":"贵州渠广万兴钢结构有限公司","city":"贵阳","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
+{"id":"CN-MFG-0100733","co":"贵州渠广万兴钢结构有限公司","city":"贵阳","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["metal_stamping"]}
 {"id":"CN-MFG-0100737","co":"贵州金丰钢结构有限公司","city":"贵阳","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0100738","co":"贵州裕捷安钢结构有限公司","city":"贵阳","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0100740","co":"贵州旺财盛钢结构有限公司","city":"贵阳","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":["碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","碳钢/不锈钢"]}
@@ -2479,7 +2523,7 @@
 {"id":"CN-MFG-0113686","co":"云南雁塔钢结构有限公司","city":"昆明","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
 {"id":"CN-MFG-0113696","co":"云南联达钢结构制造有限公司","city":"昆明","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
 {"id":"CN-MFG-0113698","co":"云南天源钢结构工程有限公司","city":"昆明","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
-{"id":"CN-MFG-0113700","co":"嵩明新鑫钢结构工程有限公司","city":"昆明","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
+{"id":"CN-MFG-0113700","co":"嵩明新鑫钢结构工程有限公司","city":"昆明","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["metal_stamping"]}
 {"id":"CN-MFG-0113704","co":"云南珍品钢结构工程有限公司","city":"昆明","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
 {"id":"CN-MFG-0113705","co":"云南万金护栏网围栏防护网厂","city":"昆明","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0113709","co":"云南中屹钢结构工程有限公司","city":"昆明","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
@@ -2541,6 +2585,7 @@
 {"id":"CN-MFG-0122425","co":"南宁市兴达钢结构材料有限公司","city":"南宁","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["metal_stamping"]}
 {"id":"CN-MFG-0122446","co":"南宁永顺彩钢钢结构建材批发部","city":"南宁","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":["碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","碳钢/不锈钢"]}
 {"id":"CN-MFG-0122450","co":"广西欧特福钢结构工程有限公司","city":"南宁","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
+{"id":"CN-MFG-0122462","co":"宏广益不锈钢焊接加工部","city":"南宁","gb":"3311","mf":1,"proc":["welding"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"g":"C","cap":["welding","不锈钢","碳钢/不锈钢"]}
 {"id":"CN-MFG-0122471","co":"力颖钢结构有限公司","city":"南宁","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0122472","co":"南宁安顺彩钢钢结构批发部","city":"南宁","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":["碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","碳钢/不锈钢"]}
 {"id":"CN-MFG-0122479","co":"广西旭瑞钢结构","city":"南宁","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
@@ -2551,6 +2596,7 @@
 {"id":"CN-MFG-0122550","co":"广西美光钢结构有限公司","city":"南宁","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0122629","co":"鑫尔利围挡护栏边坡防护网厂","city":"南宁","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0122818","co":"辉永桂玻璃铝板幕墙门窗钢结构工程","city":"南宁","gb":"3311","mf":1,"proc":["metal_stamping"],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_stamping","铝合金"]}
+{"id":"CN-MFG-0122975","co":"富源焊接加工","city":"遵义","gb":"3311","mf":1,"proc":["welding"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"g":"C","cap":["welding"]}
 {"id":"CN-MFG-0122995","co":"钣金-机械加工","city":"遵义","gb":"3311","mf":1,"proc":["laser_cutting","stamping","bending","metal_stamping","cutting_service","welding","cnc_milling","cnc_turning","wire_cutting","metal_material"],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0123090","co":"广大源不锈钢剪板刨槽折弯激光","city":"遵义","gb":"3311","mf":1,"proc":["bending","cutting_service"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["bending","cutting_service","不锈钢","碳钢/不锈钢"]}
 {"id":"CN-MFG-0123091","co":"红群不锈钢激光切割加工回风炉","city":"遵义","gb":"3311","mf":1,"proc":["laser_cutting"],"mat":["不锈钢","碳钢/不锈钢"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["laser_cutting","不锈钢","碳钢/不锈钢"]}

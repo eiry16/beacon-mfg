@@ -14604,9 +14604,7 @@
     "company": "云南泽茂注塑科技有限公司",
     "category": "注塑成型",
     "keywords": [
-      "注塑加工",
-      "注塑成型",
-      "注塑模具"
+      "注塑成型"
     ],
     "region": {
       "province": "云南",
@@ -14614,30 +14612,12 @@
     },
     "address": "空港大道8号",
     "contact_phone": "195****5336",
-    "lat": 25.280363,
-    "lng": 103.018041,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0MUBU73NU",
-      "type": "公司企业;公司;公司",
-      "typecode": "170200",
-      "alias": "",
-      "tag": "",
-      "keytag": "公司",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "530127",
-      "search_keyword": "注塑加工"
-    },
+    "status": "verified",
     "industry": {
       "code": "2929",
       "name": "塑料零件及其他塑料制品制造",
@@ -14647,7 +14627,16 @@
       "source": "name",
       "evidence": "注塑"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0106043/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0106044",
@@ -18086,54 +18075,6 @@
       "confidence": "high",
       "source": "name",
       "evidence": "塑料制品"
-    },
-    "is_manufacturer": true
-  },
-  {
-    "id": "CN-MFG-0106538",
-    "company": "昆明市凯跃机电塑料有限责任公司",
-    "category": "注塑成型",
-    "keywords": [
-      "塑料模具"
-    ],
-    "region": {
-      "province": "云南",
-      "city": "昆明"
-    },
-    "address": "海口街道中滩街",
-    "contact_phone": "0871-68591298",
-    "lat": 24.781995,
-    "lng": 102.601118,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0FFH9UD3A",
-      "type": "公司企业;公司;公司",
-      "typecode": "170200",
-      "alias": "",
-      "tag": "",
-      "keytag": "公司",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "530112",
-      "search_keyword": "塑料模具"
-    },
-    "industry": {
-      "code": "2929",
-      "name": "塑料零件及其他塑料制品制造",
-      "level": "class",
-      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
-      "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "注塑成型"
     },
     "is_manufacturer": true
   },
@@ -30385,10 +30326,9 @@
   {
     "id": "CN-MFG-0120117",
     "company": "南宁贝斯泰五金塑胶制品有限公司",
-    "category": "注塑成型",
+    "category": "标准件",
     "keywords": [
-      "塑料制品",
-      "塑胶制品"
+      "标准件"
     ],
     "region": {
       "province": "广西",
@@ -30396,30 +30336,12 @@
     },
     "address": "丰达路69号",
     "contact_phone": "180****3419",
-    "lat": 22.892425,
-    "lng": 108.27806,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0JAVD15IZ",
-      "type": "公司企业;公司;公司",
-      "typecode": "170200",
-      "alias": "",
-      "tag": "",
-      "keytag": "公司",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "450107",
-      "search_keyword": "塑料制品"
-    },
+    "status": "verified",
     "industry": {
       "code": "2929",
       "name": "塑料零件及其他塑料制品制造",
@@ -30429,7 +30351,16 @@
       "source": "name",
       "evidence": "塑胶制品"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0120117/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0120118",
@@ -35391,54 +35322,6 @@
       "postcode": "",
       "business_area": "",
       "adcode": "520330",
-      "search_keyword": "注塑加工"
-    },
-    "industry": {
-      "code": "2929",
-      "name": "塑料零件及其他塑料制品制造",
-      "level": "class",
-      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
-      "confidence": "low",
-      "source": "keyword",
-      "evidence": "注塑加工"
-    },
-    "is_manufacturer": true
-  },
-  {
-    "id": "CN-MFG-0123134",
-    "company": "华洪电子加工厂",
-    "category": "注塑成型",
-    "keywords": [
-      "注塑加工"
-    ],
-    "region": {
-      "province": "贵州",
-      "city": "遵义"
-    },
-    "address": "天台路225号",
-    "contact_phone": "待核实",
-    "lat": 27.955452,
-    "lng": 107.181582,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "unverified_poi",
-    "is_template": true,
-    "note": "",
-    "amap": {
-      "poi_id": "B0IUDCH3DP",
-      "type": "公司企业;工厂;工厂",
-      "typecode": "170300",
-      "alias": "",
-      "tag": "",
-      "keytag": "工厂",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520323",
       "search_keyword": "注塑加工"
     },
     "industry": {
@@ -50244,5 +50127,239 @@
       "evidence": "塑胶制品"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0002426",
+    "company": "深圳市合进五金塑胶制品有限公司",
+    "category": "标准件",
+    "keywords": [
+      "标准件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "沙井街道新二社区鼎丰盛工业园B栋1楼3号",
+    "contact_phone": "137****8943",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶制品"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002426/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0002721",
+    "company": "广州市番禺区钟村开元五金塑料制品厂",
+    "category": "标准件",
+    "keywords": [
+      "标准件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "钟二工业区石仔岗18号",
+    "contact_phone": "020-23839173",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002721/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0008246",
+    "company": "南京塑料制品亚克力定制加工中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京"
+    },
+    "address": "禄口街道秦禄大道2号10区2栋106-107",
+    "contact_phone": "133****8008",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料制品"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008246/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0008399",
+    "company": "东莞市石排唐益注塑厂",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑成型"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "石排镇下沙刘屋工业一路36号101室",
+    "contact_phone": "188****0245",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008399/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0010927",
+    "company": "信尔诺CNC加工激光抄数注塑产品",
+    "category": "注塑成型",
+    "keywords": [
+      "注塑成型"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "建设北路183号",
+    "contact_phone": "155****0618; 183****3738",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "注塑"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0010927/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0028789",
+    "company": "永朝塑胶加工店",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "东坑镇东坑村中心中路64号",
+    "contact_phone": "134****6443",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2929",
+      "name": "塑料零件及其他塑料制品制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料零件及其他塑料制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑胶加工"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0028789/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

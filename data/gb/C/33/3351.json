@@ -96,7 +96,15 @@
       "evidence": "建筑"
     },
     "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "_bucket": "C/33/3351",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003618/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0011314",

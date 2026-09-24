@@ -3602,7 +3602,15 @@
       "adcode": "441900",
       "search_keyword": "阳极氧化"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000179/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0000181",
@@ -8125,7 +8133,15 @@
       "adcode": "320206",
       "search_keyword": "电镀"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003979/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003980",
@@ -17032,7 +17048,15 @@
       "adcode": "320111",
       "search_keyword": "电镀"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004186/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0004188",
@@ -17080,7 +17104,15 @@
       "adcode": "320111",
       "search_keyword": "电镀"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004188/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0004189",
@@ -17176,7 +17208,15 @@
       "adcode": "320116",
       "search_keyword": "电镀"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004190/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0004191",
@@ -17272,7 +17312,15 @@
       "adcode": "320116",
       "search_keyword": "电镀"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004192/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0004193",
@@ -17464,7 +17512,15 @@
       "adcode": "320115",
       "search_keyword": "电镀"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004196/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0004197",
@@ -30762,7 +30818,15 @@
       "adcode": "320505",
       "search_keyword": "喷涂"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004470/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0004471",
@@ -41954,7 +42018,15 @@
       "adcode": "320404",
       "search_keyword": "喷涂"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004708/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0004709",
@@ -44375,7 +44447,15 @@
       "adcode": "320114",
       "search_keyword": "喷涂"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004757/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0004758",
@@ -44744,7 +44824,15 @@
       "adcode": "320115",
       "search_keyword": "喷涂"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004766/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0004767",
@@ -80130,7 +80218,15 @@
       "adcode": "440111",
       "search_keyword": "冲压"
     },
-    "_bucket": "C/33/3360"
+    "_bucket": "C/33/3360",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002143/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0012694",
@@ -177211,5 +177307,668 @@
       "evidence": "烤漆"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0001441",
+    "company": "苏州展禾金属喷塑厂",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "董浜镇华烨大道2号",
+    "contact_phone": "177****3511",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷塑"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0001441/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0001481",
+    "company": "常州坛金喷塑加工有限公司",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "河山环路7号",
+    "contact_phone": "0519-88119997; 181****1607",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷塑"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0001481/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0001556",
+    "company": "深圳天翔钣金龙门铣喷涂加工厂",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "西坑新村佰公坳工业区品奥实业93号B座一楼",
+    "contact_phone": "189****3719",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0001556/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0003926",
+    "company": "电镀表面处理",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "友胜路10号",
+    "contact_phone": "155****1178",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003926/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0004155",
+    "company": "新阳电镀厂",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "南夏墅镇华阳村",
+    "contact_phone": "158****2107",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004155/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0004171",
+    "company": "常州市武进洛阳第二电镀厂",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "洛阳镇岑村塘门桥10号",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004171/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0004625",
+    "company": "杜尔涂装系统工程(上海)有限公司",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "白鹤镇鹤泰路198号",
+    "contact_phone": "021-39791000",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "表面处理"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004625/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0013667",
+    "company": "大昌电镀环保PP板PVC板",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "沙井北环路177号",
+    "contact_phone": "136****2385",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电镀"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013667/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0015062",
+    "company": "兴壹方电缆桥架线槽镀锌线管厂(永晟大厦店)",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "珠海"
+    },
+    "address": "翠前南路223-107号(永晟大厦)",
+    "contact_phone": "181****0678",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015062/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0015067",
+    "company": "珠海三泰模具真空热处理厂",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "珠海"
+    },
+    "address": "乾务镇乾湾路湾口村厂房",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015067/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0015068",
+    "company": "渝耀模具热处理厂",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "珠海"
+    },
+    "address": "一字桥头兰姐快餐店正对面100米左右",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015068/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0016095",
+    "company": "镀锌铝板不锈钢板材",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "东方路与工业大道东北一路交叉口西北40米",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016095/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0016219",
+    "company": "良田热处理大水磨加工中心",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "横栏镇茂辉工业区益辉三路9号",
+    "contact_phone": "189****2893",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016219/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0017360",
+    "company": "杭州铝艺型材铝板单板喷涂厂",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "高后线",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017360/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019859",
+    "company": "诸暨市海恒机械热处理加工",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "海马传动东北门西90米",
+    "contact_phone": "137****9731",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "热处理"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019859/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0028317",
+    "company": "上海帕卡濑精有限公司金属表面加工产研中心(建设中)",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "嘉定工业区兴荣路1588号",
+    "contact_phone": "021-59122587",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "金属表面"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0028317/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0113760",
+    "company": "中乐镀锌钢材",
+    "category": "表面处理",
+    "keywords": [
+      "表面处理"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "宝象物流园区D3栋",
+    "contact_phone": "158****3327",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0113760/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

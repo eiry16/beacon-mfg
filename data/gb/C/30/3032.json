@@ -2306,5 +2306,44 @@
       "evidence": "石材"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0028441",
+    "company": "金广诚石业加工中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "万石大道华东石材市场1区3号",
+    "contact_phone": "137****6767; 138****6756",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3032",
+      "name": "建筑用石加工",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 砖瓦、石材等建筑材料制造 > 建筑用石加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "石业"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0028441/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

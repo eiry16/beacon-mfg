@@ -6451,5 +6451,161 @@
       "evidence": "建材批发"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0006718",
+    "company": "上海龙之峰门控科技有限公司",
+    "category": "原材料",
+    "keywords": [
+      "原材料"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "金大公路8218号1幢",
+    "contact_phone": "135****2181; 136****8059; 152****7188",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5165",
+      "name": "建材批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 建材批发",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006718/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0027807",
+    "company": "激光切管加工",
+    "category": "原材料",
+    "keywords": [
+      "原材料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "孔湖社区卫生服务站东北侧160米",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5165",
+      "name": "建材批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 建材批发",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0027807/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0027814",
+    "company": "激光切管切板加工",
+    "category": "原材料",
+    "keywords": [
+      "原材料"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "杭州经纬电子机械制造有限公司西区南门东70米",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5165",
+      "name": "建材批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 建材批发",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0027814/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0029068",
+    "company": "昊通加工分条仓",
+    "category": "原材料",
+    "keywords": [
+      "原材料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "陈村镇力源金属物流城A区5座5-8号",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5165",
+      "name": "建材批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 建材批发",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0029068/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

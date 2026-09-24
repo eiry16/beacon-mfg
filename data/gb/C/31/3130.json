@@ -24776,7 +24776,15 @@
       "adcode": "440113",
       "search_keyword": "铝板"
     },
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000669/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0008579",
@@ -26204,7 +26212,15 @@
       "adcode": "440118",
       "search_keyword": "激光切割"
     },
-    "_bucket": "C/31/3130"
+    "_bucket": "C/31/3130",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002151/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002154",
@@ -92581,5 +92597,317 @@
       "evidence": "钢管"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0001723",
+    "company": "昆山磐泰钢材批发激光切割厂",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "盛晞路77号",
+    "contact_phone": "152****3968",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0001723/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0002146",
+    "company": "威兹漫楼梯·激光切割钢板加工",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "沙头街南双玉工业区二街8号-5号仓",
+    "contact_phone": "135****7187",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢板"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002146/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019462",
+    "company": "延森钢铁激光切割",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "东湖街道中亚工贸园C05 B09 B10幢",
+    "contact_phone": "182****3898",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢铁"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019462/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019466",
+    "company": "顺泰不锈钢板材激光切割剪板折弯(文化新村小区北区店)",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "舜江东路102号",
+    "contact_phone": "137****1400; 188****5389",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "不锈钢板"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019466/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019473",
+    "company": "嵊州佳和钢材激光切割加工厂",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "浦口街道前杨东路5号",
+    "contact_phone": "135****5300; 139****8138",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019473/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019873",
+    "company": "绍兴钢材批发联何钢材交易中心",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "于越东路555号",
+    "contact_phone": "188****1323",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019873/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0020125",
+    "company": "锦闽钢铁(电子商务园店)",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "浦阳新村32-8-11电子商务园区北门",
+    "contact_phone": "153****2855; 177****6055",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢铁"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0020125/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0029677",
+    "company": "宝盛钢材",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "西乡街道金湾大道中锦钢材交易中心M2仓库A6销售部",
+    "contact_phone": "136****2238; 136****2338",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3130",
+      "name": "钢压延加工",
+      "level": "class",
+      "path": "C 制造业 > 黑色金属冶炼和压延加工业 > 钢压延加工 > 钢压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0029677/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

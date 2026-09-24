@@ -4196,7 +4196,15 @@
       "adcode": "320509",
       "search_keyword": "注塑成型"
     },
-    "_bucket": "C/29/2929"
+    "_bucket": "C/29/2929",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002738/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002739",
@@ -4543,7 +4551,15 @@
       "adcode": "330483",
       "search_keyword": "注塑成型"
     },
-    "_bucket": "C/29/2929"
+    "_bucket": "C/29/2929",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002746/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002747",

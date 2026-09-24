@@ -23589,7 +23589,15 @@
       "source": "name",
       "evidence": "物资"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0096442/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0096515",
@@ -25493,7 +25501,15 @@
       "source": "name",
       "evidence": "物资"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0106511/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0106515",
@@ -26443,7 +26459,15 @@
       "source": "name",
       "evidence": "批发"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0112366/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0112381",
@@ -28393,7 +28417,15 @@
       "source": "name",
       "evidence": "批发"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0118769/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0119568",
@@ -40813,5 +40845,83 @@
       "evidence": "商贸"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0013034",
+    "company": "中山市励铖钢材批发商行",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "晓阳路7号F大栋313卡",
+    "contact_phone": "134****3189; 158****5062",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材|门店型:商行"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013034/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0016401",
+    "company": "中山市励铖钢材批发商行",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "晓阳路7号F大栋313卡",
+    "contact_phone": "134****3189; 158****5062",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "钢材|门店型:商行"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016401/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

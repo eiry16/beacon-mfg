@@ -13952,7 +13952,15 @@
       "adcode": "320282",
       "search_keyword": "喷涂"
     },
-    "_bucket": "F/51/5174"
+    "_bucket": "F/51/5174",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004499/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0013690",
@@ -38375,5 +38383,395 @@
       "evidence": "五金|门店型:五金机电"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0013805",
+    "company": "天益五金机电商行",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "沥林镇仲恺八路459号",
+    "contact_phone": "158****8801; 158****1058",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013805/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0013970",
+    "company": "诸暨市福鼎五金机电经营部",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "万安南路67号",
+    "contact_phone": "135****8260; 188****2133",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013970/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0015058",
+    "company": "正泰施耐德五金机电螺丝",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "珠海"
+    },
+    "address": "228国道与边山大街交叉口西北120米",
+    "contact_phone": "155****6538; 187****3607",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "螺丝|门店型:五金机电"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0015058/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0016440",
+    "company": "未来万家五金机电(三角店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "三角镇金三大道东37号之一4至11卡",
+    "contact_phone": "139****3681",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016440/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0018179",
+    "company": "佳士焊割五金商行",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "园洲镇博园路861号佳士焊机",
+    "contact_phone": "158****6781",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:商行"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018179/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0018190",
+    "company": "未来万家五金机电博罗店",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "博罗大道中797号",
+    "contact_phone": "135****1581",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018190/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0018787",
+    "company": "程晖铜铝不锈钢绝缘材料五金货架商行",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "仲恺大道289号恒河科创园D栋",
+    "contact_phone": "138****3476",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "货架|门店型:商行"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018787/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0018804",
+    "company": "未来万家五金机电博罗店",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "博罗大道中797号",
+    "contact_phone": "135****1581",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018804/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019814",
+    "company": "诸暨市福鼎五金机电经营部",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "万安南路67号",
+    "contact_phone": "135****8260; 188****2133",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:经营部"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019814/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0019961",
+    "company": "蓝滨五金机电超市",
+    "category": "批发和零售业",
+    "keywords": [
+      "批发和零售业"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "滨海工业区柯海公路与平海路交叉路口3号楼1层",
+    "contact_phone": "138****1997",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5174",
+      "name": "五金产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 五金产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金|门店型:五金机电"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0019961/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

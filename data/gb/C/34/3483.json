@@ -35279,7 +35279,15 @@
       "source": "name",
       "evidence": "弹簧"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0113493/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0113494",
@@ -36509,5 +36517,122 @@
       "evidence": "弹簧"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0002498",
+    "company": "锐沃五金弹簧有限公司",
+    "category": "标准件",
+    "keywords": [
+      "标准件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山"
+    },
+    "address": "丹灶镇金沙西联三甲大份开发区14号",
+    "contact_phone": "0757-86618121; 186****2890",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002498/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0006243",
+    "company": "浙江远华弹簧科技股份有限公司",
+    "category": "标准件",
+    "keywords": [
+      "标准件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "温州"
+    },
+    "address": "柳市镇象南社区四板桥工业区",
+    "contact_phone": "0577-62626211",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0006243/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0017687",
+    "company": "亿玻自动门旋转门厂家地弹簧门控五金销售",
+    "category": "标准件",
+    "keywords": [
+      "标准件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "崇贤街道疏港公路32号油车浜10组2号",
+    "contact_phone": "136****3480; 177****7143",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3483",
+      "name": "弹簧制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 弹簧制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "弹簧"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0017687/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

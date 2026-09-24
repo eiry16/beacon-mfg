@@ -25235,7 +25235,15 @@
       "adcode": "440305",
       "search_keyword": "激光切割"
     },
-    "_bucket": "C/33/3312"
+    "_bucket": "C/33/3312",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0001967/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0002037",

@@ -3695,7 +3695,15 @@
       "adcode": "441303",
       "search_keyword": "喷涂"
     },
-    "_bucket": "C/20/2019"
+    "_bucket": "C/20/2019",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0004967/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0018631",
@@ -6398,5 +6406,44 @@
       "evidence": "木制品"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0026593",
+    "company": "上海慎航木制品有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "精密机械加工"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "北青公路7521号",
+    "contact_phone": "021-59228388; 137****6881",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2019",
+      "name": "其他木材加工",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 木材加工 > 其他木材加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "木制品"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0026593/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

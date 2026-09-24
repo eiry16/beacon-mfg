@@ -634,7 +634,7 @@
     "company": "海底捞火锅(东盟盛天地店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "广西",
@@ -642,30 +642,12 @@
     },
     "address": "中越路8号盛天华府地下室B3311-B3319号商铺",
     "contact_phone": "0771-5585689; 0771-5585690",
-    "lat": 22.810774,
-    "lng": 108.400535,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFLJ5RDZ",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "雪人豆乳蛋糕,云南文山红甸山药,黄土高原滩羊卷,冰爽葡萄柠檬茶,虫草花乌鸡丸,川味果香五花腊肉,内蒙罕山白绒山羊,双人餐,鸡肉,单人餐",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "东盟商务区",
-      "adcode": "450103",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -675,7 +657,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0108231/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0108232",
@@ -3515,7 +3506,7 @@
     "company": "韩膳煌自助火锅烤肉",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "广西",
@@ -3523,30 +3514,12 @@
     },
     "address": "鲁班路46-5号综合楼第3层",
     "contact_phone": "191****4197",
-    "lat": 22.833578,
-    "lng": 108.2836,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFHFALNW",
-      "type": "餐饮服务;外国餐厅;韩国料理",
-      "typecode": "050203",
-      "alias": "",
-      "tag": "牛肉,自助餐,烤肉",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "鲁班路",
-      "adcode": "450107",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -3556,7 +3529,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0108291/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0108292",
@@ -4575,7 +4557,7 @@
     "company": "幸福苏锅锅·旋转自助小火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "广西",
@@ -4583,30 +4565,12 @@
     },
     "address": "西乡塘街道农院路4号34铺",
     "contact_phone": "152****7862",
-    "lat": 22.834191,
-    "lng": 108.295337,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LB9MWDA7",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "油皇鸡,冰淇淋,粉色小汉堡,腌牛肉,花花小蛋糕,小蛋糕,自助餐",
-      "keytag": "自助餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "450107",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -4616,7 +4580,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0108313/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0108314",
@@ -9185,7 +9158,7 @@
     "company": "张小厨家常小炒菜湖北小龙虾(同人·西湖东郡店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "家常菜"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "广西",
@@ -9193,30 +9166,12 @@
     },
     "address": "相思湖东路3号西湖东郡1号楼16号",
     "contact_phone": "139****8971",
-    "lat": 22.835051,
-    "lng": 108.248072,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0L1JOAXS7",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "酸菜鱼,大古米饭,秘制油闷大虾,火爆腰花,私房牛排,双人餐",
-      "keytag": "湘菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "相思湖",
-      "adcode": "450107",
-      "search_keyword": "家常菜"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -9226,7 +9181,16 @@
       "source": "name",
       "evidence": "小龙虾"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0108560/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0108561",
@@ -17883,7 +17847,7 @@
     "company": "聚相楼私房菜馆(城光俊景店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "私房菜"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "广西",
@@ -17891,30 +17855,12 @@
     },
     "address": "吉祥路城光俊景B143号商铺",
     "contact_phone": "191****0208",
-    "lat": 22.828355,
-    "lng": 108.417166,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0JBTOBMJ8",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "私房煎鸭,小西红柿焖鲟龙鱼,云南野生菌养生鸡汤,玉林生炒牛杂,网红九孔木桶饭,私房菜,重庆火锅,木桶饭,特色菜",
-      "keytag": "粤菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "凤岭",
-      "adcode": "450103",
-      "search_keyword": "私房菜"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -17924,7 +17870,16 @@
       "source": "name",
       "evidence": "私房菜"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0108795/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0108796",
@@ -34058,9 +34013,7 @@
     "company": "清真疆厨·新疆餐厅(会址店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -34068,30 +34021,12 @@
     },
     "address": "杨柳街1935街区三楼(会址后门好吃街内)公园路尽头",
     "contact_phone": "181****7680; 190****0214",
-    "lat": 27.689541,
-    "lng": 106.923096,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0HGCDJIL0",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "双人餐,烤肉,牛肉",
-      "keytag": "新疆菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "步行街",
-      "adcode": "520302",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -34101,7 +34036,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115633/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115634",
@@ -34255,9 +34199,7 @@
     "company": "赛维利亚全时段中西餐厅(仁怀店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -34265,30 +34207,12 @@
     },
     "address": "国酒大道酒都大厦2层",
     "contact_phone": "0851-22311733",
-    "lat": 27.79386,
-    "lng": 106.405172,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFJC4B6E",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "双人餐",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "盐津",
-      "adcode": "520382",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -34298,7 +34222,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115637/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115638",
@@ -34454,9 +34387,7 @@
     "company": "赛维利亚全时段中西餐厅(桐梓店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -34464,30 +34395,12 @@
     },
     "address": "文笔路四小德利大厦F2层",
     "contact_phone": "0851-26657733",
-    "lat": 28.136825,
-    "lng": 106.827475,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFK66LWX",
-      "type": "餐饮服务;休闲餐饮场所;休闲餐饮场所|餐饮服务;中餐厅;中餐厅",
-      "typecode": "050400|050100",
-      "alias": "",
-      "tag": "双人餐",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520322",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -34497,7 +34410,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115642/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115643",
@@ -34552,9 +34474,7 @@
     "company": "赛维利亚全时段中西餐厅(南白店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -34562,30 +34482,12 @@
     },
     "address": "阳光花园B区东门旁",
     "contact_phone": "180****7623",
-    "lat": 27.53132,
-    "lng": 106.831542,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFFAK7V6",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "地星秀肉饼火锅,手工外婆香春卷,泡椒肥肠火锅,牙签牛肉,特色冰粥,私房夹沙肉,缤纷草莓慕斯,芒果捞,苗岭软哨豆米火锅,荷香排骨笼仔饭,菲力牛扒,蝴蝶虾,西冷牛扒,赛维利亚肉酱饭,丽江洋芋粑粑,双人餐",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "阳光花园",
-      "adcode": "520304",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -34595,14 +34497,23 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115644/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115645",
     "company": "百特喜·意大利餐厅(遵义国贸店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -34610,30 +34521,12 @@
     },
     "address": "珠海路1号曼哈顿时代广场5楼505",
     "contact_phone": "0851-28220838",
-    "lat": 27.716775,
-    "lng": 106.931425,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFKSHIKU",
-      "type": "餐饮服务;外国餐厅;意式菜品餐厅",
-      "typecode": "050205",
-      "alias": "",
-      "tag": "披萨,牛排,沙拉",
-      "keytag": "意大利菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "珠海路",
-      "adcode": "520303",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -34643,7 +34536,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115645/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115646",
@@ -35521,7 +35423,7 @@
     "company": "习水滇蘑菇餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -35529,30 +35431,12 @@
     },
     "address": "杉王街道丹霞社区圣城公园美食街7-1-16号",
     "contact_phone": "0851-22522229; 183****8821",
-    "lat": 28.318768,
-    "lng": 106.199699,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFLFSJTU",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "蘑菇",
-      "keytag": "云南菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520330",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -35562,7 +35446,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115666/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115667",
@@ -35617,8 +35510,7 @@
     "company": "野肆和牛餐厅(汇川店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -35626,30 +35518,12 @@
     },
     "address": "福州路147号",
     "contact_phone": "187****1988",
-    "lat": 27.711196,
-    "lng": 106.927457,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LUCRU8W5",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "宵夜",
-      "keytag": "牛肉火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "宁波路",
-      "adcode": "520303",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -35659,7 +35533,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115668/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115669",
@@ -35714,7 +35597,7 @@
     "company": "文塔斯西餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -35722,30 +35605,12 @@
     },
     "address": "红军大道北路259号(贵阳银行楼上)",
     "contact_phone": "151****2144",
-    "lat": 28.578958,
-    "lng": 105.698761,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0K2DSFXH4",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "牛排",
-      "keytag": "西餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520381",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -35755,7 +35620,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115670/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115671",
@@ -36002,7 +35876,7 @@
     "company": "提普希红酒西餐厅(星力城店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -36010,30 +35884,12 @@
     },
     "address": "万里路127号遵义星乐城B1层",
     "contact_phone": "151****3002",
-    "lat": 27.676466,
-    "lng": 106.922494,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0J1AZ4ZII",
-      "type": "餐饮服务;外国餐厅;西餐厅(综合风味)",
-      "typecode": "050201",
-      "alias": "",
-      "tag": "烟熏鸭胸罗勒意面,菲力原切牛排,鸡肉洋葱圈,火焰牛排,香煎鸡扒双拼",
-      "keytag": "西餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "万里路",
-      "adcode": "520302",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -36043,7 +35899,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115676/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115677",
@@ -36437,7 +36302,7 @@
     "company": "金禧泰泰式融合餐厅(日月星壹号公馆店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -36445,30 +36310,12 @@
     },
     "address": "新蒲街道日月星•1号公馆S2商业1-25号-27号门面",
     "contact_phone": "186****8072",
-    "lat": 27.711196,
-    "lng": 107.037399,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LUPAWZRD",
-      "type": "餐饮服务;外国餐厅;韩国料理",
-      "typecode": "050203",
-      "alias": "",
-      "tag": "",
-      "keytag": "东南亚菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -36478,7 +36325,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115687/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115688",
@@ -36677,8 +36533,7 @@
     "company": "川黔餐馆",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "饭店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -36686,30 +36541,12 @@
     },
     "address": "大矸镇中街",
     "contact_phone": "137****0746",
-    "lat": 28.972645,
-    "lng": 107.452181,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFFV4T3Z",
-      "type": "餐饮服务;中餐厅;四川菜(川菜)",
-      "typecode": "050102",
-      "alias": "",
-      "tag": "羊肉汤锅,腊排骨,汤锅",
-      "keytag": "川菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520325",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -36719,7 +36556,16 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115692/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115693",
@@ -36822,7 +36668,7 @@
     "company": "印象遵义·红色文化餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -36830,30 +36676,12 @@
     },
     "address": "贵州省遵义市红花岗区公园路60号",
     "contact_phone": "0851-28238288; 180****7319",
-    "lat": 27.690859,
-    "lng": 106.921863,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFGNP0ZS",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -36863,7 +36691,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115695/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115696",
@@ -37113,8 +36950,7 @@
     "company": "武胜餐馆(毛肚火锅)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "饭店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -37122,30 +36958,12 @@
     },
     "address": "武胜路298号",
     "contact_phone": "139****0283",
-    "lat": 28.137604,
-    "lng": 106.818097,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFGJU0ET",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "毛肚火锅,鲜毛肚",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520322",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -37155,14 +36973,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115701/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115702",
     "company": "金黔嘉华国际大酒店-中餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -37170,30 +36997,12 @@
     },
     "address": "文华办河滨南路8号金黔嘉华酒店2楼",
     "contact_phone": "0851-22998888",
-    "lat": 28.56767,
-    "lng": 105.694824,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFL3DURZ",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520381",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -37203,7 +37012,16 @@
       "source": "name",
       "evidence": "中餐"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115702/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115703",
@@ -37452,7 +37270,7 @@
     "company": "黔韵院子餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -37460,30 +37278,12 @@
     },
     "address": "银河路461号",
     "contact_phone": "177****4168; 183****1235",
-    "lat": 27.666498,
-    "lng": 106.888152,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0L2RLN1YX",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "桃溪寺庙",
-      "adcode": "520302",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -37493,7 +37293,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115708/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115709",
@@ -37933,7 +37742,7 @@
     "company": "回家吃饭湘菜时尚餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -37941,30 +37750,12 @@
     },
     "address": "虾子镇西大街365-371号",
     "contact_phone": "0851-27331877",
-    "lat": 27.684699,
-    "lng": 107.188067,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFHG5E2K",
-      "type": "餐饮服务;中餐厅;湖南菜(湘菜)",
-      "typecode": "050108",
-      "alias": "",
-      "tag": "",
-      "keytag": "湘菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -37974,7 +37765,16 @@
       "source": "name",
       "evidence": "湘菜"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115720/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115721",
@@ -38271,8 +38071,7 @@
     "company": "朱家川味餐馆",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "饭店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -38280,30 +38079,12 @@
     },
     "address": "永兴镇",
     "contact_phone": "0851-24321079; 187****0404",
-    "lat": 27.87509,
-    "lng": 107.595113,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFFAKLEP",
-      "type": "餐饮服务;中餐厅;四川菜(川菜)",
-      "typecode": "050102",
-      "alias": "",
-      "tag": "",
-      "keytag": "川菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520328",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -38313,7 +38094,16 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115728/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115731",
@@ -38901,8 +38691,7 @@
     "company": "财哥餐馆",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "饭店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -38910,30 +38699,12 @@
     },
     "address": "永安镇田坝街上接待中心大门口正对面",
     "contact_phone": "133****1008; 182****5158",
-    "lat": 28.077791,
-    "lng": 107.570902,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFLKHAHF",
-      "type": "餐饮服务;中餐厅;云贵菜",
-      "typecode": "050114",
-      "alias": "",
-      "tag": "",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520327",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -38943,7 +38714,16 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115743/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115744",
@@ -39047,8 +38827,7 @@
     "company": "鑫隆餐馆(河西路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "饭店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -39056,30 +38835,12 @@
     },
     "address": "高坪镇翠庭花园旁",
     "contact_phone": "136****7468; 189****6690",
-    "lat": 27.816035,
-    "lng": 106.90544,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFIULQU5",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "炒饭,盖饭",
-      "keytag": "中餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520303",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -39089,15 +38850,23 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115746/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115747",
     "company": "贵习餐馆",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "饭店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -39105,30 +38874,12 @@
     },
     "address": "贵州省遵义市习水县习酒镇瑞馨苑小区对面",
     "contact_phone": "135****8917",
-    "lat": 28.163082,
-    "lng": 106.177396,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0J6NSG0SV",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520330",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -39138,7 +38889,16 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115747/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115748",
@@ -39435,7 +39195,7 @@
     "company": "汇川区梁记小厨餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -39443,30 +39203,12 @@
     },
     "address": "上海路764号门面",
     "contact_phone": "156****0101; 185****0003",
-    "lat": 27.704969,
-    "lng": 106.917541,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFL7D25W",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "",
-      "keytag": "川菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "上海路",
-      "adcode": "520303",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -39476,7 +39218,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115754/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115757",
@@ -40017,8 +39768,7 @@
     "company": "刘三妹餐馆",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "饭店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -40026,30 +39776,12 @@
     },
     "address": "仙源镇富邦路148号",
     "contact_phone": "133****6169; 133****6358",
-    "lat": 28.390653,
-    "lng": 106.653649,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFK9DOMF",
-      "type": "餐饮服务;中餐厅;云贵菜",
-      "typecode": "050114",
-      "alias": "",
-      "tag": "",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520330",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -40059,14 +39791,23 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115769/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115770",
     "company": "时光记忆主题餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -40074,30 +39815,12 @@
     },
     "address": "龙泉大道黔北记忆16号楼",
     "contact_phone": "0851-27722886; 188****2170",
-    "lat": 27.555225,
-    "lng": 106.846575,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFGDXN41",
-      "type": "餐饮服务;中餐厅;云贵菜",
-      "typecode": "050114",
-      "alias": "",
-      "tag": "",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520304",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -40107,7 +39830,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115770/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115771",
@@ -40891,7 +40623,7 @@
     "company": "百味人家餐厅(碧桂园店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -40899,30 +40631,12 @@
     },
     "address": "鲁班街道和平社区天汇碧桂园收银机107号",
     "contact_phone": "159****6837; 183****1270",
-    "lat": 27.755994,
-    "lng": 106.353123,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0G2RMIO5Y",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "",
-      "keytag": "川菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520382",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -40932,7 +40646,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115788/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115789",
@@ -41475,7 +41198,7 @@
     "company": "温迪士欢乐餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -41483,30 +41206,12 @@
     },
     "address": "仙源镇三岔路口温迪士",
     "contact_phone": "186****5756",
-    "lat": 28.389725,
-    "lng": 106.651506,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0GUX1A1MG",
-      "type": "餐饮服务;快餐厅;快餐厅",
-      "typecode": "050300",
-      "alias": "",
-      "tag": "",
-      "keytag": "西餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520330",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -41516,7 +41221,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115800/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115801",
@@ -42109,8 +41823,7 @@
     "company": "景苑餐馆(凯粤壹品店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "饭店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -42118,30 +41831,12 @@
     },
     "address": "赤金大道凯粤壹品",
     "contact_phone": "133****8980; 187****0210",
-    "lat": 28.580929,
-    "lng": 105.718645,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0GK6GP8SD",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "",
-      "keytag": "川菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520381",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -42151,7 +41846,16 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115814/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115815",
@@ -42690,8 +42394,7 @@
     "company": "二合豆花烤鱼华勤餐馆",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅",
-      "饭店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -42699,30 +42402,12 @@
     },
     "address": "二合镇二合街道",
     "contact_phone": "180****8148",
-    "lat": 28.001203,
-    "lng": 106.345762,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFLEE5AS",
-      "type": "餐饮服务;中餐厅;四川菜(川菜)",
-      "typecode": "050102",
-      "alias": "",
-      "tag": "豆花烤鱼",
-      "keytag": "川菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520382",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -42732,7 +42417,16 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115827/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115828",
@@ -42886,8 +42580,7 @@
     "company": "龙坪鸭脚板火锅(总店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -42895,30 +42588,12 @@
     },
     "address": "龙坪镇龙坝社区贸易街38号",
     "contact_phone": "130****0770",
-    "lat": 27.557304,
-    "lng": 107.035814,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFJI4IIR",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "现炸小酥肉,鸭脚板火锅,鸭脚板炝鸡血,龙坪鸭脚板,龙坪鸭脚板火锅,贵州特色鸭脚板火锅,排骨,素菜,酸萝卜",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520304",
-      "search_keyword": "酒楼"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -42928,7 +42603,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115997/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0115998",
@@ -43615,7 +43299,7 @@
     "company": "老江菜馆",
     "category": "住宿和餐饮业",
     "keywords": [
-      "酒楼"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -43623,30 +43307,12 @@
     },
     "address": "合众路144号建文小学斜对面",
     "contact_phone": "0851-28878688; 189****7378; 189****6674",
-    "lat": 27.690631,
-    "lng": 106.937705,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0354008K5",
-      "type": "餐饮服务;中餐厅;综合酒楼",
-      "typecode": "050101",
-      "alias": "",
-      "tag": "钙骨萝卜汤,糟辣豆腐干回锅肉,春笋炒肉,老江粉蒸肉,酱爆肉,豆角炒茄子,烧椒棒豆,酸辣椒米粉,炝炒时蔬,生态老豆腐,豆香糍粑,猪蹄",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "延安路",
-      "adcode": "520302",
-      "search_keyword": "酒楼"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -43656,7 +43322,16 @@
       "source": "name",
       "evidence": "菜馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116014/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116015",
@@ -45621,8 +45296,7 @@
     "company": "酸汤鱼火锅店",
     "category": "住宿和餐饮业",
     "keywords": [
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -45630,30 +45304,12 @@
     },
     "address": "尚嵇镇乌江寨国际旅游度假区(西北角)",
     "contact_phone": "0851-28746927",
-    "lat": 27.380904,
-    "lng": 106.897999,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0ID49QL3U",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "特色菜,烤鱼,辣子鸡",
-      "keytag": "中餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520304",
-      "search_keyword": "酒楼"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -45663,7 +45319,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116056/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116057",
@@ -46201,8 +45866,7 @@
     "company": "电厂老酸汤火锅酸汤鱼(合众路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -46210,30 +45874,12 @@
     },
     "address": "合众路90号门面1-2号食为鲜楼下",
     "contact_phone": "152****6358; 157****3197",
-    "lat": 27.690468,
-    "lng": 106.938045,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFIC0VNU",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "鲜切羊肉片,小酥肉,酸汤鱼,单人草鱼片片鱼自助火锅,千叶豆腐,麻辣锅底,酸汤锅底,自助火锅,酸汤火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "延安路",
-      "adcode": "520302",
-      "search_keyword": "酒楼"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -46243,7 +45889,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116071/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116072",
@@ -46298,8 +45953,7 @@
     "company": "砂锅豆米火锅野菜馆(老城店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -46307,30 +45961,12 @@
     },
     "address": "解放路31号",
     "contact_phone": "133****4401",
-    "lat": 27.689282,
-    "lng": 106.918196,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0K0YUGDZG",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "豆米火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "酒楼"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -46340,7 +45976,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116073/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116074",
@@ -48434,8 +48079,7 @@
     "company": "黔豆园贵阳特色豆米火锅·野菜馆(赤水店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -48443,30 +48087,12 @@
     },
     "address": "红军大道富城花园9-10-11号",
     "contact_phone": "158****7991; 158****7991",
-    "lat": 28.576386,
-    "lng": 105.698264,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFKSB8UD",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "小酥肉,烤肉,素菜,牛肉",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520381",
-      "search_keyword": "酒楼"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -48476,7 +48102,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116120/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116121",
@@ -49067,7 +48702,7 @@
     "company": "京华酒楼(南京路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "酒楼"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -49075,30 +48710,12 @@
     },
     "address": "南京路38号(电力公寓1号楼北门东南60米)",
     "contact_phone": "0851-28235666",
-    "lat": 27.716162,
-    "lng": 106.93419,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LU4DW63G",
-      "type": "餐饮服务;中餐厅;综合酒楼",
-      "typecode": "050101",
-      "alias": "",
-      "tag": "盐菜扣肉焗小管,葱香煎百合,川味雪花牛肉打边炉,阴包谷烩生态腊猪脚,宫爆大虾球,山楂鹅肝佐海蜇,贵州省汤,老坛糟辣煮九宫格,大红袍椒麻方竹笋,黄鸡油蒸深海大黄鱼,贵州天麻炖老母鸡,烧椒青蟹恋竹山珍,古法果木北京烤鸭,春意盎然,毕节皱皮椒爆牛黄金,糟辣土猪肉捞脆笋,刺身素什锦,金玉满堂,天妇罗素炸什锦,圆笼粉蒸拼,鲜肉葱煎包,黄金酥脆糯米糍,刺身,天妇罗",
-      "keytag": "中餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "宁波路",
-      "adcode": "520303",
-      "search_keyword": "酒楼"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -49108,7 +48725,16 @@
       "source": "name",
       "evidence": "酒楼"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116139/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116140",
@@ -50470,58 +50096,6 @@
     "is_manufacturer": false
   },
   {
-    "id": "CN-MFG-0116170",
-    "company": "老方桌烂蹄花(遵义宁波路店)",
-    "category": "住宿和餐饮业",
-    "keywords": [
-      "酒楼",
-      "火锅",
-      "便当",
-      "简餐",
-      "小吃店"
-    ],
-    "region": {
-      "province": "贵州",
-      "city": "遵义"
-    },
-    "address": "宁波路113号",
-    "contact_phone": "191****5522",
-    "lat": 27.710454,
-    "lng": 106.931057,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0L6KREVOO",
-      "type": "餐饮服务;中餐厅;四川菜(川菜)",
-      "typecode": "050102",
-      "alias": "",
-      "tag": "双人餐,单人餐",
-      "keytag": "川菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "宁波路",
-      "adcode": "520303",
-      "search_keyword": "酒楼"
-    },
-    "industry": {
-      "code": "6210",
-      "name": "正餐服务",
-      "level": "class",
-      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
-      "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "住宿和餐饮业"
-    },
-    "is_manufacturer": false
-  },
-  {
     "id": "CN-MFG-0116171",
     "company": "炉得滋果木烤鸭(康海世纪花城美伦花乡店)",
     "category": "住宿和餐饮业",
@@ -50768,8 +50342,7 @@
     "company": "黔豆园豆米火锅野菜馆(桐梓店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "酒楼",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -50777,30 +50350,12 @@
     },
     "address": "骏逸天下小区门口蟠龙大道112号",
     "contact_phone": "187****6940",
-    "lat": 28.120118,
-    "lng": 106.820254,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0GKUMG5PV",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "豆米火锅,野菜",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520322",
-      "search_keyword": "酒楼"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -50810,7 +50365,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116177/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116178",
@@ -52319,7 +51883,7 @@
     "company": "榕江牛瘪火锅·侗家酸汤牛肉(思乐为店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -52327,30 +51891,12 @@
     },
     "address": "新蒲街道日月星1号公馆S2商业1-17、1-18号门面",
     "contact_phone": "139****1236; 186****4302",
-    "lat": 27.711304,
-    "lng": 107.037119,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0K0RDN0NF",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "酸汤牛肉",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -52360,7 +51906,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116254/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116255",
@@ -53334,7 +52889,7 @@
     "company": "老孟家东北菜",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -53342,30 +52897,12 @@
     },
     "address": "新蒲街道老孟家东北菜日月星·壹号公馆",
     "contact_phone": "186****2030",
-    "lat": 27.711611,
-    "lng": 107.037717,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFHN718K",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "东北菜",
-      "keytag": "东北菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -53375,7 +52912,16 @@
       "source": "name",
       "evidence": "东北菜"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116275/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116276",
@@ -54684,7 +54230,7 @@
     "company": "赵大方六龙豆干火锅(思乐为店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -54692,30 +54238,12 @@
     },
     "address": "乌江大道与播州大道交叉口东240米",
     "contact_phone": "178****0894",
-    "lat": 27.710657,
-    "lng": 107.037416,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0L6VOZKXC",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -54725,7 +54253,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116305/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116306",
@@ -55072,7 +54609,7 @@
     "company": "黄记豆豉火锅(林达店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -55080,30 +54617,12 @@
     },
     "address": "新蒲街道林达美食街1楼进口左侧1号",
     "contact_phone": "182****2777",
-    "lat": 27.708535,
-    "lng": 107.036333,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0HDTYL2WF",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "豆豉火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "林达美食街(林达时代中心店)",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -55113,7 +54632,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116313/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116314",
@@ -55889,8 +55417,7 @@
     "company": "广顺楼粤菜·海鲜火锅(新蒲店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆",
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -55898,30 +55425,12 @@
     },
     "address": "金科天都美食城8栋3楼(播州大道西)",
     "contact_phone": "0851-28435666; 173****2888",
-    "lat": 27.699302,
-    "lng": 107.029478,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LA59TBHQ",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "海鲜火锅",
-      "keytag": "粤菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -55931,7 +55440,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116331/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116332",
@@ -57048,7 +56566,7 @@
     "company": "桐梓方竹笋火锅(新蒲林达阳光新城店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -57056,30 +56574,12 @@
     },
     "address": "新蒲街道播州大道林达阳光新城S4-1-15号",
     "contact_phone": "189****8228",
-    "lat": 27.704375,
-    "lng": 107.031825,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0JKDR8E4S",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "林达·阳光新城",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -57089,14 +56589,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116357/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116358",
     "company": "鼎级牛酸汤火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -57104,30 +56613,12 @@
     },
     "address": "长征大道7号",
     "contact_phone": "199****9555",
-    "lat": 27.700288,
-    "lng": 107.035298,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0M69LDYLK",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "酸汤火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "林达·阳光新城",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -57137,7 +56628,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116358/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116359",
@@ -57240,7 +56740,7 @@
     "company": "潘师傅红豆牛肉火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -57248,30 +56748,12 @@
     },
     "address": "长征大道中海新都会S8-3-1-1号",
     "contact_phone": "187****1056",
-    "lat": 27.704506,
-    "lng": 107.041178,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0L3H686FG",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "牛肉火锅",
-      "keytag": "牛肉火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -57281,7 +56763,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116361/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116362",
@@ -57915,8 +57406,7 @@
     "company": "陈记私房菜(长征大道店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆",
-      "私房菜"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -57924,30 +57414,12 @@
     },
     "address": "新浦街道蔷薇国际7期S18-109",
     "contact_phone": "181****8868",
-    "lat": 27.701704,
-    "lng": 107.036183,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFLF6YS8",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "私房菜",
-      "keytag": "私房菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "林达·阳光新城",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -57957,7 +57429,16 @@
       "source": "name",
       "evidence": "私房菜"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116375/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116376",
@@ -58062,7 +57543,7 @@
     "company": "黔山酒楼(新浦金科店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -58070,30 +57551,12 @@
     },
     "address": "新蒲新区新中街道金科新蒲天都8幢2-1,2-2号",
     "contact_phone": "187****5859",
-    "lat": 27.699325,
-    "lng": 107.029475,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0MA4UUS0G",
-      "type": "餐饮服务;中餐厅;综合酒楼",
-      "typecode": "050101",
-      "alias": "",
-      "tag": "",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -58103,7 +57566,16 @@
       "source": "name",
       "evidence": "酒楼"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116378/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116379",
@@ -58158,8 +57630,7 @@
     "company": "胖子彬豆花面馆(金科天都2号楼2-1-13)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "中餐馆",
-      "快餐"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -58167,30 +57638,12 @@
     },
     "address": "新中街道播州大道金科·新蒲天都2号楼2-1-13",
     "contact_phone": "189****6696",
-    "lat": 27.700575,
-    "lng": 107.028225,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0MD04PADX",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "豆花面",
-      "keytag": "面馆",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "中餐馆"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -58200,7 +57653,16 @@
       "source": "name",
       "evidence": "面馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116381/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116382",
@@ -59168,7 +58630,7 @@
     "company": "纪鱡酸汤牛肉火锅(苏州路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -59176,30 +58638,12 @@
     },
     "address": "上海路街道苏州路苏州苑小区门面临街一二层",
     "contact_phone": "190****1331",
-    "lat": 27.712829,
-    "lng": 106.925442,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0KBR7QRGY",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "牛肉",
-      "keytag": "牛肉火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "苏州路",
-      "adcode": "520303",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -59209,7 +58653,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116587/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116588",
@@ -59408,7 +58861,7 @@
     "company": "菌膳煌·黔来客鲜菌火锅(贵州总店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -59416,30 +58869,12 @@
     },
     "address": "香港路278号",
     "contact_phone": "0851-28690988; 131****0988",
-    "lat": 27.708279,
-    "lng": 106.937944,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LAS9Z9P0",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "香港路",
-      "adcode": "520303",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -59449,7 +58884,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116592/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116593",
@@ -59600,7 +59044,7 @@
     "company": "麻辣空间·清油火锅(仁怀店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -59608,30 +59052,12 @@
     },
     "address": "飞天路419号",
     "contact_phone": "0851-22220023; 187****5275",
-    "lat": 27.783716,
-    "lng": 106.403027,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0J0MH09TX",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "清油火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520382",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -59641,7 +59067,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116596/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116597",
@@ -59888,7 +59323,7 @@
     "company": "牛滚塘凯里酸汤牛肉火锅(遵义南京路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -59896,30 +59331,12 @@
     },
     "address": "上海路街道汇川区南京路118号鸿宇大厦一栋2号门面",
     "contact_phone": "0851-28633288; 189****4739",
-    "lat": 27.716068,
-    "lng": 106.930068,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFGG06NB",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "酸汤牛肉火锅",
-      "keytag": "牛肉火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "宁波路",
-      "adcode": "520303",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -59929,7 +59346,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116603/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116604",
@@ -59984,7 +59410,7 @@
     "company": "笨牛酸汤牛肉火锅昆明路店",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -59992,30 +59418,12 @@
     },
     "address": "大连路街道城市之光广场喷泉旁集装箱",
     "contact_phone": "139****3530; 182****4991",
-    "lat": 27.710015,
-    "lng": 106.942043,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0K33968RG",
-      "type": "生活服务;生活服务场所;生活服务场所",
-      "typecode": "070000",
-      "alias": "",
-      "tag": "牛舌,酸汤牛肉火锅,酸汤火锅,新鲜牛肉",
-      "keytag": "牛肉火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520303",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60025,7 +59433,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116605/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116606",
@@ -60080,7 +59497,7 @@
     "company": "稻道禾豆米火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60088,30 +59505,12 @@
     },
     "address": "湘山路6号",
     "contact_phone": "187****5586",
-    "lat": 27.683554,
-    "lng": 106.927811,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0G3F7NLNK",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "豆米火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "中华路",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60121,7 +59520,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116607/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116608",
@@ -60176,7 +59584,7 @@
     "company": "苏格里岛自助烧烤火锅(星力城C馆店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60184,30 +59592,12 @@
     },
     "address": "万里路星力城C馆2层苏格里岛",
     "contact_phone": "0851-23222258; 150****1690",
-    "lat": 27.67436,
-    "lng": 106.920205,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0GK5M8PM3",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "五花肉,炖汤,牛排,面食,自助餐,小火锅,螃蟹",
-      "keytag": "自助餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "万里路",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60217,14 +59607,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116609/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116610",
     "company": "茅台镇张家羊肉火锅城",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60232,30 +59631,12 @@
     },
     "address": "长征路74号",
     "contact_phone": "130****0599; 139****8899; 186****4999",
-    "lat": 27.855373,
-    "lng": 106.371283,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFH95G4Z",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "羊肉火锅,羊肉,豆腐",
-      "keytag": "肉类",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520382",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60265,14 +59646,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116610/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116611",
     "company": "1988重庆老火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60280,30 +59670,12 @@
     },
     "address": "红石路61号门市",
     "contact_phone": "189****9809",
-    "lat": 28.581311,
-    "lng": 105.696959,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0H3RBFQG9",
-      "type": "餐饮服务;快餐厅;快餐厅",
-      "typecode": "050300",
-      "alias": "",
-      "tag": "重庆老火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520381",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60313,7 +59685,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116611/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116612",
@@ -60368,7 +59749,7 @@
     "company": "渝厨鲜汇自助重庆火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60376,30 +59757,12 @@
     },
     "address": "共青大道1号吾悦广场F2层",
     "contact_phone": "0851-28221717; 193****2822",
-    "lat": 27.651425,
-    "lng": 106.885325,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LG076BHG",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "重庆火锅",
-      "keytag": "重庆火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "吾悦广场",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60409,14 +59772,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116613/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116614",
     "company": "三友毛肚火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60424,30 +59796,12 @@
     },
     "address": "大兴路63号",
     "contact_phone": "130****4098; 139****4437",
-    "lat": 27.68165,
-    "lng": 106.923146,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0HA7ZXZ57",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "牛肉",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "丁字口",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60457,14 +59811,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116614/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116615",
     "company": "娄氏狮溪方竹笋火锅(河滨南路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60472,30 +59835,12 @@
     },
     "address": "娄山关镇河滨南路234号",
     "contact_phone": "159****7641",
-    "lat": 28.124185,
-    "lng": 106.829168,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFFAL2N4",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "河滨南路",
-      "adcode": "520322",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60505,14 +59850,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116615/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116616",
     "company": "一头牛红豆牛肉火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60520,30 +59874,12 @@
     },
     "address": "播州大道与新蒲大道辅路交叉口西南100米",
     "contact_phone": "187****2321",
-    "lat": 27.700409,
-    "lng": 107.030105,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0KDPU6GZH",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "牛肉火锅",
-      "keytag": "牛肉火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60553,7 +59889,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116616/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116617",
@@ -60608,7 +59953,7 @@
     "company": "咔咔老火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60616,30 +59961,12 @@
     },
     "address": "石桥路22号",
     "contact_phone": "182****9766",
-    "lat": 28.582775,
-    "lng": 105.697227,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0IUG7NJLG",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "特色菜,老火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520381",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60649,7 +59976,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116618/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116619",
@@ -60896,7 +60232,7 @@
     "company": "贵州湄潭石头牛火锅店",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60904,30 +60240,12 @@
     },
     "address": "象山路1号湄江街道江社区哨上安置房31号门面",
     "contact_phone": "181****8227",
-    "lat": 27.749127,
-    "lng": 107.473448,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0JKY9EYUS",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "牛火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520328",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60937,17 +60255,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116624/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116625",
     "company": "黄五羊肉火锅羊肉粉(捞沙巷店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅",
-      "便当",
-      "简餐",
-      "小吃店"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -60955,30 +60279,12 @@
     },
     "address": "民主路63号老沙巷内",
     "contact_phone": "136****7071",
-    "lat": 27.686756,
-    "lng": 106.92075,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFG9MRCU",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "羊肉粉,羊肉,小吃街",
-      "keytag": "羊肉粉",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "碧云路",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -60988,7 +60294,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116625/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116626",
@@ -61139,7 +60454,7 @@
     "company": "卤校长老火锅(富城花园店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -61147,30 +60462,12 @@
     },
     "address": "红军大道富城花园10、11、12号门市",
     "contact_phone": "187****1708",
-    "lat": 28.576935,
-    "lng": 105.698495,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0G3O596UI",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "老火锅",
-      "keytag": "重庆火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520381",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -61180,7 +60477,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116630/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116631",
@@ -61235,7 +60541,7 @@
     "company": "咕咚火锅店",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -61243,30 +60549,12 @@
     },
     "address": "尚嵇镇乌江寨国际旅游度假区内(西侧)",
     "contact_phone": "0851-28746919",
-    "lat": 27.380843,
-    "lng": 106.89724,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0IGK7IMNR",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520304",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -61276,14 +60564,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116632/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116633",
     "company": "李世民烫皮牛肉羊肉火锅店",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -61291,30 +60588,12 @@
     },
     "address": "苍龙街道办事处国酒北路加油站北侧220米路东",
     "contact_phone": "0851-22293317; 138****8194; 139****4844",
-    "lat": 27.843843,
-    "lng": 106.43071,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFHS6SFR",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "羊肉",
-      "keytag": "牛肉火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520382",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -61324,14 +60603,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116633/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116634",
     "company": "九朵菌·菌汤火锅(新蒲总店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -61339,30 +60627,12 @@
     },
     "address": "娄山路30号",
     "contact_phone": "0851-28866900; 185****9207",
-    "lat": 27.706287,
-    "lng": 107.03268,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0JKPCVBUS",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "涮菜,菌汤,菌汤火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "林达·阳光新城",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -61372,7 +60642,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116634/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116635",
@@ -61419,57 +60698,6 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "美食"
-    },
-    "is_manufacturer": false
-  },
-  {
-    "id": "CN-MFG-0116636",
-    "company": "老方桌烂蹄花·川味馆子(仁怀店)",
-    "category": "住宿和餐饮业",
-    "keywords": [
-      "火锅",
-      "便当",
-      "简餐",
-      "小吃店"
-    ],
-    "region": {
-      "province": "贵州",
-      "city": "遵义"
-    },
-    "address": "盐津街道办事处水井湾安置区二期三组团1栋1层3号",
-    "contact_phone": "151****1281",
-    "lat": 27.782125,
-    "lng": 106.401425,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0LGFKIXZL",
-      "type": "餐饮服务;中餐厅;四川菜(川菜)",
-      "typecode": "050102",
-      "alias": "",
-      "tag": "单人餐",
-      "keytag": "川菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520382",
-      "search_keyword": "火锅"
-    },
-    "industry": {
-      "code": "6210",
-      "name": "正餐服务",
-      "level": "class",
-      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
-      "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "住宿和餐饮业"
     },
     "is_manufacturer": false
   },
@@ -61623,7 +60851,7 @@
     "company": "季小满·自助小火锅(贵州遵义星乐城店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -61631,30 +60859,12 @@
     },
     "address": "万里路127号星乐城3楼",
     "contact_phone": "190****0189",
-    "lat": 27.677575,
-    "lng": 106.923275,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LKZUFNJ0",
-      "type": "生活服务;生活服务场所;生活服务场所",
-      "typecode": "070000",
-      "alias": "",
-      "tag": "儿童餐,自助小火锅,自助火锅,单人自助",
-      "keytag": "小火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "万里路",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -61664,7 +60874,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116640/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116641",
@@ -61719,7 +60938,7 @@
     "company": "陈氏人家豆米火锅(国贸购物中心店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -61727,30 +60946,12 @@
     },
     "address": "国酒南路385号超一世纪广场·国贸购物中心F6层",
     "contact_phone": "191****6953",
-    "lat": 27.797325,
-    "lng": 106.406725,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LUOAKDEP",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "豆米火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "中枢",
-      "adcode": "520382",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -61760,7 +60961,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116642/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116643",
@@ -61815,7 +61025,7 @@
     "company": "渝味归重庆老火锅(昆明路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -61823,30 +61033,12 @@
     },
     "address": "大连路街道党务政务服务中心二楼",
     "contact_phone": "183****1664",
-    "lat": 27.711901,
-    "lng": 106.944878,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0KKS94CZN",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "重庆老火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "大连路",
-      "adcode": "520303",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -61856,7 +61048,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116644/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116645",
@@ -62007,7 +61208,7 @@
     "company": "三鼎.肥猪儿地摊火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -62015,30 +61216,12 @@
     },
     "address": "老城街道红军街1栋2层",
     "contact_phone": "133****2285; 187****0866",
-    "lat": 27.690528,
-    "lng": 106.921566,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0L6F9LVKM",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -62048,7 +61231,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116648/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116649",
@@ -62247,7 +61439,7 @@
     "company": "九街淑芬掌中宝串串公司(邀月路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -62255,30 +61447,12 @@
     },
     "address": "邀月路34号",
     "contact_phone": "0851-22259338",
-    "lat": 27.787079,
-    "lng": 106.402535,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0H60HJBKH",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "串串,烤鸡翅",
-      "keytag": "串串香",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "盐津",
-      "adcode": "520382",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -62288,14 +61462,23 @@
       "source": "name",
       "evidence": "串串"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116653/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116654",
     "company": "新蒲新区渝族火锅店",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -62303,30 +61486,12 @@
     },
     "address": "乌江大道新蒲镇林达美食街二楼中段C3号楼-267号门面",
     "contact_phone": "0851-28656077",
-    "lat": 27.707731,
-    "lng": 107.036146,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0I3GMFMWW",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "林达美食街(林达时代中心店)",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -62336,14 +61501,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116654/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116655",
     "company": "三鼎肥猪儿地摊火锅(珠海路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -62351,30 +61525,12 @@
     },
     "address": "上海路街道珠海路万豪国际A12栋商业房-3",
     "contact_phone": "187****0866",
-    "lat": 27.72123,
-    "lng": 106.929671,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0IKRZKT9S",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "双人餐",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "珠海路",
-      "adcode": "520303",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -62384,14 +61540,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116655/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116656",
     "company": "朱田重庆老火锅(珠海路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -62399,30 +61564,12 @@
     },
     "address": "珠海路23号",
     "contact_phone": "0851-28618868",
-    "lat": 27.721967,
-    "lng": 106.929241,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0IKNU5YS7",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "重庆老火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "珠海路",
-      "adcode": "520303",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -62432,14 +61579,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116656/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116657",
     "company": "高山曾家牛肉火锅城",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -62447,30 +61603,12 @@
     },
     "address": "湄江街道观音街",
     "contact_phone": "139****3568; 139****7102",
-    "lat": 27.747366,
-    "lng": 107.502886,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFF4TTVG",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "牛杂,牛肉火锅",
-      "keytag": "牛肉火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520328",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -62480,7 +61618,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116657/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116658",
@@ -62583,7 +61730,7 @@
     "company": "刘掌门重庆火锅(赤水店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -62591,30 +61738,12 @@
     },
     "address": "文华街道红军大道北路富城花园4栋一层1-4号",
     "contact_phone": "191****7966",
-    "lat": 28.576488,
-    "lng": 105.698326,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0J11C8Z8G",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "重庆火锅",
-      "keytag": "重庆火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520381",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -62624,7 +61753,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116660/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116661",
@@ -62919,7 +62057,7 @@
     "company": "盛家豆豉火锅(鸭溪总店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -62927,30 +62065,12 @@
     },
     "address": "鸭溪镇326国道与杭瑞高速交叉口北侧",
     "contact_phone": "0851-27336100; 159****0581; 182****8521",
-    "lat": 27.589057,
-    "lng": 106.659481,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B035400CNK",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "鸭血,油渣,豆豉火锅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520304",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -62960,7 +62080,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116667/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116668",
@@ -63399,7 +62528,7 @@
     "company": "狮溪方竹笋火锅(武胜路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -63407,30 +62536,12 @@
     },
     "address": "武胜路(近桐梓县娄山关镇中心学校)",
     "contact_phone": "150****9256; 152****6558",
-    "lat": 28.132024,
-    "lng": 106.823672,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFG9OKI6",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "老北街",
-      "adcode": "520322",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -63440,7 +62551,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116677/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116678",
@@ -63927,7 +63047,7 @@
     "company": "厨娘醉鹅创意火锅(合众路店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -63935,30 +63055,12 @@
     },
     "address": "合众路97号门面",
     "contact_phone": "153****6965; 189****9097",
-    "lat": 27.689981,
-    "lng": 106.938709,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0K3RHZ0QP",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "醉鹅",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "合众路",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -63968,7 +63070,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116688/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116689",
@@ -64119,7 +63230,7 @@
     "company": "鲜菌坊.野生菌火锅(黔北老街店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -64127,30 +63238,12 @@
     },
     "address": "新蒲新区新中街道黔北老街C8-1-3号",
     "contact_phone": "181****6388",
-    "lat": 27.67886,
-    "lng": 107.021862,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0JDTX9GEU",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "野生菌炖鸡汤,鸡肉,野生菌火锅",
-      "keytag": "菌菇火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -64160,7 +63253,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116692/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116693",
@@ -64215,7 +63317,7 @@
     "company": "渝大锅集市火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -64223,30 +63325,12 @@
     },
     "address": "上海路街道广州路恒兴香樟印象3栋1-4号",
     "contact_phone": "0851-27556618; 199****6862",
-    "lat": 27.719617,
-    "lng": 106.931744,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0M697CMJP",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "重庆火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "广州路",
-      "adcode": "520303",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -64256,14 +63340,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116694/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116695",
     "company": "黔香篓地摊火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -64271,30 +63364,12 @@
     },
     "address": "共青大道醉里新天地政务大厅对面",
     "contact_phone": "195****8868",
-    "lat": 27.650875,
-    "lng": 106.886225,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0L26HEMSL",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "吾悦广场",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -64304,7 +63379,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116695/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116696",
@@ -64407,7 +63491,7 @@
     "company": "小肥猪地摊火锅(遵义店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -64415,30 +63499,12 @@
     },
     "address": "大连路街道昆明路世贸城7栋三楼天街平台AT1-31号",
     "contact_phone": "135****9800; 188****9739",
-    "lat": 27.710819,
-    "lng": 106.943406,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0H1O9VJYO",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "猪肉",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520303",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -64448,14 +63514,23 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116698/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116699",
     "company": "勤匠火锅(仁怀三店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -64463,30 +63538,12 @@
     },
     "address": "盐津街道国酒城四期B组二层57号",
     "contact_phone": "0851-23211668; 183****2233",
-    "lat": 27.78314,
-    "lng": 106.396009,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0H0BR1FDO",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "虾滑",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520382",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -64496,7 +63553,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116699/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116700",
@@ -64792,7 +63858,7 @@
     "company": "柚烯重庆火锅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -64800,30 +63866,12 @@
     },
     "address": "忠庄街道东欣彩虹城D",
     "contact_phone": "0851-28701234",
-    "lat": 27.662095,
-    "lng": 106.898276,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0LUT159RM",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "重庆火锅",
-      "keytag": "重庆火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "东欣大道",
-      "adcode": "520302",
-      "search_keyword": "火锅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -64833,7 +63881,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116706/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116707",
@@ -70182,8 +69239,7 @@
     "company": "四方桌私房菜馆",
     "category": "住宿和餐饮业",
     "keywords": [
-      "家常菜",
-      "私房菜"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -70191,30 +69247,12 @@
     },
     "address": "鸭溪镇一心还房小区四方桌私房菜馆",
     "contact_phone": "130****7972",
-    "lat": 27.582014,
-    "lng": 106.672262,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-17",
-    "imported_at": "2026-09-17",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0I6RCVYQT",
-      "type": "餐饮服务;中餐厅;云贵菜",
-      "typecode": "050114",
-      "alias": "",
-      "tag": "火锅自助,美蛙鱼头火锅",
-      "keytag": "客家菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520304",
-      "search_keyword": "家常菜"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -70224,7 +69262,16 @@
       "source": "name",
       "evidence": "私房菜"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0116832/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0116833",
@@ -91159,7 +90206,7 @@
     "company": "牠斯特法式牛排自助餐厅(云开国际店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -91167,30 +90214,12 @@
     },
     "address": "开州大道291号云开国际三楼",
     "contact_phone": "147****4977",
-    "lat": 27.055525,
-    "lng": 106.971775,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFI2WVKW",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "小龙虾,牛排,自助餐",
-      "keytag": "自助餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "城关",
-      "adcode": "520121",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -91200,7 +90229,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0124009/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0124010",
@@ -95767,7 +94805,7 @@
     "company": "布罗城堡烤肉料理自助餐厅(观山湖万达店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -95775,30 +94813,12 @@
     },
     "address": "云潭街道万达广场(观山湖店)4F万达影院旁",
     "contact_phone": "130****9697; 157****4650",
-    "lat": 26.631675,
-    "lng": 106.608475,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0JRF5PVIR",
-      "type": "餐饮服务;外国餐厅;牛扒店(扒房)",
-      "typecode": "050211",
-      "alias": "",
-      "tag": "大虾,薯条,寿司,披萨,毛肚,烤肉,肥牛,自助餐",
-      "keytag": "自助餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "万达广场(贵阳观山湖店)",
-      "adcode": "520115",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -95808,7 +94828,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0124129/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0124130",
@@ -102007,7 +101036,7 @@
     "company": "贵阳市乌当区陈记餐馆",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -102015,30 +101044,12 @@
     },
     "address": "高新办事处半边街客货运输站3号门面",
     "contact_phone": "151****9447",
-    "lat": 26.647877,
-    "lng": 106.781016,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0MBYG4TIT",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "大排粉,辣子鸡火锅,回锅肉盖饭,单人餐",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520112",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -102048,7 +101059,16 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0124356/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0124357",
@@ -123079,7 +122099,7 @@
     "company": "豪杰餐馆(双峰路)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "贵州",
@@ -123087,30 +122107,12 @@
     },
     "address": "毛藤巷与双峰路交叉口西20米",
     "contact_phone": "137****2649",
-    "lat": 26.587018,
-    "lng": 106.69171,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0MAU7TTUY",
-      "type": "餐饮服务;中餐厅;云贵菜",
-      "typecode": "050114",
-      "alias": "",
-      "tag": "折耳根炒腊肉,西红柿炒蛋,回锅肉盖饭,青椒肉丝,酸豇豆肉末,豆腐皮火锅",
-      "keytag": "贵州菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "520103",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -123120,7 +122122,16 @@
       "source": "name",
       "evidence": "餐馆"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0125035/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0125036",
@@ -126919,7 +125930,7 @@
     "company": "韩小样火锅烤肉海鲜自助餐厅(康和城店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "广西",
@@ -126927,30 +125938,12 @@
     },
     "address": "标营路111号3楼韩小样自助餐厅",
     "contact_phone": "0771-6315155",
-    "lat": 23.148449,
-    "lng": 108.289067,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0G3MSX0TI",
-      "type": "餐饮服务;中餐厅;火锅店",
-      "typecode": "050117",
-      "alias": "",
-      "tag": "奶油,牛肉,烤肉",
-      "keytag": "火锅",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "风雨桥",
-      "adcode": "450110",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -126960,7 +125953,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0125248/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0125249",
@@ -145783,7 +144785,7 @@
     "company": "凤凰宾馆自助餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "广西",
@@ -145791,30 +144793,12 @@
     },
     "address": "朝阳路63号凤凰宾馆4层",
     "contact_phone": "0771-2119694",
-    "lat": 22.822561,
-    "lng": 108.316658,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B03030UOFY",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "肥牛,片皮鸭,烤肉,老火例汤,海鲜,酸甜排骨,银耳糖水,寿司,自助早餐,三文鱼,特色小吃",
-      "keytag": "自助餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "朝阳",
-      "adcode": "450102",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -145824,7 +144808,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0126078/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0126079",
@@ -149047,7 +148040,7 @@
     "company": "南宁鑫伟万豪酒店(万豪酒店西餐厅)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "广西",
@@ -149055,30 +148048,12 @@
     },
     "address": "航洋国际城4号楼6层",
     "contact_phone": "0771-5366689; 0771-5366693",
-    "lat": 22.813861,
-    "lng": 108.386323,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B03030UJIA",
-      "type": "餐饮服务;咖啡厅;咖啡厅",
-      "typecode": "050500",
-      "alias": "",
-      "tag": "明档烧味,寿司,博白特色菜,烤羊腿,青口螺,自助海鲜,羊排,大闸蟹,提拉米苏,骨肉相连,香螺,三文鱼寿司,鸡蛋布丁蛋糕,桂林米粉,单人餐",
-      "keytag": "粤式茶点",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "民族大道",
-      "adcode": "450103",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -149088,7 +148063,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0126188/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0126189",
@@ -150919,7 +149903,7 @@
     "company": "南宁富力万达文华酒店·美食汇自助餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "广西",
@@ -150927,30 +149911,12 @@
     },
     "address": "东葛路118号青秀万达广场西5、西8栋万达文华酒店1层",
     "contact_phone": "0771-8068808; 0771-8068888",
-    "lat": 22.830134,
-    "lng": 108.372011,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFFSSHXN",
-      "type": "餐饮服务;外国餐厅;外国餐厅",
-      "typecode": "050200",
-      "alias": "",
-      "tag": "刺身,龙虾,寿司,鹅肝,生蚝,牛排,扇贝,三文鱼,自助餐",
-      "keytag": "自助餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "东葛路",
-      "adcode": "450103",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -150960,7 +149926,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0126229/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0126230",
@@ -161335,7 +160310,7 @@
     "company": "镜湖西餐厅·湖岸烧烤·云南特色菜(昆明玉龙湾湖景酒店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "云南",
@@ -161343,30 +160318,12 @@
     },
     "address": "玉龙湾康谷东侧70米",
     "contact_phone": "0871-65915333",
-    "lat": 24.904875,
-    "lng": 102.554125,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0M6DX80RU",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "",
-      "keytag": "云南菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "530181",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -161376,7 +160333,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0126722/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0126723",
@@ -165415,7 +164381,7 @@
     "company": "美食汇海鲜自助餐厅·小龙虾烧烤(富力万达文华酒店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "云南",
@@ -165423,30 +164389,12 @@
     },
     "address": "前兴路888号万达文华酒店1层",
     "contact_phone": "0871-68038888",
-    "lat": 25.007042,
-    "lng": 102.71144,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFG2XIZR",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "小火锅,牛排,自助餐,烤肉,羊汤,蛋挞",
-      "keytag": "自助餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "前卫",
-      "adcode": "530112",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -165456,14 +164404,23 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0126922/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0126923",
     "company": "昆明华邑酒店-鲜艳全日餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "云南",
@@ -165471,30 +164428,12 @@
     },
     "address": "怡兴路10号昆明华邑酒店",
     "contact_phone": "0871-65558888",
-    "lat": 24.972752,
-    "lng": 102.66345,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0JUG5EDQA",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "小火锅,寿司,小龙虾,牛排,鲍鱼,三文鱼",
-      "keytag": "日本料理",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "海埂",
-      "adcode": "530112",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -165504,7 +164443,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0126923/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0126924",
@@ -168535,7 +167483,7 @@
     "company": "云安会都榕园西餐厅海鲜自助",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "云南",
@@ -168543,30 +167491,12 @@
     },
     "address": "大渔路与碧鸡路交叉口西北280米",
     "contact_phone": "0871-68171936",
-    "lat": 25.023875,
-    "lng": 102.64344,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFJCTABO",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "山楂排骨,三文鱼刺身,冻虾,北极贝,南瓜粥,墨鱼仔,大虾,拿破仑蛋糕,提拉米苏,水果披萨,水果盘,水煮虾,烤牛排,烤羊肉串,烤羊腿,海鲜自助",
-      "keytag": "自助海鲜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "马街",
-      "adcode": "530112",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -168576,14 +167506,23 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0126993/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0126995",
     "company": "律茵荟·餐厅 咖啡 茶饮",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "云南",
@@ -168591,30 +167530,12 @@
     },
     "address": "宝能滇池九玺20号地块1栋3层",
     "contact_phone": "186****0601",
-    "lat": 25.002931,
-    "lng": 102.656851,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0L03SD3CL",
-      "type": "餐饮服务;中餐厅;云贵菜",
-      "typecode": "050114",
-      "alias": "",
-      "tag": "",
-      "keytag": "云南菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "530112",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -168624,7 +167545,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0126995/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0126996",
@@ -173911,7 +172841,7 @@
     "company": "源·素生态素食餐厅(火车头夜市店)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "云南",
@@ -173919,30 +172849,12 @@
     },
     "address": "火车头夜市万宏路北站1号场地3号、4号商铺",
     "contact_phone": "151****4551; 151****4923; 180****6602",
-    "lat": 25.057223,
-    "lng": 102.725193,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0IK4HK3NC",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "火锅双人餐,单人素食自助火锅,双人素食自助,儿童单人健康轻食火锅,单人素食自助,素食自助,自助餐,素食",
-      "keytag": "素菜馆",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "王旗营",
-      "adcode": "530103",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -173952,7 +172864,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0127228/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0127229",
@@ -183079,7 +182000,7 @@
     "company": "妙膳素食餐厅",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "云南",
@@ -183087,30 +182008,12 @@
     },
     "address": "关上国贸路1072号彩云之南酒店对面",
     "contact_phone": "0871-67191999; 133****6211",
-    "lat": 25.010904,
-    "lng": 102.741653,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFHS1C4G",
-      "type": "餐饮服务;中餐厅;中式素菜馆",
-      "typecode": "050120",
-      "alias": "",
-      "tag": "卤饵丝,摩登粑粑,黑椒牛排,鸡纵凉米线,千张肉,糖醋鱼,青瓜汁,手撕白菜,美味茄子,白灼菜心,香辣洋芋片,桃仁木耳,麻婆豆腐,板栗红烧肉,茴香奶芋,素食,稀豆粉,卤饵丝,米凉虾,自助餐",
-      "keytag": "素菜馆",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "关上",
-      "adcode": "530111",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -183120,7 +182023,16 @@
       "source": "name",
       "evidence": "餐厅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0127560/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0127561",
@@ -185623,7 +184535,7 @@
     "company": "鲜菌江湖闻香下马餐厅(正宗野生菌火锅.云南菜)",
     "category": "住宿和餐饮业",
     "keywords": [
-      "餐厅"
+      "住宿和餐饮业"
     ],
     "region": {
       "province": "云南",
@@ -185631,30 +184543,12 @@
     },
     "address": "福德路299号佳盟园艺内2-2-3",
     "contact_phone": "153****3622; 159****9698",
-    "lat": 25.003063,
-    "lng": 102.728635,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
     "is_template": false,
     "note": "",
-    "amap": {
-      "poi_id": "B0FFFE0VDP",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "小锅米线,火腿,野生菌火锅",
-      "keytag": "中餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "关上",
-      "adcode": "530111",
-      "search_keyword": "餐厅"
-    },
+    "status": "verified",
     "industry": {
       "code": "6210",
       "name": "正餐服务",
@@ -185664,7 +184558,16 @@
       "source": "name",
       "evidence": "火锅"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0127618/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0127619",
@@ -192143,54 +191046,6 @@
       "confidence": "high",
       "source": "name",
       "evidence": "餐馆"
-    },
-    "is_manufacturer": false
-  },
-  {
-    "id": "CN-MFG-0127899",
-    "company": "吉布鲁牛排海鲜自助(昆明七彩云南.第壹城店)",
-    "category": "住宿和餐饮业",
-    "keywords": [
-      "餐厅"
-    ],
-    "region": {
-      "province": "云南",
-      "city": "昆明"
-    },
-    "address": "乌龙街道办事处七彩云南第壹城第壹MALL",
-    "contact_phone": "0871-65954649",
-    "lat": 24.877962,
-    "lng": 102.824693,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-18",
-    "imported_at": "2026-09-18",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0FFL6ZPOJ",
-      "type": "餐饮服务;餐饮相关场所;餐饮相关",
-      "typecode": "050000",
-      "alias": "",
-      "tag": "三文鱼,牛排,自助餐,寿司",
-      "keytag": "自助餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "呈贡新区",
-      "adcode": "530114",
-      "search_keyword": "餐厅"
-    },
-    "industry": {
-      "code": "6210",
-      "name": "正餐服务",
-      "level": "class",
-      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
-      "confidence": "low",
-      "source": "search_keyword",
-      "evidence": "住宿和餐饮业"
     },
     "is_manufacturer": false
   },
@@ -241057,6 +239912,153 @@
       "email": "",
       "postcode": "",
       "business_area": "市桥",
+      "adcode": "440113",
+      "search_keyword": "饭店"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "饭店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0135015",
+    "company": "夏茅维记饭店(朝阳分店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "饭店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "白云"
+    },
+    "address": "石沙公路302号",
+    "contact_phone": "020-86399669",
+    "lat": 23.236698,
+    "lng": 113.212722,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGK9QSRB",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石井",
+      "adcode": "440111",
+      "search_keyword": "饭店"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "饭店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0135016",
+    "company": "赞庸陈皮烧鹅饭店(大源店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "饭店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "白云"
+    },
+    "address": "大源东路1号",
+    "contact_phone": "131****3090",
+    "lat": 23.250798,
+    "lng": 113.353117,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KB371MX5",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "烧鸭",
+      "keytag": "熏烤",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440111",
+      "search_keyword": "饭店"
+    },
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "饭店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0135017",
+    "company": "佳诚饭店(建华路店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "饭店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "番禺"
+    },
+    "address": "大石街建华路75-79号(近富庭东园)",
+    "contact_phone": "020-84789639; 020-85820167; 131****9468",
+    "lat": 23.019353,
+    "lng": 113.31532,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-19",
+    "imported_at": "2026-09-19",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF8POIM",
+      "type": "餐饮服务;中餐厅;潮州菜",
+      "typecode": "050123",
+      "alias": "",
+      "tag": "河粉,花甲,茄子,砂锅粥,炒米粉,猪脚",
+      "keytag": "粤菜",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "大石",
       "adcode": "440113",
       "search_keyword": "饭店"
     },

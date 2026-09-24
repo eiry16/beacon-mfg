@@ -36485,7 +36485,15 @@
       "adcode": "320114",
       "search_keyword": "精密机械"
     },
-    "_bucket": "C/34/3451"
+    "_bucket": "C/34/3451",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0001199/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0011061",
@@ -51668,5 +51676,83 @@
       "evidence": "轴承"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0005928",
+    "company": "常州东风轴承有限公司(宝丰河路工厂)",
+    "category": "标准件",
+    "keywords": [
+      "标准件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州"
+    },
+    "address": "宝丰河路6号",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3451",
+      "name": "滚动轴承制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 滚动轴承制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "轴承"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0005928/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0013974",
+    "company": "嘉宥电动工具世达工具水泵轴承",
+    "category": "标准件",
+    "keywords": [
+      "标准件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "绍兴"
+    },
+    "address": "大侣路66号",
+    "contact_phone": "138****5858; 173****3869",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3451",
+      "name": "滚动轴承制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 轴承、齿轮和传动部件制造 > 滚动轴承制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "轴承"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0013974/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]
