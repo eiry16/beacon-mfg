@@ -110,5 +110,103 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0157747",
+    "company": "起重机,电动葫芦",
+    "category": "电子元器件",
+    "keywords": [
+      "马达"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "印溪东路944号",
+    "contact_phone": "138****9749",
+    "lat": 31.57573,
+    "lng": 121.07497,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L2RAM3ER",
+      "type": "汽车服务;汽车服务相关;汽车服务相关",
+      "typecode": "010000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "马达"
+    },
+    "industry": {
+      "code": "3432",
+      "name": "生产专用起重机制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 生产专用起重机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "起重机"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0157890",
+    "company": "起重机械",
+    "category": "电子元器件",
+    "keywords": [
+      "马达"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "常州",
+      "district": "金坛区"
+    },
+    "address": "金城镇北环西路40号",
+    "contact_phone": "131****0582; 139****8726",
+    "lat": 31.749333,
+    "lng": 119.577035,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGC7QCO",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320413",
+      "search_keyword": "马达"
+    },
+    "industry": {
+      "code": "3432",
+      "name": "生产专用起重机制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 生产专用起重机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "起重机"
+    },
+    "is_manufacturer": true
   }
 ]

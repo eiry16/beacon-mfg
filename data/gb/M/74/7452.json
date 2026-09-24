@@ -20703,5 +20703,54 @@
     },
     "is_manufacturer": false,
     "_bucket": "M/74/7452"
+  },
+  {
+    "id": "CN-MFG-0159881",
+    "company": "深圳中翔检测技术有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "金属制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "光明区"
+    },
+    "address": "新湖街道楼村社区楼一工四路6号",
+    "contact_phone": "0755-21061876; 181****7566",
+    "lat": 22.775332,
+    "lng": 113.92148,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JGLHFUO7",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440311",
+      "search_keyword": "金属制品"
+    },
+    "industry": {
+      "code": "7452",
+      "name": "检测服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 质检技术服务 > 检测服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "检测技术"
+    },
+    "is_manufacturer": false
   }
 ]

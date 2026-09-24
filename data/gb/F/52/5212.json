@@ -8000,5 +8000,107 @@
       "evidence": "超市"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0157936",
+    "company": "车配龙汽车百货国际广场1期",
+    "category": "批发和零售业",
+    "keywords": [
+      "汽车配件",
+      "汽车零部件",
+      "汽配"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "闵行区"
+    },
+    "address": "虹梅南路3888号",
+    "contact_phone": "021-34625128",
+    "lat": 31.078094,
+    "lng": 121.441992,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIKAH3H",
+      "type": "汽车服务;汽车配件销售;汽车配件销售",
+      "typecode": "010800",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310112",
+      "search_keyword": "汽车配件"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0157943",
+    "company": "车配龙汽车百货国际广场(西南二门店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "汽车配件",
+      "汽车零部件",
+      "汽配"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "闵行区"
+    },
+    "address": "虹梅南路3888号(车配龙汽车百货国际广场二期1号门旁)",
+    "contact_phone": "021-34625128",
+    "lat": 31.080955,
+    "lng": 121.440448,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B001571QKV",
+      "type": "汽车服务;汽车配件销售;汽车配件销售",
+      "typecode": "010800",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽配城",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310112",
+      "search_keyword": "汽车配件"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
   }
 ]

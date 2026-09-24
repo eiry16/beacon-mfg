@@ -98,5 +98,103 @@
     },
     "is_manufacturer": false,
     "_bucket": "M/75/7516"
+  },
+  {
+    "id": "CN-MFG-0156537",
+    "company": "科林环保技术有限责任公司(长安路)",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "环保设备"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "高新路425号",
+    "contact_phone": "0512-63340888",
+    "lat": 31.141006,
+    "lng": 120.653645,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGJQ3OR",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松陵",
+      "adcode": "320509",
+      "search_keyword": "环保设备"
+    },
+    "industry": {
+      "code": "7516",
+      "name": "环保技术推广服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 科技推广和应用服务业 > 技术推广服务 > 环保技术推广服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "环保技术"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0156539",
+    "company": "科林环保技术有限责任公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "环保设备"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "科林环保技术有限责任公司内",
+    "contact_phone": "0512-63365888",
+    "lat": 31.06194,
+    "lng": 120.673464,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHQPRBW",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320509",
+      "search_keyword": "环保设备"
+    },
+    "industry": {
+      "code": "7516",
+      "name": "环保技术推广服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 科技推广和应用服务业 > 技术推广服务 > 环保技术推广服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "环保技术"
+    },
+    "is_manufacturer": false
   }
 ]

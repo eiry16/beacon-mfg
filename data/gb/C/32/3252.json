@@ -19760,7 +19760,8 @@
     "category": "原材料",
     "keywords": [
       "铝型材",
-      "铝合金"
+      "铝合金",
+      "钢化玻璃"
     ],
     "region": {
       "province": "上海",
@@ -30644,7 +30645,9 @@
     "company": "远创白铁通风加工工程厂",
     "category": "原材料",
     "keywords": [
-      "铝合金"
+      "铝合金",
+      "钢化玻璃",
+      "玻璃加工"
     ],
     "region": {
       "province": "广东",
@@ -61920,5 +61923,152 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0158356",
+    "company": "广雷铝材防火门批发(厂家直销)",
+    "category": "原材料",
+    "keywords": [
+      "钢化玻璃"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗区"
+    },
+    "address": "南联社区植物园路309-2号",
+    "contact_phone": "131****5446; 180****3882",
+    "lat": 22.712276,
+    "lng": 114.266577,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I2UZPUZT",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "门类",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南联",
+      "adcode": "440307",
+      "search_keyword": "钢化玻璃"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0158517",
+    "company": "荣群铝材(西乡店)",
+    "category": "原材料",
+    "keywords": [
+      "玻璃加工"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "宝安区"
+    },
+    "address": "西乡街道广深路西乡段117号碧家国际社区旁",
+    "contact_phone": "130****6956",
+    "lat": 22.577643,
+    "lng": 113.882751,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JRLU792W",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "西乡",
+      "adcode": "440306",
+      "search_keyword": "玻璃加工"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0159862",
+    "company": "广东江南铝业有限公司",
+    "category": "钣金冲压",
+    "keywords": [
+      "金属制品"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "南海区"
+    },
+    "address": "大沥镇长虹岭博爱路有色金属园",
+    "contact_phone": "0757-81827628",
+    "lat": 23.11573,
+    "lng": 113.055693,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F50WZ08",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "金属制品"
+    },
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝业"
+    },
+    "is_manufacturer": true
   }
 ]

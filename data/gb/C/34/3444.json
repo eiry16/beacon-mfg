@@ -13703,5 +13703,103 @@
       "evidence": "精密机械加工"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0157652",
+    "company": "东莞市华凯液压机械制造有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电机制造"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "怀雅路135号",
+    "contact_phone": "待核实",
+    "lat": 22.832675,
+    "lng": 113.753825,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDVS0O60",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "电机制造"
+    },
+    "industry": {
+      "code": "3444",
+      "name": "液压动力机械及元件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 液压动力机械及元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "液压"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0157832",
+    "company": "升降机液压货梯",
+    "category": "电子元器件",
+    "keywords": [
+      "马达"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "大岭山镇石大路大岭山段806号",
+    "contact_phone": "180****6929",
+    "lat": 22.889775,
+    "lng": 113.848025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LG7YX0WG",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "马达"
+    },
+    "industry": {
+      "code": "3444",
+      "name": "液压动力机械及元件制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 液压动力机械及元件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "液压"
+    },
+    "is_manufacturer": true
   }
 ]

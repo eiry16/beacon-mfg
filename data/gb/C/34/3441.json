@@ -251,7 +251,8 @@
     "company": "上海上元泵业有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "五金加工"
+      "五金加工",
+      "马达"
     ],
     "region": {
       "province": "江苏",
@@ -1447,7 +1448,8 @@
     "company": "旺达机电水泵总汇",
     "category": "精密机械加工",
     "keywords": [
-      "减速机"
+      "减速机",
+      "马达"
     ],
     "region": {
       "province": "广东",
@@ -1528,6 +1530,104 @@
       "business_area": "",
       "adcode": "320206",
       "search_keyword": "气缸"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0156566",
+    "company": "江苏安金元泵业有限公司高塍环保城店",
+    "category": "精密机械加工",
+    "keywords": [
+      "环保设备"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "宜兴"
+    },
+    "address": "中国宜兴高塍环保城54-10-1103",
+    "contact_phone": "待核实",
+    "lat": 31.447302,
+    "lng": 119.809383,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KUYCXHZS",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320282",
+      "search_keyword": "环保设备"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0156760",
+    "company": "三菱重工热泵.五恒全空气华厦店",
+    "category": "精密机械加工",
+    "keywords": [
+      "水处理设备"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "梁溪区"
+    },
+    "address": "梁溪区锡沪路280号华厦家居港一期二楼B109",
+    "contact_phone": "133****3399",
+    "lat": 31.585555,
+    "lng": 120.342943,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L6C5H5XN",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "空调",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "广益",
+      "adcode": "320213",
+      "search_keyword": "水处理设备"
     },
     "industry": {
       "code": "3441",

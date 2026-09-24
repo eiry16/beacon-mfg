@@ -687,5 +687,56 @@
       "evidence": "纺织"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0158167",
+    "company": "佛山丰田纺织汽车零部件有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "汽车配件",
+      "汽车零部件",
+      "汽配"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "南海区"
+    },
+    "address": "狮山镇南海科技工业园北区北园中路13号",
+    "contact_phone": "0757-81203988",
+    "lat": 23.16588,
+    "lng": 112.988918,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F507R1U",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440605",
+      "search_keyword": "汽车配件"
+    },
+    "industry": {
+      "code": "1711",
+      "name": "棉纺纱加工",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 棉纺织及印染精加工 > 棉纺纱加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "纺织"
+    },
+    "is_manufacturer": true
   }
 ]

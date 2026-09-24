@@ -174,7 +174,8 @@
       "塑料制品",
       "塑胶制品",
       "塑料模具",
-      "塑料包装"
+      "塑料包装",
+      "包装机械"
     ],
     "region": {
       "province": "江苏",
@@ -225,7 +226,8 @@
       "塑料制品",
       "塑料原料",
       "塑料模具",
-      "塑料包装"
+      "塑料包装",
+      "包装机械"
     ],
     "region": {
       "province": "江苏",
@@ -867,7 +869,8 @@
     "category": "注塑成型",
     "keywords": [
       "塑料制品",
-      "塑胶制品"
+      "塑胶制品",
+      "包装机械"
     ],
     "region": {
       "province": "广东",
@@ -11607,7 +11610,8 @@
     "company": "佛山市三水区兴宏发吹塑制品厂",
     "category": "注塑成型",
     "keywords": [
-      "塑料制品"
+      "塑料制品",
+      "包装机械"
     ],
     "region": {
       "province": "广东",
@@ -16222,7 +16226,8 @@
     "company": "苏州富昌吸塑包装制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "吸塑"
+      "吸塑",
+      "包装机械"
     ],
     "region": {
       "province": "江苏",
@@ -16516,7 +16521,8 @@
     "company": "张家港鑫德吸塑包装有限责任公司",
     "category": "注塑成型",
     "keywords": [
-      "吸塑"
+      "吸塑",
+      "包装机械"
     ],
     "region": {
       "province": "江苏",
@@ -20976,7 +20982,8 @@
     "company": "深圳市益昌吸塑包装制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "吸塑"
+      "吸塑",
+      "包装机械"
     ],
     "region": {
       "province": "广东",
@@ -21025,7 +21032,8 @@
     "company": "诚可达吸塑包装制品有限公司",
     "category": "注塑成型",
     "keywords": [
-      "吸塑"
+      "吸塑",
+      "包装机械"
     ],
     "region": {
       "province": "广东",
@@ -30387,7 +30395,8 @@
     "company": "深圳市裕兴塑料包装机械有限公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料包装"
+      "塑料包装",
+      "包装设备"
     ],
     "region": {
       "province": "广东",
@@ -31122,7 +31131,8 @@
     "company": "鑫众塑料包装机械公司",
     "category": "注塑成型",
     "keywords": [
-      "塑料包装"
+      "塑料包装",
+      "包装设备"
     ],
     "region": {
       "province": "广东",
@@ -33369,6 +33379,56 @@
       "confidence": "low",
       "source": "search_keyword",
       "evidence": "注塑成型"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0159256",
+    "company": "同创塑料包装机械厂",
+    "category": "精密机械加工",
+    "keywords": [
+      "包装机械",
+      "包装设备"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "温州",
+      "district": "瑞安"
+    },
+    "address": "潘岱街道安业路60-68号(浙江旭腾机械公司3楼)",
+    "contact_phone": "待核实",
+    "lat": 27.806407,
+    "lng": 120.588025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LBRAGTC4",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330381",
+      "search_keyword": "包装机械"
+    },
+    "industry": {
+      "code": "2926",
+      "name": "塑料包装箱及容器制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 塑料制品业 > 塑料包装箱及容器制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "塑料包装"
     },
     "is_manufacturer": true
   }

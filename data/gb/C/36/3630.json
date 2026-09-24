@@ -50,5 +50,54 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/36/3630"
+  },
+  {
+    "id": "CN-MFG-0158230",
+    "company": "无锡电装汽车部件有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "汽车零部件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "新吴区"
+    },
+    "address": "梅育路97号",
+    "contact_phone": "0510-88156611",
+    "lat": 31.532214,
+    "lng": 120.454414,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B01FE1DNV5",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320214",
+      "search_keyword": "汽车零部件"
+    },
+    "industry": {
+      "code": "3630",
+      "name": "改装汽车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 改装汽车制造 > 改装汽车制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "装汽车"
+    },
+    "is_manufacturer": true
   }
 ]

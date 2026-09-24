@@ -104,5 +104,54 @@
       "verified": false
     },
     "_bucket": "C/39/3976"
+  },
+  {
+    "id": "CN-MFG-0157614",
+    "company": "深圳汉光电子技术有限公司研发制造中心",
+    "category": "电子元器件",
+    "keywords": [
+      "电机制造"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "福田区"
+    },
+    "address": "梅林街道泰科路2号信利康智慧总部大厦902室",
+    "contact_phone": "待核实",
+    "lat": 22.56265,
+    "lng": 114.045805,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LD998V33",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440304",
+      "search_keyword": "电机制造"
+    },
+    "industry": {
+      "code": "3976",
+      "name": "光电子器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 光电子器件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "光电子"
+    },
+    "is_manufacturer": true
   }
 ]
