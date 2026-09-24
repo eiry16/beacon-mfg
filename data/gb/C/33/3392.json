@@ -10348,7 +10348,15 @@
       "adcode": "320117",
       "search_keyword": "压铸"
     },
-    "_bucket": "C/33/3392"
+    "_bucket": "C/33/3392",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003080/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003081",
@@ -11348,6 +11356,14 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "压铸"
+    },
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003106/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
     }
   },
   {
@@ -54357,5 +54373,44 @@
       "evidence": "压铸"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0002665",
+    "company": "庆红压铸加工厂",
+    "category": "压铸",
+    "keywords": [
+      "压铸"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州"
+    },
+    "address": "福田街道杏园村142号",
+    "contact_phone": "183****9655",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3392",
+      "name": "有色金属铸造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 有色金属铸造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "压铸"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0002665/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

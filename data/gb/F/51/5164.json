@@ -46,7 +46,15 @@
       "adcode": "440607",
       "search_keyword": "铝合金"
     },
-    "_bucket": "F/51/5164"
+    "_bucket": "F/51/5164",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000207/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0000216",
@@ -36060,5 +36068,44 @@
     "is_manufacturer": false,
     "status": "verified",
     "_bucket": "F/51/5164"
+  },
+  {
+    "id": "CN-MFG-0016652",
+    "company": "鼎峰不锈钢剪板折弯刨槽(好景雅苑店)",
+    "category": "原材料",
+    "keywords": [
+      "原材料"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "坦洲镇环市南路103号好景雅苑2.3.4卡a区",
+    "contact_phone": "158****8833",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "5164",
+      "name": "金属及金属矿批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 矿产品、建材及化工产品批发 > 金属及金属矿批发",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0016652/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

@@ -767,7 +767,15 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003262/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003263",
@@ -1325,7 +1333,15 @@
       "adcode": "440403",
       "search_keyword": "线路板"
     },
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003295/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003296",
@@ -1440,7 +1456,15 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003298/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003299",
@@ -2821,7 +2845,15 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003336/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003337",
@@ -2903,7 +2935,15 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003338/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003339",
@@ -12118,7 +12158,15 @@
       "adcode": "320115",
       "search_keyword": "连接器"
     },
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003610/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003611",
@@ -12151,7 +12199,15 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003611/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003612",
@@ -12295,7 +12351,15 @@
       "adcode": "320114",
       "search_keyword": "连接器"
     },
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003614/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003615",
@@ -19314,7 +19378,15 @@
       "adcode": "440402",
       "search_keyword": "连接器"
     },
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003806/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003807",
@@ -19362,7 +19434,15 @@
       "adcode": "440402",
       "search_keyword": "连接器"
     },
-    "_bucket": "C/39/3989"
+    "_bucket": "C/39/3989",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003807/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003808",
@@ -41851,5 +41931,473 @@
       "evidence": "电子元器件"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0000520",
+    "company": "宁海坤秀塑料电器厂",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "西店镇团堧村296号",
+    "contact_phone": "147****8878",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0000520/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0003406",
+    "company": "无锡利同电子商务有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡"
+    },
+    "address": "友谊中路288号中恒钢市1001A",
+    "contact_phone": "136****7899",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003406/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0003896",
+    "company": "东莞市禄达塑胶电子有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "赤岭工业一环路12号之2号",
+    "contact_phone": "195****0437",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003896/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0007358",
+    "company": "宁波市精鸿电器科技有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "南园路788号",
+    "contact_phone": "135****1127",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0007358/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0008376",
+    "company": "东莞市寅山实业有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞"
+    },
+    "address": "厦岗社区先兴北路7号2号楼101室",
+    "contact_phone": "137****5788",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008376/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0025813",
+    "company": "深圳美特思精密仪器有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "簕竹角鸿荣源鸿业工业园6栋3楼",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0025813/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0026096",
+    "company": "广州东海正保精密测量仪表有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州"
+    },
+    "address": "永盛路10号",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0026096/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0027295",
+    "company": "铭凯益电子(昆山)股份有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "澄湖路138号",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0027295/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0028031",
+    "company": "惠州市华程电子有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "马安镇新乐路23号惠州市华程电子有限公司",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0028031/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0028129",
+    "company": "博罗县永立胜电子加工厂",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "中园一路100号",
+    "contact_phone": "158****8389",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0028129/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0028181",
+    "company": "锦玉松下设备买卖贴片加工",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "中山"
+    },
+    "address": "曹安南路十二号",
+    "contact_phone": "134****4906",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0028181/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0123134",
+    "company": "华洪电子加工厂",
+    "category": "电子元器件",
+    "keywords": [
+      "电子元器件"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "天台路225号",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3989",
+      "name": "其他电子元件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子元件及电子专用材料制造 > 其他电子元件制造",
+      "confidence": "low",
+      "source": "category_fallback",
+      "evidence": "电子元器件"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0123134/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

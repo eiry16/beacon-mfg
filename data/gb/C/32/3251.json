@@ -17096,5 +17096,44 @@
       "evidence": "铜管"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0014604",
+    "company": "专营各种铜材",
+    "category": "标准件",
+    "keywords": [
+      "标准件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "浒山街道教场山南路255号",
+    "contact_phone": "0574-63894361; 138****9156; 180****7567",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜材"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0014604/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

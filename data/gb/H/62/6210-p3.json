@@ -1,152 +1,5 @@
 [
   {
-    "id": "CN-MFG-0135015",
-    "company": "夏茅维记饭店(朝阳分店)",
-    "category": "住宿和餐饮业",
-    "keywords": [
-      "饭店"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "广州",
-      "district": "白云"
-    },
-    "address": "石沙公路302号",
-    "contact_phone": "020-86399669",
-    "lat": 23.236698,
-    "lng": 113.212722,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-19",
-    "imported_at": "2026-09-19",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0LGK9QSRB",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "",
-      "keytag": "中餐",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "石井",
-      "adcode": "440111",
-      "search_keyword": "饭店"
-    },
-    "industry": {
-      "code": "6210",
-      "name": "正餐服务",
-      "level": "class",
-      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
-      "confidence": "medium",
-      "source": "name",
-      "evidence": "饭店"
-    },
-    "is_manufacturer": false
-  },
-  {
-    "id": "CN-MFG-0135016",
-    "company": "赞庸陈皮烧鹅饭店(大源店)",
-    "category": "住宿和餐饮业",
-    "keywords": [
-      "饭店"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "广州",
-      "district": "白云"
-    },
-    "address": "大源东路1号",
-    "contact_phone": "131****3090",
-    "lat": 23.250798,
-    "lng": 113.353117,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-19",
-    "imported_at": "2026-09-19",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0KB371MX5",
-      "type": "餐饮服务;中餐厅;中餐厅",
-      "typecode": "050100",
-      "alias": "",
-      "tag": "烧鸭",
-      "keytag": "熏烤",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "",
-      "adcode": "440111",
-      "search_keyword": "饭店"
-    },
-    "industry": {
-      "code": "6210",
-      "name": "正餐服务",
-      "level": "class",
-      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
-      "confidence": "medium",
-      "source": "name",
-      "evidence": "饭店"
-    },
-    "is_manufacturer": false
-  },
-  {
-    "id": "CN-MFG-0135017",
-    "company": "佳诚饭店(建华路店)",
-    "category": "住宿和餐饮业",
-    "keywords": [
-      "饭店"
-    ],
-    "region": {
-      "province": "广东",
-      "city": "广州",
-      "district": "番禺"
-    },
-    "address": "大石街建华路75-79号(近富庭东园)",
-    "contact_phone": "020-84789639; 020-85820167; 131****9468",
-    "lat": 23.019353,
-    "lng": 113.31532,
-    "source": "public_directory",
-    "source_url": "",
-    "verified_at": "2026-09-19",
-    "imported_at": "2026-09-19",
-    "last_verified_at": null,
-    "status": "verified",
-    "is_template": false,
-    "note": "",
-    "amap": {
-      "poi_id": "B0FFF8POIM",
-      "type": "餐饮服务;中餐厅;潮州菜",
-      "typecode": "050123",
-      "alias": "",
-      "tag": "河粉,花甲,茄子,砂锅粥,炒米粉,猪脚",
-      "keytag": "粤菜",
-      "website": "",
-      "email": "",
-      "postcode": "",
-      "business_area": "大石",
-      "adcode": "440113",
-      "search_keyword": "饭店"
-    },
-    "industry": {
-      "code": "6210",
-      "name": "正餐服务",
-      "level": "class",
-      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
-      "confidence": "medium",
-      "source": "name",
-      "evidence": "饭店"
-    },
-    "is_manufacturer": false
-  },
-  {
     "id": "CN-MFG-0135018",
     "company": "福记海鲜饭店",
     "category": "住宿和餐饮业",
@@ -42632,5 +42485,473 @@
       "evidence": "饭店"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0090522",
+    "company": "张记回民餐馆",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "尖山路56号1栋一层82号1-14号",
+    "contact_phone": "135****6446",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "餐馆"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0090522/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0090816",
+    "company": "叁叁說mido贵州鲜切牛肉火锅",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "富水南路186号(阿雄鱼海旁)",
+    "contact_phone": "0851-85611333",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "火锅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0090816/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0090864",
+    "company": "珍味鲜野生菌火锅(乡贤里店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳"
+    },
+    "address": "溪北街道溪北路270号",
+    "contact_phone": "152****8565",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "火锅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0090864/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0098453",
+    "company": "可可与肉肉·牛排西餐厅(同德店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "白云路528号悦汇商场地下室-1商业05号A10-B1-06号",
+    "contact_phone": "0871-63565656; 0871-63575656",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "餐厅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0098453/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0098454",
+    "company": "莱茵春天西餐厅(青年店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明"
+    },
+    "address": "青年路400号",
+    "contact_phone": "0871-63129997",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "餐厅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0098454/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0107500",
+    "company": "南宁龙光那莲豪华精选酒店·那莲中餐厅",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "中柬路8号龙光世纪大厦A座南宁龙光那莲豪华精选酒店80楼",
+    "contact_phone": "0771-2558888",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "中餐"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0107500/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0107525",
+    "company": "莆田餐厅PUTIEN(南宁万象城店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "民族大道华润万象城3楼L301铺",
+    "contact_phone": "0771-5554153",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "餐厅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0107525/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0107526",
+    "company": "路易十三西餐厅(西关新天地店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "西关路2号西关新天地7层",
+    "contact_phone": "0771-2809289",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "餐厅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0107526/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0107551",
+    "company": "绿茶餐厅(东盟盛天地店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "津头街道中越路8号盛天华府地下室B3329号",
+    "contact_phone": "195****4828",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "餐厅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0107551/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0107576",
+    "company": "牛仔街区时尚自助餐厅(安吉万达店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "高新大道55号南宁安吉万达广场F4层",
+    "contact_phone": "0771-3386101",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "餐厅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0107576/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0107577",
+    "company": "南宁会展豪生大酒店天羽西餐厅",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁"
+    },
+    "address": "民族大道106号南宁国际会展中心",
+    "contact_phone": "0771-6706666",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "餐厅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0107577/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0115756",
+    "company": "汇川区梁记小厨餐厅",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "住宿和餐饮业"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义"
+    },
+    "address": "上海路764号门面",
+    "contact_phone": "156****0101; 185****0003",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "6210",
+      "name": "正餐服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 正餐服务 > 正餐服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "餐厅"
+    },
+    "is_manufacturer": false,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0115756/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

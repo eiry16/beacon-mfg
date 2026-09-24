@@ -1861,5 +1861,44 @@
       "evidence": "印刷"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0001995",
+    "company": "优美斯广告uv彩印广告装饰有机玻璃亚克力激光切割",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳"
+    },
+    "address": "园山街道安良社区安华路32-2号",
+    "contact_phone": "153****1909; 176****3788",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2319",
+      "name": "包装装潢及其他印刷",
+      "level": "class",
+      "path": "C 制造业 > 印刷和记录媒介复制业 > 印刷 > 包装装潢及其他印刷",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "彩印"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0001995/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

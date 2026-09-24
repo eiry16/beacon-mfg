@@ -61842,5 +61842,83 @@
       "evidence": "铝业"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0001849",
+    "company": "韩华90度铝板不锈钢板剪板折弯批发加工厂",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海"
+    },
+    "address": "友谊西路1号(友谊西路地铁站1号口步行340米)",
+    "contact_phone": "150****8003",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝板"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0001849/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
+  },
+  {
+    "id": "CN-MFG-0018338",
+    "company": "长信不锈钢板材铝板批发激光切割剪板折弯刨槽加工",
+    "category": "钣金冲压",
+    "keywords": [
+      "钣金冲压"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "惠州"
+    },
+    "address": "惠州大道40号",
+    "contact_phone": "136****2240",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "3252",
+      "name": "铝压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铝压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铝板"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0018338/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

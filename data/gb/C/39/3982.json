@@ -383,7 +383,15 @@
       "adcode": "440404",
       "search_keyword": "线路板"
     },
-    "_bucket": "C/39/3982"
+    "_bucket": "C/39/3982",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0003289/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0003292",

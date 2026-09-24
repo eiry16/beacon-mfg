@@ -34283,5 +34283,44 @@
       "evidence": "色母"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0008659",
+    "company": "工程塑料尼龙PBT",
+    "category": "标准件",
+    "keywords": [
+      "标准件"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波"
+    },
+    "address": "宝峰路21号庭新雅苑",
+    "contact_phone": "待核实",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": null,
+    "is_template": false,
+    "note": "",
+    "status": "verified",
+    "industry": {
+      "code": "2651",
+      "name": "初级形态塑料及合成树脂制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 合成材料制造 > 初级形态塑料及合成树脂制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "工程塑料"
+    },
+    "is_manufacturer": true,
+    "cl": "L0",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0008659/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]
