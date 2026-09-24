@@ -598,5 +598,54 @@
       "evidence": "集成电路"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0156197",
+    "company": "瑟福迪恩半导体设备技术(苏州)有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "环保设备"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "苏州高新区鹿山路369号苏州国家环保产业园21栋103室",
+    "contact_phone": "159****0388; 181****1121",
+    "lat": 31.322588,
+    "lng": 120.505756,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JD2CQU59",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320505",
+      "search_keyword": "环保设备"
+    },
+    "industry": {
+      "code": "3973",
+      "name": "集成电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 集成电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "半导体"
+    },
+    "is_manufacturer": true
   }
 ]

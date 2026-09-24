@@ -40715,5 +40715,103 @@
       "evidence": "机械手|门店型:经营部"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0156096",
+    "company": "成兴流水线设备经营部",
+    "category": "原材料",
+    "keywords": [
+      "流水线"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "石排镇东园大道13号(塘尾工业区门口)",
+    "contact_phone": "135****2981; 183****8518",
+    "lat": 23.076508,
+    "lng": 113.924991,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIQTKN8",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "流水线"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "流水线|门店型:经营部"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0156275",
+    "company": "顺景环保通风(汇丰商贸广场店)",
+    "category": "原材料",
+    "keywords": [
+      "环保设备"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "千灯镇石浦路669号汇丰商贸广场",
+    "contact_phone": "150****8520; 189****2589",
+    "lat": 31.256246,
+    "lng": 121.044643,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL5US5R",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "购物服务,购物相关场所,购物相关场所",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "千灯",
+      "adcode": "320583",
+      "search_keyword": "环保设备"
+    },
+    "industry": {
+      "code": "5179",
+      "name": "其他机械设备及电子产品批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发 > 其他机械设备及电子产品批发",
+      "confidence": "low",
+      "source": "name",
+      "evidence": "商贸"
+    },
+    "is_manufacturer": false
   }
 ]

@@ -2727,5 +2727,54 @@
       "evidence": "材批发"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0156393",
+    "company": "洪茂环保通风设备批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "环保设备"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "金山区"
+    },
+    "address": "朱行镇朱港街46号",
+    "contact_phone": "135****1131",
+    "lat": 30.84695,
+    "lng": 121.344312,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G26SM32N",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "管材管件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "朱行",
+      "adcode": "310116",
+      "search_keyword": "环保设备"
+    },
+    "industry": {
+      "code": "51",
+      "name": "批发业",
+      "level": "division",
+      "path": "F 批发和零售业 > 批发业",
+      "confidence": "low",
+      "source": "gb_token",
+      "evidence": "设备批发"
+    },
+    "is_manufacturer": false
   }
 ]

@@ -39039,7 +39039,8 @@
     "company": "苏州黔翊达环保机械制造有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "精密机械加工"
+      "精密机械加工",
+      "环保设备"
     ],
     "region": {
       "province": "江苏",
@@ -39072,7 +39073,21 @@
       ],
       "verified": false
     },
-    "_bucket": "C/34/3484"
+    "_bucket": "C/34/3484",
+    "amap": {
+      "poi_id": "B0HKKUNL4W",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "环保设备"
+    }
   },
   {
     "id": "CN-MFG-0026714",
@@ -150515,6 +150530,55 @@
       "confidence": "high",
       "source": "name",
       "evidence": "数控"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0156030",
+    "company": "微纳精密制造(CNC,自动化非标件,五金加工)",
+    "category": "精密机械加工",
+    "keywords": [
+      "非标自动化"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "清溪镇三中凤平路12号102室",
+    "contact_phone": "166****2327",
+    "lat": 22.781302,
+    "lng": 114.139729,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3TA7HJ4",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "非标自动化"
+    },
+    "industry": {
+      "code": "3484",
+      "name": "机械零部件加工",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 通用零部件制造 > 机械零部件加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "CNC"
     },
     "is_manufacturer": true
   }
