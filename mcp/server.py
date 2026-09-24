@@ -554,6 +554,84 @@ def _fp_paths_for_gbs(codes: List[str]) -> List[str]:
 
 
 # --------------------------------------------------------------------------- #
+# 能力（cap）别名召回：把「AI / 人工智能 / 机器学习 / 大模型 / 算法 …」映射到
+# 能力键（如 tech_ai），按能力键定向召回。与 GB 别名不同，cap 是跨门类能力、
+# 不挂在某个国标码下，故走 cap.json 的 shards 表找分片，而非 _fp_paths_for_gbs。
+#
+# 关键点：命中 cap 别名的 token 从「通用子串 AND 校验」里**消费掉**，只走 cap
+# 召回 —— 否则「AI」会作为子串命中 algebraist / Ashore 等英文名咖啡店，造成噪声。
+# 匹配用整词精确（不分词组子串），同样是为了避免「ai」误扩到别的词里。
+# --------------------------------------------------------------------------- #
+_cap_index_cache: Optional[Dict[str, Any]] = None
+
+
+def _load_cap_index() -> Optional[Dict[str, Any]]:
+    """skills/registry/index/cap.json —— 发布产物（与 city.json 同构）：
+    {terms:{code:词面串}, shards:{code:{shard_name:count}}}。"""
+    global _cap_index_cache
+    if _cap_index_cache is None:
+        txt = _index_text("skills/registry/index/cap.json")
+        try:
+            _cap_index_cache = json.loads(txt) if txt else {}
+        except Exception:
+            _cap_index_cache = {}
+    return _cap_index_cache
+
+
+def _cap_term_index() -> Dict[str, str]:
+    """词面词 → 能力键（反向索引，缓存）。覆盖 cap.json terms 里的每个分词，
+    例如 「AI」「人工智能」「机器学习」「大模型」「算法」→ tech_ai。"""
+    idx: Dict[str, str] = {}
+    cap = _load_cap_index() or {}
+    for code, termstr in (cap.get("terms") or {}).items():
+        for w in str(termstr).lower().split():
+            idx.setdefault(w, code)   # 首个出现的码优先
+    return idx
+
+
+def cap_alias_codes(q: str) -> List[Dict[str, Any]]:
+    """能力口语词 → 能力键。整词精确匹配（不分词组子串）。返回 [{cap, word, name}]。"""
+    q = (q or "").strip().lower()
+    if not q:
+        return []
+    idx = _cap_term_index()
+    hits: Dict[str, Dict[str, Any]] = {}
+    for tok in dict.fromkeys(t for t in q.split() if t):
+        code = idx.get(tok)
+        if code:
+            hits[code] = {"cap": code, "word": tok, "name": _cap_name(code)}
+    return list(hits.values())
+
+
+def _cap_name(code: str) -> str:
+    """能力键 → 人类可读名（取 terms 词面串的首段）。"""
+    cap = _load_cap_index() or {}
+    t = (cap.get("terms") or {}).get(code, "")
+    return str(t).split()[0] if t else code
+
+
+def _cap_shard_paths(cap_code: str) -> List[str]:
+    """能力键 → 指纹分片路径。依据 cap.json shards[code] 的分片名，
+    优先用 manifest 的 fp 分片（按 c 对齐），否则按名直拼路径。"""
+    cap = _load_cap_index() or {}
+    names = (cap.get("shards") or {}).get(cap_code, {})
+    if not names:
+        return []
+    by_c = {str(s.get("c", "")): s.get("p") for s in _shards_of_type("fp")}
+    paths: List[str] = []
+    for nm in names:
+        p = by_c.get(str(nm))
+        if not p:
+            cand = f"skills/registry/fingerprint/gb/{nm}.jsonl"
+            if os.path.exists(cand):
+                p = cand
+        if p and p not in paths:
+            paths.append(p)
+    return paths
+
+
+
+# --------------------------------------------------------------------------- #
 # tool 实现
 # --------------------------------------------------------------------------- #
 # --------------------------------------------------------------------------- #
@@ -1165,6 +1243,17 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     # 而非必须作为连续子串出现。单关键词时退化为原行为。
     tokens = [t for t in q.split() if t]
 
+    # 能力（cap）别名：把口语词（AI / 人工智能 / 机器学习 / 大模型 / 算法 …）映射到
+    # 能力键（如 tech_ai），并**消费**掉该 token（不再做通用子串 AND 校验），只走 cap
+    # 定向召回 —— 否则「AI」会作为子串命中 algebraist / Ashore 等英文名咖啡店造成噪声。
+    cap_hits = cap_alias_codes(q) if q else []
+    # 只消费「会造成子串噪声的短 ASCII token」（如 ai 会子串命中 algebraist 等英文名），
+    # 中文/较长 token 不消费 —— 保留其文本匹配（厂名含「人工智能」的企业不被误丢），
+    # 同时下方 cap 召回仍会叠加，最终是「文本 ∪ 能力」的并集。
+    cap_tokens = {h["word"].lower() for h in cap_hits
+                  if len(h["word"]) <= 2 and h["word"].isascii()}
+    gen_tokens = [t for t in tokens if t not in cap_tokens]
+
     # 口语词 → 国标码（2026-09-24 接入别名表）。
     # 「输送线/流水线/PCB」这类词在任何记录的厂名/工艺/材料里都不出现，纯子串匹配
     # 必然 0 条。别名命中的记录按码定向召回，**豁免 AND token 校验** —— 不豁免的话
@@ -1183,7 +1272,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             for rec in _read_fp_shard(s):
                 if not _city_ok(rec, city):
                     continue
-                if tokens and not all(tok in _hay(rec).lower() for tok in tokens):
+                if gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
                     continue
                 matches.append(_rec_summary(rec))
         return {
@@ -1195,10 +1284,10 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
 
     # 未给国标码：优先走「预构建倒排索引 → 只拉命中分片」（O(命中量)）。
     # 索引缺失或陈旧时回退进程内全量索引（O(总量)，慢但结果等价）。
-    cands = _candidate_shards(tokens, city) if (tokens or city) else None
+    cands = _candidate_shards(gen_tokens, city) if (gen_tokens or city) else None
     via_index = cands is not None
 
-    if via_index and not cands and not alias_paths:
+    if via_index and not cands and not alias_paths and not cap_hits:
         # 索引明确判定无命中、别名也没给方向 —— 无需拉任何分片
         return {
             "total_matched": 0,
@@ -1215,7 +1304,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         for rec in recs:
             if not _city_ok(rec, city):
                 continue
-            if not relax_tokens and tokens and not all(tok in _hay(rec).lower() for tok in tokens):
+            if not relax_tokens and gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
                 continue
             rid = rec.get("id")
             if rid in seen:      # 别名召回与文本召回的并集要去重
@@ -1229,12 +1318,20 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             matches.append(s)
 
     if via_index:
-        # 只拉候选分片（git 模式一次 archive 批量取，通常 1~N 个）
-        scanned = len(cands or [])
-        _collect(_records_from_paths(cands or []))
+        # 只拉候选分片（git 模式一次 archive 批量取，通常 1~N 个）。
+        # 若全部 token 都被 cap 别名消费掉（gen_tokens 空），且本就有 cap 命中，
+        # 则跳过文本召回（否则 city 命中会拉回整座城市的全部记录），只走下方 cap 召回。
+        if gen_tokens or not cap_hits:
+            scanned = len(cands or [])
+            _collect(_records_from_paths(cands or []))
+        else:
+            scanned = 0
     else:
-        scanned = len(_shards_of_type("fp"))
-        _collect(_build_fp_index())
+        if gen_tokens or not cap_hits:
+            scanned = len(_shards_of_type("fp"))
+            _collect(_build_fp_index())
+        else:
+            scanned = 0
 
     # 别名定向召回（后追加，纯度次之）
     alias_scanned = 0
@@ -1253,6 +1350,31 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                 s["alias_match"] = {"word": a["word"], "gb": a["code"], "name": a["name"]}
             matches.append(s)
 
+    # 能力（cap）别名定向召回（消费 token，纯度最高，最后追加并去重）。
+    # 按能力键扫对应指纹分片，只收 cap 含该键且城市命中的记录；其余通用 token
+    # （gen_tokens）仍做 AND 校验，保证「AI 喷涂」这类组合查询不跑偏。
+    cap_scanned = 0
+    for h in cap_hits:
+        for p in _cap_shard_paths(h["cap"]):
+            for rec in _records_from_paths([p]):
+                cap_scanned += 1
+                # 该分片可能含多条记录，只收真正带此能力键的（cap.json 的 shards
+                # 表只是「哪些分片含此 cap」，分片内还需按 cap 成员过滤）。
+                if h["cap"] not in (rec.get("cap") or []):
+                    continue
+                if not _city_ok(rec, city):
+                    continue
+                if gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
+                    continue
+                rid = rec.get("id")
+                if rid in seen:
+                    continue
+                seen.add(rid)
+                s = _rec_summary(rec)
+                s["alias_match"] = {"word": h["word"], "cap": h["cap"],
+                                    "name": h["name"], "type": "cap"}
+                matches.append(s)
+
     out = {
         "total_matched": len(matches),
         "returned": len(matches[offset:offset + limit]),
@@ -1265,6 +1387,10 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                                  for a in alias_hits]
         out["alias_shards_scanned"] = len(alias_paths)
         out["alias_records_seen"] = alias_scanned
+    if cap_hits:
+        out["cap_expanded"] = [{"word": h["word"], "cap": h["cap"], "name": h["name"]}
+                               for h in cap_hits]
+        out["cap_records_seen"] = cap_scanned
     return out
 
 
