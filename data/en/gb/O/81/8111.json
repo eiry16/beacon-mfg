@@ -24610,7 +24610,7 @@
   },
   {
     "id": "CN-MFG-0057896",
-    "company_en": "Tmall Auto Care (Xuexi苑 Store)",
+    "company_en": "Tmall Auto Maintenance (Xuexi苑 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -26670,7 +26670,7 @@
   },
   {
     "id": "CN-MFG-0057960",
-    "company_en": "Mingju Butler Auto Service",
+    "company_en": "Mingju管家 Auto Service",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -26683,7 +26683,7 @@
       "province": "Jiangsu",
       "city": "Wuxi"
     },
-    "address_en": "Shop 2-4, Phase 1,孔雀雅园, Yangming Street",
+    "address_en": "No. 2-4,孔雀雅园 Phase 1, Yangming Street",
     "contact_phone": "189****7313",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -35000,14 +35000,14 @@
   },
   {
     "id": "CN-MFG-0058627",
-    "company_en": "Xiaozhi Zhiqi Quick Car Repair Shop (Zizhu Road Store)",
+    "company_en": "Xiaoyu Zhi Auto Quick Repair Shop (Zizhu Road Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "car repair",
       "auto repair",
-      "vehicle repair",
-      "mechanic"
+      "auto maintenance",
+      "auto repair service",
+      "car repair"
     ],
     "region": {
       "province": "Zhejiang",
@@ -54668,8 +54668,8 @@
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
       "auto repair",
-      "vehicle repair",
-      "mechanic"
+      "auto repair service",
+      "car repair"
     ],
     "region": {
       "province": "Guangdong",
@@ -92047,20 +92047,20 @@
   },
   {
     "id": "CN-MFG-0103753",
-    "company_en": "Dechuang Auto Repair Ma石油Certified Shop",
+    "company_en": "Dechuang Auto Repair Ma石油Certified Store",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Automotive Repair",
-      "Auto Repair",
-      "Automotive Repairing",
-      "Car Repair"
+      "auto repair",
+      "auto maintenance",
+      "auto repair service",
+      "car repair"
     ],
     "region": {
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "No. 106, Building K32,奥斯迪Ousdi",
+    "address_en": "Building 106, K32 Ousidi",
     "contact_phone": "183****7952",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -101078,13 +101078,13 @@
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Circuit Board"
+      "circuit board"
     ],
     "region": {
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "No. 5,蒲草塘村Putao Tang Village, Gongshan Town",
+    "address_en": "No. 5,蒲草塘 Village, Gongshan Town",
     "contact_phone": "159****4993",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -102439,17 +102439,17 @@
   },
   {
     "id": "CN-MFG-0111381",
-    "company_en": "Wanji Avenue Xiongtai Auto Repair",
+    "company_en": "Wanji Laoche Xiongtai Auto Repair",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "Circuit Board"
+      "circuit board"
     ],
     "region": {
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "No. 131附2,小麦溪村Xiaomaixi Village, Longquan Road, Ciba",
+    "address_en": "No. 131, wheat creek Village, Tsiba Longquan Road, Annex 2",
     "contact_phone": "136****3591",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -123526,6 +123526,2176 @@
       "confidence": "high",
       "source": "name",
       "evidence": "汽车服务"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151217",
+    "company_en": "Sinen Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 2688 Huadian Road",
+    "contact_phone": "180****4883",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151218",
+    "company_en": "Kunshan Tong'an Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 273-283 Station Road",
+    "contact_phone": "0512-57368817; 0512-57368827",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151219",
+    "company_en": "Furda Auto Repair Factory",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 10 Changxing Road",
+    "contact_phone": "137****6182; 180****0040",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151220",
+    "company_en": "Suzhou Shengxu Auto Maintenance Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "Opposite Bank of Suzhou at the intersection of Chetao Street and Hupai Road, Chetao Town",
+    "contact_phone": "183****3775",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151222",
+    "company_en": "Zhongtian Auto Repair & Truck Repair, Maintenance, Tire Repair and Wholesale",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 47 Shengxiang West Road, Qianleng Town, Qinfeng Second Village",
+    "contact_phone": "137****2523",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151223",
+    "company_en": "Xinyuan One-Stop Auto Repair Center",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "Building 3, Units 21-25, Donggang Steel City, Suzhou Industrial Park, Suzhou Industrial Park",
+    "contact_phone": "138****8845; 180****4120",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151224",
+    "company_en": "Suzhou Zhongda Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 55 Fusheng Road, Taiping Town",
+    "contact_phone": "189****8376",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151226",
+    "company_en": "Penghong Auto Service",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 216 Huamao Road, Zhou Town, Tire Repair and Replacement",
+    "contact_phone": "132****2286; 151****7622",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车服务"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151227",
+    "company_en": "Baorun Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "Qianzhou Town Dengbei Road (50 meters north of Bayue Hotel)",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151228",
+    "company_en": "Wuxi Junde Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 88 Jianghai West Road",
+    "contact_phone": "0510-88888005",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151230",
+    "company_en": "Jiangyin East China Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 1 Xinyuan Road, Dongwai Ring Road",
+    "contact_phone": "0510-81698899; 0510-86263322",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151231",
+    "company_en": "Yongjia Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 93 Park Road, Shaoci Town",
+    "contact_phone": "0510-86568703; 131****6580",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151232",
+    "company_en": "Wuxi Jiesheng Auto Repair (No truck repair)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 36 Xihu Road West Section, Yangjian Town (opposite Outfor Road)",
+    "contact_phone": "189****6932",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151234",
+    "company_en": "Wuxi Fengfan Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "Fengfan Auto Repair Co., Ltd.",
+    "contact_phone": "139****2778",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151236",
+    "company_en": "Wuxi Ouying Auto Repair Service Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 73 Qianwei Road, Zhongyi Industrial Park",
+    "contact_phone": "0510-83016999; 130****3666",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151237",
+    "company_en": "Wanjiafu Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 669 Meiyuan Road",
+    "contact_phone": "137****0385",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151238",
+    "company_en": "Shanghai Haicheng Industry (Group) Co., Ltd. Haicheng Auto Repair Branch",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 130-148 Gaoyi Road, Building 1",
+    "contact_phone": "021-65914851",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151240",
+    "company_en": "Shanghai Yuhan Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 282 Caogaozhai Road, West Area",
+    "contact_phone": "189****1271",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151241",
+    "company_en": "Shanghai Jiechao Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 1627 Cao宝Road, Opposite Nuobao Center Hotel",
+    "contact_phone": "021-62855999",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151242",
+    "company_en": "Foton Aolong-Shanghai Jiaming Auto Repair Co., Ltd. Service Station",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 3170 Tingfeng Highway",
+    "contact_phone": "133****8092",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151243",
+    "company_en": "Shanghai Lezhong Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 2361 Tingfeng Highway, Xinong Town",
+    "contact_phone": "021-57382818; 159****5084; 189****6660",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151245",
+    "company_en": "Chebaizu Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 178-180 Zhoupu Hengqiao Road",
+    "contact_phone": "182****0675",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151246",
+    "company_en": "Wanlixing Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "Beside the Northeast Gate of Xinfu Garden",
+    "contact_phone": "155****1887",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151247",
+    "company_en": "Duoduo Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "No. 171 Chongfu Maoqiao Community",
+    "contact_phone": "135****5628",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151248",
+    "company_en": "Yuanchi Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "No. 15-1617 Dangli Cultural Hall, Zhouquan Town",
+    "contact_phone": "195****0152",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151250",
+    "company_en": "Xiaopan Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "No. 27-29 Yongli Road",
+    "contact_phone": "186****6518",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151251",
+    "company_en": "Jiashan Xiangyue Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "No. 168 Hengxing Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151252",
+    "company_en": "Jiazhen Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "No. 1169 Yixi Avenue, Xinyi Residential Area, Chongfu Town",
+    "contact_phone": "182****6358",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151253",
+    "company_en": "Qicheng Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Jiaxing"
+    },
+    "address_en": "No. 1226-1228 Jinyang West Road",
+    "contact_phone": "136****3637",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151254",
+    "company_en": "Che Tian Shi Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 126 Dancheng Xinfeng Road",
+    "contact_phone": "0574-65768119; 137****9884",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151255",
+    "company_en": "Qiantu Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "Jiangbei District, Zhejiang Province",
+    "contact_phone": "188****3008",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151258",
+    "company_en": "Tunan Auto Repair Center",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 174-176 Chongqiu Road, Xiaogang Street",
+    "contact_phone": "189****1653",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151259",
+    "company_en": "Ningbo Leyuan Auto Maintenance Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 499 Kangzhuang South Road (next to the south gate of Haitong Auto Parts Factory)",
+    "contact_phone": "138****1089",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151260",
+    "company_en": "Ningbo Jiangbei Senda Auto Maintenance Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 146 Ni Jia Yan Road, Yongjiang Street",
+    "contact_phone": "0574-87678433",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151261",
+    "company_en": "Hongyao Auto Maintenance",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 105 Xinjian East Road, Fangqiao Street",
+    "contact_phone": "158****1425",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151262",
+    "company_en": "Qunying Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "No. 242 Sanbei Road, Longshan Town",
+    "contact_phone": "133****1385",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151263",
+    "company_en": "Lujiang Auto Maintenance",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "Intersection of Yuncheng Avenue and Hucheng Road",
+    "contact_phone": "132****6111; 188****0112",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151264",
+    "company_en": "Changhong Auto Maintenance Shop",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Ningbo"
+    },
+    "address_en": "Dongchang Road",
+    "contact_phone": "158****7417",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151265",
+    "company_en": "Nanjing Zhibang Auto Maintenance Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 38 Yangxin Road",
+    "contact_phone": "139****1275; 139****8294",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151266",
+    "company_en": "Nanjing Gudu Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 4 Huangzhuang, Huangma Road, Machong",
+    "contact_phone": "138****3620; 139****7494",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151267",
+    "company_en": "Lixing Star Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 80-1, Central North Road",
+    "contact_phone": "187****6365",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151268",
+    "company_en": "Nanjing Juma Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 80-1, Central North Road",
+    "contact_phone": "025-85552699",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151269",
+    "company_en": "Nanjing Ninghong Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 31, Hengda Road",
+    "contact_phone": "025-85321560; 186****9111",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151270",
+    "company_en": "Weilu Chi Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "Building 13, Ningnan Auto Parts City",
+    "contact_phone": "130****7086",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151271",
+    "company_en": "Guoqiang Auto Repair Xiao Li Diesel Auto Injection Circuit Repair Factory",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "420 meters east of the intersection of Wenjing Road and Huan Yuan North Road",
+    "contact_phone": "139****3549; 182****7102",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151273",
+    "company_en": "Nanjing Sujin Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 18, Songshan Road (3A exit of Yingtian Avenue Subway Station, walk 370 meters)",
+    "contact_phone": "138****2518",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151275",
+    "company_en": "Shenzhen Wula Auto Repair Co., Ltd. (Guotong Building A, Store)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 117, Guotong Building, 1st Lane, Xianan Road",
+    "contact_phone": "137****7346",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151276",
+    "company_en": "Shenzhen Wulijiao Xinfabaochi Auto Repair Co., Ltd. (Guotong Building A, Store)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 270, Bulong Road (B1 exit of Longsheng Subway Station, walk 390 meters)",
+    "contact_phone": "150****0511",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151278",
+    "company_en": "Xinmingfa Automobile Maintenance and Repair Factory",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 15 Xisi Alley, Xiyu Road, Sha Si Community",
+    "contact_phone": "0755-29098126; 137****6128",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151279",
+    "company_en": "Shenzhen Cheshi Automobile Maintenance Co., Ltd. (Xin'an Store)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "First Floor, Factory No. 1, Anle Second Street, District 39, Xin'an",
+    "contact_phone": "0755-27836368",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151280",
+    "company_en": "Jianwu Automobile Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 179 Datong Road, Guanlan",
+    "contact_phone": "177****5993",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车修理"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151282",
+    "company_en": "Zunmei Automobile Maintenance Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "First Floor, Dormitory Building No. 4, Huafeng Industrial Park, Nanchang Village, Gushu",
+    "contact_phone": "136****8710",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151286",
+    "company_en": "Dongguan Chang'an 168 Automobile Maintenance Service",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 129 Guanchang Road, Xiaobian Town, Chang'an",
+    "contact_phone": "188****6072",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151287",
+    "company_en": "Guangqin Automobile Repair Shop",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "Shop 101-2, Huayue Mingyuan, Xintang Town, Xintian Road",
+    "contact_phone": "137****3370",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151288",
+    "company_en": "Shifah Auto Service Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "Changping Town, Changhuang Road, Opposite Langbei Gas Station",
+    "contact_phone": "0769-83910968; 0769-89336339",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车服务"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151289",
+    "company_en": "Liangji Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 12 Xiantun South Road, Liapo Town",
+    "contact_phone": "0769-82313198; 135****5622",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151291",
+    "company_en": "Shenbo Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 15 Songshan Road, Sha Hu",
+    "contact_phone": "137****3155",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151292",
+    "company_en": "Qiaotou Quansheng Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 6 Yuanhu 1st Road, Gangtou Village",
+    "contact_phone": "185****6834",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151295",
+    "company_en": "Chao Shun Auto Repair Center",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Huizhou"
+    },
+    "address_en": "140 meters east of Pengxing Waste Recycling",
+    "contact_phone": "183****9920",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151296",
+    "company_en": "Guangzhou Jia Peng Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 418 Shatai South Road, Silver Xing Auto Parts City, Building 1, 1003-1009",
+    "contact_phone": "138****2450",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0151297",
+    "company_en": "Guangzhou Anxin Auto Repair Co., Ltd.",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "circuit board"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 48 Zhongsheng Road, Pingshan 2nd Village, Shibi Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽车维修"
+    },
+    "industry_en": {
+      "code": "8111",
+      "name_en": "Automobile Repair & Maintenance",
+      "level": "class",
+      "name": "汽车修理与维护",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8111"
+  },
+  {
+    "id": "CN-MFG-0155515",
+    "company_en": "Xinxingtong Auto Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "cylinder"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 515 Jincheng East Road",
+    "contact_phone": "131****0080",
+    "source": "public_directory",
+    "verified_at": "2026-09-24",
+    "note_en": "",
+    "industry": {
+      "code": "8111",
+      "name": "汽车修理与维护",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 汽车、摩托车等修理与维护 > 汽车修理与维护",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "汽修"
     },
     "industry_en": {
       "code": "8111",
