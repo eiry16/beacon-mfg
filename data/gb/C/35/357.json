@@ -431,5 +431,54 @@
       "evidence": "业机械"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0156288",
+    "company": "格鲁博工业机械制造(苏州)有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "环保设备"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "鹿山路369号环保产业园3幢",
+    "contact_phone": "待核实",
+    "lat": 31.320575,
+    "lng": 120.504275,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKDM2RM",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320505",
+      "search_keyword": "环保设备"
+    },
+    "industry": {
+      "code": "357",
+      "name": "农、林、牧、渔专用机械制造",
+      "level": "group",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "业机械"
+    },
+    "is_manufacturer": true
   }
 ]

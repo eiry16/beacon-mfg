@@ -136508,5 +136508,103 @@
       "evidence": "五金"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0156021",
+    "company": "东莞鸿泽芳金属制品有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "非标自动化"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "长安镇民营工业区长缘路5号之一",
+    "contact_phone": "待核实",
+    "lat": 22.834734,
+    "lng": 113.825659,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KK4S3924",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "非标自动化"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "金属制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0156063",
+    "company": "东莞市银发五金科技有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "流水线"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "常平镇元江元常马路432号",
+    "contact_phone": "0769-82050180; 189****2890",
+    "lat": 22.980875,
+    "lng": 114.035475,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-24",
+    "imported_at": "2026-09-24",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G33CYM01",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "流水线"
+    },
+    "industry": {
+      "code": "3399",
+      "name": "其他未列明金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 铸造及其他金属制品制造 > 其他未列明金属制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "五金"
+    },
+    "is_manufacturer": true
   }
 ]
