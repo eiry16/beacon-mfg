@@ -7,7 +7,7 @@
 > 英文翻译（`en_backfill`）、库维护（`postfetch` / `gb_store` / `sync_assets`）等流水线**不进 MCP**、
 > 不暴露、不持密钥；MCP 也不会落在任何写路径上。
 
-## 三个只读 tool
+## 提供的 tool（6 个，全部只读）
 
 | tool | 用途 | 关键参数 |
 |------|------|----------|
@@ -26,6 +26,12 @@
 >   千万量级下只需增大桶数（如 4096）并按城市对大分片二级切分，首次查询耗时仍与总量基本无关。
 | `get_vendor` | 按 id（+国标码）取完整中文档案 | `id`（必填） `gb`（可选，自动反查） |
 | `get_capability_card` | 按 id 取能力卡（工艺/设备/产能/认证等） | `id`（必填） |
+| `start_sourcing` | 【客户 agent 自动触发】识别找厂/代工/采购/询价意图 → 品类识别→宽召回→需求解析→生成 1~2 轮澄清问题，返回 `session_id` | `demand_text`（必填） `audience_id` |
+| `answer_sourcing` | 续接澄清轮次：写回客户答案，返回下一轮澄清问题或初选供应商列表 | `session_id`（必填） `answers` |
+| `refine_sourcing` | 推荐轮次交互：`details`(看详情与 RFQ 入口) / `more`(看更多) / `best`(看最匹配一家) | `session_id`（必填） `action` `value` |
+
+后三个构成「采购寻源」多轮会话链路 `start_sourcing → answer_sourcing → refine_sourcing`，
+同样只读，不落任何写路径。
 
 所有返回都是 JSON 文本。找不到时返回 `{ "error": ... }` 或 `has_card:false`，不会抛协议错。
 
@@ -33,7 +39,19 @@
 
 服务是**零第三方依赖**的单文件（`server.py`，仅用 Python 标准库），只需 Python 3.8+。
 
-**方式 A — 本地 git 仓库（推荐：离线 + 隐私安全 + 零 CF 流量）**
+**方式 0 — npm 安装（推荐：无需 clone、无需填路径）**
+
+```bash
+npm i -g beacon-mfg-mcp      # 或不安装直接用 npx beacon-mfg-mcp
+```
+
+```jsonc
+{ "mcpServers": { "beacon-mfg": { "command": "beacon-mfg-mcp", "args": [] } } }
+```
+
+不填 `BEACON_REPO` 时默认走 `https://beacon-mfg.pages.dev`，即开即用。
+
+**方式 A — 本地 git 仓库（离线 + 隐私安全 + 零 CF 流量）**
 
 ```jsonc
 // Claude Desktop / 其它 MCP 客户端配置
@@ -98,22 +116,45 @@ cron / GUI 是**写方**：`fetch_batch` / `postfetch` 改写 `data/gb`、`data/
 
 ## 分发 / 版本发布
 
-MCP 服务已具备两种发布渠道（详见 `mcp/RELEASE.md`）：
+MCP 服务有两种发布渠道（详见 `mcp/RELEASE.md`）：
 
 - **GitHub Release（已配 CI）**：推送 `mcp-v*` 标签即由 `.github/workflows/mcp-release.yml`
   自动打包 `mcp/` 目录为 `beacon-mfg-mcp-mcp-vX.Y.Z.tar.gz` 并创建 Release。
-- **npm 包（已备好）**：`mcp/package.json` + `mcp/bin/beacon-mfg-mcp.js`（Node 启动器，自动探测 Python）。
-  npm 发布走独立**手动**工作流 `.github/workflows/npm-publish.yml`（GitHub Actions 页面手动触发，
-  需先在仓库 Secrets 配置 `NPM_TOKEN`）；或本地 `npm login && npm publish`（在 `mcp/` 目录）。
-  装好后客户端直接用 `"command": "beacon-mfg-mcp"` 即可。
+- **npm 包（已发布 ✅）**：`beacon-mfg-mcp` 已于 **2026-09-24** 发布到 npm 公共仓库，当前版本 **`0.1.3`**
+  （<https://www.npmjs.com/package/beacon-mfg-mcp>）。第三方可直接 `npm i -g beacon-mfg-mcp`
+  或 `npx beacon-mfg-mcp`，客户端配置 `"command": "beacon-mfg-mcp"` 即可，无需 clone、无需填路径。
+  已实测：安装 → MCP 握手 → `tools/list` 全通（暴露 6 个 tool）。
+
+### 发布到 npm 的步骤（需要 Access Token，不是 2FA 种子）
+
+> ⚠️ **常见误区**：npm 启用 2FA 后给的「密钥 / TOTP 种子」（64 位十六进制串）是给认证器 App 生成动态码用的，
+> **它本身不能用于发布**——直接拿它当 token 会返回 `401 Unauthorized`。
+> 发布必须用 npm 网站生成的 **Granular Access Token**（形如 `npm_...`）。
+
+1. 登录 <https://www.npmjs.com> → 右上角头像 → **Access Tokens** → **Generate New Token**
+   → 选 **Granular Access Token**。
+2. 权限选 **Read and write**；如需 CI 自动发布，勾选 **Bypass two-factor authentication**。
+3. 生成后立刻复制（只显示一次），写入仓库根 `.env`：
+   ```
+   NPM_TOKEN=npm_xxxxxxxxxxxxxxxxxxxxxxxxxx
+   ```
+4. 本地发布（在 `mcp/` 目录）：
+   ```bash
+   npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
+   npm publish --dry-run   # 先预览将要上传的文件
+   npm publish
+   ```
+5. CI 自动发布：把该 token 配进仓库 Secrets 的 `NPM_TOKEN`，之后手动触发
+   `.github/workflows/npm-publish.yml` 即可（该工作流已就位）。
 
 ### 客户端接入速查
+
 ```jsonc
-// 方式一：GitHub Release / 源码 —— 直接指向 server.py
+// 方式一：GitHub Release / 源码 —— 直接指向 server.py（当前可用）
 { "mcpServers": { "beacon-mfg": { "command": "python",
     "args": ["/路径/beacon-mfg/mcp/server.py"],
     "env": { "BEACON_REPO": "/路径/beacon-mfg" } } } }
 
-// 方式二：npm 安装后
+// 方式二：npm 安装（推荐，无需 clone、无需填路径）
 { "mcpServers": { "beacon-mfg": { "command": "beacon-mfg-mcp", "args": [] } } }
 ```
