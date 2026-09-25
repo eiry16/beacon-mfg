@@ -127,7 +127,7 @@ npx skills add eiry16/beacon-mfg
 | 51 批发业 | 3101 | 2648 | 453 |
 | 52 零售业 | 1176 | 945 | 231 |
 
-**英文数据集**（`data/en/gb/`，与中文同构的国标归档）：**144596 条英文镜像**，与中文按 `id` 一一对应（`en_backfill.py` 增量补齐 + `en_sync_industry.py` 补 `industry_en` 标签），供海外 Agent/买家使用。
+**英文数据集**（`data/en/gb/`，与中文同构的国标归档）：**150198 条英文镜像**，与中文按 `id` 一一对应（`en_backfill.py` 增量补齐 + `en_sync_industry.py` 补 `industry_en` 标签），供海外 Agent/买家使用。
 
 覆盖地区：75 个城市——长三角（苏州、宁波、上海、无锡、杭州、嘉兴等）、珠三角（东莞、深圳、佛山、广州等），明细见 `data/region-index.json`。
 
