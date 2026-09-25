@@ -249,5 +249,40 @@
       "name": "建筑工程用机械制造",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0160700",
+    "company_en": "Shenzhen Weiteng Construction Engineering Co., Ltd.",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Software Development"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 1 Building, A Tower (Keyuan Road), Shenzhen Software Industry Base",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "3514",
+      "name": "建筑工程用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑工程用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑工程"
+    },
+    "industry_en": {
+      "code": "3514",
+      "name_en": null,
+      "level": "class",
+      "name": "建筑工程用机械制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/35/3514"
   }
 ]

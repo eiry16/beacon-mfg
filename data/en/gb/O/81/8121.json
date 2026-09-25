@@ -11722,7 +11722,7 @@
   },
   {
     "id": "CN-MFG-0083868",
-    "company_en": "Lenovo Authorized Store (Shenzhen Longguan Avenue 224, Jinlonghuang Plaza 1st Floor L032 Store)",
+    "company_en": "Lenovo Store (Shenzhen Longguan Avenue 224 Store, Jinlonghuang Plaza 1st Floor L032 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -11733,7 +11733,7 @@
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "Longhua Street, Hualian Community, Jinlonghuang Plaza,苏宁易购1st Floor Lenovo Computer Counter",
+    "address_en": "1st Floor苏宁易购, Jinlonghuang Plaza, Hualian Community, Longhua Street",
     "contact_phone": "153****5557",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -13198,7 +13198,7 @@
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "Nantou Street Office, Nantou New Road 3022, Huarewa万家Happy Song 1st Floor 140",
+    "address_en": "No. 140, 1st Floor, Huawell万家, Nanshou New Road, Nanshan Street Office",
     "contact_phone": "137****4525",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -16664,7 +16664,7 @@
   },
   {
     "id": "CN-MFG-0084273",
-    "company_en": "Lenovo Bayi Computer Repair (Chebei Service Station)",
+    "company_en": "Lenovo Baiying Computer Repair (Chebei Service Station)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -16676,7 +16676,7 @@
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "No. 50, 101 Shop, Chebei坑边Dajie",
+    "address_en": "No. 101, 50, Chebeikeng Street",
     "contact_phone": "137****5159",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -37881,7 +37881,7 @@
   },
   {
     "id": "CN-MFG-0085857",
-    "company_en": "Lenovo Bayi Service Center (Changxiawan Street Chongwen兰特庭58 Store)",
+    "company_en": "Lenovo Baiying Service Center (Changxiawan Street Chongwen兰特 58 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -37893,7 +37893,7 @@
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 36 Fengsheng Road, Jiameiya Jinyu Tianxia A Block 17 Building 7th Floor 03 Room",
+    "address_en": "No. 03, 7th Floor, Building 17, Block A, Jiazhao Industry Golden Domain, Fengsheng Road",
     "contact_phone": "159****7447; 180****6280",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -49280,7 +49280,7 @@
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "World City Center Office Building 1-4th Floor (Subway Line 11 Line 2 Guanggu Square J Exit)",
+    "address_en": "1-4th Floor, World City Center Office Building (Exit J of Metro Line 11 and Line 2 Guanggu Square)",
     "contact_phone": "0714-3703585",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -76349,7 +76349,7 @@
   },
   {
     "id": "CN-MFG-0104253",
-    "company_en": "Lenovo Authorized Store (Kunming Xishan District Park 1903 Store)",
+    "company_en": "Lenovo Store (Kunming Xishan District Park 1903 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -76360,7 +76360,7 @@
       "province": "Yunnan",
       "city": "Kunming"
     },
-    "address_en": "Park1903 Negative 1st Floor Duocai Market (left side of凯旋门前, after taking the escalator down, walk straight for 100 meters)",
+    "address_en": "B1 Duancai Market (100 meters straight after the escalator on the left side of the凯旋门 before the gate)",
     "contact_phone": "137****4376",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -99827,6 +99827,76 @@
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-19",
+    "note_en": "",
+    "industry": {
+      "code": "8121",
+      "name": "计算机和辅助设备修理",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 计算机和办公设备维修 > 计算机和辅助设备修理",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电脑维修"
+    },
+    "industry_en": {
+      "code": "8121",
+      "name_en": "Computer & Peripheral Equipment Repair",
+      "level": "class",
+      "name": "计算机和辅助设备修理",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8121"
+  },
+  {
+    "id": "CN-MFG-0157304",
+    "company_en": "Fengxing Youji Mobile Phone Computer Repair & Recycling (Dongcheng Store)",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Lithium Battery"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 279 Dongcheng Middle Road, Dongcheng Street, Dongcheng District, 109 Junhao Business Center",
+    "contact_phone": "153****0414; 4001589916",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "8121",
+      "name": "计算机和辅助设备修理",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 计算机和办公设备维修 > 计算机和辅助设备修理",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "电脑维修"
+    },
+    "industry_en": {
+      "code": "8121",
+      "name_en": "Computer & Peripheral Equipment Repair",
+      "level": "class",
+      "name": "计算机和辅助设备修理",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8121"
+  },
+  {
+    "id": "CN-MFG-0157376",
+    "company_en": "Chuntong Mobile Phone Computer Repair",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Lithium Battery"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 2343 Xiangcheng Avenue, Yuanhe Street, Xiangcheng District, 1st Floor, A021-1-3, Xierden Furniture Mall",
+    "contact_phone": "139****4144",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
     "note_en": "",
     "industry": {
       "code": "8121",

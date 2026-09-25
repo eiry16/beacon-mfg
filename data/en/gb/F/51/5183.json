@@ -1962,17 +1962,17 @@
   },
   {
     "id": "CN-MFG-0143712",
-    "company_en": "Dulan驿・HomeStay・Artistic Beauty Inn (West Lake Lingyin Store)",
+    "company_en": "Dulan驿・HomeStay・Art Hostel (West Lake Lingyin Store)",
     "category": "批发和零售业",
     "category_en": "批发和零售业",
     "keywords_en": [
-      "Guesthouse"
+      "Inn"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Hangzhou"
     },
-    "address_en": "No. 76 Lanjiawan, opposite Nanshan South Restaurant (3rd room after entering Qidi Inn)",
+    "address_en": "No. 76 Lanjiawan, opposite Nanshan South Restaurant (the 3rd room after entering the original Qidi Inn)",
     "contact_phone": "137****8026",
     "source": "public_directory",
     "verified_at": "2026-09-21",
@@ -2536,6 +2536,41 @@
     "contact_phone": "+861056320612; 11943604",
     "source": "public_directory",
     "verified_at": "2026-09-22",
+    "note_en": "",
+    "industry": {
+      "code": "5183",
+      "name": "艺术品、收藏品拍卖",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 贸易经纪与代理 > 艺术品、收藏品拍卖",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "艺术"
+    },
+    "industry_en": {
+      "code": "5183",
+      "name_en": "Artworks & Collectibles Auction",
+      "level": "class",
+      "name": "艺术品、收藏品拍卖",
+      "confidence": "high"
+    },
+    "_bucket": "F/51/5183"
+  },
+  {
+    "id": "CN-MFG-0157142",
+    "company_en": "Lemi Shanghai Flagship Store - Headquarter Lemi Art Lamp - Designer",
+    "category": "批发和零售业",
+    "category_en": "批发和零售业",
+    "keywords_en": [
+      "LED lighting"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 158 Jincang Road, Jinqiao Hongxingmeikong, 1st Gate, Honey Hall, 5th Floor",
+    "contact_phone": "150****8639",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
     "note_en": "",
     "industry": {
       "code": "5183",

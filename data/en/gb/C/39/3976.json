@@ -28,20 +28,55 @@
   },
   {
     "id": "CN-MFG-0027252",
-    "company_en": "Kunshan Xiguang Electronic Machinery Manufacturing Co., Ltd.",
+    "company_en": "Kunshan XiGuang Electronic Machinery Manufacturing Co., Ltd.",
     "category": "钣金冲压",
     "category_en": "Sheet Metal & Stamping",
     "keywords_en": [
-      "Machine Processing"
+      "Mechanical Processing"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 14 Zh浦 Road, Qianleng Town",
+    "address_en": "No. 14, Zhipu Road, Qianleng Town",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-13",
+    "note_en": "",
+    "industry": {
+      "code": "3976",
+      "name": "光电子器件制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 光电子器件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "光电子"
+    },
+    "industry_en": {
+      "code": "3976",
+      "name_en": null,
+      "level": "class",
+      "name": "光电子器件制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/39/3976"
+  },
+  {
+    "id": "CN-MFG-0157614",
+    "company_en": "Shenzhen HanGuang Electronic Technology Co., Ltd. R&D Manufacturing Center",
+    "category": "钣金冲压",
+    "category_en": "Sheet Metal & Stamping",
+    "keywords_en": [
+      "Electrical Machinery Manufacturing"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 2, Xituo Road, Meilin Street, 902, Xinli Kang Wisdom Headquarter Building",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
     "note_en": "",
     "industry": {
       "code": "3976",
