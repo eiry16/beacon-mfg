@@ -71853,5 +71853,103 @@
       "evidence": "卷闸门"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0161771",
+    "company": "宏城钢构系统门窗",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发"
+    ],
+    "region": {
+      "province": "天津",
+      "city": "天津",
+      "district": "东丽区"
+    },
+    "address": "万新街道成林道211号银河装饰城灯具楼C区13号",
+    "contact_phone": "155****2778",
+    "lat": 39.135425,
+    "lng": 117.296925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J2HM87F7",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "门窗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "程林庄",
+      "adcode": "120110",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3312",
+      "name": "金属门窗制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属门窗制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "门窗"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0161804",
+    "company": "鑫海不锈钢断桥铝铁艺附件批发",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发"
+    ],
+    "region": {
+      "province": "天津",
+      "city": "天津",
+      "district": "北辰区"
+    },
+    "address": "双口镇东堤村",
+    "contact_phone": "待核实",
+    "lat": 39.193699,
+    "lng": 116.996743,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGCGLTS",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "120113",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3312",
+      "name": "金属门窗制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属门窗制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "断桥铝"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -945,7 +945,8 @@
     "company": "上海魅服网络科技有限公司",
     "category": "信息传输、软件和信息技术服务业",
     "keywords": [
-      "网络安全"
+      "网络安全",
+      "软件开发"
     ],
     "region": {
       "province": "上海",
@@ -2077,6 +2078,202 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "互联网"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0160181",
+    "company": "上海陇粹网络科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "软件开发"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "金山区"
+    },
+    "address": "25幢3074",
+    "contact_phone": "132****4123",
+    "lat": 30.896722,
+    "lng": 121.327418,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LUKXUSS1",
+      "type": "公司企业;公司;网络科技",
+      "typecode": "170206",
+      "alias": "",
+      "tag": "",
+      "keytag": "网站建设/软件开发",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "亭林",
+      "adcode": "310116",
+      "search_keyword": "软件开发"
+    },
+    "industry": {
+      "code": "6490",
+      "name": "其他互联网服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 互联网和相关服务 > 其他互联网服务 > 其他互联网服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "网络科技"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0160708",
+    "company": "深圳市云朗信息技术开发有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "软件开发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "南山区"
+    },
+    "address": "学府路深圳市软件产业基地1栋深圳市软件产业基地1栋",
+    "contact_phone": "待核实",
+    "lat": 22.524482,
+    "lng": 113.940154,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6JCFCPL",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "后海",
+      "adcode": "440305",
+      "search_keyword": "软件开发"
+    },
+    "industry": {
+      "code": "6490",
+      "name": "其他互联网服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 互联网和相关服务 > 其他互联网服务 > 其他互联网服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "信息技术"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0160727",
+    "company": "深圳市华创微课网络科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "软件开发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙华区"
+    },
+    "address": "龙华街道和平路54号鸿华中心1303室",
+    "contact_phone": "199****0618",
+    "lat": 22.67044,
+    "lng": 114.03914,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K0LMSRIN",
+      "type": "公司企业;公司;网络科技",
+      "typecode": "170206",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙华",
+      "adcode": "440309",
+      "search_keyword": "软件开发"
+    },
+    "industry": {
+      "code": "6490",
+      "name": "其他互联网服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 互联网和相关服务 > 其他互联网服务 > 其他互联网服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "网络科技"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0160768",
+    "company": "深圳市太阳帆信息技术开发有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "软件开发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗区"
+    },
+    "address": "平湖华南城华利嘉电子市场B1D010",
+    "contact_phone": "135****4667",
+    "lat": 22.674032,
+    "lng": 114.12366,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKTZVBW",
+      "type": "生活服务;中介机构;中介机构",
+      "typecode": "071600",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "平湖",
+      "adcode": "440307",
+      "search_keyword": "软件开发"
+    },
+    "industry": {
+      "code": "6490",
+      "name": "其他互联网服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 互联网和相关服务 > 其他互联网服务 > 其他互联网服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "信息技术"
     },
     "is_manufacturer": false
   }

@@ -8102,5 +8102,103 @@
       "evidence": "百货"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0160471",
+    "company": "YS普拉提中心(巴黎春天百货淮海店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "健身房"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "黄浦区"
+    },
+    "address": "淮海中路939-947号巴黎春天百货(淮海店)L6层",
+    "contact_phone": "136****0509",
+    "lat": 31.216739,
+    "lng": 121.45944,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I1VU3PHV",
+      "type": "体育休闲服务;运动场馆;健身中心",
+      "typecode": "080111",
+      "alias": "",
+      "tag": "",
+      "keytag": "健身中心",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "淮海路",
+      "adcode": "310101",
+      "search_keyword": "健身房"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0161768",
+    "company": "龙禧小百货直销零售",
+    "category": "批发和零售业",
+    "keywords": [
+      "钢材批发"
+    ],
+    "region": {
+      "province": "天津",
+      "city": "天津",
+      "district": "红桥区"
+    },
+    "address": "西沽街道西沽街龙禧园社区卫生服务站龙禧园北区",
+    "contact_phone": "155****0706",
+    "lat": 39.16167,
+    "lng": 117.141723,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFDDF3J",
+      "type": "购物服务;便民商店/便利店;便民商店/便利店",
+      "typecode": "060200",
+      "alias": "",
+      "tag": "",
+      "keytag": "日杂店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "咸阳路",
+      "adcode": "120106",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "5212",
+      "name": "超级市场零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 综合零售 > 超级市场零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "百货"
+    },
+    "is_manufacturer": false
   }
 ]

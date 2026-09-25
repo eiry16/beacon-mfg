@@ -48,5 +48,54 @@
     },
     "is_manufacturer": false,
     "_bucket": "O/80/8060"
+  },
+  {
+    "id": "CN-MFG-0160755",
+    "company": "歌乔教育·美工设计视频摄影培训",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "软件开发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙华区"
+    },
+    "address": "大浪商业中心-华旺路玖号公馆三楼",
+    "contact_phone": "151****7765; 153****6039; 181****3518",
+    "lat": 22.673417,
+    "lng": 113.993604,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I29HHX5J",
+      "type": "科教文化服务;培训机构;培训机构",
+      "typecode": "141400",
+      "alias": "",
+      "tag": "",
+      "keytag": "设计/摄影培训",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "大浪",
+      "adcode": "440309",
+      "search_keyword": "软件开发"
+    },
+    "industry": {
+      "code": "8060",
+      "name": "摄影扩印服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 摄影扩印服务 > 摄影扩印服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "摄影"
+    },
+    "is_manufacturer": false
   }
 ]

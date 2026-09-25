@@ -6931,5 +6931,54 @@
       "evidence": "权服务"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0160758",
+    "company": "深圳知承知识产权代理有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "软件开发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "宝安区"
+    },
+    "address": "新安街道兴东社区71区金鸿峰大厦110",
+    "contact_phone": "0755-29378806",
+    "lat": 22.583179,
+    "lng": 113.917221,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HASM89JT",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新安",
+      "adcode": "440306",
+      "search_keyword": "软件开发"
+    },
+    "industry": {
+      "code": "7520",
+      "name": "知识产权服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 科技推广和应用服务业 > 知识产权服务 > 知识产权服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "知识产权"
+    },
+    "is_manufacturer": false
   }
 ]

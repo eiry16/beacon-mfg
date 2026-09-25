@@ -191,5 +191,54 @@
       "evidence": "集装箱"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0161723",
+    "company": "汇鑫集装箱租售",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发"
+    ],
+    "region": {
+      "province": "天津",
+      "city": "天津",
+      "district": "滨海新区"
+    },
+    "address": "胡家园街道于庄子路",
+    "contact_phone": "150****8341; 152****2041",
+    "lat": 39.029625,
+    "lng": 117.534975,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JGMC7Z4B",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "120116",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3331",
+      "name": "集装箱制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 集装箱及金属包装容器制造 > 集装箱制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "集装箱"
+    },
+    "is_manufacturer": true
   }
 ]
