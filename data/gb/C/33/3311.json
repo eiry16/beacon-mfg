@@ -137864,5 +137864,103 @@
       "evidence": "货架"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0161727",
+    "company": "天津嘉禾彩钢钢结构加工厂",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发"
+    ],
+    "region": {
+      "province": "天津",
+      "city": "天津",
+      "district": "西青区"
+    },
+    "address": "安兴路20号",
+    "contact_phone": "137****0600",
+    "lat": 39.036424,
+    "lng": 117.082314,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAOSKLBQ",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "120111",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "钢结构"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0161730",
+    "company": "冲孔钣金焊接加工厂",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发"
+    ],
+    "region": {
+      "province": "天津",
+      "city": "天津",
+      "district": "西青区"
+    },
+    "address": "紫阳道冲孔加工厂",
+    "contact_phone": "130****9070; 186****8031",
+    "lat": 39.111841,
+    "lng": 117.099399,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L6GH1LXX",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "工厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "120111",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3311",
+      "name": "金属结构制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 结构性金属制品制造 > 金属结构制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "钣金"
+    },
+    "is_manufacturer": true
   }
 ]

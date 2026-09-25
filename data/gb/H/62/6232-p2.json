@@ -64349,7 +64349,8 @@
     "company": "SHONEN JUMP CAFE",
     "category": "住宿和餐饮业",
     "keywords": [
-      "咖啡店"
+      "咖啡店",
+      "餐厅"
     ],
     "region": {
       "province": "上海",
@@ -221717,5 +221718,54 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0160597",
+    "company": "苏逅咖啡·湖景餐吧(石湖景区店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "餐厅"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "石湖西路石湖景区南商业街台清晓",
+    "contact_phone": "0512-68210779",
+    "lat": 31.247923,
+    "lng": 120.601822,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-25",
+    "imported_at": "2026-09-25",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGFP31S",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "美式咖啡,巧克力松饼,薯条,香草拿铁,抹茶松饼,盆栽奶茶,焦糖玛奇朵,咖啡摩卡,坚果拼盘,卡布基诺,伯爵红茶,水果冰淇淋松饼,香肠拼盘,芝士蛋糕,提拉米苏,下午茶",
+      "keytag": "主题餐厅",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "友新",
+      "adcode": "320506",
+      "search_keyword": "餐厅"
+    },
+    "industry": {
+      "code": "6232",
+      "name": "咖啡馆服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 饮料及冷饮服务 > 咖啡馆服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "咖啡"
+    },
+    "is_manufacturer": false
   }
 ]
