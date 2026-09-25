@@ -16,7 +16,7 @@
 | 已核实（verified） | **112061** |
 | 待核实（unverified_poi） | **38168** |
 | 模板（template，示例占位） | **0** |
-| 英文镜像 | **144596** |
+| 英文镜像 | **150198** |
 | 覆盖城市 | **75** |
 | 数据来源（当前） | 公开地图/工商 POI 名录（97.9% public_directory）、企业自主认证（平台核验后回流）（2.1% certification） |
 
@@ -84,7 +84,7 @@
 
 | 字段 | 非空率 | 备注 |
 |---|---|---|
-| id / company / category / keywords / region / contact_phone | 100%（112060/112061） | 核心必填字段 |
+| id / company / category / keywords / region / contact_phone | 100%（112061/112061） | 核心必填字段 |
 | address | 100%（112061/112061） | 公开地址 |
 | lat | 97.2%（108972/112061） | 纬度（LBS 检索） |
 | lng | 97.2%（108972/112061） | 经度（LBS 检索） |

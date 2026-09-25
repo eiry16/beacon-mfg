@@ -604,13 +604,13 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Inn"
+      "Guesthouse"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "F7, FuDao Building, No. 124 Xian南路",
+    "address_en": "No. 124 Xian'an South Road, F7, FuDao Building",
     "contact_phone": "028-68250195; 028-87779198; 150****4504",
     "source": "public_directory",
     "verified_at": "2026-09-22",
@@ -1800,7 +1800,7 @@
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "7th Floor, Building B,招商东城国际中心, No. 7, Second Section, Second Ring Road East",
+    "address_en": "No. 7, Second Section East of Erhuan Road, B Building,招商东城国际中心4th Floor",
     "contact_phone": "028-85072788; 193****0998",
     "source": "public_directory",
     "verified_at": "2026-09-22",
@@ -2175,7 +2175,7 @@
   },
   {
     "id": "CN-MFG-0149641",
-    "company_en": "Shengya Ge Hotel-style Apartment (High-tech Zone Science City Store)",
+    "company_en": "Shengya Ge Hotel Apartment (High-tech Zone Science City Store)",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
@@ -2185,7 +2185,7 @@
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 8, Keli New Road, Dongzhu Street, Building 2, 409,立德Business Plaza",
+    "address_en": "No. 8, Kexin Road, Dongzhu Street, 2nd Building, 409th Room,立德Business Plaza",
     "contact_phone": "181****7819; 181****7621; +861056320612; 37559244",
     "source": "public_directory",
     "verified_at": "2026-09-22",
@@ -2844,13 +2844,13 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Deluxe Inn"
+      "Deluxe Guesthouse"
     ],
     "region": {
       "province": "Zhejiang",
       "city": "Hangzhou"
     },
-    "address_en": "2/F, Building 2, 528, Intersection of Huan Ding Road and Dingqiao Road, Dinglan Street (Southeast corner of Q启迪 (Hangzhou·Dinglan) International Innovation Port)",
+    "address_en": "No. 528, 2nd Building, Southwest Corner of Intersection of Huan Ding Road and Dingqiao Road, Dinglan Street, (Hangzhou·Dinglan) International Innovation Port",
     "contact_phone": "195****1726",
     "source": "public_directory",
     "verified_at": "2026-09-22",
@@ -3540,17 +3540,17 @@
   },
   {
     "id": "CN-MFG-0150744",
-    "company_en": "Week9 Hotel (Chengdu Xi浦 Store)",
+    "company_en": "Weekday Hotel (Chengdu Xi浦 Store)",
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "deluxe inn"
+      "Deluxe Guesthouse"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 231 East Section of Xueyuan Road, Aocheng Building 17, 1st Floor",
+    "address_en": "No. 231, East Section of Xiaoyuan Road, Xi浦Town, 1st Floor, Aocity 17th Building",
     "contact_phone": "028-87983400",
     "source": "public_directory",
     "verified_at": "2026-09-22",
@@ -3754,13 +3754,13 @@
     "category": "住宿和餐饮业",
     "category_en": "住宿和餐饮业",
     "keywords_en": [
-      "Deluxe Inn"
+      "Deluxe Guesthouse"
     ],
     "region": {
       "province": "Sichuan",
       "city": "Chengdu"
     },
-    "address_en": "No. 666, Section 2, Xihanggang Avenue, 16 Building, 25 Building",
+    "address_en": "No. 666, Second Section of Xihanggang Avenue, 16th Building, 25th Building",
     "contact_phone": "138****0531; 181****4318",
     "source": "public_directory",
     "verified_at": "2026-09-22",
@@ -4254,6 +4254,286 @@
     "contact_phone": "199****4068",
     "source": "public_directory",
     "verified_at": "2026-09-22",
+    "note_en": "",
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "industry_en": {
+      "code": "6110",
+      "name_en": "Tourist Hotels",
+      "level": "class",
+      "name": "旅游饭店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6110"
+  },
+  {
+    "id": "CN-MFG-0160439",
+    "company_en": "Shanghai Bund Waldorf Astoria Hotel Gym",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Gym"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 2, Dongyi Road, Shanghai Bund Waldorf Astoria Hotel, 3rd Floor",
+    "contact_phone": "021-63229988",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "industry_en": {
+      "code": "6110",
+      "name_en": "Tourist Hotels",
+      "level": "class",
+      "name": "旅游饭店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6110"
+  },
+  {
+    "id": "CN-MFG-0160524",
+    "company_en": "City Hotel Fitness Center",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Gym"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 5-7, South Shaanxi Road, City Hotel",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "industry_en": {
+      "code": "6110",
+      "name_en": "Tourist Hotels",
+      "level": "class",
+      "name": "旅游饭店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6110"
+  },
+  {
+    "id": "CN-MFG-0161006",
+    "company_en": "Shenzhen Wuzhou Hotel Fitness Center",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Gym"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 6001, Shennan Avenue, Shenzhen Wuzhou Hotel",
+    "contact_phone": "0755-82938000; 0755-82938220",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宾馆"
+    },
+    "industry_en": {
+      "code": "6110",
+      "name_en": "Tourist Hotels",
+      "level": "class",
+      "name": "旅游饭店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6110"
+  },
+  {
+    "id": "CN-MFG-0161022",
+    "company_en": "Four Seasons Hotel Fitness Center",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Gym"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 138, Fuhua 3rd Road, Four Seasons Hotel, 1st Floor",
+    "contact_phone": "0755-88268888",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "industry_en": {
+      "code": "6110",
+      "name_en": "Tourist Hotels",
+      "level": "class",
+      "name": "旅游饭店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6110"
+  },
+  {
+    "id": "CN-MFG-0161035",
+    "company_en": "Park Hyatt Hotel - Fitness Center",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Gym"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 5023, Yitian Road, Fu'an Community, Futian Street, South Tower of Ping An Financial Center, 8th Floor",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "industry_en": {
+      "code": "6110",
+      "name_en": "Tourist Hotels",
+      "level": "class",
+      "name": "旅游饭店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6110"
+  },
+  {
+    "id": "CN-MFG-0161563",
+    "company_en": "KEEPWEEK Gym (Guangzhou Hotel Store)",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Gym"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 2, Yixi Road, Renmin Street, Guangzhou Hotel, 2nd Floor (next to Haizhu Square Subway Station Exit E)",
+    "contact_phone": "134****0463; 159****2020",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宾馆"
+    },
+    "industry_en": {
+      "code": "6110",
+      "name_en": "Tourist Hotels",
+      "level": "class",
+      "name": "旅游饭店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6110"
+  },
+  {
+    "id": "CN-MFG-0161619",
+    "company_en": "Hua Xia Hotel Fitness Center",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Gym"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 8, Qiaoguang Road, Hua Xia Hotel (near Haizhu Square)",
+    "contact_phone": "020-83355988",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "industry_en": {
+      "code": "6110",
+      "name_en": "Tourist Hotels",
+      "level": "class",
+      "name": "旅游饭店",
+      "confidence": "medium"
+    },
+    "_bucket": "H/61/6110"
+  },
+  {
+    "id": "CN-MFG-0161632",
+    "company_en": "Majestic Hotel Gym",
+    "category": "住宿和餐饮业",
+    "category_en": "住宿和餐饮业",
+    "keywords_en": [
+      "Gym"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "60 meters east of the intersection of Wenming Road and Beijing Road",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
     "note_en": "",
     "industry": {
       "code": "6110",

@@ -36,5 +36,40 @@
       "name": "改装汽车制造",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0158230",
+    "company_en": "Wuxi Electric Vehicle Parts Co., Ltd.",
+    "category": "精密机械加工",
+    "category_en": "Precision Machining",
+    "keywords_en": [
+      "Automotive Parts"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Wuxi"
+    },
+    "address_en": "No. 97 Meiyu Road",
+    "contact_phone": "0510-88156611",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "3630",
+      "name": "改装汽车制造",
+      "level": "class",
+      "path": "C 制造业 > 汽车制造业 > 改装汽车制造 > 改装汽车制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "装汽车"
+    },
+    "industry_en": {
+      "code": "3630",
+      "name_en": null,
+      "level": "class",
+      "name": "改装汽车制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/36/3630"
   }
 ]

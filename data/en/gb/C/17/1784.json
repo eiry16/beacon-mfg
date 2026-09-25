@@ -1,7 +1,7 @@
 [
   {
     "id": "CN-MFG-0019065",
-    "company_en": "Haotian Color棚 Sign Canvas",
+    "company_en": "昊天Color棚Sign Canvas",
     "category": "原材料",
     "category_en": "Raw Materials",
     "keywords_en": [
@@ -12,7 +12,7 @@
       "province": "Guangdong",
       "city": "Huizhou"
     },
-    "address_en": "No. 113 Huangling Road, Huangzhuang, Xinxu Town",
+    "address_en": "No. 113, Huangling Road, Huangzhuang, Xinxu Town",
     "contact_phone": "136****0402",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -88,5 +88,40 @@
       "confidence": "high"
     },
     "source_url": "https://www.amap.com/place/B0FFM4GGR6"
+  },
+  {
+    "id": "CN-MFG-0158551",
+    "company_en": "Shunfa Canvas Tent Store",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Glass Processing"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Dongguan"
+    },
+    "address_en": "No. 20, Jimei 6 Lane, Dongfeng Town, Humen",
+    "contact_phone": "136****2012",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "1784",
+      "name": "篷、帆布制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 产业用纺织制成品制造 > 篷、帆布制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "帆布"
+    },
+    "industry_en": {
+      "code": "1784",
+      "name_en": null,
+      "level": "class",
+      "name": "篷、帆布制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/17/1784"
   }
 ]

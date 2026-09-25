@@ -1357,7 +1357,7 @@
   },
   {
     "id": "CN-MFG-0031179",
-    "company_en": "Suzhou You赛Jiance Technology Co., Ltd.",
+    "company_en": "Suzhou You赛 Inspection Technology Co., Ltd.",
     "category": "科学研究和技术服务业",
     "category_en": "科学研究和技术服务业",
     "keywords_en": [
@@ -1367,7 +1367,7 @@
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 160 Northeast of the intersection of He Feng Road and Cang Xu Road",
+    "address_en": "160 meters northeast of the intersection of He Feng Road and Cangxu Road",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-14",
@@ -14081,5 +14081,40 @@
       "name": "检测服务",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0159881",
+    "company_en": "Shenzhen Zhongxiang Inspection Technology Co., Ltd.",
+    "category": "科学研究和技术服务业",
+    "category_en": "科学研究和技术服务业",
+    "keywords_en": [
+      "Metal Products"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 6, 4th Road, Loucun Community, Xinhuhui Street",
+    "contact_phone": "0755-21061876; 181****7566",
+    "source": "public_directory",
+    "verified_at": "2026-09-25",
+    "note_en": "",
+    "industry": {
+      "code": "7452",
+      "name": "检测服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 质检技术服务 > 检测服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "检测技术"
+    },
+    "industry_en": {
+      "code": "7452",
+      "name_en": "Testing & Inspection Services",
+      "level": "class",
+      "name": "检测服务",
+      "confidence": "high"
+    },
+    "_bucket": "M/74/7452"
   }
 ]
