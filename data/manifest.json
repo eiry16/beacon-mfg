@@ -5,8 +5,8 @@
   "usage": "1) 拉本文件 2) 按 c（国标码）筛分片 3) 缓存本次响应返回的 ETag，下次带 If-None-Match 拉分片（命中返回 304，零传输） 4) 命中后按 id 调详情 API 取完整档案",
   "field_note": "h = 分片内容 SHA1，用于下载后校验完整性；做增量更新请用服务端响应头里的 ETag，不要用 h。",
   "generated_at": "2026-09-27",
-  "total_shards": 870,
-  "total_bytes": 416517121,
+  "total_shards": 874,
+  "total_bytes": 416659541,
   "by_type": {
    "fp": {
     "shards": 282,
@@ -32,6 +32,11 @@
     "shards": 1,
     "bytes": 17131645,
     "records": 150230
+   },
+   "idx": {
+    "shards": 4,
+    "bytes": 142420,
+    "records": 860
    }
   },
   "field_spec": {
@@ -39,7 +44,7 @@
    "b": "归档桶键",
    "c": "国标码",
    "n": "国标名称",
-   "t": "类型 fp 指纹 / zh 中文 / en 英文 / pq 列式 / phone 号码索引 / name 名称索引",
+   "t": "类型 fp 指纹 / zh 中文 / en 英文 / pq 列式 / phone 号码索引 / name 名称索引 / idx 关键词解析索引",
    "k": "记录条数",
    "z": "字节数",
    "h": "内容 SHA1（作 ETag）",
@@ -9615,6 +9620,50 @@
    "k": 150230,
    "z": 17131645,
    "h": "210736568ad2014ff44cef103f2bed839348d4b1",
+   "u": "2026-09-27"
+  },
+  {
+   "p": "skills/registry/index/cap.json",
+   "b": "idx-cap",
+   "c": "",
+   "n": "能力词面表",
+   "t": "idx",
+   "k": 382,
+   "z": 29656,
+   "h": "889fe13525bd7dcaed40a43583dc910f3746e6a9",
+   "u": "2026-09-27"
+  },
+  {
+   "p": "data/gb-index.json",
+   "b": "idx-gb-index",
+   "c": "",
+   "n": "国标码索引",
+   "t": "idx",
+   "k": 269,
+   "z": 76795,
+   "h": "9ca5c3b7dbd357bbcb733bdb50c6d6bcf749003c",
+   "u": "2026-09-27"
+  },
+  {
+   "p": "data/gb-alias.json",
+   "b": "idx-gb-alias",
+   "c": "",
+   "n": "采购词别名表",
+   "t": "idx",
+   "k": 62,
+   "z": 31558,
+   "h": "637e2ee6b827658a2af37a66d1b43f1c63c679a5",
+   "u": "2026-09-09"
+  },
+  {
+   "p": "data/cap-map.json",
+   "b": "idx-cap-map",
+   "c": "",
+   "n": "能力卡定位表",
+   "t": "idx",
+   "k": 147,
+   "z": 4411,
+   "h": "8f8a13c045cbbb24ada26b7139bddc05048342ff",
    "u": "2026-09-27"
   }
  ]
