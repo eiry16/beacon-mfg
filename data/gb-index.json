@@ -2,7 +2,7 @@
   "metadata": {
     "standard": "GB/T 4754-2017 国民经济行业分类（含 2019 年第 1 号修改单）",
     "description": "厂商数据库按国标四级归档索引。门类 1 位字母 / 大类 2 位 / 中类 3 位 / 小类 4 位。客户 Agent 可按任意层级检索。",
-    "generated_at": "2026-09-25",
+    "generated_at": "2026-09-27",
     "counts": {
       "gates_in_standard": 20,
       "divisions_in_standard": 97,
@@ -10,18 +10,18 @@
       "classes_in_standard": 1382,
       "gates_used": 7,
       "divisions_used": 45,
-      "groups_used": 171,
-      "classes_used": 268
+      "groups_used": 172,
+      "classes_used": 269
     },
-    "total_suppliers": 150229,
-    "classified": 147785,
+    "total_suppliers": 150230,
+    "classified": 147786,
     "unclassified": 2444,
     "layout": "data/gb/{gate}/{division}/{class}.json，无码记录见 _unclassified.json"
   },
   "tree": {
     "C": {
       "name": "制造业",
-      "count": 54687,
+      "count": 54688,
       "divisions": {
         "13": {
           "name": "农副食品加工业",
@@ -559,7 +559,7 @@
         },
         "27": {
           "name": "医药制造业",
-          "count": 5,
+          "count": 6,
           "direct": 0,
           "groups": {
             "271": {
@@ -581,6 +581,17 @@
                 "2720": {
                   "name": "化学药品制剂制造",
                   "count": 3
+                }
+              }
+            },
+            "277": {
+              "name": "卫生材料及医药用品制造",
+              "count": 1,
+              "direct": 0,
+              "classes": {
+                "2770": {
+                  "name": "卫生材料及医药用品制造",
+                  "count": 1
                 }
               }
             }

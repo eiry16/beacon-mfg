@@ -4,24 +4,24 @@
   "description": "分片清单。客户 Agent 只需拉本文件，即可定位并按需下载命中的国标小类分片，无需 clone 整个仓库。",
   "usage": "1) 拉本文件 2) 按 c（国标码）筛分片 3) 缓存本次响应返回的 ETag，下次带 If-None-Match 拉分片（命中返回 304，零传输） 4) 命中后按 id 调详情 API 取完整档案",
   "field_note": "h = 分片内容 SHA1，用于下载后校验完整性；做增量更新请用服务端响应头里的 ETag，不要用 h。",
-  "generated_at": "2026-09-25",
-  "total_shards": 867,
-  "total_bytes": 416550564,
+  "generated_at": "2026-09-27",
+  "total_shards": 870,
+  "total_bytes": 416553389,
   "by_type": {
    "fp": {
-    "shards": 281,
-    "bytes": 32578082,
-    "records": 150229
+    "shards": 282,
+    "bytes": 32578588,
+    "records": 150230
    },
    "zh": {
-    "shards": 292,
-    "bytes": 211635854,
-    "records": 150229
+    "shards": 293,
+    "bytes": 211637006,
+    "records": 150230
    },
    "en": {
-    "shards": 292,
-    "bytes": 152059980,
-    "records": 150198
+    "shards": 293,
+    "bytes": 152061067,
+    "records": 150199
    },
    "phone": {
     "shards": 1,
@@ -30,8 +30,8 @@
    },
    "name": {
     "shards": 1,
-    "bytes": 17131565,
-    "records": 150229
+    "bytes": 17131645,
+    "records": 150230
    }
   },
   "field_spec": {
@@ -56,7 +56,7 @@
    "k": 2444,
    "z": 450950,
    "h": "75c9583187fe90240dfc5222875c6fd2da79ab10",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1313.jsonl",
@@ -67,7 +67,7 @@
    "k": 1,
    "z": 158,
    "h": "7ff2797926d0d388a9e6f4bca445bb5e6bbd7e5c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1314.jsonl",
@@ -78,7 +78,7 @@
    "k": 1,
    "z": 175,
    "h": "82ae5ee55faba9aa721e0a29b952083bfc5138d3",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1329.jsonl",
@@ -89,7 +89,7 @@
    "k": 2,
    "z": 341,
    "h": "ae89eadffd65f01e58b3ce6356e112ae70ba2549",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1351.jsonl",
@@ -100,7 +100,7 @@
    "k": 10,
    "z": 1921,
    "h": "ef0fcf727d97c95496e9209256a95eac6f31f294",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1369.jsonl",
@@ -111,7 +111,7 @@
    "k": 6,
    "z": 1090,
    "h": "f55321fb58f40054d4e4b46bd6c269e6b9348004",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1371.jsonl",
@@ -122,7 +122,7 @@
    "k": 7,
    "z": 1306,
    "h": "f55467bcb72b0f14e2e49293ca84c7042f5461d5",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1392.jsonl",
@@ -133,7 +133,7 @@
    "k": 4,
    "z": 682,
    "h": "220cd87719bb09e5040f8c0d7d119d08cfe25cf7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/13/1399.jsonl",
@@ -144,7 +144,7 @@
    "k": 19,
    "z": 3466,
    "h": "70e0ec571129e42f240be1abe53745c228897b67",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/14/1421.jsonl",
@@ -155,7 +155,7 @@
    "k": 7,
    "z": 1227,
    "h": "ba8d4d226e165b361bbc0ccf8a8294ecceb68ac2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/14/1449.jsonl",
@@ -166,7 +166,7 @@
    "k": 5,
    "z": 919,
    "h": "39921133e31c4716027a1f36a67b67fd053bfdee",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/14/1459.jsonl",
@@ -177,7 +177,7 @@
    "k": 1,
    "z": 186,
    "h": "c77f495a08db2491a7e4a78b162dce93af929796",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/14/1495.jsonl",
@@ -188,7 +188,7 @@
    "k": 1,
    "z": 206,
    "h": "4527610d4f6cd70e43d96da6cad01c46b17604a1",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/14/1499.jsonl",
@@ -199,7 +199,7 @@
    "k": 67,
    "z": 12445,
    "h": "e7f833f4f2f1079a811cf915adc8d96a9ff2877b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1511.jsonl",
@@ -210,7 +210,7 @@
    "k": 2,
    "z": 340,
    "h": "dea5210ada8687434ca47615021cab2d95d73d42",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1512.jsonl",
@@ -221,7 +221,7 @@
    "k": 3,
    "z": 463,
    "h": "055322503dc89500e4f3665ccc1200d631ed4548",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1513.jsonl",
@@ -232,7 +232,7 @@
    "k": 24,
    "z": 4334,
    "h": "c8b15de7bc14c9189878415979c856e7b895d199",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1515.jsonl",
@@ -243,7 +243,7 @@
    "k": 1,
    "z": 174,
    "h": "ca9d9528501d8909e4a17b6cffadbf2728b3f8b2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1529.jsonl",
@@ -254,7 +254,7 @@
    "k": 2,
    "z": 388,
    "h": "32d173963f55a1db6a9cec64f3ee2b0ba39a025c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/15/1530.jsonl",
@@ -265,7 +265,7 @@
    "k": 9,
    "z": 1629,
    "h": "d13420b80529a80d6cc0855d7e27bfac024f09a9",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/16/1620.jsonl",
@@ -276,7 +276,7 @@
    "k": 1,
    "z": 182,
    "h": "2f1020c3784b86ec3436de5a42ba552d86a06ab7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/17/1711.jsonl",
@@ -287,7 +287,7 @@
    "k": 16,
    "z": 3121,
    "h": "fa41fe1dd7773e08d28ee60311f041df646b0829",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/17/1713.jsonl",
@@ -298,7 +298,7 @@
    "k": 1,
    "z": 183,
    "h": "fe4e2cdad7e4e978f3f1b964f520e841d7a6425c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/17/1771.jsonl",
@@ -309,7 +309,7 @@
    "k": 3,
    "z": 537,
    "h": "11775e38b5986dc833cceab5313f31f1b03e0e60",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/17/1773.jsonl",
@@ -320,7 +320,7 @@
    "k": 10,
    "z": 1749,
    "h": "c9fc9be204ad7a47c731e64603ef7c4ab41e4215",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/17/1784.jsonl",
@@ -331,7 +331,7 @@
    "k": 4,
    "z": 705,
    "h": "9a8439bbc36d1149a6bb0a75d0ddad05706c9bb7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/18/1819.jsonl",
@@ -342,7 +342,7 @@
    "k": 26,
    "z": 4702,
    "h": "5b3203347914b3ed35ed544de68b058923919098",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/18/1830.jsonl",
@@ -353,7 +353,7 @@
    "k": 10,
    "z": 1878,
    "h": "253fa88e660de2e03dcce619d73bc10ec32b0516",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/19/1929.jsonl",
@@ -364,7 +364,7 @@
    "k": 6,
    "z": 1085,
    "h": "9e351f4114ea7aa07dae3a456e89e8f0ce9da332",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2012.jsonl",
@@ -375,7 +375,7 @@
    "k": 1,
    "z": 170,
    "h": "8c03fb240620249647a417f794096b676eeb9cc0",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2013.jsonl",
@@ -386,7 +386,7 @@
    "k": 16,
    "z": 3194,
    "h": "b19d5d0b862d64585405a1285788f10ad762e9d2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2019.jsonl",
@@ -397,7 +397,7 @@
    "k": 135,
    "z": 24422,
    "h": "a8f7f099c545103bfb268e9252d49682a81b44b8",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2029.jsonl",
@@ -408,7 +408,7 @@
    "k": 3,
    "z": 598,
    "h": "4d193b2d66afd9e60c345a67fefa8c80ea3e6291",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2033.jsonl",
@@ -419,7 +419,7 @@
    "k": 1,
    "z": 183,
    "h": "a2bd8b2e069383793583f794f695c480d6b45628",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2034.jsonl",
@@ -430,7 +430,7 @@
    "k": 8,
    "z": 1486,
    "h": "76adefbed3fea736dd990f37b86ed5ff12e0d201",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/20/2041.jsonl",
@@ -441,7 +441,7 @@
    "k": 1,
    "z": 177,
    "h": "7d9e51aea246af84f02e81b676722c2826c0edf3",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/21/2140.jsonl",
@@ -452,7 +452,7 @@
    "k": 1,
    "z": 191,
    "h": "12007032b67c1a8b7e341750fecad76323ffff6b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/21/2190.jsonl",
@@ -463,7 +463,7 @@
    "k": 25,
    "z": 4589,
    "h": "48ca7879ed9e40692acf4b6c40239ea4fcd14d8c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/22/2239.jsonl",
@@ -474,7 +474,7 @@
    "k": 17,
    "z": 3129,
    "h": "c580199871b4b29fedc8ed5efa74ca49703a06b5",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/23/2319.jsonl",
@@ -485,7 +485,7 @@
    "k": 73,
    "z": 14350,
    "h": "78b59abde7b58f082e01891d9bc713608872cbac",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2411.jsonl",
@@ -496,7 +496,7 @@
    "k": 3,
    "z": 571,
    "h": "a32dc77c5cbc4ff5a97419b2a0b984d6dd0bce60",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2414.jsonl",
@@ -507,7 +507,7 @@
    "k": 1,
    "z": 182,
    "h": "4d9193f0f97b31fea03523636f4f0a6fdfdd207d",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2432.jsonl",
@@ -518,7 +518,7 @@
    "k": 6,
    "z": 1159,
    "h": "f96d0c309c30b31bbc0f9c6bc91c7bbede9c484e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2437.jsonl",
@@ -529,7 +529,7 @@
    "k": 20,
    "z": 3941,
    "h": "be506ca711d9d1eb44659b8a0fcbe02aa9667527",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/24/2452.jsonl",
@@ -540,7 +540,7 @@
    "k": 6,
    "z": 1155,
    "h": "4c7a3b8f63de45540e0fc6a92575f46df31037e2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/25/254.jsonl",
@@ -551,7 +551,7 @@
    "k": 1,
    "z": 203,
    "h": "752b26b1624966486fc0d941a457e4125cecbd15",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/26/2641.jsonl",
@@ -562,7 +562,7 @@
    "k": 35,
    "z": 6977,
    "h": "fb02f7d1dee6889dc774792feaaa5e1f94e81c5e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/26/2645.jsonl",
@@ -573,7 +573,7 @@
    "k": 4,
    "z": 785,
    "h": "3d8489e9d15412856b2d552ec4648a9e78764b8b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/26/2651.jsonl",
@@ -584,7 +584,7 @@
    "k": 712,
    "z": 149160,
    "h": "7ed66b7b65c7df11b77a11890f41df6f827e6317",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/26/2682.jsonl",
@@ -595,7 +595,7 @@
    "k": 1,
    "z": 224,
    "h": "7c8d1d44d785bb44edb01eecb2732c0d23dfc6f4",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/27/2710.jsonl",
@@ -606,7 +606,7 @@
    "k": 2,
    "z": 363,
    "h": "8e8ee85b8955764a43aa3483455fb2c1e7191ec3",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/27/2720.jsonl",
@@ -617,7 +617,18 @@
    "k": 3,
    "z": 558,
    "h": "5a8ebb2194fee51a69b96de4de5af1b8be114510",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
+  },
+  {
+   "p": "skills/registry/fingerprint/gb/C/27/2770.jsonl",
+   "b": "C/27/2770",
+   "c": "2770",
+   "n": "卫生材料及医药用品制造",
+   "t": "fp",
+   "k": 1,
+   "z": 506,
+   "h": "586ecda6bd8183edd1a8c7efd4554f8dc2325681",
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2911.jsonl",
@@ -628,7 +639,7 @@
    "k": 288,
    "z": 54533,
    "h": "ee4f628857b36909baddf40a442394457860af9c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2913.jsonl",
@@ -639,7 +650,7 @@
    "k": 572,
    "z": 174566,
    "h": "a4fcd062bb6c475515e664d9255765433dc4ba04",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2916.jsonl",
@@ -650,7 +661,7 @@
    "k": 9,
    "z": 1772,
    "h": "9cc3eaf0bcfc75e1f607bd9a66d16be2140e2aff",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2921.jsonl",
@@ -661,7 +672,7 @@
    "k": 274,
    "z": 52129,
    "h": "7591e7d6b9aedb6981a55b9da74857afb1fff409",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2922.jsonl",
@@ -672,7 +683,7 @@
    "k": 194,
    "z": 36688,
    "h": "6be3eda94a2e57e1ed508a3336843dc2772e941a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2924.jsonl",
@@ -683,7 +694,7 @@
    "k": 8,
    "z": 1647,
    "h": "cb22fde127dd03127f39a1dc0fd03389dd475f9d",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2925.jsonl",
@@ -694,7 +705,7 @@
    "k": 1,
    "z": 172,
    "h": "959c27ff0cf5760c74a055997efbad865772677f",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2926.jsonl",
@@ -705,7 +716,7 @@
    "k": 681,
    "z": 236287,
    "h": "7592fbbd2d00034ce2555c9eacff2e5039992fad",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2928.jsonl",
@@ -716,7 +727,7 @@
    "k": 2,
    "z": 460,
    "h": "1abc449381c6d143e07365307587127945afe900",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/29/2929.jsonl",
@@ -727,7 +738,7 @@
    "k": 6046,
    "z": 2090059,
    "h": "6ed485f1d5174e76dce0cd8fe7d11d5956dbf4d4",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3011.jsonl",
@@ -738,7 +749,7 @@
    "k": 91,
    "z": 17468,
    "h": "0ef5d7cd4b65d65611cf7f0444acbce192ed7cc9",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3021.jsonl",
@@ -749,7 +760,7 @@
    "k": 7,
    "z": 1249,
    "h": "f42338ffd58deaf8314416ae4262dbedad4a1e6a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3032.jsonl",
@@ -760,7 +771,7 @@
    "k": 48,
    "z": 8881,
    "h": "fde7217ad2283c8cf8758499c4da3fca4640cf33",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3033.jsonl",
@@ -771,7 +782,7 @@
    "k": 1,
    "z": 194,
    "h": "7e7016cd88d515d61134abc090edcad11a8c0c61",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3041.jsonl",
@@ -782,7 +793,7 @@
    "k": 1,
    "z": 186,
    "h": "99fe485ed37a66bd25825f64929c2c6ecbdd7908",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3042.jsonl",
@@ -793,7 +804,7 @@
    "k": 3,
    "z": 574,
    "h": "2807e9a5c4b5bb4186148890d86f566cd50a6b75",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3052.jsonl",
@@ -804,7 +815,7 @@
    "k": 1,
    "z": 192,
    "h": "6e5959c1a92c698f3ea56d60890eb534ba98cf5a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3059.jsonl",
@@ -815,7 +826,7 @@
    "k": 144,
    "z": 27168,
    "h": "b39dd9960c38174e456563094b54e001313041aa",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3072.jsonl",
@@ -826,7 +837,7 @@
    "k": 34,
    "z": 6156,
    "h": "cbdf26f8230724c3540518f6b3ff3fb7f57e442f",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/30/3075.jsonl",
@@ -837,7 +848,7 @@
    "k": 2,
    "z": 369,
    "h": "5fd608845f4a7327160ab60a9a541dc8f52aa3b4",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/31/3130.jsonl",
@@ -848,7 +859,7 @@
    "k": 2025,
    "z": 581561,
    "h": "763715a82c3aeb4932b485cc76ed764425ddb9d8",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/32/3240.jsonl",
@@ -859,7 +870,7 @@
    "k": 1,
    "z": 173,
    "h": "67a5693900df4ea8ed655c3ac7d7c4ca78dfb169",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/32/3251.jsonl",
@@ -870,7 +881,7 @@
    "k": 356,
    "z": 67133,
    "h": "1b3f49ca397ab9d67d56d6b285a7508d7c81351f",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/32/3252.jsonl",
@@ -881,7 +892,7 @@
    "k": 1294,
    "z": 282668,
    "h": "13f173422ceba6ce98d75b4d6d32c97d8a48b8ca",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/32/3253.jsonl",
@@ -892,7 +903,7 @@
    "k": 7,
    "z": 1299,
    "h": "ed727c159fe5ad77c7c28b3f4be33462684e8c68",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3311.jsonl",
@@ -903,7 +914,7 @@
    "k": 2673,
    "z": 667735,
    "h": "c6c4fcdf7924385f91e6b430071aa90eacecaec0",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3312.jsonl",
@@ -914,7 +925,7 @@
    "k": 1501,
    "z": 318538,
    "h": "581a3571d5deb0db2809d3085b329d1b0ff7066e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/332.jsonl",
@@ -925,7 +936,7 @@
    "k": 1,
    "z": 191,
    "h": "602be50296da10a0a4d08f57a1073f69d3679048",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3321.jsonl",
@@ -936,7 +947,7 @@
    "k": 347,
    "z": 68961,
    "h": "8fddf75f5fb6dc7d5e1f71eadde95008ecb0054c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3331.jsonl",
@@ -947,7 +958,7 @@
    "k": 5,
    "z": 892,
    "h": "c5930e1b3731cb821dd0b201c6cb503e965b5239",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3332.jsonl",
@@ -958,7 +969,7 @@
    "k": 2,
    "z": 388,
    "h": "a8005a4a743cae4ee0ed90f17633e1659fc07222",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3333.jsonl",
@@ -969,7 +980,7 @@
    "k": 2,
    "z": 390,
    "h": "8da1df01e75448077f6f8488bf8ba6b39b1fd49c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3340.jsonl",
@@ -980,7 +991,7 @@
    "k": 1,
    "z": 174,
    "h": "5d2c15329100d74d7a49a0d92ba9f1e928ae61d3",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3351.jsonl",
@@ -991,7 +1002,7 @@
    "k": 27,
    "z": 5266,
    "h": "5d5b6c7467c69a2d0cac3de8dd473a7a94015b10",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3353.jsonl",
@@ -1002,7 +1013,7 @@
    "k": 25,
    "z": 4725,
    "h": "44154c5a8d3d8b4a3190fe1043d87a8b267fdbb6",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3360.jsonl",
@@ -1013,7 +1024,7 @@
    "k": 3574,
    "z": 1038529,
    "h": "4cd7a130a977cff783056e42fd51eed92eb8770f",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3391.jsonl",
@@ -1024,7 +1035,7 @@
    "k": 316,
    "z": 59564,
    "h": "9ee67e51280b1659dc90712cc289e5b342452549",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3392.jsonl",
@@ -1035,7 +1046,7 @@
    "k": 1095,
    "z": 221268,
    "h": "e3636c9c10b6dd5eab7f8550b9ae022a4d35de06",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3393.jsonl",
@@ -1046,7 +1057,7 @@
    "k": 430,
    "z": 80538,
    "h": "7a22cfa496c74735ea9f3861fe324000a2430a95",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/33/3399.jsonl",
@@ -1057,7 +1068,7 @@
    "k": 3244,
    "z": 1091212,
    "h": "fccc9502113efa38eed76dbae6c2621254a70a42",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3412.jsonl",
@@ -1068,7 +1079,7 @@
    "k": 1,
    "z": 167,
    "h": "d5b0e6f7dff99728ffa50577d3d64f387192770e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3422.jsonl",
@@ -1079,7 +1090,7 @@
    "k": 2,
    "z": 381,
    "h": "8db86947bce4f67a30edb5fdb6b7a6bf981d182a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3423.jsonl",
@@ -1090,7 +1101,7 @@
    "k": 1,
    "z": 189,
    "h": "148297e134054a69d704409d1224519a2035f1a1",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3424.jsonl",
@@ -1101,7 +1112,7 @@
    "k": 2,
    "z": 394,
    "h": "4590e1a77f1a9f650d5ecd3d656b2ae519f953b1",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3432.jsonl",
@@ -1112,7 +1123,7 @@
    "k": 4,
    "z": 807,
    "h": "6a79cfd1488f6cb9db4d908e2bb923cc8de25b21",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3434.jsonl",
@@ -1123,7 +1134,7 @@
    "k": 1,
    "z": 349,
    "h": "ee1f9f7d703eab230db58f47ac66611e25656de2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3435.jsonl",
@@ -1134,7 +1145,7 @@
    "k": 7,
    "z": 1504,
    "h": "8761f654cfaac438056c30bfc9a7f70c9d2d2fca",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3441.jsonl",
@@ -1145,7 +1156,7 @@
    "k": 33,
    "z": 6488,
    "h": "d8d06aa0247ced8a60f4597834c03544d297788a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3442.jsonl",
@@ -1156,7 +1167,7 @@
    "k": 1,
    "z": 202,
    "h": "4bd1008c08bccfc4f24e377391622e8565457c9e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3443.jsonl",
@@ -1167,7 +1178,7 @@
    "k": 256,
    "z": 55337,
    "h": "dc0780349b307d39866f66e8344bb9bb9fd74205",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3444.jsonl",
@@ -1178,7 +1189,7 @@
    "k": 281,
    "z": 56792,
    "h": "e2e3055d853c1c0080b8fdc16d76ec67fabd93d5",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3451.jsonl",
@@ -1189,7 +1200,7 @@
    "k": 1079,
    "z": 204924,
    "h": "6d1cf476a86f2c186cc7fc5dfb1b7328cd17b224",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3453.jsonl",
@@ -1200,7 +1211,7 @@
    "k": 471,
    "z": 91172,
    "h": "219534ba35b6c2c5f5cb44c52c79f2b482cebb0f",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3462.jsonl",
@@ -1211,7 +1222,7 @@
    "k": 7,
    "z": 1343,
    "h": "7708ee21466b307c2b0b0457b6455713427fc4d4",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3463.jsonl",
@@ -1222,7 +1233,7 @@
    "k": 5,
    "z": 898,
    "h": "afc0135bf695bda158b5cf51d0c7e11fbdde2d68",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3464.jsonl",
@@ -1232,8 +1243,8 @@
    "t": "fp",
    "k": 1414,
    "z": 297217,
-   "h": "9ea7a7b1fadda0e12775b0aa665efb0137749a3b",
-   "u": "2026-09-25"
+   "h": "ed36cb7a47ba12e3e83f4ad29ea6bc26561f78d8",
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3465.jsonl",
@@ -1244,7 +1255,7 @@
    "k": 169,
    "z": 33726,
    "h": "2c994281c441b916f248127596411a27ddf3f097",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3467.jsonl",
@@ -1255,7 +1266,7 @@
    "k": 370,
    "z": 75919,
    "h": "56d13c7e48634c001d6143899060ca3839f47596",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3471.jsonl",
@@ -1266,7 +1277,7 @@
    "k": 2,
    "z": 383,
    "h": "8bc26ba1ae7875f8690e5559a21bae343aae4db4",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3481.jsonl",
@@ -1277,7 +1288,7 @@
    "k": 578,
    "z": 115749,
    "h": "0ed7ac3196cdd7496422db0e64725e8bad2850ff",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3482.jsonl",
@@ -1288,7 +1299,7 @@
    "k": 1457,
    "z": 295202,
    "h": "b78d3dcba081eb494ec035acbe0d376217c9dead",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3483.jsonl",
@@ -1299,7 +1310,7 @@
    "k": 760,
    "z": 143364,
    "h": "68bce9d5e4f50b263878a1069d7c5f5d220cec0e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3484.jsonl",
@@ -1310,7 +1321,7 @@
    "k": 8588,
    "z": 2277688,
    "h": "c2b888b797e88000b04eb2286072cace83144f2a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/34/3491.jsonl",
@@ -1321,7 +1332,7 @@
    "k": 200,
    "z": 38679,
    "h": "57ed8e7e11808dbf1febc754309a26c30c8a97e9",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3511.jsonl",
@@ -1332,7 +1343,7 @@
    "k": 10,
    "z": 1893,
    "h": "064438b6e7042f6782c10c14cbf45770edbdc950",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3514.jsonl",
@@ -1343,7 +1354,7 @@
    "k": 9,
    "z": 1774,
    "h": "47b422005be6142dc5bfd7fcecd979f00a0e6a10",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3515.jsonl",
@@ -1354,7 +1365,7 @@
    "k": 10,
    "z": 1861,
    "h": "6bacd85adf979a127a711d8d2cc94e42635d9a28",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3521.jsonl",
@@ -1365,7 +1376,7 @@
    "k": 1,
    "z": 176,
    "h": "f0457c520e4a5b172ed4a5b154c83eabb2297963",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3523.jsonl",
@@ -1376,7 +1387,7 @@
    "k": 44,
    "z": 8454,
    "h": "fc2fd14c683b1969cb4f02d3c23569a0a4ab013a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3525.jsonl",
@@ -1387,7 +1398,7 @@
    "k": 7050,
    "z": 2266420,
    "h": "8289db253df6f973526d8700fb9552199a66dcce",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3546.jsonl",
@@ -1398,7 +1409,7 @@
    "k": 232,
    "z": 43197,
    "h": "ed5d9d4c0580492226bdcb86fbe4913a3c7614e7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3554.jsonl",
@@ -1409,7 +1420,7 @@
    "k": 1,
    "z": 228,
    "h": "cfa94500f024afbb162be7cc1100f464a35b7e6b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3561.jsonl",
@@ -1420,7 +1431,7 @@
    "k": 1,
    "z": 187,
    "h": "79f0e2105a6ca547b4c44f296a300198bea6e11d",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/357.jsonl",
@@ -1431,7 +1442,7 @@
    "k": 9,
    "z": 1764,
    "h": "ad52ae8c970713596adbc65210139b72482fd06b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3576.jsonl",
@@ -1442,7 +1453,7 @@
    "k": 53,
    "z": 10810,
    "h": "8ef9bdf073f53d05e8dd9d47bcef81020ef24cb9",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3577.jsonl",
@@ -1453,7 +1464,7 @@
    "k": 3,
    "z": 508,
    "h": "8164dd5245dc9a1f7699c2f59f188a2df615a1de",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3584.jsonl",
@@ -1464,7 +1475,7 @@
    "k": 62,
    "z": 12010,
    "h": "eeedd64bc98ccc5c8504a6e6e897258da3903b31",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3587.jsonl",
@@ -1475,7 +1486,7 @@
    "k": 4,
    "z": 656,
    "h": "7f231867ed852b4bd8b36d2caa6ebd99f8e72722",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3591.jsonl",
@@ -1486,7 +1497,7 @@
    "k": 736,
    "z": 141875,
    "h": "087f0fd1e204cd5a4514133e7cd7b799e1d7b30a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3594.jsonl",
@@ -1497,7 +1508,7 @@
    "k": 9,
    "z": 1627,
    "h": "0bdb47f9d483b1988bbc986da54cac4212842f10",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/3596.jsonl",
@@ -1508,7 +1519,7 @@
    "k": 1,
    "z": 192,
    "h": "7e7729772ad9ea567d2a1194ca10c4b8a888b136",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/35/_partial.jsonl",
@@ -1519,7 +1530,7 @@
    "k": 1,
    "z": 179,
    "h": "462053f4c0fe11c6a3df66f04b33796a79cffe69",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3612.jsonl",
@@ -1530,7 +1541,7 @@
    "k": 11,
    "z": 2112,
    "h": "fd45df626f7cdc26a5ec2ebda36b89f22fadb187",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3630.jsonl",
@@ -1541,7 +1552,7 @@
    "k": 2,
    "z": 375,
    "h": "cb9815fb2a7b20cb28ca717a5e69494005f01e81",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3640.jsonl",
@@ -1552,7 +1563,7 @@
    "k": 2,
    "z": 364,
    "h": "308f9dbc3b9462f8178be7772454b293451f18e2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3650.jsonl",
@@ -1563,7 +1574,7 @@
    "k": 1,
    "z": 158,
    "h": "dce128c6c41090c37bd961d4c41d6fb5b450a9e4",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3660.jsonl",
@@ -1574,7 +1585,7 @@
    "k": 327,
    "z": 62263,
    "h": "aec09de9363d0c192ee556cdd25ae53c1bf0781e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/36/3670.jsonl",
@@ -1585,7 +1596,7 @@
    "k": 1,
    "z": 194,
    "h": "468f891ac2b7f7371ca1982695bd3d27db761ce8",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/37/3714.jsonl",
@@ -1596,7 +1607,7 @@
    "k": 2,
    "z": 382,
    "h": "39221bd3b727a1cc51e2823cd751de6970f858a5",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/37/3715.jsonl",
@@ -1607,7 +1618,7 @@
    "k": 1,
    "z": 180,
    "h": "c5040070d5939446f52e90917d459935ad7ed16c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/37/3737.jsonl",
@@ -1618,7 +1629,7 @@
    "k": 1,
    "z": 195,
    "h": "7bec0350a9e03884573207e0fddc7b29103e187a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/37/3741.jsonl",
@@ -1629,7 +1640,7 @@
    "k": 7,
    "z": 1329,
    "h": "2b15fe32ed19f59dd4558ccd9bf71217ee23180e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/37/3780.jsonl",
@@ -1640,7 +1651,7 @@
    "k": 1,
    "z": 275,
    "h": "b7fde34fc53be6d8ebc4c9eb5e2dd4043ac1db8b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3812.jsonl",
@@ -1651,7 +1662,7 @@
    "k": 370,
    "z": 76114,
    "h": "9be728d10c994841c36b3a50031eb0c9a44cdff3",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3823.jsonl",
@@ -1662,7 +1673,7 @@
    "k": 4,
    "z": 725,
    "h": "5a3c99158d89655499384fed123b5e4531e1f19e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3831.jsonl",
@@ -1673,7 +1684,7 @@
    "k": 154,
    "z": 31507,
    "h": "66762b15535601bbcfdaed76ce868569e78e4c5f",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3832.jsonl",
@@ -1684,7 +1695,7 @@
    "k": 5,
    "z": 929,
    "h": "7ea9e9b6c26333f601fbec968b412585b9422333",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3834.jsonl",
@@ -1695,7 +1706,7 @@
    "k": 1,
    "z": 209,
    "h": "5c72baa6d0d1b8aee5f383df4e01b7d47727d33b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3841.jsonl",
@@ -1706,7 +1717,7 @@
    "k": 287,
    "z": 55933,
    "h": "487dc8cfd2ba6fc316eb75fc9a515243a368f6cf",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3857.jsonl",
@@ -1717,7 +1728,7 @@
    "k": 1,
    "z": 181,
    "h": "be328397c2b7dbf3b5f60ea2787058155dda6d6c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3862.jsonl",
@@ -1728,7 +1739,7 @@
    "k": 6,
    "z": 1175,
    "h": "7851c70a49ba8ed51f9be9a06b56960e1e8f733e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/38/3872.jsonl",
@@ -1739,7 +1750,7 @@
    "k": 233,
    "z": 48481,
    "h": "722e6525f539bb26e9abe0388faef416fd904e02",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3912.jsonl",
@@ -1750,7 +1761,7 @@
    "k": 1,
    "z": 198,
    "h": "8f8243a28b62d802c6fedee80cc37f7c15a4d21f",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3952.jsonl",
@@ -1761,7 +1772,7 @@
    "k": 1,
    "z": 192,
    "h": "c4a8ab63e25853986fba752ad44920e7c6cc3ad7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3963.jsonl",
@@ -1772,7 +1783,7 @@
    "k": 1,
    "z": 177,
    "h": "5f9e2d51917f4afd2c9696767d2253823f393a2f",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3973.jsonl",
@@ -1783,7 +1794,7 @@
    "k": 481,
    "z": 94136,
    "h": "c496e39927b05e6b536ec803b9762de65c206f26",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3974.jsonl",
@@ -1794,7 +1805,7 @@
    "k": 12,
    "z": 2227,
    "h": "02a9abba77653996ebc1171bcd99e81c41b136ba",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3975.jsonl",
@@ -1805,7 +1816,7 @@
    "k": 76,
    "z": 14132,
    "h": "a1d465b13add903a78d83aa20971ece65638daa6",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3976.jsonl",
@@ -1816,7 +1827,7 @@
    "k": 3,
    "z": 631,
    "h": "9db837edb535809b3d56b0056847021f8f298eb7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3982.jsonl",
@@ -1827,7 +1838,7 @@
    "k": 646,
    "z": 127949,
    "h": "768f081c910f55729f53afaa1a5280cacef3551a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3983.jsonl",
@@ -1838,7 +1849,7 @@
    "k": 101,
    "z": 19126,
    "h": "35e6a9319cf08df25c7eb67195a9f23ee00e7995",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3985.jsonl",
@@ -1849,7 +1860,7 @@
    "k": 1,
    "z": 218,
    "h": "20ea13a441ccfaaeca39fbc5fe51c0c92603abcd",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/39/3989.jsonl",
@@ -1860,7 +1871,7 @@
    "k": 943,
    "z": 218574,
    "h": "9cccc58891dd67f1180958b6f600e5bb088d27fd",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/4011.jsonl",
@@ -1871,7 +1882,7 @@
    "k": 410,
    "z": 78733,
    "h": "7c2c344b89925f61b0f86d601409fb9017f8a70d",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/4021.jsonl",
@@ -1882,7 +1893,7 @@
    "k": 5,
    "z": 929,
    "h": "897c9f76aca2e716513c57e3e66dfee2f103e178",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/4023.jsonl",
@@ -1893,7 +1904,7 @@
    "k": 1,
    "z": 199,
    "h": "7d10bf8631c790030832f921a017055dce355d7e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/4040.jsonl",
@@ -1904,7 +1915,7 @@
    "k": 1,
    "z": 201,
    "h": "b3f5a483b8354000a8b05b685f2216841e36f8b7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/40/_partial.jsonl",
@@ -1915,7 +1926,7 @@
    "k": 1,
    "z": 187,
    "h": "35cc99739bad429e1a41fc6142457984a5a467f6",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/42/4210.jsonl",
@@ -1926,7 +1937,7 @@
    "k": 2,
    "z": 390,
    "h": "c9f97b085bdc7d7b3b04d423a34d6ea43ff167b8",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/43/4343.jsonl",
@@ -1937,7 +1948,7 @@
    "k": 1,
    "z": 224,
    "h": "2bffd4da24fe16a1483e66846766b06c0cf29d22",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/C/43/4360.jsonl",
@@ -1948,7 +1959,7 @@
    "k": 1,
    "z": 189,
    "h": "05be73ca7103edef1cc1f238e0a39d9579b62a2e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5121.jsonl",
@@ -1959,7 +1970,7 @@
    "k": 1,
    "z": 172,
    "h": "a95c7348e563a87bf0889ccd33fe30ce745135b2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5131.jsonl",
@@ -1970,7 +1981,7 @@
    "k": 11,
    "z": 2105,
    "h": "7ddcc1f313d589c354ff2785373acde97e39585b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5132.jsonl",
@@ -1981,7 +1992,7 @@
    "k": 1,
    "z": 180,
    "h": "0d19d34544d757d186eb614ef85727f62185cfe8",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5138.jsonl",
@@ -1992,7 +2003,7 @@
    "k": 2,
    "z": 481,
    "h": "ae5e6e1806e405817d921827666c81a501fcf73d",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5146.jsonl",
@@ -2003,7 +2014,7 @@
    "k": 17,
    "z": 3449,
    "h": "bb32db6093c12677de5bea77f98fc420ca908ba7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5147.jsonl",
@@ -2014,7 +2025,7 @@
    "k": 2,
    "z": 492,
    "h": "3e1b0f92b2409dfed04cd169023cd726a31ac2d7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5164.jsonl",
@@ -2025,7 +2036,7 @@
    "k": 821,
    "z": 217497,
    "h": "7e0adfb58e71ad1c525457dedddc3c72807bf096",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5165.jsonl",
@@ -2036,7 +2047,7 @@
    "k": 137,
    "z": 25617,
    "h": "6d0d692b21380e52e0cdadc3ee8a322f594701b1",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5169.jsonl",
@@ -2047,7 +2058,7 @@
    "k": 238,
    "z": 48187,
    "h": "37c1b8cf088a89297f47d8e3358ad267ea1acd3c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/517.jsonl",
@@ -2058,7 +2069,7 @@
    "k": 9,
    "z": 1759,
    "h": "438214b948dcb8a270fb6844bc6faa37fa670dde",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5171.jsonl",
@@ -2069,7 +2080,7 @@
    "k": 2,
    "z": 410,
    "h": "c61a585646bd6a5807636b09a985a5e223fb66e0",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5174.jsonl",
@@ -2080,7 +2091,7 @@
    "k": 853,
    "z": 195384,
    "h": "f555ecb158248a64599f620705200bf7695714c8",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5179.jsonl",
@@ -2091,7 +2102,7 @@
    "k": 869,
    "z": 174154,
    "h": "2c2c564501ce3e2365c8b2139982db877a1624dc",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5183.jsonl",
@@ -2102,7 +2113,7 @@
    "k": 77,
    "z": 14983,
    "h": "95d8c46f4b51ebfea79f4f804bcf63781fb499ca",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5191.jsonl",
@@ -2113,7 +2124,7 @@
    "k": 1,
    "z": 173,
    "h": "960c77794d67d66b0d675ea3edd125e493915393",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/5193.jsonl",
@@ -2124,7 +2135,7 @@
    "k": 4,
    "z": 843,
    "h": "e2780ecac591db4b387b856b30119296c302eae2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/51/_partial.jsonl",
@@ -2135,7 +2146,7 @@
    "k": 56,
    "z": 11052,
    "h": "82bb7a29153c362557dec3fa7fbcaa2a324c77fc",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5212.jsonl",
@@ -2146,7 +2157,7 @@
    "k": 162,
    "z": 30927,
    "h": "103116178a39eeb144285ffd234af5116a1bd6b3",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5213.jsonl",
@@ -2157,7 +2168,7 @@
    "k": 144,
    "z": 27128,
    "h": "acfdc67a37c81f013e90dc546b424a92180be14e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5229.jsonl",
@@ -2168,7 +2179,7 @@
    "k": 145,
    "z": 26231,
    "h": "d9a51ed6f74f33716bf8de6206d7a6b5778a41ad",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5232.jsonl",
@@ -2179,7 +2190,7 @@
    "k": 9,
    "z": 1715,
    "h": "e53f362ecc216b1fded8fb826907122f229c2011",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5233.jsonl",
@@ -2190,7 +2201,7 @@
    "k": 38,
    "z": 6427,
    "h": "7cfb9c61b74a4ebce1f72474e61412ca06ff51dd",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5236.jsonl",
@@ -2201,7 +2212,7 @@
    "k": 10,
    "z": 1876,
    "h": "f4ac534e57f13dfb1f50c4ee90407fe190fb7803",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5243.jsonl",
@@ -2212,7 +2223,7 @@
    "k": 3,
    "z": 583,
    "h": "edd67d67861cac0612912729424bf67f0785b931",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5251.jsonl",
@@ -2223,7 +2234,7 @@
    "k": 202,
    "z": 39525,
    "h": "42e2f5b8a3c464b985bc3ee8dbea4f7292e5eec5",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/526.jsonl",
@@ -2234,7 +2245,7 @@
    "k": 14,
    "z": 2733,
    "h": "cdd90a6d5a20e55a41e1a0b1365a91b9b94fe7cd",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5267.jsonl",
@@ -2245,7 +2256,7 @@
    "k": 9,
    "z": 1635,
    "h": "e7839f5a9de14ee11b9a6746ae0d10681b257984",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5274.jsonl",
@@ -2256,7 +2267,7 @@
    "k": 2,
    "z": 422,
    "h": "13fdecbe217d40b14ffca99e9e366c1559f14159",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5281.jsonl",
@@ -2267,7 +2278,7 @@
    "k": 26,
    "z": 5068,
    "h": "e9cdb8524550fb9adc51100889f529d995c28e76",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5283.jsonl",
@@ -2278,7 +2289,7 @@
    "k": 61,
    "z": 11648,
    "h": "ef4e9e72f76ffdc432df2dd21674fd6df8695e4c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5287.jsonl",
@@ -2289,7 +2300,7 @@
    "k": 350,
    "z": 62530,
    "h": "e608ab8f52518e7680a0a09b0fbd2e24346533a4",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/F/52/5296.jsonl",
@@ -2300,7 +2311,7 @@
    "k": 1,
    "z": 183,
    "h": "a93c2623fb30c7a16249d32de4d31ae93cbabaa7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/61/6110.jsonl",
@@ -2311,7 +2322,7 @@
    "k": 5130,
    "z": 949920,
    "h": "bb8f3eecff10dabe4ec5d86d5d7a9a70489f908a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/61/6121.jsonl",
@@ -2322,7 +2333,7 @@
    "k": 211,
    "z": 39747,
    "h": "736dbc90406d4fe8a820eaff282e1d678c1e1f37",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/61/6130.jsonl",
@@ -2333,7 +2344,7 @@
    "k": 7529,
    "z": 1401951,
    "h": "5c44b75520d756acb84f34a14102228307c69596",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/61/6140.jsonl",
@@ -2344,7 +2355,7 @@
    "k": 1,
    "z": 152,
    "h": "ce76b943362ddca552eb7708f1434113c26b0d98",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6210.jsonl",
@@ -2355,7 +2366,7 @@
    "k": 11300,
    "z": 1973483,
    "h": "ecd27997a59425725f7584a0dba48cfa95d27cca",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6220.jsonl",
@@ -2366,7 +2377,7 @@
    "k": 4340,
    "z": 772118,
    "h": "bd86e39fca6271f563fb547284f0a3e39df48ff0",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6231.jsonl",
@@ -2377,7 +2388,7 @@
    "k": 5456,
    "z": 972376,
    "h": "81314b572d66963e61242eb6119172390e2bd5a2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6232.jsonl",
@@ -2388,7 +2399,7 @@
    "k": 9536,
    "z": 1744311,
    "h": "3880d8cd382c401b34e40dc1cc6eef7cf7ddf6d6",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6233.jsonl",
@@ -2399,7 +2410,7 @@
    "k": 2887,
    "z": 1129231,
    "h": "dfcc2a2534aa3c5b2eba492e6ca45c7221d46d0c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6242.jsonl",
@@ -2410,7 +2421,7 @@
    "k": 4,
    "z": 746,
    "h": "422d58ef1ed0807e00644cc6aa874f5cbc3187a3",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/H/62/6291.jsonl",
@@ -2421,7 +2432,7 @@
    "k": 6550,
    "z": 1179127,
    "h": "d5bd3bf9764334604335ff0d558b3f0faa816001",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/64/6440.jsonl",
@@ -2432,7 +2443,7 @@
    "k": 83,
    "z": 16628,
    "h": "41f859c3f5fe880f774cd48928e69716f6148138",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/64/6450.jsonl",
@@ -2443,7 +2454,7 @@
    "k": 166,
    "z": 34014,
    "h": "6d410db2e160fd86bdc9891230f840b3d8894fca",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/64/6490.jsonl",
@@ -2454,7 +2465,7 @@
    "k": 44,
    "z": 8858,
    "h": "d8c74b5299c2ac0c7eadaeef4023efcb87a9721d",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/651.jsonl",
@@ -2465,7 +2476,7 @@
    "k": 2,
    "z": 424,
    "h": "4e129e9a0b32b32534e8a1be074deae88a1f6772",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6513.jsonl",
@@ -2476,7 +2487,7 @@
    "k": 728,
    "z": 143768,
    "h": "ee750dff61608aeaea818dce108c4301cf46b5ba",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6531.jsonl",
@@ -2487,7 +2498,7 @@
    "k": 139,
    "z": 30198,
    "h": "f81c3b289008d23215073e5e2fa80262dad71311",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6540.jsonl",
@@ -2498,7 +2509,7 @@
    "k": 60,
    "z": 11602,
    "h": "9af0e2a1b5e6fc572ac2d3112ccbb6e99f44ebcc",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6550.jsonl",
@@ -2509,7 +2520,7 @@
    "k": 2,
    "z": 359,
    "h": "98fa845839eb5a0cab8e957063877e6b7560d611",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6572.jsonl",
@@ -2520,7 +2531,7 @@
    "k": 5,
    "z": 920,
    "h": "cfc28b4cfc977bb25fd1f3d61f16f3bf4c5e7f2b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/I/65/6591.jsonl",
@@ -2531,7 +2542,7 @@
    "k": 1,
    "z": 201,
    "h": "ee6938babbf59de26cba113a557bbddb63f6b9c6",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/73/7320.jsonl",
@@ -2542,7 +2553,7 @@
    "k": 20,
    "z": 3869,
    "h": "a8bc395f2ce3f02b01f896e1b1cbf538c8689628",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/73/7330.jsonl",
@@ -2553,7 +2564,7 @@
    "k": 2,
    "z": 361,
    "h": "7919f0b91086da4776d88dc5fd462564793224aa",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/73/7350.jsonl",
@@ -2564,7 +2575,7 @@
    "k": 1,
    "z": 248,
    "h": "8480a386dc5d308495cca83f32743b338963a4b2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7452.jsonl",
@@ -2575,7 +2586,7 @@
    "k": 399,
    "z": 80804,
    "h": "96b633c9c71c6c5ddfaafab3eeaae0d44541e9a5",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7453.jsonl",
@@ -2586,7 +2597,7 @@
    "k": 84,
    "z": 16495,
    "h": "ac04b53ec178cc7dd5decfe861012414b2abe1ce",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7454.jsonl",
@@ -2597,7 +2608,7 @@
    "k": 1,
    "z": 239,
    "h": "019c45688ac647328679564aaf3f7563e68cdc0c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7455.jsonl",
@@ -2608,7 +2619,7 @@
    "k": 75,
    "z": 14886,
    "h": "032d6563b2dddac6d213f9c715d7372b44d56935",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7461.jsonl",
@@ -2619,7 +2630,7 @@
    "k": 159,
    "z": 31934,
    "h": "75f3fee217357d6a07aae7eda8bffdec470aa865",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7463.jsonl",
@@ -2630,7 +2641,7 @@
    "k": 4,
    "z": 737,
    "h": "a3b038370dea2c4d25b94a189746b6d1fddb6940",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7473.jsonl",
@@ -2641,7 +2652,7 @@
    "k": 1,
    "z": 188,
    "h": "003ab9f80d53827f3bbdc6cced7092519fbb3470",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7484.jsonl",
@@ -2652,7 +2663,7 @@
    "k": 17,
    "z": 3327,
    "h": "2a2313082c9d99864b17b9020cdfaf38c238cbc4",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7485.jsonl",
@@ -2663,7 +2674,7 @@
    "k": 2,
    "z": 390,
    "h": "8b45f4343529bc4355eee83ab977e1fdc8e9ce78",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/749.jsonl",
@@ -2674,7 +2685,7 @@
    "k": 6,
    "z": 1237,
    "h": "86c9ddcb32646d6d75d8d4620c00d1a09196bd2e",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7491.jsonl",
@@ -2685,7 +2696,7 @@
    "k": 220,
    "z": 40873,
    "h": "08dbee933159164a5582a436c53151bc282a65f7",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/74/7492.jsonl",
@@ -2696,7 +2707,7 @@
    "k": 2,
    "z": 341,
    "h": "5e7a70d6f5ae184f28def5c7cc5640944186af24",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/75/7516.jsonl",
@@ -2707,7 +2718,7 @@
    "k": 4,
    "z": 784,
    "h": "2d76d7e5a929b003e5a2a4c3bf9e52eb9b33aba1",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/75/7520.jsonl",
@@ -2718,7 +2729,7 @@
    "k": 141,
    "z": 27797,
    "h": "44e4b313704395c6446cfc893a838cc7f1e71380",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/75/7530.jsonl",
@@ -2729,7 +2740,7 @@
    "k": 4,
    "z": 723,
    "h": "6351ab99fe4abea72a0a553c7475238babd76237",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/M/75/_partial.jsonl",
@@ -2740,7 +2751,7 @@
    "k": 1,
    "z": 217,
    "h": "3f3f91635bb810833e47749fa972ac0824fa97c3",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8010.jsonl",
@@ -2751,7 +2762,7 @@
    "k": 42,
    "z": 7796,
    "h": "697f07234787cfbee48e07d73eeb7823dc2a32aa",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8030.jsonl",
@@ -2762,7 +2773,7 @@
    "k": 2974,
    "z": 523530,
    "h": "39630d299d9a6a547765aa39c94aa8eb50f5a0cd",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8040.jsonl",
@@ -2773,7 +2784,7 @@
    "k": 3187,
    "z": 558152,
    "h": "930d09fa2a9d6edfb42173da7cffb4098f67e952",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/805.jsonl",
@@ -2784,7 +2795,7 @@
    "k": 33,
    "z": 5988,
    "h": "22a725192a9ad6d1156adbff650abd37f4b249ca",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8051.jsonl",
@@ -2795,7 +2806,7 @@
    "k": 1332,
    "z": 226410,
    "h": "b66e56c4159c946021c86f01873240bd1f541bb2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8052.jsonl",
@@ -2806,7 +2817,7 @@
    "k": 3687,
    "z": 662067,
    "h": "3033290b9bdec6ee2d5b71b221cdc50d34bc8e21",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8053.jsonl",
@@ -2817,7 +2828,7 @@
    "k": 7141,
    "z": 1294173,
    "h": "ee1ead0d7118682dbb8b25b20d6df74780f78686",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8060.jsonl",
@@ -2828,7 +2839,7 @@
    "k": 2,
    "z": 389,
    "h": "c4e724458badaa7f0d161080fc2e3657d6d804c2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8070.jsonl",
@@ -2839,7 +2850,7 @@
    "k": 4,
    "z": 718,
    "h": "94fd6a6493db8eff01591cfb665e532a06f4d830",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/80/8090.jsonl",
@@ -2850,7 +2861,7 @@
    "k": 3,
    "z": 528,
    "h": "ec41297f569c840eda3864b99b695d6597550f0b",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8111.jsonl",
@@ -2861,7 +2872,7 @@
    "k": 3369,
    "z": 600139,
    "h": "dd23c2ae27ad386ba5812d992cec0357978eeac6",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8121.jsonl",
@@ -2872,7 +2883,7 @@
    "k": 2738,
    "z": 526551,
    "h": "faf99aa30c9b8e4d0853c63d74d0a8c606922f7c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8122.jsonl",
@@ -2883,7 +2894,7 @@
    "k": 1286,
    "z": 239086,
    "h": "4f2b1fe620debfd7cbaeec735058e39d751a7ebc",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8129.jsonl",
@@ -2894,7 +2905,7 @@
    "k": 6,
    "z": 1132,
    "h": "0a6e4f75c40859fb44d0d786811ed051099cb833",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8132.jsonl",
@@ -2905,7 +2916,7 @@
    "k": 1561,
    "z": 278529,
    "h": "cd2a64fa5eaab113f36db60cdc03e3beea3a48a2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/81/8191.jsonl",
@@ -2916,7 +2927,7 @@
    "k": 6,
    "z": 1091,
    "h": "ae3e7d174392ff2feb96d0686b5cdd27482c7fcf",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/82/8211.jsonl",
@@ -2927,7 +2938,7 @@
    "k": 1,
    "z": 170,
    "h": "99e46466a59e01aea489e6e19453887c0857713a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/82/8219.jsonl",
@@ -2938,7 +2949,7 @@
    "k": 3,
    "z": 605,
    "h": "932eec633dc726e2d10dcfe33e1f509410fe1be5",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/82/8229.jsonl",
@@ -2949,7 +2960,7 @@
    "k": 5,
    "z": 946,
    "h": "fa98cd9e0c66fb9ce3958fdb1fd76ded09f9ef92",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/O/82/8290.jsonl",
@@ -2960,7 +2971,7 @@
    "k": 128,
    "z": 24453,
    "h": "9d70355e37281e851e5174e79721c9b92737b786",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/87/8720.jsonl",
@@ -2971,7 +2982,7 @@
    "k": 6,
    "z": 1067,
    "h": "f2e76ff365ad35be2e38b361b425f2dc9a793e6c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/87/8760.jsonl",
@@ -2982,7 +2993,7 @@
    "k": 403,
    "z": 78439,
    "h": "27499ec303795566fb852b4bef533f1211261d35",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/88/8850.jsonl",
@@ -2993,7 +3004,7 @@
    "k": 9,
    "z": 1833,
    "h": "5a562c6a9807cbea82b7488d7bc7fe72bcb58b80",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/88/8870.jsonl",
@@ -3004,7 +3015,7 @@
    "k": 1,
    "z": 189,
    "h": "5fc6eadd930d9fa103e59b576a7549238be695dc",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/88/8890.jsonl",
@@ -3015,7 +3026,7 @@
    "k": 1,
    "z": 190,
    "h": "9b453083e14a3258592da5cee7a13ea9c834806a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8921.jsonl",
@@ -3026,7 +3037,7 @@
    "k": 3,
    "z": 523,
    "h": "2afb1ee69ead43db33acb66ac15e5beb5be17a59",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8929.jsonl",
@@ -3037,7 +3048,7 @@
    "k": 482,
    "z": 94013,
    "h": "5c2820235ed8897a8bf26aaebb15a9528dc7620a",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8930.jsonl",
@@ -3048,7 +3059,7 @@
    "k": 922,
    "z": 180810,
    "h": "12ea245c28f70fac5ee25167b34ca17756c1e0bf",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8991.jsonl",
@@ -3059,7 +3070,7 @@
    "k": 26,
    "z": 4745,
    "h": "67330ad3cf67c024a45e3692f83592fcd84e91d2",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/89/8992.jsonl",
@@ -3070,7 +3081,7 @@
    "k": 3,
    "z": 576,
    "h": "07f238c79fda176ac5da71b5e4a33dfd56810bd1",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9011.jsonl",
@@ -3081,7 +3092,7 @@
    "k": 433,
    "z": 79769,
    "h": "7b2366c4d2a8b89daff449fd8aa4b9c7c2940c05",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9013.jsonl",
@@ -3092,7 +3103,7 @@
    "k": 705,
    "z": 131487,
    "h": "9aadec9580072daa410b57c873646d13c587a488",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9019.jsonl",
@@ -3103,7 +3114,7 @@
    "k": 437,
    "z": 82095,
    "h": "1cbda6b6d24fb32d35317ccb896da183e8501b98",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9020.jsonl",
@@ -3114,7 +3125,7 @@
    "k": 2389,
    "z": 435610,
    "h": "5a20fa715c162f2dd68c3ab63e6083030483fe7c",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9030.jsonl",
@@ -3125,7 +3136,7 @@
    "k": 164,
    "z": 30168,
    "h": "ede14c50fb99fd73356d928ba80a4c78e0c520fe",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "skills/registry/fingerprint/gb/R/90/9051.jsonl",
@@ -3136,7 +3147,7 @@
    "k": 12,
    "z": 2320,
    "h": "2266d59a711fb9dff5b48ceccfc52c1d3a1c8e64",
-   "u": "2026-09-25"
+   "u": "2026-09-27"
   },
   {
    "p": "data/gb/_unclassified.json",
@@ -3146,8 +3157,8 @@
    "t": "zh",
    "k": 2444,
    "z": 2468141,
-   "h": "58267b6e4cead5c6603c45e2718a0259c0989e82",
-   "u": "2026-09-25"
+   "h": "de097dacad3edb21311b9e555c3c9c17eed75d89",
+   "u": "2026-09-27"
   },
   {
    "p": "data/gb/C/13/1313.json",
@@ -3709,6 +3720,17 @@
    "z": 4216,
    "h": "19b3ef0884b1741f97e202e275401b0740f946d2",
    "u": "2026-09-19"
+  },
+  {
+   "p": "data/gb/C/27/2770.json",
+   "b": "C/27/2770",
+   "c": "2770",
+   "n": "卫生材料及医药用品制造",
+   "t": "zh",
+   "k": 1,
+   "z": 1152,
+   "h": "4f0c32cc2f0a95bbf9a4f594dd597e03b50622f0",
+   "u": "2026-09-27"
   },
   {
    "p": "data/gb/C/29/2911.json",
@@ -6923,6 +6945,17 @@
    "u": "2026-09-25"
   },
   {
+   "p": "data/en/gb/C/27/2770.json",
+   "b": "C/27/2770",
+   "c": "2770",
+   "n": "卫生材料及医药用品制造",
+   "t": "en",
+   "k": 1,
+   "z": 1087,
+   "h": "92fbbe33764296002da354d9fba19b38f89bf6fd",
+   "u": "2026-09-27"
+  },
+  {
    "p": "data/en/gb/C/29/2911.json",
    "b": "C/29/2911",
    "c": "2911",
@@ -9570,8 +9603,8 @@
    "t": "phone",
    "k": 110605,
    "z": 3145083,
-   "h": "b51585ce41fc54b666de6919ffb0987177e61555",
-   "u": "2026-09-25"
+   "h": "af0ca3ea2f551009c656001a1eb055edb9bbd939",
+   "u": "2026-09-27"
   },
   {
    "p": "data/name-index.jsonl",
@@ -9579,10 +9612,10 @@
    "c": "",
    "n": "名称索引",
    "t": "name",
-   "k": 150229,
-   "z": 17131565,
-   "h": "768412cd2def885589648b2564b96e4ae26c4191",
-   "u": "2026-09-25"
+   "k": 150230,
+   "z": 17131645,
+   "h": "210736568ad2014ff44cef103f2bed839348d4b1",
+   "u": "2026-09-27"
   }
  ]
 }
