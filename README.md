@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/code-MIT-3fb68a)](LICENSE)
 [![Data](https://img.shields.io/badge/data-CC%20BY--NC%204.0-blue)](DATA_LICENSE.md)
-[![Records](https://img.shields.io/badge/records-150229-58a6ff)](data/)
+[![Records](https://img.shields.io/badge/records-150230-58a6ff)](data/)
 [![Categories](https://img.shields.io/badge/categories-46-58a6ff)](data/gb-index.json)
 [![Industry](https://img.shields.io/badge/industry-GB%2FT%204754--2017%20%C2%B7%20107%20%E5%B0%8F%E7%B1%BB-orange)](data/industry-index.json)
 [![Stars](https://img.shields.io/github/stars/eiry16/beacon-mfg?style=social)](https://github.com/eiry16/beacon-mfg)
@@ -99,7 +99,7 @@ npx skills add eiry16/beacon-mfg
 
 ## 数据现状
 
-**中文数据集**（`data/gb/`，国标四级归档）：**150229 条记录**（其中 **112061 条电话已核实**，**38168 条待核实**），拆为 **46 个国标大类**（含未归类）：
+**中文数据集**（`data/gb/`，国标四级归档）：**150230 条记录**（其中 **112061 条电话已核实**，**38169 条待核实**），拆为 **46 个国标大类**（含未归类）：
 
 | 国标大类 | 总记录 | 电话已核实 | 待核实 |
 |---|---|---|---|
@@ -127,7 +127,7 @@ npx skills add eiry16/beacon-mfg
 | 51 批发业 | 3101 | 2648 | 453 |
 | 52 零售业 | 1176 | 945 | 231 |
 
-**英文数据集**（`data/en/gb/`，与中文同构的国标归档）：**150198 条英文镜像**，与中文按 `id` 一一对应（`en_backfill.py` 增量补齐 + `en_sync_industry.py` 补 `industry_en` 标签），供海外 Agent/买家使用。
+**英文数据集**（`data/en/gb/`，与中文同构的国标归档）：**150199 条英文镜像**，与中文按 `id` 一一对应（`en_backfill.py` 增量补齐 + `en_sync_industry.py` 补 `industry_en` 标签），供海外 Agent/买家使用。
 
 覆盖地区：75 个城市——长三角（苏州、宁波、上海、无锡、杭州、嘉兴等）、珠三角（东莞、深圳、佛山、广州等），明细见 `data/region-index.json`。
 
@@ -152,7 +152,7 @@ npx skills add eiry16/beacon-mfg
 "is_manufacturer": true
 ```
 
-- **147785 / 150229 条已归类**，覆盖 **280 个国标小类码**（另有个别记录只精确到大类/中类，归入 `_partial.json`）；2444 条未归类（公司名无行业信号，或所属门类尚未登记 schema：建筑/运输/金融/房地产/商务服务/教育/卫生）
+- **147786 / 150230 条已归类**，覆盖 **281 个国标小类码**（另有个别记录只精确到大类/中类，归入 `_partial.json`）；2444 条未归类（公司名无行业信号，或所属门类尚未登记 schema：建筑/运输/金融/房地产/商务服务/教育/卫生）
 - `confidence`：`high`=公司名直接命中、`medium`/`low`=关键词或品类兜底推断
 - `is_manufacturer=false` 表示落在 **F51 批发业**（贸易/批发商，不是生产企业）
 - 归类原则：**只信公司名**，搜索关键词只能补位；**宁可留空也不硬贴标签**
