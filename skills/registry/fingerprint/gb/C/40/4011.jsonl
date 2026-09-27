@@ -15,14 +15,14 @@
 {"id":"CN-MFG-0003275","co":"东莞市科建自动化设备有限公司","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0003422","co":"无锡尚力自动化科技有限公司","city":"无锡","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0003755","co":"东莞市丘工自动化科技有限公司","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0004526","co":"江苏凯旋涂装自动化工程有限公司","city":"无锡","gb":"4011","mf":1,"proc":["spray_painting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"dist":"惠山"}
+{"id":"CN-MFG-0004526","co":"江苏凯旋涂装自动化工程有限公司","city":"无锡","gb":"4011","mf":1,"proc":["spray_painting"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":1,"cap":["spray_painting"],"dist":"惠山"}
 {"id":"CN-MFG-0004551","co":"无锡零微自动化设备有限公司","city":"无锡","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0004581","co":"宁波万亿涂装自动化","city":"宁波","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"慈溪"}
 {"id":"CN-MFG-0004783","co":"东莞市劲昇涂装自动化科技有限公司","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0004791","co":"东莞市正源涂装自动化科技有限公司","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0004843","co":"宏诚自动化涂装设备有限公司","city":"深圳","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"宝安"}
 {"id":"CN-MFG-0005729","co":"川科(浙江)自动化设备有限公司","city":"温州","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0006867","co":"江苏伟海乐自动化有限公司","city":"无锡","gb":"4011","mf":1,"proc":["metal_material"],"mat":["铝合金","亚克力"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"dist":"新吴"}
+{"id":"CN-MFG-0006867","co":"江苏伟海乐自动化有限公司","city":"无锡","gb":"4011","mf":1,"proc":["metal_material"],"mat":["铝合金","亚克力"],"cert":[],"cl":"L0","pv":"auto","sc":20,"tel":1,"cap":["metal_material","铝合金","亚克力"],"dist":"新吴"}
 {"id":"CN-MFG-0008987","co":"华工自动化","city":"宁波","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"余姚"}
 {"id":"CN-MFG-0009374","co":"禹通自动化配件工业型材配件","city":"宁波","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"余姚"}
 {"id":"CN-MFG-0018223","co":"惠增土建3标自动化钢筋加工配送中心","city":"惠州","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"博罗"}
@@ -34,7 +34,7 @@
 {"id":"CN-MFG-0024248","co":"东莞市长加自动化科技有限公司","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
 {"id":"CN-MFG-0026040","co":"广州鑫鹏润达自动化科技有限公司","city":"广州","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"黄埔"}
 {"id":"CN-MFG-0026510","co":"广东信宜德自动化设备有限公司","city":"中山","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
-{"id":"CN-MFG-0027572","co":"广州市鸿杰自动化机械设备有限公司","city":"广州","gb":"4011","mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"dist":"番禺"}
+{"id":"CN-MFG-0027572","co":"广州市鸿杰自动化机械设备有限公司","city":"广州","gb":"4011","mf":1,"proc":["cnc_milling"],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":10,"tel":0,"cap":["cnc_milling"],"dist":"番禺"}
 {"id":"CN-MFG-0027711","co":"展鑫自动化","city":"佛山","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"顺德"}
 {"id":"CN-MFG-0030056","co":"劲领(上海)自动化科技有限公司","city":"上海","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"闵行"}
 {"id":"CN-MFG-0031898","co":"金益恒(苏州)精密自动化有限公司","city":"苏州","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"虎丘"}
@@ -43,7 +43,7 @@
 {"id":"CN-MFG-0064095","co":"昆山市易普多自动化设备厂","city":"苏州","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"昆山"}
 {"id":"CN-MFG-0070069","co":"张家港市维控工业自动化有限公司","city":"苏州","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"张家港"}
 {"id":"CN-MFG-0070505","co":"沃思诺自动化科技有限公司","city":"苏州","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"相城"}
-{"id":"CN-MFG-0081046","co":"宏泰塑料机械自动化设备有限公司","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1}
+{"id":"CN-MFG-0081046","co":"宏泰塑料机械自动化设备有限公司","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":["工程塑料"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"cap":["工程塑料"]}
 {"id":"CN-MFG-0088825","co":"深圳市威利特自动化设备有限公司","city":"深圳","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝安"}
 {"id":"CN-MFG-0133531","co":"变频器销售维修自动化设备维修","city":"上海","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"浦东新"}
 {"id":"CN-MFG-0139352","co":"上海恩邦自动化仪表股份有限公司","city":"上海","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"闵行"}
@@ -57,7 +57,7 @@
 {"id":"CN-MFG-0146576","co":"弘瑞自动化静电涂装机械","city":"佛山","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"顺德区"}
 {"id":"CN-MFG-0146637","co":"喷码机激光机杭州乐创自动化设备","city":"杭州","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"上城区"}
 {"id":"CN-MFG-0146728","co":"信鑫自动化涂装设备厂","city":"中山","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"中山"}
-{"id":"CN-MFG-0151647","co":"禹通自动化配件工业铝型材","city":"宁波","gb":"4011","mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"余姚"}
+{"id":"CN-MFG-0151647","co":"禹通自动化配件工业铝型材","city":"宁波","gb":"4011","mf":1,"proc":[],"mat":["铝合金"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"cap":["铝合金"],"dist":"余姚"}
 {"id":"CN-MFG-0154270","co":"苏州罗韦自动化科技有限公司","city":"苏州","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"虎丘区"}
 {"id":"CN-MFG-0154420","co":"广东富创自动化设备有限公司","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"东莞"}
 {"id":"CN-MFG-0154422","co":"东莞市驰进自动化设备有限公司","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"东莞"}
@@ -355,7 +355,7 @@
 {"id":"CN-MFG-0156044","co":"深圳市轩鹏电子设备有限公司","city":"深圳","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝安区"}
 {"id":"CN-MFG-0156045","co":"凯嘉流水线工作台","city":"深圳","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝安区"}
 {"id":"CN-MFG-0156046","co":"中原流水线","city":"深圳","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝安区"}
-{"id":"CN-MFG-0156051","co":"鹏发不锈钢流水线工程(福和路店)","city":"深圳","gb":"4011","mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"宝安区"}
+{"id":"CN-MFG-0156051","co":"鹏发不锈钢流水线工程(福和路店)","city":"深圳","gb":"4011","mf":1,"proc":[],"mat":["不锈钢"],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"cap":["不锈钢"],"dist":"宝安区"}
 {"id":"CN-MFG-0156052","co":"天盈流水线","city":"深圳","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"宝安区"}
 {"id":"CN-MFG-0156053","co":"流水线","city":"深圳","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"宝安区"}
 {"id":"CN-MFG-0156055","co":"东莞市金鸿源工作台流水线工厂","city":"东莞","gb":"4011","mf":1,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"东莞"}

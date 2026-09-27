@@ -6,7 +6,7 @@
     "classified": 147786,
     "unclassified": 2444,
     "total_codes": 281,
-    "generated_at": "2026-09-27",
+    "generated_at": "2026-09-28",
     "usage": "按国标小类代码锁定行业 → 取 ids → 从 data/gb/<门类>/<大类>/<小类>.json 按 id 读详情（或用 gb-index.json 定位文件）",
     "note": "confidence=low 表示公司名称无明确行业信号，由关键词或原品类兜底推断，采购前需复核"
   },
