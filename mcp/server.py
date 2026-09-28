@@ -208,6 +208,33 @@ _alias_cache: Optional[Dict[str, Any]] = None
 _gb_name_cache: Optional[Dict[str, str]] = None
 
 
+# 版本号单一来源：直接读同目录 package.json，避免 MCP 内部版本与发布包版本漂移。
+def _pkg_version() -> str:
+    try:
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
+        with open(p, "r", encoding="utf-8") as f:
+            return json.load(f).get("version", "1.3.2")
+    except Exception:
+        return "1.3.2"
+
+
+# HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
+# GitHub 兜底镜像（与 Android App 同策略：pages.dev 主源 + jsDelivr / raw 镜像），
+# 保证「免 clone 检索」在单一 CDN 抖动/被墙时仍可工作。可用 BEACON_MIRRORS 追加自定义镜像。
+def _http_bases() -> List[str]:
+    bases = [BEACON_SOURCE]
+    if BEACON_SOURCE == DEFAULT_SOURCE:
+        bases.append("https://cdn.jsdelivr.net/gh/eiry16/beacon-mfg@main")
+        bases.append("https://raw.githubusercontent.com/eiry16/beacon-mfg/main")
+    m = os.environ.get("BEACON_MIRRORS")
+    if m:
+        for x in m.split(","):
+            x = x.strip().rstrip("/")
+            if x:
+                bases.append(x)
+    return bases
+
+
 # --------------------------------------------------------------------------- #
 # 使用量埋点（设计见 docs/MCP_USAGE_AUDIT.md §3.4 / §4 / §14）
 # --------------------------------------------------------------------------- #
@@ -362,48 +389,59 @@ def _git_show(relpath: str) -> Optional[str]:
     return None
 
 
+# 单基址 HTTP 超时（秒）。多镜像回退时每个基址各自计时，避免单一 CDN 卡死拖垮整体。
+_HTTP_TIMEOUT = 15
+
+
 def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
-    url = BEACON_SOURCE + "/" + relpath
-    cap = _cache_path(url)
-    etag = None
-    if os.path.exists(cap):
+    """统一的 HTTP 读取：依次尝试 _http_bases() 中的基址（主源 + 兜底镜像），
+    任一成功即返回；全部失败则用本地缓存兜底（保证离线可用）。"""
+    cached_body = None
+    cached_etag = None
+    for base in _http_bases():
+        url = base + "/" + relpath
+        cap = _cache_path(url)
+        etag = None
+        if os.path.exists(cap):
+            try:
+                with open(cap, "r", encoding="utf-8") as f:
+                    blob = json.load(f)
+                etag = blob.get("etag")
+                cached_body = blob.get("body")
+                cached_etag = etag
+            except Exception:
+                etag = None
+        headers = {"User-Agent": UA, "Accept": "*/*"}
+        # 埋点头：服务端据此填 tool / tokens / hits 列。收不到也没关系 ——
+        # worker 那边**照样计数**，只是这三列为空（文档 §3.4）。
         try:
-            with open(cap, "r", encoding="utf-8") as f:
-                blob = json.load(f)
-            etag = blob.get("etag")
-        except Exception:
-            etag = None
-    headers = {"User-Agent": UA, "Accept": "*/*"}
-    # 埋点头：服务端据此填 tool / tokens / hits 列。收不到也没关系 ——
-    # worker 那边**照样计数**，只是这三列为空（文档 §3.4）。
-    try:
-        headers.update(_beacon_headers())
-    except Exception:
-        pass
-    req = urllib.request.Request(url, headers=headers)
-    if etag:
-        req.add_header("If-None-Match", etag)
-    try:
-        resp = urllib.request.urlopen(req, timeout=30)
-        body = resp.read().decode("utf-8")
-        new_etag = resp.headers.get("ETag")
-        try:
-            with open(cap, "w", encoding="utf-8") as f:
-                json.dump({"etag": new_etag, "body": body}, f)
+            headers.update(_beacon_headers())
         except Exception:
             pass
-        return body, new_etag
-    except urllib.error.HTTPError as e:
-        if e.code == 304 and os.path.exists(cap):
-            with open(cap, "r", encoding="utf-8") as f:
-                return json.load(f).get("body"), etag
-        return None, None
-    except Exception:
-        # 网络不通时若本地有缓存也返回，保证离线可用
-        if os.path.exists(cap):
-            with open(cap, "r", encoding="utf-8") as f:
-                return json.load(f).get("body"), etag
-        return None, None
+        req = urllib.request.Request(url, headers=headers)
+        if etag:
+            req.add_header("If-None-Match", etag)
+        try:
+            resp = urllib.request.urlopen(req, timeout=_HTTP_TIMEOUT)
+            body = resp.read().decode("utf-8")
+            new_etag = resp.headers.get("ETag")
+            try:
+                with open(cap, "w", encoding="utf-8") as f:
+                    json.dump({"etag": new_etag, "body": body}, f)
+            except Exception:
+                pass
+            return body, new_etag
+        except urllib.error.HTTPError as e:
+            if e.code == 304 and cached_body is not None:
+                return cached_body, etag
+            continue
+        except Exception:
+            # 当前基址不可达：尝试下一个兜底镜像；全部失败后在末尾用本地缓存兜底
+            continue
+    # 全部基址失败：若有任何本地缓存也返回，保证离线可用
+    if cached_body is not None:
+        return cached_body, cached_etag
+    return None, None
 
 
 def _worktree_read(relpath: str) -> Optional[str]:
@@ -1935,7 +1973,7 @@ def main() -> None:
                 "result": {
                     "protocolVersion": "2024-11-05",
                     "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "beacon-mfg-readonly", "version": "1.3.0"},
+                    "serverInfo": {"name": "beacon-mfg-readonly", "version": _pkg_version()},
                 },
             })
         elif method == "notifications/initialized":

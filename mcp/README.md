@@ -46,8 +46,18 @@ npm i -g beacon-mfg-mcp      # 或不安装直接用 npx beacon-mfg-mcp
 ```
 
 ```jsonc
-{ "mcpServers": { "beacon-mfg": { "command": "beacon-mfg-mcp", "args": [] } } }
+{
+  "mcpServers": {
+    "beacon-mfg": {
+      "command": "beacon-mfg-mcp",
+      "args": [],
+      "env": { "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8" }
+    }
+  }
+}
 ```
+> 启动器（`bin/beacon-mfg-mcp.js`）已默认注入上述两个变量；此处写出仅为显式/可覆盖。
+> 二者保证 python 子进程以 UTF-8 输出，否则中文 Windows 上工具描述/结果会乱码。
 
 不填 `BEACON_REPO` 时默认走 `https://beacon-mfg.pages.dev`，即开即用。
 
@@ -91,6 +101,13 @@ npm i -g beacon-mfg-mcp      # 或不安装直接用 npx beacon-mfg-mcp
 
 HTTP 模式带正确 `User-Agent` 与 `ETag` 304 缓存（与 App 同款策略），并落盘 `~/.cache/beacon-mcp-cache`，
 重复查询零传输。CF 部署版手机号可能是全号——隐私敏感场景请用方式 A。
+
+> **CDN 兜底镜像（v1.3.2 新增）**：默认源 `beacon-mfg.pages.dev` 不可达（抖动/被墙）时，
+> MCP 会**自动回退**到 GitHub 兜底镜像拉 `manifest.json` 与分片——`cdn.jsdelivr.net/gh/eiry16/beacon-mfg@main`
+> 与 `raw.githubusercontent.com/eiry16/beacon-mfg/main`（与 Android App 同策略）。因此「免 clone 检索」
+> 在单一 CDN 失效时仍可工作。如需自定义/追加镜像，设 `BEACON_MIRRORS`（逗号分隔的基址列表）。
+> 注意：能力卡（`get_capability_card`）不在 git 内、仅存于 CF/R2，镜像兜底覆盖的是 manifest + 分片 + 档案这类主数据；
+> 在中国大陆等直连 GitHub 困难的网络，给 MCP 进程设 `HTTPS_PROXY=http://127.0.0.1:7890`（或你的代理）可让镜像链路走代理。
 
 ## 远程 HTTP 端点（Streamable HTTP）
 
@@ -169,7 +186,7 @@ MCP 服务有两种发布渠道（详见 `mcp/RELEASE.md`）：
 
 - **GitHub Release（已配 CI）**：推送 `mcp-v*` 标签即由 `.github/workflows/mcp-release.yml`
   自动打包 `mcp/` 目录为 `beacon-mfg-mcp-mcp-vX.Y.Z.tar.gz` 并创建 Release。
-- **npm 包（已发布 ✅）**：`beacon-mfg-mcp` 已发布到 npm 公共仓库，当前版本 **`1.3.1`**
+- **npm 包（已发布 ✅）**：`beacon-mfg-mcp` 已发布到 npm 公共仓库，当前版本 **`1.3.2`**
   （<https://www.npmjs.com/package/beacon-mfg-mcp>）。第三方可直接 `npm i -g beacon-mfg-mcp`
   或 `npx beacon-mfg-mcp`，客户端配置 `"command": "beacon-mfg-mcp"` 即可，无需 clone、无需填路径。
   **1.3.0 起 npm 包自带 rfq-kernel**，安装 → MCP 握手 → `tools/list` 暴露 6 个 tool 且全部可用
