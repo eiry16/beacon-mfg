@@ -26,5 +26,11 @@ if (!chosen) {
 
 const child = spawnSync(chosen, [serverPy, ...process.argv.slice(2)], {
   stdio: 'inherit',
+  // 显式锁定 UTF-8：中文 Windows 上 python 默认按 GBK 写 stdout，
+  // MCP 客户端按 UTF-8 解码会乱码。从启动器层面保证子进程用 UTF-8 输出。
+  env: Object.assign({}, process.env, {
+    PYTHONUTF8: '1',
+    PYTHONIOENCODING: 'utf-8',
+  }),
 });
 process.exit(child.status === null ? 1 : child.status);
