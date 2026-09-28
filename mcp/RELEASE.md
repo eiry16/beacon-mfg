@@ -1,4 +1,4 @@
-# Beacon-MFG 只读 MCP 服务 · v1.3.2
+# Beacon-MFG 只读 MCP 服务 · v1.3.3
 
 让任意支持 MCP 的主流 agent（Claude Desktop / Cline / Continue / WorkBuddy 等）能够
 **检索与调用**已发布到 Cloudflare Pages（或 GitHub）的灯塔工厂供应商数据，
@@ -21,7 +21,21 @@ MCP 只做**只读检索**。后端数据采集、英文翻译、库维护等流
 后三个构成「采购寻源」多轮会话链路 `start_sourcing → answer_sourcing → refine_sourcing`，
 依赖仓库平级的 `skills/rfq-kernel` 桥接模块。
 
-## 本次更新（v1.3.2）
+## 本次更新（v1.3.3）
+- **本地检索免提交、免重启即时可见**：这是 v1.3.1「worktree 兜底」的收尾。v1.3.1 只让**单文件读**走了工作树，
+  但关键词/城市检索的**召回**走的是**批量读** `_read_many_text()`——它在 git 模式下恒走 `git archive HEAD`
+  （已提交快照），于是**改完数据、重建索引后，关键词检索仍读旧索引、必须 commit 才可见**。
+  本次把批量读也改为「**工作树优先 → `git archive HEAD` 兜底 → HTTP**」。
+- **进程内 + 磁盘缓存按文件新鲜度失效**：新增 `_wt_mtime` / `_cache_stale`，各 loader
+  （manifest / 别名 / 国标名表 / cap 索引 / city / 索引桶 / fp 分片 / 能力词）改为
+  **按工作树文件 mtime 判新**——派生层一重建，MCP 立刻重读，**无需重启进程**；
+  磁盘索引缓存（`idx-*`）加 **mtime 印记**（`repr` 精确往返），同秒重写也能识别。
+- **可选 TTL**：`BEACON_CACHE_TTL`（秒，默认 `0`=关闭）可让进程内缓存周期性刷新；
+  非工作树模式（`BEACON_WORKTREE=0`）保持旧的「提交后 / 重启后生效」行为不变。
+- 已用**真实注入实验**验证：单进程、不 commit、只 sleep，`data/gb` 新记录经本地重建后
+  关键词检索由 `0` 命中变 `1` 命中。
+
+## 本次更新（v1.3.2，已发布）
 - **npm 启动器锁定 UTF-8**：`bin/beacon-mfg-mcp.js` 拉起 python 时注入 `PYTHONUTF8=1` / `PYTHONIOENCODING=utf-8`，
   修复中文 Windows 上 python 按 GBK 写 stdout、被客户端按 UTF-8 解码导致的工具描述/结果乱码。
 - **HTTP 兜底镜像**：默认源 `beacon-mfg.pages.dev` 不可达时，自动回退到 GitHub 镜像
@@ -40,7 +54,7 @@ MCP 只做**只读检索**。后端数据采集、英文翻译、库维护等流
 ## 安装（三选一）
 
 ### 1. 从 GitHub Release 下载（推荐，零依赖）
-下载本 Release 的 `beacon-mfg-mcp-mcp-v1.3.2.tar.gz`，解压后：
+下载本 Release 的 `beacon-mfg-mcp-mcp-v1.3.3.tar.gz`，解压后：
 ```jsonc
 {
   "mcpServers": {
