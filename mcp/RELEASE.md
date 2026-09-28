@@ -1,4 +1,4 @@
-# Beacon-MFG 只读 MCP 服务 · v1.3.0
+# Beacon-MFG 只读 MCP 服务 · v1.3.1
 
 让任意支持 MCP 的主流 agent（Claude Desktop / Cline / Continue / WorkBuddy 等）能够
 **检索与调用**已发布到 Cloudflare Pages（或 GitHub）的灯塔工厂供应商数据，
@@ -21,7 +21,7 @@ MCP 只做**只读检索**。后端数据采集、英文翻译、库维护等流
 后三个构成「采购寻源」多轮会话链路 `start_sourcing → answer_sourcing → refine_sourcing`，
 依赖仓库平级的 `skills/rfq-kernel` 桥接模块。
 
-## 本次更新（v1.3.0）
+## 本次更新（v1.3.1）
 - **npm 包自带 rfq-kernel**：`prepack` 会把 `skills/rfq-kernel` 打进包内，因此 `npm i -g beacon-mfg-mcp`
   安装后 6 个 tool 全部可用（早于此版本的 npm 包不含该桥接，3 个寻源 tool 会降级）。
   GitHub Release tarball 同步包含 `rfq-kernel/`。
@@ -32,7 +32,7 @@ MCP 只做**只读检索**。后端数据采集、英文翻译、库维护等流
 ## 安装（三选一）
 
 ### 1. 从 GitHub Release 下载（推荐，零依赖）
-下载本 Release 的 `beacon-mfg-mcp-mcp-v1.3.0.tar.gz`，解压后：
+下载本 Release 的 `beacon-mfg-mcp-mcp-v1.3.1.tar.gz`，解压后：
 ```jsonc
 {
   "mcpServers": {
