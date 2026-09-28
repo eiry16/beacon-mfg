@@ -14,11 +14,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: 同步 rfq-kernel 进 tar（npm 包同理，否则 start/answer/refine_sourcing 三工具降级）
+        run: |
+          rm -rf mcp/rfq-kernel
+          cp -r skills/rfq-kernel mcp/rfq-kernel
+          rm -rf mcp/rfq-kernel/__pycache__
+
       - name: 打包 MCP（仅 mcp/ 目录，保持干净分发）
         run: |
           tag="${GITHUB_REF_NAME}"
           tar -czf "beacon-mfg-mcp-${tag}.tar.gz" \
-            -C mcp server.py bin README.md RELEASE.md package.json
+            -C mcp server.py bin README.md RELEASE.md package.json rfq-kernel
           ls -lh "beacon-mfg-mcp-${tag}.tar.gz"
 
       - name: 创建 GitHub Release 并上传

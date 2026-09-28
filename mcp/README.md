@@ -51,6 +51,12 @@ npm i -g beacon-mfg-mcp      # 或不安装直接用 npx beacon-mfg-mcp
 
 不填 `BEACON_REPO` 时默认走 `https://beacon-mfg.pages.dev`，即开即用。
 
+> **v1.3.0 起 npm 包自带 `rfq-kernel`**：`start_sourcing` / `answer_sourcing` / `refine_sourcing`
+> 三个寻源 tool 依赖该桥接模块。`prepack` 会把仓库平级的 `skills/rfq-kernel` 打进包内，
+> 所以 `npm i -g beacon-mfg-mcp`（≥1.3.0）后 6 个 tool 全部可用。
+> ⚠️ **早于此版本的 npm 包不含 rfq-kernel**，那 3 个寻源 tool 会返回「桥接未就绪」——
+> 要么升级到 1.3.0+，要么改用「方式 A / 方式 B」源码接入。
+
 **方式 A — 本地 git 仓库（离线 + 隐私安全 + 零 CF 流量）**
 
 ```jsonc
@@ -66,8 +72,14 @@ npm i -g beacon-mfg-mcp      # 或不安装直接用 npx beacon-mfg-mcp
 }
 ```
 
-本地模式只通过 `git show HEAD:<path>` 读取**已提交**内容——这是掩码态手机号（138\*\*\*\*0000），
+本地模式通过 `git show HEAD:<path>` 读取已提交内容——这是掩码态手机号（138\*\*\*\*0000），
 且不会触发 `maskphone` 的 smudge、不会碰 git index 锁。
+
+> **闭合检索缺口（v1.3.0 新增）**：默认 `BEACON_WORKTREE=1`，本地模式会**优先读工作树文件**
+> （含尚未提交 / 刚修改的数据），只在文件缺失或单对象 JSON 解析失败（cron 写入中途的半成品）时
+> 退回 `git show HEAD` 已提交快照，再否则走 HTTP。这样 cron 刚写入、尚未 `git commit` 的记录也能被
+> `get_vendor` / `search_vendors` 检索到。设 `BEACON_WORKTREE=0` 可恢复「只读已提交快照」的严格行为
+> （仍不触发 smudge / 不碰 index 锁）。
 
 **方式 B — Cloudflare Pages 公开端点（最省事，需联网）**
 
@@ -129,8 +141,10 @@ cron / GUI 是**写方**：`fetch_batch` / `postfetch` 改写 `data/gb`、`data/
 （经 maskphone clean 过滤脱敏），再发布到 R2 / Pages / GitHub（`fetch_batch` 还持有仓库级 PID 锁
 `.fetch_batch.lock`）。MCP 是**只读**且不调用任何后端脚本，因此：
 
-- **硬规则 1 — 只读已发布快照，不碰实时工作树**：MCP 只从「CF 公开端点」或「`git show HEAD:` 已提交内容」
-  读取，**绝不读 cron 正在写的实时工作树**，避免读到半成品 JSON。本服务严格按此实现。
+- **硬规则 1 — 默认只读已提交快照，工作树读取受控**：MCP 只从「CF 公开端点」或「`git show HEAD:` 已提交内容」
+  读取；`BEACON_WORKTREE=1`（默认）时额外优先读工作树文件以闭合检索缺口，但**仅直接 `open()` 工作树、
+  不触发 `git checkout`/smudge、不碰 index 锁**，因此不会重掩码手机号，也只在单对象 JSON 解析失败
+  （半成品）时退回 HEAD，避免读到损坏内容。`BEACON_WORKTREE=0` 则恢复纯「只读已提交快照」。
 - **硬规则 2 — 绝不 `git checkout` / `git restore` 本仓库**：这是历史「42578 个手机号被无声掩码」事故的
   根因——smudge 过滤器会把 index 里的脱敏内容写回工作树，且 `git status` 仍显干净。本服务**只**用
   `git show HEAD:`（不触发 smudge、不碰 index 锁），从根上避开。
@@ -155,10 +169,11 @@ MCP 服务有两种发布渠道（详见 `mcp/RELEASE.md`）：
 
 - **GitHub Release（已配 CI）**：推送 `mcp-v*` 标签即由 `.github/workflows/mcp-release.yml`
   自动打包 `mcp/` 目录为 `beacon-mfg-mcp-mcp-vX.Y.Z.tar.gz` 并创建 Release。
-- **npm 包（已发布 ✅）**：`beacon-mfg-mcp` 已于 **2026-09-24** 发布到 npm 公共仓库，当前版本 **`0.1.3`**
+- **npm 包（已发布 ✅）**：`beacon-mfg-mcp` 已发布到 npm 公共仓库，当前版本 **`1.3.0`**
   （<https://www.npmjs.com/package/beacon-mfg-mcp>）。第三方可直接 `npm i -g beacon-mfg-mcp`
   或 `npx beacon-mfg-mcp`，客户端配置 `"command": "beacon-mfg-mcp"` 即可，无需 clone、无需填路径。
-  已实测：安装 → MCP 握手 → `tools/list` 全通（暴露 6 个 tool）。
+  **1.3.0 起 npm 包自带 rfq-kernel**，安装 → MCP 握手 → `tools/list` 暴露 6 个 tool 且全部可用
+  （含 `start/answer/refine_sourcing` 三个寻源 tool；更早版本不含该桥接，那 3 个 tool 会降级）。
 
 ### 发布到 npm 的步骤（需要 Access Token，不是 2FA 种子）
 
