@@ -51,9 +51,18 @@ import uuid as _uuid
 # 寻源内核 桥接（G1/G2/G3：让 MCP 客户 agent 能跑多轮对话匹配）
 # 路径相对本文件解析，与 cwd / BEACON_REPO 无关。桥接不可用时降级，不影响其余 tool。
 # --------------------------------------------------------------------------- #
-_RFK_SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        "..", "skills", "rfq-kernel", "src")
-if os.path.isdir(_RFK_SRC) and _RFK_SRC not in _sys.path:
+_MCP_DIR = os.path.dirname(os.path.abspath(__file__))
+# 解析顺序：
+#  ① 仓库平级目录 ../skills/寻源内核/src —— 本地 clone（git 仓库）优先用**活源**
+#  ② 包内自带副本 mcp/寻源内核/src —— `npm i -g beacon-mfg-mcp` 安装后兜底
+#     （prepack 会把 ../skills/寻源内核 拷进 mcp/寻源内核，见 package.json）
+# 与 cwd / BEACON_REPO 无关。桥接不可用时降级，不影响其余 tool。
+_RFK_CANDIDATES = [
+    os.path.join(_MCP_DIR, "..", "skills", "rfq-kernel", "src"),
+    os.path.join(_MCP_DIR, "rfq-kernel", "src"),
+]
+_RFK_SRC = next((p for p in _RFK_CANDIDATES if os.path.isdir(p)), None)
+if _RFK_SRC and _RFK_SRC not in _sys.path:
     _sys.path.insert(0, _RFK_SRC)
 try:
     import mcp_bridge as _bridge
@@ -397,13 +406,59 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
         return None, None
 
 
+def _worktree_read(relpath: str) -> Optional[str]:
+    """本地 git 模式：读取本地副本文件，闭合『未提交/刚修改的数据搜不到』的缺口。
+
+    优先于 git HEAD 返回本地副本版本（含**新增**与**刚修改**的记录）；仅当：
+      - 文件不存在，或
+      - 单对象 JSON（.json）无法解析（cron 写入中途的半成品）
+    时返回 None，由 fetch_text 退回 git HEAD（已提交快照，安全），避免污染结果。
+    注意：直接 open 本地副本文件、**不触发** git checkout / smudge，因此不会重隐藏手机号，
+    也不会碰 git index 锁（与 server.py 硬规则 2 一致）。
+    BEACON_WORKTREE=0 时彻底关闭，恢复『只读已提交快照』的严格行为。
+    """
+    if not REPO:
+        return None
+    if os.environ.get("BEACON_WORKTREE", "1") == "0":
+        return None
+    p = os.path.join(REPO, relpath)
+    if not os.path.isfile(p):
+        return None
+    try:
+        with open(p, "r", encoding="utf-8") as f:
+            txt = f.read()
+    except Exception:
+        return None
+    if not txt.strip():
+        return None
+    # 单对象 JSON：解析失败（半成品）则退回 HEAD，避免返回损坏内容
+    if relpath.endswith(".json"):
+        try:
+            json.loads(txt)
+        except Exception:
+            return None
+    return txt
+
+
 def fetch_text(relpath: str) -> Optional[str]:
-    """统一的只读取入口：本地 git 优先（若可用），否则 HTTP。"""
+    """统一的只读取入口。
+
+    本地 git 模式（BEACON_WORKTREE 默认开启）：优先返回本地副本文件（含新增/刚修改），
+    半成品或不存在时退回 git HEAD 已提交快照，再否则 HTTP——闭合检索缺口且不读损坏内容。
+    BEACON_WORKTREE=0：恢复『只读已提交快照』的严格行为（git HEAD → HTTP）。
+    """
     if REPO:
-        g = _git_show(relpath)
-        if g is not None:
-            return g
-        # 本地没有（如能力卡不进 git）再退回 HTTP
+        if os.environ.get("BEACON_WORKTREE", "1") != "0":
+            w = _worktree_read(relpath)
+            if w is not None:
+                return w
+            g = _git_show(relpath)
+            if g is not None:
+                return g
+        else:
+            g = _git_show(relpath)
+            if g is not None:
+                return g
     return _http_get(relpath)[0]
 
 
@@ -717,13 +772,66 @@ def _build_fp_index_via_archive() -> Optional[List[Dict[str, Any]]]:
         return None
 
 
+def _build_fp_index_from_worktree() -> List[Dict[str, Any]]:
+    """本地 git 模式 + BEACON_WORKTREE!=0：直接扫本地副本 fingerprint 分片，闭合检索缺口。
+
+    逐行解析（每行非法 JSON 跳过，避免读到 cron 写入中途的半成品），按 id 去重后返回。
+    仅补充/覆盖『已提交快照之外』的本地副本记录，不读非 fingerprint 目录。
+    """
+    out: Dict[str, Dict[str, Any]] = {}
+    if not REPO:
+        return []
+    if os.environ.get("BEACON_WORKTREE", "1") == "0":
+        return []
+    d = os.path.join(REPO, "skills", "registry", "fingerprint")
+    if not os.path.isdir(d):
+        return []
+    for root, _dirs, files in os.walk(d):
+        for fn in files:
+            if not fn.endswith(".jsonl"):
+                continue
+            fp = os.path.join(root, fn)
+            try:
+                with open(fp, "r", encoding="utf-8") as f:
+                    data = f.read()
+            except Exception:
+                continue
+            for line in data.splitlines():
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    r = json.loads(line)
+                except Exception:
+                    continue
+                rid = r.get("id") if isinstance(r, dict) else None
+                if rid:
+                    out[rid] = r
+    return list(out.values())
+
+
+def _merge_worktree_fp(recs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """用本地副本 fingerprint 记录覆盖/补充已提交快照（按 id；本地副本胜出），闭合检索缺口。"""
+    wt_recs = _build_fp_index_from_worktree()
+    if not wt_recs:
+        return recs
+    by_id: Dict[str, Dict[str, Any]] = {
+        r["id"]: r for r in recs if isinstance(r, dict) and r.get("id")
+    }
+    for r in wt_recs:
+        if isinstance(r, dict) and r.get("id"):
+            by_id[r["id"]] = r   # 工作树覆盖已提交
+    return list(by_id.values())
+
+
 def _build_fp_index() -> List[Dict[str, Any]]:
     global _fp_index, _fp_index_key
     cp = _index_cache_path()
-    key = cp or "mem"
+    wt = os.environ.get("BEACON_WORKTREE", "1") != "0"
+    key = (cp or "mem") + ("|wt" if wt else "")
     if _fp_index is not None and _fp_index_key == key:
         return _fp_index
-    if cp and os.path.exists(cp):
+    if cp and not wt and os.path.exists(cp):
         try:
             with open(cp, "r", encoding="utf-8") as f:
                 _fp_index = json.load(f)
@@ -736,9 +844,13 @@ def _build_fp_index() -> List[Dict[str, Any]]:
     if REPO:
         recs = _build_fp_index_via_archive()
         if recs is not None:
+            # 本地副本模式：用本地副本 fingerprint 分片覆盖/补充已提交快照，闭合检索缺口
+            if wt:
+                recs = _merge_worktree_fp(recs)
             _fp_index = recs
             _fp_index_key = key
-            if cp:
+            # 本地副本模式不落盘缓存（内容随本地副本变化，落盘会陈旧）
+            if cp and not wt:
                 try:
                     with open(cp, "w", encoding="utf-8") as f:
                         json.dump(recs, f, ensure_ascii=False)
@@ -757,9 +869,11 @@ def _build_fp_index() -> List[Dict[str, Any]]:
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
         for part in ex.map(_read_fp_shard, fp_shards):
             recs.extend(part)
+    if wt and REPO:
+        recs = _merge_worktree_fp(recs)
     _fp_index = recs
     _fp_index_key = key
-    if cp:
+    if cp and not wt:
         try:
             with open(cp, "w", encoding="utf-8") as f:
                 json.dump(recs, f, ensure_ascii=False)
