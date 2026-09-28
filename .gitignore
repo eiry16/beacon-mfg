@@ -282,3 +282,7 @@ start_cron_manager.bat
 启动控制台.bat
 # 遗留备份目录（旧 ID 制式能力卡备份；postfetch 的提交步骤本就明确不碰它）
 .backup_legacy/
+# 构建期生成物：prepack 把仓库平级的 skills/rfq-kernel 拷进 mcp/rfq-kernel，
+# 供 npm 包 / GitHub Release tarball 自带（否则 3 个寻源 tool 降级）。属派生副本，
+# 不得入库 —— 真实源在 skills/rfq-kernel/，改那里，勿改这里。
+mcp/rfq-kernel/
