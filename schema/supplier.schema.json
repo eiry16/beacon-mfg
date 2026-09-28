@@ -75,7 +75,7 @@
     "is_template": {
       "type": "boolean",
       "deprecated": true,
-      "description": "已废弃，请使用 status 字段。本字段保留用于兼容旧数据：true=template，false=verified或unverified_poi"
+      "description": "已废弃，请使用 status 字段。本字段保留用于兼容旧数据，语义与 status 对齐：true=非verified（unverified_poi 或 template），false=verified。注：本文档 2026-09-28 更正——旧描述「true=template，false=verified或unverified_poi」与写入端及全库数据不符（scripts/fetch_gaode_poi.py、scripts/dedup_gb.py 均写 is_template = status != 'verified'；全库 38,264 条 is_template=true 对应 status=unverified_poi，status=template 为 0 条）"
     },
     "verified_at": {
       "type": "string",
