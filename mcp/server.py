@@ -208,14 +208,71 @@ _alias_cache: Optional[Dict[str, Any]] = None
 _gb_name_cache: Optional[Dict[str, str]] = None
 
 
+# ───────────────────────────────────────────────────────────────
+# 派生层缓存失效（让「后台上传 → 立刻可见」无需提交 / 无需重启）
+#
+# BEACON_WORKTREE=1（默认）下，派生重建 会把 fp / 检索索引 / 清单等派生层重建到
+# 本地副本。下面这组机制让 MCP 在不提交、不重启的前提下读到新版本：
+#   - 磁盘索引缓存（idx-*）按「HEAD sha + 本地副本 mtime」判新（见 _index_text）
+#   - 进程内缓存（manifest/alias/cap/gb_name/fp_index/桶/分片）按文件 mtime 判新
+#     （见 _cache_stale），或按 BEACON_CACHE_TTL（秒）周期刷新。
+#   - 批量读（_read_many_text，被 _candidate_shards / _records_from_paths 使用）
+#     改为**本地副本优先**、git archive HEAD 兜底 —— 否则这两条关键词 / 城市检索的
+#     关键路径会绕过上面的失效机制，永远读到已提交快照。
+# 非本地副本模式（BEACON_WORKTREE=0）或 HTTP 模式：恢复旧的「提交后 / 重启后生效」。
+BEACON_CACHE_TTL = float(os.environ.get("BEACON_CACHE_TTL", "0") or "0")
+
+_mtime_cache: Dict[str, tuple] = {}  # relpath -> (checked_at, mtime)，2s 内复用避免热路径狂 stat
+
+
+def _wt_mtime(relpath: str) -> Optional[float]:
+    """本地副本文件 mtime（秒）。非本地副本模式或文件不存在 → None（不按 mtime 判新）。"""
+    if not REPO or os.environ.get("BEACON_WORKTREE", "1") == "0":
+        return None
+    now = time.time()
+    c = _mtime_cache.get(relpath)
+    if c is not None and (now - c[0]) < 2.0:
+        return c[1]
+    p = os.path.join(REPO, relpath)
+    try:
+        m = os.stat(p).st_mtime
+    except OSError:
+        m = None
+    _mtime_cache[relpath] = (now, m)
+    return m
+
+
+def _wt_mtime_any(relpaths) -> Optional[float]:
+    """多文件取最大 mtime（任一不存在则忽略），全不存在 → None。"""
+    mts = [m for m in (_wt_mtime(r) for r in relpaths) if m is not None]
+    return max(mts) if mts else None
+
+
+def _cache_stale(slot: tuple, relpath: Optional[str]) -> bool:
+    """进程内缓存是否该失效。slot = (value, loaded_at, sig_mtime)。
+    value 为空 / 超 BEACON_CACHE_TTL / 本地副本 mtime 变化（派生重建 重建）→ 失效。
+    relpath 可为单路径或路径序列（取最大 mtime）。非本地副本模式（mtime 为 None）则只受
+    TTL 与首次加载约束，即旧行为。
+    """
+    if slot is None or slot[0] is None:
+        return True
+    if BEACON_CACHE_TTL > 0 and (time.time() - slot[1]) > BEACON_CACHE_TTL:
+        return True
+    if relpath is not None:
+        m = _wt_mtime_any(relpath) if isinstance(relpath, (list, tuple, set)) else _wt_mtime(relpath)
+        if m is not None and slot[2] != m:
+            return True
+    return False
+
+
 # 版本号单一来源：直接读同目录 package.json，避免 MCP 内部版本与发布包版本漂移。
 def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.3.2")
+            return json.load(f).get("version", "1.3.3")
     except Exception:
-        return "1.3.2"
+        return "1.3.3"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
@@ -505,12 +562,12 @@ def fetch_text(relpath: str) -> Optional[str]:
 # --------------------------------------------------------------------------- #
 def load_manifest() -> Dict[str, Any]:
     global _manifest_cache
-    if _manifest_cache is None:
+    if _cache_stale(_manifest_cache, "data/manifest.json"):
         txt = fetch_text("data/manifest.json")
         if not txt:
             raise RuntimeError("无法取得 manifest.json（检查 BEACON_SOURCE / BEACON_REPO / 网络）")
-        _manifest_cache = json.loads(txt)
-    return _manifest_cache
+        _manifest_cache = (json.loads(txt), time.time(), _wt_mtime("data/manifest.json"))
+    return _manifest_cache[0]
 
 
 def _shards_of_type(t: str) -> List[Dict[str, Any]]:
@@ -551,13 +608,14 @@ def _load_alias_file(rel: str) -> Dict[str, Any]:
 def load_gb_alias() -> Dict[str, Any]:
     """词 → 条目。两层表合并：gb-alias.json（数据推导）+ gb-alias-curated.json（人工策展）。"""
     global _alias_cache
-    if _alias_cache is None:
+    _alias_relpaths = ("data/gb-alias.json", "data/gb-alias-curated.json")
+    if _cache_stale(_alias_cache, _alias_relpaths):
         merged: Dict[str, Any] = {}
-        for rel in ("data/gb-alias.json", "data/gb-alias-curated.json"):
+        for rel in _alias_relpaths:
             for k, v in _load_alias_file(rel).items():
                 merged.setdefault(str(k).lower(), v)
-        _alias_cache = merged
-    return _alias_cache
+        _alias_cache = (merged, time.time(), _wt_mtime_any(_alias_relpaths))
+    return _alias_cache[0]
 
 
 def _alias_entries(v: Any) -> List[Dict[str, Any]]:
@@ -584,7 +642,7 @@ def _alias_entries(v: Any) -> List[Dict[str, Any]]:
 def _gb_names() -> Dict[str, str]:
     """国标码 → 中文名。取不到（离线/文件缺失）就返回空表，不影响主链路。"""
     global _gb_name_cache
-    if _gb_name_cache is None:
+    if _cache_stale(_gb_name_cache, "data/gb4754-full.json"):
         names: Dict[str, str] = {}
         txt = fetch_text("data/gb4754-full.json")
         if txt:
@@ -599,8 +657,8 @@ def _gb_names() -> Dict[str, str]:
                 if key in ("classes", "groups", "divisions") and isinstance(body, dict):
                     for k, v in body.items():
                         names[str(k)] = str(v.get("name", v)) if isinstance(v, dict) else str(v)
-        _gb_name_cache = names
-    return _gb_name_cache
+        _gb_name_cache = (names, time.time(), _wt_mtime("data/gb4754-full.json"))
+    return _gb_name_cache[0]
 
 
 def alias_codes(q: str, max_codes: int = 6) -> List[Dict[str, Any]]:
@@ -662,13 +720,14 @@ def _load_cap_index() -> Optional[Dict[str, Any]]:
     """skills/registry/index/cap.json —— 发布产物（与 city.json 同构）：
     {terms:{code:词面串}, shards:{code:{shard_name:count}}}。"""
     global _cap_index_cache
-    if _cap_index_cache is None:
+    if _cache_stale(_cap_index_cache, "skills/registry/index/cap.json"):
         txt = _index_text("skills/registry/index/cap.json")
         try:
-            _cap_index_cache = json.loads(txt) if txt else {}
+            _cap_index_cache = (json.loads(txt) if txt else {},
+                               time.time(), _wt_mtime("skills/registry/index/cap.json"))
         except Exception:
-            _cap_index_cache = {}
-    return _cap_index_cache
+            _cap_index_cache = ({}, time.time(), _wt_mtime("skills/registry/index/cap.json"))
+    return _cap_index_cache[0]
 
 
 def _cap_term_index() -> Dict[str, str]:
@@ -867,6 +926,11 @@ def _build_fp_index() -> List[Dict[str, Any]]:
     cp = _index_cache_path()
     wt = os.environ.get("BEACON_WORKTREE", "1") != "0"
     key = (cp or "mem") + ("|wt" if wt else "")
+    if wt:
+        # 本地副本模式：manifest 由 派生重建 每次重建（mtime 随之变），把它并进键 →
+        # fp 分片被重建后 fp_index 自动翻新，无需提交 / 重启。
+        mm = _wt_mtime("data/manifest.json")
+        key += "|m%.0f" % (mm if mm is not None else 0)
     if _fp_index is not None and _fp_index_key == key:
         return _fp_index
     if cp and not wt and os.path.exists(cp):
@@ -926,7 +990,7 @@ def _build_fp_index() -> List[Dict[str, Any]]:
     return recs
 
 
-_CAP_TERMS_CACHE: Dict[str, Any] = {}
+_CAP_TERMS_SLOT: Optional[tuple] = None
 
 
 def _cap_term_of(code: str) -> str:
@@ -939,7 +1003,8 @@ def _cap_term_of(code: str) -> str:
     取不到时退回键本身：`caps_index` 允许出现码表之外的裸值（材料「不锈钢」、
     品类「正餐」），它们本身就是可检索词，丢掉等于让这类查询瞎掉。
     """
-    if "v" not in _CAP_TERMS_CACHE:
+    global _CAP_TERMS_SLOT
+    if _cache_stale(_CAP_TERMS_SLOT, "skills/registry/index/cap.json"):
         terms: Dict[str, Any] = {}
         try:
             txt = _index_text("skills/registry/index/cap.json")
@@ -947,8 +1012,8 @@ def _cap_term_of(code: str) -> str:
                 terms = (json.loads(txt).get("terms") or {})
         except Exception:
             terms = {}
-        _CAP_TERMS_CACHE["v"] = terms
-    return str(_CAP_TERMS_CACHE["v"].get(code) or code or "")
+        _CAP_TERMS_SLOT = (terms, time.time(), _wt_mtime("skills/registry/index/cap.json"))
+    return str(_CAP_TERMS_SLOT[0].get(code) or code or "")
 
 
 def _hay(rec: Dict[str, Any]) -> str:
@@ -992,8 +1057,8 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
 INDEX_DIR = "skills/registry/index"
 INDEX_VERSION = 3          # 倒排 key 为分片路径；v2 用国标码会漏掉 gb=null 的记录
 _index_meta_cache: Optional[Dict[str, Any]] = None
-_bucket_cache: Dict[str, Dict[str, Any]] = {}
-_shard_rec_cache: Dict[str, List[Dict[str, Any]]] = {}
+_bucket_cache: Dict[str, tuple] = {}
+_shard_rec_cache: Dict[str, tuple] = {}
 
 _RE_CJK = re.compile("[\u4e00-\u9fff\u3400-\u4dbf]+")
 _RE_WORD = re.compile(r"[a-z0-9]+")
@@ -1036,13 +1101,18 @@ def _grams(text: str, query_mode: bool = False) -> List[str]:
 def _index_text(relpath: str) -> Optional[str]:
     """读索引文件。git 模式按 HEAD sha 落盘缓存（桶均 11KB），
     缓存后跨进程重复查询几乎零成本。
+
+    BEACON_WORKTREE=1（默认）：磁盘缓存额外按本地副本文件 mtime 判新 —— 派生重建
+    重建索引后 mtime 变化，下次查询即重读本地副本版本，无需提交 HEAD 即可让关键词 /
+    城市检索看到新数据（修 DSH 发现的「不提交就永远看不到」坑）。非本地副本模式保持
+    旧的「HEAD 变化才刷新」行为。
     """
     cp = None
     if REPO:
         h = _head_sha() or "nosha"
         cp = os.path.join(CACHE_DIR, "idx-" +
                           hashlib.sha1((h + "|" + relpath).encode("utf-8")).hexdigest() + ".json")
-        if os.path.exists(cp):
+        if os.path.exists(cp) and _index_sig_ok(cp, relpath):
             try:
                 with open(cp, "r", encoding="utf-8") as f:
                     return f.read()
@@ -1054,9 +1124,41 @@ def _index_text(relpath: str) -> Optional[str]:
             os.makedirs(CACHE_DIR, exist_ok=True)
             with open(cp, "w", encoding="utf-8") as f:
                 f.write(txt)
+            _write_index_sig(cp, relpath)
         except Exception:
             pass
     return txt
+
+
+def _index_sig_ok(cp: str, relpath: str) -> bool:
+    """本地副本模式下，磁盘缓存里的 mtime 印记是否与当前本地副本文件一致。
+
+    印记用 repr 精确往返（浮点不丢精度），避免 派生重建 在同一秒内重写索引文件时
+    截断判成「未变」而误服陈旧缓存。
+    """
+    sig = _wt_mtime(relpath)
+    if sig is None:
+        return True                      # 非工作树：不按 mtime 判新
+    sf = cp + ".sig"
+    try:
+        with open(sf, "r", encoding="utf-8") as f:
+            return float(f.read().strip()) == sig
+    except Exception:
+        return False                     # 缺印记 / 损坏 → 重建
+
+
+def _write_index_sig(cp: str, relpath: str) -> None:
+    sig = _wt_mtime(relpath)
+    sf = cp + ".sig"
+    try:
+        if sig is None:
+            if os.path.exists(sf):
+                os.remove(sf)
+            return
+        with open(sf, "w", encoding="utf-8") as f:
+            f.write(repr(sig))
+    except Exception:
+        pass
 
 
 def _git_read_many(paths: List[str]) -> Dict[str, str]:
@@ -1088,10 +1190,29 @@ def _git_read_many(paths: List[str]) -> Dict[str, str]:
 
 
 def _read_many_text(paths: List[str]) -> Dict[str, str]:
-    """批量取文本：git 模式 1 次 archive；HTTP 模式线程池并发。"""
+    """批量取文本：本地副本优先 → git archive 兜底；HTTP 模式线程池并发。
+
+    BEACON_WORKTREE=1（默认）：**必须本地副本优先**。`_candidate_shards`（索引桶）与
+    `_records_from_paths`（fp 分片）都走这里 —— 若沿用「git archive HEAD」就会永远
+    读到**已提交快照**，派生重建 刚重建、尚未提交的索引 / 分片完全看不见（DSH 实测
+    「关键词 / 城市检索不提交就搜不到」的真凶）。本地副本缺的文件再走 archive 已提交
+    快照兜底，最后 HTTP。非本地副本模式（BEACON_WORKTREE=0）保持旧行为。
+    """
     if not paths:
         return {}
     if REPO:
+        if os.environ.get("BEACON_WORKTREE", "1") != "0":
+            out: Dict[str, str] = {}
+            missing: List[str] = []
+            for p in paths:
+                w = _worktree_read(p)
+                if w is not None:
+                    out[p] = w
+                else:
+                    missing.append(p)
+            if missing:                       # 工作树缺失/半成品 → 已提交快照兜底
+                out.update(_git_read_many(missing))
+            return out
         got = _git_read_many(paths)
         if len(got) >= max(1, len(paths) // 2):   # archive 正常覆盖
             return got
@@ -1105,16 +1226,17 @@ def _read_many_text(paths: List[str]) -> Dict[str, str]:
 
 def _index_meta() -> Optional[Dict[str, Any]]:
     global _index_meta_cache
-    if _index_meta_cache is not None:
-        return _index_meta_cache
-    txt = _index_text(INDEX_DIR + "/meta.json")
-    if not txt:
-        return None
-    try:
-        _index_meta_cache = json.loads(txt)
-    except Exception:
-        return None
-    return _index_meta_cache
+    if _cache_stale(_index_meta_cache, INDEX_DIR + "/meta.json"):
+        txt = _index_text(INDEX_DIR + "/meta.json")
+        if not txt:
+            _index_meta_cache = (None, time.time(), _wt_mtime(INDEX_DIR + "/meta.json"))
+        else:
+            try:
+                _index_meta_cache = (json.loads(txt), time.time(),
+                                    _wt_mtime(INDEX_DIR + "/meta.json"))
+            except Exception:
+                _index_meta_cache = (None, time.time(), _wt_mtime(INDEX_DIR + "/meta.json"))
+    return _index_meta_cache[0]
 
 
 def _index_fresh() -> bool:
@@ -1155,17 +1277,16 @@ _city_names_cache: Optional[set] = None
 def _city_names() -> set:
     """检索索引里出现过的城市名集合：地区词不作为相关性证据（只作筛选偏好）。"""
     global _city_names_cache
-    if _city_names_cache is not None:
-        return _city_names_cache
-    names: set = set()
-    txt = _index_text(INDEX_DIR + "/city.json")
-    if txt:
-        try:
-            names = set(json.loads(txt).keys())
-        except Exception:
-            names = set()
-    _city_names_cache = names
-    return names
+    if _cache_stale(_city_names_cache, INDEX_DIR + "/city.json"):
+        names: set = set()
+        txt = _index_text(INDEX_DIR + "/city.json")
+        if txt:
+            try:
+                names = set(json.loads(txt).keys())
+            except Exception:
+                names = set()
+        _city_names_cache = (names, time.time(), _wt_mtime(INDEX_DIR + "/city.json"))
+    return _city_names_cache[0]
 
 
 def _is_cjk(s: str) -> bool:
@@ -1202,16 +1323,23 @@ def _collapse_prefixes(toks: set) -> set:
 
 
 def _bucket_postings(gram: str, buckets: int) -> Dict[str, Any]:
-    """取检索索引里某词的 postings {分片路径: 命中条数}；缺失/异常返回空 dict。"""
+    """取检索索引里某词的 postings {分片路径: 命中条数}；缺失/异常返回空 dict。
+
+    桶缓存按本地副本 mtime 判新（见 _wt_mtime）：派生重建 重建索引后，对应桶文件
+    mtime 变化即自动重读，无需重启。
+    """
     rel = _bucket_rel(gram, buckets)
-    b = _bucket_cache.get(rel)
-    if b is None:
+    m = _wt_mtime(rel)
+    slot = _bucket_cache.get(rel)
+    if slot is not None and (m is None or slot[0] == m):
+        b = slot[1]
+    else:
         txt = _index_text(rel)
         try:
             b = json.loads(txt) if txt else {}
         except Exception:
             b = {}
-        _bucket_cache[rel] = b
+        _bucket_cache[rel] = (m, b)
     post = b.get(gram) if isinstance(b, dict) else None
     return post if isinstance(post, dict) else {}
 
@@ -1354,13 +1482,22 @@ def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
 
 
 def _records_from_paths(paths: List[str]) -> List[Dict[str, Any]]:
-    """批量读取若干 fp 分片的记录，并在进程内按路径缓存（重复查询近乎零成本）。"""
+    """批量读取若干 fp 分片的记录，并在进程内按路径缓存（重复查询近乎零成本）。
+
+    缓存按本地副本 mtime 判新（见 _wt_mtime）：派生重建 重建 fp 分片后，对应分片 mtime
+    变化即重读，无需重启；非本地副本模式保持旧行为（按路径存在性判新）。
+    """
     out: List[Dict[str, Any]] = []
     if not paths:
         return out
-    todo = [p for p in paths if p not in _shard_rec_cache]
-    for p in todo:
-        _shard_rec_cache[p] = []
+    todo: List[str] = []
+    for p in paths:
+        m = _wt_mtime(p)
+        slot = _shard_rec_cache.get(p)
+        if slot is not None and (m is None or slot[0] == m):
+            continue
+        todo.append(p)
+        _shard_rec_cache[p] = (m, [])
     for _path, txt in _read_many_text(todo).items():
         recs: List[Dict[str, Any]] = []
         for line in txt.splitlines():
@@ -1371,9 +1508,11 @@ def _records_from_paths(paths: List[str]) -> List[Dict[str, Any]]:
                 recs.append(json.loads(line))
             except Exception:
                 continue
-        _shard_rec_cache[_path] = recs
+        _shard_rec_cache[_path] = (_wt_mtime(_path), recs)
     for p in paths:
-        out.extend(_shard_rec_cache.get(p, []))
+        slot = _shard_rec_cache.get(p)
+        if slot:
+            out.extend(slot[1])
     return out
 
 
