@@ -169,7 +169,7 @@ MCP 服务有两种发布渠道（详见 `mcp/RELEASE.md`）：
 
 - **GitHub Release（已配 CI）**：推送 `mcp-v*` 标签即由 `.github/workflows/mcp-release.yml`
   自动打包 `mcp/` 目录为 `beacon-mfg-mcp-mcp-vX.Y.Z.tar.gz` 并创建 Release。
-- **npm 包（已发布 ✅）**：`beacon-mfg-mcp` 已发布到 npm 公共仓库，当前版本 **`1.3.0`**
+- **npm 包（已发布 ✅）**：`beacon-mfg-mcp` 已发布到 npm 公共仓库，当前版本 **`1.3.1`**
   （<https://www.npmjs.com/package/beacon-mfg-mcp>）。第三方可直接 `npm i -g beacon-mfg-mcp`
   或 `npx beacon-mfg-mcp`，客户端配置 `"command": "beacon-mfg-mcp"` 即可，无需 clone、无需填路径。
   **1.3.0 起 npm 包自带 寻源内核**，安装 → MCP 握手 → `tools/list` 暴露 6 个 tool 且全部可用
