@@ -15047,7 +15047,15 @@
       "evidence": "棋牌"
     },
     "is_manufacturer": false,
-    "_bucket": "R/90/9019"
+    "_bucket": "R/90/9019",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0065905/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0066934",

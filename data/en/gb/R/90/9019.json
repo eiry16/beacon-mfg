@@ -840,13 +840,13 @@
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Amusement Park"
+      "Amusement park"
     ],
     "region": {
       "province": "Shanghai",
       "city": "Shanghai"
     },
-    "address_en": "200 meters west of the intersection of Dong'an Road and Longteng Avenue辅路",
+    "address_en": "200 meters west at the intersection of Dong'an Road and Longteng Avenue辅路",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -1388,17 +1388,17 @@
   },
   {
     "id": "CN-MFG-0042319",
-    "company_en": "Dreamland Children's Paradise (Huarewa万家 Store at Chunfeng Road)",
+    "company_en": "Dreamland Children's Paradise (Chunfeng Road China Resources万家 Store)",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Amusement Park"
+      "Amusement park"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Shenzhen"
     },
-    "address_en": "50 meters southwest of the main entrance of Manyuexuan (walk 180 meters west from Xicun Subway Station B Exit)",
+    "address_en": "50 meters southwest of the main entrance of Manyu轩, 180 meters walk from Xicun Metro Station B Exit",
     "contact_phone": "135****8834",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -8846,7 +8846,7 @@
   },
   {
     "id": "CN-MFG-0062917",
-    "company_en": "Zizhu轩 Mahjong Room",
+    "company_en": "Zizhu轩棋牌室",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
@@ -8856,7 +8856,7 @@
       "province": "Guangdong",
       "city": "Dongguan"
     },
-    "address_en": "No. 75 Xizheng Road, Dalingshan Town, Zizhu轩 Mahjong Room (2nd Floor)",
+    "address_en": "No. 75 Xizheng Road, Dalingshan Town, Zizhu轩棋牌室 (2nd Floor)",
     "contact_phone": "135****8198",
     "source": "public_directory",
     "verified_at": "2026-09-15",
@@ -9507,12 +9507,12 @@
   },
   {
     "id": "CN-MFG-0066943",
-    "company_en": "Buji Mahjong and Tea Chat",
+    "company_en": "Buji Mahjong & Tea Chat",
     "category": "文化、体育和娱乐业",
     "category_en": "文化、体育和娱乐业",
     "keywords_en": [
-      "Tea House",
-      "Teahouse"
+      "Teahouse",
+      "Tea house"
     ],
     "region": {
       "province": "Shanghai",
@@ -13187,6 +13187,741 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165352",
+    "company_en": "Baimianguang Siyin Zhujiao Yule Hudong Guan",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "movie theater"
+    ],
+    "region": {
+      "province": "Hubei",
+      "city": "Wuhan"
+    },
+    "address_en": "No. 818 Zhongshan Avenue, Hualou Jiedao, Ping'an Building, 37th Floor, Room 15",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165431",
+    "company_en": "Yunding·Yulehui·Card Room",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "Beside the main entrance of Yunfeng Grand Hotel (430 meters walk from Jing'an Temple Subway Station Exit 1)",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "棋牌"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165439",
+    "company_en": "Quehui Card Room",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "No. 388 Changshou Road, 3rd Floor, Changshou Road Jiedao (beside Changshou Road Subway Station Exit 3)",
+    "contact_phone": "021-62227093",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "棋牌"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165510",
+    "company_en": "TmPL Entertainment",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 1, Tai'an Bay Road 8, Vanke Binhai Cloud Center F4 Floor",
+    "contact_phone": "4009836932",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165512",
+    "company_en": "Jinse Lanwan Billiards Room (Shazui Zhongxin Street Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 64 Shazui Zhongxin Street",
+    "contact_phone": "4009827382",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "台球"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165516",
+    "company_en": "Xinghehui Entertainment",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 2008 Xinzhou South Road, Xinshidu Commercial Plaza 3rd Floor A303, A305, Fubao Jiedao, Xinggang Community",
+    "contact_phone": "4009998247; 4009998347",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165621",
+    "company_en": "Xihuhui Entertainment Hall",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "Jinlong Fortune Center, Chaoming Jiedao",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165684",
+    "company_en": "Zhongguo Yun·International Entertainment",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 191 Zhongshan South Road, Jiangsu SuMao Building, Qiangtian Temple Jiedao",
+    "contact_phone": "025-58731935",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165688",
+    "company_en": "Jin Yue•International Entertainment",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Nanjing"
+    },
+    "address_en": "No. 330 Hongwu Road, Hongwu Road Street, smile hotel",
+    "contact_phone": "4009622613",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165790",
+    "company_en": "Hongsheng Business Entertainment Center",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Hubei",
+      "city": "Wuhan"
+    },
+    "address_en": "100 meters west of the intersection of Huangpu Avenue and Xinjianhou Street",
+    "contact_phone": "4009081652",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165800",
+    "company_en": "Chihong•Entertainment",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Hubei",
+      "city": "Wuhan"
+    },
+    "address_en": "Yanjiang No. 1 Mall, Minzu Street",
+    "contact_phone": "4008976813",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165808",
+    "company_en": "Bailomen•Entertainment (New World Department Store Branch)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "KTV"
+    ],
+    "region": {
+      "province": "Hubei",
+      "city": "Wuhan"
+    },
+    "address_en": "4th Floor, New World Department Store, Xudong Avenue, Yangyuan Street, Yiyuan Building",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165847",
+    "company_en": "Happy Dance Hall (Song Huan Entertainment Co., Ltd.)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Dance Hall"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "F2, Play Cool World Food Plaza, No. 555 Song East Road, Huancheng Road",
+    "contact_phone": "139****0247",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165855",
+    "company_en": "Jinbi Huihuan Entertainment",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Dance Hall"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 16, Lixin Avenue, Xintang Town, Hui Mei Auxiliary Material Street",
+    "contact_phone": "4009102503; 4009738173",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165874",
+    "company_en": "Sakura Entertainment",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Dance Hall"
+    ],
+    "region": {
+      "province": "Sichuan",
+      "city": "Chengdu"
+    },
+    "address_en": "F2, Xingju Building, No. 199, Jiefang Road, Second Section",
+    "contact_phone": "028-66116322",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165895",
+    "company_en": "Wukong E-sports Card Room (Gaokiao Hongfang Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Internet Cafe"
+    ],
+    "region": {
+      "province": "Shanghai",
+      "city": "Shanghai"
+    },
+    "address_en": "Gaokiao Hongfang Commercial Plaza",
+    "contact_phone": "130****3002",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "棋牌"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165928",
+    "company_en": "Wangyu E-Sports & Mahjong (Panyu University Town Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Internet cafe"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 1, Zhong'erheng Road, Beigang Village, Xiaoguwei Street",
+    "contact_phone": "191****2728",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "棋牌"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0165954",
+    "company_en": "GDJ E-Sports & Mahjong (Du Fu Village Metro Station Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Internet cafe"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "3rd Floor, Building B1, Qiming Cross-border, Du Fu Village",
+    "contact_phone": "133****0687",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "棋牌"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0166695",
+    "company_en": "Hongguan No.1 International Entertainment Club (Jincheng Road Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Dance hall"
+    ],
+    "region": {
+      "province": "Zhejiang",
+      "city": "Hangzhou"
+    },
+    "address_en": "1-4F, No. 390 Jincheng Road (Californian City Life Plaza)",
+    "contact_phone": "0571-28121108",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0167065",
+    "company_en": "Meili Renjian Entertainment",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Dance hall"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "3rd Floor, B Building, Jintong Building, Aiguo Road, Huangbei Street",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "娱乐"
+    },
+    "industry_en": {
+      "code": "9019",
+      "name_en": "Other Indoor Entertainment",
+      "level": "class",
+      "name": "其他室内娱乐活动",
+      "confidence": "medium"
+    },
+    "_bucket": "R/90/9019"
+  },
+  {
+    "id": "CN-MFG-0169469",
+    "company_en": "Le Pai E-Sports & Billiards & Mahjong (Ailian Store)",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "Internet cafe"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "2nd Floor, Golden Island, followed by Le Pai E-Sports Internet Cafe navigation",
+    "contact_phone": "189****3646",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "9019",
+      "name": "其他室内娱乐活动",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 室内娱乐活动 > 其他室内娱乐活动",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "棋牌"
     },
     "industry_en": {
       "code": "9019",

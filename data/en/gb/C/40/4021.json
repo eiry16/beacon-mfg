@@ -170,5 +170,41 @@
       "name": "环境监测专用仪器仪表制造",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0166951",
+    "company_en": "Suzhou Taicang Environmental Monitoring Center",
+    "category": "电子元器件",
+    "category_en": "Electronic Components",
+    "keywords_en": [
+      "Environmental Testing",
+      "Environmental Monitoring"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 3-4F, Qǐdǐ Square, Taiping South Road",
+    "contact_phone": "0512-53572740",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "4021",
+      "name": "环境监测专用仪器仪表制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 专用仪器仪表制造 > 环境监测专用仪器仪表制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "环境监"
+    },
+    "industry_en": {
+      "code": "4021",
+      "name_en": null,
+      "level": "class",
+      "name": "环境监测专用仪器仪表制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/40/4021"
   }
 ]

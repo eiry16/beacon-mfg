@@ -106,5 +106,40 @@
       "name": "其他人造板制造",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0175325",
+    "company_en": "Taicang Zhengxue Plywood Wholesale (Shanghai Minhang District Southwest Wood Market)",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Plywood Wholesale"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 666 Pingjiang Road, Minghao Market, Fuyou Town",
+    "contact_phone": "136****8325",
+    "source": "public_directory",
+    "verified_at": "2026-10-02",
+    "note_en": "",
+    "industry": {
+      "code": "2029",
+      "name": "其他人造板制造",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 人造板制造 > 其他人造板制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "胶合板"
+    },
+    "industry_en": {
+      "code": "2029",
+      "name_en": null,
+      "level": "class",
+      "name": "其他人造板制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/20/2029"
   }
 ]

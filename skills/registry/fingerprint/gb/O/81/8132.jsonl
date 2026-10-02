@@ -451,8 +451,8 @@
 {"id":"CN-MFG-0090259","co":"泰黄烟酒百货水电家电维修","city":"南京","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"栖霞"}
 {"id":"CN-MFG-0090260","co":"忠信家电维修(小市街店)","city":"南京","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"鼓楼"}
 {"id":"CN-MFG-0090261","co":"小胡电器维修中心","city":"南京","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"六合"}
-{"id":"CN-MFG-0096389","co":"啄木鸟家庭维修家电维修(贵阳店)","city":"贵阳","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["srv_appliance_repair","srv_computer_repair","srv_laundry","rsm_on_site","其他服务"]}
-{"id":"CN-MFG-0096398","co":"讯维电脑打印机家电维修","city":"贵阳","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"cap":["srv_appliance_repair","srv_computer_repair","srv_laundry","rsm_on_site","其他服务"]}
+{"id":"CN-MFG-0096389","co":"啄木鸟家庭维修家电维修(贵阳店)","city":"贵阳","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"g":"O","cap":["srv_appliance_repair","srv_computer_repair","srv_laundry","rsm_on_site","其他服务"]}
+{"id":"CN-MFG-0096398","co":"讯维电脑打印机家电维修","city":"贵阳","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"g":"O","cap":["srv_appliance_repair","srv_computer_repair","srv_laundry","rsm_on_site","其他服务"]}
 {"id":"CN-MFG-0096485","co":"清镇市齐师傅电器维修部","city":"贵阳","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0096491","co":"贵阳鹏达电脑家电维修部","city":"贵阳","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
 {"id":"CN-MFG-0096574","co":"贵阳小师弟电器维修服务有限公司","city":"贵阳","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0}
@@ -1104,7 +1104,7 @@
 {"id":"CN-MFG-0129072","co":"水电家电维修","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"吴中"}
 {"id":"CN-MFG-0129073","co":"祥源家电维修","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"昆山"}
 {"id":"CN-MFG-0129079","co":"齐全电脑家电维修部(富强新苑2区店)","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"姑苏"}
-{"id":"CN-MFG-0129082","co":"速达家电维修管道疏通水电维修(张家港店)","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"张家港"}
+{"id":"CN-MFG-0129082","co":"速达家电维修管道疏通水电维修(张家港店)","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"g":"O","cap":["srv_appliance_repair","srv_plumbing","srv_laundry","其他服务"],"dist":"张家港"}
 {"id":"CN-MFG-0129084","co":"张家港家电维修","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"张家港"}
 {"id":"CN-MFG-0129088","co":"美的家电维修","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"太仓"}
 {"id":"CN-MFG-0129105","co":"宏声家电维修(铁琴北街)","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"常熟"}
@@ -1119,7 +1119,7 @@
 {"id":"CN-MFG-0129143","co":"小刘家电维修","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"姑苏"}
 {"id":"CN-MFG-0129144","co":"鼎峰家电维修(彩虹苑店)","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"张家港"}
 {"id":"CN-MFG-0129145","co":"全惠家电维修","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"张家港"}
-{"id":"CN-MFG-0129146","co":"维祥电脑家电维修部","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"吴中"}
+{"id":"CN-MFG-0129146","co":"维祥电脑家电维修部","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"auto","sc":0,"tel":1,"g":"O","cap":["srv_appliance_repair","srv_laundry","srv_computer_repair","其他服务"],"dist":"吴中"}
 {"id":"CN-MFG-0129147","co":"木渎杨春生家电维修部","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"吴中"}
 {"id":"CN-MFG-0129148","co":"家电维修(兰亭苑店)","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":1,"dist":"姑苏"}
 {"id":"CN-MFG-0129149","co":"台铃电动车(浩宇家电维修)","city":"苏州","gb":"8132","mf":0,"proc":[],"mat":[],"cert":[],"cl":"L0","pv":"derived","sc":0,"tel":0,"dist":"吴中"}

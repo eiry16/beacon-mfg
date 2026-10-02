@@ -107,5 +107,40 @@
       "name": "化学药品制剂制造",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0171223",
+    "company_en": "Chunhui Tang Pharmaceutical",
+    "category": "医药与生物制品",
+    "category_en": "Pharma & Biological Products",
+    "keywords_en": [
+      "pharmacy"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 8 Liuzhuang Road, Mudu Jinqiao Industrial Park (next to the east gate of Mingke Polymer Medical Device Co., Ltd.)",
+    "contact_phone": "0512-66389928",
+    "source": "public_directory",
+    "verified_at": "2026-10-02",
+    "note_en": "",
+    "industry": {
+      "code": "2720",
+      "name": "化学药品制剂制造",
+      "level": "class",
+      "path": "C 制造业 > 医药制造业 > 化学药品制剂制造 > 化学药品制剂制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "药业"
+    },
+    "industry_en": {
+      "code": "2720",
+      "name_en": null,
+      "level": "class",
+      "name": "化学药品制剂制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/27/2720"
   }
 ]
