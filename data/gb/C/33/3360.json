@@ -773,7 +773,9 @@
       "钢材",
       "钢板",
       "钢材批发",
-      "铜材批发"
+      "铜材批发",
+      "板材批发",
+      "装饰材料批发"
     ],
     "region": {
       "province": "浙江",
@@ -1075,7 +1077,8 @@
     "keywords": [
       "不锈钢",
       "钢材",
-      "钢板"
+      "钢板",
+      "不锈钢材料"
     ],
     "region": {
       "province": "浙江",
@@ -6681,7 +6684,9 @@
     "keywords": [
       "电镀",
       "喷涂",
-      "线路板"
+      "线路板",
+      "锂电池",
+      "塑料包装"
     ],
     "region": {
       "province": "江苏",
@@ -6926,7 +6931,8 @@
     "company": "德丰电镀五金制品有限公司",
     "category": "表面处理",
     "keywords": [
-      "电镀"
+      "电镀",
+      "五金制品"
     ],
     "region": {
       "province": "江苏",
@@ -41213,7 +41219,8 @@
     "category": "表面处理",
     "keywords": [
       "喷涂",
-      "不锈钢"
+      "不锈钢",
+      "钢材"
     ],
     "region": {
       "province": "浙江",
@@ -41240,7 +41247,20 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/33/3360",
-    "amap": {}
+    "amap": {
+      "poi_id": "B023D01GD8",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330483",
+      "search_keyword": "钢材"
+    }
   },
   {
     "id": "CN-MFG-0004693",
@@ -60841,7 +60861,8 @@
     "company": "瑾昊机电工具",
     "category": "表面处理",
     "keywords": [
-      "喷涂"
+      "喷涂",
+      "工具批发"
     ],
     "region": {
       "province": "广东",
@@ -80302,7 +80323,9 @@
     "company": "苏州钢材市场镀锌方管镀锌管角钢槽钢工字钢",
     "category": "钣金冲压",
     "keywords": [
-      "激光切割"
+      "激光切割",
+      "钢材批发",
+      "钢板"
     ],
     "region": {
       "province": "江苏",
@@ -96936,7 +96959,8 @@
     "company": "湘樁门窗镀锌方管角钢槽钢镀锌管钢材批发",
     "category": "电子元器件",
     "keywords": [
-      "线路板"
+      "线路板",
+      "板材批发"
     ],
     "region": {
       "province": "上海",
@@ -97323,7 +97347,8 @@
     "company": "宝聚镀锌方管镀锌管螺纹钢角钢槽钢H型钢批发",
     "category": "原材料",
     "keywords": [
-      "钢材"
+      "钢材",
+      "钢材批发"
     ],
     "region": {
       "province": "江苏",
@@ -97381,7 +97406,10 @@
     "keywords": [
       "不锈钢材料",
       "不锈钢材料批发",
-      "钢板"
+      "钢板",
+      "钢材批发",
+      "钢材",
+      "装饰材料批发"
     ],
     "region": {
       "province": "江苏",
@@ -97956,7 +97984,11 @@
     "company": "佳兴达镀锌钢管钢材批发",
     "category": "原材料",
     "keywords": [
-      "钢板"
+      "钢板",
+      "钢材批发",
+      "不锈钢材料",
+      "钢材",
+      "装饰材料批发"
     ],
     "region": {
       "province": "江苏",
@@ -99942,7 +99974,9 @@
     "company": "鑫京州镀锌管钢材批发(昆山店)",
     "category": "原材料",
     "keywords": [
-      "板材批发"
+      "板材批发",
+      "钢材批发",
+      "装饰材料批发"
     ],
     "region": {
       "province": "江苏",
@@ -176895,7 +176929,11 @@
     "company": "巨润镀锌管批发(东港钢材市场店)",
     "category": "原材料",
     "keywords": [
-      "不锈钢材料"
+      "不锈钢材料",
+      "钢材批发",
+      "钢材",
+      "钢板",
+      "装饰材料批发"
     ],
     "region": {
       "province": "江苏",
@@ -177453,7 +177491,8 @@
     "company": "电镀表面处理",
     "category": "表面处理",
     "keywords": [
-      "表面处理"
+      "表面处理",
+      "电镀"
     ],
     "region": {
       "province": "江苏",
@@ -177485,6 +177524,20 @@
         "catalog"
       ],
       "verified": false
+    },
+    "amap": {
+      "poi_id": "B0MGD9RK2O",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "电镀"
     }
   },
   {
@@ -178285,6 +178338,1443 @@
       "confidence": "high",
       "source": "name",
       "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0167363",
+    "company": "佛山振冶螺纹钢槽钢角钢镀锌方管钢板批发",
+    "category": "原材料",
+    "keywords": [
+      "板材批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "佛山",
+      "district": "顺德区"
+    },
+    "address": "钢铁世界c区钢铁世界大道10号",
+    "contact_phone": "138****5733",
+    "lat": 22.920637,
+    "lng": 113.110614,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJK3GC8",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "乐从镇",
+      "adcode": "440606",
+      "search_keyword": "板材批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0169007",
+    "company": "上海钢材市场(旭储)镀锌管镀锌方管工字钢角钢槽钢板材批发",
+    "category": "原材料",
+    "keywords": [
+      "板材批发"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "松江区"
+    },
+    "address": "松江钢材城内环42一46号",
+    "contact_phone": "177****8659",
+    "lat": 31.108882,
+    "lng": 121.287433,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIAVBDS",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "泗泾",
+      "adcode": "310117",
+      "search_keyword": "板材批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0169858",
+    "company": "嘉宝莉涂装体验馆",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "清镇"
+    },
+    "address": "麒龙新天地3栋1楼6号",
+    "contact_phone": "187****6595",
+    "lat": 26.558256,
+    "lng": 106.481789,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRCDEYLT",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "油漆",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东门桥",
+      "adcode": "520181",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0169859",
+    "company": "喷涂机",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "花溪区"
+    },
+    "address": "天利城吉祥楼20号",
+    "contact_phone": "151****9888; 151****8886",
+    "lat": 26.478911,
+    "lng": 106.637238,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I2XC3D51",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "石板",
+      "adcode": "520111",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0169864",
+    "company": "立邦涂装服务中心",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明",
+      "district": "安宁"
+    },
+    "address": "财兴盛商业广场北门旁",
+    "contact_phone": "176****2927",
+    "lat": 24.916007,
+    "lng": 102.493566,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K6LSKT83",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "连然",
+      "adcode": "530181",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0169865",
+    "company": "立邦涂装服务中心(麟彩店)",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "云南",
+      "city": "昆明",
+      "district": "西山区"
+    },
+    "address": "西南建材市场6区1号中间",
+    "contact_phone": "135****2847",
+    "lat": 25.029313,
+    "lng": 102.672076,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LB9DP81E",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "大观楼",
+      "adcode": "530112",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0170002",
+    "company": "立邦涂装服务中心",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁",
+      "district": "马山县"
+    },
+    "address": "悦恒·天润城",
+    "contact_phone": "0771-3835850",
+    "lat": 23.70566,
+    "lng": 108.15088,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LU7O1PXL",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450124",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0170003",
+    "company": "嘉宝莉涂装体验馆",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "广西",
+      "city": "南宁",
+      "district": "武鸣区"
+    },
+    "address": "农坛路348号",
+    "contact_phone": "153****9391",
+    "lat": 23.168836,
+    "lng": 108.287561,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HD3HQM1P",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "450110",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0170021",
+    "company": "安兴建材钢筋镀锌方通角铁批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗区"
+    },
+    "address": "宝龙爱南路22号-7-8",
+    "contact_phone": "0755-61380337; 135****7881",
+    "lat": 22.718451,
+    "lng": 114.293172,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LUMCI0RN",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440307",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0170259",
+    "company": "嘉宝莉涂装体验馆",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义",
+      "district": "仁怀"
+    },
+    "address": "鲁班街道办事处水口小区",
+    "contact_phone": "151****1669",
+    "lat": 27.761349,
+    "lng": 106.354175,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HGKMGTPJ",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520382",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0170260",
+    "company": "立邦涂装服务中心",
+    "category": "表面处理",
+    "keywords": [
+      "喷涂"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义",
+      "district": "余庆县"
+    },
+    "address": "希望路与外环路交叉口西160米",
+    "contact_phone": "待核实",
+    "lat": 27.233873,
+    "lng": 107.880156,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JD911S9M",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520329",
+      "search_keyword": "喷涂"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "喷涂"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0170336",
+    "company": "苏州钢诺工字钢角钢槽钢镀锌管方管",
+    "category": "原材料",
+    "keywords": [
+      "不锈钢材料批发",
+      "不锈钢材料",
+      "钢板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "东城大道3栋108号",
+    "contact_phone": "134****9990; 150****0690",
+    "lat": 31.348527,
+    "lng": 121.05968,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JK45QCLU",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "管材管件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "不锈钢材料批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0170615",
+    "company": "汤商热镀锌无缝钢管(东港钢材城店)",
+    "category": "精密机械加工",
+    "keywords": [
+      "阀门",
+      "螺丝",
+      "螺栓"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "苏州工业园区唯亭镇东港钢材城3幢62一63幢汤商公司",
+    "contact_phone": "0512-62626593; 138****0755",
+    "lat": 31.362367,
+    "lng": 120.818393,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFM35FFW",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区",
+      "adcode": "320506",
+      "search_keyword": "阀门"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172106",
+    "company": "苏州市创新先锋金属制品有限公司,表面处理",
+    "category": "钣金冲压",
+    "keywords": [
+      "五金制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "横泾镇尧南路20号",
+    "contact_phone": "0512-66398896",
+    "lat": 31.193185,
+    "lng": 120.532378,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02000JH1F",
+      "type": "公司企业;公司;冶金化工",
+      "typecode": "170205",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横泾",
+      "adcode": "320506",
+      "search_keyword": "五金制品"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "表面处理"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172300",
+    "company": "尚亿宏工程塑",
+    "category": "表面处理",
+    "keywords": [
+      "电镀",
+      "工程塑料"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "346国道与新港公路交叉口西北160米",
+    "contact_phone": "待核实",
+    "lat": 31.559992,
+    "lng": 121.21446,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LD19L6M0",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "电镀"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "keyword",
+      "evidence": "电镀"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172368",
+    "company": "鸿阳钢材镀锌管H型钢彩钢瓦钢材批发",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发",
+      "钢材"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "苏州工业园区唯亭312国道北浦田路199号3幢06-07号",
+    "contact_phone": "134****5797",
+    "lat": 31.36247,
+    "lng": 120.818191,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI9KAZT",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172373",
+    "company": "苏州钢王钢材批发 镀锌方管 工角槽钢 彩钢瓦",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发",
+      "钢材",
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "四方路15号",
+    "contact_phone": "159****6636",
+    "lat": 31.363141,
+    "lng": 120.81198,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LDGADAJA",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172380",
+    "company": "苏州钢材市场镀锌方管镀锌角钢镀锌槽钢镀锌管",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发",
+      "钢材",
+      "钢板",
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "金燕路8号阳山科技工业园28号厂房4楼西4A102室",
+    "contact_phone": "180****8431; 185****5872",
+    "lat": 31.355075,
+    "lng": 120.490718,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3ZL17GR",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320505",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172397",
+    "company": "重恒.镀锌管方管工角槽钢开单处",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发",
+      "不锈钢材料",
+      "钢板",
+      "板材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "古城中路368号华东钢材城大门到底A区29号",
+    "contact_phone": "158****6076",
+    "lat": 31.365042,
+    "lng": 120.879996,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LGVUXOM1",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172458",
+    "company": "钢材螺纹钢镀锌管方管工字钢批发",
+    "category": "原材料",
+    "keywords": [
+      "钢材批发",
+      "钢板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "大发未来苑",
+    "contact_phone": "180****8606; 189****4969",
+    "lat": 31.144975,
+    "lng": 120.657275,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFYK797",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "大发彩钢瓦",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松陵",
+      "adcode": "320509",
+      "search_keyword": "钢材批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172808",
+    "company": "苏州东盛金属表面处理有限公司",
+    "category": "钣金冲压",
+    "keywords": [
+      "金属制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "临湖镇采莲工业园北区32号",
+    "contact_phone": "待核实",
+    "lat": 31.145092,
+    "lng": 120.485183,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B02001CRWC",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "临湖",
+      "adcode": "320506",
+      "search_keyword": "金属制品"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "表面处理"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172836",
+    "company": "荣昌金属表面处理有限公司",
+    "category": "钣金冲压",
+    "keywords": [
+      "金属制品"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "江浦路81号",
+    "contact_phone": "待核实",
+    "lat": 31.319746,
+    "lng": 120.848974,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B020002K2Q",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区",
+      "adcode": "320506",
+      "search_keyword": "金属制品"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "表面处理"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173342",
+    "company": "惠濮汽修钣金喷漆",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "桐乡"
+    },
+    "address": "杰尼亚印花园区北门旁",
+    "contact_phone": "150****7978",
+    "lat": 30.667775,
+    "lng": 120.601081,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHTXZEP",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330483",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "喷漆"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173789",
+    "company": "汤商镀锌方管角钢槽钢圆管管件不锈钢管",
+    "category": "原材料",
+    "keywords": [
+      "不锈钢材料",
+      "钢板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "古城中路368号华东钢材城A区18-19号",
+    "contact_phone": "181****2337; 181****2373",
+    "lat": 31.365078,
+    "lng": 120.880571,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KRZCFHM8",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "不锈钢材料"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173933",
+    "company": "诺亚洲方管镀锌管角钢槽钢工字钢",
+    "category": "原材料",
+    "keywords": [
+      "钢板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "玉山镇古城中路368号(华东钢材城)A区7号",
+    "contact_phone": "138****0996",
+    "lat": 31.36531,
+    "lng": 120.881295,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KGKSOJNA",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "钢板"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173965",
+    "company": "金鑫彩钢板钢材镀锌板批发",
+    "category": "原材料",
+    "keywords": [
+      "钢板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "印溪东路与吉祥路交叉口东南40米",
+    "contact_phone": "待核实",
+    "lat": 31.566278,
+    "lng": 121.07918,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHEOHQP",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "钢板"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0174354",
+    "company": "广源钢材消防配件(镀锌钢管槽钢角钢)",
+    "category": "原材料",
+    "keywords": [
+      "钢材"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海宁"
+    },
+    "address": "长安镇修川北路68号",
+    "contact_phone": "137****8393",
+    "lat": 30.463468,
+    "lng": 120.440448,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JGML9HJO",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "钢材"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "镀锌|配件型:配件"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0177200",
+    "company": "佳兴达镀锌钢材批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "苏州工业园区蒲田路东港钢材城3幢67号",
+    "contact_phone": "138****5546",
+    "lat": 31.362597,
+    "lng": 120.818885,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L165S1KN",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区",
+      "adcode": "320506",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "镀锌"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0177630",
+    "company": "批发,零售,石膏板,轻钢龙骨,矿棉板,烤漆龙骨,轻质砖",
+    "category": "原材料",
+    "keywords": [
+      "建材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "建材市场新区34幢一单元",
+    "contact_phone": "173****8405",
+    "lat": 31.641239,
+    "lng": 120.799053,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L2CMGM79",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "石膏板",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
+      "search_keyword": "建材批发"
+    },
+    "industry": {
+      "code": "3360",
+      "name": "金属表面处理及热处理加工",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 金属表面处理及热处理加工 > 金属表面处理及热处理加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "烤漆"
     },
     "is_manufacturer": true
   }

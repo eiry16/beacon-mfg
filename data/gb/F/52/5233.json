@@ -1746,7 +1746,8 @@
     "company": "美鞋吧洗护馆(双湾花园店)",
     "category": "批发和零售业",
     "keywords": [
-      "干洗"
+      "干洗",
+      "洗衣店"
     ],
     "region": {
       "province": "江苏",
@@ -1795,7 +1796,8 @@
     "company": "大懒猫洗鞋吧",
     "category": "批发和零售业",
     "keywords": [
-      "干洗"
+      "干洗",
+      "洗衣"
     ],
     "region": {
       "province": "江苏",
@@ -1827,6 +1829,153 @@
       "business_area": "",
       "adcode": "320582",
       "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0162254",
+    "company": "爱革·鞋包洗修(悠方购物中心店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "杨浦区"
+    },
+    "address": "殷行路1388号悠方购物公园B1盒马鲜生侧门口",
+    "contact_phone": "173****6202",
+    "lat": 31.329466,
+    "lng": 121.507609,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-28",
+    "imported_at": "2026-09-28",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GUM659HD",
+      "type": "购物服务;服装鞋帽皮具店;服装鞋帽皮具店|生活服务;生活服务场所;生活服务场所",
+      "typecode": "061100|070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "修鞋擦鞋",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新江湾城",
+      "adcode": "310110",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0162503",
+    "company": "修鞋洗鞋洗包(场中小区店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "静安区"
+    },
+    "address": "-场中路2093(彭浦新村地铁站2号口步行370米)",
+    "contact_phone": "152****8878; 182****7317",
+    "lat": 31.305739,
+    "lng": 121.452006,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-28",
+    "imported_at": "2026-09-28",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIQIXO4",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "共康",
+      "adcode": "310106",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0162634",
+    "company": "get holiday 夹脚鞋与鱼子酱",
+    "category": "批发和零售业",
+    "keywords": [
+      "餐厅"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "天河区"
+    },
+    "address": "天河北街1号侨宏楼1楼",
+    "contact_phone": "133****7906",
+    "lat": 23.140456,
+    "lng": 113.319335,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJQ3LGD",
+      "type": "餐饮服务;快餐厅;快餐厅",
+      "typecode": "050300",
+      "alias": "",
+      "tag": "牛排,牛肉,蘑菇,薯条",
+      "keytag": "西餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "林和邨",
+      "adcode": "440106",
+      "search_keyword": "餐厅"
     },
     "industry": {
       "code": "5233",

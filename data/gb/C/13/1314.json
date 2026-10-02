@@ -46,5 +46,54 @@
       "evidence": "杂粮"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0176689",
+    "company": "歆悦杂粮煎饼",
+    "category": "制造业",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "南湖区"
+    },
+    "address": "会展路与新气象路交叉口西北60米",
+    "contact_phone": "137****1437; 158****2104",
+    "lat": 30.736621,
+    "lng": 120.752032,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HAFNU0Y6",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "杂粮煎饼",
+      "keytag": "煎饼",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新气象路",
+      "adcode": "330402",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "1314",
+      "name": "杂粮加工",
+      "level": "class",
+      "path": "C 制造业 > 农副食品加工业 > 谷物磨制 > 杂粮加工",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "杂粮"
+    },
+    "is_manufacturer": true
   }
 ]

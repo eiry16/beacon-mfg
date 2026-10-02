@@ -48,5 +48,54 @@
       "evidence": "化妆品"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0165067",
+    "company": "兴发广场美发美容化妆品展贸中心",
+    "category": "原材料",
+    "keywords": [
+      "美发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "白云区"
+    },
+    "address": "石榴桥路43号(兴发广场二期)",
+    "contact_phone": "020-86550355",
+    "lat": 23.165423,
+    "lng": 113.265192,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKAS5M0",
+      "type": "购物服务;个人用品/化妆品店;其它个人用品店",
+      "typecode": "061400",
+      "alias": "",
+      "tag": "",
+      "keytag": "化妆品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "景泰",
+      "adcode": "440111",
+      "search_keyword": "美发"
+    },
+    "industry": {
+      "code": "2682",
+      "name": "化妆品制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 日用化学产品制造 > 化妆品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "化妆品"
+    },
+    "is_manufacturer": true
   }
 ]

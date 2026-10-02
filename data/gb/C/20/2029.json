@@ -54,7 +54,9 @@
     "company": "港龙木材胶合板批发市场",
     "category": "原材料",
     "keywords": [
-      "板材批发"
+      "板材批发",
+      "装饰材料批发",
+      "建材批发"
     ],
     "region": {
       "province": "江苏",
@@ -104,7 +106,8 @@
     "company": "东莞茶山丰业人造板装饰材料市场(茶石路)",
     "category": "原材料",
     "keywords": [
-      "装饰材料批发"
+      "装饰材料批发",
+      "建材批发"
     ],
     "region": {
       "province": "广东",
@@ -147,5 +150,54 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/20/2029"
+  },
+  {
+    "id": "CN-MFG-0175325",
+    "company": "太仓正学胶合板批发(上海闵行区西南木材市场)",
+    "category": "原材料",
+    "keywords": [
+      "板材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "浮桥镇平江路666号铭豪市场四库",
+    "contact_phone": "136****8325",
+    "lat": 31.637123,
+    "lng": 121.167929,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H6UHST6O",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "板材批发"
+    },
+    "industry": {
+      "code": "2029",
+      "name": "其他人造板制造",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 人造板制造 > 其他人造板制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "胶合板"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -55,7 +55,8 @@
     "category": "批发和零售业",
     "keywords": [
       "汉堡",
-      "小吃店"
+      "小吃店",
+      "快餐"
     ],
     "region": {
       "province": "上海",
@@ -7257,6 +7258,251 @@
       "business_area": "杭州国家高新技术产业开发区",
       "adcode": "330106",
       "search_keyword": "西点"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0163819",
+    "company": "伊佳清真食品商店",
+    "category": "批发和零售业",
+    "keywords": [
+      "便利店"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "越秀区"
+    },
+    "address": "光塔路41号",
+    "contact_phone": "158****8863",
+    "lat": 23.122589,
+    "lng": 113.258995,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B00140CCDT",
+      "type": "购物服务;便民商店/便利店;便民商店/便利店",
+      "typecode": "060200",
+      "alias": "",
+      "tag": "",
+      "keytag": "便利店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中山六路",
+      "adcode": "440104",
+      "search_keyword": "便利店"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0166780",
+    "company": "和谐食品店",
+    "category": "批发和零售业",
+    "keywords": [
+      "便利店"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "上城区"
+    },
+    "address": "钱江路622号",
+    "contact_phone": "139****4307",
+    "lat": 30.237582,
+    "lng": 120.199709,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL9WCFX",
+      "type": "购物服务;便民商店/便利店;便民商店/便利店",
+      "typecode": "060200",
+      "alias": "",
+      "tag": "",
+      "keytag": "便利店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "近江",
+      "adcode": "330102",
+      "search_keyword": "便利店"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "食品"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167431",
+    "company": "水沐汤泉·水果饮料畅享(昆山店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "水疗"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "柏庐南路888号中创商业中心2号楼3层",
+    "contact_phone": "待核实",
+    "lat": 31.352039,
+    "lng": 120.95824,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JBUHDB5C",
+      "type": "生活服务;洗浴推拿场所;洗浴推拿场所",
+      "typecode": "071400",
+      "alias": "",
+      "tag": "",
+      "keytag": "SPA",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "玉山",
+      "adcode": "320583",
+      "search_keyword": "水疗"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "水果"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167523",
+    "company": "华服设计制版(聚隆生鲜店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "产品设计"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "海珠区"
+    },
+    "address": "南州街大塘村聚隆生鲜",
+    "contact_phone": "131****1695",
+    "lat": 23.080153,
+    "lng": 113.324862,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIUG0GM",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "服装设计",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "赤岗",
+      "adcode": "440105",
+      "search_keyword": "产品设计"
+    },
+    "industry": {
+      "code": "5229",
+      "name": "其他食品零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 食品、饮料及烟草制品专门零售 > 其他食品零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "生鲜"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0175235",
+    "company": "十一点食品店(泰南路120号院店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "便利店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "姑苏区"
+    },
+    "address": "泰南路120号1幢102室",
+    "contact_phone": "待核实",
+    "lat": 31.292372,
+    "lng": 120.608318,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0ID77KHCR",
+      "type": "购物服务;便民商店/便利店;便民商店/便利店",
+      "typecode": "060200",
+      "alias": "",
+      "tag": "",
+      "keytag": "便利店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "南门",
+      "adcode": "320508",
+      "search_keyword": "便利店"
     },
     "industry": {
       "code": "5229",

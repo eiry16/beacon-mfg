@@ -361,5 +361,54 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/37/3741"
+  },
+  {
+    "id": "CN-MFG-0170304",
+    "company": "航空工业成都飞机工业(集团)有限责任公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "信息系统集成"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "青羊区"
+    },
+    "address": "黄田坝纬一路88号",
+    "contact_phone": "028-87405033",
+    "lat": 30.699918,
+    "lng": 103.965109,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFF00AJQ",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "黄田坝",
+      "adcode": "510105",
+      "search_keyword": "信息系统集成"
+    },
+    "industry": {
+      "code": "3741",
+      "name": "飞机制造",
+      "level": "class",
+      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 航空、航天器及设备制造 > 飞机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "飞机"
+    },
+    "is_manufacturer": true
   }
 ]

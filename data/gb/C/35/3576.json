@@ -2823,5 +2823,54 @@
       "evidence": "机械配件"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173685",
+    "company": "机械配件",
+    "category": "标准件",
+    "keywords": [
+      "轴承"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "玉山镇城北中路1288号",
+    "contact_phone": "158****9693",
+    "lat": 31.406203,
+    "lng": 121.017945,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H337X263",
+      "type": "汽车服务;汽车服务相关;汽车服务相关",
+      "typecode": "010000",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "周市",
+      "adcode": "320583",
+      "search_keyword": "轴承"
+    },
+    "industry": {
+      "code": "3576",
+      "name": "农林牧渔机械配件制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 农、林、牧、渔专用机械制造 > 农林牧渔机械配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "机械配件"
+    },
+    "is_manufacturer": true
   }
 ]

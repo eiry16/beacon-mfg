@@ -461,5 +461,103 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0168379",
+    "company": "星鑫建材建筑材料批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "宁波",
+      "district": "宁海县"
+    },
+    "address": "桃源街道丁香逸21幢2号",
+    "contact_phone": "159****9931",
+    "lat": 29.352225,
+    "lng": 121.435775,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2FAMIDH",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330226",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "3515",
+      "name": "建筑材料生产专用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0169421",
+    "company": "多乐建筑材料批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "木渎镇中山路70号",
+    "contact_phone": "189****6505",
+    "lat": 31.258034,
+    "lng": 120.532651,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUYHQ0MO",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "木渎",
+      "adcode": "320506",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "3515",
+      "name": "建筑材料生产专用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑材"
+    },
+    "is_manufacturer": true
   }
 ]

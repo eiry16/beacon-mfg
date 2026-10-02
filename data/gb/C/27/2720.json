@@ -4,7 +4,8 @@
     "company": "海岸药业",
     "category": "医药与生物制品",
     "keywords": [
-      "药店"
+      "药店",
+      "药房"
     ],
     "region": {
       "province": "江苏",
@@ -149,5 +150,54 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/27/2720"
+  },
+  {
+    "id": "CN-MFG-0171223",
+    "company": "春晖堂药业",
+    "category": "医药与生物制品",
+    "keywords": [
+      "药房"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "木渎金桥开发区刘庄路8号(明基高分子医疗器械有限公司东门旁)",
+    "contact_phone": "0512-66389928",
+    "lat": 31.218024,
+    "lng": 120.522269,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02000JGRZ",
+      "type": "医疗保健服务;医药保健销售店;药房",
+      "typecode": "090601",
+      "alias": "",
+      "tag": "",
+      "keytag": "药店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "药房"
+    },
+    "industry": {
+      "code": "2720",
+      "name": "化学药品制剂制造",
+      "level": "class",
+      "path": "C 制造业 > 医药制造业 > 化学药品制剂制造 > 化学药品制剂制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "药业"
+    },
+    "is_manufacturer": true
   }
 ]

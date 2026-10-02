@@ -4,7 +4,8 @@
     "company": "中国杭帮菜博物馆(虎玉路店)",
     "category": "文化、体育和娱乐业",
     "keywords": [
-      "家常菜"
+      "家常菜",
+      "酒楼"
     ],
     "region": {
       "province": "浙江",
@@ -434,6 +435,55 @@
       "business_area": "北京路",
       "adcode": "310101",
       "search_keyword": "甜品"
+    },
+    "industry": {
+      "code": "8850",
+      "name": "博物馆",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 文化艺术业 > 博物馆 > 博物馆",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "博物馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0166537",
+    "company": "南山博物馆",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "温泉"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "南山区"
+    },
+    "address": "南山大道2093号(南头古城地铁站E4出口)",
+    "contact_phone": "0755-86700071",
+    "lat": 22.535024,
+    "lng": 113.923887,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02F37WNJN",
+      "type": "科教文化服务;展览馆;展览馆",
+      "typecode": "140200",
+      "alias": "",
+      "tag": "",
+      "keytag": "博物馆",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "桃园",
+      "adcode": "440305",
+      "search_keyword": "温泉"
     },
     "industry": {
       "code": "8850",

@@ -64,7 +64,8 @@
     "company": "晨晓人力家政红娘",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "认证服务"
+      "认证服务",
+      "软件外包"
     ],
     "region": {
       "province": "浙江",
@@ -122,7 +123,8 @@
     "company": "美蒂斯甲醛检测家政保洁(张家港店)",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "环境检测"
+      "环境检测",
+      "检测服务"
     ],
     "region": {
       "province": "江苏",
@@ -1969,7 +1971,9 @@
     "company": "一七生活洗衣·家政(城邦花园店)",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "干洗"
+      "干洗",
+      "洗衣",
+      "洗衣店"
     ],
     "region": {
       "province": "江苏",
@@ -2018,7 +2022,9 @@
     "company": "一七生活洗衣·家政(苏州运营中心店)",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "干洗"
+      "干洗",
+      "洗衣",
+      "洗衣店"
     ],
     "region": {
       "province": "江苏",
@@ -2099,6 +2105,546 @@
       "business_area": "",
       "adcode": "440311",
       "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0161988",
+    "company": "段先生洗衣家政(三林店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新区"
+    },
+    "address": "云台路902号",
+    "contact_phone": "172****4943",
+    "lat": 31.158445,
+    "lng": 121.509586,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-09-28",
+    "imported_at": "2026-09-28",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KK5Y69KZ",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "上南",
+      "adcode": "310115",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0163116",
+    "company": "卡博尼洗衣·洗鞋·家政服务(春光苑店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "干洗"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "无锡",
+      "district": "惠山区"
+    },
+    "address": "钱桥街道春光苑(27-13)",
+    "contact_phone": "138****6315",
+    "lat": 31.595474,
+    "lng": 120.215612,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGANXHI",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "钱桥街道",
+      "adcode": "320206",
+      "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0163614",
+    "company": "庙能劳务家政",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "软件外包"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新区"
+    },
+    "address": "高宝路371号1层",
+    "contact_phone": "133****8832; 182****5561",
+    "lat": 31.290558,
+    "lng": 121.623246,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KBO5I9O5",
+      "type": "生活服务;中介机构;中介机构",
+      "typecode": "071600",
+      "alias": "",
+      "tag": "",
+      "keytag": "人才服务",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310115",
+      "search_keyword": "软件外包"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0165165",
+    "company": "指待白蚁防治灭白蚁除甲醛家政保洁",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "环境检测"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "白云区"
+    },
+    "address": "米龙大丰埔南街一巷4号104",
+    "contact_phone": "147****5397",
+    "lat": 23.291396,
+    "lng": 113.3656,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L0G73TP6",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家政",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太和",
+      "adcode": "440111",
+      "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0165170",
+    "company": "为明家政服务天河店",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "环境检测"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "天河区"
+    },
+    "address": "科韵路20号",
+    "contact_phone": "173****2165",
+    "lat": 23.124055,
+    "lng": 113.373827,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDUC0NL6",
+      "type": "生活服务;中介机构;中介机构",
+      "typecode": "071600",
+      "alias": "",
+      "tag": "",
+      "keytag": "保洁清洗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "天园",
+      "adcode": "440106",
+      "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0165255",
+    "company": "美家环保家政保洁(光谷天地店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "环境检测"
+    ],
+    "region": {
+      "province": "湖北",
+      "city": "武汉",
+      "district": "洪山区"
+    },
+    "address": "关山大道519号光谷天地1F层",
+    "contact_phone": "188****5389",
+    "lat": 30.478693,
+    "lng": 114.410752,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HUAU8ZYL",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "家政",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "关山",
+      "adcode": "420111",
+      "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0166986",
+    "company": "南京苏吉家政服务有限公司",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "环境检测"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "南京",
+      "district": "江宁区"
+    },
+    "address": "天元东路228号财富广场二期8栋1512室",
+    "contact_phone": "189****0989",
+    "lat": 31.936462,
+    "lng": 118.862363,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3MSSSK3",
+      "type": "生活服务;中介机构;中介机构",
+      "typecode": "071600",
+      "alias": "",
+      "tag": "",
+      "keytag": "家政",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "竹山路沿线",
+      "adcode": "320115",
+      "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167684",
+    "company": "容易家政旗舰店.保洁清洗.家电清洗",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "环境检测"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "龙岗区"
+    },
+    "address": "德润荣君府南门旁(坂田地铁站A口步行350米)",
+    "contact_phone": "132****0261; 186****1291",
+    "lat": 22.625429,
+    "lng": 114.068652,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HKG1KV4N",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "保洁清洗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "坂田",
+      "adcode": "440307",
+      "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167685",
+    "company": "能达家小二保姆月嫂育儿嫂(百花新天地店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "环境检测"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "福田区"
+    },
+    "address": "园岭街道南天社区百花一路2号百花园二期B104",
+    "contact_phone": "188****7698",
+    "lat": 22.551861,
+    "lng": 114.094495,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LUKDUPMM",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "保姆陪护",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "园岭",
+      "adcode": "440304",
+      "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "保姆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167690",
+    "company": "家庭管家-保洁保姆罗湖店",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "环境检测"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "罗湖区"
+    },
+    "address": "北斗路18号(黄贝岭地铁站G2口步行110米)",
+    "contact_phone": "186****4558",
+    "lat": 22.544275,
+    "lng": 114.135025,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K3VZTLNA",
+      "type": "生活服务;中介机构;中介机构",
+      "typecode": "071600",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "东门",
+      "adcode": "440303",
+      "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "保姆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0172176",
+    "company": "一七生活洗衣·家政(墅浦生活荟店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "洗衣",
+      "洗衣店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "郭巷街道苏州吴中区墅浦生活荟2楼",
+    "contact_phone": "待核实",
+    "lat": 31.278784,
+    "lng": 120.674505,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAFAYZ4A",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "自助洗衣",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "洗衣"
     },
     "industry": {
       "code": "8010",
