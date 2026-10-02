@@ -417,7 +417,8 @@
     "company": "利民服饰塑料包装",
     "category": "注塑成型",
     "keywords": [
-      "塑料模具"
+      "塑料模具",
+      "塑料包装"
     ],
     "region": {
       "province": "江苏",
@@ -498,6 +499,55 @@
       "business_area": "",
       "adcode": "330421",
       "search_keyword": "塑胶制品"
+    },
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0169931",
+    "company": "深圳云栖服饰设计有限公司",
+    "category": "制造业",
+    "keywords": [
+      "产品设计"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "南山区"
+    },
+    "address": "登良路恒裕中心B座508非遗香云纱服装附近",
+    "contact_phone": "待核实",
+    "lat": 22.510539,
+    "lng": 113.923576,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFM1YNUH",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440305",
+      "search_keyword": "产品设计"
     },
     "industry": {
       "code": "1830",

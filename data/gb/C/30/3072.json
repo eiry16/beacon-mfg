@@ -1323,7 +1323,8 @@
     "company": "三井金属特种陶瓷(苏州)有限公司",
     "category": "原材料",
     "keywords": [
-      "特种陶瓷"
+      "特种陶瓷",
+      "金属制品"
     ],
     "region": {
       "province": "江苏",
@@ -1649,6 +1650,55 @@
       "business_area": "松岗",
       "adcode": "440605",
       "search_keyword": "特种陶瓷"
+    },
+    "industry": {
+      "code": "3072",
+      "name": "卫生陶瓷制品制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 陶瓷制品制造 > 卫生陶瓷制品制造",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "原材料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0170262",
+    "company": "德利丰岩板(苏州总店)",
+    "category": "原材料",
+    "keywords": [
+      "工业陶瓷"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "吴中区工业园区东环路1号华东装饰城1楼A106",
+    "contact_phone": "131****8218",
+    "lat": 31.282152,
+    "lng": 120.656015,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J397CTSX",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "陶瓷瓷砖",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区",
+      "adcode": "320505",
+      "search_keyword": "工业陶瓷"
     },
     "industry": {
       "code": "3072",

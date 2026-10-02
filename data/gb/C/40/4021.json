@@ -4,7 +4,8 @@
     "company": "南京中科环境监测有限公司",
     "category": "电子元器件",
     "keywords": [
-      "连接器"
+      "连接器",
+      "环境检测"
     ],
     "region": {
       "province": "江苏",
@@ -30,7 +31,21 @@
       "evidence": "环境监测"
     },
     "is_manufacturer": true,
-    "_bucket": "C/40/4021"
+    "_bucket": "C/40/4021",
+    "amap": {
+      "poi_id": "B0LKZGDVZS",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320113",
+      "search_keyword": "环境检测"
+    }
   },
   {
     "id": "CN-MFG-0036728",
@@ -233,5 +248,55 @@
     },
     "is_manufacturer": true,
     "_bucket": "C/40/4021"
+  },
+  {
+    "id": "CN-MFG-0166951",
+    "company": "苏州市太仓环境监控中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "环境检测",
+      "环境监测"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "太平南路启迪广场3-4F",
+    "contact_phone": "0512-53572740",
+    "lat": 31.443936,
+    "lng": 121.119828,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2TZR0WG",
+      "type": "政府机构及社会团体;政府机关;政府机关相关",
+      "typecode": "130100",
+      "alias": "苏州市太仓环境监测站",
+      "tag": "",
+      "keytag": "政府机关",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "4021",
+      "name": "环境监测专用仪器仪表制造",
+      "level": "class",
+      "path": "C 制造业 > 仪器仪表制造业 > 专用仪器仪表制造 > 环境监测专用仪器仪表制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "环境监"
+    },
+    "is_manufacturer": true
   }
 ]

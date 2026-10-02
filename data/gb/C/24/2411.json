@@ -144,5 +144,54 @@
       "evidence": "文具"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0168678",
+    "company": "怡新文具劳保批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "大朗镇黄草朗社区美景中路1200号",
+    "contact_phone": "0769-83119897; 135****8993",
+    "lat": 22.917804,
+    "lng": 113.915871,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKRFCWJ",
+      "type": "购物服务;文化用品店;文化用品店",
+      "typecode": "060800",
+      "alias": "",
+      "tag": "",
+      "keytag": "文具店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "美景中路",
+      "adcode": "441900",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "2411",
+      "name": "文具制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 文教办公用品制造 > 文具制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "文具"
+    },
+    "is_manufacturer": true
   }
 ]

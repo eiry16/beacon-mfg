@@ -47,5 +47,54 @@
       "evidence": "工程装备"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0166062",
+    "company": "上海新地海洋工程技术有限公司工程检测部",
+    "category": "精密机械加工",
+    "keywords": [
+      "检测技术"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "宝山区"
+    },
+    "address": "铁力路785号3号楼108室",
+    "contact_phone": "待核实",
+    "lat": 31.395679,
+    "lng": 121.467463,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKOZGL5P",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310113",
+      "search_keyword": "检测技术"
+    },
+    "industry": {
+      "code": "3737",
+      "name": "海洋工程装备制造",
+      "level": "class",
+      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 船舶及相关装置制造 > 海洋工程装备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "海洋工程"
+    },
+    "is_manufacturer": true
   }
 ]

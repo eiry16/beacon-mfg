@@ -70323,7 +70323,8 @@
     "company": "宁波市卓匠电器维修服务有限公司",
     "category": "居民服务、修理和其他服务业",
     "keywords": [
-      "密封件"
+      "密封件",
+      "检测服务"
     ],
     "region": {
       "province": "浙江",
@@ -78155,6 +78156,55 @@
       "confidence": "high",
       "source": "gb_token",
       "evidence": "电器修理"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0172849",
+    "company": "家电维修",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "空调维修"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "花溪区"
+    },
+    "address": "清溪路新牛马市场2栋2单元",
+    "contact_phone": "182****4996",
+    "lat": 26.39406,
+    "lng": 106.678045,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KDSRX9JD",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520111",
+      "search_keyword": "空调维修"
+    },
+    "industry": {
+      "code": "8132",
+      "name": "日用电器修理",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 家用电器修理 > 日用电器修理",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家电维修"
     },
     "is_manufacturer": false
   }

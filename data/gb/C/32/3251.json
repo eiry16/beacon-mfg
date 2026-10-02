@@ -4895,7 +4895,8 @@
     "company": "兴极荣铜材(嘉和苑店)",
     "category": "原材料",
     "keywords": [
-      "铜材"
+      "铜材",
+      "铜材批发"
     ],
     "region": {
       "province": "江苏",
@@ -17136,5 +17137,54 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0168254",
+    "company": "南冶金属铜板铜材批发零售剪板开平",
+    "category": "原材料",
+    "keywords": [
+      "板材批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "长安镇霄边业盛广场丰盛路8号110-123",
+    "contact_phone": "136****6575",
+    "lat": 22.797227,
+    "lng": 113.82365,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJ1F76A",
+      "type": "公司企业;工厂;工厂",
+      "typecode": "170300",
+      "alias": "",
+      "tag": "",
+      "keytag": "钢材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "霄边",
+      "adcode": "441900",
+      "search_keyword": "板材批发"
+    },
+    "industry": {
+      "code": "3251",
+      "name": "铜压延加工",
+      "level": "class",
+      "path": "C 制造业 > 有色金属冶炼和压延加工业 > 有色金属压延加工 > 铜压延加工",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "铜材"
+    },
+    "is_manufacturer": true
   }
 ]

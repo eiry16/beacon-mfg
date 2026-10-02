@@ -208,5 +208,54 @@
       "evidence": "起重机"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0171009",
+    "company": "苏州帅启起重机设备有限公司",
+    "category": "精密机械加工",
+    "keywords": [
+      "液压"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "渭塘镇苏渭路89号",
+    "contact_phone": "130****0333",
+    "lat": 31.464327,
+    "lng": 120.647345,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G1NH37GH",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "机械设备",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "渭塘",
+      "adcode": "320507",
+      "search_keyword": "液压"
+    },
+    "industry": {
+      "code": "3432",
+      "name": "生产专用起重机制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 物料搬运设备制造 > 生产专用起重机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "起重机"
+    },
+    "is_manufacturer": true
   }
 ]

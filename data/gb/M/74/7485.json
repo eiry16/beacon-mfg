@@ -54,7 +54,8 @@
     "company": "江苏青檀规划设计有限公司",
     "category": "科学研究和技术服务业",
     "keywords": [
-      "软件开发"
+      "软件开发",
+      "软件公司"
     ],
     "region": {
       "province": "江苏",
@@ -98,5 +99,54 @@
     },
     "is_manufacturer": false,
     "_bucket": "M/74/7485"
+  },
+  {
+    "id": "CN-MFG-0169914",
+    "company": "深圳市摩迪赛产品设计管理有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "产品设计"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "南山区"
+    },
+    "address": "沙河世纪假日广场B313",
+    "contact_phone": "0755-86539010",
+    "lat": 22.538485,
+    "lng": 113.972685,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKDJ3FA",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "益田假日",
+      "adcode": "440305",
+      "search_keyword": "产品设计"
+    },
+    "industry": {
+      "code": "7485",
+      "name": "规划设计管理",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工程技术与设计服务 > 规划设计管理",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "设计管理"
+    },
+    "is_manufacturer": false
   }
 ]

@@ -450,5 +450,103 @@
       "evidence": "茶叶"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0167125",
+    "company": "杭州桂雨春华茶叶有限公司",
+    "category": "制造业",
+    "keywords": [
+      "软件公司"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "余杭区"
+    },
+    "address": "五常大道148号五常西溪软件园·巨蟹座",
+    "contact_phone": "待核实",
+    "lat": 30.245075,
+    "lng": 120.035325,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MD5LWJXI",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "五常街道",
+      "adcode": "330110",
+      "search_keyword": "软件公司"
+    },
+    "industry": {
+      "code": "1530",
+      "name": "精制茶加工",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 精制茶加工 > 精制茶加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "茶叶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0169346",
+    "company": "亮欣农业茶叶加工仓储批发中心",
+    "category": "精密机械加工",
+    "keywords": [
+      "加工中心"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "遵义",
+      "district": "务川仡佬族苗族自治县"
+    },
+    "address": "涪洋镇水坝村退役军人服务站东北侧270米",
+    "contact_phone": "待核实",
+    "lat": 28.530925,
+    "lng": 107.756825,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MU2UDNS1",
+      "type": "购物服务;购物相关场所;购物相关场所|公司企业;公司企业;公司企业",
+      "typecode": "060000|170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "茶业",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520326",
+      "search_keyword": "加工中心"
+    },
+    "industry": {
+      "code": "1530",
+      "name": "精制茶加工",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 精制茶加工 > 精制茶加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "茶叶"
+    },
+    "is_manufacturer": true
   }
 ]

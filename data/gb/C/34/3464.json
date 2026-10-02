@@ -4,7 +4,8 @@
     "company": "顺大空调制冷配件五金批发(空调安装维修清洗)",
     "category": "原材料",
     "keywords": [
-      "铜材"
+      "铜材",
+      "五金批发"
     ],
     "region": {
       "province": "广东",
@@ -30,7 +31,21 @@
       "evidence": "制冷"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3464"
+    "_bucket": "C/34/3464",
+    "amap": {
+      "poi_id": "B0FFKMEULW",
+      "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;机械电子",
+      "typecode": "060603|170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "赤岗",
+      "adcode": "440105",
+      "search_keyword": "五金批发"
+    }
   },
   {
     "id": "CN-MFG-0007852",
@@ -2418,7 +2433,8 @@
     "keywords": [
       "螺丝",
       "螺栓",
-      "电线电缆"
+      "电线电缆",
+      "装饰材料批发"
     ],
     "region": {
       "province": "广东",
@@ -2717,7 +2733,8 @@
       "铜管",
       "空调维修",
       "洗衣机维修",
-      "冰箱维修"
+      "冰箱维修",
+      "电线电缆"
     ],
     "region": {
       "province": "江苏",
@@ -34314,7 +34331,8 @@
     "category": "精密机械加工",
     "keywords": [
       "家电维修",
-      "冰箱维修"
+      "冰箱维修",
+      "洗衣店"
     ],
     "region": {
       "province": "江苏",
@@ -70228,7 +70246,9 @@
     "company": "苏州新同创汽车空调有限公司(亭融街)",
     "category": "精密机械加工",
     "keywords": [
-      "汽配"
+      "汽配",
+      "汽车配件",
+      "汽车零部件"
     ],
     "region": {
       "province": "江苏",
@@ -70260,6 +70280,790 @@
       "business_area": "苏州工业园区",
       "adcode": "320506",
       "search_keyword": "汽配"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0168669",
+    "company": "东兴制冷配件保温材料批发行",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "东莞",
+      "district": "东莞"
+    },
+    "address": "塘龙中路108号",
+    "contact_phone": "186****1898; 186****8505",
+    "lat": 22.80132,
+    "lng": 114.078258,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LG1S3NI3",
+      "type": "购物服务;家居建材市场;建材五金市场|生活服务;维修站点;维修站点",
+      "typecode": "060603|071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "441900",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "制冷"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0169896",
+    "company": "桥昌制冷配件五金电器批发",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "增城区"
+    },
+    "address": "新塘镇广深北路6号",
+    "contact_phone": "136****3868",
+    "lat": 23.111029,
+    "lng": 113.551376,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG6JACV",
+      "type": "购物服务;家居建材市场;建材五金市场|生活服务;维修站点;维修站点|购物服务;家电电子卖场;家电电子卖场",
+      "typecode": "060603|071200|060300",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "荔联",
+      "adcode": "440118",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "制冷"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0172848",
+    "company": "贵州鑫祥睿节能科技有限公司(空调)",
+    "category": "精密机械加工",
+    "keywords": [
+      "空调维修"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "云岩区"
+    },
+    "address": "中天甜蜜小镇十一组团",
+    "contact_phone": "151****6610; 4008116298",
+    "lat": 26.586413,
+    "lng": 106.774083,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HGAZZ27P",
+      "type": "生活服务;维修站点;维修站点",
+      "typecode": "071200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "520103",
+      "search_keyword": "空调维修"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173120",
+    "company": "小郝汽车电瓶电器空调电喷后处理",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "浮桥镇华东国际塑化城东北门7-5-05",
+    "contact_phone": "178****6070",
+    "lat": 31.560554,
+    "lng": 121.214151,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JKTCBDDC",
+      "type": "汽车维修;货车维修;货车维修",
+      "typecode": "035000",
+      "alias": "",
+      "tag": "",
+      "keytag": "货车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173127",
+    "company": "汽车电路空调",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "问渡路与人民街交叉口西南40米",
+    "contact_phone": "待核实",
+    "lat": 31.435801,
+    "lng": 120.439163,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JU4OF4ME",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "望亭镇",
+      "adcode": "320507",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173197",
+    "company": "韩波汽车电路空调维修",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "园区唯亭镇金陵东路338号雍河湾花园3幢",
+    "contact_phone": "0512-62620425; 138****8710",
+    "lat": 31.362259,
+    "lng": 120.804319,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG1Z7E6",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "货车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区",
+      "adcode": "320506",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173208",
+    "company": "梅山专业汽车空调修理部",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "文曲路256号(迎春路地铁站1西南口步行360米)",
+    "contact_phone": "138****1163",
+    "lat": 31.265465,
+    "lng": 120.641158,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFF61BN",
+      "type": "汽车维修;汽车综合维修;汽车综合维修",
+      "typecode": "030100",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173253",
+    "company": "专修汽车电路空调",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "北厍镇厍西路812号",
+    "contact_phone": "138****4223",
+    "lat": 31.061271,
+    "lng": 120.778381,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFM5LFWU",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320509",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173254",
+    "company": "卡友帮汽车电瓶电路空调电控",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "兴中路(中国石化加油站南侧约150米)",
+    "contact_phone": "待核实",
+    "lat": 31.220984,
+    "lng": 120.661112,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HBXYNXUW",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173298",
+    "company": "双峰电瓶电喷空调",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "桐乡"
+    },
+    "address": "临杭大道二环西路交叉口正西方680米",
+    "contact_phone": "139****2149; 158****8121",
+    "lat": 30.604273,
+    "lng": 120.508086,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I6RLURVT",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330483",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173304",
+    "company": "小林汽车电路电瓶空调",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海宁"
+    },
+    "address": "许村镇许巷海王村倒庄里二组66号",
+    "contact_phone": "137****1860",
+    "lat": 30.419145,
+    "lng": 120.366277,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHT6POF",
+      "type": "汽车服务;汽车配件销售;汽车配件销售",
+      "typecode": "010800",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173339",
+    "company": "小胡汽车电瓶空调电路",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海宁"
+    },
+    "address": "长安镇陆泽村毛家桥26号",
+    "contact_phone": "待核实",
+    "lat": 30.49369,
+    "lng": 120.435198,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JUFCVASK",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173380",
+    "company": "油泵油嘴柴油电喷后处理空调电瓶电路维修",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "嘉善县"
+    },
+    "address": "魏中村里泽大道411号",
+    "contact_phone": "151****8600",
+    "lat": 30.877605,
+    "lng": 120.959855,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL89A4T",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "货车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330421",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173383",
+    "company": "汽车电瓶电路电控空调尿素泵维修",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "桐乡"
+    },
+    "address": "洲泉镇足佳鞋业市场一期5-02号",
+    "contact_phone": "197****3177",
+    "lat": 30.578653,
+    "lng": 120.381208,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JR2ZIASW",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "货车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330483",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173391",
+    "company": "启航电喷油泵油嘴尿素泵电路空调",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "秀洲区"
+    },
+    "address": "王店镇八联村公交站牌后",
+    "contact_phone": "134****2278",
+    "lat": 30.664146,
+    "lng": 120.718864,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFMCDCR1",
+      "type": "汽车维修;货车维修;货车维修",
+      "typecode": "035000",
+      "alias": "",
+      "tag": "",
+      "keytag": "货车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330411",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3464",
+      "name": "制冷、空调设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 烘炉、风机、包装等设备制造 > 制冷、空调设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "空调"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173420",
+    "company": "长安胖子汽车货车电瓶电喷空调电路维修",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海宁"
+    },
+    "address": "泰山村高速出口往北20米处公交车站",
+    "contact_phone": "133****9309",
+    "lat": 30.479554,
+    "lng": 120.436647,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLF6IFH",
+      "type": "汽车服务;汽车配件销售;汽车配件销售",
+      "typecode": "010800",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车配件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "电路板"
     },
     "industry": {
       "code": "3464",

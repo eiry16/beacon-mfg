@@ -153,5 +153,103 @@
       "evidence": "保洁"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0165169",
+    "company": "广州巧媳妇清洁服务有限公司",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "环境检测"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "天河区"
+    },
+    "address": "黄埔大道西365号1409室KS12",
+    "contact_phone": "135****0869; 150****4475",
+    "lat": 23.115262,
+    "lng": 113.357261,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L0T5AFE7",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "保洁清洗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440106",
+      "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "8219",
+      "name": "其他清洁服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 其他服务业 > 清洁服务 > 其他清洁服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "清洁服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0177409",
+    "company": "飞腾管道疏通清洁服务部",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "检测服务"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "张家港"
+    },
+    "address": "敬安路与人民东路交叉口北100米",
+    "contact_phone": "待核实",
+    "lat": 31.814804,
+    "lng": 120.652995,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0G0CARUEQ",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "管道疏通",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "检测服务"
+    },
+    "industry": {
+      "code": "8219",
+      "name": "其他清洁服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 其他服务业 > 清洁服务 > 其他清洁服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "清洁服务"
+    },
+    "is_manufacturer": false
   }
 ]

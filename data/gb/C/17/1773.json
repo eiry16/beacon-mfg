@@ -448,5 +448,54 @@
       "evidence": "窗帘"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0173795",
+    "company": "苏州太和窗帘(南环店)",
+    "category": "原材料",
+    "keywords": [
+      "铝合金"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "姑苏区"
+    },
+    "address": "盘蠡路8号好美家建材市场48号",
+    "contact_phone": "132****3968",
+    "lat": 31.276748,
+    "lng": 120.614082,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-02",
+    "imported_at": "2026-10-02",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHKRLGU",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "布艺家纺",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙西",
+      "adcode": "320508",
+      "search_keyword": "铝合金"
+    },
+    "industry": {
+      "code": "1773",
+      "name": "窗帘、布艺类产品制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 家用纺织制成品制造 > 窗帘、布艺类产品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "窗帘"
+    },
+    "is_manufacturer": true
   }
 ]

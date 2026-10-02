@@ -5777,7 +5777,8 @@
     "company": "四川智邦系统集成有限公司",
     "category": "信息传输、软件和信息技术服务业",
     "keywords": [
-      "系统集成"
+      "系统集成",
+      "信息系统集成"
     ],
     "region": {
       "province": "四川",
@@ -6298,7 +6299,8 @@
     "company": "音视频会议系统集成(会议系统专业音箱智能广播数字影院)锦辰芯语电子",
     "category": "信息传输、软件和信息技术服务业",
     "keywords": [
-      "系统集成"
+      "系统集成",
+      "信息系统集成"
     ],
     "region": {
       "province": "四川",
@@ -6590,7 +6592,8 @@
     "company": "四川美盛系统集成有限公司",
     "category": "信息传输、软件和信息技术服务业",
     "keywords": [
-      "系统集成"
+      "系统集成",
+      "信息系统集成"
     ],
     "region": {
       "province": "四川",
@@ -6699,7 +6702,8 @@
     "company": "鑫智云(上海)系统集成有限公司(暂停营业)",
     "category": "信息传输、软件和信息技术服务业",
     "keywords": [
-      "信息系统集成"
+      "信息系统集成",
+      "系统集成"
     ],
     "region": {
       "province": "上海",
@@ -7470,6 +7474,1242 @@
       "confidence": "high",
       "source": "name",
       "evidence": "系统集成"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-I-0000001",
+    "company": "赤兔智能工业（苏州）有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "信息传输、软件和信息技术服务业",
+      "认证企业"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州"
+    },
+    "address": "江苏省苏州市虎丘区苏州工业园星湖街青创港二期",
+    "contact_phone": "185****6038",
+    "source": "certification",
+    "source_url": null,
+    "verified_at": "2026-09-24",
+    "is_template": false,
+    "note": "已完成平台认证，灯牌由规则引擎算出",
+    "status": "verified",
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "high",
+      "source": "certification"
+    },
+    "is_manufacturer": false,
+    "cl": "L2",
+    "agent": {
+      "skill_url": "skills/vendors/CN-I-0000001/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog",
+        "rfq"
+      ],
+      "verified": true
+    },
+    "_bucket": "I/65/6531",
+    "website": null,
+    "certifications": [],
+    "certification": {
+      "app_id": "CERT-20260911-0001",
+      "badge": "L2",
+      "issued_at": "2026-09-24",
+      "expires_at": "2027-09-24",
+      "reviewer": "eiry",
+      "profile": "it-service",
+      "completeness": 83.3
+    },
+    "claim": {
+      "status": "verified",
+      "verified_by": "manual",
+      "verified_at": "2026-09-23",
+      "badge": "L2",
+      "app_id": "CERT-20260911-0001"
+    }
+  },
+  {
+    "id": "CN-MFG-0164584",
+    "company": "美的集成灶(坪山天商店)",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "深圳",
+      "district": "坪山区"
+    },
+    "address": "深汕路69号(六和地铁站A2口步行460米)",
+    "contact_phone": "0755-89933035",
+    "lat": 22.698275,
+    "lng": 114.332856,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LG54M6PR",
+      "type": "购物服务;家居建材市场;厨卫市场",
+      "typecode": "060604",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电数码",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "坪山",
+      "adcode": "440310",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0164732",
+    "company": "美的集成灶(八益店)",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "武侯区"
+    },
+    "address": "簇桥街道八益装饰材料城C区118号",
+    "contact_phone": "159****4633",
+    "lat": 30.612719,
+    "lng": 104.004969,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LAHA9ZH4",
+      "type": "购物服务;家居建材市场;厨卫市场",
+      "typecode": "060604",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电数码",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "510107",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0164733",
+    "company": "成都潮普惠科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "武侯区"
+    },
+    "address": "一环路南二段15号东华电子电脑城一楼G08",
+    "contact_phone": "184****8666",
+    "lat": 30.634885,
+    "lng": 104.069004,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0J6Z4FAH5",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "小天竺",
+      "adcode": "510107",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0164734",
+    "company": "美的集成灶(成都龙泉街道驿都东路店)",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "龙泉驿区"
+    },
+    "address": "驿都东路145号",
+    "contact_phone": "028-84842055",
+    "lat": 30.559942,
+    "lng": 104.263098,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIMJ7OL",
+      "type": "购物服务;家电电子卖场;家电电子卖场",
+      "typecode": "060300",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电数码",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "四川天府新区",
+      "adcode": "510112",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0164832",
+    "company": "上海禹亮信息科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "信息系统集成",
+      "系统集成"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "静安区"
+    },
+    "address": "共和新路3699号A栋1107室",
+    "contact_phone": "021-61390738; 150****7518; 4000022718",
+    "lat": 31.30427,
+    "lng": 121.450214,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUX79TON",
+      "type": "公司企业;公司;网络科技",
+      "typecode": "170206",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "凉城",
+      "adcode": "310106",
+      "search_keyword": "信息系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167509",
+    "company": "上海雍诺电气科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "闵行区"
+    },
+    "address": "都会路99号赐方园区1号楼",
+    "contact_phone": "021-58229588",
+    "lat": 31.032812,
+    "lng": 121.432524,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HA1CGR9D",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "310112",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167510",
+    "company": "上海矩阵超智系统集成有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新区"
+    },
+    "address": "张江人工智能岛10号楼",
+    "contact_phone": "177****0539",
+    "lat": 31.185387,
+    "lng": 121.610942,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6O5LZPS",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "张江",
+      "adcode": "310115",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "系统集成"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167511",
+    "company": "上海浦东微电子封装与系统集成公共服务平台",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新区"
+    },
+    "address": "盛夏路608号",
+    "contact_phone": "待核实",
+    "lat": 31.208118,
+    "lng": 121.62641,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFTLAD2",
+      "type": "商务住宅;产业园区;产业园区",
+      "typecode": "120100",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "张江",
+      "adcode": "310115",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "系统集成"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167512",
+    "company": "石杰集成系统工程(上海)有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "奉贤区"
+    },
+    "address": "奉干公路637号",
+    "contact_phone": "待核实",
+    "lat": 30.899367,
+    "lng": 121.667031,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JDVLOHIC",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中国(上海)自由贸易试验区临港新片区",
+      "adcode": "310120",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167513",
+    "company": "上海银湾智能系统集成有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新区"
+    },
+    "address": "南祝路3967号",
+    "contact_phone": "待核实",
+    "lat": 31.058442,
+    "lng": 121.765097,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHSNLC8",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "惠南",
+      "adcode": "310115",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "系统集成"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167515",
+    "company": "泰莱迪系统集成(上海)有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新区"
+    },
+    "address": "揽月路与江山路交叉口东北140米",
+    "contact_phone": "待核实",
+    "lat": 30.871148,
+    "lng": 121.820427,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L3AOZBX4",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "中国(上海)自由贸易试验区临港新片区",
+      "adcode": "310115",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "系统集成"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167516",
+    "company": "上海启隆银祥电子系统集成有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新区"
+    },
+    "address": "南汇新城镇江山路1889弄T1栋307室",
+    "contact_phone": "021-20989909",
+    "lat": 30.869216,
+    "lng": 121.853755,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HAOPHXKO",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "芦潮港村",
+      "adcode": "310115",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "系统集成"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167587",
+    "company": "北京威胜得数码科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "北京",
+      "city": "北京",
+      "district": "石景山区"
+    },
+    "address": "政达路2号CRD银座B座1031室",
+    "contact_phone": "010-68868383",
+    "lat": 39.904933,
+    "lng": 116.227969,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFI5RCD4",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "110107",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167588",
+    "company": "北京安托系统集成有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "北京",
+      "city": "北京",
+      "district": "朝阳区"
+    },
+    "address": "东湖国际中心",
+    "contact_phone": "待核实",
+    "lat": 40.008048,
+    "lng": 116.464024,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MB3NEB3M",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "望京",
+      "adcode": "110105",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "系统集成"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167589",
+    "company": "今川永动(北京)科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "北京",
+      "city": "北京",
+      "district": "大兴区"
+    },
+    "address": "北京城区忠凉路1号院住总万科C座7层704A",
+    "contact_phone": "待核实",
+    "lat": 39.805577,
+    "lng": 116.459344,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0M6D77EK0",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "亦庄",
+      "adcode": "110115",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167590",
+    "company": "库兹·拉斐特-别墅车库门",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "北京",
+      "city": "北京",
+      "district": "顺义区"
+    },
+    "address": "通顺路与李家桥村中心街交叉口东南120米",
+    "contact_phone": "待核实",
+    "lat": 40.041439,
+    "lng": 116.667634,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MA9UARBL",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "alias": "",
+      "tag": "",
+      "keytag": "门窗",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "李桥",
+      "adcode": "110113",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167914",
+    "company": "广州云枢人工智能科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "番禺区"
+    },
+    "address": "番禺大道北555号广州天安科技交流中心207室之一",
+    "contact_phone": "132****6149",
+    "lat": 22.980675,
+    "lng": 113.367175,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDT9DMZO",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
+      "alias": "",
+      "tag": "",
+      "keytag": "联合办公",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440113",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167915",
+    "company": "广州市用德电子科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "天河区"
+    },
+    "address": "新塘街道软件路17号1栋701室",
+    "contact_phone": "待核实",
+    "lat": 23.171775,
+    "lng": 113.413925,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL9W1XT",
+      "type": "公司企业;公司;网络科技",
+      "typecode": "170206",
+      "alias": "",
+      "tag": "",
+      "keytag": "电子厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "440106",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167916",
+    "company": "星迪电子科技有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "天河区"
+    },
+    "address": "黄村西路与圃兴路交叉口南100米",
+    "contact_phone": "待核实",
+    "lat": 23.123234,
+    "lng": 113.405926,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBR4Q0QK",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "电子厂",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "车陂",
+      "adcode": "440106",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167917",
+    "company": "美的集成灶(增城嘉誉店)",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "广东",
+      "city": "广州",
+      "district": "增城区"
+    },
+    "address": "新塘镇丰华东路与欲兴一街交叉口西南80米耀乐大厦(荔新十三路61号之一)",
+    "contact_phone": "139****7009",
+    "lat": 23.129402,
+    "lng": 113.613888,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K29HS49H",
+      "type": "购物服务;家居建材市场;厨卫市场",
+      "typecode": "060604",
+      "alias": "",
+      "tag": "",
+      "keytag": "家电",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "新塘",
+      "adcode": "440118",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0167918",
+    "company": "中兴系统技术有限公司",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "系统集成"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "杭州",
+      "district": "上城区"
+    },
+    "address": "九和路520号铁汇发展中心(七堡地铁站C口旁)",
+    "contact_phone": "待核实",
+    "lat": 30.299525,
+    "lng": 120.240675,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I3TLH29F",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "彭埠",
+      "adcode": "330102",
+      "search_keyword": "系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0170301",
+    "company": "成飞集成",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "信息系统集成"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "青羊区"
+    },
+    "address": "日月大道二段成飞集成",
+    "contact_phone": "028-87405033",
+    "lat": 30.685426,
+    "lng": 103.950218,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGMTQUR",
+      "type": "公司企业;公司;机械电子",
+      "typecode": "170204",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "黄田坝",
+      "adcode": "510105",
+      "search_keyword": "信息系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0170302",
+    "company": "成飞集成(四川成都航空产业园1期店)",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "信息系统集成"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "新都区"
+    },
+    "address": "石板滩街道",
+    "contact_phone": "待核实",
+    "lat": 30.709882,
+    "lng": 104.233188,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HGUAF8FR",
+      "type": "购物服务;专卖店;专营店",
+      "typecode": "061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "购物服务,专卖店,专营店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "510114",
+      "search_keyword": "信息系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0170305",
+    "company": "诚信集成房屋",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "信息系统集成"
+    ],
+    "region": {
+      "province": "四川",
+      "city": "成都",
+      "district": "彭州"
+    },
+    "address": "丽春镇君平村1组15号",
+    "contact_phone": "137****6195",
+    "lat": 30.954125,
+    "lng": 103.836825,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-01",
+    "imported_at": "2026-10-01",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KGXSORXN",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "510182",
+      "search_keyword": "信息系统集成"
+    },
+    "industry": {
+      "code": "6531",
+      "name": "信息系统集成服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息系统集成和物联网技术服务 > 信息系统集成服务",
+      "confidence": "low",
+      "source": "search_keyword",
+      "evidence": "信息传输、软件和信息技术服务业"
     },
     "is_manufacturer": false
   }
