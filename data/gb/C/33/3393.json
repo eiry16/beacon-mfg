@@ -11149,7 +11149,15 @@
       "source": "name",
       "evidence": "锻件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0152360/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0152361",
@@ -11248,7 +11256,15 @@
       "source": "name",
       "evidence": "锻造"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0152362/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0152363",
@@ -20925,7 +20941,15 @@
       "source": "search_keyword",
       "evidence": "压铸"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0152569/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0152570",

@@ -405,6 +405,14 @@
       "source": "gb_token",
       "evidence": "器批发"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0174929/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

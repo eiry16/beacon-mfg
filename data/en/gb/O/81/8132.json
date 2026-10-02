@@ -669,13 +669,13 @@
   },
   {
     "id": "CN-MFG-0089111",
-    "company_en": "Jing盟Electrical Appliance Repair(Piao Ying Huayuan Xiyuan Store)",
+    "company_en": "Jing盟电器维修(Piaoying Huayuan Xiyuan Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "home appliance repair",
-      "air conditioner repair",
-      "refrigerator repair"
+      "Appliance Repair",
+      "Air Conditioner Repair",
+      "Refrigerator Repair"
     ],
     "region": {
       "province": "Shanghai",
@@ -7978,12 +7978,12 @@
   },
   {
     "id": "CN-MFG-0089675",
-    "company_en": "Lan Guang Electrical Appliance Repair(Hongkang Garden Jianshen苑Store)",
+    "company_en": "Lan Guang Electrical Appliance Repair(Hongkang Garden Jianshen苑 Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "home appliance repair",
-      "refrigerator repair"
+      "Appliance Repair",
+      "Refrigerator Repair"
     ],
     "region": {
       "province": "Guangdong",
@@ -9348,18 +9348,18 @@
   },
   {
     "id": "CN-MFG-0089728",
-    "company_en": "Chuangke Home Appliance Repair(Hetang Yue塞Xingruiju·Xinglangju Store)",
+    "company_en": "Chuangke Appliance Repair(He Tang Yue Se Xing Rui Ju·Xing Lang Ju Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "home appliance repair",
-      "refrigerator repair"
+      "Appliance Repair",
+      "Refrigerator Repair"
     ],
     "region": {
       "province": "Guangdong",
       "city": "Guangzhou"
     },
-    "address_en": "No. 301 Hanyun Road, Hetang Yue塞Xingruiju·Xinglangju",
+    "address_en": "No. 301 Hanyun Road, He Tang Yue Se Xing Rui Ju·Xing Lang Ju",
     "contact_phone": "134****8839",
     "source": "public_directory",
     "verified_at": "2026-09-16",
@@ -16375,23 +16375,23 @@
   },
   {
     "id": "CN-MFG-0096398",
-    "company_en": "Xunwei Computer Printer Home Appliance Repair",
+    "company_en": "Xunwei Computer Printer Appliance Repair",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "computer repair",
-      "laptop repair",
-      "on-site computer repair",
-      "home appliance repair",
-      "air conditioner repair",
-      "washing machine repair",
-      "refrigerator repair"
+      "Computer Repair",
+      "Laptop Repair",
+      "On-site Computer Repair",
+      "Appliance Repair",
+      "Air Conditioner Repair",
+      "Washing Machine Repair",
+      "Refrigerator Repair"
     ],
     "region": {
       "province": "Guizhou",
       "city": "Guiyang"
     },
-    "address_en": "No. 108 Xiahui Road, storefront (opposite苏宁易购Jinghui Village Gate on the left)",
+    "address_en": "No. 108 Xiahui Road, Shop Front (Opposite苏宁易购, Jinghui Village Gate, Left Side)",
     "contact_phone": "139****3851",
     "source": "public_directory",
     "verified_at": "2026-09-17",
@@ -42641,17 +42641,17 @@
   },
   {
     "id": "CN-MFG-0129228",
-    "company_en": "Weifeng Home Appliance Repair(Changshu奥特莱斯Store)",
+    "company_en": "Weifeng Appliance Repair (Changshu奥特莱斯Store)",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
-      "home appliance repair"
+      "Appliance Repair"
     ],
     "region": {
       "province": "Jiangsu",
       "city": "Suzhou"
     },
-    "address_en": "No. 48 Mingzhu Street, Haoyu Town, Changshu奥特莱斯",
+    "address_en": "No. 48 Mingzhu Street, Haishu Town,奥特莱斯",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-19",
@@ -52202,7 +52202,7 @@
   },
   {
     "id": "CN-MFG-0141140",
-    "company_en": "Jiadian Weixiuzhongxin",
+    "company_en": "Appliance Repair Center",
     "category": "居民服务、修理和其他服务业",
     "category_en": "居民服务、修理和其他服务业",
     "keywords_en": [
@@ -52212,7 +52212,7 @@
       "province": "Hubei",
       "city": "Wuhan"
     },
-    "address_en": "No. 7 Gate, 35-10, Renxin Olin Garden Community,沌口Jingji Kaifaqu",
+    "address_en": "No. 7 Gate, 35-10, Renxin Olin Garden Community, Economic and Technological Development Zone,沌口",
     "contact_phone": "Pending verification",
     "source": "public_directory",
     "verified_at": "2026-09-19",
@@ -56460,6 +56460,41 @@
       "confidence": "high",
       "source": "gb_token",
       "evidence": "电器修理"
+    },
+    "industry_en": {
+      "code": "8132",
+      "name_en": null,
+      "level": "class",
+      "name": "日用电器修理",
+      "confidence": "high"
+    },
+    "_bucket": "O/81/8132"
+  },
+  {
+    "id": "CN-MFG-0172849",
+    "company_en": "Jiadian Weixiu",
+    "category": "居民服务、修理和其他服务业",
+    "category_en": "居民服务、修理和其他服务业",
+    "keywords_en": [
+      "Air Conditioner Repair"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
+    },
+    "address_en": "No. 2, Unit 2, Building 2, Xin Niuma Market, Qingxi Road",
+    "contact_phone": "182****4996",
+    "source": "public_directory",
+    "verified_at": "2026-10-02",
+    "note_en": "",
+    "industry": {
+      "code": "8132",
+      "name": "日用电器修理",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 机动车、电子产品和日用产品修理业 > 家用电器修理 > 日用电器修理",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家电维修"
     },
     "industry_en": {
       "code": "8132",

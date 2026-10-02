@@ -34,5 +34,40 @@
       "name": "化妆品制造",
       "confidence": "medium"
     }
+  },
+  {
+    "id": "CN-MFG-0165067",
+    "company_en": "Xingfa Square Hairdressing and Beauty Cosmetics Trade Center",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "hairdressing"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Guangzhou"
+    },
+    "address_en": "No. 43 Shiliuqiao Road (Phase II Xingfa Square)",
+    "contact_phone": "020-86550355",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "2682",
+      "name": "化妆品制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 日用化学产品制造 > 化妆品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "化妆品"
+    },
+    "industry_en": {
+      "code": "2682",
+      "name_en": null,
+      "level": "class",
+      "name": "化妆品制造",
+      "confidence": "medium"
+    },
+    "_bucket": "C/26/2682"
   }
 ]

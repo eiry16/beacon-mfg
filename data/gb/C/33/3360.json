@@ -101388,7 +101388,15 @@
       "source": "name",
       "evidence": "电镀"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0087592/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0092216",
@@ -134042,7 +134050,15 @@
       "source": "name",
       "evidence": "喷涂"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0146012/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0146013",
@@ -165406,7 +165422,15 @@
       "source": "name",
       "evidence": "热处理"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0146768/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0146769",
@@ -165798,7 +165822,15 @@
       "source": "name",
       "evidence": "热处理"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0146776/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0146777",
@@ -176975,7 +177007,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0151519/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0151582",
@@ -178929,7 +178969,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0170336/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0170615",
@@ -178980,7 +179028,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0170615/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0172106",
@@ -179129,7 +179185,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0172368/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0172373",
@@ -179180,7 +179244,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0172373/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0172380",
@@ -179232,7 +179304,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0172380/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0172397",
@@ -179284,7 +179364,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0172397/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0172458",
@@ -179334,7 +179422,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0172458/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0172808",
@@ -179481,7 +179577,15 @@
       "source": "name",
       "evidence": "喷漆"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0173342/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0173789",
@@ -179531,7 +179635,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0173789/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0173933",
@@ -179580,7 +179692,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0173933/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0173965",
@@ -179678,7 +179798,15 @@
       "source": "name",
       "evidence": "镀锌|配件型:配件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0174354/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0177200",
@@ -179727,7 +179855,15 @@
       "source": "name",
       "evidence": "镀锌"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0177200/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0177630",

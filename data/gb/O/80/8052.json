@@ -93756,7 +93756,15 @@
       "evidence": "足浴"
     },
     "is_manufacturer": false,
-    "_bucket": "O/80/8052"
+    "_bucket": "O/80/8052",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0046442/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0046444",

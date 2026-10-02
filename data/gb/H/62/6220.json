@@ -22430,7 +22430,15 @@
       "evidence": "住宿和餐饮业"
     },
     "is_manufacturer": false,
-    "_bucket": "H/62/6220"
+    "_bucket": "H/62/6220",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0038705/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0038706",
@@ -34268,7 +34276,15 @@
       "evidence": "住宿和餐饮业"
     },
     "is_manufacturer": false,
-    "_bucket": "H/62/6220"
+    "_bucket": "H/62/6220",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039823/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039824",
@@ -35990,7 +36006,15 @@
       "evidence": "住宿和餐饮业"
     },
     "is_manufacturer": false,
-    "_bucket": "H/62/6220"
+    "_bucket": "H/62/6220",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039866/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039867",
@@ -37717,7 +37741,15 @@
       "evidence": "住宿和餐饮业"
     },
     "is_manufacturer": false,
-    "_bucket": "H/62/6220"
+    "_bucket": "H/62/6220",
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0039915/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0039916",
@@ -98843,7 +98875,15 @@
       "source": "name",
       "evidence": "螺蛳粉"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0091052/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0091953",

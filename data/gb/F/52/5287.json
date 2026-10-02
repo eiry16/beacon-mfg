@@ -17329,7 +17329,15 @@
       "source": "gb_token",
       "evidence": "陶瓷"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0169435/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0169594",

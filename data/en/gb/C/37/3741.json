@@ -217,5 +217,40 @@
       "name": "飞机制造",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0170304",
+    "company_en": "Huangtianba Aviation Industry (Group) Co., Ltd.",
+    "category": "精密机械加工",
+    "category_en": "Precision Machining",
+    "keywords_en": [
+      "Information System Integration"
+    ],
+    "region": {
+      "province": "Sichuan",
+      "city": "Chengdu"
+    },
+    "address_en": "No. 88, Weiyi Road, Huangtianba",
+    "contact_phone": "028-87405033",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "3741",
+      "name": "飞机制造",
+      "level": "class",
+      "path": "C 制造业 > 铁路、船舶、航空航天和其他运输设备制造业 > 航空、航天器及设备制造 > 飞机制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "飞机"
+    },
+    "industry_en": {
+      "code": "3741",
+      "name_en": null,
+      "level": "class",
+      "name": "飞机制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/37/3741"
   }
 ]

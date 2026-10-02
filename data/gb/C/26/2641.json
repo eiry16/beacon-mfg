@@ -1694,6 +1694,14 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0152575/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   }
 ]

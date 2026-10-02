@@ -43251,7 +43251,15 @@
       "source": "name",
       "evidence": "美容"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0078924/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0078938",
@@ -193618,7 +193626,15 @@
       "source": "search_keyword",
       "evidence": "居民服务、修理和其他服务业"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0172228/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0172229",

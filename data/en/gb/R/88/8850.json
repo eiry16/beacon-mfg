@@ -305,5 +305,40 @@
       "confidence": "high"
     },
     "_bucket": "R/88/8850"
+  },
+  {
+    "id": "CN-MFG-0166537",
+    "company_en": "Nanshan Museum",
+    "category": "文化、体育和娱乐业",
+    "category_en": "文化、体育和娱乐业",
+    "keywords_en": [
+      "hot spring"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 2093 Nanshan Avenue (Exit E4, Nantou Ancient City Subway Station)",
+    "contact_phone": "0755-86700071",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "8850",
+      "name": "博物馆",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 文化艺术业 > 博物馆 > 博物馆",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "博物馆"
+    },
+    "industry_en": {
+      "code": "8850",
+      "name_en": "Museums",
+      "level": "class",
+      "name": "博物馆",
+      "confidence": "high"
+    },
+    "_bucket": "R/88/8850"
   }
 ]

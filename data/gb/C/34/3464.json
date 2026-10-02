@@ -71025,7 +71025,15 @@
       "source": "name",
       "evidence": "空调"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0173391/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0173420",

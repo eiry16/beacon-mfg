@@ -71636,7 +71636,15 @@
       "source": "name",
       "evidence": "螺丝"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0154188/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0154476",
@@ -75381,7 +75389,15 @@
       "source": "name",
       "evidence": "螺丝"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0173483/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0173511",
@@ -75683,7 +75699,15 @@
       "source": "name",
       "evidence": "螺丝"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0173524/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0173525",
@@ -77744,7 +77768,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0173585/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0173586",
@@ -84973,7 +85005,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0174523/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0174524",
@@ -86167,7 +86207,15 @@
       "source": "name",
       "evidence": "紧固件"
     },
-    "is_manufacturer": true
+    "is_manufacturer": true,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0174547/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0174548",

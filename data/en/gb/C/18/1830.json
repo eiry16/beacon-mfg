@@ -313,5 +313,40 @@
       "name": "服饰制造",
       "confidence": "high"
     }
+  },
+  {
+    "id": "CN-MFG-0169931",
+    "company_en": "Shenzhen Yunqi Garment Design Co., Ltd.",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Product Design"
+    ],
+    "region": {
+      "province": "Guangdong",
+      "city": "Shenzhen"
+    },
+    "address_en": "No. 508, Building B, Hengyu Center, Dengliang Road, near Feiyun Sha Garment of Intangible Cultural Heritage",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-10-01",
+    "note_en": "",
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服饰"
+    },
+    "industry_en": {
+      "code": "1830",
+      "name_en": null,
+      "level": "class",
+      "name": "服饰制造",
+      "confidence": "high"
+    },
+    "_bucket": "C/18/1830"
   }
 ]

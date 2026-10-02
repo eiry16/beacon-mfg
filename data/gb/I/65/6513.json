@@ -42502,7 +42502,15 @@
       "source": "name",
       "evidence": "软件"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0163205/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0163206",
@@ -42649,7 +42657,15 @@
       "source": "name",
       "evidence": "软件科技"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0163208/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0163210",
@@ -62301,7 +62317,15 @@
       "source": "name",
       "evidence": "软件科技"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0175610/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0175611",
@@ -62546,7 +62570,15 @@
       "source": "name",
       "evidence": "软件科技"
     },
-    "is_manufacturer": false
+    "is_manufacturer": false,
+    "agent": {
+      "skill_url": "skills/vendors/CN-MFG-0175617/SKILL.md",
+      "protocol": "skill",
+      "capabilities": [
+        "catalog"
+      ],
+      "verified": false
+    }
   },
   {
     "id": "CN-MFG-0175929",
