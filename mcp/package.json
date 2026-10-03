@@ -1,6 +1,6 @@
 {
   "name": "beacon-mfg-mcp",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "description": "Read-only MCP server exposing the BeaconMFG灯塔工厂 supplier directory (search vendors, get vendor detail, get capability card, multi-turn sourcing) to any MCP-compatible agent. No API key required.",
   "keywords": [
     "mcp",
@@ -26,6 +26,8 @@
   "files": [
     "server.py",
     "http_server.py",
+    "mcp_adapter.py",
+    "test_protocol.py",
     "bin/",
     "rfq-kernel/",
     "copy-rfk.js",
