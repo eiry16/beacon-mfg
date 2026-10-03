@@ -233,6 +233,56 @@ def test_adapter():
             proc.kill()
 
 
+def test_dead_proxy():
+    """死代理容错：环境里配了**不可用**代理时，仍应直连成功（回归 #100086）。
+
+    背景：客户机器上若配了已失效的代理（VPN/Clash 退出、端口已关），
+    urllib 会把所有请求喂给死代理 → 检索整体归零，且旧报错「检查网络」不指向真因。
+    修法见 server.py 的 `_openers()`：直连优先、代理兜底。
+    """
+    print("\n[*] 死代理容错  (直连优先)")
+    env = _child_env()
+    env.pop("BEACON_REPO", None)          # 强制走联网，才能真正触发网络取数
+    for k in ("http_proxy", "https_proxy", "HTTP_PROXY", "HTTPS_PROXY"):
+        env[k] = "http://127.0.0.1:9"     # 9 = discard 端口，几乎必然拒绝
+    env["BEACON_MIRRORS"] = ""             # 别被本地镜像配置干扰
+    proc = subprocess.Popen([sys.executable, "-u", SERVER], stdin=subprocess.PIPE,
+                            stdout=subprocess.PIPE, env=env, encoding="utf-8", bufsize=1)
+    try:
+        def send(method, params, notify=False):
+            msg = {"jsonrpc": "2.0", "method": method, "params": params}
+            if not notify:
+                msg["id"] = 1
+            else:
+                msg.pop("id", None)
+            proc.stdin.write(json.dumps(msg, ensure_ascii=False) + "\n")
+            proc.stdin.flush()
+            if notify:
+                return None
+            return json.loads(proc.stdout.readline())
+
+        send("initialize", {"protocolVersion": "2024-11-05", "capabilities": {},
+                            "clientInfo": {"name": "smoke", "version": "1"}})
+        send("notifications/initialized", {}, notify=True)
+        r = send("tools/call", {"name": "search_vendors",
+                                "arguments": {"query": "面馆", "city": "苏州", "limit": 3}})
+        n, err = 0, ""
+        if r and "result" in r:
+            try:
+                n = len(json.loads(r["result"]["content"][0]["text"]).get("results", []))
+            except Exception as e:
+                err = "解析失败 %s" % e
+        else:
+            err = "无回包（很可能被死代理拖累）"
+        _check("dead-proxy 苏州/面馆", n > 0, err or "命中 %d" % n)
+    finally:
+        proc.terminate()
+        try:
+            proc.wait(timeout=5)
+        except Exception:
+            proc.kill()
+
+
 def main():
     print("=" * 60)
     print("BeaconMFG MCP 协议回归测试")
@@ -247,6 +297,7 @@ def main():
     else:
         print("\n[2/3] stdio  (跳过，加 --stdio 启用)")
         print("[3/3] adapter (跳过，加 --adapter 启用)")
+    test_dead_proxy()
 
     passed = sum(1 for _, ok, _ in _results if ok)
     failed = [(n, d) for n, ok, d in _results if not ok]
