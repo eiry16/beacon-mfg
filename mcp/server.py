@@ -43,6 +43,7 @@ import time
 import hmac
 import urllib.request
 import urllib.error
+import socket
 from typing import Any, Dict, List, Optional, Tuple
 import sys as _sys
 import uuid as _uuid
@@ -450,11 +451,74 @@ def _git_show(relpath: str) -> Optional[str]:
 _HTTP_TIMEOUT = 15
 
 
+# 记录最近一次全失败的诊断（供上层报错时引用，不进返回值以免破坏既有签名）
+_HTTP_LAST_ERROR: List[str] = [""]
+
+
+def _openers() -> List[Tuple[str, Any]]:
+    """构造 (标签, opener) 列表，**直连优先、代理兜底**。
+
+    为什么需要：urllib 默认读取环境里的 `*_proxy` 变量。客户机器上若配了
+    已失效的代理（VPN/Clash 退出、端口已关），所有请求都会被代理吃掉并失败，
+    表现为「无法取得 manifest.json」——报错完全没指向真因，客户无从下手。
+    这里把「绕过代理直连」作为**第一选择**，代理仅作兜底，并在全部失败时
+    给出明确诊断（见 `_http_diagnose`）。
+
+    仅在直连确实失败后才启用代理，因此不会破坏内网/反代等必须走代理的场景。
+    """
+    out: List[Tuple[str, Any]] = []
+    # 1) 直连（显式 no-proxy opener，忽略环境里的 *_proxy）
+    try:
+        out.append(("direct", urllib.request.build_opener(urllib.request.ProxyHandler({}))))
+    except Exception:
+        pass
+    # 2) 环境代理（若系统确实配置了可用代理，这里才会成功）
+    try:
+        if urllib.request.getproxies():
+            out.append(("proxy", urllib.request.build_opener()))
+    except Exception:
+        pass
+    # 3) 兜底：默认 opener
+    if not out:
+        out.append(("default", urllib.request.build_opener()))
+    return out
+
+
+def _http_diagnose(relpath: str, last_err: str = "") -> str:
+    """全部基址+全部连接方式都失败时，给出**指向真因**的诊断串。"""
+    hints = []
+    try:
+        proxies = urllib.request.getproxies()
+    except Exception:
+        proxies = {}
+    live = []
+    for k, v in proxies.items():
+        try:
+            host = v.split("//")[-1].split(":")[0].split("@")[-1]
+            port = v.rsplit(":", 1)[-1].split("/")[0]
+            s = socket.create_connection((host, int(port)), timeout=1.5)
+            s.close()
+            live.append("%s=%s" % (k, v))
+        except Exception:
+            hints.append("代理 %s=%s **不可用**（已退出/端口未监听）" % (k, v))
+    if live:
+        hints.append("可用代理: " + ", ".join(live))
+    if not hints:
+        hints.append("未检测到代理配置；可能是本机网络不可达或域名被阻断")
+    if last_err:
+        hints.append("最后错误: " + last_err)
+    return "；".join(hints)
+
+
 def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
     """统一的 HTTP 读取：依次尝试 _http_bases() 中的基址（主源 + 兜底镜像），
-    任一成功即返回；全部失败则用本地缓存兜底（保证离线可用）。"""
+    任一成功即返回；全部失败则用本地缓存兜底（保证离线可用）。
+
+    连接方式上「直连优先、代理兜底」——避免失效代理把检索整体打挂。
+    """
     cached_body = None
     cached_etag = None
+    last_err = ""
     for base in _http_bases():
         url = base + "/" + relpath
         cap = _cache_path(url)
@@ -478,26 +542,29 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
         req = urllib.request.Request(url, headers=headers)
         if etag:
             req.add_header("If-None-Match", etag)
-        try:
-            resp = urllib.request.urlopen(req, timeout=_HTTP_TIMEOUT)
-            body = resp.read().decode("utf-8")
-            new_etag = resp.headers.get("ETag")
+        for _tag, opener in _openers():
             try:
-                with open(cap, "w", encoding="utf-8") as f:
-                    json.dump({"etag": new_etag, "body": body}, f)
-            except Exception:
-                pass
-            return body, new_etag
-        except urllib.error.HTTPError as e:
-            if e.code == 304 and cached_body is not None:
-                return cached_body, etag
-            continue
-        except Exception:
-            # 当前基址不可达：尝试下一个兜底镜像；全部失败后在末尾用本地缓存兜底
-            continue
+                resp = opener.open(req, timeout=_HTTP_TIMEOUT)
+                body = resp.read().decode("utf-8")
+                new_etag = resp.headers.get("ETag")
+                try:
+                    with open(cap, "w", encoding="utf-8") as f:
+                        json.dump({"etag": new_etag, "body": body}, f)
+                except Exception:
+                    pass
+                return body, new_etag
+            except urllib.error.HTTPError as e:
+                if e.code == 304 and cached_body is not None:
+                    return cached_body, etag
+                last_err = "HTTP %s" % e.code
+                break   # HTTP 层错误，换基址比重试连接方式有意义
+            except Exception as e:
+                last_err = "%s: %s" % (type(e).__name__, e)
+                continue   # 连接层失败（典型：代理不可用）→ 换连接方式
     # 全部基址失败：若有任何本地缓存也返回，保证离线可用
     if cached_body is not None:
         return cached_body, cached_etag
+    _HTTP_LAST_ERROR[0] = _http_diagnose(relpath, last_err)
     return None, None
 
 
@@ -565,7 +632,15 @@ def load_manifest() -> Dict[str, Any]:
     if _cache_stale(_manifest_cache, "data/manifest.json"):
         txt = fetch_text("data/manifest.json")
         if not txt:
-            raise RuntimeError("无法取得 manifest.json（检查 BEACON_SOURCE / BEACON_REPO / 网络）")
+            # 报错必须指向真因：把 _http_get 记下的连接层诊断（失效代理 / 网络不可达 /
+            # 域名阻断）带上，否则客户只看到「检查网络」却无从下手。
+            detail = _HTTP_LAST_ERROR[0] or "无缓存且所有镜像均不可达"
+            raise RuntimeError(
+                "无法取得 manifest.json。诊断：" + detail
+                + "。可尝试：① 检查系统代理/VPN 是否已退出或端口未监听；"
+                + "② 设置 BEACON_SOURCE 指向自建镜像；"
+                + "③ 设置 BEACON_REPO 指向本地仓库以完全离线使用。"
+            )
         _manifest_cache = (json.loads(txt), time.time(), _wt_mtime("data/manifest.json"))
     return _manifest_cache[0]
 
