@@ -1,4 +1,4 @@
-# Beacon-MFG 只读 MCP 服务 · v1.3.3
+# Beacon-MFG 只读 MCP 服务 · v1.4.2
 
 让任意支持 MCP 的主流 agent（Claude Desktop / Cline / Continue / WorkBuddy 等）能够
 **检索与调用**已发布到 Cloudflare Pages（或 GitHub）的灯塔工厂供应商数据，
@@ -21,7 +21,23 @@ MCP 只做**只读检索**。后端数据采集、英文翻译、库维护等流
 后三个构成「采购寻源」多轮会话链路 `start_sourcing → answer_sourcing → refine_sourcing`，
 依赖仓库平级的 `skills/rfq-kernel` 桥接模块。
 
-## 本次更新（v1.3.3）
+## 本次更新（v1.4.2）
+- **自动升级（自更新）**：新增 `bin/selfupdate.js`，MCP 启动时以**独立 detached 子进程**拉起（绝不阻塞 MCP 启动），
+  节流查 npm registry `latest`（默认 24h 一次，可用 `BEACON_MCP_UPDATE_INTERVAL_H` 调），发现新版本即执行
+  `npm i -g beacon-mfg-mcp@<新版本>`（Windows 上正确走 `npm.cmd + shell`）。
+- **跳过条件**：设 `BEACON_MCP_NO_UPDATE=1`、或已设 `BEACON_SOURCE` / `BEACON_REPO`（离线 / 本地仓库用户）时**不联网升级**，避免对本地仓库用户添乱。
+- **并发保护**：原子目录锁 + 残留锁 10 分钟过期自愈（踩过死锁坑——残留锁会让之后所有启动永久跳过自更新）。
+- **测试**：`test_update.js` 单元测试 23/23 通过，并以 fake-npm 拦截验证安装命令形态正确（`npm.cmd i -g beacon-mfg-mcp@1.4.2`）。
+- **前向生效说明**：自更新是「向前生效」的——已装的 ≤1.4.1 旧版代码里没有 `selfupdate.js`，需**一次性手动** `npm i -g beacon-mfg-mcp@latest` 进入自动升级基线；之后永久自动。`npx beacon-mfg-mcp` 用户天然永远最新。
+
+## 本次更新（v1.4.1，已发布）
+- **直连优先 + 死代理容错**：修复「失效代理导致检索归零」——默认源不可达时直连兜底镜像，且报错信息直指真因（是代理挂了而非数据问题），`npm i -g` 装一次即享受（无需重启客户端）。
+
+## 本次更新（v1.4.0，已发布）
+- **标准分帧适配层 `mcp_adapter.py`**：补齐「严格分帧」客户端接入路径，与「换行 stdio」「Streamable HTTP」三条传输链路统一。
+- **协议回归测试 `test_protocol.py`**：一条命令覆盖三条链路（握手 + 6 工具齐全 + 三城市真实检索 `via_index`），发版前必跑。
+
+## 本次更新（v1.3.3，已发布）
 - **本地检索免提交、免重启即时可见**：这是 v1.3.1「worktree 兜底」的收尾。v1.3.1 只让**单文件读**走了工作树，
   但关键词/城市检索的**召回**走的是**批量读** `_read_many_text()`——它在 git 模式下恒走 `git archive HEAD`
   （已提交快照），于是**改完数据、重建索引后，关键词检索仍读旧索引、必须 commit 才可见**。
@@ -54,7 +70,7 @@ MCP 只做**只读检索**。后端数据采集、英文翻译、库维护等流
 ## 安装（三选一）
 
 ### 1. 从 GitHub Release 下载（推荐，零依赖）
-下载本 Release 的 `beacon-mfg-mcp-mcp-v1.3.3.tar.gz`，解压后：
+下载本 Release 的 `beacon-mfg-mcp-mcp-v1.4.2.tar.gz`，解压后：
 ```jsonc
 {
   "mcpServers": {
