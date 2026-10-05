@@ -5,6 +5,7 @@
  "buckets": 183,
  "records": 168779,
  "other_records": 1,
+ "max_id": 182302,
  "id_pattern": "CN-MFG-%07d",
  "format": "每行 `<id>,<国标码>`；国标码为空串表示「未归类」（有效答案）",
  "generated_at": "2026-10-06"
