@@ -448,7 +448,9 @@ def _git_show(relpath: str) -> Optional[str]:
 
 
 # 单基址 HTTP 超时（秒）。多镜像回退时每个基址各自计时，避免单一 CDN 卡死拖垮整体。
-_HTTP_TIMEOUT = 15
+# 2026-10-05：明显缩短。启用 gzip 后单个大分片（6.8 MB→397 KB）约 4 s，
+# 但 name-index 这类 19 MB 的索引压缩后仍有 2.8 MB、跨网约 15 s，原超时太贴边。
+_HTTP_TIMEOUT = 30
 
 
 # 记录最近一次全失败的诊断（供上层报错时引用，不进返回值以免破坏既有签名）
@@ -510,6 +512,29 @@ def _http_diagnose(relpath: str, last_err: str = "") -> str:
     return "；".join(hints)
 
 
+def _decode_body(raw: bytes, resp) -> str:
+    """按 Content-Encoding 解压再解码。
+
+    2026-10-05 起主动要 gzip：JSON 压缩比约 6~17×，实测
+    `data/gb/C/35/3525.json` 6.78 MB / 14.8 s → **397 KB / 3.9 s**。
+    客户端本来一直发的是「不带 Accept-Encoding」，等于白扔这笔收益 ——
+    这也正是普通用户取数慢的第二个来源。**只声明 gzip**：brotli 不在标准库里，
+    声明了却解不开就等于把请求打挂。
+    """
+    ce = ""
+    try:
+        ce = (resp.headers.get("Content-Encoding") or "").lower()
+    except Exception:
+        ce = ""
+    if "gzip" in ce:
+        try:
+            import gzip as _gz
+            raw = _gz.decompress(raw)
+        except Exception:
+            pass          # 解不开就当明文试（可能是中间层误标头）
+    return raw.decode("utf-8")
+
+
 def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
     """统一的 HTTP 读取：依次尝试 _http_bases() 中的基址（主源 + 兜底镜像），
     任一成功即返回；全部失败则用本地缓存兜底（保证离线可用）。
@@ -532,7 +557,7 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
                 cached_etag = etag
             except Exception:
                 etag = None
-        headers = {"User-Agent": UA, "Accept": "*/*"}
+        headers = {"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "gzip"}
         # 埋点头：服务端据此填 tool / tokens / hits 列。收不到也没关系 ——
         # worker 那边**照样计数**，只是这三列为空（文档 §3.4）。
         try:
@@ -545,7 +570,7 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
         for _tag, opener in _openers():
             try:
                 resp = opener.open(req, timeout=_HTTP_TIMEOUT)
-                body = resp.read().decode("utf-8")
+                body = _decode_body(resp.read(), resp)
                 new_etag = resp.headers.get("ETag")
                 try:
                     with open(cap, "w", encoding="utf-8") as f:
@@ -622,6 +647,98 @@ def fetch_text(relpath: str) -> Optional[str]:
             if g is not None:
                 return g
     return _http_get(relpath)[0]
+
+
+def _fetch_many(paths: List[str], workers: int = 6) -> List[Optional[str]]:
+    """并发取多份**分片**文本，返回与入参同序的结果（取不到为 None）。
+
+    走 `_shard_text`（按清单 sha1 缓存）而不是 `fetch_text`：命中缓存时连条件请求
+    都省掉，重复查询同一国标码/邻近记录近乎零成本。
+
+    为什么值得并发：一个国标码常有 2~3 个 zh 续片（3525 = 3525.json 7.0 MB +
+    3525-p2.json 2.8 MB），串行取等于把延迟**相加**；并发取的总耗时接近最慢那一个。
+    单条路径时不做线程开销。
+
+    上限 6 是有意的：客户端瓶颈在带宽不在连接数，开太多只会互相挤、还会撞上
+    CDN 的限速。异常一律吞成 None —— 与 fetch_text 的语义一致（取不到就是取不到，
+    由调用方决定是"换下一片"还是"报错"），绝不把线程异常泄漏成 tool 崩溃。
+    """
+    if len(paths) <= 1:
+        return [_shard_text(p) for p in paths]
+    out: List[Optional[str]] = [None] * len(paths)
+    with concurrent.futures.ThreadPoolExecutor(
+            max_workers=min(workers, len(paths))) as ex:
+        futs = {ex.submit(_shard_text, p): i for i, p in enumerate(paths)}
+        for fut in concurrent.futures.as_completed(futs):
+            i = futs[fut]
+            try:
+                out[i] = fut.result()
+            except Exception:
+                out[i] = None
+    return out
+
+
+_shard_hash_slot: Optional[tuple] = None    # (rel -> sha1, 数据版本号)
+
+
+def _shard_hash_index() -> Dict[str, str]:
+    """分片路径 → 清单登记的 sha1（h）。随数据版本重建，进程内只建一次。"""
+    global _shard_hash_slot
+    ver = _data_version()
+    if _shard_hash_slot is None or _shard_hash_slot[1] != ver:
+        m: Dict[str, str] = {}
+        try:
+            for s in load_manifest().get("shards", []):
+                p, h = s.get("p"), s.get("h")
+                if p and h:
+                    m[str(p)] = str(h)
+        except Exception:
+            m = {}
+        _shard_hash_slot = (m, ver)
+    return _shard_hash_slot[0]
+
+
+def _shard_text(relpath: str) -> Optional[str]:
+    """按**内容哈希**缓存的分片读取（热启动的关键）。
+
+    为什么需要它 —— `_http_get` 的缓存是 URL 级的，命中也要发一次条件请求等 304：
+    对 6.8 MB 的分片，多一个 RTT 是小事，但 ETag 一旦不匹配就得**整份重传**。
+    而清单里本来就登记了每片内容的 sha1（h），拿它当缓存键正好：
+
+      * 内容没变 → 缓存键不变 → **完全不走网络**（连 304 都省）；
+      * 内容变了 → 键自动变 → 不会读到旧内容（这正是"不敢随便缓存"的顾虑所在）；
+      * 命中后还能顺手**校验**拿到的内容 sha1 是否等于 h —— 清单的 field_note
+        本来就建议客户端这么做，这里顺手把完整性也验了。哈希不符时不缓存、
+        并在诊断里留痕（宁可每次重取，也不把对不上的内容当权威）。
+
+    实测意义：get_vendor 首次加载 9.6 MB（其中 zh 详情 9.35 MB）→ 第二次查
+    同国标码下的任何一家，**这一层完全不再走网络**。
+    """
+    h = _shard_hash_index().get(relpath)
+    cp = os.path.join(CACHE_DIR, "shard-" + h + ".json") if h else None
+    if cp and os.path.exists(cp):
+        try:
+            with open(cp, "r", encoding="utf-8") as f:
+                return f.read()
+        except Exception:
+            pass
+    txt = fetch_text(relpath)
+    if txt is None or cp is None:
+        return txt
+    if h:
+        got = hashlib.sha1(txt.replace("\r\n", "\n").encode("utf-8")).hexdigest()
+        if got != h:
+            _HTTP_LAST_ERROR[0] = (
+                f"分片 {relpath} 内容哈希与清单不符（{got[:10]}… != {h[:10]}…），"
+                "已按未缓存处理（可能是发布进行中，稍后重试即可）")
+            return txt
+    try:
+        os.makedirs(CACHE_DIR, exist_ok=True)
+        with open(cp, "w", encoding="utf-8") as f:
+            f.write(txt)
+    except Exception:
+        pass
+    return txt
 
 
 # --------------------------------------------------------------------------- #
@@ -885,6 +1002,7 @@ def _cap_shard_paths(cap_code: str) -> List[str]:
 # --------------------------------------------------------------------------- #
 _fp_index: Optional[List[Dict[str, Any]]] = None
 _fp_index_key: Optional[str] = None
+_name_gb_slot: Optional[tuple] = None   # (id -> gb 映射, loaded_at, mtime)
 
 
 def _head_sha() -> Optional[str]:
@@ -900,16 +1018,199 @@ def _head_sha() -> Optional[str]:
     return None
 
 
+def _data_version() -> str:
+    """数据版本号，用于给落盘缓存判新。
+
+    git 模式 = HEAD sha（提交变则版本变）；
+    HTTP 模式 = 清单里的 generated_at（**一发布新数据版本就变**，
+    所以不会读到陈旧的已发布快照 —— 这正是当初不敢在 HTTP 模式落盘的顾虑）。
+
+    取不到就返回空串，调用方据此**禁用**缓存（宁慢不脏）。
+    """
+    if REPO:
+        return _head_sha() or "nosha"
+    try:
+        return str(load_manifest().get("metadata", {}).get("generated_at") or "")
+    except Exception:
+        return ""
+
+
 def _index_cache_path() -> Optional[str]:
-    if not REPO:  # HTTP 模式不落盘缓存，避免读到陈旧的已发布快照
+    """索引落盘缓存的路径。
+
+    2026-10-05 改：**HTTP 模式也允许落盘**。旧实现直接 `return None`，导致每个新进程
+    都要把 320 个 fp 分片（40.6 MB）重拉一遍 —— 这是「普通用户第一次查一家厂要等
+    4.5 分钟」的第二层原因。缓存键加上「数据版本号」，一发布新数据键就变，
+    因此不会读到陈旧的已发布快照（这正是当初不敢落盘的顾虑）。
+    """
+    sig = _data_version()
+    if not sig:
         return None
-    key = (BEACON_REPO or BEACON_SOURCE) + "|" + (_head_sha() or "nosha")
+    key = (BEACON_REPO or BEACON_SOURCE) + "|" + sig
     h = hashlib.sha1(key.encode("utf-8")).hexdigest()
     return os.path.join(CACHE_DIR, "fpindex-" + h + ".json")
 
 
+# ── id → 国标码 的定址分片（2026-10-05） ───────────────────────────────
+# 为什么需要：`get_vendor(id)` 在调用方没给国标码时得先定位。旧实现读
+# data/name-index.jsonl —— 那是为「按公司名匹配」设计的一整份 18.4 MB / 168,780 条，
+# HTTP 首次加载实测让一次 get_vendor 花掉 **103.9 秒**（其中约 100 s 是这份索引）。
+#
+# 定位其实只要两列，而且 id 是**密集自增**的 `CN-MFG-%07d`（实测 0 ~ 168,779）
+# → 按 id 千位切片就能直接定址，**连目录表都不需要**：
+#     CN-MFG-0093680 → 93680 // 1000 = 93 → skills/registry/index/编号映射/093.jsonl
+# 一片约 1000 行 / 13 KB，一次只拉命中那一片：18.4 MB → 13 KB，**约 1400×**。
+#
+# 附带一个重要性质：id 密集且分片完整时，**「分片取到了但 id 不在」= 这条 id 确实
+# 不存在**（不是索引滞后）→ 可以直接给「查无此人」，不必退回 18.4 MB 全量索引。
+# 这个区分（shard_ok）是下面 _编号映射_lookup 返回两元组的原因。
+_IDMAP_BUCKET = 1000
+_VENDOR_ID_RE = re.compile(r"^CN-MFG-(\d{7})$")
+_IDMAP_DIR = "skills/registry/index/idmap"
+# 片内解析结果常驻内存：rel -> (id->gb, 数据版本号)
+_idmap_slot: Dict[str, tuple] = {}
+# meta.json（切片参数）常驻内存：({...}, 数据版本号)
+_idmap_meta_slot: Optional[tuple] = None
+
+
+def _idmap_bucket(vid: str) -> Optional[int]:
+    """id 落在第几片；非 `CN-MFG-\\d{7}` 形态返回 None（归 other.jsonl）。"""
+    m = _VENDOR_ID_RE.match(vid or "")
+    return int(m.group(1)) // _IDMAP_BUCKET if m else None
+
+
+def _idmap_rel(vid: str) -> Optional[str]:
+    b = _idmap_bucket(vid)
+    if b is None:
+        return (_IDMAP_DIR + "/other.jsonl") if vid else None
+    return "%s/%03d.jsonl" % (_IDMAP_DIR, b)
+
+
+def _idmap_meta() -> Dict[str, Any]:
+    """编号映射 的切片参数（来自清单的 `metadata.编号映射`）。
+
+    两个作用：
+
+    1. **范围守卫**：越过已发布范围的 id（bucket >= buckets）如果照常去请求分片，
+       会拿到 404 —— 本机实测那条失败路径最坏能拖到 **44.6 秒**（urllib 直连失败后
+       转代理、代理再拖到超时）。有 meta 就能先判定「这条 id 根本不存在」，
+       把那 44.6 秒整段省掉。
+
+    2. **开关**：清单里**没有**这个块 = 该快照的 编号映射 还没发布（老版本快照）。
+       此时整体跳过 编号映射 路径、直接走原有定位方式 —— 于是「MCP 先升级、数据还没
+       发布」的窗口期里，客户端行为与升级前**完全一致**，不会多付任何请求或 404。
+
+    ⚠ 只从**清单**读（HTTP 模式）。清单为了定位分片本来就要拉，所以零额外请求；
+      单拉一个 meta.json 在窗口期恰恰就是一个 404。本地模式（BEACON_REPO）下
+      才补一次 编号映射/meta.json 的本地文件读 —— 那是磁盘读，不产生网络请求，
+      方便「只重算了 编号映射、还没重算清单」的开发中间态。
+    """
+    global _idmap_meta_slot
+    ver = _data_version()
+    if _idmap_meta_slot is not None and _idmap_meta_slot[1] == ver:
+        return _idmap_meta_slot[0]
+
+    m: Dict[str, Any] = {}
+    try:
+        blk = load_manifest().get("metadata", {}).get("idmap")
+        if isinstance(blk, dict) and blk:
+            m = blk
+    except Exception:
+        m = {}
+    if not m and REPO:
+        try:
+            txt = _index_text(_IDMAP_DIR + "/meta.json")
+            if txt:
+                o = json.loads(txt)
+                if isinstance(o, dict):
+                    m = o
+        except Exception:
+            m = {}
+    _idmap_meta_slot = (m, ver)
+    return m
+
+
+def _idmap_lookup(vid: str) -> Tuple[Optional[str], bool]:
+    """定位 id → 国标码。返回 (gb, shard_ok)。
+
+    gb 为 `None` = 该片里没有这条 id；gb 为空串 = **未归类**（这是有效答案，
+    客户端必须照样按空串走 _unclassified 那条路，而不是当成「没找到」）。
+    shard_ok = 该片的**范围已被覆盖** → 此时 id 缺席可判定为「不存在」，
+    调用方不必再去付 18.4 MB / 320 个分片的兜底代价。
+    """
+    meta = _idmap_meta()
+    nb = meta.get("buckets")
+    if not isinstance(nb, int) or nb <= 0:
+        return None, False          # 快照里没有 idmap（尚未发布）→ 调用方按老路径走
+
+    # 范围守卫：超出范围 = 这条 id 不在已发布快照里，直接判定，
+    # 不去请求那个必定 404 的分片。
+    b = _idmap_bucket(vid)
+    if b is not None and b >= nb:
+        return None, True
+
+    rel = _idmap_rel(vid)
+    if not rel:
+        return None, False
+    ver = _data_version()
+    slot = _idmap_slot.get(rel)
+    if slot is not None and slot[1] == ver:
+        m = slot[0]
+        return (m.get(vid), True) if m else (None, False)
+    txt = _index_text(rel)
+    if txt is None:
+        return None, False                    # 片没取到（网络问题）→ 允许慢路径兜底
+    m: Dict[str, str] = {}
+    for line in txt.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        i, sep, g = line.partition(",")
+        if sep:
+            m[i] = g
+    _idmap_slot[rel] = (m, ver)
+    return m.get(vid), True
+
+
+def _name_gb_index() -> Dict[str, str]:
+    """`id -> 国标码` 映射，来源 `data/name-index.jsonl`（发布产物，19 MB，168k 条）。
+
+    为什么要有它：`get_vendor` 在调用方没给 gb 时，旧实现是**顺序**遍历 320 个 fp
+    分片找那个 id；本地有 git archive 批量读所以看不出来，但 HTTP 模式下就是
+    320 次串行 GET —— 2026-10-05 实测 **270.6 秒**，普通用户会以为程序卡死。
+    name-index 每条记录自带 id/co/city/gb，**一次读取**即可定位到目标分片：
+    270 s → 一次索引读 + 一次分片拉取。
+
+    值可能是空串（该记录未归类），那不是缺失 —— 空串是有效答案，代表要直接去
+    `_unclassified` 那条路径，而不是再扫 320 个 fp 分片。
+    """
+    global _name_gb_slot
+    if _cache_stale(_name_gb_slot, "data/name-index.jsonl"):
+        m: Dict[str, str] = {}
+        try:
+            txt = _index_text("data/name-index.jsonl")
+            if txt:
+                for line in txt.splitlines():
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        o = json.loads(line)
+                    except Exception:
+                        continue
+                    i = o.get("id")
+                    if i:
+                        m[i] = o.get("gb") or ""
+        except Exception:
+            m = {}
+        _name_gb_slot = (m, time.time(), _wt_mtime("data/name-index.jsonl"))
+    return _name_gb_slot[0]
+
+
 def _read_fp_shard(s: Dict[str, Any]) -> List[Dict[str, Any]]:
-    txt = fetch_text(s["p"])
+    # 走 _shard_text：摘要分片同样登记在清单里，按内容 sha1 缓存后，
+    # 重复检索（换关键词、换城市）不再重复下载 40 MB 的 fp 层。
+    txt = _shard_text(s["p"])
     out: List[Dict[str, Any]] = []
     if not txt:
         return out
@@ -1192,19 +1493,23 @@ def _grams(text: str, query_mode: bool = False) -> List[str]:
 
 
 def _index_text(relpath: str) -> Optional[str]:
-    """读索引文件。git 模式按 HEAD sha 落盘缓存（桶均 11KB），
-    缓存后跨进程重复查询几乎零成本。
+    """读索引文件。按**数据版本号**落盘缓存，缓存后跨进程重复查询几乎零成本。
 
     BEACON_WORKTREE=1（默认）：磁盘缓存额外按本地副本文件 mtime 判新 —— 派生重建
     重建索引后 mtime 变化，下次查询即重读本地副本版本，无需提交 HEAD 即可让关键词 /
     城市检索看到新数据（修 DSH 发现的「不提交就永远看不到」坑）。非本地副本模式保持
     旧的「HEAD 变化才刷新」行为。
+
+    2026-10-05 改：**HTTP 模式也落盘**（原先 `if REPO` 直接跳过缓存 → 每个新进程
+    都要重新下载 + 重新解析）。data/name-index.jsonl 18.4 MB / 168,780 行 JSON，
+    重复解析本身就是秒级开销；编号映射 分片更值得缓存（一次解析，进程内 与命中量相关 查询）。
+    版本号取 _data_version()：HTTP 模式一发布新数据即失效，不会读到陈旧快照。
     """
     cp = None
-    if REPO:
-        h = _head_sha() or "nosha"
+    ver = _data_version()
+    if ver:
         cp = os.path.join(CACHE_DIR, "idx-" +
-                          hashlib.sha1((h + "|" + relpath).encode("utf-8")).hexdigest() + ".json")
+                          hashlib.sha1((ver + "|" + relpath).encode("utf-8")).hexdigest() + ".json")
         if os.path.exists(cp) and _index_sig_ok(cp, relpath):
             try:
                 with open(cp, "r", encoding="utf-8") as f:
@@ -1814,35 +2119,47 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
     if not vid:
         return {"error": "缺少必填参数 id"}
     gb = (gb or "").strip()
-    # 没给国标码就先建 id->gb 索引（扫 fp 分片，HTTP 缓存加速）
-    # 找到了就立刻停：gb 为 null（未归类）继续扫剩下的分片是纯浪费（275 次 IO）。
-    fp_hit = False
+    # 没给国标码就先解析 id -> gb。
+    #
+    # 2026-10-05 改（第二版）：**不再顺序扫 fp 分片**，也**不再默认读 18.4 MB 的
+    # name-index**。旧实现 `for s in _shards_of_type("fp")` 逐个 fetch_text 直到命中，
+    # HTTP 模式下 = 320 次串行 GET ≈ 270 秒；改成读 name-index 后降到 103.9 秒，
+    # 但那 100 秒**全在那份 18.4 MB 的索引上** —— 它本来是为「按公司名匹配」设计的，
+    # 拿来定位一条 id 属于严重超配。
+    #
+    # 现在分三级：
+    #   ① 编号映射 定址分片（id 千位切片）：一次约 13 KB，常数级 IO
+    #   ② 片取到了但 id 不在 → id 密集自增且分片与 zh 同批发布，可判定「不存在」，
+    #      直接返回，不走任何慢路径（否则查一个不存在的 id 会把 100 秒重新付一遍）
+    #   ③ 片没取到（超出已发布范围）或本地本地副本比索引新 → name-index / 并发全量兜底
     if not gb:
-        for s in _shards_of_type("fp"):
-            txt = fetch_text(s["p"])
-            if not txt:
-                continue
-            for line in txt.splitlines():
-                line = line.strip()
-                if not line:
-                    continue
+        got, shard_ok = _idmap_lookup(vid)
+        if got is not None:
+            gb = got               # 归属已确定（可能是空串 = 未归类，那是有效答案）
+        elif shard_ok and not REPO:
+            return {"error": f"找不到 id={vid}：id 索引里没有这条记录"
+                             "（可能尚未发布到云端，或 id 拼写有误）"}
+        else:
+            idx = _name_gb_index()
+            if vid in idx:
+                gb = idx[vid]
+            else:
                 try:
-                    rec = json.loads(line)
+                    for rec in _build_fp_index():   # 已并发，且落盘缓存
+                        if rec.get("id") == vid:
+                            gb = rec.get("gb") or ""
+                            break
                 except Exception:
-                    continue
-                if rec.get("id") == vid:
-                    gb = rec.get("gb") or ""
-                    fp_hit = True
-                    break
-            if fp_hit:
-                break
+                    pass
 
     if gb:
         zh_paths = _zh_paths_for_gb(gb)
         if not zh_paths:
             return {"error": f"国标码 {gb} 没有对应的 zh 分片"}
-        for zh_path in zh_paths:
-            txt = fetch_text(zh_path)
+        # 一个国标码常有 2~3 个 zh 续片（3525 = 3525.json 7.0 MB + 3525-p2.json 2.8 MB），
+        # 串行取等于把延迟相加。并发取、按原顺序判定，命中即返回。
+        texts = _fetch_many(zh_paths)
+        for zh_path, txt in zip(zh_paths, texts):
             if not txt:
                 continue
             try:
@@ -1858,8 +2175,8 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
     # （主要是 _unclassified.json，外加几个 xxx/_partial.json）。
     # 2026-09-24 之前这条路径直接报「找不到国标码」，2271 条未归类企业等于查无此人。
     loose = [s.get("p") for s in _shards_of_type("zh") if not s.get("c")]
-    for p in loose:
-        txt = fetch_text(p)
+    loose_txt = _fetch_many(loose)
+    for p, txt in zip(loose, loose_txt):
         if not txt:
             continue
         try:

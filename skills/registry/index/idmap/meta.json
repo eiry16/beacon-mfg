@@ -1,0 +1,11 @@
+{
+ "schema": "1.0",
+ "description": "id → 国标码 的定址分片。片名 = id 数字部分整除 bucket，零填充 3 位。客户端据此一次只取命中那一片（约 24 KB），无需下载 19 MB 的 name-index。",
+ "bucket": 1000,
+ "buckets": 183,
+ "records": 168779,
+ "other_records": 1,
+ "id_pattern": "CN-MFG-%07d",
+ "format": "每行 `<id>,<国标码>`；国标码为空串表示「未归类」（有效答案）",
+ "generated_at": "2026-10-06"
+}
