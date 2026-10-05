@@ -271,9 +271,9 @@ def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.5.0")
+            return json.load(f).get("version", "1.5.1")
     except Exception:
-        return "1.5.0"
+        return "1.5.1"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
@@ -1137,13 +1137,35 @@ def _idmap_lookup(vid: str) -> Tuple[Optional[str], bool]:
     客户端必须照样按空串走 _unclassified 那条路，而不是当成「没找到」）。
     shard_ok = 该片的**范围已被覆盖** → 此时 id 缺席可判定为「不存在」，
     调用方不必再去付 18.4 MB / 320 个分片的兜底代价。
+
+    ⚠ 「片里没有」要**先过 max_id 这道闸**才能判不存在。抓取流水线与政府信源
+    导入每天都在发新号，而 编号映射 只在 manifest 步重算、只在 pages 步上云 ——
+    于是「刚导入、还没发布」的新 id 天然不在已发布的 编号映射 里。
+    若只看「片存在但片里没这条」就判不存在，等于**把新导入的企业全部误杀**
+    （政府名录一次能进上千家，症状还是静默的：查不到，不报错）。
+    判据：id 数字 <= meta.max_id 才敢判「真不存在」；超过就退回慢路径兜底。
     """
     meta = _idmap_meta()
     nb = meta.get("buckets")
     if not isinstance(nb, int) or nb <= 0:
         return None, False          # 快照里没有 idmap（尚未发布）→ 调用方按老路径走
 
-    # 范围守卫：超出范围 = 这条 id 不在已发布快照里，直接判定，
+    # 已发布的最大 id 数字。老版本快照没有这个字段 → 退化成「只能靠 buckets 守卫」，
+    # 此时新 id 会被误判，所以**取不到就整体不走 编号映射**（宁可慢，不可错）。
+    mx = meta.get("max_id")
+    if not isinstance(mx, int) or mx < 0:
+        return None, False
+
+    # ⚠ 两个守卫的**顺序不能反**。
+    #   max_id 是比 buckets 更精确的上界（buckets 只精确到千位）：
+    #   例如 buckets=183 / max_id=182302 时，id=0187302 的 bucket=187 已越界，
+    #   但它其实只是「比已发布最大号大 5000」的新号 —— 若先走 buckets 守卫就会
+    #   被判成不存在（误杀）。所以先用 max_id 收口，再谈 buckets。
+    m_vid = _VENDOR_ID_RE.match(vid or "")
+    if m_vid is not None and int(m_vid.group(1)) > mx:
+        return None, False      # 尚未发布的新号 → 交回调用方走兜底
+
+    # 范围守卫：连千位片都还没生成 = 远在未来的号，直接判定，
     # 不去请求那个必定 404 的分片。
     b = _idmap_bucket(vid)
     if b is not None and b >= nb:
