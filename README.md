@@ -234,6 +234,16 @@ npx skills add eiry16/beacon-mfg
 - **GitHub 公开仓库（静态快照）**：入库即隐私处理——手机 → `138****0000`，座机原样；**没有任何例外**（认领 / 认证过的企业同样隐私处理：GitHub 这份内容不承担拨号职责，App 拨号读的是 Pages/R2）。由本地工厂的 git clean filter 自动执行（脚本属工厂资产，不在本仓库），本地副本与 Pages 部署源仍保留全号。
 - **入库通道有两道闸门**：① 提交前查**暂存区内容**——只要还有明文 11 位手机号就拒绝提交；② 发布前查**本地副本**——本地副本若被隐私处理内容反向污染（`git checkout` / `rebase` / `reset --hard` 会把索引里的隐藏版写回本地副本，且 `git status` 仍显示干净）就拒绝发布，避免把 `138****0000` 推到 App。
 - 该 filter 的命令只存在**机器本地**的 git 配置里（git 刻意不分发「会在 checkout 时执行任意命令」的配置），所以**换机器 / 重新同步目录后需要重装一次**；装置本身不入公开仓库。
+  - 换机器 / 新拿到的目录上，**第一步就是重装**（一条命令，幂等）：
+    ```bash
+    python scripts/git_filter_guard.py          # 装机 + 活体自检；缺 python3 时 export BEACON_PYTHON=<路径>
+    python scripts/git_filter_guard.py --check  # 只体检，不改配置
+    ```
+    它会把 `filter.maskphone.clean` 写成**绝对解释器 + 相对脚本**的形式（脚本路径相对仓库根，git 跑 filter 时 cwd 恒为仓库根），
+    并挂上 `core.hooksPath=scripts/githooks`。不装的话：`required=true` 会让 `git add` 直接 fatal；
+    更糟的是若有人把它设成 `false`，明文手机号会**静默入库**。
+  - 装置本体（`scripts/_pyexec.sh`、`scripts/git-mask-filter.sh`、`scripts/git_filter_guard.py`、`scripts/githooks/pre-commit`、
+    `scripts/check_worktree_phones.py`）与运维手册 `scripts/MASK_FILTER.md` 同属工厂资产，不在公开仓库里。
 - 如企业要求更正/删除联系方式，可通过 GitHub Issue 提出。
 
 ## 仓库结构
