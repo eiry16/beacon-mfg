@@ -9,6 +9,15 @@ from __future__ import annotations
 
 import json
 import sys
+# [utf8-guard] Windows 下 stdout/stderr 非 TTY 时按 locale 编码（中文 Windows = cp936/GBK），
+# 而本脚本输出的 ✗ ✓ ⚠ 等符号 GBK 码表里根本没有 → print 当场抛
+#   UnicodeEncodeError: 'gbk' codec can't encode character '\u2717'
+# 整条流水线会断在打印那一行。统一 UTF-8 + 兜底替换：宁可显示成 '?'，也绝不因打印而崩。
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 from datetime import datetime, timezone
 from pathlib import Path
 
