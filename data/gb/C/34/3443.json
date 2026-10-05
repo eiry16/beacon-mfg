@@ -30,7 +30,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0007388/SKILL.md",
       "protocol": "skill",
@@ -71,7 +70,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0007395/SKILL.md",
       "protocol": "skill",
@@ -121,7 +119,6 @@
       ],
       "verified": false
     },
-    "_bucket": "C/34/3443",
     "amap": {
       "poi_id": "B0FFI95C9O",
       "type": "公司企业;公司;公司",
@@ -184,7 +181,6 @@
       "adcode": "440118",
       "search_keyword": "不锈钢材料"
     },
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0007638/SKILL.md",
       "protocol": "skill",
@@ -225,7 +221,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0007871/SKILL.md",
       "protocol": "skill",
@@ -282,7 +277,6 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0014445/SKILL.md",
       "protocol": "skill",
@@ -338,7 +332,6 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0014677/SKILL.md",
       "protocol": "skill",
@@ -394,7 +387,6 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0015306/SKILL.md",
       "protocol": "skill",
@@ -457,8 +449,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3443"
+    }
   },
   {
     "id": "CN-MFG-0020132",
@@ -507,8 +498,7 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0005722",
@@ -540,8 +530,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0005725",
@@ -573,8 +562,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0005726",
@@ -606,8 +594,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0005727",
@@ -639,8 +626,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0005728",
@@ -672,8 +658,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0003457",
@@ -705,8 +690,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013661",
@@ -753,8 +737,7 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013105",
@@ -801,8 +784,7 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013135",
@@ -850,8 +832,7 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0015741",
@@ -897,8 +878,7 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0022436",
@@ -946,8 +926,7 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0022457",
@@ -995,8 +974,7 @@
       "evidence": "阀门|配件型:配件"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0022869",
@@ -1004,7 +982,8 @@
     "category": "原材料",
     "keywords": [
       "钢板",
-      "阀门"
+      "阀门",
+      "五金店"
     ],
     "region": {
       "province": "江苏",
@@ -1044,8 +1023,7 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0022908",
@@ -1093,8 +1071,7 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0023380",
@@ -1141,8 +1118,7 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0023387",
@@ -1189,8 +1165,7 @@
       "evidence": "阀门|配件型:配件"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3443"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0023395",
@@ -1238,7 +1213,6 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0023395/SKILL.md",
       "protocol": "skill",
@@ -1303,8 +1277,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3443"
+    }
   },
   {
     "id": "CN-MFG-0034129",
@@ -1356,7 +1329,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034129/SKILL.md",
       "protocol": "skill",
@@ -1413,8 +1385,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034293",
@@ -1463,7 +1434,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034293/SKILL.md",
       "protocol": "skill",
@@ -1519,8 +1489,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034296",
@@ -1568,8 +1537,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034297",
@@ -1618,7 +1586,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034297/SKILL.md",
       "protocol": "skill",
@@ -1675,7 +1642,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034301/SKILL.md",
       "protocol": "skill",
@@ -1731,8 +1697,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034314",
@@ -1780,8 +1745,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034316",
@@ -1829,8 +1793,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034404",
@@ -1879,8 +1842,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034406",
@@ -1929,8 +1891,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034407",
@@ -1979,8 +1940,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034411",
@@ -2029,8 +1989,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034415",
@@ -2079,8 +2038,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034417",
@@ -2129,8 +2087,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034419",
@@ -2180,7 +2137,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034419/SKILL.md",
       "protocol": "skill",
@@ -2237,8 +2193,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034508",
@@ -2287,8 +2242,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034512",
@@ -2337,8 +2291,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034514",
@@ -2388,7 +2341,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034514/SKILL.md",
       "protocol": "skill",
@@ -2446,7 +2398,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034515/SKILL.md",
       "protocol": "skill",
@@ -2504,7 +2455,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034524/SKILL.md",
       "protocol": "skill",
@@ -2561,8 +2511,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034609",
@@ -2611,8 +2560,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034613",
@@ -2661,8 +2609,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034618",
@@ -2711,8 +2658,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034623",
@@ -2761,8 +2707,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034627",
@@ -2812,7 +2757,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034627/SKILL.md",
       "protocol": "skill",
@@ -2869,8 +2813,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0036008",
@@ -2919,8 +2862,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0037445",
@@ -2972,7 +2914,6 @@
       "evidence": "阀门"
     },
     "is_manufacturer": true,
-    "_bucket": "C/34/3443",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0037445/SKILL.md",
       "protocol": "skill",
@@ -3029,8 +2970,7 @@
       "source": "name",
       "evidence": "阀门"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3443"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0089819",
@@ -7495,7 +7435,8 @@
     "company": "苏州市鑫渭阀门有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "阀门"
+      "阀门",
+      "五金店"
     ],
     "region": {
       "province": "江苏",
@@ -16326,7 +16267,8 @@
     "company": "环羽阀门管件批发部",
     "category": "精密机械加工",
     "keywords": [
-      "阀门"
+      "阀门",
+      "五金批发"
     ],
     "region": {
       "province": "江苏",
@@ -19397,6 +19339,56 @@
       "business_area": "木渎",
       "adcode": "320506",
       "search_keyword": "水暖批发"
+    },
+    "industry": {
+      "code": "3443",
+      "name": "阀门和旋塞制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 阀门和旋塞制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "阀门"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0181436",
+    "company": "上海金来邦阀门制造有限公司苏州办事处",
+    "category": "标准件",
+    "keywords": [
+      "螺丝",
+      "螺栓"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "张家港"
+    },
+    "address": "25幢A8",
+    "contact_phone": "150****2673",
+    "lat": 31.880179,
+    "lng": 120.586475,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIR1F84",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "螺丝"
     },
     "industry": {
       "code": "3443",

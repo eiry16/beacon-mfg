@@ -49,7 +49,6 @@
       "evidence": "家政"
     },
     "is_manufacturer": false,
-    "_bucket": "O/80/8010",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0030076/SKILL.md",
       "protocol": "skill",
@@ -108,7 +107,6 @@
       "evidence": "家政"
     },
     "is_manufacturer": false,
-    "_bucket": "O/80/8010",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034064/SKILL.md",
       "protocol": "skill",
@@ -166,8 +164,7 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false,
-    "_bucket": "O/80/8010"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0036439",
@@ -216,8 +213,7 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false,
-    "_bucket": "O/80/8010"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0036442",
@@ -266,8 +262,7 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false,
-    "_bucket": "O/80/8010"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0036447",
@@ -316,8 +311,7 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false,
-    "_bucket": "O/80/8010"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0036449",
@@ -366,8 +360,7 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false,
-    "_bucket": "O/80/8010"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0036451",
@@ -416,8 +409,7 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false,
-    "_bucket": "O/80/8010"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0036567",
@@ -466,8 +458,7 @@
       "source": "name",
       "evidence": "家政"
     },
-    "is_manufacturer": false,
-    "_bucket": "O/80/8010"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0036738",
@@ -517,7 +508,6 @@
       "evidence": "家政"
     },
     "is_manufacturer": false,
-    "_bucket": "O/80/8010",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0036738/SKILL.md",
       "protocol": "skill",
@@ -576,8 +566,7 @@
       "source": "name",
       "evidence": "保姆"
     },
-    "is_manufacturer": false,
-    "_bucket": "O/80/8010"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0083464",
@@ -2660,6 +2649,56 @@
       "postcode": "",
       "business_area": "",
       "adcode": "320506",
+      "search_keyword": "洗衣"
+    },
+    "industry": {
+      "code": "8010",
+      "name": "家庭服务",
+      "level": "class",
+      "path": "O 居民服务、修理和其他服务业 > 居民服务业 > 家庭服务 > 家庭服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "家政"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178325",
+    "company": "一七生活洗衣·家政(娄葑店)",
+    "category": "居民服务、修理和其他服务业",
+    "keywords": [
+      "洗衣",
+      "洗衣店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "北摆宴街15-1号",
+    "contact_phone": "待核实",
+    "lat": 31.28903,
+    "lng": 120.664106,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H3TUKL2U",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区",
+      "adcode": "320505",
       "search_keyword": "洗衣"
     },
     "industry": {

@@ -48,8 +48,7 @@
       "source": "name",
       "evidence": "皮具"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/19/1929"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0029189",
@@ -97,8 +96,7 @@
       "source": "name",
       "evidence": "皮革"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/19/1929"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0080022",
@@ -333,6 +331,55 @@
       "business_area": "和田",
       "adcode": "310109",
       "search_keyword": "干洗"
+    },
+    "industry": {
+      "code": "1929",
+      "name": "其他皮革制品制造",
+      "level": "class",
+      "path": "C 制造业 > 皮革、毛皮、羽毛及其制品和制鞋业 > 皮革制品制造 > 其他皮革制品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "皮具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179678",
+    "company": "特蕾芙洗衣·配钥匙·修鞋皮具保养维修家政",
+    "category": "制造业",
+    "keywords": [
+      "洗衣店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "湘江东路225号",
+    "contact_phone": "180****1777",
+    "lat": 31.661007,
+    "lng": 120.7489,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MUYSPH5Z",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "皮具护理",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
+      "search_keyword": "洗衣店"
     },
     "industry": {
       "code": "1929",

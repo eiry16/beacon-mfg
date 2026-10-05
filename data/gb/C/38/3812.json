@@ -48,7 +48,6 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/38/3812",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0017758/SKILL.md",
       "protocol": "skill",
@@ -104,8 +103,7 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/38/3812"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0014025",
@@ -154,8 +152,7 @@
       "evidence": "马达"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/38/3812"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0019988",
@@ -203,8 +200,7 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/38/3812"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0020007",
@@ -252,8 +248,7 @@
       "evidence": "电动机"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/38/3812"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0003412",
@@ -285,8 +280,7 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/38/3812"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0011447",
@@ -333,8 +327,7 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/38/3812"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0012252",
@@ -382,8 +375,7 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/38/3812"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0004185",
@@ -415,8 +407,7 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/38/3812"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0002283",
@@ -463,8 +454,7 @@
       "business_area": "",
       "adcode": "320412",
       "search_keyword": "冲压"
-    },
-    "_bucket": "C/38/3812"
+    }
   },
   {
     "id": "CN-MFG-0022297",
@@ -518,8 +508,7 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/38/3812"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0026929",
@@ -576,8 +565,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/38/3812"
+    }
   },
   {
     "id": "CN-MFG-0027212",
@@ -634,8 +622,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/38/3812"
+    }
   },
   {
     "id": "CN-MFG-0028625",
@@ -684,8 +671,7 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/38/3812"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0033000",
@@ -735,7 +721,6 @@
       "evidence": "电机"
     },
     "is_manufacturer": true,
-    "_bucket": "C/38/3812",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0033000/SKILL.md",
       "protocol": "skill",
@@ -793,8 +778,7 @@
       "source": "name",
       "evidence": "电机"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/38/3812"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0064569",
@@ -845,8 +829,7 @@
       "source": "name",
       "evidence": "马达"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/38/3812"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0075168",
@@ -22403,7 +22386,8 @@
     "company": "供销社老王五金交电机电水暖批发",
     "category": "原材料",
     "keywords": [
-      "水暖批发"
+      "水暖批发",
+      "五金批发"
     ],
     "region": {
       "province": "江苏",

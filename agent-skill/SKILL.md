@@ -1,6 +1,13 @@
 ---
 name: beacon-mfg-search
 description: BeaconMFG 供应商灯塔「薄框架」检索技能——按 GB/T 4754-2017 国标归档的中国制造业/批发零售/本地生活/技术服务企业名录。轻量安装：只装本文件 + client_search.py，数据全部从 CDN 按需拉取，不为不看的分片付费。用于按供应商类型（CNC加工、钣金、注塑、压铸、模具、电子元器件、批发商、餐厅、酒店、检测、软件）和地域（城市）检索工厂/厂家/代工厂/OEM，返回结构化、可溯源的公开联系方式。英文场景 sourcing / find supplier / manufacturer 同样适用。仅提供公开名录，不参与交易、不做评级。
+agent_created: true
+license: MIT (code) / CC BY 4.0 (data) — see LICENSE.txt
+version: 1.0.0
+author: BeaconMFG contributors
+homepage: https://github.com/eiry16/beacon-mfg
+tags: [数据检索, 企业服务, 供应链]
+icon: icon.png
 ---
 
 # BeaconMFG 薄框架检索 Skill
@@ -24,6 +31,23 @@ description: BeaconMFG 供应商灯塔「薄框架」检索技能——按 GB/T 
 - 只提供公开联系方式与基本信息，**不参与**询价/下单/交易。
 - **不**对任何企业做推荐评级；用户要「最好的一家」→ 说明「按契合度排序，请自行核实」。
 - 不编造价格、交期、产能；数据里没有的就不说。
+
+## 权限与网络
+
+- **所需权限**：仅「网络访问」。本技能**不**读取、不上传用户本机任何文件；所有对外请求都是「拉取公开名录分片」。
+- **请求域名与用途**（均为公开只读 CDN，无需任何密钥）：
+  - `https://beacon-mfg.pages.dev` —— 主源，按国标码拉取对应名录分片
+  - `https://fastly.jsdelivr.net` / `https://cdn.jsdelivr.net` —— 镜像兜底（能直连 GitHub 时）
+  - `https://raw.githubusercontent.com` —— 二次兜底（读取仓库内 `data/清单.json` 等）
+- 每次查询仅传输命中的那一个分片（平均 < 1 MB），不下载全量数据。
+
+## 数据来源与隐私
+
+- **数据来源**：全部为**公开**经营信息（公开地图 POI / 工商公开目录），不含任何非公开抓取。
+- **不捆绑 PII**：本技能包内**不含**任何企业联系方式或个人信息；联系方式由云端按需求提供，且仓库快照已隐私处理（`138****0000` 形态）。
+- **隐私与申诉**：企业若需更正或删除自身信息，可通过 GitHub Issue 提交申诉，项目方按 CC BY 4.0 与数据许可处理。
+- **许可**：代码 MIT、数据 CC BY 4.0（允许商用与再分发，须保留来源署名）。下游使用请注明「数据来源：BeaconMFG 供应商灯塔」。
+- **合规边界**：仅提供公开名录检索，不参与交易、不做评级、不编造字段；法人个人信息一律不返回。
 
 ## 数据源与必须知道的坑
 

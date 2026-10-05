@@ -16,7 +16,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/20/2029",
     "industry": {
       "code": "2029",
       "name": "其他人造板制造",
@@ -52,7 +51,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/20/2029",
     "industry": {
       "code": "2029",
       "name": "其他人造板制造",
@@ -88,7 +86,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/20/2029",
     "industry": {
       "code": "2029",
       "name": "其他人造板制造",
@@ -139,7 +136,35 @@
       "level": "class",
       "name": "其他人造板制造",
       "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0179867",
+    "company_en": "Taicang Zhongqing International Wholesale Building Material Plywood",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Building Material Wholesale"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
     },
+    "address_en": "No. 666 Pingjiang Road, 6th Warehouse",
+    "contact_phone": "153****2555",
+    "source": "public_directory",
+    "verified_at": "2026-10-04",
+    "note_en": "",
+    "industry": {
+      "code": "2029",
+      "name": "其他人造板制造",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 人造板制造 > 其他人造板制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "胶合板"
+    },
+    "industry_en": null,
     "_bucket": "C/20/2029"
   }
 ]

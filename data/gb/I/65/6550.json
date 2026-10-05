@@ -45,8 +45,7 @@
       "source": "name",
       "evidence": "云科技"
     },
-    "is_manufacturer": false,
-    "_bucket": "I/65/6550"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0031664",
@@ -95,8 +94,7 @@
       "source": "name",
       "evidence": "云科技"
     },
-    "is_manufacturer": false,
-    "_bucket": "I/65/6550"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0164499",
@@ -227,6 +225,55 @@
       "alias": "",
       "tag": "",
       "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "软件外包"
+    },
+    "industry": {
+      "code": "6550",
+      "name": "信息处理和存储支持服务",
+      "level": "class",
+      "path": "I 信息传输、软件和信息技术服务业 > 软件和信息技术服务业 > 信息处理和存储支持服务 > 信息处理和存储支持服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "云服务"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179854",
+    "company": "苏州毕贵川云服务外包",
+    "category": "信息传输、软件和信息技术服务业",
+    "keywords": [
+      "软件外包"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "凤阳路与湘太路交叉口西80米",
+    "contact_phone": "待核实",
+    "lat": 31.486524,
+    "lng": 120.731325,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MGBPSB5G",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "生活服务,生活服务场所,生活服务场所",
       "website": "",
       "email": "",
       "postcode": "",

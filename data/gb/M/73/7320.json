@@ -46,8 +46,7 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0030689",
@@ -96,8 +95,7 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0031936",
@@ -148,8 +146,7 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0035088",
@@ -198,8 +195,7 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0035094",
@@ -248,8 +244,7 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0038664",
@@ -298,8 +293,7 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0038831",
@@ -348,8 +342,7 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0039212",
@@ -398,8 +391,7 @@
       "source": "name",
       "evidence": "研究院"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0022529",
@@ -447,8 +439,7 @@
       "evidence": "研究院"
     },
     "is_manufacturer": false,
-    "status": "verified",
-    "_bucket": "M/73/7320"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0046795",
@@ -498,8 +489,7 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0050340",
@@ -549,8 +539,7 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0063293",
@@ -599,8 +588,7 @@
       "source": "name",
       "evidence": "研究所"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/73/7320"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0075873",
@@ -1224,6 +1212,55 @@
       "business_area": "西塘",
       "adcode": "330421",
       "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "7320",
+      "name": "工程和技术研究和试验发展",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 研究和试验发展 > 工程和技术研究和试验发展 > 工程和技术研究和试验发展",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "研究所"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179109",
+    "company": "创新建筑技术研究所有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "检测技术"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "开发区苏州路半泾北路108号",
+    "contact_phone": "0512-53573483",
+    "lat": 31.474965,
+    "lng": 121.116654,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHF5IC6",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "建筑公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "检测技术"
     },
     "industry": {
       "code": "7320",

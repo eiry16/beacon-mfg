@@ -96,5 +96,54 @@
       "evidence": "测绘"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179728",
+    "company": "苏州杰诚测绘地理信息有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "检测服务"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "青阳北路128号御座大厦1501室",
+    "contact_phone": "186****3869",
+    "lat": 31.403069,
+    "lng": 120.993534,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IU5C09TS",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "检测服务"
+    },
+    "industry": {
+      "code": "7449",
+      "name": "其他测绘地理信息服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 测绘地理信息服务 > 其他测绘地理信息服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "测绘"
+    },
+    "is_manufacturer": false
   }
 ]

@@ -45,7 +45,55 @@
       "evidence": "防水建"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/30/3033"
+    "status": "verified"
+  },
+  {
+    "id": "CN-MFG-0179977",
+    "company": "姑苏防水建材(永康路店)",
+    "category": "原材料",
+    "keywords": [
+      "板材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "交通路3090号",
+    "contact_phone": "待核实",
+    "lat": 31.160179,
+    "lng": 120.650277,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFDNE08",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "防水",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松陵",
+      "adcode": "320509",
+      "search_keyword": "板材批发"
+    },
+    "industry": {
+      "code": "3033",
+      "name": "防水建筑材料制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 砖瓦、石材等建筑材料制造 > 防水建筑材料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "防水建"
+    },
+    "is_manufacturer": true
   }
 ]

@@ -44,8 +44,7 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/24/2437"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0010510",
@@ -92,8 +91,7 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/24/2437"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0010513",
@@ -140,8 +138,7 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/24/2437"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0010710",
@@ -188,8 +185,7 @@
       "source": "gb_token",
       "evidence": "地毯"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/24/2437"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0019642",
@@ -236,8 +232,7 @@
       "evidence": "地毯"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/24/2437"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0019647",
@@ -285,8 +280,7 @@
       "evidence": "地毯"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/24/2437"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0023527",
@@ -333,8 +327,7 @@
       "evidence": "地毯"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/24/2437"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0083943",
@@ -1006,6 +999,104 @@
       "business_area": "石厦",
       "adcode": "440304",
       "search_keyword": "环境检测"
+    },
+    "industry": {
+      "code": "2437",
+      "name": "地毯、挂毯制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 地毯、挂毯制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "地毯"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0178250",
+    "company": "杰成pvc地板 地毯 静电地板",
+    "category": "原材料",
+    "keywords": [
+      "建材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "横塘大江南建材市场B区02号",
+    "contact_phone": "137****7164; 158****9269",
+    "lat": 31.268268,
+    "lng": 120.578301,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KKTHKVL8",
+      "type": "购物服务;家居建材市场;布艺市场",
+      "typecode": "060605",
+      "alias": "",
+      "tag": "",
+      "keytag": "地板",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横塘",
+      "adcode": "320505",
+      "search_keyword": "建材批发"
+    },
+    "industry": {
+      "code": "2437",
+      "name": "地毯、挂毯制造",
+      "level": "class",
+      "path": "C 制造业 > 文教、工美、体育和娱乐用品制造业 > 工艺美术及礼仪用品制造 > 地毯、挂毯制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "地毯"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0178258",
+    "company": "PVC地板地毯静电地板",
+    "category": "原材料",
+    "keywords": [
+      "建材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "大江南建材市场B区11号",
+    "contact_phone": "188****8219",
+    "lat": 31.269044,
+    "lng": 120.578385,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHF86L3",
+      "type": "购物服务;家居建材市场;布艺市场",
+      "typecode": "060605",
+      "alias": "",
+      "tag": "",
+      "keytag": "地板",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横塘",
+      "adcode": "320505",
+      "search_keyword": "建材批发"
     },
     "industry": {
       "code": "2437",

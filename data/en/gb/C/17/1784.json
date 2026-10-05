@@ -12,7 +12,7 @@
       "province": "Guangdong",
       "city": "Huizhou"
     },
-    "address_en": "No. 113 Huangling Road, Huangzhuang, Xinxu Town",
+    "address_en": "Xinwei Town Huangzhuang Huangling Road No. 113",
     "contact_phone": "136****0402",
     "source": "public_directory",
     "verified_at": "2026-08-13",
@@ -26,13 +26,7 @@
       "source": "gb_token",
       "evidence": "帆布"
     },
-    "industry_en": {
-      "code": "1784",
-      "name_en": null,
-      "level": "class",
-      "name": "篷、帆布制造",
-      "confidence": "high"
-    },
+    "industry_en": null,
     "_bucket": "C/17/1784"
   },
   {
@@ -59,7 +53,6 @@
       "name": "篷、帆布制造",
       "confidence": "high"
     },
-    "_bucket": "C/17/1784",
     "source_url": "https://www.amap.com/place/B0K2RCBYB6"
   },
   {
@@ -79,7 +72,6 @@
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "C/17/1784",
     "industry_en": {
       "code": "1784",
       "name_en": null,
@@ -121,7 +113,6 @@
       "level": "class",
       "name": "篷、帆布制造",
       "confidence": "high"
-    },
-    "_bucket": "C/17/1784"
+    }
   }
 ]

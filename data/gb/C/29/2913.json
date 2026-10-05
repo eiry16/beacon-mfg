@@ -44,8 +44,7 @@
       "source": "name",
       "evidence": "橡胶"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0009162",
@@ -93,7 +92,6 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2913",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0009162/SKILL.md",
       "protocol": "skill",
@@ -149,7 +147,6 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2913",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0009163/SKILL.md",
       "protocol": "skill",
@@ -206,7 +203,6 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2913",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0009238/SKILL.md",
       "protocol": "skill",
@@ -262,8 +258,7 @@
       "source": "name",
       "evidence": "橡胶"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0009534",
@@ -311,7 +306,6 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2913",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0009534/SKILL.md",
       "protocol": "skill",
@@ -367,7 +361,6 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2913",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0009538/SKILL.md",
       "protocol": "skill",
@@ -423,7 +416,6 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/29/2913",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0016822/SKILL.md",
       "protocol": "skill",
@@ -478,8 +470,7 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0005785",
@@ -513,7 +504,6 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2913",
     "amap": {
       "poi_id": "B0FFG4TRTU",
       "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
@@ -582,8 +572,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0006054",
@@ -626,7 +615,6 @@
       ],
       "verified": false
     },
-    "_bucket": "C/29/2913",
     "amap": {
       "poi_id": "B0FFK47OID",
       "type": "公司企业;公司;公司",
@@ -682,7 +670,6 @@
       ],
       "verified": false
     },
-    "_bucket": "C/29/2913",
     "amap": {
       "poi_id": "B0FFFZ70G9",
       "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;公司",
@@ -733,7 +720,6 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "_bucket": "C/29/2913",
     "amap": {
       "poi_id": "B0FFFQ0HBD",
       "type": "购物服务;家居建材市场;建材五金市场|公司企业;公司;商业贸易|购物服务;专卖店;专营店",
@@ -798,8 +784,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013893",
@@ -848,8 +833,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013951",
@@ -860,7 +844,8 @@
       "机械密封",
       "密封件",
       "密封圈",
-      "油封"
+      "油封",
+      "五金店"
     ],
     "region": {
       "province": "江苏",
@@ -900,8 +885,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013965",
@@ -950,8 +934,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013966",
@@ -1001,8 +984,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013982",
@@ -1049,8 +1031,7 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013990",
@@ -1097,8 +1078,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013991",
@@ -1145,8 +1125,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013992",
@@ -1194,8 +1173,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013993",
@@ -1242,8 +1220,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013995",
@@ -1290,8 +1267,7 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0014000",
@@ -1342,8 +1318,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0014002",
@@ -1392,8 +1367,7 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0014020",
@@ -1441,8 +1415,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0014054",
@@ -1490,8 +1463,7 @@
       "evidence": "硅胶"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0015201",
@@ -1546,8 +1518,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0015207",
@@ -1602,8 +1573,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0015216",
@@ -1658,8 +1628,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0015219",
@@ -1714,8 +1683,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0016502",
@@ -1761,8 +1729,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0016540",
@@ -1816,8 +1783,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0018809",
@@ -1864,8 +1830,7 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018820",
@@ -1912,8 +1877,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018821",
@@ -1960,8 +1924,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018822",
@@ -2008,8 +1971,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018825",
@@ -2056,8 +2018,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018830",
@@ -2104,8 +2065,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018832",
@@ -2152,8 +2112,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018835",
@@ -2200,8 +2159,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018840",
@@ -2248,8 +2206,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018850",
@@ -2296,8 +2253,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018851",
@@ -2344,8 +2300,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0002718",
@@ -2392,8 +2347,7 @@
       "business_area": "石楼",
       "adcode": "440113",
       "search_keyword": "注塑加工"
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0010658",
@@ -2440,8 +2394,7 @@
       "source": "name",
       "evidence": "橡胶"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013183",
@@ -2488,8 +2441,7 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0015440",
@@ -2540,8 +2492,7 @@
       "evidence": "橡胶"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/29/2913"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0015756",
@@ -2587,8 +2538,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/29/2913"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0001108",
@@ -2643,8 +2593,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0008284",
@@ -2692,8 +2641,7 @@
       "source": "name",
       "evidence": "橡胶"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0008619",
@@ -2740,8 +2688,7 @@
       "source": "name",
       "evidence": "橡胶"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0011377",
@@ -2788,8 +2735,7 @@
       "evidence": "密封圈"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0003897",
@@ -2838,8 +2784,7 @@
       "business_area": "",
       "adcode": "441900",
       "search_keyword": "电镀"
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0022038",
@@ -2886,8 +2831,7 @@
       "evidence": "油封"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/29/2913"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0022913",
@@ -2935,7 +2879,6 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/29/2913",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0022913/SKILL.md",
       "protocol": "skill",
@@ -2992,8 +2935,7 @@
       "source": "name",
       "evidence": "油封"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0027264",
@@ -3050,8 +2992,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/29/2913"
+    }
   },
   {
     "id": "CN-MFG-0063716",
@@ -3100,8 +3041,7 @@
       "source": "name",
       "evidence": "橡胶"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0062892",
@@ -3150,8 +3090,7 @@
       "source": "name",
       "evidence": "橡胶"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0062907",
@@ -3200,8 +3139,7 @@
       "source": "name",
       "evidence": "橡胶"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/29/2913"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0079661",
@@ -24950,7 +24888,8 @@
     "category": "注塑成型",
     "keywords": [
       "油封",
-      "轴承"
+      "轴承",
+      "五金批发"
     ],
     "region": {
       "province": "江苏",
@@ -28524,6 +28463,104 @@
       "business_area": "玉山",
       "adcode": "320583",
       "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "胶带"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180475",
+    "company": "美缝硅胶批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "之江国际9号楼118号",
+    "contact_phone": "待核实",
+    "lat": 31.443704,
+    "lng": 121.089414,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LBTC3ZFR",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "2913",
+      "name": "橡胶零件制造",
+      "level": "class",
+      "path": "C 制造业 > 橡胶和塑料制品业 > 橡胶制品业 > 橡胶零件制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "硅胶"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0182209",
+    "company": "施特普胶带(常熟)有限公司",
+    "category": "注塑成型",
+    "keywords": [
+      "五金店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "东南开发区银通路301号",
+    "contact_phone": "待核实",
+    "lat": 31.623421,
+    "lng": 120.82134,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B020015XLI",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
+      "search_keyword": "五金店"
     },
     "industry": {
       "code": "2913",

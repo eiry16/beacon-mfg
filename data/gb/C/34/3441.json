@@ -43,8 +43,7 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3441"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0017439",
@@ -91,8 +90,7 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3441"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0017482",
@@ -147,8 +145,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3441"
+    }
   },
   {
     "id": "CN-MFG-0018688",
@@ -195,8 +192,7 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3441"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0018713",
@@ -243,8 +239,7 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3441"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0011818",
@@ -292,8 +287,7 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3441"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0021778",
@@ -340,8 +334,7 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3441"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0021817",
@@ -388,8 +381,7 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3441"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0021960",
@@ -436,8 +428,7 @@
       "evidence": "泵"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/34/3441"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0026754",
@@ -494,8 +485,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/34/3441"
+    }
   },
   {
     "id": "CN-MFG-0036797",
@@ -544,8 +534,7 @@
       "source": "name",
       "evidence": "泵"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/34/3441"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0076071",
@@ -1990,5 +1979,301 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0179159",
+    "company": "泵铁健身美式铁馆",
+    "category": "精密机械加工",
+    "keywords": [
+      "健身房",
+      "健身中心",
+      "健身会所"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "东仓北路8号",
+    "contact_phone": "待核实",
+    "lat": 31.462178,
+    "lng": 121.117184,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IGG5XP9S",
+      "type": "体育休闲服务;运动场馆;健身中心",
+      "typecode": "080111",
+      "alias": "",
+      "tag": "",
+      "keytag": "健身房",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "健身房"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179209",
+    "company": "电路油路检测油嘴油泵精修服务站",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "东山大道2555号",
+    "contact_phone": "134****1860",
+    "lat": 31.119089,
+    "lng": 120.463407,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KUN5L4NA",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "临湖",
+      "adcode": "320506",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179217",
+    "company": "汽车电瓶电路校油泵",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "福东路",
+    "contact_phone": "待核实",
+    "lat": 31.317741,
+    "lng": 120.404783,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K1PSGB6X",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320506",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179336",
+    "company": "鸿顺电喷油泵油嘴机修电路维修服务中心",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "汾湖国道路1710号附近",
+    "contact_phone": "152****8357; 173****1629",
+    "lat": 31.015015,
+    "lng": 120.829617,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIQBFUA",
+      "type": "汽车维修;汽车维修;汽车维修",
+      "typecode": "030000",
+      "alias": "",
+      "tag": "",
+      "keytag": "汽车维修",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "汾湖",
+      "adcode": "320509",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0181370",
+    "company": "锦辉橡塑水泵批发部",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "芦墟汽车站对面国道1110号",
+    "contact_phone": "0512-88983398; 182****0858",
+    "lat": 31.015956,
+    "lng": 120.843902,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFG4IU3U",
+      "type": "购物服务;家居建材市场;建材五金市场|购物服务;专卖店;专营店",
+      "typecode": "060603|061200",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "汾湖",
+      "adcode": "320509",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0181378",
+    "company": "平望伟志橡塑水泵批发部",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "莺湖路35号109室",
+    "contact_phone": "136****9101",
+    "lat": 30.976208,
+    "lng": 120.639304,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFF9AS1",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "平望镇",
+      "adcode": "320509",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "3441",
+      "name": "泵及真空设备制造",
+      "level": "class",
+      "path": "C 制造业 > 通用设备制造业 > 泵、阀门、压缩机及类似机械制造 > 泵及真空设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "泵"
+    },
+    "is_manufacturer": true
   }
 ]

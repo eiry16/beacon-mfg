@@ -143,5 +143,57 @@
       "evidence": "白酒"
     },
     "is_manufacturer": true
+  },
+  {
+    "company": "贵州张氏万家高粱酒厂",
+    "category": "制造业",
+    "keywords": [
+      "白酒制造",
+      "酒的制造"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "白云"
+    },
+    "address": "贵州省贵阳市白云区都拉营街道俊杰路269号贵阳俊发城悦澜郡E1栋1层5号",
+    "contact_phone": "",
+    "lat": null,
+    "lng": null,
+    "source": "gov_list",
+    "source_url": "",
+    "verified_at": "2026-10-05",
+    "imported_at": "2026-10-05",
+    "last_verified_at": null,
+    "note": "",
+    "gov": {
+      "uscc": "91520113MACM1GQ46B",
+      "legal_rep": "张毛桃",
+      "ent_type": "个人独资企业",
+      "op_status": "存续",
+      "reg_capital_wan": 50.0,
+      "founded": "2023-06-01",
+      "reg_org": "贵阳市白云区市场监督管理局本级",
+      "gb_names": {
+        "division": "酒、饮料和精制茶制造业",
+        "group": "酒的制造",
+        "class": "白酒制造"
+      },
+      "origin": "省平台匿名 preview（部分数据）",
+      "phone_from": "none"
+    },
+    "status": "unverified_poi",
+    "is_template": true,
+    "industry": {
+      "code": "1512",
+      "name": "白酒制造",
+      "level": "class",
+      "path": "C 制造业 > 酒、饮料和精制茶制造业 > 酒的制造 > 白酒制造",
+      "confidence": "high",
+      "source": "gov_registry",
+      "evidence": "登记行业分类：酒、饮料和精制茶制造业/酒的制造/白酒制造"
+    },
+    "is_manufacturer": true,
+    "id": "CN-MFG-0182301"
   }
 ]

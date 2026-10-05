@@ -141147,7 +141147,8 @@
     "company": "杉 Beauty mild life",
     "category": "住宿和餐饮业",
     "keywords": [
-      "咖啡店"
+      "咖啡店",
+      "美容"
     ],
     "region": {
       "province": "江苏",
@@ -221903,6 +221904,104 @@
       "business_area": "",
       "adcode": "330483",
       "search_keyword": "餐厅"
+    },
+    "industry": {
+      "code": "6232",
+      "name": "咖啡馆服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 饮料及冷饮服务 > 咖啡馆服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "咖啡"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178572",
+    "company": "伯克利咖啡",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "餐厅"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海盐县"
+    },
+    "address": "新桥北路142-7号",
+    "contact_phone": "180****1739",
+    "lat": 30.519555,
+    "lng": 120.948879,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KBCRLZRE",
+      "type": "餐饮服务;咖啡厅;咖啡厅",
+      "typecode": "050500",
+      "alias": "",
+      "tag": "",
+      "keytag": "咖啡",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "武原",
+      "adcode": "330424",
+      "search_keyword": "餐厅"
+    },
+    "industry": {
+      "code": "6232",
+      "name": "咖啡馆服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 饮料及冷饮服务 > 咖啡馆服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "咖啡"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178845",
+    "company": "舒适派对健身KK888GYM·24H·咖啡",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "健身房"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "张家港"
+    },
+    "address": "金港大道146-148号",
+    "contact_phone": "199****6563",
+    "lat": 31.854946,
+    "lng": 120.546913,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KGX7OM1U",
+      "type": "体育休闲服务;运动场馆;健身中心",
+      "typecode": "080111",
+      "alias": "",
+      "tag": "",
+      "keytag": "健身中心",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "健身房"
     },
     "industry": {
       "code": "6232",

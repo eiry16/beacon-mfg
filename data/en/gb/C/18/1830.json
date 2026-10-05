@@ -16,7 +16,6 @@
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "_unclassified",
     "industry_en": {
       "code": "1830",
       "name_en": null,
@@ -43,7 +42,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-13",
     "note_en": "",
-    "_bucket": "_unclassified",
     "industry_en": {
       "code": "1830",
       "name_en": null,
@@ -70,7 +68,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-13",
     "note_en": "",
-    "_bucket": "_unclassified",
     "industry_en": {
       "code": "1830",
       "name_en": null,
@@ -97,7 +94,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-13",
     "note_en": "",
-    "_bucket": "_unclassified",
     "industry_en": {
       "code": "1830",
       "name_en": null,
@@ -124,7 +120,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-13",
     "note_en": "",
-    "_bucket": "_unclassified",
     "industry_en": {
       "code": "1830",
       "name_en": null,
@@ -151,7 +146,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/18/1830",
     "industry": {
       "code": "1830",
       "name": "服饰制造",
@@ -187,7 +181,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/18/1830",
     "industry": {
       "code": "1830",
       "name": "服饰制造",
@@ -223,7 +216,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-15",
     "note_en": "",
-    "_bucket": "C/18/1830",
     "industry": {
       "code": "1830",
       "name": "服饰制造",
@@ -259,7 +251,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "C/18/1830",
     "industry": {
       "code": "1830",
       "name": "服饰制造",
@@ -295,7 +286,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "C/18/1830",
     "industry": {
       "code": "1830",
       "name": "服饰制造",
@@ -346,7 +336,36 @@
       "level": "class",
       "name": "服饰制造",
       "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0182284",
+    "company_en": "Guizhou Hailun Industrial Development Co., Ltd.",
+    "category": "制造业",
+    "category_en": "制造业",
+    "keywords_en": [
+      "Apparel Manufacturing",
+      "Textile, Clothing, and Apparel Industry"
+    ],
+    "region": {
+      "province": "Guizhou",
+      "city": "Guiyang"
     },
+    "address_en": "No. 8, Shaowen Street, Shaowen Town, Baiyun District, Guiyang City, Guizhou Province",
+    "contact_phone": "",
+    "source": "gov_list",
+    "verified_at": "2026-10-04",
+    "note_en": "",
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "gov_registry",
+      "evidence": "登记行业分类：纺织服装、服饰业/服饰制造/服饰制造"
+    },
+    "industry_en": null,
     "_bucket": "C/18/1830"
   }
 ]

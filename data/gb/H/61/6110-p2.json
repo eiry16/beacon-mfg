@@ -6527,7 +6527,9 @@
     "company": "海利开元名都大酒店顶上豆捞",
     "category": "住宿和餐饮业",
     "keywords": [
-      "火锅"
+      "火锅",
+      "酒楼",
+      "中餐馆"
     ],
     "region": {
       "province": "浙江",
@@ -6674,7 +6676,9 @@
     "company": "昆山琶拉帝诗酒店·游泳健身中心",
     "category": "住宿和餐饮业",
     "keywords": [
-      "健身会所"
+      "健身会所",
+      "健身房",
+      "健身中心"
     ],
     "region": {
       "province": "江苏",
@@ -8970,6 +8974,996 @@
       "confidence": "low",
       "source": "search_keyword",
       "evidence": "住宿和餐饮业"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178286",
+    "company": "全家福大酒店(人民东路)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "餐厅"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "平湖"
+    },
+    "address": "当湖街道人民东路120号",
+    "contact_phone": "0573-85019779",
+    "lat": 30.697757,
+    "lng": 121.022774,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023D01E5F",
+      "type": "住宿服务;宾馆酒店;宾馆酒店|餐饮服务;中餐厅;中餐厅",
+      "typecode": "100100|050100",
+      "alias": "",
+      "tag": "酸菜鱼,牛肉",
+      "keytag": "江浙菜",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "当湖",
+      "adcode": "330482",
+      "search_keyword": "餐厅"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178510",
+    "company": "凯悦酒店游泳健身",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "健身房",
+      "健身中心",
+      "健身会所"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "东南大道333号",
+    "contact_phone": "132****9869",
+    "lat": 31.595743,
+    "lng": 120.768346,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKDDNP1G",
+      "type": "体育休闲服务;运动场馆;游泳馆",
+      "typecode": "080110",
+      "alias": "",
+      "tag": "",
+      "keytag": "游泳馆",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
+      "search_keyword": "健身房"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178844",
+    "company": "体乐圈24H健身(派克酒店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "健身房",
+      "健身中心",
+      "健身会所"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "张家港"
+    },
+    "address": "杨舍镇购物公园派克酒店二楼",
+    "contact_phone": "待核实",
+    "lat": 31.870765,
+    "lng": 120.517901,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LG0DXS3Y",
+      "type": "体育休闲服务;运动场馆;健身中心",
+      "typecode": "080111",
+      "alias": "",
+      "tag": "",
+      "keytag": "健身中心",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "健身房"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179077",
+    "company": "吴越乾门大酒店(海涛路店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "餐厅"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海宁"
+    },
+    "address": "丁桥镇海涛路2999号永胜商厦3号楼",
+    "contact_phone": "0573-87071777",
+    "lat": 30.45389,
+    "lng": 120.656499,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H63L8CDY",
+      "type": "餐饮服务;中餐厅;中餐厅|住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "050100|100100",
+      "alias": "",
+      "tag": "双人餐",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
+      "search_keyword": "餐厅"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179132",
+    "company": "赛维干洗(浏港商务宾馆店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "洗衣",
+      "洗衣店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "迎福新村西南门南150米",
+    "contact_phone": "待核实",
+    "lat": 31.503153,
+    "lng": 121.270754,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKYZIOE",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "洗衣"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宾馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179250",
+    "company": "千禧万福大酒店(园区店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "东环路1518号新苏大厦北楼1-3层",
+    "contact_phone": "181****0782",
+    "lat": 31.321754,
+    "lng": 120.647756,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K1THU9BY",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "双人餐,清炒虾仁,清炒河虾仁,松鼠鳜鱼,松鼠桂鱼,响油鳝糊",
+      "keytag": "江浙菜",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "苏州工业园区",
+      "adcode": "320505",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179657",
+    "company": "沙洲宾馆·宴杨楼",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼",
+      "中餐馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "张家港"
+    },
+    "address": "长安中路280号",
+    "contact_phone": "0512-58810777; 178****0630",
+    "lat": 31.868851,
+    "lng": 120.545399,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JUDNTN4U",
+      "type": "餐饮服务;糕饼店;糕饼店|餐饮服务;中餐厅;中餐厅",
+      "typecode": "050800|050100",
+      "alias": "",
+      "tag": "浇头,沙宾红汤面,红汤焖肉面",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "宾馆"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179696",
+    "company": "新黄埭大酒店·婚宴(润元路店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼",
+      "中餐馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "元和街道润元路南(海亮地产东侧)",
+    "contact_phone": "0512-67567777; 0512-67597777",
+    "lat": 31.352472,
+    "lng": 120.627464,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHCJN65",
+      "type": "餐饮服务;中餐厅;综合酒楼",
+      "typecode": "050101",
+      "alias": "",
+      "tag": "",
+      "keytag": "婚宴酒店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179701",
+    "company": "金鹏酒店(相城店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "相城大道1669号",
+    "contact_phone": "0512-65868887; 0512-69229899",
+    "lat": 31.375926,
+    "lng": 120.635171,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFJYB125",
+      "type": "住宿服务;宾馆酒店;宾馆酒店|餐饮服务;中餐厅;中餐厅",
+      "typecode": "100100|050100",
+      "alias": "",
+      "tag": "牛腩",
+      "keytag": "江浙菜",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179749",
+    "company": "新锡爵大酒店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼",
+      "中餐馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "岳阳路99号",
+    "contact_phone": "0512-53597788; 176****1990",
+    "lat": 31.444421,
+    "lng": 121.130934,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02001GX45",
+      "type": "餐饮服务;中餐厅;综合酒楼|住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "050101|100100",
+      "alias": "",
+      "tag": "特色菜,鲍鱼,堂食,豉汁蒸凤爪,蟹黄包,汤包,点心,小龙虾,油条",
+      "keytag": "粤菜",
+      "website": "",
+      "email": "",
+      "postcode": "215400",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179763",
+    "company": "古月江南大酒店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼",
+      "中餐馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "城厢镇娄江南路116号江西银行旁",
+    "contact_phone": "139****2696",
+    "lat": 31.464997,
+    "lng": 121.137341,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GK57CGMB",
+      "type": "住宿服务;宾馆酒店;宾馆酒店|餐饮服务;中餐厅;中餐厅",
+      "typecode": "100100|050100",
+      "alias": "",
+      "tag": "炖汤,石锅拌饭,脆皮乳鸽,小海鲜,芝士生煎,玻璃乳鸽,苏式生煎",
+      "keytag": "江浙菜",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179948",
+    "company": "乍浦周大鲜酒店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "平湖"
+    },
+    "address": "乍浦镇天妃路63号",
+    "contact_phone": "0573-85523581; 137****3319",
+    "lat": 30.601476,
+    "lng": 121.09425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I3VZDF51",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "家常菜",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330482",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179951",
+    "company": "东湖印象大酒店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼",
+      "中餐馆"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "平湖"
+    },
+    "address": "当湖街道案山公园内望湖楼",
+    "contact_phone": "0573-85108888; 135****3792",
+    "lat": 30.700149,
+    "lng": 121.03073,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JRMCJTCK",
+      "type": "餐饮服务;中餐厅;综合酒楼",
+      "typecode": "050101",
+      "alias": "",
+      "tag": "虾饺",
+      "keytag": "江浙菜",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "平湖",
+      "adcode": "330482",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0180067",
+    "company": "不夜城大酒店(海盐店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海盐县"
+    },
+    "address": "百尺南路28号",
+    "contact_phone": "0573-86286666",
+    "lat": 30.513552,
+    "lng": 120.931871,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHC3209",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "武原",
+      "adcode": "330424",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0180068",
+    "company": "涛涛大酒店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "酒楼"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海盐县"
+    },
+    "address": "澉浦新市镇农贸市场西区2层",
+    "contact_phone": "137****5777; 139****7173",
+    "lat": 30.387142,
+    "lng": 120.886001,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H1L5IHPS",
+      "type": "餐饮服务;中餐厅;综合酒楼",
+      "typecode": "050101",
+      "alias": "",
+      "tag": "",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330424",
+      "search_keyword": "酒楼"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0180555",
+    "company": "云起荟酒店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "辛庄创乐橙5幢2楼",
+    "contact_phone": "0512-51880999",
+    "lat": 31.532543,
+    "lng": 120.676685,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H0459RAX",
+      "type": "餐饮服务;中餐厅;综合酒楼",
+      "typecode": "050101",
+      "alias": "",
+      "tag": "云吞,虾仁,大闸蟹,大米饭,红烧肉,小炒黄牛肉,黑松露红烧肉,金汤酸菜鱼,小海鲜,猪肚鸡",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0180865",
+    "company": "浒顺大酒店(相城店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "元和街道润元路517号(陆慕地铁站6号口步行400米)",
+    "contact_phone": "0512-66830777; 189****6952",
+    "lat": 31.353419,
+    "lng": 120.628446,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020017MSN",
+      "type": "餐饮服务;中餐厅;综合酒楼",
+      "typecode": "050101",
+      "alias": "",
+      "tag": "豆腐,烤鸭,豆沙小圆子,赤豆圆子,牛肉",
+      "keytag": "江浙菜",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0181388",
+    "company": "汉庭酒店(海盐吾悦广场店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海盐县"
+    },
+    "address": "武原街道城西北路118号",
+    "contact_phone": "0573-86195555",
+    "lat": 30.528897,
+    "lng": 120.932069,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B023D0QA7R",
+      "type": "住宿服务;宾馆酒店;经济型连锁酒店|餐饮服务;中餐厅;中餐厅",
+      "typecode": "100105|050100",
+      "alias": "",
+      "tag": "",
+      "keytag": "经济型",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "武原",
+      "adcode": "330424",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0181392",
+    "company": "新兴大酒店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海盐县"
+    },
+    "address": "钱王路1号",
+    "contact_phone": "0573-86786688; 151****1442",
+    "lat": 30.560987,
+    "lng": 120.763777,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0H6LMCTQ4",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330424",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0181547",
+    "company": "亚嘉达酒店(洪兴路店)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "秀洲区"
+    },
+    "address": "嘉北街道洪兴路878号亚嘉达酒店",
+    "contact_phone": "待核实",
+    "lat": 30.764152,
+    "lng": 120.728073,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B023D0QSC1",
+      "type": "餐饮服务;中餐厅;综合酒楼|公司企业;公司;公司|住宿服务;宾馆酒店;宾馆酒店",
+      "typecode": "050101|170200|100100",
+      "alias": "",
+      "tag": "",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "洪兴路",
+      "adcode": "330411",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "6110",
+      "name": "旅游饭店",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 住宿业 > 旅游饭店 > 旅游饭店",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "酒店"
     },
     "is_manufacturer": false
   }

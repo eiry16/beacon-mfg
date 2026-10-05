@@ -184,6 +184,7 @@ python client_search.py --industry 3525 --city 宁波 --limit 5
 ```
 mcp/                        只读 MCP 服务（npm 包 beacon-mfg-mcp）
 agent-skill/                薄框架：SKILL.md + client_search.py
+                            （其 icon.png 为品牌灯塔照片，源图 APK/Beacon.jpg，512×512）
 data/
   清单.json             分片清单（取数入口）
   gb/**  en/**              中文 / 英文名录分片

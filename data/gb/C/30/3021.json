@@ -31,7 +31,6 @@
       "evidence": "混凝土"
     },
     "is_manufacturer": true,
-    "_bucket": "C/30/3021",
     "amap": {
       "poi_id": "B001557CUA",
       "type": "公司企业;公司;公司",
@@ -94,8 +93,7 @@
       "source": "name",
       "evidence": "水泥制品"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/30/3021"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0028880",
@@ -144,8 +142,7 @@
       "source": "name",
       "evidence": "水泥制品"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/30/3021"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0100617",
@@ -336,6 +333,55 @@
       "confidence": "high",
       "source": "name",
       "evidence": "水泥制品"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0178373",
+    "company": "江苏省高耐久混凝土工程技术研究中心检测中心",
+    "category": "原材料",
+    "keywords": [
+      "检测技术"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "姑苏区"
+    },
+    "address": "谈家南巷与三香弄交叉口北160米",
+    "contact_phone": "待核实",
+    "lat": 31.302584,
+    "lng": 120.603787,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHPP5OJ",
+      "type": "政府机构及社会团体;公检法机构;公证鉴定机构",
+      "typecode": "130505",
+      "alias": "",
+      "tag": "",
+      "keytag": "科研机构",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "三香路沿线",
+      "adcode": "320508",
+      "search_keyword": "检测技术"
+    },
+    "industry": {
+      "code": "3021",
+      "name": "水泥制品制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 石膏、水泥制品及类似制品制造 > 水泥制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "混凝土"
     },
     "is_manufacturer": true
   }

@@ -76064,5 +76064,154 @@
       "evidence": "小吃"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178903",
+    "company": "惟飨雅萃烘焙坊(咕噜妮)",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "餐厅"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "秀洲区"
+    },
+    "address": "新城街道东升西路966号5号楼1楼202室",
+    "contact_phone": "137****3676",
+    "lat": 30.779082,
+    "lng": 120.703444,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L6P501SS",
+      "type": "餐饮服务;餐饮相关场所;餐饮相关",
+      "typecode": "050000",
+      "alias": "",
+      "tag": "双人餐",
+      "keytag": "糕点/烘焙",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330411",
+      "search_keyword": "餐厅"
+    },
+    "industry": {
+      "code": "6291",
+      "name": "小吃服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 其他餐饮业 > 小吃服务",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "烘焙"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0181026",
+    "company": "戴松小吃",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴中区"
+    },
+    "address": "水香街195号(苏州市吴中区老年大学东门旁)",
+    "contact_phone": "待核实",
+    "lat": 31.269366,
+    "lng": 120.62103,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0GD2ARN23",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "龙西",
+      "adcode": "320506",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "6291",
+      "name": "小吃服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 其他餐饮业 > 小吃服务",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "小吃"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "company": "贵阳锦福达餐饮店",
+    "category": "住宿和餐饮业",
+    "keywords": [
+      "小吃服务",
+      "其他餐饮业"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "白云"
+    },
+    "address": "贵州省贵阳市白云区艳山红镇云环路150号云景世家1-8栋1层1-13号",
+    "contact_phone": "",
+    "lat": null,
+    "lng": null,
+    "source": "gov_list",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "note": "",
+    "gov": {
+      "uscc": "91520113MAC7BYN8XR",
+      "legal_rep": "周娟",
+      "ent_type": "个人独资企业",
+      "op_status": "存续",
+      "reg_capital_wan": 0.0,
+      "founded": "2023-02-17",
+      "reg_org": "贵阳市白云区市场监督管理局本级",
+      "gb_names": {
+        "division": "餐饮业",
+        "group": "其他餐饮业",
+        "class": "小吃服务"
+      },
+      "origin": "省平台匿名 preview（部分数据）"
+    },
+    "status": "unverified_poi",
+    "is_template": true,
+    "industry": {
+      "code": "6291",
+      "name": "小吃服务",
+      "level": "class",
+      "path": "H 住宿和餐饮业 > 餐饮业 > 其他餐饮业 > 小吃服务",
+      "confidence": "high",
+      "source": "gov_registry",
+      "evidence": "登记行业分类：餐饮业/其他餐饮业/小吃服务"
+    },
+    "is_manufacturer": false,
+    "id": "CN-MFG-0182291"
   }
 ]

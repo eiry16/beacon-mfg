@@ -45,7 +45,6 @@
     },
     "is_manufacturer": false,
     "status": "verified",
-    "_bucket": "F/52/5287",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0014314/SKILL.md",
       "protocol": "skill",
@@ -102,8 +101,7 @@
       "source": "gb_token",
       "evidence": "陶瓷"
     },
-    "is_manufacturer": false,
-    "_bucket": "F/52/5287"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0029084",
@@ -152,8 +150,7 @@
       "source": "gb_token",
       "evidence": "陶瓷"
     },
-    "is_manufacturer": false,
-    "_bucket": "F/52/5287"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0030510",
@@ -203,7 +200,6 @@
       "evidence": "陶瓷"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5287",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0030510/SKILL.md",
       "protocol": "skill",
@@ -261,7 +257,6 @@
       "evidence": "陶瓷"
     },
     "is_manufacturer": false,
-    "_bucket": "F/52/5287",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0031683/SKILL.md",
       "protocol": "skill",
@@ -17522,6 +17517,252 @@
       "postcode": "",
       "business_area": "",
       "adcode": "320582",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "5287",
+      "name": "陶瓷、石材装饰材料零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 陶瓷、石材装饰材料零售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "陶瓷"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178729",
+    "company": "金艾陶瓷砖张家港总代理",
+    "category": "批发和零售业",
+    "keywords": [
+      "建材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "张家港"
+    },
+    "address": "凤凰镇镇北路一号建材市场金艾陶瓷砖",
+    "contact_phone": "138****8011",
+    "lat": 31.795163,
+    "lng": 120.658793,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFIM461O",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "陶瓷瓷砖",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320582",
+      "search_keyword": "建材批发"
+    },
+    "industry": {
+      "code": "5287",
+      "name": "陶瓷、石材装饰材料零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 陶瓷、石材装饰材料零售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "陶瓷"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179061",
+    "company": "兴隆陶瓷批发部",
+    "category": "批发和零售业",
+    "keywords": [
+      "建材批发",
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "城厢镇太丰路8号太丰建材批发广场",
+    "contact_phone": "待核实",
+    "lat": 31.438025,
+    "lng": 121.093875,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDUL1H5U",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "陶瓷瓷砖",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "建材批发"
+    },
+    "industry": {
+      "code": "5287",
+      "name": "陶瓷、石材装饰材料零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 陶瓷、石材装饰材料零售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "陶瓷"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179994",
+    "company": "上昊建材商行陶瓷批发仓库",
+    "category": "批发和零售业",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "苏福路与火炬路交叉口往南200米",
+    "contact_phone": "0512-67374377; 139****4089; 181****5539",
+    "lat": 31.259671,
+    "lng": 120.566259,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFK6O15P",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "陶瓷瓷砖",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "汇金新地",
+      "adcode": "320505",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "5287",
+      "name": "陶瓷、石材装饰材料零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 陶瓷、石材装饰材料零售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "陶瓷"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179998",
+    "company": "欧斯健陶瓷卫浴批发部",
+    "category": "批发和零售业",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "苏福路199号A区10室",
+    "contact_phone": "158****3920",
+    "lat": 31.268875,
+    "lng": 120.577225,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K26GYAW4",
+      "type": "购物服务;家居建材市场;建材五金市场|购物服务;家居建材市场;厨卫市场",
+      "typecode": "060603|060604",
+      "alias": "",
+      "tag": "",
+      "keytag": "厨卫洁具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横塘",
+      "adcode": "320505",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "5287",
+      "name": "陶瓷、石材装饰材料零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 五金、家具及室内装饰材料专门零售 > 陶瓷、石材装饰材料零售",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "陶瓷"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0180673",
+    "company": "苏州无名外贸陶瓷批发零售",
+    "category": "批发和零售业",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "交通路5235号",
+    "contact_phone": "158****2892",
+    "lat": 31.195495,
+    "lng": 120.661713,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MD3ZER3Y",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "厨卫洁具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320509",
       "search_keyword": "装饰材料批发"
     },
     "industry": {

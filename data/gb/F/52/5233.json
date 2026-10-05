@@ -1747,7 +1747,8 @@
     "category": "批发和零售业",
     "keywords": [
       "干洗",
-      "洗衣店"
+      "洗衣店",
+      "洗衣"
     ],
     "region": {
       "province": "江苏",
@@ -1976,6 +1977,156 @@
       "business_area": "林和邨",
       "adcode": "440106",
       "search_keyword": "餐厅"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178320",
+    "company": "猴给力洗鞋",
+    "category": "批发和零售业",
+    "keywords": [
+      "洗衣",
+      "洗衣店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "邓蔚路滨河花苑二期大门东6幢106室猴给力洗鞋",
+    "contact_phone": "待核实",
+    "lat": 31.300233,
+    "lng": 120.562992,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MBFD5JAH",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320505",
+      "search_keyword": "洗衣"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178660",
+    "company": "大懒猫洗鞋吧(城东店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "洗衣",
+      "洗衣店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "千岛湖路东晶国际北门14栋7号底商",
+    "contact_phone": "177****4168",
+    "lat": 31.373144,
+    "lng": 121.039267,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0KK454JLR",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320583",
+      "search_keyword": "洗衣"
+    },
+    "industry": {
+      "code": "5233",
+      "name": "鞋帽零售",
+      "level": "class",
+      "path": "F 批发和零售业 > 零售业 > 纺织、服装及日用品专门零售 > 鞋帽零售",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "鞋"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179113",
+    "company": "猴给力洗鞋(惠阳路店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "洗衣",
+      "洗衣店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "惠阳路96号",
+    "contact_phone": "187****5637",
+    "lat": 31.451066,
+    "lng": 121.119099,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0K2H9O8MY",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "洗衣"
     },
     "industry": {
       "code": "5233",

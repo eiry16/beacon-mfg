@@ -53,8 +53,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/39/3973"
+    }
   },
   {
     "id": "CN-MFG-0003256",
@@ -86,8 +85,7 @@
       "source": "name",
       "evidence": "半导体"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3973"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0019355",
@@ -134,8 +132,7 @@
       "evidence": "半导体"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/39/3973"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0003957",
@@ -169,7 +166,6 @@
       "evidence": "半导体"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3973",
     "amap": {
       "poi_id": "B0MG6HI85F",
       "type": "公司企业;公司;公司",
@@ -232,8 +228,7 @@
       "source": "name",
       "evidence": "晶圆"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3973"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0031351",
@@ -281,8 +276,7 @@
       "source": "name",
       "evidence": "半导体"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3973"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0033382",
@@ -331,8 +325,7 @@
       "source": "name",
       "evidence": "集成电路"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/39/3973"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0033463",
@@ -382,7 +375,6 @@
       "evidence": "集成电路"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3973",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0033463/SKILL.md",
       "protocol": "skill",
@@ -440,7 +432,6 @@
       "evidence": "集成电路"
     },
     "is_manufacturer": true,
-    "_bucket": "C/39/3973",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0033464/SKILL.md",
       "protocol": "skill",
@@ -2859,7 +2850,8 @@
     "company": "张家港市集成电路产业促进中心",
     "category": "电子元器件",
     "keywords": [
-      "集成电路"
+      "集成电路",
+      "电路板"
     ],
     "region": {
       "province": "江苏",
@@ -2908,7 +2900,8 @@
     "company": "矽兴集成电路科技有限公司",
     "category": "电子元器件",
     "keywords": [
-      "集成电路"
+      "集成电路",
+      "电路板"
     ],
     "region": {
       "province": "江苏",
@@ -3006,7 +2999,8 @@
     "company": "苏州市集成电路产业知识产权运营中心",
     "category": "电子元器件",
     "keywords": [
-      "集成电路"
+      "集成电路",
+      "电路板"
     ],
     "region": {
       "province": "江苏",
@@ -3251,7 +3245,8 @@
     "company": "武汉新芯集成电路制造有限公司苏州分公司",
     "category": "电子元器件",
     "keywords": [
-      "集成电路"
+      "集成电路",
+      "电路板"
     ],
     "region": {
       "province": "江苏",
@@ -3349,7 +3344,8 @@
     "company": "苏州玉盘集成电路有限公司",
     "category": "电子元器件",
     "keywords": [
-      "集成电路"
+      "集成电路",
+      "电路板"
     ],
     "region": {
       "province": "江苏",
@@ -3398,7 +3394,8 @@
     "company": "苏州洪芯集成电路有限公司",
     "category": "电子元器件",
     "keywords": [
-      "集成电路"
+      "集成电路",
+      "电路板"
     ],
     "region": {
       "province": "江苏",
@@ -3447,7 +3444,8 @@
     "company": "苏州博创集成电路设计有限公司",
     "category": "电子元器件",
     "keywords": [
-      "集成电路"
+      "集成电路",
+      "电路板"
     ],
     "region": {
       "province": "江苏",
@@ -3496,7 +3494,8 @@
     "company": "苏州睿芯集成电路科技有限公司",
     "category": "电子元器件",
     "keywords": [
-      "集成电路"
+      "集成电路",
+      "电路板"
     ],
     "region": {
       "province": "江苏",
@@ -30481,6 +30480,104 @@
       "postcode": "",
       "business_area": "",
       "adcode": "330482",
+      "search_keyword": "电路板"
+    },
+    "industry": {
+      "code": "3973",
+      "name": "集成电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 集成电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "集成电路"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179110",
+    "company": "苏州大弘兴半导体检测技术有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "检测技术"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "江申大道与子冈路交叉口西南180米",
+    "contact_phone": "待核实",
+    "lat": 31.418575,
+    "lng": 121.136425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L66ZK41R",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "检测技术"
+    },
+    "industry": {
+      "code": "3973",
+      "name": "集成电路制造",
+      "level": "class",
+      "path": "C 制造业 > 计算机、通信和其他电子设备制造业 > 电子器件制造 > 集成电路制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "半导体"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179857",
+    "company": "浙江芯锋集成电路技术有限公司",
+    "category": "电子元器件",
+    "keywords": [
+      "电路板"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "海宁"
+    },
+    "address": "浙联大厦附近",
+    "contact_phone": "待核实",
+    "lat": 30.481295,
+    "lng": 120.668574,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LRPMQBZ4",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330481",
       "search_keyword": "电路板"
     },
     "industry": {

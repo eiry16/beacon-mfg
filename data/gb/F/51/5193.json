@@ -48,7 +48,6 @@
       "evidence": "网批发"
     },
     "is_manufacturer": false,
-    "_bucket": "F/51/5193",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0036010/SKILL.md",
       "protocol": "skill",
@@ -257,6 +256,55 @@
       "business_area": "盛泽",
       "adcode": "320509",
       "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "5193",
+      "name": "互联网批发",
+      "level": "class",
+      "path": "F 批发和零售业 > 批发业 > 其他批发业 > 互联网批发",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "网批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0180474",
+    "company": "腾煌筛网批发",
+    "category": "批发和零售业",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "城厢镇恒洋路28幢120号五洋商城公寓",
+    "contact_phone": "待核实",
+    "lat": 31.443745,
+    "lng": 121.090055,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFL6QGBR",
+      "type": "购物服务;家居建材市场;家居建材市场",
+      "typecode": "060600",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "装饰材料批发"
     },
     "industry": {
       "code": "5193",

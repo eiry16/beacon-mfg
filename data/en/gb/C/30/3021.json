@@ -16,7 +16,6 @@
     "source": "public_directory",
     "verified_at": "2026-08-13",
     "note_en": "",
-    "_bucket": "_unclassified",
     "industry_en": {
       "code": "3021",
       "name_en": null,
@@ -42,7 +41,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-11",
     "note_en": "",
-    "_bucket": "_unclassified",
     "industry_en": {
       "code": "3021",
       "name_en": null,
@@ -69,7 +67,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-13",
     "note_en": "",
-    "_bucket": "_unclassified",
     "industry_en": {
       "code": "3021",
       "name_en": null,
@@ -111,8 +108,7 @@
       "level": "class",
       "name": "水泥制品制造",
       "confidence": "high"
-    },
-    "_bucket": "C/30/3021"
+    }
   },
   {
     "id": "CN-MFG-0106052",
@@ -146,8 +142,7 @@
       "level": "class",
       "name": "水泥制品制造",
       "confidence": "high"
-    },
-    "_bucket": "C/30/3021"
+    }
   },
   {
     "id": "CN-MFG-0119463",
@@ -181,8 +176,7 @@
       "level": "class",
       "name": "水泥制品制造",
       "confidence": "high"
-    },
-    "_bucket": "C/30/3021"
+    }
   },
   {
     "id": "CN-MFG-0119476",
@@ -216,7 +210,35 @@
       "level": "class",
       "name": "水泥制品制造",
       "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0178373",
+    "company_en": "Jiangsu Province High-Durability Concrete Engineering Technology Research Center Testing Center",
+    "category": "原材料",
+    "category_en": "Raw Materials",
+    "keywords_en": [
+      "Inspection Technology"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
     },
+    "address_en": "160 meters north of the intersection of Tanjiatan Alley and Sanxiang Lane",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-10-04",
+    "note_en": "",
+    "industry": {
+      "code": "3021",
+      "name": "水泥制品制造",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 石膏、水泥制品及类似制品制造 > 水泥制品制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "混凝土"
+    },
+    "industry_en": null,
     "_bucket": "C/30/3021"
   }
 ]

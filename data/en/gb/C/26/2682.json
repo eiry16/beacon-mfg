@@ -16,7 +16,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "C/26/2682",
     "industry": {
       "code": "2682",
       "name": "化妆品制造",
@@ -67,7 +66,35 @@
       "level": "class",
       "name": "化妆品制造",
       "confidence": "medium"
+    }
+  },
+  {
+    "id": "CN-MFG-0180759",
+    "company_en": "CAF Meimei Japanese Beauty Skin Care Center",
+    "category": "注塑成型",
+    "category_en": "Injection Molding",
+    "keywords_en": [
+      "beauty"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
     },
+    "address_en": "No. 550 Huagang Road, Jiangling Street",
+    "contact_phone": "159****6048",
+    "source": "public_directory",
+    "verified_at": "2026-10-04",
+    "note_en": "",
+    "industry": {
+      "code": "2682",
+      "name": "化妆品制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 日用化学产品制造 > 化妆品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "日化"
+    },
+    "industry_en": null,
     "_bucket": "C/26/2682"
   }
 ]

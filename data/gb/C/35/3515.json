@@ -44,8 +44,7 @@
       "evidence": "建筑材"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/35/3515"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0007936",
@@ -78,8 +77,7 @@
       "source": "gb_token",
       "evidence": "建筑材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3515"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0004600",
@@ -112,7 +110,6 @@
       "evidence": "建筑材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/35/3515",
     "amap": {
       "poi_id": "B0LDXSI0PX",
       "type": "公司企业;公司;公司",
@@ -173,8 +170,7 @@
       "business_area": "",
       "adcode": "320509",
       "search_keyword": "激光切割"
-    },
-    "_bucket": "C/35/3515"
+    }
   },
   {
     "id": "CN-MFG-0002584",
@@ -206,15 +202,15 @@
       "source": "gb_token",
       "evidence": "建筑材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3515"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0031676",
     "company": "上海外安建筑材料批发仓库",
     "category": "原材料",
     "keywords": [
-      "装饰材料批发"
+      "装饰材料批发",
+      "建材批发"
     ],
     "region": {
       "province": "江苏",
@@ -256,8 +252,7 @@
       "source": "gb_token",
       "evidence": "建筑材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3515"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0035099",
@@ -306,8 +301,7 @@
       "source": "gb_token",
       "evidence": "建筑材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3515"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0098951",
@@ -548,6 +542,56 @@
       "business_area": "木渎",
       "adcode": "320506",
       "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "3515",
+      "name": "建筑材料生产专用机械制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 采矿、冶金、建筑专用设备制造 > 建筑材料生产专用机械制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0178551",
+    "company": "钢锋建筑材料交易市场",
+    "category": "原材料",
+    "keywords": [
+      "建材批发",
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "千灯镇秦峰北路左转祥西路",
+    "contact_phone": "137****6769",
+    "lat": 31.276284,
+    "lng": 121.003199,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKDBG3S",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "千灯",
+      "adcode": "320583",
+      "search_keyword": "建材批发"
     },
     "industry": {
       "code": "3515",

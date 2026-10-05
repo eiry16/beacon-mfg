@@ -46,8 +46,7 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/21/2190"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0030618",
@@ -96,8 +95,7 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/21/2190"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0030636",
@@ -146,8 +144,7 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/21/2190"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0031444",
@@ -196,8 +193,7 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/21/2190"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0032290",
@@ -248,8 +244,7 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/21/2190"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0032391",
@@ -302,8 +297,7 @@
       "source": "name",
       "evidence": "家具"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/21/2190"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0014107",
@@ -350,8 +344,7 @@
       "evidence": "家具"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/21/2190"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0088650",
@@ -1391,7 +1384,8 @@
     "company": "恒伟装饰全屋整装家具批发",
     "category": "原材料",
     "keywords": [
-      "板材批发"
+      "板材批发",
+      "装饰材料批发"
     ],
     "region": {
       "province": "江苏",
@@ -1483,5 +1477,449 @@
       "evidence": "家具"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180373",
+    "company": "富明家具仓储式批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "建元路71号",
+    "contact_phone": "0512-66153821; 139****8234",
+    "lat": 31.381726,
+    "lng": 120.620292,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0HK9H3316",
+      "type": "购物服务;家居建材市场;家具城",
+      "typecode": "060602",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180375",
+    "company": "户外家具批发部(一线峰景休闲家具)",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "新天地1号馆2楼",
+    "contact_phone": "133****0512",
+    "lat": 31.387325,
+    "lng": 120.631975,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I3BCC6TN",
+      "type": "购物服务;家居建材市场;家具城",
+      "typecode": "060602",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180377",
+    "company": "品牌库存家具批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "张家浜路18号3号楼",
+    "contact_phone": "185****8488",
+    "lat": 31.489875,
+    "lng": 120.627225,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MA9Z8IIG",
+      "type": "购物服务;家居建材市场;家具城",
+      "typecode": "060602",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320507",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180379",
+    "company": "煜邦茶家具批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "相城大道2199号金苹果家具馆一楼",
+    "contact_phone": "159****7222",
+    "lat": 31.397034,
+    "lng": 120.631285,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0L67CYJ9I",
+      "type": "购物服务;家居建材市场;家具城",
+      "typecode": "060602",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180381",
+    "company": "鑫饶实木家具批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "广登路329号",
+    "contact_phone": "待核实",
+    "lat": 31.395729,
+    "lng": 120.61739,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFMHMYMO",
+      "type": "购物服务;家居建材市场;家具城",
+      "typecode": "060602",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180382",
+    "company": "余多钱家具批发",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "广登路与齐门北大街交叉口东80米",
+    "contact_phone": "待核实",
+    "lat": 31.396075,
+    "lng": 120.616425,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LG418VZS",
+      "type": "购物服务;家居建材市场;家具城",
+      "typecode": "060602",
+      "alias": "",
+      "tag": "",
+      "keytag": "家具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0181182",
+    "company": "八达办公家具批发中心",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "元和街道建元路131号",
+    "contact_phone": "158****6828",
+    "lat": 31.381354,
+    "lng": 120.616953,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0JARH0ESC",
+      "type": "购物服务;家居建材市场;家具城",
+      "typecode": "060602",
+      "alias": "笑龙家具",
+      "tag": "",
+      "keytag": "办公家具",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "元和",
+      "adcode": "320507",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0181242",
+    "company": "太仓亿立五金建材家具城接待中心",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "城厢镇弇山西路128号",
+    "contact_phone": "待核实",
+    "lat": 31.450299,
+    "lng": 121.085023,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHUBOZ3",
+      "type": "生活服务;生活服务场所;生活服务场所",
+      "typecode": "070000",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "家具"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "company": "贵州省尚意全屋定制家具有限公司",
+    "category": "制造业",
+    "keywords": [
+      "其他家具制造",
+      "家具制造业"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "白云"
+    },
+    "address": "贵州省贵阳市白云区云城街道莲花街123号第A3-2组团14幢5层7号",
+    "contact_phone": "138****7472",
+    "lat": null,
+    "lng": null,
+    "source": "gov_list",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "note": "",
+    "gov": {
+      "uscc": "91520113MAC7UDMC2M",
+      "legal_rep": "何忠毅",
+      "ent_type": "有限责任公司(自然人投资或控股)",
+      "op_status": "存续",
+      "reg_capital_wan": 30.0,
+      "founded": "2023-02-02",
+      "reg_org": "贵阳市白云区市场监督管理局本级",
+      "gb_names": {
+        "division": "家具制造业",
+        "group": "其他家具制造",
+        "class": "其他家具制造"
+      },
+      "origin": "省平台匿名 preview（部分数据）",
+      "phone_from": "amap"
+    },
+    "status": "verified",
+    "is_template": false,
+    "industry": {
+      "code": "2190",
+      "name": "其他家具制造",
+      "level": "class",
+      "path": "C 制造业 > 家具制造业 > 其他家具制造 > 其他家具制造",
+      "confidence": "high",
+      "source": "gov_registry",
+      "evidence": "登记行业分类：家具制造业/其他家具制造/其他家具制造"
+    },
+    "is_manufacturer": true,
+    "id": "CN-MFG-0182283"
   }
 ]

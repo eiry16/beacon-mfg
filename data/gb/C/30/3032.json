@@ -46,8 +46,7 @@
       "source": "name",
       "evidence": "石材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/30/3032"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0000532",
@@ -79,8 +78,7 @@
       "source": "name",
       "evidence": "石材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/30/3032"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0008573",
@@ -127,8 +125,7 @@
       "source": "name",
       "evidence": "石材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/30/3032"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0008574",
@@ -175,8 +172,7 @@
       "source": "name",
       "evidence": "石材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/30/3032"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0008678",
@@ -223,7 +219,6 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "_bucket": "C/30/3032",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0008678/SKILL.md",
       "protocol": "skill",
@@ -278,8 +273,7 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/30/3032"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0012349",
@@ -326,8 +320,7 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/30/3032"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0012450",
@@ -374,8 +367,7 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/30/3032"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0012475",
@@ -422,8 +414,7 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/30/3032"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0012549",
@@ -470,8 +461,7 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/30/3032"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0012550",
@@ -518,8 +508,7 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/30/3032"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0017056",
@@ -566,8 +555,7 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/30/3032"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0017057",
@@ -614,8 +602,7 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/30/3032"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0019420",
@@ -662,8 +649,7 @@
       "evidence": "石材"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/30/3032"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0022628",
@@ -712,7 +698,6 @@
     },
     "is_manufacturer": true,
     "status": "verified",
-    "_bucket": "C/30/3032",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0022628/SKILL.md",
       "protocol": "skill",
@@ -769,8 +754,7 @@
       "source": "name",
       "evidence": "石材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/30/3032"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0028662",
@@ -819,8 +803,7 @@
       "source": "name",
       "evidence": "石材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/30/3032"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0028793",
@@ -876,8 +859,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/30/3032"
+    }
   },
   {
     "id": "CN-MFG-0028852",
@@ -933,8 +915,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/30/3032"
+    }
   },
   {
     "id": "CN-MFG-0028916",
@@ -991,8 +972,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/30/3032"
+    }
   },
   {
     "id": "CN-MFG-0028929",
@@ -1041,8 +1021,7 @@
       "source": "name",
       "evidence": "石材"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/30/3032"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0028978",
@@ -1099,8 +1078,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/30/3032"
+    }
   },
   {
     "id": "CN-MFG-0091749",
@@ -2432,6 +2410,104 @@
       "postcode": "",
       "business_area": "临湖",
       "adcode": "320506",
+      "search_keyword": "建材批发"
+    },
+    "industry": {
+      "code": "3032",
+      "name": "建筑用石加工",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 砖瓦、石材等建筑材料制造 > 建筑用石加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "石材"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0178249",
+    "company": "中发石业",
+    "category": "原材料",
+    "keywords": [
+      "建材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "横塘好易家家居广场2幢187号",
+    "contact_phone": "137****9935",
+    "lat": 31.264119,
+    "lng": 120.577336,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFZ079E",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材市场",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横塘",
+      "adcode": "320505",
+      "search_keyword": "建材批发"
+    },
+    "industry": {
+      "code": "3032",
+      "name": "建筑用石加工",
+      "level": "class",
+      "path": "C 制造业 > 非金属矿物制品业 > 砖瓦、石材等建筑材料制造 > 建筑用石加工",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "石业"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179384",
+    "company": "兴达石材吴江恒大建材市场39幢1号",
+    "category": "原材料",
+    "keywords": [
+      "建材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "东太湖大道6208号",
+    "contact_phone": "152****7795",
+    "lat": 31.14008,
+    "lng": 120.660662,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MDPRMZ7M",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "石材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松陵",
+      "adcode": "320509",
       "search_keyword": "建材批发"
     },
     "industry": {

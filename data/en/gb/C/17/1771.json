@@ -23,7 +23,6 @@
       "name": "床上用品制造",
       "confidence": "high"
     },
-    "_bucket": "C/17/1771",
     "source_url": "https://www.amap.com/place/B0FFKR8KXF"
   },
   {
@@ -50,7 +49,6 @@
       "name": "床上用品制造",
       "confidence": "high"
     },
-    "_bucket": "C/17/1771",
     "source_url": "https://www.amap.com/place/B0G12AKQ6V"
   },
   {
@@ -70,7 +68,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-13",
     "note_en": "",
-    "_bucket": "C/17/1771",
     "industry_en": {
       "code": "1771",
       "name_en": null,
@@ -79,5 +76,34 @@
       "confidence": "high"
     },
     "source_url": "https://www.amap.com/place/B0L627UPE7"
+  },
+  {
+    "id": "CN-MFG-0180473",
+    "company_en": "Chengxin Bedding Products Wholesale (Kwun Tong Road Store)",
+    "category": "精密机械加工",
+    "category_en": "Precision Machining",
+    "keywords_en": [
+      "Wholesale Decorative Materials"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
+    },
+    "address_en": "No. 3 Building, Second Village, North Ditch Market, North Gate",
+    "contact_phone": "139****0863",
+    "source": "public_directory",
+    "verified_at": "2026-10-04",
+    "note_en": "",
+    "industry": {
+      "code": "1771",
+      "name": "床上用品制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 家用纺织制成品制造 > 床上用品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "床上用品"
+    },
+    "industry_en": null,
+    "_bucket": "C/17/1771"
   }
 ]

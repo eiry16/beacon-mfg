@@ -29,8 +29,7 @@
       "source": "name",
       "evidence": "环保设备"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3591"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0007956",
@@ -64,7 +63,6 @@
       "evidence": "环保设备"
     },
     "is_manufacturer": true,
-    "_bucket": "C/35/3591",
     "amap": {
       "poi_id": "B0FFILIIHV",
       "type": "公司企业;公司;公司|购物服务;购物相关场所;购物相关场所",
@@ -127,8 +125,7 @@
       "source": "name",
       "evidence": "环保设备"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3591"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0008928",
@@ -176,8 +173,7 @@
       "source": "name",
       "evidence": "净化设备"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3591"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0019005",
@@ -224,8 +220,7 @@
       "evidence": "环保设备"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/35/3591"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0017162",
@@ -278,8 +273,7 @@
       "evidence": "净化设备"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/35/3591"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0004011",
@@ -326,8 +320,7 @@
       "business_area": "",
       "adcode": "330281",
       "search_keyword": "电镀"
-    },
-    "_bucket": "C/35/3591"
+    }
   },
   {
     "id": "CN-MFG-0004495",
@@ -382,8 +375,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/35/3591"
+    }
   },
   {
     "id": "CN-MFG-0004571",
@@ -416,7 +408,6 @@
       "evidence": "环保设备"
     },
     "is_manufacturer": true,
-    "_bucket": "C/35/3591",
     "amap": {
       "poi_id": "B0FFH8ULBV",
       "type": "购物服务;专卖店;专营店|公司企业;公司;公司",
@@ -477,8 +468,7 @@
       "evidence": "环保设备"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/35/3591"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0001622",
@@ -524,8 +514,7 @@
       "business_area": "桥头广场",
       "adcode": "441900",
       "search_keyword": "钣金加工"
-    },
-    "_bucket": "C/35/3591"
+    }
   },
   {
     "id": "CN-MFG-0001819",
@@ -573,8 +562,7 @@
       "business_area": "堰桥",
       "adcode": "320206",
       "search_keyword": "激光切割"
-    },
-    "_bucket": "C/35/3591"
+    }
   },
   {
     "id": "CN-MFG-0002074",
@@ -620,8 +608,7 @@
       "business_area": "",
       "adcode": "442000",
       "search_keyword": "激光切割"
-    },
-    "_bucket": "C/35/3591"
+    }
   },
   {
     "id": "CN-MFG-0023775",
@@ -670,8 +657,7 @@
       "source": "name",
       "evidence": "环保设备"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3591"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0027951",
@@ -720,8 +706,7 @@
       "source": "name",
       "evidence": "环保设备"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3591"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0028050",
@@ -771,8 +756,7 @@
       "source": "name",
       "evidence": "环保设备"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3591"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0121692",
@@ -7155,7 +7139,8 @@
     "company": "苏州韵山海企业管理有限公司",
     "category": "精密机械加工",
     "keywords": [
-      "环保设备"
+      "环保设备",
+      "检测服务"
     ],
     "region": {
       "province": "江苏",
@@ -9117,7 +9102,8 @@
     "company": "双达通风环保设备保温材料批发部",
     "category": "精密机械加工",
     "keywords": [
-      "环保设备"
+      "环保设备",
+      "装饰材料批发"
     ],
     "region": {
       "province": "江苏",
@@ -36216,6 +36202,55 @@
       "confidence": "low",
       "source": "search_keyword",
       "evidence": "精密机械加工"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179979",
+    "company": "天乐净化设备具材彩钢板",
+    "category": "原材料",
+    "keywords": [
+      "板材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "金家坝金厍路863号",
+    "contact_phone": "138****3691",
+    "lat": 31.088392,
+    "lng": 120.785568,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFDEIO1",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "木材板材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320509",
+      "search_keyword": "板材批发"
+    },
+    "industry": {
+      "code": "3591",
+      "name": "环境保护专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 环境保护专用设备制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "净化设备"
     },
     "is_manufacturer": true
   }

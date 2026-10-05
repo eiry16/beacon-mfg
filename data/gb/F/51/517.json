@@ -473,7 +473,8 @@
     "company": "南盛贸易有限公司云南水暖配件批发中心",
     "category": "批发和零售业",
     "keywords": [
-      "水暖批发"
+      "水暖批发",
+      "五金批发"
     ],
     "region": {
       "province": "江苏",
@@ -609,6 +610,55 @@
       "email": "",
       "postcode": "",
       "business_area": "周市",
+      "adcode": "320583",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "517",
+      "name": "机械设备、五金产品及电子产品批发",
+      "level": "group",
+      "path": "F 批发和零售业 > 批发业 > 机械设备、五金产品及电子产品批发",
+      "confidence": "medium",
+      "source": "gb_token",
+      "evidence": "件批发"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0180197",
+    "company": "茗品管材管件批发部(添乐福美居机电建材城店)",
+    "category": "批发和零售业",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "淀山湖镇黄浦江南路238号添乐福美居建材城六区36号",
+    "contact_phone": "待核实",
+    "lat": 31.197669,
+    "lng": 121.008255,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGJUXBR",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "管材管件",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
       "adcode": "320583",
       "search_keyword": "装饰材料批发"
     },

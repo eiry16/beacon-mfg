@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/beacon-mfg/beacon-mfg/schema/supplier.schema.json",
   "title": "BeaconMFG Supplier Record",
-  "description": "面向 Agent 检索的制造业供应商结构化记录。所有字段必须来自公开渠道，联系方式必须为企业公开渠道。数据状态字段：status（新）与 is_template（已废弃，兼容旧数据）。",
+  "description": "面向 Agent 检索的全行业供应商结构化记录（2026-10-04 起不再限于制造业）。所有字段必须来自公开渠道，联系方式必须为企业公开渠道。数据状态字段：status（新）与 is_template（已废弃，兼容旧数据）。分类体系为三级：门类（gate，GB/T 4754 门类字母）→ 行业档案（profile，skills/profiles/{profile}.json）→ 品类（category，展示标签）。",
   "type": "object",
   "required": ["id", "company", "category", "keywords", "region", "contact_phone", "source"],
   "allOf": [
@@ -24,14 +24,22 @@
   "properties": {
     "id": {
       "type": "string",
-      "description": "全局唯一编号，格式 CN-MFG-XXXXXXX（4-7位数字，支持千万级规模）",
-      "pattern": "^CN-MFG-[0-9]{4,7}$"
+      "description": "全局唯一编号，格式 CN-{门类前缀}-XXXXXXX（4-7位数字，支持千万级规模）。制造业沿用历史前缀 CN-MFG-（不迁移）；其余门类用单字母，如 CN-I-0000001",
+      "pattern": "^CN-(MFG|[A-Z])-[0-9]{4,7}$"
     },
     "company": { "type": "string", "minLength": 2, "description": "企业全称（去 POI 噪声）" },
+    "gate": {
+      "type": ["string", "null"],
+      "enum": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", null],
+      "description": "三级分类第 1 级：GB/T 4754 门类字母。可由 industry.code 确定性推导（industry_taxonomy.gate_of），无需向企业再问；industry 为空时留 null（红线：不猜）。与 L1 能力卡 envelope 的 gate 同语义。"
+    },
+    "profile": {
+      "type": ["string", "null"],
+      "description": "三级分类第 2 级：行业档案名，必须存在于 skills/profiles/{profile}.json（当前 17 个：precision-machining / sheet-metal / injection-molding / die-casting / electronics / surface-treatment / standard-parts / raw-materials / pharma-bio / equipment_assembly / custom / restaurant / retail-shop / it-service / tech-research / resident-service / entertainment）。无匹配档案时留 null，不硬贴。"
+    },
     "category": {
       "type": "string",
-      "description": "一级品类，必须存在于 data/index.json 的 categories 列表",
-      "enum": ["精密机械加工", "钣金冲压", "注塑成型", "压铸", "电子元器件", "表面处理", "标准件", "原材料"]
+      "description": "三级分类第 3 级：门类内的展示标签。**合法值域是动态计算的，本 schema 不再硬编码 enum**（硬编码必然与动态注册表漂移——能力码表已因此改为 x-enum-from 单源，见 skills/schema/cap-codes/）：合法值 = 采购品类名（data/index.json 的 categories，当前 9 个制造业品类）∪ 门类兜底名（skills/schema/gates/*.json 的 gate_name，非制造业企业无更细品类时用它占位，如「住宿和餐饮业」）∪ profile 展示名。可执行校验在 scripts/validate.py（与索引/门类注册表实时对齐）；检索主键是 industry.code（GB/T 4754）与 L1 卡 caps_index，category 只作展示。"
     },
     "keywords": {
       "type": "array",
@@ -51,20 +59,47 @@
     "lat": { "type": ["number", "null"], "description": "纬度（LBS 检索预留）" },
     "lng": { "type": ["number", "null"], "description": "经度（LBS 检索预留）" },
     "website": { "type": ["string", "null"], "format": "uri", "description": "企业官网（公开渠道；认领后解锁）" },
-    "contact_phone": { "type": "string", "minLength": 5, "description": "公开联系电话。模板数据允许占位符，真实数据必须为可核实的企业公开电话；unverified_poi 状态允许「待核实」" },
+    "contact_phone": {
+      "type": "string",
+      "anyOf": [
+        { "minLength": 5, "description": "可核实的企业公开电话" },
+        { "const": "", "description": "空串 = 公开渠道没拿到号码（status=unverified_poi 的常态，政府建档名录就普遍没有电话）。红线：宁可留空，不许拿猜的号充数" },
+        { "const": "待核实", "description": "旧数据的占位写法，语义等于空串（unverified_poi）。新数据一律写空串；读取端两种都按「无号」处理" }
+      ],
+      "description": "公开联系电话。有号必须是可核实的企业公开电话；拿不到就留空串并置 status=unverified_poi。2026-10-05 修正：此前硬要求 minLength=5，导致政府建档的 30 条无电话记录（以及大量 POI 无号记录）一律校验失败——空值是被允许的事实，不是错误"
+    },
     "contact_email": { "type": ["string", "null"], "description": "公开邮箱（可选；认领后解锁）" },
     "address": { "type": ["string", "null"], "description": "注册/经营地址（公开）" },
-    "founded": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2030, "description": "成立年份（可选）" },
+    "founded": {
+      "anyOf": [
+        { "type": "integer", "minimum": 1900, "maximum": 2030, "description": "成立年份" },
+        { "type": "string", "format": "date", "description": "成立日期 YYYY-MM-DD（工商/登记数据给的是完整日期，写入端原样保留，不截断成年份——截断等于丢信息）" },
+        { "type": "null" }
+      ],
+      "description": "成立年份或成立日期（可选）。2026-10-05 修正：此前只允许 integer 年份，与写入端写日期字符串的事实不符"
+    },
     "scale": { "type": ["string", "null"], "enum": ["<50人", "50-100人", "100-500人", "500-1000人", ">1000人", null], "description": "规模（可选）" },
     "certifications": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "资质标签，如 高新技术企业 / ISO9001 / 专精特新（可选；认领后解锁）"
+      "description": "资质标签，如 高新技术企业 / ISO9001 / 专精特新（可选；认领后解锁）。元素两种形态并存：纯字符串（历史数据），或 {name, evidence} 对象（认证申报时企业自报 + 证据档，evidence=self_declared 表示自述未经第三方核验）。2026-10-05 修正：此前只允许字符串，与写入端不符",
+      "items": {
+        "anyOf": [
+          { "type": "string", "minLength": 1 },
+          {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1, "description": "资质名，如 ISO9001" },
+              "evidence": { "type": "string", "description": "证据档，如 self_declared=企业自述未核验 / certificate=有证书佐证" }
+            }
+          }
+        ]
+      }
     },
     "source": {
       "type": "string",
-      "enum": ["gov_list", "company_website", "public_directory", "exhibition", "template"],
-      "description": "数据来源渠道。取值说明：\n- public_directory → 公开地图/工商 POI 名录（当前数据 100% 为此来源）\n- gov_list → 政府公开名单（专精特新/高企等）\n- company_website → 企业官网\n- exhibition → 展会/协会名录\n- template → 示例占位数据"
+      "enum": ["gov_list", "company_website", "public_directory", "exhibition", "template", "certification"],
+      "description": "数据来源渠道。取值说明：\n- public_directory → 公开地图/工商 POI 名录\n- gov_list → 政府公开名单（专精特新/高企/政府开放平台名录）\n- company_website → 企业官网\n- exhibition → 展会/协会名录\n- certification → 企业自主提交认证申请、经平台核验后入库（certify_writeback 回流）\n- template → 示例占位数据"
     },
     "source_url": { "type": ["string", "null"], "description": "数据来源链接（可溯源）。去出处策略下可为空，不再点名数据源。" },
     "status": {
@@ -78,7 +113,7 @@
       "description": "已废弃，请使用 status 字段。本字段保留用于兼容旧数据，语义与 status 对齐：true=非verified（unverified_poi 或 template），false=verified。注：本文档 2026-09-28 更正——旧描述「true=template，false=verified或unverified_poi」与写入端及全库数据不符（scripts/fetch_gaode_poi.py、scripts/dedup_gb.py 均写 is_template = status != 'verified'；全库 38,264 条 is_template=true 对应 status=unverified_poi，status=template 为 0 条）"
     },
     "verified_at": {
-      "type": "string",
+      "type": ["string", "null"],
       "format": "date",
       "deprecated": true,
       "description": "已废弃，请使用 imported_at / last_verified_at。旧数据的核实日期（实际为导入日期），格式 YYYY-MM-DD"
@@ -122,14 +157,19 @@
     },
     "industry": {
       "type": ["object", "null"],
-      "description": "GB/T 4754-2017 国民经济行业分类（制造业子集 + F51 批发业）。null = 未归类：公司名无行业信号，或属于本数据集不覆盖的门类——不得硬贴标签。完整代码表见 scripts/industry_taxonomy.py",
+      "description": "GB/T 4754-2017 国民经济行业分类（全行业，不限制造业）。null = 未归类：公司名无行业信号，或属于本数据集不覆盖的门类——不得硬贴标签。完整代码表见 scripts/industry_taxonomy.py",
       "required": ["code", "name", "confidence"],
       "properties": {
-        "code": { "type": "string", "pattern": "^[0-9]{4}$", "description": "国标小类代码（4 位）" },
-        "name": { "type": "string", "description": "国标小类中文名，须与代码表一致" },
+        "code": { "type": "string", "pattern": "^[0-9]{2,4}$", "description": "国标代码。4 位小类 / 3 位中类 / 2 位大类——证据只够到哪一级就落到哪一级（与 level 字段自洽）" },
+        "name": { "type": "string", "description": "国标类别中文名，须与代码表一致" },
         "path": { "type": "string", "description": "门类 > 大类 > 中类 > 小类 全路径" },
+        "level": {
+          "type": "string",
+          "enum": ["class", "group", "division", "gate"],
+          "description": "分类置信层级：class=4 位小类 / group=3 位中类 / division=2 位大类 / gate=仅门类。证据只够到中类/大类时如实降级，硬判到 4 位等于编造"
+        },
         "confidence": { "type": "string", "enum": ["high", "medium", "low"], "description": "high=公司名直接命中；medium/low=关键词或品类兜底推断" },
-        "source": { "type": "string", "enum": ["name", "keyword", "search_keyword", "category_fallback"], "description": "证据来源：name 最强，search_keyword 仅补位" },
+        "source": { "type": "string", "enum": ["name", "keyword", "search_keyword", "category_fallback", "gb_token", "company_website", "certification", "gov_数据目录"], "description": "证据来源：name 最强；gb_token=公司名中的国标行业词直接命中；search_keyword 仅补位；certification=企业认证申报时自报并经核验；gov_数据目录=政府登记的行业分类（gov_import 建档，与 name 同为高置信证据）。2026-10-05 补入 gov_数据目录（政府建档 30 条在写，schema 原枚举里没有）" },
         "evidence": { "type": "string", "description": "命中的具体词，便于人工复核" }
       }
     },
@@ -153,6 +193,56 @@
         "business_area": { "type": "string" },
         "adcode": { "type": "string" },
         "search_keyword": { "type": "string", "description": "抓到这条记录时用的搜索词（弱证据）" }
+      }
+    },
+    "cl": {
+      "type": "string",
+      "enum": ["L0", "L1", "L2", "L3"],
+      "description": "认证灯牌等级（对外叫「灯牌」，定义见 docs/CERTIFICATION_V1.md §1）：L0=公开名录自动收录未核验 / L1=主体已认领，信息自述 / L2=营业执照核验+材料齐备+人工复核 / L3=第三方实地验厂或客户案例佐证。由 server/routers/certification.py 的 evaluate_badge() 逐级算出，**没有 set_badge 接口**——改等级只能改证据。缺失按 L0；灯牌不是评级，不代表这家厂好不好。2026-10-05 补入 schema（写入端 certify_writeback.py 早已在写，全库 3074 条）"
+    },
+    "certification": {
+      "type": ["object", "null"],
+      "description": "认证存证的公开摘要（企业认证申请经平台核验后由 certify_writeback.py 写入，全库 2 条试点）。null / 缺失 = 未认证，是常态不是错误。2026-10-05 补入 schema",
+      "required": ["app_id", "badge", "issued_at", "expires_at"],
+      "properties": {
+        "app_id": { "type": "string", "description": "认证申请号，如 CERT-20260923-MFG-0020317。为空则视为无存证" },
+        "badge": { "type": "string", "enum": ["L0", "L1", "L2", "L3"], "description": "存证载明的灯牌等级，应与同记录的 cl 一致" },
+        "issued_at": { "type": "string", "format": "date", "description": "签发日期 YYYY-MM-DD" },
+        "expires_at": { "type": "string", "format": "date", "description": "有效截止日期 YYYY-MM-DD。过期≠降级，降级由服务端规则判" },
+        "reviewer": { "type": "string", "description": "复核人（平台内部标识）" },
+        "profile": { "type": ["string", "null"], "description": "认证时归到的行业档案名" },
+        "completeness": { "type": ["number", "null"], "minimum": 0, "maximum": 100, "description": "材料完整度百分比（0–100）" }
+      }
+    },
+    "gov": {
+      "type": ["object", "null"],
+      "description": "政府信源登记字段（source=gov_list 的记录才有，由 scripts/gov_import.py 从政府开放平台/公开名单建档时写入，全库 30 条试点）。**含统一社会信用代码 uscc，是最强的主体标识**。字段白名单之外的列（PII）在导入时即被丢弃并审计，见 gov_import.py 的 FIELD_MAP。2026-10-05 补入 schema（此前写入端在写、schema 未定义，additionalProperties:false 会让这些记录校验不通过）",
+      "properties": {
+        "uscc": { "type": ["string", "null"], "description": "统一社会信用代码（18 位，校验位已验）。判重与主体核实的锚点" },
+        "legal_rep": { "type": ["string", "null"], "description": "法定代表人" },
+        "ent_type": { "type": ["string", "null"], "description": "主体类型，如 有限责任公司 / 个体工商户（个体户在导入时过滤）" },
+        "op_status": { "type": ["string", "null"], "description": "登记经营状态，如 存续 / 在业。注销、吊销、迁出的在导入时过滤" },
+        "reg_capital_wan": { "type": ["number", "null"], "description": "注册资本（万元）" },
+        "founded": {
+          "anyOf": [{ "type": "integer", "minimum": 1900, "maximum": 2030 }, { "type": "string", "format": "date" }, { "type": "null" }],
+          "description": "成立年份或成立日期。登记数据给完整日期时原样保留，不截断成年份"
+        },
+        "reg_org": { "type": ["string", "null"], "description": "登记机关" },
+        "gb_names": {
+          "type": ["object", "null"],
+          "description": "登记的行业分类名（原文），由 GbMapper 映射到 GB/T 4754 代码",
+          "properties": {
+            "division": { "type": ["string", "null"], "description": "门类原名" },
+            "group": { "type": ["string", "null"], "description": "大类原名" },
+            "class": { "type": ["string", "null"], "description": "小类原名" }
+          }
+        },
+        "origin": { "type": ["string", "null"], "description": "信源说明，如「省平台匿名 preview」。仅内部溯源用，不对外展示" },
+        "phone_from": {
+          "type": ["string", "null"],
+          "enum": ["gov_数据目录", "amap", "none", null],
+          "description": "号码来源（2026-10-05 增补）：gov_数据目录=政府名录自带 / amap=建档后由高德 POI 反查补的（高德优先，查到即覆盖政府号）/ none=两边都没有，contact_phone 留空。留痕的意义是把「没号」与「没查过」区分开"
+        }
       }
     },
     "note": { "type": ["string", "null"], "description": "备注，如主营特色、交期、最小起订（公开信息，不编造）" }

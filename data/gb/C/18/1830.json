@@ -46,8 +46,7 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1830"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0035443",
@@ -96,8 +95,7 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1830"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0006428",
@@ -144,8 +142,7 @@
       "business_area": "",
       "adcode": "320281",
       "search_keyword": "弹簧"
-    },
-    "_bucket": "C/18/1830"
+    }
   },
   {
     "id": "CN-MFG-0027208",
@@ -202,8 +199,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/18/1830"
+    }
   },
   {
     "id": "CN-MFG-0028674",
@@ -252,8 +248,7 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1830"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0028823",
@@ -309,8 +304,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/18/1830"
+    }
   },
   {
     "id": "CN-MFG-0028921",
@@ -359,8 +353,7 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1830"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0040323",
@@ -409,8 +402,7 @@
       "source": "name",
       "evidence": "服饰"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1830"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0070120",
@@ -559,5 +551,56 @@
       "evidence": "服饰"
     },
     "is_manufacturer": true
+  },
+  {
+    "company": "贵州海伦实业发展有限公司",
+    "category": "制造业",
+    "keywords": [
+      "服饰制造",
+      "纺织服装、服饰业"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "白云"
+    },
+    "address": "贵州省贵阳市白云区沙文镇沙文中街8号",
+    "contact_phone": "",
+    "lat": null,
+    "lng": null,
+    "source": "gov_list",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "note": "",
+    "gov": {
+      "uscc": "91520113MAC6YF1P1F",
+      "legal_rep": "张顶全",
+      "ent_type": "有限责任公司(自然人投资或控股)",
+      "op_status": "存续",
+      "reg_capital_wan": 880.0,
+      "founded": "2023-02-13",
+      "reg_org": "贵阳市白云区市场监督管理局本级",
+      "gb_names": {
+        "division": "纺织服装、服饰业",
+        "group": "服饰制造",
+        "class": "服饰制造"
+      },
+      "origin": "省平台匿名 preview（部分数据）"
+    },
+    "status": "unverified_poi",
+    "is_template": true,
+    "industry": {
+      "code": "1830",
+      "name": "服饰制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 服饰制造 > 服饰制造",
+      "confidence": "high",
+      "source": "gov_registry",
+      "evidence": "登记行业分类：纺织服装、服饰业/服饰制造/服饰制造"
+    },
+    "is_manufacturer": true,
+    "id": "CN-MFG-0182284"
   }
 ]

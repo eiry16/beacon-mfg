@@ -44,8 +44,7 @@
       "business_area": "新塘",
       "adcode": "440118",
       "search_keyword": "铝合金"
-    },
-    "_bucket": "C/26/2641"
+    }
   },
   {
     "id": "CN-MFG-0007958",
@@ -95,8 +94,7 @@
       "business_area": "",
       "adcode": "330226",
       "search_keyword": "铝合金"
-    },
-    "_bucket": "C/26/2641"
+    }
   },
   {
     "id": "CN-MFG-0015447",
@@ -143,8 +141,7 @@
       "evidence": "涂料"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/26/2641"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0008537",
@@ -191,8 +188,7 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/26/2641"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0004880",
@@ -224,8 +220,7 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/26/2641"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0004980",
@@ -257,8 +252,7 @@
       "source": "gb_token",
       "evidence": "涂料"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/26/2641"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0013691",
@@ -305,8 +299,7 @@
       "evidence": "涂料"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/26/2641"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0013761",
@@ -353,8 +346,7 @@
       "evidence": "涂料"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/26/2641"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0017369",
@@ -401,8 +393,7 @@
       "evidence": "涂料"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/26/2641"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0017389",
@@ -457,8 +448,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/26/2641"
+    }
   },
   {
     "id": "CN-MFG-0019825",
@@ -505,8 +495,7 @@
       "evidence": "涂料"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/26/2641"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0019827",
@@ -561,8 +550,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/26/2641"
+    }
   },
   {
     "id": "CN-MFG-0110270",
@@ -1703,5 +1691,152 @@
       ],
       "verified": false
     }
+  },
+  {
+    "id": "CN-MFG-0178889",
+    "company": "优邦油漆涂料",
+    "category": "原材料",
+    "keywords": [
+      "建材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "相城区"
+    },
+    "address": "问渡路25号展望建材市场",
+    "contact_phone": "138****3089",
+    "lat": 31.433725,
+    "lng": 120.439475,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IU6OCTJ6",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "望亭",
+      "adcode": "320507",
+      "search_keyword": "建材批发"
+    },
+    "industry": {
+      "code": "2641",
+      "name": "涂料制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 涂料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "涂料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179371",
+    "company": "鸿森油漆涂料防水批发(恒大国际装饰广场店)",
+    "category": "原材料",
+    "keywords": [
+      "建材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "恒大建材市场17幢1-2号",
+    "contact_phone": "158****2389",
+    "lat": 31.140877,
+    "lng": 120.661561,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFPGCQB",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "松陵",
+      "adcode": "320509",
+      "search_keyword": "建材批发"
+    },
+    "industry": {
+      "code": "2641",
+      "name": "涂料制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 涂料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "涂料"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179995",
+    "company": "油漆涂料防水批发(苏州善成建筑材料有限公司)",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "横塘好易家家居装饰广场3栋162-163号",
+    "contact_phone": "待核实",
+    "lat": 31.264819,
+    "lng": 120.578556,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0LKCS1KML",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "涂料",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横塘",
+      "adcode": "320505",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "2641",
+      "name": "涂料制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 涂料、油墨、颜料及类似产品制造 > 涂料制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "涂料"
+    },
+    "is_manufacturer": true
   }
 ]

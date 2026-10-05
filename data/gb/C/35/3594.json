@@ -44,8 +44,7 @@
       "evidence": "饮食"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/35/3594"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0032726",
@@ -94,8 +93,7 @@
       "source": "gb_token",
       "evidence": "饮食"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3594"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0039646",
@@ -147,8 +145,7 @@
       "source": "gb_token",
       "evidence": "饮食"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3594"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0028917",
@@ -197,8 +194,7 @@
       "source": "gb_token",
       "evidence": "饮食"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3594"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0045755",
@@ -247,8 +243,7 @@
       "source": "gb_token",
       "evidence": "饮食"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/35/3594"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0078685",
@@ -530,6 +525,104 @@
       "postcode": "",
       "business_area": "三香路沿线",
       "adcode": "320508",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "3594",
+      "name": "商业、饮食、服务专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 商业、饮食、服务专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "饮食"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180489",
+    "company": "马福兴一村饮食店",
+    "category": "精密机械加工",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "姑苏区"
+    },
+    "address": "园区(地下车库出口处)",
+    "contact_phone": "189****2269",
+    "lat": 31.299878,
+    "lng": 120.580188,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B02000HSPW",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "生煎",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "三香路沿线",
+      "adcode": "320508",
+      "search_keyword": "中餐馆"
+    },
+    "industry": {
+      "code": "3594",
+      "name": "商业、饮食、服务专用设备制造",
+      "level": "class",
+      "path": "C 制造业 > 专用设备制造业 > 环保、邮政、社会公共服务及其他专用设备制造 > 商业、饮食、服务专用设备制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "饮食"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0181458",
+    "company": "凉来西饮食",
+    "category": "精密机械加工",
+    "keywords": [
+      "中餐馆"
+    ],
+    "region": {
+      "province": "浙江",
+      "city": "嘉兴",
+      "district": "嘉善县"
+    },
+    "address": "罗星街道子胥南路孔雀城麓园25-11号",
+    "contact_phone": "159****3018",
+    "lat": 30.811263,
+    "lng": 120.904319,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFLJ396L",
+      "type": "餐饮服务;中餐厅;中餐厅",
+      "typecode": "050100",
+      "alias": "",
+      "tag": "牛肉汤,荷包蛋,烧麦,拌面",
+      "keytag": "中餐",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "330421",
       "search_keyword": "中餐馆"
     },
     "industry": {

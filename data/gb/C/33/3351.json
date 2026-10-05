@@ -29,8 +29,7 @@
       "source": "gb_token",
       "evidence": "建筑"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0003594",
@@ -62,8 +61,7 @@
       "source": "gb_token",
       "evidence": "建筑"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0003618",
@@ -96,7 +94,6 @@
       "evidence": "建筑"
     },
     "is_manufacturer": true,
-    "_bucket": "C/33/3351",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0003618/SKILL.md",
       "protocol": "skill",
@@ -151,8 +148,7 @@
       "evidence": "建筑"
     },
     "is_manufacturer": true,
-    "status": "unverified_poi",
-    "_bucket": "C/33/3351"
+    "status": "unverified_poi"
   },
   {
     "id": "CN-MFG-0004941",
@@ -199,8 +195,7 @@
       "business_area": "",
       "adcode": "441324",
       "search_keyword": "喷涂"
-    },
-    "_bucket": "C/33/3351"
+    }
   },
   {
     "id": "CN-MFG-0022576",
@@ -247,8 +242,7 @@
       "evidence": "建筑"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/33/3351"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0028109",
@@ -305,8 +299,7 @@
         "catalog"
       ],
       "verified": false
-    },
-    "_bucket": "C/33/3351"
+    }
   },
   {
     "id": "CN-MFG-0030428",
@@ -355,8 +348,7 @@
       "source": "gb_token",
       "evidence": "建筑"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0030878",
@@ -405,8 +397,7 @@
       "source": "gb_token",
       "evidence": "建筑"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0030888",
@@ -455,8 +446,7 @@
       "source": "gb_token",
       "evidence": "建筑"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0031293",
@@ -505,8 +495,7 @@
       "source": "gb_token",
       "evidence": "建筑"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0031365",
@@ -555,8 +544,7 @@
       "source": "gb_token",
       "evidence": "建筑"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0032125",
@@ -605,8 +593,7 @@
       "source": "gb_token",
       "evidence": "建筑"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0044595",
@@ -656,8 +643,7 @@
       "source": "gb_token",
       "evidence": "建筑"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3351"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0104804",
@@ -1444,7 +1430,8 @@
     "company": "建鑫旺建筑模板木方批发",
     "category": "原材料",
     "keywords": [
-      "板材批发"
+      "板材批发",
+      "装饰材料批发"
     ],
     "region": {
       "province": "江苏",
@@ -1935,7 +1922,8 @@
     "company": "木百年建筑木方模板批发",
     "category": "原材料",
     "keywords": [
-      "板材批发"
+      "板材批发",
+      "装饰材料批发"
     ],
     "region": {
       "province": "江苏",
@@ -2015,6 +2003,55 @@
       "postcode": "",
       "business_area": "周市",
       "adcode": "320583",
+      "search_keyword": "板材批发"
+    },
+    "industry": {
+      "code": "3351",
+      "name": "建筑、家具用金属配件制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 建筑、家具用金属配件制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "建筑"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179602",
+    "company": "小李建筑林方模版",
+    "category": "原材料",
+    "keywords": [
+      "板材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "繁荣路852号",
+    "contact_phone": "175****7341",
+    "lat": 31.531856,
+    "lng": 120.687504,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0MA4HTXM5",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "木材板材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320581",
       "search_keyword": "板材批发"
     },
     "industry": {

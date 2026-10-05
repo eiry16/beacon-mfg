@@ -1,7 +1,7 @@
 [
   {
     "id": "CN-MFG-0026980",
-    "company_en": "Changzhou Hongying Machinery Manufacturing Co., Ltd.",
+    "company_en": "Changzhou Huoying Machinery Manufacturing Co., Ltd.",
     "category": "精密机械加工",
     "category_en": "Precision Machining",
     "keywords_en": [
@@ -25,13 +25,7 @@
       "source": "gb_token",
       "evidence": "影机械"
     },
-    "industry_en": {
-      "code": "3471",
-      "name_en": null,
-      "level": "class",
-      "name": "电影机械制造",
-      "confidence": "high"
-    },
+    "industry_en": null,
     "_bucket": "C/34/3471"
   },
   {
@@ -51,7 +45,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-16",
     "note_en": "",
-    "_bucket": "C/34/3471",
     "industry": {
       "code": "3471",
       "name": "电影机械制造",

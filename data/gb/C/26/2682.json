@@ -97,5 +97,54 @@
       "evidence": "化妆品"
     },
     "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180759",
+    "company": "CAF美美日化肌肤管理中心",
+    "category": "原材料",
+    "keywords": [
+      "美容"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "吴江区"
+    },
+    "address": "江陵街道花港路550号",
+    "contact_phone": "159****6048",
+    "lat": 31.206209,
+    "lng": 120.652053,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKQWGP1",
+      "type": "生活服务;美容美发店;美容美发店|购物服务;个人用品/化妆品店;其它个人用品店",
+      "typecode": "071100|061400",
+      "alias": "",
+      "tag": "",
+      "keytag": "美容",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320509",
+      "search_keyword": "美容"
+    },
+    "industry": {
+      "code": "2682",
+      "name": "化妆品制造",
+      "level": "class",
+      "path": "C 制造业 > 化学原料和化学制品制造业 > 日用化学产品制造 > 化妆品制造",
+      "confidence": "medium",
+      "source": "name",
+      "evidence": "日化"
+    },
+    "is_manufacturer": true
   }
 ]

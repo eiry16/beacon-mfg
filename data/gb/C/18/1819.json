@@ -46,8 +46,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0032392",
@@ -101,7 +100,6 @@
       "evidence": "服装"
     },
     "is_manufacturer": true,
-    "_bucket": "C/18/1819",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0032392/SKILL.md",
       "protocol": "skill",
@@ -141,8 +139,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0002622",
@@ -174,8 +171,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0002625",
@@ -207,8 +203,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0002630",
@@ -240,8 +235,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0002632",
@@ -273,8 +267,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0002660",
@@ -306,8 +299,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0009608",
@@ -356,8 +348,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0000555",
@@ -389,8 +380,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0008121",
@@ -438,8 +428,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0008514",
@@ -486,8 +475,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0012231",
@@ -534,8 +522,7 @@
       "evidence": "服装"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/18/1819"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0029077",
@@ -584,8 +571,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0029166",
@@ -633,8 +619,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0062890",
@@ -683,8 +668,7 @@
       "source": "name",
       "evidence": "服装"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/18/1819"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0102038",
@@ -1429,6 +1413,105 @@
       "confidence": "high",
       "source": "name",
       "evidence": "制衣"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0178499",
+    "company": "诚信服装干洗",
+    "category": "制造业",
+    "keywords": [
+      "洗衣",
+      "洗衣店"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "青莲路花园角21号",
+    "contact_phone": "139****4401",
+    "lat": 31.621379,
+    "lng": 120.748896,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFKPPBUY",
+      "type": "生活服务;洗衣店;洗衣店",
+      "typecode": "071500",
+      "alias": "",
+      "tag": "",
+      "keytag": "洗衣店",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
+      "search_keyword": "洗衣"
+    },
+    "industry": {
+      "code": "1819",
+      "name": "其他机织服装制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 机织服装制造 > 其他机织服装制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服装"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180925",
+    "company": "服装城协税护税五金市场开票点",
+    "category": "原材料",
+    "keywords": [
+      "五金批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "常熟"
+    },
+    "address": "白雪路9附近",
+    "contact_phone": "待核实",
+    "lat": 31.632525,
+    "lng": 120.745284,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFFYXAUU",
+      "type": "政府机构及社会团体;政府机关;国家级机关及事业单位",
+      "typecode": "130101",
+      "alias": "",
+      "tag": "",
+      "keytag": "五金",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "常熟",
+      "adcode": "320581",
+      "search_keyword": "五金批发"
+    },
+    "industry": {
+      "code": "1819",
+      "name": "其他机织服装制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织服装、服饰业 > 机织服装制造 > 其他机织服装制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "服装"
     },
     "is_manufacturer": true
   }

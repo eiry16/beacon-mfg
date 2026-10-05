@@ -16,7 +16,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/27/2720",
     "industry": {
       "code": "2720",
       "name": "化学药品制剂制造",
@@ -52,7 +51,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/27/2720",
     "industry": {
       "code": "2720",
       "name": "化学药品制剂制造",
@@ -89,7 +87,6 @@
     "source": "public_directory",
     "verified_at": "2026-09-14",
     "note_en": "",
-    "_bucket": "C/27/2720",
     "industry": {
       "code": "2720",
       "name": "化学药品制剂制造",
@@ -140,7 +137,35 @@
       "level": "class",
       "name": "化学药品制剂制造",
       "confidence": "high"
+    }
+  },
+  {
+    "id": "CN-MFG-0178310",
+    "company_en": "Suzhou Pharmaceutical Inspection and Testing Research Center Biologics Testing Base",
+    "category": "医药与生物制品",
+    "category_en": "Pharma & Biological Products",
+    "keywords_en": [
+      "Inspection Technology"
+    ],
+    "region": {
+      "province": "Jiangsu",
+      "city": "Suzhou"
     },
+    "address_en": "No. 4, Floor 4, Building 4, Nanotechnology Park, Suzhou Industrial Park",
+    "contact_phone": "Pending verification",
+    "source": "public_directory",
+    "verified_at": "2026-10-04",
+    "note_en": "",
+    "industry": {
+      "code": "2720",
+      "name": "化学药品制剂制造",
+      "level": "class",
+      "path": "C 制造业 > 医药制造业 > 化学药品制剂制造 > 化学药品制剂制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "药品"
+    },
+    "industry_en": null,
     "_bucket": "C/27/2720"
   }
 ]

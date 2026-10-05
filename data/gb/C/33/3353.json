@@ -45,8 +45,7 @@
       "evidence": "安全"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/33/3353"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0031279",
@@ -95,8 +94,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0031386",
@@ -145,8 +143,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034241",
@@ -195,8 +192,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034242",
@@ -245,8 +241,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034453",
@@ -295,8 +290,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0034654",
@@ -345,7 +339,6 @@
       "evidence": "安全"
     },
     "is_manufacturer": true,
-    "_bucket": "C/33/3353",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034654/SKILL.md",
       "protocol": "skill",
@@ -402,7 +395,6 @@
       "evidence": "安全"
     },
     "is_manufacturer": true,
-    "_bucket": "C/33/3353",
     "agent": {
       "skill_url": "skills/vendors/CN-MFG-0034668/SKILL.md",
       "protocol": "skill",
@@ -459,8 +451,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0035079",
@@ -509,8 +500,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0035081",
@@ -559,8 +549,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0035186",
@@ -608,8 +597,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0035300",
@@ -658,8 +646,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0035914",
@@ -708,8 +695,7 @@
       "source": "gb_token",
       "evidence": "安全"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/33/3353"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0095369",
@@ -2063,6 +2049,55 @@
       "business_area": "",
       "adcode": "320581",
       "search_keyword": "检测技术"
+    },
+    "industry": {
+      "code": "3353",
+      "name": "安全、消防用金属制品制造",
+      "level": "class",
+      "path": "C 制造业 > 金属制品业 > 建筑、安全用金属制品制造 > 安全、消防用金属制品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "安全"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0178252",
+    "company": "鸿创安全门(好易家4幢店)",
+    "category": "原材料",
+    "keywords": [
+      "建材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "好易家建材市场4幢2楼271号",
+    "contact_phone": "177****8839; 189****2702",
+    "lat": 31.26513,
+    "lng": 120.578057,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0IUU99PH9",
+      "type": "购物服务;家居建材市场;建材五金市场",
+      "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "门类",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "横塘",
+      "adcode": "320505",
+      "search_keyword": "建材批发"
     },
     "industry": {
       "code": "3353",

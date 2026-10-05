@@ -46,8 +46,7 @@
       "source": "name",
       "evidence": "胶合板"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/20/2029"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0030990",
@@ -98,8 +97,7 @@
       "source": "name",
       "evidence": "胶合板"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/20/2029"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0031858",
@@ -148,15 +146,15 @@
       "source": "name",
       "evidence": "人造板"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/20/2029"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0175325",
     "company": "太仓正学胶合板批发(上海闵行区西南木材市场)",
     "category": "原材料",
     "keywords": [
-      "板材批发"
+      "板材批发",
+      "装饰材料批发"
     ],
     "region": {
       "province": "江苏",
@@ -179,6 +177,55 @@
       "poi_id": "B0H6UHST6O",
       "type": "购物服务;家居建材市场;建材五金市场",
       "typecode": "060603",
+      "alias": "",
+      "tag": "",
+      "keytag": "建材",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "",
+      "adcode": "320585",
+      "search_keyword": "板材批发"
+    },
+    "industry": {
+      "code": "2029",
+      "name": "其他人造板制造",
+      "level": "class",
+      "path": "C 制造业 > 木材加工和木、竹、藤、棕、草制品业 > 人造板制造 > 其他人造板制造",
+      "confidence": "high",
+      "source": "name",
+      "evidence": "胶合板"
+    },
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0179867",
+    "company": "太仓中庆国际批发建筑模板胶合板",
+    "category": "原材料",
+    "keywords": [
+      "板材批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "平江路666号6库",
+    "contact_phone": "153****2555",
+    "lat": 31.635274,
+    "lng": 121.167938,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0I0M71WSX",
+      "type": "公司企业;公司企业;公司企业",
+      "typecode": "170000",
       "alias": "",
       "tag": "",
       "keytag": "建材",

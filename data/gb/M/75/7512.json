@@ -96,5 +96,54 @@
       "evidence": "生物技术"
     },
     "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0179105",
+    "company": "中美冠科生物技术(太仓)有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "检测技术"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "娄东街道北京西路6号科技创业园D幢",
+    "contact_phone": "0512-53879999",
+    "lat": 31.479563,
+    "lng": 121.093288,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020019L1N",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "CROWNBIO",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "检测技术"
+    },
+    "industry": {
+      "code": "7512",
+      "name": "生物技术推广服务",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 科技推广和应用服务业 > 技术推广服务 > 生物技术推广服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "生物技术"
+    },
+    "is_manufacturer": false
   }
 ]

@@ -46,8 +46,7 @@
       "source": "gb_token",
       "evidence": "文化体育"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0035369",
@@ -96,8 +95,7 @@
       "source": "gb_token",
       "evidence": "文化体育"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0041197",
@@ -146,8 +144,7 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0044740",
@@ -196,8 +193,7 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0044766",
@@ -246,8 +242,7 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0047868",
@@ -296,8 +291,7 @@
       "source": "gb_token",
       "evidence": "文化体育"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0048341",
@@ -346,8 +340,7 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0069278",
@@ -398,8 +391,7 @@
       "source": "gb_token",
       "evidence": "动服务"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0067814",
@@ -449,8 +441,7 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0067894",
@@ -500,8 +491,7 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0067896",
@@ -551,8 +541,7 @@
       "source": "gb_token",
       "evidence": "文化体"
     },
-    "is_manufacturer": false,
-    "_bucket": "R/90/9051"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0094620",
@@ -648,6 +637,56 @@
       "business_area": "春申",
       "adcode": "310112",
       "search_keyword": "球馆"
+    },
+    "industry": {
+      "code": "9051",
+      "name": "文化体育娱乐活动与经纪代理服务文化活动服务",
+      "level": "class",
+      "path": "R 文化、体育和娱乐业 > 娱乐业 > 文化体育娱乐活动与经纪代理服务文化活动服务 > 文化体育娱乐活动与经纪代理服务文化活动服务",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "文化体育"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178664",
+    "company": "巴城文化体育活动中心",
+    "category": "文化、体育和娱乐业",
+    "keywords": [
+      "健身房",
+      "健身中心"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "昆山"
+    },
+    "address": "巴城镇湖亭西路568号",
+    "contact_phone": "180****5397",
+    "lat": 31.45081,
+    "lng": 120.866368,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B020015VGD",
+      "type": "体育休闲服务;运动场馆;运动场所",
+      "typecode": "080100",
+      "alias": "",
+      "tag": "",
+      "keytag": "综合场馆",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "巴城",
+      "adcode": "320583",
+      "search_keyword": "健身房"
     },
     "industry": {
       "code": "9051",

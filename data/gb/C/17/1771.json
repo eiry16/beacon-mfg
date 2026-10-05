@@ -44,8 +44,7 @@
       "source": "gb_token",
       "evidence": "床上用品"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/17/1771"
+    "is_manufacturer": true
   },
   {
     "id": "CN-MFG-0018246",
@@ -92,8 +91,7 @@
       "evidence": "床上用品"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/17/1771"
+    "status": "verified"
   },
   {
     "id": "CN-MFG-0028537",
@@ -142,7 +140,55 @@
       "source": "gb_token",
       "evidence": "床上用品"
     },
-    "is_manufacturer": true,
-    "_bucket": "C/17/1771"
+    "is_manufacturer": true
+  },
+  {
+    "id": "CN-MFG-0180473",
+    "company": "诚信床上用品批发(观塘路店)",
+    "category": "原材料",
+    "keywords": [
+      "装饰材料批发"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "太仓"
+    },
+    "address": "北壕弄小商品市场北门二村3幢",
+    "contact_phone": "139****0863",
+    "lat": 31.447586,
+    "lng": 121.103069,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "verified",
+    "is_template": false,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFHCCS2H",
+      "type": "购物服务;家居建材市场;布艺市场",
+      "typecode": "060605",
+      "alias": "",
+      "tag": "",
+      "keytag": "床上用品",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "太仓",
+      "adcode": "320585",
+      "search_keyword": "装饰材料批发"
+    },
+    "industry": {
+      "code": "1771",
+      "name": "床上用品制造",
+      "level": "class",
+      "path": "C 制造业 > 纺织业 > 家用纺织制成品制造 > 床上用品制造",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "床上用品"
+    },
+    "is_manufacturer": true
   }
 ]

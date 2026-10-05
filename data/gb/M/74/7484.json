@@ -46,8 +46,7 @@
       "source": "gb_token",
       "evidence": "工程设计"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/74/7484"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0035098",
@@ -96,8 +95,7 @@
       "source": "gb_token",
       "evidence": "工程设计"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/74/7484"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0050784",
@@ -147,8 +145,7 @@
       "source": "name",
       "evidence": "设计院"
     },
-    "is_manufacturer": false,
-    "_bucket": "M/74/7484"
+    "is_manufacturer": false
   },
   {
     "id": "CN-MFG-0114280",
@@ -1126,6 +1123,55 @@
       "confidence": "medium",
       "source": "name",
       "evidence": "建筑设计"
+    },
+    "is_manufacturer": false
+  },
+  {
+    "id": "CN-MFG-0178301",
+    "company": "苏州安顺工程设备检测技术有限公司",
+    "category": "科学研究和技术服务业",
+    "keywords": [
+      "检测技术"
+    ],
+    "region": {
+      "province": "江苏",
+      "city": "苏州",
+      "district": "虎丘区"
+    },
+    "address": "苏州市新区苏州高新区通安镇华金路278号",
+    "contact_phone": "待核实",
+    "lat": 31.378324,
+    "lng": 120.455249,
+    "source": "public_directory",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "status": "unverified_poi",
+    "is_template": true,
+    "note": "",
+    "amap": {
+      "poi_id": "B0FFGC6S7H",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "alias": "",
+      "tag": "",
+      "keytag": "公司",
+      "website": "",
+      "email": "",
+      "postcode": "",
+      "business_area": "通安",
+      "adcode": "320505",
+      "search_keyword": "检测技术"
+    },
+    "industry": {
+      "code": "7484",
+      "name": "工程设计活动",
+      "level": "class",
+      "path": "M 科学研究和技术服务业 > 专业技术服务业 > 工程技术与设计服务 > 工程设计活动",
+      "confidence": "high",
+      "source": "gb_token",
+      "evidence": "工程设"
     },
     "is_manufacturer": false
   }

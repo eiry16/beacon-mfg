@@ -31,7 +31,6 @@
       "evidence": "金属废"
     },
     "is_manufacturer": true,
-    "_bucket": "C/42/4210",
     "amap": {
       "poi_id": "B0KALRH3ZH",
       "type": "公司企业;公司;公司",
@@ -92,7 +91,57 @@
       "evidence": "金属废"
     },
     "is_manufacturer": true,
-    "status": "verified",
-    "_bucket": "C/42/4210"
+    "status": "verified"
+  },
+  {
+    "company": "贵州锦鸿环境资源管理有限公司",
+    "category": "制造业",
+    "keywords": [
+      "金属废料和碎屑加工处理",
+      "废弃资源综合利用业"
+    ],
+    "region": {
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "白云"
+    },
+    "address": "贵州省贵阳市白云区艳山红镇刘庄村毛栗山组35号",
+    "contact_phone": "",
+    "lat": null,
+    "lng": null,
+    "source": "gov_list",
+    "source_url": "",
+    "verified_at": "2026-10-04",
+    "imported_at": "2026-10-04",
+    "last_verified_at": null,
+    "note": "",
+    "gov": {
+      "uscc": "91520113MAC5B20P3C",
+      "legal_rep": "刘松",
+      "ent_type": "有限责任公司(自然人投资或控股)",
+      "op_status": "存续",
+      "reg_capital_wan": 10.0,
+      "founded": "2023-01-06",
+      "reg_org": "贵阳市白云区市场监督管理局本级",
+      "gb_names": {
+        "division": "废弃资源综合利用业",
+        "group": "金属废料和碎屑加工处理",
+        "class": "金属废料和碎屑加工处理"
+      },
+      "origin": "省平台匿名 preview（部分数据）"
+    },
+    "status": "unverified_poi",
+    "is_template": true,
+    "industry": {
+      "code": "4210",
+      "name": "金属废料和碎屑加工处理",
+      "level": "class",
+      "path": "C 制造业 > 废弃资源综合利用业 > 金属废料和碎屑加工处理 > 金属废料和碎屑加工处理",
+      "confidence": "high",
+      "source": "gov_registry",
+      "evidence": "登记行业分类：废弃资源综合利用业/金属废料和碎屑加工处理/金属废料和碎屑加工处理"
+    },
+    "is_manufacturer": true,
+    "id": "CN-MFG-0182289"
   }
 ]

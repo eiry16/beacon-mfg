@@ -838,22 +838,40 @@ def _cap_name(code: str) -> str:
 
 
 def _cap_shard_paths(cap_code: str) -> List[str]:
-    """能力键 → 摘要分片路径。依据 cap.json shards[code] 的分片名，
-    优先用 manifest 的 fp 分片（按 c 对齐），否则按名直拼路径。"""
+    """能力键 → 摘要分片路径（一个逻辑桶可能拆成多个物理分片，必须全收）。
+
+    cap.json shards[code] 的键是**逻辑桶名**（`C/34/3484` / `_unclassified`，
+    2026-10-04 起剥 -pN 归并，与 manifest 的 `b` 字段同口径）。
+    fp 分片按 4096 行切 -pN 续片后，一个桶对应多条 manifest 记录
+    （`b` 相同、`p` 各异）——只取一条会把续片里的企业整批丢掉，且不报错。
+    """
     cap = _load_cap_index() or {}
     names = (cap.get("shards") or {}).get(cap_code, {})
     if not names:
         return []
-    by_c = {str(s.get("c", "")): s.get("p") for s in _shards_of_type("fp")}
+    by_bucket: Dict[str, List[str]] = {}
+    for s in _shards_of_type("fp"):
+        b = str(s.get("b", ""))
+        p = s.get("p")
+        if b and p:
+            by_bucket.setdefault(b, []).append(p)
     paths: List[str] = []
     for nm in names:
-        p = by_c.get(str(nm))
-        if not p:
+        ps = by_bucket.get(str(nm)) or []
+        if not ps:
+            # manifest 兜底：本地文件系统按主文件 + -pN 续片直拼
             cand = f"skills/registry/fingerprint/gb/{nm}.jsonl"
             if os.path.exists(cand):
-                p = cand
-        if p and p not in paths:
-            paths.append(p)
+                ps.append(cand)
+            base_dir = os.path.dirname(cand)
+            stem = os.path.basename(cand)[:-len(".jsonl")]
+            if os.path.isdir(base_dir):
+                for fn in sorted(os.listdir(base_dir)):
+                    if fn.startswith(stem + "-p") and fn.endswith(".jsonl"):
+                        ps.append(os.path.join(base_dir, fn))
+        for p in ps:
+            if p and p not in paths:
+                paths.append(p)
     return paths
 
 
