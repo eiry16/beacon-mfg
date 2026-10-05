@@ -271,9 +271,9 @@ def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.4.2")
+            return json.load(f).get("version", "1.5.0")
     except Exception:
-        return "1.4.2"
+        return "1.5.0"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
