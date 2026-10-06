@@ -3213,8 +3213,41 @@ def _log(msg: str) -> None:
     sys.stderr.flush()
 
 
+def _maybe_spawn_selfupdate() -> None:
+    """启动时踢一次自更新检查（detached、不阻塞、失败一律静默）。
+
+    修掉的盲区：自更新原先只挂在 npm 启动器（bin/beacon-mfg-mcp.js）上，
+    凡是以 `python server.py` 直接接入的用户（包括本地仓库用户）永远不会
+    收到“有新版 / 仓库落后”的提示。这里让**任何接入方式**都会检查一次，
+    并把结果写进 ~/.beacon-mfg/update-check.json、把提示写到 stderr
+    （MCP 客户端会把它记进日志，因此用户可见）。
+    """
+    try:
+        if os.environ.get("BEACON_MCP_NO_UPDATE") == "1":
+            return
+        script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "selfupdate.py")
+        if not os.path.isfile(script):
+            return
+        kwargs: Dict[str, Any] = {}
+        if os.name == "nt":
+            # DETACHED_PROCESS | CREATE_NEW_PROCESS_GROUP：不随本进程退出而结束
+            kwargs["creationflags"] = 0x00000008 | 0x00000200
+        else:
+            kwargs["start_new_session"] = True
+        subprocess.Popen(
+            [sys.executable, script],
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.DEVNULL,
+            stderr=None,          # 继承：提示进入客户端日志
+            **kwargs,
+        )
+    except Exception:
+        pass
+
+
 def main() -> None:
     _log(f"start; source={BEACON_SOURCE} repo={REPO or '(http)'}")
+    _maybe_spawn_selfupdate()
     for raw in sys.stdin:
         raw = raw.strip()
         if not raw:

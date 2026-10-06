@@ -39,3 +39,7 @@ python http_server.py     # Streamable HTTP，端点 /mcp
 ```
 
 数据默认取自公开数据源，无需密钥、无需克隆仓库。
+
+## 本次更新
+
+- 稳定性与接入体验改进。
