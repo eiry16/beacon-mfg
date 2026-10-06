@@ -283,9 +283,9 @@ def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.5.5")
+            return json.load(f).get("version", "1.5.6")
     except Exception:
-        return "1.5.5"
+        return "1.5.6"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
@@ -1268,16 +1268,22 @@ def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any
     res: Dict[str, Any] = {
         "query": q,
         "city": city or "",
-        # 把「MCP 是怎么理解这句话的」摊开给 agent 看：抽走了哪个城市、剔了哪些停用词、
-        # 认出了哪些词条。不透明的话，agent 无法判断候选为空到底是「没这行业」还是
-        # 「这句话没被读懂」，只能瞎猜着换词重试。
-        "city_from_query": norm.get("city_from_query") or "",
-        "keywords": norm.get("tokens") or [],
-        "recognized": norm.get("segments") or [],
         "candidates": out,
         "how_to_use": "挑 1~3 个 code，逐个调 search_vendors(gb=<code>, city=<城市>)"
                       "（给了 gb 只扫对应分片，最快）；多个码的结果自行合并去重。"
                       "候选为空或都不对味时，调 list_industries 看货架自己挑。",
+    }
+    # 把「MCP 是怎么理解这句话的」摊开给 agent 看：抽走了哪个城市、剔了哪些停用词、
+    # 认出了哪些词条。不透明的话，agent 无法判断候选为空到底是「没这行业」还是
+    # 「这句话没被读懂」，只能瞎猜着换词重试。
+    # 字段形状与 search_vendors 的 query_parsed **逐字一致** —— agent 从任一工具学到的
+    # 字段名在另一个里都找得到，不必记两套形状（此前这里是扁平的 city_from_query /
+    # keywords / recognized，与 search_vendors 的 query_parsed 不一致，属实现漂移）。
+    res["query_parsed"] = {
+        "city": city or "",
+        "city_from_query": norm.get("city_from_query") or "",
+        "keywords": norm.get("tokens") or [],
+        "recognized": norm.get("segments") or [],
     }
     if cap_cands:
         res["cap_candidates"] = cap_cands
@@ -2012,6 +2018,26 @@ def _hay_lit(rec: Dict[str, Any]) -> str:
     return _hay_parts(rec, False)
 
 
+def _name_fit(rec_or_sum: Dict[str, Any], tokens: List[str]) -> int:
+    """关键词在**厂名**里的贴合度，0/1/2。用于同一召回档内部的次级排序。
+
+    只有档位是不够的：档内顺序原本就是分片里的记录顺序 —— 等于随机。实测
+    「贵阳的商务酒店」把 悦庭楠舍酒店(花果园**中央商务区**店) 排在了 龙翔商务酒店
+    前面：两者都算 text 命中，但前者只是**括号里的商圈名**撞上了「商务」，后者厂名里
+    就写着「商务酒店」。只用「关键词是否出现在厂名里」也不够（两家都含「商务」和
+    「酒店」），必须是**成片出现**才区分得开。
+
+    `query+city` 与 `gb=` 两条路由共用本函数，保证同一批记录两条路排出来的顺序一致
+    （体检的「C 路由一致性」就是查这个）。
+    """
+    if not tokens:
+        return 0
+    co = str(rec_or_sum.get("company") or rec_or_sum.get("co") or "").lower()
+    if "".join(tokens) in co:
+        return 2                     # 关键词在厂名里成片出现 —— 最强
+    return 1 if all(t in co for t in tokens) else 0
+
+
 def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "id": rec.get("id"),
@@ -2571,12 +2597,19 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                 s = _rec_summary(rec)
                 s["via"] = "gb"
                 matches.append(s)
+        # 与 query 路由同一套档内排序（`gb=` 只走一档，故按厂名贴合度降序即可），
+        # 否则同一批记录经两条路进来顺序不同，agent 会以为「换了个写法结果就变了」。
+        matches.sort(key=lambda x: -_name_fit(x, gen_tokens))
         return _attach_routing_hint({
             "total_matched": len(matches),
             "returned": len(matches[offset:offset + limit]),
             "shards_scanned": scanned,
             "results": matches[offset:offset + limit],
             **parsed,
+            # 同 query 路由的口径：档内按「关键词在厂名里成片出现」优先，score 不是相关度。
+            "order_note": ("results 按「关键词在厂名里成片出现」优先排列；score 是"
+                           "**能力画像分**（有已发布能力卡才有分，无卡为 0），"
+                           "**不是相关度**，不要拿它反推排序。"),
         }, q, city)
 
     # 未给国标码：优先走「预构建检索索引 → 只拉命中分片」（与命中量相关）。
@@ -2689,7 +2722,10 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     # 为什么必须显式排：cap_text 与 text 是**同一趟**文本召回里 append 进去的，
     # 不重排两档会交错，order_note 里「按召回来源分档排列」就成了假承诺。
     _RANK = {"text": 0, "city": 0, "cap_text": 1, "alias": 2, "cap": 3}
-    matches.sort(key=lambda x: _RANK.get(x.get("via"), 9))
+
+    # 档内再按厂名贴合度排（见 `_name_fit` 的说明）。这是**档内**微调，不影响档间
+    # 次序，也不影响 total_matched。
+    matches.sort(key=lambda x: (_RANK.get(x.get("via"), 9), -_name_fit(x, gen_tokens)))
 
     out = {
         "total_matched": len(matches),
@@ -2704,7 +2740,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         # 所以在这里把口径写死，让 agent 自己能分辨「谁更值得先看」。
         "order_note": ("results 按召回来源分档排列：via=text(厂名/工艺/材料等**字面**命中) → "
                        "via=cap_text(厂名里其实没这个词，只是撞上了能力键的中文词面) → "
-                       "via=alias(别名定向) → via=cap(能力定向)；score 是**能力画像分**"
+                       "via=alias(别名定向) → via=cap(能力定向)；**同一档内**再按「关键词在"
+                       "厂名里成片出现」优先（所以「商务酒店」会把 龙翔商务酒店 排在 "
+                       "某酒店(中央商务区店) 前面）；score 是**能力画像分**"
                        "（有已发布能力卡才有分，无卡为 0），**不是相关度**，不要拿它反推排序。"),
     }
     if alias_hits:
