@@ -8,20 +8,10 @@ BeaconMFG MCP —— 标准协议适配层（adapter / shim）。
   这正是 **MCP stdio 规范**的分帧方式。但有一类宿主用 LSP 式的
   `Content-Length: N\\r\\n\\r\\n{...}` 分帧。本适配层让同一个 server 同时吃两种帧。
 
-【2026-10-06 两处致命缺陷（实测代价：常见 MCP 客户端 里 249 轮探测全部超时，0 个工具）】
-
-  ① **只认 Content-Length**。旧版断言「标准 MCP 客户端用 Content-Length 分帧」，
-     于是收到换行的 `{...}\\n` 时不认为一条消息结束，一直阻塞等一个永远不来的空行；
-     宿主 15s 判 `initialize timed out`，杀进程重试。实测两端分歧：
-       printf '{...}\\n'  | python server.py       → 正常回包  ✅
-       printf '{...}\\n'  | python mcp_adapter.py  → stdout 0 字节、静默退出 ❌
-       Content-Length 分帧 | 两者都正常                       ✅
-
-  ② **「一请求等一响应」的严格配对会死锁**。旧版每转发一个带 id 的请求，就阻塞等子进程
-     回一条；而 server.py 里 `notifications/initialized` 是**不回包**的。宿主只要把这条
-     通知带上 id 发出来（部分宿主确实这么干），adapter 就永久卡在等待上，
-     之后所有请求（含 tools/list）都拿不到响应 → 宿主报 `tools/list timed out`。
-     现象与 ① 极像（都是超时），但根因完全不同，只修 ① 会停在 tools/list 上原地打转。
+【为什么要双向直通】
+  宿主的分帧方式不统一：有的用换行分隔 JSON，有的用 LSP 式 Content-Length。
+  本适配层两种都识别，且**不做请求/响应配对**，双向直通，因此不会因为
+  「某条请求不产生响应」而死锁。
 
 【现在的设计：纯分帧桥】
   不再做请求/响应的配对，**双向直通**：
@@ -56,8 +46,7 @@ _FRAMING = {"kind": None}
 # initialize 的 id 与客户端请求的协议版本（回包时按 id 认领并改写）
 _INIT = {"id": None, "proto": None}
 # 诊断开关：默认**关**（排查「宿主不吭声」时设 BEACON_ADAPTER_TRACE=1 打开，
-# 收发实录会写进 %TEMP%/beacon_adapter_trace.log）。2026-10-06 定位 tools/list 超时
-# 就是靠它一眼看出「子进程吐到一半就死了」。
+# 收发实录会写进 %TEMP%/beacon_adapter_trace.log）。
 _TRACE_ON = os.environ.get("BEACON_ADAPTER_TRACE") == "1"
 
 
@@ -193,10 +182,8 @@ def _spawn_server():
         [sys.executable, "-u", SERVER],
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
-        # ⚠ 必须显式注入 UTF-8（npm 启动器 bin/beacon-mfg-mcp.js 就是这么干的，本适配层
-        #   曾漏掉）：中文 Windows 上 python 默认按 cp936 写 stdout，而 tool 描述里含
-        #   `⚠`(U+26A0) 这类 GBK 编不出的字符 —— initialize 能过，`tools/list` 必崩，
-        #   宿主只看到「tools/list timed out」。2026-10-06 实测：常见 MCP 客户端 249 轮探测全废。
+        # ⚠ 必须显式注入 UTF-8：中文 Windows 上 python 默认按 cp936 写 stdout，
+        #   而 tool 描述里含 GBK 编不出的字符，会导致握手之后的请求失败。
         env={**os.environ, "BEACON_REPO": REPO, "BEACON_MASK_PHONE": MASK,
              "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"},
         bufsize=0, text=True, encoding="utf-8",

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""beacon-mfg MCP —— Streamable HTTP 传输适配层（远程端点的第一步）。
+"""beacon-mfg MCP —— Streamable HTTP 传输适配层。
 
 设计要点
 --------
-* **不改动 server.py 本体**：直接复用它的 `_dispatch` / `TOOLS`，业务逻辑一行不动，
-  因此「本地 stdio」与「远程 HTTP」两条链路共用同一份检索实现，不会分叉。
+* **不改动 server.py 本体**：复用它的检索实现，业务逻辑一行不动，
+  因此「本地 stdio」与「远程 HTTP」两条链路共用同一份实现，不会分叉。
 * 协议：MCP **Streamable HTTP**（2025-03-26）。请求一律 `POST /mcp`，
   响应 `application/json`；`initialize` 时下发 `Mcp-Session-Id`。
 * 本服务器**不提供** server→client 的 SSE 主动推送（只读检索不需要），

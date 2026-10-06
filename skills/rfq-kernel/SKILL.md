@@ -32,7 +32,7 @@ agent_created: true
   新增行业只加 pack，不碰 schema / 内核。已含 11 个 pack：
   `drinkware` / `mattress` / `sheet_metal` / `machining` / `injection` / `die_casting` /
   `electronics` / `surface_treatment` / `fasteners` / `raw_material` /
-  `material_handling`（输送/物流搬运，2026-09-22 新增）。
+  `material_handling`（输送/物流搬运）。
 - **客户视图**（`audience/<profile>.json`）：字段权重、术语映射、默认值、必填项调整。
   同一份工厂数据投影出多套视图，数据不复制。已含 `intl_buyer` / `domestic_downstream`。
 - **认证强校验**：`certifications` 必须是对象 `{code, cert_no, issuer, valid_until, verified}`。
@@ -67,14 +67,11 @@ cd skills/寻源内核
 PYTHONIOENCODING=utf-8 python demo.py
 ```
 
-## 接入生产（已落地）
+## 接入方式
 
-- beacon-mfg 根 `SKILL.md` 已新增「RFQ 与自动接客」章节：描述需求侧匹配（本 skill）与
-  供给侧投递（`POST /v1/rfq` 中转）的两层关系，以及供应商如何"按新方案建立 skill"。
-- **生效的 RFQ 能力位是能力卡上的 `rfq` 块**（`{schema:"rfq/v1", protocol, endpoint}`），
-  不是 L0 记录上的 `agent.capabilities`（后者仍是 Phase-1 预留、当前未启用）。全库已有 7 家
-  声明了 `rfq` 块（含两家非采集真实企业 苏州赤兔 `CN-I-0000001`、耐特斯 `CN-MFG-0020317`）。
+- **生效的 RFQ 能力位是能力卡上的 `rfq` 块**（`{schema:"rfq/v1", protocol, endpoint}`）——
+  只有带这个块的企业才表示「能接收结构化询价」。L0 记录上的 `agent.capabilities`
+  是预留字段，当前未启用。
 - 客户 Agent 流程：`parse_free_text → suggest_clarifications → narrow` 产出候选 + 信封，
-  再对带 `rfq` 块的候选调用 `POST /v1/rfq` 投递（平台中转：强制 Bearer 凭证、审计存证、
-  非本机地址默认不真实投递）。
-- 适配器在生产环境读 `skills/数据目录/capability/{id}.json`（与 `rfq.py` 同源），不再 grep `data/gb`。
+  再对带 `rfq` 块的候选投递标准 RFQ。
+- 适配器读权威能力卡（`skills/数据目录/capability/{id}.json`），`skills/vendors/{id}/` 兜底。

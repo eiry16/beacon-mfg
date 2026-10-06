@@ -3,15 +3,12 @@
 """
 Beacon-MFG 只读 MCP 服务（stdio 传输，零第三方依赖）
 
-设计边界（与用户 2026-09-18 约定一致）：
-  - **只读**：只检索「已发布数据」—— Cloudflare Pages 公开端点（默认）或本地 git 仓库的
-    已提交快照。绝不写、绝不调用任何后端脚本（批量采集 / 派生重建 / en_backfill …），
-    绝不持有 ZHIPU / CLOUDFLARE 密钥。
-  - **不污染仓库**：本地模式只通过 `git show HEAD:<path>` 读取已提交内容（不会触发
-    maskphone 的 smudge 过滤器，也不会碰 index 锁）。本服务**绝不**对仓库执行
-    `git checkout` / `git restore` / `git add` / `git commit` —— 那是历史「42578 个手机号
-    被无声隐藏」事故的根源，必须规避。
-  - 手机号为隐私字段：git 已提交版本是隐藏态（138****0000）；CF 部署版可能是全号。
+设计边界：
+  - **只读**：只检索「已发布数据」—— 公开 CDN 端点（默认）或本地 git 仓库的
+    已提交快照。绝不写入、绝不调用任何后端写入脚本，绝不持有任何密钥。
+  - **不污染仓库**：本地模式只通过 `git show HEAD:<path>` 读取已提交内容，
+    不触碰本地副本与索引；本服务**绝不**对仓库执行任何写操作。
+  - 手机号为隐私字段：已提交版本是隐藏态（138****0000）；部署版可能是全号。
     对隐私敏感场景，把 BEACON_REPO 指向本地仓库（默认即读取隐藏态）即可，无需联网。
 
 协议：JSON-RPC 2.0 over stdio（newline-delimited）。兼容 Claude Desktop / Cline /
@@ -23,9 +20,9 @@ Continue / 常见 MCP 客户端 等主流 MCP 客户端。
                 缺省时自动探测 cwd 所在 git 仓库（若含 data/gb 就用它）
 
 暴露的 tool：
-  search_vendors       按 关键词 / 城市 / 国标码 检索（走 fp 摘要分片）
-  get_vendor           按 id（+ 国标码）取完整中文档案（走 zh 分片）
-  get_capability_card  按 id 取能力卡（走 skills/registry/capability，由 R2 提供）
+  search_vendors       按 关键词 / 城市 / 国标码 检索
+  get_vendor           按 id（+ 国标码）取完整中文档案
+  get_capability_card  按 id 取能力卡
 """
 
 import os
@@ -47,8 +44,6 @@ import urllib.error
 # [utf8-guard] 中文 Windows 上，宿主若没注入 PYTHONUTF8/PYTHONIOENCODING，stdout 会落回
 # cp936；而 TOOLS 的 tool 描述里含 `⚠`(U+26A0) 这类 GBK 根本编不出的字符 ——
 # initialize 全是 ASCII 能过，一到 `tools/list` 就 UnicodeEncodeError **当场崩进程**。
-# 宿主侧只能看到「tools/list timed out」，日志里毫无线索。
-# 2026-10-06 实测：常见 MCP 客户端 里连续 249 轮探测全部卡死于此。
 # 强制 UTF-8 + 出错降级替换：宁可显示成 '?'，也绝不因为一次打印而断开协议。
 for _s in (sys.stdout, sys.stderr):
     try:
@@ -98,7 +93,7 @@ def _gb_seed_records(pack_id: str) -> List[Dict[str, Any]]:
     按 gb 分片精准取（与命中量相关，绝非全量扫描），进程内缓存复用。
     语义依据：beacon-mfg 以国标码为唯一行业判别信号，检测到行业即应召回其国标分类下的企业，
     即便其厂名不含召回词（如 conveyor 的 gb=3434 连续搬运设备厂「耐特斯传输设备」用『传输』
-    而非『输送』，而『传输』df=1 未入检索索引，常规召回捞不到）。加法召回，绝不误删真实企业。
+    而非『输送』，而『传输』df=1 未入预构建索引，常规召回捞不到）。加法召回，绝不误删真实企业。
     """
     cached = _gb_seed_cache.get(pack_id)
     if cached is not None:
@@ -125,7 +120,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 
     **并集召回**：需求词被切成 bigram 后，任意一个命中即算候选（OR），不做交集。
     （旧的 `_candidate_shards` 对同一需求词内部的 bigram 求交，会把「钣金冲压」这类
-    连写词缩到只剩字面全含的极少数分片——实测 316/372 条缩到 1 个分片，属隐性漏召回。）
+    连写词缩到只剩字面全含的极少数分片，属隐性漏召回。）
 
     证据权重：
       - 产品信号命中（proc/mat/cert/gb）权重 3x；企业名 `co` 命中权重 1x。
@@ -135,8 +130,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
         通名「厂家」）权重小 —— 需求句里的地区/通名不会带偏排序。
       - 传入 pack_id 时，国标码命中本行业的记录 +1000，确保本行业供应商排到 top_k 前列。
 
-    性能：优先走检索索引的『区分词并集』快速路径 `_recall_candidates`（与命中量相关）；
-    索引不可用/无区分词/并集过大时回退全量扫描（进程内与盘上均缓存，可复用）。只读。
+    性能：优先走预构建索引的快速路径；索引不可用或并集过大时回退全量扫描。只读。
     """
     toks = _collapse_prefixes({t for t in _grams(text, query_mode=True) if _usable_gram(t)})
     if not toks:
@@ -224,7 +218,7 @@ _gb_name_cache: Optional[Dict[str, str]] = None
 # ───────────────────────────────────────────────────────────────
 # 派生层缓存失效（让「后台上传 → 立刻可见」无需提交 / 无需重启）
 #
-# BEACON_WORKTREE=1（默认）下，派生重建 会把 fp / 检索索引 / 清单等派生层重建到
+# BEACON_WORKTREE=1（默认）下，后台流水线会把 fp / 预构建索引 / 清单等派生层重建到
 # 本地副本。下面这组机制让 MCP 在不提交、不重启的前提下读到新版本：
 #   - 磁盘索引缓存（idx-*）按「HEAD sha + 本地副本 mtime」判新（见 _index_text）
 #   - 进程内缓存（manifest/alias/cap/gb_name/fp_index/桶/分片）按文件 mtime 判新
@@ -460,8 +454,6 @@ def _git_show(relpath: str) -> Optional[str]:
 
 
 # 单基址 HTTP 超时（秒）。多镜像回退时每个基址各自计时，避免单一 CDN 卡死拖垮整体。
-# 2026-10-05：明显缩短。启用 gzip 后单个大分片（6.8 MB→397 KB）约 4 s，
-# 但 name-index 这类 19 MB 的索引压缩后仍有 2.8 MB、跨网约 15 s，原超时太贴边。
 _HTTP_TIMEOUT = 30
 
 
@@ -527,11 +519,7 @@ def _http_diagnose(relpath: str, last_err: str = "") -> str:
 def _decode_body(raw: bytes, resp) -> str:
     """按 Content-Encoding 解压再解码。
 
-    2026-10-05 起主动要 gzip：JSON 压缩比约 6~17×，实测
-    `data/gb/C/35/3525.json` 6.78 MB / 14.8 s → **397 KB / 3.9 s**。
-    客户端本来一直发的是「不带 Accept-Encoding」，等于白扔这笔收益 ——
-    这也正是普通用户取数慢的第二个来源。**只声明 gzip**：brotli 不在标准库里，
-    声明了却解不开就等于把请求打挂。
+    **只声明 gzip**（标准库即可解）；不声明 brotli，避免声明了却解不开把请求打挂。
     """
     ce = ""
     try:
@@ -667,8 +655,8 @@ def _fetch_many(paths: List[str], workers: int = 6) -> List[Optional[str]]:
     走 `_shard_text`（按清单 sha1 缓存）而不是 `fetch_text`：命中缓存时连条件请求
     都省掉，重复查询同一国标码/邻近记录近乎零成本。
 
-    为什么值得并发：一个国标码常有 2~3 个 zh 续片（3525 = 3525.json 7.0 MB +
-    3525-p2.json 2.8 MB），串行取等于把延迟**相加**；并发取的总耗时接近最慢那一个。
+    为什么值得并发：一个国标码常有多个 zh 续片，串行取等于把延迟**相加**；
+    并发取的总耗时接近最慢那一个。
     单条路径时不做线程开销。
 
     上限 6 是有意的：客户端瓶颈在带宽不在连接数，开太多只会互相挤、还会撞上
@@ -696,10 +684,8 @@ _shard_hash_slot: Optional[tuple] = None    # (rel -> sha1, 数据版本号)
 def _shard_hash_index() -> Dict[str, str]:
     """分片路径 → 清单登记的 sha1（h）。随数据版本重建，进程内只建一次。
 
-    除 `shards` 外还合并 `metadata.idxfiles`：terms 倒排桶与策展别名表**刻意不在
-    shards 里** —— App 会拉全部 t=idx 片（RemoteSource.kt:419），把 512 个
-    terms 桶放进 shards 等于让手机每次同步多下 35 MB。
-    但 MCP 侧需要它们的 h 才能做内容哈希缓存，否则每次检索都各付一次 CDN RTT。
+    除 `shards` 外还合并 `metadata.idxfiles`：索引桶与别名表刻意不列入 `shards`，
+    避免客户端同步时多下载。MCP 侧需要它们的摘要来做内容缓存。
     """
     global _shard_hash_slot
     ver = _data_version()
@@ -729,7 +715,7 @@ def _shard_text(relpath: str) -> Optional[str]:
     """按**内容哈希**缓存的分片读取（热启动的关键）。
 
     为什么需要它 —— `_http_get` 的缓存是 URL 级的，命中也要发一次条件请求等 304：
-    对 6.8 MB 的分片，多一个 RTT 是小事，但 ETag 一旦不匹配就得**整份重传**。
+    对大分片，多一个 RTT 是小事，但 ETag 一旦不匹配就得**整份重传**。
     而清单里本来就登记了每片内容的 sha1（h），拿它当缓存键正好：
 
       * 内容没变 → 缓存键不变 → **完全不走网络**（连 304 都省）；
@@ -738,8 +724,8 @@ def _shard_text(relpath: str) -> Optional[str]:
         本来就建议客户端这么做，这里顺手把完整性也验了。哈希不符时不缓存、
         并在诊断里留痕（宁可每次重取，也不把对不上的内容当权威）。
 
-    实测意义：get_vendor 首次加载 9.6 MB（其中 zh 详情 9.35 MB）→ 第二次查
-    同国标码下的任何一家，**这一层完全不再走网络**。
+    意义：同一国标码下的企业共享同一个 zh 分片，因此查过一家之后，
+    再查同国标码下的任何一家，**这一层完全不再走网络**。
     """
     h = _shard_hash_index().get(relpath)
     cp = os.path.join(CACHE_DIR, "shard-" + h + ".json") if h else None
@@ -801,9 +787,8 @@ def _zh_paths_for_gb(gb: str) -> List[str]:
 # --------------------------------------------------------------------------- #
 # 国标行业别名表（与 App 的 AliasIndex 同源）
 #
-# 2026-09-24 之前 MCP **完全没接别名表**：「输送线」这种口语词在厂名/工艺/材料里
-# 一个字都不出现，检索面 命中不了，于是返回 0 条 —— 而 App 同一句能出 3434。
-# 别名表把「口语词 → 国标码」补上，检索时按码直接定向对应分片。
+# 别名表把「口语词 → 国标码」补上：「输送线」这类口语词在厂名/工艺/材料里
+# 一个字都不出现，只能靠别名按码定向召回。
 # --------------------------------------------------------------------------- #
 def _load_alias_file(rel: str, txt: Optional[str] = None) -> Dict[str, Any]:
     """两种历史形态都兼容：[["metadata",..],["alias",{..}]] 和直接 {word: ...}。
@@ -836,7 +821,7 @@ def load_gb_alias() -> Dict[str, Any]:
     _alias_relpaths = ("data/gb-alias.json", "data/gb-alias-curated.json")
     if _cache_stale(_alias_cache, _alias_relpaths):
         # ⚡ 两张表互相独立 → 一次并发取齐。逐个 fetch 各付一次 CDN RTT
-        #    （实测每个约 0.7 s，串行 1.42 s —— 占「新进程首次检索」剩余耗时的一半）。
+        #    （并发取齐可省下数次串行往返）。
         #    同时借 _read_many_text 落到 _shard_text：清单里登记了 h 的表按内容缓存，
         #    内容没变就完全不走网络；没 h 的表（如 gb-alias-curated.json）自动退回 fetch。
         raw = _read_many_text(list(_alias_relpaths))
@@ -938,13 +923,12 @@ def _fp_paths_for_gbs(codes: List[str]) -> List[str]:
 # 语义路由层：不要求「服务端猜对用户的原话」，而是把**国标货架 + 候选码**交给
 # 客户端 LLM，让它现场做语义映射。
 #
-# 为什么这么做（2026-10-06 主人提的问题）：靠人工扩别名表覆盖「机加工 / 精密件 /
-# 手机壳…」是走不通的 —— 说法千人千面，表永远差一行，而且加得越多误召回越多。
-# 而 **MCP 客户端本身就是一个 LLM**。把「用户原话 → 国标码」这一步交给它：
+# 设计思路：不要求服务端猜对用户的原话，而是把**国标货架 + 候选码**交给
+# **客户端 LLM** 做语义映射：
 #   · 零额外基础设施：服务端不调 LLM、不需要密钥、不引入延迟和成本；
-#   · 天然覆盖长尾：LLM 的知识面就是那张「说法表」，不必我们枚举；
-#   · 可控可解释：LLM 挑码的依据是货架上的类名 + 真实条数，不是黑盒。
-# 别名表因此降级为**高频词加速器**（能命中就直接省一次往返），不再是唯一入口。
+#   · 天然覆盖长尾：说法千人千面，LLM 的知识面就是那张「说法表」；
+#   · 可控可解释：挑码依据是货架上的类名 + 真实条数，不是黑盒。
+# 别名表因此是**高频词加速器**（能命中就直接省一次往返），不是唯一入口。
 #
 # 三个出口：
 #   list_industries()    → 国标货架（只列有数据的类，带条数）
@@ -1001,10 +985,8 @@ def _seg_patterns() -> List[Tuple[str, str]]:
         for r in _gb_shelf():
             if len(r["name"]) >= 2:
                 pats.setdefault(r["name"], "gb_name")
-        # 2026-10-06 补 cap（能力词）。在此之前这里只收「国标别名 + 国标类名」，
-        # 而「人工智能 / 机器学习 / 大模型」是**跨门类能力词**，两边都不在 —— 于是
-        # 「找苏州做人工智能的企业」在这里一个字都切不出来，`suggest_filters` 只能
-        # 返回空候选把 agent 赶去翻货架。
+        # 同时收 cap（能力词）：「人工智能 / 机器学习 / 大模型」是**跨门类能力词**，
+        # 国标别名与类名两侧都不覆盖，必须单独纳入。
         # 只收 **纯汉字且长度 >= 2** 的能力词：ASCII 侧（ai / cnc / c / 3d…）数量大，
         # 且「c」「3c」这类单双字符做子串切分会把任意含 c 的串切碎。ASCII 能力词由
         # `_cap_terms_in` 用词边界单独扫，不进这张切分表。
@@ -1041,13 +1023,10 @@ def _segment_terms(text: str) -> List[Tuple[str, str]]:
 # --------------------------------------------------------------------------- #
 # 原话归一化：把「一句人话」切成可执行的检索参数
 #
-# 为什么必须有这一层（2026-10-06 实测）：`search_vendors` 的关键词切分原本只有
-# `q.split()` —— 按空白切。中文用户输入的自然语言没有空格，整句话就是一个 token：
-#   「苏州做AI的企业」 → tokens = ["苏州做ai的企业"]
-# 而关键词走的是「每个 token 都必须出现在记录检索面里」（AND）语义，**没有任何一条
-# 记录**会包含「苏州做ai的企业」这个串，于是必然 0 条。同时城市没被提取、能力词
-# 'AI' 也认不出。三层叠起来的结果：用户**原话**问什么都是 0 条，必须由 agent 先手工
-# 拆成 query + city 才行 —— 这是把「理解自然语言」的责任推给了调用方，MCP 该自己扛住。
+# 中文用户输入的自然语言没有空格，按空白切分时整句话就是一个 token；而关键词是
+# 「每个 token 都必须出现在记录检索面里」（AND）语义，整句必然 0 条。
+# 这一层负责把原话切成可执行的检索参数（城市 + 关键词 + 能力词），
+# 让调用方可以直接把用户原话传进来。
 # --------------------------------------------------------------------------- #
 _STOPWORDS: Tuple[str, ...] = (
     # 通名/机构词：出现即无信息量（「企业」「公司」本身不是产品词）
@@ -1137,8 +1116,7 @@ def _normalize_query(query: str, city: str = "") -> Dict[str, Any]:
     toks: List[str] = []
     # 纯结构字（厂/店/家/司…）不成词、没有产品信息，不能当关键词：它们会进入
     # **AND 过滤**，把厂名里恰好不写「厂」的「XX有限公司」整批误滤掉。
-    # 2026-10-06 实测：「昆山 做CNC的厂」里 cnc 被消费后只剩一个「厂」，
-    # 结果文本召回退化成「整城扫所有含厂字的记录」。
+    # 例：cnc 被消费后只剩一个「厂」，纯文本召回会退化成「整城扫含厂字的记录」。
     _noinfo = _FUNC_CHARS | _ORG_SUFFIX
     for t in _RE_RUNSPLIT.sub(" ", resid).split():
         t = _trim_edges(t)
@@ -1254,9 +1232,8 @@ def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any
 
     # 能力域候选（跨门类的工艺/技术标签，如 tech_ai=人工智能与算法）。
     # **绝不能混进 candidates**：那串是国标码，agent 会照着拿去调 search_vendors(gb=…)；
-    # 把「tech_ai」塞进去就会被当成一个国标码用，必然 0 条。所以单独字段 + 单独说明。
-    # 2026-10-06 补：在此之前 suggest_filters 完全不看能力维，于是「人工智能」这种词
-    # 国标侧没类、能力侧不问 —— 两边都空，agent 只能拿到 candidates:[] 瞎猜。
+    # 把「tech_ai」塞进国标码字段会被当成国标码用，必然 0 条。所以单独字段 + 单独说明。
+    # suggest_filters 同时看国标维与能力维，避免「人工智能」这种词两边都落空。
     cap_cands: List[Dict[str, Any]] = []
     try:
         for c in (norm.get("cap_hits") or cap_alias_codes(q)):
@@ -1352,9 +1329,7 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
 
     if out.get("total_matched", 0) == 0 and not cands:
         # 0 条 + 国标侧无候选 —— 但**能力域可能命中**，这是唯一还可执行的线索。
-        # 旧实现这里直接 return 一句「关键词对不上」：2026-10-06 实测查
-        # 「苏州做AI的企业」时 caps=tech_ai 明明存在，hint 却在更早的分支出局，
-        # agent 于是完全看不到「换个说法/加城市就能召回」这条信息。
+        # 此处必须给出 hint，否则 agent 看不到「换个说法 / 加城市就能召回」这条信息。
         if caps:
             _emit_cap()
             return out
@@ -1370,9 +1345,7 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
         return out
     # 命中 1~4 条、别名与类名一条候选都推不出来 —— 最糟的一档，也是最容易被漏掉的一档：
     # 既有几条噪音（agent 会以为「就这些」直接交付），又没有任何可执行的下一步。
-    # 2026-10-06 实测：查「苏州做AI的企业」只回 2 条（其中一条是名字里带「人工智能」的
-    # 餐厅），hint 全程不出现 —— 因为旧逻辑只有「0 条且无候选」和「有候选」两个分支，
-    # 1~4 条无候选直接掉进空档 return。必须补上。
+    # 因此「1~4 条且无候选」也要给出 hint，不能掉进空档。
     if caps:
         _emit_cap()
         return out
@@ -1456,10 +1429,9 @@ def cap_alias_codes(q: str) -> List[Dict[str, Any]]:
       ① exact   查询按空白切开后某个 token 完全等于能力词（原行为）
       ② substr  能力词出现在查询里的**任意位置**（ASCII 词另要求词边界）
 
-    2026-10-06 补 ②。在此之前只做 ①，而真实用户说的是**一整句人话**：
-    「苏州做AI的企业」按空白切只有一个 token，'AI' 永远匹配不上 —— 能力域召回
-    整条链路对自然人话失效，只能回 0 条并把 agent 赶去翻货架。
-    国标别名侧（`alias_codes`）一直是子串匹配的，两侧行为不一致本身就是 bug。
+    真实用户说的是**一整句人话**：按空白切只有一个 token，'AI' 永远匹配不上，
+    能力域召回对自然人话会失效。国标别名侧（`alias_codes`）是子串匹配的，
+    两侧行为需保持一致。
     """
     q = (q or "").strip().lower()
     if not q:
@@ -1504,10 +1476,10 @@ def _cap_count(code: str) -> int:
 def _cap_shard_paths(cap_code: str) -> List[str]:
     """能力键 → 摘要分片路径（一个逻辑桶可能拆成多个物理分片，必须全收）。
 
-    cap.json shards[code] 的键是**逻辑桶名**（`C/34/3484` / `_unclassified`，
-    2026-10-04 起剥 -pN 归并，与 manifest 的 `b` 字段同口径）。
-    fp 分片按 4096 行切 -pN 续片后，一个桶对应多条 manifest 记录
-    （`b` 相同、`p` 各异）——只取一条会把续片里的企业整批丢掉，且不报错。
+    cap.json shards[code] 的键是**逻辑桶名**（如 `C/34/3484` / `_unclassified`），
+    已剥离续片后缀、与 manifest 同口径。
+    fp 分片按条数切成续片后，一个桶对应多条 manifest 记录（桶名相同、路径各异）
+    ——只取一条会把续片里的企业整批丢掉，且不报错。
     """
     cap = _load_cap_index() or {}
     names = (cap.get("shards") or {}).get(cap_code, {})
@@ -1585,10 +1557,8 @@ def _data_version() -> str:
 def _index_cache_path() -> Optional[str]:
     """索引落盘缓存的路径。
 
-    2026-10-05 改：**HTTP 模式也允许落盘**。旧实现直接 `return None`，导致每个新进程
-    都要把 320 个 fp 分片（40.6 MB）重拉一遍 —— 这是「普通用户第一次查一家厂要等
-    4.5 分钟」的第二层原因。缓存键加上「数据版本号」，一发布新数据键就变，
-    因此不会读到陈旧的已发布快照（这正是当初不敢落盘的顾虑）。
+    HTTP 模式也可落盘：缓存键包含「数据版本号」，一发布新数据键就变，
+    因此不会读到陈旧的已发布快照。
     """
     sig = _data_version()
     if not sig:
@@ -1598,18 +1568,16 @@ def _index_cache_path() -> Optional[str]:
     return os.path.join(CACHE_DIR, "fpindex-" + h + ".json")
 
 
-# ── id → 国标码 的定址分片（2026-10-05） ───────────────────────────────
-# 为什么需要：`get_vendor(id)` 在调用方没给国标码时得先定位。旧实现读
-# data/name-index.jsonl —— 那是为「按公司名匹配」设计的一整份 18.4 MB / 168,780 条，
-# HTTP 首次加载实测让一次 get_vendor 花掉 **103.9 秒**（其中约 100 s 是这份索引）。
+# ── id → 国标码 的定址分片 ────────────────────────────────────────────
+# 为什么需要：`get_vendor(id)` 在调用方没给国标码时得先定位。
 #
-# 定位其实只要两列，而且 id 是**密集自增**的 `CN-MFG-%07d`（实测 0 ~ 168,779）
-# → 按 id 千位切片就能直接定址，**连目录表都不需要**：
+# id 是**密集自增**的 `CN-MFG-%07d` → 按 id 千位切片即可直接定址，
+# 不需要额外目录表。
 #     CN-MFG-0093680 → 93680 // 1000 = 93 → skills/registry/index/编号映射/093.jsonl
-# 一片约 1000 行 / 13 KB，一次只拉命中那一片：18.4 MB → 13 KB，**约 1400×**。
+# 一片约 1000 行，一次只拉命中那一片。
 #
 # 附带一个重要性质：id 密集且分片完整时，**「分片取到了但 id 不在」= 这条 id 确实
-# 不存在**（不是索引滞后）→ 可以直接给「查无此人」，不必退回 18.4 MB 全量索引。
+# 不存在**（不是索引滞后）→ 可以直接给「查无此人」，不必退回全量索引。
 # 这个区分（shard_ok）是下面 _编号映射_lookup 返回两元组的原因。
 _IDMAP_BUCKET = 1000
 _VENDOR_ID_RE = re.compile(r"^CN-MFG-(\d{7})$")
@@ -1639,9 +1607,8 @@ def _idmap_meta() -> Dict[str, Any]:
     两个作用：
 
     1. **范围守卫**：越过已发布范围的 id（bucket >= buckets）如果照常去请求分片，
-       会拿到 404 —— 本机实测那条失败路径最坏能拖到 **44.6 秒**（urllib 直连失败后
-       转代理、代理再拖到超时）。有 meta 就能先判定「这条 id 根本不存在」，
-       把那 44.6 秒整段省掉。
+       会一路失败到超时。有 meta 就能先判定「这条 id 根本不存在」，
+       把这段等待整段省掉。
 
     2. **开关**：清单里**没有**这个块 = 该快照的 编号映射 还没发布（老版本快照）。
        此时整体跳过 编号映射 路径、直接走原有定位方式 —— 于是「MCP 先升级、数据还没
@@ -1683,7 +1650,7 @@ def _idmap_lookup(vid: str) -> Tuple[Optional[str], bool]:
     gb 为 `None` = 该片里没有这条 id；gb 为空串 = **未归类**（这是有效答案，
     客户端必须照样按空串走 _unclassified 那条路，而不是当成「没找到」）。
     shard_ok = 该片的**范围已被覆盖** → 此时 id 缺席可判定为「不存在」，
-    调用方不必再去付 18.4 MB / 320 个分片的兜底代价。
+    调用方不必再去付全量兜底的代价。
 
     ⚠ 「片里没有」要**先过 max_id 这道闸**才能判不存在。抓取流水线与政府信源
     导入每天都在发新号，而 编号映射 只在 manifest 步重算、只在 pages 步上云 ——
@@ -1742,13 +1709,12 @@ def _idmap_lookup(vid: str) -> Tuple[Optional[str], bool]:
 
 
 def _name_gb_index() -> Dict[str, str]:
-    """`id -> 国标码` 映射，来源 `data/name-index.jsonl`（发布产物，19 MB，168k 条）。
+    """`id -> 国标码` 映射，来源 `data/name-index.jsonl`（发布产物）。
 
-    为什么要有它：`get_vendor` 在调用方没给 gb 时，旧实现是**顺序**遍历 320 个 fp
-    分片找那个 id；本地有 git archive 批量读所以看不出来，但 HTTP 模式下就是
-    320 次串行 GET —— 2026-10-05 实测 **270.6 秒**，普通用户会以为程序卡死。
+    为什么要有它：`get_vendor` 在调用方没给 gb 时需要先定位；顺序遍历全部 fp
+    分片去找那个 id；本地批量读看不出来，但远端的串行请求会非常慢。
     name-index 每条记录自带 id/co/city/gb，**一次读取**即可定位到目标分片：
-    270 s → 一次索引读 + 一次分片拉取。
+    一次索引读 + 一次分片拉取。
 
     值可能是空串（该记录未归类），那不是缺失 —— 空串是有效答案，代表要直接去
     `_unclassified` 那条路径，而不是再扫 320 个 fp 分片。
@@ -1778,7 +1744,7 @@ def _name_gb_index() -> Dict[str, str]:
 
 def _read_fp_shard(s: Dict[str, Any]) -> List[Dict[str, Any]]:
     # 走 _shard_text：摘要分片同样登记在清单里，按内容 sha1 缓存后，
-    # 重复检索（换关键词、换城市）不再重复下载 40 MB 的 fp 层。
+    # 重复检索（换关键词、换城市）不再重复下载 fp 层。
     txt = _shard_text(s["p"])
     out: List[Dict[str, Any]] = []
     if not txt:
@@ -1998,10 +1964,8 @@ def _hay_parts(rec: Dict[str, Any], with_cap: bool) -> str:
 def _hay(rec: Dict[str, Any]) -> str:
     """检索面：query 的每个词都必须出现在这里（AND 全命中）。
 
-    2026-09-23 加入 `cap`（跨门类能力键）—— 在此之前的六个字段
-    （co/city/dist/gb/proc/mat/cert/products）全都表达不了「能力」：
-    赤兔智能的键是 `tech_ai`，而它的厂名/工艺/材料里一个「人工智能」都没有，
-    客户问「苏州做人工智能的企业」就永远 0 条。键必须摊成中文词面才能被中文命中。
+    另有 `cap`（跨门类能力键）：其余字段都表达不了「能力」，
+    而能力键必须摊成中文词面才能被中文命中。
     """
     return _hay_parts(rec, True)
 
@@ -2010,10 +1974,9 @@ def _hay_lit(rec: Dict[str, Any]) -> str:
     """**字面**检索面 = `检索面` 去掉 cap 词面。
 
     存在的理由：`检索面` 把厂名/工艺与 cap 词面混在一起，于是「query 词出现在
-    `检索面` 里」这一条**分不清**是「厂名/工艺真写了这个词」还是「只是能力键的中文
-    词面撞上了」。2026-10-06 实测：问「苏州做人工智能的企业」，赤兔智能（键
-    tech_ai）被判成 `via=text`，而它厂名/工艺里一个「人工智能」都没有 —— agent
-    读到 text 会误以为「这家厂自己写了 AI」。所以 text 的判定改走这里。
+    检索面里」这一条**分不清**是「厂名/工艺真写了这个词」还是「只是能力键的中文
+    词面撞上了」；而 `via=text` 会让 agent 误以为「这家厂自己写了 AI」。
+    因此 text 的判定走这里。
     """
     return _hay_parts(rec, False)
 
@@ -2021,11 +1984,9 @@ def _hay_lit(rec: Dict[str, Any]) -> str:
 def _name_fit(rec_or_sum: Dict[str, Any], tokens: List[str]) -> int:
     """关键词在**厂名**里的贴合度，0/1/2。用于同一召回档内部的次级排序。
 
-    只有档位是不够的：档内顺序原本就是分片里的记录顺序 —— 等于随机。实测
-    「贵阳的商务酒店」把 悦庭楠舍酒店(花果园**中央商务区**店) 排在了 龙翔商务酒店
-    前面：两者都算 text 命中，但前者只是**括号里的商圈名**撞上了「商务」，后者厂名里
-    就写着「商务酒店」。只用「关键词是否出现在厂名里」也不够（两家都含「商务」和
-    「酒店」），必须是**成片出现**才区分得开。
+    只有档位是不够的：档内顺序原本就是分片里的记录顺序 —— 等于随机。
+    还需要判断关键词是否**成片出现在厂名里**：只判断「是否出现」不够
+    （括号里的商圈名也会撞上），必须是连片的词面命中才区分得开。
 
     `query+city` 与 `gb=` 两条路由共用本函数，保证同一批记录两条路排出来的顺序一致
     （体检的「C 路由一致性」就是查这个）。
@@ -2055,7 +2016,7 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
 
 
 INDEX_DIR = "skills/registry/index"
-INDEX_VERSION = 3          # 倒排 key 为分片路径；v2 用国标码会漏掉 gb=null 的记录
+INDEX_VERSION = 3          # 索引键为分片路径（用国标码会漏掉未归类的记录）
 _index_meta_cache: Optional[Dict[str, Any]] = None
 _bucket_cache: Dict[str, tuple] = {}
 _shard_rec_cache: Dict[str, tuple] = {}
@@ -2076,7 +2037,7 @@ def _grams(text: str, query_mode: bool = False) -> List[str]:
     """query_mode=True 时，长度 >= 2 的 CJK 串只用 2-gram。
 
     原因：查询侧若同时用 1-gram 求交，含「酒」和「店」但不含「酒店」的分片
-    也会被算成候选，白白多拉分片（上海+酒店实测 20 片）。2-gram 已足以保证
+    也会被算成候选，白白多拉分片。2-gram 已足以保证
     召回（含「酒店」的记录必然含 bigram「酒店」），单字查询仍走 1-gram。
     """
     t = (text or "").lower()
@@ -2106,10 +2067,8 @@ def _index_text(relpath: str) -> Optional[str]:
     城市检索看到新数据（修 DSH 发现的「不提交就永远看不到」坑）。非本地副本模式保持
     旧的「HEAD 变化才刷新」行为。
 
-    2026-10-05 改：**HTTP 模式也落盘**（原先 `if REPO` 直接跳过缓存 → 每个新进程
-    都要重新下载 + 重新解析）。data/name-index.jsonl 18.4 MB / 168,780 行 JSON，
-    重复解析本身就是秒级开销；编号映射 分片更值得缓存（一次解析，进程内 与命中量相关 查询）。
-    版本号取 _data_version()：HTTP 模式一发布新数据即失效，不会读到陈旧快照。
+    HTTP 模式也落盘：name-index 与 编号映射 的重复解析成本高，值得缓存。
+    版本号取 _data_version()：一发布新数据即失效，不会读到陈旧快照。
     """
     cp = None
     ver = _data_version()
@@ -2196,11 +2155,10 @@ def _git_read_many(paths: List[str]) -> Dict[str, str]:
 def _read_many_text(paths: List[str]) -> Dict[str, str]:
     """批量取文本：本地副本优先 → git archive 兜底；HTTP 模式线程池并发。
 
-    BEACON_WORKTREE=1（默认）：**必须本地副本优先**。`_candidate_shards`（索引桶）与
-    `_records_from_paths`（fp 分片）都走这里 —— 若沿用「git archive HEAD」就会永远
-    读到**已提交快照**，派生重建 刚重建、尚未提交的索引 / 分片完全看不见（DSH 实测
-    「关键词 / 城市检索不提交就搜不到」的真凶）。本地副本缺的文件再走 archive 已提交
-    快照兜底，最后 HTTP。非本地副本模式（BEACON_WORKTREE=0）保持旧行为。
+    BEACON_WORKTREE=1（默认）：**必须本地副本优先**。索引与分片都走这里 ——
+    若只用「git archive HEAD」就只会读到**已提交快照**，刚重建、尚未提交的
+    派生层完全看不见。本地副本缺的文件再走已提交快照兜底，最后 HTTP。
+    非本地副本模式（BEACON_WORKTREE=0）只读已提交快照。
     """
     if not paths:
         return {}
@@ -2221,12 +2179,12 @@ def _read_many_text(paths: List[str]) -> Dict[str, str]:
         if len(got) >= max(1, len(paths) // 2):   # archive 正常覆盖
             return got
     # ⚠ HTTP 分支必须走 _shard_text（按清单 h 做**内容哈希缓存**），不能裸调 fetch_text。
-    #   这里是 _candidate_shards（倒排桶）与 _records_from_paths（fp 分片）的**公共取数口**：
-    #   一次「模具」检索要拉约 17 MB 的 fp 分片（24 片）。裸 fetch_text 只有 URL 级缓存，
+    #   这里是 _candidate_shards（索引桶）与 _records_from_paths（fp 分片）的**公共取数口**：
+    #   一次「模具」检索要拉大量 fp 分片。裸 fetch_text 只有 URL 级缓存，
     #   而 URL 缓存**不跨进程复用**（每次新进程都重下），于是热启动与首次加载同速
-    #   —— 实测两次都是 ~11 s，缓存目录里 URL 哈希文件 33 个、shard-*.json 一个都没有。
+    #   —— 走缓存后不必重复付出这笔解析开销。
     #   换 _shard_text 后，内容没变就完全不走网络（连 304 都省），且跨进程有效。
-    #   （没有 h 的路径——如倒排桶——_shard_text 内部自动退回 fetch_text，行为不变。）
+    #   （没有 h 的路径——如索引桶——_shard_text 内部自动退回 fetch_text，行为不变。）
     _shard_hash_index()          # 预热：别让线程池里做首次构建
     out: Dict[str, str] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
@@ -2287,7 +2245,7 @@ _city_names_cache: Optional[set] = None
 
 
 def _city_names() -> set:
-    """检索索引里出现过的城市名集合：地区词不作为相关性证据（只作筛选偏好）。"""
+    """预构建索引里出现过的城市名集合：地区词不作为相关性证据（只作筛选偏好）。"""
     global _city_names_cache
     if _cache_stale(_city_names_cache, INDEX_DIR + "/city.json"):
         names: set = set()
@@ -2335,7 +2293,7 @@ def _collapse_prefixes(toks: set) -> set:
 
 
 def _bucket_postings(gram: str, buckets: int) -> Dict[str, Any]:
-    """取检索索引里某词的 postings {分片路径: 命中条数}；缺失/异常返回空 dict。
+    """取预构建索引里某词的 postings {分片路径: 命中条数}；缺失/异常返回空 dict。
 
     桶缓存按本地副本 mtime 判新（见 _wt_mtime）：派生重建 重建索引后，对应桶文件
     mtime 变化即自动重读，无需重启。
@@ -2368,7 +2326,7 @@ def _bucket_df(gram: str, buckets: int) -> int:
 
 
 def _gram_idf(grams) -> Dict[str, float]:
-    """按检索索引的 df 给产品词估 IDF 权重 = 1/(1+ln(df))。
+    """按预构建索引的 df 给产品词估 IDF 权重 = 1/(1+ln(df))。
 
     稀有的真产品词（「输送」df=6 -> 0.36）权重高；泛词权重低、自然让位，
     碎片（df<MIN，如「送线」）直接剔除。索引不可用时返回空 dict，
@@ -2393,7 +2351,7 @@ def _gram_idf(grams) -> Dict[str, float]:
 
 
 def _recall_candidates(toks) -> Optional[List[Dict[str, Any]]]:
-    """检索索引『区分词并集』快速召回：取并集（OR）而非交集。
+    """预构建索引『区分词并集』快速召回：取并集（OR）而非交集。
 
     锚定所有采信的产品词（df >= _RECALL_DF_MIN）。碎片/地区词/通名已在 `_usable_gram`
     与 `_gram_idf` 阶段剔除，故这里只做并集。索引不可用、无采信词、或并集覆盖过大
@@ -2542,10 +2500,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     limit = max(1, min(int(limit), 200))
     offset = max(0, int(offset))
     q = (query or "").strip().lower()
-    # 原话归一化（2026-10-06）：用户输入的是**一句人话**，不是空格分隔的关键词表。
-    # 旧实现直接 `q.split()`，中文整句会变成一个 token，而关键词是 AND 语义 —— 没有
-    # 任何记录会包含「苏州做ai的企业」这个串，必然 0 条。归一化顺带把原话里的城市
-    # 抽成 city 过滤条件。详见 `_normalize_query`。
+    # 原话归一化：用户输入的是**一句人话**，不是空格分隔的关键词表。
+    # 归一化把它切成可执行的检索参数，并顺带把原话里的城市抽成 city 过滤条件。
+    # 详见 `_normalize_query`。
     norm = _normalize_query(query, city) if q else None
     if norm:
         city = norm["city"] or city
@@ -2562,7 +2519,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     cap_tokens = {h["word"].lower() for h in cap_hits
                   if len(h["word"]) <= 2 and h["word"].isascii()}
     gen_tokens = [t for t in tokens if t not in cap_tokens]
-    # 口语词 → 国标码（2026-09-24 接入别名表）。
+    # 口语词 → 国标码（别名表）。
     # 「输送线/流水线/PCB」这类词在任何记录的厂名/工艺/材料里都不出现，纯子串匹配
     # 必然 0 条。别名命中的记录按码定向召回，**豁免 AND token 校验** —— 不豁免的话
     # 刚拉进来就又被 检索面 判定「不含输送线」而滤掉，等于白接。
@@ -2612,7 +2569,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                            "**不是相关度**，不要拿它反推排序。"),
         }, q, city)
 
-    # 未给国标码：优先走「预构建检索索引 → 只拉命中分片」（与命中量相关）。
+    # 未给国标码：优先走「预构建索引 → 只拉命中分片」。
     # 索引缺失或陈旧时回退进程内全量索引（与命中量相关，慢但结果等价）。
     cands = _candidate_shards(gen_tokens, city) if (gen_tokens or city) else None
     via_index = cands is not None
@@ -2736,7 +2693,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         **parsed,
         # 结果顺序是**有意设计的分档**，不是随机的：按召回纯度递减排列。
         # 而 `score` 是**能力画像分**（有已发布能力卡才有分，无卡为 0），**不是相关度**。
-        # 两者一起看极易误判（实测：一家餐厅 sc=0 排在持卡 L2 企业 sc=40 前面），
+        # 两者一起看极易误判，
         # 所以在这里把口径写死，让 agent 自己能分辨「谁更值得先看」。
         "order_note": ("results 按召回来源分档排列：via=text(厂名/工艺/材料等**字面**命中) → "
                        "via=cap_text(厂名里其实没这个词，只是撞上了能力键的中文词面) → "
@@ -2795,16 +2752,12 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
     gb = (gb or "").strip()
     # 没给国标码就先解析 id -> gb。
     #
-    # 2026-10-05 改（第二版）：**不再顺序扫 fp 分片**，也**不再默认读 18.4 MB 的
-    # name-index**。旧实现 `for s in _shards_of_type("fp")` 逐个 fetch_text 直到命中，
-    # HTTP 模式下 = 320 次串行 GET ≈ 270 秒；改成读 name-index 后降到 103.9 秒，
-    # 但那 100 秒**全在那份 18.4 MB 的索引上** —— 它本来是为「按公司名匹配」设计的，
-    # 拿来定位一条 id 属于严重超配。
+    # 定位策略（三级，见下）：先小后大，绝不默认读全量索引。
     #
     # 现在分三级：
-    #   ① 编号映射 定址分片（id 千位切片）：一次约 13 KB，常数级 IO
+    #   ① 编号映射 定址分片（id 千位切片）：常数级 IO
     #   ② 片取到了但 id 不在 → id 密集自增且分片与 zh 同批发布，可判定「不存在」，
-    #      直接返回，不走任何慢路径（否则查一个不存在的 id 会把 100 秒重新付一遍）
+    #      直接返回，不走任何慢路径
     #   ③ 片没取到（超出已发布范围）或本地本地副本比索引新 → name-index / 并发全量兜底
     if not gb:
         got, shard_ok = _idmap_lookup(vid)
@@ -2830,7 +2783,7 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
         zh_paths = _zh_paths_for_gb(gb)
         if not zh_paths:
             return {"error": f"国标码 {gb} 没有对应的 zh 分片"}
-        # 一个国标码常有 2~3 个 zh 续片（3525 = 3525.json 7.0 MB + 3525-p2.json 2.8 MB），
+        # 一个国标码常有 2~3 个 zh 续片（主片 + 续片），
         # 串行取等于把延迟相加。并发取、按原顺序判定，命中即返回。
         texts = _fetch_many(zh_paths)
         for zh_path, txt in zip(zh_paths, texts):
@@ -2845,8 +2798,8 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
                     v = normalize_vendor(rec)
                     # zh 记录自身常常**不写 gb**（只留 industry.code），但它就归档在
                     # 这个 gb 分片里。不按分片归属回填的话会出现自相矛盾：
-                    # search_vendors(gb=6531) 能搜到它、get_vendor 却说
-                    # gb=null + gb_unclassified=true（2026-10-06 实测 CN-I-0000001）。
+                    # search_vendors 能搜到它、get_vendor 却说
+                    # gb=null + gb_unclassified=true。
                     if not v.get("gb"):
                         v["gb"] = gb
                         v["gb_source"] = "shard"   # 记录没写，取自分片归属
@@ -2856,7 +2809,7 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
 
     # 兜底：gb 为 null（未归类）—— 这些记录躺在 c=='' 的 zh 分片里
     # （主要是 _unclassified.json，外加几个 xxx/_partial.json）。
-    # 2026-09-24 之前这条路径直接报「找不到国标码」，2271 条未归类企业等于查无此人。
+    # 未归类企业也要能被检索到，不能直接报「找不到国标码」。
     loose = [s.get("p") for s in _shards_of_type("zh") if not s.get("c")]
     loose_txt = _fetch_many(loose)
     for p, txt in zip(loose, loose_txt):
@@ -2885,10 +2838,8 @@ def _card_count() -> int:
 def _cap_card_ids() -> Optional[set]:
     """清单里登记的「已有能力卡的 id 集合」（None = 清单没这块，走原路径）。
 
-    2026-10-06 实测：能力卡只存在于本地 `skills/registry/capability/`，
-    既不进 git 也不在 CDN 静态站上 → 三个基址串行 404。对 majority 没有卡的
-    供应商，一次 `get_capability_card` 要 **42~65 秒**才肯回 has_card=false。
-    清单带上这张 id 表之后，没卡的直接短路，一次网络都不发。
+    并非所有供应商都有能力卡；逐个去远端探测会非常慢。
+    清单带上这张 id 表之后，没卡的可以直接短路，一次网络都不发。
     """
     global _CAP_CARD_IDS
     if _CAP_CARD_IDS is None:
@@ -3121,8 +3072,7 @@ def _chain_grams(grams: List[str], max_len: int = 8) -> List[str]:
     """把重叠的 2-gram 链回原词：`流水` + `水线` → `流水线`。
 
     为什么需要这一步：`_tokenize` 出于召回考虑会同时产出 1-gram 和 2-gram，
-    直接取前 N 个得到的是「厂 / 家 / 水 / 流」这种碎片 —— 拿来当需求信号毫无意义
-    （2026-09-23 实测：「上海的流水线厂家」抽出来是 `['厂','家','水','水线','流','流水']`）。
+    直接取前 N 个得到的是「厂 / 家 / 水 / 流」这种碎片 —— 拿来当需求信号毫无意义。
     链回原词之后才是「流水线」这种能直接翻译成抓取矩阵的词。
     """
     gs = sorted(set(g for g in grams if len(g) == 2))

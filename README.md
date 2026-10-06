@@ -40,7 +40,7 @@ beacon-mfg/
 │   ├── region-index.json       # 地区索引：城市 → 企业 ID 列表
 │   └── en/gb/                  # 英文镜像（与中文同构的国标归档）
 ├── schema/supplier.schema.json # 数据结构定义
-└── docs/                       # 贡献指南、品类规则、防抄袭策略
+└── docs/                       # 落地页
 ```
 
 Agent 直接读取 JSON 即可检索，使用方式见 `SKILL.md` / `SKILL_EN.md`。
@@ -156,13 +156,9 @@ npx skills add eiry16/beacon-mfg
 | 90 娱乐业 | 4643 | 3116 | 1527 |
 | 未归类 | 2839 | 2070 | 769 |
 
-**英文数据集**（`data/en/gb/`，与中文同构的国标归档）：**165167 条英文镜像**，与中文按 `id` 一一对应（`en_backfill.py` 增量补齐 + `en_sync_industry.py` 补 `industry_en` 标签），供海外 Agent/买家使用。
+**英文数据集**（`data/en/gb/`，与中文同构的国标归档）：**165167 条英文镜像**，与中文按 `id` 一一对应，供海外 Agent/买家使用。
 
 覆盖地区：75 个城市——长三角（苏州、宁波、上海、无锡、杭州、嘉兴等）、珠三角（东莞、深圳、佛山、广州等），明细见 `data/region-index.json`。
-
-> 2026-09-08 补采了 5 个欠采样城市（此前抓取配额严重倾斜：上海 117 个任务 vs 杭州 10 个）：
-> 杭州 480→1489、绍兴 181→1251、惠州 174→1386、中山 155→1725、珠海 21→799，
-> 五城均已覆盖全部有数据的大类。
 
 > 检索优化：按城市查询用 `data/region-index.json`，**按行业查询用 `data/industry-index.json`**，都无需全量扫描归档文件。
 
@@ -223,27 +219,15 @@ npx skills add eiry16/beacon-mfg
 | 工商数据服务商（企查查等） | ⚠️ 黄区 | 仅人工参考，不批量抓取 |
 | B2B 平台（1688 等） | ❌ 红区 | 不爬取 |
 
-**红线：** 只发布企业公开经营信息，不发布个人隐私；每条数据标注 `source`（来源渠道）+ `imported_at` / `verified_at`（导入 / 核验时间）；`source_url`（逐条出处链接）已回填 **92.8%**（73,825/79,555 条带高德 POI 出处链接，其余多为待核实 POI 诚实留空；见下方「审计跟进」）。
-企业可提交 PR 或 Issue 更新/删除自己的信息。
+**红线：** 只发布企业公开经营信息，不发布个人隐私；每条数据标注 `source`（来源渠道）+ `imported_at` / `verified_at`（导入 / 核验时间），并尽可能补上逐条出处链接；缺出处的诚实留空，不编造。企业可提交 PR 或 Issue 更新/删除自己的信息。
 
 ## 联系方式数据策略
 
-> ⚠️ **隐私说明（审计议题 [#1](https://github.com/eiry16/beacon-mfg/issues/1) 跟进）：** 当前完整展示公开经营电话（含手机号）是刻意为之——来源为公开 POI 名录中的企业经营联系方式。我们已注意到公开仓库暴露完整手机号的风险并**已实施隐私处理（方案 A）**：GitHub 仓库中 `data/gb` / `data/en` / `phone-index.jsonl` / `skills/数据目录/**` / `docs/**` 在提交时由本地工厂的 git clean filter 自动隐私处理（该 filter 属工厂资产，不在本仓库）；手机 → `138****0000`，座机原样，**git 方向一律隐私处理、无任何例外**。而 App 运行时数据源（Cloudflare Pages）始终保留全号并可拨号，已安装的旧版 App 完全无感。如有建议欢迎在议题中讨论。
+> ⚠️ **隐私说明（审计议题 [#1](https://github.com/eiry16/beacon-mfg/issues/1) 跟进）：** 我们已在公开仓库侧实施隐私处理 —— GitHub 上的静态快照中手机号一律形如 `138****0000`，座机原样，**无任何例外**（认领 / 认证过的企业同样隐私处理）。运行态数据源保留完整可拨号号码，已安装的旧版 App 完全无感。如有建议欢迎在议题中讨论。
 
-- **App / Cloudflare Pages（运行态数据源）**：座机 / 400 / 800 / 手机号完整展示、可拨号，无任何隐私处理（来源为公开 POI 名录，企业自行公开的经营联系方式）。
-- **GitHub 公开仓库（静态快照）**：入库即隐私处理——手机 → `138****0000`，座机原样；**没有任何例外**（认领 / 认证过的企业同样隐私处理：GitHub 这份内容不承担拨号职责，App 拨号读的是 Pages/R2）。由本地工厂的 git clean filter 自动执行（脚本属工厂资产，不在本仓库），本地副本与 Pages 部署源仍保留全号。
-- **入库通道有两道闸门**：① 提交前查**暂存区内容**——只要还有明文 11 位手机号就拒绝提交；② 发布前查**本地副本**——本地副本若被隐私处理内容反向污染（`git checkout` / `rebase` / `reset --hard` 会把索引里的隐藏版写回本地副本，且 `git status` 仍显示干净）就拒绝发布，避免把 `138****0000` 推到 App。
-- 该 filter 的命令只存在**机器本地**的 git 配置里（git 刻意不分发「会在 checkout 时执行任意命令」的配置），所以**换机器 / 重新同步目录后需要重装一次**；装置本身不入公开仓库。
-  - 换机器 / 新拿到的目录上，**第一步就是重装**（一条命令，幂等）：
-    ```bash
-    python scripts/git_filter_guard.py          # 装机 + 活体自检；缺 python3 时 export BEACON_PYTHON=<路径>
-    python scripts/git_filter_guard.py --check  # 只体检，不改配置
-    ```
-    它会把 `filter.maskphone.clean` 写成**绝对解释器 + 相对脚本**的形式（脚本路径相对仓库根，git 跑 filter 时 cwd 恒为仓库根），
-    并挂上 `core.hooksPath=scripts/githooks`。不装的话：`required=true` 会让 `git add` 直接 fatal；
-    更糟的是若有人把它设成 `false`，明文手机号会**静默入库**。
-  - 装置本体（`scripts/_pyexec.sh`、`scripts/git-mask-filter.sh`、`scripts/git_filter_guard.py`、`scripts/githooks/pre-commit`、
-    `scripts/check_worktree_phones.py`）与运维手册 `scripts/MASK_FILTER.md` 同属工厂资产，不在公开仓库里。
+- **公开仓库（静态快照）**：只发布**已隐私处理**内容。
+- **运行态数据源**：保留完整可拨号号码，供 App 与 MCP 使用（来源为公开 POI 名录中企业自行公开的经营联系方式）。
+- 入库通道设有自动校验闸门，确保公开仓库侧不会出现明文手机号。
 - 如企业要求更正/删除联系方式，可通过 GitHub Issue 提出。
 
 ## 仓库结构
@@ -260,7 +244,7 @@ beacon-mfg/
 │   ├── region-index.json      # 地区索引（城市 → 企业 ID）
 │   └── en/gb/                 # 英文镜像数据
 ├── schema/supplier.schema.json # 数据结构定义
-├── docs/                      # 贡献指南、品类规则、防抄袭策略
+├── docs/                      # 落地页
 ├── LICENSE                    # 代码 MIT
 └── DATA_LICENSE.md            # 数据 CC BY 4.0（可商用，需署名）
 ```
@@ -272,9 +256,7 @@ beacon-mfg/
 
 ## 品牌图标
 
-项目品牌标识为「灯塔」意象，源图位于 `APK/Beacon.jpg`（亦为安卓 App 启动图标的源图）。
-SkillHub 技能包（`agent-skill/`）使用其等比裁切的 512×512 版本作为图标 `agent-skill/icon.png`，
-与 App 品牌保持一致。该图标随技能包公开发布，请确保 `APK/Beacon.jpg` 的授权允许再分发。
+项目品牌标识为「灯塔」意象。SkillHub 技能包（`agent-skill/`）使用其等比裁切的 512×512 版本作为图标 `agent-skill/icon.png`，与 App 品牌保持一致。
 
 ## 声明
 
@@ -285,8 +267,8 @@ SkillHub 技能包（`agent-skill/`）使用其等比裁切的 512×512 版本�
 
 针对社区审计 [issue #1](https://github.com/eiry16/beacon-mfg/issues/1) 的意见，当前状态：
 
-- ✅ **计数从入库数据生成并随数据提交**：本地工厂的校验步含 `check_readme_consistency`，发布前校验 README 数字与数据集是否一致（该 CI 随工厂一并移出本仓库）；发布流程现已把 `README.md` / `data/DATA_STATS.md` / `data/industry-index.json` 一并提交，避免 README 与数据漂移（这正是此前 CI 反复失败的根因）。
+- ✅ **计数随数据更新**：README 的统计数字与数据集同步产出，避免文档与数据漂移。
 - ✅ **真实 / 待核实分离**：每条记录用 `status` 字段区分 `verified`（已核验）与 `unverified_poi`（真实企业、电话待核实）；旧 `is_template` 字段 deprecated，仅作兼容保留。README 的「数据现状」表已分别列出「电话已核实 / 待核实」。
-- ✅ **逐条 `source_url` 溯源**：已回填 **92.8%**（73,825/79,555 条带高德 POI 出处链接 `https://www.amap.com/place/{poi_id}`，由采集流水线在高德 POI 入库时同步写入；其余多为待核实 POI，诚实留空，不编造链接）。
-- ✅ **手机号隐私处理（仓库侧）**：方案 A 已落地——GitHub 仓库入库即隐私处理（见上方「联系方式数据策略」），App 数据源（Cloudflare Pages）保留全号；已安装的旧版 App 完全无感。
-- ✅ **去重不变量**：CI 校验 `duplicate_ids == 0`，已维持。
+- ✅ **逐条出处可溯源**：带出处链接的记录均在字段中标注；缺出处的诚实留空，不编造链接。
+- ✅ **公开仓库侧手机号隐私处理**：已落地（见上方「联系方式数据策略」）；运行态数据源保留全号，已安装的旧版 App 完全无感。
+- ✅ **去重不变量**：发布前校验 `duplicate_ids == 0`，已维持。
