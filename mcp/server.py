@@ -283,9 +283,9 @@ def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.5.4")
+            return json.load(f).get("version", "1.5.5")
     except Exception:
-        return "1.5.4"
+        return "1.5.5"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
@@ -991,7 +991,7 @@ def _gb_shelf() -> List[Dict[str, Any]]:
 
 
 def _seg_patterns() -> List[Tuple[str, str]]:
-    """长词优先的匹配表 [(词, 来源)]，来源 ∈ alias / gb_name。"""
+    """长词优先的匹配表 [(词, 来源)]，来源 ∈ alias / gb_name / cap。"""
     global _SEG_PATTERNS
     if _SEG_PATTERNS is None:
         pats: Dict[str, str] = {}
@@ -1001,6 +1001,16 @@ def _seg_patterns() -> List[Tuple[str, str]]:
         for r in _gb_shelf():
             if len(r["name"]) >= 2:
                 pats.setdefault(r["name"], "gb_name")
+        # 2026-10-06 补 cap（能力词）。在此之前这里只收「国标别名 + 国标类名」，
+        # 而「人工智能 / 机器学习 / 大模型」是**跨门类能力词**，两边都不在 —— 于是
+        # 「找苏州做人工智能的企业」在这里一个字都切不出来，`suggest_filters` 只能
+        # 返回空候选把 agent 赶去翻货架。
+        # 只收 **纯汉字且长度 >= 2** 的能力词：ASCII 侧（ai / cnc / c / 3d…）数量大，
+        # 且「c」「3c」这类单双字符做子串切分会把任意含 c 的串切碎。ASCII 能力词由
+        # `_cap_terms_in` 用词边界单独扫，不进这张切分表。
+        for w in _cap_term_index():
+            if len(w) >= 2 and _is_cjk(w):
+                pats.setdefault(w, "cap")
         _SEG_PATTERNS = sorted(pats.items(), key=lambda x: -len(x[0]))
     return _SEG_PATTERNS
 
@@ -1026,6 +1036,120 @@ def _segment_terms(text: str) -> List[Tuple[str, str]]:
         else:
             i += 1
     return hits
+
+
+# --------------------------------------------------------------------------- #
+# 原话归一化：把「一句人话」切成可执行的检索参数
+#
+# 为什么必须有这一层（2026-10-06 实测）：`search_vendors` 的关键词切分原本只有
+# `q.split()` —— 按空白切。中文用户输入的自然语言没有空格，整句话就是一个 token：
+#   「苏州做AI的企业」 → tokens = ["苏州做ai的企业"]
+# 而关键词走的是「每个 token 都必须出现在记录检索面里」（AND）语义，**没有任何一条
+# 记录**会包含「苏州做ai的企业」这个串，于是必然 0 条。同时城市没被提取、能力词
+# 'AI' 也认不出。三层叠起来的结果：用户**原话**问什么都是 0 条，必须由 agent 先手工
+# 拆成 query + city 才行 —— 这是把「理解自然语言」的责任推给了调用方，MCP 该自己扛住。
+# --------------------------------------------------------------------------- #
+_STOPWORDS: Tuple[str, ...] = (
+    # 通名/机构词：出现即无信息量（「企业」「公司」本身不是产品词）
+    "生产厂家", "制造商", "加工厂", "制造厂", "供应商", "厂商",
+    "企业", "公司", "工厂", "厂家",
+    # 诉求词
+    "有哪些", "哪几家", "哪家", "几家", "一家",
+    "推荐", "介绍", "查找", "找一下", "查一下", "看一下", "看看",
+    "找找", "查询", "搜索", "检索",
+    # 指代/范围
+    "有没有", "什么样的", "怎么样", "什么", "附近", "周边",
+    "当地", "本地", "这边", "那边", "相关的", "有关的", "有关",
+    # 单字诉求（整词替换，不会伤到词内部）
+    "帮我", "给我", "我要", "我想", "一下",
+)
+_STOPWORDS_SET = frozenset(_STOPWORDS)
+# 只削**两端**的功能字。刻意不含 厂/家/店/司（「酒厂」「酒店」「家电」是合法词），
+# 也不含 有/用/能/会/可（「有色」「用友」会被削坏）。
+_EDGE_FILLER = set("的了找做想要请给我你在和与或及是这那们吧呢吗把被让")
+_RE_RUNSPLIT = re.compile(r"[^0-9a-z\u4e00-\u9fff]+")
+
+
+def _trim_edges(t: str) -> str:
+    """削掉 token 两端的功能字，只削两端、不动中间（「做ai的」→「ai」）。"""
+    i, j = 0, len(t)
+    while i < j and t[i] in _EDGE_FILLER:
+        i += 1
+    while j > i and t[j - 1] in _EDGE_FILLER:
+        j -= 1
+    return t[i:j]
+
+
+def _normalize_query(query: str, city: str = "") -> Dict[str, Any]:
+    """把用户原话归一成 (city, keywords, cap_hits, alias_hits, segments)。
+
+    一句话（「找一下苏州做AI的企业」）里混着四类东西：
+      ① 城市     → 抽出来当 city 过滤（调用方没显式给 city 才抽）
+      ② 已识别词 → 国标别名 / 国标类名 / 能力词（`_segment_terms` 切出）
+      ③ 停用词   → 「的」「找」「企业」这类无信息量的填充
+      ④ 真关键词 → 剔掉 ①②③ 后剩下的
+    ② 保留进 keywords（不丢弃）：「厂名里真写了这个词」仍能被字面召回，与既有行为
+    一致；③ 必须剔掉，否则「的企业」会参与 AND 匹配，必然 0 条。
+    """
+    raw = (query or "").strip()
+    low = raw.lower()
+    out: Dict[str, Any] = {"raw": raw, "city": city or "", "city_from_query": "",
+                           "tokens": [], "cap_hits": [], "alias_hits": [],
+                           "segments": []}
+    if not low:
+        return out
+
+    # 停用词不参与任何「识别」——否则 '企业' 若恰好也是能力词/别名，会被当成
+    # 一个正式检索词塞进 tokens，反而把查询扩大成「整城扫」。
+    cap_hits = [h for h in cap_alias_codes(low)
+                if str(h.get("word") or "").lower() not in _STOPWORDS_SET]
+    alias_hits = [h for h in alias_codes(raw)
+                  if str(h.get("word") or "").lower() not in _STOPWORDS_SET]
+    segs = [(w, s) for (w, s) in _segment_terms(low)
+            if w.lower() not in _STOPWORDS_SET]
+
+    # ① 城市就地抽取（只在调用方没显式给 city 时）。取**最长**命中：「苏州」与「昆山」
+    #    同时出现时长者信息量更大。省/自治区不在 city.json（那里只放市/县级），故
+    #    「贵州的酒厂」这类由 agent 走 list_industries 语义挑码。
+    city_found = ""
+    if not out["city"]:
+        try:
+            names = [n for n in _city_names() if n and n.lower() in low]
+        except Exception:
+            names = []
+        if names:
+            city_found = max(names, key=len)
+            out["city"] = city_found
+            out["city_from_query"] = city_found
+
+    # ② 把「已识别的」从原话里剔掉，剩下的才是通用关键词
+    resid = low
+    if city_found:
+        resid = resid.replace(city_found.lower(), " ")
+    for h in cap_hits + alias_hits:
+        w = str(h.get("word") or "").lower()
+        if w:
+            resid = resid.replace(w, " ")
+    for w, _src in segs:
+        resid = resid.replace(w.lower(), " ")
+    for w in sorted(_STOPWORDS, key=len, reverse=True):
+        resid = resid.replace(w, " ")
+    toks: List[str] = []
+    # 纯结构字（厂/店/家/司…）不成词、没有产品信息，不能当关键词：它们会进入
+    # **AND 过滤**，把厂名里恰好不写「厂」的「XX有限公司」整批误滤掉。
+    # 2026-10-06 实测：「昆山 做CNC的厂」里 cnc 被消费后只剩一个「厂」，
+    # 结果文本召回退化成「整城扫所有含厂字的记录」。
+    _noinfo = _FUNC_CHARS | _ORG_SUFFIX
+    for t in _RE_RUNSPLIT.sub(" ", resid).split():
+        t = _trim_edges(t)
+        if t and not all(ch in _noinfo for ch in t):
+            toks.append(t)
+
+    out["tokens"] = list(dict.fromkeys(toks + [w.lower() for w, _ in segs]))
+    out["cap_hits"] = cap_hits
+    out["alias_hits"] = alias_hits
+    out["segments"] = [{"term": w, "source": s} for w, s in segs]
+    return out
 
 
 def list_industries(keyword: str = "", parent: str = "", limit: int = 30,
@@ -1072,6 +1196,10 @@ def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any
     q = (query or "").strip()
     if not q:
         return {"error": "缺少必填参数 query"}
+    # 原话归一化：抽城市（调用方没给才抽）+ 剔停用词。用户给的是一句话时，
+    # 「苏州做AI的企业」里的「苏州」应当变成 city 条件，而不是当成关键词去 AND。
+    norm = _normalize_query(q, city)
+    city = norm["city"] or city
     limit = max(1, min(int(limit), 30))
     by_code = {r["code"]: r for r in _gb_shelf()}
     cands: Dict[str, Dict[str, Any]] = {}
@@ -1131,7 +1259,7 @@ def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any
     # 国标侧没类、能力侧不问 —— 两边都空，agent 只能拿到 candidates:[] 瞎猜。
     cap_cands: List[Dict[str, Any]] = []
     try:
-        for c in cap_alias_codes(q):
+        for c in (norm.get("cap_hits") or cap_alias_codes(q)):
             cap_cands.append({"cap": c["cap"], "name": c["name"], "word": c["word"],
                               "records": _cap_count(c["cap"])})
     except Exception:
@@ -1140,6 +1268,12 @@ def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any
     res: Dict[str, Any] = {
         "query": q,
         "city": city or "",
+        # 把「MCP 是怎么理解这句话的」摊开给 agent 看：抽走了哪个城市、剔了哪些停用词、
+        # 认出了哪些词条。不透明的话，agent 无法判断候选为空到底是「没这行业」还是
+        # 「这句话没被读懂」，只能瞎猜着换词重试。
+        "city_from_query": norm.get("city_from_query") or "",
+        "keywords": norm.get("tokens") or [],
+        "recognized": norm.get("segments") or [],
         "candidates": out,
         "how_to_use": "挑 1~3 个 code，逐个调 search_vendors(gb=<code>, city=<城市>)"
                       "（给了 gb 只扫对应分片，最快）；多个码的结果自行合并去重。"
@@ -1161,8 +1295,11 @@ def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any
         res["note"] = ("国标小类里没有这个词（GB/T 4754 本来就不保证有「%s」这一类），"
                        "但它命中能力域 %s。直接调 search_vendors(query=\"%s\") 即可，"
                        "能力域会被自动展开；结果偏少属正常 —— 那是数据厚度问题，"
-                       "不是查询写法问题。"
-                       % (q, "、".join(c["name"] for c in cap_cands), q))
+                       "不是查询写法问题。%s"
+                       % (q, "、".join(c["name"] for c in cap_cands), q,
+                          ("另外能力域企业在空间上很稀疏（全库常只有几十家），"
+                           "按 city=%s 过滤后若为 0 条，去掉 city 再试。" % city)
+                          if city else ""))
     else:
         res["next_call"] = {"tool": "list_industries",
                             "arguments": {"keyword": q, "limit": 30}}
@@ -1184,9 +1321,37 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
     try:
         s = suggest_filters(q, city, limit=5)
     except Exception:
-        return out
+        s = {}
     cands = s.get("candidates") or []
+    try:
+        caps = cap_alias_codes(q)
+    except Exception:
+        caps = []
+
+    def _emit_cap() -> None:
+        out["cap_expanded"] = [{"cap": c["cap"], "name": c["name"], "word": c["word"],
+                                "records": _cap_count(c["cap"])} for c in caps]
+        txt = ("这个词命中能力域 %s（跨门类的工艺/技术标签，不是国标小类），"
+               "search_vendors(query=…) 已自动展开并计入结果。命中偏少说明该能力"
+               "在名录里确实很薄，**不要理解成「没这家厂」**。放宽可调 "
+               "list_industries(keyword=…) 换近义类目再传 gb=。"
+               % "、".join("%s %d 家" % (c["name"], _cap_count(c["cap"]))
+                          for c in caps))
+        # 0 条且带了城市时，最可能的元凶是城市而不是关键词 —— 能力域企业在空间上
+        # 很稀疏（全库可能就十几家），叠一个城市筛掉全部是常态。这一句能省掉 agent
+        # 一整轮「换个城市试」的瞎猜。
+        if city and not out.get("total_matched", 0):
+            txt += ("本次已按 city=%s 过滤；去掉 city 再试一次往往就有。" % city)
+        out["hint"] = txt
+
     if out.get("total_matched", 0) == 0 and not cands:
+        # 0 条 + 国标侧无候选 —— 但**能力域可能命中**，这是唯一还可执行的线索。
+        # 旧实现这里直接 return 一句「关键词对不上」：2026-10-06 实测查
+        # 「苏州做AI的企业」时 caps=tech_ai 明明存在，hint 却在更早的分支出局，
+        # agent 于是完全看不到「换个说法/加城市就能召回」这条信息。
+        if caps:
+            _emit_cap()
+            return out
         out["hint"] = ("关键词与名录里的写法对不上，且没有可推导的国标码。"
                        "建议调 list_industries 用语义挑码后改传 gb=。")
         return out
@@ -1202,18 +1367,8 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
     # 2026-10-06 实测：查「苏州做AI的企业」只回 2 条（其中一条是名字里带「人工智能」的
     # 餐厅），hint 全程不出现 —— 因为旧逻辑只有「0 条且无候选」和「有候选」两个分支，
     # 1~4 条无候选直接掉进空档 return。必须补上。
-    try:
-        caps = cap_alias_codes(q)
-    except Exception:
-        caps = []
     if caps:
-        out["cap_expanded"] = [{"cap": c["cap"], "name": c["name"], "word": c["word"],
-                                "records": _cap_count(c["cap"])} for c in caps]
-        out["hint"] = ("这个词命中能力域 %s（跨门类的工艺/技术标签，不是国标小类），"
-                       "search_vendors(query=…) 已自动展开并计入结果。命中偏少说明该能力"
-                       "在名录里确实很薄，**不要理解成「没这家厂」**。放宽可调 "
-                       "list_industries(keyword=…) 换近义类目再传 gb=。"
-                       % "、".join("%s %d 家" % (c["name"], _cap_count(c["cap"])) for c in caps))
+        _emit_cap()
         return out
     out["hint"] = ("命中偏少且推不出国标码：这几条多半只是**字面撞词**，未必真是你要的行业。"
                    "建议调 list_industries(keyword=\"…\") 用语义挑 1~3 个国标小类，"
@@ -1258,17 +1413,72 @@ def _cap_term_index() -> Dict[str, str]:
     return idx
 
 
+_CAP_SUBSTR_WORDS: Optional[List[Tuple[str, str, Any]]] = None
+
+
+def _cap_substr_words() -> List[Tuple[str, str, Any]]:
+    """能力词表里**可做子串扫描**的词 [(词, 键, 预编译边界正则|None)]，长词在前。
+
+    过滤规则都是为了不误命中：
+      · 长度 < 2 一律不要 —— 表里有 'c'、'/' 这种单字符键，子串扫会把任何含 c 的
+        查询都映射成 tst_cpp（一个字符毁掉一条链路）；
+      · 只保留「纯字母/数字/汉字」构成的词，带符号的（`.net` / `c++` / `250m汽车配件`
+        里的斜杠）留给整词精确那一档；
+      · ASCII 词预编译 `(?<![a-z0-9])词(?![a-z0-9])` 词边界 —— 否则 'ai' 会命中
+        'chair'、'cnc' 会命中 'cncxx'。汉字不分词、天然成词，无需边界。
+    """
+    global _CAP_SUBSTR_WORDS
+    if _CAP_SUBSTR_WORDS is None:
+        rows: List[Tuple[str, str, Any]] = []
+        for w, code in _cap_term_index().items():
+            if len(w) < 2:
+                continue
+            if not re.fullmatch(r"[a-z0-9\u4e00-\u9fff]+", w):
+                continue
+            rx = (re.compile(r"(?<![a-z0-9])" + re.escape(w) + r"(?![a-z0-9])")
+                  if w.isascii() else None)
+            rows.append((w, code, rx))
+        rows.sort(key=lambda x: -len(x[0]))
+        _CAP_SUBSTR_WORDS = rows
+    return _CAP_SUBSTR_WORDS
+
+
 def cap_alias_codes(q: str) -> List[Dict[str, Any]]:
-    """能力口语词 → 能力键。整词精确匹配（不分词组子串）。返回 [{cap, word, name}]。"""
+    """能力口语词 → 能力键。返回 [{cap, word, name, match}]。
+
+    两档匹配，整词精确优先：
+      ① exact   查询按空白切开后某个 token 完全等于能力词（原行为）
+      ② substr  能力词出现在查询里的**任意位置**（ASCII 词另要求词边界）
+
+    2026-10-06 补 ②。在此之前只做 ①，而真实用户说的是**一整句人话**：
+    「苏州做AI的企业」按空白切只有一个 token，'AI' 永远匹配不上 —— 能力域召回
+    整条链路对自然人话失效，只能回 0 条并把 agent 赶去翻货架。
+    国标别名侧（`alias_codes`）一直是子串匹配的，两侧行为不一致本身就是 bug。
+    """
     q = (q or "").strip().lower()
     if not q:
         return []
     idx = _cap_term_index()
     hits: Dict[str, Dict[str, Any]] = {}
+    # ① 整词
     for tok in dict.fromkeys(t for t in q.split() if t):
         code = idx.get(tok)
         if code:
-            hits[code] = {"cap": code, "word": tok, "name": _cap_name(code)}
+            hits[code] = {"cap": code, "word": tok, "name": _cap_name(code),
+                          "match": "exact"}
+    # ② 子串（长词优先，一份查询最多认 6 个能力域，免得长句把货架扫爆）
+    for w, code, rx in _cap_substr_words():
+        if code in hits:
+            continue
+        if rx is not None:
+            if not rx.search(q):
+                continue
+        elif w not in q:
+            continue
+        hits[code] = {"cap": code, "word": w, "name": _cap_name(code),
+                      "match": "substr"}
+        if len(hits) >= 6:
+            break
     return list(hits.values())
 
 
@@ -2306,28 +2516,45 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     limit = max(1, min(int(limit), 200))
     offset = max(0, int(offset))
     q = (query or "").strip().lower()
-    # 多词按空格分词，要求全部命中(AND)——这样「上海 酒店」也能正确匹配，
-    # 而非必须作为连续子串出现。单关键词时退化为原行为。
-    tokens = [t for t in q.split() if t]
-
-    # 能力（cap）别名：把口语词（AI / 人工智能 / 机器学习 / 大模型 / 算法 …）映射到
-    # 能力键（如 tech_ai），并**消费**掉该 token（不再做通用子串 AND 校验），只走 cap
-    # 定向召回 —— 否则「AI」会作为子串命中 algebraist / Ashore 等英文名咖啡店造成噪声。
-    cap_hits = cap_alias_codes(q) if q else []
-    # 只消费「会造成子串噪声的短 ASCII token」（如 ai 会子串命中 algebraist 等英文名），
-    # 中文/较长 token 不消费 —— 保留其文本匹配（厂名含「人工智能」的企业不被误丢），
-    # 同时下方 cap 召回仍会叠加，最终是「文本 ∪ 能力」的并集。
+    # 原话归一化（2026-10-06）：用户输入的是**一句人话**，不是空格分隔的关键词表。
+    # 旧实现直接 `q.split()`，中文整句会变成一个 token，而关键词是 AND 语义 —— 没有
+    # 任何记录会包含「苏州做ai的企业」这个串，必然 0 条。归一化顺带把原话里的城市
+    # 抽成 city 过滤条件。详见 `_normalize_query`。
+    norm = _normalize_query(query, city) if q else None
+    if norm:
+        city = norm["city"] or city
+        tokens = norm["tokens"]
+        cap_hits = norm["cap_hits"]
+        alias_hits = norm["alias_hits"]
+    else:
+        tokens, cap_hits, alias_hits = [], [], []
+    # 能力（cap）别名：映射到能力键（如 tech_ai）后**消费**掉该 token（不再做通用
+    # 子串 AND 校验），只走 cap 定向召回 —— 否则「AI」会子串命中 algebraist /
+    # Ashore 等英文名咖啡店造成噪声。
+    # 只消费「会造成子串噪声的短 ASCII token」（ai / cnc …），中文/较长 token 不消费
+    # —— 保留其文本匹配（厂名含「人工智能」的企业不被误丢），最终是「文本 ∪ 能力」并集。
     cap_tokens = {h["word"].lower() for h in cap_hits
                   if len(h["word"]) <= 2 and h["word"].isascii()}
     gen_tokens = [t for t in tokens if t not in cap_tokens]
-
     # 口语词 → 国标码（2026-09-24 接入别名表）。
     # 「输送线/流水线/PCB」这类词在任何记录的厂名/工艺/材料里都不出现，纯子串匹配
     # 必然 0 条。别名命中的记录按码定向召回，**豁免 AND token 校验** —— 不豁免的话
     # 刚拉进来就又被 检索面 判定「不含输送线」而滤掉，等于白接。
-    alias_hits = alias_codes(q) if q else []
     alias_by_code = {a["code"]: a for a in alias_hits}
     alias_paths = _fp_paths_for_gbs(list(alias_by_code)) if alias_by_code else []
+
+    # 只有「原话确实被拆过」时才回显解析结果：一句话查询（抽了城市 / 剔了停用词 /
+    # 识别出词条）必须让 agent 看见 MCP 是怎么理解的，否则它无法判断结果为何是这样。
+    # 普通关键词查询不额外增加返回体字节。
+    parsed: Dict[str, Any] = {}
+    if norm and (norm["city_from_query"] or norm["segments"]
+                 or tokens != [t for t in q.split() if t]):
+        parsed["query_parsed"] = {
+            "city": city or "",
+            "city_from_query": norm["city_from_query"] or "",
+            "keywords": gen_tokens,
+            "recognized": norm["segments"],
+        }
 
     # 给了国标码：只扫对应分片（最快路径，不构建全量索引）
     if gb:
@@ -2349,6 +2576,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             "returned": len(matches[offset:offset + limit]),
             "shards_scanned": scanned,
             "results": matches[offset:offset + limit],
+            **parsed,
         }, q, city)
 
     # 未给国标码：优先走「预构建检索索引 → 只拉命中分片」（与命中量相关）。
@@ -2364,6 +2592,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             "shards_scanned": 0,
             "via_index": True,
             "results": [],
+            **parsed,
         }, q, city)
 
     matches: List[Dict[str, Any]] = []
@@ -2468,6 +2697,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         "shards_scanned": scanned,
         "via_index": via_index,
         "results": matches[offset:offset + limit],
+        **parsed,
         # 结果顺序是**有意设计的分档**，不是随机的：按召回纯度递减排列。
         # 而 `score` 是**能力画像分**（有已发布能力卡才有分，无卡为 0），**不是相关度**。
         # 两者一起看极易误判（实测：一家餐厅 sc=0 排在持卡 L2 企业 sc=40 前面），
