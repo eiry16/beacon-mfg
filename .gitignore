@@ -1,8 +1,6 @@
-# 敏感信息（API Key 等）
+# 敏感信息
 .env
-# .env 的备份同样含密钥（AMAP/ZHIPU/CF），必须一并挡住
 .env.bak*
-
 .env.local
 .env.*.local
 secrets/
@@ -16,132 +14,43 @@ venv/
 
 
 # ---------------------------------------------------------------------------
-# 两条线程：工厂（本地） vs 产品（公开） —— 2026-09-22 定下，别再混回去
+# 仓库边界：只放对外消费必需的内容（MCP 服务 + 只读数据面 + 对外入口）
 # ---------------------------------------------------------------------------
-# 本仓库是**产品**：MCP 服务 + 只读数据面 + 对外消费入口。
-# 抓取 / 翻译 / 派生重建 / 发布（Pages、R2、push 云端）属于**工厂**，
-# 是只在本地跑的后端运维，一律不入库。
-#
-# MCP 的运行边界（2026-09-22 按 mcp/server.py 的 fetch_text 实参实测）：
-#   mcp/**                                 MCP 进程本体（npm 只发这 4 项）
-#   data/manifest.json                     分片清单（它的 p 字段就是下面这些路径）
-#   data/gb/** · data/en/**                名录分片（zh 284 片 / en 281 片）
-#   data/phone-index.jsonl                 号码索引（1 片）
-#   skills/registry/fingerprint/**         指纹分片（273 片，搜索召回面）
-#   skills/registry/index/**               倒排索引 meta/city/terms（514 片）
-#   skills/registry/capability/{id}.json   L1 能力卡（只在 R2，不入库、不在本块内）
-#   skills/rfq-kernel/**                   多轮匹配桥接（mcp/server.py 用 sys.path 导入）
-#   agent-skill/**                         非 MCP 的对外消费入口（薄框架：SKILL + client_search）
-# 除此之外的文件都不参与 MCP 运行 —— 凡不在此清单里的后端脚本，不入库。
-#
-# ⚠ 本块原先是一份 147 行的 scripts/ 白名单，逐条附「不放行的后果」。
-# 那些理由几乎全部成立于同一条旧消费路径：「客户 Agent 照根目录 SKILL.md
-# 敲 python scripts/xxx.py」。2026-09-22 起对外消费只剩两条：
-#   ① MCP（npm 包 beacon-mfg-mcp，只发 server.py / bin/ / README / RELEASE）
-#   ② agent-skill 薄框架（只装 SKILL.md + client_search.py，数据全从 CDN 按需拉）
-# 旧理由随之作废，而它的代价是把 fetch / publish / gui / cron 这些后端运维
-# 连同它们的依赖一起摆在公开仓库里。
-#
-# 为什么不能「按目录挑着留」：postfetch.py 用 subprocess 编排了几乎全部脚本，
-# 还直接调用 APK/tools/sync_assets.py —— 依赖闭包会把 scripts/、APK/ 整片
-# 拖回来。所以边界只能按**「MCP 运行时读什么」**划，不能按
-# 「脚本之间互相 import/subprocess 什么」划。后者问的是「工厂能不能跑」，
-# 而工厂是本地的、不入库的。
 scripts/
-# ⚠ APK/ **保持整目录忽略**（口径 2026-10-05 澄清）：
-#   「App 运行不受影响」指的是**手机装包后访问云端数据不受影响**（数据面走 Pages/CDN），
-#   不是「App 源码要进 git」。安卓客户端属产品发布物，源码不入版本库。
-#   注意：只要这行还在，后面再怎么写 `!APK/...` 都不生效（父目录被排除时，
-#   目录内文件不再单独判定）——所以下方「安卓客户端」块只能继续挡生成物。
 APK/
 pages/
 server/
-# ── 零读者残留（2026-09-22 清出）───────────────────────────────────────────────
-# 判据：在 mcp/ · skills/rfq-kernel/src/ · agent-skill/ · APK 的 Kotlin 源码里
-# grep 不到任何读者（含字符串路径与 import 两种形态）。
-# 注：skills/schema/envelope.json 与 rfq-kernel 自己的 schema/envelope.schema.json
-# 同名但无关 —— 被读的是后者（kernel.py 的 envelope() 函数与其自带 schema/）。
 skills/profiles/
 skills/schema/
 skills/TEMPLATE.md
 skills/README.md
 skills/registry/index.json
-# ⚠ 别与 skills/registry/index/ **目录**搞混（2026-10-05 实测澄清）：
-#   · skills/registry/index/{cap,city,meta}.json + terms/b*.json —— **已入库**（515 个文件）。
-#     mcp/server.py 真读它们：`:799/:1103` 取 cap.json（能力词面表）、
-#     `INDEX_DIR=:1150` 取 meta.json / city.json / terms/。必须入库。
-#   · skills/registry/index.json（单文件）—— 由 scripts/gen_fingerprint.py 重建，
-#     是指纹的投影（同一份数据存两遍）；MCP 运行时**零代码读者**，
-#     文档（SKILL.md / README / agent-skill）也不引用它 → 保持忽略是对的。
 skills/registry/gb-proc-map.json
 skills/registry/category-conflicts.json
-# SkillHub 上架操作清单（2026-10-05）：不是安装/运行件 —— 里面是开发者中心表单
-# 字段、描述文案、合规话术、提交前自测 checkbox，属**一次性上架操作手册**。
-# 且它引用的 dist/agent-skill.zip 生成脚本已不存在（dist/ 下无该包）→ 清单本身
-# 已部分失效。真正随 skill 分发的是 agent-skill/ 那 5 个文件（已入库）。
 SKILLHUB_SUBMISSION.md
 data/fetch_cursor.json
 data/district_cache.json
-# 名称索引（2026-09-23）：**只供 Pages/CDN 按需拉取**，不入库。两条理由叠加：
-#   ① 边界判据：上面那条铁律是「MCP 运行时读什么 = 入库」。mcp/server.py 只按
-#      `_shards_of_type("fp"|"zh")` 取分片，**从不**取 `t="name"` → 没有 MCP 读者；
-#      且内容是从 skills/registry/fingerprint/** 现算的投影（co/city/gb/cl 全在那 273 片里），
-#      入库等于把 15MB 重复数据再存一份，纯撑大公开仓。
-#   ② 安全：上游名录存在「号码写在企业名里」的脏数据（此处本该写企业名举例，
-#      但 co 字段会把号码原样带进来，而本文件**不在 maskphone filter 覆盖路径里**
-#      —— 注释里一旦抄下真号，就等于明文写进公开仓库。所以只写形态，不写号码）。
-#      而 .gitattributes 的 maskphone 只盖 data/gb|en、phone-index、skills/registry、docs
-#      ——**本路径不在 filter 覆盖内**。一旦误 `git add`，脱敏防线整条绕过。
-#      它由 postfetch 的 manifest 步（scripts/gen_name_index.py）每轮重建，随时可再生成。
 data/name-index.jsonl
-# ⚠ skills/vendors/{id}/capability.json **不能**忽略：它是 rfq-kernel
-# beacon_adapter._card_path() 在 registry/capability 缺失时的兜底读路径（属 MCP 运行链）。
-# ⚠ skills/rfq-kernel/suppliers/** 同理：kernel.load_suppliers() 会 glob 读取。
-# ⚠ 脱敏 filter 的 clean 端（scripts/mask_phones.py）随工厂一起不入库，这是**有意**的：
-#   · 入库内容本身已是掩码态（138****0000），clone 拿到的就是掩码版；
-#   · filter.maskphone.smudge = cat（内建命令），新 clone 的 checkout 不需要任何脚本；
-#   · filter.maskphone.clean 的定义只在**本机 .git/config**（.gitattributes 只声明 filter 名），
-#     它只对写方（本地工厂）有意义，而工厂天然持有 scripts/ 全量。
-#   ⚠ 唯一残留风险：clone 后改 data/** 再 commit，clean filter 缺失 → 会提交未脱敏内容。
-#     要兜底就在 CI 里放一个**不依赖 scripts/** 的独立检查（几行 grep），别为此把工厂搬回来。
-# CI 只留 MCP 的分发 workflow（两者都只打包 mcp/ 目录），其余 .github 内容不外发。
-# ⚠ 注意形态：先 `!.github/workflows/` 放开目录，再逐条 `!` 放行具体文件。
-# 只写「放开目录」= 整个 workflows 目录对外 —— validate.yml 就是这样漏出去的。
 .github/*
 !.github/workflows/
 !.github/workflows/mcp-release.yml
 !.github/workflows/npm-publish.yml
-# release.yml 会把**整个仓库**打包成 zip 发到 GitHub Release（os.walk('.')，
-# 只排除 .git/__pycache__/.github）→ 曾是一条「非 MCP 文件对外分发」的通道。2026-09-22 移出。
 .github/workflows/release.yml
-# validate.yml 跑的是 `python scripts/validate.py --strict` —— 工厂侧脚本，已随工厂移出；
-# 留着只会 CI 红灯。它同时是「贡献者提 PR 校验数据」那条旧消费路径的残留。2026-09-22 移出。
 .github/workflows/validate.yml
 .workbuddy/
-# ⚠ 必须带前导斜杠：裸 `examples/` 会匹配**任意层级**的 examples 目录，
-#   把 agent-skill/examples/example_queries.md 这份对外示例一并吞掉（2026-10-05 实测命中）。
-#   本条的原意只是挡仓库根的 examples/，而根 examples/ 至今 tracked = 0，收窄零损失。
 /examples/
 CRON_*.md
 .env.example
 
 # ---------------------------------------------------------------------------
-# docs/ 发布面收窄（2026-09-22）
+# docs/ 只发布落地页
 # ---------------------------------------------------------------------------
-# 根因：**GitHub Pages 的发布根就是 docs/**（实测站点根 200，而 /README.md 404、
-# /docs/index.html 404）→ 整目录公开。于是「放进 docs/」等价于「公网可读」。
-# 只留落地页 index.html，其余一律算内部材料。
-# 不被忽略的后果：反抄袭策略、反爬风控设计（含 App 特征头）、Cloudflare 部署手册、
-# token 泄露事故复盘 —— 全部公网可读（2026-09-22 实测 13 个文件均 HTTP 200）。
-# 注：下面若干条 docs/xxx 专条规则已被本块覆盖，保留是为了不丢历史原因说明。
 docs/*
 !docs/index.html
 
 # ---------------------------------------------------------------------------
-# 临时文件与本地产物（不入库）
+# 临时文件与本地产物
 # ---------------------------------------------------------------------------
-# _backup/：重写历史前的仓库镜像（git clone --mirror，约 170MB），纯本地保险，
-# 恢复方式：git clone --mirror _backup/mirror.git <新目录>。
 _backup/
 _depgraph.py
 _leak_scan.txt
@@ -150,9 +59,6 @@ _r2refresh*.log
 _r2verify*.log
 _r2_inventory*
 _build_precheck.log
-# 边界验收探针（2026-09-22）：_mcp_smoke.py 只用「保留下来的文件」跑一次真实检索，
-# 用来证明 MCP 运行边界成立。随工厂留在本地，可重复跑；别入库（它 import mcp/server.py
-# 需要仓库在工作树里，属本地检查）。
 _mcp_smoke.py
 _patch_*.py
 _gitignore_newblock.txt
@@ -162,102 +68,52 @@ _gitignore_newblock.txt
 Thumbs.db
 
 # ---------------------------------------------------------------------------
-# 私有层：不进 Git（2026-09-07 清理）
-# Git 仓库只放引流层：薄名录 + L0 指纹 + 协议规范。
-# 以下都是私有资产，一旦公开等于把商业逻辑送人。
+# 私有层：不进 Git
 # ---------------------------------------------------------------------------
-# 注意：gitignore 不支持行尾注释，`path  # 说明` 会把整行当成一个 pattern，
-# 规则静默失效。所有注释必须独占一行。
-#
-# 私有层 API（auth/api_key、routers/claim、services/ranker）
-# ⚠ 这里原来有一条 !server/routers/collect.py 的例外（注册自动发布接线），
-# 走的是「放开目录 → server/** 重新忽略全部 → 再放开单文件」三段式。
-# 2026-09-22 撤销：server/ 整体归工厂（它是**写方**，客户 Agent 只读 MCP/薄框架，
-# 不经过它），而单文件例外会让整目录忽略被穿透 —— 实测 collect.py 正是漏出去的那个。
-
-# 采集脚本
 run_fetch.ps1
-# 校验脚本
 run_validate.ps1
-# 运行日志
 fetch_log.txt
-# 排名算法 + 认证设计（核心商业逻辑）
 docs/API_RANKING_AUTH_DESIGN.md
-# 内部修复记录
 docs/fix_doc_number_drift_*.md
-
-# ---------------------------------------------------------------------------
-# 商业策略文档与原型（2026-09-08）
-# 写明了护城河分析、定价策略、采集流程，公开等于把打法送人
-# ---------------------------------------------------------------------------
 docs/PROPOSAL_V2_COMMERCIAL.md
 docs/PROPOSAL_VENDOR_SKILL.md
 docs/PROPOSAL_A2A_OUTBOUND.md
 docs/prototype/
 
 # ---------------------------------------------------------------------------
-# Skill 分层存储（2026-09-07 起）
-#
-# L0 指纹  skills/registry/fingerprint/*.jsonl  → 进 Git（客户 Agent 全量扫这层做初筛）
-# L1 能力卡 skills/vendors/*/capability.json    → 不进 Git（走云端按需拉取）
-# L2 自述   skills/vendors/*/SKILL.md           → 不进 Git（走云端按需拉取）
-#
-# 理由：1200+ 家 × (SKILL.md + capability.json) ≈ 11MB 且持续增长。
-# 客户 Agent 只需 L0 指纹即可完成 95% 的初筛淘汰，命中后才调 API 取 L1/L2。
-# 详见 docs/AUTO_PROFILE_REPORT.md
+# Skill 分层存储：L0 指纹入库；L1 能力卡 / L2 自述走云端按需拉取
 # ---------------------------------------------------------------------------
 skills/vendors/*/SKILL.md
 skills/vendors/*/capability.json
 skills/vendors/*/assets/
 skills/registry/capability/
-
-# 重跑批量整理时归档的旧能力卡（reset_auto.py 生成，确认无误后可自行删除）
 skills/_vendors_backup_*/
 skills/_keep_sample/
-
-# 改动前的自动备份（cert_card_sync.py 写：`{文件}.bak-YYYYMMDD`）。
-# registry/capability 整个目录已被忽略、覆盖不到 skills/vendors 那两个文件，
-# 所以这里单列一条 —— 否则每次同步都会在 git 里留下未跟踪文件。
 skills/vendors/*/*.bak-*
-# 同上，指纹侧也有单文件改动前的备份（如 mark_fixture_card.py 改 cl 时写的）
 skills/registry/fingerprint/**/*.bak-*
-
-# 例外：保留 1 家已认主样板进 Git，作为「标准长什么样」的参考
+# 例外：保留 1 家样板进 Git，作为「标准长什么样」的参考
 !skills/vendors/CN-MFG-0000005/SKILL.md
 !skills/vendors/CN-MFG-0000005/capability.json
 
-# 运行日志与临时文件
+# 运行日志与本地产物
 *.log
-# 单实例抓取锁（fetch_batch.py 仓库内 PID 锁，防双实例并发抓取到账本）
 .fetch_batch.lock
 _fixed_*_backup.json
 en_backfill_*
 en_watchdog*
 cjk_fix_*
-# 列式导出产物（构建物，不进 Git）
 dist/
-# 部署打包的中间产物（deploy_pages.py 生成，200KB 压缩包，不进 Git）
 pages/dist.zip
-# wrangler 的本地状态目录（部署记录、binding 同步缓存），机器相关，不进 Git
 .wrangler/
 
 # ---------------------------------------------------------------------------
-# 安卓客户端（APK/）—— 边界 2026-10-05 澄清：**整目录不入库**（含源码）
+# 安卓客户端：整目录不入库
 # ---------------------------------------------------------------------------
-# 判据：APK/ 整体不入版本库。上一条 `APK/` 已整目录排除，此处只把**磁盘上
-# 没必要留下的生成物/工厂脚本**显式挡一遍，方便一眼看清本地留了什么、别提交什么。
-#   · APK/app/src/main/assets/ —— 生成物：内置 assets 由 APK/tools/sync_assets.py 从仓库数据重新生成，
-#     避免 3.9MB 数据在仓库里存两份（原始来源 data/** 已入库）；
-#     构建产物（.gradle / build / *.apk / local.properties）同理。
-#   · APK/tools/** 是**工厂脚本**（sync_assets.py / gen_icon.py / e2e_parity.py），
-#     与顶部 `scripts/` 同口径：属本地运维面，非 App 运行时读它，不入库。
-#   · APK/app/src/androidTest/** 是测试（与「测试不入库」同规则）。
 APK/.gradle/
 APK/build/
 APK/app/build/
 APK/local.properties
 APK/app/src/main/assets/
-# 构建产物：19MB 的 apk 不进仓库（要装机的包走本地构建，见 APK/build.sh）
 APK/*.apk
 APK/*.jpg
 APK/build.sh
@@ -266,105 +122,40 @@ APK/tools/
 APK/gradle/
 APK/app/src/androidTest/
 
-# ---------------------------------------------------------------------------
-# Excel 收集模板（生成物，不入库）
-# 企业信息收集模板.xlsx 由 scripts/gen_excel_template.py 动态读取
-# skills/profiles/*.json 生成，schema 变了重跑即可；入库会和 schema 产生
-# 两份真相，且容易被 git add -A 卷进去。生成器脚本本身入库。
-# ---------------------------------------------------------------------------
+# Excel 收集模板（由 schema 生成，入库会产生两份真相）
 企业信息收集模板.xlsx
 
-# ---------------------------------------------------------------------------
-# 项目调试说明.md：本地调试手册，不入库（2026-09-18，user 决定）。
-# 它记录的是本机环境坑、避坑清单与内部排障过程，属于本地工作笔记；
-# 它曾在 859fad5 误入版本库，已用 `git rm --cached` 取消跟踪（本地文件保留）。
-# ---------------------------------------------------------------------------
+# 本地调试手册 / 回滚快照 / QA 产物
 项目调试说明.md
-# ---------------------------------------------------------------------------
-# 去重清洗前的 data/gb 快照（scripts/dedup_gb.py --apply 自动生成）。
-# 体积大（~170MB）且只在出事故回滚时用得到，不入库。2026-09-19
-# ---------------------------------------------------------------------------
 .backup_dedup_*/
-
-# ---------------------------------------------------------------------------
-# 后端/运维内容：非 MCP 检索所需，不进 Git（2026-09-19 用户明确口径）
-#
-# Git 仓库只放「MCP 工作必需」的内容：发布数据（data/、fingerprint、index）+
-# L2 自述（skills/vendors/*/SKILL.md）清单 + 协议规范 + MCP server（mcp/）。
-# 采集/翻译/维护流水线、本机运维工具、审计日志等后端产物一律不入库。
-# Cloudflare 发布面由 deploy_pages.build() 控制，本就只含 data/ + fingerprint/
-# + index/ + vendors SKILL.md + 能力卡分片，不含任何脚本/运维文件。
-# 与既有口径一致：项目调试说明.md / CRON_*.md / docs 内部材料同规则。
-# （scripts/ 下的运维留档已由上方 `scripts/*` 整体忽略，无需重复列举。）
-# ---------------------------------------------------------------------------
-# 构建产物：Android 安装包（含仓库根目录下误入的包；上方 APK/*.apk 只覆盖子目录）
 *.apk
-# 数据质量检查报告（后端 QA 产物，非发布数据）
 QA_*.md
-# 去重审计日志（scripts/dedup_gb.py 按需再生成，非发布数据）
 data/_dedup_removed_ids.json
 
 # ---------------------------------------------------------------------------
-# 富化工作区（2026-10-05 整目录忽略）
+# 富化工作区（含上游原始名录与运行时产物，整体不入库）
 # ---------------------------------------------------------------------------
-# 加这条之前先核实过：`git ls-files data/enrich | wc -l` = 0，本目录**一个文件
-# 都没进过 git**（全是 untracked），所以「整目录忽略」零损失，不是把已有入库内容
-# 悄悄摘出去。它同时挡住三样东西：
-#   ① 政府开放平台导出的原始名录（data/enrich/gov/raw/*.{xlsx,csv}）：
-#      上游有版权，且含企业实名电话；gov_import.py 与 fetch_gov_opendata.py 都
-#      优先读这个目录，留本地是功能需要，进公开仓库是事故。
-#   ② 运行时产物：queue.json（1.3M）、enrich-*.{json,jsonl} 富化队列与每轮快照、
-#      findings_*.json —— 下轮跑批即重建，纯撑大公开仓。
-#   ③ 回滚备份 backup-20261003-151257/、_converge_backup/、_equipment_inferred_backup/
-#      —— qa_geo_recheck.py 等脚本硬编码读 backup-20261003-151257/，
-#      converge_capability_copies.py 写 _converge_backup/。
-#      ⚠ ignore 只挡 git，不碰磁盘，这些脚本照读得到（已验证硬编码路径都在目录内）。
-# 还有一层是脱敏：maskphone filter 只覆盖 data/gb|en、phone-index、fingerprint、docs，
-# 本路径不在覆盖内 —— 一旦被 `git add -A` 卷进去，明文号码会直接绕过脱敏防线。
-# MCP 运行链从不读它（只读 data/gb|en + fingerprint + index + manifest），无读者。
 data/enrich/
-# 本机 cron 管理 UI（运维工具，非 MCP 检索所需；与 项目调试说明.md 同口径）
 cron_manager.py
 cron_manager.html
 start_cron_manager.bat
-# 总后端控制台入口（2026-09-23）：能跑抓取、能改 .env，属本地运维面，绝不进公开仓。
-# 服务本体 scripts/console_server.py 已被上方 `scripts/*` 忽略，这里只补根目录的双击入口。
-# 口径参照上一条 cron_manager：`用户第 11 轮明确「控制台不进 git」`。
 启动控制台.bat
-# 遗留备份目录（旧 ID 制式能力卡备份；postfetch 的提交步骤本就明确不碰它）
 .backup_legacy/
-# 构建期生成物：prepack 把仓库平级的 skills/rfq-kernel 拷进 mcp/rfq-kernel，
-# 供 npm 包 / GitHub Release tarball 自带（否则 3 个寻源 tool 降级）。属派生副本，
-# 不得入库 —— 真实源在 skills/rfq-kernel/，改那里，勿改这里。
+# npm 包构建期把 skills/rfq-kernel 拷进 mcp/rfq-kernel，属派生副本，不入库
 mcp/rfq-kernel/
 
 # ---------------------------------------------------------------------------
-# 测试脚本 / 本地产物：不发布、不入库（2026-10-05 用户口径）
+# 测试脚本与本地产物：不发布、不入库
 # ---------------------------------------------------------------------------
-# 判据沿用本文件顶部那条铁律 —— **MCP 运行时读什么 = 入库**。下面这些要么全仓
-# 查不到读者，要么读者是本地工厂（scripts/console_server.py 之类），都不在
-# MCP / App 运行链上，进公开仓库只会把维护面摊开。
-# ⚠ 只挡 git：磁盘文件一律保留，脚本照读得到（ignore 不碰工作树）。
-#
-# MCP 包内的测试脚本。
-# ⚠ 例外：`mcp/mcp_adapter.py` **不**在此列 —— 它是 MCP 运行链上的启动入口
-#   （BeaconMFG_MCP_安装指南.md:44 把 <仓库>/mcp/mcp_adapter.py 写进客户启动的
-#   args，docs/MCP_系统性接入方案.md 描述它「对外讲标准 Content-Length 分帧、
-#   内部转发给 server.py」），且已列在 mcp/package.json 的 files 白名单里。
-#   按总原则它属 MCP 运行 → 入库，与客户安装路径保持一致。
 mcp/test_protocol.py
 mcp/test_search_client.py
 mcp/test_update.js
-
-# agent-skill 薄框架：对外入口本体（SKILL.md / client_search.py / LICENSE / icon
-# / examples）保留入库，挡掉的只有它的测试目录与打包产物。
+# 薄框架对外入口本体入库，挡掉的只有测试目录与打包产物
 agent-skill/tests/
 skills/agent-skill.zip
 
-# 本地桌面快捷方式（与 启动控制台.bat、cron_manager 同口径：本机运维入口）
+# 本地桌面快捷方式（本机运维入口）
 *.lnk
 
-# 行政区划表：唯一读者是 scripts/console_server.py（本地控制台），且不在发布面
-# —— data/manifest.json 里 0 次引用。归工厂运行态数据，与 fetch_cursor.json /
-# district_cache.json 同规则。
+# 行政区划表：仅本地控制台使用，不在发布面
 data/admin_divisions.json

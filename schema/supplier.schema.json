@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://github.com/beacon-mfg/beacon-mfg/schema/supplier.schema.json",
   "title": "BeaconMFG Supplier Record",
-  "description": "面向 Agent 检索的全行业供应商结构化记录（2026-10-04 起不再限于制造业）。所有字段必须来自公开渠道，联系方式必须为企业公开渠道。数据状态字段：status（新）与 is_template（已废弃，兼容旧数据）。分类体系为三级：门类（gate，GB/T 4754 门类字母）→ 行业档案（profile，skills/profiles/{profile}.json）→ 品类（category，展示标签）。",
+  "description": "面向 Agent 检索的全行业供应商结构化记录。所有字段必须来自公开渠道，联系方式必须为企业公开渠道。数据状态字段：status（新）与 is_template（已废弃，兼容旧数据）。分类体系为三级：门类（gate，GB/T 4754 门类字母）→ 行业档案（profile）→ 品类（category，展示标签）。",
   "type": "object",
   "required": ["id", "company", "category", "keywords", "region", "contact_phone", "source"],
   "allOf": [
@@ -53,7 +53,7 @@
       "properties": {
         "province": { "type": "string", "description": "省/直辖市，如 广东" },
         "city": { "type": "string", "description": "地级市，如 深圳。县级市（昆山/海盐…）在高德里归到地级市名下，见 district" },
-        "district": { "type": "string", "description": "区县/县级市（去 市/县/区 后缀），如 昆山、浦东新、宝安。2026-09-19 新增：高德对县级市返回的 city 是地级市名，昆山的数据全落在 city=苏州 下，靠本字段才能按「昆山」检索到" }
+        "district": { "type": "string", "description": "区县/县级市（去 市/县/区 后缀），如 昆山、浦东新、宝安。上游地图数据对县级市返回的 city 是地级市名，靠本字段才能按县级市检索到" }
       }
     },
     "lat": { "type": ["number", "null"], "description": "纬度（LBS 检索预留）" },
@@ -66,7 +66,7 @@
         { "const": "", "description": "空串 = 公开渠道没拿到号码（status=unverified_poi 的常态，政府建档名录就普遍没有电话）。红线：宁可留空，不许拿猜的号充数" },
         { "const": "待核实", "description": "旧数据的占位写法，语义等于空串（unverified_poi）。新数据一律写空串；读取端两种都按「无号」处理" }
       ],
-      "description": "公开联系电话。有号必须是可核实的企业公开电话；拿不到就留空串并置 status=unverified_poi。2026-10-05 修正：此前硬要求 minLength=5，导致政府建档的 30 条无电话记录（以及大量 POI 无号记录）一律校验失败——空值是被允许的事实，不是错误"
+      "description": "公开联系电话。有号必须是可核实的企业公开电话；拿不到就留空串并置 status=unverified_poi。空值是允许的，不是错误"
     },
     "contact_email": { "type": ["string", "null"], "description": "公开邮箱（可选；认领后解锁）" },
     "address": { "type": ["string", "null"], "description": "注册/经营地址（公开）" },
@@ -76,12 +76,12 @@
         { "type": "string", "format": "date", "description": "成立日期 YYYY-MM-DD（工商/登记数据给的是完整日期，写入端原样保留，不截断成年份——截断等于丢信息）" },
         { "type": "null" }
       ],
-      "description": "成立年份或成立日期（可选）。2026-10-05 修正：此前只允许 integer 年份，与写入端写日期字符串的事实不符"
+      "description": "成立年份或成立日期（可选）"
     },
     "scale": { "type": ["string", "null"], "enum": ["<50人", "50-100人", "100-500人", "500-1000人", ">1000人", null], "description": "规模（可选）" },
     "certifications": {
       "type": "array",
-      "description": "资质标签，如 高新技术企业 / ISO9001 / 专精特新（可选；认领后解锁）。元素两种形态并存：纯字符串（历史数据），或 {name, evidence} 对象（认证申报时企业自报 + 证据档，evidence=self_declared 表示自述未经第三方核验）。2026-10-05 修正：此前只允许字符串，与写入端不符",
+      "description": "资质标签，如 高新技术企业 / ISO9001 / 专精特新（可选；认领后解锁）。元素两种形态并存：纯字符串，或 {name, evidence} 对象（企业自报 + 证据档，evidence=self_declared 表示自述未经第三方核验）",
       "items": {
         "anyOf": [
           { "type": "string", "minLength": 1 },
@@ -110,7 +110,7 @@
     "is_template": {
       "type": "boolean",
       "deprecated": true,
-      "description": "已废弃，请使用 status 字段。本字段保留用于兼容旧数据，语义与 status 对齐：true=非verified（unverified_poi 或 template），false=verified。注：本文档 2026-09-28 更正——旧描述「true=template，false=verified或unverified_poi」与写入端及全库数据不符（scripts/fetch_gaode_poi.py、scripts/dedup_gb.py 均写 is_template = status != 'verified'；全库 38,264 条 is_template=true 对应 status=unverified_poi，status=template 为 0 条）"
+      "description": "已废弃，请使用 status 字段。本字段保留用于兼容旧数据，语义与 status 对齐：true=非verified（unverified_poi 或 template），false=verified"
     },
     "verified_at": {
       "type": ["string", "null"],
@@ -169,7 +169,7 @@
           "description": "分类置信层级：class=4 位小类 / group=3 位中类 / division=2 位大类 / gate=仅门类。证据只够到中类/大类时如实降级，硬判到 4 位等于编造"
         },
         "confidence": { "type": "string", "enum": ["high", "medium", "low"], "description": "high=公司名直接命中；medium/low=关键词或品类兜底推断" },
-        "source": { "type": "string", "enum": ["name", "keyword", "search_keyword", "category_fallback", "gb_token", "company_website", "certification", "gov_数据目录"], "description": "证据来源：name 最强；gb_token=公司名中的国标行业词直接命中；search_keyword 仅补位；certification=企业认证申报时自报并经核验；gov_数据目录=政府登记的行业分类（gov_import 建档，与 name 同为高置信证据）。2026-10-05 补入 gov_数据目录（政府建档 30 条在写，schema 原枚举里没有）" },
+        "source": { "type": "string", "enum": ["name", "keyword", "search_keyword", "category_fallback", "gb_token", "company_website", "certification", "gov_数据目录"], "description": "证据来源：name 最强；gb_token=公司名中的国标行业词直接命中；search_keyword 仅补位；certification=企业认证申报时自报并经核验；gov_数据目录=政府登记的行业分类，与 name 同为高置信证据" },
         "evidence": { "type": "string", "description": "命中的具体词，便于人工复核" }
       }
     },
@@ -198,11 +198,11 @@
     "cl": {
       "type": "string",
       "enum": ["L0", "L1", "L2", "L3"],
-      "description": "认证灯牌等级（对外叫「灯牌」，定义见 docs/CERTIFICATION_V1.md §1）：L0=公开名录自动收录未核验 / L1=主体已认领，信息自述 / L2=营业执照核验+材料齐备+人工复核 / L3=第三方实地验厂或客户案例佐证。由 server/routers/certification.py 的 evaluate_badge() 逐级算出，**没有 set_badge 接口**——改等级只能改证据。缺失按 L0；灯牌不是评级，不代表这家厂好不好。2026-10-05 补入 schema（写入端 certify_writeback.py 早已在写，全库 3074 条）"
+      "description": "认证灯牌等级（对外叫「灯牌」）：L0=公开名录自动收录未核验 / L1=主体已认领，信息自述 / L2=营业执照核验+材料齐备+人工复核 / L3=第三方实地验厂或客户案例佐证。等级由证据逐级算出，改等级只能改证据。缺失按 L0；灯牌不是评级，不代表这家厂好不好"
     },
     "certification": {
       "type": ["object", "null"],
-      "description": "认证存证的公开摘要（企业认证申请经平台核验后由 certify_writeback.py 写入，全库 2 条试点）。null / 缺失 = 未认证，是常态不是错误。2026-10-05 补入 schema",
+      "description": "认证存证的公开摘要。null / 缺失 = 未认证，是常态不是错误",
       "required": ["app_id", "badge", "issued_at", "expires_at"],
       "properties": {
         "app_id": { "type": "string", "description": "认证申请号，如 CERT-20260923-MFG-0020317。为空则视为无存证" },
@@ -216,7 +216,7 @@
     },
     "gov": {
       "type": ["object", "null"],
-      "description": "政府信源登记字段（source=gov_list 的记录才有，由 scripts/gov_import.py 从政府开放平台/公开名单建档时写入，全库 30 条试点）。**含统一社会信用代码 uscc，是最强的主体标识**。字段白名单之外的列（PII）在导入时即被丢弃并审计，见 gov_import.py 的 FIELD_MAP。2026-10-05 补入 schema（此前写入端在写、schema 未定义，additionalProperties:false 会让这些记录校验不通过）",
+      "description": "政府信源登记字段（source=gov_list 的记录才有）。**含统一社会信用代码 uscc，是最强的主体标识**。字段白名单之外的列（PII）在导入时即被丢弃并审计",
       "properties": {
         "uscc": { "type": ["string", "null"], "description": "统一社会信用代码（18 位，校验位已验）。判重与主体核实的锚点" },
         "legal_rep": { "type": ["string", "null"], "description": "法定代表人" },
@@ -241,7 +241,7 @@
         "phone_from": {
           "type": ["string", "null"],
           "enum": ["gov_数据目录", "amap", "none", null],
-          "description": "号码来源（2026-10-05 增补）：gov_数据目录=政府名录自带 / amap=建档后由高德 POI 反查补的（高德优先，查到即覆盖政府号）/ none=两边都没有，contact_phone 留空。留痕的意义是把「没号」与「没查过」区分开"
+          "description": "号码来源：gov_数据目录=政府名录自带 / amap=建档后由地图 POI 反查补的 / none=两边都没有，contact_phone 留空。留痕的意义是把「没号」与「没查过」区分开"
         }
       }
     },

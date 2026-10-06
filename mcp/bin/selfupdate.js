@@ -6,7 +6,7 @@
 // launcher 用 spawnSync 同步拉起 server.py —— 那会**阻塞 Node 整个事件循环**。
 // 如果把自更新写成 async 函数在主进程里跑，它在 spawnSync 期间推不动，
 // 等 server 退出、事件循环恢复时，主进程紧跟着就 process.exit() 了，
-// 于是更新逻辑永远跑不完（实测：stamp 根本没写）。
+// 于是更新逻辑永远跑不完。
 // 独立 detached 子进程不受主进程阻塞与退出影响，是唯一稳的做法。
 //
 // 【三条硬约束】
@@ -64,7 +64,7 @@ function writeStamp(extra) {
 }
 // 锁的过期时间：超过就视为持有者已死，直接接管。
 // 为什么必须有：detached 子进程有可能被中途杀掉（launcher 退出、Windows job object），
-// 停在「已加锁、未解锁」之间。实测踩到过一次 —— 残留锁会让**此后所有启动**
+// 停在「已加锁、未解锁」之间 —— 残留锁会让**此后所有启动**
 // 永久跳过自更新，而且现场毫无线索。所以锁必须能自愈。
 const LOCK_STALE_MS = Number(process.env.BEACON_MCP_UPDATE_LOCK_STALE_MIN || 10) * 60000;
 

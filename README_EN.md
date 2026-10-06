@@ -91,13 +91,14 @@ factory pipeline, which is not part of this repo.
 
 > **Fast region search:** use `data/region-index.json` to locate companies by city without scanning full category files.
 
-> **Contact numbers** come from public POI directories — landlines / 400 hotlines / mobiles are shown in full (published by the businesses themselves, no masking or asterisks). Records marked "待核实" (pending verification) have unconfirmed phone data from public maps; never fabricate digits — contact the supplier via their website to confirm.
+> **Contact numbers** come from public POI directories. Numbers in the public repository snapshot are **masked** (`138****0000`); the runtime data source keeps them dialable. Records marked "待核实" (pending verification) have unconfirmed phone data; never fabricate digits — confirm via the company's own channels.
 
 ## Compliance
 
 - Public business info only. No personal data. Each record carries `source + verified_at`.
+- The public repository snapshot publishes **masked** contact numbers only.
 - Companies may request correction/removal of their info via GitHub Issue.
-- 
+
 ## License
 
 - Code: MIT

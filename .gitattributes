@@ -1,21 +1,6 @@
-# ── 手机号脱敏（方案 A：只脱敏 git，Pages/App 数据源保留全号，旧 App 无感）──
-# 下列路径在 `git add` 时由 scripts/mask_phones.py 作为 git clean filter 自动脱敏：
-#   手机 → 138****0000（等长替换，不改文件格式）
-#   座机 / 400 / 800 / 待核实 → 原样
-#   落在长十六进制串（MD5/SHA1/SHA256）里的 11 位片段 → 跳过（否则会改坏校验和）
-#   ⚠ 没有任何例外：认领/认证过的企业**同样脱敏**（2026-09-24 起，见
-#     mask_phones.py::keep_full_number —— 「GitHub 那份不承担拨号职责，
-#     App 拨号读 Pages/R2」；曾因该例外让明文 PII 进了公开仓库）
-# 工作树（磁盘）文件始终是全号 → Pages / R2 部署读工作树 → App 照常拿全号+拨号。
-#
-# 2026-09-22 扩面：此前只覆盖 data/**，导致 skills/registry/**（指纹、倒排索引等派生文件）
-# 与 docs/** 裸奔 —— 号码藏在 company 字段或派生文件里会明文推上 GitHub。
-# filter 命令仅在本地 config（`python scripts/git_filter_guard.py` 写入；流水线 step_git
-# 首次运行会自动调用它——**换机器后必须重跑，因为 .git/config 不随仓库走**）。
-# 本文件只声明 filter 名；第三方 clone 未配置该 filter 时 git 仅告警并按 blob 原文检出
-# （不影响只读消费）。
-# ⚠ 新增/删除下面的 maskphone 模式时，必须同步 scripts/git_filter_guard.py 的
-#   MOUNT_SAMPLES，否则新挂载点会「声明了但没人验证」。运维手册：scripts/MASK_FILTER.md
+# 手机号脱敏（clean filter，filter 名 maskphone）
+# 本文件只声明 filter 名；filter 的具体命令由本机 git config 提供。
+# 未配置该 filter 的 clone 检出的是提交里已脱敏的内容，不影响只读消费。
 data/gb/** filter=maskphone
 data/en/** filter=maskphone
 data/phone-index.jsonl filter=maskphone

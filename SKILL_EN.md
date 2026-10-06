@@ -1,235 +1,120 @@
 ---
-name: beacon-mfg-en
-description: Agent-facing directory of Chinese companies and local businesses, archived by GB/T 4754-2017 national industry gate. Covers 7 gates — C Manufacturing, F Wholesale & Retail, H Accommodation & Catering, I IT & Software, M Scientific & Technical Services, O Residential Services & Repair, R Culture/Sports/Entertainment. Use when the user needs suppliers, factories, OEM/ODM vendors (CNC machining, sheet metal, injection molding, die casting, moulds, fasteners, electronic components), wholesalers / distributors / trading companies, food & beverage venues (restaurant, hotpot, fast food, coffee, tea & bubble tea, bakery, bar, hotel, B&B), local service businesses (hair & beauty salon, laundry, auto repair, appliance repair, gym, KTV, internet cafe, cinema, amusement park, pet services), or technical service providers (software development, system integration, cybersecurity, big data, third-party testing, calibration, certification, industrial design, environmental monitoring); also for filtering by GB/T 4754 industry code, product keyword, or city/region. Handles Chinese-language sourcing requests too. **Query through the MCP server (beacon-mfg-mcp) or the thin-framework client — not local scripts.** Public POI directory with contact info only — no transactions.
+name: beacon-mfg
+description: Agent-facing directory of Chinese enterprises and businesses, filed by GB/T 4754-2017 national industry codes across 7 gates — C Manufacturing, F Wholesale & Retail, H Accommodation & Food Service, I Information Technology Services, M Scientific & Technical Services, O Repair & Personal Services, R Culture, Sports & Recreation. Use it to find suppliers, factories, OEM/ODM partners (CNC machining, sheet metal, injection molding, die casting, molds, fasteners, electronic components), wholesalers, distributors and traders; restaurants, cafes, hotels and guesthouses; local services (hair & beauty, laundry, auto repair, appliance repair, fitness, KTV, internet cafes, cinemas, amusement parks, pet services); and technical service providers (software development, systems integration, cybersecurity, big data, third-party testing, calibration, certification, industrial design, environmental monitoring) — or to filter by GB industry code, product keyword, or city. **The retrieval entry point is the MCP service (beacon-mfg-mcp).** Public POI directory data and contact details only; we take no part in transactions.
 ---
 
-# BeaconMFG · Supplier Search Skill (English Dataset)
+# BeaconMFG · Supplier Search Skill
 
-> ## ⚠️ As of 2026-09-22 this repo holds only the MCP server and the read-only data surface
+> ## ⚠️ This repository carries only the MCP service and read-only data
 >
-> Scraping / translation / derived-layer rebuild / publishing (Cloudflare Pages, R2, pushing to
-> the cloud) belong to the **local factory** and are **not** in this repo. **This document
-> therefore no longer describes the "clone the whole repo and run local scripts" path** —
-> the `scripts/*.py` it used to reference ship with the factory, so running those commands
-> now just yields "file not found".
+> Data collection, translation, derived rebuilding and publishing pipelines are **not** in this
+> repository, so this document does not describe a "check out the whole repo and run local
+> scripts" workflow.
 
 ---
 
-## 1. Two entry points
-
-### A. MCP (recommended — hosted, zero maintenance, no key)
+## 1. Retrieval entry point: MCP (recommended — hosted, zero maintenance, no key)
 
 ```bash
-npx -y beacon-mfg-mcp          # or wire it into any MCP client via mcp/README.md
+npx -y beacon-mfg-mcp          # or wire it into any MCP client as shown in mcp/README.md
 ```
 
-No API key, no cloning. Six tools:
+No API key, no need to clone this repository. **8 read-only tools** are provided:
 
-| Tool | Purpose | Key params |
+| Tool | Purpose | Key parameters |
 |---|---|---|
-| `search_vendors` | Directory search (keyword / city / GB code) | `query` (company·process·material·cert substring), `city` (accepts prefecture cities and county-level cities), `gb` (GB code — restricts the scan to those 分片s), `limit` (1–200), `offset` |
-| `get_vendor` | Full Chinese record by id | `id`, `gb` (omit it and the code is reverse-looked-up from fingerprint 分片s, slower) |
-| `get_capability_card` | L1 capability card by id (process slots, equipment, capacity, certifications, MOQ) | `id`; returns `has_card: false` with a reason when absent |
-| `start_sourcing` | **Auto-triggered on find-a-factory / sourcing / RFQ intent**: category detection → wide fingerprint recall → requirement normalisation → 1–2 rounds of clarifying questions | `demand_text`, `audience_id` (`domestic_downstream` / `intl_buyer`) |
-| `answer_sourcing` | Continue the clarification rounds, or return an initial shortlist | `session_id`, `answers` |
-| `refine_sourcing` | Recommendation round: `details` / `more` / `best` | `session_id`, `action`, `value` |
+| `search_vendors` | Directory search (keyword / city / GB code) | `query` (**the user's own wording works**), `city` (accepts prefecture-level and county-level cities), `gb` (GB code), `limit` (1–200), `offset` |
+| `get_vendor` | Full Chinese record by id | `id`, `gb` (optional) |
+| `get_capability_card` | Capability card by id (process stations / equipment / capacity / certifications / MOQ) | `id`; returns `has_card: false` plus a reason when absent |
+| `suggest_filters` | User wording → candidate GB class codes, so you can switch to `gb=` | `query`, `city`, `limit` |
+| `list_industries` | GB class shelf (only classes that hold data, with counts) | `keyword`, `parent`, `limit`, `offset` |
+| `start_sourcing` | **Auto-triggered on sourcing/RFQ intent**: category detection → broad recall → requirement normalisation → 1–2 clarification rounds | `demand_text`, `audience_id` (`domestic_downstream` / `intl_buyer`) |
+| `answer_sourcing` | Continue a clarification round, or return a shortlist scored against the requirement | `session_id`, `answers` |
+| `refine_sourcing` | Recommendation rounds: `details` / `more` / `best` | `session_id`, `action`, `value` |
 
-**For multi-turn sourcing conversations start with `start_sourcing`** — it runs the protocol
-kernel in `skills/寻源内核/` (category detection + clarifying-question generation +
-requirement normalisation), not plain keyword matching.
-
-### B. Thin framework (when you don't want to run MCP)
-
-Two files, **no data clone**:
-
-- `agent-skill/SKILL.md` — protocol and flow
-- `agent-skill/client_search.py` — on-demand fetch wrapper with UA and ETag caching
-
-```bash
-python client_search.py --industry 3525 --city 宁波 --limit 5
-```
-
-Shards are pulled **on demand from the CDN**, < 1 MB per query on average.
-Both entry points return the same results from the same source.
-
-### About `data/` on GitHub
-
-The `data/**` in this repo is a **masked public snapshot** (phone numbers look like
-`138****0000`), kept so the offline "read committed content only" mode works
-(MCP's `BEACON_REPO` mode). Full contact details come from the cloud on demand.
-Neither entry point requires you to clone it.
+**For multi-turn sourcing conversations, start with `start_sourcing`** — it returns a
+`session_id` that `answer_sourcing` / `refine_sourcing` carry forward. It is not a thin wrapper
+around keyword matching.
 
 ---
 
-## 2. Data source
-
-| Item | Value |
-|---|---|
-| Primary (CDN) | `https://beacon-mfg.pages.dev` |
-| Shard 清单 | `data/清单.json` |
-| Data as-of date | see `data/DATA_STATS.md` |
-
-1. Fetch `data/清单.json` (~143 KB, cacheable).
-2. Filter to the 分片s you need by GB code.
-3. Cache the response `ETag`; next time send `If-None-Match` — a hit returns `304` (zero transfer).
-4. Fetch details (or L1/L2) by `id`.
-
-⚠️ **Always send a User-Agent.** Cloudflare returns `403` (error 1010) for UA-less requests;
-the symptom is "the source is down", which is easy to misdiagnose.
-
----
-
-## 3. Two kinds of `SKILL.md` in this repo — don't confuse them
+## 2. Two kinds of `SKILL.md` — don't confuse them
 
 | | Name prefix | Location | Nature |
 |---|---|---|---|
 | **Search entry skill** (this doc) | `beacon-mfg` / `beacon-mfg-en` | repo root | **Instructions** — how to search |
-| **Vendor data card** | `beacon-mfg-vendor-*` | `skills/vendors/{id}/SKILL.md` | **Data** — one company's profile, no instructions |
+| **Vendor data card** | `beacon-mfg-vendor-*` | served from the cloud, not from this repo | **Data** — one company's profile, no instructions |
 
 Those vendor files are **data records indexed by vendor id**, not installable sub-skills.
 If one shows up in a skill list, it is a capability card (fetched on demand) —
-**do not** load it as a standalone skill. They are served from the cloud, not from this repo.
+**do not** load it as a standalone skill.
 
 ---
 
-## 4. Coverage: 7 national industry gates
+## 3. Coverage: 7 national industry gates
 
-| Gate | Name | Typical queries |
+| Gate | Name | Typical needs |
 |---|---|---|
-| C | Manufacturing | CNC machining, sheet metal, injection molding, die casting, moulds, fasteners, electronics |
-| F | Wholesale & Retail | wholesalers, distributors, trading companies, hardware/building materials, convenience stores, pharmacies |
-| H | Accommodation & Catering | restaurant, hotpot, fast food, coffee, bubble tea, bakery, bar, hotel, B&B |
-| R | Culture, Sports & Entertainment | gym, KTV, internet cafe, cinema, amusement park, sports venues |
-| O | Residential Services & Repair | hair & beauty, laundry, auto repair, appliance repair, pet services |
-| I | IT & Software | software development, system integration, cybersecurity, big data, ops |
-| M | Scientific & Technical | third-party testing, calibration, certification, industrial design, environmental monitoring |
+| C | Manufacturing | CNC machining, sheet metal, injection molding, die casting, molds, fasteners, electronic components |
+| F | Wholesale & Retail | Wholesalers, distributors, traders, hardware & building materials, convenience stores, pharmacies |
+| H | Accommodation & Food Service | Restaurants, hot pot, fast food, cafes, milk tea, bakeries, bars, hotels, guesthouses |
+| R | Culture, Sports & Recreation | Fitness, KTV, internet cafes, cinemas, amusement parks, sports halls |
+| O | Repair & Personal Services | Hair & beauty, laundry, auto repair, appliance repair, pet services |
+| I | Information Technology Services | Software development, systems integration, cybersecurity, big data, operations |
+| M | Scientific & Technical Services | Third-party testing, calibration, certification, industrial design, environmental monitoring |
 
-> **Per-gate counts change daily — always read `data/DATA_STATS.md`, never quote stale numbers
-> from this file.**
+> **Per-gate counts change daily — always take them from `data/DATA_STATS.md`**, never from
+> numbers quoted in prose.
 >
-> **When a gate comes up short:** check the per-class breakdown in `data/DATA_STATS.md`,
-> then report that number honestly. **Do not** substitute approximate results from another gate —
-> that would be fabrication. Some records have `industry: null` (gate not yet determined) —
-> **no label is invented** for them; they remain searchable by keyword.
-
-**Prefer a GB code over keywords.** Factories are registered as "plastic products", not
-"injection molding" — keyword search misses badly, GB codes do not. There are three ways to
-get the code: the curated alias table (`data/gb-alias-curated.json`), the derived alias table
-(`data/gb-alias.json`, only words that actually occur in company names), and the full GB
-industry table (`data/gb4754-full.json`). Or just call `search_vendors` and let it resolve.
+> **If a gate returns nothing**: check the class breakdown in `data/DATA_STATS.md` to confirm the
+> entry count, then tell the user the current scale honestly. **Do not** paper over it by pulling
+> near-miss results from another gate. A small number of records have `industry` set to null
+> (industry not yet determined) — **do not force a label on them**; they remain keyword-searchable.
 
 ---
 
-## 5. Manifest contract (`data/清单.json`)
+## 4. `search_vendors` return fields
 
-`metadata.total_分片s = 839`:
+| Field | Meaning |
+|---|---|
+| `id` · `company` · `city` · `district` | Identity and name, city / district |
+| `gb` | GB class code |
+| `badge` | Certification badge (`L0` = not yet certified) |
+| `score` | **Capability profile score** (non-zero only when a published capability card exists) — **not relevance** |
+| `has_phone` | Whether a dialable number is available |
+| `process` · `material` · `cert` | Process / material / certifications |
+| `via` | Which recall source matched (`text` / `cap_text` / `alias` / `cap` / `gb`) |
 
-| Type `t` | Shards | Records | Content | Path |
-|---|---|---|---|---|
-| `fp` | 273 | 139,318 | L0 fingerprints (recall surface, smallest) | `skills/数据目录/fingerprint/gb/{gate}/{division}/{class}.jsonl` |
-| `zh` | 284 | 139,318 | Full Chinese records | `data/gb/{gate}/{division}/{class}.json` |
-| `en` | 281 | 135,072 | English mirror | `data/en/gb/{gate}/{division}/{class}.json` |
-| `phone` | 1 | 103,137 | Phone index | `data/phone-index.jsonl` |
+A few easy traps:
 
-Shard entry fields: `p` path · `b` bucket key · `c` GB code · `n` GB name · `t` type ·
-`k` record count · `z` bytes · `h` content SHA1 · `u` last updated.
-
-⚠️ **Use the HTTP `ETag` for incremental updates, not `h`.** `h` is a content digest,
-not a version. Its only job is verifying a downloaded 分片 was not truncated.
-
-⚠️ **A GB code may be split across continuation 分片s** (`3484.json` + `3484-p2.json`).
-Scanning only the first one silently drops records.
-
-Counts above are a 2026-09-22 snapshot; live values are in `metadata.by_type`.
+- **District is not always present**: county-level cities are filed under their prefecture city
+  (Kunshan → Suzhou).
+- `industry` null means "not yet determined" — **do not force a label**; those records stay in the
+  directory and remain keyword-searchable.
+- Do not treat `score` as a relevance ranking — the returned `order_note` states the ordering rule.
 
 ---
 
-## 6. Layers: L0 / L1 / L2
+## 5. Boundaries (mandatory)
 
-| Layer | Content | Where |
-|---|---|---|
-| **L0 fingerprint** | company / city / GB code / process / material / cert / has-phone (compact) | `skills/数据目录/fingerprint/**`, in this repo |
-| **L1 capability card** | process slots, equipment, capacity, certifications, MOQ | `skills/数据目录/capability/{id}.json`, **cloud only** (`get_capability_card`) |
-| **L2 self-description** | vendor narrative, one Skill per factory | `skills/vendors/{id}/SKILL.md`, **cloud only** |
-
-**L0 deliberately stores no phone numbers** — numbers come only from the `phone` 分片.
-That way the fingerprint layer can be scanned in full without touching contact data.
-
----
-
-## 7. Fields
-
-**The authoritative definition is `schema/supplier.schema.json`.** Summary — note that the
-three representations use different key sets:
-
-| Layer | Fields | Purpose |
-|---|---|---|
-| Chinese record `zh` | `id` · `company` · `category` · `keywords` · `region{province,city}` · `address` · `lat/lng` · `industry{code,name,level,path,confidence}` · `is_manufacturer` · `contact_phone` · `source`/`source_url` · `status` · `is_template` · `amap{poi_id,adcode,…}` · `note` | Full record |
-| L0 fingerprint `fp` | `id` · `co` · `city` · `dist` · `gb` · `mf` · `proc` · `mat` · `cert` · `cl` · `pv` · `sc` · `tel` | Recall surface (short keys save bytes) |
-| `search_vendors` result | `id` · `company` · `city` · `district` · `gb` · `badge` · `score` · `has_phone` · `process` · `material` · `cert` | Readable summary (fingerprint rows normalised) |
-
-Things that trip people up:
-
-- **`name` / `gb` / `proc` are not in the Chinese record** — it uses `company` and
-  `industry.code`. Short keys exist only in fingerprint rows. Don't write field names from intuition.
-- **The district is not in the Chinese record's `region`** (province + city only). County-level
-  cities are filed under their prefecture city (Kunshan → Suzhou); match the fingerprint `dist`.
-- `category` (product category, e.g. 注塑成型) and `industry` (GB code) are **two separate
-  vocabularies** — don't substitute one for the other.
-- `industry: null` means the GB code is not yet determined — **no label is invented**;
-  the record is still in the directory and keyword-searchable.
-- `is_template: true` does **not** mean a placeholder — it is a real business POI whose phone is
-  **awaiting verification**, and should be kept in results.
-- English mirror fields: `company_en` / `address_en` / `keywords_en` / `industry_en`
-  (`{code, name_en, level, name, confidence}`). Every English record **must carry `industry`**,
-  and the same `id` must not appear in more than one 分片.
+- **Public contact details and basic information only** — no quoting, ordering or transactions.
+- **No ranking or recommendation.** If the user asks for "the best one", say results are ordered by
+  fit and must be verified independently.
+- **Never invent** price, lead time or capacity — if the data does not have it, say so.
+- Weak evidence must not override strong evidence: process / material come from the company name and
+  the capability card; search keywords only fill gaps.
+- "Not filled in ≠ not offered": keep records with missing fields at reduced weight; do not drop them.
+- Fix mislabels: a labelling problem must never make a real company unsearchable.
+- Prefer `search_vendors` / `start_sourcing` — **do not guess GB codes yourself**; search first.
 
 ---
 
-## 8. Boundaries (mandatory)
+## 6. Data provenance & disputes
 
-- **Information only** — no quoting, ordering, or transactions.
-- **No ratings or recommendations.** Asked for "the best one" → say it is ranked by fit and
-  the user should verify independently.
-- **Never invent** price, lead time, or capacity. If it is not in the data, say so.
-- Weak evidence never overrides strong evidence: process/material come from the company name
-  and capability card; search keywords only fill gaps.
-- "Not filled in ≠ doesn't do it" — downweight missing fields, don't drop the company.
-- A misapplied label must be corrected: no real company should be unfindable because of a label.
+- Data comes from **public POI directories** (maps / public business listings) and is traceable.
+- **Code** is MIT; **data** is CC BY 4.0 (see `DATA_LICENSE.md`).
+- Companies may dispute, correct or request removal of their entry via a GitHub Issue.
 
 ---
 
-## 9. License & disputes
-
-- **Code** MIT; **data** CC BY 4.0 (see `DATA_LICENSE.md`).
-- Businesses may dispute, correct, or request removal of their own listing via a GitHub Issue.
-
----
-
-## 10. Repo layout
-
-```
-mcp/                        read-only MCP server (npm package beacon-mfg-mcp)
-agent-skill/                thin framework: SKILL.md + client_search.py
-data/
-  清单.json             分片 清单 (the entry point)
-  gb/**  en/**              Chinese / English record 分片s
-  phone-index.jsonl         phone index
-  gb-index.json  industry-index.json  region-index.json
-  gb-alias.json  gb-alias-curated.json  gb4754-full.json
-  endpoint.json             app data-source discovery pointer
-  DATA_STATS.md             statistics (source of truth for counts)
-schema/supplier.schema.json authoritative record schema
-skills/
-  数据目录/fingerprint/**   L0 fingerprint 分片s
-  数据目录/index/**         inverted index (meta / city / terms)
-  寻源内核/**             sourcing protocol kernel (used by the sourcing tools)
-README.md  README_EN.md     data status and coverage
-SPEC.md                     data format specification
-```
-
----
-
-*Scraping / translation / derived-layer rebuild / publishing pipelines are local factory assets
-and are not in this repo. This repo carries only the public artifacts that let a customer's
-agent find Chinese manufacturers.*
+*This repository carries only the public artefacts that let a customer's agent find manufacturing suppliers.*

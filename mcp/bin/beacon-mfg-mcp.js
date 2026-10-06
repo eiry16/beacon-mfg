@@ -13,7 +13,7 @@ const selfUpdateJs = path.join(__dirname, 'selfupdate.js');
 // 为什么必须是独立进程而不是本进程里的 async 函数：
 // 下面 spawnSync 是**同步阻塞**的，会冻结整个事件循环 —— async 的自更新
 // 在 server 运行期间推不动，等它能跑时本进程已经 process.exit() 了，
-// 更新逻辑永远跑不完（实测 stamp 根本不写）。独立进程不受此影响。
+// 更新逻辑永远跑不完。独立进程不受此影响。
 // 失败、离线、没权限一律静默：它只影响「下次启动是不是最新版」。
 try {
   const u = spawn(process.execPath, [selfUpdateJs], {
