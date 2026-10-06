@@ -271,9 +271,9 @@ def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.5.2")
+            return json.load(f).get("version", "1.5.3")
     except Exception:
-        return "1.5.2"
+        return "1.5.3"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
@@ -920,6 +920,244 @@ def alias_codes(q: str, max_codes: int = 6) -> List[Dict[str, Any]]:
 
 def _fp_paths_for_gbs(codes: List[str]) -> List[str]:
     return [s.get("p") for s in _shards_of_type("fp") if s.get("c") in set(codes)]
+
+
+# --------------------------------------------------------------------------- #
+# 语义路由层：不要求「服务端猜对用户的原话」，而是把**国标货架 + 候选码**交给
+# 客户端 LLM，让它现场做语义映射。
+#
+# 为什么这么做（2026-10-06 主人提的问题）：靠人工扩别名表覆盖「机加工 / 精密件 /
+# 手机壳…」是走不通的 —— 说法千人千面，表永远差一行，而且加得越多误召回越多。
+# 而 **MCP 客户端本身就是一个 LLM**。把「用户原话 → 国标码」这一步交给它：
+#   · 零额外基础设施：服务端不调 LLM、不需要密钥、不引入延迟和成本；
+#   · 天然覆盖长尾：LLM 的知识面就是那张「说法表」，不必我们枚举；
+#   · 可控可解释：LLM 挑码的依据是货架上的类名 + 真实条数，不是黑盒。
+# 别名表因此降级为**高频词加速器**（能命中就直接省一次往返），不再是唯一入口。
+#
+# 三个出口：
+#   list_industries()    → 国标货架（只列有数据的类，带条数）
+#   suggest_filters()    → 拆词 + 别名 + 类名子串，给出候选码与下一步调用
+#   search_vendors()     → 命中偏少时内联 hint，把这条链路推给 agent
+# --------------------------------------------------------------------------- #
+
+_GB_SHELF: Optional[List[Dict[str, Any]]] = None
+_SEG_PATTERNS: Optional[List[Tuple[str, str]]] = None
+
+
+def _gb_shelf() -> List[Dict[str, Any]]:
+    """国标小类货架：[{code, name, group, path, records}]。
+
+    数据源刻意选 `data/gb-index.json`（82 KB）而不是 `gb4754-full.json`（280 KB）：
+    前者**只含真正有数据的类**（269 个），并直接带每类条数。对「让 LLM 挑码」
+    这个用途，列一个 0 条的类只会误导它 —— 货架上摆不出来的东西没必要上架。
+    """
+    global _GB_SHELF
+    if _GB_SHELF is not None:
+        return _GB_SHELF
+    rows: List[Dict[str, Any]] = []
+    try:
+        txt = fetch_text("data/gb-index.json")
+        tree = (json.loads(txt) if txt else {}).get("tree") or {}
+    except Exception:
+        tree = {}
+    for dcode, dv in tree.items():
+        dname = str(dv.get("name") or "")
+        for gcode, gv in (dv.get("divisions") or {}).items():
+            gname = str(gv.get("name") or "")
+            for mcode, mv in (gv.get("groups") or {}).items():
+                mname = str(mv.get("name") or "")
+                for ccode, cv in (mv.get("classes") or {}).items():
+                    rows.append({
+                        "code": str(ccode),
+                        "name": str(cv.get("name") or ""),
+                        "group": str(mcode),
+                        "path": "%s/%s/%s" % (dname, gname, mname),
+                        "records": int(cv.get("count") or 0),
+                    })
+    _GB_SHELF = rows
+    return rows
+
+
+def _seg_patterns() -> List[Tuple[str, str]]:
+    """长词优先的匹配表 [(词, 来源)]，来源 ∈ alias / gb_name。"""
+    global _SEG_PATTERNS
+    if _SEG_PATTERNS is None:
+        pats: Dict[str, str] = {}
+        for w in load_gb_alias():
+            if len(w) >= 2:
+                pats.setdefault(w, "alias")
+        for r in _gb_shelf():
+            if len(r["name"]) >= 2:
+                pats.setdefault(r["name"], "gb_name")
+        _SEG_PATTERNS = sorted(pats.items(), key=lambda x: -len(x[0]))
+    return _SEG_PATTERNS
+
+
+def _segment_terms(text: str) -> List[Tuple[str, str]]:
+    """把一段人话按「最长优先、不重叠」切成已知词条。
+
+    这是「智能拆分需求」的确定性那一半：`不锈钢板激光切割折弯` →
+    `激光切割 / 折弯 / 不锈钢板` 三个候选，各自再去映射国标码。
+    剩下那一半（这几个词到底该挑哪个码、要不要并集）交给 LLM。
+    """
+    hay = (text or "").lower()
+    if not hay:
+        return []
+    hits: List[Tuple[str, str]] = []
+    i, n = 0, len(hay)
+    while i < n:
+        for w, src in _seg_patterns():
+            if hay.startswith(w.lower(), i):
+                hits.append((w, src))
+                i += len(w)
+                break
+        else:
+            i += 1
+    return hits
+
+
+def list_industries(keyword: str = "", parent: str = "", limit: int = 30,
+                    offset: int = 0) -> Dict[str, Any]:
+    """国标货架：给 LLM 一张「有哪些行业、各有多少家」的菜单。
+
+    用户原话与任何类名都不对字时（如「机加工」对不上「机械零部件加工」），
+    唯一靠谱的办法是让 LLM 看货架自己挑 —— 这正是本工具存在的理由。
+    """
+    limit = max(1, min(int(limit), 200))
+    offset = max(0, int(offset))
+    rows = _gb_shelf()
+    parent = (parent or "").strip()
+    if parent:
+        rows = [r for r in rows
+                if r["code"].startswith(parent) or r["group"].startswith(parent)
+                or r["path"].startswith(parent)]
+    keyword = (keyword or "").strip().lower()
+    if keyword:
+        rows = [r for r in rows
+                if keyword in r["name"].lower() or keyword in r["code"]
+                or keyword in r["path"].lower()]
+    rows = sorted(rows, key=lambda r: -r["records"])
+    return {
+        "total": len(rows),
+        "returned": len(rows[offset:offset + limit]),
+        "note": "只列**已有企业**的国标小类（带条数）。请按语义挑 1~3 个最接近的 code，"
+                "再调 search_vendors(gb=<code>, city=<城市>)。"
+                "传 parent 可缩小货架（门类字母如 C、或大类两位码如 35）。",
+        "industries": rows[offset:offset + limit],
+    }
+
+
+def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any]:
+    """把用户原话映射成候选国标码（给 LLM 做决策依据，而不是替它做决定）。
+
+    三条来源按可信度排序：
+      1 alias      别名表精确命中（人工策展 / 数据推导）—— 最可信
+      2 gb_name    类名被完整说出（「机械零部件加工」）
+      3 substring  类名子串（「轴承」→ 轴承制造）
+      4 segmented  对原话做最长匹配拆出的词（覆盖「一句话多个诉求」）
+    全都没命中时**明确告诉 agent 去查货架**，而不是返回一个空数组让它瞎猜。
+    """
+    q = (query or "").strip()
+    if not q:
+        return {"error": "缺少必填参数 query"}
+    limit = max(1, min(int(limit), 30))
+    by_code = {r["code"]: r for r in _gb_shelf()}
+    cands: Dict[str, Dict[str, Any]] = {}
+
+    def _add(code: str, score: int, why: str, term: str = "", hits: int = 0) -> None:
+        row = by_code.get(code) or {}
+        name = row.get("name") or _gb_names().get(code, "")
+        # 名字里**直接含用户原话**是最强信号：「轴承」→ 3451 滚动轴承制造
+        # 一定比「3399 其他未列明金属制品制造」更可能是正解。没有这一步，
+        # 排序会被「类大 = 条数多」带偏（3399 有 4116 家，把正解压到第二名）。
+        if term and term.lower() in (name or "").lower():
+            score += 25
+        cur = cands.get(code)
+        item = {
+            "code": code,
+            "name": name,
+            "path": row.get("path", ""),
+            "records": row.get("records", 0),
+            "why": why,
+            "term": term or q,
+            "hits": int(hits or 0),
+            "_score": score,
+        }
+        if cur is None or score > cur["_score"]:
+            cands[code] = item
+
+    for h in alias_codes(q):
+        _add(h["code"], 100 if h["exact"] else 80, "alias", h["word"], h.get("hits", 0))
+    ql = q.lower()
+    for r in _gb_shelf():
+        nm = r["name"].lower()
+        if nm == ql:
+            _add(r["code"], 90, "gb_name", q)
+        elif ql in nm:
+            _add(r["code"], 60, "substring", q)
+    for term, src in _segment_terms(q):
+        if term.lower() == ql:
+            continue
+        if src == "alias":
+            for h in alias_codes(term):
+                _add(h["code"], 70 if h["exact"] else 55, "segmented", term,
+                     h.get("hits", 0))
+        for r in _gb_shelf():
+            if r["name"] == term:
+                _add(r["code"], 65, "segmented", term)
+
+    # 词条级证据（hits = 该词在该类下真实出现过的企业数）优先于类规模。
+    out = sorted(cands.values(), key=lambda x: (-x["_score"], -x["hits"], -x["records"]))
+    for x in out:
+        x.pop("_score", None)
+    out = out[:limit]
+
+    res: Dict[str, Any] = {
+        "query": q,
+        "city": city or "",
+        "candidates": out,
+        "how_to_use": "挑 1~3 个 code，逐个调 search_vendors(gb=<code>, city=<城市>)"
+                      "（给了 gb 只扫对应分片，最快）；多个码的结果自行合并去重。"
+                      "候选为空或都不对味时，调 list_industries 看货架自己挑。",
+    }
+    if out:
+        res["next_call"] = {"tool": "search_vendors",
+                            "arguments": {"gb": out[0]["code"], "city": city or "",
+                                          "limit": 20}}
+    else:
+        res["next_call"] = {"tool": "list_industries",
+                            "arguments": {"keyword": q, "limit": 30}}
+        res["note"] = ("没有字面/别名候选。请用你的语义理解先在货架上挑类："
+                       "先 list_industries(keyword=\"…\") 看有哪些类，"
+                       "必要时空 keyword 拉全货架（269 类）挑最贴近的 1~3 个 code。")
+    return res
+
+
+def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, Any]:
+    """命中偏少时，把「怎么把口语词换成国标码」这条链路内联进结果。
+
+    只在 query 非空且命中 < 5 时触发 —— 命中充足说明用户说的词本身就是数据里的
+    词，不需要打扰 agent。内联（而不是让 agent 再调一次）是为了省一个 RTT：
+    agent 看到 hint 就能直接改参数重试。
+    """
+    if not q or out.get("total_matched", 0) >= 5:
+        return out
+    try:
+        s = suggest_filters(q, city, limit=5)
+    except Exception:
+        return out
+    cands = s.get("candidates") or []
+    if out.get("total_matched", 0) == 0 and not cands:
+        out["hint"] = ("关键词与名录里的写法对不上，且没有可推导的国标码。"
+                       "建议调 list_industries 用语义挑码后改传 gb=。")
+        return out
+    if cands:
+        out["hint"] = ("命中偏少：用户说的是口语/采购词，名录里按国标小类归档。"
+                       "改用 gb= 重试通常能召回几十~几百条（见 suggested_gb）。")
+        out["suggested_gb"] = [{"code": c["code"], "name": c["name"],
+                                "records": c["records"], "why": c["why"]}
+                               for c in cands]
+    return out
 
 
 # --------------------------------------------------------------------------- #
@@ -2020,12 +2258,12 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                 if gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
                     continue
                 matches.append(_rec_summary(rec))
-        return {
+        return _attach_routing_hint({
             "total_matched": len(matches),
             "returned": len(matches[offset:offset + limit]),
             "shards_scanned": scanned,
             "results": matches[offset:offset + limit],
-        }
+        }, q, city)
 
     # 未给国标码：优先走「预构建检索索引 → 只拉命中分片」（与命中量相关）。
     # 索引缺失或陈旧时回退进程内全量索引（与命中量相关，慢但结果等价）。
@@ -2034,13 +2272,13 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
 
     if via_index and not cands and not alias_paths and not cap_hits:
         # 索引明确判定无命中、别名也没给方向 —— 无需拉任何分片
-        return {
+        return _attach_routing_hint({
             "total_matched": 0,
             "returned": 0,
             "shards_scanned": 0,
             "via_index": True,
             "results": [],
-        }
+        }, q, city)
 
     matches: List[Dict[str, Any]] = []
     seen: set = set()
@@ -2136,7 +2374,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         out["cap_expanded"] = [{"word": h["word"], "cap": h["cap"], "name": h["name"]}
                                for h in cap_hits]
         out["cap_records_seen"] = cap_scanned
-    return out
+    return _attach_routing_hint(out, q, city)
 
 
 def _pick(*vals: Any) -> Any:
@@ -2247,10 +2485,43 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
     return {"error": f"找不到 id={vid} 对应的国标码，可能该记录尚未发布"}
 
 
+_CAP_CARD_IDS: Optional[set] = None
+
+
+def _card_count() -> int:
+    return int(((load_manifest().get("metadata") or {})
+                .get("cap_cards") or {}).get("count") or 0)
+
+
+def _cap_card_ids() -> Optional[set]:
+    """清单里登记的「已有能力卡的 id 集合」（None = 清单没这块，走原路径）。
+
+    2026-10-06 实测：能力卡只存在于本地 `skills/registry/capability/`，
+    既不进 git 也不在 CDN 静态站上 → 三个基址串行 404。对 majority 没有卡的
+    供应商，一次 `get_capability_card` 要 **42~65 秒**才肯回 has_card=false。
+    清单带上这张 id 表之后，没卡的直接短路，一次网络都不发。
+    """
+    global _CAP_CARD_IDS
+    if _CAP_CARD_IDS is None:
+        ids = ((load_manifest().get("metadata") or {}).get("cap_cards") or {}).get("ids")
+        _CAP_CARD_IDS = set(ids.split(",")) if ids else None
+    return _CAP_CARD_IDS
+
+
 def get_capability_card(vid: str) -> Dict[str, Any]:
     vid = (vid or "").strip()
     if not vid:
         return {"error": "缺少必填参数 id"}
+    # 短路：清单里查得到这张表时，没卡的 id 立刻回，别去撞三基址 404。
+    want = _cap_card_ids()
+    if want is not None:
+        num = vid.split("-")[-1]
+        if not num.isdigit() or num not in want:
+            return {
+                "id": vid, "has_card": False,
+                "note": "该供应商暂无已发布能力卡（全库仅 %d 家有卡）。"
+                        "需要档案请先调 get_vendor。" % _card_count(),
+            }
     rel = f"skills/registry/capability/{vid}.json"
     txt = fetch_text(rel)
     if not txt:
@@ -2335,7 +2606,11 @@ TOOLS = [
     {
         "name": "search_vendors",
         "description": "检索灯塔工厂供应商名录。可按关键词(企业名/工艺/材料/认证)、城市、国标码(GB/T 4754)过滤。"
-                       "返回精简档案(id/企业名/城市/国标码/认证等级/工艺/材料/认证/是否含电话)。",
+                       "返回精简档案(id/企业名/城市/国标码/认证等级/工艺/材料/认证/是否含电话)。"
+                       "⚠ 关键词是**字面子串**匹配：用户的口语词/采购词若与名录写法不同（如「机加工」"
+                       "vs 归档用的「机械零部件加工」），命中会极少。此时不要直接报「没有」——"
+                       "看返回体里的 hint / suggested_gb，或先调 suggest_filters 拿到候选码，"
+                       "再用 gb=<码> 重试（召回通常多几十倍，且只扫对应分片更快）。",
         "inputSchema": {
             "type": "object",
             "properties": {
@@ -2365,6 +2640,8 @@ TOOLS = [
     {
         "name": "get_capability_card",
         "description": "按供应商 id 取能力卡（工艺位/设备/产能/认证/起订量等）。"
+                       "全库仅少数供应商有已发布能力卡，无卡的会秒回 has_card=false"
+                       "（不必重试）。"
                        "无已发布卡片时返回 has_card=false 及原因说明。",
         "inputSchema": {
             "type": "object",
@@ -2416,6 +2693,36 @@ TOOLS = [
                 "value": {"type": "string", "description": "details 时为 supplier_id；more 时为数量 N"},
             },
             "required": ["session_id"],
+        },
+    },
+    {
+        "name": "suggest_filters",
+        "description": "把用户原话（口语/采购词）映射成候选国标小类码，供你改用 search_vendors(gb=…)。"
+                       "用户说的是「机加工」，名录里按「机械零部件加工」归档——别名表覆盖不了所有说法，"
+                       "所以本工具把「拆词 + 别名 + 类名」的候选和每类条数给你，由你做最终语义选择。"
+                       "search_vendors 命中偏少时也会内联 suggested_gb。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "用户原话，如 机加工 / 不锈钢板激光切割折弯（必填）"},
+                "city": {"type": "string", "description": "可选，用于拼出下一步调用参数"},
+                "limit": {"type": "integer", "default": 8, "description": "候选码条数上限(1-30)"},
+            },
+            "required": ["query"],
+        },
+    },
+    {
+        "name": "list_industries",
+        "description": "列出国标小类货架（只列已有企业的类，附企业条数），供你在没有字面候选时"
+                       "按语义自己挑码。可传 keyword 模糊筛、parent 按门类字母/大类码缩小范围。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "keyword": {"type": "string", "description": "可选，类名/码的子串"},
+                "parent": {"type": "string", "description": "可选，门类字母(C)或大类两位码(35)"},
+                "limit": {"type": "integer", "default": 30, "description": "返回条数(1-200)"},
+                "offset": {"type": "integer", "default": 0},
+            },
         },
     },
 ]
@@ -2539,6 +2846,13 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
             return get_vendor(args.get("id", ""), args.get("gb", ""))
         if name == "get_capability_card":
             return get_capability_card(args.get("id", ""))
+        if name == "suggest_filters":
+            return suggest_filters(args.get("query", ""), args.get("city", ""),
+                                   int(args.get("limit") or 8))
+        if name == "list_industries":
+            return list_industries(args.get("keyword", ""), args.get("parent", ""),
+                                   int(args.get("limit") or 30),
+                                   int(args.get("offset") or 0))
         if name == "start_sourcing":
             return start_sourcing(args.get("demand_text", ""), args.get("audience_id", "domestic_downstream"))
         if name == "answer_sourcing":
