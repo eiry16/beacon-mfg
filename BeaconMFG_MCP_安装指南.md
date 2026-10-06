@@ -92,15 +92,25 @@ MCP_PORT=8787 python mcp/http_server.py
 ```json
 {
   "via_index": true,
+  "total_matched": 2,
   "results": [
     { "id": "CN-MFG-0058615", "company": "京东养车(嘉兴会展中心店)",
-      "city": "嘉兴", "gb": "8111", "cert_level": null, "has_phone": true }
-  ]
+      "city": "嘉兴", "gb": "8111", "badge": "L0", "score": 0,
+      "has_phone": true, "via": "text" }
+  ],
+  "order_note": "results 按召回来源分档排列：via=text → via=cap_text → via=alias → via=cap；score 是**能力画像分**（有已发布能力卡才有分，无卡为 0），**不是相关度**，不要拿它反推排序。"
 }
 ```
 
-- `cert_level` 缺失即 `null` —— **不编造**。
+- `badge` 是灯牌等级（`L0`/`L2`…）；取不到就是 `null` —— **不编造**。
 - `has_phone` 表示是否有可拨号号码（仓库侧可能已按 `BEACON_MASK_PHONE` 隐私处理）。
+- `via` 说明这条是**怎么被召回的**，四档纯度递减：`text`（厂名/工艺等字面命中）、
+  `cap_text`（厂名里其实没这个词，只是撞上了能力键的中文词面）、`alias`（别名定向）、
+  `cap`（能力定向）；只按城市筛选时是 `city`。结果就按这个次序分档排列。
+- `score` 是**能力画像分**，不是相关度 —— 详见返回体里的 `order_note`。
+
+`query` 命中偏少时返回体里会带 `hint` / `suggested_gb` / `cap_expanded`，
+照它指的方向再调一次即可，不要直接判「没有」。
 
 ## 可选参数
 
