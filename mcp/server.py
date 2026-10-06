@@ -271,9 +271,9 @@ def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.5.1")
+            return json.load(f).get("version", "1.5.2")
     except Exception:
-        return "1.5.1"
+        return "1.5.2"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
@@ -682,16 +682,31 @@ _shard_hash_slot: Optional[tuple] = None    # (rel -> sha1, 数据版本号)
 
 
 def _shard_hash_index() -> Dict[str, str]:
-    """分片路径 → 清单登记的 sha1（h）。随数据版本重建，进程内只建一次。"""
+    """分片路径 → 清单登记的 sha1（h）。随数据版本重建，进程内只建一次。
+
+    除 `shards` 外还合并 `metadata.idxfiles`：terms 倒排桶与策展别名表**刻意不在
+    shards 里** —— App 会拉全部 t=idx 片（RemoteSource.kt:419），把 512 个
+    terms 桶放进 shards 等于让手机每次同步多下 35 MB。
+    但 MCP 侧需要它们的 h 才能做内容哈希缓存，否则每次检索都各付一次 CDN RTT。
+    """
     global _shard_hash_slot
     ver = _data_version()
     if _shard_hash_slot is None or _shard_hash_slot[1] != ver:
         m: Dict[str, str] = {}
         try:
-            for s in load_manifest().get("shards", []):
+            man = load_manifest()
+            for s in man.get("shards", []):
                 p, h = s.get("p"), s.get("h")
                 if p and h:
                     m[str(p)] = str(h)
+            ix = (man.get("metadata") or {}).get("idxfiles") or {}
+            d = ix.get("dir")
+            for name, h in (ix.get("h") or {}).items():
+                if d and name and h:
+                    m["%s/%s" % (d, name)] = str(h)
+            for rel, h in (ix.get("files") or {}).items():
+                if rel and h:
+                    m[str(rel)] = str(h)
         except Exception:
             m = {}
         _shard_hash_slot = (m, ver)
@@ -778,9 +793,15 @@ def _zh_paths_for_gb(gb: str) -> List[str]:
 # 一个字都不出现，检索面 命中不了，于是返回 0 条 —— 而 App 同一句能出 3434。
 # 别名表把「口语词 → 国标码」补上，检索时按码直接定向对应分片。
 # --------------------------------------------------------------------------- #
-def _load_alias_file(rel: str) -> Dict[str, Any]:
-    """两种历史形态都兼容：[["metadata",..],["alias",{..}]] 和直接 {word: ...}。"""
-    txt = fetch_text(rel)
+def _load_alias_file(rel: str, txt: Optional[str] = None) -> Dict[str, Any]:
+    """两种历史形态都兼容：[["metadata",..],["alias",{..}]] 和直接 {word: ...}。
+
+    `txt` 可由调用方批量取好后传入（见 `load_gb_alias`）—— 免得逐文件各付一次 RTT。
+    未传入时走 `_shard_text`：`data/gb-alias.json` 登记在清单里 ⇒ 按内容哈希缓存，
+    跨进程也不重复下载。
+    """
+    if txt is None:
+        txt = _shard_text(rel)
     if not txt:
         return {}
     try:
@@ -802,9 +823,14 @@ def load_gb_alias() -> Dict[str, Any]:
     global _alias_cache
     _alias_relpaths = ("data/gb-alias.json", "data/gb-alias-curated.json")
     if _cache_stale(_alias_cache, _alias_relpaths):
+        # ⚡ 两张表互相独立 → 一次并发取齐。逐个 fetch 各付一次 CDN RTT
+        #    （实测每个约 0.7 s，串行 1.42 s —— 占「新进程首次检索」剩余耗时的一半）。
+        #    同时借 _read_many_text 落到 _shard_text：清单里登记了 h 的表按内容缓存，
+        #    内容没变就完全不走网络；没 h 的表（如 gb-alias-curated.json）自动退回 fetch。
+        raw = _read_many_text(list(_alias_relpaths))
         merged: Dict[str, Any] = {}
         for rel in _alias_relpaths:
-            for k, v in _load_alias_file(rel).items():
+            for k, v in _load_alias_file(rel, raw.get(rel)).items():
                 merged.setdefault(str(k).lower(), v)
         _alias_cache = (merged, time.time(), _wt_mtime_any(_alias_relpaths))
     return _alias_cache[0]
@@ -1636,9 +1662,17 @@ def _read_many_text(paths: List[str]) -> Dict[str, str]:
         got = _git_read_many(paths)
         if len(got) >= max(1, len(paths) // 2):   # archive 正常覆盖
             return got
+    # ⚠ HTTP 分支必须走 _shard_text（按清单 h 做**内容哈希缓存**），不能裸调 fetch_text。
+    #   这里是 _candidate_shards（倒排桶）与 _records_from_paths（fp 分片）的**公共取数口**：
+    #   一次「模具」检索要拉约 17 MB 的 fp 分片（24 片）。裸 fetch_text 只有 URL 级缓存，
+    #   而 URL 缓存**不跨进程复用**（每次新进程都重下），于是热启动与首次加载同速
+    #   —— 实测两次都是 ~11 s，缓存目录里 URL 哈希文件 33 个、shard-*.json 一个都没有。
+    #   换 _shard_text 后，内容没变就完全不走网络（连 304 都省），且跨进程有效。
+    #   （没有 h 的路径——如倒排桶——_shard_text 内部自动退回 fetch_text，行为不变。）
+    _shard_hash_index()          # 预热：别让线程池里做首次构建
     out: Dict[str, str] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
-        for path, txt in zip(paths, ex.map(fetch_text, paths)):
+        for path, txt in zip(paths, ex.map(_shard_text, paths)):
             if txt:
                 out[path] = txt
     return out
