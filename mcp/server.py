@@ -43,6 +43,18 @@ import time
 import hmac
 import urllib.request
 import urllib.error
+
+# [utf8-guard] 中文 Windows 上，宿主若没注入 PYTHONUTF8/PYTHONIOENCODING，stdout 会落回
+# cp936；而 TOOLS 的 tool 描述里含 `⚠`(U+26A0) 这类 GBK 根本编不出的字符 ——
+# initialize 全是 ASCII 能过，一到 `tools/list` 就 UnicodeEncodeError **当场崩进程**。
+# 宿主侧只能看到「tools/list timed out」，日志里毫无线索。
+# 2026-10-06 实测：常见 MCP 客户端 里连续 249 轮探测全部卡死于此。
+# 强制 UTF-8 + 出错降级替换：宁可显示成 '?'，也绝不因为一次打印而断开协议。
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 import socket
 from typing import Any, Dict, List, Optional, Tuple
 import sys as _sys
@@ -271,9 +283,9 @@ def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.5.3")
+            return json.load(f).get("version", "1.5.4")
     except Exception:
-        return "1.5.3"
+        return "1.5.4"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
@@ -1112,6 +1124,19 @@ def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any
         x.pop("_score", None)
     out = out[:limit]
 
+    # 能力域候选（跨门类的工艺/技术标签，如 tech_ai=人工智能与算法）。
+    # **绝不能混进 candidates**：那串是国标码，agent 会照着拿去调 search_vendors(gb=…)；
+    # 把「tech_ai」塞进去就会被当成一个国标码用，必然 0 条。所以单独字段 + 单独说明。
+    # 2026-10-06 补：在此之前 suggest_filters 完全不看能力维，于是「人工智能」这种词
+    # 国标侧没类、能力侧不问 —— 两边都空，agent 只能拿到 candidates:[] 瞎猜。
+    cap_cands: List[Dict[str, Any]] = []
+    try:
+        for c in cap_alias_codes(q):
+            cap_cands.append({"cap": c["cap"], "name": c["name"], "word": c["word"],
+                              "records": _cap_count(c["cap"])})
+    except Exception:
+        cap_cands = []
+
     res: Dict[str, Any] = {
         "query": q,
         "city": city or "",
@@ -1120,10 +1145,24 @@ def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any
                       "（给了 gb 只扫对应分片，最快）；多个码的结果自行合并去重。"
                       "候选为空或都不对味时，调 list_industries 看货架自己挑。",
     }
+    if cap_cands:
+        res["cap_candidates"] = cap_cands
+        res["cap_note"] = ("这些是**能力域**（跨门类的工艺/技术标签），不是国标码，"
+                           "别拿去当 gb= 用。search_vendors(query=…) 已自动按它们展开并计数；"
+                           "这里的用处是告诉你「该能力在名录里有多厚」——records 很小就是很薄。")
     if out:
         res["next_call"] = {"tool": "search_vendors",
                             "arguments": {"gb": out[0]["code"], "city": city or "",
                                           "limit": 20}}
+    elif cap_cands:
+        # 国标侧没候选、但能力域命中了 —— 别让 agent 空着手去翻货架
+        res["next_call"] = {"tool": "search_vendors",
+                            "arguments": {"query": q, "city": city or "", "limit": 20}}
+        res["note"] = ("国标小类里没有这个词（GB/T 4754 本来就不保证有「%s」这一类），"
+                       "但它命中能力域 %s。直接调 search_vendors(query=\"%s\") 即可，"
+                       "能力域会被自动展开；结果偏少属正常 —— 那是数据厚度问题，"
+                       "不是查询写法问题。"
+                       % (q, "、".join(c["name"] for c in cap_cands), q))
     else:
         res["next_call"] = {"tool": "list_industries",
                             "arguments": {"keyword": q, "limit": 30}}
@@ -1157,6 +1196,28 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
         out["suggested_gb"] = [{"code": c["code"], "name": c["name"],
                                 "records": c["records"], "why": c["why"]}
                                for c in cands]
+        return out
+    # 命中 1~4 条、别名与类名一条候选都推不出来 —— 最糟的一档，也是最容易被漏掉的一档：
+    # 既有几条噪音（agent 会以为「就这些」直接交付），又没有任何可执行的下一步。
+    # 2026-10-06 实测：查「苏州做AI的企业」只回 2 条（其中一条是名字里带「人工智能」的
+    # 餐厅），hint 全程不出现 —— 因为旧逻辑只有「0 条且无候选」和「有候选」两个分支，
+    # 1~4 条无候选直接掉进空档 return。必须补上。
+    try:
+        caps = cap_alias_codes(q)
+    except Exception:
+        caps = []
+    if caps:
+        out["cap_expanded"] = [{"cap": c["cap"], "name": c["name"], "word": c["word"],
+                                "records": _cap_count(c["cap"])} for c in caps]
+        out["hint"] = ("这个词命中能力域 %s（跨门类的工艺/技术标签，不是国标小类），"
+                       "search_vendors(query=…) 已自动展开并计入结果。命中偏少说明该能力"
+                       "在名录里确实很薄，**不要理解成「没这家厂」**。放宽可调 "
+                       "list_industries(keyword=…) 换近义类目再传 gb=。"
+                       % "、".join("%s %d 家" % (c["name"], _cap_count(c["cap"])) for c in caps))
+        return out
+    out["hint"] = ("命中偏少且推不出国标码：这几条多半只是**字面撞词**，未必真是你要的行业。"
+                   "建议调 list_industries(keyword=\"…\") 用语义挑 1~3 个国标小类，"
+                   "再改传 gb= 重试；这样召回和精度都会好很多。")
     return out
 
 
@@ -1216,6 +1277,12 @@ def _cap_name(code: str) -> str:
     cap = _load_cap_index() or {}
     t = (cap.get("terms") or {}).get(code, "")
     return str(t).split()[0] if t else code
+
+
+def _cap_count(code: str) -> int:
+    """能力键 → 全库企业数（cap.json 的 shards[code] 是一堆「分片名 → 条数」，求和）。"""
+    cap = _load_cap_index() or {}
+    return sum((((cap.get("shards") or {}).get(code) or {})).values())
 
 
 def _cap_shard_paths(cap_code: str) -> List[str]:
@@ -1696,14 +1763,7 @@ def _cap_term_of(code: str) -> str:
     return str(_CAP_TERMS_SLOT[0].get(code) or code or "")
 
 
-def _hay(rec: Dict[str, Any]) -> str:
-    """检索面：query 的每个词都必须出现在这里（AND 全命中）。
-
-    2026-09-23 加入 `cap`（跨门类能力键）—— 在此之前的六个字段
-    （co/city/dist/gb/proc/mat/cert/products）全都表达不了「能力」：
-    赤兔智能的键是 `tech_ai`，而它的厂名/工艺/材料里一个「人工智能」都没有，
-    客户问「苏州做人工智能的企业」就永远 0 条。键必须摊成中文词面才能被中文命中。
-    """
+def _hay_parts(rec: Dict[str, Any], with_cap: bool) -> str:
     parts = [
         # `or ""` 不是多余：gb 为 None（未归类）时 str() 会产出字面量 "None"，
         # 2271 条 gb=null 的记录于是每条都带一个 "None" 词面 —— 查 "none" 能命中
@@ -1713,9 +1773,33 @@ def _hay(rec: Dict[str, Any]) -> str:
         " ".join(rec.get("mat", []) or []),
         " ".join(rec.get("cert", []) or []),
         " ".join(rec.get("products", []) or []),
-        " ".join(_cap_term_of(c) for c in (rec.get("cap") or [])),
     ]
+    if with_cap:
+        parts.append(" ".join(_cap_term_of(c) for c in (rec.get("cap") or [])))
     return " ".join(p for p in parts if p)
+
+
+def _hay(rec: Dict[str, Any]) -> str:
+    """检索面：query 的每个词都必须出现在这里（AND 全命中）。
+
+    2026-09-23 加入 `cap`（跨门类能力键）—— 在此之前的六个字段
+    （co/city/dist/gb/proc/mat/cert/products）全都表达不了「能力」：
+    赤兔智能的键是 `tech_ai`，而它的厂名/工艺/材料里一个「人工智能」都没有，
+    客户问「苏州做人工智能的企业」就永远 0 条。键必须摊成中文词面才能被中文命中。
+    """
+    return _hay_parts(rec, True)
+
+
+def _hay_lit(rec: Dict[str, Any]) -> str:
+    """**字面**检索面 = `检索面` 去掉 cap 词面。
+
+    存在的理由：`检索面` 把厂名/工艺与 cap 词面混在一起，于是「query 词出现在
+    `检索面` 里」这一条**分不清**是「厂名/工艺真写了这个词」还是「只是能力键的中文
+    词面撞上了」。2026-10-06 实测：问「苏州做人工智能的企业」，赤兔智能（键
+    tech_ai）被判成 `via=text`，而它厂名/工艺里一个「人工智能」都没有 —— agent
+    读到 text 会误以为「这家厂自己写了 AI」。所以 text 的判定改走这里。
+    """
+    return _hay_parts(rec, False)
 
 
 def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
@@ -2257,7 +2341,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                     continue
                 if gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
                     continue
-                matches.append(_rec_summary(rec))
+                s = _rec_summary(rec)
+                s["via"] = "gb"
+                matches.append(s)
         return _attach_routing_hint({
             "total_matched": len(matches),
             "returned": len(matches[offset:offset + limit]),
@@ -2287,13 +2373,23 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         for rec in recs:
             if not _city_ok(rec, city):
                 continue
-            if not relax_tokens and gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
+            # 只在有关键词时才算检索面（纯城市查询不需要，省一次 join/条）。
+            hay = _hay(rec).lower() if gen_tokens else ""
+            if not relax_tokens and gen_tokens and not all(tok in hay for tok in gen_tokens):
                 continue
             rid = rec.get("id")
             if rid in seen:      # 别名召回与文本召回的并集要去重
                 continue
             seen.add(rid)
             s = _rec_summary(rec)
+            # 只有落在**字面**检索面（厂名/城市/工艺/材料/认证/产品）上才算 text；
+            # 全靠 cap 词面撞上的如实标 cap_text —— 见 `检索面_lit` 的说明。
+            # 没挂 cap 键的记录两张面完全等价（绝大多数），直接复用 hay 不额外算。
+            if gen_tokens:
+                lit = hay if not rec.get("cap") else _hay_lit(rec).lower()
+                s["via"] = "text" if all(tok in lit for tok in gen_tokens) else "cap_text"
+            else:
+                s["via"] = "city"      # 没给关键词，纯城市筛选
             if relax_tokens:
                 a = alias_by_code.get(rec.get("gb") or "")
                 if a:
@@ -2328,6 +2424,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                 continue
             seen.add(rid)
             s = _rec_summary(rec)
+            s["via"] = "alias"         # 别名定向召回（企业自己没写过这个词）
             a = alias_by_code.get(rec.get("gb") or "")
             if a:
                 s["alias_match"] = {"word": a["word"], "gb": a["code"], "name": a["name"]}
@@ -2354,9 +2451,16 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                     continue
                 seen.add(rid)
                 s = _rec_summary(rec)
+                s["via"] = "cap"       # 能力定向召回（跨门类能力键，如 tech_ai）
                 s["alias_match"] = {"word": h["word"], "cap": h["cap"],
                                     "name": h["name"], "type": "cap"}
                 matches.append(s)
+
+    # 分档排序（稳定）：text → cap_text → alias → cap。
+    # 为什么必须显式排：cap_text 与 text 是**同一趟**文本召回里 append 进去的，
+    # 不重排两档会交错，order_note 里「按召回来源分档排列」就成了假承诺。
+    _RANK = {"text": 0, "city": 0, "cap_text": 1, "alias": 2, "cap": 3}
+    matches.sort(key=lambda x: _RANK.get(x.get("via"), 9))
 
     out = {
         "total_matched": len(matches),
@@ -2364,6 +2468,14 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         "shards_scanned": scanned,
         "via_index": via_index,
         "results": matches[offset:offset + limit],
+        # 结果顺序是**有意设计的分档**，不是随机的：按召回纯度递减排列。
+        # 而 `score` 是**能力画像分**（有已发布能力卡才有分，无卡为 0），**不是相关度**。
+        # 两者一起看极易误判（实测：一家餐厅 sc=0 排在持卡 L2 企业 sc=40 前面），
+        # 所以在这里把口径写死，让 agent 自己能分辨「谁更值得先看」。
+        "order_note": ("results 按召回来源分档排列：via=text(厂名/工艺/材料等**字面**命中) → "
+                       "via=cap_text(厂名里其实没这个词，只是撞上了能力键的中文词面) → "
+                       "via=alias(别名定向) → via=cap(能力定向)；score 是**能力画像分**"
+                       "（有已发布能力卡才有分，无卡为 0），**不是相关度**，不要拿它反推排序。"),
     }
     if alias_hits:
         out["alias_expanded"] = [{"word": a["word"], "gb": a["code"], "name": a["name"]}
@@ -2462,7 +2574,16 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
                 return {"error": f"分片 {zh_path} 解析失败: {e}"}
             for rec in arr:
                 if rec.get("id") == vid:
-                    return {"vendor": normalize_vendor(rec)}
+                    v = normalize_vendor(rec)
+                    # zh 记录自身常常**不写 gb**（只留 industry.code），但它就归档在
+                    # 这个 gb 分片里。不按分片归属回填的话会出现自相矛盾：
+                    # search_vendors(gb=6531) 能搜到它、get_vendor 却说
+                    # gb=null + gb_unclassified=true（2026-10-06 实测 CN-I-0000001）。
+                    if not v.get("gb"):
+                        v["gb"] = gb
+                        v["gb_source"] = "shard"   # 记录没写，取自分片归属
+                        v.pop("gb_unclassified", None)
+                    return {"vendor": v}
         return {"error": f"国标码 {gb} 的全部 zh 分片(共{len(zh_paths)}个)中均未找到 id={vid}"}
 
     # 兜底：gb 为 null（未归类）—— 这些记录躺在 c=='' 的 zh 分片里
