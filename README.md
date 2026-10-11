@@ -3,7 +3,7 @@
 > **🌐 [English Version](README_EN.md)** · 中文为主，英文数据集见 `data/en/` · 落地页 https://eiry16.github.io/beacon-mfg/
 
 [![License](https://img.shields.io/badge/code-MIT-3fb68a)](LICENSE)
-[![Data](https://img.shields.io/badge/data-CC%20BY--NC%204.0-blue)](DATA_LICENSE.md)
+[![Data](https://img.shields.io/badge/data-CC%20BY%204.0-blue)](DATA_LICENSE.md)
 [![Records](https://img.shields.io/badge/records-168780-58a6ff)](data/)
 [![Categories](https://img.shields.io/badge/categories-52-58a6ff)](data/gb-index.json)
 [![Industry](https://img.shields.io/badge/industry-GB%2FT%204754--2017%20%C2%B7%20107%20%E5%B0%8F%E7%B1%BB-orange)](data/industry-index.json)
