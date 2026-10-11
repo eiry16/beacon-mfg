@@ -6,7 +6,7 @@
 [![Data](https://img.shields.io/badge/data-CC%20BY%204.0-blue)](DATA_LICENSE.md)
 [![Records](https://img.shields.io/badge/records-168780-58a6ff)](data/)
 [![Categories](https://img.shields.io/badge/categories-52-58a6ff)](data/gb-index.json)
-[![Industry](https://img.shields.io/badge/industry-GB%2FT%204754--2017%20%C2%B7%20107%20%E5%B0%8F%E7%B1%BB-orange)](data/industry-index.json)
+[![Industry](https://img.shields.io/badge/industry-GB%2FT%204754--2017%20%C2%B7%20302%20%E5%B0%8F%E7%B1%BB-orange)](data/industry-index.json)
 [![Stars](https://img.shields.io/github/stars/eiry16/beacon-mfg?style=social)](https://github.com/eiry16/beacon-mfg)
 
 > 面向 Agent 的制造业供应商结构化名录 —— 按产品关键词分类，让下游厂商的 Agent 一眼看到上游供应商。
@@ -83,19 +83,22 @@ npx skills add eiry16/beacon-mfg
 
 设计面覆盖以下全部门类。注意 **门类在册 ≠ 已有数据** —— 采集分批推进，
 尚缺数据的门类标为「待采集」。
-（逐门类家数以 `data/DATA_STATS.md` 为准；采集与发布流水线属本地工厂资产，不在本仓库。）
+（**逐门类家数以 `data/industry-index.json` 为准** —— 该文件按国标小类码索引企业；
+`data/DATA_STATS.md` 是国标**二位大类**口径，两者不是同一层。采集与发布流水线属本地工厂资产，不在本仓库。）
 
 | 门类 | 名称 | 现有数据 | 典型需求 |
 |---|---|---|---|
-| C | 制造业 | 28213 条 | CNC加工、钣金、注塑、压铸、模具、标准件、电子元器件 |
-| F | 批发和零售业 | 2603 条 | 批发商、经销商、贸易商、五金/建材批发、便利店、药店 |
-| H | 住宿和餐饮业 | 2578 条 | 餐厅、火锅、快餐、咖啡、奶茶、烘焙、酒吧、酒店、民宿 |
-| R | 文化体育娱乐业 | 1905 条 | 健身、KTV、网吧、影院、游乐园、球馆 |
-| O | 居民服务与修理业 | 1372 条 | 美容美发、洗衣干洗、汽车维修、家电维修、宠物服务 |
-| I | 信息技术服务业 | 1039 条 | 软件开发、系统集成、网络安全、大数据、运维 |
-| M | 科研技术服务业 | 954 条 | 第三方检测、计量校准、认证、工业设计、环境监测 |
+| C | 制造业 | 59148 条 | CNC加工、钣金、注塑、压铸、模具、标准件、电子元器件 |
+| H | 住宿和餐饮业 | 56426 条 | 餐厅、火锅、快餐、咖啡、奶茶、烘焙、酒吧、酒店、民宿 |
+| O | 居民服务、修理和其他服务业 | 31107 条 | 美容美发、洗衣干洗、汽车维修、家电维修、宠物服务 |
+| R | 文化、体育和娱乐业 | 8503 条 | 健身、KTV、网吧、影院、游乐园、球馆 |
+| F | 批发和零售业 | 6212 条 | 批发商、经销商、贸易商、五金/建材批发、便利店、药店 |
+| I | 信息传输、软件和信息技术服务业 | 2385 条 | 软件开发、系统集成、网络安全、大数据、运维 |
+| M | 科学研究和技术服务业 | 2148 条 | 第三方检测、计量校准、认证、工业设计、环境监测 |
 
-> 另有 **1033 条**尚未判定国标行业（`industry` 为 null，不硬贴标签），与上表合计 **39697 条**。
+> 上表 7 个门类合计 **165929 条**；另有 12 条落在 A 农林牧渔业（11 条）与 E 建筑业（1 条），
+> **2839 条**尚未判定国标行业（`industry` 为 null，不硬贴标签）—— 合计 **168780 条**，
+> 与 `industry-index.json` 的 `classified: 165941` / `unclassified: 2839` 对齐。
 
 ## 数据现状
 
