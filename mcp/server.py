@@ -55,6 +55,13 @@ for _s in (sys.stdout, sys.stderr):
         _s.reconfigure(encoding="utf-8", errors="replace")
     except Exception:
         pass
+
+# [no-bytecode-guard] 本文件随 npm 包分发（package.json 的 files 含 server.py），
+# 可能被 `python server.py` 直接拉起 —— 那条路径**不经** bin/ 启动器，
+# 启动器注入的 PYTHONDONTWRITEBYTECODE 不生效。这里显式禁写 __pycache__，
+# 避免在全局 npm 包目录 / 只读盘上留字节码（或 EPERM 噪音）。本服务短命，
+# 无字节码缓存收益。
+sys.dont_write_bytecode = True
 import socket
 from typing import Any, Dict, List, Optional, Tuple
 import sys as _sys

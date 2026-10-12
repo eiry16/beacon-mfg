@@ -49,6 +49,10 @@ const child = spawnSync(chosen, [serverPy, ...process.argv.slice(2)], {
   env: Object.assign({}, process.env, {
     PYTHONUTF8: '1',
     PYTHONIOENCODING: 'utf-8',
+    // 不写 __pycache__：本服务由 npm 全局安装、跑在任意用户机器上，
+    // 字节码会落进包目录（或只读盘上 EPERM 报错）。服务是短命进程，
+    // 字节码缓存无收益，关掉更干净。
+    PYTHONDONTWRITEBYTECODE: '1',
   }),
 });
 process.exit(child.status === null ? 1 : child.status);

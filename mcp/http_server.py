@@ -26,6 +26,10 @@ import uuid
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
+# [no-bytecode-guard] 同 server.py：本文件随 npm 包分发、可被 `python http_server.py`
+# 直接拉起（不经 bin/ 启动器），显式禁写 __pycache__，避免在包目录/只读盘留字节码。
+sys.dont_write_bytecode = True
+
 # 保证可直接 `python http_server.py` 运行（同级 import server）
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
