@@ -19,10 +19,15 @@ Continue / 常见 MCP 客户端 等主流 MCP 客户端。
   BEACON_REPO    本地 git 仓库路径；设了就用 `git show HEAD:` 读（推荐：离线 + 隐私安全）
                 缺省时自动探测 cwd 所在 git 仓库（若含 data/gb 就用它）
 
-暴露的 tool：
+暴露的 tool（8 个，只读）：
   search_vendors       按 关键词 / 城市 / 国标码 检索
   get_vendor           按 id（+ 国标码）取完整中文档案
   get_capability_card  按 id 取能力卡
+  suggest_filters      用户原话 → 候选国标小类码
+  list_industries      国标小类货架（只列有数据的类）
+  start_sourcing       多轮寻源起手：品类识别 → 宽召回 → 澄清问题
+  answer_sourcing      续接澄清轮次 / 返回初选供应商
+  refine_sourcing      推荐轮交互：details / more / best
 """
 
 import os
