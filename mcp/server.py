@@ -2499,7 +2499,7 @@ def _records_from_paths(paths: List[str]) -> List[Dict[str, Any]]:
 
 
 def _city_ok(rec: Dict[str, Any], city: str) -> bool:
-    """city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在高德里归到地级市名下，
+    """city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在地图数据里归到地级市名下，
     记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
     """
     if not city:
@@ -2970,7 +2970,7 @@ TOOLS = [
                 "city": {"type": "string",
                          "description": "城市名精确匹配，如 深圳 / 东莞；"
                                         "也接受区县或县级市（如 昆山、海盐），"
-                                        "这些地方在高德里归地级市名下，靠 district 字段命中"},
+                                        "这些地方在地图数据里归地级市名下，靠 district 字段命中"},
                 "gb": {"type": "string", "description": "国标码，如 3484(机械零部件加工)。给了就只扫对应分片"},
                 "limit": {"type": "integer", "default": 20, "description": "返回条数上限(1-200)"},
                 "offset": {"type": "integer", "default": 0, "description": "分页偏移"},
