@@ -289,9 +289,9 @@ def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.5.6")
+            return json.load(f).get("version", "1.6.0")
     except Exception:
-        return "1.5.6"
+        return "1.6.0"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
@@ -383,11 +383,31 @@ def _cid() -> str:
 
 
 def _beacon_headers() -> Dict[str, str]:
-    """随请求带出的四个头。**不含 IP / UA 原文 / 完整 query**。"""
-    if not BEACON_TELEMETRY:
-        return {}
+    """随请求带出的头。
+
+    **身份头与遥测头必须分开**（2026-10-22）：
+      - 身份（cid / op / Authorization）→ 不可关。关掉遥测只应少报「你查了
+        什么」，不能连身份一起不发 —— 那样服务端会把用户当匿名客户端拒绝服务，
+        而他以为只是关了个统计开关。
+      - 遥测（tool / tokens / hits）→ 可被 BEACON_TELEMETRY=0 关闭。
+    """
+    h: Dict[str, str] = {}
+    try:
+        import identity  # 同目录模块；不可用时退回旧路径，不能因此丢身份
+        h.update(identity.headers())
+    except Exception:
+        h["X-Beacon-Cid"] = _cid()
+
     cur = _cur_get() or {}
-    h = {"X-Beacon-Tool": cur.get("tool") or "", "X-Beacon-Cid": _cid()}
+    # op = 一次 tool 调用。服务端按 op 去重计量配额：一次「上海」检索要拉
+    # 178 个分片，按请求计费会把正常用户直接打死（见 pages/_worker.js 注释）。
+    if cur.get("op"):
+        h["X-Beacon-Op"] = cur["op"]
+
+    if not BEACON_TELEMETRY:
+        return {k: v for k, v in h.items() if v not in ("", None)}
+
+    h["X-Beacon-Tool"] = cur.get("tool") or ""
     # tokens = 分词后的**产品词**，不是整句（§14.2：记整句等于把用户输入落成明文台账）
     if cur.get("tokens"):
         h["X-Beacon-Tokens"] = ",".join(cur["tokens"])[:120]
@@ -2507,10 +2527,31 @@ def _city_ok(rec: Dict[str, Any], city: str) -> bool:
     return city in (rec.get("city", ""), rec.get("dist", ""))
 
 
+OFFSET_MAX = 200   # 分页深度上限（10 页 × 20 条）。服务端 X-Beacon-Offset-Max 同值。
+
+
+def _page_slice(matches: list, offset: int, limit: int, raw_offset: int):
+    """分页切片 + 越界说明。三处 return 共用，避免各写一遍导致口径不一致。"""
+    page = matches[offset:offset + limit]
+    if raw_offset <= OFFSET_MAX:
+        return page, {}
+    return page, {"offset_clamped": {
+        "requested": raw_offset, "max": OFFSET_MAX,
+        "note": ("分页深度上限 %d 条。要更完整的结果请**收窄检索条件**"
+                 "（加城市 / 国标码 / 能力词），而不是加大 offset。" % OFFSET_MAX)}}
+
+
 def search_vendors(query: str = "", city: str = "", gb: str = "",
                    limit: int = 20, offset: int = 0) -> Dict[str, Any]:
     limit = max(1, min(int(limit), 200))
-    offset = max(0, int(offset))
+    # ── 分页深度上限（2026-10-22）────────────────────────────────────────
+    # 这不是性能优化，是**反截取**。翻页遍历是从公开接口搬走整个库的唯一
+    # 可行路径：`total_matched=4684` 时 offset += 200 循环 24 次就拉干了。
+    # 而真实用户翻不到第 11 页 —— 他要的是「找几家能做的」，不是「第 4000 条是谁」。
+    # ⚠ 这条只是体验层的一道闸：search 本身在客户端本地过滤，改客户端即可绕过。
+    #   真正的防线是服务端的数据面鉴权（pages/_worker.js 的 quotaGuard）。
+    raw_offset = max(0, int(offset))
+    offset = min(raw_offset, OFFSET_MAX)
     q = (query or "").strip().lower()
     # 原话归一化：用户输入的是**一句人话**，不是空格分隔的关键词表。
     # 归一化把它切成可执行的检索参数，并顺带把原话里的城市抽成 city 过滤条件。
@@ -2569,12 +2610,14 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         # 与 query 路由同一套档内排序（`gb=` 只走一档，故按厂名贴合度降序即可），
         # 否则同一批记录经两条路进来顺序不同，agent 会以为「换了个写法结果就变了」。
         matches.sort(key=lambda x: -_name_fit(x, gen_tokens))
+        page, pmeta = _page_slice(matches, offset, limit, raw_offset)
         return _attach_routing_hint({
             "total_matched": len(matches),
-            "returned": len(matches[offset:offset + limit]),
+            "returned": len(page),
             "shards_scanned": scanned,
-            "results": matches[offset:offset + limit],
+            "results": page,
             **parsed,
+            **pmeta,
             # 同 query 路由的口径：档内按「关键词在厂名里成片出现」优先，score 不是相关度。
             "order_note": ("results 按「关键词在厂名里成片出现」优先排列；score 是"
                            "**能力画像分**（有已发布能力卡才有分，无卡为 0），"
@@ -2696,13 +2739,15 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     # 次序，也不影响 total_matched。
     matches.sort(key=lambda x: (_RANK.get(x.get("via"), 9), -_name_fit(x, gen_tokens)))
 
+    page, pmeta = _page_slice(matches, offset, limit, raw_offset)
     out = {
         "total_matched": len(matches),
-        "returned": len(matches[offset:offset + limit]),
+        "returned": len(page),
         "shards_scanned": scanned,
         "via_index": via_index,
-        "results": matches[offset:offset + limit],
+        "results": page,
         **parsed,
+        **pmeta,
         # 结果顺序是**有意设计的分档**，不是随机的：按召回纯度递减排列。
         # 而 `score` 是**能力画像分**（有已发布能力卡才有分，无卡为 0），**不是相关度**。
         # 两者一起看极易误判，
@@ -3077,7 +3122,48 @@ TOOLS = [
             },
         },
     },
+    {
+        "name": "account",
+        "description": "查看/升级本机调用身份与配额（匿名装完即用，无需注册）。"
+                       "action=status 看当前档位与剩余额度；"
+                       "action=request 需传 phone（中国大陆 11 位），发短信验证码；"
+                       "action=confirm 需传 phone + code，验证通过后本机升级为 verified，"
+                       "配额 200→2000 次/滚动 24 小时，并解锁能力卡等 L2 加工资产；"
+                       "action=logout 清除本地令牌回到匿名档。"
+                       "⚠ 只有当你**确实遇到** upgrade_required / quota_exceeded，"
+                       "或用户主动问「额度/绑定手机号」时才调用；不要一上来就催用户绑手机。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "action": {"type": "string", "enum": ["status", "request", "confirm", "logout"],
+                           "description": "默认 status"},
+                "phone": {"type": "string", "description": "request/confirm 必填：中国大陆手机号，如 13800138000"},
+                "code": {"type": "string", "description": "confirm 必填：收到的 6 位验证码"},
+            },
+        },
+    },
 ]
+
+
+def account(action: str = "status", phone: str = "", code: str = "") -> Dict[str, Any]:
+    """身份与配额自助。**任何异常都转成可读错误**，不让对话里冒出堆栈。"""
+    try:
+        import identity
+    except Exception as e:      # noqa: BLE001
+        return {"error": "identity_unavailable", "detail": str(e)[:120]}
+    a = (action or "status").strip().lower()
+    try:
+        if a == "status":
+            return identity.status()
+        if a == "request":
+            return identity.request_code(phone)
+        if a == "confirm":
+            return identity.confirm_code(phone, code)
+        if a == "logout":
+            return identity.logout()
+    except Exception as e:      # noqa: BLE001
+        return {"error": "account_failed", "detail": str(e)[:160]}
+    return {"error": "bad_action", "hint": "action 只能是 status/request/confirm/logout"}
 
 
 def _chain_grams(grams: List[str], max_len: int = 8) -> List[str]:
@@ -3156,7 +3242,11 @@ def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
     回填，供**后续**请求带上（一次检索的头几个请求因此没有 hits 列，属正常）。
     """
     args = args or {}
-    tok = _cur_set({"tool": name, "tokens": _product_tokens(name, args)})
+    # op = 本次 tool 调用的唯一 id，服务端按它去重计配额。
+    # 必须**每次调用新生成**：复用同一个 op 会被服务端的「单 op 路径上限」拦住
+    # （一次检索横跨上百个分片是正常的，但同一个 op 不该无限扩）。
+    tok = _cur_set({"tool": name, "tokens": _product_tokens(name, args),
+                    "op": _uuid.uuid4().hex})
     t0 = time.time()
     err: Optional[BaseException] = None
     r: Any = None
@@ -3210,6 +3300,8 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
             return answer_sourcing(args.get("session_id", ""), args.get("answers"))
         if name == "refine_sourcing":
             return refine_sourcing(args.get("session_id", ""), args.get("action", ""), args.get("value"))
+        if name == "account":
+            return account(args.get("action", "status"), args.get("phone", ""), args.get("code", ""))
     except Exception as e:  # 任何异常都包成文本，避免协议崩
         return {"error": f"{name} 执行异常: {e}"}
     return {"error": f"未知 tool: {name}"}
@@ -3260,6 +3352,14 @@ def _maybe_spawn_selfupdate() -> None:
 def main() -> None:
     _log(f"start; source={BEACON_SOURCE} repo={REPO or '(http)'}")
     _maybe_spawn_selfupdate()
+    # 后台静默取一次身份令牌。**必须异步**：bootstrap 最坏等 3 秒超时，
+    # 而 stdio 的 initialize 如果卡 3 秒，客户端会判定服务不可用。
+    # 拿不到就只带 cid 继续跑（服务端 fail-open），不影响任何查询。
+    try:
+        import identity
+        identity.warmup()
+    except Exception:
+        pass
     for raw in sys.stdin:
         raw = raw.strip()
         if not raw:
@@ -3302,5 +3402,82 @@ def main() -> None:
                 _send({"jsonrpc": "2.0", "id": mid, "result": {}})
 
 
+# --------------------------------------------------------------------------- #
+# 命令行自助（`npx beacon-mfg-mcp login|status|logout`）
+# --------------------------------------------------------------------------- #
+# 为什么要有 CLI：MCP 的 `account` 工具只能在**已经接进 agent** 的场景里用。
+# 但用户大概率是在终端里第一次接触这个包（`npx` 装完先跑一下看看），此时
+# 还没有任何 agent 会替他调 tool。两条路并存，覆盖两类入口。
+CLI_COMMANDS = {"login": "login", "bind": "login", "status": "status",
+                "whoami": "status", "me": "status", "logout": "logout"}
+
+
+def _cli_ask(prompt: str) -> str:
+    sys.stderr.write(prompt)
+    sys.stderr.flush()
+    line = sys.stdin.readline()
+    return (line or "").strip()
+
+
+def _cli_main(cmd: str, argv: List[str]) -> int:
+    """返回进程退出码。**不写 stdout 的 JSON-RPC 通道** —— 这是终端模式。"""
+    import identity
+
+    def show(d: Dict[str, Any]) -> None:
+        sys.stdout.write(json.dumps(d, ensure_ascii=False, indent=2) + "\n")
+        sys.stdout.flush()
+
+    # --phone / --code 供脚本化调用（CI、一键脚本），缺省走交互式提问
+    opt: Dict[str, str] = {}
+    for i, a in enumerate(argv):
+        if a in ("--phone", "-p") and i + 1 < len(argv):
+            opt["phone"] = argv[i + 1]
+        elif a in ("--code", "-c") and i + 1 < len(argv):
+            opt["code"] = argv[i + 1]
+
+    if cmd == "status":
+        show(identity.status())
+        return 0
+
+    if cmd == "logout":
+        show(identity.logout())
+        return 0
+
+    # login
+    phone = opt.get("phone") or _cli_ask("手机号（中国大陆 11 位）：")
+    r = identity.request_code(phone)
+    if not r.get("ok"):
+        show(r)
+        # 把「为什么不行」翻成人话：这些错误码用户看不懂，但后果很具体
+        hint = {
+            "sms_not_configured": "服务端还没接短信通道（运营侧待配置），请稍后再试",
+            "too_frequent": "同一号码 60 秒内只能发一条，请稍等再试",
+            "daily_limit": "该号码今天验证次数已用完，请明天再试",
+            "ip_limit": "当前网络验证过于频繁，请换网络或稍后",
+            "bad_phone": "手机号格式不对（只支持中国大陆 11 位）",
+        }.get(r.get("error") or "")
+        if hint:
+            sys.stderr.write("\n提示：" + hint + "\n")
+        return 2
+
+    sys.stderr.write("\n验证码已发送到 %s（%d 秒内有效）\n" %
+                     (r.get("phone", ""), int(r.get("ttl") or 300)))
+    if r.get("dev_code"):
+        sys.stderr.write("【本地 dev 通道】验证码：%s\n" % r["dev_code"])
+    code = opt.get("code") or _cli_ask("验证码（6 位）：")
+    c = identity.confirm_code(phone, code)
+    show(c)
+    if c.get("ok"):
+        sys.stderr.write("\n✅ 已升级为 verified：配额 %s 次/滚动 24 小时，"
+                         "能力卡等 L2 资产已解锁。\n" %
+                         (c.get("quota", {}) or {}).get("day", "-"))
+        return 0
+    return 2
+
+
 if __name__ == "__main__":
+    _argv = sys.argv[1:]
+    _cmd = CLI_COMMANDS.get(_argv[0].lstrip("-").lower()) if _argv else None
+    if _cmd:
+        sys.exit(_cli_main(_cmd, _argv[1:]))
     main()

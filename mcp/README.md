@@ -5,7 +5,7 @@
 
 > **边界**：本服务只做**只读检索**，不参与交易、不写任何数据、不持有任何密钥。
 
-## 提供的 tool（8 个，全部只读）
+## 提供的 tool（8 个只读 + 1 个身份自助）
 
 | tool | 用途 | 关键参数 |
 |------|------|----------|
@@ -17,10 +17,29 @@
 | `start_sourcing` | 【客户 agent 自动触发】识别找厂/代工/采购/询价意图 → 品类识别→宽召回→需求解析→生成 1~2 轮澄清问题，返回 `session_id` | `demand_text`（必填） `audience_id` |
 | `answer_sourcing` | 续接澄清轮次：写回客户答案，返回下一轮澄清问题或初选供应商列表 | `session_id`（必填） `answers` |
 | `refine_sourcing` | 推荐轮次交互：`details`(看详情与 RFQ 入口) / `more`(看更多) / `best`(看最匹配一家) | `session_id`（必填） `action` `value` |
+| `account` | 查看档位/剩余额度；`request`+`confirm` 绑手机号升 `verified`；`logout` 回匿名 | `action` `phone` `code` |
 
 后三个构成「采购寻源」多轮会话链路 `start_sourcing → answer_sourcing → refine_sourcing`，同样只读。
 
 所有返回都是 JSON 文本。找不到时返回 `{ "error": ... }` 或 `has_card:false`，不会抛协议错。
+
+## 身份与额度（不需要注册）
+
+首次运行会在 `~/.beacon-mfg/` 生成一个匿名身份（机器本地 UUID → 单向哈希），
+**不采集硬件指纹、不收集任何个人信息**。匿名档 200 次检索 / 滚动 24 小时，
+L0 名录与 L1 指纹全量可用。
+
+需要 **L2 加工资产（能力卡 / 厂商自述体）** 时再绑手机号（200 → 2000 次/24h，
+能力卡另有 300 条/日上限）。两条路等价，任选其一：
+
+```bash
+npx beacon-mfg-mcp login      # 终端交互式：输手机号 → 收码 → 完成
+npx beacon-mfg-mcp status     # 看当前档位、剩余额度、cid
+npx beacon-mfg-mcp logout     # 解绑本机令牌
+```
+
+或者在对话里让 agent 调 `account` 工具（`action=status|request|confirm|logout`）。
+手机号在服务端只存 HMAC 哈希，本地只存脱敏回显（`138****8000`）。
 
 ## 搜索语义
 

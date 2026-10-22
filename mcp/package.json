@@ -1,7 +1,7 @@
 {
   "name": "beacon-mfg-mcp",
-  "version": "1.5.8",
-  "description": "Read-only MCP server exposing the BeaconMFG灯塔工厂 supplier directory (search vendors, get vendor detail, get capability card, multi-turn sourcing) to any MCP-compatible agent. No API key required.",
+  "version": "1.6.0",
+  "description": "Read-only MCP server exposing the BeaconMFG灯塔工厂 supplier directory to any MCP-compatible agent. No signup and no API key: an anonymous identity is generated on first run, phone binding is optional (only needed for L2 capability cards).",
   "keywords": [
     "mcp",
     "model-context-protocol",
@@ -25,6 +25,7 @@
   },
   "files": [
     "server.py",
+    "identity.py",
     "http_server.py",
     "mcp_adapter.py",
     "bin/",
@@ -41,4 +42,3 @@
   },
   "dependencies": {}
 }
-
