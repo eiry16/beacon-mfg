@@ -3073,7 +3073,8 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             "order_note": ("results 按「关键词在企业名里成片出现」优先排列；同一品牌的连锁门店"
                            "已折成一行（`branches` = 门店数，`branch_ids` 前 20 个）。"
                            "score 是**能力画像分**（有已发布能力卡才有分，无卡为 0），"
-                           "**不是相关度**，不要拿它反推排序。") + _geo_note(rad),
+                           "**不是相关度**，不要拿它反推排序。")
+                          + (_geo_note(rad) if lat_v is not None else ""),
             # 坐标回显：让 agent 能核对「服务端确实按我给的坐标排了」。
             **({"geo": {"lat": lat_v, "lng": lng_v, "radius_km": rad,
                         "records_with_coords": geo_ncoord}} if lat_v is not None else {}),
@@ -3278,7 +3279,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                        "厂名里成片出现」优先（所以「商务酒店」会把 龙翔商务酒店 排在 "
                        "某酒店(中央商务区店) 前面）；score 是**能力画像分**"
                        "（有已发布能力卡才有分，无卡为 0），**不是相关度**，不要拿它反推排序。")
-                       + _geo_note(rad),
+                       + (_geo_note(rad) if lat_v is not None else ""),
         # 坐标回显 + 圈外剔除数（仅坐标查询时出现）。
         **({"geo": {"lat": lat_v, "lng": lng_v, "radius_km": rad,
                     "records_with_coords": geo_ncoord}} if lat_v is not None else {}),
@@ -3840,6 +3841,13 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
                 offset=args.get("offset", 0),
                 group_branches=bool(args.get("group_branches", True)),
                 etype=args.get("etype", ""),
+                # 2026-10-24 fix：v1.9.0 的坐标参数一度漏转发（schema 里有、
+                # search_vendors 签名里也有，但 dispatch 没传 → 三个参数恒为 None，
+                # 表现为 radius_km 静默失效、结果无 distance_km / geo、
+                # 且「只传 lat」不报 bad_geo）。坐标必须转发。
+                lat=args.get("lat"),
+                lng=args.get("lng"),
+                radius_km=args.get("radius_km"),
             )
         if name == "get_vendor":
             return get_vendor(args.get("id", ""), args.get("gb", ""))
