@@ -2907,6 +2907,11 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             alias_scanned += 1
             if not _city_ok(rec, city):
                 continue
+            # etype 必须在这里也筛一遍：别名召回**绕过了 `_collect`**，
+            # 漏这一步就会出现「传 etype=生产，返回的全是流通主体」
+            # ——总数按 etype 变了、行却没变，比不筛更难发现（2026-10-23 修）。
+            if et_want and (rec.get("et") or 0) != et_want:
+                continue
             rid = rec.get("id")
             if rid in seen:
                 continue
@@ -2931,6 +2936,8 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                 if h["cap"] not in (rec.get("cap") or []):
                     continue
                 if not _city_ok(rec, city):
+                    continue
+                if et_want and (rec.get("et") or 0) != et_want:
                     continue
                 if gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
                     continue
