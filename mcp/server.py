@@ -848,9 +848,14 @@ def _load_alias_file(rel: str, txt: Optional[str] = None) -> Dict[str, Any]:
 
 
 def load_gb_alias() -> Dict[str, Any]:
-    """词 → 条目。两层表合并：gb-alias.json（数据推导）+ gb-alias-curated.json（人工策展）。"""
+    """词 → 条目。三层表合并（data > curated > abbr，setdefault 保序）：
+      gb-alias.json         数据推导层（企业关键词实际落在哪些小类）
+      gb-alias-curated.json 人工策展层（口语俗称：律所、饭店、保洁…）
+      gb-class-abbr.json    机械简称层（类名切短：法律服务、正餐、快递…）
+    前两层优先级更高：abbr 层显式跳过与前两层冲突的词（见 gen_class_abbr.py）。"""
     global _alias_cache
-    _alias_relpaths = ("data/gb-alias.json", "data/gb-alias-curated.json")
+    _alias_relpaths = ("data/gb-alias.json", "data/gb-alias-curated.json",
+                       "data/gb-class-abbr.json")
     if _cache_stale(_alias_cache, _alias_relpaths):
         # ⚡ 两张表互相独立 → 一次并发取齐。逐个 fetch 各付一次 CDN RTT
         #    （并发取齐可省下数次串行往返）。
@@ -1324,6 +1329,65 @@ def suggest_filters(query: str, city: str = "", limit: int = 8) -> Dict[str, Any
     return res
 
 
+# _shelf_recall 单字回溯用的泛字：这些字在国标类名里随处可见，命中了不说明
+# 查询词与该类有任何关系（「店」命中正餐服务、咖啡馆服务……全部）。
+_SHELF_STOP_CHARS = set("服务业公厂商中心部所集团有限材料产品设备加工制造技术"
+                        "供销买卖经营承包租赁代理经纪咨询开发建设设计安装"
+                        "装修装饰工程施工承包勘察监理检测检验")
+
+
+def _shelf_recall(q: str, limit: int = 5) -> List[Dict[str, Any]]:
+    """L3 兜底：查询词与任何类名/别名都不对字时，把货架初筛递到 agent 手边。
+
+    与 suggest_filters 的分工：那条链路只认「子串完整对上」（ql in nm）；
+    这里用 **bigram 重合度** ——「法律咨询」对「律师及相关法律服务」共享
+    bigram「法律」，子串链路全军覆没时这里还能给方向。完全无重合时退化为货架
+    records top（why 里明码标注「字面无关联，仅供语义参考」），让 agent 至少
+    知道名录里有什么、按语义挑一个 gb=，或者如实告诉用户「该查询不在覆盖范围」。
+    """
+    q = (q or "").strip()
+    if not q:
+        return []
+    ql = q.lower()
+    grams = {g for g in _grams(q, query_mode=True) if len(g) >= 2 and g != ql}
+    # 单字回溯：bigram 全灭时启用（「律政」→ 7231 律师及相关法律服务共享单字「律」）。
+    # 泛字单字（服/务/业/公/司…）在类名里到处都是，命中了也不说明问题 —— 剔除。
+    chars = {c for c in q if "\u4e00" <= c <= "\u9fff" and c not in _SHELF_STOP_CHARS}
+    scored: List[tuple] = []
+    for r in _gb_shelf():
+        nm = (r["name"] or "").lower()
+        path = (r["path"] or "").lower()
+        s = 100 if (ql and ql in nm) else 0
+        bi = sum(1 for g in grams if g in nm) if grams else 0
+        if bi:
+            s += min(bi * 10, 40)
+        elif chars:
+            # 单字回溯分级：类名**首字**命中是强信号（「律师…」对「律政」的律），
+            # 腰部命中降权（「邮政/市政」里的政与「律政」无关）。不叠加，取最高。
+            head = nm[:1] if nm else ""
+            if any(c in chars for c in head):
+                s += 25
+            elif any(c in nm for c in chars):
+                s += 8
+        s += min(r["records"] / 5000.0, 4)
+        if s > 0:
+            scored.append((s, r))
+    scored.sort(key=lambda x: -x[0])
+    out: List[Dict[str, Any]] = []
+    for s, r in scored[:limit]:
+        out.append({"code": r["code"], "name": r["name"], "path": r["path"],
+                    "records": r["records"],
+                    "why": "货架字面初筛（bigram 重合，非精确子串）：请按语义判断是否对口"})
+    if not out:
+        # 完全不对字 → 货架热销榜。给信息但不装懂：why 明说这只是 records 最高。
+        for r in sorted(_gb_shelf(), key=lambda r: -r["records"])[:limit]:
+            out.append({"code": r["code"], "name": r["name"], "path": r["path"],
+                        "records": r["records"],
+                        "why": "查询词与货架字面零关联 —— 这只是名录里 records 最高的类，"
+                               "仅供语义参考，不对味就如实告诉用户没收录"})
+    return out
+
+
 def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, Any]:
     """命中偏少时，把「怎么把口语词换成国标码」这条链路内联进结果。
 
@@ -1365,6 +1429,17 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
         if caps:
             _emit_cap()
             return out
+        # L3：货架初筛兜底。别名/类名子串都推不出码时，把 bigram 初筛（或热销榜）
+        # 直接递给 agent —— 语义归一这一步归 LLM，但「候选从哪来」不必再让它
+        # 多花一轮 list_industries。
+        shelf = _shelf_recall(q, limit=5)
+        if shelf:
+            out["suggested_gb"] = shelf
+            out["hint"] = ("0 条：你的词与名录里的写法（企业名/国标类名/别名表）都对不上字。"
+                           "名录按国标小类归档，我已按字面重合度初筛了货架上最接近的类目"
+                           "（见 suggested_gb）—— 请按语义挑 1~3 个 code 改传 gb= 重试；"
+                           "都不对味就如实告诉用户该查询不在名录覆盖范围，不要换词硬猜。")
+            return out
         out["hint"] = ("关键词与名录里的写法对不上，且没有可推导的国标码。"
                        "建议调 list_industries 用语义挑码后改传 gb=。")
         return out
@@ -1380,6 +1455,14 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
     # 因此「1~4 条且无候选」也要给出 hint，不能掉进空档。
     if caps:
         _emit_cap()
+        return out
+    # L3 同上：货架初筛兜底（这批词多半只是字面撞词，真正的行业要 agent 按语义挑）。
+    shelf = _shelf_recall(q, limit=5)
+    if shelf:
+        out["suggested_gb"] = shelf
+        out["hint"] = ("命中偏少且推不出国标码：这几条多半只是**字面撞词**，未必真是你要的行业。"
+                       "我已按字面重合度初筛了货架上最接近的类目（见 suggested_gb）—— 请按语义挑 "
+                       "1~3 个 code 改传 gb= 重试，召回和精度都会好很多。")
         return out
     out["hint"] = ("命中偏少且推不出国标码：这几条多半只是**字面撞词**，未必真是你要的行业。"
                    "建议调 list_industries(keyword=\"…\") 用语义挑 1~3 个国标小类，"
