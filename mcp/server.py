@@ -1388,6 +1388,58 @@ def _shelf_recall(q: str, limit: int = 5) -> List[Dict[str, Any]]:
     return out
 
 
+def _geo_rank_key(x: Dict[str, Any]) -> tuple:
+    """距离排序键：无坐标记录恒排档内末位（None 不参与比较，用 (1, 0.0) 占位）。"""
+    d = x.get("distance_km")
+    return (1, 0.0) if d is None else (0, d)
+
+
+def _geo_apply(matches: List[Dict[str, Any]], lat_v: Optional[float],
+               lng_v: Optional[float], rad: Optional[float]) -> tuple:
+    """给结果算球面距离；rad 非空时按圈过滤。
+
+    返回 (保留列表, 圈外剔除数, 有坐标条数)。
+
+    无坐标记录在 rad 模式下**剔除** —— 无法证明在圈内，就是不在（与项目
+    「宁可留空不编造」同源：拿 1.5% 的空值去猜「应该在圈内」，用户按导航
+    过去发现是隔壁市，比没有结果更糟）。只排序模式（rad=None）下保留、
+    distance_km=None、排档内末位。
+
+    调用时机：分页**之前**（与 _collapse_brands 同理，见该函数注释）。
+    """
+    if lat_v is None:
+        return matches, 0, 0
+    kept: List[Dict[str, Any]] = []
+    dropped = 0
+    n_coord = 0
+    for m in matches:
+        la, ln = m.get("lat"), m.get("lng")
+        if la is None or ln is None:
+            if rad is not None:
+                dropped += 1
+                continue
+            kept.append(m)
+            continue
+        d = _haversine_km(lat_v, lng_v, la, ln)
+        n_coord += 1
+        if rad is not None and d > rad:
+            dropped += 1
+            continue
+        m["distance_km"] = round(d, 2)
+        kept.append(m)
+    return kept, dropped, n_coord
+
+
+def _geo_note(rad: Optional[float]) -> str:
+    """坐标查询时追加在 order_note 后的口径说明（无坐标查询返回空串）。"""
+    if rad is not None:
+        return (" 本次传了坐标+半径：圈内按召回纯度分档、档内按球面距离升序；"
+                "distance_km 为直线距离（非路程）；圈外与无坐标记录已剔除，"
+                "剔除数见 geo_filtered_out。")
+    return (" 本次传了坐标（无半径）：按球面距离升序为第一键，等距才按召回纯度；"
+            "distance_km 为直线距离（非路程）；无坐标记录 distance_km=null 排末位。")
+
+
 def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, Any]:
     """命中偏少时，把「怎么把口语词换成国标码」这条链路内联进结果。
 
@@ -1396,6 +1448,17 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
     agent 看到 hint 就能直接改参数重试。
     """
     if not q or out.get("total_matched", 0) >= 5:
+        return out
+    # 坐标圈内 0 条（2026-10-23）：先于一切候选码建议 —— 圈内没数据时，
+    # 「改查 gb= 重试」是纯噪音（换什么码圈内都还是没有），该说的是
+    # 「检索命中 N 条但都不在圈内 / 无坐标」。这类信息差最容易让 agent
+    # 对用户说出「这个区域没有便利店」这种**没有数据支撑**的结论。
+    if out.get("geo_filtered_out"):
+        out["hint"] = ("坐标圈内 0 条：检索本身命中 %d 条，但都超出半径或无坐标"
+                       "（无坐标记录无法证明在圈内，已剔除）。**不要对用户说"
+                       "「这一带没有」**——如实说「圈内无收录，全城/全库有 N 条，"
+                       "最近的也超出半径」。可放宽 radius_km、或去掉坐标按城市查。"
+                       % out["geo_filtered_out"])
         return out
     try:
         s = suggest_filters(q, city, limit=5)
@@ -2199,11 +2262,86 @@ def _collapse_brands(matches: List[Dict[str, Any]], keep_all: bool = False
             ids = row.setdefault("branch_ids", [])
             if len(ids) < 20:                       # 有上限：别让一条结果带 267 个 id
                 ids.append(m.get("id"))
+            # 坐标查询（2026-10-23）：品牌行报**最近门店**的距离，不是代表店。
+            # 「全家 2.1km」而拐角就有一家 400m 的全家，是最容易被用户当成 bug 的
+            # 一种错。代表行本身不动（档位/name_fit 仍按它），只把距离换成最近的。
+            dm, dr = m.get("distance_km"), row.get("distance_km")
+            if dm is not None and (dr is None or dm < dr):
+                row["distance_km"] = dm
     return out, len(pos)
 
 
 # 指纹 et 码 → 主体经济类型名。0 = 门类判不出来（老数据无国标码），不贴标签。
 _ETYPE_NAMES = {0: "", 1: "生产", 2: "流通", 3: "服务"}
+
+
+def _haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
+    """两地球面直线距离（公里）。半径取 6371.0。
+
+    只用于「X 公里内」这类**排序与粗筛**，不是测绘精度 —— GCJ-02（高德）与
+    WGS-84（GPS）坐标混用时有数十到数百米偏差，对公里级半径无影响。
+    """
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    dp = p2 - p1
+    dl = math.radians(lng2 - lng1)
+    a = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return 6371.0088 * 2 * math.asin(math.sqrt(a))
+
+
+# 中国经纬度范围（与 scripts/gen_fingerprint.py 的坐标写入校验同口径）。
+# 超出即视为调用方传错（常见根因：经纬度顺序写反、用了海外国标 API）。
+_GEO_LAT_RANGE = (3.0, 54.0)
+_GEO_LNG_RANGE = (73.0, 136.0)
+_GEO_RADIUS_MAX_KM = 500.0
+
+
+def _geo_params(lat: Any, lng: Any, radius_km: Any) -> tuple:
+    """坐标参数校验 → (lat_v, lng_v, radius_v)。任一不合法返回 error 字典占位。
+
+    地标名（「青创港」）→ 坐标由**调用方**解析：MCP 不持地图 API，也不猜地名。
+    传错时不静默忽略 —— 坐标查询的失败模式必须是显式的，否则 agent 会把
+    「按全城排的结果」误当成「按距离排的结果」交付给用户。
+    """
+    if (lat is None) != (lng is None):
+        return None, None, None, {
+            "error": "bad_geo",
+            "message": "lat 与 lng 必须同时提供。「青创港」这类地标名请先用地图工具"
+                       "解析成坐标再传（MCP 不持地图 API，不做地名猜测）。",
+        }
+    if lat is None:
+        return None, None, None, None
+    try:
+        lat_v, lng_v = float(lat), float(lng)
+    except (TypeError, ValueError):
+        return None, None, None, {"error": "bad_geo",
+                                  "message": "lat/lng 必须是数字，收到 %r / %r" % (lat, lng)}
+    if not (_GEO_LAT_RANGE[0] <= lat_v <= _GEO_LAT_RANGE[1]
+            and _GEO_LNG_RANGE[0] <= lng_v <= _GEO_LNG_RANGE[1]):
+        return None, None, None, {
+            "error": "bad_geo",
+            "message": "坐标超出中国范围（lat %.1f~%.1f, lng %.1f~%.1f），收到 %r / %r。"
+                       "常见根因：经纬度顺序写反。" % (
+                           _GEO_LAT_RANGE[0], _GEO_LAT_RANGE[1],
+                           _GEO_LNG_RANGE[0], _GEO_LNG_RANGE[1], lat, lng),
+        }
+    rad = None
+    if radius_km is not None:
+        try:
+            rad = float(radius_km)
+        except (TypeError, ValueError):
+            return None, None, None, {"error": "bad_geo",
+                                      "message": "radius_km 必须是数字，收到 %r" % (radius_km,)}
+        if rad <= 0:
+            return None, None, None, {"error": "bad_geo",
+                                      "message": "radius_km 必须 > 0（公里）"}
+        if rad > _GEO_RADIUS_MAX_KM:
+            return None, None, None, {
+                "error": "bad_geo",
+                "message": "radius_km 上限 %.0f 公里（覆盖全国任意两点），收到 %r。"
+                           "要更大范围请去掉坐标按城市/全国查。" % (
+                               _GEO_RADIUS_MAX_KM, radius_km),
+            }
+    return lat_v, lng_v, rad, None
 
 
 def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
@@ -2223,6 +2361,11 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
         "process": rec.get("proc", []),
         "material": rec.get("mat", []),
         "cert": rec.get("cert", []),
+        # 坐标（2026-10-23 接入）：指纹层 98.5% 有值，无值为 null。
+        # 给 agent 自己排序/换算用；检索侧的距离过滤见 search_vendors 的
+        # lat/lng/radius_km 参数（那里才会写 distance_km）。
+        "lat": rec.get("lat"),
+        "lng": rec.get("lng"),
     }
 
 
@@ -2798,9 +2941,10 @@ def _page_slice(matches: list, offset: int, limit: int, raw_offset: int):
 
 def search_vendors(query: str = "", city: str = "", gb: str = "",
                    limit: int = 20, offset: int = 0,
-                   group_branches: bool = True,
-                   etype: str = "") -> Dict[str, Any]:
-    """按关键词 / 城市 / 国标码检索全国各行业主体。
+                   group_branches: bool = True, etype: str = "",
+                   lat: Optional[float] = None, lng: Optional[float] = None,
+                   radius_km: Optional[float] = None) -> Dict[str, Any]:
+    """按关键词 / 城市 / 国标码 / 坐标检索全国各行业主体。
 
     `group_branches`：同一品牌的连锁门店是否折成一行（默认折）。连锁在名录里是一家一条，
     不折的话「面馆」这类查询会被门店淹没（苏州瑞幸一家就 267 条）。
@@ -2812,6 +2956,14 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
        服务 = H 住宿餐饮 … S 公共管理
     「找能做的厂」用生产，「找附近的店/服务商」用服务，别用「非制造商」反向排除 ——
     那会把六成主体混成一个筐。
+
+    `lat`/`lng`/`radius_km`：坐标检索（2026-10-23 接入，数据来自指纹层 98.5% 覆盖）。
+    地标名（「青创港」）→ 坐标由**调用方**解析（MCP 不持地图 API）；GCJ-02/WGS-84
+    混用无碍（偏差远小于公里级半径）。语义：
+      - 只传 lat/lng：结果档内按球面距离升序（无坐标记录排末位，distance_km=null）；
+      - 加 radius_km：圈外与无坐标记录剔除（无法证明在圈内=不在圈内），
+        total_matched 变为圈内数，被剔除数见 geo_filtered_out；
+      - 连锁品牌行报**最近门店**距离（_collapse_brands）。
     """
     limit = max(1, min(int(limit), 200))
     # etype 过滤：中文名 → 指纹 et 码。传了不认识的值不静默忽略，见下方校验。
@@ -2821,6 +2973,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             "error": "bad_etype",
             "message": "etype 只接受 生产 / 流通 / 服务 三个值（按国标门类推导），收到 %r" % etype,
         }
+    lat_v, lng_v, rad, geo_err = _geo_params(lat, lng, radius_km)
+    if geo_err:
+        return geo_err
     # ── 分页深度上限（2026-10-22）────────────────────────────────────────
     # 这不是性能优化，是**反截取**。翻页遍历是从公开接口搬走整个库的唯一
     # 可行路径：`total_matched=4684` 时 offset += 200 循环 24 次就拉干了。
@@ -2888,13 +3043,25 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                 matches.append(s)
         # 与 query 路由同一套档内排序（`gb=` 只走一档，故按厂名贴合度降序即可），
         # 否则同一批记录经两条路进来顺序不同，agent 会以为「换了个写法结果就变了」。
-        matches.sort(key=lambda x: -_name_fit(x, gen_tokens))
+        # 2026-10-23：传了坐标时距离优先于 name_fit（「附近」是显式意图），
+        # 无坐标记录排末位；档间次序该路径只有一档，无分档问题。
+        if lat_v is not None:
+            matches, geo_dropped, geo_ncoord = _geo_apply(matches, lat_v, lng_v, rad)
+            matches.sort(key=lambda x: (_geo_rank_key(x), -_name_fit(x, gen_tokens),
+                                        str(x.get("id") or "")))
+        else:
+            geo_dropped = 0
+            geo_ncoord = 0
         # 品牌归并放在**分页之前**：否则一页 20 条里可能 9 条是同一条街上的门店，
         # 而第 21 条才是另一个品牌 —— 分页之后再折叠等于白折。
         records_total = len(matches)
         matches, brands_total = _collapse_brands(matches, keep_all=not group_branches)
+        # 同 query 路由：折行后按距离稳定重排（品牌行距离折行时才换成最近门店，
+        # 位置会停在代表店那）。等距组内保持 name_fit/id 序。
+        if lat_v is not None:
+            matches.sort(key=_geo_rank_key)
         page, pmeta = _page_slice(matches, offset, limit, raw_offset)
-        return _attach_routing_hint({
+        out = {
             "total_matched": records_total,
             "total_brands": brands_total,
             "returned": len(page),
@@ -2906,8 +3073,13 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             "order_note": ("results 按「关键词在企业名里成片出现」优先排列；同一品牌的连锁门店"
                            "已折成一行（`branches` = 门店数，`branch_ids` 前 20 个）。"
                            "score 是**能力画像分**（有已发布能力卡才有分，无卡为 0），"
-                           "**不是相关度**，不要拿它反推排序。"),
-        }, q, city)
+                           "**不是相关度**，不要拿它反推排序。") + _geo_note(rad),
+            # 坐标回显：让 agent 能核对「服务端确实按我给的坐标排了」。
+            **({"geo": {"lat": lat_v, "lng": lng_v, "radius_km": rad,
+                        "records_with_coords": geo_ncoord}} if lat_v is not None else {}),
+            **({"geo_filtered_out": geo_dropped} if geo_dropped else {}),
+        }
+        return _attach_routing_hint(out, q, city)
 
     # 未给国标码：优先走「预构建索引 → 只拉命中分片」。
     # 索引缺失或陈旧时回退进程内全量索引（与命中量相关，慢但结果等价）。
@@ -3046,16 +3218,45 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     # cap 与 text 同名次时仍按 name_fit 细分（品牌名命中 > 仅门店限定命中）。
     _RANK = {"cap": 0, "text": 1, "city": 1, "cap_text": 2, "alias": 3}
 
+    # 坐标过滤与距离计算（2026-10-23）：分页之前，与 _collapse_brands 同理。
+    # radius 模式下圈外与无坐标记录在这里就已剔除，后续所有计数（total_matched /
+    # total_brands / 分页）都是圈内口径；被剔除数单独走 geo_filtered_out，
+    # 让 agent 能对用户说清「全城有 176 条、圈内 3 条」而不是只说「有 3 条」。
+    matches, geo_dropped, geo_ncoord = _geo_apply(matches, lat_v, lng_v, rad)
+
     # 档内再按厂名贴合度排（见 `_name_fit` 的说明）。这是**档内**微调，不影响档间
     # 次序，也不影响 total_matched。末尾按 id 收尾，保证同档同分的顺序稳定
     #（否则等于按分片路径排，H 住宿餐饮恒在 Q 卫生前面）。
-    matches.sort(key=lambda x: (_RANK.get(x.get("via"), 9),
-                                -_name_fit(x, gen_tokens),
-                                str(x.get("id") or "")))
+    # 2026-10-23：坐标查询两种语义，排序键不同（这是刻意的，不是疏漏）——
+    #   ① 只传 lat/lng（无 radius）：意图 =「离我最近的先看」→ **距离第一键**，
+    #      档序降为次级（等距时才按召回纯度分高下）。否则「便利店」会出现
+    #      15km 的 cap 档压在 10.8km 的 text 档前面，用户只会当 bug。
+    #   ② 传 radius_km：圈已经限定候选，纯度优先、档内距离 —— 圈内都是
+    #      「能用的」，先看最对口的。
+    # 无坐标查询时距离键恒等，排序退化为原有 (_RANK, name_fit, id)，零影响。
+    if lat_v is not None and rad is None:
+        def _geo_sort(x):
+            return (_geo_rank_key(x), _RANK.get(x.get("via"), 9),
+                    -_name_fit(x, gen_tokens), str(x.get("id") or ""))
+    else:
+        def _geo_sort(x):
+            return (_RANK.get(x.get("via"), 9), _geo_rank_key(x),
+                    -_name_fit(x, gen_tokens), str(x.get("id") or ""))
+    matches.sort(key=_geo_sort)
 
     # 品牌归并（分页之前，理由见 `_collapse_brands`）。
     records_total = len(matches)
     matches, brands_total = _collapse_brands(matches, keep_all=not group_branches)
+    # 折行后按距离稳定重排（2026-10-23）：品牌行的 distance_km 是在折行时才换成
+    # 「最近门店」的，位置却停在代表店那里 —— 不重排就会出现「排第 3 的品牌比
+    # 排第 1 的还近」，用户只会把它当 bug。键序与折行前一致（无 radius 距离
+    # 第一、有 radius 档序第一）；stable + 等距组内保持折行前序（name_fit/id）。
+    # 无坐标查询时距离键恒等，排序结果与不传坐标完全一致（存量零影响）。
+    if lat_v is not None:
+        if rad is None:
+            matches.sort(key=lambda x: (_geo_rank_key(x), _RANK.get(x.get("via"), 9)))
+        else:
+            matches.sort(key=lambda x: (_RANK.get(x.get("via"), 9), _geo_rank_key(x)))
     page, pmeta = _page_slice(matches, offset, limit, raw_offset)
     out = {
         "total_matched": records_total,
@@ -3076,7 +3277,12 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                        "via=alias(别名定向) → via=cap(能力定向)；**同一档内**再按「关键词在"
                        "厂名里成片出现」优先（所以「商务酒店」会把 龙翔商务酒店 排在 "
                        "某酒店(中央商务区店) 前面）；score 是**能力画像分**"
-                       "（有已发布能力卡才有分，无卡为 0），**不是相关度**，不要拿它反推排序。"),
+                       "（有已发布能力卡才有分，无卡为 0），**不是相关度**，不要拿它反推排序。")
+                       + _geo_note(rad),
+        # 坐标回显 + 圈外剔除数（仅坐标查询时出现）。
+        **({"geo": {"lat": lat_v, "lng": lng_v, "radius_km": rad,
+                    "records_with_coords": geo_ncoord}} if lat_v is not None else {}),
+        **({"geo_filtered_out": geo_dropped} if geo_dropped else {}),
     }
     if alias_hits:
         out["alias_expanded"] = [{"word": a["word"], "gb": a["code"], "name": a["name"]}
@@ -3325,8 +3531,10 @@ TOOLS = [
                        "制造、电热燃水、建筑、批发零售、交通运输、住宿餐饮、信息软件、金融、"
                        "房地产、租赁商务服务、科研技术服务、水利环境、居民服务、教育、卫生、"
                        "文化体育娱乐、公共管理……）。可按关键词(名称/工艺/材料/认证/服务内容)、"
-                       "城市或区县、国标码过滤。返回精简档案(id/名称/城市/区县/国标码/认证等级/"
-                       "工艺/材料/认证/是否含电话/连锁门店数)。"
+                       "城市或区县、国标码过滤。支持坐标检索：传 lat/lng 按距离排序、"
+                       "加 radius_km 只留圈内（地标名需调用方先解析成坐标）。"
+                       "返回精简档案(id/名称/城市/区县/国标码/认证等级/"
+                       "工艺/材料/认证/是否含电话/连锁门店数/距离)。"
                        "⚠ 关键词是**字面子串**匹配：用户的口语词若与名录写法不同（如「机加工」"
                        "vs 归档用的「机械零部件加工」、「面馆」vs「苏式面馆」），命中会偏少。"
                        "此时不要直接报「没有」——看返回体里的 hint / suggested_gb，"
@@ -3355,6 +3563,17 @@ TOOLS = [
                                          "流通 = F批发零售/G交通运输仓储邮政；"
                                          "服务 = H住宿餐饮…S公共管理。"
                                          "「找能做的厂」用生产，「找附近的店/服务商」用服务"},
+                "lat": {"type": "number",
+                        "description": "纬度（GCJ-02/WGS-84 均可）。**地标名（如「青创港」）"
+                                       "请先用地图工具解析成坐标再传 —— MCP 不持地图 API、"
+                                       "不猜地名。与 lng 必须同时提供"},
+                "lng": {"type": "number",
+                        "description": "经度。与 lat 同时提供后，结果档内按球面距离升序，"
+                                       "每条带 distance_km（直线距离，非路程）；无坐标记录排末位"},
+                "radius_km": {"type": "number",
+                              "description": "半径（公里，上限 500）。给了就只保留圈内主体："
+                                             "圈外与无坐标记录剔除（无坐标=无法证明在圈内），"
+                                             "剔除数见返回体 geo_filtered_out；连锁品牌行报最近门店距离"},
             },
         },
     },
