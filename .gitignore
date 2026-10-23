@@ -163,3 +163,11 @@ skills/agent-skill.zip
 
 # 行政区划表：仅本地控制台使用，不在发布面
 data/admin_divisions.json
+
+# 政府工商名录（体积大 + 含登记信息，不入库）
+# 政府工商名录（体积大 + 含登记信息，不入库）
+# 2026-10-22 起从 data/gov/ 挪到 cache/gov/：data/ 是**发布面**（整体拷进 dist/site），
+# 候选池 140 MiB 会被一起上传，撞 Pages 单文件 25 MiB 上限导致整轮部署失败。
+cache/
+# 上一轮的位置，保留忽略以防旧工作树里还有残留
+data/gov/

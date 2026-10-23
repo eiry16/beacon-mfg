@@ -1413,14 +1413,24 @@ def _load_cap_index() -> Optional[Dict[str, Any]]:
     return _cap_index_cache[0]
 
 
-def _cap_term_index() -> Dict[str, str]:
-    """词面词 → 能力键（反向索引，缓存）。覆盖 cap.json terms 里的每个分词，
-    例如 「AI」「人工智能」「机器学习」「大模型」「算法」→ tech_ai。"""
-    idx: Dict[str, str] = {}
+def _cap_term_index() -> Dict[str, List[str]]:
+    """词面词 → 能力键**列表**（反向索引，缓存）。覆盖 cap.json terms 里的每个分词，
+    例如 「AI」「人工智能」「机器学习」「大模型」「算法」→ [tech_ai]。
+
+    **一个词可以指向多个键**（2026-10-23）。别名会跨域撞车：「物流」同时是
+    retail-service 的 rdm_freight（零售商提供送货上门）和 civic-infra 的
+    log_freight（货运主体）—— 两者都是合法语义，且**按用户意图二选一做不到**
+    （「苏州物流」既可能找货运公司，也可能找送货运的商行）。
+    旧版是 `setdefault`「首个码优先」：域名顺序里 retail-service 在 civic-infra
+    前面，于是 rdm_freight 恒赢，G 门类 2178 家一个都召不回来。
+    """
+    idx: Dict[str, List[str]] = {}
     cap = _load_cap_index() or {}
     for code, termstr in (cap.get("terms") or {}).items():
         for w in str(termstr).lower().split():
-            idx.setdefault(w, code)   # 首个出现的码优先
+            lst = idx.setdefault(w, [])
+            if code not in lst:
+                lst.append(code)
     return idx
 
 
@@ -1441,14 +1451,16 @@ def _cap_substr_words() -> List[Tuple[str, str, Any]]:
     global _CAP_SUBSTR_WORDS
     if _CAP_SUBSTR_WORDS is None:
         rows: List[Tuple[str, str, Any]] = []
-        for w, code in _cap_term_index().items():
+        for w, codes in _cap_term_index().items():
             if len(w) < 2:
                 continue
             if not re.fullmatch(r"[a-z0-9\u4e00-\u9fff]+", w):
                 continue
             rx = (re.compile(r"(?<![a-z0-9])" + re.escape(w) + r"(?![a-z0-9])")
                   if w.isascii() else None)
-            rows.append((w, code, rx))
+            # 一词多码：每个 (词, 码) 各出一行，长词优先的排序不受影响
+            for code in codes:
+                rows.append((w, code, rx))
         rows.sort(key=lambda x: -len(x[0]))
         _CAP_SUBSTR_WORDS = rows
     return _CAP_SUBSTR_WORDS
@@ -1470,12 +1482,11 @@ def cap_alias_codes(q: str) -> List[Dict[str, Any]]:
         return []
     idx = _cap_term_index()
     hits: Dict[str, Dict[str, Any]] = {}
-    # ① 整词
+    # ① 整词（一词多码：全部收，见 `_cap_term_index` 的说明）
     for tok in dict.fromkeys(t for t in q.split() if t):
-        code = idx.get(tok)
-        if code:
-            hits[code] = {"cap": code, "word": tok, "name": _cap_name(code),
-                          "match": "exact"}
+        for code in idx.get(tok) or []:
+            hits.setdefault(code, {"cap": code, "word": tok,
+                                   "name": _cap_name(code), "match": "exact"})
     # ② 子串（长词优先，一份查询最多认 6 个能力域，免得长句把货架扫爆）
     for w, code, rx in _cap_substr_words():
         if code in hits:
@@ -2014,11 +2025,18 @@ def _hay_lit(rec: Dict[str, Any]) -> str:
 
 
 def _name_fit(rec_or_sum: Dict[str, Any], tokens: List[str]) -> int:
-    """关键词在**厂名**里的贴合度，0/1/2。用于同一召回档内部的次级排序。
+    """关键词在**厂名**里的贴合度，0/1/2/3。用于同一召回档内部的次级排序。
 
     只有档位是不够的：档内顺序原本就是分片里的记录顺序 —— 等于随机。
     还需要判断关键词是否**成片出现在厂名里**：只判断「是否出现」不够
     （括号里的商圈名也会撞上），必须是连片的词面命中才区分得开。
+
+    第 4 档（2026-10-23）拆「成片命中」：连锁门店名是「品牌(门店限定)」，
+    关键词落在**门店限定**里与落在**品牌名**里是两种相关性。
+    实测搜「医院」：返回前 10 条全是「蓝天酒店(贵州医科大学附属医院店)」这类
+    酒店/民宿/餐厅，真正的医院被挤到第 23 位之后 —— 两者同名次（text）、同名分
+    （「医院」都成片在厂名里），于是按分片路径排，H 住宿餐饮恒在 Q 卫生前面。
+    拆档后「贵州省人民医院」（品牌名命中）压过「…(…医院店)」（仅限定词命中）。
 
     `query+city` 与 `gb=` 两条路由共用本函数，保证同一批记录两条路排出来的顺序一致
     （体检的「C 路由一致性」就是查这个）。
@@ -2026,9 +2044,83 @@ def _name_fit(rec_or_sum: Dict[str, Any], tokens: List[str]) -> int:
     if not tokens:
         return 0
     co = str(rec_or_sum.get("company") or rec_or_sum.get("co") or "").lower()
-    if "".join(tokens) in co:
-        return 2                     # 关键词在厂名里成片出现 —— 最强
+    if not co:
+        return 0
+    joined = "".join(tokens)
+    if joined in co:
+        # 成片命中再分一档：去掉门店限定后**仍在**，说明是主体本身的名字
+        return 3 if joined in _brand_of(co) else 2
     return 1 if all(t in co for t in tokens) else 0
+
+
+_RE_TAIL_BRACKET = re.compile(r"[\s]*[\(（][^\(（）\)]*[\)）]\s*$")
+
+
+def _brand_of(name: str) -> str:
+    """企业名 → 品牌键：去掉末尾的括号限定。
+
+    连锁在名录里是**一家一条**（东吴面馆 9 条、瑞幸咖啡在苏州 267 条），
+    对「找谁能做这个」是纯噪声。门店名的规律是「品牌(门店限定)」，去掉括号就是品牌。
+
+    刻意**不做**更激进的归并（去「店/馆/楼」后缀、模糊匹配）：那会把「陆振兴」和
+    「陆正兴」这种一字之差的不同主体并成一家 —— 错比噪声严重。
+    与 scripts/gen_brand_index.py 的 brand_of 同一口径。
+    """
+    s = (name or "").strip()
+    prev = None
+    while prev != s:
+        prev = s
+        s = _RE_TAIL_BRACKET.sub("", s).strip()
+    return s
+
+
+def _brand_key(sum_rec: Dict[str, Any]) -> Optional[str]:
+    """归并键：城市 + 国标小类 + 品牌。跨城同名是不同主体，跨小类也是不同业态。"""
+    b = _brand_of(sum_rec.get("company") or "")
+    if len(b) < 3:
+        return None
+    return "%s|%s|%s" % (sum_rec.get("city") or "", sum_rec.get("gb") or "", b)
+
+
+def _collapse_brands(matches: List[Dict[str, Any]], keep_all: bool = False
+                     ) -> tuple[List[Dict[str, Any]], int]:
+    """把同一品牌的多家门店折成一行（代表行带 `branches` 与 `branch_ids`）。
+
+    为什么在**结果集上现算**而不是发布一份品牌索引：发布侧算过一次的版本有 911 KB，
+    每个 MCP 客户端都得为它多下一份；而检索本来就把候选记录读进内存了，这里零成本。
+    少发的字节比多发的索引值钱。
+
+    副作用（可接受）：分片是按需分批拉的，跨分片连锁只统计到「本次加载到的部分」，
+    `branches` 可能偏小。宁可少报一个数，也不让所有人多付 900KB。
+
+    返回 (折叠后的列表, 主体数)。顺序保持不变 —— 代表行取该品牌在结果里最靠前的那条，
+    所以档位排序（text → cap_text → alias → cap）不被破坏。
+    """
+    if keep_all:
+        return matches, len(matches)
+    out: List[Dict[str, Any]] = []
+    pos: Dict[str, int] = {}
+    for m in matches:
+        k = _brand_key(m)
+        if k is None:
+            out.append(m)
+            continue
+        i = pos.get(k)
+        if i is None:
+            pos[k] = len(out)
+            m["branches"] = 1
+            out.append(m)
+        else:
+            row = out[i]
+            row["branches"] = int(row.get("branches") or 1) + 1
+            ids = row.setdefault("branch_ids", [])
+            if len(ids) < 20:                       # 有上限：别让一条结果带 267 个 id
+                ids.append(m.get("id"))
+    return out, len(pos)
+
+
+# 指纹 et 码 → 主体经济类型名。0 = 门类判不出来（老数据无国标码），不贴标签。
+_ETYPE_NAMES = {0: "", 1: "生产", 2: "流通", 3: "服务"}
 
 
 def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
@@ -2038,6 +2130,10 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
         "city": rec.get("city"),
         "district": rec.get("dist"),
         "gb": rec.get("gb"),
+        # 主体经济类型：生产(A/B/C/D/E) / 流通(F/G) / 服务(H~S)。
+        # 全行业口径下这是唯一能跨门类表达「这家主体在干什么性质的事」的信号 ——
+        # 旧的「是否制造商」只能区分 C 与非 C，服务类主体占六成却全挤在一筐里。
+        "etype": _ETYPE_NAMES.get(rec.get("et") or 0, ""),
         "badge": rec.get("cl"),
         "score": rec.get("sc"),
         "has_phone": bool(rec.get("tel")),
@@ -2261,6 +2357,30 @@ def _index_fresh() -> bool:
         return False
 
 
+def _index_reason() -> str:
+    """索引为什么没被用上 —— 回给调用方，别再让人靠猜。
+
+    2026-10-23 实测踩过：线上 MCP 一次「面馆」查询 `shards_scanned=320`（全量扫），
+    但返回体只有 `via_index:false` 一个布尔，看不出是「索引没部署」「版本不符」
+    还是「落后于数据」。排查要靠翻代码 —— 这个字段就是为这件事加的。
+    """
+    meta = _index_meta()
+    if not meta:
+        return ("index_meta_unavailable（skills/registry/index/meta.json 读不到："
+                "未部署 / 401 / 网络不通）")
+    if int(meta.get("version", 0)) != INDEX_VERSION:
+        return "index_version_mismatch（索引 v%s，客户端要 v%d）" % (
+            meta.get("version"), INDEX_VERSION)
+    try:
+        tot = sum(s.get("k", 0) for s in _shards_of_type("fp"))
+        rec = int(meta.get("records", -1))
+    except Exception:
+        return "index_meta_malformed"
+    if not (rec >= tot > 0):
+        return "index_behind_data（索引 %d 条 < 数据 %d 条，需重跑 gen_search_index）" % (rec, tot)
+    return "index_ok"       # 索引本身没问题 → 是取候选分片那一步失败了
+
+
 def _bucket_rel(term: str, buckets: int) -> str:
     b = int(hashlib.sha1(term.encode("utf-8")).hexdigest(), 16) % buckets
     return "%s/terms/b%04d.json" % (INDEX_DIR, b)
@@ -2412,6 +2532,44 @@ def _recall_candidates(toks) -> Optional[List[Dict[str, Any]]]:
     return _records_from_paths(sorted(picked))
 
 
+def _city_postings(city: str) -> Optional[Dict[str, int]]:
+    """某个城市的 {分片路径: 条数}。索引不可用 → None；确无该城市 → {}。
+
+    先读 `index/city/<城市>.json`（几 KB），读不到才退回 `index/city.json`（700 KB 全表）。
+    拆分的理由：一次查询只关心一个城市，却要为全国 527 个城市付流量 ——
+    那是冷启动首查的主要成本。旧索引没有单城文件，所以全表兜底保留。
+
+    城市名做**后缀无关**匹配（「姑苏」/「姑苏区」），避免索引写法与用户输入不一致时
+    把「有」误判成「无」（返回空结果比返回慢结果更糟）。
+    """
+    if not city:
+        return {}
+    safe = city.replace("/", "").replace("\\", "")
+    txt = _index_text(INDEX_DIR + "/city/" + safe + ".json")
+    if txt:
+        try:
+            d = json.loads(txt)
+            if isinstance(d, dict):
+                return {str(k): int(v) for k, v in d.items()}
+        except Exception:
+            pass
+    txt = _index_text(INDEX_DIR + "/city.json")
+    if not txt:
+        return None
+    try:
+        full = json.loads(txt)
+    except Exception:
+        return None
+    m = full.get(city)
+    if not m:
+        alt = _norm_district(city)
+        for k, v in full.items():
+            if _norm_district(k) == alt:
+                m = v
+                break
+    return {str(k): int(v) for k, v in (m or {}).items()}
+
+
 def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
     """用预构建索引求候选分片路径；索引不可用/版本不符/陈旧时返回 None 交回退。
 
@@ -2433,8 +2591,6 @@ def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
         gram_groups.append(gs)
 
     need: List[str] = []
-    if city:
-        need.append(INDEX_DIR + "/city.json")
     for gs in gram_groups:
         for g in gs:
             need.append(_bucket_rel(g, buckets))
@@ -2453,13 +2609,12 @@ def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
 
     cands: Optional[set] = None
     if city:
-        cd = docs.get(INDEX_DIR + "/city.json")
-        if cd is None:
+        postings = _city_postings(city)
+        if postings is None:
             return None
-        m = cd.get(city)
-        if not m:                      # 索引里没这个城市 → 确无命中
+        if not postings:               # 索引里没这个城市 → 确无命中
             return []
-        cands = set(m.keys())
+        cands = set(postings.keys())
 
     for gs in gram_groups:
         tset: Optional[set] = None
@@ -2518,13 +2673,30 @@ def _records_from_paths(paths: List[str]) -> List[Dict[str, Any]]:
     return out
 
 
+def _norm_district(s: str) -> str:
+    """区县比较用的归一化键：去掉末尾一个 区/县/市。
+
+    数据层已经在入库时统一成短写法（scripts/normalize_district.py），这里再兜一层，
+    因为：① 存量分片可能还没重生成；② 用户输入的是「吴中区」这种官方全名，
+    而记录里是「吴中」。等值比较会让这两种写法互相看不见 —— 数据是全的，
+    用户却看到半个城市。归一化后「吴中」==「吴中区」，「浦东新」==「浦东新区」。
+    """
+    s = (s or "").strip()
+    return s[:-1] if len(s) > 2 and s[-1] in "区县市" else s
+
+
 def _city_ok(rec: Dict[str, Any], city: str) -> bool:
     """city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在地图数据里归到地级市名下，
     记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
+
+    区县侧做**后缀无关**比较（见 `_norm_district`），
+    所以「姑苏」「姑苏区」「嘉善」「嘉善县」都能命中同一批记录。
     """
     if not city:
         return True
-    return city in (rec.get("city", ""), rec.get("dist", ""))
+    if city == rec.get("city", ""):
+        return True
+    return _norm_district(city) == _norm_district(rec.get("dist", ""))
 
 
 OFFSET_MAX = 200   # 分页深度上限（10 页 × 20 条）。服务端 X-Beacon-Offset-Max 同值。
@@ -2542,8 +2714,30 @@ def _page_slice(matches: list, offset: int, limit: int, raw_offset: int):
 
 
 def search_vendors(query: str = "", city: str = "", gb: str = "",
-                   limit: int = 20, offset: int = 0) -> Dict[str, Any]:
+                   limit: int = 20, offset: int = 0,
+                   group_branches: bool = True,
+                   etype: str = "") -> Dict[str, Any]:
+    """按关键词 / 城市 / 国标码检索全国各行业主体。
+
+    `group_branches`：同一品牌的连锁门店是否折成一行（默认折）。连锁在名录里是一家一条，
+    不折的话「面馆」这类查询会被门店淹没（苏州瑞幸一家就 267 条）。
+    要看全部门店时传 false。
+
+    `etype`：主体经济类型过滤 —— 生产 / 流通 / 服务。按国标门类推导：
+       生产 = A 农林牧渔、B 采矿、C 制造、D 电力热力燃气水、E 建筑
+       流通 = F 批发零售、G 交通运输仓储邮政
+       服务 = H 住宿餐饮 … S 公共管理
+    「找能做的厂」用生产，「找附近的店/服务商」用服务，别用「非制造商」反向排除 ——
+    那会把六成主体混成一个筐。
+    """
     limit = max(1, min(int(limit), 200))
+    # etype 过滤：中文名 → 指纹 et 码。传了不认识的值不静默忽略，见下方校验。
+    et_want = {"生产": 1, "流通": 2, "服务": 3}.get((etype or "").strip(), 0)
+    if (etype or "").strip() and not et_want:
+        return {
+            "error": "bad_etype",
+            "message": "etype 只接受 生产 / 流通 / 服务 三个值（按国标门类推导），收到 %r" % etype,
+        }
     # ── 分页深度上限（2026-10-22）────────────────────────────────────────
     # 这不是性能优化，是**反截取**。翻页遍历是从公开接口搬走整个库的唯一
     # 可行路径：`total_matched=4684` 时 offset += 200 循环 24 次就拉干了。
@@ -2602,6 +2796,8 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             for rec in _read_fp_shard(s):
                 if not _city_ok(rec, city):
                     continue
+                if et_want and (rec.get("et") or 0) != et_want:
+                    continue
                 if gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
                     continue
                 s = _rec_summary(rec)
@@ -2610,17 +2806,23 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         # 与 query 路由同一套档内排序（`gb=` 只走一档，故按厂名贴合度降序即可），
         # 否则同一批记录经两条路进来顺序不同，agent 会以为「换了个写法结果就变了」。
         matches.sort(key=lambda x: -_name_fit(x, gen_tokens))
+        # 品牌归并放在**分页之前**：否则一页 20 条里可能 9 条是同一条街上的门店，
+        # 而第 21 条才是另一个品牌 —— 分页之后再折叠等于白折。
+        records_total = len(matches)
+        matches, brands_total = _collapse_brands(matches, keep_all=not group_branches)
         page, pmeta = _page_slice(matches, offset, limit, raw_offset)
         return _attach_routing_hint({
-            "total_matched": len(matches),
+            "total_matched": records_total,
+            "total_brands": brands_total,
             "returned": len(page),
             "shards_scanned": scanned,
             "results": page,
             **parsed,
             **pmeta,
             # 同 query 路由的口径：档内按「关键词在厂名里成片出现」优先，score 不是相关度。
-            "order_note": ("results 按「关键词在厂名里成片出现」优先排列；score 是"
-                           "**能力画像分**（有已发布能力卡才有分，无卡为 0），"
+            "order_note": ("results 按「关键词在企业名里成片出现」优先排列；同一品牌的连锁门店"
+                           "已折成一行（`branches` = 门店数，`branch_ids` 前 20 个）。"
+                           "score 是**能力画像分**（有已发布能力卡才有分，无卡为 0），"
                            "**不是相关度**，不要拿它反推排序。"),
         }, q, city)
 
@@ -2647,6 +2849,8 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         for rec in recs:
             if not _city_ok(rec, city):
                 continue
+            if et_want and (rec.get("et") or 0) != et_want:
+                continue
             # 只在有关键词时才算检索面（纯城市查询不需要，省一次 join/条）。
             hay = _hay(rec).lower() if gen_tokens else ""
             if not relax_tokens and gen_tokens and not all(tok in hay for tok in gen_tokens):
@@ -2664,6 +2868,16 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                 s["via"] = "text" if all(tok in lit for tok in gen_tokens) else "cap_text"
             else:
                 s["via"] = "city"      # 没给关键词，纯城市筛选
+            # 能力命中压过纯字面撞名（2026-10-23）。
+            # 查询词是能力别名时（「医院」「银行」「药店」「煤矿」），**主体本身
+            # 就是干这个的**比**名字里恰好有这个词**相关得多。只靠 name_fit 分不开：
+            # 「贵黔医院负一楼营养餐厅」（gb 6210，医院开的食堂）品牌名里也有
+            # 「医院」，与「贵州省人民医院」同名次同名分，照样排在前面。
+            # 所以这里显式把 cap 含该键的记录提到最高档，与下方 cap 定向召回同档。
+            if cap_hits and rec.get("cap"):
+                want = {h["cap"] for h in cap_hits}
+                if want & {str(c) for c in rec["cap"]}:
+                    s["via"] = "cap"
             if relax_tokens:
                 a = alias_by_code.get(rec.get("gb") or "")
                 if a:
@@ -2730,21 +2944,36 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                                     "name": h["name"], "type": "cap"}
                 matches.append(s)
 
-    # 分档排序（稳定）：text → cap_text → alias → cap。
+    # 分档排序（稳定）：cap → text → cap_text → alias。
     # 为什么必须显式排：cap_text 与 text 是**同一趟**文本召回里 append 进去的，
     # 不重排两档会交错，order_note 里「按召回来源分档排列」就成了假承诺。
-    _RANK = {"text": 0, "city": 0, "cap_text": 1, "alias": 2, "cap": 3}
+    #
+    # 2026-10-23：cap 从末档提到首档。原口径 text 最高，制造业时代成立（厂名写了
+    # 「CNC」的大概率真是 CNC 厂）；全行业口径下不成立 —— 搜「医院」时前 10 条
+    # 全是「蓝天酒店(贵州医科大学附属医院店)」「贵黔医院负一楼营养餐厅」，
+    # 真正的医院在第 23 位之后。查询词是能力别名时，**主体本身干这个** > **名字里
+    # 有这个词**，这一条跨门类通用（药店/银行/物流/煤矿同此）。
+    # cap 与 text 同名次时仍按 name_fit 细分（品牌名命中 > 仅门店限定命中）。
+    _RANK = {"cap": 0, "text": 1, "city": 1, "cap_text": 2, "alias": 3}
 
     # 档内再按厂名贴合度排（见 `_name_fit` 的说明）。这是**档内**微调，不影响档间
-    # 次序，也不影响 total_matched。
-    matches.sort(key=lambda x: (_RANK.get(x.get("via"), 9), -_name_fit(x, gen_tokens)))
+    # 次序，也不影响 total_matched。末尾按 id 收尾，保证同档同分的顺序稳定
+    #（否则等于按分片路径排，H 住宿餐饮恒在 Q 卫生前面）。
+    matches.sort(key=lambda x: (_RANK.get(x.get("via"), 9),
+                                -_name_fit(x, gen_tokens),
+                                str(x.get("id") or "")))
 
+    # 品牌归并（分页之前，理由见 `_collapse_brands`）。
+    records_total = len(matches)
+    matches, brands_total = _collapse_brands(matches, keep_all=not group_branches)
     page, pmeta = _page_slice(matches, offset, limit, raw_offset)
     out = {
-        "total_matched": len(matches),
+        "total_matched": records_total,
+        "total_brands": brands_total,
         "returned": len(page),
         "shards_scanned": scanned,
         "via_index": via_index,
+        **({"via_index_reason": _index_reason()} if not via_index else {}),
         "results": page,
         **parsed,
         **pmeta,
@@ -3002,33 +3231,50 @@ def refine_sourcing(session_id: str, action: str = "", value: Optional[str] = No
 TOOLS = [
     {
         "name": "search_vendors",
-        "description": "检索灯塔工厂供应商名录。可按关键词(企业名/工艺/材料/认证)、城市、国标码(GB/T 4754)过滤。"
-                       "返回精简档案(id/企业名/城市/国标码/认证等级/工艺/材料/认证/是否含电话)。"
-                       "⚠ 关键词是**字面子串**匹配：用户的口语词/采购词若与名录写法不同（如「机加工」"
-                       "vs 归档用的「机械零部件加工」），命中会极少。此时不要直接报「没有」——"
-                       "看返回体里的 hint / suggested_gb，或先调 suggest_filters 拿到候选码，"
-                       "再用 gb=<码> 重试（召回通常多几十倍，且只扫对应分片更快）。",
+        "description": "检索灯塔名录里的**全国各行业主体**（按 GB/T 4754 全门类收录：农林牧渔、采矿、"
+                       "制造、电热燃水、建筑、批发零售、交通运输、住宿餐饮、信息软件、金融、"
+                       "房地产、租赁商务服务、科研技术服务、水利环境、居民服务、教育、卫生、"
+                       "文化体育娱乐、公共管理……）。可按关键词(名称/工艺/材料/认证/服务内容)、"
+                       "城市或区县、国标码过滤。返回精简档案(id/名称/城市/区县/国标码/认证等级/"
+                       "工艺/材料/认证/是否含电话/连锁门店数)。"
+                       "⚠ 关键词是**字面子串**匹配：用户的口语词若与名录写法不同（如「机加工」"
+                       "vs 归档用的「机械零部件加工」、「面馆」vs「苏式面馆」），命中会偏少。"
+                       "此时不要直接报「没有」——看返回体里的 hint / suggested_gb，"
+                       "或先调 suggest_filters 拿到候选码，再用 gb=<码> 重试"
+                       "（召回通常多几十倍，且只扫对应分片更快）。",
         "inputSchema": {
             "type": "object",
             "properties": {
-                "query": {"type": "string", "description": "关键词：企业名/工艺/材料/认证子串"},
+                "query": {"type": "string",
+                          "description": "关键词：企业名/品牌/工艺/材料/认证/服务内容子串"},
                 "city": {"type": "string",
-                         "description": "城市名精确匹配，如 深圳 / 东莞；"
-                                        "也接受区县或县级市（如 昆山、海盐），"
+                         "description": "城市名，如 深圳 / 东莞 / 苏州；"
+                                        "也接受区县或县级市（如 昆山、海盐、姑苏），"
                                         "这些地方在地图数据里归地级市名下，靠 district 字段命中"},
-                "gb": {"type": "string", "description": "国标码，如 3484(机械零部件加工)。给了就只扫对应分片"},
+                "gb": {"type": "string", "description": "国标码，如 3484(机械零部件加工)、"
+                                                        "6210(正餐服务)。给了就只扫对应分片"},
                 "limit": {"type": "integer", "default": 20, "description": "返回条数上限(1-200)"},
                 "offset": {"type": "integer", "default": 0, "description": "分页偏移"},
+                "group_branches": {"type": "boolean", "default": True,
+                                   "description": "同一品牌的连锁门店是否折成一行（默认折）。"
+                                                  "折后代表行带 branches(门店数) 与 branch_ids；"
+                                                  "传 false 可展开全部门店"},
+                "etype": {"type": "string", "enum": ["生产", "流通", "服务"],
+                          "description": "主体经济类型过滤，按国标门类推导："
+                                         "生产 = A农林牧渔/B采矿/C制造/D电力热力燃气水/E建筑；"
+                                         "流通 = F批发零售/G交通运输仓储邮政；"
+                                         "服务 = H住宿餐饮…S公共管理。"
+                                         "「找能做的厂」用生产，「找附近的店/服务商」用服务"},
             },
         },
     },
     {
         "name": "get_vendor",
-        "description": "按供应商 id(+可选国标码)取完整中文档案：企业名/地址/经纬度/电话/行业路径/认证/关键词等。",
+        "description": "按主体 id(+可选国标码)取完整中文档案：名称/地址/经纬度/电话/行业路径/认证/关键词等。",
         "inputSchema": {
             "type": "object",
             "properties": {
-                "id": {"type": "string", "description": "供应商 id，如 CN-MFG-0000163（必填）"},
+                "id": {"type": "string", "description": "主体 id，如 CN-MFG-0000163（必填）"},
                 "gb": {"type": "string", "description": "国标码；不填会自动从指纹分片反查(稍慢)"},
             },
             "required": ["id"],
@@ -3036,14 +3282,14 @@ TOOLS = [
     },
     {
         "name": "get_capability_card",
-        "description": "按供应商 id 取能力卡（工艺位/设备/产能/认证/起订量等）。"
-                       "全库仅少数供应商有已发布能力卡，无卡的会秒回 has_card=false"
+        "description": "按主体 id 取能力卡（工艺位/设备/产能/认证/起订量等；服务业主体多为空）。"
+                       "全库仅少数主体有已发布能力卡，无卡的会秒回 has_card=false"
                        "（不必重试）。"
                        "无已发布卡片时返回 has_card=false 及原因说明。",
         "inputSchema": {
             "type": "object",
             "properties": {
-                "id": {"type": "string", "description": "供应商 id（必填）"},
+                "id": {"type": "string", "description": "主体 id（必填）"},
             },
             "required": ["id"],
         },
@@ -3124,13 +3370,14 @@ TOOLS = [
     },
     {
         "name": "account",
-        "description": "查看/升级本机调用身份与配额（匿名装完即用，无需注册）。"
+        "description": "查看/提升本机调用身份与配额（匿名装完即用，无需注册）。"
+                       "数据本身对所有档位全量可见；绑定手机号只**提高配额**，不解锁内容。"
                        "action=status 看当前档位与剩余额度；"
                        "action=request 需传 phone（中国大陆 11 位），发短信验证码；"
                        "action=confirm 需传 phone + code，验证通过后本机升级为 verified，"
-                       "配额 200→2000 次/滚动 24 小时，并解锁能力卡等 L2 加工资产；"
+                       "配额 200→2000 次/滚动 24 小时；"
                        "action=logout 清除本地令牌回到匿名档。"
-                       "⚠ 只有当你**确实遇到** upgrade_required / quota_exceeded，"
+                       "⚠ 只有当你**确实遇到** quota_exceeded / l2_daily_limit，"
                        "或用户主动问「额度/绑定手机号」时才调用；不要一上来就催用户绑手机。",
         "inputSchema": {
             "type": "object",
@@ -3282,6 +3529,8 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
                 gb=args.get("gb", ""),
                 limit=args.get("limit", 20),
                 offset=args.get("offset", 0),
+                group_branches=bool(args.get("group_branches", True)),
+                etype=args.get("etype", ""),
             )
         if name == "get_vendor":
             return get_vendor(args.get("id", ""), args.get("gb", ""))
