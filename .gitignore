@@ -31,6 +31,12 @@ SKILLHUB_SUBMISSION.md
 data/fetch_cursor.json
 data/district_cache.json
 data/name-index.jsonl
+# 原始归档与英文镜像：MCP 运行时**不读**这两层（它只读 skills/registry/ 的
+# 派生索引与 data/*.json 索引），而这两层合计 446MB、每次采集全量变动。
+# 2026-10-23 起只留本地，由维护者自行备份；仓库只保留 MCP 跑起来必需的部分。
+data/gb/
+data/en/
+_archive/
 .github/*
 !.github/workflows/
 !.github/workflows/mcp-release.yml
