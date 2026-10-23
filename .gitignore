@@ -36,6 +36,9 @@ data/name-index.jsonl
 # 2026-10-23 起只留本地，由维护者自行备份；仓库只保留 MCP 跑起来必需的部分。
 data/gb/
 data/en/
+# 2026-10-23 回滚用的工作树快照（全号原值，绝不能入库）
+data/_gb_pruned_*/
+data/_en_pruned_*/
 _archive/
 .github/*
 !.github/workflows/
