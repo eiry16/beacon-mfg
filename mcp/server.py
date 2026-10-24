@@ -2351,6 +2351,11 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
         "city": rec.get("city"),
         "district": rec.get("dist"),
         "gb": rec.get("gb"),
+        # 行业归类的证据来源（2026-10-24）。指纹分片带 isrc 时才有值；
+        # 没有就留 null —— 调用方要精确证据等级请用 get_vendor 的 industry_evidence。
+        # ⚠ 读的是 isrc 不是 src：src 是**数据信源**（gov_list/public_directory），
+        #   两件事必须分开，混用会让 App 的绿色 G 标和这里的证据等级互相干扰。
+        "industry_source": rec.get("isrc"),
         # 主体经济类型：生产(A/B/C/D/E) / 流通(F/G) / 服务(H~S)。
         # 全行业口径下这是唯一能跨门类表达「这家主体在干什么性质的事」的信号 ——
         # 旧的「是否制造商」只能区分 C 与非 C，服务类主体占六成却全挤在一筐里。
@@ -3280,6 +3285,14 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                        "某酒店(中央商务区店) 前面）；score 是**能力画像分**"
                        "（有已发布能力卡才有分，无卡为 0），**不是相关度**，不要拿它反推排序。")
                        + (_geo_note(rad) if lat_v is not None else ""),
+        # 行业证据：search 只返回指纹摘要，拿不到完整的 industry.source。
+        # 但 agent 很容易把 results[].gb 当成「核实过的行业」直接讲给客户 ——
+        # 全库 28.5% 的归类其实是按采集关键词反推的。把口径写死在这里，
+        # 和 order_note 同一立场：别让调用方猜。
+        "industry_note": ("results[].gb 是这家**归档所在的国标小类**，不等于已核实的行业。"
+                          "要拿行业下结论前，先 get_vendor 看 industry_evidence.tier："
+                          "A=工商登记/人工认证、B=公司名推断、C=词表兜底、D=采集关键词反推。"
+                          "C/D 级别的行业只能当线索，向用户表述时应带上「行业待核」。"),
         # 坐标回显 + 圈外剔除数（仅坐标查询时出现）。
         **({"geo": {"lat": lat_v, "lng": lng_v, "radius_km": rad,
                     "records_with_coords": geo_ncoord}} if lat_v is not None else {}),
@@ -3307,6 +3320,60 @@ def _pick(*vals: Any) -> Any:
     return None
 
 
+# ── 行业归类的证据等级（2026-10-24）──────────────────────────────────
+# 全库 210,555 条里只有 34 条的行业有权威依据（工商登记 / 人工认证），
+# 98.4% 是推断的。但检索结果里这两者长得一模一样 —— agent 会把
+# 「用采集关键词反推出来的码」当成「确认过的行业」讲给客户。
+# 那比答"没有"伤害更大：答"没有"用户会自己去找，答错了用户会拿它做采购决定。
+#
+# 所以给每条记录附一个等级，让调用方自己决定信到什么程度。
+# 等级**完全由 industry.source 推导、不落盘**：source 一变等级自动跟着变，
+# 不会出现「数据里存着旧等级、source 已经改过」的自相矛盾。
+#
+#   A 权威  工商登记 / 人工认证
+#   B 名称  公司名推断（"苏州某某精密机械有限公司" → 通用设备制造）
+#   C 兜底  国标特征词 / POI 标签 / 原品类
+#   D 采集  按抓取时的搜索词反推 —— 最弱的一档，占全库 28.5%
+_EVIDENCE_TIER = {
+    "gov_registry": ("A", "工商登记"),
+    "registration": ("A", "工商登记"),
+    "certification": ("A", "人工认证"),
+    "name": ("B", "公司名称推断"),
+    "gb_token": ("C", "国标特征词匹配"),
+    "keyword": ("C", "POI 标签词"),
+    "category_fallback": ("C", "原品类兜底"),
+    "company_website": ("C", "企业官网"),
+    "search_keyword": ("D", "采集关键词反推"),
+}
+_EVIDENCE_CAVEAT = {
+    "C": "行业依据较弱，可能只判到门类；可作线索，不宜当精确分类引用。",
+    "D": "按采集时的搜索词反推，与这家实际做什么可能无关"
+         "（当年用「软件开发」搜地图，整栋软件大厦里的公司都被打了 6513）。"
+         "多结果并列时请降权，或向用户明示「行业待核」。",
+}
+
+
+def _industry_evidence(rec: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """把 industry.source 折成可读的证据等级；没有 industry 就返回 None。"""
+    ind = rec.get("industry")
+    if not isinstance(ind, dict) or not ind.get("code"):
+        return None
+    src = (ind.get("source") or "").strip()
+    tier, label = _EVIDENCE_TIER.get(src, ("C", src or "未知来源"))
+    out: Dict[str, Any] = {
+        "tier": tier,
+        "label": label,
+        "source": src,
+        "confidence": ind.get("confidence"),
+        "code": ind.get("code"),
+        "name": ind.get("name"),
+    }
+    cav = _EVIDENCE_CAVEAT.get(tier)
+    if cav:
+        out["caveat"] = cav
+    return out
+
+
 def normalize_vendor(rec: Dict[str, Any]) -> Dict[str, Any]:
     """zh 分片存在两套历史结构，下游 agent 只认一种，在这里展平（只增不删）。
 
@@ -3323,6 +3390,10 @@ def normalize_vendor(rec: Dict[str, Any]) -> Dict[str, Any]:
     out["province"] = _pick(rec.get("province"), region.get("province"))
     out["gb"] = rec.get("gb") if rec.get("gb") not in (None, "") else None
     out["keywords"] = _pick(rec.get("keywords"), rec.get("products"))
+    # 行业证据等级：只增不删的新字段，老调用方忽略即可（见 _EVIDENCE_TIER）
+    ev = _industry_evidence(rec)
+    if ev:
+        out["industry_evidence"] = ev
     if not out.get("gb"):
         out["gb_unclassified"] = True
     return out
