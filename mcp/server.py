@@ -289,9 +289,9 @@ def _pkg_version() -> str:
     try:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
         with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.7.0")
+            return json.load(f).get("version", "1.10.0")
     except Exception:
-        return "1.7.0"
+        return "1.10.0"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
@@ -3699,7 +3699,107 @@ TOOLS = [
             },
         },
     },
+    {
+        "name": "vendor_onboarding",
+        "description": "给供应商开通「入驻 / 认领」入口：返回一个**可直接点开**的控制台链接与步骤。"
+                       "当用户说「我是某某公司的」「我想入驻 / 上架产品 / 让客户搜到我」"
+                       "「我要认领我的企业」「怎么注册成供应商」「我的审核到哪一步了」时调用。"
+                       "⚠ 本工具**只给入口，绝不代办**：短信验证码与法人手机核验必须由用户"
+                       "在自己的浏览器里输入 —— 让他把验证码念给你，等于把「证明他是这家企业」"
+                       "的凭证交给第三方，还会进入对话上下文与日志。"
+                       "⚠ 不要替用户编造企业信息，不要承诺审核结果或时效，"
+                       "也不要把未认领的企业说成「已经属于你」。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "supplier_id": {"type": "string",
+                                "description": "可选。已在检索结果里拿到的企业 ID（如 CN-MFG-0020317），用于生成直达深链，省得用户再搜一遍公司名"},
+                "company": {"type": "string", "description": "可选。企业名称，用于把步骤说得更具体"},
+                "intent": {"type": "string", "enum": ["claim", "register", "status"],
+                           "description": "claim=认领库里已收录的企业（默认）；register=库里没有、要新建档；status=查自己申请的审核进度"},
+            },
+        },
+    },
 ]
+
+
+CONSOLE_BASE = "https://beacon-mfg.pages.dev/console/"
+
+
+def vendor_onboarding(supplier_id: str = "", company: str = "",
+                      intent: str = "claim") -> Dict[str, Any]:
+    """给供应商一个**能自己走完**的入驻入口。
+
+    为什么 MCP 只做到「给链接」为止
+    ------------------------------
+    Agent 拿得到 HTML 也没用（它不会填表单）。但更要紧的是**凭证不能进对话**：
+    认领要过短信验证码与法人手机核验，让用户把验证码念给 Agent，等于把
+    「证明我是这家企业」的东西交给第三方，还顺带落进 LLM 上下文与日志。
+    所以这里只返回链接 + 步骤 + 明确的边界，由用户在浏览器里自己完成。
+
+    同源红线：即便将来 Agent 能代填字段，也必须企业自己确认过才算「企业自述」——
+    否则就是拿平台推断冒充企业说的话。
+    """
+    from urllib.parse import quote as _q
+
+    sid = (supplier_id or "").strip()
+    name = (company or "").strip()
+    if sid and not name:
+        # 顺带把公司名查出来，好让 Agent 说「帮您找到 XX 公司」而不是干巴巴一个 ID
+        try:
+            v = get_vendor(sid)
+            # get_vendor 的外层是 {"vendor": {...}}，公司名在 vendor 顶层或 identity 里
+            vv = (v.get("vendor") if isinstance(v, dict) and v.get("vendor") else v) or {}
+            name = str(
+                vv.get("company")
+                or (vv.get("identity") or {}).get("company")
+                or ""
+            ).strip()
+        except Exception:
+            pass
+
+    url = CONSOLE_BASE + ("?id=" + _q(sid, safe="") if sid else "")
+    intent = (intent or "claim").strip().lower()
+
+    if intent == "register":
+        steps = [
+            "打开链接，用手机号收验证码登录（同一个号在 App 与网页是同一账号，草稿也共享）",
+            "在「找到我的企业」里搜公司名；搜不到就走「新建档」",
+            "填主体 / 联系 / 产能 / 质量 / 服务与产品条目（单价可不填，对外显示「面议」）",
+            "提交后进入人工审核；不通过会带**逐字段理由**退回，改完可重新提交",
+        ]
+    elif intent == "status":
+        steps = [
+            "打开链接，用提交时那个手机号登录",
+            "页面会列出「我的申请」：待审核 / 已通过 / 已驳回（驳回带理由）",
+        ]
+    else:
+        steps = [
+            "打开链接，用手机号收验证码登录",
+            "搜到自己的企业并选中（已在库里的话，公开信息会自动带成底稿，不用重填）",
+            "第一步：填 18 位统一社会信用代码（按 GB 32100-2015 校验位当场验）",
+            "第二步：填工商登记的法人手机号并收码",
+            "提交认领申请 → **人工复核通过后**才算认领成功",
+        ]
+
+    return {
+        "url": url,
+        "company": name or None,
+        "supplier_id": sid or None,
+        "intent": intent,
+        "steps": steps,
+        "boundary": "验证码、法人手机号这类凭证只能由用户在本页面自己输入。"
+                    "**不要让用户把它们告诉你**，也不要替他填写。",
+        "what_not_to_do": [
+            "不要代替用户完成认领或注册",
+            "不要索取、转述或回显任何验证码",
+            "不要承诺审核结果或时效",
+            "不要把未认领的企业说成「已经属于该用户」",
+        ],
+        "why_not_here": "USCC 是企业公开信息，单凭它认领等于把企业送人。"
+                        "所以我们不用「填个代码就算认领」的做法，而是提交后人工复核。",
+        "next": "把 url 原样给用户，让他在浏览器里走完；完成后可以回来让你查他企业的能力卡。",
+    }
 
 
 def account(action: str = "status", phone: str = "", code: str = "") -> Dict[str, Any]:
@@ -3868,6 +3968,9 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
             return refine_sourcing(args.get("session_id", ""), args.get("action", ""), args.get("value"))
         if name == "account":
             return account(args.get("action", "status"), args.get("phone", ""), args.get("code", ""))
+        if name == "vendor_onboarding":
+            return vendor_onboarding(args.get("supplier_id", ""), args.get("company", ""),
+                                     args.get("intent", "claim"))
     except Exception as e:  # 任何异常都包成文本，避免协议崩
         return {"error": f"{name} 执行异常: {e}"}
     return {"error": f"未知 tool: {name}"}
