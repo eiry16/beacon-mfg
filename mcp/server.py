@@ -1735,15 +1735,29 @@ def _data_version() -> str:
     """数据版本号，用于给落盘缓存判新。
 
     git 模式 = HEAD sha（提交变则版本变）；
-    HTTP 模式 = 清单里的 generated_at（**一发布新数据版本就变**，
-    所以不会读到陈旧的已发布快照 —— 这正是当初不敢在 HTTP 模式落盘的顾虑）。
+    HTTP 模式 = 清单**内容指纹**。
+
+    2026-10-24 修：原来 HTTP 模式只取 `generated_at`，它是 `date.today()`（**日期精度**）。
+    同一天内重复发布（重跑索引、补数据）版本号不变 → 落盘缓存永远命中旧快照 →
+    线上索引卡在 210555 条，MCP 每次搜索都判 `index_behind_data` 并退化成扫全部
+    467 个分片（单次 130s+），重跑 gen_search_index 也「看不出效果」。
+    改为「generated_at + 各类型记录数 + 索引桶哈希聚合」，数据或索引任一变化即失效。
 
     取不到就返回空串，调用方据此**禁用**缓存（宁慢不脏）。
     """
     if REPO:
         return _head_sha() or "nosha"
     try:
-        return str(load_manifest().get("metadata", {}).get("generated_at") or "")
+        md = load_manifest().get("metadata", {}) or {}
+        bt = md.get("by_type") or {}
+        parts = ["%s:%s" % (k, (bt[k] or {}).get("records", 0)) for k in sorted(bt)]
+        h = (md.get("idxfiles") or {}).get("h") or {}
+        if h:
+            parts.append("idx:" + hashlib.sha1(
+                "".join(sorted(h.values())).encode("utf-8")).hexdigest()[:16])
+        if not parts:
+            return str(md.get("generated_at") or "")
+        return str(md.get("generated_at") or "") + "|" + "|".join(parts)
     except Exception:
         return ""
 
@@ -2551,8 +2565,21 @@ def _read_many_text(paths: List[str]) -> Dict[str, str]:
     #   （没有 h 的路径——如索引桶——_shard_text 内部自动退回 fetch_text，行为不变。）
     _shard_hash_index()          # 预热：别让线程池里做首次构建
     out: Dict[str, str] = {}
+    # ⚠ 必须把调用方的 ContextVar **显式带进线程池**（2026-10-24 实测踩坑）。
+    #   本次 tool 调用的 op 存在 `_cur_get()` 里，`X-Beacon-Op` 头就是靠它发出去的；
+    #   而 ContextVar **不会**自动继承到 ThreadPoolExecutor 的工作线程（线程各有空
+    #   context）。子线程发出的请求于是只有 cid、没有 op → worker 判 identity_required
+    #   → 401 → 文本为空。症状极隐蔽：city.json 是主线程单读（正常），terms/*.json
+    #   走这里（全 401）→ 候选分片集为空 → 搜索返回 0 条、shards_scanned=0，
+    #   看起来像「索引没建好」，实际是身份在跨线程时丢了。
+    import contextvars
+    _ctx = contextvars.copy_context()
+
+    def _one(p: str) -> Optional[str]:
+        return _ctx.copy().run(_shard_text, p)   # 每个任务一份副本，可并发进入
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
-        for path, txt in zip(paths, ex.map(_shard_text, paths)):
+        for path, txt in zip(paths, ex.map(_one, paths)):
             if txt:
                 out[path] = txt
     return out
