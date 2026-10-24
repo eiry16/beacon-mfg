@@ -36,7 +36,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import server as S  # noqa: E402
 
 PROTOCOL_VERSION = "2024-11-05"
-SERVER_INFO = {"name": "beacon-mfg-readonly", "version": "1.3.0"}
+SERVER_INFO = {"name": "beacon-mfg-readonly", "version": S.VERSION}
 MCP_PATH = os.environ.get("MCP_PATH", "/mcp")
 
 _sessions = set()

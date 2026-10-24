@@ -213,12 +213,31 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # --------------------------------------------------------------------------- #
 # 配置
 # --------------------------------------------------------------------------- #
+# 版本号单一来源：同目录 package.json（npm 发布包的 version）。
+# 全项目所有版本号（MCP / HTTP 服务 / Python API / Agent Skill / Android APK）
+# 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
+# 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
+# 否则 check_version.py 会报错（这就是它的用途）。
+VERSION_FALLBACK = "1.11.0"
+
+
+def _pkg_version() -> str:
+    try:
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
+        with open(p, "r", encoding="utf-8") as f:
+            return json.load(f).get("version", VERSION_FALLBACK)
+    except Exception:
+        return VERSION_FALLBACK
+
+
+VERSION = _pkg_version()
+
 DEFAULT_SOURCE = "https://beacon-mfg.pages.dev"
 BEACON_SOURCE = os.environ.get("BEACON_SOURCE", DEFAULT_SOURCE).rstrip("/")
 BEACON_REPO = os.environ.get("BEACON_REPO")  # None -> 自动探测 / 退回 HTTP
 
 CACHE_DIR = os.path.join(tempfile.gettempdir(), "beacon-mcp-cache")
-UA = "BeaconMFG-MCP/1.0 (+https://beacon-mfg.pages.dev/)"
+UA = "BeaconMFG-MCP/%s (+https://beacon-mfg.pages.dev/)" % VERSION
 
 _manifest_cache: Optional[Dict[str, Any]] = None
 # 国标别名表（{word: entries}），懒加载一次；None 表示还没读过
@@ -282,16 +301,6 @@ def _cache_stale(slot: tuple, relpath: Optional[str]) -> bool:
         if m is not None and slot[2] != m:
             return True
     return False
-
-
-# 版本号单一来源：直接读同目录 package.json，避免 MCP 内部版本与发布包版本漂移。
-def _pkg_version() -> str:
-    try:
-        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package.json")
-        with open(p, "r", encoding="utf-8") as f:
-            return json.load(f).get("version", "1.10.0")
-    except Exception:
-        return "1.10.0"
 
 
 # HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
