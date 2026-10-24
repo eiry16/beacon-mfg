@@ -45,6 +45,8 @@ import time
 import hmac
 import urllib.request
 import urllib.error
+import urllib.parse
+import threading
 
 # [utf8-guard] 中文 Windows 上，宿主若没注入 PYTHONUTF8/PYTHONIOENCODING，stdout 会落回
 # cp936；而 TOOLS 的 tool 描述里含 `⚠`(U+26A0) 这类 GBK 根本编不出的字符 ——
@@ -387,6 +389,31 @@ def _cid() -> str:
                .hexdigest()[:16]
 
 
+def _header_value(v: Any) -> str:
+    """把任意值收敛成**可安全放进 HTTP 头**的 ASCII 串。
+
+    ⚠ HTTP 头只能是 latin-1（`http.client.putheader` 会做 `.encode("latin-1")`），
+    而 `X-Beacon-Tokens` 装的是**产品词**——中文用户查「海伦钢琴」，token 就是
+    `海伦`，一进头就在**建连之前**抛 `UnicodeEncodeError`。
+
+    后果远比「少记一条埋点」严重：`_beacon_headers()` 是**所有** HTTP 读共用
+    （manifest、索引桶、指纹分片全走它），于是任何含中文关键词的检索在冷缓存下
+    **整体不可用**，而报错文案指向「网络/代理不可达」。2026-10-24 由用户在另一台
+    机器上实测定位（1.4.2 → 1.11.0 均存在；本机因 manifest 已进缓存而未复现）。
+
+    处理方式取 **percent-encode** 而不是丢弃：中文产品词正是要观测的主体，
+    过滤掉等于把中文场景的遥测清零。worker 侧用 `decodeURIComponent` 还原。
+    """
+    s = "" if v is None else str(v)
+    if not s:
+        return ""
+    try:
+        s.encode("latin-1")
+        return s                      # 全 ASCII（含 latin-1 可编的西欧字符）
+    except UnicodeEncodeError:
+        return urllib.parse.quote(s, safe=",._-")
+
+
 def _beacon_headers() -> Dict[str, str]:
     """随请求带出的头。
 
@@ -395,6 +422,9 @@ def _beacon_headers() -> Dict[str, str]:
         什么」，不能连身份一起不发 —— 那样服务端会把用户当匿名客户端拒绝服务，
         而他以为只是关了个统计开关。
       - 遥测（tool / tokens / hits）→ 可被 BEACON_TELEMETRY=0 关闭。
+
+    **所有值必须过 `_header_value()`**（2026-10-24）：中文 token 直接在
+    `putheader` 抛 UnicodeEncodeError，等于让一条埋点把整次检索打挂。
     """
     h: Dict[str, str] = {}
     try:
@@ -410,7 +440,7 @@ def _beacon_headers() -> Dict[str, str]:
         h["X-Beacon-Op"] = cur["op"]
 
     if not BEACON_TELEMETRY:
-        return {k: v for k, v in h.items() if v not in ("", None)}
+        return {k: _header_value(v) for k, v in h.items() if v not in ("", None)}
 
     h["X-Beacon-Tool"] = cur.get("tool") or ""
     # tokens = 分词后的**产品词**，不是整句（§14.2：记整句等于把用户输入落成明文台账）
@@ -418,7 +448,7 @@ def _beacon_headers() -> Dict[str, str]:
         h["X-Beacon-Tokens"] = ",".join(cur["tokens"])[:120]
     if cur.get("hits") is not None:
         h["X-Beacon-Hits"] = str(cur["hits"])
-    return {k: v for k, v in h.items() if v not in ("", None)}
+    return {k: _header_value(v) for k, v in h.items() if v not in ("", None)}
 
 
 def _emit_usage(tool: str, ms: int, ok: bool, extra: Any = None) -> None:
@@ -496,6 +526,10 @@ _HTTP_TIMEOUT = 30
 
 # 记录最近一次全失败的诊断（供上层报错时引用，不进返回值以免破坏既有签名）
 _HTTP_LAST_ERROR: List[str] = [""]
+# 「取数被中途放弃」的独立槽（2026-10-24）：`_HTTP_LAST_ERROR` 会被后续每一次
+# 失败请求覆盖，中止原因一写进去就被冲掉，于是返回体里只剩一句「HTTP 401」，
+# 看不出「结果其实残缺」。分开存，两者都报。
+_FETCH_ABORTED: List[str] = [""]
 
 
 def _openers() -> List[Tuple[str, Any]]:
@@ -528,7 +562,16 @@ def _openers() -> List[Tuple[str, Any]]:
 
 
 def _http_diagnose(relpath: str, last_err: str = "") -> str:
-    """全部基址+全部连接方式都失败时，给出**指向真因**的诊断串。"""
+    """全部基址+全部连接方式都失败时，给出**指向真因**的诊断串。
+
+    ⚠ 只有在**确实是网络层**失败时才谈代理。历史上这里无条件先说「可能是本机
+    网络不可达」，而 1.4.x～1.11.0 的真实故障是请求头里的中文 token 触发
+    `UnicodeEncodeError` —— 让人白去查代理/VPN（2026-10-24 用户实测反馈）。
+    """
+    # 请求头编码问题：与网络、代理、CDN 全都无关，必须单独说清楚。
+    if "UnicodeEncodeError" in last_err or "latin-1" in last_err:
+        return ("请求头包含非 ASCII 字符，无法编码成 HTTP 头（**本地编码问题，"
+                "不是网络问题**）；最后错误: " + last_err)
     hints = []
     try:
         proxies = urllib.request.getproxies()
@@ -581,6 +624,7 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
     cached_body = None
     cached_etag = None
     last_err = ""
+    _fatal = False
     for base in _http_bases():
         url = base + "/" + relpath
         cap = _cache_path(url)
@@ -622,12 +666,40 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
                 break   # HTTP 层错误，换基址比重试连接方式有意义
             except Exception as e:
                 last_err = "%s: %s" % (type(e).__name__, e)
+                if isinstance(e, UnicodeEncodeError):
+                    # 确定性错误：头编不出来，换连接方式或换基址结果完全一样，
+                    # 继续循环只会把一次失败放大成 N 次（并拖长客户端等待）。
+                    _fatal = True
+                    break
                 continue   # 连接层失败（典型：代理不可用）→ 换连接方式
+        if _fatal:
+            break
     # 全部基址失败：若有任何本地缓存也返回，保证离线可用
     if cached_body is not None:
         return cached_body, cached_etag
     _HTTP_LAST_ERROR[0] = _http_diagnose(relpath, last_err)
     return None, None
+
+
+def _fetch_warn(total: int) -> Dict[str, Any]:
+    """取数故障对本次结果的影响，供返回体如实告知调用方。
+
+    - `total == 0` 且有过取数错误 → `fetch_error`：**0 条不等于没有这家企业**，
+      原本的返回体没有任何字段能区分「库里真没有」和「取数挂了」。
+    - 中途放弃（"已中止"）→ 额外 `partial: true`：结果是残缺的，别当全量。
+    正常查询返回 {}，对存量输出零影响。
+    """
+    err = _HTTP_LAST_ERROR[0]
+    aborted = _FETCH_ABORTED[0]
+    if not err and not aborted:
+        return {}
+    detail = "；".join(x for x in (aborted, err) if x)
+    if aborted:
+        # 中途放弃过 → 结果是残缺的，无论是否碰巧有命中都要标出来
+        return {"partial": True, "fetch_error": detail}
+    if total == 0:
+        return {"fetch_error": detail}
+    return {}
 
 
 def _worktree_read(relpath: str) -> Optional[str]:
@@ -867,12 +939,15 @@ def load_gb_alias() -> Dict[str, Any]:
         #    同时借 _read_many_text 落到 _shard_text：清单里登记了 h 的表按内容缓存，
         #    内容没变就完全不走网络；没 h 的表（如 gb-alias-curated.json）自动退回 fetch。
         raw = _read_many_text(list(_alias_relpaths))
-        merged: Dict[str, Any] = {}
-        for rel in _alias_relpaths:
-            for k, v in _load_alias_file(rel, raw.get(rel)).items():
-                merged.setdefault(str(k).lower(), v)
-        _alias_cache = (merged, time.time(), _wt_mtime_any(_alias_relpaths))
-    return _alias_cache[0]
+        # 三张表都在磁盘上；只要有一张没取到就**不提交缓存**（同 `_city_names`），
+        # 否则一次抖动会让本进程此后所有口语词（律所/输送线/保洁…）都推不出国标码。
+        if all(raw.get(rel) for rel in _alias_relpaths):
+            merged: Dict[str, Any] = {}
+            for rel in _alias_relpaths:
+                for k, v in _load_alias_file(rel, raw.get(rel)).items():
+                    merged.setdefault(str(k).lower(), v)
+            _alias_cache = (merged, time.time(), _wt_mtime_any(_alias_relpaths))
+    return _alias_cache[0] if _alias_cache else {}
 
 
 def _alias_entries(v: Any) -> List[Dict[str, Any]]:
@@ -914,8 +989,9 @@ def _gb_names() -> Dict[str, str]:
                 if key in ("classes", "groups", "divisions") and isinstance(body, dict):
                     for k, v in body.items():
                         names[str(k)] = str(v.get("name", v)) if isinstance(v, dict) else str(v)
-        _gb_name_cache = (names, time.time(), _wt_mtime("data/gb4754-full.json"))
-    return _gb_name_cache[0]
+        if names:      # 取不到不写缓存（同 `_city_names`）
+            _gb_name_cache = (names, time.time(), _wt_mtime("data/gb4754-full.json"))
+    return _gb_name_cache[0] if _gb_name_cache else {}
 
 
 def alias_codes(q: str, max_codes: int = 6) -> List[Dict[str, Any]]:
@@ -1012,7 +1088,7 @@ def _gb_shelf() -> List[Dict[str, Any]]:
                         "path": "%s/%s/%s" % (dname, gname, mname),
                         "records": int(cv.get("count") or 0),
                     })
-    _GB_SHELF = rows
+    _GB_SHELF = rows if rows else None   # 取数失败不缓存空货架（同 `_city_names`）
     return rows
 
 
@@ -1035,8 +1111,9 @@ def _seg_patterns() -> List[Tuple[str, str]]:
         for w in _cap_term_index():
             if len(w) >= 2 and _is_cjk(w):
                 pats.setdefault(w, "cap")
-        _SEG_PATTERNS = sorted(pats.items(), key=lambda x: -len(x[0]))
-    return _SEG_PATTERNS
+        # 全空说明取数链路整个挂了：不缓存，否则词条切分此后永久失效
+        _SEG_PATTERNS = sorted(pats.items(), key=lambda x: -len(x[0])) if pats else None
+    return _SEG_PATTERNS or []
 
 
 def _segment_terms(text: str) -> List[Tuple[str, str]]:
@@ -1552,16 +1629,21 @@ _cap_index_cache: Optional[Dict[str, Any]] = None
 
 def _load_cap_index() -> Optional[Dict[str, Any]]:
     """skills/registry/index/cap.json —— 发布产物（与 city.json 同构）：
-    {terms:{code:词面串}, shards:{code:{shard_name:count}}}。"""
+    {terms:{code:词面串}, shards:{code:{shard_name:count}}}。
+
+    ⚠ 与 `_city_names` 同一类坑：取不到时若把 `{}` 写进缓存，此后整个进程的
+    能力（工艺/技术标签）召回全部失效，而且返回值看着「正常」（只是永远没命中）。
+    """
     global _cap_index_cache
     if _cache_stale(_cap_index_cache, "skills/registry/index/cap.json"):
         txt = _index_text("skills/registry/index/cap.json")
-        try:
-            _cap_index_cache = (json.loads(txt) if txt else {},
-                               time.time(), _wt_mtime("skills/registry/index/cap.json"))
-        except Exception:
-            _cap_index_cache = ({}, time.time(), _wt_mtime("skills/registry/index/cap.json"))
-    return _cap_index_cache[0]
+        if txt:
+            try:
+                _cap_index_cache = (json.loads(txt), time.time(),
+                                    _wt_mtime("skills/registry/index/cap.json"))
+            except Exception:
+                pass          # 半成品 → 不缓存，下次重取
+    return _cap_index_cache[0] if _cap_index_cache else None
 
 
 def _cap_term_index() -> Dict[str, List[str]]:
@@ -1946,8 +2028,10 @@ def _name_gb_index() -> Dict[str, str]:
                         m[i] = o.get("gb") or ""
         except Exception:
             m = {}
-        _name_gb_slot = (m, time.time(), _wt_mtime("data/name-index.jsonl"))
-    return _name_gb_slot[0]
+        # 同 `_city_names`：取数失败不写缓存（否则整个进程的 gb 精确解析全废）
+        if m:
+            _name_gb_slot = (m, time.time(), _wt_mtime("data/name-index.jsonl"))
+    return _name_gb_slot[0] if _name_gb_slot else {}
 
 
 def _read_fp_shard(s: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -2104,10 +2188,32 @@ def _build_fp_index() -> List[Dict[str, Any]]:
             return recs
     # fallback：逐分片读取（HTTP 模式，或 git archive 异常时）
     recs = []
-    # git show / HTTP GET 均为 I/O 密集，线程池并发拉取可大幅缩短首次构建耗时
-    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
-        for part in ex.map(_read_fp_shard, fp_shards):
-            recs.extend(part)
+    # git show / HTTP GET 均为 I/O 密集，线程池并发拉取可大幅缩短首次构建耗时。
+    # 分批 + 失败过半即停（2026-10-24）：全量回退是 467 个分片，若故障是系统性的
+    # （401/429/断网），挨个试完只会把一次失败放大成几百次重试 —— 实测 479 次
+    # 请求、累计 2258s 才返回 0 条，用户只看到「卡住然后没有结果」。
+    _BATCH = 16
+    _tried = 0
+    _ok = 0
+    _aborted = False
+    with concurrent.futures.ThreadPoolExecutor(max_workers=_BATCH) as ex:
+        for _i in range(0, len(fp_shards), _BATCH):
+            _chunk = fp_shards[_i:_i + _BATCH]
+            _parts = list(ex.map(_read_fp_shard, _chunk))
+            _tried += len(_chunk)
+            _ok += sum(1 for _p in _parts if _p)
+            for _p in _parts:
+                recs.extend(_p)
+            if _tried >= 32 and _tried < len(fp_shards) and _ok * 2 < _tried:
+                _aborted = True
+                _FETCH_ABORTED[0] = (
+                    "取数失败过半（%d 个分片仅 %d 个读到），已中止剩余 %d 个"
+                    % (_tried, _ok, len(fp_shards) - _tried))
+                break
+    if _aborted:
+        # ⚠ 绝不能把残缺结果写进 `_fp_index` / 磁盘缓存：那一层是**进程级**缓存，
+        #   写进去等于让后续每一次查询都拿半份数据，直到重启。
+        return recs
     if wt and REPO:
         recs = _merge_worktree_fp(recs)
     _fp_index = recs
@@ -2142,15 +2248,17 @@ def _cap_term_of(code: str) -> str:
     """
     global _CAP_TERMS_SLOT
     if _cache_stale(_CAP_TERMS_SLOT, "skills/registry/index/cap.json"):
-        terms: Dict[str, Any] = {}
         try:
             txt = _index_text("skills/registry/index/cap.json")
             if txt:
                 terms = (json.loads(txt).get("terms") or {})
+                if terms:     # 取数失败/空表不写缓存（同 `_city_names`）
+                    _CAP_TERMS_SLOT = (terms, time.time(),
+                                       _wt_mtime("skills/registry/index/cap.json"))
         except Exception:
-            terms = {}
-        _CAP_TERMS_SLOT = (terms, time.time(), _wt_mtime("skills/registry/index/cap.json"))
-    return str(_CAP_TERMS_SLOT[0].get(code) or code or "")
+            pass
+    terms_now = _CAP_TERMS_SLOT[0] if _CAP_TERMS_SLOT else {}
+    return str(terms_now.get(code) or code or "")
 
 
 def _hay_parts(rec: Dict[str, Any], with_cap: bool) -> str:
@@ -2578,10 +2686,31 @@ def _read_many_text(paths: List[str]) -> Dict[str, str]:
     def _one(p: str) -> Optional[str]:
         return _ctx.copy().run(_shard_text, p)   # 每个任务一份副本，可并发进入
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as ex:
-        for path, txt in zip(paths, ex.map(_one, paths)):
-            if txt:
-                out[path] = txt
+    # 分批提交 + **快速放弃**（2026-10-24）。
+    # 为什么必须分批：全量回退最多要拉 467 个分片。若失败是**系统性**的
+    # （断网、代理死、身份 401、429 限流），挨个试完只是把「一次失败」放大成
+    # 几百次重试 —— 用户侧看到的就是「工具卡了 100~300 秒然后返回 0 条」，
+    # 而且完全不知道是真没有这家企业还是取数挂了。实测过一次 479 次请求
+    # 累计 2258s 才返回 0 条。
+    # 判据：跑满 32 个后统计**失败占比**，超过一半就停 —— 此时哪怕剩下的全成功，
+    # 结果也已经残缺不全，继续拉没有意义，不如把故障如实报给调用方。
+    _BATCH = 16
+    _tried = 0
+    _ok = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=_BATCH) as ex:
+        for _i in range(0, len(paths), _BATCH):
+            _chunk = paths[_i:_i + _BATCH]
+            _got = list(ex.map(_one, _chunk))
+            _tried += len(_chunk)
+            _ok += sum(1 for _t in _got if _t)
+            for _p, _t in zip(_chunk, _got):
+                if _t:
+                    out[_p] = _t
+            if _tried >= 32 and _tried < len(paths) and _ok * 2 < _tried:
+                _FETCH_ABORTED[0] = (
+                    "取数失败过半（%d 个中仅 %d 个成功），已中止剩余 %d 个分片"
+                    % (_tried, _ok, len(paths) - _tried))
+                break
     return out
 
 
@@ -2660,18 +2789,27 @@ _city_names_cache: Optional[set] = None
 
 
 def _city_names() -> set:
-    """预构建索引里出现过的城市名集合：地区词不作为相关性证据（只作筛选偏好）。"""
+    """预构建索引里出现过的城市名集合：地区词不作为相关性证据（只作筛选偏好）。
+
+    ⚠ 取数失败**绝不可**把空集写进缓存（2026-10-24 修）。原实现 `if txt:` 不成立时
+    仍然写 `(set(), ...)`，而 `_cache_stale` 只认 `value is None`，于是**一次**网络
+    抖动/401 就会让这个进程此后**所有**查询都拿不到城市表：
+    城市抽不出来 → 「贵阳肠旺面」不再拆成 city=贵阳 + 关键词=肠旺面，整句被当成
+    一个 token → 候选分片从 4 个掉到 1 个、结果从 21 条掉到 3 条，且**没有任何报错**。
+    实测复现过：同一台机器同一份代码，冷启动首次查询正常、偶发一次就只有 3 条。
+    """
     global _city_names_cache
     if _cache_stale(_city_names_cache, INDEX_DIR + "/city.json"):
-        names: set = set()
         txt = _index_text(INDEX_DIR + "/city.json")
         if txt:
             try:
                 names = set(json.loads(txt).keys())
             except Exception:
-                names = set()
-        _city_names_cache = (names, time.time(), _wt_mtime(INDEX_DIR + "/city.json"))
-    return _city_names_cache[0]
+                names = None      # 半成品/损坏 → 不缓存，下次重取
+            if names:
+                _city_names_cache = (names, time.time(),
+                                     _wt_mtime(INDEX_DIR + "/city.json"))
+    return _city_names_cache[0] if _city_names_cache else set()
 
 
 def _is_cjk(s: str) -> bool:
@@ -2911,13 +3049,24 @@ def _records_from_paths(paths: List[str]) -> List[Dict[str, Any]]:
     if not paths:
         return out
     todo: List[str] = []
+    _seen_path: set = set()
     for p in paths:
+        if p in _seen_path:      # 同一次调用里重复的路径只读一次
+            continue
+        _seen_path.add(p)
         m = _wt_mtime(p)
         slot = _shard_rec_cache.get(p)
         if slot is not None and (m is None or slot[0] == m):
             continue
         todo.append(p)
-        _shard_rec_cache[p] = (m, [])
+        # ⚠ 这里**不能**先写 `(m, [])` 占位（2026-10-24 修）。
+        #   tool 调用改成并发处理后（见 main()），占位会被**另一个线程**当成
+        #   「已缓存、内容为空」跳过 → 该分片的记录整体丢失。症状是并发跑两个
+        #   检索时结果变少（实测「贵阳肠旺面」21 条 → 3 条），而串行时永远正常，
+        #   极难复现。去掉占位后：读失败也不会把空结果写进缓存（下次还会重试），
+        #   代价只是并发撞同一分片时多拉一次。另外下方 `_read_many_text` 本身
+        #   已按内容哈希缓存，重复拉取通常连网络都不走。
+        # 缓存只在**读成功之后**写入（见下方赋值处）。
     for _path, txt in _read_many_text(todo).items():
         recs: List[Dict[str, Any]] = []
         for line in txt.splitlines():
@@ -3132,6 +3281,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             "shards_scanned": 0,
             "via_index": True,
             "results": [],
+            **_fetch_warn(0),   # 索引桶取数失败也会让候选为空，别把故障说成「没有」
             **parsed,
         }, q, city)
 
@@ -3303,6 +3453,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         "shards_scanned": scanned,
         "via_index": via_index,
         **({"via_index_reason": _index_reason()} if not via_index else {}),
+        # 0 条 ≠ 没有这家企业（2026-10-24）：取数整体失败时也是 0 条，而返回体
+        # 原本没有任何字段能区分两者 —— 用户会得出「数据里没有」的错误结论。
+        **_fetch_warn(records_total),
         "results": page,
         **parsed,
         **pmeta,
@@ -4002,6 +4155,9 @@ def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
     回填，供**后续**请求带上（一次检索的头几个请求因此没有 hits 列，属正常）。
     """
     args = args or {}
+    # 每次调用重置「取数失败原因」，避免上一次的超时/401 文案串到这一次的正常结果上
+    _HTTP_LAST_ERROR[0] = ""
+    _FETCH_ABORTED[0] = ""
     # op = 本次 tool 调用的唯一 id，服务端按它去重计配额。
     # 必须**每次调用新生成**：复用同一个 op 会被服务端的「单 op 路径上限」拦住
     # （一次检索横跨上百个分片是正常的，但同一个 op 不该无限扩）。
@@ -4079,9 +4235,16 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
     return {"error": f"未知 tool: {name}"}
 
 
+_SEND_LOCK = threading.Lock()
+
+
 def _send(obj: Dict[str, Any]) -> None:
-    sys.stdout.write(json.dumps(obj, ensure_ascii=False) + "\n")
-    sys.stdout.flush()
+    # 并发处理 tool 调用后，stdout 是**多线程共享**资源：整行必须一次写完，
+    # 否则两条响应会交错成一行非法 JSON，客户端直接判定协议错误。
+    line = json.dumps(obj, ensure_ascii=False) + "\n"
+    with _SEND_LOCK:
+        sys.stdout.write(line)
+        sys.stdout.flush()
 
 
 def _log(msg: str) -> None:
@@ -4121,6 +4284,39 @@ def _maybe_spawn_selfupdate() -> None:
         pass
 
 
+def _serve_tool_call(params: Dict[str, Any], mid: Any) -> None:
+    """在工作线程里跑一次 tools/call，并**保证**回一条响应（含异常路径）。
+
+    必须做成独立函数而不是就地 try：`_dispatch` 会重新抛业务异常，若异常发生在
+    线程里又没人接，客户端会永远等这个 id（表现为工具「假死」）。
+    """
+    name = (params or {}).get("name", "")
+    try:
+        res = _dispatch(name, (params or {}).get("arguments") or {})
+        payload = {
+            "jsonrpc": "2.0", "id": mid,
+            "result": {
+                "content": [{"type": "text", "text": json.dumps(res, ensure_ascii=False)}],
+                "isError": isinstance(res, dict) and "error" in res,
+            },
+        }
+    except BaseException as e:      # noqa: BLE001 —— 线程里必须兜住一切
+        payload = {
+            "jsonrpc": "2.0", "id": mid,
+            "result": {
+                "content": [{"type": "text", "text": json.dumps(
+                    {"error": {"code": "internal", "tool": name,
+                               "message": "%s: %s" % (type(e).__name__, e)}},
+                    ensure_ascii=False)}],
+                "isError": True,
+            },
+        }
+    try:
+        _send(payload)
+    except Exception:
+        pass
+
+
 def main() -> None:
     _log(f"start; source={BEACON_SOURCE} repo={REPO or '(http)'}")
     _maybe_spawn_selfupdate()
@@ -4132,46 +4328,53 @@ def main() -> None:
         identity.warmup()
     except Exception:
         pass
-    for raw in sys.stdin:
-        raw = raw.strip()
-        if not raw:
-            continue
-        try:
-            msg = json.loads(raw)
-        except Exception:
-            continue
-        method = msg.get("method")
-        mid = msg.get("id")
-        if method == "initialize":
-            _send({
-                "jsonrpc": "2.0", "id": mid,
-                "result": {
-                    "protocolVersion": "2024-11-05",
-                    "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "beacon-mfg-readonly", "version": _pkg_version()},
-                },
-            })
-        elif method == "notifications/initialized":
-            continue  # 通知无需回复
-        elif method == "ping":
-            _send({"jsonrpc": "2.0", "id": mid, "result": {}})
-        elif method == "tools/list":
-            _send({"jsonrpc": "2.0", "id": mid, "result": {"tools": TOOLS}})
-        elif method == "tools/call":
-            params = msg.get("params", {})
-            name = params.get("name", "")
-            res = _dispatch(name, params.get("arguments", {}))
-            _send({
-                "jsonrpc": "2.0", "id": mid,
-                "result": {
-                    "content": [{"type": "text", "text": json.dumps(res, ensure_ascii=False)}],
-                    "isError": "error" in res,
-                },
-            })
-        else:
-            # 未知方法：若有 id 则回空结果，通知则忽略
-            if mid is not None:
+    # ⚠ 读循环与 tool 执行必须**解耦**（2026-10-24）：
+    #   原来 `for raw in sys.stdin` 里直接同步跑 _dispatch，是严格串行 ——
+    #   一个慢检索（冷缓存扫全库 / 网络抖动）会把后面**所有**调用堵住，
+    #   连 `account`、`ping` 这种本该立刻返回的也要排队到客户端超时；
+    #   更糟的是客户端超时后不再读管道，服务端写 stdout 会被阻塞，
+    #   进程从此「假死」，只能被杀。改为：协议类方法就地处理（极快、保序），
+    #   只有 tools/call 丢进小线程池，响应按 JSON-RPC 的 id 匹配、允许乱序。
+    _pool: Optional[concurrent.futures.ThreadPoolExecutor] = None
+    try:
+        for raw in sys.stdin:
+            raw = raw.strip()
+            if not raw:
+                continue
+            try:
+                msg = json.loads(raw)
+            except Exception:
+                continue
+            method = msg.get("method")
+            mid = msg.get("id")
+            if method == "initialize":
+                _send({
+                    "jsonrpc": "2.0", "id": mid,
+                    "result": {
+                        "protocolVersion": "2024-11-05",
+                        "capabilities": {"tools": {}},
+                        "serverInfo": {"name": "beacon-mfg-readonly", "version": _pkg_version()},
+                    },
+                })
+            elif method == "notifications/initialized":
+                continue  # 通知无需回复
+            elif method == "ping":
                 _send({"jsonrpc": "2.0", "id": mid, "result": {}})
+            elif method == "tools/list":
+                _send({"jsonrpc": "2.0", "id": mid, "result": {"tools": TOOLS}})
+            elif method == "tools/call":
+                if _pool is None:
+                    _pool = concurrent.futures.ThreadPoolExecutor(
+                        max_workers=3, thread_name_prefix="beacon-tool")
+                _pool.submit(_serve_tool_call, msg.get("params", {}), mid)
+            else:
+                # 未知方法：若有 id 则回空结果，通知则忽略
+                if mid is not None:
+                    _send({"jsonrpc": "2.0", "id": mid, "result": {}})
+    finally:
+        # stdin 关闭后必须等在飞的调用写完再退，否则最后一条响应会丢
+        if _pool is not None:
+            _pool.shutdown(wait=True)
 
 
 # --------------------------------------------------------------------------- #
