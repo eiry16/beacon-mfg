@@ -414,6 +414,30 @@ def _header_value(v: Any) -> str:
         return urllib.parse.quote(s, safe=",._-")
 
 
+def _quote_path(relpath: str) -> str:
+    """把可能含非 ASCII 的相对路径转成**可放进 HTTP 请求行**的 ASCII 串。
+
+    ⚠ 这是与 `_header_value()` 并列的**第二处编码边界**，漏了同样致命：
+    `http.client` 组装请求行时按 `'ascii'` 编码，路径里出现原始 UTF-8 字节
+    就在**建连之前**抛 `UnicodeEncodeError: 'ascii' codec can't encode ...`。
+
+    2026-10-24 实测路径：`_city_postings()` 拼 `skills/registry/index/city/贵阳.json`，
+    城市名是发布侧的**原始中文文件名**（391 个城市全是中文名，没有哈希化）——
+    中文城市 + 冷缓存首个查询必定在这一跳失败。
+
+    为什么不在 `_city_postings()` 里就地 quote：`fetch_text()` 会**先用 relpath
+    读本地工作树/dirgit HEAD**（本地仓库模式），把 relpath 提前编码会让本地读
+    全部落空。所以编码只发生在「真正要发 HTTP」这一层，relpath 本身保持原样。
+
+    只对含非 ASCII 的路径处理：纯 ASCII 路径（绝大多数分片、索引桶）走原样，
+    零行为变化，也不会把已带 `%` 的路径二次编码。
+    """
+    if relpath.isascii():
+        return relpath
+    return urllib.parse.quote(relpath, safe="/")
+
+
+
 def _beacon_headers() -> Dict[str, str]:
     """随请求带出的头。
 
@@ -568,8 +592,16 @@ def _http_diagnose(relpath: str, last_err: str = "") -> str:
     网络不可达」，而 1.4.x～1.11.0 的真实故障是请求头里的中文 token 触发
     `UnicodeEncodeError` —— 让人白去查代理/VPN（2026-10-24 用户实测反馈）。
     """
-    # 请求头编码问题：与网络、代理、CDN 全都无关，必须单独说清楚。
+    # 编码问题：与网络、代理、CDN 全都无关，必须单独说清楚。
+    # 且必须区分错在**请求行(URL)还是请求头**——两者排查方向完全不同：
+    #   'ascii' codec  → 路径里混进了非 ASCII（如 city/贵阳.json）
+    #   'latin-1' codec → 请求头里混进了非 ASCII（如 X-Beacon-Tokens: 海伦）
+    # 早期把两者都写成「请求头」，用户按那个方向去查会一无所获（2026-10-24 反馈）。
     if "UnicodeEncodeError" in last_err or "latin-1" in last_err:
+        if "'ascii'" in last_err:
+            return ("请求路径 `%s` 含非 ASCII 字符，无法编码成 HTTP 请求行"
+                    "（**本地编码问题，不是网络问题**）；最后错误: %s"
+                    % (relpath, last_err))
         return ("请求头包含非 ASCII 字符，无法编码成 HTTP 头（**本地编码问题，"
                 "不是网络问题**）；最后错误: " + last_err)
     hints = []
@@ -626,7 +658,7 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
     last_err = ""
     _fatal = False
     for base in _http_bases():
-        url = base + "/" + relpath
+        url = base + "/" + _quote_path(relpath)
         cap = _cache_path(url)
         etag = None
         if os.path.exists(cap):
@@ -2946,6 +2978,7 @@ def _city_postings(city: str) -> Optional[Dict[str, int]]:
     if not city:
         return {}
     safe = city.replace("/", "").replace("\\", "")
+    err_before = _HTTP_LAST_ERROR[0]          # 记住进入前的错误，供兜底成功后撤销
     txt = _index_text(INDEX_DIR + "/city/" + safe + ".json")
     if txt:
         try:
@@ -2957,6 +2990,13 @@ def _city_postings(city: str) -> Optional[Dict[str, int]]:
     txt = _index_text(INDEX_DIR + "/city.json")
     if not txt:
         return None
+    # 走到这里说明**全表兜底取到了**。单城文件只是「省流量」的可选快路径，
+    # 它失败（4xx / 编码错误 / 该城市无文件）不影响结果完整性 —— 所以不能让它
+    # 冒到 `fetch_error` 里。实测代价：0 条结果时返回体夹一条「请求头编码错误」，
+    # 调用方会判定「工具坏了」，而真实结论只是「库里确实没有这家企业」。
+    # 只撤销**本函数内新产生**的错误，外层（manifest / 分片哈希不符）照旧保留。
+    if _HTTP_LAST_ERROR[0] != err_before:
+        _HTTP_LAST_ERROR[0] = err_before
     try:
         full = json.loads(txt)
     except Exception:
