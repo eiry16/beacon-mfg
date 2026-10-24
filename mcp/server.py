@@ -509,6 +509,10 @@ def _detect_repo() -> Optional[str]:
         out = subprocess.run(
             ["git", "rev-parse", "--show-toplevel"],
             capture_output=True, text=True, cwd=os.getcwd(),
+            # 2026-10-25 fix：**绝不继承父进程的 stdio**。stdio MCP 的 stdin 是
+            # JSON-RPC 管道，git（及其 sh.exe 孙进程）继承该句柄后 communicate()
+            # 会永远等不到 EOF → tool 调用整体挂死（Windows 上实测必现）。
+            stdin=subprocess.DEVNULL, timeout=10,
         )
         if out.returncode == 0:
             repo = out.stdout.strip()
@@ -536,6 +540,7 @@ def _git_show(relpath: str) -> Optional[str]:
         r = subprocess.run(
             ["git", "-C", REPO, "show", "HEAD:" + relpath],
             capture_output=True, text=True,
+            stdin=subprocess.DEVNULL, timeout=20,   # 同上：不继承 stdio，且必须限时
         )
         if r.returncode == 0 and r.stdout:
             return r.stdout
@@ -1837,7 +1842,12 @@ def _head_sha() -> Optional[str]:
         return None
     try:
         r = subprocess.run(["git", "-C", REPO, "rev-parse", "HEAD"],
-                           capture_output=True, text=True)
+                           capture_output=True, text=True,
+                           # 2026-10-25 fix：这条在 `_data_version()` 热路径上，
+                           # 每个 tool 调用都会经过。不指定 stdin 会让 git 继承
+                           # stdio MCP 的 JSON-RPC 管道 → communicate() 死等 →
+                           # 所有工具「假死」（1.11.2 实测）。必须 DEVNULL + 限时。
+                           stdin=subprocess.DEVNULL, timeout=10)
         if r.returncode == 0 and r.stdout.strip():
             return r.stdout.strip()
     except Exception:
@@ -2097,6 +2107,7 @@ def _build_fp_index_via_archive() -> Optional[List[Dict[str, Any]]]:
         r = subprocess.run(
             ["git", "-C", REPO, "archive", "HEAD", "--", d],
             capture_output=True,
+            stdin=subprocess.DEVNULL, timeout=120,   # 同上：不继承 stdio，且必须限时
         )
         if r.returncode != 0 or not r.stdout:
             return None
@@ -2652,7 +2663,8 @@ def _git_read_many(paths: List[str]) -> Dict[str, str]:
         return {}
     try:
         r = subprocess.run(["git", "-C", REPO, "archive", "HEAD", "--", *paths],
-                           capture_output=True)
+                           capture_output=True,
+                           stdin=subprocess.DEVNULL, timeout=120)  # 同上：不继承 stdio
         if r.returncode != 0 or not r.stdout:
             return {}
         out: Dict[str, str] = {}
