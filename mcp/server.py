@@ -216,11 +216,11 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 配置
 # --------------------------------------------------------------------------- #
 # 版本号单一来源：同目录 package.json（npm 发布包的 version）。
-# 全项目所有版本号（MCP / HTTP 服务 / Python API / Agent Skill / Android APK）
+# 全项目所有版本号（MCP / HTTP 服务 / Python API / Android APK）
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.0"
+VERSION_FALLBACK = "1.11.1"
 
 
 def _pkg_version() -> str:
