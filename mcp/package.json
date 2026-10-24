@@ -36,8 +36,7 @@
     "bin/",
     "rfq-kernel/",
     "copy-rfk.js",
-    "README.md",
-    "RELEASE.md"
+    "README.md"
   ],
   "scripts": {
     "prepack": "node copy-rfk.js"

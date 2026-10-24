@@ -43,21 +43,12 @@ npx beacon-mfg-mcp logout     # 解绑本机令牌
 
 ## 搜索语义
 
-**`query` 直接传用户原话即可**，不必自己拆词。服务端会先归一化：
-
-1. **抽城市** —— 「找一下**苏州**做AI的企业」→ `city=苏州`，城市词不再参与关键词匹配；
-2. **剔填充词** —— 的 / 找 / 一下 / 企业 / 有没有 …；
-3. **认词条** —— 国标别名 / 国标类名 / **能力词**（如 AI·人工智能·机器学习·大模型）→ 走定向召回；
-4. 剩下的部分才作为通用关键词做 **AND** 匹配。
-
-返回体用 `query_parsed` 回显解析结果（抽走了哪个城市、剔了哪些词、认出了哪些词条），
-便于调用方判断「命中少」到底是没这类企业、还是这句话没被读懂。
-
-**结果顺序**：`results` 先按**召回来源**分档（`via=text` 字面命中 → `via=cap_text` 只撞能力词面
-→ `via=alias` 别名定向 → `via=cap` 能力定向），**同一档内**再按「关键词在**厂名**里成片出现」优先。
+**`query` 直接传用户原话即可**，不必自己拆词。服务端会自动抽城市、剔填充词，
+并识别国标别名 / 类名 / 能力词。返回体的 `query_parsed` 回显解析结果，
+`suggested_gb`（或 `hint`）给出候选国标码。
 
 > `score` 是**能力画像分**（有已发布能力卡才有分，无卡为 0），**不是相关度**，不要拿它反推排序；
-> 返回体的 `order_note` 里写死了这个口径。
+> 排序口径见返回体里的 `order_note`。
 
 **遇到生词（命中很少）怎么办**：`query` 是字面子串匹配，而名录按国标小类归档 ——
 客户说「机加工」，库里写的是「机械零部件加工」，字面不通。
@@ -112,21 +103,7 @@ npm i -g beacon-mfg-mcp
 
 不填 `BEACON_REPO` 时默认走 `https://beacon-mfg.pages.dev`，即开即用。
 
-### 方式二 · 本地 git 仓库（离线可用）
-
-```jsonc
-{
-  "mcpServers": {
-    "beacon-mfg": {
-      "command": "python",
-      "args": ["/绝对路径/到/beacon-mfg/mcp/server.py"],
-      "env": { "BEACON_REPO": "/绝对路径/到/beacon-mfg" }
-    }
-  }
-}
-```
-
-### 方式三 · 远程 HTTP 端点（Streamable HTTP）
+### 方式二 · 远程 HTTP 端点（Streamable HTTP）
 
 `server.py` 本体是 stdio；`http_server.py` 是它的 HTTP 传输适配层（同一套业务逻辑）。
 
@@ -142,7 +119,7 @@ MCP_PORT=8787 python http_server.py      # 默认 0.0.0.0:8787，端点 /mcp，�
 
 | 变量 | 作用 |
 |---|---|
-| `BEACON_REPO` | 指定本地仓库根，改走本地只读模式（离线可用） |
+| `BEACON_REPO` | 指定含 `data/` 的本地目录，改走本地只读模式（维护者用，分发仓库不含数据） |
 | `BEACON_SOURCE` | 覆盖默认数据源基址（HTTP 模式） |
 | `BEACON_MIRRORS` | 追加备用基址（逗号分隔），主源不可达时自动回退 |
 | `BEACON_MASK_PHONE` | 置 `1` 时对手机号隐私处理输出 |
@@ -154,4 +131,4 @@ MCP_PORT=8787 python http_server.py      # 默认 0.0.0.0:8787，端点 /mcp，�
 - **npm**：`beacon-mfg-mcp`（<https://www.npmjs.com/package/beacon-mfg-mcp>）
 - **GitHub Release**：<https://github.com/eiry16/beacon-mfg/releases>（`mcp-v*` 标签）
 
-变更说明见本目录 `RELEASE.md`。
+版本变更见 GitHub Releases 页面。

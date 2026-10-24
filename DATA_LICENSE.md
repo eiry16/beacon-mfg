@@ -1,12 +1,7 @@
 # 数据许可（CC BY 4.0）
 
-本仓库 `data/` 目录下的全部数据（含结构化供应商名录）采用
-**Creative Commons Attribution 4.0 International (CC BY 4.0)** 许可。
-
-> **变更记录（2026-09-07）**：本许可由 CC BY-NC 4.0 变更为 CC BY 4.0，
-> 移除了「禁止商业使用」条款。原因是 NC 条款与本项目的供应商付费认主、
-> 认证服务等商业形态直接冲突，也与「让尽可能多的 Agent 自由使用名录」
-> 的分发目标相悖。
+BeaconMFG 提供的供应商名录数据（由 <https://beacon-mfg.pages.dev> 分发，不随代码仓库提供）
+采用 **Creative Commons Attribution 4.0 International (CC BY 4.0)** 许可。
 
 ## 你可以
 
@@ -35,13 +30,12 @@
 
 ## 关于供应商提交内容
 
-供应商认领后自行提交的能力数据（`skills/vendors/*/capability.json` 中
-`provenance` 为 `vendor` 或 `claimed` 的字段）版权归供应商所有，
-供应商在提交时授予本项目及使用者在 CC BY 4.0 下使用的权利。
+供应商认领后自行提交的能力数据（`provenance` 为 `vendor` 或 `claimed` 的字段）
+版权归供应商所有，供应商在提交时授予本项目及使用者在 CC BY 4.0 下使用的权利。
 
 由平台从公开信息自动整理、未经供应商认领的内容（`provenance` 为 `auto`）
-同样适用本许可，且**不作任何准确性保证**——详见各文件的「信息可信度」标注。
+同样适用本许可，且**不作任何准确性保证**。
 
 ---
 
-代码部分（`scripts/`、`schema/`、`docs/`、`SKILL.md` 等）采用 MIT 许可，见 `LICENSE`。
+代码部分（`mcp/`、`skills/rfq-kernel/`）采用 MIT 许可，见 `LICENSE`。

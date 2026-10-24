@@ -1,182 +1,71 @@
+# ---------------------------------------------------------------------------
+# 本仓库定位：MCP 分发入口
+#   入库 = 运行 MCP 必需的代码 + 许可声明 + 用户接入说明
+#   数据面（data/、skills/registry/）由 https://beacon-mfg.pages.dev 提供，不入库
+#   设计文档、采集流水线、App/控制台源码一律留在本地，不入库
+# ---------------------------------------------------------------------------
+
+# 数据面（运行时从远端拉，仓库只做分发）
+data/
+skills/registry/
+skills/vendors/
+cache/
+
+# 非分发面源码与文档
+scripts/
+server/
+pages/
+APK/
+docs/
+agent-skill/
+schema/
+templates/
+skills/profiles/
+skills/_vendors_backup_*/
+# npm prepack 时把 skills/rfq-kernel 拷进 mcp/rfq-kernel，属派生副本
+mcp/rfq-kernel/
+
 # 敏感信息
 .env
-.env.bak*
-.env.local
-.env.*.local
+.env.*
 secrets/
+*.pem
+*.p12
 
 # Python
 __pycache__/
 *.py[cod]
-*.egg-info/
 .venv/
 venv/
 
-
-# ---------------------------------------------------------------------------
-# 仓库边界：只放对外消费必需的内容（MCP 服务 + 只读数据面 + 对外入口）
-# ---------------------------------------------------------------------------
-scripts/
-APK/
-pages/
-server/
-skills/profiles/
-skills/schema/
-skills/TEMPLATE.md
-skills/README.md
-skills/registry/index.json
-skills/registry/gb-proc-map.json
-skills/registry/category-conflicts.json
-SKILLHUB_SUBMISSION.md
-data/fetch_cursor.json
-data/district_cache.json
-data/name-index.jsonl
-# 原始归档与英文镜像：MCP 运行时**不读**这两层（它只读 skills/registry/ 的
-# 派生索引与 data/*.json 索引），而这两层合计 446MB、每次采集全量变动。
-# 2026-10-23 起只留本地，由维护者自行备份；仓库只保留 MCP 跑起来必需的部分。
-data/gb/
-data/en/
-# 2026-10-23 回滚用的工作树快照（全号原值，绝不能入库）
-data/_gb_pruned_*/
-data/_en_pruned_*/
-_archive/
+# CI：只保留两个发布 workflow
 .github/*
 !.github/workflows/
+.github/workflows/*
 !.github/workflows/mcp-release.yml
 !.github/workflows/npm-publish.yml
-.github/workflows/release.yml
-.github/workflows/validate.yml
-.workbuddy/
-/examples/
-CRON_*.md
-.env.example
 
-# ---------------------------------------------------------------------------
-# docs/ 只发布落地页
-# ---------------------------------------------------------------------------
-docs/*
-!docs/index.html
+# 本地运维与内部文件
+SKILLHUB_SUBMISSION.md
+项目调试说明.md
+cron_manager.*
+start_cron_manager.bat
+examples/
+skills/README.md
+skills/TEMPLATE.md
+mcp/test_*.py
+mcp/test_update.js
 
-# ---------------------------------------------------------------------------
-# 临时文件与本地产物
-# ---------------------------------------------------------------------------
+# 本地产物与临时文件
+*.log
+*.apk
+*.lnk
+dist/
+.wrangler/
 _backup/
-_depgraph.py
-_leak_scan.txt
-_r2_stale.txt
-_r2refresh*.log
-_r2verify*.log
-_r2_inventory*
-_build_precheck.log
-_mcp_smoke.py
-_patch_*.py
-_gitignore_newblock.txt
+_archive/
+.workbuddy/
 
 # OS
 .DS_Store
 Thumbs.db
-
-# ---------------------------------------------------------------------------
-# 私有层：不进 Git
-# ---------------------------------------------------------------------------
-run_fetch.ps1
-run_validate.ps1
-fetch_log.txt
-docs/API_RANKING_AUTH_DESIGN.md
-docs/fix_doc_number_drift_*.md
-docs/PROPOSAL_V2_COMMERCIAL.md
-docs/PROPOSAL_VENDOR_SKILL.md
-docs/PROPOSAL_A2A_OUTBOUND.md
-docs/prototype/
-
-# ---------------------------------------------------------------------------
-# Skill 分层存储：L0 指纹入库；L1 能力卡 / L2 自述走云端按需拉取
-# ---------------------------------------------------------------------------
-skills/vendors/*/SKILL.md
-skills/vendors/*/capability.json
-skills/vendors/*/assets/
-skills/registry/capability/
-skills/_vendors_backup_*/
-skills/_keep_sample/
-skills/vendors/*/*.bak-*
-skills/registry/fingerprint/**/*.bak-*
-# 例外：保留 1 家样板进 Git，作为「标准长什么样」的参考
-!skills/vendors/CN-MFG-0000005/SKILL.md
-!skills/vendors/CN-MFG-0000005/capability.json
-
-# 运行日志与本地产物
-*.log
-.fetch_batch.lock
-_fixed_*_backup.json
-en_backfill_*
-en_watchdog*
-cjk_fix_*
-dist/
-pages/dist.zip
-.wrangler/
-
-# ---------------------------------------------------------------------------
-# 安卓客户端：整目录不入库
-# ---------------------------------------------------------------------------
-APK/.gradle/
-APK/build/
-APK/app/build/
-APK/local.properties
-APK/app/src/main/assets/
-APK/*.apk
-APK/*.jpg
-APK/build.sh
-APK/docs/
-APK/tools/
-APK/gradle/
-APK/app/src/androidTest/
-
-# Excel 收集模板（由 schema 生成，入库会产生两份真相）
-企业信息收集模板.xlsx
-
-# 本地调试手册 / 回滚快照 / QA 产物
-项目调试说明.md
-.backup_dedup_*/
-*.apk
-QA_*.md
-data/_dedup_removed_ids.json
-
-# ---------------------------------------------------------------------------
-# 富化工作区（含上游原始名录与运行时产物，整体不入库）
-# ---------------------------------------------------------------------------
-data/enrich/
-cron_manager.py
-cron_manager.html
-start_cron_manager.bat
-启动控制台.bat
-.backup_legacy/
-# npm 包构建期把 skills/rfq-kernel 拷进 mcp/rfq-kernel，属派生副本，不入库
-mcp/rfq-kernel/
-
-# 星系页的共现预聚合产物：由 scripts/gen_cooccurrence.py 从 data/gb 全量重算，
-# 每次采集后都会变，入库只会制造 diff 噪音（控制台上有「⟳ 重算数据」按钮）
-data/stats/
-
-# ---------------------------------------------------------------------------
-# 测试脚本与本地产物：不发布、不入库
-# ---------------------------------------------------------------------------
-mcp/test_protocol.py
-mcp/test_search_client.py
-mcp/test_update.js
-# 薄框架对外入口本体入库，挡掉的只有测试目录与打包产物
-agent-skill/tests/
-skills/agent-skill.zip
-
-# 本地桌面快捷方式（本机运维入口）
-*.lnk
-
-# 行政区划表：仅本地控制台使用，不在发布面
-data/admin_divisions.json
-
-# 政府工商名录（体积大 + 含登记信息，不入库）
-# 政府工商名录（体积大 + 含登记信息，不入库）
-# 2026-10-22 起从 data/gov/ 挪到 cache/gov/：data/ 是**发布面**（整体拷进 dist/site），
-# 候选池 140 MiB 会被一起上传，撞 Pages 单文件 25 MiB 上限导致整轮部署失败。
-cache/
-# 上一轮的位置，保留忽略以防旧工作树里还有残留
-data/gov/

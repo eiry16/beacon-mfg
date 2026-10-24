@@ -8,7 +8,7 @@ BeaconMFG 的**需求侧接客引擎**：把客户的自然语言采购需求，
 ## 目录
 
 ```
-skills/寻源内核/
+skills/rfq-kernel/
   SKILL.md                        # agent 侧 skill 说明，含与能力卡的关系
   demo.py                         # 端到端演示（示例场景 + 认证强校验 + 真实卡接入）
   schema/
@@ -49,7 +49,7 @@ skills/寻源内核/
 ## 验证
 
 ```bash
-cd skills/寻源内核 && PYTHONIOENCODING=utf-8 python demo.py
+cd skills/rfq-kernel && PYTHONIOENCODING=utf-8 python demo.py
 ```
 
 预期：示例场景 3 家可承接 / 2 家结构化拒单；认证强校验三档（满足/未核验/缺失）；

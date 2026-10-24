@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-          数据目录-url: "https://数据目录.npmjs.org"
+          registry-url: "https://registry.npmjs.org"
       - name: 发布到 npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

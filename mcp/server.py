@@ -303,14 +303,10 @@ def _cache_stale(slot: tuple, relpath: Optional[str]) -> bool:
     return False
 
 
-# HTTP 基址列表（含兜底镜像）。默认部署 Cloudflare Pages 不可达时，自动回退到
-# GitHub 兜底镜像（与 Android App 同策略：pages.dev 主源 + jsDelivr / raw 镜像），
-# 保证「免 clone 检索」在单一 CDN 抖动/被墙时仍可工作。可用 BEACON_MIRRORS 追加自定义镜像。
+# HTTP 基址列表。默认数据源为 Cloudflare Pages；可用 BEACON_MIRRORS 追加自定义镜像，
+# 主源不可达时按顺序回退。
 def _http_bases() -> List[str]:
     bases = [BEACON_SOURCE]
-    if BEACON_SOURCE == DEFAULT_SOURCE:
-        bases.append("https://cdn.jsdelivr.net/gh/eiry16/beacon-mfg@main")
-        bases.append("https://raw.githubusercontent.com/eiry16/beacon-mfg/main")
     m = os.environ.get("BEACON_MIRRORS")
     if m:
         for x in m.split(","):
@@ -321,7 +317,7 @@ def _http_bases() -> List[str]:
 
 
 # --------------------------------------------------------------------------- #
-# 使用量埋点（设计见 docs/MCP_USAGE_AUDIT.md §3.4 / §4 / §14）
+# 使用量埋点
 # --------------------------------------------------------------------------- #
 # 三条原则，改这里前先读文档：
 #   1. **默认不出网**。本地台账永远只写本地文件；随请求带出去的只有下面四个
@@ -577,7 +573,7 @@ def _decode_body(raw: bytes, resp) -> str:
 
 
 def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
-    """统一的 HTTP 读取：依次尝试 _http_bases() 中的基址（主源 + 兜底镜像），
+    """统一的 HTTP 读取：依次尝试 _http_bases() 中的基址（主源 + 自定义镜像），
     任一成功即返回；全部失败则用本地缓存兜底（保证离线可用）。
 
     连接方式上「直连优先、代理兜底」——避免失效代理把检索整体打挂。

@@ -27,7 +27,8 @@ jobs:
         run: |
           tag="${GITHUB_REF_NAME}"
           tar -czf "beacon-mfg-mcp-${tag}.tar.gz" \
-            -C mcp server.py bin README.md RELEASE.md package.json rfq-kernel
+            -C mcp server.py identity.py http_server.py mcp_adapter.py \
+            bin README.md package.json rfq-kernel
           ls -lh "beacon-mfg-mcp-${tag}.tar.gz"
 
       - name: 创建 GitHub Release 并上传
@@ -37,5 +38,5 @@ jobs:
           tag="${GITHUB_REF_NAME}"
           gh release create "$tag" \
             --title "Beacon-MFG 只读 MCP 服务 ${tag}" \
-            --notes-file mcp/RELEASE.md \
+            --generate-notes \
             "beacon-mfg-mcp-${tag}.tar.gz"
