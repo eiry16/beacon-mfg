@@ -69,3 +69,6 @@ _archive/
 # OS
 .DS_Store
 Thumbs.db
+
+# 本地构建/发布缓存（含一次性日志与临时状态）
+.cache/

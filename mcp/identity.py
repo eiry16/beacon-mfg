@@ -172,13 +172,21 @@ def _post(url: str, payload: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         return None
 
 
-def ensure_token(bases: Optional[list[str]] = None) -> Dict[str, Any]:
+def ensure_token(bases: Optional[list[str]] = None,
+                 force: bool = False) -> Dict[str, Any]:
     """确保有可用令牌。**绝不抛异常、绝不阻塞超过 3 秒。**
 
     返回当前身份状态；拿不到令牌时返回 tier=anon_local，调用方照常继续。
+
+    `force=True`：即使本地令牌"看起来还没过期"也重新换一张。
+    为什么需要它（2026-10-28，C 上线后）：服务端把「有 cid 无令牌」从
+    「按 anon 配额放行」改成「401 identity_unverified」。若本地令牌被服务端
+    作废（改密钥、身份被 suspend、或本地时钟偏快导致提前判 fresh），
+    客户端会一直带着一张服务端不认的令牌重试，而本地 `_is_fresh` 认为它有效 ——
+    表现为"永久 401，且日志显示身份正常"。force 给了唯一的自愈出口。
     """
     d = _load()
-    if _is_fresh(d):
+    if _is_fresh(d) and not force:
         return token_state()
 
     bases = bases or _bases()

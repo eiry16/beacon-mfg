@@ -34,6 +34,7 @@ import os
 import re
 import sys
 import math
+import copy
 import json
 import hashlib
 import concurrent.futures
@@ -90,6 +91,93 @@ try:
     import mcp_bridge as _bridge
 except Exception:  # 桥接缺失/异常 → 降级，MCP 其余 3 个只读 tool 照常
     _bridge = None
+
+# --------------------------------------------------------------------------- #
+# id token（D，2026-10-28）
+#
+# 对外 id 是 HMAC 置换后的 8 字符 token，不是 `CN-MFG-0000163` 这种顺序编号 ——
+# 顺序编号等于「从 1 遍历到 222875 就能把全库重建一遍」。
+#
+# 为什么客户端也要有这份算法：MCP 的检索是**本地**跑的（拉分片、本地打分），
+# 它得把结果里的内部 id 换成 token 才能对外给。算法文件与
+# scripts/vid_token.py **逐字相同**（sync_vid_block.py 维护），密钥来自
+# BEACON_VID_KEY。没有密钥时（npm 客户端默认情况）**不改写** —— 见 has_key()。
+# --------------------------------------------------------------------------- #
+try:
+    from vid_token import (          # 同目录副本（npm 只分发 mcp/）
+        has_key as _vid_has_key,
+        encode_deep as _vid_encode_deep,
+        decode_arg as _vid_decode_arg,
+        vid_secret as _vid_secret,
+    )
+except Exception:                    # 副本缺失 → 退化成「不改写 id」，绝不影响其余功能
+    _vid_has_key = None
+
+# 哪些入参是「供应商 id」。只认这几个键，**不要**把 query/kw 也塞进来：
+# query 是自然语言，里面出现 8 位大写串的概率虽低，但一旦误判就会把
+# 正常检索词当 token 解，解出个不存在的编号去查。
+# ⚠ schema 里实际叫 `id`（get_vendor / get_capability_card 都是），不是 vid ——
+#   漏了 "id" 的表现是「检索正常，点开某家报 找不到 id=<token> 对应的国标码」。
+_VID_IN_ARGS = ("id", "vid", "vendor_id", "supplier_id", "company_id", "card_id")
+
+
+def _vid_ready() -> bool:
+    return bool(_vid_has_key and _vid_has_key())
+
+
+def _vid_remote_data() -> bool:
+    """数据源是远端（HTTP）吗。
+
+    这决定了入参里的 id 要不要解码：
+      · **远端模式**（BEACON_REPO 未设）：拉下来的分片已经 token 化过 ——
+        分片的 `id`、name-index、idmap 的键全都是 token。此时若再解码成
+        内部 id 去查，等于拿内部 id 去查一张 token 键的索引，**必然查不到**
+        （症状：检索正常，点开某家报「找不到 id 对应的国标码」）。
+      · **本地模式**（BEACON_REPO 指向仓库）：读的是仓库里的内部 id，
+        入参的 token 必须解码后才能命中。
+
+    所以：远端模式下 id 一路原样透传，解码只发生在本地模式。
+    """
+    return not REPO
+
+
+def _vid_in(args: Dict[str, Any]) -> Dict[str, Any]:
+    """入参里的 token → 内部 id（仅本地模式需要；远端模式的数据已是 token）。"""
+    if not _vid_ready() or not isinstance(args, dict):
+        return args
+    if _vid_remote_data():
+        return args
+    sec = _vid_secret()
+    out = dict(args)
+    for k in _VID_IN_ARGS:
+        v = out.get(k)
+        if isinstance(v, str) and v:
+            out[k] = _vid_decode_arg(v, sec)
+    return out
+
+
+def _vid_out(res: Any) -> Any:
+    """结果树里的内部 id → token（含路径、正文、嵌套列表）。"""
+    if not _vid_ready() or res is None:
+        return res
+    return _vid_encode_deep(res, _vid_secret())
+
+
+def _vid_url(vid: str) -> str:
+    """拼对外 URL 时用 token，别用内部 id。
+
+    两条路径必须分开看：
+      · **本地逻辑**（分片定址、idmap 查 gb、清单短路）要内部 id —— 分片是按
+        内部 id 命名/分桶的；
+      · **对服务端的 HTTP 请求**要 token —— worker 那边是硬切，裸 id 在
+        BEACON_ID_LEGACY=0 之后一律 404。
+    混用一次的后果是「本机检索正常、点开卡片 404」，而且只在翻旗之后才炸。
+    """
+    if not _vid_ready():
+        return vid
+    from vid_token import encode as _enc
+    return _enc(vid, _vid_secret())
+
 
 _SESSIONS: Dict[str, Any] = {}
 
@@ -220,7 +308,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.2"
+VERSION_FALLBACK = "1.11.4"
 
 
 def _pkg_version() -> str:
@@ -264,6 +352,22 @@ BEACON_CACHE_TTL = float(os.environ.get("BEACON_CACHE_TTL", "0") or "0")
 
 _mtime_cache: Dict[str, tuple] = {}  # relpath -> (checked_at, mtime)，2s 内复用避免热路径狂 stat
 
+# 陈旧判定的节流门。relpath -> (slot_sig, checked_at)，`BEACON_STALE_GATE` 秒内不重判。
+#
+# 为什么必须有：`_cap_term_of()` 在 `_hay_parts()` 里对**每条记录的每个能力键**调用一次，
+# 一次「加工」查询就是 47 万次，每次都进 `_cache_stale()` 去问「cap.json 变了没」。
+# 而一次查询内这些派生文件不可能变 —— 实测这 47 万次 time.time() + dict 查找 + 函数栈
+# 占单次查询耗时的 45%（5 条查询 18.3s → 10.1s）。
+#
+# 为什么不按缓存槽判：`_cap_index_cache` 与 `_CAP_TERMS_SLOT` 共用 cap.json，按槽判会
+# 互相失效。按「文件 + slot 当前签名」判才是正确粒度：签名没变 = 这个槽没被重建过 =
+# 文件在这个签名下已经确认过不陈旧。
+#
+# 语义代价：文件变更最长延后 `BEACON_STALE_GATE` 秒才被看见（默认 1.0s，与 `_mtime_cache`
+# 的 2s 同级）。设为 0 可完全关闭，恢复逐次判定。
+BEACON_STALE_GATE = float(os.environ.get("BEACON_STALE_GATE", "1.0") or "0")
+_STALE_GATE: Dict[str, tuple] = {}
+
 
 def _wt_mtime(relpath: str) -> Optional[float]:
     """本地副本文件 mtime（秒）。非本地副本模式或文件不存在 → None（不按 mtime 判新）。"""
@@ -298,10 +402,23 @@ def _cache_stale(slot: tuple, relpath: Optional[str]) -> bool:
         return True
     if BEACON_CACHE_TTL > 0 and (time.time() - slot[1]) > BEACON_CACHE_TTL:
         return True
-    if relpath is not None:
-        m = _wt_mtime_any(relpath) if isinstance(relpath, (list, tuple, set)) else _wt_mtime(relpath)
-        if m is not None and slot[2] != m:
-            return True
+    if relpath is None:
+        return False
+    key = relpath if isinstance(relpath, str) else "|".join(relpath)
+    now = time.time()
+    if BEACON_STALE_GATE > 0:
+        g = _STALE_GATE.get(key)
+        # 签名一致 = 这个槽没有重建过，且刚才已确认文件在该签名下无变化 → 仍不陈旧。
+        # 签名不一致（槽被重建）或超过节流窗口 → 落下去真判一次。
+        if g is not None and g[0] == slot[2] and (now - g[1]) < BEACON_STALE_GATE:
+            return False
+    m = _wt_mtime_any(relpath) if isinstance(relpath, (list, tuple, set)) else _wt_mtime(relpath)
+    if m is not None and slot[2] != m:
+        # 陈旧：不记门。否则「文件变了但 loader 拒绝更新缓存」（取数失败时不写缓存）会让
+        # 门在窗口内一直回「不陈旧」，变成持续漏检。
+        return True
+    if BEACON_STALE_GATE > 0:
+        _STALE_GATE[key] = (slot[2], now)
     return False
 
 
@@ -649,6 +766,18 @@ def _decode_body(raw: bytes, resp) -> str:
             raw = _gz.decompress(raw)
         except Exception:
             pass          # 解不开就当明文试（可能是中间层误标头）
+    # 兜底：Content-Encoding 只解一层，但中间层（代理 / 边缘）可能对**已压缩**
+    # 的字节再压一次，此时解一层仍是 gzip 魔数。历史上这会让 cap-map /
+    # region-index 这类文件直接 UnicodeDecodeError → 被当"取数失败"静默返回空，
+    # 排查成本极高。按魔数循环解到不是 gzip 为止（上限 3 层，防病态输入）。
+    import gzip as _gz2
+    for _ in range(3):
+        if not raw[:2] == b"\x1f\x8b":
+            break
+        try:
+            raw = _gz2.decompress(raw)
+        except Exception:
+            break
     return raw.decode("utf-8")
 
 
@@ -656,8 +785,32 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
     """统一的 HTTP 读取：依次尝试 _http_bases() 中的基址（主源 + 自定义镜像），
     任一成功即返回；全部失败则用本地缓存兜底（保证离线可用）。
 
-    连接方式上「直连优先、代理兜底」——避免失效代理把检索整体打挂。
+    **401 自愈一次**（2026-10-28，与服务端 C 配套）：服务端把「只有
+    `X-Beacon-Cid`、没有令牌」从「放行」改成 `401 identity_unverified`。
+    客户端的 `identity.headers()` 只在本地令牌 fresh 时带 Authorization，
+    所以只要本地令牌被服务端判废（改密钥 / 身份被 suspend / 时钟偏快），
+    就会陷入「本地认为身份正常、服务端一直 401」的死循环。
+    这里在拿到 401 时强制续签并重试**一次**：能自愈的当场自愈，不能的
+    照旧走原有的报错路径（不放大成 N 次重试）。
+
+    为什么只在 `body is None` 时重试：如果本地有缓存分片可用，优先保证
+    可用性，不为了一次身份刷新把已有缓存结果丢掉。
     """
+    st = [0]
+    body, etag = _http_get_once(relpath, st)
+    if body is None and st[0] == 401:
+        try:
+            import identity as _idn
+            _idn.ensure_token(force=True)
+        except Exception:
+            return body, etag
+        st[0] = 0
+        body, etag = _http_get_once(relpath, st)
+    return body, etag
+
+
+def _http_get_once(relpath: str, st: list) -> Tuple[Optional[str], Optional[str]]:
+    """单次尝试（不含 401 自愈）。`st[0]` 回填最后一次 HTTP 状态码。"""
     cached_body = None
     cached_etag = None
     last_err = ""
@@ -699,6 +852,7 @@ def _http_get(relpath: str) -> Tuple[Optional[str], Optional[str]]:
             except urllib.error.HTTPError as e:
                 if e.code == 304 and cached_body is not None:
                     return cached_body, etag
+                st[0] = e.code
                 last_err = "HTTP %s" % e.code
                 break   # HTTP 层错误，换基址比重试连接方式有意义
             except Exception as e:
@@ -1215,6 +1369,25 @@ def _trim_edges(t: str) -> str:
     return t[i:j]
 
 
+# 业态后缀：只表达「这是一家店」这种经营形态，不携带品类信息。
+# 「牛肉粉店」与「牛肉粉」在名录里指的是同一批主体，而名录侧的写法普遍不带后缀。
+_STORE_SUFFIX = "店馆铺摊吧坊"
+
+
+def _strip_store_suffix(tok: str) -> str:
+    """剥掉 token 末尾的业态后缀（可连续剥：「拉面店馆」→「拉面」）。
+
+    护栏（必须保留）：原词 <3 字或剥后 <2 字 → 原样返回。
+    「面馆」剥成「面」、「书店」剥成「书」都属于把精确查询退化成整城扫，
+    比召回不足更糟 —— 这类查询的正确解法是走 gb= 或 list_industries。
+    """
+    orig = tok or ""
+    t = orig
+    while len(t) >= 3 and t[-1] in _STORE_SUFFIX:
+        t = t[:-1]
+    return t if len(t) >= 2 else orig
+
+
 def _normalize_query(query: str, city: str = "") -> Dict[str, Any]:
     """把用户原话归一成 (city, keywords, cap_hits, alias_hits, segments)。
 
@@ -1229,6 +1402,7 @@ def _normalize_query(query: str, city: str = "") -> Dict[str, Any]:
     raw = (query or "").strip()
     low = raw.lower()
     out: Dict[str, Any] = {"raw": raw, "city": city or "", "city_from_query": "",
+                           "province": "",
                            "tokens": [], "cap_hits": [], "alias_hits": [],
                            "segments": []}
     if not low:
@@ -1258,9 +1432,23 @@ def _normalize_query(query: str, city: str = "") -> Dict[str, Any]:
             out["city_from_query"] = city_found
 
     # ② 把「已识别的」从原话里剔掉，剩下的才是通用关键词
+    # ②bis 省级抽取（2026-10-29）。省名**不能当关键词做 AND**：「贵州 面馆」原样
+    #     拆成两个 token → 要求厂名同时含「贵州」与「面馆」→ 实测 0 条，而全省
+    #     确实有面馆。省名必须变成**过滤条件**（记录的城市反查所属省），
+    #     不能留在关键词里。直辖市（北京/上海）走城市那条路，这里不重复处理。
+    prov_found = ""
+    if not city_found:
+        try:
+            cand = [p for p in _province_map()["provinces"] if p and p.lower() in low]
+        except Exception:
+            cand = []
+        if cand:
+            prov_found = max(cand, key=len)
     resid = low
     if city_found:
         resid = resid.replace(city_found.lower(), " ")
+    if prov_found:
+        resid = resid.replace(prov_found.lower(), " ")
     for h in cap_hits + alias_hits:
         w = str(h.get("word") or "").lower()
         if w:
@@ -1279,7 +1467,43 @@ def _normalize_query(query: str, city: str = "") -> Dict[str, Any]:
         if t and not all(ch in _noinfo for ch in t):
             toks.append(t)
 
+    # ③ 业态后缀归一（2026-10-29）。用户说的是「牛肉粉店」，名录里写的是「牛肉粉」；
+    #    在纯子串 AND 语义下，多一个「店」字就把召回打掉九成 —— 贵阳实测
+    #    「牛肉粉」42 条 vs「牛肉粉店」3 条（−93%），「面馆」13 条 vs「粉面馆」…
+    #    「店/馆/铺/摊/吧/坊」这类**业态后缀不携带品类信息**，剥掉是**纯放宽**：
+    #    任何含「牛肉粉店」的检索面必然也含「牛肉粉」，所以不可能引入假阳性。
+    #
+    #    护栏：原词 ≥3 字、剥后 ≥2 字才剥。否则「面馆」→「面」、「书店」→「书」
+    #    会退化成「整城扫含面/书的记录」，比重排更糟。被改写的词原样回显在
+    #    `query_parsed.token_fixed`，让调用方看得见 MCP 是**怎么放宽**的。
+    #
+    #    另有一条既有缺陷一并处理：能力词被消费后残留的**孤立业态字**。
+    #    「米线馆」里「米线」是能力词（cuisine_rice_noodles）会被消费掉，只剩
+    #    一个「馆」进 tokens，于是要求每条记录的检索面都含「馆」——实测昆明
+    #    「米线馆」只剩 1 条。单字业态后缀不携带任何信息，与 `_noinfo` 同一口径丢弃。
+    token_fixed: List[Dict[str, Any]] = []
+    fixed: List[str] = []
+    for t in toks:
+        if len(t) == 1 and t in _STORE_SUFFIX:
+            token_fixed.append({"from": t, "to": "", "why": "孤立业态字不携带信息，已丢弃"})
+            continue
+        s = _strip_store_suffix(t)
+        if s != t:
+            token_fixed.append({"from": t, "to": s, "why": "去掉业态后缀后按放宽形式检索"})
+            fixed.append(s)
+        else:
+            fixed.append(t)
+    toks = fixed
+
     out["tokens"] = list(dict.fromkeys(toks + [w.lower() for w, _ in segs]))
+    out["token_fixed"] = token_fixed
+    # 省名只有在「另外还有检索线索」时才当过滤条件。若整句就是个光秃秃的省名
+    # （「贵州」），退回去当关键词做厂名匹配 —— 否则 token 为空会触发全国全扫
+    # （188 片 / 四十多秒），而用户要的往往只是「名字里带贵州的那些」。
+    if prov_found and not (out["tokens"] or cap_hits or alias_hits):
+        out["tokens"] = [prov_found.lower()]
+        prov_found = ""
+    out["province"] = prov_found
     out["cap_hits"] = cap_hits
     out["alias_hits"] = alias_hits
     out["segments"] = [{"term": w, "source": s} for w, s in segs]
@@ -1836,6 +2060,35 @@ _fp_index: Optional[List[Dict[str, Any]]] = None
 _fp_index_key: Optional[str] = None
 _name_gb_slot: Optional[tuple] = None   # (id -> gb 映射, loaded_at, mtime)
 
+# 全量兜底的**上限**（2026-10-29）。`_build_fp_index` 是「预构建索引不可用」时的
+# 最后一道网：git archive 一次批量读 267~467 个 fp 分片，实测 210,555 条要 26.7 秒。
+#
+# 它本来只在「索引缺失/陈旧」时才会被走到，但 `get_vendor` 在 id 反查失败时会拿它
+# 兜底——那是一条**用户正在等着看点开的那一家**的同步路径。实测绕过 `_vid_in`
+# 直接调 `get_vendor(token_id)` 就掉进来了：31s / 38s 两次复现，客户端表现为「卡死」。
+#
+# 所以给它两道闸：时间闸（超时即返回已拿到的部分，并如实标记截断）+ 条数闸。
+# 两道闸都在**返回前**判定，且截断结果绝不写进 `_fp_index`（进程级缓存，写脏等于
+# 让后续每次查询都拿半份数据，见下方 fallback 分支的同类注释）。
+#
+# 默认值刻意**高于**本机全量构建实测耗时（26.7s / 21 万条）：这道闸的职责是拦
+# 「系统病态」（曾经出现 479 次请求、2258s 才返回 0 条），不是把正常构建切残——
+# 8s 的初版实测会把索引截成 6.1 万条（29%），普通检索于是悄悄少 2/3 记录。
+# 需要更紧预算的地方自己传 deadline_s（`get_vendor` 就传 5s，见
+# `_VENDOR_FP_DEADLINE`）。
+_FP_BUILD_DEADLINE = float(os.environ.get("BEACON_FP_BUILD_DEADLINE", "40") or "0")
+_FP_INDEX_MAX = int(os.environ.get("BEACON_FP_INDEX_MAX", "260000") or "0")
+_fp_trunc_tls = threading.local()
+
+
+def _fp_trunc_note() -> Dict[str, Any]:
+    """本线程最近一次全量兜底是否被截断；未截断返回空 dict。"""
+    return dict(getattr(_fp_trunc_tls, "note", {}) or {})
+
+
+def _fp_trunc_set(note: Dict[str, Any]) -> None:
+    _fp_trunc_tls.note = dict(note or {})
+
 
 def _head_sha() -> Optional[str]:
     if not REPO:
@@ -1912,7 +2165,9 @@ def _index_cache_path() -> Optional[str]:
 # 不存在**（不是索引滞后）→ 可以直接给「查无此人」，不必退回全量索引。
 # 这个区分（shard_ok）是下面 _编号映射_lookup 返回两元组的原因。
 _IDMAP_BUCKET = 1000
-_VENDOR_ID_RE = re.compile(r"^CN-MFG-(\d{7})$")
+# 7~10 位：编号上限从 9,999,999 抬到 4,294,967,295，与 vid token 的 32 bit 编号位
+# 对齐（2026-10-28）。同一片内宽度必然相同，所以片内字典序仍等于数值序。
+_VENDOR_ID_RE = re.compile(r"^CN-MFG-(\d{7,10})$")
 _IDMAP_DIR = "skills/registry/index/idmap"
 # 片内解析结果常驻内存：rel -> (id->gb, 数据版本号)
 _idmap_slot: Dict[str, tuple] = {}
@@ -1921,12 +2176,37 @@ _idmap_meta_slot: Optional[tuple] = None
 
 
 def _idmap_bucket(vid: str) -> Optional[int]:
-    """id 落在第几片；非 `CN-MFG-\\d{7}` 形态返回 None（归 other.jsonl）。"""
+    """id 落在第几片；非 `CN-MFG-\\d{7,10}` 形态返回 None（归 other.jsonl）。
+
+    只有**旧寻址**（数字整除 1000）用得上。token 寻址看 _idmap_rel 那条分支。
+    """
     m = _VENDOR_ID_RE.match(vid or "")
     return int(m.group(1)) // _IDMAP_BUCKET if m else None
 
 
+# 对外形态：8 字符 Crockford base32（去掉 I/L/O/U，与 vid_token 的编码一致）
+_TOKEN_ID_RE = re.compile(r"^[0-9A-HJKMNP-TV-Z]{8}$")
+# 寻址模式。老快照的清单里没有 `addr` → 客户端继续按旧的整除定址走，
+# 行为与升级前**完全一致**（不多付请求、不会 404），所以可以安全先发客户端。
+_IDMAP_ADDR_TOKEN = "prefix2"
+
+
+def _idmap_addr() -> str:
+    """清单里 idmap 的寻址模式。取不到 = 该快照的 idmap 还没换 token 寻址。"""
+    return str(_idmap_meta().get("addr") or "bucket1000")
+
+
 def _idmap_rel(vid: str) -> Optional[str]:
+    """id 落在哪一片。
+
+    token 寻址：片名 = token 的前 2 字符（32×32 = 1024 片）。token 是随机
+    排列的，前 2 字符在其上是**均匀**的 → 21 万条散进去每片约 205 行 / 3 KB，
+    与旧的「1000 行 / 14 KB」同量级，而且不需要任何目录表。
+    """
+    if _idmap_addr() == _IDMAP_ADDR_TOKEN:
+        if vid and _TOKEN_ID_RE.match(vid):
+            return "%s/%s.jsonl" % (_IDMAP_DIR, vid[:2])
+        return (_IDMAP_DIR + "/other.jsonl") if vid else None
     b = _idmap_bucket(vid)
     if b is None:
         return (_IDMAP_DIR + "/other.jsonl") if vid else None
@@ -1990,7 +2270,39 @@ def _idmap_lookup(vid: str) -> Tuple[Optional[str], bool]:
     若只看「片存在但片里没这条」就判不存在，等于**把新导入的企业全部误杀**
     （政府名录一次能进上千家，症状还是静默的：查不到，不报错）。
     判据：id 数字 <= meta.max_id 才敢判「真不存在」；超过就退回慢路径兜底。
+
+    ⚠ token 寻址下**没有这道闸，也不需要**：清单、分片、这条索引是同一次
+    发布出去的，token 不在片里就是没有这家 —— 不存在「号比索引新」这种
+    中间态（旧寻址之所以需要，是因为 id 自增，新号天然落在索引之外）。
     """
+    if _idmap_addr() == _IDMAP_ADDR_TOKEN:
+        # 形态不是 token = 内部 id 漏出来了（旧客户端 / 未发布的数据），
+        # 直接交回调用方走兜底，不去 other.jsonl 碰运气。
+        if not vid or not _TOKEN_ID_RE.match(vid):
+            return None, False
+        rel = _idmap_rel(vid)
+        if not rel:
+            return None, False
+        ver = _data_version()
+        slot = _idmap_slot.get(rel)
+        if slot is not None and slot[1] == ver:
+            m = slot[0]
+            return (m.get(vid), True) if m else (None, False)
+        txt = _index_text(rel)
+        if txt is None:
+            # 片不存在 = 这个前缀下一条记录都没有 → 无从判断，交回兜底
+            return None, False
+        m: Dict[str, str] = {}
+        for line in txt.splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            i, sep, g = line.partition(",")
+            if sep:
+                m[i] = g
+        _idmap_slot[rel] = (m, ver)
+        return m.get(vid), True
+
     meta = _idmap_meta()
     nb = meta.get("buckets")
     if not isinstance(nb, int) or nb <= 0:
@@ -2094,13 +2406,18 @@ def _read_fp_shard(s: Dict[str, Any]) -> List[Dict[str, Any]]:
     return out
 
 
-def _build_fp_index_via_archive() -> Optional[List[Dict[str, Any]]]:
+def _build_fp_index_via_archive(deadline: Optional[float] = None) -> Optional[List[Dict[str, Any]]]:
     """git 模式：用 `git archive HEAD -- <dir>` 一次性批量取出所有 fp 分片。
 
     只读已提交 object（本就是 maskphone 隐藏态），不碰本地副本、不触发 smudge、
     不碰 index 锁 —— 安全边界与逐分片 `git show` 一致，但把 267 次 subprocess
     降到 1 次，首次加载从 ~48s 降至数秒。任一环节失败都返回 None，由调用方退回
     逐分片 fallback。
+
+    `deadline`（epoch 秒，可选）：解析阶段的**时间闸**。git archive 只花几百毫秒，
+    真正吃时间的是 21 万行的 json.loads（实测全量构建 26.7s）。到点即返回**已解析
+    的部分**并写入 `_fp_trunc_note()` 标记截断 —— 返回 None 会让调用方退回更慢的
+    逐分片路径，反而更糟。
     """
     try:
         d = os.path.join("skills", "registry", "fingerprint")
@@ -2112,8 +2429,11 @@ def _build_fp_index_via_archive() -> Optional[List[Dict[str, Any]]]:
         if r.returncode != 0 or not r.stdout:
             return None
         recs: List[Dict[str, Any]] = []
+        _cut = False
         with tarfile.open(fileobj=io.BytesIO(r.stdout), mode="r:*") as tf:
             for m in tf.getmembers():
+                if _cut:
+                    break
                 if not m.isfile():
                     continue
                 try:
@@ -2128,6 +2448,18 @@ def _build_fp_index_via_archive() -> Optional[List[Dict[str, Any]]]:
                         recs.append(json.loads(line))
                     except Exception:
                         continue
+                # 时间闸：按**分片**粒度判（一行一判的 time.time() 成本会吃掉
+                # 相当一部分预算）。到点后把已解析的部分返回，别让它变成「卡死」。
+                if deadline is not None and time.time() > deadline:
+                    _cut = True
+        if _cut:
+            _fp_trunc_set({
+                "stage": "archive_parse_timeout",
+                "records": len(recs),
+                "note": ("全量兜底在 git archive 解析阶段超时，只解析了部分分片（%d 条）。"
+                         "**不代表没有相关企业**；请改用 query+city 或 gb= 走索引路径。"
+                         % len(recs)),
+            })
         return recs if recs else None
     except Exception:
         return None
@@ -2185,7 +2517,7 @@ def _merge_worktree_fp(recs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return list(by_id.values())
 
 
-def _build_fp_index() -> List[Dict[str, Any]]:
+def _build_fp_index(deadline_s: Optional[float] = None) -> List[Dict[str, Any]]:
     global _fp_index, _fp_index_key
     cp = _index_cache_path()
     wt = os.environ.get("BEACON_WORKTREE", "1") != "0"
@@ -2206,13 +2538,33 @@ def _build_fp_index() -> List[Dict[str, Any]]:
         except Exception:
             pass
     fp_shards = _shards_of_type("fp")
+    _t_start = time.time()
+    _fp_trunc_set({})          # 每轮构建先清掉上一轮的截断标记，避免串到本次回执里
+    _budget = _FP_BUILD_DEADLINE if deadline_s is None else float(deadline_s)
+    _deadline_abs = (_t_start + _budget) if _budget > 0 else None
+
+    def _deadline_hit() -> bool:
+        return _deadline_abs is not None and time.time() > _deadline_abs
+
     # git 模式优先用 `git archive` 一次性批量读（1 次 subprocess，远快于逐分片 git show）
     if REPO:
-        recs = _build_fp_index_via_archive()
+        recs = _build_fp_index_via_archive(_deadline_abs)
         if recs is not None:
             # 本地副本模式：用本地副本 fingerprint 分片覆盖/补充已提交快照，闭合检索缺口
             if wt:
-                recs = _merge_worktree_fp(recs)
+                if _deadline_hit():
+                    # 时间闸：archive 这一步已经吃满预算，别再把 merge 叠上去。
+                    # 返回未合并的结果并标记，让调用方知道少了一层工作树覆盖。
+                    _fp_trunc_set({
+                        "stage": "worktree_merge_skipped",
+                        "deadline_s": _FP_BUILD_DEADLINE,
+                        "records": len(recs),
+                        "note": ("全量兜底超时（%.1fs），已跳过工作树指纹覆盖层。"
+                                 "结果可能不含本地副本里新增/修改的记录。"
+                                 % _FP_BUILD_DEADLINE),
+                    })
+                else:
+                    recs = _merge_worktree_fp(recs)
             _fp_index = recs
             _fp_index_key = key
             # 本地副本模式不落盘缓存（内容随本地副本变化，落盘会陈旧）
@@ -2239,6 +2591,7 @@ def _build_fp_index() -> List[Dict[str, Any]]:
     _tried = 0
     _ok = 0
     _aborted = False
+    _timeout = False
     with concurrent.futures.ThreadPoolExecutor(max_workers=_BATCH) as ex:
         for _i in range(0, len(fp_shards), _BATCH):
             _chunk = fp_shards[_i:_i + _BATCH]
@@ -2253,12 +2606,39 @@ def _build_fp_index() -> List[Dict[str, Any]]:
                     "取数失败过半（%d 个分片仅 %d 个读到），已中止剩余 %d 个"
                     % (_tried, _ok, len(fp_shards) - _tried))
                 break
+            # 时间闸：每批之间判一次。超时就带着**已拿到的部分**返回并标记截断，
+            # 绝不无限期堵住调用方（get_vendor 会走这条兜底）。
+            if _deadline_hit():
+                _timeout = True
+                break
+    if _timeout:
+        _fp_trunc_set({
+            "stage": "shard_scan_timeout",
+            "deadline_s": _FP_BUILD_DEADLINE,
+            "shards_scanned": _tried,
+            "shards_total": len(fp_shards),
+            "records": len(recs),
+            "note": ("全量兜底超时（%.1fs，已扫 %d/%d 个分片）。本次只基于已读到的部分，"
+                     "**不代表没有相关企业**；请改用 query+city 或 gb= 走索引路径。"
+                     % (_FP_BUILD_DEADLINE, _tried, len(fp_shards))),
+        })
+        return recs
     if _aborted:
         # ⚠ 绝不能把残缺结果写进 `_fp_index` / 磁盘缓存：那一层是**进程级**缓存，
         #   写进去等于让后续每一次查询都拿半份数据，直到重启。
         return recs
     if wt and REPO:
         recs = _merge_worktree_fp(recs)
+    # 条数闸：兜底只为「找得到」，不必把整个库搬进内存。
+    if _FP_INDEX_MAX and len(recs) > _FP_INDEX_MAX:
+        _fp_trunc_set({
+            "stage": "record_cap",
+            "cap": _FP_INDEX_MAX,
+            "records_total": len(recs),
+            "note": ("全量兜底记录数超过上限 %d，已截断。结果可能不完整；"
+                     "请改用 query+city 或 gb= 走索引路径。" % _FP_INDEX_MAX),
+        })
+        return recs[:_FP_INDEX_MAX]
     _fp_index = recs
     _fp_index_key = key
     if cp and not wt:
@@ -2304,6 +2684,44 @@ def _cap_term_of(code: str) -> str:
     return str(terms_now.get(code) or code or "")
 
 
+# 菜系级「互斥」：一个主体被显式标成韩餐／日料／西餐／东南亚／泰餐时，
+# 不再把「面馆（cuisine_noodles）」的词面并进检索面。
+#
+# 为什么需要（2026-10-29 实测）：查「面馆」时首条是「Kim Pro辛普乐概念韩餐」。
+# 它的 cap 是 ["cuisine_korean","cuisine_noodles","cuisine_barbecue","正餐"] ——
+# 韩餐馆的 POI 标签里带「拉面」（韩式拉面），离线打标于是把 cuisine_noodles
+# 也挂给了它。`面馆` 便经 cuisine_noodles 的中文词面命中它，且 via 被提到
+# cap 档（最高档），压过所有真面馆，且无法靠翻页绕开。
+#
+# 为什么不改词表：删掉 cuisine_noodles 的「拉面」会让兰州拉面那批真面馆一起
+# 掉出该能力域（它们的厂名往往只写「拉面」）。所以修在**检索面构造**这一步：
+# 记录自带更强的菜系标签时，面条词面不参与匹配。这是纯收益——
+# 真面馆不会被标成 cuisine_korean，所以不会误伤。
+_CAP_CUISINE_CONFLICT: Dict[str, tuple] = {
+    "cuisine_noodles": ("cuisine_korean", "cuisine_japanese", "cuisine_western",
+                        "cuisine_southeast_asian", "cuisine_thai"),
+}
+
+
+def _cap_terms_of(rec: Dict[str, Any]) -> List[str]:
+    """记录的能力键 → 实际参与检索的词面（已按菜系互斥剔除）。
+
+    只是过滤能力键，不改记录本身：`cap` 字段原样保留，`via=cap` 的判定
+    （`want & set(rec["cap"])`）与能力卡查询都不受影响。
+    """
+    caps = [c for c in (rec.get("cap") or []) if c]
+    if not caps:
+        return []
+    capset = set(caps)
+    kept: List[str] = []
+    for c in caps:
+        blocked = _CAP_CUISINE_CONFLICT.get(c)
+        if blocked and any(b in capset for b in blocked):
+            continue
+        kept.append(c)
+    return kept
+
+
 def _hay_parts(rec: Dict[str, Any], with_cap: bool) -> str:
     parts = [
         # `or ""` 不是多余：gb 为 None（未归类）时 str() 会产出字面量 "None"，
@@ -2316,7 +2734,9 @@ def _hay_parts(rec: Dict[str, Any], with_cap: bool) -> str:
         " ".join(rec.get("products", []) or []),
     ]
     if with_cap:
-        parts.append(" ".join(_cap_term_of(c) for c in (rec.get("cap") or [])))
+        # 走 `_cap_terms_of`：菜系互斥后再摊成中文词面（否则韩餐馆会靠
+        # cuisine_noodles 的词面冒充面馆，见 `_CAP_CUISINE_CONFLICT`）。
+        parts.append(" ".join(_cap_term_of(c) for c in _cap_terms_of(rec)))
     return " ".join(p for p in parts if p)
 
 
@@ -2826,10 +3246,61 @@ def _bucket_rel(term: str, buckets: int) -> str:
 # df < MIN 的 bigram 几乎必是分词碎片（「送线」df=0），不作证据。
 # 泛词（城市名/企业通名）已由 `_usable_gram` 拦掉，故不另设 df 上限。
 _RECALL_DF_MIN = 2
+
+# --- 候选分片硬上限（保险丝，不是性能方案）--------------------------------- #
+# 老实现是「并集 >= 60% 分片就 return None → 调用方全量扫」。那个阈值是**相对量**，
+# 分片数一涨就必然触发（282 片时不会，8,448 片时任何中频词都会）—— 而触发代价是
+# 把整库拉下来。实测（scripts/audit_recall_cost.py，24 条真实查询，467 片）：
+# 最大 128 片（「加工」27.4%），60% 阈值一次都没撞上；但**索引路径本身**就能拉到
+# 13~16 MB，因为倒排粒度是分片级，不是行级。这件事只能靠行级倒排解决（见
+# docs/两步走落地方案.md 的 P2），本上限只负责让「最坏情况」有界：
+# 宁可少拉几片并如实上报，也绝不静默全量。
+# 400 的取值：当前 467 片的 85%，给「数据翻倍到 ~900 片」留出不误伤的余量。
+_RECALL_SHARD_CAP = 400
+
+# 本进程最近一次召回是否被截断。用 threading.local：工具调用是并发处理的，
+# 用模块级字典会让 A 线程的截断标记串到 B 线程的回执里（这个坑 `_HTTP_LAST_ERROR`
+# 已经踩过一次）。
+_recall_tls = threading.local()
+
+
+def _recall_trunc_note() -> Dict[str, Any]:
+    """当前线程最近一次召回的截断回执；没截断返回空 dict。"""
+    return dict(getattr(_recall_tls, "trunc", {}) or {})
+
+
+def _cap_shards(picked, weights: Dict[str, float], where: str) -> List[str]:
+    """候选分片超过 `_RECALL_SHARD_CAP` 时按命中密度截断，并记下截断事实。
+
+    按权重（`idf × 该片命中数`）降序，而不是按路径字典序：密度高的片更可能给出
+    相关记录，按路径截断等于随机丢弃 —— 撞「真实企业必须被看见」的红线。
+
+    返回排序后的路径列表；截断与否都返回，调用方**不需要**分支。
+    """
+    _recall_tls.trunc = {}
+    paths = sorted(picked)
+    if len(paths) <= _RECALL_SHARD_CAP:
+        return paths
+    ranked = sorted(paths, key=lambda p: (-weights.get(p, 0.0), p))
+    kept = sorted(ranked[:_RECALL_SHARD_CAP])
+    _recall_tls.trunc = {
+        "where": where,
+        "cap": _RECALL_SHARD_CAP,
+        "shards_total": len(paths),
+        "shards_kept": len(kept),
+        "shards_dropped": len(paths) - len(kept),
+        "note": ("候选分片超过上限，已按「词在该片里的命中密度」保留前 "
+                 f"{_RECALL_SHARD_CAP} 片。本次结果可能不完整（被丢弃的片里若有"
+                 "相关企业不会出现）。这是**有界截断**，不是全量扫描。"),
+    }
+    return kept
+
+
 # 以功能字开头/结尾、或以企业通名结尾的 bigram 不是产品词（「的输」「线厂」「厂家」）。
 _FUNC_CHARS = set("的了要找做想帮我你在和与或及是有能可会请给把被用让需个些这那们吧呢吗来去上下就到从对为")
 _ORG_SUFFIX = set("厂家司部行店商社")
 _city_names_cache: Optional[set] = None
+_province_map_cache: Optional[dict] = None
 
 
 def _city_names() -> set:
@@ -2854,6 +3325,35 @@ def _city_names() -> set:
                 _city_names_cache = (names, time.time(),
                                      _wt_mtime(INDEX_DIR + "/city.json"))
     return _city_names_cache[0] if _city_names_cache else set()
+
+
+def _province_map() -> Dict[str, Any]:
+    """「省名单 + 城市→省 反查表」（index/province-city.json，由 gen_region_index 生成）。
+
+    为什么需要它：指纹分片里只有 `city` / `dist`，**没有 province**，所以「贵州的
+    面馆」无法在记录层直接判省；而 city.json 只收有数据的城市（贵州仅 贵阳/遵义），
+    拿它展开省份会漏掉全省绝大多数记录。反过来，用「城市 → 省」反查就能在过滤记录时
+    就地判省，不必新增一遍全国扫描。
+
+    与 `_city_names` 同样的坑：取数失败**绝不能**把空表写进缓存，否则一次网络抖动
+    会让此后所有省级查询都退化成「把省名当关键词 AND」，结果是**静默 0 条**。
+    """
+    global _province_map_cache
+    rel = INDEX_DIR + "/province-city.json"
+    if _cache_stale(_province_map_cache, rel):
+        txt = _index_text(rel)
+        if txt:
+            try:
+                d = json.loads(txt)
+                provs = {str(p) for p in (d.get("provinces") or []) if p}
+                c2p = {str(k): str(v) for k, v in (d.get("city2prov") or {}).items()}
+                val = {"provinces": provs, "city2prov": c2p}
+            except Exception:
+                val = None          # 半成品 → 不缓存
+            if val:
+                _province_map_cache = (val, time.time(), _wt_mtime(rel))
+    return _province_map_cache[0] if _province_map_cache else {"provinces": set(),
+                                                               "city2prov": {}}
 
 
 def _is_cjk(s: str) -> bool:
@@ -2951,8 +3451,11 @@ def _recall_candidates(toks) -> Optional[List[Dict[str, Any]]]:
     """预构建索引『区分词并集』快速召回：取并集（OR）而非交集。
 
     锚定所有采信的产品词（df >= _RECALL_DF_MIN）。碎片/地区词/通名已在 `_usable_gram`
-    与 `_gram_idf` 阶段剔除，故这里只做并集。索引不可用、无采信词、或并集覆盖过大
-    （≥60% 分片）时返回 None，交调用方全量扫描兜底（结果一致）。
+    与 `_gram_idf` 阶段剔除，故这里只做并集。
+
+    返回 None **只在真的召不回来时**（索引不可用、无采信词）。并集过大不再回退全量：
+    改为按「idf × 片内命中数」截断到 `_RECALL_SHARD_CAP`，并把截断事实写进
+    `_recall_trunc_note()`，由 tool 回执如实告知调用方。
     """
     if not _index_fresh():
         return None
@@ -2964,17 +3467,26 @@ def _recall_candidates(toks) -> Optional[List[Dict[str, Any]]]:
 
     known = {s.get("p") for s in _shards_of_type("fp")}
     picked: set = set()
+    weights: Dict[str, float] = {}
     for g in toks:
         if not g:
             continue
-        if _bucket_df(g, buckets) < _RECALL_DF_MIN:   # 碎片 -> 不作锚
+        d = _bucket_df(g, buckets)
+        if d < _RECALL_DF_MIN:   # 碎片 -> 不作锚
             continue
-        picked.update(p for p in _bucket_postings(g, buckets) if p in known)
+        iw = 1.0 / (1.0 + math.log(d))          # 与 _gram_idf 同口径
+        for p, n in _bucket_postings(g, buckets).items():
+            if p not in known:
+                continue
+            picked.add(p)
+            try:
+                weights[p] = weights.get(p, 0.0) + iw * float(n)
+            except Exception:
+                weights[p] = weights.get(p, 0.0) + iw
     if not picked:
         return None
-    if len(picked) >= max(1, int(len(known) * 0.6)):   # 并集过大，全量扫描更划算
-        return None
-    return _records_from_paths(sorted(picked))
+    return _records_from_paths(_cap_shards(picked, weights, "recall_candidates"))
+
 
 
 def _city_postings(city: str) -> Optional[Dict[str, int]]:
@@ -3069,12 +3581,20 @@ def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
             return []
         cands = set(postings.keys())
 
+    # 每片的「词命中密度」累加：只用于超上限时的截断排序（见 `_cap_shards`）。
+    wacc: Dict[str, float] = {}
     for gs in gram_groups:
         tset: Optional[set] = None
         for g in gs:
             d = docs.get(_bucket_rel(g, buckets))
             m = d.get(g) if isinstance(d, dict) else None
             s = set(m.keys()) if m else set()   # 桶里没这个词 → 确无命中
+            if m:
+                for _p, _n in m.items():
+                    try:
+                        wacc[_p] = wacc.get(_p, 0.0) + float(_n)
+                    except Exception:
+                        wacc[_p] = wacc.get(_p, 0.0) + 1.0
             tset = s if tset is None else (tset & s)
             if not tset:
                 break
@@ -3088,7 +3608,10 @@ def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
         return None
     # 与 manifest 求交：防止陈旧索引指向已删除的分片
     known = {s.get("p") for s in _shards_of_type("fp")}
-    return sorted(p for p in cands if p in known)
+    picked = {p for p in cands if p in known}
+    if not picked:
+        return []
+    return _cap_shards(picked, wacc, "candidate_shards")
 
 
 def _records_from_paths(paths: List[str]) -> List[Dict[str, Any]]:
@@ -3149,18 +3672,48 @@ def _norm_district(s: str) -> str:
     return s[:-1] if len(s) > 2 and s[-1] in "区县市" else s
 
 
-def _city_ok(rec: Dict[str, Any], city: str) -> bool:
+def _city_ok(rec: Dict[str, Any], city: str, province: str = "") -> bool:
     """city 匹配「地级市 或 区县」：县级市（昆山/海盐…）在地图数据里归到地级市名下，
     记录里 city=苏州、dist=昆山。只比 city 的话查「昆山」永远 0 条。
 
     区县侧做**后缀无关**比较（见 `_norm_district`），
     所以「姑苏」「姑苏区」「嘉善」「嘉善县」都能命中同一批记录。
+
+    `province`：省级过滤。指纹分片没有 province 字段，只能用「记录的城市 →
+    省」反查（index/province-city.json）。取不到映射时**放行**（宁可多给不可错杀：
+    滤错是静默 0 条，比多几条严重得多）。
     """
+    if province and not _province_ok(rec, province):
+        return False
     if not city:
         return True
     if city == rec.get("city", ""):
         return True
     return _norm_district(city) == _norm_district(rec.get("dist", ""))
+
+
+def _province_ok(rec: Dict[str, Any], province: str) -> bool:
+    """记录是否属于该省：按 city（没有则 dist）反查 province-city.json。"""
+    if not province:
+        return True
+    m = _province_map().get("city2prov") or {}
+    if not m:
+        return True           # 表没加载成功 → 不过滤
+    want = province.strip()
+    for key in ("city", "dist"):
+        c = str(rec.get(key) or "").strip()
+        if not c:
+            continue
+        p = m.get(c)
+        if p is None:
+            # 记录里可能写全称（贵阳市/贵州省），或反过来只有简称
+            for cand in (c + "市", c[: -1] if c.endswith("市") else c):
+                p = m.get(cand)
+                if p:
+                    break
+        if p:
+            return p.strip() == want
+    return True               # 判不出来 → 放行，避免误杀
 
 
 OFFSET_MAX = 200   # 分页深度上限（10 页 × 20 条）。服务端 X-Beacon-Offset-Max 同值。
@@ -3227,8 +3780,10 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     # 归一化把它切成可执行的检索参数，并顺带把原话里的城市抽成 city 过滤条件。
     # 详见 `_normalize_query`。
     norm = _normalize_query(query, city) if q else None
+    province = ""          # 省级过滤（省名不能当关键词，见 _normalize_query ②bis）
     if norm:
         city = norm["city"] or city
+        province = norm.get("province") or ""
         tokens = norm["tokens"]
         cap_hits = norm["cap_hits"]
         alias_hits = norm["alias_hits"]
@@ -3253,14 +3808,20 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     # 识别出词条）必须让 agent 看见 MCP 是怎么理解的，否则它无法判断结果为何是这样。
     # 普通关键词查询不额外增加返回体字节。
     parsed: Dict[str, Any] = {}
-    if norm and (norm["city_from_query"] or norm["segments"]
+    if norm and (norm["city_from_query"] or norm.get("province") or norm["segments"]
+                 or norm.get("token_fixed")
                  or tokens != [t for t in q.split() if t]):
         parsed["query_parsed"] = {
             "city": city or "",
             "city_from_query": norm["city_from_query"] or "",
+            "province": province or "",
             "keywords": gen_tokens,
             "recognized": norm["segments"],
         }
+        # 业态后缀被剥过才回显：调用方需要知道「牛肉粉店」实际是按「牛肉粉」检索的，
+        # 否则会以为召回变宽是数据变了。
+        if norm.get("token_fixed"):
+            parsed["query_parsed"]["token_fixed"] = norm["token_fixed"]
 
     # 给了国标码：只扫对应分片（最快路径，不构建全量索引）
     if gb:
@@ -3270,7 +3831,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         for s in fp_shards:
             scanned += 1
             for rec in _read_fp_shard(s):
-                if not _city_ok(rec, city):
+                if not _city_ok(rec, city, province):
                     continue
                 if et_want and (rec.get("et") or 0) != et_want:
                     continue
@@ -3324,6 +3885,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     # 索引缺失或陈旧时回退进程内全量索引（与命中量相关，慢但结果等价）。
     cands = _candidate_shards(gen_tokens, city) if (gen_tokens or city) else None
     via_index = cands is not None
+    recall_trunc = _recall_trunc_note()
 
     if via_index and not cands and not alias_paths and not cap_hits:
         # 索引明确判定无命中、别名也没给方向 —— 无需拉任何分片
@@ -3342,7 +3904,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
 
     def _collect(recs, relax_tokens: bool = False) -> None:
         for rec in recs:
-            if not _city_ok(rec, city):
+            if not _city_ok(rec, city, province):
                 continue
             if et_want and (rec.get("et") or 0) != et_want:
                 continue
@@ -3400,7 +3962,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     for p in alias_paths:
         for rec in _records_from_paths([p]):
             alias_scanned += 1
-            if not _city_ok(rec, city):
+            if not _city_ok(rec, city, province):
                 continue
             # etype 必须在这里也筛一遍：别名召回**绕过了 `_collect`**，
             # 漏这一步就会出现「传 etype=生产，返回的全是流通主体」
@@ -3430,7 +3992,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                 # 表只是「哪些分片含此 cap」，分片内还需按 cap 成员过滤）。
                 if h["cap"] not in (rec.get("cap") or []):
                     continue
-                if not _city_ok(rec, city):
+                if not _city_ok(rec, city, province):
                     continue
                 if et_want and (rec.get("et") or 0) != et_want:
                     continue
@@ -3505,6 +4067,11 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         "shards_scanned": scanned,
         "via_index": via_index,
         **({"via_index_reason": _index_reason()} if not via_index else {}),
+        # 召回被截断时如实上报（见 _cap_shards）：结果可能不完整，不能装作完整。
+        **({"recall_truncated": recall_trunc} if recall_trunc else {}),
+        # 全量兜底被时间闸/条数闸截断时同样要如实上报（见 _build_fp_index）：
+        # 走兜底路径时结果天然不完整，不说清楚就等于让调用方以为「库里就这些」。
+        **({"scan_truncated": _fp_trunc_note()} if _fp_trunc_note() else {}),
         # 0 条 ≠ 没有这家企业（2026-10-24）：取数整体失败时也是 0 条，而返回体
         # 原本没有任何字段能区分两者 —— 用户会得出「数据里没有」的错误结论。
         **_fetch_warn(records_total),
@@ -3515,9 +4082,10 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         # 而 `score` 是**能力画像分**（有已发布能力卡才有分，无卡为 0），**不是相关度**。
         # 两者一起看极易误判，
         # 所以在这里把口径写死，让 agent 自己能分辨「谁更值得先看」。
-        "order_note": ("results 按召回来源分档排列：via=text(厂名/工艺/材料等**字面**命中) → "
+        "order_note": ("results 按召回来源分档排列：via=cap(能力定向：主体本身干这个) → "
+                       "via=text(厂名/工艺/材料等**字面**命中) → "
                        "via=cap_text(厂名里其实没这个词，只是撞上了能力键的中文词面) → "
-                       "via=alias(别名定向) → via=cap(能力定向)；**同一档内**再按「关键词在"
+                       "via=alias(别名定向)；**同一档内**再按「关键词在"
                        "厂名里成片出现」优先（所以「商务酒店」会把 龙翔商务酒店 排在 "
                        "某酒店(中央商务区店) 前面）；score 是**能力画像分**"
                        "（有已发布能力卡才有分，无卡为 0），**不是相关度**，不要拿它反推排序。")
@@ -3636,11 +4204,62 @@ def normalize_vendor(rec: Dict[str, Any]) -> Dict[str, Any]:
     return out
 
 
+# ── get_vendor 解析结果缓存（2026-10-29）─────────────────────────────────────
+# 实测（贵阳「牛肉粉」首条 Z3XMNP7Y，本地工作树）：不带 gb 1.61s、带 gb 1.03s；
+# 同一个 id 连打 5 次是 979/980/981/967/970ms —— **零收敛**。
+# 原因是这条路只缓存了分片的**原始文本**，每次都重做：
+#   `_idmap_lookup`（~700ms，只在不给 gb 时）+ 命中片的 `json.loads`（~150-190ms/片，
+#   zh 分片 5-7 MB / 5000 条）+ normalize。
+# 而「点开一家详情」是最频繁的交互动作，1 秒/次直接落在用户感知上。
+#
+# 这里缓存**最终回执**，用清单 mtime 当全局签名：派生层任何重建都会重写
+# data/manifest.json，所以一次 stat（_mtime_cache 2s 内复用）就能判定整份缓存
+# 是否还对得上当前数据 —— 与 `_fp_index` 的 key 口径一致。
+# 只缓存成功结果（有 vendor 的），错误不缓存（否则一次偶发 fetch_failed 会钉住）。
+_VENDOR_CACHE: Dict[tuple, tuple] = {}   # (vid, gb) -> (resp, sig)
+_VENDOR_CACHE_MAX = int(os.environ.get("BEACON_VENDOR_CACHE_MAX", "1024") or "0")
+
+# get_vendor 走全量兜底时的**专属预算**（比通用 8s 更紧）：这条路径是用户正在
+# 等着看「点开的那一家」，通用预算下 26.7s 的构建会原样砸到交互上。
+_VENDOR_FP_DEADLINE = float(os.environ.get("BEACON_VENDOR_FP_DEADLINE", "5") or "0")
+
+
+def _vendor_cache_sig() -> float:
+    m = _wt_mtime("data/manifest.json")
+    return m if m is not None else -1.0
+
+
+def _vendor_cache_get(ck: tuple, sig: float) -> Optional[Dict[str, Any]]:
+    hit = _VENDOR_CACHE.get(ck)
+    if hit is None or hit[1] != sig:
+        return None
+    # 回执会被调用方整块塞进 MCP 响应，深拷贝防止上游改坏缓存本体。
+    return copy.deepcopy(hit[0])
+
+
+def _vendor_cache_put(ck: tuple, sig: float, resp: Dict[str, Any]) -> None:
+    if not _VENDOR_CACHE_MAX or not isinstance(resp, dict) or "vendor" not in resp:
+        return
+    if len(_VENDOR_CACHE) >= _VENDOR_CACHE_MAX:
+        # 简单 FIFO（dict 保序）：这不是热点数据集，LRU 的记账成本不划算。
+        try:
+            _VENDOR_CACHE.pop(next(iter(_VENDOR_CACHE)))
+        except (StopIteration, KeyError):
+            pass
+    _VENDOR_CACHE[ck] = (resp, sig)
+
+
 def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
     vid = (vid or "").strip()
     if not vid:
         return {"error": "缺少必填参数 id"}
     gb = (gb or "").strip()
+    # 命中缓存就直接回，省掉 id 反查 + 分片解析（三次实测均为 970ms 量级）。
+    _ck = (vid, gb)
+    _sig = _vendor_cache_sig()
+    _hit = _vendor_cache_get(_ck, _sig)
+    if _hit is not None:
+        return _hit
     # 没给国标码就先解析 id -> gb。
     #
     # 定位策略（三级，见下）：先小后大，绝不默认读全量索引。
@@ -3663,7 +4282,9 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
                 gb = idx[vid]
             else:
                 try:
-                    for rec in _build_fp_index():   # 已并发，且落盘缓存
+                    # 已并发，且进程内缓存；带专属预算，超时即用已解析的部分
+                    # （否则这条兜底会把 26.7s 的全量构建原样砸到交互上）。
+                    for rec in _build_fp_index(deadline_s=_VENDOR_FP_DEADLINE):
                         if rec.get("id") == vid:
                             gb = rec.get("gb") or ""
                             break
@@ -3677,6 +4298,7 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
         # 一个国标码常有 2~3 个 zh 续片（主片 + 续片），
         # 串行取等于把延迟相加。并发取、按原顺序判定，命中即返回。
         texts = _fetch_many(zh_paths)
+        missing = [p for p, t in zip(zh_paths, texts) if not t]
         for zh_path, txt in zip(zh_paths, texts):
             if not txt:
                 continue
@@ -3695,7 +4317,22 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
                         v["gb"] = gb
                         v["gb_source"] = "shard"   # 记录没写，取自分片归属
                         v.pop("gb_unclassified", None)
-                    return {"vendor": v}
+                    _resp = {"vendor": v}
+                    _vendor_cache_put(_ck, _sig, _resp)
+                    return _resp
+        # ⚠ 「取不到分片」与「分片里没有这一条」是两件事，不能合并成一句
+        #   「全部 zh 分片中均未找到」。2026-10-29 实测：一次并发取数里
+        #   p2 分片返回 None（身份令牌刚过期、401 自愈与并发抢跑），结论直接
+        #   变成"这家不存在"，而重试一次就正常 —— 这种话术会把排障带偏，
+        #   也会让调用方对用户说"查无此企业"。
+        if missing:
+            return {
+                "error": "fetch_failed",
+                "message": f"国标码 {gb} 的分片有 {len(missing)}/{len(zh_paths)} 个没取到，"
+                           "**这不代表没有这家企业**；本次未能在已取到的分片里命中。",
+                "missing": missing[:3],
+                "hint": "重试一次通常即可（并发取数时偶发身份令牌刷新）。持续失败请看 /data 可达性与身份。",
+            }
         return {"error": f"国标码 {gb} 的全部 zh 分片(共{len(zh_paths)}个)中均未找到 id={vid}"}
 
     # 兜底：gb 为 null（未归类）—— 这些记录躺在 c=='' 的 zh 分片里
@@ -3714,7 +4351,9 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
             if rec.get("id") == vid:
                 v = normalize_vendor(rec)
                 v["_from"] = p
-                return {"vendor": v}
+                _resp = {"vendor": v}
+                _vendor_cache_put(_ck, _sig, _resp)
+                return _resp
     return {"error": f"找不到 id={vid} 对应的国标码，可能该记录尚未发布"}
 
 
@@ -3746,14 +4385,24 @@ def get_capability_card(vid: str) -> Dict[str, Any]:
     # 短路：清单里查得到这张表时，没卡的 id 立刻回，别去撞三基址 404。
     want = _cap_card_ids()
     if want is not None:
-        num = vid.split("-")[-1]
-        if not num.isdigit() or num not in want:
+        # 集合里的元素**就是发布面上的对外 id**：token 化发布之后是 8 字符
+        # token，之前是内部编号的数字后缀。
+        #
+        # ⚠ 旧实现一律取 `vid.split("-")[-1]` 当"数字后缀"：token 里没有连字符，
+        #   取出来还是它自己，`isdigit()` 直接为假 → **任何 token 都被判成"没卡"**，
+        #   连一次请求都不发。2026-10-29 实测：token WE694FVV 明明
+        #   `/skills/registry/capability/WE694FVV.json` 返回 200，MCP 却回
+        #   has_card=false —— 客户端 Agent 由此彻底拿不到 L1。
+        #   判据改为"形态即键"：token 形态按原值比，其余才退回数字后缀（兼容本地
+        #   git 模式与未 token 化的老快照）。
+        key = vid if _TOKEN_ID_RE.match(vid) else vid.split("-")[-1]
+        if key not in want:
             return {
                 "id": vid, "has_card": False,
                 "note": "该供应商暂无已发布能力卡（全库仅 %d 家有卡）。"
                         "需要档案请先调 get_vendor。" % _card_count(),
             }
-    rel = f"skills/registry/capability/{vid}.json"
+    rel = f"skills/registry/capability/{_vid_url(vid)}.json"
     txt = fetch_text(rel)
     if not txt:
         return {
@@ -4206,7 +4855,7 @@ def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
     被调用函数内部，tokens 必须在请求发出前就位；而 hits 只能等结果出来后
     回填，供**后续**请求带上（一次检索的头几个请求因此没有 hits 列，属正常）。
     """
-    args = args or {}
+    args = _vid_in(args or {})
     # 每次调用重置「取数失败原因」，避免上一次的超时/401 文案串到这一次的正常结果上
     _HTTP_LAST_ERROR[0] = ""
     _FETCH_ABORTED[0] = ""
@@ -4224,7 +4873,10 @@ def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
             cur = _cur_get() or {}
             cur["hits"] = r.get("total_matched")
             _cur_set(cur)
-        return r
+        # 出口统一换 token：只改 `id` 字段是不够的 —— 路径
+        # （skills/vendors/<id>/SKILL.md）、markdown 正文、LLM 会照抄的自然语言
+        # 里都写着内部编号，漏一处就等于把编号送出去。
+        return _vid_out(r)
     except BaseException as e:      # noqa: BLE001 —— 埋点不能吞掉协议层行为
         err = e
         raise
