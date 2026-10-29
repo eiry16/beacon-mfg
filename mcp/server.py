@@ -308,7 +308,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.4"
+VERSION_FALLBACK = "1.11.5"
 
 
 def _pkg_version() -> str:
@@ -669,6 +669,17 @@ def _git_show(relpath: str) -> Optional[str]:
 # 单基址 HTTP 超时（秒）。多镜像回退时每个基址各自计时，避免单一 CDN 卡死拖垮整体。
 _HTTP_TIMEOUT = 30
 
+# URL 级正文字缓存的**免网络**窗口（秒，2026-10-29）。
+#
+# 背景：`_http_get_once` 原本只做「带 If-None-Match 的条件请求」，命中也要付一个
+# RTT。本机实测这条链路单次 RTT 就有 0.6~2.9 秒，于是**几十 KB** 的索引文件
+# （gb-alias.json 24 KB / gb-alias-curated.json 40 KB / gb-class-abbr.json 33 KB）
+# 每次进程各取一遍就要 3~9 秒 —— 与文件大小完全不成比例，纯是往返次数。
+#
+# 而这类索引随发布版本变化，不是每秒都在变：TTL 内直接用磁盘正文，一个请求都不发。
+# 置 0 可关掉（恢复「每次条件请求」的旧行为）。
+BEACON_HTTP_TTL = float(os.environ.get("BEACON_HTTP_TTL", "300") or "0")
+
 
 # 记录最近一次全失败的诊断（供上层报错时引用，不进返回值以免破坏既有签名）
 _HTTP_LAST_ERROR: List[str] = [""]
@@ -826,6 +837,13 @@ def _http_get_once(relpath: str, st: list) -> Tuple[Optional[str], Optional[str]
                 etag = blob.get("etag")
                 cached_body = blob.get("body")
                 cached_etag = etag
+                # 免网络窗口（见 BEACON_HTTP_TTL）：正文还在 TTL 内就直接用，
+                # 连条件请求都不发 —— 本机单次 RTT 实测 0.6~2.9 秒，省掉它是
+                # 小索引文件唯一有意义的速度来源。
+                _at = blob.get("at")
+                if (BEACON_HTTP_TTL > 0 and cached_body is not None and _at
+                        and (time.time() - float(_at)) < BEACON_HTTP_TTL):
+                    return cached_body, etag
             except Exception:
                 etag = None
         headers = {"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "gzip"}
@@ -845,12 +863,21 @@ def _http_get_once(relpath: str, st: list) -> Tuple[Optional[str], Optional[str]
                 new_etag = resp.headers.get("ETag")
                 try:
                     with open(cap, "w", encoding="utf-8") as f:
-                        json.dump({"etag": new_etag, "body": body}, f)
+                        json.dump({"etag": new_etag, "body": body,
+                                   "at": time.time()}, f)
                 except Exception:
                     pass
                 return body, new_etag
             except urllib.error.HTTPError as e:
                 if e.code == 304 and cached_body is not None:
+                    # 304 也要回写时间戳：否则旧缓存文件永远没有 "at"，
+                    # TTL 免网络窗口对它**永远不生效**（每次都还得付一个 RTT）。
+                    try:
+                        with open(cap, "w", encoding="utf-8") as f:
+                            json.dump({"etag": etag, "body": cached_body,
+                                       "at": time.time()}, f)
+                    except Exception:
+                        pass
                     return cached_body, etag
                 st[0] = e.code
                 last_err = "HTTP %s" % e.code
@@ -949,7 +976,16 @@ def fetch_text(relpath: str) -> Optional[str]:
     return _http_get(relpath)[0]
 
 
-def _fetch_many(paths: List[str], workers: int = 6) -> List[Optional[str]]:
+# 分片并发上限（2026-10-29 由硬编码 6 改为可调，默认 12）。
+#
+# 原来固定 6，理由是「配合 CDN 限速」。但线上实测一次检索要拉 4~7 个 200~900 KB
+# 的分片，低并发把延迟**叠加**成 7~11 秒；而总耗时本应接近「最慢的那一片」。
+# 提高到 12 后，冷检索里分片取数这一段基本收敛到单片耗时。
+# 若某台客户端/CDN 出现限速（429/超时），用 BEACON_FETCH_WORKERS 调回低值即可。
+_FETCH_WORKERS = max(1, int(os.environ.get("BEACON_FETCH_WORKERS", "12") or "12"))
+
+
+def _fetch_many(paths: List[str], workers: int = 0) -> List[Optional[str]]:
     """并发取多份**分片**文本，返回与入参同序的结果（取不到为 None）。
 
     走 `_shard_text`（按清单 sha1 缓存）而不是 `fetch_text`：命中缓存时连条件请求
@@ -957,17 +993,17 @@ def _fetch_many(paths: List[str], workers: int = 6) -> List[Optional[str]]:
 
     为什么值得并发：一个国标码常有多个 zh 续片，串行取等于把延迟**相加**；
     并发取的总耗时接近最慢那一个。
-    单条路径时不做线程开销。
 
-    上限 6 是有意的：客户端瓶颈在带宽不在连接数，开太多只会互相挤、还会撞上
-    CDN 的限速。异常一律吞成 None —— 与 fetch_text 的语义一致（取不到就是取不到，
+    `workers` 传 0 表示用默认值 `_FETCH_WORKERS`（环境变量可调）。
+    异常一律吞成 None —— 与 fetch_text 的语义一致（取不到就是取不到，
     由调用方决定是"换下一片"还是"报错"），绝不把线程异常泄漏成 tool 崩溃。
     """
     if len(paths) <= 1:
         return [_shard_text(p) for p in paths]
+    n = max(1, int(workers or _FETCH_WORKERS))
     out: List[Optional[str]] = [None] * len(paths)
     with concurrent.futures.ThreadPoolExecutor(
-            max_workers=min(workers, len(paths))) as ex:
+            max_workers=min(n, len(paths))) as ex:
         futs = {ex.submit(_shard_text, p): i for i, p in enumerate(paths)}
         for fut in concurrent.futures.as_completed(futs):
             i = futs[fut]
@@ -1057,9 +1093,106 @@ def _shard_text(relpath: str) -> Optional[str]:
 # --------------------------------------------------------------------------- #
 # manifest + 分片访问
 # --------------------------------------------------------------------------- #
+# 清单的**跨进程**磁盘缓存（2026-10-29）。
+#
+# 为什么必须做：线上每次新进程加载清单要 2~3 秒（582 KB + 身份令牌 + 一次条件
+# 请求），而清单是**读任何分片的前置条件** —— 拿不到清单，连「这个分片的内容
+# sha1 是多少」都无从判断，`_shard_text` 的内容哈希缓存就永远无从命中。
+# 结果就是「跨进程复用」形同虚设：同一条查询（素粉/贵阳）在三个全新进程里实测
+# 11151 / 5713 / 7788 ms，而分片本身早已缓存（95 个 shard-*.json）。
+# 换句话说，卡的不是下载，是**每进程一次的清单取数**。
+#
+# 因此给它一条真正的旁路：清单连同取到时间落盘，TTL 内完全不联网。
+# 只在「数据只能来自网络」时启用（REPO 存在时本地文件 / git 更快也更准，
+# 不能让 TTL 掩盖本地派生层重建 —— 那条路径仍按 mtime 判新）。
+BEACON_MANIFEST_TTL = float(os.environ.get("BEACON_MANIFEST_TTL", "300") or "0")
+
+
+def _manifest_disk_path() -> str:
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    return os.path.join(CACHE_DIR, "manifest-fresh.json")
+
+
+def _manifest_disk_read() -> Optional[Dict[str, Any]]:
+    """读跨进程清单缓存；未启用 / 过期 / 损坏 → None。"""
+    if BEACON_MANIFEST_TTL <= 0:
+        return None
+    try:
+        with open(_manifest_disk_path(), "r", encoding="utf-8") as f:
+            blob = json.load(f)
+        at = float(blob.get("at") or 0)
+        man = blob.get("manifest")
+        if isinstance(man, dict) and man.get("shards") is not None \
+                and (time.time() - at) < BEACON_MANIFEST_TTL:
+            return man
+    except Exception:
+        pass
+    return None
+
+
+def _manifest_disk_write(man: Dict[str, Any]) -> None:
+    try:
+        with open(_manifest_disk_path(), "w", encoding="utf-8") as f:
+            json.dump({"at": time.time(), "manifest": man}, f, ensure_ascii=False)
+    except Exception:
+        pass
+
+
+# 预热完成信号（2026-10-29）。为什么要等：预热和首次查询会**抢同一批表**
+# （别名三表 / 切词表 / 清单）。没有锁时两边各算一遍，等于把 4 秒翻倍；
+# 而实测「initialize 之后立刻发查询」的客户端确实会撞上这个窗口
+# （三个新进程 4624 / 4857 / 35745 ms —— 那个 35s 就是两倍工作 + 网络重传叠出来的）。
+# 所以查询侧**等预热完成**，而不是并行重复。
+_WARM_DONE = threading.Event()
+_WARM_WAIT_S = float(os.environ.get("BEACON_WARM_WAIT", "20") or "20")
+
+
+def _await_warm() -> None:
+    """等待启动预热完成（最多 `_WARM_WAIT_S` 秒）。未启动/已完成为无操作。"""
+    if not _WARM_DONE.is_set():
+        _WARM_DONE.wait(_WARM_WAIT_S)
+
+
+def _warm_caches() -> None:
+    """启动后异步预热「所有检索的前置」。
+
+    放在后台线程里做，是因为 stdio 的 `initialize` 不能等这些（客户端会判服务
+    不可用）；预热完，首次 `tools/call` 就直接命中，用户感知不到这一跳。
+
+    清单里每一项都对应一个**进程内首次查询才建**的表，线上冷启动实测合计
+    约 6~7 秒（2026-10-29，各分项为单进程冷调）：
+      · load_manifest        2.0~3.0 s（跨进程 TTL 缓存上线后降到 ~20 ms）
+      · alias_codes          2.07 s（三张别名表：data / curated / abbr）
+      · _segment_terms       1.91 s（最长优先切词表，由别名+类名+能力词合成）
+      · _city_names             25 ms
+      · _province_map            3 ms
+    每项都可失败：真出错时查询路径会自己重建，不让预热把进程带崩。
+    """
+    try:
+        for fn in (load_manifest, _shard_hash_index, _city_names, _province_map,
+                   load_gb_alias, _seg_patterns):
+            try:
+                fn()
+            except Exception:
+                pass
+        try:
+            _cap_term_of("cuisine_noodles")     # 预热能力词面表（cap.json）
+        except Exception:
+            pass
+    finally:
+        _WARM_DONE.set()
+
+
 def load_manifest() -> Dict[str, Any]:
     global _manifest_cache
     if _cache_stale(_manifest_cache, "data/manifest.json"):
+        # 只有「数据必须从网络来」时才走磁盘旁路；本地存在副本时保持 mtime 判新。
+        use_disk = not REPO
+        if use_disk:
+            man = _manifest_disk_read()
+            if man is not None:
+                _manifest_cache = (man, time.time(), None)
+                return _manifest_cache[0]
         txt = fetch_text("data/manifest.json")
         if not txt:
             # 报错必须指向真因：把 _http_get 记下的连接层诊断（失效代理 / 网络不可达 /
@@ -1071,7 +1204,10 @@ def load_manifest() -> Dict[str, Any]:
                 + "② 设置 BEACON_SOURCE 指向自建镜像；"
                 + "③ 设置 BEACON_REPO 指向本地仓库以完全离线使用。"
             )
-        _manifest_cache = (json.loads(txt), time.time(), _wt_mtime("data/manifest.json"))
+        _man = json.loads(txt)
+        _manifest_cache = (_man, time.time(), _wt_mtime("data/manifest.json"))
+        if use_disk:
+            _manifest_disk_write(_man)
     return _manifest_cache[0]
 
 
@@ -1287,6 +1423,25 @@ def _seg_patterns() -> List[Tuple[str, str]]:
     """长词优先的匹配表 [(词, 来源)]，来源 ∈ alias / gb_name / cap。"""
     global _SEG_PATTERNS
     if _SEG_PATTERNS is None:
+        # 跨进程磁盘缓存（2026-10-29）。冷建实测 4.4 秒，几乎全花在
+        # `_cap_term_index()`（大 JSON 解析 + 建词表）和 2757 条排序上，
+        # 都是**纯 CPU**，与网络无关；不做持久化的话每个新进程都要重付一次。
+        # 键里带数据版本号：一发布新数据版本就变，不会读到陈旧切词表。
+        _cp = None
+        try:
+            _ver = _data_version() or ""
+            if _ver:
+                os.makedirs(CACHE_DIR, exist_ok=True)
+                _cp = os.path.join(CACHE_DIR, "seg-" + hashlib.sha1(
+                    _ver.encode("utf-8")).hexdigest() + ".json")
+                if os.path.exists(_cp):
+                    with open(_cp, "r", encoding="utf-8") as f:
+                        _d = json.load(f)
+                    if isinstance(_d, list) and _d:
+                        _SEG_PATTERNS = [(str(a), str(b)) for a, b in _d]
+                        return _SEG_PATTERNS
+        except Exception:
+            _cp = None
         pats: Dict[str, str] = {}
         for w in load_gb_alias():
             if len(w) >= 2:
@@ -1304,6 +1459,13 @@ def _seg_patterns() -> List[Tuple[str, str]]:
                 pats.setdefault(w, "cap")
         # 全空说明取数链路整个挂了：不缓存，否则词条切分此后永久失效
         _SEG_PATTERNS = sorted(pats.items(), key=lambda x: -len(x[0])) if pats else None
+        if _SEG_PATTERNS and _cp:
+            try:
+                with open(_cp, "w", encoding="utf-8") as f:
+                    json.dump([[w, s] for w, s in _SEG_PATTERNS], f,
+                              ensure_ascii=False)
+            except Exception:
+                pass
     return _SEG_PATTERNS or []
 
 
@@ -4996,6 +5158,10 @@ def _serve_tool_call(params: Dict[str, Any], mid: Any) -> None:
     """
     name = (params or {}).get("name", "")
     try:
+        # 等启动预热收尾（最多 BEACON_WARM_WAIT 秒）。不这样做的话，预热线程与
+        # 首次查询会各建一遍同样的表（别名三表 ~2s、切词表 ~1.9s），等于把冷启动
+        # 成本翻倍 —— 实测出现过 35745 ms 这种远超单项之和的离群值。
+        _await_warm()
         res = _dispatch(name, (params or {}).get("arguments") or {})
         payload = {
             "jsonrpc": "2.0", "id": mid,
@@ -5030,6 +5196,13 @@ def main() -> None:
     try:
         import identity
         identity.warmup()
+    except Exception:
+        pass
+    # 预热「清单 + 分片哈希索引」（异步，理由同上：initialize 不能等）。
+    # 这两样是所有检索的前置：清单不到位，连分片的内容哈希都无从判断，
+    # 内容哈希缓存也就无从命中。线上实测清单取数 2~3 秒，先在这里付掉。
+    try:
+        threading.Thread(target=_warm_caches, name="beacon-warm", daemon=True).start()
     except Exception:
         pass
     # ⚠ 读循环与 tool 执行必须**解耦**（2026-10-24）：
