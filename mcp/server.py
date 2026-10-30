@@ -338,7 +338,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.10"
+VERSION_FALLBACK = "1.11.11"
 
 
 def _pkg_version() -> str:
@@ -2095,6 +2095,11 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
     """
     if not q or out.get("total_matched", 0) >= 5:
         return out
+    # 0 条先做关键词审计（2026-10-30）：本函数有 4 条 return 分支，放在最前面才
+    # 不会被绕过 —— 否则「五星级宾馆」这类会被 suggested_gb 那条提前返回，
+    # 用户看到「0 条 + 换个码试试」，却始终不知道「五星级」根本不参与过滤。
+    if not out.get("total_matched"):
+        out.update(_keyword_audit((out.get("query_parsed") or {}).get("keywords") or [], 0))
     # 坐标圈内 0 条（2026-10-23）：先于一切候选码建议 —— 圈内没数据时，
     # 「改查 gb= 重试」是纯噪音（换什么码圈内都还是没有），该说的是
     # 「检索命中 N 条但都不在圈内 / 无坐标」。这类信息差最容易让 agent
@@ -2135,6 +2140,7 @@ def _attach_routing_hint(out: Dict[str, Any], q: str, city: str) -> Dict[str, An
     if out.get("total_matched", 0) == 0 and not cands:
         # 0 条 + 国标侧无候选 —— 但**能力域可能命中**，这是唯一还可执行的线索。
         # 此处必须给出 hint，否则 agent 看不到「换个说法 / 加城市就能召回」这条信息。
+        # 关键词审计已在函数入口统一做过（0 条时），这里不重复。
         if caps:
             _emit_cap()
             return out
@@ -3926,6 +3932,112 @@ def _candidate_shards(tokens: List[str], city: str) -> Optional[List[str]]:
     return _cap_shards(picked, wacc, "candidate_shards")
 
 
+def _unsatisfiable_tokens(tokens: List[str]) -> List[str]:
+    """哪些关键词在**索引里完全没有倒排** = 全库没有一条记录的检索面含它。
+
+    为什么单独拎出来：检索里最贵的一种错是「限定词悄悄不生效」——调用方以为
+    筛过了，拿到的其实是整类。以前它被折进「交集为空 → 0 条」，而别名召回更是
+    整段绕过 AND 校验，于是「五星级宾馆」返回全城宾馆 502 条、count 很好看，
+    没人知道「五星级」根本没参与过滤（星级只在 poi.type，不在检索面）。
+
+    返回 [] 表示「都查得到」或「索引不可用，别下结论」——宁可不说，也不能瞎报。
+    """
+    if not tokens or not _index_fresh():
+        return []
+    meta = _index_meta() or {}
+    try:
+        buckets = int(meta["buckets"])
+    except Exception:
+        return []
+    need = sorted({_bucket_rel(g, buckets)
+                   for t in tokens for g in _grams(t, query_mode=True)})
+    raw = _read_many_text(need)
+    docs: Dict[str, Any] = {}
+    for k in need:
+        t = raw.get(k)
+        if not t:
+            continue
+        try:
+            docs[k] = json.loads(t)
+        except Exception:
+            return []
+    miss: List[str] = []
+    for tok in tokens:
+        gs = _grams(tok, query_mode=True)
+        if not gs:
+            miss.append(tok)
+            continue
+        inter: Optional[set] = None
+        for g in gs:
+            d = docs.get(_bucket_rel(g, buckets))
+            m = d.get(g) if isinstance(d, dict) else None
+            s = set(m.keys()) if m else set()
+            inter = s if inter is None else (inter & s)
+            if not inter:
+                break
+        if not inter:
+            miss.append(tok)
+    return miss
+
+
+def _keyword_audit(tokens: List[str], total: Optional[int] = None) -> Dict[str, Any]:
+    """把「这个词没收录」「这个词把结果筛成 0 条」显式写进返回体，而不是静默消失。"""
+    if not tokens:
+        return {}
+    miss = _unsatisfiable_tokens(tokens)
+    if miss:
+        return {
+            "unmatched_keywords": miss,
+            "keyword_note": (
+                "关键词 %s 在检索面（企业名/城市/区县/国标码/工艺/材料/认证/产品/能力词）里"
+                "**一条记录都没有**，所以它没有起到过滤作用，结果只由其余关键词决定。"
+                "这类词通常是 POI 属性（星级/档次/营业状态等）：档案详情里有"
+                "（poi.type 例如「住宿服务;宾馆酒店;五星级宾馆」、poi.keytag 例如「高档型」），"
+                "检索面不含。要按属性筛，先用 gb= 缩类目再用 get_vendor(ids=[...]) 逐家看 poi，"
+                "或告诉我把该属性做成过滤器。"
+                % "、".join(miss)
+            ),
+        }
+    if total == 0:
+        return {
+            "no_match_note": (
+                "关键词 %s 按 AND 逐条比对**检索面**，组合后 0 条。若其中含星级、档次、"
+                "营业状态这类 POI 属性词，检索面不含（只在 poi.type / poi.keytag 里）："
+                "先用 gb= 把类目缩到正确范围，再 get_vendor(ids=[...]) 逐家看 poi；"
+                "也可以去掉该属性词，只按品类检索。"
+                % "、".join(tokens)
+            ),
+        }
+    return {}
+
+
+def _alias_keep_tokens(tokens: List[str], alias_word: str) -> List[str]:
+    """别名召回时要 AND 校验的关键词 = 全部关键词 - 别名词所解释掉的那些。
+
+    别名召回是「按国标码把整个类目拉回来」（宾馆 → 住宿类），所以**别名词本身**
+    不能要求出现在检索面里，否则等于把刚拉进来的整类又滤掉。但原来是把 AND
+    整段豁免掉的，后果是任何混合查询里的限定词都彻底失效：实测「五星级宾馆」
+    （贵阳）= 全城宾馆 502 条，「五星级」一条都没参与过滤，而返回体不说。
+
+    豁免范围按**词面派生关系**判，不能只按 `==`：
+      · 「钣金」→ 别名条目叫「钣金加工」「钣金」，后者是被前者解释掉的扩展写法，
+        只认 `==` 会把「钣金加工」类目里没写「钣金」的记录全滤掉（实测 454 → 146）。
+      · 「医院」→ 别名条目「宠物医院/社区医院/专科医院」，同理必须豁免。
+      · 「大酒店」→ 别名条目就叫「酒店」，只能豁免「酒店」，残留的「大」照样参与
+        —— 这才是限定词该起的作用。
+    """
+    w = (alias_word or "").strip().lower()
+    if not w:
+        return list(tokens)
+    keep: List[str] = []
+    for t in tokens:
+        s = t.strip().lower()
+        if s and (s == w or s in w or w in s):
+            continue                      # 该词被别名条目解释掉了
+        keep.append(t)
+    return keep
+
+
 def _records_from_paths(paths: List[str]) -> List[Dict[str, Any]]:
     """批量读取若干 fp 分片的记录，并在进程内按路径缓存（重复查询近乎零成本）。
 
@@ -4202,6 +4314,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             **({"geo": {"lat": lat_v, "lng": lng_v, "radius_km": rad,
                         "records_with_coords": geo_ncoord}} if lat_v is not None else {}),
             **({"geo_filtered_out": geo_dropped} if geo_dropped else {}),
+            **_keyword_audit(gen_tokens, records_total),
         }
         return _attach_routing_hint(out, q, city)
 
@@ -4221,6 +4334,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             "results": [],
             **_fetch_warn(0),   # 索引桶取数失败也会让候选为空，别把故障说成「没有」
             **parsed,
+            **_keyword_audit(gen_tokens, 0),
         }, q, city)
 
     matches: List[Dict[str, Any]] = []
@@ -4305,6 +4419,11 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         s = _rec_summary(rec)
         s["via"] = "alias"         # 别名定向召回（企业自己没写过这个词）
         a = alias_by_code.get(rec.get("gb") or "")
+        _keep = _alias_keep_tokens(gen_tokens, a["word"] if a else "")
+        if _keep and not all(t in _hay(rec).lower() for t in _keep):
+            # 别名词可以不在检索面里（正因如此才走别名），但同一句里的其它
+            # 限定词必须在 —— 否则「五星级宾馆」= 全城宾馆，见 _alias_keep_tokens。
+            continue
         if a:
             s["alias_match"] = {"word": a["word"], "gb": a["code"], "name": a["name"]}
         matches.append(s)
