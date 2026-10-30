@@ -322,7 +322,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.8"
+VERSION_FALLBACK = "1.11.9"
 
 
 def _pkg_version() -> str:
@@ -4545,6 +4545,14 @@ _VENDOR_CACHE_MAX = int(os.environ.get("BEACON_VENDOR_CACHE_MAX", "1024") or "0"
 # 等着看「点开的那一家」，通用预算下 26.7s 的构建会原样砸到交互上。
 _VENDOR_FP_DEADLINE = float(os.environ.get("BEACON_VENDOR_FP_DEADLINE", "5") or "0")
 
+# 批量详情的上限与并发度（2026-10-30）。
+# 上限 20：一次调用就吃 20 个 /v1/rec，再多会变成"变相全量导出"的入口，
+# 与「防一次性整体拉走」的设计相冲突。
+# 并发 6：服务端 worker 同 colo 读 R2 很快，瓶颈是链路 RTT，6 路足够把
+# 5~20 家压进一个往返量级；再高对 Cloudflare Pages 免费额度不友好。
+_BATCH_VENDOR_MAX = int(os.environ.get("BEACON_BATCH_VENDOR_MAX", "20") or "20")
+_BATCH_VENDOR_WORKERS = int(os.environ.get("BEACON_BATCH_VENDOR_WORKERS", "6") or "6")
+
 
 def _vendor_cache_sig() -> float:
     m = _wt_mtime("data/manifest.json")
@@ -4660,32 +4668,141 @@ def _rec_gb(rec: Dict[str, Any]) -> str:
     return ""
 
 
+def _vendor_fast(vid: str, ck: tuple, sig: float) -> Optional[Dict[str, Any]]:
+    """详情快路径：缓存 → `/v1/rec` 按条取 → 回写缓存；取不到返回 None。
+
+    为什么抽出来（2026-10-30）：批量详情要并发这一段。单条详情稳定在
+    2.3s，而它是**往返受限**的 —— 每次只搬 1.4KB，链路 RTT 占总耗时九成。
+    串行取 5 家就是 11.7s，用户会把「推荐几家」直接当成卡顿。
+
+    一次 HTTP 拿 1 条 ≈ 1.1KB，替代「定国标码 → 拉 2~3 个 zh 续片
+    （5~7MB）→ 解析整片 → 线性扫」。走不通时返回 None，由 `get_vendor`
+    静默回落到原路径 —— 这一步失败**不会**让详情不可用，只会慢回去。
+    """
+    _hit = _vendor_cache_get(ck, sig)
+    if _hit is not None:
+        return _hit
+    _fast = _v1_rec(vid)
+    if _fast is None:
+        return None
+    _rgb = _rec_gb(_fast)
+    if _rgb and not _fast.get("gb"):
+        # zh 记录常常不写顶层 gb（只留 industry.code），但它确实归档在这个
+        # 国标码下。不回填就会出现「search 能搜到、get_vendor 说 gb=null」。
+        _fast["gb"] = _rgb
+        _fast["gb_source"] = "record"
+    _resp = {"vendor": normalize_vendor(_fast)}
+    _vendor_cache_put(ck, sig, _resp)
+    return _resp
+
+
+def get_vendors(ids: Any, gb: str = "") -> Dict[str, Any]:
+    """批量取详情：一次调用拿回 N 家。
+
+    两条泳道，这是关键设计：
+      ① **快路径**（缓存 / `/v1/rec`）并发跑。这是绝大多数情况，也是慢的
+         那个 —— 5 家串行 11.7s → 并发约 2.5s。
+      ② 快路径没命中的，退回 `get_vendor` 的慢路径，**串行**跑。
+         不能并发：慢路径会构建全量指纹索引（`_build_fp_index`），N 个线程
+         同时撞上去等于把一次重建变成 N 次，内存和出网都会爆。
+
+    `gb` 对整批生效；不传则每条各自反查（更慢，但结果更准）。
+    """
+    raw = ids
+    if isinstance(raw, str):
+        raw = [raw]
+    if not isinstance(raw, (list, tuple)):
+        return {"error": "参数 ids 需要是字符串数组"}
+
+    # 去重保序：调用方经常把 search 结果的 id 和别处来的 id 混在一起传。
+    seen: set = set()
+    uniq: List[str] = []
+    for _x in raw:
+        _v = str(_x or "").strip()
+        if _v and _v not in seen:
+            seen.add(_v)
+            uniq.append(_v)
+    if not uniq:
+        return {"error": "缺少必填参数 ids（或 id）"}
+
+    dropped = 0
+    if len(uniq) > _BATCH_VENDOR_MAX:
+        dropped = len(uniq) - _BATCH_VENDOR_MAX
+        uniq = uniq[:_BATCH_VENDOR_MAX]
+
+    gb = (gb or "").strip()
+    sig = _vendor_cache_sig()
+    got: Dict[str, Dict[str, Any]] = {}
+
+    if len(uniq) > 1:
+        # 每个任务一份 context 副本：同一 Context 不能并发进入，且
+        # X-Beacon-Op 是靠 ContextVar 传的（缺了服务端按 401 处理）。
+        import contextvars
+        _base = contextvars.copy_context()
+        _n = max(1, min(_BATCH_VENDOR_WORKERS, len(uniq)))
+        with concurrent.futures.ThreadPoolExecutor(max_workers=_n) as ex:
+            futs = {ex.submit(_base.copy().run, _vendor_fast, vid, (vid, gb), sig): vid
+                    for vid in uniq}
+            for fut in concurrent.futures.as_completed(futs):
+                _vid = futs[fut]
+                try:
+                    _r = fut.result()
+                except Exception:
+                    _r = None          # 单条炸掉不能拖垮整批
+                if _r is not None:
+                    got[_vid] = _r
+    else:
+        _r = _vendor_fast(uniq[0], (uniq[0], gb), sig)
+        if _r is not None:
+            got[uniq[0]] = _r
+
+    vendors: List[Dict[str, Any]] = []
+    failed: List[Dict[str, Any]] = []
+    for vid in uniq:
+        if vid in got:
+            vendors.append(got[vid]["vendor"])
+            continue
+        # 慢路径：串行。注意这里可能很慢（要拉分片），所以只在快路径没命中时走。
+        try:
+            r = get_vendor(vid, gb)
+        except Exception as e:  # noqa: BLE001
+            r = {"error": "get_vendor 异常: %s" % e}
+        if isinstance(r, dict) and r.get("vendor"):
+            vendors.append(r["vendor"])
+        else:
+            item: Dict[str, Any] = {"id": vid,
+                                    "error": (r or {}).get("error") if isinstance(r, dict) else "unknown"}
+            if isinstance(r, dict) and r.get("message"):
+                item["message"] = r["message"]
+            failed.append(item)
+
+    out: Dict[str, Any] = {
+        "vendors": vendors,
+        "count": len(vendors),
+        "requested": len(uniq),
+    }
+    if failed:
+        out["failed"] = failed
+    if dropped:
+        out["truncated"] = dropped
+        out["note"] = ("一次最多取 %d 家，本次多出的 %d 个已忽略；"
+                       "请分批调用或先用 search_vendors 缩小范围。"
+                       % (_BATCH_VENDOR_MAX, dropped))
+    return out
+
+
 def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
     vid = (vid or "").strip()
     if not vid:
         return {"error": "缺少必填参数 id"}
     gb = (gb or "").strip()
     # 命中缓存就直接回，省掉 id 反查 + 分片解析（三次实测均为 970ms 量级）。
+    # ⓿ 缓存 + 按条取（2026-10-30）：详情的主路径。逻辑抽到 `_vendor_fast`，
+    # 批量详情（get_vendors）要并发复用同一段；这里失败会返回 None 继续往下走慢路径。
     _ck = (vid, gb)
     _sig = _vendor_cache_sig()
-    _hit = _vendor_cache_get(_ck, _sig)
-    if _hit is not None:
-        return _hit
-    # ⓿ 按条取（2026-10-30）：详情的主路径。
-    #
-    # 一次 HTTP 拿 1 条 ≈ 1.1KB，替代下面「定国标码 → 拉 2~3 个 zh 续片
-    # （5~7MB）→ 解析整片 → 线性扫」。走不通就静默回落到原路径，
-    # 因此这一步失败**不会**让详情不可用，只会慢回去。
-    _fast = _v1_rec(vid)
-    if _fast is not None:
-        _rgb = _rec_gb(_fast)
-        if _rgb and not _fast.get("gb"):
-            # zh 记录常常不写顶层 gb（只留 industry.code），但它确实归档在这个
-            # 国标码下。不回填就会出现「search 能搜到、get_vendor 说 gb=null」。
-            _fast["gb"] = _rgb
-            _fast["gb_source"] = "record"
-        _resp = {"vendor": normalize_vendor(_fast)}
-        _vendor_cache_put(_ck, _sig, _resp)
+    _resp = _vendor_fast(vid, _ck, _sig)
+    if _resp is not None:
         return _resp
     # 没给国标码就先解析 id -> gb。
     #
@@ -4964,14 +5081,22 @@ TOOLS = [
     },
     {
         "name": "get_vendor",
-        "description": "按主体 id(+可选国标码)取完整中文档案：名称/地址/经纬度/电话/行业路径/认证/关键词等。",
+        "description": "按主体 id 取完整中文档案：名称/地址/经纬度/电话/行业路径/认证/关键词等。"
+                       "**取多家请用 ids 一次批量拿**：单条固定约 2.3 秒（往返受限，"
+                       "数据本身只有 ~1.4KB），串行取 5 家要 11~12 秒，批量并发后约 2~3 秒。"
+                       "典型用法：search_vendors 拿到一批 id 后，把要展示的几家一起传给 ids。",
         "inputSchema": {
             "type": "object",
             "properties": {
-                "id": {"type": "string", "description": "主体 id，如 CN-MFG-0000163（必填）"},
-                "gb": {"type": "string", "description": "国标码；不填会自动从指纹分片反查(稍慢)"},
+                "id": {"type": "string",
+                       "description": "单个主体 id，如 CN-MFG-0000163（与 ids 二选一，只传它时回执是 {\"vendor\": …}）"},
+                "ids": {"type": "array", "items": {"type": "string"}, "maxItems": 20,
+                        "description": "批量主体 id，最多 20 个；自动去重、按传入顺序返回。"
+                                       "回执是 {\"vendors\": [...], \"count\": n, \"failed\": [...]}，"
+                                       "单条取不到只进 failed，不影响其余"},
+                "gb": {"type": "string",
+                       "description": "国标码（可选）；批量时对全部 id 生效。不填会自动反查，稍慢"},
             },
-            "required": ["id"],
         },
     },
     {
@@ -5340,6 +5465,11 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
                 radius_km=args.get("radius_km"),
             )
         if name == "get_vendor":
+            # 批量优先：传了 ids 就整批取（并发后总耗时≈一个往返），
+            # 只传 id 仍走单条，回执结构保持 {"vendor": …} 不变（向后兼容）。
+            _ids = args.get("ids")
+            if _ids:
+                return get_vendors(_ids, args.get("gb", ""))
             return get_vendor(args.get("id", ""), args.get("gb", ""))
         if name == "get_capability_card":
             return get_capability_card(args.get("id", ""))

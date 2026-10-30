@@ -10,7 +10,7 @@
 | tool | 用途 | 关键参数 |
 |------|------|----------|
 | `search_vendors` | 按 关键词 / 城市 / 国标码 检索，返回精简档案 | `query` `city` `gb` `limit` `offset` |
-| `get_vendor` | 按 id（+国标码）取完整中文档案 | `id`（必填） `gb`（可选，自动反查） |
+| `get_vendor` | 取一家或多家的完整中文档案。**看多家务必用 `ids` 一次拿**：单条约 2.3 s（往返受限，数据仅 ~1.4 KB），串行 6 家要 15 s，批量约 4.4 s | `id` 或 `ids`（二选一，`ids` 最多 20 个） `gb`（可选，自动反查） |
 | `get_capability_card` | 按 id 取能力卡（工艺/设备/产能/认证等） | `id`（必填） |
 | `suggest_filters` | **把用户原话映射成候选国标小类码**，供改用 `gb=` | `query`（必填） `city` `limit` |
 | `list_industries` | **国标小类货架**（只列有数据的类，附企业条数），供按语义自己挑码 | `keyword` `parent` `limit` `offset` |
