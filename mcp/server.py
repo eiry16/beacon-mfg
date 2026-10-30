@@ -322,7 +322,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.7"
+VERSION_FALLBACK = "1.11.8"
 
 
 def _pkg_version() -> str:
@@ -906,7 +906,12 @@ def _http_get_once(relpath: str, st: list) -> Tuple[Optional[str], Optional[str]
     last_err = ""
     _fatal = False
     for base in _http_bases():
-        url = base + "/" + _quote_path(relpath)
+        # 去掉前导 `/` 再拼：`base + "/" + "/v1/rec/x"` 会拼出 `//v1/rec/x`。
+        # 双斜杠不会报错 —— 它只是**绕过** worker 的路由前缀匹配，落到静态
+        # 兜底上，于是 /v1/rec 变成 401/404（本机经代理是 404）。症状是
+        # 「端点明明存在、手工 curl 也 200，客户端却一直静默回落」
+        # （2026-10-30，按条取在 1.11.7 上因此完全没生效）。
+        url = base + "/" + _quote_path(relpath).lstrip("/")
         cap = _cache_path(url)
         etag = None
         if os.path.exists(cap):
@@ -4605,7 +4610,7 @@ def _v1_rec(vid: str) -> Optional[Dict[str, Any]]:
         return None
     _st = [0]
     try:
-        body, _etag = _http_get_once("/v1/rec/" + vid, _st)
+        body, _etag = _http_get_once("v1/rec/" + vid, _st)
         if body is None and _st[0] == 401:
             try:
                 import identity as _idn
@@ -4613,7 +4618,7 @@ def _v1_rec(vid: str) -> Optional[Dict[str, Any]]:
             except Exception:
                 return None
             _st[0] = 0
-            body, _etag = _http_get_once("/v1/rec/" + vid, _st)
+            body, _etag = _http_get_once("v1/rec/" + vid, _st)
     except Exception:
         return None
     if not body:
