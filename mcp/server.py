@@ -308,7 +308,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.5"
+VERSION_FALLBACK = "1.11.6"
 
 
 def _pkg_version() -> str:
@@ -4411,6 +4411,84 @@ def _vendor_cache_put(ck: tuple, sig: float, resp: Dict[str, Any]) -> None:
     _VENDOR_CACHE[ck] = (resp, sig)
 
 
+# `/v1/rec` 端点不存在时的静默期截止时间（unix ts）。见 _v1_rec 里的说明：
+# 目的是「线上还没部署时，别让每条详情多付一个 404 往返」。
+_REC_PROBE_UNTIL = [0.0]
+
+
+def _v1_rec(vid: str) -> Optional[Dict[str, Any]]:
+    """GET /v1/rec/<id> —— 向服务端按条取一条完整记录；取不到返回 None。
+
+    为什么单开一条路：原先「看一家企业」= 定国标码 → 拉 2~3 个 zh 续片
+    （合计 5~7MB）→ 本地 JSON 解析整片再线性扫。实测 get_vendor 冷调用
+    2.4~3.2s，其中大头是分片解析。服务端有了按条寻址（v2 定长块 + R2 Range）
+    以后，同一步是 1 个请求、约 1.1KB。
+
+    **不允许它把详情链路搞挂**：任何异常 / 非 200 / 结构不符都退化成 None，
+    调用方随即回落到原来的分片路径。这样在 v2 块尚未发布、或线上还是老
+    worker 的机器上，行为与改动前**完全一致**，不会出现「升级 MCP 后详情全空」。
+
+    自证：返回的 id 必须与请求的 id 相等。这不是多余的一步 —— 按条取依赖
+    idmap 的 rowid 与 zh 块内的偏移，偏移错一位不会报错，只会返回**另一家
+    企业**的记录（2026-10-30 那个 zh 块未排序的 bug 就是这个形态：返回的东西
+    看起来完全正常）。这里做一次往返校验，代价为零。
+    """
+    if not vid:
+        return None
+    # 纯本地模式（REPO 存在）不走这里：那时其余数据都读本地副本，
+    # 单为一条详情去联网既慢又会让「断网可用」失效。
+    if REPO:
+        return None
+    # 端点还不存在时的静默期。
+    #
+    # 为什么必须有：线上 worker 没部署 /v1/rec 之前，每次 get_vendor 都会先付
+    # 一个 404 往返。本机实测单次 RTT 0.6~2.9 秒，这等于**给每条详情加一秒**，
+    # 而这一秒换不到任何东西 —— 是纯粹的回归。
+    # 探测到端点不存在后安静 5 分钟：既不让每条详情付钱，又能在部署后
+    # 自己恢复（不需要重启 MCP 子进程）。
+    if time.time() < _REC_PROBE_UNTIL[0]:
+        return None
+    _st = [0]
+    try:
+        body, _etag = _http_get_once("/v1/rec/" + vid, _st)
+        if body is None and _st[0] == 401:
+            try:
+                import identity as _idn
+                _idn.ensure_token(force=True)
+            except Exception:
+                return None
+            _st[0] = 0
+            body, _etag = _http_get_once("/v1/rec/" + vid, _st)
+    except Exception:
+        return None
+    if not body:
+        # 404/405 = 这个端点还不存在（老 worker），不是「这条记录不存在」。
+        # 只对这两种状态进静默期；其余（网络错误等）下次照常重试。
+        if _st[0] in (404, 405, 501):
+            _REC_PROBE_UNTIL[0] = time.time() + 300
+        return None
+    try:
+        o = json.loads(body)
+    except Exception:
+        return None
+    if not isinstance(o, dict) or o.get("error"):
+        return None
+    if str(o.get("id") or "") != vid:
+        return None
+    return o
+
+
+def _rec_gb(rec: Dict[str, Any]) -> str:
+    """从一条 zh 记录里取国标码。顶层没有就取 industry.code。"""
+    g = rec.get("gb")
+    if g:
+        return str(g)
+    ind = rec.get("industry") or {}
+    if isinstance(ind, dict):
+        return str(ind.get("code") or "")
+    return ""
+
+
 def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
     vid = (vid or "").strip()
     if not vid:
@@ -4422,6 +4500,22 @@ def get_vendor(vid: str, gb: str = "") -> Dict[str, Any]:
     _hit = _vendor_cache_get(_ck, _sig)
     if _hit is not None:
         return _hit
+    # ⓿ 按条取（2026-10-30）：详情的主路径。
+    #
+    # 一次 HTTP 拿 1 条 ≈ 1.1KB，替代下面「定国标码 → 拉 2~3 个 zh 续片
+    # （5~7MB）→ 解析整片 → 线性扫」。走不通就静默回落到原路径，
+    # 因此这一步失败**不会**让详情不可用，只会慢回去。
+    _fast = _v1_rec(vid)
+    if _fast is not None:
+        _rgb = _rec_gb(_fast)
+        if _rgb and not _fast.get("gb"):
+            # zh 记录常常不写顶层 gb（只留 industry.code），但它确实归档在这个
+            # 国标码下。不回填就会出现「search 能搜到、get_vendor 说 gb=null」。
+            _fast["gb"] = _rgb
+            _fast["gb_source"] = "record"
+        _resp = {"vendor": normalize_vendor(_fast)}
+        _vendor_cache_put(_ck, _sig, _resp)
+        return _resp
     # 没给国标码就先解析 id -> gb。
     #
     # 定位策略（三级，见下）：先小后大，绝不默认读全量索引。
