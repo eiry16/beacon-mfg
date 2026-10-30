@@ -42,6 +42,7 @@ import subprocess
 import tarfile
 import tempfile
 import io
+import gzip
 import time
 import hmac
 import urllib.request
@@ -206,13 +207,26 @@ def _gb_seed_records(pack_id: str) -> List[Dict[str, Any]]:
     except Exception:
         gbs = set()
     if gbs:
+        # 先挑出候选片，**并发预取**，再逐片解析（2026-10-30）。
+        # 原来是 `for s in _shards_of_type("fp")` 里逐片 `_read_fp_shard`：
+        # 一片 1.5~2.5s，start_sourcing 首查实测 179 个请求 / 91s，
+        # 其中绝大部分就耗在这条串行链上（并发度实测只有 1.69）。
+        # 预取只负责把内容放进缓存层，逐片判定的语义与顺序完全不变。
+        cand = []
         for s in _shards_of_type("fp"):
             c = str(s.get("c") or "")
             if c in gbs or c[:2] in gbs:
-                try:
-                    out.extend(_read_fp_shard(s))
-                except Exception:
-                    continue
+                cand.append(s)
+        if len(cand) > 1:
+            try:
+                _fetch_many([s.get("p") for s in cand])
+            except Exception:
+                pass
+        for s in cand:
+            try:
+                out.extend(_read_fp_shard(s))
+            except Exception:
+                continue
     _gb_seed_cache[pack_id] = out
     return out
 
@@ -479,6 +493,15 @@ def _cur_get() -> Any:
 
 _CUR_FALLBACK = None
 
+# 兜底 op：不属于任何 tool 调用的取数（启动预热、跨线程池丢失上下文、
+# 后台补数）用它，避免被 worker 当成旧版客户端 401。
+#
+# 为什么带 pid：worker 按 op 去重计量，同一进程共用一个是**想要**的效果
+# （一次启动算一次操作）；而带上 pid 能让服务端台账里区分不同进程，
+# 排查「谁在拉」时不会所有客户端糊成一条。时间戳只取进程启动那一刻，
+# 不是每条请求一个新值 —— 那等于把去重完全废掉。
+_BOOT_OP = "boot-%d-%d" % (os.getpid(), int(time.time()))
+
 
 def _client_id() -> str:
     """稳定的本机 id（首次调用时生成），**只用于派生不可逆的 cid**。
@@ -577,8 +600,17 @@ def _beacon_headers() -> Dict[str, str]:
     cur = _cur_get() or {}
     # op = 一次 tool 调用。服务端按 op 去重计量配额：一次「上海」检索要拉
     # 178 个分片，按请求计费会把正常用户直接打死（见 pages/_worker.js 注释）。
-    if cur.get("op"):
-        h["X-Beacon-Op"] = cur["op"]
+    #
+    # ⚠ **没有 op 就一定会 401**（2026-10-30 线上实测）。worker 门禁第 4 条是
+    #   `enforce && !op → 401 client_outdated`，它把「缺 op」当成旧版客户端。
+    #   而 op 只存在于 tool 调用期间（`_cur_set`），**启动预热、跨线程池、
+    #   以及任何非 tool 触发的取数都没有它**。缺了就整片 401：
+    #     · /data/manifest.json → 冷启动 8 次 401 重试（实测 67.7s）
+    #     · /data/gb/**         → get_vendor 全部 fetch_failed
+    #   所以这里必须有兜底 op。用 `boot-<pid>` 而不是给所有请求塞同一个常量：
+    #   服务端按 op 去重，同一进程的多条预热/兜底请求计作一次操作，
+    #   既不会把配额打爆，也不会让「一个进程」在台账里看起来像几百次调用。
+    h["X-Beacon-Op"] = cur.get("op") or _BOOT_OP
 
     if not BEACON_TELEMETRY:
         return {k: _header_value(v) for k, v in h.items() if v not in ("", None)}
@@ -647,6 +679,53 @@ REPO = _detect_repo()
 def _cache_path(url: str) -> str:
     os.makedirs(CACHE_DIR, exist_ok=True)
     return os.path.join(CACHE_DIR, hashlib.sha1(url.encode("utf-8")).hexdigest() + ".json")
+
+
+def _cache_write(cap: str, etag: Optional[str], body: Optional[str]) -> None:
+    """写内容缓存。**gzip + 不转义中文**。
+
+    为什么（2026-10-30 实测）：原实现是
+        json.dump({"etag":…, "body": body, "at": …}, f)
+    两个开销叠在一起 ——
+      ① 默认 ensure_ascii=True：中文每字变成 `\\u8d35` 六个字节，而 UTF-8 只要三字节；
+      ② body 已经是 **gzip 解压后**的正文，缓存里存的是解压态而非线上那份压缩字节。
+    结果是落盘量比实际下载量大 20 倍以上：一次冷启动下载 3.19 MB，
+    缓存目录涨到 116.8 MB / 463 个文件 —— 用户只查一次就占了 117 MB 磁盘，
+    与「尽可能少的落盘」正相反。gzip 后同一批内容约 10 MB。
+
+    写临时文件再 replace：并发进程同时写同一 key 时不能出现半截文件
+    （读到半截 JSON 会被当成"没有缓存"，下次又整片重下）。
+    """
+    if body is None:
+        return
+    try:
+        raw = json.dumps({"etag": etag, "body": body, "at": time.time()},
+                         ensure_ascii=False).encode("utf-8")
+        tmp = cap + ".tmp"
+        with open(tmp, "wb") as f:
+            f.write(gzip.compress(raw, compresslevel=6, mtime=0))
+        os.replace(tmp, cap)
+    except Exception:
+        pass
+
+
+def _cache_read(cap: str) -> Optional[dict]:
+    """读内容缓存；兼容旧格式（未压缩的 JSON）。"""
+    try:
+        with open(cap, "rb") as f:
+            raw = f.read()
+    except Exception:
+        return None
+    if raw[:2] == b"\x1f\x8b":
+        try:
+            raw = gzip.decompress(raw)
+        except Exception:
+            return None
+    try:
+        obj = json.loads(raw.decode("utf-8"))
+    except Exception:
+        return None
+    return obj if isinstance(obj, dict) else None
 
 
 def _git_show(relpath: str) -> Optional[str]:
@@ -832,8 +911,7 @@ def _http_get_once(relpath: str, st: list) -> Tuple[Optional[str], Optional[str]
         etag = None
         if os.path.exists(cap):
             try:
-                with open(cap, "r", encoding="utf-8") as f:
-                    blob = json.load(f)
+                blob = _cache_read(cap) or {}
                 etag = blob.get("etag")
                 cached_body = blob.get("body")
                 cached_etag = etag
@@ -861,23 +939,13 @@ def _http_get_once(relpath: str, st: list) -> Tuple[Optional[str], Optional[str]
                 resp = opener.open(req, timeout=_HTTP_TIMEOUT)
                 body = _decode_body(resp.read(), resp)
                 new_etag = resp.headers.get("ETag")
-                try:
-                    with open(cap, "w", encoding="utf-8") as f:
-                        json.dump({"etag": new_etag, "body": body,
-                                   "at": time.time()}, f)
-                except Exception:
-                    pass
+                _cache_write(cap, new_etag, body)
                 return body, new_etag
             except urllib.error.HTTPError as e:
                 if e.code == 304 and cached_body is not None:
                     # 304 也要回写时间戳：否则旧缓存文件永远没有 "at"，
                     # TTL 免网络窗口对它**永远不生效**（每次都还得付一个 RTT）。
-                    try:
-                        with open(cap, "w", encoding="utf-8") as f:
-                            json.dump({"etag": etag, "body": cached_body,
-                                       "at": time.time()}, f)
-                    except Exception:
-                        pass
+                    _cache_write(cap, etag, cached_body)
                     return cached_body, etag
                 st[0] = e.code
                 last_err = "HTTP %s" % e.code
@@ -1002,9 +1070,18 @@ def _fetch_many(paths: List[str], workers: int = 0) -> List[Optional[str]]:
         return [_shard_text(p) for p in paths]
     n = max(1, int(workers or _FETCH_WORKERS))
     out: List[Optional[str]] = [None] * len(paths)
+    # ⚠ ContextVar 不会自动继承到线程池的工作线程（2026-10-30 线上复现）。
+    #   本次 tool 调用的 op 在 `_cur_get()` 里，`X-Beacon-Op` 头靠它发出；
+    #   丢了 op → worker 判 `client_outdated` → **整片 401**。
+    #   症状极具误导性：同一次 get_vendor 里，单读的 idmap 200、并发取的
+    #   /data/gb/** 全 401 → 报 "fetch_failed"（看起来像企业不存在或网络抖）。
+    #   每任务一份 `copy()`，因为同一个 Context 不能并发进入。
+    import contextvars
+    _base = contextvars.copy_context()
     with concurrent.futures.ThreadPoolExecutor(
             max_workers=min(n, len(paths))) as ex:
-        futs = {ex.submit(_shard_text, p): i for i, p in enumerate(paths)}
+        futs = {ex.submit(_base.copy().run, _shard_text, p): i
+                for i, p in enumerate(paths)}
         for fut in concurrent.futures.as_completed(futs):
             i = futs[fut]
             try:
@@ -1067,8 +1144,14 @@ def _shard_text(relpath: str) -> Optional[str]:
     cp = os.path.join(CACHE_DIR, "shard-" + h + ".json") if h else None
     if cp and os.path.exists(cp):
         try:
-            with open(cp, "r", encoding="utf-8") as f:
-                return f.read()
+            # gzip 存储（2026-10-30）：分片原文是 JSONL，gzip 后只剩 1/4~1/5。
+            # 缓存的是**文本**，压缩不改变语义，只是别再让用户为「查过几次」
+            # 付几十 MB 磁盘。旧格式（未压缩）仍可读。
+            with open(cp, "rb") as f:
+                raw = f.read()
+            if raw[:2] == b"\x1f\x8b":
+                raw = gzip.decompress(raw)
+            return raw.decode("utf-8")
         except Exception:
             pass
     txt = fetch_text(relpath)
@@ -1083,8 +1166,10 @@ def _shard_text(relpath: str) -> Optional[str]:
             return txt
     try:
         os.makedirs(CACHE_DIR, exist_ok=True)
-        with open(cp, "w", encoding="utf-8") as f:
-            f.write(txt)
+        tmp = cp + ".tmp"
+        with open(tmp, "wb") as f:
+            f.write(gzip.compress(txt.encode("utf-8"), compresslevel=6, mtime=0))
+        os.replace(tmp, cp)
     except Exception:
         pass
     return txt
@@ -1362,6 +1447,41 @@ def alias_codes(q: str, max_codes: int = 6) -> List[Dict[str, Any]]:
 
 def _fp_paths_for_gbs(codes: List[str]) -> List[str]:
     return [s.get("p") for s in _shards_of_type("fp") if s.get("c") in set(codes)]
+
+
+# 检索的**固定前置索引**（2026-10-30）。
+#
+# 为什么列成常量：这些文件每次检索都要读，但它们互不依赖，原来是「用到才读」
+# —— 于是变成一条纯串行的 RTT 链。实测一次冷启动检索的时间线：
+#   t=5.5s manifest → 7.1 city → 8.3 province-city → 9.7 gb-alias
+#   → 9.9 gb-class-abbr → 9.9 gb-alias-curated → 11.9 gb-index → 13.1 cap
+#   → 15.3 gb4754-full → 16.5 meta …… 到 17.7s 才开始读真正的分片。
+# 即**12 秒 / 30 秒的 40% 花在 9 个各 1~2.3s 的串行小请求上**，
+# 而它们的总字节量并不大。并发预取后这一段只剩最慢那一个的量级。
+#
+# 只预取、不改任何读取点：命中缓存后各调用方仍走自己原来的路径与校验。
+_WARM_INDEX_PATHS = (
+    "skills/registry/index/city.json",
+    "skills/registry/index/province-city.json",
+    "skills/registry/index/cap.json",
+    "skills/registry/index/meta.json",
+    "data/gb-alias.json",
+    "data/gb-alias-curated.json",
+    "data/gb-class-abbr.json",
+    "data/gb-index.json",
+    "data/gb4754-full.json",
+)
+
+
+def _warm_indexes() -> None:
+    """并发预热固定索引。失败一律吞掉 —— 预热只影响速度，不能影响结果。"""
+    if REPO:
+        return          # 本地副本：读文件是微秒级，没必要开线程池
+    try:
+        _shard_hash_index()          # 先备好清单，否则预取也要排队等它
+        _fetch_many(list(_WARM_INDEX_PATHS))
+    except Exception:
+        pass
 
 
 # --------------------------------------------------------------------------- #
@@ -2754,10 +2874,19 @@ def _build_fp_index(deadline_s: Optional[float] = None) -> List[Dict[str, Any]]:
     _ok = 0
     _aborted = False
     _timeout = False
+    # 与 _fetch_many 同一个坑：ContextVar 不进线程池 → 丢 op → 401。
+    # 这里虽然有 _BOOT_OP 兜底不会挂，但兜底 op 会把「本次 tool 调用」
+    # 记成「一次启动」，配额与台账都会失真，所以照旧显式带上下文。
+    import contextvars
+    _fpctx = contextvars.copy_context()
+
+    def _read_fp_in_ctx(p):
+        return _fpctx.copy().run(_read_fp_shard, p)
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=_BATCH) as ex:
         for _i in range(0, len(fp_shards), _BATCH):
             _chunk = fp_shards[_i:_i + _BATCH]
-            _parts = list(ex.map(_read_fp_shard, _chunk))
+            _parts = list(ex.map(_read_fp_in_ctx, _chunk))
             _tried += len(_chunk)
             _ok += sum(1 for _p in _parts if _p)
             for _p in _parts:
@@ -3937,6 +4066,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     #   真正的防线是服务端的数据面鉴权（pages/_worker.js 的 quotaGuard）。
     raw_offset = max(0, int(offset))
     offset = min(raw_offset, OFFSET_MAX)
+    # 固定索引并发预热（2026-10-30）：放在任何取数之前，把 9 个串行 RTT
+    # 压成一批。见 `_WARM_INDEX_PATHS` 上方的时间线实测。
+    _warm_indexes()
     q = (query or "").strip().lower()
     # 原话归一化：用户输入的是**一句人话**，不是空格分隔的关键词表。
     # 归一化把它切成可执行的检索参数，并顺带把原话里的城市抽成 city 过滤条件。
@@ -3990,6 +4122,15 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         fp_shards = [s for s in _shards_of_type("fp") if s.get("c") == gb]
         scanned = 0
         matches: List[Dict[str, Any]] = []
+        # 并发预取再逐片判定（2026-10-30 实测）：这是首查最大的单点。
+        # 逐片串行时 34 片 × 1.5~2.5s ≈ 51s（一次「苏州 注塑」冷查 41s，
+        # 并发度只有 1.69）。_fetch_many 带 12 路并发，且已缓存的分片直接命中
+        # 磁盘缓存，不产生请求。
+        if len(fp_shards) > 1:
+            try:
+                _fetch_many([s.get("p") for s in fp_shards])
+            except Exception:
+                pass
         for s in fp_shards:
             scanned += 1
             for rec in _read_fp_shard(s):
@@ -4121,31 +4262,45 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
 
     # 别名定向召回（后追加，纯度次之）
     alias_scanned = 0
-    for p in alias_paths:
-        for rec in _records_from_paths([p]):
-            alias_scanned += 1
-            if not _city_ok(rec, city, province):
-                continue
-            # etype 必须在这里也筛一遍：别名召回**绕过了 `_collect`**，
-            # 漏这一步就会出现「传 etype=生产，返回的全是流通主体」
-            # ——总数按 etype 变了、行却没变，比不筛更难发现（2026-10-23 修）。
-            if et_want and (rec.get("et") or 0) != et_want:
-                continue
-            rid = rec.get("id")
-            if rid in seen:
-                continue
-            seen.add(rid)
-            s = _rec_summary(rec)
-            s["via"] = "alias"         # 别名定向召回（企业自己没写过这个词）
-            a = alias_by_code.get(rec.get("gb") or "")
-            if a:
-                s["alias_match"] = {"word": a["word"], "gb": a["code"], "name": a["name"]}
-            matches.append(s)
+    # ⚠ 一次批量读，不要逐片调（2026-10-30 实测）。
+    #   原来是 `for p in alias_paths: for rec in _records_from_paths([p])`——
+    #   每次只传 1 个路径，`_read_many_text` 的并发完全用不上，34 个别名分片
+    #   就串行 34 × 1.5s ≈ 51s。这正是「苏州 注塑」冷启动 41s 的主因
+    #   （整次检索的实测并发度只有 1.69）。批量后同批 12 路并发。
+    #   `alias_scanned` 仍按**记录数**计，与改前口径一致。
+    for rec in _records_from_paths(alias_paths or []):
+        alias_scanned += 1
+        if not _city_ok(rec, city, province):
+            continue
+        # etype 必须在这里也筛一遍：别名召回**绕过了 `_collect`**，
+        # 漏这一步就会出现「传 etype=生产，返回的全是流通主体」
+        # ——总数按 etype 变了、行却没变，比不筛更难发现（2026-10-23 修）。
+        if et_want and (rec.get("et") or 0) != et_want:
+            continue
+        rid = rec.get("id")
+        if rid in seen:
+            continue
+        seen.add(rid)
+        s = _rec_summary(rec)
+        s["via"] = "alias"         # 别名定向召回（企业自己没写过这个词）
+        a = alias_by_code.get(rec.get("gb") or "")
+        if a:
+            s["alias_match"] = {"word": a["word"], "gb": a["code"], "name": a["name"]}
+        matches.append(s)
 
     # 能力（cap）别名定向召回（消费 token，纯度最高，最后追加并去重）。
     # 按能力键扫对应摘要分片，只收 cap 含该键且城市命中的记录；其余通用 token
     # （gen_tokens）仍做 AND 校验，保证「AI 喷涂」这类组合查询不跑偏。
     cap_scanned = 0
+    # 同上的串行问题：内层每片单独一次 `_records_from_paths([p])`。
+    # 这里不动结构，只在前面并发预取一遍 —— 预取走后仍命中同一缓存层，
+    # 逐片逻辑与顺序完全不变，风险最小。
+    _cap_all_paths = [p for h in cap_hits for p in _cap_shard_paths(h["cap"])]
+    if len(_cap_all_paths) > 1:
+        try:
+            _fetch_many(_cap_all_paths)
+        except Exception:
+            pass
     for h in cap_hits:
         for p in _cap_shard_paths(h["cap"]):
             for rec in _records_from_paths([p]):
@@ -4473,7 +4628,18 @@ def _v1_rec(vid: str) -> Optional[Dict[str, Any]]:
         return None
     if not isinstance(o, dict) or o.get("error"):
         return None
-    if str(o.get("id") or "") != vid:
+    # 自证：返回的必须就是请求的那一条。
+    #
+    # ⚠ 比对两个字段（2026-10-30 线上实测）：v2 块按**内部 id** 定长索引，
+    #   worker 原样透出的 `id` 是 `CN-MFG-0020882` 这种内部编号，而客户端手里
+    #   的 id 是 token（`2BB5DR0Q`，与 search_vendors 返回的一致）。
+    #   只比 `id` 会让**每一次**按条取都判为"不是同一条"→ 静默回落 → 这个
+    #   优化在线上等于从未生效（而日志上看起来一切正常）。
+    #   同时比 `token`：worker 回写的 token 就是请求的那个值。
+    #   自证本身不能省 —— 偏移错一位不会报错，只会返回另一家企业。
+    _got_id = str(o.get("id") or "")
+    _got_tok = str(o.get("token") or "")
+    if _got_id != vid and _got_tok != vid:
         return None
     return o
 
