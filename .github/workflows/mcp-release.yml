@@ -24,10 +24,16 @@ jobs:
           rm -rf mcp/rfq-kernel/__pycache__
 
       - name: 打包 MCP（仅 mcp/ 目录，保持干净分发）
+        # ⚠ 清单必须与 mcp/package.json 的 files 保持一致（2026-10-30）：
+        #   · vid_token.py 缺失 → server.py 的 try/except 静默降级成「不改写 id」，
+        #     对外回内部编号（CN-MFG-0000163），既可枚举、又与 /v1/rec 的 token 口径不符；
+        #   · selfupdate.py 缺失 → bin/selfupdate.js 找不到脚本，自更新静默失效。
+        #   两者都不会报错，只会「功能少一点」，所以只能靠清单自检兜住。
         run: |
           tag="${GITHUB_REF_NAME}"
           tar -czf "beacon-mfg-mcp-${tag}.tar.gz" \
-            -C mcp server.py identity.py http_server.py mcp_adapter.py \
+            -C mcp server.py identity.py vid_token.py selfupdate.py \
+            http_server.py mcp_adapter.py \
             bin README.md package.json rfq-kernel
           ls -lh "beacon-mfg-mcp-${tag}.tar.gz"
 
