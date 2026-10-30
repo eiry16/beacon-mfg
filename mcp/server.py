@@ -121,6 +121,16 @@ except Exception:                    # 副本缺失 → 退化成「不改写 id
 #   漏了 "id" 的表现是「检索正常，点开某家报 找不到 id=<token> 对应的国标码」。
 _VID_IN_ARGS = ("id", "vid", "vendor_id", "supplier_id", "company_id", "card_id")
 
+# 批量形态的参数名（1.11.10 补）。
+#
+# `get_vendors(ids=[...])` 是 1.11.9 新增的，但**漏进了上面那圈转换**：
+# `_vid_in` 只处理 `isinstance(v, str)`，列表被原样透传。后果实测（本地模式）：
+# 单个 id 正常返回档案，而 `ids=[S7YFA2XF, 801SCQ7K, 123XRNG5]` 三条**全部**报
+# 「找不到 id 对应的国标码」——因为 token 直接进了 `get_vendor`，而本地模式的
+# 分片 / idmap / name-index 全是拿**内部 id** 建的键，必然查不到。
+# 症状极具迷惑性：批量接口"能调通、格式正确、就是没数据"，容易被当成数据没发布。
+_VID_IN_LIST_ARGS = ("ids",)
+
 
 def _vid_ready() -> bool:
     return bool(_vid_has_key and _vid_has_key())
@@ -154,6 +164,12 @@ def _vid_in(args: Dict[str, Any]) -> Dict[str, Any]:
         v = out.get(k)
         if isinstance(v, str) and v:
             out[k] = _vid_decode_arg(v, sec)
+    # 列表形态（`ids=[...]`）逐个解码；非字符串元素原样保留，不猜类型。
+    for k in _VID_IN_LIST_ARGS:
+        v = out.get(k)
+        if isinstance(v, (list, tuple)):
+            out[k] = [_vid_decode_arg(x, sec) if isinstance(x, str) and x else x
+                      for x in v]
     return out
 
 
@@ -322,7 +338,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.9"
+VERSION_FALLBACK = "1.11.10"
 
 
 def _pkg_version() -> str:
