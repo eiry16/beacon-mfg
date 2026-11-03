@@ -338,7 +338,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.11"
+VERSION_FALLBACK = "1.11.14"
 
 
 def _pkg_version() -> str:
@@ -4255,27 +4255,50 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         fp_shards = [s for s in _shards_of_type("fp") if s.get("c") == gb]
         scanned = 0
         matches: List[Dict[str, Any]] = []
-        # 并发预取再逐片判定（2026-10-30 实测）：这是首查最大的单点。
-        # 逐片串行时 34 片 × 1.5~2.5s ≈ 51s（一次「苏州 注塑」冷查 41s，
-        # 并发度只有 1.69）。_fetch_many 带 12 路并发，且已缓存的分片直接命中
-        # 磁盘缓存，不产生请求。
-        if len(fp_shards) > 1:
-            try:
-                _fetch_many([s.get("p") for s in fp_shards])
-            except Exception:
-                pass
-        for s in fp_shards:
-            scanned += 1
-            for rec in _read_fp_shard(s):
-                if not _city_ok(rec, city, province):
-                    continue
-                if et_want and (rec.get("et") or 0) != et_want:
-                    continue
-                if gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
-                    continue
-                s = _rec_summary(rec)
-                s["via"] = "gb"
-                matches.append(s)
+        # ── 服务端检索优先（2026-11-03，「按条来拉」）────────────────────────
+        # 旧路径：并发预取该类全部分片（34 片 × 1.5~2.5s，几 MB 落盘缓存）再本地
+        # AND 过滤。新路径：服务端倒排直接给出该类的 IDF 精排窗口（≤200 条，
+        # ~80KB），MCP 只做类内精排与校验。服务端不可用时回落旧路径，行为不变。
+        _srv = _server_search(q=" ".join(gen_tokens), city=city, gb=gb, et=et_want,
+                              limit=min(SERVER_SEARCH_WINDOW, raw_offset + limit))
+        if _srv is not None:
+            _rec_iter = _srv["records"]
+        elif not REPO:
+            # 整片路由已下线（2026-11-03）：读分片只会 410/空，最后把「连不上」
+            # 报成「这一类没有企业」。如实报错，让 agent 让用户稍后重试。
+            return {
+                "error": "server_unavailable",
+                "hint": ("服务端检索暂时不可达（网络/额度/端点变更）。**这不等于该类目没有企业**，"
+                         "不要据此回答「查不到」，请稍后重试。"),
+                "retryable": True,
+                "shards_scanned": 0,
+                "results": [],
+                **_keyword_audit(gen_tokens, 0),
+            }
+        else:
+            if len(fp_shards) > 1:
+                try:
+                    _fetch_many([s.get("p") for s in fp_shards])
+                except Exception:
+                    pass
+
+            def _rec_iter_fn():
+                nonlocal scanned
+                for s in fp_shards:
+                    scanned += 1
+                    yield from _read_fp_shard(s)
+            _rec_iter = _rec_iter_fn()
+        for rec in _rec_iter:
+            if not _city_ok(rec, city, province):
+                continue
+            if et_want and (rec.get("et") or 0) != et_want:
+                continue
+            if gen_tokens and not all(tok in _hay(rec).lower() for tok in gen_tokens):
+                continue
+            s = _rec_summary(rec)
+            s["via"] = "gb"
+            matches.append(s)
+        _via_server = _srv is not None
         # 与 query 路由同一套档内排序（`gb=` 只走一档，故按厂名贴合度降序即可），
         # 否则同一批记录经两条路进来顺序不同，agent 会以为「换了个写法结果就变了」。
         # 2026-10-23：传了坐标时距离优先于 name_fit（「附近」是显式意图），
@@ -4304,6 +4327,9 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             "results": page,
             **parsed,
             **pmeta,
+            # 服务端检索生效标记：窗口语义见 SERVER_SEARCH_WINDOW。
+            **({"via_server": True, "server_window": SERVER_SEARCH_WINDOW}
+               if _via_server else {}),
             # 同 query 路由的口径：档内按「关键词在厂名里成片出现」优先，score 不是相关度。
             "order_note": ("results 按「关键词在企业名里成片出现」优先排列；同一品牌的连锁门店"
                            "已折成一行（`branches` = 门店数，`branch_ids` 前 20 个）。"
@@ -4320,7 +4346,32 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
 
     # 未给国标码：优先走「预构建索引 → 只拉命中分片」。
     # 索引缺失或陈旧时回退进程内全量索引（与命中量相关，慢但结果等价）。
-    cands = _candidate_shards(gen_tokens, city) if (gen_tokens or city) else None
+    # ── 服务端检索优先（2026-11-03，「按条来拉」）──────────────────────────
+    # 文本召回源 = /v1/search 的 IDF 精排窗口（≤200 条），不再拉分片。
+    # 别名召回 = 逐个别名码做 gb-only 服务端列举（记录本来就不含查询词）。
+    # 服务端不可用（REPO 本地模式 / 端点缺失 / 网络故障）→ 整段回落旧路径。
+    _srv_text = None
+    if not REPO and (gen_tokens or city):
+        _srv_text = _server_search(q=" ".join(gen_tokens), city=city, et=et_want,
+                                   limit=min(SERVER_SEARCH_WINDOW, raw_offset + limit))
+    _via_server = _srv_text is not None
+    # 2026-11-03 数据面收口：/data/** 与 fingerprint 的整片路由已从线上撤下（410）。
+    # 本地兜底不再是「慢一点」，而是必然 404 —— 还会白打几百个请求、最后把
+    # 「服务端连不上」说成「名录里没有这家企业」。那是最坏的一种错：看起来正常。
+    # 所以服务端不可达时如实报错，让 agent 转述「稍后重试」而不是「查不到」。
+    if not _via_server and not REPO and (gen_tokens or city):
+        return {
+            "error": "server_unavailable",
+            "hint": ("服务端检索暂时不可达（网络/额度/端点变更）。**这不等于名录里没有这家企业**，"
+                     "不要把「查不到」当成结论；请稍后重试，或让用户稍后再问。"),
+            "retryable": True,
+            "shards_scanned": 0,
+            "results": [],
+            **_keyword_audit(gen_tokens, 0),
+        }
+    cands = None
+    if not _via_server:
+        cands = _candidate_shards(gen_tokens, city) if (gen_tokens or city) else None
     via_index = cands is not None
     recall_trunc = _recall_trunc_note()
 
@@ -4379,7 +4430,13 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                     s["alias_match"] = {"word": a["word"], "gb": a["code"], "name": a["name"]}
             matches.append(s)
 
-    if via_index:
+    if _via_server:
+        # 服务端窗口：IDF 精排过的候选，MCP 只做 AND 校验与精排
+        scanned = 0
+        if gen_tokens or not cap_hits:
+            _collect(_srv_text["records"])
+        # cap-only 查询（gen_tokens 空）仍走下方 cap 分片定向召回（有界）
+    elif via_index:
         # 只拉候选分片（git 模式一次 archive 批量取，通常 1~N 个）。
         # 若全部 token 都被 cap 别名消费掉（gen_tokens 空），且本就有 cap 命中，
         # 则跳过文本召回（否则 city 命中会拉回整座城市的全部记录），只走下方 cap 召回。
@@ -4403,7 +4460,17 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     #   就串行 34 × 1.5s ≈ 51s。这正是「苏州 注塑」冷启动 41s 的主因
     #   （整次检索的实测并发度只有 1.69）。批量后同批 12 路并发。
     #   `alias_scanned` 仍按**记录数**计，与改前口径一致。
-    for rec in _records_from_paths(alias_paths or []):
+    if _via_server:
+        def _alias_recs():
+            for _code in alias_by_code:
+                _r = _server_search(q="", city=city, gb=_code, et=et_want,
+                                    limit=SERVER_SEARCH_WINDOW)
+                if _r:
+                    yield from _r["records"]
+        _alias_iter = _alias_recs()
+    else:
+        _alias_iter = _records_from_paths(alias_paths or [])
+    for rec in _alias_iter:
         alias_scanned += 1
         if not _city_ok(rec, city, province):
             continue
@@ -4523,6 +4590,10 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         "returned": len(page),
         "shards_scanned": scanned,
         "via_index": via_index,
+        # 服务端检索生效标记：候选来自 /v1/search 的 IDF 窗口（≤200 条），
+        # 不再整片下载。窗口语义见 SERVER_SEARCH_WINDOW。
+        **({"via_server": True, "server_window": SERVER_SEARCH_WINDOW}
+           if _via_server else {}),
         **({"via_index_reason": _index_reason()} if not via_index else {}),
         # 召回被截断时如实上报（见 _cap_shards）：结果可能不完整，不能装作完整。
         **({"recall_truncated": recall_trunc} if recall_trunc else {}),
@@ -4717,6 +4788,99 @@ def _vendor_cache_put(ck: tuple, sig: float, resp: Dict[str, Any]) -> None:
 # `/v1/rec` 端点不存在时的静默期截止时间（unix ts）。见 _v1_rec 里的说明：
 # 目的是「线上还没部署时，别让每条详情多付一个 404 往返」。
 _REC_PROBE_UNTIL = [0.0]
+# `/v1/search` 同款静默期（2026-11-03）。
+_SEARCH_PROBE_UNTIL = [0.0]
+
+# 服务端检索窗口上限。与 worker 的 SEARCH_LIMIT_MAX 联动：MCP 的深分页
+# （offset+limit）在这窗口内完成，窗口之外翻页为空 —— 这是「记录不得成规模
+# 落用户盘」的产品决定，不是缺陷。旧口径一次拉整片 16.3MB，窗口 200 条
+# ≤ ~80KB，差两个数量级。
+SERVER_SEARCH_WINDOW = 200
+
+
+def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
+                   limit: int = SERVER_SEARCH_WINDOW) -> Optional[Dict[str, Any]]:
+    """POST /v1/search —— 服务端检索（「按条来拉」的检索面，2026-11-03）。
+
+    返回 {"total": int, "records": [原始 fp 记录]}；任何失败返回 None，
+    调用方随即回落本地分片路径 —— 与 _v1_rec 同一款降级哲学：新链路绝不
+    弄坏旧链路，线上 worker 未部署新路由时行为与改动前逐字节一致。
+
+    为什么 q 可以为空：别名召回（口语词 → 国标码）的记录**本来就不含查询词**，
+    纯 gb/city 定向列举是合法需求；worker 侧要求「q/gb/city 至少一个」，
+    无条件空查会被 400 挡掉（防 rowid 顺序遍历）。
+    """
+    if REPO:
+        return None
+    if time.time() < _SEARCH_PROBE_UNTIL[0]:
+        return None
+    if not (str(q or "").strip() or str(city or "").strip() or str(gb or "").strip()):
+        return None
+    try:
+        import identity as _idn
+        _idn.ensure_token()
+    except Exception:
+        pass
+    payload: Dict[str, Any] = {"q": str(q or ""), "limit": int(limit), "offset": 0}
+    if str(city or "").strip():
+        payload["city"] = str(city).strip()
+    if str(gb or "").strip():
+        payload["gb"] = str(gb).strip()
+    if et:
+        payload["et"] = int(et)
+    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    st = [0]
+    for attempt in (0, 1):
+        for base in _http_bases():
+            url = base.rstrip("/") + "/v1/search"
+            headers = {"User-Agent": UA, "Accept": "application/json",
+                       "Content-Type": "application/json"}
+            try:
+                headers.update(_beacon_headers())
+            except Exception:
+                pass
+            req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+            try:
+                import urllib.error as _ue
+                for _tag, opener in _openers():
+                    try:
+                        resp = opener.open(req, timeout=_HTTP_TIMEOUT)
+                        st[0] = getattr(resp, "status", 200)
+                        o = json.loads(resp.read().decode("utf-8"))
+                        if isinstance(o, dict) and not o.get("error"):
+                            hits = o.get("hits")
+                            if isinstance(hits, list):
+                                return {"total": int(o.get("total_matched") or 0),
+                                        "records": hits}
+                        continue
+                    except _ue.HTTPError as e:
+                        st[0] = e.code
+                        if e.code == 400:
+                            # bad_gb ≠ 失败：别名表可能引用库里尚无记录的码
+                            # （真机首测踩过：「注塑」别名 2927 → 400 → 整次回落分片路径）。
+                            # 按「该码 0 家」应答，多码查询里其他码照常生效。
+                            try:
+                                _o = json.loads(e.read().decode("utf-8"))
+                                if _o.get("error") == "bad_gb":
+                                    return {"total": 0, "records": []}
+                            except Exception:
+                                pass
+                        continue
+                    except Exception:
+                        continue
+            except Exception:
+                continue
+        if st[0] != 401 or attempt == 1:
+            break
+        # 401 → 强制换牌重试一轮（与 _http_get 的自愈同款）
+        try:
+            import identity as _idn
+            _idn.ensure_token(force=True)
+        except Exception:
+            return None
+    if st[0] in (404, 405, 501):
+        _SEARCH_PROBE_UNTIL[0] = time.time() + 300
+    return None
 
 
 def _v1_rec(vid: str) -> Optional[Dict[str, Any]]:
@@ -5219,7 +5383,14 @@ TOOLS = [
         "description": "按主体 id 取完整中文档案：名称/地址/经纬度/电话/行业路径/认证/关键词等。"
                        "**取多家请用 ids 一次批量拿**：单条固定约 2.3 秒（往返受限，"
                        "数据本身只有 ~1.4KB），串行取 5 家要 11~12 秒，批量并发后约 2~3 秒。"
-                       "典型用法：search_vendors 拿到一批 id 后，把要展示的几家一起传给 ids。",
+                       "典型用法：search_vendors 拿到一批 id 后，把要展示的几家一起传给 ids。"
+                       "\n\n若这家已归集到政府主体，回执里会多一个 `linked_entity`："
+                       "{uscc 统一社会信用代码, legal_name 法定登记名称, relation 关系"
+                       "(operator 同一法人/branch 分支机构/brand 品牌门店/unknown 未定), "
+                       "origin auto 机器判|manual 人工确认, score 机器分}。"
+                       "`company` 是**经营招牌名**，`linked_entity.legal_name` 是**工商登记名**，"
+                       "两者经常不同（如「温州亿鸿不锈钢装饰材料有限公司」登记名是"
+                       "「温州市亿鸿装饰工程有限公司」）；签约、开票、查资质一律用 legal_name + uscc。",
         "inputSchema": {
             "type": "object",
             "properties": {
