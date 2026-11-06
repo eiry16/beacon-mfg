@@ -338,7 +338,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.15"
+VERSION_FALLBACK = "1.11.16"
 
 
 def _pkg_version() -> str:
@@ -4363,8 +4363,18 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     # 服务端不可用（REPO 本地模式 / 端点缺失 / 网络故障）→ 整段回落旧路径。
     _srv_text = None
     if not REPO and (gen_tokens or city):
+        # ⚠ 窗口取满（200），不是 offset+limit（2026-11-06）。
+        #   旧写法只取「这一页要几条」，于是 MCP 手上永远只有 limit 条候选：
+        #   搜「民宿·苏州」拿到 20 条，`total_matched` 也就报 20 —— 而库里 918 家。
+        #   窗口大小是产品给的召回深度上限（SERVER_SEARCH_WINDOW），该用满；
+        #   分页在本地 matches 上切，传输 200 条 ≈ 80KB，仍在设计内。
+        #
+        # 关于 gb 类内列举（未做）：别名把「注塑」解析成 2929/3525/3399 三个码，
+        # 服务端一次只能收一个 gb，取首个会把另外两类整批漏掉 —— 比不传更糟。
+        # 要做就得支持多码（worker 侧 gb 改数组）+ 逐码窗口分配，单独立项。
         _srv_text = _server_search(q=" ".join(gen_tokens), city=city, et=et_want,
-                                   limit=min(SERVER_SEARCH_WINDOW, raw_offset + limit))
+                                   limit=SERVER_SEARCH_WINDOW,
+                                   cap=[h["cap"] for h in cap_hits] if cap_hits else None)
     _via_server = _srv_text is not None
     # 2026-11-03 数据面收口：/data/** 与 fingerprint 的整片路由已从线上撤下（410）。
     # 本地兜底不再是「慢一点」，而是必然 404 —— 还会白打几百个请求、最后把
@@ -4583,6 +4593,16 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
 
     # 品牌归并（分页之前，理由见 `_collapse_brands`）。
     records_total = len(matches)
+    # 服务端给了更准的总量时用它（2026-11-06）。
+    #   · 查询词解析出能力键 → 用 `cap_matched`（这一类的总量，即用户真正问的数）；
+    #   · 否则用 `total_matched`（词面 ∪ 能力，worker 已做 city/gb 过滤）。
+    # 为什么不能只信 len(matches)：matches 受 200 条窗口限制，窗口多深就报多少，
+    # 于是「民宿·苏州 918 家」被报成「20 家」——用户会以为库里只有这些。
+    if _via_server and _srv_text:
+        _srv_total = int(_srv_text.get("cap_matched") or 0) or \
+            int(_srv_text.get("total") or 0)
+        if _srv_total > records_total:
+            records_total = _srv_total
     matches, brands_total = _collapse_brands(matches, keep_all=not group_branches)
     # 折行后按距离稳定重排（2026-10-23）：品牌行的 distance_km 是在折行时才换成
     # 「最近门店」的，位置却停在代表店那里 —— 不重排就会出现「排第 3 的品牌比
@@ -4810,7 +4830,8 @@ SERVER_SEARCH_WINDOW = 200
 
 
 def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
-                   limit: int = SERVER_SEARCH_WINDOW) -> Optional[Dict[str, Any]]:
+                   limit: int = SERVER_SEARCH_WINDOW,
+                   cap: Optional[List[str]] = None) -> Optional[Dict[str, Any]]:
     """POST /v1/search —— 服务端检索（「按条来拉」的检索面，2026-11-03）。
 
     返回 {"total": int, "records": [原始 fp 记录]}；任何失败返回 None，
@@ -4825,7 +4846,8 @@ def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
         return None
     if time.time() < _SEARCH_PROBE_UNTIL[0]:
         return None
-    if not (str(q or "").strip() or str(city or "").strip() or str(gb or "").strip()):
+    if not (str(q or "").strip() or str(city or "").strip()
+            or str(gb or "").strip() or cap):
         return None
     try:
         import identity as _idn
@@ -4839,6 +4861,11 @@ def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
         payload["gb"] = str(gb).strip()
     if et:
         payload["et"] = int(et)
+    if cap:
+        # 能力键定向（2026-11-06）：worker 侧按 v2 的 cap.po 做全量列举。
+        # 这是「搜民宿只回 20 家」的修法 —— 民宿 7,652 家里绝大多数名字里没有
+        # 「民宿」二字（叫 XX客栈 / XX小院），只靠字面词面永远召回不全。
+        payload["cap"] = [str(c) for c in cap][:6]
     data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     st = [0]
     for attempt in (0, 1):
@@ -4862,6 +4889,7 @@ def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
                             hits = o.get("hits")
                             if isinstance(hits, list):
                                 return {"total": int(o.get("total_matched") or 0),
+                                        "cap_matched": int(o.get("cap_matched") or 0),
                                         "records": hits}
                         continue
                     except _ue.HTTPError as e:
