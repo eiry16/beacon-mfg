@@ -338,7 +338,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.14"
+VERSION_FALLBACK = "1.11.15"
 
 
 def _pkg_version() -> str:
@@ -3272,6 +3272,17 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
         "score": rec.get("sc"),
         "has_phone": bool(rec.get("tel")),
         "process": rec.get("proc", []),
+        # 工艺来源（2026-11-06）：None = 能力卡/企业自述/按国标码推导的类默认；
+        # "inferred:A1" = 零采集推断，字母是分档（A1 三路一致 99.3% / A2 97.4% /
+        # A3 94.3% / B0 单路 96.0%，见 docs/PROCESS_INFERENCE.md）。
+        # 为什么要暴露：推断不是核实，"这家能做"和"这家这一类大概都做"必须可区分 ——
+        # 客户在严苛场景（超公差、医疗件、指定牌号）里要能据此追加追问，而不是直接下单。
+        "process_evidence": ("inferred:" + rec["pinf"]) if rec.get("pinf") else None,
+        # 业务能力码（2026-11-06）：非制造业门类的「能干什么」，如 fmt_bar 酒吧 /
+        # edu_vocational 职业技能培训 / con_steel 钢结构。此前它只参与匹配不返回，
+        # 于是「搜酒吧」的结果里看不出哪家真是酒吧。现在一并返回，agent 可据此
+        # 复核与二次筛选（码的中文名见 skills/schema/cap-codes/*.json）。
+        "capability": rec.get("cap", []),
         "material": rec.get("mat", []),
         "cert": rec.get("cert", []),
         # 坐标（2026-10-23 接入）：指纹层 98.5% 有值，无值为 null。
