@@ -1,5 +1,9 @@
 # BeaconMFG · 供应商灯塔
 
+**BeaconMFG (Supplier Lighthouse)** is a free, keyless, read-only MCP server that lets any AI agent search **210,000+ Chinese business entities** — suppliers, manufacturers, factories and service providers across all **GB/T 4754** industry divisions — with bilingual CN/EN records, USCC-verified identities, and a built-in RFQ sourcing kernel. Works with Claude Desktop, Cursor, Cline and any MCP-compatible client: `npx -y beacon-mfg-mcp`.
+
+*Keywords: MCP server · China suppliers · Chinese manufacturers · supplier directory · sourcing · procurement · vendor search · factory directory · B2B · GB/T 4754 · company registry.*
+
 面向 Agent 的中国**全门类、全行业**企业与商户数据基座，按 GB/T 4754-2017 国民经济行业分类归档，收录 **210,000+ 经营主体**，中英双语。
 只提供经营主体的公开记录与经营联系方式，不参与交易。
 

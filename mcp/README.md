@@ -1,5 +1,7 @@
 # Beacon-MFG 只读 MCP 服务
 
+**English**: Read-only MCP server for finding **Chinese suppliers, manufacturers and business entities** — 210k+ records across all GB/T 4754 industries, bilingual CN/EN, USCC-verified, with an RFQ sourcing kernel. Free, no API key: `npx -y beacon-mfg-mcp`.
+
 让任意支持 MCP 的主流 agent（Claude Desktop / Cline / Continue / 常见 MCP 客户端 等）能够**检索与调用**
 灯塔工厂供应商名录，**无需 clone 整个仓库、无需任何密钥、无需第三方依赖**。
 
