@@ -92,5 +92,6 @@ jobs:
         run: ./mcp-publisher login github-oidc
 
       - name: 发布 server.json 到 MCP Registry
-        run: ./mcp-publisher publish
+        # 二进制解在仓库根，publish 要切进 mcp/（server.json 所在），用相对路径调用
+        run: ../mcp-publisher publish
         working-directory: mcp
