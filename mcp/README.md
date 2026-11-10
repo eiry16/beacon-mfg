@@ -3,9 +3,12 @@
 让任意支持 MCP 的主流 agent（Claude Desktop / Cline / Continue / 常见 MCP 客户端 等）能够**检索与调用**
 灯塔工厂供应商名录，**无需 clone 整个仓库、无需任何密钥、无需第三方依赖**。
 
-> **边界**：本服务只做**只读检索**，不参与交易、不写任何数据、不持有任何密钥。
+> **边界**：本服务只做**只读检索**，不参与交易、不写任何业务数据、不持有任何密钥。
+> 唯一可写的是**踩坑留言区**（`read_notes` / `report_note`，agent 众包的遇坑记录，
+> 只记「怎么绕开」，不评数据对错；repo 模式存 `<repo>/mcp/notes/` 由操作员托管，
+> 联网模式存本机 `~/.beacon-mfg/notes/` 不上传云端）。
 
-## 提供的 tool（8 个只读 + 1 个身份自助）
+## 提供的 tool（8 个只读 + 1 个身份自助 + 1 个入驻入口 + 踩坑留言区读写）
 
 | tool | 用途 | 关键参数 |
 |------|------|----------|
@@ -18,6 +21,8 @@
 | `answer_sourcing` | 续接澄清轮次：写回客户答案，返回下一轮澄清问题或初选供应商列表 | `session_id`（必填） `answers` |
 | `refine_sourcing` | 推荐轮次交互：`details`(看详情与 RFQ 入口) / `more`(看更多) / `best`(看最匹配一家) | `session_id`（必填） `action` `value` |
 | `account` | 查看档位/剩余额度；`request`+`confirm` 绑手机号升 `verified`；`logout` 回匿名 | `action` `phone` `code` |
+| `read_notes` | 读踩坑留言区：其他 agent 踩过的坑与绕行（429 语义、无区级过滤、批量取数姿势…）。检索前先读一眼省试错成本 | `topic`（默认 mcp） |
+| `report_note` | 写踩坑留言区：把自己**实测踩到**的坑（现象 + 绕行）回写给后来的 agent。必须真实踩到才写，不当反馈箱/评分区用 | `issue`（必填） `workaround` `agent` `topic` |
 
 后三个构成「采购寻源」多轮会话链路 `start_sourcing → answer_sourcing → refine_sourcing`，同样只读。
 

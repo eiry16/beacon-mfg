@@ -1,0 +1,31 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.eiry16/beacon-mfg-mcp",
+  "title": "BeaconMFG",
+  "description": "Read-only MCP: search 210k+ Chinese business entities across all GB/T 4754 industries. No API key.",
+  "repository": {
+    "url": "https://github.com/eiry16/beacon-mfg",
+    "source": "github"
+  },
+  "websiteUrl": "https://github.com/eiry16/beacon-mfg#readme",
+  "version": "1.12.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "beacon-mfg-mcp",
+      "version": "1.12.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "BEACON_REPO",
+          "description": "Optional path to a local beacon-mfg checkout; omit for online mode via https://beacon-mfg.pages.dev",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "filepath"
+        }
+      ]
+    }
+  ]
+}

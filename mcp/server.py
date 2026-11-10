@@ -19,7 +19,7 @@ Continue / 常见 MCP 客户端 等主流 MCP 客户端。
   BEACON_REPO    本地 git 仓库路径；设了就用 `git show HEAD:` 读（推荐：离线 + 隐私安全）
                 缺省时自动探测 cwd 所在 git 仓库（若含 data/gb 就用它）
 
-暴露的 tool（8 个，只读）：
+暴露的 tool（8 个检索 + 账号/入驻 + 踩坑留言区）：
   search_vendors       按 关键词 / 城市 / 国标码 检索
   get_vendor           按 id（+ 国标码）取完整中文档案
   get_capability_card  按 id 取能力卡
@@ -28,7 +28,10 @@ Continue / 常见 MCP 客户端 等主流 MCP 客户端。
   start_sourcing       多轮寻源起手：品类识别 → 宽召回 → 澄清问题
   answer_sourcing      续接澄清轮次 / 返回初选供应商
   refine_sourcing      推荐轮交互：details / more / best
-"""
+  account              调用身份与配额（匿名可用）
+  vendor_onboarding    供应商入驻 / 认领入口
+  read_notes           读踩坑留言区（别的 agent 踩过的坑与绕行）
+  report_note          写踩坑留言区（必须实测踩到才写）"""
 
 import os
 import re
@@ -338,7 +341,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.11.16"
+VERSION_FALLBACK = "1.12.0"
 
 
 def _pkg_version() -> str:
@@ -5362,6 +5365,106 @@ def refine_sourcing(session_id: str, action: str = "", value: Optional[str] = No
 
 
 # --------------------------------------------------------------------------- #
+# 踩坑留言区（notes）：agent 众包「遇坑记录」，与 DatasetPlazz pitfalls 同构。
+# 设计红线（2026-11-07 定稿）：
+#   1. 只记「怎么绕开」，不评「数据对错」；每条必含时间与 agent 标识。
+#   2. 存储分两档：REPO 模式（BEACON_REPO）写 <repo>/mcp/notes/（操作员托管、
+#      可审计可清理）；联网模式写 ~/.beacon-mfg/notes/（本机自用，不下传云端）。
+#   3. 文件按需创建：存在即代表有真实坑；topic 经白名单字符清洗防路径逃逸。
+# --------------------------------------------------------------------------- #
+_NOTES_HEADER = (
+    "# 踩坑留言区 · beacon-mfg-mcp · {topic}\n\n"
+    "> 由 agent 经 report_note 写入、read_notes 读取：只记「怎么绕开」，\n"
+    "> 不评「数据对错」。每条必含时间与 agent 标识；绕行方法须自带实测依据。\n"
+    "> 操作员保留清理与合并权。格式：`## YYYY-MM-DD HH:MM · agent` + 现象/绕行。\n\n"
+)
+_NOTES_MAX = {"agent": 80, "issue": 2000, "workaround": 2000}
+_NOTES_SECTION = re.compile(r"^## 20\d{2}-\d{2}-\d{2}", re.M)
+
+
+def _notes_dir() -> str:
+    if REPO:
+        return os.path.join(REPO, "mcp", "notes")
+    return os.path.join(os.path.expanduser("~"), ".beacon-mfg", "notes")
+
+
+def _notes_path(topic: str) -> str:
+    safe = re.sub(r"[^A-Za-z0-9_\-]", "_", (topic or "").strip() or "mcp")
+    return os.path.join(_notes_dir(), safe + ".md")
+
+
+def _notes_scope() -> str:
+    return "repo-shared（操作员托管，全体 agent 可见）" if REPO \
+        else "local-machine（仅本机，不会上传云端）"
+
+
+def read_notes(topic: str = "mcp") -> Dict[str, Any]:
+    p = _notes_path(topic)
+    if not os.path.isfile(p):
+        # 联网模式本机还没有留言时，回落读包内 seed（npm files 里带着，
+        # 只读展示 + 标注来源，让新用户也能看到仓库侧沉淀的真实坑）。
+        seed = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "notes", re.sub(r"[^A-Za-z0-9_\-]", "_", (topic or "").strip() or "mcp") + ".md")
+        if not REPO and os.path.isfile(seed):
+            with open(seed, encoding="utf-8") as f:
+                text = f.read()
+            heads = list(_NOTES_SECTION.finditer(text))
+            entries = []
+            for i, m in enumerate(heads):
+                end = heads[i + 1].start() if i + 1 < len(heads) else len(text)
+                block = text[m.start():end].strip()
+                head, _, body = block.partition("\n")
+                entries.append({"header": head.strip(), "body": body.strip()})
+            entries.reverse()
+            return {"ok": True, "topic": topic, "count": len(entries),
+                    "entries": entries, "scope": "seed（包内置的真实坑，只读）",
+                    "store": seed,
+                    "note": "本机尚无自写留言，以下为包内置 seed；你 report_note 写入的会存到本机。"}
+        return {"ok": True, "topic": topic, "count": 0, "entries": [],
+                "scope": _notes_scope(), "store": p,
+                "note": "尚无留言：还没有 agent 记录过这个主题的坑。"}
+    with open(p, encoding="utf-8") as f:
+        text = f.read()
+    heads = list(_NOTES_SECTION.finditer(text))
+    entries = []
+    for i, m in enumerate(heads):
+        end = heads[i + 1].start() if i + 1 < len(heads) else len(text)
+        block = text[m.start():end].strip()
+        head, _, body = block.partition("\n")
+        entries.append({"header": head.strip(), "body": body.strip()})
+    entries.reverse()  # 最新在前
+    return {"ok": True, "topic": topic, "count": len(entries),
+            "entries": entries, "scope": _notes_scope(), "store": p}
+
+
+def report_note(issue: str, workaround: str = "", agent: str = "",
+                topic: str = "mcp") -> Dict[str, Any]:
+    iss = (issue or "").strip()
+    wa = (workaround or "").strip()
+    ag = (agent or "").strip() or "unknown-agent"
+    if not iss:
+        return {"ok": False, "reason": "empty_issue",
+                "hint": "现象必填：碰到什么错/什么边界，别只写「不行」。"}
+    for key, val in (("agent", ag), ("issue", iss), ("workaround", wa)):
+        if len(val) > _NOTES_MAX[key]:
+            return {"ok": False, "reason": "too_long", "field": key,
+                    "max": _NOTES_MAX[key]}
+    p = _notes_path(topic)
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    ts = time.strftime("%Y-%m-%d %H:%M")
+    block = f"## {ts} · {ag}\n- 现象：{iss}\n"
+    if wa:
+        block += f"- 绕行：{wa}\n"
+    if not os.path.isfile(p):
+        with open(p, "w", encoding="utf-8", newline="\n") as f:
+            f.write(_NOTES_HEADER.format(topic=topic))
+    with open(p, "a", encoding="utf-8", newline="\n") as f:
+        f.write(block + "\n")
+    return {"ok": True, "topic": topic, "store": p,
+            "scope": _notes_scope(), "count": read_notes(topic)["count"]}
+
+
+# --------------------------------------------------------------------------- #
 # MCP 协议层（JSON-RPC 2.0 over stdio）
 # --------------------------------------------------------------------------- #
 TOOLS = [
@@ -5572,6 +5675,41 @@ TOOLS = [
                 "intent": {"type": "string", "enum": ["claim", "register", "status"],
                            "description": "claim=认领库里已收录的企业（默认）；register=库里没有、要新建档；status=查自己申请的审核进度"},
             },
+        },
+    },
+    {
+        "name": "read_notes",
+        "description": "读「踩坑留言区」：其他 agent 用本 MCP 时踩过的坑与绕行方法"
+                       "（如 429 配额语义、无区级过滤、批量取数姿势）。"
+                       "⚠ 开始检索前值得先读一眼，能省掉别人已经付过的试错成本；"
+                       "没有留言时返回空列表，属正常。topic 默认 mcp（MCP 使用坑）。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "topic": {"type": "string", "default": "mcp",
+                          "description": "留言主题，默认 mcp"},
+            },
+        },
+    },
+    {
+        "name": "report_note",
+        "description": "往「踩坑留言区」写一条你自己实测踩到的坑（现象 + 绕行方法），"
+                       "让后来的 agent 少走弯路。⚠ 必须是你**实际碰到**的问题，"
+                       "带真实报错/现象描述；不要凭猜测写，不要把留言区当反馈箱或评分区。"
+                       "碰到配额（429）、字段缺失、参数被静默忽略这类边界后，请顺手回写一条。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "issue": {"type": "string",
+                          "description": "现象：碰到什么错/什么边界（必填，要具体）"},
+                "workaround": {"type": "string",
+                               "description": "绕行：你怎么绕开的（实测有效的方法)"},
+                "agent": {"type": "string",
+                          "description": "你的 agent 标识（如 workbuddy-main、claude-desktop）"},
+                "topic": {"type": "string", "default": "mcp",
+                          "description": "留言主题，默认 mcp"},
+            },
+            "required": ["issue"],
         },
     },
 ]
@@ -5836,6 +5974,11 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
         if name == "vendor_onboarding":
             return vendor_onboarding(args.get("supplier_id", ""), args.get("company", ""),
                                      args.get("intent", "claim"))
+        if name == "read_notes":
+            return read_notes(args.get("topic", "mcp"))
+        if name == "report_note":
+            return report_note(args.get("issue", ""), args.get("workaround", ""),
+                               args.get("agent", ""), args.get("topic", "mcp"))
     except Exception as e:  # 任何异常都包成文本，避免协议崩
         return {"error": f"{name} 执行异常: {e}"}
     return {"error": f"未知 tool: {name}"}
