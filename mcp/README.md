@@ -10,7 +10,7 @@
 > 只记「怎么绕开」，不评数据对错；repo 模式存 `<repo>/mcp/notes/` 由操作员托管，
 > 联网模式存本机 `~/.beacon-mfg/notes/` 不上传云端）。
 
-## 提供的 tool（8 个只读 + 1 个身份自助 + 1 个入驻入口 + 踩坑留言区读写）
+## 提供的 tool（共 12 个：8 个只读检索 + 1 个身份自助 + 1 个入驻入口 + 2 个留言区读写）
 
 | tool | 用途 | 关键参数 |
 |------|------|----------|
@@ -23,6 +23,7 @@
 | `answer_sourcing` | 续接澄清轮次：写回客户答案，返回下一轮澄清问题或初选供应商列表 | `session_id`（必填） `answers` |
 | `refine_sourcing` | 推荐轮次交互：`details`(看详情与 RFQ 入口) / `more`(看更多) / `best`(看最匹配一家) | `session_id`（必填） `action` `value` |
 | `account` | 查看档位/剩余额度；`request`+`confirm` 绑手机号升 `verified`；`logout` 回匿名 | `action` `phone` `code` |
+| `vendor_onboarding` | 给供应商开通「入驻 / 认领」入口：返回可直接点开的控制台链接与步骤。**只给入口不代办**（验证码与法人核验必须用户自己在浏览器输入） | 无（返回链接） |
 | `read_notes` | 读踩坑留言区：其他 agent 踩过的坑与绕行（429 语义、无区级过滤、批量取数姿势…）。检索前先读一眼省试错成本 | `topic`（默认 mcp） |
 | `report_note` | 写踩坑留言区：把自己**实测踩到**的坑（现象 + 绕行）回写给后来的 agent。必须真实踩到才写，不当反馈箱/评分区用 | `issue`（必填） `workaround` `agent` `topic` |
 

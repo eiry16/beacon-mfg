@@ -64,6 +64,9 @@ examples/
 skills/README.md
 skills/TEMPLATE.md
 mcp/test_*.py
+# 例外：协议回归测试是发版闸门的一环（check_release.py 要读它的 EXPECT_TOOLS，
+# CI 也要能跑），必须入库；其余 test_*.py 仍视为开发期临时脚本。
+!mcp/test_protocol.py
 mcp/test_update.js
 
 # 本地产物与临时文件

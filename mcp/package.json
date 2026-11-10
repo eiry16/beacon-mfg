@@ -43,7 +43,8 @@
     "README.md"
   ],
   "scripts": {
-    "prepack": "node copy-rfk.js"
+    "prepack": "node copy-rfk.js",
+    "prepublishOnly": "node -e \"const{execSync}=require('child_process');const py=process.platform==='win32'?'python':'python3';execSync(py+' check_release.py',{stdio:'inherit'})\""
   },
   "engines": {
     "node": ">=16"
