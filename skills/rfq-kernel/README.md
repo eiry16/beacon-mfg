@@ -42,7 +42,7 @@ skills/rfq-kernel/
    - beacon-mfg 能力卡 = **供给数据**（工厂能做什么），由采集/认领流水线生成。
    - 寻源内核 = **需求解析 + 匹配引擎**，能力卡是它的输入。
    - 两者互为上下游，经 `src/beacon_adapter.py` 单向对接：真实卡转成标准供应商卡后，
-     内核零改动即可匹配（新增 `sheet_metal` pack 验证）。
+     内核零改动即可匹配。
    - 能力卡 `limits` 为空时**匹配优雅降级**——交期/认证标「需向工厂确认」，
      而非编造数字。这就是「静态优先、动态降级」的设计。
 
@@ -56,23 +56,10 @@ cd skills/rfq-kernel && PYTHONIOENCODING=utf-8 python demo.py
 真实卡经适配器接入后工艺匹配但硬指标全空 → 降级不中断；
 跨行业 mattress 复用同一内核。
 
-## 双源分离（以 mattress 为例）
-
-同一件事不要在两个地方各写一份真相。床垫 pack 的划分：
-
-- `fire_retardant` —— **物理阻燃特性**（`有阻燃处理` / `无阻燃处理` / `未指定`，`late` 档），
-  不含标准码。
-- 标准合规（`BS5852` / `CA TB117` / `GB8624` / `CertiPUR` / `OEKO-TEX`）—— 只留在
-  `certifications`，作为可验证的合规真相源。
-
-示例卡 `suppliers/SUP-MT-001.json` 的 `industry_ext.fire_retardant` 为 `["有阻燃处理"]`。
-
 ## 企业怎么建立自己的供给信息
 
-- **不用建空 skill**：框架就是能力卡本身。自动采集的卡 `claim.status=unclaimed`、
-  `limits` 全 null，正是爬来企业的现状——再写空 skill 只是重复现状。
-- **正确做法 = 认领后自填**：企业认领自己的卡后，在卡上补全 `limits` / `materials` /
-  `quality.certifications` / `rfq` 块即可。
+- **认领后自填即可**：框架就是能力卡本身。企业认领自己的卡后，在卡上补全
+  `limits` / `materials` / `quality.certifications` / `rfq` 块，就能进入结构化匹配。
 - **RFQ 可达性 = 能力卡上的 `rfq` 块**（`{schema:"rfq/v1", protocol, endpoint}`）。
   只有带这个块的企业才能接收结构化询价。
 - `schema/supplier.schema.json` 的 `agent.capabilities`（含 `rfq`）是 L0 记录上的预留字段，

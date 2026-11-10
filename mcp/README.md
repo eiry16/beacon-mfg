@@ -153,7 +153,7 @@ MCP_PORT=8787 python http_server.py      # 默认 0.0.0.0:8787，端点 /mcp，�
 
 | 变量 | 作用 |
 |---|---|
-| `BEACON_REPO` | 指定含 `data/` 的本地目录，改走本地只读模式（维护者用，分发仓库不含数据） |
+| `BEACON_REPO` | 指定含 `data/` 的本地目录，改走本地只读模式（默认走线上服务） |
 | `BEACON_SOURCE` | 覆盖默认数据源基址（HTTP 模式） |
 | `BEACON_MIRRORS` | 追加备用基址（逗号分隔），主源不可达时自动回退 |
 | `BEACON_MASK_PHONE` | 置 `1` 时对手机号隐私处理输出 |
