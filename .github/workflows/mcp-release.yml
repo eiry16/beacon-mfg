@@ -42,6 +42,28 @@ jobs:
             bin README.md package.json rfq-kernel
           ls -lh "beacon-mfg-mcp-${tag}.tar.gz"
 
+      # ⚠ 发版前闸门：tag ↔ package.json ↔ server.json 三处版本必须一致。
+      #   漏改 server.json 的后果不是「报错」，而是 npm 发成功后 Registry 才 400
+      #   （2026-11-10 的失败邮件就是这么来的），版本号已经消耗掉、只能发下一个。
+      #   所以把它挡在 npm publish **之前**，并直接打印该改哪个文件的哪一行。
+      - name: 校验版本一致性（tag ↔ package.json ↔ server.json）
+        run: |
+          set -euo pipefail
+          tag="${GITHUB_REF_NAME#mcp-v}"
+          pkg="$(node -p "require('./mcp/package.json').version")"
+          sj="$(node -p "require('./mcp/server.json').version")"
+          sjpkg="$(node -p "require('./mcp/server.json').packages[0].version")"
+          echo "tag=$tag  package.json=$pkg  server.json=$sj  packages[0]=$sjpkg"
+          fail=0
+          [ "$tag" = "$pkg" ]   || { echo "::error file=mcp/package.json::version=$pkg 但 tag 是 $tag"; fail=1; }
+          [ "$tag" = "$sj" ]    || { echo "::error file=mcp/server.json::顶层 version=$sj 但 tag 是 $tag"; fail=1; }
+          [ "$tag" = "$sjpkg" ] || { echo "::error file=mcp/server.json::packages[0].version=$sjpkg 但 tag 是 $tag"; fail=1; }
+          if ! node -e "const m=require('./mcp/package.json').mcpName; process.exit(m?0:1)"; then
+            echo "::error file=mcp/package.json::缺少 mcpName（Registry 校验 npm 归属必需）"; fail=1
+          fi
+          [ "$fail" = "0" ] || { echo "版本不一致，已中止（未发 npm）。改完重新打 tag。"; exit 1; }
+          echo "✓ 版本一致，继续发布"
+
       - name: 发布到 npm（package.json 的 prepack 会经 copy-rfk.js 同步寻源内核）
         uses: actions/setup-node@v4
         with:
