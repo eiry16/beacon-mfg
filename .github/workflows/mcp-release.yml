@@ -1,7 +1,7 @@
 name: MCP Release
 
-# 触发：mcp-v* 标签（自动发 Release + 注册到官方 MCP Registry）；
-#       手动 dispatch（只跑 Registry 注册，用于补发/重试）。
+# 触发：mcp-v* 标签（npm publish → GitHub Release → 注册到官方 MCP Registry）；
+#       手动 dispatch（只跑 Registry 注册，用于补发/重试；此时 release 被 skip）。
 # 与整仓发布 release.yml 的 v* 互不干扰。
 on:
   push:
@@ -42,6 +42,16 @@ jobs:
             bin README.md package.json rfq-kernel
           ls -lh "beacon-mfg-mcp-${tag}.tar.gz"
 
+      - name: 发布到 npm（package.json 的 prepack 会经 copy-rfk.js 同步寻源内核）
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+      - run: npm publish --access public
+        working-directory: mcp
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: 创建 GitHub Release 并上传
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -58,9 +68,13 @@ jobs:
   # 命名空间归属，不需要 device-code 登录（本机直连 github.com/login/device/code
   # 间歇被断，已弃用该路径）。
   # 前置：npm 包内必须有 mcpName（package.json，2026-11-10 加）；
-  #       server.json 的 version 必须与 npm 已发布版本一致，否则 422。
+  #       server.json 的 version 必须与 npm 已发布版本一致，否则 400/422
+  #       （npm publish 已前置进 release job，此 job 依赖其完成并等 npm 传播）。
   # ─────────────────────────────────────────────────────────────────────────────
   publish-registry:
+    needs: release
+    # dispatch 补发/重试时 release 是 skipped，仍要允许本 job 跑
+    if: ${{ !failure() && !cancelled() }}
     runs-on: ubuntu-latest
     permissions:
       id-token: write   # OIDC 认证必需
@@ -69,6 +83,22 @@ jobs:
       MCP_PUBLISHER_VERSION: v1.8.8
     steps:
       - uses: actions/checkout@v4
+
+      # Registry 会实时校验 npm 上该版本是否已存在；npm publish 完成后
+      # 传播有延迟（几十秒内），不等待就会 404 → publish 失败
+      # （1.12.0/1.12.1 首跑各吃过一次这个亏）。
+      - name: 等待 npm 版本传播
+        run: |
+          set -euo pipefail
+          ver="$(python3 -c "import json;print(json.load(open('server.json'))['packages'][0]['version'])")"
+          for i in $(seq 1 30); do
+            if curl -fsSL "https://registry.npmjs.org/beacon-mfg-mcp" | grep -q "\"${ver}\""; then
+              echo "npm ${ver} visible (check ${i})"; exit 0
+            fi
+            echo "waiting for npm ${ver} (${i}/30)..."; sleep 10
+          done
+          echo "npm ${ver} not visible after 5min"; exit 1
+        working-directory: mcp
 
       - name: 安装 cosign 并校验 mcp-publisher 签名（官方推荐做法）
         uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
