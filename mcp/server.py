@@ -341,7 +341,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.12.0"
+VERSION_FALLBACK = "1.12.2"
 
 
 def _pkg_version() -> str:
@@ -5665,15 +5665,19 @@ TOOLS = [
                        "在自己的浏览器里输入 —— 让他把验证码念给你，等于把「证明他是这家企业」"
                        "的凭证交给第三方，还会进入对话上下文与日志。"
                        "⚠ 不要替用户编造企业信息，不要承诺审核结果或时效，"
-                       "也不要把未认领的企业说成「已经属于你」。",
+                       "也不要把未认领的企业说成「已经属于你」。\n"
+                       "返回体另带 agent_channel（契约 v3.0）：一条**非手机 App** 的 HTTP/JSON 自助通道，"
+                       "供供应商自己的 Agent 认领并上传资料（intent=agent 看完整说明）。"
+                       "该通道必须手机验证码登录，且认领前还要求「登录手机号 = 工商登记法人手机号」"
+                       "一致性核查通过。本工具仍然只读指路，不发任何写请求、不持有密钥。",
         "inputSchema": {
             "type": "object",
             "properties": {
                 "supplier_id": {"type": "string",
                                 "description": "可选。已在检索结果里拿到的企业 ID（如 CN-MFG-0020317），用于生成直达深链，省得用户再搜一遍公司名"},
                 "company": {"type": "string", "description": "可选。企业名称，用于把步骤说得更具体"},
-                "intent": {"type": "string", "enum": ["claim", "register", "status"],
-                           "description": "claim=认领库里已收录的企业（默认）；register=库里没有、要新建档；status=查自己申请的审核进度"},
+                "intent": {"type": "string", "enum": ["claim", "register", "status", "agent"],
+                           "description": "claim=认领库里已收录的企业（默认）；register=库里没有、要新建档；status=查自己申请的审核进度；agent=看非 App 的 Agent HTTP 自助通道（端点契约 + 用法）"},
             },
         },
     },
@@ -5716,21 +5720,33 @@ TOOLS = [
 
 
 CONSOLE_BASE = "https://beacon-mfg.pages.dev/console/"
+AGENT_API_BASE = "https://beacon-mfg.pages.dev/api"
+AGENT_CONTRACT_URL = "https://beacon-mfg.pages.dev/agent-onboard.json"
 
 
 def vendor_onboarding(supplier_id: str = "", company: str = "",
                       intent: str = "claim") -> Dict[str, Any]:
-    """给供应商一个**能自己走完**的入驻入口。
+    """给供应商两个**能自己走完**的入驻入口：浏览器控制台，以及非 App 的 Agent HTTP 通道。
 
-    为什么 MCP 只做到「给链接」为止
+    为什么 MCP 本身只做到「指路」
     ------------------------------
-    Agent 拿得到 HTML 也没用（它不会填表单）。但更要紧的是**凭证不能进对话**：
-    认领要过短信验证码与法人手机核验，让用户把验证码念给 Agent，等于把
-    「证明我是这家企业」的东西交给第三方，还顺带落进 LLM 上下文与日志。
-    所以这里只返回链接 + 步骤 + 明确的边界，由用户在浏览器里自己完成。
+    公开 MCP 包是只读的（文件头红线）：任何匿名 Agent 都能调用检索工具，
+    在里面塞写工具等于让检索方顺手改别人的企业档案。所以写能力放在**独立
+    HTTP 通道**，由企业自己的 Agent 持「手机验证码登录签发的用户 JWT」调用，
+    且认领一律以 pending 申请结束，交人工复核。
 
-    同源红线：即便将来 Agent 能代填字段，也必须企业自己确认过才算「企业自述」——
-    否则就是拿平台推断冒充企业说的话。
+    认领的两段身份证明（v3.0）
+    --------------------------
+    ① 手机验证码登录（腾讯云短信）→ JWT，证明「持有这个手机号」；
+    ② 该手机号必须与「平台已核验的工商登记法人手机号基准」一致，
+       证明「这个号是这家企业工商登记的法人手机号」。
+    两者都成立才允许提交认领。工商登记法人手机号不是公开可查数据，
+    基准由平台依据营业执照/工商档案人工核实后登记，可信级别
+    platform_manual_verified，不冒充政府接口核验。
+
+    凭证边界仍然成立：短信验证码这类「证明我是这家企业」的东西由企业本人
+    在浏览器输入，Agent 不得索取、转述或编造；USCC 由企业自己提供，
+    且它只是公开信息，不足以单独构成认领依据。
     """
     from urllib.parse import quote as _q
 
@@ -5753,25 +5769,94 @@ def vendor_onboarding(supplier_id: str = "", company: str = "",
     url = CONSOLE_BASE + ("?id=" + _q(sid, safe="") if sid else "")
     intent = (intent or "claim").strip().lower()
 
-    if intent == "register":
+    # 非手机 App 的写入通道。只描述契约，不代发请求、不持有任何密钥。
+    agent_channel = {
+        "kind": "http-json",
+        "no_app_required": True,
+        "auth_required": True,
+        "contract_url": AGENT_CONTRACT_URL,
+        "api_base": AGENT_API_BASE,
+        "docs": "契约 JSON 本身即完整文档；平台本地工作副本另有 docs/AGENT_ONBOARD.md"
+                "（非分发面，不在公开 GitHub 仓库）",
+        "client": "按契约用任意 HTTP 客户端 / curl 实现即可；平台工作副本另有 scripts/agent_onboard.py "
+                  "CLI（同样不在公开仓库）",
+        "contract_version": "3.1",
+        "auth": {
+            "login": "POST /auth/sms/send → /auth/sms/verify（腾讯云短信真实下发，"
+                     "验证码由企业本人输入）→ 用户 JWT（30 天）",
+            "required": "所有 /agent/* 端点必须带 Authorization: Bearer <JWT>；匿名与伪造 token 均 401，"
+                        "后端 get_current_user 真校验，Worker 层再做一次前置拒绝",
+            "operator": "仅平台人工复核使用 BEACON_OPERATOR_TOKEN，外部 Agent 不持有",
+        },
+        "legal_phone_gate": {
+            "rule": "提交认领前，登录手机号必须等于该企业工商登记法人手机号；"
+                    "不一致 / 无基准 / 未登录一律拒绝且不落申请",
+            "why": "短信验证码只证明持有号码；平台已核验的法人手机号基准才证明该号属于这家企业",
+            "data_source": "工商登记法人手机号不是公开可查数据（公示系统只公开法人姓名）；"
+                           "基准由 operator 依据营业执照/工商档案人工核实后登记，"
+                           "只存 HMAC 哈希，可信级别 platform_manual_verified",
+            "check": "GET /agent/legal-phone/check?supplier_id=... → status: match 才放行",
+            "bootstrap": "no_baseline 时 POST /agent/legal-phone/request 发起核验申请；"
+                         "平台建立基准后用同一手机号登录即可通过",
+            "denials": "LOGIN_REQUIRED / LEGAL_PHONE_NOT_VERIFIED / LEGAL_PHONE_MISMATCH / TOO_MANY_CHECKS",
+            "also_applies_to": "/claim/confirm（App 三步认领链路，后端同一道闸门）",
+        },
+        "flows": {
+            "identity_check": "GET /agent/me（确认这次连接确实带着登录过的账号）",
+            "legal_phone_check": "GET /agent/legal-phone/check（认领前必做，须返回 match）",
+            "legal_phone_request": "POST /agent/legal-phone/request（基准为空时的冷启动）",
+            "claim": "POST /agent/claim（supplier_id 必填；USCC 可选资料；先过 legal_phone_gate）→ pending 申请",
+            "profile_upload": "POST /agent/profile（结构化资料一次提交）→ pending 申请",
+            "self_register": "POST /agent/register（公司名 / 地址 / 门类）→ pending 申请；"
+                             "人审通过后由 operator 分配 supplier_id 并建档",
+            "status": "GET /agent/applications（只按 JWT 的 user_id 查自己提交的）",
+        },
+        "not_for_agents": "/claim/verify-start、/claim/submit-uscc 与 /v1/collect/* 是手机 App 内部链路；"
+                          "/claim/confirm 现已要求用户 JWT 并走同一道法人手机号闸门。"
+                          "外部 Agent 一律走 /agent/*。",
+        "result": "所有提交只落 vendor_application(status=pending, channel=agent)，"
+                  "带登录账号 user_id；只有 operator 批准后才写 claimed / 上架",
+        "boundary": "本工具只读指路。短信验证码由企业本人在自己设备上输入，"
+                    "Agent 不得索取、转述或代填；USCC 由企业自己提供，且只是资料字段、不是身份凭证。"
+                    "不要对外宣称「政府接口实时核验法人手机号」。",
+    }
+
+    if intent == "agent":
         steps = [
-            "打开链接，用手机号收验证码登录（同一个号在 App 与网页是同一账号，草稿也共享）",
+            f"取契约：GET {AGENT_CONTRACT_URL}（v3.0，含 legal_phone_gate）",
+            f"写接口基址固定为 {AGENT_API_BASE}；**这条通道需要身份认证，不是免身份的**",
+            "先登录：POST /auth/sms/send {phone} → /auth/sms/verify {phone, code} 换用户 JWT。"
+            "腾讯云短信真实下发；验证码须由企业本人在自己设备上读取并输入，Agent 不得索取或转述",
+            "身份自检：GET /agent/me，带 Authorization: Bearer <JWT>；200 才继续",
+            "**认领前必做**：GET /agent/legal-phone/check?supplier_id=... 须返回 status=match"
+            "（登录手机号 = 工商登记法人手机号）。no_baseline 走 /agent/legal-phone/request，"
+            "mismatch 改用工商登记法人手机号重新登录",
+            "认领 POST /agent/claim ｜ 上传资料 POST /agent/profile ｜ 新建档 POST /agent/register ｜ "
+            "查进度 GET /agent/applications，全部带同一个 JWT",
+            "⚠ 所有提交只落 pending，人审批准后才生效；基准是平台人工核验结果，"
+            "不要对外宣称「政府接口实时核验」",
+        ]
+    elif intent == "register":
+        steps = [
+            "打开控制台链接，用手机号收验证码登录（同一个号在 App 与网页是同一账号）",
             "在「找到我的企业」里搜公司名；搜不到就走「新建档」",
             "填主体 / 联系 / 产能 / 质量 / 服务与产品条目（单价可不填，对外显示「面议」）",
             "提交后进入人工审核；不通过会带**逐字段理由**退回，改完可重新提交",
+            "若让 Agent 代办新建档：同样先手机验证码登录，再 POST /agent/register "
+            "（company / claimed_address / gate），人审通过后由平台分配正式 ID",
         ]
     elif intent == "status":
         steps = [
-            "打开链接，用提交时那个手机号登录",
+            "打开控制台链接，用提交时那个手机号登录",
             "页面会列出「我的申请」：待审核 / 已通过 / 已驳回（驳回带理由）",
         ]
     else:
         steps = [
-            "打开链接，用手机号收验证码登录",
+            "打开控制台链接，用手机号收验证码登录（或让企业自己的 Agent 走 agent_channel HTTP 通道）",
             "搜到自己的企业并选中（已在库里的话，公开信息会自动带成底稿，不用重填）",
-            "第一步：填 18 位统一社会信用代码（按 GB 32100-2015 校验位当场验）",
-            "第二步：填工商登记的法人手机号并收码",
-            "提交认领申请 → **人工复核通过后**才算认领成功",
+            "填 18 位统一社会信用代码（按 GB 32100-2015 校验位当场验）；USCC 是公开信息，只是资料字段",
+            "登录手机号还须与该企业工商登记法人手机号一致（平台已核验基准）才可提交认领",
+            "提交认领申请 → 状态 pending，**人工复核通过后**才算认领成功",
         ]
 
     return {
@@ -5780,17 +5865,27 @@ def vendor_onboarding(supplier_id: str = "", company: str = "",
         "supplier_id": sid or None,
         "intent": intent,
         "steps": steps,
-        "boundary": "验证码、法人手机号这类凭证只能由用户在本页面自己输入。"
-                    "**不要让用户把它们告诉你**，也不要替他填写。",
+        "agent_channel": agent_channel,
+        "boundary": "两条路径都需要身份认证：浏览器控制台与 Agent HTTP 通道都以手机验证码登录为前提，"
+                    "且认领还要求登录手机号与工商登记法人手机号一致，没有匿名写入。"
+                    "**不要让用户把验证码念给你**，Agent 不得索取、转述或代填；"
+                    "USCC 由企业自己提供，Agent 不编造、不代替企业确认。",
         "what_not_to_do": [
-            "不要代替用户完成认领或注册",
+            "不要代替用户完成认领或注册（本工具不发写请求）",
             "不要索取、转述或回显任何验证码",
             "不要承诺审核结果或时效",
             "不要把未认领的企业说成「已经属于该用户」",
+            "不要把 claim_token 贴进公开日志或对话记录",
+            "不要宣称「政府接口实时核验法人手机号」；基准是平台人工核验结果",
+            "不要在 legal-phone/check 返回 no_baseline 或 mismatch 时继续提交认领",
         ],
-        "why_not_here": "USCC 是企业公开信息，单凭它认领等于把企业送人。"
-                        "所以我们不用「填个代码就算认领」的做法，而是提交后人工复核。",
-        "next": "把 url 原样给用户，让他在浏览器里走完；完成后可以回来让你查他企业的能力卡。",
+        "why_not_here": "USCC 是企业公开信息，单凭它认领等于把企业送人；"
+                        "能收短信也不等于代表这家公司。所以 Agent 通道要过"
+                        "「手机验证码登录 + 法人手机号一致性」两道证明，"
+                        "认领提交后只落 pending、由人工复核批准；公开 MCP 包保持只读。",
+        "next": ("把 url 原样给用户，让他在浏览器里走完；"
+                 "若他是让 Agent 代办，把 agent_channel.contract_url 与 api_base 交给他的 Agent。"
+                 "完成后可以回来让你查他企业的能力卡。"),
     }
 
 
