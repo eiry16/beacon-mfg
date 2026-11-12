@@ -11,7 +11,7 @@
   自报（self_declared）或无证书号 → verified=false → 不作数。
   这正是「ISO9001 需上传证书号、且平台/现场核验过才作数」。
 
-真实卡权威位置（与 server/routers/rfq.py 一致）：
+真实卡权威位置：
   skills/registry/capability/{sid}.json
 skills/vendors/{id}/capability.json 作为兜底（两者内容同源）。
 生产环境应优先 registry/capability，不要遍历 data/gb 分片。

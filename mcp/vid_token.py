@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""供应商 id 的对外 token 化（D，2026-10-28）。
+"""供应商 id 的对外 token 化。
 
 问题
 ====
-内部 id 是 `CN-MFG-0000163` —— **顺序编号**。这意味着「存在性可枚举」：
-实测 `/skills/registry/capability/CN-MFG-0000009.json` → 200、
-`.../0000010.json` → 404，于是从 1 遍历到 222875 就能把全库重建一遍。
-A（manifest 需要身份）+ B（R2 私有）+ C（服务端签发令牌）把「拖库」从 5 分钟
-抬到几十小时，但**枚举本身仍然成立**：只要 id 可预测，攻击者不需要任何
-目录信息，盲扫 URL 就够了。D 要终结的正是这一点。
+内部 id 是顺序编号，存在性可枚举：只要 id 可预测，不需要任何目录信息，
+盲扫 URL 就能逐条试探。服务端门禁只能抬高成本，不能消除枚举本身。
+对外标识必须是不可预测的置换结果，而不是可推导的编号。
 
 做法
 ====
@@ -19,10 +16,10 @@ A（manifest 需要身份）+ B（R2 私有）+ C（服务端签发令牌）把�
 为什么是「置换」而不是「哈希」
 ------------------------------
 哈希（SHA/HMAC）不可逆 → 服务端收到 token 后无法还原内部 id，只能建一张
-21 万行的映射表并每次查库 —— 那是给每个请求加一次 D1 往返。
+    全量映射表并每次查库 —— 那是给每个请求加一次数据库往返。
 置换（双射）可逆，还原是纯计算、零 IO。这在这里是决定性的：
-  · capability / vendors 路径要还原后才知道去 R2 取哪个对象
-  · 记账（beacon_card_view.vid）要还原成内部 id 才能和存量数据对齐
+  · 对象路径要还原后才知道去存储取哪个文件
+  · 记账要还原成内部 id 才能和存量数据对齐
 
 为什么是 Feistel 而不是「XOR 一个常数」
 --------------------------------------
@@ -42,10 +39,10 @@ Crockford base32（去掉 I/L/O/U，避免和 1/0 混淆），8 字符 = 40 bit�
 
 用法
 ====
-    python scripts/vid_token.py selftest
-    python scripts/vid_token.py enc CN-MFG-0000163
-    python scripts/vid_token.py dec 7K3M9QXA
-    python scripts/vid_token.py bench          # 21 万条全量往返校验
+    python vid_token.py selftest
+    python vid_token.py enc <内部 id>
+    python vid_token.py dec <token>
+    python vid_token.py bench          # 全量往返校验
 """
 from __future__ import annotations
 

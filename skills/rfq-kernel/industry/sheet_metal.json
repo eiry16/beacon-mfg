@@ -3,7 +3,7 @@
   "display_name": "钣金冲压",
   "version": "0.2.0",
   "extends": "_base",
-  "description": "beacon-mfg 原生品类（一级品类『钣金冲压』）。验证 rfq-kernel 可直接消费 beacon-mfg 真实能力卡：适配器把 L1 capability.json 转成标准供应商卡后，本 pack 即可驱动匹配，内核与 schema 零改动。",
+  "description": "钣金 / 冲压 / 机箱机柜 / 金属结构件等金属板材成形加工，覆盖材料、厚度、精度等询价属性。",
 
   "attributes": {
     "material": {

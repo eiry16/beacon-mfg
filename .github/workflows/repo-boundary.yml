@@ -1,0 +1,22 @@
+name: Repo boundary guard
+
+# 为什么需要第三个 workflow：另两个只在 tag / 手动触发，普通 push 没有任何 CI。
+# 本 job 覆盖**所有分支**的 push 与所有 PR（推到任何公开分支都算暴露面，
+# 不能只守 main）；tag push 由发布 workflow 自己管，这里不重复触发。
+# 判据见 .github/scripts/check_repo_boundary.py，新增公开文件前先改那里的白名单。
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 核对公开仓库跟踪文件白名单
+        run: python3 .github/scripts/check_repo_boundary.py

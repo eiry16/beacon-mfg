@@ -97,15 +97,14 @@ except Exception:  # 桥接缺失/异常 → 降级，MCP 其余 3 个只读 too
     _bridge = None
 
 # --------------------------------------------------------------------------- #
-# id token（D，2026-10-28）
+# id token
 #
-# 对外 id 是 HMAC 置换后的 8 字符 token，不是 `CN-MFG-0000163` 这种顺序编号 ——
-# 顺序编号等于「从 1 遍历到 222875 就能把全库重建一遍」。
+# 对外 id 是 HMAC 置换后的 8 字符 token，不是顺序编号 —— 顺序编号可被枚举遍历，
+# 等于把整库暴露给批量抓取。
 #
 # 为什么客户端也要有这份算法：MCP 的检索是**本地**跑的（拉分片、本地打分），
-# 它得把结果里的内部 id 换成 token 才能对外给。算法文件与
-# scripts/vid_token.py **逐字相同**（sync_vid_block.py 维护），密钥来自
-# BEACON_VID_KEY。没有密钥时（npm 客户端默认情况）**不改写** —— 见 has_key()。
+# 它得把结果里的内部 id 换成 token 才能对外给。同目录的算法副本必须保持同步；
+# 没有密钥时（npm 客户端默认情况）**不改写** —— 见 has_key()。
 # --------------------------------------------------------------------------- #
 try:
     from vid_token import (          # 同目录副本（npm 只分发 mcp/）
@@ -313,7 +312,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
         # 国标码命中检测行业 / 厂名含本 pack 产品词：本行业强信号，即便需求词全为
         # 稀有词（df<2，如「风送线」）导致 token 打分全为 0，也要保留——这些是
         # 真实供应商（GB 种子加法补召的 3434 搬运设备厂、或厂名含产品词的长尾厂），
-        # 不能因为「没有高频区分词」就被 w<=0 一概滤除（beacon-mfg 红线：真实企业必须被看见）。
+        # 不能因为「没有高频区分词」就被 w<=0 一概滤除（真实企业必须被看见，不能漏召回）。
         gb_hit = pack_id and _bridge is not None and _bridge.pack_of_gb(r.get("gb")) == pack_id
         name_hit = pack_id and name_surfaces and any(s in name_hay for s in name_surfaces)
         if w <= 0 and not (gb_hit or name_hit):
@@ -323,7 +322,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
             w += 1000.0
         # 厂名含本 pack 产品词、但 gb 未映射本行业的长尾真实企业（如输送厂 gb=3360/3451
         # 而非 3434）：同样视为本行业强信号给次高加成，避免被 GB 种子挤到池底
-        # （beacon-mfg 红线：真实企业必须被看见）。
+        # （真实企业必须被看见，不能漏召回）。
         elif name_hit:
             w += 500.0
         r2 = dict(r)
@@ -338,7 +337,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # --------------------------------------------------------------------------- #
 # 版本号单一来源：同目录 package.json（npm 发布包的 version）。
 # 全项目所有版本号（MCP / HTTP 服务 / Python API / Android APK）
-# 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
+# 都对齐到这个值，发布前的一致性闸门会校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
 VERSION_FALLBACK = "1.12.3"
@@ -557,8 +556,7 @@ def _header_value(v: Any) -> str:
 
     后果远比「少记一条埋点」严重：`_beacon_headers()` 是**所有** HTTP 读共用
     （manifest、索引桶、指纹分片全走它），于是任何含中文关键词的检索在冷缓存下
-    **整体不可用**，而报错文案指向「网络/代理不可达」。2026-10-24 由用户在另一台
-    机器上实测定位（1.4.2 → 1.11.0 均存在；本机因 manifest 已进缓存而未复现）。
+      **整体不可用**，而报错文案指向「网络/代理不可达」，容易误导排查方向。
 
     处理方式取 **percent-encode** 而不是丢弃：中文产品词正是要观测的主体，
     过滤掉等于把中文场景的遥测清零。worker 侧用 `decodeURIComponent` 还原。
@@ -580,9 +578,8 @@ def _quote_path(relpath: str) -> str:
     `http.client` 组装请求行时按 `'ascii'` 编码，路径里出现原始 UTF-8 字节
     就在**建连之前**抛 `UnicodeEncodeError: 'ascii' codec can't encode ...`。
 
-    2026-10-24 实测路径：`_city_postings()` 拼 `skills/registry/index/city/贵阳.json`，
-    城市名是发布侧的**原始中文文件名**（391 个城市全是中文名，没有哈希化）——
-    中文城市 + 冷缓存首个查询必定在这一跳失败。
+      `_city_postings()` 拼出的城市索引使用发布侧的**原始中文文件名**（未做哈希化）——
+      中文城市 + 冷缓存首个查询必定在这一跳失败。
 
     为什么不在 `_city_postings()` 里就地 quote：`fetch_text()` 会**先用 relpath
     读本地工作树/dirgit HEAD**（本地仓库模式），把 relpath 提前编码会让本地读
@@ -617,15 +614,11 @@ def _beacon_headers() -> Dict[str, str]:
         h["X-Beacon-Cid"] = _cid()
 
     cur = _cur_get() or {}
-    # op = 一次 tool 调用。服务端按 op 去重计量配额：一次「上海」检索要拉
-    # 178 个分片，按请求计费会把正常用户直接打死（见 pages/_worker.js 注释）。
+    # op = 一次 tool 调用。服务端按 op 去重计量配额：一次检索会拉很多分片，
+    # 按请求计费会把正常用户直接打死。
     #
-    # ⚠ **没有 op 就一定会 401**（2026-10-30 线上实测）。worker 门禁第 4 条是
-    #   `enforce && !op → 401 client_outdated`，它把「缺 op」当成旧版客户端。
-    #   而 op 只存在于 tool 调用期间（`_cur_set`），**启动预热、跨线程池、
-    #   以及任何非 tool 触发的取数都没有它**。缺了就整片 401：
-    #     · /data/manifest.json → 冷启动 8 次 401 重试（实测 67.7s）
-    #     · /data/gb/**         → get_vendor 全部 fetch_failed
+    # ⚠ op 只存在于 tool 调用期间（`_cur_set`）：**启动预热、跨线程池、
+    #   以及任何非 tool 触发的取数都没有它**，缺了会被服务端当成旧版客户端拒绝。
     #   所以这里必须有兜底 op。用 `boot-<pid>` 而不是给所有请求塞同一个常量：
     #   服务端按 op 去重，同一进程的多条预热/兜底请求计作一次操作，
     #   既不会把配额打爆，也不会让「一个进程」在台账里看起来像几百次调用。
@@ -1094,11 +1087,10 @@ def _fetch_many(paths: List[str], workers: int = 0) -> List[Optional[str]]:
         return [_shard_text(p) for p in paths]
     n = max(1, int(workers or _FETCH_WORKERS))
     out: List[Optional[str]] = [None] * len(paths)
-    # ⚠ ContextVar 不会自动继承到线程池的工作线程（2026-10-30 线上复现）。
+    # ⚠ ContextVar 不会自动继承到线程池的工作线程。
     #   本次 tool 调用的 op 在 `_cur_get()` 里，`X-Beacon-Op` 头靠它发出；
-    #   丢了 op → worker 判 `client_outdated` → **整片 401**。
-    #   症状极具误导性：同一次 get_vendor 里，单读的 idmap 200、并发取的
-    #   /data/gb/** 全 401 → 报 "fetch_failed"（看起来像企业不存在或网络抖）。
+    #   丢了 op 会被服务端当成旧版客户端拒绝，整批取数失败。
+    #   症状极具误导性：看起来像企业不存在或网络抖动，排查方向容易跑偏。
     #   每任务一份 `copy()`，因为同一个 Context 不能并发进入。
     import contextvars
     _base = contextvars.copy_context()
@@ -2372,20 +2364,18 @@ _fp_index: Optional[List[Dict[str, Any]]] = None
 _fp_index_key: Optional[str] = None
 _name_gb_slot: Optional[tuple] = None   # (id -> gb 映射, loaded_at, mtime)
 
-# 全量兜底的**上限**（2026-10-29）。`_build_fp_index` 是「预构建索引不可用」时的
-# 最后一道网：git archive 一次批量读 267~467 个 fp 分片，实测 210,555 条要 26.7 秒。
+# 全量兜底的**上限**。`_build_fp_index` 是「预构建索引不可用」时的
+# 最后一道网：一次批量读取全部分片，耗时随数据量线性增长。
 #
 # 它本来只在「索引缺失/陈旧」时才会被走到，但 `get_vendor` 在 id 反查失败时会拿它
-# 兜底——那是一条**用户正在等着看点开的那一家**的同步路径。实测绕过 `_vid_in`
-# 直接调 `get_vendor(token_id)` 就掉进来了：31s / 38s 两次复现，客户端表现为「卡死」。
+# 兜底——那是一条**用户正在等着看点开的那一家**的同步路径，必须设上限。
 #
 # 所以给它两道闸：时间闸（超时即返回已拿到的部分，并如实标记截断）+ 条数闸。
 # 两道闸都在**返回前**判定，且截断结果绝不写进 `_fp_index`（进程级缓存，写脏等于
 # 让后续每次查询都拿半份数据，见下方 fallback 分支的同类注释）。
 #
-# 默认值刻意**高于**本机全量构建实测耗时（26.7s / 21 万条）：这道闸的职责是拦
-# 「系统病态」（曾经出现 479 次请求、2258s 才返回 0 条），不是把正常构建切残——
-# 8s 的初版实测会把索引截成 6.1 万条（29%），普通检索于是悄悄少 2/3 记录。
+# 默认值刻意**高于**正常全量构建耗时：这道闸的职责是拦「系统病态」，
+# 不是把正常构建切残 —— 预算过紧会把索引截掉一大截，普通检索于是悄悄少记录。
 # 需要更紧预算的地方自己传 deadline_s（`get_vendor` 就传 5s，见
 # `_VENDOR_FP_DEADLINE`）。
 _FP_BUILD_DEADLINE = float(os.environ.get("BEACON_FP_BUILD_DEADLINE", "40") or "0")
@@ -2426,10 +2416,9 @@ def _data_version() -> str:
     git 模式 = HEAD sha（提交变则版本变）；
     HTTP 模式 = 清单**内容指纹**。
 
-    2026-10-24 修：原来 HTTP 模式只取 `generated_at`，它是 `date.today()`（**日期精度**）。
-    同一天内重复发布（重跑索引、补数据）版本号不变 → 落盘缓存永远命中旧快照 →
-    线上索引卡在 210555 条，MCP 每次搜索都判 `index_behind_data` 并退化成扫全部
-    467 个分片（单次 130s+），重跑 gen_search_index 也「看不出效果」。
+    HTTP 模式原先只取 `generated_at`，它是 `date.today()`（**日期精度**）。
+    同一天内重复发布（重跑索引、补数据）版本号不变 → 落盘缓存永远命中旧快照，
+    重跑索引也「看不出效果」。
     改为「generated_at + 各类型记录数 + 索引桶哈希聚合」，数据或索引任一变化即失效。
 
     取不到就返回空串，调用方据此**禁用**缓存（宁慢不脏）。
@@ -2512,8 +2501,8 @@ def _idmap_rel(vid: str) -> Optional[str]:
     """id 落在哪一片。
 
     token 寻址：片名 = token 的前 2 字符（32×32 = 1024 片）。token 是随机
-    排列的，前 2 字符在其上是**均匀**的 → 21 万条散进去每片约 205 行 / 3 KB，
-    与旧的「1000 行 / 14 KB」同量级，而且不需要任何目录表。
+    排列的，前 2 字符在其上是**均匀**的 → 全量记录散进去每片行数很少，
+    而且不需要任何目录表。
     """
     if _idmap_addr() == _IDMAP_ADDR_TOKEN:
         if vid and _TOKEN_ID_RE.match(vid):
@@ -2896,9 +2885,9 @@ def _build_fp_index(deadline_s: Optional[float] = None) -> List[Dict[str, Any]]:
     # fallback：逐分片读取（HTTP 模式，或 git archive 异常时）
     recs = []
     # git show / HTTP GET 均为 I/O 密集，线程池并发拉取可大幅缩短首次构建耗时。
-    # 分批 + 失败过半即停（2026-10-24）：全量回退是 467 个分片，若故障是系统性的
-    # （401/429/断网），挨个试完只会把一次失败放大成几百次重试 —— 实测 479 次
-    # 请求、累计 2258s 才返回 0 条，用户只看到「卡住然后没有结果」。
+    # 分批 + 失败过半即停：全量回退要拉的分片很多，若故障是系统性的
+    # （401/429/断网），挨个试完只会把一次失败放大成几百次重试，
+    # 用户只看到「卡住然后没有结果」。
     _BATCH = 16
     _tried = 0
     _ok = 0
@@ -3121,7 +3110,7 @@ def _brand_of(name: str) -> str:
 
     刻意**不做**更激进的归并（去「店/馆/楼」后缀、模糊匹配）：那会把「陆振兴」和
     「陆正兴」这种一字之差的不同主体并成一家 —— 错比噪声严重。
-    与 scripts/gen_brand_index.py 的 brand_of 同一口径。
+    品牌口径与发布侧索引保持一致。
     """
     s = (name or "").strip()
     prev = None
@@ -3199,7 +3188,7 @@ def _haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
     return 6371.0088 * 2 * math.asin(math.sqrt(a))
 
 
-# 中国经纬度范围（与 scripts/gen_fingerprint.py 的坐标写入校验同口径）。
+# 中国经纬度范围（与发布侧坐标写入校验同口径）。
 # 超出即视为调用方传错（常见根因：经纬度顺序写反、用了海外国标 API）。
 _GEO_LAT_RANGE = (3.0, 54.0)
 _GEO_LNG_RANGE = (73.0, 136.0)
@@ -3275,24 +3264,21 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
         "score": rec.get("sc"),
         "has_phone": bool(rec.get("tel")),
         "process": rec.get("proc", []),
-        # 工艺来源（2026-11-06，2026-11-13 补第三档）：
+        # 工艺来源：
         #   None            = 能力卡 / 企业自述 / 类默认但工艺码少于 4 个
-        #   "inferred:A1"   = 零采集推断，字母是分档（A1 三路一致 99.3% / A2 97.4% /
-        #                     A3 94.3% / B0 单路 96.0%，见 docs/PROCESS_INFERENCE.md）
+        #   "inferred:A1"   = 零采集推断，字母按证据强度分档（A1 最强，B0 单路）
         #   "class_default" = 该记录挂了 ≥4 个「国标小类默认工艺码」，不是这家企业
-        #                     的事实工艺，只是同类众数。全库 12,988 条属此类（其中
-        #                     12,970 条 pv=derived）。必须让 Agent 看得见：否则它会把
+        #                     的事实工艺，只是同类众数。必须让 Agent 看得见：否则它会把
         #                     「这一类大概都做」当成「这家确实做」，严苛场景直接下单。
-        # 红线：工艺码一个不动（召回不变），只加证据标签 —— 不编造也不减召回。
-        # 12,988 条里只有 838 条有推断候选，其余 12,150 条没有任何强证据可换。
+        # 工艺码保持原样（召回不变），只加证据标签 —— 不编造也不减召回。
         "process_evidence": (
             "inferred:" + rec["pinf"] if rec.get("pinf")
             else ("class_default" if (rec.get("pv") == "derived"
                                       and len(rec.get("proc") or []) >= 4) else None)),
-        # 业务能力码（2026-11-06）：非制造业门类的「能干什么」，如 fmt_bar 酒吧 /
+        # 业务能力码：非制造业门类的「能干什么」，如 fmt_bar 酒吧 /
         # edu_vocational 职业技能培训 / con_steel 钢结构。此前它只参与匹配不返回，
         # 于是「搜酒吧」的结果里看不出哪家真是酒吧。现在一并返回，agent 可据此
-        # 复核与二次筛选（码的中文名见 skills/schema/cap-codes/*.json）。
+        # 复核与二次筛选。
         "capability": rec.get("cap", []),
         "material": rec.get("mat", []),
         "cert": rec.get("cert", []),
@@ -3315,7 +3301,7 @@ _RE_WORD = re.compile(r"[a-z0-9]+")
 
 
 def _tokenize(text: str) -> List[str]:
-    """切成可索引的词。必须与 scripts/gen_search_index.py 的 tokenize 保持一致。
+    """切成可索引的词。必须与发布侧索引的 tokenize 保持一致。
 
     CJK 取 1-gram + 2-gram；拉丁/数字取整词 + 长度 >= 2 的前缀。
     """
@@ -3490,13 +3476,12 @@ def _read_many_text(paths: List[str]) -> Dict[str, str]:
     def _one(p: str) -> Optional[str]:
         return _ctx.copy().run(_shard_text, p)   # 每个任务一份副本，可并发进入
 
-    # 分批提交 + **快速放弃**（2026-10-24）。
-    # 为什么必须分批：全量回退最多要拉 467 个分片。若失败是**系统性**的
+    # 分批提交 + **快速放弃**。
+    # 为什么必须分批：全量回退要拉的分片很多。若失败是**系统性**的
     # （断网、代理死、身份 401、429 限流），挨个试完只是把「一次失败」放大成
-    # 几百次重试 —— 用户侧看到的就是「工具卡了 100~300 秒然后返回 0 条」，
-    # 而且完全不知道是真没有这家企业还是取数挂了。实测过一次 479 次请求
-    # 累计 2258s 才返回 0 条。
-    # 判据：跑满 32 个后统计**失败占比**，超过一半就停 —— 此时哪怕剩下的全成功，
+    # 几百次重试，用户侧只看到「工具卡很久然后返回 0 条」，
+    # 而且完全不知道是真没有这家企业还是取数挂了。
+    # 判据：跑满一批后统计**失败占比**，超过一半就停 —— 此时哪怕剩下的全成功，
     # 结果也已经残缺不全，继续拉没有意义，不如把故障如实报给调用方。
     _BATCH = 16
     _tried = 0
@@ -3556,9 +3541,8 @@ def _index_fresh() -> bool:
 def _index_reason() -> str:
     """索引为什么没被用上 —— 回给调用方，别再让人靠猜。
 
-    2026-10-23 实测踩过：线上 MCP 一次「面馆」查询 `shards_scanned=320`（全量扫），
-    但返回体只有 `via_index:false` 一个布尔，看不出是「索引没部署」「版本不符」
-    还是「落后于数据」。排查要靠翻代码 —— 这个字段就是为这件事加的。
+    只回 `via_index:false` 一个布尔，看不出是「索引没部署」「版本不符」
+    还是「落后于数据」，排查要靠翻代码 —— 这个字段就是为这件事加的。
     """
     meta = _index_meta()
     if not meta:
@@ -3589,18 +3573,15 @@ _RECALL_DF_MIN = 2
 
 # --- 候选分片硬上限（保险丝，不是性能方案）--------------------------------- #
 # 老实现是「并集 >= 60% 分片就 return None → 调用方全量扫」。那个阈值是**相对量**，
-# 分片数一涨就必然触发（282 片时不会，8,448 片时任何中频词都会）—— 而触发代价是
-# 把整库拉下来。实测（scripts/audit_recall_cost.py，24 条真实查询，467 片）：
-# 最大 128 片（「加工」27.4%），60% 阈值一次都没撞上；但**索引路径本身**就能拉到
-# 13~16 MB，因为倒排粒度是分片级，不是行级。这件事只能靠行级倒排解决（见
-# docs/两步走落地方案.md 的 P2），本上限只负责让「最坏情况」有界：
+# 分片数一涨就必然触发，而触发代价是把整库拉下来。
+# 倒排粒度是分片级、不是行级，索引路径本身也可能拉回很大的体积；
+# 这件事只能靠行级倒排解决，本上限只负责让「最坏情况」有界：
 # 宁可少拉几片并如实上报，也绝不静默全量。
-# 400 的取值：当前 467 片的 85%，给「数据翻倍到 ~900 片」留出不误伤的余量。
+# 上限取分片总量的大部分，给数据增长留出不误伤的余量。
 _RECALL_SHARD_CAP = 400
 
 # 本进程最近一次召回是否被截断。用 threading.local：工具调用是并发处理的，
-# 用模块级字典会让 A 线程的截断标记串到 B 线程的回执里（这个坑 `_HTTP_LAST_ERROR`
-# 已经踩过一次）。
+# 用模块级字典会让 A 线程的截断标记串到 B 线程的回执里。
 _recall_tls = threading.local()
 
 
@@ -3613,7 +3594,7 @@ def _cap_shards(picked, weights: Dict[str, float], where: str) -> List[str]:
     """候选分片超过 `_RECALL_SHARD_CAP` 时按命中密度截断，并记下截断事实。
 
     按权重（`idf × 该片命中数`）降序，而不是按路径字典序：密度高的片更可能给出
-    相关记录，按路径截断等于随机丢弃 —— 撞「真实企业必须被看见」的红线。
+    相关记录，按路径截断等于随机丢弃真实企业。
 
     返回排序后的路径列表；截断与否都返回，调用方**不需要**分支。
     """
@@ -4213,16 +4194,14 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     lat_v, lng_v, rad, geo_err = _geo_params(lat, lng, radius_km)
     if geo_err:
         return geo_err
-    # ── 分页深度上限（2026-10-22）────────────────────────────────────────
+    # ── 分页深度上限 ─────────────────────────────────────────────────────
     # 这不是性能优化，是**反截取**。翻页遍历是从公开接口搬走整个库的唯一
-    # 可行路径：`total_matched=4684` 时 offset += 200 循环 24 次就拉干了。
-    # 而真实用户翻不到第 11 页 —— 他要的是「找几家能做的」，不是「第 4000 条是谁」。
+    # 可行路径，而真实用户要的是「找几家能做的」，不会翻到很深的结果页。
     # ⚠ 这条只是体验层的一道闸：search 本身在客户端本地过滤，改客户端即可绕过。
-    #   真正的防线是服务端的数据面鉴权（pages/_worker.js 的 quotaGuard）。
+    #   真正的防线在服务端的额度与鉴权层。
     raw_offset = max(0, int(offset))
     offset = min(raw_offset, OFFSET_MAX)
-    # 固定索引并发预热（2026-10-30）：放在任何取数之前，把 9 个串行 RTT
-    # 压成一批。见 `_WARM_INDEX_PATHS` 上方的时间线实测。
+    # 固定索引并发预热：放在任何取数之前，把串行 RTT 压成一批。
     _warm_indexes()
     q = (query or "").strip().lower()
     # 原话归一化：用户输入的是**一句人话**，不是空格分隔的关键词表。
@@ -4984,10 +4963,9 @@ def _v1_rec(vid: str) -> Optional[Dict[str, Any]]:
         return None
     # 端点还不存在时的静默期。
     #
-    # 为什么必须有：线上 worker 没部署 /v1/rec 之前，每次 get_vendor 都会先付
-    # 一个 404 往返。本机实测单次 RTT 0.6~2.9 秒，这等于**给每条详情加一秒**，
-    # 而这一秒换不到任何东西 —— 是纯粹的回归。
-    # 探测到端点不存在后安静 5 分钟：既不让每条详情付钱，又能在部署后
+    # 为什么必须有：目标端点不存在时，每次 get_vendor 都会先付一次 404 往返，
+    # 而这一跳换不到任何东西 —— 是纯粹的回归。
+    # 探测到端点不存在后安静一段时间：既不让每条详情付钱，又能在部署后
     # 自己恢复（不需要重启 MCP 子进程）。
     if time.time() < _REC_PROBE_UNTIL[0]:
         return None
@@ -5574,7 +5552,7 @@ TOOLS = [
             "type": "object",
             "properties": {
                 "id": {"type": "string",
-                       "description": "单个主体 id，如 CN-MFG-0000163（与 ids 二选一，只传它时回执是 {\"vendor\": …}）"},
+                       "description": "单个主体 id（与 ids 二选一，只传它时回执是 {\"vendor\": …}）"},
                 "ids": {"type": "array", "items": {"type": "string"}, "maxItems": 20,
                         "description": "批量主体 id，最多 20 个；自动去重、按传入顺序返回。"
                                        "回执是 {\"vendors\": [...], \"count\": n, \"failed\": [...]}，"
@@ -5813,10 +5791,8 @@ def vendor_onboarding(supplier_id: str = "", company: str = "",
         "auth_required": True,
         "contract_url": AGENT_CONTRACT_URL,
         "api_base": AGENT_API_BASE,
-        "docs": "契约 JSON 本身即完整文档；平台本地工作副本另有 docs/AGENT_ONBOARD.md"
-                "（非分发面，不在公开 GitHub 仓库）",
-        "client": "按契约用任意 HTTP 客户端 / curl 实现即可；平台工作副本另有 scripts/agent_onboard.py "
-                  "CLI（同样不在公开仓库）",
+        "docs": "契约 JSON 本身即完整文档，按其中字段即可完成接入",
+        "client": "按契约用任意 HTTP 客户端 / curl 实现即可",
         "contract_version": "3.1",
         "auth": {
             "login": "POST /auth/sms/send → /auth/sms/verify（腾讯云短信真实下发，"

@@ -38,6 +38,30 @@ npx -y beacon-mfg-mcp
 本仓库承载 **MCP 服务端**（[`mcp/`](mcp/)）与 **RFQ 寻源内核**（[`skills/rfq-kernel/`](skills/rfq-kernel/)）代码。
 数据经由线上服务分发，不随仓库提供。
 
+## 仓库定位与公开面边界
+
+本仓库是 **MCP 的最小分发面**，不是项目的完整源码仓库。公开仓库里只允许三类文件：
+
+| 类别 | 路径 | 为什么能留 |
+| --- | --- | --- |
+| MCP 运行时 | `mcp/` | npm 包本体，客户端装上要能跑 |
+| 寻源内核 | `skills/rfq-kernel/` | `prepack` 从这里拷贝，缺了三个寻源工具会降级 |
+| 发布链 / 法律 / 展示 | `.github/`、`.gitignore`、`LICENSE`、`README.md`、`DATA_LICENSE.md`、`glama.json` | 发版、闸门与对外声明 |
+
+**不入库**（留在本地或私有仓库）：后端、采集/富化脚本、边缘 Worker、App、设计文档、数据面、
+运行时数据，以及所有非分发件。
+
+> **备份 ≠ 公开。** 需要版本历史，就在各自目录单独 `git init` 或推到私有仓库。
+
+**这条规则由机器守，不靠人记**：任意分支 push 或开 PR 时，
+`repo-boundary.yml` 会跑 `.github/scripts/check_repo_boundary.py`，用白名单核对 `git ls-files`：
+
+- 新增跟踪文件**默认被拦**，必须显式改白名单并在提交里说明理由；
+- 派生副本等禁入路径优先级高于白名单（防止宽前缀被借用）；
+- `.gitignore` 的关键忽略行被删也会让检查变红。
+
+本机另有一道 `pre-commit` 钩子调用同一个脚本（钩子与 clean filter 一样不随 clone 传播，换机器需重挂）。
+
 ## 数据与许可
 
 - 代码：MIT（[LICENSE](LICENSE)）

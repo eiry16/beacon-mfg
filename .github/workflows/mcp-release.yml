@@ -29,9 +29,9 @@ jobs:
           rm -rf mcp/rfq-kernel/__pycache__
 
       - name: 打包 MCP（仅 mcp/ 目录，保持干净分发）
-        # ⚠ 清单必须与 mcp/package.json 的 files 保持一致（2026-10-30）：
+        # ⚠ 清单必须与 mcp/package.json 的 files 保持一致：
         #   · vid_token.py 缺失 → server.py 的 try/except 静默降级成「不改写 id」，
-        #     对外回内部编号（CN-MFG-0000163），既可枚举、又与 /v1/rec 的 token 口径不符；
+        #     对外回可枚举的顺序编号，与 /v1/rec 的 token 口径不符；
         #   · selfupdate.py 缺失 → bin/selfupdate.js 找不到脚本，自更新静默失效。
         #   两者都不会报错，只会「功能少一点」，所以只能靠清单自检兜住。
         run: |
@@ -43,12 +43,10 @@ jobs:
           ls -lh "beacon-mfg-mcp-${tag}.tar.gz"
 
       # ⚠ 发版前闸门。两类不一致都在这里挡，且都在 npm publish **之前**：
-      #   1) tag ↔ package.json ↔ server.json 三处版本。漏改 server.json 的后果
-      #      不是「报错」，而是 npm 发成功后 Registry 才 400（2026-11-10 的失败
-      #      邮件就是这么来的），版本号已消耗、只能再发一个。
-      #   2) 工具清单三处漂移：server.py 的 TOOLS（权威）、mcp/README.md 工具表
-      #      （Glama/npm 页面读它）、test_protocol.py 的 EXPECT_TOOLS（回归基准）。
-      #      实测漂移过：server.py 12 个工具时 README 只写了 11 个。
+        #   1) tag ↔ package.json ↔ server.json 三处版本。漏改 server.json 的后果
+        #      不是「报错」，而是 npm 发成功后 Registry 才拒绝，版本号已消耗、只能再发一个。
+        #   2) 工具清单三处漂移：server.py 的 TOOLS（权威）、mcp/README.md 工具表
+        #      （Glama/npm 页面读它）、test_protocol.py 的 EXPECT_TOOLS（回归基准）。
       #   校验逻辑只在 mcp/check_release.py 一处，本地也能跑同一条命令，
       #   避免「CI 拦的和本地跑的不是同一套规则」。
       - name: 闸门 · 版本一致性 + 工具清单同步

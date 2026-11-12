@@ -4,9 +4,10 @@
 #   入库 = MCP 客户端能跑起来的最小集：mcp/ + skills/ 分发件 + 许可与接入说明
 #   不入库 = 后端、采集/富化流水线、边缘 Worker、App、设计文档、数据面、运行时数据
 #
-# 这条规则已反复确认多次：GitHub 只放最小集，其余留在本地。
-# 需要给后端/脚本留版本历史时，在各自目录内单独 git init，不要混进本仓库。
-# 详见 README.md「仓库定位」。
+# 这条规则由机器守，不靠人记：.github/workflows/repo-boundary.yml 在任意分支 push / PR 时
+# 跑 .github/scripts/check_repo_boundary.py，用白名单核对 git ls-files；新增跟踪文件默认被拦。
+# 改白名单 = 改公开面，须在提交里说明理由。备份 ≠ 公开：需要版本历史就在目录内单独
+# git init 或推私有仓库，不要混进本仓库。详见 README.md「仓库定位与公开面边界」。
 # ---------------------------------------------------------------------------
 
 # 非分发面源码（只在本地/云主机，见 README 表格）
@@ -28,9 +29,7 @@ server/.data/
 # 非分发面文档与模板
 docs/
 agent-skill/
-# 仓库根 schema/ 与 skills/schema/ 都不入库。skills/schema/ 是本地数据生产用的
-# 内部规则表（能力码 / 门类门禁 / 工艺码 / 数据模型），已在独立私有仓库版本化，
-# 不随公开仓库分发（2026-11-13 从公开历史中彻底清除）。
+# 本地-only 规则目录：不入库，避免误 git add -A（白名单门禁之外的兜底）
 /schema/
 skills/schema/
 templates/
@@ -52,12 +51,16 @@ __pycache__/
 .venv/
 venv/
 
-# CI：只保留两个发布 workflow
+# CI：两个发布 workflow + 一个公开面边界守卫（为普通 push 兜底，见脚本注释）
 .github/*
 !.github/workflows/
+!.github/scripts/
 .github/workflows/*
 !.github/workflows/mcp-release.yml
 !.github/workflows/npm-publish.yml
+!.github/workflows/repo-boundary.yml
+.github/scripts/*
+!.github/scripts/check_repo_boundary.py
 
 # 本地运维与内部文件
 SKILLHUB_SUBMISSION.md
