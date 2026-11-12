@@ -28,7 +28,9 @@ server/.data/
 # 非分发面文档与模板
 docs/
 agent-skill/
-schema/
+# 只忽略仓库根的 schema/。skills/schema/ 是能力码表与门类登记（分发面协议层），必须入库；
+# 裸写 schema/ 会把它整棵误伤（2026-11-06 的 12 个码表曾因此完全不进版本控制）。
+/schema/
 templates/
 skills/profiles/
 skills/_vendors_backup_*/
