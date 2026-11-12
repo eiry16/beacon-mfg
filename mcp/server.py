@@ -341,7 +341,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，`scripts/check_version.py` 在发布前校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.12.2"
+VERSION_FALLBACK = "1.12.3"
 
 
 def _pkg_version() -> str:
@@ -3275,12 +3275,20 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
         "score": rec.get("sc"),
         "has_phone": bool(rec.get("tel")),
         "process": rec.get("proc", []),
-        # 工艺来源（2026-11-06）：None = 能力卡/企业自述/按国标码推导的类默认；
-        # "inferred:A1" = 零采集推断，字母是分档（A1 三路一致 99.3% / A2 97.4% /
-        # A3 94.3% / B0 单路 96.0%，见 docs/PROCESS_INFERENCE.md）。
-        # 为什么要暴露：推断不是核实，"这家能做"和"这家这一类大概都做"必须可区分 ——
-        # 客户在严苛场景（超公差、医疗件、指定牌号）里要能据此追加追问，而不是直接下单。
-        "process_evidence": ("inferred:" + rec["pinf"]) if rec.get("pinf") else None,
+        # 工艺来源（2026-11-06，2026-11-13 补第三档）：
+        #   None            = 能力卡 / 企业自述 / 类默认但工艺码少于 4 个
+        #   "inferred:A1"   = 零采集推断，字母是分档（A1 三路一致 99.3% / A2 97.4% /
+        #                     A3 94.3% / B0 单路 96.0%，见 docs/PROCESS_INFERENCE.md）
+        #   "class_default" = 该记录挂了 ≥4 个「国标小类默认工艺码」，不是这家企业
+        #                     的事实工艺，只是同类众数。全库 12,988 条属此类（其中
+        #                     12,970 条 pv=derived）。必须让 Agent 看得见：否则它会把
+        #                     「这一类大概都做」当成「这家确实做」，严苛场景直接下单。
+        # 红线：工艺码一个不动（召回不变），只加证据标签 —— 不编造也不减召回。
+        # 12,988 条里只有 838 条有推断候选，其余 12,150 条没有任何强证据可换。
+        "process_evidence": (
+            "inferred:" + rec["pinf"] if rec.get("pinf")
+            else ("class_default" if (rec.get("pv") == "derived"
+                                      and len(rec.get("proc") or []) >= 4) else None)),
         # 业务能力码（2026-11-06）：非制造业门类的「能干什么」，如 fmt_bar 酒吧 /
         # edu_vocational 职业技能培训 / con_steel 钢结构。此前它只参与匹配不返回，
         # 于是「搜酒吧」的结果里看不出哪家真是酒吧。现在一并返回，agent 可据此
@@ -4486,11 +4494,27 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     #   `alias_scanned` 仍按**记录数**计，与改前口径一致。
     if _via_server:
         def _alias_recs():
-            for _code in alias_by_code:
-                _r = _server_search(q="", city=city, gb=_code, et=et_want,
-                                    limit=SERVER_SEARCH_WINDOW)
-                if _r:
-                    yield from _r["records"]
+            codes = list(alias_by_code)[:6]
+            if not codes:
+                return
+            # 2026-11-13 多码列举：一次请求把全部国标码交给 worker。
+            # 旧 worker 不认 gbs：它只按首码 gb 应答、且不回 gbs_supported，
+            # 于是这里退回逐码补发其余码 —— 绝不出现「取首个码漏掉另外两类」。
+            _r = _server_search(q="", city=city, gb=codes, et=et_want,
+                                limit=SERVER_SEARCH_WINDOW)
+            done = set()
+            if _r:
+                yield from _r["records"]
+                if _r.get("gbs_supported") and len(codes) > 1:
+                    return
+                done.add(codes[0])
+            for _code in codes:
+                if _code in done:
+                    continue
+                _r2 = _server_search(q="", city=city, gb=_code, et=et_want,
+                                     limit=SERVER_SEARCH_WINDOW)
+                if _r2:
+                    yield from _r2["records"]
         _alias_iter = _alias_recs()
     else:
         _alias_iter = _records_from_paths(alias_paths or [])
@@ -4832,7 +4856,7 @@ _SEARCH_PROBE_UNTIL = [0.0]
 SERVER_SEARCH_WINDOW = 200
 
 
-def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
+def _server_search(q: str = "", city: str = "", gb: Any = "", et: int = 0,
                    limit: int = SERVER_SEARCH_WINDOW,
                    cap: Optional[List[str]] = None) -> Optional[Dict[str, Any]]:
     """POST /v1/search —— 服务端检索（「按条来拉」的检索面，2026-11-03）。
@@ -4849,8 +4873,13 @@ def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
         return None
     if time.time() < _SEARCH_PROBE_UNTIL[0]:
         return None
-    if not (str(q or "").strip() or str(city or "").strip()
-            or str(gb or "").strip() or cap):
+    # 2026-11-13：gb 可为多个国标码（别名「注塑」→2929/3525/3399）。
+    # 一次请求全交给 worker，别再逐码各发一次 —— 额度与 RTT 都按请求数翻。
+    if isinstance(gb, (list, tuple, set)):
+        gb_list = [str(x).strip() for x in gb if str(x).strip()][:6]
+    else:
+        gb_list = [str(gb).strip()] if str(gb or "").strip() else []
+    if not (str(q or "").strip() or str(city or "").strip() or gb_list or cap):
         return None
     try:
         import identity as _idn
@@ -4860,8 +4889,11 @@ def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
     payload: Dict[str, Any] = {"q": str(q or ""), "limit": int(limit), "offset": 0}
     if str(city or "").strip():
         payload["city"] = str(city).strip()
-    if str(gb or "").strip():
-        payload["gb"] = str(gb).strip()
+    if gb_list:
+        # 旧 worker 只认单码 gb：首码照传，保证线上还没部署新 worker 时
+        # 至少这一个码仍生效；新 worker 见到 gbs 数组会改用多码列举。
+        payload["gb"] = gb_list[0]
+        payload["gbs"] = gb_list
     if et:
         payload["et"] = int(et)
     if cap:
@@ -4893,7 +4925,8 @@ def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
                             if isinstance(hits, list):
                                 return {"total": int(o.get("total_matched") or 0),
                                         "cap_matched": int(o.get("cap_matched") or 0),
-                                        "records": hits}
+                                        "records": hits,
+                                        "gbs_supported": bool(o.get("gbs_supported"))}
                         continue
                     except _ue.HTTPError as e:
                         st[0] = e.code
@@ -4904,7 +4937,8 @@ def _server_search(q: str = "", city: str = "", gb: str = "", et: int = 0,
                             try:
                                 _o = json.loads(e.read().decode("utf-8"))
                                 if _o.get("error") == "bad_gb":
-                                    return {"total": 0, "records": []}
+                                    return {"total": 0, "records": [],
+                                            "gbs_supported": False}
                             except Exception:
                                 pass
                         continue
@@ -5478,6 +5512,9 @@ TOOLS = [
                        "加 radius_km 只留圈内（地标名需调用方先解析成坐标）。"
                        "返回精简档案(id/名称/城市/区县/国标码/认证等级/"
                        "工艺/材料/认证/是否含电话/连锁门店数/距离)。"
+                       "每条带 process_evidence：null=有事实工艺；inferred:A1~B0=零采集"
+                       "推断（分档非核实）；class_default=挂的是国标小类默认工艺码(≥4个)，"
+                       "不是这家企业的事实工艺，严苛场景请降权或追问核实。"
                        "⚠ 关键词是**字面子串**匹配：用户的口语词若与名录写法不同（如「机加工」"
                        "vs 归档用的「机械零部件加工」、「面馆」vs「苏式面馆」），命中会偏少。"
                        "此时不要直接报「没有」——看返回体里的 hint / suggested_gb，"
