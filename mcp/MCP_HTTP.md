@@ -209,7 +209,46 @@ npx @modelcontextprotocol/inspector
 # Transport: Streamable HTTP    URL: https://beacon-mfg.pages.dev/mcp
 ```
 
-## 6. 已知边界
+## 6. 被发现：服务卡（SEP-2127）
+
+端点存在，不等于 agent 知道它存在。**MCP 没有服务搜索引擎**：客户端启动时读的是本地
+配置里已经写好的连接列表，不会联网去找有什么服务。注册到 Registry 的作用是让**人**在
+目录站/客户端面板里看到条目，再点一下写进配置 —— 链条上永远有一个人。
+
+唯一不靠人转述的机制是服务卡：
+
+```bash
+curl -s https://beacon-mfg.pages.dev/.well-known/mcp.json | jq '{name, version, remotes}'
+```
+
+```json
+{
+  "name": "io.github.eiry16/beacon-mfg-mcp",
+  "version": "1.12.7",
+  "remotes": [{ "type": "streamable-http", "url": "https://beacon-mfg.pages.dev/mcp" }]
+}
+```
+
+| 项 | 值 |
+|---|---|
+| 路径 | `/.well-known/mcp.json`；别名 `/.well-known/mcp/server-card.json`（同一份 body） |
+| 生成方式 | **由 `_worker.js` 生成**，不是静态文件；`version` / `protocolVersion` 直接引用端点常量 |
+| 字段集 | SEP-2127 收敛后的范围：身份 + 远端端点。**不列工具、不声明 auth**（工具是运行时 `server/discover` 拿的） |
+| 配额 | 不消耗。路由在门禁**之前** —— 发现阶段被自己的闸拦一次，等于把这条路堵死 |
+
+**为什么两个路径都发**：草案期从 `/.well-known/mcp.json` 换到
+`/.well-known/mcp/server-card.json`，目前仍在 Extensions Track 里演进。只发一个等于
+赌客户端读哪个，赌错的症状是「什么都对，就是没人连」—— 没有任何报错。
+
+**为什么不用静态文件**：① 点开头的目录在 Pages 上行为不保证（Workers Sites 明确忽略
+hidden files）；② 静态文件的 version 迟早与端点漂移，而这张卡正是给「不会来问的人」看的，
+编错了也没人报错。`scripts/deploy_pages.py --verify` 会把卡片版本与 `initialize` 自报
+版本对比，不一致即红。
+
+`llms.txt` 里同时给出了端点 URL 与卡片地址 —— 那是「会读本站的 agent」唯一会看的一份说明。
+在补之前它只写了 `npx` 安装，于是「不想装东西」的 agent 读完也不知道该怎么连。
+
+## 7. 已知边界
 
 1. **无状态 = 无推送**。需要 sampling / elicitation / 服务端通知的客户端功能用不了。
 2. **一次性工具调用没做去重**。客户端重试 = 重复计量（与 `/v1` 同口径，不为重试开豁免）。

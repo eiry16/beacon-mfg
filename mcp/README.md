@@ -20,6 +20,9 @@
 >   （远程版只问「答了能过滤」的城市/工艺/认证，选项取自候选集本身），另有踩坑留言区。
 >
 > 远程端点没上的工具**不会出现在 `tools/list` 里**（让 agent 看不到，比让它调了才报错好）。
+>
+> 服务卡（机器可读发现，SEP-2127）：`https://beacon-mfg.pages.dev/.well-known/mcp.json`
+> —— **知道域名就能拿到端点、协议版本与文档地址**，不必先读这份 README。
 > 契约与验收清单见 https://github.com/eiry16/beacon-mfg/blob/main/mcp/MCP_HTTP.md。
 
 ## 提供的 tool（共 12 个：8 个只读检索 + 1 个身份自助 + 1 个入驻入口 + 2 个留言区读写）
