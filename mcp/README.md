@@ -46,6 +46,11 @@
 
 所有返回都是 JSON 文本。找不到时返回 `{ "error": ... }` 或 `has_card:false`，不会抛协议错。
 
+**参数名写了近义词也能用**（`keyword`/`q`/`term`/`name` → `query`，`token`/`vendor_id` → `id`，
+`query` → `demand_text`…），回执里用 `arg_aliases` 说明被改写成了什么。远程端点还多一层：
+归一不了的陌生参数名，如果该工具的主参数为空，直接回 `unknown_argument` 并点名正确参数 ——
+**不会**退化成「只按剩下的条件检索」然后给你一堆无关记录。见 `MCP_HTTP.md` §4.4。
+
 ### `linked_entity`：招牌名 ≠ 工商登记名
 
 名录里的 `company` 是**门店招牌/经营名**（来自地图、黄页、展会），而工商登记名往往更长、

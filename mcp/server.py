@@ -6038,6 +6038,70 @@ def _product_tokens(name: str, args: Dict[str, Any]) -> List[str]:
     return out[:6]
 
 
+# ── 入参别名（与远程 worker 的 MCP_ARG_ALIASES 同一口径，2026-11-14 起）──────
+# 起因：模型常把 search_vendors 的关键词参数写成 `keyword`，而 schema 里叫 `query`。
+# 服务端一旦静默丢弃未知参数，就只剩 city 成立 —— 返回一堆与关键词毫无关系的记录，
+# 而且看起来完全像成功（有 total、有条目、无报错）。远程端已加「未知参数拦截」，
+# 本地这侧只做归一：stdio 的 12 个工具签名比远程宽，且终端里看得见输出、能自己修正。
+_ARG_ALIASES: Dict[str, Dict[str, str]] = {
+    "search_vendors": {
+        "keyword": "query", "keywords": "query", "q": "query", "kw": "query",
+        "term": "query", "terms": "query", "text": "query", "search_text": "query",
+        "name": "query", "company": "query", "company_name": "query",
+        "product": "query", "products": "query", "word": "query",
+        "city_name": "city", "region": "city", "province": "city",
+        "industry_code": "gb", "gb_code": "gb", "gbt": "gb", "industry": "gb",
+        "industry_codes": "gbs", "gb_codes": "gbs",
+        "size": "limit", "count": "limit", "top_k": "limit", "page_size": "limit",
+    },
+    "get_vendor": {
+        "token": "id", "vendor_id": "id", "company_id": "id", "subject_id": "id",
+        "entity_id": "id", "vid": "id", "supplier_id": "id",
+    },
+    "get_capability_card": {
+        "token": "id", "vendor_id": "id", "company_id": "id", "subject_id": "id",
+        "entity_id": "id", "vid": "id", "supplier_id": "id",
+    },
+    "start_sourcing": {
+        "query": "demand_text", "keyword": "demand_text", "demand": "demand_text",
+        "need": "demand_text", "requirement": "demand_text", "text": "demand_text",
+        "brief": "demand_text", "city_name": "city", "region": "city",
+    },
+    "answer_sourcing": {
+        "session": "session_id", "sid": "session_id",
+        "answer": "answers", "reply": "answers", "response": "answers",
+    },
+    "refine_sourcing": {
+        "session": "session_id", "sid": "session_id",
+        "mode": "action", "op": "action", "type": "action",
+        "keyword": "value", "query": "value", "q": "value", "token": "value",
+    },
+    "get_onboarding_guide": {
+        "id": "supplier_id", "token": "supplier_id", "vendor_id": "supplier_id",
+        "name": "company", "company_name": "company",
+        "action": "intent", "mode": "intent",
+    },
+}
+
+
+def _norm_args(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
+    """未知的近义词参数 → 正式名。正式名已给时以正式名为准（别名不覆盖）。"""
+    alias = _ARG_ALIASES.get(name)
+    if not isinstance(args, dict) or not args or not alias:
+        return args
+    out = dict(args)
+    taken = set()
+    for k in list(args.keys()):
+        target = alias.get(str(k).lower())
+        if not target:
+            continue
+        if target in args or target in taken:   # 显式给了正式名 / 已有别名占用
+            continue
+        out[target] = out.pop(k)
+        taken.add(target)
+    return out
+
+
 def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
     """tool 调用的唯一入口 —— 埋点就挂在这里（文档 §4）。
 
@@ -6045,7 +6109,8 @@ def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
     被调用函数内部，tokens 必须在请求发出前就位；而 hits 只能等结果出来后
     回填，供**后续**请求带上（一次检索的头几个请求因此没有 hits 列，属正常）。
     """
-    args = _vid_in(args or {})
+    args = _norm_args(name, args or {})
+    args = _vid_in(args)
     # 每次调用重置「取数失败原因」，避免上一次的超时/401 文案串到这一次的正常结果上
     _HTTP_LAST_ERROR[0] = ""
     _FETCH_ABORTED[0] = ""

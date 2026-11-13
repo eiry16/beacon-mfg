@@ -163,6 +163,28 @@ agent 必须据此决定「答有 / 答无 / 答未覆盖」——只念 `total_
 > 同批实测的对照组：`search_vendors("盈科", city="苏州")` → 前三名正是盈科在苏州/太仓/常熟的
 > 三家分所，`gb=7231`。**排序本身没坏**，坏在拿不到货时用单字凑数。
 
+### 4.4 入参别名与未知参数（1.12.9）
+
+工具的参数名是**固定**的（`search_vendors` 用 `query`，不是 `keyword`）。为了让「差一点」
+的调用不至于变成一次静默的错误结果，入口做了两件事：
+
+| 情形 | 行为 | 回执里能看到 |
+|---|---|---|
+| 近义词（`keyword`/`q`/`term`/`name` → `query`；`token`/`vendor_id` → `id`；`query` → `demand_text`…） | 自动归一，调用正常执行 | `arg_aliases: {"keyword":"query"}` |
+| 归一不了的陌生参数名，**且该工具的主参数为空** | 拒绝执行：`unknown_argument` + 点名正确参数名 | 不返回任何记录，**不消耗额度** |
+| 陌生参数名，但主参数已给 | 放行，结果有效 | `unknown_args: [...]` + `hint` 说明「已忽略」 |
+| 正式名与别名同时给 | 正式名优先，别名丢弃 | `arg_aliases` 为空 |
+
+> **为什么必须拦。** 2026-11-14 实测：按 `keyword` 调 `search_vendors`（schema 里叫 `query`），
+> 服务端把未知参数静默丢掉，只剩 `city` 成立 → 返回 3000 条与关键词毫无关系的记录
+> （洗衣店 / 装饰加工厂 / 私厨），`terms_hit: 0`，**既无 error 也无 warning**。
+> 这种「看起来成功」的错比 400 更坏：agent 会把「小白熊洗衣」当成素粉店念给用户。
+>
+> 同批还修了一个更隐蔽的：查不到的 token 走的是上游纯文本 `Not found`(404)，
+> `resp.json()` 一抛就被当成「工具崩了」报 `-32603 tool_failed`（线上原话是
+> `Unexpected token 'N', "Not found" is not valid JSON`）。现在统一翻成
+> `{"error":"not_found", "hint":"...用 search_vendors 重新取 token..."}`。
+
 ## 5. 验收清单
 
 ```bash
