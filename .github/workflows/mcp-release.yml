@@ -61,15 +61,30 @@ jobs:
       # 起因（1.12.8）：本地已按老习惯 `npm publish` 发过一次，再推 tag 时
       # CI 的 npm publish 会因「版本已存在」整 job 失败 —— 连带 GitHub Release
       # 与 Registry 注册都不执行，而这三件事里只有 npm 是重复的。
-      # 做成幂等后：手工补发、重跑 job、tag 重推都不会再被这一步卡死。
+      #
+      # 为什么第一版探测没拦住：用 `npm view` 查，而它走的是 CDN 缓存，
+      # 手工发布后 3 分钟内仍查不到 → 探测判「不存在」→ 照样 publish → 409
+      # 「Cannot publish over previously staged version」。
+      # 现在两道都上：
+      #   ① 直接问 registry 本体（registry.npmjs.org/<pkg>/<ver>），没有 CDN 延迟；
+      #   ② 万一还是漏了，把 409 / "previously staged" 当成「已发布」放行 ——
+      #      这一步本来就是"确保 npm 上有这个版本"，目的已达成就不该让整条链停。
       - name: 发布到 npm（已存在则跳过）
         run: |
           set -euo pipefail
           ver="$(python3 -c "import json;print(json.load(open('package.json'))['version'])")"
-          if npm view "beacon-mfg-mcp@${ver}" version >/dev/null 2>&1; then
-            echo "npm 已有 beacon-mfg-mcp@${ver}，跳过 publish（其余步骤照常）"
+          if curl -fsSL "https://registry.npmjs.org/beacon-mfg-mcp/${ver}" >/dev/null 2>&1; then
+            echo "registry 上已有 beacon-mfg-mcp@${ver}，跳过 publish（其余步骤照常）"
+            exit 0
+          fi
+          log="$(mktemp)"
+          if npm publish --access public 2>&1 | tee "$log"; then
+            echo "已发布 beacon-mfg-mcp@${ver}"
+          elif grep -qE "E409|previously staged|cannot publish over" "$log"; then
+            echo "npm 判定该版本已存在（409），视为已发布，继续后续步骤"
           else
-            npm publish --access public
+            echo "publish 失败且不是「版本已存在」，按失败处理"
+            exit 1
           fi
         working-directory: mcp
         env:
