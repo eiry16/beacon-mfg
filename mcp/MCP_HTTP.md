@@ -131,6 +131,32 @@ Cloudflare 直接拒（403 / error code 1000），所以这条闸没有「客户
 
 **没上的工具不出现在 `tools/list` 里** —— 让 agent 看不到，比让它调了才报错好。
 
+### 4.3 `search_vendors` 的返回体：四个必须读的字段
+
+检索是**字面子串**匹配，所以「结果里有货」不等于「有你要的货」。返回体里带四个信号，
+agent 必须据此决定「答有 / 答无 / 答未覆盖」——只念 `total_matched` 会说错话。
+
+| 字段 | 含义 | agent 该怎么用 |
+|---|---|---|
+| `total_matched` | **强匹配**条数（已被 `city`/`gb` 过滤） | 这是「有多少家」，不是 `limit` 窗口大小 |
+| `weak_matched` | 只被**单字**撞上的候选数，**已从 `hits` 剔除** | 别念给用户；它说明「有共同的字，但不是这个行业」 |
+| `head_missing` | 查询首词（如「律师」）**全库零记录** | 答「名录暂未收录该品类」，别说「查无此企业」 |
+| `head_missing_local` | 首词全库有、但本轮 `city` 范围内**一家都没有** | 答「该地区暂未收录」，并说明另有 `partial_matched` 条被扣下 |
+
+`coverage` 是把上面两个信号翻译成的枚举：`missing_head` / `missing_local` / `none`，
+同时 `hint` 给可执行的下一步（换同义词、按 `gb` 定向、让企业自助建档）。
+
+> **为什么必须有这四个。** 2026-11-13 实测：`search_vendors("律师事务所", city="黄浦")`
+> 返回 964 条，前五名是设计事务所、健身房、星巴克、咖啡店、糕点店 —— 因为分词器把
+> 「律师事务所」切成 5 个单字 + 4 个双字，而单字「事」「师」「律」在库里 df 极大
+> （星巴克**久事**大厦店、鲍**师**傅）。agent 读到 964 会如实回答「黄浦有 964 家律所」。
+> **真相是 0 家**：gb 7231（律师及相关法律服务）全库仅 515 家可见，集中在苏州(175)/贵阳，
+> 上海一家都没有。修法有两半：排序侧「单字命中不进结果窗口」（`weak_matched` 单独报数），
+> 覆盖侧「首词在本轮范围内零命中就整页扣下」（`head_missing_local`）。
+>
+> 同批实测的对照组：`search_vendors("盈科", city="苏州")` → 前三名正是盈科在苏州/太仓/常熟的
+> 三家分所，`gb=7231`。**排序本身没坏**，坏在拿不到货时用单字凑数。
+
 ## 5. 验收清单
 
 ```bash
@@ -158,6 +184,23 @@ curl -s -X POST -H "Content-Type: application/json" \
 # 方向性检查：GET 必须 405，不是 200 也不是 404
 curl -s -o /dev/null -w "%{http_code}\n" $B/mcp
 ```
+
+**覆盖信号的两条反向断言**（应分别得到 `coverage=missing_local` 和 0 条结果）：
+
+```bash
+# 1) 品类有、地区没有：上海黄浦区律所 —— 全库有律师，黄浦 0 家
+curl -s -X POST -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"search_vendors","arguments":{"query":"律师事务所","city":"黄浦","limit":10}}}' \
+  $B/mcp
+
+# 2) 品类根本没有：返回 total_matched=0 且 coverage=missing_head
+curl -s -X POST -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":6,"method":"tools/call","params":{"name":"search_vendors","arguments":{"query":"律务","limit":5}}}' \
+  $B/mcp
+```
+
+> 在 1.12.7 之前，上面两条分别返回 **964 条**和 **931 条**「结果」。
+> 反向断言比正向断言重要：正向只能证明「有货时能取到」，证明不了「没货时不说假话」。
 
 真正的客户端验收（比 curl 可信）：
 
