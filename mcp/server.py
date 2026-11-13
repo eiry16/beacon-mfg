@@ -4834,10 +4834,16 @@ _SEARCH_PROBE_UNTIL = [0.0]
 # ≤ ~80KB，差两个数量级。
 SERVER_SEARCH_WINDOW = 200
 
+# 服务端 AND 下沉的灰度开关（2026-11-13）。缺省关 = 线上行为与改动前逐字节一致。
+# 打开后 worker 只回「全部多字 term 都命中」的候选，窗口可从 200 收到 20 而不少召回
+# —— 这正是「降负载」的终局；但它是收紧召回，必须先过影子比对（scripts/shadow_and_compare.py）。
+_SERVER_AND = str(os.environ.get("BEACON_SERVER_AND", "0")).lower() in ("1", "true", "yes")
+
 
 def _server_search(q: str = "", city: str = "", gb: Any = "", et: int = 0,
                    limit: int = SERVER_SEARCH_WINDOW,
-                   cap: Optional[List[str]] = None) -> Optional[Dict[str, Any]]:
+                   cap: Optional[List[str]] = None,
+                   and_: Optional[bool] = None) -> Optional[Dict[str, Any]]:
     """POST /v1/search —— 服务端检索（「按条来拉」的检索面，2026-11-03）。
 
     返回 {"total": int, "records": [原始 fp 记录]}；任何失败返回 None，
@@ -4866,6 +4872,15 @@ def _server_search(q: str = "", city: str = "", gb: Any = "", et: int = 0,
     except Exception:
         pass
     payload: Dict[str, Any] = {"q": str(q or ""), "limit": int(limit), "offset": 0}
+    # 服务端 AND 下沉（2026-11-13）：`and=1` 让 worker 只回「全部多字 term 都命中」
+    # 的候选，窗口里剩下的就是客户端 AND 之后大概率仍活着的那批。
+    #
+    # 默认跟着 `BEACON_SERVER_AND` 走（缺省关）：这是一条**收紧召回**的改动，
+    # 而老客户端把 /v1/search 当 OR 窗口用。必须先影子比对确认「只少不多、
+    # 且少的都能被客户端的 AND 规则解释」再打开 —— 见 scripts/shadow_and_compare.py。
+    _and = _SERVER_AND if and_ is None else bool(and_)
+    if _and:
+        payload["and"] = 1
     if str(city or "").strip():
         payload["city"] = str(city).strip()
     if gb_list:
@@ -4905,7 +4920,8 @@ def _server_search(q: str = "", city: str = "", gb: Any = "", et: int = 0,
                                 return {"total": int(o.get("total_matched") or 0),
                                         "cap_matched": int(o.get("cap_matched") or 0),
                                         "records": hits,
-                                        "gbs_supported": bool(o.get("gbs_supported"))}
+                                        "gbs_supported": bool(o.get("gbs_supported")),
+                                        "and_supported": bool(o.get("and_supported"))}
                         continue
                     except _ue.HTTPError as e:
                         st[0] = e.code
