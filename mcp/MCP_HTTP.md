@@ -59,11 +59,19 @@ aid = hex(sha256("mcp|" + ipk))[:16]      // 16 位 hex，满足 agentId 的格�
 |---|---|---|
 | `V1_DAILY.anon` | 1,000 条 / 24h / IP | 一条记录算一条；重复看同一家不重复计 |
 | `V1_IP_DAILY` | 20,000 条 / 24h / IP | 防「同 IP 换 aid 消耗」，两条闸量同一个池子 |
+| `IP_DAILY_OP` | 5,000 次操作 / 24h / IP | 防「同 IP 换 cid 刷」。**操作数与记录数是两条尺子**，混算的后果见下 |
 
 一个真实买家一轮「搜一次 + 翻十家 + 看十张卡」≈ 21 条，1,000 条 ≈ 47 轮/天。
 
 **换 IP 才能换额度，换 header 无效。** 顺带实测确认：外部伪造 `cf-connecting-ip` 会被
 Cloudflare 直接拒（403 / error code 1000），所以这条闸没有「客户端自己声明 IP」的漏洞。
+
+> **2026-11-13 修的一处真事故**：`beacon_ip_op` 里一行代表**一条记录**（`ipChargeV1` 按条写），
+> 而门禁原来用 `COUNT(*)` 同时当「操作数」用 —— 一次检索回 200 条就抵掉 200 次操作。
+> 实测本机 IP 一天取 7,351 条，把 `IP_DAILY_OP`(5000) 撞满，之后所有受门禁保护的路径
+> （`/data/manifest.json`、`/skills/registry/capability/*`）全 429，部署校验读成
+> 「6/19 项未通过」。现在两条尺子分开：记录数按行数（上限 20000），操作数按
+> `#` 前缀归并（上限 5000），429 回执里带 `dimension: ops | records` 指明是哪一条。
 
 ### 审计口径
 
@@ -73,24 +81,52 @@ Cloudflare 直接拒（403 / error code 1000），所以这条闸没有「客户
 
 工具执行抛异常时**也写一行**（status 500）。第一版在 catch 里直接 return，等于最严重的那类失败静默。
 
-## 4. 已上线的工具（3 个）
+## 4. 已上线的工具（7 个：3 个取数 + 4 个寻源/指路）
 
 | 工具 | 映射到 | 说明 |
 |---|---|---|
 | `search_vendors` | `handleSearch` → `/v1/search` | 关键词/城市/国标码检索 |
 | `get_vendor` | `handleRec` → `/v1/rec/<token>` | 单家完整档案 |
 | `get_capability_card` | `handleCap` → `/v1/cap/<token>` | 能力卡；`found:false` 是正常结果，不算错误 |
+| `start_sourcing` | `handleSearch` + D1 会话 | 含糊需求 → 宽召回 + 1~2 个澄清问题，返回 `session_id` |
+| `answer_sourcing` | 会话续接 + 重检 | 把澄清答案写回，**重新检索**（不是在旧结果里二次过滤） |
+| `refine_sourcing` | 会话快照 | `best` / `more` / `filter` / `details` |
+| `vendor_onboarding` | 纯静态文案 | 入驻/认领指路（控制台深链 + Agent HTTP 契约） |
 
 **复用而不是重写**：检索打分、脱敏、逐条计量都在原 handler 里。在这里重写一份必然与 stdio 版分叉，
 而分叉的检索结果比慢一点糟得多。实现方式见 `pages/_worker.js` 的 `mcpInnerRequest()`。
 
-### 没上的 4 类，以及为什么
+### 4.1 多轮寻源：会话在哪、活多久、谁的
+
+协议层的「无状态」没变（仍然不签 `Mcp-Session-Id`）。多轮状态是**业务状态**，落在 D1 的
+`beacon_mcp_session` 表，用 `session_id` 显式续接：
+
+| 项 | 值 |
+|---|---|
+| TTL | 2 小时（`expires`），过期即读不到、并在下一次 `start_sourcing` 时被清 |
+| 归属 | `aid`（由出口 IP 派生）。SQL 里带 `AND aid = ?`，别的 IP 拿到 `sid` 也读不到 |
+| 容量 | 单 IP 最多 20 个活会话（按最后使用时间淘汰），一轮最多存 40 家候选 |
+| 存什么 | 一句话 `demand` + 候选的**筛选字段**（名称/城市/区县/国标码/工艺/材料/认证/是否有电话/灯牌档） |
+| **不存什么** | 电话、坐标、来源 URL。电话是「一条一个额度」的取证动作（`get_vendor`），存进会话等于开第二条免费取号通道 |
+
+**城市先从需求里认。** `start_sourcing("东莞注塑代工，最好有 ISO9001")` 里的「东莞」会被
+认成 `city` 过滤条件（词表直接用检索侧的 `catalog/tree.json → cities`，所以认得就一定查得到），
+回执里用 `city` 字段明说是哪一座 —— 否则 agent 没法解释「为什么结果全是东莞的」。
+认不出来才由澄清问题去问。
+
+> 这条是线上实测补的：第一版没做提取，同一句需求返回的第一名是**重庆**的公司。
+> 它不是「问得浅」，是**方向错了** —— 比少问一句严重得多。
+
+**澄清问题由候选集自己生成，不是背行业知识表。** 只问三件事：城市、工艺、认证 ——
+选项全部取自这一轮候选，所以不会出现「选项里没有这个城市」，也不会问名录里没有的字段
+（交期、数量、开票方式一律不问）。这比本地 stdio 版（`skills/rfq-kernel/industry/*.json`
+的 10 个行业 pack）问得浅，是刻意的取舍：**与其问得像人却答不出，不如只问能兑现的**。
+
+### 4.2 没上的 4 类，以及为什么
 
 | 工具 | 缺什么 |
 |---|---|
-| `start_sourcing` / `answer_sourcing` / `refine_sourcing` | 有状态多轮，会话要先落到 D1 |
-| `vendor_onboarding` | 写操作，远程需要防滥用（现在只开了读） |
-| `read_notes` / `report_note` | 语义是「本地笔记」，远程端点没有本地盘 |
+| `read_notes` / `report_note` | 语义是「本地笔记」，远程端点没有本地盘（要么改语义，要么不做） |
 | `suggest_filters` / `list_industries` | 依赖国标货架名称表（`industry-index.json` 6MB），要单独做缓存层 |
 
 **没上的工具不出现在 `tools/list` 里** —— 让 agent 看不到，比让它调了才报错好。
@@ -105,13 +141,18 @@ curl -s -X POST -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18"}}' \
   $B/mcp
 
-# 工具清单（应恰好 3 个）
+# 工具清单（应恰好 7 个）
 curl -s -X POST -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' $B/mcp
 
 # 检索
 curl -s -X POST -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"search_vendors","arguments":{"query":"输送线","city":"上海"}}}' \
+  $B/mcp
+
+# 多轮寻源：start 拿 session_id，再 answer / refine（两条命令要在**同一个出口 IP** 下执行）
+curl -s -X POST -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"start_sourcing","arguments":{"demand_text":"东莞注塑代工，最好有 ISO9001"}}}' \
   $B/mcp
 
 # 方向性检查：GET 必须 405，不是 200 也不是 404

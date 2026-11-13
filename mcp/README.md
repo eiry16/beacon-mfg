@@ -12,9 +12,12 @@
 
 > **两种接入形态，工具数不同**：
 > - **远程端点**（`https://beacon-mfg.pages.dev/mcp`，Streamable HTTP，无需安装）——
->   提供下表中 3 个只读检索工具：`search_vendors` / `get_vendor` / `get_capability_card`。
->   额度按**出口 IP** 计（1,000 条记录/24h），不要注册、不要 API Key。
-> - **本地 stdio**（`npx -y beacon-mfg-mcp`）—— 下表全部 12 个，含多轮寻源与留言区。
+>   提供 7 个工具：`search_vendors` / `get_vendor` / `get_capability_card`，
+>   多轮寻源 `start_sourcing` / `answer_sourcing` / `refine_sourcing`，以及 `vendor_onboarding`。
+>   额度按**出口 IP** 计（1,000 条记录/24h），不要注册、不要 API Key；寻源会话 2 小时过期，
+>   且只能在**同一个出口 IP** 下续接。
+> - **本地 stdio**（`npx -y beacon-mfg-mcp`）—— 下表全部 12 个，多轮寻源的澄清问题由行业 pack 驱动
+>   （远程版只问「答了能过滤」的城市/工艺/认证，选项取自候选集本身），另有踩坑留言区。
 >
 > 远程端点没上的工具**不会出现在 `tools/list` 里**（让 agent 看不到，比让它调了才报错好）。
 > 契约与验收清单见 https://github.com/eiry16/beacon-mfg/blob/main/mcp/MCP_HTTP.md。
