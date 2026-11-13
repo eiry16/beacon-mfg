@@ -52,12 +52,25 @@ jobs:
       - name: 闸门 · 版本一致性 + 工具清单同步
         run: python3 mcp/check_release.py --tag "$GITHUB_REF_NAME"
 
-      - name: 发布到 npm（package.json 的 prepack 会经 copy-rfk.js 同步寻源内核）
+      - name: 配置 Node 与 npm registry
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
-      - run: npm publish --access public
+      # 幂等：npm 上已有这个版本就跳过，不报错。
+      # 起因（1.12.8）：本地已按老习惯 `npm publish` 发过一次，再推 tag 时
+      # CI 的 npm publish 会因「版本已存在」整 job 失败 —— 连带 GitHub Release
+      # 与 Registry 注册都不执行，而这三件事里只有 npm 是重复的。
+      # 做成幂等后：手工补发、重跑 job、tag 重推都不会再被这一步卡死。
+      - name: 发布到 npm（已存在则跳过）
+        run: |
+          set -euo pipefail
+          ver="$(python3 -c "import json;print(json.load(open('package.json'))['version'])")"
+          if npm view "beacon-mfg-mcp@${ver}" version >/dev/null 2>&1; then
+            echo "npm 已有 beacon-mfg-mcp@${ver}，跳过 publish（其余步骤照常）"
+          else
+            npm publish --access public
+          fi
         working-directory: mcp
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
