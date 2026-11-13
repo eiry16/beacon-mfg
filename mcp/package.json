@@ -40,7 +40,8 @@
     "rfq-kernel/",
     "copy-rfk.js",
     "notes/",
-    "README.md"
+    "README.md",
+    "MCP_HTTP.md"
   ],
   "scripts": {
     "prepack": "node copy-rfk.js",

@@ -17,7 +17,7 @@
 > - **本地 stdio**（`npx -y beacon-mfg-mcp`）—— 下表全部 12 个，含多轮寻源与留言区。
 >
 > 远程端点没上的工具**不会出现在 `tools/list` 里**（让 agent 看不到，比让它调了才报错好）。
-> 契约与验收清单见 [MCP_HTTP.md](MCP_HTTP.md)。
+> 契约与验收清单见 https://github.com/eiry16/beacon-mfg/blob/main/mcp/MCP_HTTP.md。
 
 ## 提供的 tool（共 12 个：8 个只读检索 + 1 个身份自助 + 1 个入驻入口 + 2 个留言区读写）
 
