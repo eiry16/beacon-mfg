@@ -1,6 +1,6 @@
 # Beacon-MFG 只读 MCP 服务
 
-**English**: Read-only MCP server for finding **Chinese suppliers, manufacturers and business entities** — 210k+ records across all GB/T 4754 industries, bilingual CN/EN, USCC-verified, with an RFQ sourcing kernel. Free, no API key: `npx -y beacon-mfg-mcp`.
+**English**: Read-only MCP server for finding **Chinese suppliers, manufacturers and business entities** — 210k+ records across all GB/T 4754 industries, bilingual CN/EN, USCC-verified, with an RFQ sourcing kernel. Free, no API key. **No install**: connect to the hosted Streamable HTTP endpoint `https://beacon-mfg.pages.dev/mcp`; or run locally with `npx -y beacon-mfg-mcp`.
 
 让任意支持 MCP 的主流 agent（Claude Desktop / Cline / Continue / 常见 MCP 客户端 等）能够**检索与调用**
 灯塔工厂供应商名录，**无需 clone 整个仓库、无需任何密钥、无需第三方依赖**。
@@ -9,6 +9,15 @@
 > 唯一可写的是**踩坑留言区**（`read_notes` / `report_note`，agent 众包的遇坑记录，
 > 只记「怎么绕开」，不评数据对错；repo 模式存 `<repo>/mcp/notes/` 由操作员托管，
 > 联网模式存本机 `~/.beacon-mfg/notes/` 不上传云端）。
+
+> **两种接入形态，工具数不同**：
+> - **远程端点**（`https://beacon-mfg.pages.dev/mcp`，Streamable HTTP，无需安装）——
+>   提供下表中 3 个只读检索工具：`search_vendors` / `get_vendor` / `get_capability_card`。
+>   额度按**出口 IP** 计（1,000 条记录/24h），不要注册、不要 API Key。
+> - **本地 stdio**（`npx -y beacon-mfg-mcp`）—— 下表全部 12 个，含多轮寻源与留言区。
+>
+> 远程端点没上的工具**不会出现在 `tools/list` 里**（让 agent 看不到，比让它调了才报错好）。
+> 契约与验收清单见 [MCP_HTTP.md](MCP_HTTP.md)。
 
 ## 提供的 tool（共 12 个：8 个只读检索 + 1 个身份自助 + 1 个入驻入口 + 2 个留言区读写）
 

@@ -1,6 +1,6 @@
 # BeaconMFG · 供应商灯塔
 
-**BeaconMFG (Supplier Lighthouse)** is a free, keyless, read-only MCP server that lets any AI agent search **210,000+ Chinese business entities** — suppliers, manufacturers, factories and service providers across all **GB/T 4754** industry divisions — with bilingual CN/EN records, USCC-verified identities, and a built-in RFQ sourcing kernel. Works with Claude Desktop, Cursor, Cline and any MCP-compatible client: `npx -y beacon-mfg-mcp`.
+**BeaconMFG (Supplier Lighthouse)** is a free, keyless, read-only MCP server that lets any AI agent search **210,000+ Chinese business entities** — suppliers, manufacturers, factories and service providers across all **GB/T 4754** industry divisions — with bilingual CN/EN records, USCC-verified identities, and a built-in RFQ sourcing kernel. Works with Claude Desktop, Cursor, Cline and any MCP-compatible client: **no install** via the hosted Streamable HTTP endpoint `https://beacon-mfg.pages.dev/mcp`, or locally with `npx -y beacon-mfg-mcp`.
 
 *Keywords: MCP server · China suppliers · Chinese manufacturers · supplier directory · sourcing · procurement · vendor search · factory directory · B2B · GB/T 4754 · company registry.*
 
@@ -20,16 +20,32 @@
 
 ## 快速接入
 
+### ① 远程端点 —— 无需安装（推荐）
+
+```
+https://beacon-mfg.pages.dev/mcp
+```
+
+Streamable HTTP，无状态，免费。粘到任何支持远程 MCP 的客户端即可
+（Claude、Cursor、Cline、MCP Inspector…）。不用装 Node，不用注册，不用 API Key ——
+额度按**出口 IP** 计（1,000 条记录/24h，一次检索算它返回的条数）。
+
+已验证可用的三个工具：`search_vendors` / `get_vendor` / `get_capability_card`。
+远程端点的完整契约与验收清单见 **[mcp/MCP_HTTP.md](mcp/MCP_HTTP.md)**。
+
+### ② 本地进程（stdio）
+
 ```bash
 npx -y beacon-mfg-mcp
 ```
 
-客户端配置、完整工具清单与环境变量见 **[mcp/README.md](mcp/README.md)**。
+客户端配置、完整工具清单（12 个）与环境变量见 **[mcp/README.md](mcp/README.md)**。
 
 | 渠道 | 地址 |
 |---|---|
 | npm | <https://www.npmjs.com/package/beacon-mfg-mcp> |
 | MCP Registry | `io.github.eiry16/beacon-mfg-mcp` |
+| 远程端点 | <https://beacon-mfg.pages.dev/mcp> |
 | Release | <https://github.com/eiry16/beacon-mfg/releases> |
 | 数据门户 | <https://beacon-mfg.pages.dev> |
 

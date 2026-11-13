@@ -220,6 +220,24 @@ def check_versions(tag=None):
             "name=%r 与 package.json 的 mcpName=%r 不一致"
             % (srv.get("name"), pkg.get("mcpName")),
         ))
+
+    # 远程端点的版本回执（pages/_worker.js 里的 MCP_SERVER_VERSION）。
+    # 只影响 initialize 告诉客户端的版本号，不影响任何行为 —— 但两边不一致会让
+    # 「线上跑的是不是新版」变成猜谜，而这是排查时第一个要问的问题（2026-11-13 加）。
+    # 文件不存在时**跳过不报**：npm 包内不含 pages/，从包目录跑 prepublishOnly 会走到这。
+    wpath = os.path.join(HERE, "..", "pages", "_worker.js")
+    try:
+        with io.open(wpath, encoding="utf-8") as f:
+            m = re.search(r'^const MCP_SERVER_VERSION = "([^"]+)"', f.read(), re.M)
+    except OSError:
+        m = None
+    if m and m.group(1) != pkg.get("version"):
+        problems.append((
+            "pages/_worker.js",
+            'MCP_SERVER_VERSION=%r 与 package.json version=%r 不一致'
+            '（远程端点 /mcp 会对外报旧版本号）' % (m.group(1), pkg.get("version")),
+        ))
+
     return problems
 
 
