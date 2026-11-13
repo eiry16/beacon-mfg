@@ -91,7 +91,13 @@ Cloudflare 直接拒（403 / error code 1000），所以这条闸没有「客户
 | `start_sourcing` | `handleSearch` + D1 会话 | 含糊需求 → 宽召回 + 1~2 个澄清问题，返回 `session_id` |
 | `answer_sourcing` | 会话续接 + 重检 | 把澄清答案写回，**重新检索**（不是在旧结果里二次过滤） |
 | `refine_sourcing` | 会话快照 | `best` / `more` / `filter` / `details` |
-| `vendor_onboarding` | 纯静态文案 | 入驻/认领指路（控制台深链 + Agent HTTP 契约） |
+| `get_onboarding_guide` | 纯静态文案 | 入驻/认领指路（控制台深链 + Agent HTTP 契约） |
+
+> **命名一致性（1.12.8）**：7 个工具前 6 个都是 `verb_noun`（search_/get_/start_/answer_/refine_），
+> 第 7 个原名 `vendor_onboarding` 是名词短语 —— Glama 评审把这算作一致性扣分项。
+> 改成 `get_onboarding_guide` 后与 `get_vendor` / `get_capability_card` 同构：都是「取一份已有的东西」，
+> 而它确实是纯静态文案、不发写请求。**旧名留作隐藏别名**（`tools/call` 能命中、`tools/list` 不出现），
+> 已按旧名配好白名单的客户端不会突然拿到 `unknown tool`；等审计里旧名归零再删。
 
 **复用而不是重写**：检索打分、脱敏、逐条计量都在原 handler 里。在这里重写一份必然与 stdio 版分叉，
 而分叉的检索结果比慢一点糟得多。实现方式见 `pages/_worker.js` 的 `mcpInnerRequest()`。

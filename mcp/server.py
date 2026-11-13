@@ -29,7 +29,7 @@ Continue / 常见 MCP 客户端 等主流 MCP 客户端。
   answer_sourcing      续接澄清轮次 / 返回初选供应商
   refine_sourcing      推荐轮交互：details / more / best
   account              调用身份与配额（匿名可用）
-  vendor_onboarding    供应商入驻 / 认领入口
+  get_onboarding_guide 供应商入驻 / 认领入口（旧名 vendor_onboarding 仍可用）
   read_notes           读踩坑留言区（别的 agent 踩过的坑与绕行）
   report_note          写踩坑留言区（必须实测踩到才写）"""
 
@@ -5719,7 +5719,7 @@ TOOLS = [
         },
     },
     {
-        "name": "vendor_onboarding",
+        "name": "get_onboarding_guide",
         "description": "给供应商开通「入驻 / 认领」入口：返回一个**可直接点开**的控制台链接与步骤。"
                        "当用户说「我是某某公司的」「我想入驻 / 上架产品 / 让客户搜到我」"
                        "「我要认领我的企业」「怎么注册成供应商」「我的审核到哪一步了」时调用。"
@@ -6126,7 +6126,10 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
             return refine_sourcing(args.get("session_id", ""), args.get("action", ""), args.get("value"))
         if name == "account":
             return account(args.get("action", "status"), args.get("phone", ""), args.get("code", ""))
-        if name == "vendor_onboarding":
+        if name in ("get_onboarding_guide", "vendor_onboarding"):
+            # 旧名 vendor_onboarding 是 1.12.8 之前的写法，作隐藏别名保留
+            # （不出现在 tools/list 里，但调用能命中），避免已配旧名的客户端报
+            # unknown tool。等 REAL 调用日志里旧名归零再删。
             return vendor_onboarding(args.get("supplier_id", ""), args.get("company", ""),
                                      args.get("intent", "claim"))
         if name == "read_notes":

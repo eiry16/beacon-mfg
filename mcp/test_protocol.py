@@ -39,7 +39,7 @@ EXPECT_TOOLS = {
     "start_sourcing", "answer_sourcing", "refine_sourcing",
     # 1.5.3 之后陆续加的两个，之前一直没进这个清单 —— 清单漏项等于
     # 「工具在某条链路上没注册」这类故障测不出来。
-    "account", "vendor_onboarding",
+    "account", "get_onboarding_guide",
     # 2026-11-07 加的踩坑留言区读写对：漏项等于「新工具在某条链路没注册」测不出
     "read_notes", "report_note",
 }
