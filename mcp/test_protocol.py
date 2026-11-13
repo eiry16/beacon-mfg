@@ -405,6 +405,67 @@ def test_alias_keep():
                else "")
 
 
+def test_card_whitelist():
+    """能力卡白名单的形态必须「两代清单 × 两种入参」都能命中（离线，不走网）。
+
+    这个判据已经错了两次，两次都是**静默错**：不报错、不发请求，直接答
+    `has_card=false`，客户端 Agent 从此拿不到 L1 能力卡。
+
+      ① 一律取数字后缀 → token 入参没有连字符，取出来还是 token，判成没卡；
+      ② 只认 token 形态 → 内部 id 取后缀得 `0020317`，与 token 化的白名单
+         永不相交，于是**任何有卡企业都答没卡**（2026-11-13 实测耐特斯）。
+
+    正确行为是「候选键取交集」，外加反向一条：真没卡时必须短路、零请求。
+    """
+    print("\n[*] 能力卡白名单判据  (两代清单 × 两种入参 · 离线)")
+    if HERE not in sys.path:
+        sys.path.insert(0, HERE)
+    try:
+        import vid_token
+        import server
+    except Exception as e:
+        _check("server 可导入", False, "%s: %s" % (type(e).__name__, e))
+        return
+
+    secret = "regression-secret-0123456789abcdef"
+    vid = "CN-MFG-0020317"
+    tok = vid_token.encode(vid, secret)
+    keep = (server._vid_has_key, server._vid_secret, server._CAP_CARD_IDS,
+            server.load_manifest, server.fetch_text)
+    server._vid_has_key = lambda: True
+    server._vid_secret = lambda: secret
+    called = []
+
+    def fake_fetch(rel):
+        called.append(rel)
+        return '{"id": "%s"}' % vid
+
+    server.fetch_text = fake_fetch
+    try:
+        for label, ids in (("token 清单", tok), ("数字后缀清单", vid.rsplit("-", 1)[-1])):
+            server.load_manifest = (lambda ids=ids: {
+                "metadata": {"cap_cards": {"count": 3, "ids": ids}}})
+            for arg_label, arg in (("内部 id", vid), ("token", tok)):
+                server._CAP_CARD_IDS = None
+                called.clear()
+                r = server.get_capability_card(arg)
+                _check("%s + %s 入参" % (label, arg_label),
+                       r.get("has_card") is True and bool(called),
+                       "得到 %r，请求 %d 次" % (r.get("has_card"), len(called)))
+
+        # 反向：不在白名单 → 立刻答没卡，且一次请求都不发（这是白名单存在的唯一理由）
+        server.load_manifest = lambda: {"metadata": {"cap_cards": {"count": 3, "ids": tok}}}
+        server._CAP_CARD_IDS = None
+        called.clear()
+        r = server.get_capability_card("CN-MFG-0999999")
+        _check("不在白名单 → 短路零请求",
+               r.get("has_card") is False and not called,
+               "得到 %r，请求 %d 次" % (r.get("has_card"), len(called)))
+    finally:
+        (server._vid_has_key, server._vid_secret, server._CAP_CARD_IDS,
+         server.load_manifest, server.fetch_text) = keep
+
+
 def main():
     print("=" * 60)
     print("BeaconMFG MCP 协议回归测试")
@@ -413,6 +474,7 @@ def main():
 
     test_vid_args()
     test_alias_keep()
+    test_card_whitelist()
     test_http()
     if "--stdio" in sys.argv:
         test_stdio()

@@ -340,7 +340,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，发布前的一致性闸门会校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.12.3"
+VERSION_FALLBACK = "1.12.4"
 
 
 def _pkg_version() -> str:
@@ -5291,6 +5291,38 @@ def _cap_card_ids() -> Optional[set]:
     return _CAP_CARD_IDS
 
 
+def _card_id_keys(vid: str) -> set:
+    """入参 id 在清单白名单里可能出现的**全部形态**。
+
+    白名单的元素形态取决于清单是哪一代产物：token 化之后是 8 字符 token，
+    之前是内部编号的数字后缀。而入参同样有两种来源：App/搜索结果给 token，
+    控制台与本地调试给 `CN-MFG-…` 内部 id。
+
+    两边形态一旦对不上，结果不是报错而是**静默答"没卡"**：一次网络都不发，
+    客户端 Agent 直接失去 L1 能力卡。所以这里不做"猜一种形态"，而是把三种
+    可能都摆出来取交集 —— 多算两个字符串远比漏判安全。
+    """
+    keys = {vid}
+    tail = vid.rsplit("-", 1)[-1]
+    if tail:
+        keys.add(tail)                       # 内部 id 的数字后缀（老快照）
+    try:
+        keys.add(_vid_url(vid))              # 内部 id → 对外 token（现行快照）
+    except Exception:
+        pass
+    if _TOKEN_ID_RE.match(vid) and _vid_ready():
+        # token 入参 × 老快照（白名单还是数字后缀）这一格：只能解回去。
+        # 反解失败（无密钥 / 伪 token）就静默跳过，交给下面真正的取卡去判。
+        try:
+            from vid_token import decode as _dec
+            inner = _dec(vid, _vid_secret())
+            if inner:
+                keys.add(inner.rsplit("-", 1)[-1])
+        except Exception:
+            pass
+    return {k for k in keys if k}
+
+
 def get_capability_card(vid: str) -> Dict[str, Any]:
     vid = (vid or "").strip()
     if not vid:
@@ -5298,18 +5330,17 @@ def get_capability_card(vid: str) -> Dict[str, Any]:
     # 短路：清单里查得到这张表时，没卡的 id 立刻回，别去撞三基址 404。
     want = _cap_card_ids()
     if want is not None:
-        # 集合里的元素**就是发布面上的对外 id**：token 化发布之后是 8 字符
-        # token，之前是内部编号的数字后缀。
+        # 集合里的元素是**发布面上的对外 id**：token 化发布之后是 8 字符 token，
+        # 之前是内部编号的数字后缀；入参也可能是这两种之一。
         #
-        # ⚠ 旧实现一律取 `vid.split("-")[-1]` 当"数字后缀"：token 里没有连字符，
-        #   取出来还是它自己，`isdigit()` 直接为假 → **任何 token 都被判成"没卡"**，
-        #   连一次请求都不发。2026-10-29 实测：token WE694FVV 明明
-        #   `/skills/registry/capability/WE694FVV.json` 返回 200，MCP 却回
-        #   has_card=false —— 客户端 Agent 由此彻底拿不到 L1。
-        #   判据改为"形态即键"：token 形态按原值比，其余才退回数字后缀（兼容本地
-        #   git 模式与未 token 化的老快照）。
-        key = vid if _TOKEN_ID_RE.match(vid) else vid.split("-")[-1]
-        if key not in want:
+        # ⚠ 这里出过两次事故，都是"只猜一种形态"造成的：
+        #   · 一律取数字后缀 → token 入参（没有连字符）被判成"没卡"，一次请求都不发；
+        #   · 只认 token 形态 → 内部 id 入参（`CN-MFG-…` 取后缀得 `0020317`）与
+        #     token 化后的白名单永远不相交，**任何有卡企业都回 has_card=false**。
+        #     2026-11-13 实测：耐特斯 CN-MFG-0020317 的
+        #     `/skills/registry/capability/<token>.json` 明明 200，MCP 却答没卡。
+        # 判据改为"候选集取交集"，两种入参 × 两代清单都能命中。
+        if not (_card_id_keys(vid) & want):
             return {
                 "id": vid, "has_card": False,
                 "note": "该供应商暂无已发布能力卡（全库仅 %d 家有卡）。"
