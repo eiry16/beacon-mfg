@@ -12,9 +12,15 @@
 
 > **两种接入形态，工具数不同**：
 > - **远程端点**（`https://beacon-mfg.pages.dev/mcp`，Streamable HTTP，无需安装）——
->   提供 7 个工具：`search_vendors` / `get_vendor` / `get_capability_card`，
->   多轮寻源 `start_sourcing` / `answer_sourcing` / `refine_sourcing`，以及 `get_onboarding_guide`。
->   额度按**出口 IP** 计（1,000 条记录/24h），不要注册、不要 API Key；寻源会话 2 小时过期，
+>   提供 9 个工具：`search_vendors`（支持 `cap` / `caps` 能力域定向）/ `get_vendor` /
+>   `get_capability_card`，检索辅助 `suggest_filters`（轻量版：原话拆词 → 候选词、
+>   gb 码与能力域键，不依赖 5.9MB 货架）与 `list_industries`（轻量货架：418 个有企业的
+>   国标小类 + 全库条数），多轮寻源 `start_sourcing` / `answer_sourcing` /
+>   `refine_sourcing`，以及 `get_onboarding_guide`。两个辅助工具都是纯计算、零运行时 IO，
+>   回执带 `coverage:"lite"` 说明边界。
+>   额度按**出口 IP** 计（1,000 条记录/24h），不要注册、不要 API Key；每个工具回执都带
+>   `quota`（按出口 IP 的剩余条数与滚动窗口释放时点；本地 stdio 的 `quota`
+>   是另一套 op 档位缓存，口径见「身份与额度」）；寻源会话 2 小时过期，
 >   且只能在**同一个出口 IP** 下续接。
 > - **本地 stdio**（`npx -y beacon-mfg-mcp`）—— 下表全部 12 个，多轮寻源的澄清问题由行业 pack 驱动
 >   （远程版只问「答了能过滤」的城市/工艺/认证，选项取自候选集本身），另有踩坑留言区。
@@ -101,6 +107,12 @@ L0 名录与 L1 指纹全量可用。
 
 需要 **L2 加工资产（能力卡 / 厂商自述体）** 时再绑手机号（200 → 2000 次/24h，
 能力卡另有 300 条/日上限）。两条路等价，任选其一：
+
+> **口径说明**：上面说的是**本地 stdio 的 op 档位**（拉静态分片按次计件）。
+> 远程 HTTP 端点 `/mcp` 按出口 IP 计「记录条数」（固定 1000 条/24h，绑手机号
+> 也不会涨），`/v1` 又按身份档位计另一套条数 —— 三本账互不共享。本地每个
+> 工具回执里的 `quota` 只给档位上限、不给余量（只读缓存、不联网），要查权威
+> 用量用 `npx beacon-mfg-mcp status`。
 
 ```bash
 npx beacon-mfg-mcp login      # 终端交互式：输手机号 → 收码 → 完成

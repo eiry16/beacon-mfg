@@ -340,7 +340,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，发布前的一致性闸门会校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.12.4"
+VERSION_FALLBACK = "1.12.10"
 
 
 def _pkg_version() -> str:
@@ -1003,6 +1003,32 @@ def _fetch_warn(total: int) -> Dict[str, Any]:
     if total == 0:
         return {"fetch_error": detail}
     return {}
+
+
+def _empty_window_guard(out: Dict[str, Any]) -> Dict[str, Any]:
+    """`total_matched > 0` 但 `results` 为空时，绝不静默返回（2026-11-14）。
+
+    根因不是 `total_brands`（品牌折叠返回 0 只表示「没有连锁品牌」，不会清空结果）。
+    真因是：服务端 `/v1/search` 给出这一类在全库的匹配总量，被写进 `total_matched`；
+    而本轮结果窗口可能因窗口截断、页内过滤、覆盖信号整页扣下等原因一条都没取回。
+    于是出现「找到 65 家」却列不出一家，agent 会照着念。
+
+    这里**不改变总量口径**（它确实是库里的真相），只把「本轮没给名单」显式化：
+    保留 total_matched，另加 results_window_empty / warning / hint，禁止空结果
+    冒充「有货」。正常查询返回原对象，对存量输出零影响。
+    """
+    total = out.get("total_matched") or 0
+    if total <= 0 or out.get("results"):
+        return out
+    out["results_window_empty"] = True
+    out.setdefault("warning", (
+        "本轮 total_matched=%d 是上游给出的匹配总量，但 results 为空——"
+        "**不要据此回答「找到 %d 家」**。这是「总量有、本轮窗口没取回」，"
+        "不是「名录里有这些企业可列」。请改小 limit / 调整 offset、"
+        "去掉 city 或 gb 限定重试，或按 hint 换词；仍为空就如实说"
+        "「本轮未取回名单」，不要编造名单。" % (total, total)))
+    out.setdefault("hint", out["warning"])
+    return out
 
 
 def _worktree_read(relpath: str) -> Optional[str]:
@@ -3556,7 +3582,15 @@ def _index_reason() -> str:
         rec = int(meta.get("records", -1))
     except Exception:
         return "index_meta_malformed"
-    if not (rec >= tot > 0):
+    # 2026-11-14：读不到 fp 分片元数据（tot=0）时，旧版 `not (rec >= tot > 0)`
+    # 会报「索引 210559 条 < 数据 0 条」——两个数说反了，还把「分片不可读」
+    # 说成「索引落后」。诊断字段报错方向错了比不报更误导，故拆成独立分支。
+    if rec < 0:
+        return "index_meta_malformed（meta.records 缺失或非法，无法核对条数）"
+    if tot <= 0:
+        return ("index_shards_unavailable（读不到 fp 分片元数据，无法核对索引与数据条数；"
+                "本次已按设计降级为服务端检索，不是索引落后）")
+    if rec < tot:
         return "index_behind_data（索引 %d 条 < 数据 %d 条，需重跑 gen_search_index）" % (rec, tot)
     return "index_ok"       # 索引本身没问题 → 是取候选分片那一步失败了
 
@@ -4343,7 +4377,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
             **({"geo_filtered_out": geo_dropped} if geo_dropped else {}),
             **_keyword_audit(gen_tokens, records_total),
         }
-        return _attach_routing_hint(out, q, city)
+        return _empty_window_guard(_attach_routing_hint(out, q, city))
 
     # 未给国标码：优先走「预构建索引 → 只拉命中分片」。
     # 索引缺失或陈旧时回退进程内全量索引（与命中量相关，慢但结果等价）。
@@ -4677,7 +4711,7 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         out["cap_expanded"] = [{"word": h["word"], "cap": h["cap"], "name": h["name"]}
                                for h in cap_hits]
         out["cap_records_seen"] = cap_scanned
-    return _attach_routing_hint(out, q, city)
+    return _empty_window_guard(_attach_routing_hint(out, q, city))
 
 
 def _pick(*vals: Any) -> Any:
@@ -5706,6 +5740,9 @@ TOOLS = [
                        "action=confirm 需传 phone + code，验证通过后本机升级为 verified，"
                        "配额 200→2000 次/滚动 24 小时；"
                        "action=logout 清除本地令牌回到匿名档。"
+                       "⚠ 这里说的是**本机 op 档位**：本地 stdio 拉静态分片按次计件，"
+                       "与远程 /mcp 回执里按出口 IP 计的 records 条数（1000 条/24h）"
+                       "不是同一本账，别拿这边的数字解释那边的回执。"
                        "⚠ 只有当你**确实遇到** quota_exceeded / l2_daily_limit，"
                        "或用户主动问「额度/绑定手机号」时才调用；不要一上来就催用户绑手机。",
         "inputSchema": {
@@ -6102,6 +6139,72 @@ def _norm_args(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
     return out
 
 
+# ── 本地 quota 回执（2026-11-14，缓存版）────────────────────────────────────
+#
+# 远程 /mcp 每个 tools/call 都带 quota（按出口 IP 计的 **records 条数**）。本地
+# stdio / 本地 Streamable HTTP 是**另一条通道**：它们拉 /data/** 静态分片，
+# 过 quotaGuard 按 **op 计件**（anon 200 / verified 2000 次 per 滚动 24h），
+# 不碰 /v1 的 records 额度。把远端那套数字搬到本地回执里会直接说错口径。
+#
+# 为什么只给档位上限、不给 used/remaining：本地 identity.json 里只有
+# bootstrap 签发的静态档位；服务端不发 X-Beacon-Quota-* 响应头（identity.py
+# 的 quota_from_response 是历史兼容函数，没有数据源），而 /v1/identity/me
+# 要联网 —— 无 UA 时 Cloudflare 回 1010 且**静默降级**，每个 tools/call
+# 多一个 RTT 还可能拿到过期值。宁可给 null + precision:"tier_only"，也不给
+# 一个看起来精确其实是假的数字。
+def _quota_receipt() -> Dict[str, Any]:
+    """只读本机身份缓存组回执；**绝不联网、绝不触发 ensure_token**。"""
+    tier, q = "anon_local", {}
+    try:
+        import identity as _idn
+        st = _idn.token_state()        # 读本地文件 + 30s 缓存，无 HTTP
+        tier = st.get("tier") or tier
+        q = st.get("quota") or {}
+    except Exception:
+        pass                           # 身份模块/文件异常都不能影响工具回执
+
+    def _num(v: Any) -> Optional[int]:
+        try:
+            return int(v)
+        except (TypeError, ValueError):
+            return None
+
+    limit = _num(q.get("day"))
+    return {
+        "channel": "local",
+        "dimension": "ops",
+        "unit": "次",
+        "tier": tier,
+        "limit": limit,
+        "used": None,
+        "remaining": None,
+        "precision": "tier_only",
+        "window": "rolling_24h",
+        "as_of": "local_cache",
+        "hint": ("只读本机缓存里 bootstrap 签发的档位上限，不联网、不含真实用量；"
+                 "查权威用量调 account(status)。服务端默认观察模式只记账，"
+                 "未开 BEACON_ENFORCE=1 时不会因额度拦截请求，limit 不是「还能调几次」。"
+                 + ("" if limit is not None else " 本机暂无有效令牌，档位上限未知。")),
+        "channels_note": ("三本账互不共享：本地按 op 计件（本机上限见 limit）；"
+                          "远程 /mcp 按出口 IP 派生 aid 计 records（固定 anon 档 1000 条/24h，不看身份档位）；"
+                          "/v1 按身份 aid+tier 计 records（anon 1000 / verified 5000 条）。"
+                          "别拿一边的数字解释另一边的回执。"),
+    }
+
+
+def _attach_quota_receipt(name: str, res: Any) -> Any:
+    """给 tools/call 的业务回执挂 quota。
+
+    `account` 的返回值自带服务端 quota 字段，不能覆盖成另一套结构；已有
+    `quota` 键的工具同理（避免未来新工具被静默改写）。
+    """
+    if name == "account" or not isinstance(res, dict) or "quota" in res:
+        return res
+    out = dict(res)                    # 浅拷贝：不就地改可能被缓存复用的 dict
+    out["quota"] = _quota_receipt()
+    return out
+
+
 def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
     """tool 调用的唯一入口 —— 埋点就挂在这里（文档 §4）。
 
@@ -6131,7 +6234,9 @@ def _dispatch(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
         # 出口统一换 token：只改 `id` 字段是不够的 —— 路径
         # （skills/vendors/<id>/SKILL.md）、markdown 正文、LLM 会照抄的自然语言
         # 里都写着内部编号，漏一处就等于把编号送出去。
-        return _vid_out(r)
+        # 挂 quota 放在唯一入口：stdio 与本地 Streamable HTTP 两条链路共用
+        # _dispatch，不必在两条传输层各写一遍（也不会出现一边有一边没有）。
+        return _attach_quota_receipt(name, _vid_out(r))
     except BaseException as e:      # noqa: BLE001 —— 埋点不能吞掉协议层行为
         err = e
         raise
@@ -6281,8 +6386,9 @@ def _serve_tool_call(params: Dict[str, Any], mid: Any) -> None:
             "jsonrpc": "2.0", "id": mid,
             "result": {
                 "content": [{"type": "text", "text": json.dumps(
-                    {"error": {"code": "internal", "tool": name,
-                               "message": "%s: %s" % (type(e).__name__, e)}},
+                    _attach_quota_receipt(name, {
+                        "error": {"code": "internal", "tool": name,
+                                  "message": "%s: %s" % (type(e).__name__, e)}}),
                     ensure_ascii=False)}],
                 "isError": True,
             },

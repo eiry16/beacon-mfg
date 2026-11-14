@@ -28,7 +28,8 @@ https://beacon-mfg.pages.dev/mcp
 
 Streamable HTTP，无状态，免费。粘到任何支持远程 MCP 的客户端即可
 （Claude、Cursor、Cline、MCP Inspector…）。不用装 Node，不用注册，不用 API Key ——
-额度按**出口 IP** 计（1,000 条记录/24h，一次检索算它返回的条数）。
+额度按**出口 IP + 匿名身份**计（匿名 1,000 条记录/24h、绑定手机后 5,000；单 IP 另设 20,000 条硬顶；
+一次检索算它返回的条数）。
 
 已验证可用的三个工具：`search_vendors` / `get_vendor` / `get_capability_card`。
 远程端点的完整契约与验收清单见 **[mcp/MCP_HTTP.md](mcp/MCP_HTTP.md)**。

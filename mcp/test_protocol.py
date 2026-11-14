@@ -89,10 +89,11 @@ def _assert_tools_and_search(call, label):
     _check("%s tools/list (%d)" % (label, len(EXPECT_TOOLS)), not missing,
            ("缺: " + ",".join(missing)) if missing else "")
 
+    qchecked = False
     for q, city in SMOKE_QUERIES:
         r3 = call("tools/call", {"name": "search_vendors",
                                  "arguments": {"query": q, "city": city, "limit": 3}})
-        n, err = 0, ""
+        n, err, data = 0, "", None
         if r3 and "result" in r3:
             try:
                 data = json.loads(r3["result"]["content"][0]["text"])
@@ -102,6 +103,19 @@ def _assert_tools_and_search(call, label):
         else:
             err = "无回包"
         _check("%s search %s/%s" % (label, city, q), n > 0, err or "命中 %d" % n)
+        # 2026-11-14：本地 tools/call 回执统一挂 quota（缓存版）。只查一次，
+        # 避免三次 SMOKE_QUERY 重复计数；三条链路（http/stdio/adapter）都过。
+        if not qchecked and isinstance(data, dict):
+            qchecked = True
+            qr = data.get("quota") or {}
+            _check("%s quota 回执（本地缓存版）" % label,
+                   qr.get("channel") == "local" and qr.get("dimension") == "ops"
+                   and qr.get("precision") == "tier_only"
+                   and qr.get("as_of") == "local_cache"
+                   and qr.get("used") is None and qr.get("remaining") is None,
+                   "得到 %r" % (qr,))
+    if not qchecked:
+        _check("%s quota 回执（本地缓存版）" % label, False, "没有可解析的 tools/call 回执")
 
     # 踩坑留言区读写往返：report → read 能读到刚写的那条（用独立 topic 防污染）
     rn = call("tools/call", {"name": "report_note", "arguments": {
@@ -405,6 +419,65 @@ def test_alias_keep():
                else "")
 
 
+def test_quota_receipt():
+    """本地 quota 回执（2026-11-14 缓存版）：零联网、不伪造用量、不覆盖已有字段。
+
+    这条比「回执里有没有 quota」更重要：早期方案想在每个 tools/call 里同步打
+    `/v1/identity/me`，但 identity.py 记录过「无 UA → Cloudflare 1010 且静默降级」
+    的故障，而且本地缓存里根本没有权威 used。所以把三个 HTTP 出口换成炸弹，
+    确保任何人日后「顺手改成实时查」都会在这里被拦下。
+    """
+    print("\n[*] 本地 quota 回执  (缓存版 · 离线)")
+    if HERE not in sys.path:
+        sys.path.insert(0, HERE)
+    try:
+        import identity
+        import server
+    except Exception as e:
+        _check("server 可导入", False, "%s: %s" % (type(e).__name__, e))
+        return
+
+    keep = (identity._post, identity._post_auth, identity.ensure_token)
+    called = []
+
+    def bomb(*a, **kw):
+        called.append(a)
+        raise AssertionError("quota 回执触发了联网")
+
+    identity._post = bomb
+    identity._post_auth = bomb
+    identity.ensure_token = bomb
+    try:
+        q = server._quota_receipt()
+    finally:
+        (identity._post, identity._post_auth, identity.ensure_token) = keep
+
+    _check("quota 回执零联网", not called, "触发 %d 次 HTTP 出口" % len(called))
+    _check("quota 形状：本地渠道 / op 口径 / 档位精度",
+           q.get("channel") == "local" and q.get("dimension") == "ops"
+           and q.get("unit") == "次" and q.get("precision") == "tier_only"
+           and q.get("as_of") == "local_cache" and q.get("window") == "rolling_24h",
+           "得到 %r" % (q,))
+    _check("不伪造 used/remaining",
+           q.get("used") is None and q.get("remaining") is None,
+           "缓存里没有权威用量，给了数字就是假的")
+    _check("写明三本账口径", "三本账互不共享" in (q.get("channels_note") or ""))
+    _check("写明观察模式", "BEACON_ENFORCE" in (q.get("hint") or ""))
+
+    src = {"results": [1], "total_matched": 1}
+    out = server._attach_quota_receipt("search_vendors", src)
+    _check("普通工具挂 quota 且不污染原对象",
+           "quota" in out and "quota" not in src,
+           "浅拷贝失效会污染可能被缓存复用的 dict")
+    _check("account 自带 quota 不被覆盖",
+           server._attach_quota_receipt("account", {"quota": {"server": 1}})["quota"]
+           == {"server": 1})
+    _check("已有 quota 键的工具不被覆盖",
+           server._attach_quota_receipt("x", {"quota": 7})["quota"] == 7)
+    _check("非 dict 回执原样返回",
+           server._attach_quota_receipt("x", [1, 2]) == [1, 2])
+
+
 def test_card_whitelist():
     """能力卡白名单的形态必须「两代清单 × 两种入参」都能命中（离线，不走网）。
 
@@ -475,6 +548,7 @@ def main():
     test_vid_args()
     test_alias_keep()
     test_card_whitelist()
+    test_quota_receipt()
     test_http()
     if "--stdio" in sys.argv:
         test_stdio()
