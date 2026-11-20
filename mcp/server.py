@@ -780,6 +780,33 @@ _HTTP_LAST_ERROR: List[str] = [""]
 _FETCH_ABORTED: List[str] = [""]
 
 
+# 「默认 TLS 上下文」的一次性缓存（2026-11-14）。
+# 为什么必须缓存：`_http_get_once` 是**每请求**调 `_openers()` 的，而
+# `urllib.request.build_opener()` 每次都会造一个 HTTPSHandler；HTTPSHandler 在
+# **没有显式 context** 时会走 `ssl.create_default_context()` →
+# `load_default_certs()` → **遍历 Windows 证书存储**。本机实测（262 张证书）
+# 这一步 **2.1~2.4 秒/次**，且纯串行（取数线程再多也帮不上忙）。
+# 远端模式（BEACON_REPO='' / BEACON_WORKTREE=0）下每个分片都要取，于是：
+#   「面馆」一次检索实测 22.7s；12 个取数线程争用时 >200s 无响应 →
+#   客户端只看到 `-32001 Request timed out`。
+# 症状与 1.11.2 的「tools/call 全不响应」相同，但根因完全不同（那次是 git
+# 子进程占死线程池）；判据：faulthandler 栈里出现
+# `ssl.py _load_windows_store_certs` → 就是这里。
+# 复用同一个 SSLContext 对 HTTPSConnection 是设计内用法，**不改变证书校验行为**。
+_SSL_CTX_CACHE: List[Any] = []
+
+
+def _ssl_context():
+    """返回进程内唯一的默认 TLS 上下文（首次构建，之后复用）。失败返回 None。"""
+    if not _SSL_CTX_CACHE:
+        try:
+            import ssl as _ssl
+            _SSL_CTX_CACHE.append(_ssl.create_default_context())
+        except Exception:
+            _SSL_CTX_CACHE.append(None)
+    return _SSL_CTX_CACHE[0]
+
+
 def _openers() -> List[Tuple[str, Any]]:
     """构造 (标签, opener) 列表，**直连优先、代理兜底**。
 
@@ -792,20 +819,33 @@ def _openers() -> List[Tuple[str, Any]]:
     仅在直连确实失败后才启用代理，因此不会破坏内网/反代等必须走代理的场景。
     """
     out: List[Tuple[str, Any]] = []
+    # 显式传入**共享的** TLS 上下文：避免每次 build_opener 都遍历 Windows
+    # 证书存储（见 `_ssl_context()` 上方注释，本机 2.1~2.4s/次）。
+    _ctx = _ssl_context()
+
+    def _mk(*handlers: Any):
+        try:
+            if _ctx is not None:
+                return urllib.request.build_opener(
+                    *(handlers + (urllib.request.HTTPSHandler(context=_ctx),)))
+        except TypeError:      # 老 Python 的 HTTPSHandler 不收 context 关键字
+            pass
+        return urllib.request.build_opener(*handlers)
+
     # 1) 直连（显式 no-proxy opener，忽略环境里的 *_proxy）
     try:
-        out.append(("direct", urllib.request.build_opener(urllib.request.ProxyHandler({}))))
+        out.append(("direct", _mk(urllib.request.ProxyHandler({}))))
     except Exception:
         pass
     # 2) 环境代理（若系统确实配置了可用代理，这里才会成功）
     try:
         if urllib.request.getproxies():
-            out.append(("proxy", urllib.request.build_opener()))
+            out.append(("proxy", _mk()))
     except Exception:
         pass
     # 3) 兜底：默认 opener
     if not out:
-        out.append(("default", urllib.request.build_opener()))
+        out.append(("default", _mk()))
     return out
 
 
@@ -6154,12 +6194,12 @@ def _norm_args(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
 # 一个看起来精确其实是假的数字。
 def _quota_receipt() -> Dict[str, Any]:
     """只读本机身份缓存组回执；**绝不联网、绝不触发 ensure_token**。"""
-    tier, q = "anon_local", {}
+    tier, q = "anon_local", None
     try:
         import identity as _idn
         st = _idn.token_state()        # 读本地文件 + 30s 缓存，无 HTTP
         tier = st.get("tier") or tier
-        q = st.get("quota") or {}
+        q = st.get("quota")
     except Exception:
         pass                           # 身份模块/文件异常都不能影响工具回执
 
@@ -6169,7 +6209,16 @@ def _quota_receipt() -> Dict[str, Any]:
         except (TypeError, ValueError):
             return None
 
-    limit = _num(q.get("day"))
+    # ⚠ `token_state()["quota"]` 有**两种形态**：旧版是 {"day": N} 这类映射，
+    #    新版（含 partner 档）直接给**整数**（本机实测 1000000）。2026-11-14 实测：
+    #    只认 dict 会在**每一次成功回执的最后一步**抛
+    #    `AttributeError: 'int' object has no attribute 'get'` —— 检索已经跑完、
+    #    结果也正确，却在挂 quota 时让整条 tools/call 失败（远端模式下尤其明显，
+    #    因为每次都要真取数才会走到这一步）。
+    if isinstance(q, dict):
+        limit = _num(q.get("day"))
+    else:
+        limit = _num(q)
     return {
         "channel": "local",
         "dimension": "ops",

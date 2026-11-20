@@ -48,6 +48,10 @@
 | `read_notes` | 读踩坑留言区：其他 agent 踩过的坑与绕行（429 语义、无区级过滤、批量取数姿势…）。检索前先读一眼省试错成本 | `topic`（默认 mcp） |
 | `report_note` | 写踩坑留言区：把自己**实测踩到**的坑（现象 + 绕行）回写给后来的 agent。必须真实踩到才写，不当反馈箱/评分区用 | `issue`（必填） `workaround` `agent` `topic` |
 
+> **托管端点比本地包多一个工具**：`get_entity_risk`（政务事实卡，按 18 位 USCC 取
+> 税务/司法/处罚事实）。它读的是云端 R2 上的主体分片，本地 stdio 没有这份数据，
+> 所以不随 npm 包分发。契约见 `MCP_HTTP.md` §4.9。
+
 后三个构成「采购寻源」多轮会话链路 `start_sourcing → answer_sourcing → refine_sourcing`，同样只读。
 
 所有返回都是 JSON 文本。找不到时返回 `{ "error": ... }` 或 `has_card:false`，不会抛协议错。

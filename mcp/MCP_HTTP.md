@@ -81,7 +81,7 @@ Cloudflare 直接拒（403 / error code 1000），所以这条闸没有「客户
 
 工具执行抛异常时**也写一行**（status 500）。第一版在 catch 里直接 return，等于最严重的那类失败静默。
 
-## 4. 已上线的工具（9 个：3 个取数 + 2 个检索辅助 + 4 个寻源/指路）
+## 4. 已上线的工具（10 个：3 个取数 + 2 个检索辅助 + 4 个寻源/指路 + 1 个政务事实卡）
 
 | 工具 | 映射到 | 说明 |
 |---|---|---|
@@ -94,6 +94,7 @@ Cloudflare 直接拒（403 / error code 1000），所以这条闸没有「客户
 | `answer_sourcing` | 会话续接 + 重检 | 把澄清答案写回，**重新检索**（不是在旧结果里二次过滤） |
 | `refine_sourcing` | 会话快照 | `best` / `more` / `filter` / `details` |
 | `get_onboarding_guide` | 纯静态文案 | 入驻/认领指路（控制台深链 + Agent HTTP 契约） |
+| `get_entity_risk` | R2 `entity/**` 分片 | **政务事实卡**：按 USCC 取主体级税务/司法/处罚事实，返回排好版的 Markdown 卡 + `structuredContent`，见 §4.9 |
 
 > **命名一致性（1.12.8，当时是 7 个工具）**：前 6 个都是 `verb_noun`（search_/get_/start_/answer_/refine_），
 > 第 7 个原名 `vendor_onboarding` 是名词短语 —— Glama 评审把这算作一致性扣分项。
@@ -368,6 +369,67 @@ D1 不可用时 `used / remaining / reset_at` 给 `null`，fail-open 不打断�
 `industry-index.json`、没有门类中文路径名；② `industries[].records` 是**全库该类
 企业总数**，不是本次匹配数，也不是当前 `city` 范围内的条数。挑完码仍必须
 `search_vendors(gb=<code>)` 验证，别把类规模当召回结果念给用户。
+
+### 4.9 `get_entity_risk`：政务事实卡（S0，2026-11-20）
+
+政府采购 / 招商尽调用。与前面 9 个工具的关键区别：**主键是法人主体（USCC），不是场所（POI）**。
+`search_vendors` 的 8 位 token 在这里没有意义，两个工具不要串用。
+
+**返回形态与其它工具不同**：`content[0].text` 是服务端排好版的 **Markdown 卡**，
+精确取值在 `structuredContent`，另有 `_meta.ui.resourceUri` 供富客户端做增强渲染（可选）。
+之所以不在两个地方都给 JSON：客户端渲染的是 text，模型也主要读 text，把结构化数据当文本发出去，
+模型就有机会「重新排版」，而排版一散，「固定结构」就没了。
+
+**六个法定资格核验项**（政采法 §22 + 条例 §19 + 财库〔2016〕125号）：
+
+| key | 对应条件 | 数据来源 |
+|---|---|---|
+| `tax_payment_record` | 依法缴纳税收良好记录 | 省税务局 |
+| `social_insurance_record` | 依法缴纳社保良好记录 | 税务（社保入税） |
+| `major_tax_violation` | 未列入重大税收违法失信主体 | 税务总局 54 号公告 |
+| `dishonest_debtor` | 未被列入失信被执行人 | 执行信息公开网 |
+| `gov_procurement_blacklist` | 未列入政府采购严重违法失信名单 | 中国政府采购网 |
+| `major_illegal_record_3y` | 前 3 年无重大违法记录 | 信用中国 + 条例 §19 |
+
+每项是对象，不是字符串：
+
+```jsonc
+"dishonest_debtor": {
+  "status": "clear",          // hit | clear | unknown  ← 值本身
+  "as_of": "2026-09-01",
+  "age_days": 81,             // 服务端算
+  "freshness": "stale",       // fresh | stale | expired  ← 新鲜度，与 status 正交
+  "actionable": false,        // ← agent 唯一该看的那一位
+  "note": "数据超期（81 天前），核查前须到原文渠道实时确认"
+}
+```
+
+三条规则，缺一条这套设计就塌：
+
+1. **`unknown` 是「没查过」，不是「没问题」**。该省未接入、块缺失、主体未收录，一律 `unknown`，
+   且 `actionable=false`。回执里还有 `meta.coverage`（`full`/`partial`/`none`）说明覆盖到什么程度。
+2. **过期不降级**。值照出，`status` 不变，只是 `freshness` 变 `stale`/`expired` 且 `actionable=false`。
+   把过期并进 `unknown` 会同时丢掉「我们查过、当时没有」这个事实。
+   阈值按源的**自然周期**定（失信 10 天 / 欠税 45 天 / 处罚 60 天 / 纳税信用 400 天），
+   不是统一的「一周」；超过 `min(540, max(180, 4×周期))` 天判 `expired`，移入卡片的
+   「五、历史快照」并且**不再进资格核验表** —— 一份两年前的「无失信」摆在核验表里等于替企业背书。
+3. **只给事实**。没有 `score` / `rating` / `qualified`。`hit` 只表示「有记录」，不表示「不合格」。
+
+**存储**：`entity/{省2}/{市区4}/{桶}.jsonl`，一行一个主体。桶 = `FNV-1a32(uscc) % 64`。
+
+> 分片键踩过一次：设计稿原本写 `uscc[8:10]`（组织机构代码前两位），实测 4 条记录全挤进 2 个桶 ——
+> 新码那两位几乎全是 `MA`/`9A`，熵太低，全国量级下会退化成单个几百 MB 的巨文件。
+> 改成哈希取模后分布均匀，且**读写两侧的算法必须逐字节一致**
+> （`scripts/import_entity_feed.py` 的 `fnv1a32` 与 worker 的 `entityFnv1a`），
+> 差一位的表现是「导入报成功、读端永远查不到」。
+
+**导入**：`python scripts/import_entity_feed.py feed.jsonl --dry-run` 先看报告
+（通过/拒收/重复/分片数/块缺失率/按省分布），确认后加 `--write dist/entity`。
+校验做三件事：schema（**所有层级 `additionalProperties:false`**，字段名拼错当场拒收整行）、
+GB 32100 校验位、PII 扫描（身份证/手机号命中即整行拒收，不尝试脱敏）。
+
+**空库行为**：0 条数据时仍返回完整四节卡 + 六个 `unknown` + `coverage` 全 `none`，
+**不是 404、也不是空对象** —— 空对象会让 agent 说「查无异常」。
 
 ## 5. 验收清单
 

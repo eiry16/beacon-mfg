@@ -1,0 +1,270 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://beacon-mfg.pages.dev/schema/entity_risk.v1.schema.json",
+  "title": "BeaconMFG 主体风险记录 v1（政务事实卡数据源）",
+  "description": "一条记录 = 一个法人主体（USCC 级），不是场所（POI）级。分片 entity/{uscc[2:4]}/{uscc[4:8]}/{FNV-1a32(uscc)%64}.jsonl，一行一个主体。所有 additionalProperties 都必须是 false —— 数据源把 arrears 写成 arreas 时，必须在入库时炸掉，而不是三个月后卡片上出现一片空白色块。契约说明见 mcp/MCP_HTTP.md §4.9。",
+
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["uscc", "legal_name", "as_of"],
+
+  "properties": {
+    "uscc": {
+      "type": "string",
+      "pattern": "^[0-9A-HJ-NPQRTUWXY]{18}$",
+      "description": "18 位统一社会信用代码。入库前必须过 GB 32100-2015 校验位（导入脚本执行，schema 只查字符集）。"
+    },
+    "legal_name": { "type": "string", "minLength": 2, "description": "工商登记全称，不是招牌名" },
+    "reg_status": { "type": "string", "description": "登记状态原文：存续 / 在业 / 注销 / 吊销 / 迁出 等，不映射不改写" },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "prov": { "type": "string" },
+        "city": { "type": "string" },
+        "dist": { "type": "string" }
+      },
+      "description": "登记机关所在省/市/区县。不要用经营地址反推。"
+    },
+    "industry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "gb": { "type": "string", "pattern": "^[0-9]{4}$", "description": "GB/T 4754 小类码" },
+        "path": { "type": "string", "description": "门类 > 大类 > 中类 > 小类 的可读路径" }
+      }
+    },
+    "founded": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "as_of": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "本条记录的整块数据截止日（取各块 as_of 的最小值）。卡片「数据截至」用它。"
+    },
+    "license": { "type": "string", "description": "再分发许可标识，来自数据源合同，如 gov-feed-v1" },
+
+    "tax": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "税务块。整块缺失 = 该省未接入 → tax_payment_record/social_insurance_record/major_tax_violation 全部 unknown。",
+      "required": ["as_of", "src"],
+      "properties": {
+        "as_of": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "src": { "type": "string", "description": "如「省税务局」「税务总局公告」，卡片右侧照原样显示" },
+        "reg_status": { "type": "string", "description": "税务登记状态：正常 / 非正常 等" },
+        "abnormal_since": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "arrears": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "count": { "type": "integer", "minimum": 0 },
+            "amount_cny": { "type": ["number", "null"], "minimum": 0 },
+            "latest_notice_date": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+            "cleared": {
+              "type": ["boolean", "null"],
+              "description": "公告发布后是否已结清。必须给：欠税公告是时点快照，补缴后旧公告仍挂在网上，只给金额会把已结清的旧欠税当现状。"
+            }
+          }
+        },
+        "major_violation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "hit": { "type": "boolean" },
+            "nature": { "type": ["string", "null"] },
+            "publish_date": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+            "withdraw_date": {
+              "type": ["string", "null"],
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+              "description": "撤出日期。非空 = 已撤出，不得再计为失信主体。"
+            }
+          }
+        },
+        "credit_rating": {
+          "type": ["string", "null"],
+          "enum": ["A", "B", "M", "C", "D", null],
+          "description": "纳税信用等级。公开渠道只有 A 级，其余等级若数据源不给就填 null —— 不要用 A 反推「不是 A」。"
+        },
+        "credit_year": { "type": ["integer", "null"], "minimum": 2000, "maximum": 2100 }
+      }
+    },
+
+    "social_insurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "社保缴费（社保入税后由税务出数）。缺失 = unknown，不要当成「无欠缴」。",
+      "required": ["as_of", "src"],
+      "properties": {
+        "as_of": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "src": { "type": "string" },
+        "status": { "type": "string", "description": "正常 / 欠缴 / 未参保 等" },
+        "months_owed": { "type": ["integer", "null"], "minimum": 0 },
+        "amount_cny": { "type": ["number", "null"], "minimum": 0 }
+      }
+    },
+
+    "judicial": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "司法块（企业为被执行人/被告部分）。自然人被执行人永不入库。",
+      "required": ["as_of", "src"],
+      "properties": {
+        "as_of": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "src": { "type": "string", "description": "如「中国执行信息公开网」" },
+        "dishonest_debtor": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "hit": { "type": "boolean" },
+            "times": { "type": ["integer", "null"], "minimum": 0 },
+            "circumstances": { "type": ["string", "null"] },
+            "withdrawn": {
+              "type": ["boolean", "null"],
+              "description": "是否已从名单撤出（履行完毕/和解）。true = 不得计为失信。"
+            }
+          }
+        },
+        "enforcement": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "active_count": { "type": ["integer", "null"], "minimum": 0 },
+            "total_amount_cny": { "type": ["number", "null"], "minimum": 0 },
+            "unpaid_amount_cny": { "type": ["number", "null"], "minimum": 0 }
+          }
+        },
+        "case_closed_no_assets": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "count": { "type": ["integer", "null"], "minimum": 0 },
+            "unpaid_amount_cny": { "type": ["number", "null"], "minimum": 0 }
+          }
+        },
+        "defendant": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "只数「作为被告」的案件。企业作为原告追欠款是正常经营，数进去会系统性冤枉所有大企业。",
+          "properties": {
+            "count_3y": { "type": ["integer", "null"], "minimum": 0 },
+            "by_cause": {
+              "type": "object",
+              "additionalProperties": { "type": "integer", "minimum": 0 }
+            },
+            "latest_case_no": { "type": ["string", "null"] }
+          }
+        },
+        "hearing": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "upcoming_count": { "type": ["integer", "null"], "minimum": 0 },
+            "next_date": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+          }
+        },
+        "bankruptcy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "in_procedure": { "type": ["boolean", "null"] },
+            "type": { "type": ["string", "null"], "description": "重整 / 和解 / 破产清算" }
+          }
+        },
+        "legal_rep_restricted": {
+          "type": ["boolean", "null"],
+          "description": "法定代表人是否被限制高消费。只出布尔：限消令原文同时列明企业与个人，关联关系由法院文书给出，我们不做身份匹配，也不存姓名/身份证/案号。"
+        }
+      }
+    },
+
+    "penalty": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "行政处罚。「重大违法记录」的直接依据，缺它答不了政采条例 §19。",
+      "required": ["as_of", "src"],
+      "properties": {
+        "as_of": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "src": { "type": "string", "description": "如「信用中国」" },
+        "items": {
+          "type": "array",
+          "maxItems": 200,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["date", "authority"],
+            "properties": {
+              "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+              "domain": { "type": ["string", "null"], "description": "处罚领域：生态环境 / 市场监管 / 税务 等" },
+              "authority": { "type": "string" },
+              "doc_no": { "type": ["string", "null"], "description": "决定书文号。原文可回溯，但可能是个人信息载体，卡片不展示。" },
+              "amount_cny": { "type": ["number", "null"], "minimum": 0 },
+              "severe": {
+                "type": "boolean",
+                "description": "按政采条例 §19 判定：吊销证照 ∨ 责令停产停业 ∨ 罚款超处罚机关所在地「较大数额」标准 ∨ 刑事处罚。阈值必须按处罚机关所在地取，不吃全国统一值。"
+              }
+            }
+          }
+        },
+        "total_3y": { "type": ["integer", "null"], "minimum": 0 },
+        "severe_3y": { "type": ["integer", "null"], "minimum": 0 }
+      }
+    },
+
+    "gov_blacklist": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "政府采购严重违法失信行为记录名单（中国政府采购网）。财库〔2016〕125号 三件套之一。",
+      "required": ["as_of", "src"],
+      "properties": {
+        "as_of": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "src": { "type": "string" },
+        "hit": { "type": "boolean" },
+        "publish_date": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "ban_until": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+      }
+    },
+
+    "authorized": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "B 档：企业授权数据。没有 consent_id 或已过期时，本块整体不出现 —— 缺块让卡片写「未获企业授权」，不要写「无数据」。",
+      "required": ["consent_id", "purpose", "valid_until", "as_of"],
+      "properties": {
+        "consent_id": { "type": "string", "description": "授权凭证号，必须能追到授权记录" },
+        "purpose": { "type": "string", "description": "授权用途，与本次调用用途不匹配时不得返回本块" },
+        "valid_until": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "as_of": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "tax_total_cny": { "type": ["number", "null"], "minimum": 0 },
+        "tax_year": { "type": ["integer", "null"] },
+        "invoice_out_cny": { "type": ["number", "null"], "minimum": 0, "description": "年度销项开票合计。只给合计与开票客户家数，不给客户名单。" },
+        "invoice_customers": { "type": ["integer", "null"], "minimum": 0 },
+        "employees_insured": { "type": ["integer", "null"], "minimum": 0 },
+        "power_kwh": { "type": ["number", "null"], "minimum": 0, "description": "年度用电量。产能利用率最硬的证据，比产值难造假。" },
+        "power_yoy": { "type": ["number", "null"], "description": "同比，小数（0.12 = +12%）" },
+        "land_mu": { "type": ["number", "null"], "minimum": 0, "description": "用地亩数。亩产税收的分母。" },
+        "output_value_cny": { "type": ["number", "null"], "minimum": 0, "description": "产值。非税务直连，卡片上必须标 self_declared，不得与税务数据同列。" },
+        "output_value_source": { "type": "string", "enum": ["self_declared", "statistics_bureau"] }
+      }
+    },
+
+    "raw_refs": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "url"],
+        "properties": {
+          "field": { "type": "string", "description": "如 tax.arrears / judicial.dishonest_debtor" },
+          "url": { "type": "string", "pattern": "^https://" }
+        }
+      },
+      "description": "原文链接。每条结论都要能点回官方页面，否则错了没人能查。"
+    },
+
+    "pii_removed": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "已剔除的个人信息字段名。说明我们删了什么，而不是假装没有这类数据。"
+    }
+  }
+}
