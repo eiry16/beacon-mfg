@@ -93,7 +93,7 @@ Cloudflare 直接拒（403 / error code 1000），所以这条闸没有「客户
 | `start_sourcing` | `handleSearch` + D1 会话 | 含糊需求 → 宽召回 + 1~2 个澄清问题，返回 `session_id` |
 | `answer_sourcing` | 会话续接 + 重检 | 把澄清答案写回，**重新检索**（不是在旧结果里二次过滤） |
 | `refine_sourcing` | 会话快照 | `best` / `more` / `filter` / `details` |
-| `get_onboarding_guide` | 纯静态文案 | 入驻/认领指路（控制台深链 + Agent HTTP 契约） |
+| `get_onboarding_guide` | 纯静态文案 | 入驻/认领指路（控制台深链 + Agent HTTP 契约）。`intent` 四档：`claim`(默认)/`register`/`status`/`agent`，见 §4.10 |
 | `get_entity_risk` | R2 `entity/**` 分片 | **政务事实卡**：按 USCC 取主体级税务/司法/处罚事实，返回排好版的 Markdown 卡 + `structuredContent`，见 §4.9 |
 
 > **命名一致性（1.12.8，当时是 7 个工具）**：前 6 个都是 `verb_noun`（search_/get_/start_/answer_/refine_），
@@ -539,6 +539,25 @@ GB 32100 校验位、PII 扫描（身份证/手机号命中即整行拒收，不
 
 **空库行为**：0 条数据时仍返回完整四节卡 + 六个 `unknown` + `coverage` 全 `none`，
 **不是 404、也不是空对象** —— 空对象会让 agent 说「查无异常」。
+
+### 4.10 `get_onboarding_guide` 的 `intent` 四档（补文档，2026-11-20）
+
+工具表里漏了这个参数 —— 它一直在线上（`_worker.js` 的 `tools/list` schema 里就是枚举），
+只是 `MCP_HTTP.md` 没写，按本文写调用会以为只有「认领」一种用法。
+
+| `intent` | 给谁 | 返回什么 |
+|---|---|---|
+| `claim`（默认） | 企业主本人 | 认领已收录企业的控制台深链 + 步骤 |
+| `register` | 库里没有、要新建档 | 自助注册入口 + 步骤 |
+| `status` | 已提交、等审核 | 查进度入口 |
+| `agent` | 供应商自己的 Agent 走 HTTP/JSON | 额外返回 `agent_channel`：v3.1 契约 `agent-onboard.json`、`api_base`、JWT 流程、`legal_phone_gate` |
+
+`agent` 档回执里带 `no_app_required: true` 与完整端点表（`/agent/me`、`/agent/legal-phone/check`、
+`/agent/claim`、`/agent/profile`、`/agent/register`、`/agent/applications`），全部只落
+`vendor_application(status=pending)`，人审通过才生效。
+
+> 与其余工具一致：本工具**只读指路、不代办**。短信验证码与法人手机核验必须由企业本人
+> 在自己设备上完成 —— 让 Agent 代收验证码等于把「证明他是这家企业」的凭证交给第三方。
 
 ## 5. 验收清单
 
