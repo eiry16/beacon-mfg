@@ -41,7 +41,8 @@
     "copy-rfk.js",
     "notes/",
     "README.md",
-    "MCP_HTTP.md"
+    "MCP_HTTP.md",
+    "schema/"
   ],
   "scripts": {
     "prepack": "node copy-rfk.js",
