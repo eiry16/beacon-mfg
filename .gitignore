@@ -78,6 +78,8 @@ mcp/test_update.js
 
 # 本地产物与临时文件
 *.log
+# 模拟数据实验台的分片与报告（假数据，绝不入库，更不能进 dist/）
+tmp/
 *.apk
 *.lnk
 dist/
