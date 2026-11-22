@@ -1,5 +1,7 @@
 # BeaconMFG · 供应商灯塔
 
+[![Glama](https://glama.ai/mcp/servers/eiry16/beacon-mfg/badges/score.svg)](https://glama.ai/mcp/servers/eiry16/beacon-mfg)
+
 **BeaconMFG (Supplier Lighthouse)** is a free, keyless, read-only MCP server that lets any AI agent search **210,000+ Chinese business entities** — suppliers, manufacturers, factories and service providers across all **GB/T 4754** industry divisions — with bilingual CN/EN records, USCC-verified identities, and a built-in RFQ sourcing kernel. Works with Claude Desktop, Cursor, Cline and any MCP-compatible client: **no install** via the hosted Streamable HTTP endpoint `https://beacon-mfg.pages.dev/mcp`, or locally with `npx -y beacon-mfg-mcp`.
 
 *Keywords: MCP server · China suppliers · Chinese manufacturers · supplier directory · sourcing · procurement · vendor search · factory directory · B2B · GB/T 4754 · company registry.*
