@@ -31,6 +31,9 @@ ALLOW_EXACT = frozenset({
     "README.md",
     "DATA_LICENSE.md",
     "glama.json",
+    # Glama 等目录在容器里拉起服务做工具内省，默认只认仓库根的 Dockerfile。
+    # 镜像内容 = mcp/ + skills/rfq-kernel/，不带任何数据面或后端，属最小可跑集。
+    "Dockerfile",
     ".github/workflows/mcp-release.yml",
     ".github/workflows/npm-publish.yml",
     ".github/workflows/repo-boundary.yml",
