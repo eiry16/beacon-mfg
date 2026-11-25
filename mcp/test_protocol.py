@@ -35,6 +35,8 @@ ADAPTER = os.path.join(HERE, "mcp_adapter.py")
 
 EXPECT_TOOLS = {
     "search_vendors", "get_vendor", "get_capability_card",
+    # 2026-11-25 加：按统一社会信用代码精确查库（个体户同名场景的唯一可靠入口）
+    "lookup_uscc",
     "suggest_filters", "list_industries",
     "start_sourcing", "answer_sourcing", "refine_sourcing",
     # 1.5.3 之后陆续加的两个，之前一直没进这个清单 —— 清单漏项等于

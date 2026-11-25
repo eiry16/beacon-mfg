@@ -22,6 +22,7 @@ Continue / 常见 MCP 客户端 等主流 MCP 客户端。
 暴露的 tool（8 个检索 + 账号/入驻 + 踩坑留言区）：
   search_vendors       按 关键词 / 城市 / 国标码 检索
   get_vendor           按 id（+ 国标码）取完整中文档案
+  lookup_uscc          按统一社会信用代码精确查库（个体户同名场景的唯一可靠入口）
   get_capability_card  按 id 取能力卡
   suggest_filters      用户原话 → 候选国标小类码
   list_industries      国标小类货架（只列有数据的类）
@@ -40,6 +41,7 @@ import math
 import copy
 import json
 import hashlib
+import zlib
 import concurrent.futures
 import subprocess
 import tarfile
@@ -3328,6 +3330,10 @@ def _rec_summary(rec: Dict[str, Any]) -> Dict[str, Any]:
         "etype": _ETYPE_NAMES.get(rec.get("et") or 0, ""),
         "badge": rec.get("cl"),
         "score": rec.get("sc"),
+        # 主体类型（2026-11-25）：企业 / 个体工商户 / 农合 / 集体经济组织。
+        # 个体户入库后这是区分「厂」与「店」的唯一信号（etype 是行业性质，不是主体性质）。
+        "subject_type": rec.get("st") or "unknown",
+        "subject_type_label": _SUBJECT_LABELS.get(str(rec.get("st") or "unknown"), "未判定"),
         "has_phone": bool(rec.get("tel")),
         "process": rec.get("proc", []),
         # 工艺来源：
@@ -4235,7 +4241,8 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
                    limit: int = 20, offset: int = 0,
                    group_branches: bool = True, etype: str = "",
                    lat: Optional[float] = None, lng: Optional[float] = None,
-                   radius_km: Optional[float] = None) -> Dict[str, Any]:
+                   radius_km: Optional[float] = None,
+                   subject_type: str = "") -> Dict[str, Any]:
     """按关键词 / 城市 / 国标码 / 坐标检索全国各行业主体。
 
     `group_branches`：同一品牌的连锁门店是否折成一行（默认折）。连锁在名录里是一家一条，
@@ -4268,6 +4275,17 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     lat_v, lng_v, rad, geo_err = _geo_params(lat, lng, radius_km)
     if geo_err:
         return geo_err
+    # 主体类型过滤（2026-11-25）：个体户入库后，一个区里七成是「某某店」。
+    # 不传 = 不过滤（默认），传了就只看该类型。值域与 _SUBJECT_LABELS 一致。
+    st_want = (subject_type or "").strip().lower()
+    if st_want and st_want not in _SUBJECT_LABELS:
+        return {
+            "error": "bad_subject_type",
+            "message": "subject_type 只接受 %s（或留空不过滤），收到 %r"
+                       % (" / ".join(_SUBJECT_LABELS), subject_type),
+        }
+    if st_want == "unknown":
+        st_want = ""      # unknown = 判不出的存量 POI，不是有意义的一类
     # ── 分页深度上限 ─────────────────────────────────────────────────────
     # 这不是性能优化，是**反截取**。翻页遍历是从公开接口搬走整个库的唯一
     # 可行路径，而真实用户要的是「找几家能做的」，不会翻到很深的结果页。
@@ -4388,6 +4406,10 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
         # 品牌归并放在**分页之前**：否则一页 20 条里可能 9 条是同一条街上的门店，
         # 而第 21 条才是另一个品牌 —— 分页之后再折叠等于白折。
         records_total = len(matches)
+        if st_want:
+            matches = [m for m in matches
+                       if (m.get("subject_type") or "unknown") == st_want]
+            records_total = len(matches)
         matches, brands_total = _collapse_brands(matches, keep_all=not group_branches)
         # 同 query 路由：折行后按距离稳定重排（品牌行距离折行时才换成最近门店，
         # 位置会停在代表店那）。等距组内保持 name_fit/id 序。
@@ -4672,13 +4694,17 @@ def search_vendors(query: str = "", city: str = "", gb: str = "",
     matches.sort(key=_geo_sort)
 
     # 品牌归并（分页之前，理由见 `_collapse_brands`）。
+    # 主体类型过滤放在总数统计之前：否则 total 会把被过滤掉的个体户也算进去。
+    if st_want:
+        matches = [m for m in matches
+                   if (m.get("subject_type") or "unknown") == st_want]
     records_total = len(matches)
     # 服务端给了更准的总量时用它（2026-11-06）。
     #   · 查询词解析出能力键 → 用 `cap_matched`（这一类的总量，即用户真正问的数）；
     #   · 否则用 `total_matched`（词面 ∪ 能力，worker 已做 city/gb 过滤）。
     # 为什么不能只信 len(matches)：matches 受 200 条窗口限制，窗口多深就报多少，
     # 于是「民宿·苏州 918 家」被报成「20 家」——用户会以为库里只有这些。
-    if _via_server and _srv_text:
+    if _via_server and _srv_text and not st_want:
         _srv_total = int(_srv_text.get("cap_matched") or 0) or \
             int(_srv_text.get("total") or 0)
         if _srv_total > records_total:
@@ -4818,6 +4844,45 @@ def _industry_evidence(rec: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     return out
 
 
+# 主体类型：企业 / 个体工商户 / 农民专业合作社 / 集体经济组织 / 机关事业。
+# 判别口径与 scripts/subject_type.py 完全一致（USCC 前两位优先，ent_type 兜底）——
+# MCP 是独立发布包，不能 import scripts/，所以在这里内联一份**极简版**，
+# 只覆盖指纹层会出现的值域（st 字段由 build_row 写入，已是判别后的结果）。
+_SUBJECT_LABELS = {
+    "enterprise": "企业",
+    "individual": "个体工商户",
+    "cooperative": "农民专业合作社",
+    "collective": "农村集体经济组织",
+    "public": "机关/事业/社团",
+    "unknown": "未判定",
+}
+_SUBJECT_BY_PREFIX = {"91": "enterprise", "92": "individual", "93": "cooperative",
+                      "N": "collective", "Y": "unknown"}
+
+
+def _subject_type_from_gov(rec: Dict[str, Any]) -> Tuple[str, str]:
+    """从 gov 块判主体类型，返回 (类型, 依据)。判不出返回 ("unknown", "none")。"""
+    gov = rec.get("gov") or {}
+    if not isinstance(gov, dict):
+        gov = {}
+    uscc = str(gov.get("uscc") or rec.get("uscc") or "").strip().upper()
+    if len(uscc) >= 2:
+        head = uscc[0] if uscc[0] in _SUBJECT_BY_PREFIX else uscc[:2]
+        st = _SUBJECT_BY_PREFIX.get(head)
+        if st:
+            return st, "uscc"
+    ent = str(gov.get("ent_type") or "")
+    if "个体" in ent:
+        return "individual", "ent_type"
+    if "农民专业合作" in ent:
+        return "cooperative", "ent_type"
+    if "集体经济" in ent or "股份经济合作" in ent:
+        return "collective", "ent_type"
+    if any(k in ent for k in ("公司", "合伙", "企业")):
+        return "enterprise", "ent_type"
+    return "unknown", "none"
+
+
 def normalize_vendor(rec: Dict[str, Any]) -> Dict[str, Any]:
     """zh 分片存在两套历史结构，下游 agent 只认一种，在这里展平（只增不删）。
 
@@ -4832,12 +4897,23 @@ def normalize_vendor(rec: Dict[str, Any]) -> Dict[str, Any]:
     out["city"] = _pick(rec.get("city"), region.get("city"))
     out["dist"] = _pick(rec.get("dist"), region.get("district"), region.get("dist"))
     out["province"] = _pick(rec.get("province"), region.get("province"))
+    # district 是 dist 的别名（2026-11-25）：两套历史结构一个叫 dist 一个叫 district，
+    # 调用方按其中一个读，另一个就是 null —— 这类"字段名不对就静默为空"最难排查。
+    out["district"] = out["dist"]
     out["gb"] = rec.get("gb") if rec.get("gb") not in (None, "") else None
     out["keywords"] = _pick(rec.get("keywords"), rec.get("products"))
     # 行业证据等级：只增不删的新字段，老调用方忽略即可（见 _EVIDENCE_TIER）
     ev = _industry_evidence(rec)
     if ev:
         out["industry_evidence"] = ev
+    # 主体类型（2026-11-25）：个体户入库后，「这家是厂还是店」是最基础的判别。
+    # 优先用 gov.uscc（工商登记口径，最硬）；zh 分片没有 gov 时退回指纹层的 st。
+    _st, _st_src = _subject_type_from_gov(rec)
+    if _st == "unknown" and rec.get("st"):
+        _st, _st_src = str(rec["st"]), "fingerprint"
+    out["subject_type"] = _st
+    out["subject_type_label"] = _SUBJECT_LABELS.get(_st, "未判定")
+    out["subject_type_src"] = _st_src
     if not out.get("gb"):
         out["gb_unclassified"] = True
     return out
@@ -5231,6 +5307,171 @@ def get_vendors(ids: Any, gb: str = "") -> Dict[str, Any]:
         out["note"] = ("一次最多取 %d 家，本次多出的 %d 个已忽略；"
                        "请分批调用或先用 search_vendors 缩小范围。"
                        % (_BATCH_VENDOR_MAX, dropped))
+    return out
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 统一社会信用代码查询（2026-11-25）
+# ═══════════════════════════════════════════════════════════════════════════
+# 为什么需要独立入口：企业名称会改（更名/简称/中英文括号差异），个体户名称更是
+# **只在登记辖区内唯一**（白云区可以有一家「XX五金店」，南明区也可以有同名），
+# 靠名字检索必然串号。USCC 终身不变，是唯一可靠的锚。
+#
+# 索引形态与 idmap 同构（`skills/registry/index/uscc/`）：
+#   片名 = crc32(uscc) % buckets，每行 `<uscc>,<id>`
+# 客户端算一次哈希就知道拿哪一片（约 20 KB），不需要目录表。
+#
+# ⚠ 这个索引**不是校验器**，是查找表。查不到只说明「库里没有这个代码」，
+# 不能反推「这家企业不存在」——存量绝大多数来自地图 POI，本来就没有 USCC。
+USCC_DIR = INDEX_DIR + "/uscc"
+
+_uscc_meta_cache: Optional[Tuple[Dict[str, Any], float, Optional[float]]] = None
+
+
+def _uscc_meta() -> Dict[str, Any]:
+    """读 uscc 索引的 meta（buckets / records / coverage）。
+
+    拿不到就返回空 dict，调用方按默认 buckets=256 走 —— 索引缺失时查询应当
+    「查不到」，而不是抛错中断整个会话。
+    """
+    global _uscc_meta_cache
+    rel = USCC_DIR + "/meta.json"
+    if _cache_stale(_uscc_meta_cache, rel):
+        txt = _index_text(rel)
+        m: Dict[str, Any] = {}
+        if txt:
+            try:
+                m = json.loads(txt) or {}
+            except Exception:
+                m = {}
+        _uscc_meta_cache = (m, time.time(), _wt_mtime(rel))
+    return (_uscc_meta_cache or ({}, 0, None))[0] or {}
+
+
+def _uscc_normalize(raw: str) -> str:
+    """归一：去空白/连字符、全角转半角、转大写。
+
+    用户抄营业执照时经常带空格或分隔符（`9152 0113 MAKR TXY1 0W`），
+    不归一就等于查一个不存在的代码 —— 这类失败最难排查。
+    """
+    s = str(raw or "")
+    out = []
+    for ch in s:
+        o = ord(ch)
+        if 0xFF01 <= o <= 0xFF5E:          # 全角 ASCII 段 → 半角
+            ch = chr(o - 0xFEE0)
+        elif o == 0x3000:                   # 全角空格
+            ch = " "
+        out.append(ch)
+    return "".join(out).replace("-", "").replace("_", "").replace(" ", "").upper()
+
+
+# GB 32100-2015 校验位：字符集 + 加权因子
+_USCC_CHARSET = "0123456789ABCDEFGHJKLMNPQRTUWXY"
+_USCC_WEIGHTS = [1, 3, 9, 27, 19, 26, 16, 17, 20, 29, 25, 13, 8, 24, 10, 30, 28]
+
+
+def _uscc_checksum_ok(uscc: str) -> Optional[bool]:
+    """校验位是否通过。长度/字符集不对或非 18 位 → None（不判真假）。
+
+    只用来给调用方一个「这串像不像手抄错的」提示，**不参与是否收录的判断**：
+    索引里若有历史不合规值，也要能查出来并暴露问题，而不是被校验器挡在门外。
+    """
+    if len(uscc) != 18:
+        return None
+    if any(c not in _USCC_CHARSET for c in uscc):
+        return None
+    try:
+        total = sum(_USCC_CHARSET.index(c) * _USCC_WEIGHTS[i]
+                    for i, c in enumerate(uscc[:17]))
+    except ValueError:
+        return None
+    return _USCC_CHARSET[(31 - total % 31) % 31] == uscc[17]
+
+
+def lookup_uscc(uscc: str, with_profile: bool = True) -> Dict[str, Any]:
+    """按统一社会信用代码查库：返回命中的主体 id 与（可选）完整档案。
+
+    设计要点：
+      · **只做精确命中**，不做模糊匹配 —— 模糊匹配放 `search_vendors`，
+        这个入口存在的意义就是「代码对代码」的确定性。
+      · 查不到时 `found=false`，并回带 `coverage` 与 hint，避免调用方把
+        「库里没有」误读成「企业不存在」。
+      · 一个代码理论上对应一个主体，但索引按 `uscc,id` 行存，
+        极端情况（同代码重复建档）会返回多条，这里**全部返回**并标 `ambiguous`。
+    """
+    norm = _uscc_normalize(uscc)
+    if not norm:
+        return {"error": "缺少必填参数 uscc（统一社会信用代码）"}
+    if len(norm) < 8:
+        return {
+            "error": "bad_uscc",
+            "message": "统一社会信用代码至少 8 位（完整为 18 位），收到 %d 位" % len(norm),
+            "uscc": norm,
+            "found": False,
+        }
+
+    meta = _uscc_meta()
+    buckets = int(meta.get("buckets") or 256)
+    if buckets <= 0:
+        buckets = 256
+    bucket = zlib.crc32(norm.encode("utf-8")) % buckets
+    rel = "%s/%03d.jsonl" % (USCC_DIR, bucket)
+    txt = _index_text(rel)
+
+    ids: List[str] = []
+    if txt:
+        for line in txt.splitlines():
+            line = line.strip()
+            if not line or "," not in line:
+                continue
+            u, _, sid = line.partition(",")
+            if u.strip().upper() == norm and sid.strip():
+                ids.append(sid.strip())
+
+    out: Dict[str, Any] = {
+        "uscc": norm,
+        "found": bool(ids),
+        "bucket": bucket,
+        "checksum_ok": _uscc_checksum_ok(norm),
+    }
+
+    # 覆盖率：告诉调用方这个「查不到」有多可信
+    cov = meta.get("coverage")
+    if cov is not None:
+        out["index_coverage"] = cov
+    out["index_records"] = int(meta.get("records") or 0)
+    out["index_generated_at"] = meta.get("generated_at")
+
+    if not ids:
+        out["hint"] = (
+            "索引里没有这个代码。**这不等于企业不存在**：存量主体多数来自公开地图 POI，"
+            "本来就不带 USCC（索引覆盖率见 index_coverage）。要确认是否在库，"
+            "改用 search_vendors(query=<企业登记全称>, city=<城市>) 按名称再试一次。"
+        )
+        return out
+
+    out["ids"] = ids
+    out["count"] = len(ids)
+    if len(ids) > 1:
+        out["ambiguous"] = True
+        out["ambiguous_note"] = "同一代码命中多条记录，可能是重复建档；请人工核对后合并。"
+
+    if not with_profile:
+        return out
+
+    try:
+        res = get_vendors(ids[:_BATCH_VENDOR_MAX])
+    except Exception as e:
+        out["profile_error"] = str(e)
+        return out
+    if isinstance(res, dict):
+        out["vendors"] = res.get("vendors") or []
+        if res.get("failed"):
+            out["failed"] = res["failed"]
+        # 顶层也放一份单条档案，方便「就查一家」的直接取用
+        if len(out["vendors"]) == 1:
+            out["vendor"] = out["vendors"][0]
     return out
 
 
@@ -5642,6 +5883,14 @@ TOOLS = [
                                          "流通 = F批发零售/G交通运输仓储邮政；"
                                          "服务 = H住宿餐饮…S公共管理。"
                                          "「找能做的厂」用生产，「找附近的店/服务商」用服务"},
+                "subject_type": {"type": "string",
+                                 "enum": ["enterprise", "individual", "cooperative",
+                                          "collective", "public"],
+                                 "description": "**主体登记类型**过滤（与 etype 不同：etype 是行业性质，"
+                                                "这个是工商登记的主体性质）。个体户自 2026-11-25 起入库，"
+                                                "一个区里可达七成 —— 找工厂/公司时传 enterprise "
+                                                "可滤掉满屏「某某店」；找门店、作坊、维修点时传 individual。"
+                                                "不传 = 不过滤"},
                 "lat": {"type": "number",
                         "description": "纬度（GCJ-02/WGS-84 均可）。**地标名（如「青创港」）"
                                        "请先用地图工具解析成坐标再传 —— MCP 不持地图 API、"
@@ -5681,6 +5930,33 @@ TOOLS = [
                 "gb": {"type": "string",
                        "description": "国标码（可选）；批量时对全部 id 生效。不填会自动反查，稍慢"},
             },
+        },
+    },
+    {
+        "name": "lookup_uscc",
+        "description": "按**统一社会信用代码**（营业执照上 18 位那串，如 91330100MA2AB1CD2N）"
+                       "精确查库，回答「这个代码在我们名录里吗？是哪一家？」。\n\n"
+                       "**什么时候必须用它**：\n"
+                       "· 对方给了营业执照/代码 —— 这是唯一不会串号的锚（名称会改、简称会重）；\n"
+                       "· **个体工商户** —— 它们的名称只在登记辖区内唯一（白云区有「XX五金店」，"
+                       "南明区也可以有同名），按名字搜必然串号，只能按代码查；\n"
+                       "· 认领/签约/开票前核对主体身份。\n\n"
+                       "**查不到 ≠ 不存在**：存量主体多数来自公开地图 POI，本来就不带代码，"
+                       "索引覆盖率见返回体 `index_coverage`。没命中时用 "
+                       "search_vendors(query=<登记全称>, city=<城市>) 按名称再试。\n\n"
+                       "返回：found / ids / count；with_profile=true（默认）时附完整档案 "
+                       "`vendors`（单条时顶层还有 `vendor`）。同一代码命中多条会标 ambiguous。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "uscc": {"type": "string",
+                         "description": "统一社会信用代码（必填）。带空格/连字符/全角字符会自动归一，"
+                                        "大小写不敏感"},
+                "with_profile": {"type": "boolean", "default": True,
+                                 "description": "是否连档案一起返回。只要「在不在库、id 是多少」"
+                                                "就传 false，省一次取档"},
+            },
+            "required": ["uscc"],
         },
     },
     {
@@ -6130,10 +6406,18 @@ _ARG_ALIASES: Dict[str, Dict[str, str]] = {
         "industry_code": "gb", "gb_code": "gb", "gbt": "gb", "industry": "gb",
         "industry_codes": "gbs", "gb_codes": "gbs",
         "size": "limit", "count": "limit", "top_k": "limit", "page_size": "limit",
+        "subject": "subject_type", "entity_type": "subject_type",
+        "org_type": "subject_type", "主体类型": "subject_type",
     },
     "get_vendor": {
         "token": "id", "vendor_id": "id", "company_id": "id", "subject_id": "id",
         "entity_id": "id", "vid": "id", "supplier_id": "id",
+    },
+    "lookup_uscc": {
+        "usci": "uscc", "credit_code": "uscc", "unified_code": "uscc",
+        "social_credit_code": "uscc", "code": "uscc", "uscc_code": "uscc",
+        "统一社会信用代码": "uscc", "信用代码": "uscc",
+        "profile": "with_profile", "detail": "with_profile", "full": "with_profile",
     },
     "get_capability_card": {
         "token": "id", "vendor_id": "id", "company_id": "id", "subject_id": "id",
@@ -6320,6 +6604,7 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
                 lat=args.get("lat"),
                 lng=args.get("lng"),
                 radius_km=args.get("radius_km"),
+                subject_type=args.get("subject_type", ""),
             )
         if name == "get_vendor":
             # 批量优先：传了 ids 就整批取（并发后总耗时≈一个往返），
@@ -6328,6 +6613,9 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
             if _ids:
                 return get_vendors(_ids, args.get("gb", ""))
             return get_vendor(args.get("id", ""), args.get("gb", ""))
+        if name == "lookup_uscc":
+            return lookup_uscc(args.get("uscc", ""),
+                               bool(args.get("with_profile", True)))
         if name == "get_capability_card":
             return get_capability_card(args.get("id", ""))
         if name == "suggest_filters":

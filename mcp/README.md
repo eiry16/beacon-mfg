@@ -22,8 +22,9 @@
 >   `quota`（按出口 IP 的剩余条数与滚动窗口释放时点；本地 stdio 的 `quota`
 >   是另一套 op 档位缓存，口径见「身份与额度」）；寻源会话 2 小时过期，
 >   且只能在**同一个出口 IP** 下续接。
-> - **本地 stdio**（`npx -y beacon-mfg-mcp`）—— 下表全部 12 个，多轮寻源的澄清问题由行业 pack 驱动
+> - **本地 stdio**（`npx -y beacon-mfg-mcp`）—— 下表全部 13 个，多轮寻源的澄清问题由行业 pack 驱动
 >   （远程版只问「答了能过滤」的城市/工艺/认证，选项取自候选集本身），另有踩坑留言区。
+>   `lookup_uscc`（按统一社会信用代码查库）目前**只在本地 stdio 上线**，远程端点尚未同步。
 >
 > 远程端点没上的工具**不会出现在 `tools/list` 里**（让 agent 看不到，比让它调了才报错好）。
 >
@@ -31,12 +32,13 @@
 > —— **知道域名就能拿到端点、协议版本与文档地址**，不必先读这份 README。
 > 契约与验收清单见 https://github.com/eiry16/beacon-mfg/blob/main/mcp/MCP_HTTP.md。
 
-## 提供的 tool（共 12 个：8 个只读检索 + 1 个身份自助 + 1 个入驻入口 + 2 个留言区读写）
+## 提供的 tool（共 13 个：9 个只读检索 + 1 个身份自助 + 1 个入驻入口 + 2 个留言区读写）
 
 | tool | 用途 | 关键参数 |
 |------|------|----------|
-| `search_vendors` | 按 关键词 / 城市 / 国标码 检索，返回精简档案 | `query` `city` `gb` `limit` `offset` |
+| `search_vendors` | 按 关键词 / 城市 / 国标码 检索，返回精简档案。结果带 `subject_type`（企业/个体工商户/农合…），可按主体类型过滤 | `query` `city` `gb` `limit` `offset` `subject_type` |
 | `get_vendor` | 取一家或多家的完整中文档案。**看多家务必用 `ids` 一次拿**：单条约 2.3 s（往返受限，数据仅 ~1.4 KB），串行 6 家要 15 s，批量约 4.4 s | `id` 或 `ids`（二选一，`ids` 最多 20 个） `gb`（可选，自动反查） |
+| `lookup_uscc` | **按统一社会信用代码精确查库**（营业执照上 18 位）。个体户名称只在登记辖区内唯一，按名字搜必然串号 —— 这个入口是唯一可靠的锚。查不到 ≠ 不存在（见返回体 `index_coverage`） | `uscc`（必填） `with_profile` |
 | `get_capability_card` | 按 id 取能力卡（工艺/设备/产能/认证等） | `id`（必填） |
 | `suggest_filters` | **把用户原话映射成候选国标小类码**，供改用 `gb=` | `query`（必填） `city` `limit` |
 | `list_industries` | **国标小类货架**（只列有数据的类，附企业条数），供按语义自己挑码 | `keyword` `parent` `limit` `offset` |
