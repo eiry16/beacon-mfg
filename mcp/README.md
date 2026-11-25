@@ -1,5 +1,7 @@
 # Beacon-MFG 只读 MCP 服务
 
+[![eiry16/beacon-mfg MCP server](https://glama.ai/mcp/servers/eiry16/beacon-mfg/badges/score.svg)](https://glama.ai/mcp/servers/eiry16/beacon-mfg)
+
 **English**: Read-only MCP server for finding **Chinese suppliers, manufacturers and business entities** — 210k+ records across all GB/T 4754 industries, bilingual CN/EN, USCC-verified, with an RFQ sourcing kernel. Free, no API key. **No install**: connect to the hosted Streamable HTTP endpoint `https://beacon-mfg.pages.dev/mcp`; or run locally with `npx -y beacon-mfg-mcp`.
 
 让任意支持 MCP 的主流 agent（Claude Desktop / Cline / Continue / 常见 MCP 客户端 等）能够**检索与调用**
@@ -12,11 +14,12 @@
 
 > **两种接入形态，工具数不同**：
 > - **远程端点**（`https://beacon-mfg.pages.dev/mcp`，Streamable HTTP，无需安装）——
->   提供 9 个工具：`search_vendors`（支持 `cap` / `caps` 能力域定向）/ `get_vendor` /
+>   提供 11 个工具：`search_vendors`（支持 `cap` / `caps` 能力域定向）/ `get_vendor` /
 >   `get_capability_card`，检索辅助 `suggest_filters`（轻量版：原话拆词 → 候选词、
 >   gb 码与能力域键，不依赖 5.9MB 货架）与 `list_industries`（轻量货架：418 个有企业的
 >   国标小类 + 全库条数），多轮寻源 `start_sourcing` / `answer_sourcing` /
->   `refine_sourcing`，以及 `get_onboarding_guide`。两个辅助工具都是纯计算、零运行时 IO，
+>   `refine_sourcing`，以及 `get_onboarding_guide`，另有政务事实卡 `get_entity_risk`
+>   与执照代码查库 `lookup_uscc`（两者详见下文）。两个辅助工具都是纯计算、零运行时 IO，
 >   回执带 `coverage:"lite"` 说明边界。
 >   额度按**出口 IP** 计（1,000 条记录/24h），不要注册、不要 API Key；每个工具回执都带
 >   `quota`（按出口 IP 的剩余条数与滚动窗口释放时点；本地 stdio 的 `quota`
