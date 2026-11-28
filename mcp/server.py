@@ -342,7 +342,7 @@ def _recall_for_sourcing(text: str, top_k: int = 200, pack_id: str | None = None
 # 都对齐到这个值，发布前的一致性闸门会校验它们没有漂移。
 # 读不到 package.json 时的兜底值 —— 改版本时**必须**和 package.json 一起改，
 # 否则 check_version.py 会报错（这就是它的用途）。
-VERSION_FALLBACK = "1.13.0"
+VERSION_FALLBACK = "1.13.1"
 
 
 def _pkg_version() -> str:
@@ -4809,6 +4809,7 @@ _EVIDENCE_TIER = {
     "registration": ("A", "工商登记"),
     "certification": ("A", "人工认证"),
     "name": ("B", "公司名称推断"),
+    "poi_business": ("C", "地图 POI 业态改判"),
     "gb_token": ("C", "国标特征词匹配"),
     "keyword": ("C", "POI 标签词"),
     "category_fallback": ("C", "原品类兜底"),
@@ -5678,6 +5679,179 @@ def get_capability_card(vid: str) -> Dict[str, Any]:
 
 
 # --------------------------------------------------------------------------- #
+# 资产条目（Listing）只读工具
+#
+# Listing 与能力卡是两个实体：能力卡讲「这家能做什么」，Listing 讲「这家有什么
+# 具体资产可租/可售/待处置」。首批是政府闲置资产样板。检索读 data/listings-index.jsonl
+# （公开条目派生面），详情读 data/listings/{id}.json。L1 自述草稿不在公开面，
+# 所以客户 Agent 搜不到未经审核的条目 —— 这是「弱证据不覆盖强证据」的落点。
+# --------------------------------------------------------------------------- #
+def _listings_face() -> List[Dict[str, Any]]:
+    txt = fetch_text("data/listings-index.jsonl")
+    if not txt:
+        return []
+    out: List[Dict[str, Any]] = []
+    for line in txt.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            row = json.loads(line)
+        except Exception:
+            continue  # 坏行跳过，绝不让一条脏数据打崩整个工具
+        if isinstance(row, dict):
+            out.append(row)
+    return out
+
+
+# 资产自然语言同义词：Agent/用户用口语词（电脑/打印机/出租/政府机关…）搜公告里的
+# 书面词（计算机/打印设备/招租/国家机关…）。每条是一组等价词面，检索时整组展开。
+# 只收「公告里确实会出现、且用户确实会这么问」的词，不做泛化联想（避免弱证据扩大召回）。
+_LISTING_SYNONYMS: List[List[str]] = [
+    ["电脑", "计算机", "台式机", "笔记本", "便携机", "pc", "主机"],
+    ["打印机", "打印", "复印机", "一体机", "打印设备"],
+    ["传真机", "传真"],
+    ["扫描仪", "扫描"],
+    ["碎纸机", "碎纸"],
+    ["空调", "冷气"],
+    ["出租", "招租", "租赁", "租用", "承租", "出租房", "租房"],
+    ["出售", "售卖", "买卖", "转让", "拍卖", "竞买", "竞租"],
+    ["划转", "无偿划转", "调拨", "移交"],
+    ["闲置", "空置", "积压", "盘活", "多余"],
+    ["报废", "废旧", "淘汰"],
+    ["厂房", "标准厂房", "标准化厂房", "车间", "工业厂房"],
+    ["办公楼", "写字楼", "办公用房", "办公房"],
+    ["宿舍", "宿舍楼", "职工宿舍", "公寓"],
+    ["门面", "商铺", "店面", "铺面", "商业街"],
+    ["住房", "住宅", "公租房", "保障房", "安置房"],
+    ["房屋", "房产", "不动产", "物业"],
+    ["政府", "国家机关", "机关", "事业单位", "机关单位", "政务", "gov", "government"],
+    ["降价", "下调", "折扣"],
+    ["办公设备", "办公用品", "设备", "器材", "办公家具"],
+    ["资产", "固定资产", "经营性资产", "国有资产"],
+]
+
+
+def _listing_syn_group(token: str) -> List[str]:
+    """返回一个词所属的同义词组（含自身）；未命中词典时返回单元素列表。"""
+    for grp in _LISTING_SYNONYMS:
+        if any(token == w or token in w or w in token for w in grp if len(w) >= 2):
+            return list(grp)
+    return [token]
+
+
+def _seg_zh(text: str) -> List[str]:
+    """中文最大匹配切词：把「政府闲置资产」切成 ['政府','闲置','资产']。
+
+    只按同义词词面切，不做通用分词——目的不是语言学正确，是把连写的口语查询
+    拆成可展开检索的词面。切不出的连续中文聚成整词（如「贵州」「药监局」），
+    绝不逐字拆成单字——单字会同时出现在无关条目里，把 AND 检索彻底打散。
+    """
+    vocab = sorted({w for grp in _LISTING_SYNONYMS for w in grp}, key=len, reverse=True)
+    out: List[str] = []
+    i = 0
+    buf: List[str] = []
+
+    def flush() -> None:
+        if buf:
+            out.append("".join(buf))
+            buf.clear()
+
+    while i < len(text):
+        ch = text[i]
+        if ch.isspace():
+            flush()
+            i += 1
+            continue
+        hit = None
+        for w in vocab:
+            if text.startswith(w, i):
+                hit = w
+                break
+        if hit:
+            flush()
+            out.append(hit)
+            i += len(hit)
+        elif '\u4e00' <= ch <= '\u9fff':
+            buf.append(ch)  # 未识别的中文先攒着，遇到词面/空白/结尾再整体吐出
+            i += 1
+        else:
+            flush()
+            out.append(ch)
+            i += 1
+    flush()
+    return [t for t in out if t]
+
+
+def search_listings(query: str = "", city: str = "", asset_type: str = "",
+                    disposal_mode: str = "", limit: int = 20) -> Dict[str, Any]:
+    """按关键词/城市/资产类型/处置方式检索已公开的资产条目。
+
+    关键词支持中文自然语言：连写的「政府闲置资产」「打印机出租」会先按同义词
+    词面切词，再整组展开匹配（打印↔打印机、出租↔招租、电脑↔计算机）。
+    """
+    limit = max(1, min(int(limit or 20), 100))
+    rows = _listings_face()
+    q = (query or "").strip().lower()
+    # 先按空白切，再对每段做中文最大匹配；空 query 不产生任何 token。
+    raw_tokens = [t for seg in q.split() for t in _seg_zh(seg)]
+    c = (city or "").strip().lower()
+    hits = []
+    for r in rows:
+        if c and not any(c in str(r.get(k) or "").lower()
+                         for k in ("province", "city", "district")):
+            continue
+        if asset_type and r.get("asset_type") != asset_type:
+            continue
+        if disposal_mode and disposal_mode not in (r.get("modes") or []):
+            continue
+        # hay 由索引构建器生成（含名称/主体/结构/用途/现状 + 自然别名），
+        # 比仅拼检索面字段更全：公告里写「台式计算机」而用户常问「电脑」。
+        hay = " ".join(str(v) for v in r.values() if v is not None).lower()
+        # 每个 token 展开成同义词组，组内任一命中即算该词命中（OR），记录命中词数。
+        matched = sum(
+            1 for tok in raw_tokens
+            if any(w in hay for w in _listing_syn_group(tok))
+        )
+        if matched:
+            hits.append((matched, r))
+    # 词间 AND 优先：全词命中的排前且只留这些；无全命中时降级为 OR（按命中数降序），
+    # 避免「打印机出租」这类跨条目口语因为单词不同条目而 0 命中。
+    full = [r for n, r in hits if n == len(raw_tokens)] if raw_tokens else [r for _, r in hits]
+    if full:
+        hits_out = full
+    else:
+        hits_out = [r for _, r in sorted(hits, key=lambda x: -x[0])]
+    return {
+        "count": len(hits_out),
+        "returned": min(len(hits_out), limit),
+        "listings": hits_out[:limit],
+        "query_tokens": raw_tokens,
+        "match_mode": "and" if full else ("or" if raw_tokens else "all"),
+        "note": "只返回已公开的条目；企业自述草稿须平台人审后才进入检索面。"
+                "价格与公告时效以 source_url 官方原文为准，平台不参与交易。",
+    }
+
+
+def get_listing(listing_id: str = "") -> Dict[str, Any]:
+    """按 listing_id 取完整结构化资产条目 + 官方公告链接。"""
+    lid = (listing_id or "").strip()
+    if not lid:
+        return {"error": "缺少必填参数 listing_id"}
+    if not lid.replace("-", "").isalnum():
+        return {"error": "listing_id 格式非法"}
+    txt = fetch_text(f"data/listings/{lid}.json")
+    if not txt:
+        return {"found": False, "id": lid,
+                "note": "条目不存在、未公开或尚未发布到数据面。可用 search_listings 查公开条目。"}
+    try:
+        rec = json.loads(txt)
+    except Exception as e:
+        return {"error": f"资产条目解析失败: {e}"}
+    return {"found": True, "id": lid, "listing": rec}
+
+
+# --------------------------------------------------------------------------- #
 # 寻源内核 桥接 tool：多轮对话式供应商匹配（G1/G2/G3）
 # 入口只有一个：客户 agent 检测到采购/代工/找厂意图时自动调 start_sourcing。
 # --------------------------------------------------------------------------- #
@@ -5971,6 +6145,39 @@ TOOLS = [
                 "id": {"type": "string", "description": "主体 id（必填）"},
             },
             "required": ["id"],
+        },
+    },
+    {
+        "name": "search_listings",
+        "description": "检索供应商/行政事业单位公开的**资产条目**（闲置办公楼、厂房、门面、"
+                       "电脑与办公设备等可租可售/待处置资产）。首批样板来自贵州政府公开公告。"
+                       "只返回已公开条目，企业自述草稿不进检索面。命中后用 get_listing 取完整字段，"
+                       "并以 source_url 官方公告为准；平台不参与交易。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "关键词，如『铜仁 闲置厂房』『电脑』"},
+                "city": {"type": "string", "description": "城市/区县，子串匹配"},
+                "asset_type": {"type": "string", "enum": ["real_estate", "equipment", "vehicle", "land", "other"],
+                               "description": "资产大类"},
+                "disposal_mode": {"type": "string",
+                                  "enum": ["rent", "sell", "auction", "lease_right", "transfer_free", "scrap"],
+                                  "description": "处置方式"},
+                "limit": {"type": "integer", "default": 20, "minimum": 1, "maximum": 100},
+            },
+            "required": [],
+        },
+    },
+    {
+        "name": "get_listing",
+        "description": "按 listing_id 取资产条目完整结构化档案：坐落/面积/权属/评估价/底价/租期/"
+                       "公告日期/处置主体/官方公告链接。未公开条目返回 found=false。",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "listing_id": {"type": "string", "description": "search_listings 返回的 id"},
+            },
+            "required": ["listing_id"],
         },
     },
     {
@@ -6612,12 +6819,29 @@ def _dispatch_inner(name: str, args: Dict[str, Any]) -> Dict[str, Any]:
             _ids = args.get("ids")
             if _ids:
                 return get_vendors(_ids, args.get("gb", ""))
-            return get_vendor(args.get("id", ""), args.get("gb", ""))
+            _res = get_vendor(args.get("id", ""), args.get("gb", ""))
+            # 主体视角的可发现性：挂了资产条目的主体在返回体里带 listings_count，
+            # Agent 可据此转 search_listings(listing 的 supplier_id 检索面)。
+            if isinstance(_res, dict) and isinstance(_res.get("vendor"), dict):
+                _sid = _res["vendor"].get("id") or ""
+                _res["listings_count"] = sum(
+                    1 for r in _listings_face() if r.get("supplier_id") == _sid
+                )
+            return _res
         if name == "lookup_uscc":
             return lookup_uscc(args.get("uscc", ""),
                                bool(args.get("with_profile", True)))
         if name == "get_capability_card":
             return get_capability_card(args.get("id", ""))
+        if name == "search_listings":
+            return search_listings(
+                query=args.get("query", ""), city=args.get("city", ""),
+                asset_type=args.get("asset_type", ""),
+                disposal_mode=args.get("disposal_mode", ""),
+                limit=args.get("limit", 20),
+            )
+        if name == "get_listing":
+            return get_listing(args.get("listing_id", "") or args.get("id", ""))
         if name == "suggest_filters":
             return suggest_filters(args.get("query", ""), args.get("city", ""),
                                    int(args.get("limit") or 8))

@@ -36,7 +36,7 @@
 > —— **知道域名就能拿到端点、协议版本与文档地址**，不必先读这份 README。
 > 契约与验收清单见 https://github.com/eiry16/beacon-mfg/blob/main/mcp/MCP_HTTP.md。
 
-## 提供的 tool（共 13 个：9 个只读检索 + 1 个身份自助 + 1 个入驻入口 + 2 个留言区读写）
+## 提供的 tool（共 15 个：11 个只读检索 + 1 个身份自助 + 1 个入驻入口 + 2 个留言区读写）
 
 | tool | 用途 | 关键参数 |
 |------|------|----------|
@@ -44,6 +44,8 @@
 | `get_vendor` | 取一家或多家的完整中文档案。**看多家务必用 `ids` 一次拿**：单条约 2.3 s（往返受限，数据仅 ~1.4 KB），串行 6 家要 15 s，批量约 4.4 s | `id` 或 `ids`（二选一，`ids` 最多 20 个） `gb`（可选，自动反查） |
 | `lookup_uscc` | **按统一社会信用代码精确查库**（营业执照上 18 位）。个体户名称只在登记辖区内唯一，按名字搜必然串号 —— 这个入口是唯一可靠的锚。查不到 ≠ 不存在（见返回体 `index_coverage`） | `uscc`（必填） `with_profile` |
 | `get_capability_card` | 按 id 取能力卡（工艺/设备/产能/认证等） | `id`（必填） |
+| `search_listings` | 检索已公开的资产条目（闲置房产/厂房/办公设备等，首批为贵州政府公告样板）；企业自述草稿不进检索面 | `query` `city` `asset_type` `disposal_mode` `limit` |
+| `get_listing` | 按 listing_id 取资产条目完整结构化档案 + 官方公告链接；条目证据独立于主体灯牌 | `listing_id`（必填） |
 | `suggest_filters` | **把用户原话映射成候选国标小类码**，供改用 `gb=` | `query`（必填） `city` `limit` |
 | `list_industries` | **国标小类货架**（只列有数据的类，附企业条数），供按语义自己挑码 | `keyword` `parent` `limit` `offset` |
 | `start_sourcing` | 【客户 agent 自动触发】识别找厂/代工/采购/询价意图 → 品类识别→宽召回→需求解析→生成 1~2 轮澄清问题，返回 `session_id` | `demand_text`（必填） `audience_id` |

@@ -44,6 +44,8 @@ EXPECT_TOOLS = {
     "account", "get_onboarding_guide",
     # 2026-11-07 加的踩坑留言区读写对：漏项等于「新工具在某条链路没注册」测不出
     "read_notes", "report_note",
+    # 2026-11-28 加的政府闲置资产检索对：上一轮新增时漏进基准，闸门抓到后补齐
+    "search_listings", "get_listing",
 }
 
 # 三个城市各取一个高频词，覆盖不同行业与不同分片，避免「只测通一个分片」
